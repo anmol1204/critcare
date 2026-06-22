@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CritCare AI — ICU Decision Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .page-head { background: linear-gradient(180deg, var(--blue-soft), #fff); padding: 4rem 5% 3rem; text-align: center; }
+    .page-head h1 { font-family: var(--font-disp); font-weight: 600; font-size: clamp(2rem,4vw,3rem); }
+    .page-head .eyebrow { justify-content: center; }
+    .page-head p { color: var(--slate); max-width: 560px; margin: 0.8rem auto 0; line-height: 1.7; }
+
+    .demo-wrap { max-width: 920px; margin: 0 auto; padding: 3rem 5%; }
+    .demo-card { background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 14px 36px rgba(20,35,58,0.08); overflow: hidden; }
+    .demo-top { background: var(--ink); padding: 1rem 1.4rem; display: flex; align-items: center; gap: 0.6rem; }
+    .dt-dot { width: 11px; height: 11px; border-radius: 50%; }
+    .dt-dot.r { background: #ff5f57; } .dt-dot.y { background: #febc2e; } .dt-dot.g { background: #28c840; }
+    .dt-title { margin-left: 0.6rem; color: rgba(255,255,255,0.6); font-size: 0.82rem; }
+    .demo-body { padding: 1.8rem; }
+    .field-label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); margin-bottom: 0.5rem; display: block; }
+    .demo-input { width: 100%; min-height: 110px; padding: 1rem; border: 1.5px solid var(--line); border-radius: 10px; font-family: var(--font-body); font-size: 0.9rem; color: var(--ink); resize: vertical; outline: none; transition: border-color 0.2s; line-height: 1.6; }
+    .demo-input:focus { border-color: var(--blue); }
+    .demo-run { margin-top: 1rem; width: 100%; }
+    .demo-out { margin-top: 1.5rem; background: var(--blue-soft); border-radius: 10px; padding: 1.4rem; border-left: 3px solid var(--blue); display: none; }
+    .demo-out.show { display: block; }
+    .demo-out h4 { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-dark); margin-bottom: 0.7rem; }
+    .demo-out p { font-size: 0.9rem; color: var(--ink); line-height: 1.75; }
+    .demo-out p strong { color: var(--blue-dark); }
+    .disclaimer { margin-top: 1.5rem; background: #fff8ec; border: 1px solid #f0dcae; border-radius: 8px; padding: 1rem 1.2rem; font-size: 0.82rem; color: #8a6d2f; line-height: 1.6; }
+    .build-note { text-align: center; margin-top: 2rem; font-size: 0.88rem; color: var(--slate); }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="topics.html">ICU Topics</a></li>
+    <li><a href="ai-tool.html" class="active">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="page-head">
+  <span class="eyebrow">Clinical Decision Support</span>
+  <h1>CritCare AI</h1>
+  <p>Enter a patient's clinical picture and receive a structured, evidence-based ICU management plan. Built for intensivists in resource-limited settings.</p>
+</header>
+
+<section class="demo-wrap">
+  <div class="demo-card">
+    <div class="demo-top">
+      <span class="dt-dot r"></span><span class="dt-dot y"></span><span class="dt-dot g"></span>
+      <span class="dt-title">CritCare AI — ICU Assistant (Demo)</span>
+    </div>
+    <div class="demo-body">
+      <label class="field-label">Patient clinical summary</label>
+      <textarea class="demo-input" id="caseInput" placeholder="e.g. 65yr male, septic shock, BP 70/40, HR 122, Temp 39.2, Creatinine 4.8 (baseline 1.0), urine output 10ml/hr, on Noradrenaline 0.15 mcg/kg/min, urine culture E.coli ESBL+, CXR bilateral infiltrates...">65yr male, septic shock, BP 70/40, HR 122, Temp 39.2°C, Creatinine 4.8 (baseline 1.0), urine output 10 ml/hr, on Noradrenaline 0.15 mcg/kg/min. Urine culture: E.coli (ESBL+). CXR: bilateral infiltrates.</textarea>
+      <button class="btn btn-blue demo-run" onclick="runDemo()">⚡ Generate Management Plan</button>
+
+      <div class="demo-out" id="demoOut">
+        <h4>Suggested Management Plan</h4>
+        <p>
+          <strong>Assessment:</strong> Septic shock (urosepsis, ESBL source) with AKI Stage 3 and early ARDS.<br><br>
+          <strong>1. Source control & antibiotics:</strong> Meropenem 1g IV q12h (renal-adjusted for eGFR). Send repeat cultures.<br>
+          <strong>2. Haemodynamics:</strong> Target MAP ≥ 65 mmHg. Uptitrate noradrenaline; add vasopressin 0.03 U/min if &gt;0.25 mcg/kg/min. Consider hydrocortisone 200 mg/day if refractory.<br>
+          <strong>3. Renal:</strong> AKI 3 with oliguria — initiate CRRT (CVVHDF, 25 ml/kg/hr).<br>
+          <strong>4. Respiratory:</strong> Lung-protective ventilation (Vt 6 ml/kg PBW), monitor for proning if P/F &lt; 150.<br>
+          <strong>5. Monitoring:</strong> Lactate clearance, hourly urine output, daily cultures.
+        </p>
+      </div>
+
+      <div class="disclaimer">
+        ⚠️ <strong>Demo only — not yet a live AI.</strong> This is a fixed example response to show how the tool will work.
+        The real version (powered by the Claude API) is in development. Always apply clinical judgement; AI output is decision <em>support</em>, never a replacement for a trained physician.
+      </div>
+    </div>
+  </div>
+
+  <p class="build-note">🛠 The live AI version will require login and is currently being built. Want early access? <a href="login.html" style="color:var(--blue);font-weight:600;">Sign up here →</a></p>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="login.html">Login</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+
+<script>
+  function runDemo() {
+    document.getElementById('demoOut').classList.add('show');
+    document.getElementById('demoOut').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+</script>
+
+</body>
+</html>

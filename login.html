@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .login-stage {
+      min-height: calc(100vh - 66px);
+      display: grid; grid-template-columns: 1fr 1fr;
+      background: linear-gradient(135deg, var(--ink) 0%, #1d3a5f 100%);
+    }
+    /* left brand panel */
+    .login-brand-panel { padding: 4rem; display: flex; flex-direction: column; justify-content: center; color: #fff; position: relative; overflow: hidden; }
+    .login-brand-panel::after { content: ''; position: absolute; left: -80px; bottom: -80px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(0,179,164,0.2), transparent 70%); }
+    .lbp-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+    .lbp-title { font-family: var(--font-disp); font-weight: 600; font-size: 2.4rem; line-height: 1.15; margin-bottom: 1.2rem; }
+    .lbp-sub { color: rgba(255,255,255,0.6); font-size: 0.96rem; line-height: 1.8; max-width: 380px; margin-bottom: 2rem; }
+    .lbp-feats { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; position: relative; z-index: 2; }
+    .lbp-feats li { display: flex; align-items: center; gap: 0.7rem; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+    .lbp-feats li span { color: var(--accent); font-weight: 700; }
+
+    /* right form panel */
+    .login-form-panel { background: #fff; display: flex; align-items: center; justify-content: center; padding: 3rem; }
+    .login-box { width: 100%; max-width: 380px; }
+    .lb-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; background: var(--bg-alt); padding: 0.3rem; border-radius: 10px; }
+    .lb-tab { flex: 1; text-align: center; padding: 0.65rem; font-size: 0.85rem; font-weight: 700; color: var(--slate); border-radius: 7px; cursor: pointer; transition: all 0.2s; border: none; background: none; }
+    .lb-tab.active { background: #fff; color: var(--blue); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .lb-title { font-family: var(--font-disp); font-weight: 600; font-size: 1.6rem; margin-bottom: 0.3rem; }
+    .lb-sub { font-size: 0.86rem; color: var(--slate); margin-bottom: 1.8rem; }
+    .fg { margin-bottom: 1.1rem; }
+    .fg label { display: block; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); margin-bottom: 0.45rem; }
+    .fg input, .fg select { width: 100%; padding: 0.8rem 1rem; border: 1.5px solid var(--line); border-radius: 8px; font-family: var(--font-body); font-size: 0.9rem; color: var(--ink); outline: none; transition: border-color 0.2s; }
+    .fg input:focus, .fg select:focus { border-color: var(--blue); }
+    .submit-btn { width: 100%; margin-top: 0.5rem; }
+    .lb-note { margin-top: 1.2rem; padding: 0.85rem 1rem; background: var(--blue-soft); border-radius: 8px; font-size: 0.78rem; color: var(--blue-dark); text-align: center; line-height: 1.55; }
+
+    @media (max-width: 820px) {
+      .login-stage { grid-template-columns: 1fr; }
+      .login-brand-panel { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="topics.html">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta active">Login</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<div class="login-stage">
+  <!-- LEFT: brand panel -->
+  <div class="login-brand-panel">
+    <div class="lbp-eyebrow">Member Access</div>
+    <div class="lbp-title">Critical care,<br>at your fingertips.</div>
+    <p class="lbp-sub">Registered clinicians get full access to ICU topic articles, clinical protocols, and the CritCare AI decision support tool.</p>
+    <ul class="lbp-feats">
+      <li><span>✓</span> Full ICU topic library & protocols</li>
+      <li><span>✓</span> CritCare AI — real-time decision support</li>
+      <li><span>✓</span> Drug dosing & guideline tools</li>
+      <li><span>✓</span> Built for Indian intensivists</li>
+    </ul>
+  </div>
+
+  <!-- RIGHT: form -->
+  <div class="login-form-panel">
+    <div class="login-box">
+      <div class="lb-tabs">
+        <button class="lb-tab active" id="tabLogin" onclick="switchTab('login')">Sign In</button>
+        <button class="lb-tab" id="tabReg" onclick="switchTab('register')">Register</button>
+      </div>
+
+      <div class="lb-title" id="formTitle">Welcome back</div>
+      <div class="lb-sub" id="formSub">Sign in to access your account</div>
+
+      <!-- Register-only field -->
+      <div class="fg" id="nameField" style="display:none;">
+        <label>Full name</label>
+        <input type="text" placeholder="Dr. Your Name" />
+      </div>
+
+      <div class="fg">
+        <label>Email address</label>
+        <input type="email" placeholder="doctor@hospital.com" />
+      </div>
+
+      <!-- Register-only field -->
+      <div class="fg" id="roleField" style="display:none;">
+        <label>I am a...</label>
+        <select>
+          <option>Intensivist / Critical Care Specialist</option>
+          <option>Emergency Physician</option>
+          <option>Anaesthesiologist</option>
+          <option>Senior Resident / Fellow</option>
+          <option>Junior Resident / Intern</option>
+          <option>Medical Student</option>
+        </select>
+      </div>
+
+      <div class="fg">
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" />
+      </div>
+
+      <button class="btn btn-blue submit-btn" onclick="alert('Login backend coming soon! This is a visual prototype.')" id="submitBtn">Sign In →</button>
+
+      <div class="lb-note">
+        ⚙️ The login system is a visual prototype. A real backend (secure accounts) will be added next.
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+
+<script>
+  function switchTab(mode) {
+    var isReg = mode === 'register';
+    document.getElementById('tabLogin').classList.toggle('active', !isReg);
+    document.getElementById('tabReg').classList.toggle('active', isReg);
+    document.getElementById('nameField').style.display = isReg ? 'block' : 'none';
+    document.getElementById('roleField').style.display = isReg ? 'block' : 'none';
+    document.getElementById('formTitle').textContent = isReg ? 'Create your account' : 'Welcome back';
+    document.getElementById('formSub').textContent = isReg ? 'Join CritCare.in as a registered clinician' : 'Sign in to access your account';
+    document.getElementById('submitBtn').textContent = isReg ? 'Create Account →' : 'Sign In →';
+  }
+</script>
+
+</body>
+</html>

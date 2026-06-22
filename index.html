@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CritCare.in — Critical Care Medicine Resource</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    /* ===== HOMEPAGE-ONLY STYLES ===== */
+    .hero {
+      background: linear-gradient(180deg, var(--blue-soft) 0%, #fff 100%);
+      padding: 5rem 5% 5rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-inner {
+      max-width: 1160px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem; align-items: center;
+    }
+    /* NOTE: name is intentionally SMALL — this site is about the field,
+       not the person. The big headline is the mission statement. */
+    .hero-person {
+      display: flex; align-items: center; gap: 0.7rem;
+      margin-bottom: 1.5rem;
+    }
+    .hero-person-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .hero-person-name {
+      font-size: 0.92rem; font-weight: 600; color: var(--slate);
+    }
+    .hero-person-name strong { color: var(--ink); font-weight: 700; }
+    .hero-headline {
+      font-family: var(--font-disp);
+      font-weight: 600;
+      font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+      line-height: 1.08;
+      letter-spacing: -0.015em;
+      color: var(--ink);
+      margin-bottom: 1.3rem;
+    }
+    .hero-headline em { font-style: italic; color: var(--blue); }
+    .hero-sub {
+      font-size: 1.02rem; color: var(--slate);
+      line-height: 1.75; max-width: 480px; margin-bottom: 2.2rem;
+    }
+    .hero-btns { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+    .hero-visual { position: relative; }
+    .hero-photo-card {
+      background: #fff; border-radius: 16px;
+      border: 1px solid var(--line);
+      box-shadow: 0 20px 50px rgba(20,35,58,0.1);
+      overflow: hidden;
+    }
+    /* ===== PHOTO PLACEHOLDER =====
+       TO ADD YOUR PHOTO:
+       1. Save your photo as  anmol.jpg  in this same folder
+       2. Delete this whole <div class="photo-ph"> block
+       3. Paste instead:
+          <img src="anmol.jpg" alt="Dr. Anmol" style="width:100%;display:block;">
+    */
+    .photo-ph {
+      aspect-ratio: 4/5;
+      background: repeating-linear-gradient(45deg, #f0f5fb, #f0f5fb 14px, #e9f1fb 14px, #e9f1fb 28px);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0.8rem;
+      color: var(--slate); text-align: center; padding: 2rem;
+    }
+    .photo-ph .ic { font-size: 3rem; opacity: 0.5; }
+    .photo-ph p { font-size: 0.8rem; max-width: 170px; line-height: 1.55; }
+    .photo-meta {
+      padding: 1.1rem 1.3rem; border-top: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .photo-meta-name { font-weight: 700; font-size: 0.92rem; color: var(--ink); }
+    .photo-meta-role { font-size: 0.76rem; color: var(--slate); margin-top: 2px; }
+    .photo-meta-badge {
+      font-size: 0.68rem; font-weight: 700; color: var(--blue);
+      background: var(--blue-soft); padding: 0.3rem 0.6rem; border-radius: 5px;
+    }
+
+    /* stats strip */
+    .stats {
+      max-width: 1160px; margin: -2.5rem auto 0; position: relative; z-index: 5;
+      background: #fff; border: 1px solid var(--line); border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(20,35,58,0.06);
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+    }
+    .stat { padding: 1.6rem 1.4rem; border-right: 1px solid var(--line); }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-family: var(--font-disp); font-size: 1.5rem; font-weight: 600; color: var(--blue); }
+    .stat-lbl { font-size: 0.78rem; color: var(--slate); margin-top: 3px; }
+
+    /* topics preview */
+    .section { padding: 5rem 5%; }
+    .section.alt { background: var(--bg-alt); }
+    .sec-head { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+    .sec-head .eyebrow { justify-content: center; }
+    .sec-head p { color: var(--slate); font-size: 0.98rem; margin-top: 0.8rem; line-height: 1.7; }
+
+    .topic-grid {
+      max-width: 1160px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.1rem;
+    }
+    .tcard {
+      background: #fff; border: 1px solid var(--line); border-radius: 12px;
+      padding: 1.5rem; text-decoration: none; color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      position: relative;
+    }
+    .tcard:hover { border-color: var(--blue); box-shadow: 0 10px 26px rgba(30,111,217,0.1); transform: translateY(-3px); }
+    .tcard-ic {
+      width: 46px; height: 46px; border-radius: 10px;
+      background: var(--blue-soft); display: grid; place-items: center;
+      font-size: 1.4rem; margin-bottom: 1rem;
+    }
+    .tcard-title { font-weight: 700; font-size: 0.96rem; margin-bottom: 0.4rem; }
+    .tcard-desc { font-size: 0.83rem; color: var(--slate); line-height: 1.6; }
+    .tcard-arrow { margin-top: 1rem; font-size: 0.82rem; font-weight: 700; color: var(--blue); }
+
+    /* AI banner */
+    .ai-banner {
+      max-width: 1160px; margin: 0 auto;
+      background: linear-gradient(120deg, var(--ink) 0%, #1d3a5f 100%);
+      border-radius: 18px; padding: 3rem; color: #fff;
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .ai-banner::after {
+      content: ''; position: absolute; right: -60px; top: -60px;
+      width: 240px; height: 240px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,179,164,0.25), transparent 70%);
+    }
+    .ai-banner h2 { font-family: var(--font-disp); font-weight: 600; font-size: 1.9rem; margin-bottom: 0.8rem; }
+    .ai-banner p { color: rgba(255,255,255,0.65); font-size: 0.94rem; line-height: 1.7; margin-bottom: 1.5rem; }
+    .ai-banner .eyebrow { color: var(--accent); }
+    .ai-banner .eyebrow::before { background: var(--accent); }
+    .ai-chip-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; position: relative; z-index: 2; }
+    .ai-chip-list li {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.85rem; color: rgba(255,255,255,0.8);
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+
+    @media (max-width: 820px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero-visual { max-width: 320px; margin: 0 auto; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .stat:nth-child(2) { border-right: none; }
+      .ai-banner { grid-template-columns: 1fr; padding: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">
+    <span class="nav-mark">🫀</span>
+    <span class="nav-name">Crit<span>Care</span>.in</span>
+  </a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="topics.html">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <!-- Name is small & subtle here (site is about the field) -->
+      <div class="hero-person">
+        <span class="hero-person-dot"></span>
+        <span class="hero-person-name">Curated by <strong>Dr. Anmol Srivastava</strong> · SGPGIMS Lucknow</span>
+      </div>
+
+      <!-- The BIG headline is the mission, not the name -->
+      <h1 class="hero-headline">
+        Sharper decisions at the <em>ICU bedside.</em>
+      </h1>
+      <p class="hero-sub">
+        Evidence-based critical care knowledge, practical protocols, and an
+        AI clinical assistant — built for intensivists and emergency physicians
+        working in real-world Indian hospitals.
+      </p>
+      <div class="hero-btns">
+        <a href="topics.html" class="btn btn-blue">Explore ICU Topics →</a>
+        <a href="about.html" class="btn btn-line">About Dr. Anmol</a>
+      </div>
+    </div>
+
+    <!-- PHOTO CARD -->
+    <div class="hero-visual">
+      <div class="hero-photo-card">
+        <!-- ===== REPLACE THIS BLOCK WITH YOUR PHOTO (see instructions in CSS) ===== -->
+        <div class="photo-ph">
+          <div class="ic">📸</div>
+          <p>Add your photo here — see instructions inside the file.</p>
+        </div>
+        <!-- ===== END PHOTO BLOCK ===== -->
+        <div class="photo-meta">
+          <div>
+            <div class="photo-meta-name">Dr. Anmol Srivastava</div>
+            <div class="photo-meta-role">Emergency Medicine · Critical Care</div>
+          </div>
+          <span class="photo-meta-badge">SGPGIMS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STATS STRIP -->
+<div class="stats">
+  <div class="stat"><div class="stat-num">SGPGIMS</div><div class="stat-lbl">Senior Resident, Emergency Medicine</div></div>
+  <div class="stat"><div class="stat-num">DNB</div><div class="stat-lbl">Anaesthesiology & Critical Care</div></div>
+  <div class="stat"><div class="stat-num">ICU</div><div class="stat-lbl">Active Intensivist, BMC Superspeciality</div></div>
+  <div class="stat"><div class="stat-num">AI</div><div class="stat-lbl">Decision Support Tool in Development</div></div>
+</div>
+
+<!-- TOPICS PREVIEW -->
+<section class="section">
+  <div class="sec-head">
+    <span class="eyebrow">Knowledge Hub</span>
+    <h2 class="display">High-Yield ICU Topics</h2>
+    <p>Concise, evidence-based summaries for physicians managing complex patients. Click any topic to read more.</p>
+  </div>
+  <div class="topic-grid">
+    <a href="topics.html" class="tcard">
+      <div class="tcard-ic">🦠</div>
+      <div class="tcard-title">Sepsis & Septic Shock</div>
+      <div class="tcard-desc">Hour-1 bundle, vasopressors, fluid targets, SSC 2024 updates.</div>
+      <div class="tcard-arrow">Read →</div>
+    </a>
+    <a href="topics.html" class="tcard">
+      <div class="tcard-ic">🫁</div>
+      <div class="tcard-title">ARDS & Ventilation</div>
+      <div class="tcard-desc">Lung-protective settings, proning, 2023 global redefinition.</div>
+      <div class="tcard-arrow">Read →</div>
+    </a>
+    <a href="topics.html" class="tcard">
+      <div class="tcard-ic">🫘</div>
+      <div class="tcard-title">AKI & CRRT</div>
+      <div class="tcard-desc">Staging, timing of CRRT, anticoagulation, dosing.</div>
+      <div class="tcard-arrow">Read →</div>
+    </a>
+    <a href="topics.html" class="tcard">
+      <div class="tcard-ic">💊</div>
+      <div class="tcard-title">Vasopressors</div>
+      <div class="tcard-desc">Drug doses, receptors, shock decision algorithm.</div>
+      <div class="tcard-arrow">Read →</div>
+    </a>
+  </div>
+  <div style="text-align:center; margin-top:2.5rem;">
+    <a href="topics.html" class="btn btn-line">View all topics →</a>
+  </div>
+</section>
+
+<!-- AI BANNER -->
+<section class="section alt">
+  <div class="ai-banner">
+    <div>
+      <span class="eyebrow">In Development</span>
+      <h2>CritCare AI — your ICU co-pilot</h2>
+      <p>
+        Enter a patient's vitals, labs, and clinical picture. Receive a structured,
+        evidence-based management plan in seconds — drug dosing, antibiotics,
+        ventilation, and fluid strategy, tuned for resource-limited settings.
+      </p>
+      <a href="ai-tool.html" class="btn btn-blue">Preview the tool →</a>
+    </div>
+    <ul class="ai-chip-list">
+      <li>🩺 Full ICU management plans</li>
+      <li>💊 Renal & hepatic dose adjustment</li>
+      <li>🦠 Evidence-based antibiotic choice</li>
+      <li>🫁 Ventilation & sedation targets</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="topics.html">Topics</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+
+</body>
+</html>
