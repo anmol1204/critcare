@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AKI & CRRT — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › AKI & CRRT</div>
+    <h1>🫘 AKI &amp; Renal Replacement Therapy</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag">Nephrology</span>
+      <span class="topic-tag">CRRT</span>
+      <span class="topic-tag">Drug dosing</span>
+      <span class="topic-updated">Updated Jun 2025 · KDIGO 2022</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#staging">AKI Staging</a></li>
+        <li><a href="#causes">Causes & Work-up</a></li>
+        <li><a href="#conservative">Conservative Management</a></li>
+        <li><a href="#indications">Indications for RRT</a></li>
+        <li><a href="#crrt">CRRT Prescription</a></li>
+        <li><a href="#anticoag">Anticoagulation</a></li>
+        <li><a href="#drug-dosing">Drug Dosing in AKI</a></li>
+        <li><a href="#trials">Key Trials</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="staging">
+      <h2>AKI Staging (KDIGO)</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Stage</th><th>Serum Creatinine</th><th>Urine Output</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Stage 1</strong></td><td>× 1.5–1.9 baseline OR rise ≥ 0.3 mg/dL within 48h</td><td>&lt; 0.5 ml/kg/h for 6–12h</td></tr>
+            <tr><td><strong>Stage 2</strong></td><td>× 2.0–2.9 baseline</td><td>&lt; 0.5 ml/kg/h for ≥ 12h</td></tr>
+            <tr><td><strong>Stage 3</strong></td><td>× 3.0 baseline OR Cr ≥ 4 mg/dL OR initiation of RRT</td><td>&lt; 0.3 ml/kg/h for ≥ 24h OR anuria ≥ 12h</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Use whichever criterion (creatinine OR urine output) gives the higher stage. Baseline creatinine = lowest within 3 months, or estimate from MDRD using normal eGFR of 75 if unknown.</p>
+    </section>
+
+    <section id="causes">
+      <h2>Causes & Work-up</h2>
+      <h3>Pre-renal</h3>
+      <p>Hypovolaemia, cardiac failure, sepsis-induced renal vasodilatation, hepatorenal syndrome. FeNa &lt;1%, urine Na &lt;20, urine osmolality &gt;500. <strong>Responds to volume or haemodynamic correction.</strong></p>
+      <h3>Intrinsic renal</h3>
+      <ul>
+        <li><strong>ATN</strong> (most common in ICU): prolonged ischaemia, nephrotoxins (aminoglycosides, contrast, NSAIDs, vancomycin). Urine: muddy brown casts, FeNa &gt;2%</li>
+        <li><strong>AIN</strong>: drug-induced (beta-lactams, PPIs, NSAIDs) — eosinophiluria, WBC casts</li>
+        <li><strong>GN</strong>: haematuria, RBC casts, proteinuria</li>
+        <li><strong>TMA</strong>: TTP/HUS — schistocytes, thrombocytopenia, elevated LDH</li>
+      </ul>
+      <h3>Post-renal (obstruction)</h3>
+      <p>Catheter blockage (first thing to rule out!), BPH, pelvic mass, bilateral ureteric obstruction. Ultrasound to check hydronephrosis.</p>
+      <h3>Nephrotoxic drugs to withhold/adjust in AKI</h3>
+      <div class="warn-box">
+        <div class="kb-label">Stop these in AKI</div>
+        <ul>
+          <li>NSAIDs, COX-2 inhibitors</li>
+          <li>ACE inhibitors / ARBs (unless renal protective indication)</li>
+          <li>Aminoglycosides (switch to alternative if possible)</li>
+          <li>IV contrast (use iso-osmolar contrast, pre-hydrate)</li>
+          <li>Metformin (lactic acidosis risk)</li>
+          <li>Spironolactone (hyperkalaemia risk)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="conservative">
+      <h2>Conservative Management</h2>
+      <ul>
+        <li><strong>Haemodynamic optimisation:</strong> maintain MAP ≥ 65 mmHg; correct hypovolaemia but avoid fluid overload (&gt;10% weight gain worsens outcome)</li>
+        <li><strong>Diuretics:</strong> furosemide to maintain urine output and manage volume — does NOT prevent AKI or improve renal recovery, but can avoid volume overload</li>
+        <li><strong>Avoid nephrotoxins</strong> (see above)</li>
+        <li><strong>Tight glycaemic control</strong> 140–180 mg/dL</li>
+        <li><strong>Nutritional support</strong> — don't restrict protein in AKI; normal requirements (0.8–1.0 g/kg/day), higher if on CRRT (1.5–2 g/kg/day due to amino acid losses)</li>
+        <li><strong>Prevent and treat hyperkalaemia</strong> (diet, calcium resonium, calcium gluconate for ECG changes)</li>
+      </ul>
+    </section>
+
+    <section id="indications">
+      <h2>Indications for RRT</h2>
+      <div class="key-box">
+        <div class="kb-label">Absolute indications (AEIOU) — start immediately</div>
+        <ul>
+          <li><strong>A</strong>cidosis — metabolic acidosis pH &lt; 7.1 refractory to medical treatment</li>
+          <li><strong>E</strong>lectrolytes — hyperkalaemia K+ &gt; 6.5 mEq/L with ECG changes or refractory to medical management</li>
+          <li><strong>I</strong>ngestion — dialysable toxins (methanol, ethylene glycol, lithium, salicylates, metformin)</li>
+          <li><strong>O</strong>verload — pulmonary oedema refractory to diuretics</li>
+          <li><strong>U</strong>raemia — urea &gt;150–200 mg/dL, uraemic encephalopathy, uraemic pericarditis, uraemic bleeding</li>
+        </ul>
+      </div>
+      <h3>Timing of RRT</h3>
+      <p>STARRT-AKI trial (2020): <strong>accelerated vs standard strategy</strong> — no difference in 90-day mortality. Avoid prophylactic RRT for AKI that may recover. Wait for absolute indication or AKI Stage 3 with clinical deterioration. <span class="evidence-pill ep-1a">1A</span></p>
+    </section>
+
+    <section id="crrt">
+      <h2>CRRT Prescription</h2>
+      <h3>Modality: CVVHDF (preferred)</h3>
+      <p>Continuous venovenous haemodiafiltration — combines convection (haemofiltration) and diffusion (haemodialysis). Best for haemodynamically unstable patients.</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>Setting</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Blood flow rate</strong></td><td>150–250 ml/min</td><td>Higher if anticoagulation issues</td></tr>
+            <tr><td><strong>Effluent dose</strong></td><td>20–25 ml/kg/hr</td><td>KDIGO recommends ≥20; 25 prescribed to deliver 20 net (filter losses)</td></tr>
+            <tr><td><strong>Dialysate flow</strong></td><td>50% of effluent</td><td>For CVVHDF; adjust per machine</td></tr>
+            <tr><td><strong>Ultrafiltration</strong></td><td>Per fluid balance goal</td><td>Net negative or neutral; set hourly target</td></tr>
+            <tr><td><strong>Replacement fluid</strong></td><td>Pre-dilution preferred</td><td>Reduces clotting, slightly lower clearance</td></tr>
+            <tr><td><strong>Access</strong></td><td>Non-dominant femoral or RIJ</td><td>Jugular preferred; avoid subclavian (stenosis)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>When to switch to intermittent HD</h3>
+      <p>When patient is haemodynamically stable, fluid balance is controlled, and GFR remains low. IHD offers more rapid toxin/electrolyte clearance when needed.</p>
+    </section>
+
+    <section id="anticoag">
+      <h2>Anticoagulation in CRRT</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Method</th><th>Use when</th><th>Protocol</th><th>Monitoring</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Regional citrate (RCA)</strong></td><td>First choice — all patients</td><td>Citrate pre-filter → calcium replacement post-filter</td><td>Post-filter iCa 0.25–0.35, systemic iCa 1.0–1.35</td></tr>
+            <tr><td><strong>Unfractionated heparin</strong></td><td>No citrate availability; HIT ruled out</td><td>500–1000 IU/hr pre-filter</td><td>aPTT 45–60s</td></tr>
+            <tr><td><strong>No anticoagulation</strong></td><td>Active bleeding, high haemorrhage risk</td><td>Flush circuit with saline q30–60min</td><td>Monitor filter pressure, circuit life</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="warn-box">
+        <div class="kb-label">Citrate accumulation</div>
+        <p>Suspect if: total Ca/ionised Ca ratio &gt; 2.5, metabolic alkalosis, or liver failure (liver metabolises citrate). Reduce citrate dose or switch to heparin if citrate accumulation occurs.</p>
+      </div>
+    </section>
+
+    <section id="drug-dosing">
+      <h2>Drug Dosing in AKI & CRRT</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Normal dose</th><th>AKI / CRRT adjustment</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Meropenem</strong></td><td>1g q8h</td><td>AKI: 1g q12h; CRRT: 1g q12h (CVVHDF)</td></tr>
+            <tr><td><strong>Piperacillin-tazobactam</strong></td><td>4.5g q6h</td><td>AKI eGFR &lt;20: 2.25g q6h; CRRT: 4.5g q6–8h</td></tr>
+            <tr><td><strong>Vancomycin</strong></td><td>Weight-based q8–12h</td><td>AKI: load 25mg/kg, then monitor levels; CRRT: 1g q24–48h (target AUC 400–600)</td></tr>
+            <tr><td><strong>Gentamicin</strong></td><td>5–7mg/kg q24h</td><td>AKI: extend interval; monitor levels; avoid if possible</td></tr>
+            <tr><td><strong>Enoxaparin</strong></td><td>40mg SC OD</td><td>eGFR &lt;30: use UFH; CRRT: UFH preferred</td></tr>
+            <tr><td><strong>Fentanyl</strong></td><td>Infusion titrated</td><td>Safe in AKI — preferred opioid (no active metabolites)</td></tr>
+            <tr><td><strong>Morphine</strong></td><td>Infusion</td><td>Avoid in AKI — M6G accumulates (sedation, respiratory depression)</td></tr>
+            <tr><td><strong>Metformin</strong></td><td>500–1000mg BD</td><td>STOP if eGFR &lt;30 (lactic acidosis)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="trials">
+      <h2>Key Trials</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Trial</th><th>Question</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td><strong>STARRT-AKI (2020)</strong></td><td>Accelerated vs standard RRT timing in AKI</td><td>No 90-day mortality difference — wait for indication</td></tr>
+            <tr><td><strong>RENAL (2009)</strong></td><td>Higher dose (40ml/kg/hr) vs standard (25ml/kg/hr) CRRT</td><td>No benefit from higher dose — 25ml/kg/hr is sufficient</td></tr>
+            <tr><td><strong>ATHOS-3 (2017)</strong></td><td>Angiotensin II in catecholamine-resistant vasoplegic shock</td><td>MAP improved — useful adjunct in refractory shock with AKI</td></tr>
+            <tr><td><strong>RICH trial (citrate)</strong></td><td>Regional citrate vs heparin in CRRT</td><td>Citrate: longer filter life, less bleeding — now standard</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ARDS & Ventilation — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › ARDS</div>
+    <h1>🫁 ARDS &amp; Lung-Protective Ventilation</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag">Ventilation</span>
+      <span class="topic-tag">Proning</span>
+      <span class="topic-tag red">Critical</span>
+      <span class="topic-updated">Updated Jun 2025 · 2023 Global ARDS definition</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#definitions">Definition & Staging</a></li>
+        <li><a href="#pathophysiology">Pathophysiology</a></li>
+        <li><a href="#diagnosis">Diagnosis</a></li>
+        <li><a href="#ventilation">Lung-Protective Ventilation</a></li>
+        <li><a href="#peep">PEEP Strategy</a></li>
+        <li><a href="#proning">Proning</a></li>
+        <li><a href="#adjuncts">Adjuncts</a></li>
+        <li><a href="#fluids">Fluid Strategy</a></li>
+        <li><a href="#trials">Key Trials</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="definitions">
+      <h2>Definition & Staging</h2>
+      <h3>2023 Global ARDS Definition (updated from Berlin)</h3>
+      <p>The 2023 Global Definition expanded ARDS to include non-intubated patients and resource-limited settings. All criteria must be present within <strong>1 week</strong> of a known clinical insult:</p>
+      <ul>
+        <li>Bilateral opacities on CXR or CT (not fully explained by effusions, collapse, or nodules)</li>
+        <li>Respiratory failure not fully explained by cardiac failure or fluid overload</li>
+        <li>Oxygenation impairment with SpO2/FiO2 ≤ 315 on O2 ≥ 0.3 (non-intubated) OR P/F ≤ 300 on PEEP ≥ 5 (intubated)</li>
+      </ul>
+      <h3>Severity (on MV, PEEP ≥ 5 cmH2O)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Severity</th><th>P/F ratio (mmHg)</th><th>Key management</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Mild</strong></td><td>201–300</td><td>LPV, HFNO may avoid intubation</td></tr>
+            <tr><td><strong>Moderate</strong></td><td>101–200</td><td>LPV, higher PEEP, consider proning</td></tr>
+            <tr><td><strong>Severe</strong></td><td>≤ 100</td><td>LPV, prone ≥16h/day, consider NMB, ECMO</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="pathophysiology">
+      <h2>Pathophysiology</h2>
+      <p>ARDS results from diffuse alveolar damage (DAD). Two phases:</p>
+      <ul>
+        <li><strong>Exudative (0–7 days):</strong> Alveolar flooding with protein-rich fluid, hyaline membranes, alveolar collapse. Diffuse consolidation + atelectasis = "baby lung" (only 20–30% of lung is aerated and recruitable).</li>
+        <li><strong>Proliferative (7–14 days):</strong> Type II pneumocyte proliferation, fibroblast infiltration, early fibrosis.</li>
+      </ul>
+      <p>Driving pressure (ΔP = Pplat − PEEP) reflects the stress applied to the aerated baby lung. ΔP > 15 cmH2O is independently associated with mortality.</p>
+      <div class="warn-box">
+        <div class="kb-label">Ventilator-Induced Lung Injury (VILI)</div>
+        <p>Overdistension (volutrauma), repetitive opening/closing (atelectrauma), and biotrauma drive secondary lung injury. The whole point of lung-protective ventilation is minimising VILI.</p>
+      </div>
+    </section>
+
+    <section id="diagnosis">
+      <h2>Diagnosis</h2>
+      <p>Common causes to identify and treat:</p>
+      <ul>
+        <li><strong>Direct (pulmonary):</strong> pneumonia, aspiration, pulmonary contusion, inhalation injury</li>
+        <li><strong>Indirect (extrapulmonary):</strong> sepsis (most common), pancreatitis, massive transfusion, DIC, major surgery</li>
+      </ul>
+      <p>Exclude cardiac pulmonary oedema: BNP/NT-proBNP, echocardiography, clinical context. PCWP > 18 mmHg suggests cardiogenic cause (but can coexist).</p>
+    </section>
+
+    <section id="ventilation">
+      <h2>Lung-Protective Ventilation (ARDSNet)</h2>
+      <div class="key-box">
+        <div class="kb-label">ARDSNet targets — apply to ALL ventilated ARDS</div>
+        <ul>
+          <li><strong>Tidal volume:</strong> 6 ml/kg predicted body weight (PBW) — start at 8, reduce to 6</li>
+          <li><strong>Plateau pressure (Pplat):</strong> ≤ 30 cmH2O</li>
+          <li><strong>Driving pressure (ΔP = Pplat − PEEP):</strong> aim &lt; 14–15 cmH2O</li>
+          <li><strong>Respiratory rate:</strong> 14–35/min to maintain pH ≥ 7.30</li>
+          <li><strong>Permissive hypercapnia:</strong> acceptable PaCO2 up to 55–60 (pH ≥ 7.25)</li>
+          <li><strong>SpO2 target:</strong> 88–95% (FiO2 as low as possible)</li>
+        </ul>
+      </div>
+      <h3>Calculating predicted body weight (PBW)</h3>
+      <p>Males: 50 + 2.3 × (height in inches − 60)<br>Females: 45.5 + 2.3 × (height in inches − 60)</p>
+      <p>Or use: Males PBW (kg) ≈ height (cm) − 100; Females ≈ height (cm) − 105 (rough estimate)</p>
+    </section>
+
+    <section id="peep">
+      <h2>PEEP Strategy</h2>
+      <p>PEEP prevents alveolar derecruitment and reduces atelectrauma. Higher PEEP improves oxygenation but risks haemodynamic compromise and overdistension.</p>
+      <h3>ARDSNet PEEP/FiO2 table (Lower PEEP table — use for mild ARDS)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>FiO2</th><th>0.3</th><th>0.4</th><th>0.5</th><th>0.6</th><th>0.7</th><th>0.8</th><th>0.9</th><th>1.0</th></tr></thead>
+          <tbody>
+            <tr><td><strong>PEEP</strong></td><td>5</td><td>5–8</td><td>8–10</td><td>10</td><td>10–12</td><td>14</td><td>14–18</td><td>18–24</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>For <strong>moderate-severe ARDS</strong>, consider higher PEEP titration guided by driving pressure — reduce PEEP if ΔP increases (recruitable lung is limited). Recruitment manoeuvres should be used cautiously (ART trial showed harm with sustained inflations).</p>
+    </section>
+
+    <section id="proning">
+      <h2>Prone Positioning</h2>
+      <div class="key-box">
+        <div class="kb-label">PROSEVA trial — most impactful ARDS intervention</div>
+        <p>Prone positioning ≥ 16 hours/day in severe ARDS (P/F &lt; 150) reduced 28-day mortality from 32.8% to 16%. NNT = 6. This is a strong recommendation.</p>
+      </div>
+      <h3>Indications</h3>
+      <ul>
+        <li>P/F &lt; 150 on PEEP ≥ 5 cmH2O, FiO2 ≥ 0.6 — after ≥ 12–24h of optimised supine ventilation</li>
+        <li>Consider early: within 36 hours of intubation</li>
+      </ul>
+      <h3>Procedure summary</h3>
+      <ul>
+        <li>Minimum 4 staff members (3 at bedside, 1 managing head/ETT)</li>
+        <li>Secure all lines, pause NGT feeds, give prophylactic sedation</li>
+        <li>Turn to prone in one smooth manoeuvre</li>
+        <li>Head position: swimmer's position, alternate every 2h</li>
+        <li>Target ≥ 16 consecutive hours prone; return supine if SpO2 or haemodynamics worsen significantly</li>
+      </ul>
+      <h3>Contraindications</h3>
+      <p>Relative: spinal instability, open abdomen, facial fractures, elevated ICP, pregnancy. Absolute: few — proning is generally safe if done carefully.</p>
+    </section>
+
+    <section id="adjuncts">
+      <h2>Adjunctive Therapies</h2>
+      <h3>Neuromuscular blockade (NMB)</h3>
+      <p>Cisatracurium 0.37 mg/kg bolus then 0.03–0.06 mg/kg/hr infusion for 48h in P/F &lt; 150. ACURASYS trial showed benefit; ROSE trial was neutral. Current practice: use selectively for severe ventilator dyssynchrony or refractory hypoxaemia. <span class="evidence-pill ep-2a">2A</span></p>
+      <h3>High-flow nasal oxygen (HFNO)</h3>
+      <p>For mild-moderate ARDS (P/F 200–300) in non-intubated patients. Flow 40–60 L/min, FiO2 titrated. FLORALI trial showed benefit over conventional O2. Watch for delayed intubation — escalate early if ROX index (SpO2/FiO2 ÷ RR) &lt; 4.88 at 2h.</p>
+      <h3>Inhaled nitric oxide / Prostacyclin</h3>
+      <p>Improve oxygenation transiently (bridge to ECMO or as rescue). No mortality benefit. Use as rescue if P/F &lt; 80 despite prone + optimal vent. <span class="evidence-pill ep-2b">2B</span></p>
+      <h3>ECMO</h3>
+      <p>Veno-venous (VV) ECMO for reversible severe ARDS (P/F &lt; 80 on optimal therapy). EOLIA trial: ECMO did not meet primary endpoint but had crossover — expert centres use it as rescue. Refer early to ECMO-capable centre.</p>
+    </section>
+
+    <section id="fluids">
+      <h2>Fluid Strategy</h2>
+      <p>After initial resuscitation, use a <strong>conservative fluid strategy</strong>. The FACTT trial showed conservative fluids improved ventilator-free days with no increase in non-pulmonary organ failure.</p>
+      <ul>
+        <li>Target neutral to negative fluid balance after haemodynamic stability achieved</li>
+        <li>Daily weights, fluid balance, assess signs of fluid overload</li>
+        <li>Judicious diuresis (furosemide) to achieve neutral balance once haemodynamics allow</li>
+      </ul>
+    </section>
+
+    <section id="trials">
+      <h2>Key Trials</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Trial</th><th>Intervention</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td><strong>ARMA (2000)</strong></td><td>6 ml/kg PBW vs 12 ml/kg</td><td>Mortality reduced 8.8% with LPV — practice changing</td></tr>
+            <tr><td><strong>PROSEVA (2013)</strong></td><td>Prone ≥16h vs supine in severe ARDS</td><td>Mortality 16% vs 32.8% — NNT=6, landmark trial</td></tr>
+            <tr><td><strong>ACURASYS (2010)</strong></td><td>Cisatracurium 48h vs placebo</td><td>Improved 90-day survival; less barotrauma</td></tr>
+            <tr><td><strong>ROSE (2019)</strong></td><td>NMB vs light sedation</td><td>No difference — NMB not routinely needed</td></tr>
+            <tr><td><strong>FACTT (2006)</strong></td><td>Conservative vs liberal fluids</td><td>Conservative: more ventilator-free days, no AKI increase</td></tr>
+            <tr><td><strong>ART (2017)</strong></td><td>Aggressive recruitment + high PEEP</td><td>Harm — increased mortality vs ARDSNet strategy</td></tr>
+            <tr><td><strong>EOLIA (2018)</strong></td><td>VV-ECMO vs conventional in severe ARDS</td><td>Missed primary endpoint; ECMO as rescue acceptable</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+</body>
+</html>

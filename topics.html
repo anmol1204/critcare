@@ -13,10 +13,13 @@
     .page-head p { color: var(--slate); max-width: 540px; margin: 0.8rem auto 0; line-height: 1.7; }
 
     .topics-area { max-width: 1160px; margin: 0 auto; padding: 3.5rem 5%; }
+    .section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--slate); margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--line); }
+    .section-label:first-child { margin-top: 0; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
     .card {
       background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1.7rem;
       transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; position: relative;
+      text-decoration: none; color: inherit; display: block;
     }
     .card:hover { border-color: var(--blue); box-shadow: 0 10px 26px rgba(30,111,217,0.1); transform: translateY(-3px); }
     .card-ic { width: 50px; height: 50px; border-radius: 11px; background: var(--blue-soft); display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 1rem; }
@@ -24,8 +27,9 @@
     .card-desc { font-size: 0.87rem; color: var(--slate); line-height: 1.65; margin-bottom: 1rem; }
     .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: var(--blue-soft); color: var(--blue-dark); padding: 0.25rem 0.55rem; border-radius: 5px; }
+    .card-arrow { margin-top: 1rem; font-size: 0.82rem; font-weight: 700; color: var(--blue); }
     .soon { position: absolute; top: 1.2rem; right: 1.2rem; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: #fff4e0; color: #b07d2a; padding: 0.22rem 0.5rem; border-radius: 5px; }
-    .dim { opacity: 0.72; }
+    .dim { opacity: 0.72; pointer-events: none; }
   </style>
 </head>
 <body>
@@ -45,22 +49,90 @@
 <header class="page-head">
   <span class="eyebrow">Knowledge Hub</span>
   <h1>ICU Topics for Clinicians</h1>
-  <p>Practical, evidence-based summaries of high-yield critical care topics — for physicians managing complex patients in real-world settings.</p>
+  <p>Practical, evidence-based summaries of high-yield critical care topics — click any card to read the full article.</p>
 </header>
 
 <section class="topics-area">
+
+  <div class="section-label">Core Critical Care</div>
   <div class="grid">
-    <!-- To add a topic: copy one .card block and edit it -->
-    <div class="card"><div class="card-ic">🦠</div><div class="card-title">Sepsis & Septic Shock</div><div class="card-desc">Hour-1 bundle, vasopressor choice, fluid targets, and Surviving Sepsis Campaign 2024 updates.</div><div class="tags"><span class="tag">Haemodynamics</span><span class="tag">Antibiotics</span></div></div>
-    <div class="card"><div class="card-ic">🫁</div><div class="card-title">ARDS & Ventilation</div><div class="card-desc">Lung-protective ventilation, P-SILI, prone positioning, 2023 global ARDS redefinition.</div><div class="tags"><span class="tag">Ventilation</span><span class="tag">Proning</span></div></div>
-    <div class="card"><div class="card-ic">🫘</div><div class="card-title">AKI & CRRT</div><div class="card-desc">AKI staging, indications to start CRRT, anticoagulation strategies, dose prescription.</div><div class="tags"><span class="tag">Nephrology</span><span class="tag">CRRT</span></div></div>
-    <div class="card"><div class="card-ic">💊</div><div class="card-title">Vasopressors & Inotropes</div><div class="card-desc">Noradrenaline, vasopressin, adrenaline, dobutamine — doses, receptors, decision algorithm.</div><div class="tags"><span class="tag">Shock</span><span class="tag">Doses</span></div></div>
-    <div class="card"><div class="card-ic">⚡</div><div class="card-title">Electrolyte Emergencies</div><div class="card-desc">Hyponatraemia, hypokalaemia, hypomagnesaemia — acute correction protocols and pitfalls.</div><div class="tags"><span class="tag">Sodium</span><span class="tag">Potassium</span></div></div>
-    <div class="card"><div class="card-ic">💉</div><div class="card-title">Sedation & Analgesia</div><div class="card-desc">ABCDEF bundle, dexmedetomidine, remimazolam, RASS scoring, delirium prevention.</div><div class="tags"><span class="tag">RASS</span><span class="tag">CAM-ICU</span></div></div>
-    <div class="card dim"><span class="soon">Coming Soon</span><div class="card-ic">☠️</div><div class="card-title">Toxicology in the ICU</div><div class="card-desc">Organophosphate poisoning, paracetamol overdose, antidotes, flumazenil.</div><div class="tags"><span class="tag">Antidotes</span></div></div>
-    <div class="card dim"><span class="soon">Coming Soon</span><div class="card-ic">🫀</div><div class="card-title">Acute Liver Failure</div><div class="card-desc">King's College Criteria, encephalopathy grading, coagulopathy management.</div><div class="tags"><span class="tag">Hepatology</span></div></div>
-    <div class="card dim"><span class="soon">Coming Soon</span><div class="card-ic">🧠</div><div class="card-title">Neurocritical Care</div><div class="card-desc">Raised ICP, status epilepticus, stroke, traumatic brain injury management.</div><div class="tags"><span class="tag">Neuro</span></div></div>
+    <a href="topic-sepsis.html" class="card">
+      <div class="card-ic">🦠</div>
+      <div class="card-title">Sepsis &amp; Septic Shock</div>
+      <div class="card-desc">Hour-1 bundle, vasopressor algorithm, antibiotics, steroids, and SSC 2024 updates.</div>
+      <div class="tags"><span class="tag">Haemodynamics</span><span class="tag">Antibiotics</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="topic-ards.html" class="card">
+      <div class="card-ic">🫁</div>
+      <div class="card-title">ARDS &amp; Ventilation</div>
+      <div class="card-desc">Lung-protective ventilation, prone positioning, PEEP strategy, 2023 Global ARDS definition.</div>
+      <div class="tags"><span class="tag">Ventilation</span><span class="tag">Proning</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="topic-aki.html" class="card">
+      <div class="card-ic">🫘</div>
+      <div class="card-title">AKI &amp; CRRT</div>
+      <div class="card-desc">KDIGO staging, indications for RRT, CRRT prescription, anticoagulation, drug dosing.</div>
+      <div class="tags"><span class="tag">Nephrology</span><span class="tag">CRRT</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="topic-vasopressors.html" class="card">
+      <div class="card-ic">💊</div>
+      <div class="card-title">Vasopressors &amp; Inotropes</div>
+      <div class="card-desc">Receptor pharmacology, drug dose table, septic shock algorithm, cardiogenic shock.</div>
+      <div class="tags"><span class="tag">Shock</span><span class="tag">Doses</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="topic-electrolytes.html" class="card">
+      <div class="card-ic">⚡</div>
+      <div class="card-title">Electrolyte Emergencies</div>
+      <div class="card-desc">Hyponatraemia correction rates, hyperkalaemia algorithm, Mg and phosphate replacement.</div>
+      <div class="tags"><span class="tag">Sodium</span><span class="tag">Potassium</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="topic-sedation.html" class="card">
+      <div class="card-ic">💉</div>
+      <div class="card-title">Sedation, Analgesia &amp; Delirium</div>
+      <div class="card-desc">ABCDEF bundle, RASS, drug comparison table, CAM-ICU, delirium management.</div>
+      <div class="tags"><span class="tag">RASS</span><span class="tag">CAM-ICU</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
   </div>
+
+  <div class="section-label">Organ-Specific Topics</div>
+  <div class="grid">
+    <a href="topic-toxicology.html" class="card">
+      <div class="card-ic">☠️</div>
+      <div class="card-title">Toxicology in the ICU</div>
+      <div class="card-desc">Organophosphate poisoning, paracetamol overdose, antidote reference, dialysable toxins.</div>
+      <div class="tags"><span class="tag">Antidotes</span><span class="tag">Poisoning</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="topic-alf.html" class="card">
+      <div class="card-ic">🫀</div>
+      <div class="card-title">Acute Liver Failure</div>
+      <div class="card-desc">King's College Criteria, encephalopathy grading, coagulopathy, transplant indications.</div>
+      <div class="tags"><span class="tag">Hepatology</span><span class="tag">Coagulopathy</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="topic-neuro.html" class="card">
+      <div class="card-ic">🧠</div>
+      <div class="card-title">Neurocritical Care</div>
+      <div class="card-desc">Raised ICP management, TBI targets, acute stroke, ICH, status epilepticus algorithm.</div>
+      <div class="tags"><span class="tag">Neuro</span><span class="tag">ICP</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+  </div>
+
+  <div class="section-label">Coming Soon</div>
+  <div class="grid">
+    <div class="card dim"><span class="soon">Coming Soon</span><div class="card-ic">🩸</div><div class="card-title">DIC &amp; Coagulation</div><div class="card-desc">Disseminated intravascular coagulopathy, TEG/ROTEM interpretation, blood product ratios.</div><div class="tags"><span class="tag">Haematology</span></div></div>
+    <div class="card dim"><span class="soon">Coming Soon</span><div class="card-ic">🥗</div><div class="card-title">ICU Nutrition</div><div class="card-desc">Early enteral feeding, caloric targets, refeeding syndrome prevention, TPN indications.</div><div class="tags"><span class="tag">Nutrition</span></div></div>
+    <div class="card dim"><span class="soon">Coming Soon</span><div class="card-ic">📊</div><div class="card-title">Haemodynamic Monitoring</div><div class="card-desc">Arterial line, CVP, PICCO, PAC, fluid responsiveness — dynamic parameters.</div><div class="tags"><span class="tag">Monitoring</span></div></div>
+    <div class="card dim"><span class="soon">Coming Soon</span><div class="card-ic">❤️</div><div class="card-title">Post-Cardiac Arrest Care</div><div class="card-desc">TTM, coronary angiography timing, prognostication, neuroprotection.</div><div class="tags"><span class="tag">Resuscitation</span></div></div>
+  </div>
+
 </section>
 
 <footer class="footer">

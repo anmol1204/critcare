@@ -12,7 +12,6 @@
       display: grid; grid-template-columns: 1fr 1fr;
       background: linear-gradient(135deg, var(--ink) 0%, #1d3a5f 100%);
     }
-    /* left brand panel */
     .login-brand-panel { padding: 4rem; display: flex; flex-direction: column; justify-content: center; color: #fff; position: relative; overflow: hidden; }
     .login-brand-panel::after { content: ''; position: absolute; left: -80px; bottom: -80px; width: 280px; height: 280px; border-radius: 50%; background: radial-gradient(circle, rgba(0,179,164,0.2), transparent 70%); }
     .lbp-eyebrow { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
@@ -22,20 +21,42 @@
     .lbp-feats li { display: flex; align-items: center; gap: 0.7rem; font-size: 0.9rem; color: rgba(255,255,255,0.8); }
     .lbp-feats li span { color: var(--accent); font-weight: 700; }
 
-    /* right form panel */
     .login-form-panel { background: #fff; display: flex; align-items: center; justify-content: center; padding: 3rem; }
     .login-box { width: 100%; max-width: 380px; }
     .lb-tabs { display: flex; gap: 0.5rem; margin-bottom: 2rem; background: var(--bg-alt); padding: 0.3rem; border-radius: 10px; }
     .lb-tab { flex: 1; text-align: center; padding: 0.65rem; font-size: 0.85rem; font-weight: 700; color: var(--slate); border-radius: 7px; cursor: pointer; transition: all 0.2s; border: none; background: none; }
     .lb-tab.active { background: #fff; color: var(--blue); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
     .lb-title { font-family: var(--font-disp); font-weight: 600; font-size: 1.6rem; margin-bottom: 0.3rem; }
-    .lb-sub { font-size: 0.86rem; color: var(--slate); margin-bottom: 1.8rem; }
+    .lb-sub { font-size: 0.86rem; color: var(--slate); margin-bottom: 1.5rem; }
+
+    /* Google button */
+    .google-btn {
+      width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+      padding: 0.85rem 1rem; border: 1.5px solid var(--line); border-radius: 8px;
+      background: #fff; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+      color: var(--ink); cursor: pointer; transition: border-color 0.2s, box-shadow 0.2s;
+      margin-bottom: 1.2rem;
+    }
+    .google-btn:hover { border-color: #4285f4; box-shadow: 0 2px 12px rgba(66,133,244,0.15); }
+    .google-btn img { width: 20px; height: 20px; }
+    .divider { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+    .divider span { font-size: 0.76rem; color: var(--slate); white-space: nowrap; }
+
     .fg { margin-bottom: 1.1rem; }
     .fg label { display: block; font-size: 0.74rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); margin-bottom: 0.45rem; }
     .fg input, .fg select { width: 100%; padding: 0.8rem 1rem; border: 1.5px solid var(--line); border-radius: 8px; font-family: var(--font-body); font-size: 0.9rem; color: var(--ink); outline: none; transition: border-color 0.2s; }
     .fg input:focus, .fg select:focus { border-color: var(--blue); }
     .submit-btn { width: 100%; margin-top: 0.5rem; }
     .lb-note { margin-top: 1.2rem; padding: 0.85rem 1rem; background: var(--blue-soft); border-radius: 8px; font-size: 0.78rem; color: var(--blue-dark); text-align: center; line-height: 1.55; }
+
+    /* Logged-in state */
+    .user-panel { display: none; text-align: center; padding: 2rem 0; }
+    .user-avatar { width: 72px; height: 72px; border-radius: 50%; margin: 0 auto 1rem; border: 3px solid var(--blue-soft); }
+    .user-name { font-weight: 700; font-size: 1.1rem; margin-bottom: 0.2rem; }
+    .user-email { font-size: 0.84rem; color: var(--slate); margin-bottom: 1.5rem; }
+    .signout-btn { background: none; border: 1.5px solid var(--line); border-radius: 8px; padding: 0.6rem 1.4rem; font-size: 0.85rem; font-weight: 600; color: var(--slate); cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+    .signout-btn:hover { border-color: #dc2626; color: #dc2626; }
 
     @media (max-width: 820px) {
       .login-stage { grid-template-columns: 1fr; }
@@ -64,9 +85,9 @@
     <div class="lbp-title">Critical care,<br>at your fingertips.</div>
     <p class="lbp-sub">Registered clinicians get full access to ICU topic articles, clinical protocols, and the CritCare AI decision support tool.</p>
     <ul class="lbp-feats">
-      <li><span>✓</span> Full ICU topic library & protocols</li>
+      <li><span>✓</span> Full ICU topic library &amp; protocols</li>
       <li><span>✓</span> CritCare AI — real-time decision support</li>
-      <li><span>✓</span> Drug dosing & guideline tools</li>
+      <li><span>✓</span> Drug dosing &amp; guideline tools</li>
       <li><span>✓</span> Built for Indian intensivists</li>
     </ul>
   </div>
@@ -74,48 +95,60 @@
   <!-- RIGHT: form -->
   <div class="login-form-panel">
     <div class="login-box">
-      <div class="lb-tabs">
-        <button class="lb-tab active" id="tabLogin" onclick="switchTab('login')">Sign In</button>
-        <button class="lb-tab" id="tabReg" onclick="switchTab('register')">Register</button>
+
+      <!-- Logged-in panel -->
+      <div class="user-panel" id="userPanel">
+        <img class="user-avatar" id="userPhoto" src="" alt="Profile" />
+        <div class="user-name" id="userName">Dr. Anmol</div>
+        <div class="user-email" id="userEmail">—</div>
+        <a href="ai-tool.html" class="btn btn-blue" style="display:inline-flex;margin-bottom:1rem;">Open CritCare AI →</a><br>
+        <button class="signout-btn" onclick="signOut()">Sign out</button>
       </div>
 
-      <div class="lb-title" id="formTitle">Welcome back</div>
-      <div class="lb-sub" id="formSub">Sign in to access your account</div>
+      <!-- Auth form -->
+      <div id="authForm">
+        <div class="lb-tabs">
+          <button class="lb-tab active" id="tabLogin" onclick="switchTab('login')">Sign In</button>
+          <button class="lb-tab" id="tabReg" onclick="switchTab('register')">Register</button>
+        </div>
+        <div class="lb-title" id="formTitle">Welcome back</div>
+        <div class="lb-sub" id="formSub">Sign in to access your account</div>
 
-      <!-- Register-only field -->
-      <div class="fg" id="nameField" style="display:none;">
-        <label>Full name</label>
-        <input type="text" placeholder="Dr. Your Name" />
+        <!-- Google sign-in -->
+        <button class="google-btn" onclick="googleLogin()">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
+          Continue with Google
+        </button>
+
+        <div class="divider"><span>or continue with email</span></div>
+
+        <div class="fg" id="nameField" style="display:none;">
+          <label>Full name</label>
+          <input type="text" id="fullName" placeholder="Dr. Your Name" />
+        </div>
+        <div class="fg">
+          <label>Email address</label>
+          <input type="email" id="emailInput" placeholder="doctor@hospital.com" />
+        </div>
+        <div class="fg" id="roleField" style="display:none;">
+          <label>I am a...</label>
+          <select id="roleSelect">
+            <option>Intensivist / Critical Care Specialist</option>
+            <option>Emergency Physician</option>
+            <option>Anaesthesiologist</option>
+            <option>Senior Resident / Fellow</option>
+            <option>Junior Resident / Intern</option>
+            <option>Medical Student</option>
+          </select>
+        </div>
+        <div class="fg">
+          <label>Password</label>
+          <input type="password" id="passwordInput" placeholder="••••••••" />
+        </div>
+        <button class="btn btn-blue submit-btn" id="submitBtn" onclick="emailAuth()">Sign In →</button>
+        <div class="lb-note" id="authNote">Signing in with Google is the fastest way to get started.</div>
       </div>
 
-      <div class="fg">
-        <label>Email address</label>
-        <input type="email" placeholder="doctor@hospital.com" />
-      </div>
-
-      <!-- Register-only field -->
-      <div class="fg" id="roleField" style="display:none;">
-        <label>I am a...</label>
-        <select>
-          <option>Intensivist / Critical Care Specialist</option>
-          <option>Emergency Physician</option>
-          <option>Anaesthesiologist</option>
-          <option>Senior Resident / Fellow</option>
-          <option>Junior Resident / Intern</option>
-          <option>Medical Student</option>
-        </select>
-      </div>
-
-      <div class="fg">
-        <label>Password</label>
-        <input type="password" placeholder="••••••••" />
-      </div>
-
-      <button class="btn btn-blue submit-btn" onclick="alert('Login backend coming soon! This is a visual prototype.')" id="submitBtn">Sign In →</button>
-
-      <div class="lb-note">
-        ⚙️ The login system is a visual prototype. A real backend (secure accounts) will be added next.
-      </div>
     </div>
   </div>
 </div>
@@ -127,6 +160,88 @@
     <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
   </div>
 </footer>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
+  import {
+    getAuth, signInWithPopup, GoogleAuthProvider,
+    createUserWithEmailAndPassword, signInWithEmailAndPassword,
+    onAuthStateChanged, signOut as fbSignOut
+  } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+
+  // ============================================================
+  // STEP 1: Replace the values below with YOUR Firebase config.
+  // Go to: console.firebase.google.com → your project →
+  //   Project Settings → Your apps → Web app → Config
+  // ============================================================
+  const firebaseConfig = {
+    apiKey:            "YOUR_API_KEY",
+    authDomain:        "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId:         "YOUR_PROJECT_ID",
+    storageBucket:     "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId:             "YOUR_APP_ID"
+  };
+  // ============================================================
+  // STEP 2: In Firebase console → Authentication → Sign-in method
+  //   → Enable "Google" and "Email/Password"
+  // STEP 3: In Firebase console → Authentication → Settings →
+  //   Authorised domains → add your Vercel domain
+  // ============================================================
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  // Watch auth state
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      document.getElementById('authForm').style.display = 'none';
+      document.getElementById('userPanel').style.display = 'block';
+      document.getElementById('userName').textContent = user.displayName || 'Doctor';
+      document.getElementById('userEmail').textContent = user.email;
+      if (user.photoURL) document.getElementById('userPhoto').src = user.photoURL;
+      else document.getElementById('userPhoto').style.display = 'none';
+    } else {
+      document.getElementById('authForm').style.display = 'block';
+      document.getElementById('userPanel').style.display = 'none';
+    }
+  });
+
+  window.googleLogin = async () => {
+    try {
+      await signInWithPopup(auth, provider);
+    } catch (err) {
+      setNote('⚠️ ' + (err.message || 'Google sign-in failed. Check Firebase config.'), true);
+    }
+  };
+
+  window.emailAuth = async () => {
+    const email = document.getElementById('emailInput').value;
+    const password = document.getElementById('passwordInput').value;
+    const isReg = document.getElementById('tabReg').classList.contains('active');
+    if (!email || !password) return setNote('Please enter email and password.', true);
+    try {
+      if (isReg) {
+        await createUserWithEmailAndPassword(auth, email, password);
+      } else {
+        await signInWithEmailAndPassword(auth, email, password);
+      }
+    } catch (err) {
+      setNote('⚠️ ' + err.message, true);
+    }
+  };
+
+  window.signOut = () => fbSignOut(auth);
+
+  function setNote(msg, isError) {
+    const n = document.getElementById('authNote');
+    n.textContent = msg;
+    n.style.background = isError ? '#fef2f2' : '';
+    n.style.color = isError ? '#b91c1c' : '';
+  }
+</script>
 
 <script>
   function switchTab(mode) {

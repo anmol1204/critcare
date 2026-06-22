@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toxicology in the ICU — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Toxicology</div>
+    <h1>☠️ Toxicology in the ICU</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag">Antidotes</span><span class="topic-tag">Poisoning</span>
+      <span class="topic-updated">Updated Jun 2025</span>
+    </div>
+  </div>
+</header>
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#approach">General Approach</a></li>
+        <li><a href="#op">Organophosphate</a></li>
+        <li><a href="#paracetamol">Paracetamol Overdose</a></li>
+        <li><a href="#antidotes">Antidote Quick Reference</a></li>
+        <li><a href="#dialysable">Dialysable Toxins</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+  <main class="topic-content">
+    <section id="approach">
+      <h2>General Approach to Poisoning</h2>
+      <p>ABCDE resuscitation first — stabilise before diagnosis. Key principles:</p>
+      <ul>
+        <li><strong>Airway:</strong> Intubate early if GCS ≤8, impending respiratory failure, or risk of aspiration</li>
+        <li><strong>Identify the toxin:</strong> History, toxidrome, serum/urine levels, call Poison Control (India: 1800-11-6117)</li>
+        <li><strong>Decontamination:</strong> Activated charcoal 1g/kg PO within 1h of ingestion if airway protected and no contraindication</li>
+        <li><strong>Enhanced elimination:</strong> Multiple-dose activated charcoal, urinary alkalinisation, dialysis (see dialysable toxins)</li>
+        <li><strong>Specific antidote</strong> if available (see table below)</li>
+      </ul>
+    </section>
+    <section id="op">
+      <h2>Organophosphate Poisoning</h2>
+      <p>Extremely common in India (pesticide ingestion). Inhibits acetylcholinesterase → acetylcholine accumulation → muscarinic + nicotinic + CNS effects.</p>
+      <h3>SLUDGE / DUMBELS (muscarinic features)</h3>
+      <p>Salivation, Lacrimation, Urination, Defaecation, GI cramps, Emesis — plus bronchospasm, bradycardia, miosis.</p>
+      <h3>Management</h3>
+      <ul>
+        <li><strong>Atropine:</strong> 2–4mg IV bolus every 5–10 min until secretions dry. No ceiling — may need 20–100mg total. Target: dry secretions, HR &gt;80, clear chest. Do NOT target pupil size.</li>
+        <li><strong>Pralidoxime (2-PAM):</strong> 1–2g IV over 15–30 min, then 0.5g/hr infusion. Give within 24–48h of exposure (before ageing). Efficacy contested but give early if available.</li>
+        <li><strong>Intubation:</strong> Early RSI if respiratory failure; avoid succinylcholine (prolonged paralysis due to pseudocholinesterase inhibition — use rocuronium)</li>
+        <li><strong>Benzodiazepines</strong> for seizures; no phenytoin</li>
+        <li>Intermediate syndrome: day 2–4 weakness (neck flexors, proximal limb, cranial nerves) — watch for late respiratory failure</li>
+      </ul>
+    </section>
+    <section id="paracetamol">
+      <h2>Paracetamol (Acetaminophen) Overdose</h2>
+      <p>Toxic dose: &gt;150 mg/kg or &gt;7.5g in adults. NAPQI (toxic metabolite) depletes glutathione → hepatocellular necrosis.</p>
+      <h3>Rumack-Matthew nomogram</h3>
+      <p>Plot serum paracetamol level vs time after ingestion. Treat if level above "possible hepatotoxicity" line (150 mcg/ml at 4h).</p>
+      <h3>N-Acetylcysteine (NAC) — antidote</h3>
+      <ul>
+        <li>IV NAC: 150 mg/kg in 200ml D5W over 1h → 50 mg/kg over 4h → 100 mg/kg over 16h</li>
+        <li>Start within 8h for maximum benefit; still give up to 24h (or beyond if encephalopathy)</li>
+        <li>Oral NAC: 140 mg/kg loading, then 70 mg/kg q4h × 17 doses (if IV unavailable)</li>
+      </ul>
+      <h3>King's College Criteria (liver transplant)</h3>
+      <p>Refer for transplant if: pH &lt; 7.30 after resuscitation; OR all of: PT &gt;100s + creatinine &gt;300 + Grade III–IV encephalopathy.</p>
+    </section>
+    <section id="antidotes">
+      <h2>Antidote Quick Reference</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Toxin</th><th>Antidote</th><th>Dose</th></tr></thead>
+          <tbody>
+            <tr><td>Paracetamol</td><td>N-Acetylcysteine</td><td>150mg/kg/h then 50 then 100 (IV)</td></tr>
+            <tr><td>Organophosphate</td><td>Atropine + Pralidoxime</td><td>Atropine: 2–4mg q5-10min until dry; 2-PAM 1–2g then infusion</td></tr>
+            <tr><td>Opioid</td><td>Naloxone</td><td>0.4–2mg IV/IM/IN q2–3min; infusion for long-acting opioids</td></tr>
+            <tr><td>Benzodiazepine</td><td>Flumazenil</td><td>0.2mg IV over 15s, repeat to max 1mg; caution in benzo-dependent/seizure risk</td></tr>
+            <tr><td>Beta-blocker OD</td><td>Glucagon + High-dose insulin</td><td>Glucagon 5–10mg IV; Insulin 1 U/kg/hr + D50W (HIET therapy)</td></tr>
+            <tr><td>Digoxin</td><td>Digoxin-specific antibody fragments (Fab)</td><td>Based on ingested dose or serum level — refer package insert</td></tr>
+            <tr><td>Methanol / Ethylene glycol</td><td>Fomepizole or Ethanol + Dialysis</td><td>Fomepizole 15mg/kg IV loading; haemodialysis for severe toxicity</td></tr>
+            <tr><td>Cyanide</td><td>Hydroxocobalamin</td><td>5g IV over 15 min (or sodium thiosulphate 12.5g IV)</td></tr>
+            <tr><td>Iron overdose</td><td>Deferoxamine</td><td>15mg/kg/hr IV (max 80mg/kg/day)</td></tr>
+            <tr><td>CO poisoning</td><td>100% O2 / HBO</td><td>100% O2 by non-rebreather mask × 4–6h; consider HBO if severe</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <section id="dialysable">
+      <h2>Dialysable Toxins (need urgent RRT)</h2>
+      <ul>
+        <li>Methanol, ethylene glycol</li>
+        <li>Salicylates (aspirin) — alkalinise urine first</li>
+        <li>Lithium</li>
+        <li>Metformin (lactic acidosis)</li>
+        <li>Barbiturates (phenobarbitone)</li>
+        <li>Valproate (high-flux HD)</li>
+      </ul>
+    </section>
+  </main>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+</body>
+</html>

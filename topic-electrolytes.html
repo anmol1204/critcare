@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Electrolyte Emergencies — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Electrolytes</div>
+    <h1>⚡ Electrolyte Emergencies</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag">Sodium</span>
+      <span class="topic-tag">Potassium</span>
+      <span class="topic-tag">Magnesium</span>
+      <span class="topic-tag red">Emergency</span>
+      <span class="topic-updated">Updated Jun 2025</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#hyponatraemia">Hyponatraemia</a></li>
+        <li><a href="#hypernatraemia">Hypernatraemia</a></li>
+        <li><a href="#hypokalaemia">Hypokalaemia</a></li>
+        <li><a href="#hyperkalaemia">Hyperkalaemia</a></li>
+        <li><a href="#hypomagnesaemia">Hypomagnesaemia</a></li>
+        <li><a href="#hypophosphataemia">Hypophosphataemia</a></li>
+        <li><a href="#hypercalcaemia">Hypercalcaemia</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="hyponatraemia">
+      <h2>Hyponatraemia (Na &lt;135 mEq/L)</h2>
+      <div class="warn-box">
+        <div class="kb-label">Most dangerous pitfall</div>
+        <p>Correction rate matters as much as the target. Overcorrect and you risk osmotic demyelination syndrome (ODS/CPM). Undercorrect symptomatic acute hyponatraemia and risk herniation.</p>
+      </div>
+      <h3>Acute symptomatic (&lt;48h, seizures/coma/herniation)</h3>
+      <ul>
+        <li>3% NaCl 150 ml IV over 20 minutes — repeat up to 3 times until symptoms resolve</li>
+        <li>Target: raise Na by 4–6 mEq/L in first hour to resolve symptoms</li>
+        <li>Then slow down — do not exceed 10–12 mEq/L rise in 24h total</li>
+      </ul>
+      <h3>Chronic hyponatraemia (or unknown duration)</h3>
+      <ul>
+        <li>Correct no faster than <strong>8–10 mEq/L per 24h</strong>, max 18 mEq/L per 48h</li>
+        <li>Hypovolaemic: isotonic saline + treat underlying cause</li>
+        <li>Euvolaemic (SIADH): fluid restriction (800–1000 ml/day); consider 3% NaCl if symptomatic</li>
+        <li>Hypervolaemic (HF, cirrhosis): fluid restriction, treat underlying; consider tolvaptan (V2 antagonist) with caution (hepatotoxicity in cirrhosis)</li>
+      </ul>
+      <div class="key-box">
+        <div class="kb-label">SIADH Diagnostic Criteria</div>
+        <ul>
+          <li>Plasma osmolality &lt;275 mOsm/kg</li>
+          <li>Urine osmolality &gt;100 mOsm/kg</li>
+          <li>Urine Na &gt;30 mEq/L (on normal salt intake)</li>
+          <li>Euvolaemic</li>
+          <li>Normal thyroid, adrenal function</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="hypernatraemia">
+      <h2>Hypernatraemia (Na &gt;145 mEq/L)</h2>
+      <p>Almost always due to free water deficit. Common in ICU: insensible losses, diabetes insipidus, insufficient enteral water.</p>
+      <h3>Management</h3>
+      <ul>
+        <li>Calculate free water deficit: FWD (L) = 0.6 × weight × [(Na/140) − 1]</li>
+        <li>Replace with D5W or 0.45% NaCl IV, or free water via NGT</li>
+        <li>Correct no faster than <strong>10–12 mEq/L per 24h</strong> (risk of cerebral oedema)</li>
+        <li>Central DI: DDAVP 1–4 mcg SC/IV BD; treat underlying cause</li>
+      </ul>
+    </section>
+
+    <section id="hypokalaemia">
+      <h2>Hypokalaemia (K &lt;3.5 mEq/L)</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Severity</th><th>K level</th><th>Route</th><th>Replacement</th></tr></thead>
+          <tbody>
+            <tr><td>Mild</td><td>3.0–3.5</td><td>Oral/NGT</td><td>KCl 40–80 mEq/day in divided doses</td></tr>
+            <tr><td>Moderate</td><td>2.5–3.0</td><td>IV + oral</td><td>IV KCl 10–20 mEq/hr peripherally, 40 mEq/hr centrally</td></tr>
+            <tr><td>Severe / ECG changes</td><td>&lt;2.5 or ECG Δ</td><td>IV central</td><td>KCl 20–40 mEq/hr via central line with continuous monitoring</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="warn-box">
+        <div class="kb-label">Always correct Magnesium first</div>
+        <p>Hypokalaemia is refractory to K+ replacement if Mg2+ is low. Magnesium is essential for intracellular K+ retention. Check and correct Mg before/alongside K+.</p>
+      </div>
+      <p>Maximum peripheral IV KCl: 40 mEq/hr (highly irritant — use central line for higher rates). Always on cardiac monitor during IV replacement. Continuous infusion preferred over boluses.</p>
+    </section>
+
+    <section id="hyperkalaemia">
+      <h2>Hyperkalaemia (K &gt;5.5 mEq/L)</h2>
+      <div class="key-box">
+        <div class="kb-label">Stepwise management</div>
+        <ul>
+          <li><strong>1. Stabilise the myocardium (if ECG changes):</strong> Calcium gluconate 10ml of 10% IV over 10 min — repeatable. Effect within 1–3 min, lasts 30–60 min.</li>
+          <li><strong>2. Shift K+ into cells:</strong> Insulin 10U + 50ml 50% dextrose IV; Salbutamol nebuliser 10–20mg; NaHCO3 50–100 mEq if metabolic acidosis present</li>
+          <li><strong>3. Remove K+ from body:</strong> Furosemide IV (if urine output); Calcium resonium 15–30g 4-hourly PO/PR; Patiromer/ZS-9 if available; Dialysis (CRRT/IHD) if refractory or anuric</li>
+          <li><strong>4. Stop causative drugs</strong> (ACEi, ARBs, K-sparing diuretics, NSAIDs, heparin)</li>
+        </ul>
+      </div>
+      <h3>ECG changes in hyperkalaemia (progressive)</h3>
+      <p>Peaked T waves → widened QRS → PR prolongation → loss of P waves → sine wave pattern → VF/asystole. Any ECG change → treat aggressively.</p>
+    </section>
+
+    <section id="hypomagnesaemia">
+      <h2>Hypomagnesaemia (Mg &lt;0.75 mmol/L)</h2>
+      <p>Extremely common in ICU (30–60% prevalence). Causes: diarrhoea, aminoglycosides, amphotericin, diuretics, PPI use, sepsis, malnutrition.</p>
+      <h3>Clinical effects</h3>
+      <ul>
+        <li>Refractory hypokalaemia and hypocalcaemia</li>
+        <li>Cardiac arrhythmias (QTc prolongation, TdP, VF)</li>
+        <li>Neuromuscular: tremor, tetany, seizures</li>
+        <li>Respiratory muscle weakness</li>
+      </ul>
+      <h3>Replacement</h3>
+      <ul>
+        <li>Asymptomatic mild: oral magnesium oxide/hydroxide 400–800 mg/day (poorly absorbed — causes diarrhoea)</li>
+        <li>Symptomatic or Mg &lt;0.5 mmol/L: MgSO4 1–2g (8–16 mEq) IV over 15–60 min; may repeat</li>
+        <li>Torsades de pointes: MgSO4 2g IV push over 2 minutes</li>
+        <li>Ongoing losses: MgSO4 4–8g/day IV infusion; maintain via NGT if possible</li>
+      </ul>
+    </section>
+
+    <section id="hypophosphataemia">
+      <h2>Hypophosphataemia (PO4 &lt;0.8 mmol/L)</h2>
+      <p>Severe hypophosphataemia (&lt;0.3 mmol/L) causes respiratory muscle weakness, impaired weaning from ventilator, haemolytic anaemia, rhabdomyolysis, cardiac dysfunction. Most commonly seen in <strong>refeeding syndrome</strong>.</p>
+      <h3>Refeeding syndrome prevention</h3>
+      <ul>
+        <li>Identify high-risk patients: prolonged fasting &gt;5 days, malnutrition, chronic alcohol, weight loss &gt;15%</li>
+        <li>Start feeds at 10–20 kcal/kg/day and increase slowly</li>
+        <li>Give thiamine 200–300 mg/day before and during refeeding</li>
+        <li>Monitor PO4, K, Mg, glucose daily for first week</li>
+      </ul>
+      <h3>Replacement</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Severity</th><th>PO4 level</th><th>Route</th><th>Dose</th></tr></thead>
+          <tbody>
+            <tr><td>Mild</td><td>0.65–0.8</td><td>Oral</td><td>Sodium/potassium phosphate 1.5–2.3g/day</td></tr>
+            <tr><td>Moderate</td><td>0.32–0.64</td><td>IV</td><td>0.3–0.6 mmol/kg over 6–12h</td></tr>
+            <tr><td>Severe</td><td>&lt;0.32</td><td>IV</td><td>0.6–0.9 mmol/kg over 6–12h; repeat if needed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="hypercalcaemia">
+      <h2>Hypercalcaemia (Ca &gt;2.6 mmol/L)</h2>
+      <p>Mnemonic: <strong>Bones, Stones, Groans, Moans</strong> (bone pain, renal stones, abdominal groans, psychic moans). Causes: PTH-mediated (hyperparathyroidism) or PTH-independent (malignancy, vitamin D toxicity, sarcoidosis, thiazides).</p>
+      <h3>Severe hypercalcaemia (&gt;3.5 mmol/L or symptomatic)</h3>
+      <ul>
+        <li><strong>IV fluids:</strong> 0.9% NaCl 1–2L over 2–4h, then 200–300 ml/hr to maintain UO 100–150 ml/hr</li>
+        <li><strong>Loop diuretic:</strong> Furosemide 40–80 mg IV after adequate hydration (do NOT give before rehydration)</li>
+        <li><strong>Bisphosphonates:</strong> Zoledronic acid 4mg IV over 15 min — most potent; effect in 48–72h, lasts weeks</li>
+        <li><strong>Calcitonin:</strong> 4–8 IU/kg SC q12h — fastest onset (4–6h), tachyphylaxis after 48h; use as bridge</li>
+        <li><strong>Steroids:</strong> Prednisolone 40–60mg/day — effective in lymphoma, vitamin D toxicity, sarcoidosis</li>
+        <li><strong>Denosumab:</strong> 120mg SC for malignancy-related hypercalcaemia refractory to bisphosphonates</li>
+        <li><strong>Dialysis:</strong> Severe refractory or AKI — low-calcium dialysate</li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+</body>
+</html>

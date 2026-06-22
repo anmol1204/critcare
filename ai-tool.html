@@ -22,14 +22,23 @@
     .field-label { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--slate); margin-bottom: 0.5rem; display: block; }
     .demo-input { width: 100%; min-height: 110px; padding: 1rem; border: 1.5px solid var(--line); border-radius: 10px; font-family: var(--font-body); font-size: 0.9rem; color: var(--ink); resize: vertical; outline: none; transition: border-color 0.2s; line-height: 1.6; }
     .demo-input:focus { border-color: var(--blue); }
-    .demo-run { margin-top: 1rem; width: 100%; }
+    .demo-run { margin-top: 1rem; width: 100%; position: relative; }
+    .spinner { display: none; width: 18px; height: 18px; border: 2.5px solid rgba(255,255,255,0.3); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
     .demo-out { margin-top: 1.5rem; background: var(--blue-soft); border-radius: 10px; padding: 1.4rem; border-left: 3px solid var(--blue); display: none; }
     .demo-out.show { display: block; }
-    .demo-out h4 { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-dark); margin-bottom: 0.7rem; }
-    .demo-out p { font-size: 0.9rem; color: var(--ink); line-height: 1.75; }
-    .demo-out p strong { color: var(--blue-dark); }
+    .demo-out h4 { font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--blue-dark); margin-bottom: 0.9rem; }
+    .demo-out .response-text { font-size: 0.92rem; color: var(--ink); line-height: 1.85; white-space: pre-wrap; }
+
+    .error-out { margin-top: 1rem; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; padding: 1rem; font-size: 0.85rem; color: #b91c1c; display: none; }
+    .error-out.show { display: block; }
+
     .disclaimer { margin-top: 1.5rem; background: #fff8ec; border: 1px solid #f0dcae; border-radius: 8px; padding: 1rem 1.2rem; font-size: 0.82rem; color: #8a6d2f; line-height: 1.6; }
-    .build-note { text-align: center; margin-top: 2rem; font-size: 0.88rem; color: var(--slate); }
+    .example-cases { margin-top: 1.2rem; }
+    .example-cases p { font-size: 0.78rem; color: var(--slate); margin-bottom: 0.5rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; }
+    .ex-btn { font-size: 0.8rem; background: var(--bg-alt); border: 1px solid var(--line); border-radius: 6px; padding: 0.4rem 0.8rem; cursor: pointer; color: var(--slate); transition: border-color 0.18s, color 0.18s; margin: 0 0.3rem 0.4rem 0; }
+    .ex-btn:hover { border-color: var(--blue); color: var(--blue); }
   </style>
 </head>
 <body>
@@ -49,40 +58,44 @@
 <header class="page-head">
   <span class="eyebrow">Clinical Decision Support</span>
   <h1>CritCare AI</h1>
-  <p>Enter a patient's clinical picture and receive a structured, evidence-based ICU management plan. Built for intensivists in resource-limited settings.</p>
+  <p>Describe your patient's clinical picture and receive a structured, evidence-based ICU management plan powered by Claude AI.</p>
 </header>
 
 <section class="demo-wrap">
   <div class="demo-card">
     <div class="demo-top">
       <span class="dt-dot r"></span><span class="dt-dot y"></span><span class="dt-dot g"></span>
-      <span class="dt-title">CritCare AI — ICU Assistant (Demo)</span>
+      <span class="dt-title">CritCare AI — ICU Assistant (Live)</span>
     </div>
     <div class="demo-body">
       <label class="field-label">Patient clinical summary</label>
       <textarea class="demo-input" id="caseInput" placeholder="e.g. 65yr male, septic shock, BP 70/40, HR 122, Temp 39.2, Creatinine 4.8 (baseline 1.0), urine output 10ml/hr, on Noradrenaline 0.15 mcg/kg/min, urine culture E.coli ESBL+, CXR bilateral infiltrates...">65yr male, septic shock, BP 70/40, HR 122, Temp 39.2°C, Creatinine 4.8 (baseline 1.0), urine output 10 ml/hr, on Noradrenaline 0.15 mcg/kg/min. Urine culture: E.coli (ESBL+). CXR: bilateral infiltrates.</textarea>
-      <button class="btn btn-blue demo-run" onclick="runDemo()">⚡ Generate Management Plan</button>
 
-      <div class="demo-out" id="demoOut">
-        <h4>Suggested Management Plan</h4>
-        <p>
-          <strong>Assessment:</strong> Septic shock (urosepsis, ESBL source) with AKI Stage 3 and early ARDS.<br><br>
-          <strong>1. Source control & antibiotics:</strong> Meropenem 1g IV q12h (renal-adjusted for eGFR). Send repeat cultures.<br>
-          <strong>2. Haemodynamics:</strong> Target MAP ≥ 65 mmHg. Uptitrate noradrenaline; add vasopressin 0.03 U/min if &gt;0.25 mcg/kg/min. Consider hydrocortisone 200 mg/day if refractory.<br>
-          <strong>3. Renal:</strong> AKI 3 with oliguria — initiate CRRT (CVVHDF, 25 ml/kg/hr).<br>
-          <strong>4. Respiratory:</strong> Lung-protective ventilation (Vt 6 ml/kg PBW), monitor for proning if P/F &lt; 150.<br>
-          <strong>5. Monitoring:</strong> Lactate clearance, hourly urine output, daily cultures.
-        </p>
+      <div class="example-cases">
+        <p>Try an example:</p>
+        <button class="ex-btn" onclick="setExample('sepsis')">Septic shock</button>
+        <button class="ex-btn" onclick="setExample('ards')">ARDS</button>
+        <button class="ex-btn" onclick="setExample('aki')">AKI / oliguria</button>
+        <button class="ex-btn" onclick="setExample('dka')">DKA</button>
       </div>
 
+      <button class="btn btn-blue demo-run" id="runBtn" onclick="runAI()">
+        <span id="btnText">⚡ Generate Management Plan</span>
+        <span class="spinner" id="spinner"></span>
+      </button>
+
+      <div class="demo-out" id="demoOut">
+        <h4>AI Management Plan</h4>
+        <div class="response-text" id="responseText"></div>
+      </div>
+
+      <div class="error-out" id="errorOut"></div>
+
       <div class="disclaimer">
-        ⚠️ <strong>Demo only — not yet a live AI.</strong> This is a fixed example response to show how the tool will work.
-        The real version (powered by the Claude API) is in development. Always apply clinical judgement; AI output is decision <em>support</em>, never a replacement for a trained physician.
+        ⚠️ <strong>Clinical decision support only.</strong> CritCare AI uses the Claude AI model and may make errors. Always apply your own clinical judgement. AI output is decision <em>support</em>, not a replacement for a trained physician. Do not act on AI output without clinical assessment.
       </div>
     </div>
   </div>
-
-  <p class="build-note">🛠 The live AI version will require login and is currently being built. Want early access? <a href="login.html" style="color:var(--blue);font-weight:600;">Sign up here →</a></p>
 </section>
 
 <footer class="footer">
@@ -94,9 +107,59 @@
 </footer>
 
 <script>
-  function runDemo() {
-    document.getElementById('demoOut').classList.add('show');
-    document.getElementById('demoOut').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  const EXAMPLES = {
+    sepsis: '68yr female, urosepsis with septic shock. BP 82/50 (on NE 0.18 mcg/kg/min), HR 118, Temp 38.9°C, RR 28, SpO2 94% on 4L O2. Creatinine 3.2 (baseline 0.9), urine output 8ml/hr × 6h, lactate 4.8 mmol/L. WBC 22k, procalcitonin 48. Urine culture awaited. Diabetic, no known allergies.',
+    ards: '45yr male, post-COVID ARDS day 3. Intubated: Vt 500ml (weight 70kg), PEEP 10, FiO2 0.7, RR 22. P/F ratio 105. PaCO2 52, pH 7.28. CXR: bilateral dense consolidation. Haemodynamics stable on no vasopressors. Temp 37.8°C.',
+    aki: '55yr male, admitted for abdominal sepsis post-perforation surgery. Creatinine today 5.8 (baseline 1.1), urine output 5ml/hr for last 12h. K+ 6.1 mEq/L, pH 7.18, HCO3 10, lactate 3.2. MAP 68 on NE 0.08 mcg/kg/min. Abdominal drain in situ. Temp 38.2°C.',
+    dka: '32yr female, type 1 DM, presents with DKA. Blood glucose 520 mg/dL, pH 7.08, HCO3 6, ketones +++, anion gap 28. K+ 5.8 (before insulin). BP 98/60, HR 124, RR 30, GCS 12. No fever. No precipitating infection identified yet. 1L NS given pre-hospital.',
+  };
+
+  function setExample(key) {
+    document.getElementById('caseInput').value = EXAMPLES[key];
+  }
+
+  async function runAI() {
+    const msg = document.getElementById('caseInput').value.trim();
+    if (!msg) return;
+
+    const btn = document.getElementById('runBtn');
+    const btnText = document.getElementById('btnText');
+    const spinner = document.getElementById('spinner');
+    const outBox = document.getElementById('demoOut');
+    const errBox = document.getElementById('errorOut');
+    const respText = document.getElementById('responseText');
+
+    btn.disabled = true;
+    btnText.textContent = 'Generating…';
+    spinner.style.display = 'inline-block';
+    outBox.classList.remove('show');
+    errBox.classList.remove('show');
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: msg }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || data.error) {
+        errBox.textContent = '⚠️ ' + (data.error || 'Something went wrong. Please try again.');
+        errBox.classList.add('show');
+      } else {
+        respText.textContent = data.reply;
+        outBox.classList.add('show');
+        outBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    } catch (err) {
+      errBox.textContent = '⚠️ Network error — make sure ANTHROPIC_API_KEY is set in Vercel environment variables.';
+      errBox.classList.add('show');
+    } finally {
+      btn.disabled = false;
+      btnText.textContent = '⚡ Generate Management Plan';
+      spinner.style.display = 'none';
+    }
   }
 </script>
 
