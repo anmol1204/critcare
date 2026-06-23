@@ -9,16 +9,8 @@ module.exports = async function handler(req, res) {
   const { message } = req.body || {};
   if (!message) return res.status(400).json({ error: 'No message provided' });
 
-  // Debug: show which env vars are present (names only, not values)
-  const envKeys = Object.keys(process.env).filter(k =>
-    k.includes('GEMINI') || k.includes('ANTHROPIC') || k.includes('API')
-  );
-
-  if (!process.env.GEMINI_API_KEY) {
-    return res.status(500).json({
-      error: 'GEMINI_API_KEY not found.',
-      hint: 'Env vars containing GEMINI/API/ANTHROPIC found: ' + (envKeys.join(', ') || 'none'),
-    });
+  if (!process.env.GROQ_API_KEY) {
+    return res.status(500).json({ error: 'GROQ_API_KEY is not set in Vercel environment variables.' });
   }
 
   const systemPrompt = `You are CritCare AI, an ICU clinical decision support assistant designed for intensivists and emergency physicians in Indian hospitals.
@@ -42,15 +34,20 @@ Be concise, practical, and adapted for resource-limited settings. Cite relevant 
 Always end with: This is clinical decision support only - always apply your own clinical judgement.`;
 
   try {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
-
-    const response = await fetch(url, {
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + process.env.GROQ_API_KEY,
+      },
       body: JSON.stringify({
-        system_instruction: { parts: [{ text: systemPrompt }] },
-        contents: [{ parts: [{ text: message }] }],
-        generationConfig: { maxOutputTokens: 2048, temperature: 0.3 },
+        model: 'llama-3.3-70b-versatile',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: message },
+        ],
+        max_tokens: 1024,
+        temperature: 0.3,
       }),
     });
 
@@ -62,11 +59,11 @@ Always end with: This is clinical decision support only - always apply your own 
         const parsed = JSON.parse(responseText);
         detail = parsed.error && parsed.error.message ? parsed.error.message : responseText;
       } catch (_) {}
-      return res.status(502).json({ error: 'Gemini API error (status ' + response.status + '): ' + detail });
+      return res.status(502).json({ error: 'Groq API error (status ' + response.status + '): ' + detail });
     }
 
     const data = JSON.parse(responseText);
-    const reply = data.candidates[0].content.parts[0].text;
+    const reply = data.choices[0].message.content;
     return res.json({ reply });
   } catch (err) {
     return res.status(500).json({ error: 'Server error: ' + err.message });

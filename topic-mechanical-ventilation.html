@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mechanical Ventilation — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Mechanical Ventilation</div>
+    <h1>🫁 Mechanical Ventilation — A Practical Guide</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ATS/SCCM</span>
+      <span class="gbadge esicm">ESICM 2017</span>
+      <span class="gbadge isccm">ISCCM</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag">Ventilation</span><span class="topic-tag">Weaning</span><span class="topic-tag">Initial Settings</span>
+      <span class="topic-updated">Last updated: Jun 2025</span>
+    </div>
+  </div>
+</header>
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#indications">Indications for MV</a></li>
+        <li><a href="#modes">Ventilation Modes</a></li>
+        <li><a href="#initial">Initial Settings</a></li>
+        <li><a href="#parameters">Key Parameters</a></li>
+        <li><a href="#troubleshoot">Troubleshooting</a></li>
+        <li><a href="#vili">Preventing VILI</a></li>
+        <li><a href="#weaning">Weaning Protocol</a></li>
+        <li><a href="#extubation">Extubation</a></li>
+        <li><a href="#niv">Non-Invasive Ventilation</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+  <main class="topic-content">
+
+    <section id="indications">
+      <h2>Indications for Mechanical Ventilation</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Category</th><th>Criteria</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Respiratory Failure</strong></td><td>PaO₂ &lt;60 mmHg on FiO₂ ≥0.5; P/F &lt;150 on HFNO; PaCO₂ &gt;50 + pH &lt;7.25</td><td>ARDS, pneumonia, pulmonary oedema</td></tr>
+            <tr><td><strong>Airway Protection</strong></td><td>GCS ≤8; loss of gag/cough reflex; stridor; secretion clearance failure</td><td>Coma, stroke, neuromuscular disease</td></tr>
+            <tr><td><strong>Increased WOB</strong></td><td>RR &gt;30; accessory muscle use; paradoxical breathing; exhaustion</td><td>Status asthmaticus, COPD exacerbation</td></tr>
+            <tr><td><strong>Haemodynamic</strong></td><td>Cardiogenic shock (reducing WOB); post-cardiac arrest</td><td>Cardiogenic pulmonary oedema, OHCA</td></tr>
+            <tr><td><strong>Procedural/Elective</strong></td><td>Pre-operative intubation; anticipated deterioration; bronchoscopy under GA</td><td>Major surgery, massive haemoptysis</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="modes">
+      <h2>Ventilation Modes</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Mode</th><th>What it Does</th><th>When to Use</th><th>Advantages</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Volume Control (VC-CMV / AC)</strong></td><td>Delivers preset Vt at preset rate; pressure varies</td><td>Initial ventilation; ARDS; no spontaneous breathing</td><td>Guaranteed tidal volume; easy monitoring of Pplat; lung-protective ventilation</td></tr>
+            <tr><td><strong>Pressure Control (PC-CMV / PCV)</strong></td><td>Delivers preset pressure; Vt varies with compliance</td><td>Dyssynchrony; obstructive disease; limit peak pressures</td><td>Decelerating flow = better distribution; limits peak pressure</td></tr>
+            <tr><td><strong>Pressure Support (PSV)</strong></td><td>Patient-triggered; delivers preset pressure support; patient controls Vt and RR</td><td>Weaning; spontaneous breathing trials; bridging to extubation</td><td>Promotes respiratory muscle use; comfortable; most commonly used for weaning</td></tr>
+            <tr><td><strong>SIMV (Synchronised IMV)</strong></td><td>Combines mandatory breaths (VC or PC) with spontaneous breathing</td><td>Weaning (traditional); less commonly used now</td><td>Prevents respiratory muscle atrophy — but slower weaning than PSV; not preferred (ACCP guidelines)</td></tr>
+            <tr><td><strong>PRVC / ASV / APRV</strong></td><td>Advanced adaptive modes; dual-control or unconventional cycling</td><td>ARDS (APRV); varies by manufacturer</td><td>APRV: high mean airway pressure; recruitment; no consensus benefit over lung-protective VC</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="initial">
+      <h2>Initial Ventilator Settings</h2>
+      <div class="key-box">
+        <div class="kb-label">Initial Settings — Volume Control AC (Most Common)</div>
+        <ul>
+          <li><strong>Mode:</strong> Volume Control AC (VC-CMV)</li>
+          <li><strong>Tidal Volume (Vt):</strong> 6–8 ml/kg Predicted Body Weight (PBW) — reduce to 6 ml/kg in ARDS</li>
+          <li><strong>Respiratory Rate (RR):</strong> 12–16/min; adjust to achieve pH 7.35–7.45</li>
+          <li><strong>FiO₂:</strong> Start at 1.0 (100%); titrate down to achieve SpO₂ 92–96% (88–95% in ARDS)</li>
+          <li><strong>PEEP:</strong> 5 cmH₂O initial; adjust per oxygenation and ventilator graphics</li>
+          <li><strong>Flow rate:</strong> 60 L/min initial (adjust for I:E ratio)</li>
+          <li><strong>I:E ratio:</strong> 1:2 (prolong expiration to 1:3–1:4 in obstructive disease)</li>
+          <li><strong>Trigger sensitivity:</strong> −1 to −2 cmH₂O (pressure); 1–2 L/min (flow); avoid auto-PEEP</li>
+        </ul>
+      </div>
+      <h3>Predicted Body Weight (PBW) — ALWAYS Use This for Vt</h3>
+      <ul>
+        <li><strong>Male:</strong> PBW (kg) = 50 + 2.3 × [Height (inches) − 60]</li>
+        <li><strong>Female:</strong> PBW (kg) = 45.5 + 2.3 × [Height (inches) − 60]</li>
+        <li>Quick estimate: Male ≈ Height (cm) − 100; Female ≈ Height (cm) − 105</li>
+      </ul>
+    </section>
+
+    <section id="parameters">
+      <h2>Key Ventilator Parameters</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>How to Measure</th><th>Target</th><th>Action if Abnormal</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Peak Pressure (Ppeak)</strong></td><td>Real-time display during inspiration</td><td>&lt;35 cmH₂O</td><td>High: check for obstruction (secretions, ETT kink), bronchospasm, pneumothorax</td></tr>
+            <tr><td><strong>Plateau Pressure (Pplat)</strong></td><td>0.5s inspiratory hold; NO active breathing</td><td>≤30 cmH₂O</td><td>&gt;30: reduce Vt by 1 ml/kg increments; increase RR to maintain minute ventilation</td></tr>
+            <tr><td><strong>Driving Pressure (ΔP)</strong></td><td>ΔP = Pplat − PEEP</td><td>&lt;14–15 cmH₂O</td><td>&gt;15 with good compliance = overdistension; reduce Vt or increase PEEP to find optimum</td></tr>
+            <tr><td><strong>Auto-PEEP (PEEPi)</strong></td><td>Expiratory hold; air trapping</td><td>0 (ideally &lt;2 cmH₂O)</td><td>&gt;5: ↑ expiratory time (↓RR or ↓I:E); treat bronchospasm; disconnect if haemodynamically compromised</td></tr>
+            <tr><td><strong>Compliance (Cstat)</strong></td><td>Vt / (Pplat − PEEP)</td><td>40–60 ml/cmH₂O (normal); &lt;30 = ARDS range</td><td>Low compliance: ARDS, pneumothorax, main-stem intubation, pulmonary oedema, obesity, abdominal hypertension</td></tr>
+            <tr><td><strong>Minute Ventilation (MV)</strong></td><td>Vt × RR</td><td>6–10 L/min; ↑ for metabolic acidosis</td><td>Low: ↑ RR; High: look for causes of ↑ CO₂ production (fever, sepsis, overfeeding)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="troubleshoot">
+      <h2>Troubleshooting — High Airway Pressures</h2>
+      <p>High peak pressure (Ppeak) with normal Pplat → increased airway resistance (secretions, bronchospasm, ETT kink). High Ppeak AND high Pplat → reduced compliance (pneumothorax, ARDS, oedema, main-stem intubation).</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Problem</th><th>Check</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Sudden ↑ Ppeak + ↑ Pplat</td><td>ETT position (auscultate); CXR; O₂ saturation</td><td>Rule out pneumothorax (tension → needle decompression); main-stem intubation (pull back ETT)</td></tr>
+            <tr><td>↑ Ppeak + Normal Pplat</td><td>Secretions; bronchospasm; biting ETT</td><td>Suction; bronchodilators; bite block; check ETT position</td></tr>
+            <tr><td>Desaturation without alarm</td><td>SpO₂ probe position; ET CO₂; circuit disconnection</td><td>Manual ventilation; check circuit; chest rise; ETCO₂</td></tr>
+            <tr><td>Dyssynchrony / fighting ventilator</td><td>Pain; agitation; auto-PEEP; wrong mode/settings</td><td>Analgesia first; assess need for sedation; check settings; switch to pressure support if awake</td></tr>
+            <tr><td>Auto-PEEP / air trapping</td><td>Expiratory hold manoeuvre; obstructive disease</td><td>↑ Expiratory time; treat bronchospasm; disconnect briefly if haemodynamic collapse</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="warn-box">
+        <div class="kb-label">Sudden Haemodynamic Collapse on MV — DOPE Mnemonic</div>
+        <p><strong>D</strong>isplacement of ETT (main-stem or accidental extubation) | <strong>O</strong>bstruction (secretions, tension pneumothorax) | <strong>P</strong>neumothorax (tension) | <strong>E</strong>quipment failure (vent malfunction, disconnection). Disconnect from ventilator and manually bag ventilate first — this immediately diagnoses and treats equipment failure and differentiates from tension pneumothorax.</p>
+      </div>
+    </section>
+
+    <section id="vili">
+      <h2>Preventing Ventilator-Induced Lung Injury (VILI)</h2>
+      <ul>
+        <li><strong>Low Vt (6 ml/kg PBW):</strong> Prevents volutrauma — the cornerstone of lung-protective ventilation</li>
+        <li><strong>Pplat ≤ 30 cmH₂O:</strong> Prevents barotrauma</li>
+        <li><strong>Driving pressure &lt; 14 cmH₂O:</strong> Best predictor of ARDS mortality — minimise above all other parameters</li>
+        <li><strong>Adequate PEEP:</strong> Prevents atelectrauma (repetitive collapse/reopening)</li>
+        <li><strong>Avoid unnecessary NMB:</strong> P-SILI (Patient Self-Inflicted Lung Injury) occurs with strong, uncontrolled spontaneous efforts — monitor with oesophageal pressure if available</li>
+        <li><strong>Optimal FiO₂:</strong> Minimum FiO₂ to achieve target SpO₂; high FiO₂ causes absorptive atelectasis and oxygen toxicity</li>
+        <li><strong>Permissive hypercapnia:</strong> Accept PaCO₂ up to 55–60 mmHg (pH ≥7.25) to achieve lung-protective Vt</li>
+      </ul>
+    </section>
+
+    <section id="weaning">
+      <h2>Weaning Protocol</h2>
+      <h3>Daily Readiness Assessment</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Criterion</th><th>Target</th></tr></thead>
+          <tbody>
+            <tr><td>Oxygenation</td><td>SpO₂ ≥ 92% on FiO₂ ≤ 0.5 and PEEP ≤ 8 cmH₂O; P/F ≥ 150</td></tr>
+            <tr><td>Haemodynamics</td><td>Stable — no escalating vasopressors in last 24h</td></tr>
+            <tr><td>Consciousness</td><td>Awake, following commands (RASS −1 to +1)</td></tr>
+            <tr><td>Respiratory effort</td><td>Capable of spontaneous breathing</td></tr>
+            <tr><td>Cause of intubation</td><td>Resolving or resolved</td></tr>
+            <tr><td>Secretion management</td><td>Effective cough or can manage secretions</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Spontaneous Breathing Trial (SBT)</h3>
+      <ol>
+        <li><strong>Screen with SAT first</strong> (see Sedation topic) — pass SAT before SBT</li>
+        <li><strong>SBT method:</strong> Pressure Support 5–7 cmH₂O + PEEP 5 cmH₂O; OR T-piece trial for 30–120 minutes</li>
+        <li><strong>SBT success:</strong> SpO₂ ≥92%; RR &lt;35/min; HR stable (±20% baseline); no distress; accessory muscle use minimal</li>
+        <li><strong>RSB Index (RSBI):</strong> RR ÷ Vt (in litres) — RSBI &lt;105 predicts successful extubation (Yang &amp; Tobin criteria)</li>
+        <li><strong>SBT failure:</strong> Desaturation, RR &gt;35, marked distress, arrhythmia → restart MV, increase support, investigate cause</li>
+      </ol>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Weaning Challenges in Indian ICUs</div>
+        <ul>
+          <li>High prevalence of malnutrition — nutritional supplementation is critical for respiratory muscle recovery</li>
+          <li>ICU-acquired weakness (ICUAW): early physiotherapy; neuromuscular assessment before extubation</li>
+          <li>Tracheostomy threshold: lower threshold for tracheostomy in patients with GBS, bulbar palsy, poor cough, or chronic lung disease when &gt;7–10 days MV anticipated</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="extubation">
+      <h2>Extubation</h2>
+      <h3>Pre-Extubation Checklist</h3>
+      <ul>
+        <li>Passed SBT of ≥30–120 minutes</li>
+        <li>Adequate consciousness (GCS ≥8, follows commands)</li>
+        <li>Strong cough (ask patient to cough — audible and forceful)</li>
+        <li>Secretion management — not suctioning &gt;q2h for secretions</li>
+        <li>Cuff leak test: deflate cuff, patient can phonate or air leaks — confirms glottic opening (especially important if intubated &gt;72h or history of airway trauma)</li>
+        <li>Upper airway assessment — no significant stridor</li>
+      </ul>
+      <h3>Post-Extubation Management</h3>
+      <ul>
+        <li><strong>Nebulised adrenaline:</strong> 1 mg in 5 ml saline if post-extubation stridor</li>
+        <li><strong>IV dexamethasone:</strong> 0.1 mg/kg q6h for 24h if laryngeal oedema risk (prolonged intubation, trauma)</li>
+        <li><strong>HFNO:</strong> Apply post-extubation in patients at high risk of failure — reduces re-intubation rate (OPTIFLOW studies)</li>
+        <li><strong>NIV:</strong> For COPD post-extubation, hypoxaemic patients, obesity — reduces re-intubation</li>
+        <li>Nil by mouth for 30–60 min; speech therapy assessment before oral intake</li>
+      </ul>
+    </section>
+
+    <section id="niv">
+      <h2>Non-Invasive Ventilation (NIV)</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Indication</th><th>Evidence</th><th>Settings (BIPAP)</th></tr></thead>
+          <tbody>
+            <tr><td>Acute COPD exacerbation (pH &lt;7.35, PaCO₂ &gt;45)</td><td>Strong — reduces intubation rate and mortality</td><td>IPAP 12–20, EPAP 4–8; RR backup 12–16</td></tr>
+            <tr><td>Acute cardiogenic pulmonary oedema</td><td>Strong — reduces intubation; add CPAP 5–10 cmH₂O</td><td>CPAP 5–10; or BIPAP IPAP 10–16, EPAP 5–8</td></tr>
+            <tr><td>Immunocompromised with respiratory failure</td><td>Moderate — reduces ICU-acquired pneumonia</td><td>Standard BIPAP; frequent reassessment</td></tr>
+            <tr><td>Post-extubation (high-risk patients)</td><td>Moderate — reduces re-intubation (especially COPD)</td><td>IPAP 8–12, EPAP 4–6; 8–12h/day minimum</td></tr>
+            <tr><td>Mild ARDS (P/F 200–300) — cautious use</td><td>Weak — risk of P-SILI; monitor closely</td><td>IPAP 12–18, EPAP 6–10; ROX index q2h</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="warn-box">
+        <div class="kb-label">NIV Failure — When to Intubate</div>
+        <p>Intubate without delay if: SpO₂ &lt;88% despite NIV; RR &gt;35/min; haemodynamic instability; worsening GCS; patient unable to tolerate mask; no improvement in 1–2h of NIV. Early intubation when NIV failing is safer than delayed intubation in a deteriorating patient.</p>
+      </div>
+    </section>
+
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Acute Respiratory Distress Syndrome Network (ARDSNet), Brower RG, et al.</strong> Ventilation with Lower Tidal Volumes for Acute Lung Injury and Acute Respiratory Distress Syndrome. <em>N Engl J Med.</em> 2000;342(18):1301–1308.</li>
+        <li><strong>Yang KL, Tobin MJ.</strong> A Prospective Study of Indexes Predicting the Outcome of Trials of Weaning from Mechanical Ventilation. <em>N Engl J Med.</em> 1991;324(21):1445–1450.</li>
+        <li><strong>Kress JP, Pohlman AS, O'Connor MF, Hall JB.</strong> Daily Interruption of Sedative Infusions in Critically Ill Patients Undergoing Mechanical Ventilation. <em>N Engl J Med.</em> 2000;342(20):1471–1477.</li>
+        <li><strong>Brochard L, Rauss A, Benito S, et al.</strong> Comparison of Three Methods of Gradual Withdrawal from Ventilatory Support during Weaning from Mechanical Ventilation. <em>Am J Respir Crit Care Med.</em> 1994;150(4):896–903.</li>
+        <li><strong>Hernandez G, Vaquero C, Colinas L, et al.</strong> Effect of Postextubation High-Flow Nasal Cannula vs Noninvasive Ventilation on Reintubation and Postextubation Respiratory Failure. <em>JAMA.</em> 2016;316(15):1565–1574.</li>
+        <li><strong>Amato MB, Meade MO, Slutsky AS, et al.</strong> Driving Pressure and Survival in the Acute Respiratory Distress Syndrome. <em>N Engl J Med.</em> 2015;372(8):747–755.</li>
+        <li><strong>Fan E, Del Sorbo L, Goligher EC, et al.</strong> An Official American Thoracic Society/European Society of Intensive Care Medicine/Society of Critical Care Medicine Clinical Practice Guideline: Mechanical Ventilation in Adult Patients with Acute Respiratory Distress Syndrome. <em>Am J Respir Crit Care Med.</em> 2017;195(9):1253–1263.</li>
+        <li><strong>Boles JM, Bion J, Connors A, et al.</strong> Weaning from Mechanical Ventilation. <em>Eur Respir J.</em> 2007;29(5):1033–1056.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+</body>
+</html>

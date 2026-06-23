@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sedation & Analgesia — CritCare.in</title>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sedation, Analgesia & Delirium — CritCare.in</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
 </head>
 <body>
-
 <nav class="nav">
   <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
   <ul class="nav-menu" id="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
     <li><a href="topics.html" class="active">ICU Topics</a></li>
-    <li><a href="ai-tool.html">AI Tool</a></li>
-    <li><a href="login.html" class="nav-cta">Login</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
 </nav>
-
 <header class="topic-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Sedation & Analgesia</div>
-    <h1>💉 Sedation, Analgesia &amp; Delirium</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Sedation</div>
+    <h1>💉 Sedation, Analgesia &amp; Delirium in the ICU</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">PADIS 2018</span>
+      <span class="gbadge esicm">ESICM 2017</span>
+      <span class="gbadge isccm">ISCCM</span>
+    </div>
     <div class="topic-hero-meta">
-      <span class="topic-tag">RASS</span>
-      <span class="topic-tag">CAM-ICU</span>
-      <span class="topic-tag">ABCDEF Bundle</span>
-      <span class="topic-updated">Updated Jun 2025 · PAD guidelines 2018</span>
+      <span class="topic-tag">RASS</span><span class="topic-tag">CAM-ICU</span><span class="topic-tag">ABCDEF Bundle</span>
+      <span class="topic-updated">Last updated: Jun 2025 · PADIS Guidelines 2018</span>
     </div>
   </div>
 </header>
-
 <div class="topic-layout">
   <aside class="topic-sidebar">
     <nav class="toc">
@@ -42,92 +39,109 @@
         <li><a href="#abcdef">ABCDEF Bundle</a></li>
         <li><a href="#analgesia">Analgesia First</a></li>
         <li><a href="#scoring">Scoring Tools</a></li>
-        <li><a href="#drugs">Sedative Drugs</a></li>
+        <li><a href="#sedatives">Sedative Drugs</a></li>
         <li><a href="#opioids">Opioid Reference</a></li>
-        <li><a href="#delirium">Delirium</a></li>
+        <li><a href="#delirium">Delirium Management</a></li>
         <li><a href="#special">Special Situations</a></li>
+        <li><a href="#references">References</a></li>
       </ul>
       <a href="topics.html" class="toc-back">← All topics</a>
     </nav>
   </aside>
-
   <main class="topic-content">
 
     <section id="abcdef">
-      <h2>ABCDEF Bundle</h2>
-      <p>The ABCDEF bundle is an evidence-based, interprofessional framework for optimising outcomes in ICU patients. Implementing all components together is more effective than individual elements.</p>
+      <h2>ABCDEF Bundle (ICU Liberation)</h2>
+      <p>Full bundle compliance is associated with reduced mortality, mechanical ventilation days, delirium, and physical/cognitive impairment at 1 year (multicenter cohort, Ely 2019).</p>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Letter</th><th>Element</th><th>Action</th></tr></thead>
+          <thead><tr><th>Element</th><th>What</th><th>How</th></tr></thead>
           <tbody>
-            <tr><td><strong>A</strong></td><td>Assess, prevent, manage Pain</td><td>NRS/CPOT q4h; analgesia-first approach</td></tr>
-            <tr><td><strong>B</strong></td><td>Both Spontaneous Awakening &amp; Breathing Trials</td><td>Daily SAT (pause sedation) + SBT (reduce vent support); coordinate</td></tr>
-            <tr><td><strong>C</strong></td><td>Choice of analgesia &amp; sedation</td><td>Lightest effective sedation; avoid benzodiazepines where possible</td></tr>
-            <tr><td><strong>D</strong></td><td>Delirium assessment, prevention, management</td><td>CAM-ICU or ICDSC q8–12h; non-pharm prevention strategies</td></tr>
-            <tr><td><strong>E</strong></td><td>Early mobility &amp; Exercise</td><td>PT/OT consult; progressive mobility protocol from day 1</td></tr>
-            <tr><td><strong>F</strong></td><td>Family engagement &amp; empowerment</td><td>Open visiting hours, family at bedside, involve in care decisions</td></tr>
+            <tr><td><strong>A — Assess, prevent &amp; manage Pain</strong></td><td>Regular pain assessment; adequate analgesia</td><td>NRS (verbal), CPOT (non-verbal) q4h; Analgesic-first approach</td></tr>
+            <tr><td><strong>B — Both SAT &amp; SBT</strong></td><td>Daily spontaneous awakening + breathing trials</td><td>Coordinate SAT + SBT; SAT first, then SBT if passes SAT</td></tr>
+            <tr><td><strong>C — Choice of analgesia &amp; sedation</strong></td><td>Lightest effective sedation; avoid benzodiazepines</td><td>Target RASS −1 to 0; titrate to lowest effective dose</td></tr>
+            <tr><td><strong>D — Delirium monitoring</strong></td><td>Assess q8–12h with validated tool</td><td>CAM-ICU or ICDSC; non-pharm prevention first</td></tr>
+            <tr><td><strong>E — Early mobility &amp; Exercise</strong></td><td>Progressive mobilisation from ICU day 1</td><td>PT/OT consult; passive → active ROM → sitting → walking</td></tr>
+            <tr><td><strong>F — Family engagement</strong></td><td>Open visitation; involve in care decisions</td><td>Family meetings, care conferences, family presence during rounds</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section id="analgesia">
-      <h2>Analgesia First (eCASH)</h2>
-      <p>eCASH: <strong>early Comfort using Analgesia, minimal Sedatives, maximal Humane care</strong>. The modern paradigm: treat pain before adding sedation.</p>
+      <h2>Analgesia-First Approach (eCASH)</h2>
+      <p><strong>eCASH: early Comfort using Analgesia, minimal Sedatives, maximal Humane care</strong> (PADIS 2018). The modern paradigm: treat pain before adding sedation. Most ICU agitation is pain-driven.</p>
       <div class="key-box">
-        <div class="kb-label">Principle: Comfort &gt; Sedation</div>
+        <div class="kb-label">eCASH Principles</div>
         <ul>
-          <li>Start with IV opioid analgesia (fentanyl or morphine infusion) — most agitation in ICU is pain-driven</li>
-          <li>Target CPOT 0–2 (pain absent or mild) before assessing need for sedation</li>
-          <li>Add sedation only if still agitated/distressed after adequate analgesia</li>
-          <li>Target lightest effective sedation: RASS −1 to 0 for most ventilated patients</li>
-          <li>Perform daily SAT (spontaneous awakening trial) — pause all sedation and reassess</li>
+          <li>Start with IV opioid analgesia (fentanyl infusion preferred) — titrate to CPOT 0–2</li>
+          <li>Only add sedation if agitation persists after adequate analgesia</li>
+          <li>Use lightest effective sedation: RASS −1 to 0 for most ventilated patients</li>
+          <li>Perform daily SAT (spontaneous awakening trial) — pause all sedation, reassess</li>
+          <li>Never sedate without first treating pain</li>
         </ul>
       </div>
+      <h3>Spontaneous Awakening Trial (SAT) Protocol</h3>
+      <ol>
+        <li>Safety screen: no active seizures, no alcohol/benzo withdrawal, no agitation (RASS &gt;+2), no active paralysis, no ↑ ICP, no FiO₂ &gt;0.7 or PEEP &gt;12</li>
+        <li>Stop all sedatives (continue analgesics)</li>
+        <li>Monitor for 4h: if opens eyes to voice, follows commands → PASS → proceed to SBT</li>
+        <li>FAIL criteria (restart sedation at 50%): agitation (RASS &gt;+2), sustained SpO₂ &lt;88%, respiratory distress, new arrhythmia</li>
+      </ol>
     </section>
 
     <section id="scoring">
       <h2>Scoring Tools</h2>
-      <h3>RASS — Richmond Agitation-Sedation Scale</h3>
+      <h3>Richmond Agitation-Sedation Scale (RASS)</h3>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Score</th><th>Label</th><th>Description</th></tr></thead>
+          <thead><tr><th>Score</th><th>Label</th><th>Description</th><th>Target Population</th></tr></thead>
           <tbody>
-            <tr><td>+4</td><td>Combative</td><td>Overtly combative, violent, immediate danger to staff</td></tr>
-            <tr><td>+3</td><td>Very agitated</td><td>Pulls or removes tubes/catheters; aggressive</td></tr>
-            <tr><td>+2</td><td>Agitated</td><td>Frequent non-purposeful movement, fights ventilator</td></tr>
-            <tr><td>+1</td><td>Restless</td><td>Anxious but movements not aggressive or vigorous</td></tr>
-            <tr><td>0</td><td>Alert &amp; calm</td><td>Spontaneously pays attention to caregiver</td></tr>
-            <tr><td>−1</td><td>Drowsy</td><td>Not fully alert, but eye-opening to voice (&gt;10s)</td></tr>
-            <tr><td>−2</td><td>Light sedation</td><td>Briefly awakens to voice, eye contact &lt;10s</td></tr>
-            <tr><td>−3</td><td>Moderate sedation</td><td>Movement or eye opening to voice (no eye contact)</td></tr>
-            <tr><td>−4</td><td>Deep sedation</td><td>No response to voice, movement to physical stimulation</td></tr>
-            <tr><td>−5</td><td>Unarousable</td><td>No response to voice or physical stimulation</td></tr>
+            <tr><td>+4</td><td>Combative</td><td>Overtly combative, violent, danger to staff</td><td>Emergency sedation needed</td></tr>
+            <tr><td>+3</td><td>Very agitated</td><td>Pulls/removes tubes or catheters; aggressive</td><td></td></tr>
+            <tr><td>+2</td><td>Agitated</td><td>Frequent non-purposeful movement, fights ventilator</td><td></td></tr>
+            <tr><td>+1</td><td>Restless</td><td>Anxious, movements not aggressive</td><td></td></tr>
+            <tr><td>0</td><td>Alert &amp; calm</td><td>Spontaneously pays attention to caregiver</td><td>Most ICU patients (target)</td></tr>
+            <tr><td>−1</td><td>Drowsy</td><td>Not fully alert, eye opening to voice &gt;10s</td><td>Target for most on MV</td></tr>
+            <tr><td>−2</td><td>Light sedation</td><td>Brief awakening, eye contact &lt;10s</td><td>ARDS, high ventilator support</td></tr>
+            <tr><td>−3</td><td>Moderate sedation</td><td>Movement/eye opening to voice, no eye contact</td><td>ARDS prone; raised ICP</td></tr>
+            <tr><td>−4</td><td>Deep sedation</td><td>No response to voice, moves to physical stimulation</td><td>Status epilepticus, NMB</td></tr>
+            <tr><td>−5</td><td>Unarousable</td><td>No response to any stimulation</td><td>Only with deliberate deep sedation</td></tr>
           </tbody>
         </table>
       </div>
-      <p><strong>Target:</strong> RASS −1 to 0 (most patients). RASS −2 to −3 only for ARDS/high vent support/raised ICP/active seizures.</p>
-      <h3>CPOT — Critical-Care Pain Observation Tool</h3>
-      <p>4 domains: facial expression, body movements, muscle tension, compliance with ventilator. Score 0–8. CPOT ≥ 3 indicates significant pain — increase analgesia.</p>
+      <h3>Critical-Care Pain Observation Tool (CPOT)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Domain</th><th>0 Points</th><th>1 Point</th><th>2 Points</th></tr></thead>
+          <tbody>
+            <tr><td>Facial expression</td><td>Relaxed</td><td>Tense/frowning</td><td>Grimacing</td></tr>
+            <tr><td>Body movements</td><td>No movement</td><td>Protection/touching pain site</td><td>Pulling tubes/thrashing</td></tr>
+            <tr><td>Muscle tension</td><td>Relaxed</td><td>Tense, rigid</td><td>Very tense/rigid</td></tr>
+            <tr><td>Ventilator compliance</td><td>Tolerating MV</td><td>Coughing, alarm triggers</td><td>Fighting ventilator</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>CPOT ≥ 3</strong> = significant pain → increase analgesia. Maximum score = 8. Validated in non-verbal, sedated ICU patients.</p>
     </section>
 
-    <section id="drugs">
+    <section id="sedatives">
       <h2>Sedative Drugs</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Drug</th><th>Dose</th><th>Onset</th><th>Advantages</th><th>Cautions</th></tr></thead>
+          <thead><tr><th>Drug</th><th>Loading</th><th>Maintenance</th><th>Onset/Duration</th><th>Advantages</th><th>Cautions/Contraindications</th></tr></thead>
           <tbody>
-            <tr><td><strong>Propofol</strong></td><td>5–50 mcg/kg/min (0.3–3 mg/kg/hr)</td><td>Seconds</td><td>Rapid on/off, easy titration, anticonvulsant</td><td>PRIS risk if &gt;4mg/kg/hr for &gt;48h (check TG); hypotension; costly</td></tr>
-            <tr><td><strong>Midazolam</strong></td><td>0.02–0.1 mg/kg/hr (1–5 mg/hr)</td><td>2–5 min</td><td>Anxiolytic, amnestic, anticonvulsant, cheap</td><td>Accumulates (hepatic/renal failure); delirium; prolonged wake-up; avoid in elderly</td></tr>
-            <tr><td><strong>Dexmedetomidine</strong></td><td>0.2–1.5 mcg/kg/hr</td><td>5–10 min</td><td>Light sedation; patient communicable; less delirium; can extubate on infusion</td><td>Bradycardia, hypotension; avoid in heart block; expensive</td></tr>
-            <tr><td><strong>Ketamine</strong></td><td>0.1–0.5 mg/kg/hr infusion</td><td>Seconds (IV)</td><td>Preserves airway reflexes &amp; haemodynamics; bronchodilator; excellent analgesia</td><td>Emergence phenomena (give with low-dose benzo); secretions; raises ICP (relative CI)</td></tr>
-            <tr><td><strong>Haloperidol</strong></td><td>2.5–5 mg IV q8–12h</td><td>20–40 min</td><td>Antipsychotic for agitated delirium</td><td>QTc prolongation; EPS; no mortality benefit (MIND-USA trial)</td></tr>
+            <tr><td><strong>Propofol</strong></td><td>Not recommended (hypotension)</td><td>5–50 mcg/kg/min (0.3–3 mg/kg/hr)</td><td>30–60 sec / Short</td><td>Rapid on/off; easy titration; anticonvulsant; antiemetic</td><td>PRIS if &gt;4mg/kg/hr for &gt;48h; hypotension; high caloric load (1.1 kcal/ml); costly</td></tr>
+            <tr><td><strong>Midazolam</strong></td><td>1–2.5 mg IV boluses</td><td>0.02–0.1 mg/kg/hr</td><td>2–5 min / Prolonged with infusion</td><td>Anxiolytic; amnestic; anticonvulsant; cheap</td><td>Accumulates in elderly, obese, hepatic/renal failure; paradoxical excitation; high delirium risk; prolonged wake-up</td></tr>
+            <tr><td><strong>Dexmedetomidine</strong></td><td>0.5–1 mcg/kg over 10–20 min (optional)</td><td>0.2–1.5 mcg/kg/hr</td><td>5–10 min / Rapid offset</td><td>Light sedation; patient communicable; less delirium; can extubate on infusion; analgesic-sparing; useful in weaning</td><td>Bradycardia, hypotension; avoid if heart block; expensive; not for deep sedation</td></tr>
+            <tr><td><strong>Ketamine</strong></td><td>0.5–2 mg/kg IV/IM</td><td>0.1–0.5 mg/kg/hr infusion</td><td>Seconds (IV) / 10–20 min</td><td>Preserves airway reflexes &amp; haemodynamics; bronchodilator; excellent analgesia; useful in haemodynamically unstable</td><td>Emergence phenomena — give with low-dose BZD; ↑ secretions (give atropine 0.01 mg/kg); ↑ ICP (relative); dysphoria</td></tr>
+            <tr><td><strong>Lorazepam</strong></td><td>0.5–2 mg IV</td><td>0.01–0.1 mg/kg/hr</td><td>1–5 min / 6–8h</td><td>Less accumulation than midazolam; reliable</td><td>Propylene glycol toxicity at high doses; delirium risk</td></tr>
           </tbody>
         </table>
       </div>
       <div class="warn-box">
-        <div class="kb-label">Propofol Infusion Syndrome (PRIS)</div>
-        <p>Life-threatening: metabolic acidosis, rhabdomyolysis, cardiac failure, renal failure, hypertriglyceridaemia. Risk factors: dose &gt;4mg/kg/hr, duration &gt;48h, critical illness, steroids, catecholamines. Monitor: triglycerides, CK, lactate. Stop propofol and switch if suspected.</p>
+        <div class="kb-label">Propofol Infusion Syndrome (PRIS) — Life-Threatening</div>
+        <p><strong>Features:</strong> Metabolic acidosis + ↑ lactate + rhabdomyolysis + ↑ CK + cardiac failure + renal failure + ↑ triglycerides. <strong>Risk factors:</strong> Dose &gt;4 mg/kg/hr, duration &gt;48h, high-carbohydrate feeds, catecholamines, steroids, critical illness. <strong>Action:</strong> Stop propofol immediately; switch to alternative. Monitor TG, CK, lactate, pH daily on propofol infusions.</p>
       </div>
     </section>
 
@@ -135,62 +149,93 @@
       <h2>Opioid Reference</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Drug</th><th>ICU dose</th><th>Metabolism</th><th>Renal failure</th></tr></thead>
+          <thead><tr><th>Opioid</th><th>ICU Dose</th><th>Metabolism</th><th>Renal Failure</th><th>Hepatic Failure</th><th>Notes</th></tr></thead>
           <tbody>
-            <tr><td><strong>Fentanyl</strong></td><td>25–200 mcg/hr infusion</td><td>Hepatic; inactive metabolites</td><td>Safe — preferred opioid in AKI</td></tr>
-            <tr><td><strong>Morphine</strong></td><td>2–4 mg/hr infusion</td><td>Hepatic; M6G active metabolite</td><td>Avoid — M6G accumulates → prolonged sedation, respiratory depression</td></tr>
-            <tr><td><strong>Hydromorphone</strong></td><td>0.2–1 mg/hr</td><td>Hepatic</td><td>Caution — mild accumulation</td></tr>
-            <tr><td><strong>Remifentanil</strong></td><td>0.05–0.2 mcg/kg/min</td><td>Plasma esterases (organ-independent)</td><td>Safe in AKI/hepatic failure; ultra-short acting; requires continuous infusion</td></tr>
+            <tr><td><strong>Fentanyl</strong></td><td>25–200 mcg/hr infusion; 25–50 mcg IV PRN</td><td>Hepatic; inactive metabolites</td><td>✅ Safe — preferred opioid</td><td>Caution in severe failure (accumulation)</td><td>First-choice in AKI; rapid onset; no histamine release</td></tr>
+            <tr><td><strong>Morphine</strong></td><td>2–4 mg/hr infusion; 2–4 mg IV q4h PRN</td><td>Hepatic; M6G active metabolite</td><td>❌ AVOID — M6G accumulates</td><td>Caution</td><td>M6G causes respiratory depression, sedation; avoid in AKI</td></tr>
+            <tr><td><strong>Hydromorphone</strong></td><td>0.2–0.5 mg IV q4h; 0.5–1 mg/hr infusion</td><td>Hepatic; minor active metabolite</td><td>Caution — mild accumulation</td><td>Caution</td><td>5× potency of morphine; useful morphine alternative</td></tr>
+            <tr><td><strong>Remifentanil</strong></td><td>0.05–0.2 mcg/kg/min infusion</td><td>Plasma esterases (organ-independent)</td><td>✅ Safe</td><td>✅ Safe</td><td>Ultra-short acting — MUST use continuous infusion; rapid titration; costly; hyperalgesia on stopping</td></tr>
+            <tr><td><strong>Tramadol</strong></td><td>50–100 mg IV q6–8h</td><td>Hepatic; CYP2D6</td><td>Reduce dose (q12h)</td><td>Caution</td><td>Weak mu-agonist + SNRI; lowers seizure threshold; avoid in epilepsy</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section id="delirium">
-      <h2>Delirium in the ICU</h2>
-      <p>ICU delirium affects 60–80% of ventilated patients. Associated with increased mortality, prolonged MV, cognitive impairment, and longer LOS.</p>
-      <h3>CAM-ICU (assess twice daily)</h3>
-      <p>Four features — positive if Feature 1 AND 2 AND (3 OR 4):</p>
+      <h2>ICU Delirium</h2>
+      <p>Delirium affects 60–80% of mechanically ventilated patients. Associated with higher mortality, prolonged MV, longer ICU/hospital stay, and long-term cognitive impairment.</p>
+      <h3>CAM-ICU Assessment (perform q8–12h)</h3>
+      <p>Positive (= delirium) if Feature 1 AND Feature 2 AND (Feature 3 OR Feature 4):</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>Assessment</th><th>Positive Criterion</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1. Acute change or fluctuation</strong></td><td>History from nurse/family; chart review</td><td>Acute change from baseline OR fluctuating mental status in last 24h</td></tr>
+            <tr><td><strong>2. Inattention</strong></td><td>Letters test: "Squeeze when you hear A in SAVEAHAART"</td><td>&gt;2 errors</td></tr>
+            <tr><td><strong>3. Altered level of consciousness</strong></td><td>RASS score</td><td>RASS ≠ 0 (any deviation from alert &amp; calm)</td></tr>
+            <tr><td><strong>4. Disorganised thinking</strong></td><td>4 yes/no questions + 2 commands</td><td>&gt;1 error combined</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Non-Pharmacological Prevention (First Line — All Patients)</h3>
       <ul>
-        <li><strong>Feature 1:</strong> Acute change or fluctuating course in mental status</li>
-        <li><strong>Feature 2:</strong> Inattention (letters test: squeeze hand on 'A' in "SAVEAHAART" — &gt;2 errors = positive)</li>
-        <li><strong>Feature 3:</strong> Altered level of consciousness (RASS ≠ 0)</li>
-        <li><strong>Feature 4:</strong> Disorganised thinking (4 simple yes/no questions; squeeze fingers command — &gt;1 error = positive)</li>
+        <li>Daily reorientation: name, place, date; visible clock and calendar</li>
+        <li><strong>Sleep hygiene:</strong> Cluster care at night; reduce alarms; ear plugs; eye masks; dim lights 10pm–6am</li>
+        <li>Early mobilisation: passive → active exercises from day 1</li>
+        <li>Hearing aids, glasses — ensure patients have access to their aids</li>
+        <li>Minimise anticholinergic medications, benzodiazepines</li>
+        <li>Treat reversible precipitants: pain, urinary retention, constipation, metabolic disturbances</li>
+        <li>Normalise sleep-wake cycle: avoid daytime sedation, minimise nighttime interventions</li>
       </ul>
-      <h3>Non-pharmacological prevention (first line)</h3>
-      <ul>
-        <li>Orientation: daily reorientation, clock/calendar visible, familiar objects</li>
-        <li>Sleep hygiene: cluster care, reduce noise at night, ear plugs, eye masks</li>
-        <li>Early mobilisation: PT/OT from ICU day 1</li>
-        <li>Remove physical restraints where safe</li>
-        <li>Hearing aids, glasses — ensure patients have their aids</li>
-        <li>Minimise anticholinergic drugs, benzodiazepines, opioid dose</li>
-        <li>Treat reversible causes: pain, constipation, urinary retention, hypoxia, metabolic abnormalities</li>
-      </ul>
-      <h3>Pharmacological management</h3>
-      <p>No drug has proven mortality benefit for ICU delirium (MIND-USA, HOPE-ICU trials).</p>
-      <ul>
-        <li><strong>Agitated delirium:</strong> Haloperidol 2.5–5mg IV q8–12h (monitor QTc &lt;500ms); quetiapine 25–50mg PO/NGT q12h as alternative</li>
-        <li><strong>Hypoactive delirium:</strong> No drug proven — focus on non-pharm; quetiapine may help</li>
-        <li><strong>Dexmedetomidine:</strong> Reduces delirium duration in some studies; consider as sedative in agitated delirium</li>
-      </ul>
+      <h3>Pharmacological Management of Delirium</h3>
+      <div class="warn-box">
+        <div class="kb-label">No Drug has Mortality Benefit for ICU Delirium (MIND-USA, HOPE-ICU)</div>
+        <p>Neither haloperidol nor ziprasidone reduced mortality or ventilator-free days in ICU delirium (MIND-USA 2018). Antipsychotics are used for patient safety and comfort — not as first-line prevention. Non-pharmacological strategies are mandatory and should be tried first.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Dose</th><th>Route</th><th>Use</th><th>Cautions</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Haloperidol</strong></td><td>2.5–5 mg q8–12h</td><td>IV / IM / PO</td><td>Agitated hyperactive delirium</td><td>QTc prolongation (monitor &lt;500ms); EPS; avoid in PD, Lewy body dementia</td></tr>
+            <tr><td><strong>Quetiapine</strong></td><td>25–100 mg q12h</td><td>PO / NGT</td><td>Mixed/hypoactive delirium; sleep disturbance</td><td>QTc prolongation; metabolic effects; sedation</td></tr>
+            <tr><td><strong>Dexmedetomidine</strong></td><td>0.2–1.5 mcg/kg/hr</td><td>IV infusion</td><td>Agitated delirium in mechanically ventilated; reduce BZD</td><td>Bradycardia, hypotension — MENDS trial showed shorter delirium vs midazolam</td></tr>
+            <tr><td><strong>Melatonin</strong></td><td>2–10 mg PO/NGT at 9pm</td><td>PO / NGT</td><td>Sleep promotion; circadian rhythm restoration</td><td>Well tolerated; minimal interactions; may reduce delirium duration</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section id="special">
       <h2>Special Situations</h2>
-      <h3>ARDS / high ventilator support</h3>
-      <p>Deeper sedation (RASS −2 to −3) required to achieve ventilator synchrony and allow proning. Propofol or midazolam + fentanyl. Add NMB if severe dyssynchrony persists.</p>
-      <h3>Status epilepticus in ICU</h3>
-      <p>Refractory status: propofol, midazolam, or ketamine infusion as anaesthetic agents. Titrate to EEG burst suppression. Keep on continuous EEG monitoring.</p>
-      <h3>Liver failure</h3>
-      <p>Avoid benzodiazepines (hepatic encephalopathy, prolonged effect). Use fentanyl + dexmedetomidine. Propofol acceptable at low doses if no severe haemodynamic compromise.</p>
-      <h3>Alcohol withdrawal</h3>
-      <p>CIWA-Ar monitoring. Benzodiazepines are first-line (diazepam or chlordiazepoxide). IV thiamine before glucose. Propofol or phenobarbital for severe/refractory withdrawal.</p>
+      <h3>ARDS / High Ventilatory Support</h3>
+      <p>Deeper sedation (RASS −2 to −3) for ventilator synchrony and proning. Use propofol + fentanyl. Add cisatracurium if severe dyssynchrony (NMB). Resume lighter sedation as soon as ventilator support decreases.</p>
+      <h3>Status Epilepticus</h3>
+      <p>Propofol infusion or midazolam infusion as anaesthetic agents; titrate to EEG burst suppression. Continuous EEG monitoring mandatory.</p>
+      <h3>Liver Failure</h3>
+      <p>Avoid benzodiazepines (precipitate/worsen hepatic encephalopathy). Use fentanyl + low-dose dexmedetomidine. Propofol in low doses if haemodynamically stable.</p>
+      <h3>Alcohol/Benzodiazepine Withdrawal</h3>
+      <p>Benzodiazepines are first-line (diazepam 5–10 mg q1h PRN, or chlordiazepoxide 25–100 mg q6h). CIWA-Ar protocol for symptom-triggered therapy. IV thiamine 100–500 mg before any glucose. Propofol or phenobarbital 10–15 mg/kg IV over 1h for refractory withdrawal.</p>
+      <h3>Neurological ICU (Raised ICP)</h3>
+      <p>Avoid ketamine (raises ICP — relative contraindication). Propofol + fentanyl preferred. Target RASS −2 to −3 acutely; titrate ICP-directed. Maintain CPP ≥60 mmHg throughout.</p>
+    </section>
+
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Devlin JW, Skrobik Y, Gélinas C, et al.</strong> Clinical Practice Guidelines for the Prevention and Management of Pain, Agitation/Sedation, Delirium, Immobility, and Sleep Disruption in Adult Patients in the ICU (PADIS 2018). <em>Crit Care Med.</em> 2018;46(9):e825–e873.</li>
+        <li><strong>Girard TD, Exline MC, Carson SS, et al.</strong> Haloperidol and Ziprasidone for Treatment of Delirium in Critical Illness (MIND-USA). <em>N Engl J Med.</em> 2018;379(26):2506–2516.</li>
+        <li><strong>Barr J, Fraser GL, Puntillo K, et al.</strong> Clinical Practice Guidelines for the Management of Pain, Agitation, and Delirium in Adult Patients in the Intensive Care Unit (PAD 2013). <em>Crit Care Med.</em> 2013;41(1):263–306.</li>
+        <li><strong>Riker RR, Shehabi Y, Bokesch PM, et al.</strong> Dexmedetomidine vs Midazolam for Sedation of Critically Ill Patients: A Randomized Trial (SEDCOM). <em>JAMA.</em> 2009;301(5):489–499.</li>
+        <li><strong>Pandharipande PP, Pun BT, Herr DL, et al.</strong> Effect of Sedation with Dexmedetomidine vs Lorazepam on Acute Brain Dysfunction in Mechanically Ventilated Patients (MENDS). <em>JAMA.</em> 2007;298(22):2644–2653.</li>
+        <li><strong>Kress JP, Pohlman AS, O'Connor MF, Hall JB.</strong> Daily Interruption of Sedative Infusions in Critically Ill Patients Undergoing Mechanical Ventilation. <em>N Engl J Med.</em> 2000;342(20):1471–1477.</li>
+        <li><strong>Ely EW, Truman B, Shintani A, et al.</strong> Monitoring Sedation Status over Time in ICU Patients: Reliability and Validity of the Richmond Agitation-Sedation Scale (RASS). <em>JAMA.</em> 2003;289(22):2983–2991.</li>
+        <li><strong>Ely EW, Inouye SK, Bernard GR, et al.</strong> Delirium in Mechanically Ventilated Patients: Validity and Reliability of the Confusion Assessment Method for the Intensive Care Unit (CAM-ICU). <em>JAMA.</em> 2001;286(21):2703–2710.</li>
+        <li><strong>Vincent JL, Shehabi Y, Walsh TS, et al.</strong> Comfort and Patient-Centred Care without Excessive Sedation: The eCASH Concept. <em>Intensive Care Med.</em> 2016;42(6):962–971.</li>
+      </ol>
     </section>
 
   </main>
 </div>
-
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-brand">Crit<span>Care</span>.in</span>

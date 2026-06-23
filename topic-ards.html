@@ -8,12 +8,10 @@
   <link rel="stylesheet" href="shared.css" />
 </head>
 <body>
-
 <nav class="nav">
   <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
   <ul class="nav-menu" id="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
     <li><a href="topics.html" class="active">ICU Topics</a></li>
     <li><a href="ai-tool.html">AI Tool</a></li>
     <li><a href="login.html" class="nav-cta">Login</a></li>
@@ -25,11 +23,17 @@
   <div class="wrap">
     <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › ARDS</div>
     <h1>🫁 ARDS &amp; Lung-Protective Ventilation</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ARDSNet 2000</span>
+      <span class="gbadge esicm">ESICM 2017</span>
+      <span class="gbadge isccm">ISCCM 2020</span>
+      <span class="gbadge sccm">Global Definition 2023</span>
+    </div>
     <div class="topic-hero-meta">
+      <span class="topic-tag red">Critical</span>
       <span class="topic-tag">Ventilation</span>
       <span class="topic-tag">Proning</span>
-      <span class="topic-tag red">Critical</span>
-      <span class="topic-updated">Updated Jun 2025 · 2023 Global ARDS definition</span>
+      <span class="topic-updated">Last updated: Jun 2025 · 2023 Global ARDS Definition</span>
     </div>
   </div>
 </header>
@@ -41,13 +45,16 @@
       <ul class="toc-list">
         <li><a href="#definitions">Definition & Staging</a></li>
         <li><a href="#pathophysiology">Pathophysiology</a></li>
-        <li><a href="#diagnosis">Diagnosis</a></li>
+        <li><a href="#diagnosis">Diagnosis & DDx</a></li>
         <li><a href="#ventilation">Lung-Protective Ventilation</a></li>
         <li><a href="#peep">PEEP Strategy</a></li>
-        <li><a href="#proning">Proning</a></li>
-        <li><a href="#adjuncts">Adjuncts</a></li>
-        <li><a href="#fluids">Fluid Strategy</a></li>
+        <li><a href="#proning">Prone Positioning</a></li>
+        <li><a href="#adjuncts">Adjunctive Therapies</a></li>
+        <li><a href="#fluids">Fluid Management</a></li>
+        <li><a href="#weaning">Weaning</a></li>
+        <li><a href="#india">Indian Context</a></li>
         <li><a href="#trials">Key Trials</a></li>
+        <li><a href="#references">References</a></li>
       </ul>
       <a href="topics.html" class="toc-back">← All topics</a>
     </nav>
@@ -56,22 +63,26 @@
   <main class="topic-content">
 
     <section id="definitions">
-      <h2>Definition & Staging</h2>
-      <h3>2023 Global ARDS Definition (updated from Berlin)</h3>
-      <p>The 2023 Global Definition expanded ARDS to include non-intubated patients and resource-limited settings. All criteria must be present within <strong>1 week</strong> of a known clinical insult:</p>
+      <h2>Definition &amp; Staging</h2>
+      <div class="update-box">
+        <div class="kb-label">2023 Global ARDS Definition — Key Update</div>
+        <p>The 2023 Global Definition expands ARDS beyond intubated patients to include those on high-flow nasal oxygen (HFNO ≥30 L/min) and non-invasive ventilation (CPAP/NIV ≥5 cmH₂O), improving recognition in resource-limited settings where early intubation may not be feasible.</p>
+      </div>
+      <h3>2023 Global ARDS Diagnostic Criteria (all must be met within 1 week of clinical insult)</h3>
       <ul>
-        <li>Bilateral opacities on CXR or CT (not fully explained by effusions, collapse, or nodules)</li>
-        <li>Respiratory failure not fully explained by cardiac failure or fluid overload</li>
-        <li>Oxygenation impairment with SpO2/FiO2 ≤ 315 on O2 ≥ 0.3 (non-intubated) OR P/F ≤ 300 on PEEP ≥ 5 (intubated)</li>
+        <li><strong>Acute onset:</strong> Within 1 week of known clinical insult or new/worsening respiratory symptoms</li>
+        <li><strong>Bilateral opacities:</strong> On CXR or CT — not fully explained by effusions, lobar collapse, or nodules</li>
+        <li><strong>Not fully explained</strong> by cardiac failure or fluid overload</li>
+        <li><strong>Oxygenation impairment:</strong> SpO₂/FiO₂ ≤315 on O₂ ≥0.21 (non-intubated) OR PaO₂/FiO₂ ≤300 on PEEP ≥5 cmH₂O (intubated)</li>
       </ul>
-      <h3>Severity (on MV, PEEP ≥ 5 cmH2O)</h3>
+      <h3>Severity Classification (Intubated, PEEP ≥ 5 cmH₂O)</h3>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Severity</th><th>P/F ratio (mmHg)</th><th>Key management</th></tr></thead>
+          <thead><tr><th>Severity</th><th>P/F Ratio (mmHg)</th><th>SpO₂/FiO₂</th><th>Mortality</th></tr></thead>
           <tbody>
-            <tr><td><strong>Mild</strong></td><td>201–300</td><td>LPV, HFNO may avoid intubation</td></tr>
-            <tr><td><strong>Moderate</strong></td><td>101–200</td><td>LPV, higher PEEP, consider proning</td></tr>
-            <tr><td><strong>Severe</strong></td><td>≤ 100</td><td>LPV, prone ≥16h/day, consider NMB, ECMO</td></tr>
+            <tr><td><strong>Mild</strong></td><td>201–300</td><td>265–315</td><td>~27%</td></tr>
+            <tr><td><strong>Moderate</strong></td><td>101–200</td><td>148–264</td><td>~32%</td></tr>
+            <tr><td><strong>Severe</strong></td><td>≤ 100</td><td>≤ 148</td><td>~45%</td></tr>
           </tbody>
         </table>
       </div>
@@ -79,122 +90,241 @@
 
     <section id="pathophysiology">
       <h2>Pathophysiology</h2>
-      <p>ARDS results from diffuse alveolar damage (DAD). Two phases:</p>
+      <h3>Diffuse Alveolar Damage (DAD)</h3>
+      <p>ARDS results from direct (pulmonary) or indirect (extrapulmonary) injury to the alveolar-capillary membrane:</p>
       <ul>
-        <li><strong>Exudative (0–7 days):</strong> Alveolar flooding with protein-rich fluid, hyaline membranes, alveolar collapse. Diffuse consolidation + atelectasis = "baby lung" (only 20–30% of lung is aerated and recruitable).</li>
-        <li><strong>Proliferative (7–14 days):</strong> Type II pneumocyte proliferation, fibroblast infiltration, early fibrosis.</li>
+        <li><strong>Direct causes:</strong> Pneumonia (bacterial, viral, COVID-19), aspiration, pulmonary contusion, inhalation injury</li>
+        <li><strong>Indirect causes:</strong> Sepsis (most common — 40% of ARDS), pancreatitis, massive transfusion (TRALI), fat embolism, major surgery</li>
       </ul>
-      <p>Driving pressure (ΔP = Pplat − PEEP) reflects the stress applied to the aerated baby lung. ΔP > 15 cmH2O is independently associated with mortality.</p>
-      <div class="warn-box">
-        <div class="kb-label">Ventilator-Induced Lung Injury (VILI)</div>
-        <p>Overdistension (volutrauma), repetitive opening/closing (atelectrauma), and biotrauma drive secondary lung injury. The whole point of lung-protective ventilation is minimising VILI.</p>
-      </div>
+      <h3>Phases of ARDS</h3>
+      <ul>
+        <li><strong>Exudative (Days 1–7):</strong> Alveolar flooding with protein-rich oedema, hyaline membrane formation, neutrophil infiltration, alveolar collapse. CT: dependent consolidation + anterior ground-glass opacities = "baby lung" (only 20–30% aerated)</li>
+        <li><strong>Proliferative (Days 7–14):</strong> Type II pneumocyte proliferation, fibroblast ingrowth, early fibrosis</li>
+        <li><strong>Fibrotic (beyond 2 weeks):</strong> Established fibrosis — poor prognosis if reached</li>
+      </ul>
+      <h3>Ventilator-Induced Lung Injury (VILI) — The Core Problem</h3>
+      <p>The main goal of ventilatory management is <strong>preventing VILI</strong> through 4 mechanisms:</p>
+      <ul>
+        <li><strong>Volutrauma:</strong> Overdistension from high tidal volumes</li>
+        <li><strong>Barotrauma:</strong> High pressures (Pplat &gt;30 cmH₂O)</li>
+        <li><strong>Atelectrauma:</strong> Repetitive opening and closing of collapsed alveoli</li>
+        <li><strong>Biotrauma:</strong> Mechanical stretch triggers cytokine release, worsening systemic inflammation</li>
+      </ul>
+      <p><strong>Driving pressure (ΔP = Pplat − PEEP)</strong> is the single best predictor of ARDS mortality. ΔP &gt;15 cmH₂O independently predicts death — minimise it above all other targets.</p>
     </section>
 
     <section id="diagnosis">
-      <h2>Diagnosis</h2>
-      <p>Common causes to identify and treat:</p>
+      <h2>Diagnosis &amp; Differential Diagnosis</h2>
+      <h3>Investigations</h3>
       <ul>
-        <li><strong>Direct (pulmonary):</strong> pneumonia, aspiration, pulmonary contusion, inhalation injury</li>
-        <li><strong>Indirect (extrapulmonary):</strong> sepsis (most common), pancreatitis, massive transfusion, DIC, major surgery</li>
+        <li>ABG: P/F ratio, pH, PaCO₂</li>
+        <li>CXR: bilateral infiltrates (less sensitive — misses ~30%)</li>
+        <li>CT chest (if doubt): consolidation pattern, barotrauma, alternative diagnosis</li>
+        <li>Echo: exclude cardiogenic oedema (LVEDP, wall motion abnormality)</li>
+        <li>BNP/NT-proBNP: elevated in cardiac pulmonary oedema</li>
+        <li>BAL: if immunocompromised — PCP, CMV, fungal causes</li>
       </ul>
-      <p>Exclude cardiac pulmonary oedema: BNP/NT-proBNP, echocardiography, clinical context. PCWP > 18 mmHg suggests cardiogenic cause (but can coexist).</p>
+      <h3>Important Differentials</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Condition</th><th>Key Distinguishing Features</th></tr></thead>
+          <tbody>
+            <tr><td>Cardiogenic pulmonary oedema</td><td>Elevated BNP, cardiomegaly, pleural effusions, responds rapidly to diuretics/CPAP</td></tr>
+            <tr><td>Bilateral pneumonia</td><td>Asymmetric infiltrates, lobar pattern, responds to antibiotics</td></tr>
+            <tr><td>Diffuse alveolar haemorrhage</td><td>Haemoptysis, falling Hb, haemosiderin-laden macrophages on BAL</td></tr>
+            <tr><td>Acute eosinophilic pneumonia</td><td>BAL eosinophilia &gt;25%, rapid steroid response</td></tr>
+            <tr><td>Cryptogenic organising pneumonia</td><td>Subacute onset, peribronchovascular pattern on CT, steroid responsive</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section id="ventilation">
-      <h2>Lung-Protective Ventilation (ARDSNet)</h2>
+      <h2>Lung-Protective Ventilation (ARDSNet Protocol)</h2>
       <div class="key-box">
-        <div class="kb-label">ARDSNet targets — apply to ALL ventilated ARDS</div>
+        <div class="kb-label">ARDSNet Targets — Apply to ALL Ventilated ARDS Patients</div>
         <ul>
-          <li><strong>Tidal volume:</strong> 6 ml/kg predicted body weight (PBW) — start at 8, reduce to 6</li>
-          <li><strong>Plateau pressure (Pplat):</strong> ≤ 30 cmH2O</li>
-          <li><strong>Driving pressure (ΔP = Pplat − PEEP):</strong> aim &lt; 14–15 cmH2O</li>
-          <li><strong>Respiratory rate:</strong> 14–35/min to maintain pH ≥ 7.30</li>
-          <li><strong>Permissive hypercapnia:</strong> acceptable PaCO2 up to 55–60 (pH ≥ 7.25)</li>
-          <li><strong>SpO2 target:</strong> 88–95% (FiO2 as low as possible)</li>
+          <li><strong>Tidal Volume:</strong> 6 ml/kg <em>Predicted Body Weight (PBW)</em> — start at 8 ml/kg, reduce by 1 ml/kg q2h to reach 6 ml/kg</li>
+          <li><strong>Plateau Pressure (Pplat):</strong> ≤ 30 cmH₂O (measure by 0.5s inspiratory hold)</li>
+          <li><strong>Driving Pressure (ΔP = Pplat − PEEP):</strong> Target &lt; 14–15 cmH₂O</li>
+          <li><strong>Respiratory Rate:</strong> 14–35/min; adjust to maintain pH ≥ 7.30</li>
+          <li><strong>Permissive Hypercapnia:</strong> pH ≥ 7.25; PaCO₂ up to 50–60 mmHg acceptable</li>
+          <li><strong>SpO₂ target:</strong> 88–95%; PaO₂ 55–80 mmHg</li>
+          <li><strong>FiO₂:</strong> Titrate to minimum to achieve SpO₂ target</li>
+          <li><strong>I:E ratio:</strong> 1:1 to 1:3 (start 1:2)</li>
         </ul>
       </div>
-      <h3>Calculating predicted body weight (PBW)</h3>
-      <p>Males: 50 + 2.3 × (height in inches − 60)<br>Females: 45.5 + 2.3 × (height in inches − 60)</p>
-      <p>Or use: Males PBW (kg) ≈ height (cm) − 100; Females ≈ height (cm) − 105 (rough estimate)</p>
+      <h3>Predicted Body Weight Calculation</h3>
+      <ul>
+        <li><strong>Males:</strong> PBW (kg) = 50 + 2.3 × [height (inches) − 60]</li>
+        <li><strong>Females:</strong> PBW (kg) = 45.5 + 2.3 × [height (inches) − 60]</li>
+        <li>Approximate: Males PBW ≈ Height (cm) − 100; Females ≈ Height (cm) − 105</li>
+      </ul>
+      <div class="warn-box">
+        <div class="kb-label">Never base Vt on actual body weight</div>
+        <p>In obese patients, using actual weight will cause dangerous overdistension. Always use <strong>predicted body weight</strong> based on height and sex. A 90 kg patient who is 165 cm tall has PBW of ~63 kg (female) — Vt = 6 × 63 = 378 ml, NOT 540 ml.</p>
+      </div>
     </section>
 
     <section id="peep">
       <h2>PEEP Strategy</h2>
-      <p>PEEP prevents alveolar derecruitment and reduces atelectrauma. Higher PEEP improves oxygenation but risks haemodynamic compromise and overdistension.</p>
-      <h3>ARDSNet PEEP/FiO2 table (Lower PEEP table — use for mild ARDS)</h3>
+      <p>PEEP prevents alveolar derecruitment (atelectrauma) and improves oxygenation by keeping collapsed alveoli open. However, too-high PEEP causes haemodynamic compromise and overdistension.</p>
+      <h3>ARDSNet Lower PEEP/FiO₂ Table (Mild ARDS)</h3>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>FiO2</th><th>0.3</th><th>0.4</th><th>0.5</th><th>0.6</th><th>0.7</th><th>0.8</th><th>0.9</th><th>1.0</th></tr></thead>
-          <tbody>
-            <tr><td><strong>PEEP</strong></td><td>5</td><td>5–8</td><td>8–10</td><td>10</td><td>10–12</td><td>14</td><td>14–18</td><td>18–24</td></tr>
-          </tbody>
+          <thead><tr><th>FiO₂</th><th>0.3</th><th>0.4</th><th>0.5</th><th>0.6</th><th>0.7</th><th>0.8</th><th>0.9</th><th>1.0</th></tr></thead>
+          <tbody><tr><td><strong>PEEP (cmH₂O)</strong></td><td>5</td><td>5–8</td><td>8–10</td><td>10</td><td>10–12</td><td>14</td><td>14–18</td><td>18–24</td></tr></tbody>
         </table>
       </div>
-      <p>For <strong>moderate-severe ARDS</strong>, consider higher PEEP titration guided by driving pressure — reduce PEEP if ΔP increases (recruitable lung is limited). Recruitment manoeuvres should be used cautiously (ART trial showed harm with sustained inflations).</p>
+      <h3>Higher PEEP (Moderate-Severe ARDS)</h3>
+      <p>For P/F &lt;200, consider higher PEEP titration guided by driving pressure. If higher PEEP reduces ΔP → lung is recruitable. If ΔP increases with higher PEEP → over-distension, reduce PEEP.</p>
+      <div class="warn-box">
+        <div class="kb-label">Recruitment Manoeuvres — Use with Caution</div>
+        <p>ART trial (2017) showed that aggressive recruitment manoeuvres (RM) + high PEEP caused <strong>harm</strong> — increased 28-day mortality vs ARDSNet strategy. Use RMs only as rescue for refractory hypoxaemia, not routinely. Brief sustained inflation (40 cmH₂O × 40 sec) has mixed evidence.</p>
+      </div>
     </section>
 
     <section id="proning">
       <h2>Prone Positioning</h2>
       <div class="key-box">
-        <div class="kb-label">PROSEVA trial — most impactful ARDS intervention</div>
-        <p>Prone positioning ≥ 16 hours/day in severe ARDS (P/F &lt; 150) reduced 28-day mortality from 32.8% to 16%. NNT = 6. This is a strong recommendation.</p>
+        <div class="kb-label">PROSEVA (2013) — Most Impactful ARDS Trial</div>
+        <p>Prone ≥16 hours/day for severe ARDS (P/F &lt;150) reduced 28-day mortality from <strong>32.8% to 16% (NNT = 6)</strong>. This is the strongest intervention in ARDS management. Implement early — within 12–36 hours of moderate-severe ARDS diagnosis.</p>
       </div>
-      <h3>Indications</h3>
+      <h3>Indications (SSC/ESICM 2017)</h3>
       <ul>
-        <li>P/F &lt; 150 on PEEP ≥ 5 cmH2O, FiO2 ≥ 0.6 — after ≥ 12–24h of optimised supine ventilation</li>
-        <li>Consider early: within 36 hours of intubation</li>
+        <li>Severe ARDS: P/F &lt;150 on PEEP ≥5, FiO₂ ≥0.6</li>
+        <li>After ≥12–24 hours of optimised supine ventilation</li>
+        <li>Minimum session duration: ≥16 consecutive hours</li>
       </ul>
-      <h3>Procedure summary</h3>
+      <h3>Prone Positioning Protocol</h3>
+      <ol>
+        <li><strong>Pre-prone preparation:</strong> Minimum 4–5 staff; pre-oxygenate; pause enteral feeds 30–60 min; empty bladder; secure all lines/ETT; ocular protection</li>
+        <li><strong>Sedation:</strong> Deep sedation (RASS −3 to −4) + ensure NMB if dyssynchrony</li>
+        <li><strong>Turn manoeuvre:</strong> Log-roll in one smooth coordinated movement; one person dedicated to head/ETT</li>
+        <li><strong>Positioning:</strong> Arms in swimmer's position or alongside body; head rotation every 2h; padded pressure points</li>
+        <li><strong>Monitoring:</strong> Check ETT position; monitor SpO₂, BP, HR throughout</li>
+        <li><strong>Resupinate:</strong> After ≥16h or if deterioration (SpO₂ &lt;85% for &gt;5 min despite interventions)</li>
+      </ol>
+      <h3>Contraindications to Prone Positioning</h3>
       <ul>
-        <li>Minimum 4 staff members (3 at bedside, 1 managing head/ETT)</li>
-        <li>Secure all lines, pause NGT feeds, give prophylactic sedation</li>
-        <li>Turn to prone in one smooth manoeuvre</li>
-        <li>Head position: swimmer's position, alternate every 2h</li>
-        <li>Target ≥ 16 consecutive hours prone; return supine if SpO2 or haemodynamics worsen significantly</li>
+        <li>Absolute: Spinal instability, elevated ICP, open abdomen, anterior chest wound</li>
+        <li>Relative: Facial fractures, pregnancy (&gt;20 weeks), haemodynamic instability, uncontrolled arrhythmia, recent sternotomy</li>
       </ul>
-      <h3>Contraindications</h3>
-      <p>Relative: spinal instability, open abdomen, facial fractures, elevated ICP, pregnancy. Absolute: few — proning is generally safe if done carefully.</p>
     </section>
 
     <section id="adjuncts">
       <h2>Adjunctive Therapies</h2>
-      <h3>Neuromuscular blockade (NMB)</h3>
-      <p>Cisatracurium 0.37 mg/kg bolus then 0.03–0.06 mg/kg/hr infusion for 48h in P/F &lt; 150. ACURASYS trial showed benefit; ROSE trial was neutral. Current practice: use selectively for severe ventilator dyssynchrony or refractory hypoxaemia. <span class="evidence-pill ep-2a">2A</span></p>
-      <h3>High-flow nasal oxygen (HFNO)</h3>
-      <p>For mild-moderate ARDS (P/F 200–300) in non-intubated patients. Flow 40–60 L/min, FiO2 titrated. FLORALI trial showed benefit over conventional O2. Watch for delayed intubation — escalate early if ROX index (SpO2/FiO2 ÷ RR) &lt; 4.88 at 2h.</p>
-      <h3>Inhaled nitric oxide / Prostacyclin</h3>
-      <p>Improve oxygenation transiently (bridge to ECMO or as rescue). No mortality benefit. Use as rescue if P/F &lt; 80 despite prone + optimal vent. <span class="evidence-pill ep-2b">2B</span></p>
-      <h3>ECMO</h3>
-      <p>Veno-venous (VV) ECMO for reversible severe ARDS (P/F &lt; 80 on optimal therapy). EOLIA trial: ECMO did not meet primary endpoint but had crossover — expert centres use it as rescue. Refer early to ECMO-capable centre.</p>
+      <h3>Neuromuscular Blockade (NMB)</h3>
+      <p><strong>Cisatracurium 0.37 mg/kg bolus then 0.03–0.06 mg/kg/hr infusion</strong> for 48h in severe ARDS (P/F &lt;150).</p>
+      <ul>
+        <li>ACURASYS (2010): Improved 90-day survival, less barotrauma</li>
+        <li>ROSE (2019): No difference vs light sedation strategy — NMB not routinely required</li>
+        <li><strong>Current practice:</strong> Use NMB selectively for severe ventilator dyssynchrony, refractory hypoxaemia despite prone, or when driving pressure cannot be controlled otherwise. Monitor with train-of-four. <span class="evidence-pill ep-2a">2B</span></li>
+      </ul>
+      <h3>High-Flow Nasal Oxygen (HFNO)</h3>
+      <ul>
+        <li>For mild ARDS (P/F 200–300) in non-intubated patients: HFNO at 40–60 L/min</li>
+        <li>FLORALI trial (2015): HFNO superior to conventional O₂ and face-mask NIV in hypoxaemic respiratory failure</li>
+        <li><strong>ROX Index = SpO₂/FiO₂ ÷ RR</strong> — if &lt;4.88 at 2h or 6h → high risk of failure → intubate early</li>
+        <li>Do not delay intubation with HFNO in rapidly worsening patients</li>
+      </ul>
+      <h3>Inhaled Pulmonary Vasodilators</h3>
+      <ul>
+        <li><strong>Inhaled Nitric Oxide (iNO):</strong> Improves V/Q matching and oxygenation acutely — no survival benefit (Cochrane 2016). Use as bridge to ECMO or as rescue in refractory hypoxaemia (P/F &lt;80). <span class="evidence-pill ep-2b">2B</span></li>
+        <li><strong>Inhaled Prostacyclin (Epoprostenol/Iloprost):</strong> Similar profile to iNO; cheaper, easier to administer. Use as alternative rescue measure.</li>
+      </ul>
+      <h3>Venovenous ECMO (VV-ECMO)</h3>
+      <ul>
+        <li>For reversible severe ARDS: P/F &lt;80 on optimal ventilatory settings despite prone positioning</li>
+        <li>EOLIA (2018): VV-ECMO did not meet primary endpoint (28-day mortality) due to crossover bias; post-hoc analysis shows benefit</li>
+        <li><strong>Refer early</strong> to ECMO-capable centre. VV-ECMO is best initiated before respiratory failure worsens to the point of haemodynamic compromise</li>
+        <li>Centres in India: AIIMS Delhi, PGI Chandigarh, CMC Vellore, SGPGIMS Lucknow</li>
+      </ul>
+      <h3>Corticosteroids in ARDS</h3>
+      <ul>
+        <li>Methylprednisolone 1 mg/kg/day (or dexamethasone 20 mg/day × 5 days then 10 mg × 5 days): may reduce duration of MV in moderate-severe ARDS (DEXA-ARDS trial 2020)</li>
+        <li>Do not start after day 14 of ARDS — worsens outcome (LaSRS trial)</li>
+        <li>Best evidence for early moderate-severe ARDS (P/F &lt;200). <span class="evidence-pill ep-2a">2B</span></li>
+      </ul>
     </section>
 
     <section id="fluids">
-      <h2>Fluid Strategy</h2>
-      <p>After initial resuscitation, use a <strong>conservative fluid strategy</strong>. The FACTT trial showed conservative fluids improved ventilator-free days with no increase in non-pulmonary organ failure.</p>
+      <h2>Fluid Management in ARDS</h2>
+      <p>After haemodynamic stabilisation, use a <strong>conservative fluid strategy</strong>. FACTT trial (2006): Conservative fluid strategy improved ventilator-free days and ICU-free days without increasing non-pulmonary organ failure.</p>
       <ul>
-        <li>Target neutral to negative fluid balance after haemodynamic stability achieved</li>
-        <li>Daily weights, fluid balance, assess signs of fluid overload</li>
-        <li>Judicious diuresis (furosemide) to achieve neutral balance once haemodynamics allow</li>
+        <li>Target neutral to <strong>negative</strong> fluid balance from 24–48h after resuscitation</li>
+        <li>Judicious furosemide to achieve target — 20–40 mg IV BD if tolerated haemodynamically</li>
+        <li>Daily weights; strict fluid balance charting</li>
+        <li>Avoid fluid creep from infusions/medications — use concentrated drips</li>
       </ul>
+    </section>
+
+    <section id="weaning">
+      <h2>Weaning from Mechanical Ventilation</h2>
+      <p>ARDS patients often have prolonged MV dependency. Systematic approach:</p>
+      <h3>Criteria for SBT Trial</h3>
+      <ul>
+        <li>P/F ≥ 150 (some suggest ≥ 200) on PEEP ≤ 8 cmH₂O and FiO₂ ≤ 0.5</li>
+        <li>Patient awake and following commands (RASS −1 to +1)</li>
+        <li>Haemodynamically stable (no or low vasopressors)</li>
+        <li>No new deterioration in last 24h</li>
+        <li>Adequate cough/airway protection</li>
+      </ul>
+      <h3>SBT Method</h3>
+      <p>Pressure Support 5–7 cmH₂O + PEEP 5 cmH₂O × 30–120 minutes. Successful if: SpO₂ ≥92%, RR &lt;35, no significant distress, HR/BP stable. RSB index (RR/Vt) &lt;105 predicts success.</p>
+    </section>
+
+    <section id="india">
+      <h2>Indian Context</h2>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 ISCCM Perspective</div>
+        <ul>
+          <li><strong>COVID-19 ARDS:</strong> ISCCM published specific COVID ARDS management guidelines (2021) with emphasis on HFNO before intubation in suitable patients, awake proning, and dexamethasone</li>
+          <li><strong>Scrub typhus ARDS:</strong> Emerging cause in India (Tamil Nadu, Himalayan foothills, Northeast) — consider doxycycline 100 mg BD in addition to ventilatory management</li>
+          <li><strong>Prone positioning without ICU beds:</strong> Awake prone positioning (12–16h/day) for spontaneously breathing COVID/non-COVID ARDS patients on HFNO is feasible and improves oxygenation</li>
+          <li><strong>VV-ECMO availability:</strong> Limited to tertiary centres; early transfer referral is critical</li>
+          <li><strong>Ventilator shortages:</strong> ISCCM guidelines include ventilator-sharing protocols for resource-limited situations (published 2020)</li>
+        </ul>
+      </div>
     </section>
 
     <section id="trials">
       <h2>Key Trials</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Trial</th><th>Intervention</th><th>Result</th></tr></thead>
+          <thead><tr><th>Trial</th><th>Year</th><th>Intervention</th><th>Key Finding</th></tr></thead>
           <tbody>
-            <tr><td><strong>ARMA (2000)</strong></td><td>6 ml/kg PBW vs 12 ml/kg</td><td>Mortality reduced 8.8% with LPV — practice changing</td></tr>
-            <tr><td><strong>PROSEVA (2013)</strong></td><td>Prone ≥16h vs supine in severe ARDS</td><td>Mortality 16% vs 32.8% — NNT=6, landmark trial</td></tr>
-            <tr><td><strong>ACURASYS (2010)</strong></td><td>Cisatracurium 48h vs placebo</td><td>Improved 90-day survival; less barotrauma</td></tr>
-            <tr><td><strong>ROSE (2019)</strong></td><td>NMB vs light sedation</td><td>No difference — NMB not routinely needed</td></tr>
-            <tr><td><strong>FACTT (2006)</strong></td><td>Conservative vs liberal fluids</td><td>Conservative: more ventilator-free days, no AKI increase</td></tr>
-            <tr><td><strong>ART (2017)</strong></td><td>Aggressive recruitment + high PEEP</td><td>Harm — increased mortality vs ARDSNet strategy</td></tr>
-            <tr><td><strong>EOLIA (2018)</strong></td><td>VV-ECMO vs conventional in severe ARDS</td><td>Missed primary endpoint; ECMO as rescue acceptable</td></tr>
+            <tr><td><strong>ARMA (ARDSNet)</strong></td><td>2000</td><td>6 ml/kg PBW vs 12 ml/kg</td><td>Absolute mortality reduction 8.8% — practice-changing landmark trial</td></tr>
+            <tr><td><strong>PROSEVA</strong></td><td>2013</td><td>Prone ≥16h vs supine in severe ARDS</td><td>Mortality 16% vs 32.8% — NNT = 6; most impactful ARDS trial</td></tr>
+            <tr><td><strong>ACURASYS</strong></td><td>2010</td><td>Cisatracurium 48h in P/F &lt;150</td><td>Improved 90-day mortality, less barotrauma</td></tr>
+            <tr><td><strong>ROSE</strong></td><td>2019</td><td>NMB vs light sedation</td><td>No 90-day mortality difference — NMB not universally needed</td></tr>
+            <tr><td><strong>FACTT</strong></td><td>2006</td><td>Conservative vs liberal fluid strategy</td><td>Conservative: more ventilator-free days, no ↑ AKI or non-pulmonary organ failure</td></tr>
+            <tr><td><strong>ART</strong></td><td>2017</td><td>Aggressive RM + high PEEP vs ARDSNet</td><td>Harm — increased 28-day mortality in RM group</td></tr>
+            <tr><td><strong>EOLIA</strong></td><td>2018</td><td>VV-ECMO vs conventional</td><td>Missed primary endpoint (crossover bias); ECMO as rescue is evidence-based</td></tr>
+            <tr><td><strong>FLORALI</strong></td><td>2015</td><td>HFNO vs NIV vs standard O₂</td><td>HFNO: lower intubation rate and 90-day mortality in severe hypoxaemic RF</td></tr>
+            <tr><td><strong>DEXA-ARDS</strong></td><td>2020</td><td>Dexamethasone in moderate-severe ARDS</td><td>Reduced 60-day mortality and ventilator days</td></tr>
           </tbody>
         </table>
       </div>
+    </section>
+
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Matthay MA, Arabi Y, Arroliga AC, et al.</strong> A New Global Definition of Acute Respiratory Distress Syndrome. <em>Am J Respir Crit Care Med.</em> 2024;209(4):374–386.</li>
+        <li><strong>ARDS Definition Task Force, Ranieri VM, Rubenfeld GD, et al.</strong> Acute Respiratory Distress Syndrome: The Berlin Definition. <em>JAMA.</em> 2012;307(23):2526–2533.</li>
+        <li><strong>Acute Respiratory Distress Syndrome Network (ARDSNet), Brower RG, Matthay MA, et al.</strong> Ventilation with Lower Tidal Volumes as Compared with Traditional Tidal Volumes for Acute Lung Injury and ARDS (ARMA). <em>N Engl J Med.</em> 2000;342(18):1301–1308.</li>
+        <li><strong>Guérin C, Reignier J, Richard JC, et al.</strong> Prone Positioning in Severe Acute Respiratory Distress Syndrome (PROSEVA). <em>N Engl J Med.</em> 2013;368(23):2159–2168.</li>
+        <li><strong>Papazian L, Forel JM, Gacouin A, et al.</strong> Neuromuscular Blockers in Early Acute Respiratory Distress Syndrome (ACURASYS). <em>N Engl J Med.</em> 2010;363(12):1107–1116.</li>
+        <li><strong>PETAL Clinical Trials Network (ROSE).</strong> Early Neuromuscular Blockade in the Acute Respiratory Distress Syndrome. <em>N Engl J Med.</em> 2019;380(21):1997–2008.</li>
+        <li><strong>National Heart, Lung, and Blood Institute ARDS Clinical Trials Network (FACTT).</strong> Comparison of Two Fluid-Management Strategies in Acute Lung Injury. <em>N Engl J Med.</em> 2006;354(24):2564–2575.</li>
+        <li><strong>Writing Group for the Alveolar Recruitment for ARDS Trial (ART).</strong> Effect of Lung Recruitment and Titrated Positive End-Expiratory Pressure vs Low Positive End-Expiratory Pressure on Mortality. <em>JAMA.</em> 2017;318(14):1335–1345.</li>
+        <li><strong>Combes A, Hajage D, Capellier G, et al.</strong> Extracorporeal Membrane Oxygenation for Severe Acute Respiratory Distress Syndrome (EOLIA). <em>N Engl J Med.</em> 2018;378(21):1965–1975.</li>
+        <li><strong>Frat JP, Thille AW, Mercat A, et al.</strong> High-Flow Oxygen through Nasal Cannula in Acute Hypoxemic Respiratory Failure (FLORALI). <em>N Engl J Med.</em> 2015;372(23):2185–2196.</li>
+        <li><strong>Villar J, Ferrando C, Martínez D, et al.</strong> Dexamethasone Treatment for the Acute Respiratory Distress Syndrome: A Multicentre, Randomised Controlled Trial (DEXA-ARDS). <em>Lancet Respir Med.</em> 2020;8(3):267–276.</li>
+        <li><strong>Fan E, Del Sorbo L, Goligher EC, et al.</strong> An Official American Thoracic Society/European Society of Intensive Care Medicine/Society of Critical Care Medicine Clinical Practice Guideline: Mechanical Ventilation in Adult Patients with Acute Respiratory Distress Syndrome. <em>Am J Respir Crit Care Med.</em> 2017;195(9):1253–1263.</li>
+        <li><strong>Amato MB, Meade MO, Slutsky AS, et al.</strong> Driving Pressure and Survival in the Acute Respiratory Distress Syndrome. <em>N Engl J Med.</em> 2015;372(8):747–755.</li>
+      </ol>
     </section>
 
   </main>

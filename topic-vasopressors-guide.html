@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vasopressor Dilution & Dosing Guide — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    .dose-calc { background: var(--ink); color: #fff; border-radius: 12px; padding: 1.5rem; margin: 1.2rem 0; }
+    .dose-calc h4 { color: var(--accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.8rem; }
+    .dose-calc .formula { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; font-family: 'Courier New', monospace; }
+    .dose-calc .example { font-size: 0.85rem; color: rgba(255,255,255,0.7); line-height: 1.8; }
+    .dose-calc .example strong { color: var(--accent); }
+    .ampoule-box { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+    .ampoule-card { border: 1.5px solid var(--line); border-radius: 10px; padding: 1.2rem; background: var(--bg-alt); }
+    .ampoule-card h4 { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; }
+    .ampoule-card .amp-detail { font-size: 0.82rem; color: var(--slate); line-height: 1.8; }
+    .ampoule-card .amp-detail strong { color: var(--blue); }
+    .pearl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+    .pearl-card { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 1rem 1.2rem; }
+    .pearl-card .pearl-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #92400e; margin-bottom: 0.5rem; }
+    .pearl-card p { font-size: 0.88rem; color: #78350f; line-height: 1.7; margin: 0; }
+    .mistake-card { background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 1rem 1.2rem; margin: 0.5rem 0; }
+    .mistake-card .m-label { font-size: 0.68rem; font-weight: 700; color: #991b1b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .mistake-card p { font-size: 0.88rem; color: #7f1d1d; line-height: 1.7; margin: 0; }
+    .exam-card { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 1rem 1.2rem; margin: 0.5rem 0; }
+    .exam-card p { font-size: 0.88rem; color: #1e40af; line-height: 1.7; margin: 0; }
+    .exam-card strong { color: #1e3a8a; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Vasopressor Guide</div>
+    <h1>💊 Vasopressor &amp; Inotrope Master Guide</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">SSC 2021</span>
+      <span class="gbadge isccm">ISCCM 2020</span>
+      <span class="gbadge esicm">ESICM</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">High Yield</span>
+      <span class="topic-tag">Ampoule Dilution</span>
+      <span class="topic-tag">Dose Calculations</span>
+      <span class="topic-updated">Pharmacology + Dilution Guide · Updated Jun 2025</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#why">Why Vasopressors Work</a></li>
+        <li><a href="#ibw">IBW Calculation</a></li>
+        <li><a href="#formula">Dose Formula</a></li>
+        <li><a href="#norad">Noradrenaline</a></li>
+        <li><a href="#vasopressin">Vasopressin</a></li>
+        <li><a href="#adrenaline">Adrenaline</a></li>
+        <li><a href="#dobutamine">Dobutamine</a></li>
+        <li><a href="#dopamine">Dopamine</a></li>
+        <li><a href="#phenylephrine">Phenylephrine</a></li>
+        <li><a href="#algorithm">Shock Algorithm</a></li>
+        <li><a href="#pearls">Clinical Pearls</a></li>
+        <li><a href="#mistakes">Common Mistakes</a></li>
+        <li><a href="#exam">Exam Pearls</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="why">
+      <h2>Why Vasopressors Work — The Physiology</h2>
+      <p>Blood pressure = Cardiac Output × Systemic Vascular Resistance (MAP = CO × SVR). In septic shock, the primary problem is <strong>↓ SVR</strong> (massive vasodilation from nitric oxide, prostaglandins, cytokines). The heart is initially hyperdynamic (↑ CO) trying to compensate. Vasopressors restore SVR and therefore MAP, ensuring perfusion pressure to vital organs.</p>
+      <p>The adrenoreceptor system is the target:</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Receptor</th><th>Location</th><th>Effect</th><th>Clinical Result</th></tr></thead>
+          <tbody>
+            <tr><td><strong>α₁</strong></td><td>Vascular smooth muscle</td><td>Vasoconstriction</td><td>↑ SVR → ↑ MAP</td></tr>
+            <tr><td><strong>β₁</strong></td><td>Heart (SA node, myocardium)</td><td>↑ HR, ↑ contractility</td><td>↑ CO, ↑ HR, ↑ myocardial O₂ demand</td></tr>
+            <tr><td><strong>β₂</strong></td><td>Vasculature, bronchi</td><td>Vasodilation, bronchodilation</td><td>↓ SVR, bronchodilation</td></tr>
+            <tr><td><strong>V₁ (AVP receptor)</strong></td><td>Vascular smooth muscle</td><td>Vasoconstriction (non-catecholamine)</td><td>↑ SVR without cardiac stimulation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="key-box">
+        <div class="kb-label">Why Noradrenaline First?</div>
+        <p>Noradrenaline is predominantly α₁ (vasoconstriction) with mild β₁ (minimal HR increase). In septic shock, we want ↑ SVR without excessive tachycardia (which increases myocardial O₂ demand). Dopamine causes more arrhythmias and has unpredictable dose-receptor relationships. SOAP II trial confirmed NE superiority.</p>
+      </div>
+    </section>
+
+    <section id="ibw">
+      <h2>Ideal Body Weight (IBW) — Always Use for Dosing</h2>
+      <p>Vasopressor doses are calculated per kg of <strong>Ideal Body Weight</strong>, not actual body weight. In obese patients, using actual weight will overdose and cause peripheral ischaemia.</p>
+      <div class="dose-calc">
+        <h4>IBW Formula (Devine Formula)</h4>
+        <div class="formula">Males: IBW (kg) = 50 + 2.3 × (Height in inches − 60)</div>
+        <div class="formula">Females: IBW (kg) = 45.5 + 2.3 × (Height in inches − 60)</div>
+        <div class="example">
+          <strong>Quick metric conversion:</strong> Height in cm ÷ 2.54 = Height in inches<br>
+          <strong>Male example:</strong> Height 170 cm = 67 inches → IBW = 50 + 2.3×(67−60) = 50 + 16.1 = <strong>66 kg</strong><br>
+          <strong>Female example:</strong> Height 155 cm = 61 inches → IBW = 45.5 + 2.3×(61−60) = 45.5 + 2.3 = <strong>47.8 kg</strong><br><br>
+          <strong>Bedside shortcut:</strong> Male IBW ≈ Height(cm) − 100 | Female IBW ≈ Height(cm) − 105
+        </div>
+      </div>
+    </section>
+
+    <section id="formula">
+      <h2>The Universal Dose Calculation Formula</h2>
+      <div class="dose-calc">
+        <h4>Infusion Rate Formula (applies to ALL vasopressors)</h4>
+        <div class="formula">Rate (ml/hr) = [Dose (mcg/kg/min) × Weight (kg) × 60] ÷ Concentration (mcg/ml)</div>
+        <div class="example">
+          <strong>Where:</strong><br>
+          Dose = desired dose in mcg/kg/min<br>
+          Weight = IBW in kg<br>
+          60 = converts minutes to hours<br>
+          Concentration = mcg per ml of your prepared solution<br><br>
+          <strong>Example — Noradrenaline 0.1 mcg/kg/min for 60 kg patient, concentration 40 mcg/ml:</strong><br>
+          Rate = (0.1 × 60 × 60) ÷ 40 = 360 ÷ 40 = <strong>9 ml/hr</strong>
+        </div>
+      </div>
+      <div class="key-box">
+        <div class="kb-label">Rule of 6 (Quick Mental Math at Bedside)</div>
+        <p>Prepare drug so that: <strong>6 × body weight (mg) in 100 ml</strong> → 1 ml/hr = 1 mcg/kg/min. Example: 60 kg patient → put 360 mg drug in 100 ml → 1 ml/hr = 1 mcg/kg/min. Used for dopamine and dobutamine in many ICUs. Not suitable for all drugs — check concentration limits.</p>
+      </div>
+    </section>
+
+    <section id="norad">
+      <h2>Noradrenaline (Norepinephrine)</h2>
+      <h3>The Drug — What's in the Ampoule</h3>
+      <div class="ampoule-box">
+        <div class="ampoule-card">
+          <h4>🔬 Ampoule Composition</h4>
+          <div class="amp-detail">
+            <strong>Available as:</strong> Noradrenaline bitartrate<br>
+            <strong>Concentration:</strong> 2 mg/2 ml (1 mg/ml) or 4 mg/4 ml<br>
+            <strong>Active drug:</strong> 1 mg noradrenaline base per 2 mg bitartrate salt<br>
+            <strong>pH:</strong> 3.0–4.5 (acidic — incompatible with alkaline solutions)<br>
+            <strong>Storage:</strong> Protect from light; discard if brown discolouration
+          </div>
+        </div>
+        <div class="ampoule-card">
+          <h4>🧪 Standard Dilution (Syringe Pump)</h4>
+          <div class="amp-detail">
+            <strong>Standard:</strong> 4 mg in 46 ml NS = <strong>80 mcg/ml</strong><br>
+            <strong>Concentrated:</strong> 8 mg in 42 ml NS = <strong>160 mcg/ml</strong> (for fluid-restricted patients)<br>
+            <strong>High-dose (refractory):</strong> 16 mg in 34 ml NS = <strong>320 mcg/ml</strong><br>
+            <strong>Diluent:</strong> 0.9% NaCl or D5W — NOT Ringer's Lactate (alkaline — causes precipitation)
+          </div>
+        </div>
+      </div>
+      <h3>Dose Calculation Table (80 mcg/ml standard solution)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Dose (mcg/kg/min)</th><th>50 kg patient (ml/hr)</th><th>60 kg patient (ml/hr)</th><th>70 kg patient (ml/hr)</th><th>80 kg patient (ml/hr)</th></tr></thead>
+          <tbody>
+            <tr><td>0.05 (starting)</td><td>1.9</td><td>2.3</td><td>2.6</td><td>3.0</td></tr>
+            <tr><td>0.1 (usual start)</td><td>3.8</td><td>4.5</td><td>5.3</td><td>6.0</td></tr>
+            <tr><td>0.2</td><td>7.5</td><td>9.0</td><td>10.5</td><td>12.0</td></tr>
+            <tr><td>0.3</td><td>11.3</td><td>13.5</td><td>15.8</td><td>18.0</td></tr>
+            <tr><td>0.5</td><td>18.8</td><td>22.5</td><td>26.3</td><td>30.0</td></tr>
+            <tr><td>1.0 (high dose)</td><td>37.5</td><td>45.0</td><td>52.5</td><td>60.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Receptors</strong></td><td>α₁+++ (dominant), β₁+ (minor)</td></tr>
+            <tr><td><strong>Starting dose</strong></td><td>0.05–0.1 mcg/kg/min</td></tr>
+            <tr><td><strong>Usual range</strong></td><td>0.1–0.5 mcg/kg/min</td></tr>
+            <tr><td><strong>High dose</strong></td><td>&gt;0.5 mcg/kg/min (consider adding vasopressin)</td></tr>
+            <tr><td><strong>Maximum</strong></td><td>No absolute ceiling; &gt;1 mcg/kg/min = refractory shock</td></tr>
+            <tr><td><strong>Indication</strong></td><td>First-line: ALL distributive shock (septic, anaphylactic, neurogenic)</td></tr>
+            <tr><td><strong>Peripheral line</strong></td><td>Acceptable for up to 12h in emergency (antecubital/wrist); inspect q30 min for extravasation</td></tr>
+            <tr><td><strong>Extravasation antidote</strong></td><td>Phentolamine 5–10 mg in 10 ml NS — infiltrate subcutaneously around site</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Brand Names &amp; Availability</div>
+        <p>Noradrenaline is available as: <strong>Levophed</strong> (Abbott), <strong>Norad</strong>, <strong>Epsilor</strong>. Most come as 4 mg/4 ml ampoules. Always confirm concentration on the ampoule — a 2 mg/ml preparation requires different dilution calculations.</p>
+      </div>
+    </section>
+
+    <section id="vasopressin">
+      <h2>Vasopressin (ADH / AVP)</h2>
+      <div class="ampoule-box">
+        <div class="ampoule-card">
+          <h4>🔬 Ampoule Composition</h4>
+          <div class="amp-detail">
+            <strong>Available as:</strong> Arginine Vasopressin (AVP) 20 IU/ml ampoule (1 ml)<br>
+            <strong>Mechanism:</strong> Acts on V₁ receptors on vascular smooth muscle → vasoconstriction via IP₃/DAG pathway (NOT catecholamine dependent)<br>
+            <strong>Why useful in shock:</strong> Catecholamine-depleted states (prolonged septic shock) see relative vasopressin deficiency — replacing it restores vascular tone without tachycardia
+          </div>
+        </div>
+        <div class="ampoule-card">
+          <h4>🧪 Standard Dilution</h4>
+          <div class="amp-detail">
+            <strong>Standard:</strong> 20 IU (1 ampoule) in 19 ml NS = <strong>1 IU/ml</strong><br>
+            <strong>Alternative:</strong> 40 IU (2 ampoules) in 38 ml NS = <strong>1 IU/ml</strong><br>
+            <strong>Infusion rate:</strong> 0.03 IU/min = 1.8 ml/hr (fixed dose — do NOT titrate)<br>
+            <strong>Maximum:</strong> 0.03–0.04 IU/min (higher doses cause mesenteric/coronary ischaemia)
+          </div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Dose</strong></td><td><strong>FIXED 0.03 U/min</strong> — NEVER titrated (unlike catecholamines)</td></tr>
+            <tr><td><strong>When to add</strong></td><td>Noradrenaline &gt;0.25 mcg/kg/min AND MAP still &lt;65 mmHg</td></tr>
+            <tr><td><strong>Goal</strong></td><td>Catecholamine-sparing (allows NE dose reduction); reduces arrhythmia risk</td></tr>
+            <tr><td><strong>Infusion rate</strong></td><td>1.8 ml/hr if prepared as 1 IU/ml solution</td></tr>
+            <tr><td><strong>Side effects</strong></td><td>Mesenteric ischaemia (at &gt;0.04 IU/min), hyponatraemia (ADH effect), skin necrosis</td></tr>
+            <tr><td><strong>Contraindication</strong></td><td>Do NOT use in cardiogenic shock — no cardiac output benefit and worsens afterload</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="adrenaline">
+      <h2>Adrenaline (Epinephrine)</h2>
+      <div class="ampoule-box">
+        <div class="ampoule-card">
+          <h4>🔬 Ampoule Composition</h4>
+          <div class="amp-detail">
+            <strong>Available as:</strong> 1 mg/ml (1:1000) or 0.1 mg/ml (1:10,000)<br>
+            <strong>For ICU infusion:</strong> Use 1 mg/ml ampoules<br>
+            <strong>For anaphylaxis IM:</strong> 1:1000 (1 mg/ml) — 0.5 mg = 0.5 ml IM<br>
+            <strong>For cardiac arrest:</strong> 1 mg IV (1 ml of 1:1000 or 10 ml of 1:10,000)
+          </div>
+        </div>
+        <div class="ampoule-card">
+          <h4>🧪 ICU Infusion Dilution</h4>
+          <div class="amp-detail">
+            <strong>Standard:</strong> 5 mg (5 ampoules 1mg/ml) in 45 ml NS = <strong>100 mcg/ml</strong><br>
+            <strong>Starting dose:</strong> 0.05–0.1 mcg/kg/min<br>
+            <strong>Usual range:</strong> 0.1–0.5 mcg/kg/min<br>
+            <strong>Note:</strong> Raises lactate (β₂ mediated glycogenolysis) — do NOT use lactate clearance to guide treatment when on adrenaline infusion
+          </div>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Indication</th><th>Route</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Anaphylaxis</strong></td><td>IM (anterolateral thigh)</td><td>0.5 mg (0.5 ml of 1:1000) — adults; 0.3 mg children</td><td>FIRST LINE — do before anything else. Repeat q5–15 min if needed.</td></tr>
+            <tr><td><strong>Cardiac arrest (ACLS)</strong></td><td>IV/IO</td><td>1 mg q3–5 min</td><td>Give early in non-shockable rhythms (PEA/asystole)</td></tr>
+            <tr><td><strong>Refractory septic shock</strong></td><td>IV infusion</td><td>0.05–0.5 mcg/kg/min</td><td>Add to/replace NE when NE &gt;0.5 + vasopressin fails</td></tr>
+            <tr><td><strong>Post-extubation stridor</strong></td><td>Nebuliser</td><td>1 mg (1 ml of 1:1000) in 4 ml NS</td><td>Local mucosal vasoconstriction; lasts ~30–60 min</td></tr>
+            <tr><td><strong>Bradycardia with pulse</strong></td><td>IV infusion</td><td>2–10 mcg/min</td><td>While preparing for pacing</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="dobutamine">
+      <h2>Dobutamine</h2>
+      <div class="ampoule-box">
+        <div class="ampoule-card">
+          <h4>🔬 Ampoule Composition</h4>
+          <div class="amp-detail">
+            <strong>Available as:</strong> 250 mg/20 ml (12.5 mg/ml)<br>
+            <strong>Mechanism:</strong> Predominantly β₁ agonist → ↑ contractility + ↑ HR; β₂ → peripheral vasodilation. Net effect: ↑ CO, ↓ SVR, ↑ HR.<br>
+            <strong>Key concept:</strong> Dobutamine is an <em>inotrope</em>, not a vasopressor. It LOWERS blood pressure in isolation. Always combine with NE in cardiogenic shock with hypotension.
+          </div>
+        </div>
+        <div class="ampoule-card">
+          <h4>🧪 Standard Dilution</h4>
+          <div class="amp-detail">
+            <strong>Standard:</strong> 250 mg in 250 ml NS = <strong>1000 mcg/ml (1 mg/ml)</strong><br>
+            <strong>Or:</strong> 500 mg in 250 ml NS = <strong>2000 mcg/ml</strong><br>
+            <strong>Starting dose:</strong> 2.5–5 mcg/kg/min<br>
+            <strong>Usual range:</strong> 5–15 mcg/kg/min<br>
+            <strong>Max:</strong> 20 mcg/kg/min (beyond this: tachycardia outweighs benefit)
+          </div>
+        </div>
+      </div>
+      <h3>Dose Calculation (1000 mcg/ml solution)</h3>
+      <div class="dose-calc">
+        <h4>Formula</h4>
+        <div class="formula">Rate (ml/hr) = [Dose (mcg/kg/min) × IBW (kg) × 60] ÷ 1000</div>
+        <div class="example">
+          <strong>Example:</strong> 5 mcg/kg/min for 60 kg patient using 1000 mcg/ml solution:<br>
+          Rate = (5 × 60 × 60) ÷ 1000 = 18,000 ÷ 1000 = <strong>18 ml/hr</strong><br><br>
+          <strong>10 mcg/kg/min:</strong> 36 ml/hr | <strong>15 mcg/kg/min:</strong> 54 ml/hr
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Cardiogenic shock + adequate BP</td><td>5–10 mcg/kg/min</td><td>Improves CO; may drop BP — have NE ready</td></tr>
+            <tr><td>Septic cardiomyopathy (ScvO₂ &lt;65%, low echo EF)</td><td>5–10 mcg/kg/min</td><td>Add to NE when CO component identified</td></tr>
+            <tr><td>Acute decompensated heart failure</td><td>2.5–5 mcg/kg/min</td><td>Short-term bridge to definitive therapy</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="warn-box">
+        <div class="kb-label">Do NOT use Dobutamine alone in Hypotension</div>
+        <p>Dobutamine's β₂ activity causes peripheral vasodilation, which LOWERS MAP. In a hypotensive patient, always add noradrenaline first to maintain vascular tone, then add dobutamine for inotropy.</p>
+      </div>
+    </section>
+
+    <section id="dopamine">
+      <h2>Dopamine — Use with Caution</h2>
+      <div class="ampoule-box">
+        <div class="ampoule-card">
+          <h4>🔬 Ampoule Composition</h4>
+          <div class="amp-detail">
+            <strong>Available as:</strong> 200 mg/5 ml (40 mg/ml) or 400 mg/5 ml<br>
+            <strong>Dose-receptor relationship:</strong><br>
+            • Low (1–5 mcg/kg/min): DA₁ receptor → renal/splanchnic vasodilation<br>
+            • Medium (5–10 mcg/kg/min): β₁ → ↑ CO, ↑ HR<br>
+            • High (&gt;10 mcg/kg/min): α₁ → vasoconstriction<br>
+            <strong>Problem:</strong> These "zones" are unreliable — significant overlap exists
+          </div>
+        </div>
+        <div class="ampoule-card">
+          <h4>🧪 Dilution</h4>
+          <div class="amp-detail">
+            <strong>Standard:</strong> 200 mg in 50 ml = <strong>4000 mcg/ml (4 mg/ml)</strong><br>
+            <strong>Or:</strong> 400 mg in 250 ml NS = <strong>1600 mcg/ml</strong><br>
+            <strong>Starting:</strong> 2–5 mcg/kg/min; titrate up to 20 mcg/kg/min<br>
+            <strong>Note:</strong> "Renal-dose dopamine" (1–3 mcg/kg/min) does NOT protect kidneys — DOPAMINE-RCT proved no benefit
+          </div>
+        </div>
+      </div>
+      <div class="warn-box">
+        <div class="kb-label">SOAP II Trial — Why Dopamine is Avoided</div>
+        <p>SOAP II (De Backer et al., NEJM 2010): Dopamine vs Noradrenaline in 1679 patients with shock. Dopamine caused significantly more arrhythmias (24% vs 12%) and higher 28-day mortality in cardiogenic shock subgroup. <strong>SSC 2021: Do NOT use dopamine as first-line vasopressor.</strong> Use only when NE is unavailable.</p>
+      </div>
+    </section>
+
+    <section id="phenylephrine">
+      <h2>Phenylephrine</h2>
+      <div class="ampoule-box">
+        <div class="ampoule-card">
+          <h4>🔬 Ampoule Composition</h4>
+          <div class="amp-detail">
+            <strong>Available as:</strong> 10 mg/ml (various concentrations)<br>
+            <strong>Mechanism:</strong> Pure α₁ agonist — NO β effects whatsoever<br>
+            <strong>Effect:</strong> Pure vasoconstriction → ↑↑ SVR → reflex bradycardia (via baroreceptors) → may reduce CO<br>
+            <strong>Niche use:</strong> Septic shock + tachyarrhythmia where NE worsens rate; post-spinal hypotension
+          </div>
+        </div>
+        <div class="ampoule-card">
+          <h4>🧪 Dilution</h4>
+          <div class="amp-detail">
+            <strong>Bolus (OR/spinal hypotension):</strong> 100 mcg IV bolus (dilute 1 mg in 10 ml = 100 mcg/ml)<br>
+            <strong>Infusion:</strong> 10 mg in 250 ml NS = 40 mcg/ml<br>
+            <strong>Infusion rate:</strong> 0.5–5 mcg/kg/min<br>
+            <strong>Avoid in:</strong> Left ventricular failure (↑ afterload worsens cardiac output)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="algorithm">
+      <h2>Shock Management Algorithm</h2>
+      <div class="key-box">
+        <div class="kb-label">Step-by-Step: Septic Shock (most common — 50% of ICU admissions)</div>
+        <ul>
+          <li><strong>Step 1 — Identify &amp; resuscitate simultaneously:</strong> Blood cultures × 2 → Antibiotics within 1h → Crystalloid 30 ml/kg → Check lactate</li>
+          <li><strong>Step 2 — Start Noradrenaline</strong> if MAP &lt;65 despite 500 ml fluid bolus. Start at 0.1 mcg/kg/min. Titrate by 0.05 mcg/kg/min every 5–10 min to MAP ≥65.</li>
+          <li><strong>Step 3 — If NE &gt;0.25 mcg/kg/min:</strong> Add Vasopressin 0.03 U/min (FIXED). This is catecholamine-sparing — often allows NE dose reduction.</li>
+          <li><strong>Step 4 — If still refractory:</strong> Add Adrenaline 0.1 mcg/kg/min OR Hydrocortisone 200 mg/day (if not started already)</li>
+          <li><strong>Step 5 — Assess cardiac function (POCUS echo):</strong> If EF low + cold extremities + ScvO₂ &lt;65% → Add Dobutamine 5–10 mcg/kg/min</li>
+          <li><strong>Step 6 — Refractory vasoplegia:</strong> Methylene Blue 1–2 mg/kg IV over 20 min (inhibits iNOS → ↑ SVR); Angiotensin II if available</li>
+        </ul>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Type of Shock</th><th>CO</th><th>SVR</th><th>First Drug</th><th>Add-On</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Distributive (Septic)</strong></td><td>↑ or N</td><td>↓↓</td><td>Noradrenaline</td><td>Vasopressin → Adrenaline → Hydrocortisone</td></tr>
+            <tr><td><strong>Cardiogenic</strong></td><td>↓↓</td><td>↑↑</td><td>Noradrenaline + Dobutamine</td><td>Levosimendan; VA-ECMO if refractory</td></tr>
+            <tr><td><strong>Hypovolaemic</strong></td><td>↓</td><td>↑↑</td><td>IV Fluids (1st!)</td><td>NE only as bridge to source control; stop bleeding</td></tr>
+            <tr><td><strong>Anaphylactic</strong></td><td>↑</td><td>↓↓</td><td>Adrenaline 0.5 mg IM IMMEDIATELY</td><td>IV fluids; NE infusion if IM adrenaline insufficient</td></tr>
+            <tr><td><strong>Neurogenic</strong></td><td>N or ↓</td><td>↓↓</td><td>Noradrenaline or Phenylephrine</td><td>Atropine for bradycardia component</td></tr>
+            <tr><td><strong>Obstructive (tension PTX)</strong></td><td>↓</td><td>↑</td><td>Needle decompression IMMEDIATELY</td><td>Fluids; vasopressors as temporary bridge only</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="pearls">
+      <h2>Clinical Pearls</h2>
+      <div class="pearl-grid">
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 1 — Arterial Line First</div>
+          <p>Always insert an arterial line when starting vasopressors. Non-invasive BP is unreliable in shock — cuff readings underestimate MAP by 10–20 mmHg. Wrist (radial) artery is quickest. Allen's test first.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 2 — Peripheral Vasopressors Are OK Short-Term</div>
+          <p>In emergency: start NE peripherally (antecubital fossa or wrist with 18G IV). Acceptable for up to 12h. Check site every 30 min for blanching/swelling. Have phentolamine ready for extravasation.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 3 — Lactate Tells More Than MAP</div>
+          <p>MAP ≥65 mmHg does NOT mean the patient is perfused. Check lactate every 2h. Lactate clearance ≥10% per 2h = adequate resuscitation. Persistent lactate despite MAP = occult hypoperfusion (mesenteric, microcirculatory).</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 4 — Adrenaline Raises Lactate</div>
+          <p>Adrenaline's β₂ receptor activation stimulates hepatic glycogenolysis → raises blood glucose AND lactate. Do NOT use lactate to monitor resuscitation in patients on adrenaline. Use ScvO₂ or Echo instead.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 5 — Vasopressin = Fixed Dose</div>
+          <p>Unlike all other vasopressors, vasopressin is NEVER titrated. Always 0.03 U/min fixed dose. Higher doses cause catastrophic mesenteric and coronary ischaemia. The benefit is catecholamine-sparing, not dose-response.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 6 — Don't Chase Normal MAP in Elderly</div>
+          <p>Elderly hypertensive patients need higher MAP to perfuse autoregulated organs (brain, kidney). Target MAP 70–75 mmHg in known hypertensives — SEPSISPAM trial showed reduced AKI with higher MAP in this group.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 7 — Cold Peripheries = Add Dobutamine</div>
+          <p>Mottled extremities + capillary refill &gt;3s + ScvO₂ &lt;65% despite adequate MAP = cardiac output problem (septic cardiomyopathy in 30–50%). POCUS: check EF. If low → dobutamine 5 mcg/kg/min.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 8 — Methylene Blue Caution</div>
+          <p>NEVER give methylene blue to patients on SSRIs, SNRIs, MAOIs, fentanyl, or tramadol — fatal serotonin syndrome. Also check for G6PD deficiency before use (causes haemolysis).</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common Mistakes</h2>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 1</div>
+        <p><strong>Using actual body weight for vasopressor dose in obese patients.</strong> A 100 kg man at 165 cm has IBW of 67 kg. Using 100 kg will give 50% overdose → tachycardia, arrhythmia, digital ischaemia.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 2</div>
+        <p><strong>Diluting noradrenaline in Ringer's Lactate.</strong> RL is alkaline (pH 6.5–7.5). Catecholamines are oxidised in alkaline solutions — forms brown discolouration = drug degradation = loss of potency. Use 0.9% NaCl or D5W only.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 3</div>
+        <p><strong>Not titrating vasopressors to lactate clearance.</strong> Targeting MAP alone is insufficient. Achieve MAP ≥65 AND lactate clearance ≥10% per 2h. Persistent lactaemia despite MAP = occult hypoperfusion needing further intervention.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 4</div>
+        <p><strong>Adding dobutamine without a vasopressor in hypotensive cardiogenic shock.</strong> Dobutamine drops SVR via β₂ effects → BP falls further. Establish MAP ≥65 with NE first, then add dobutamine for CO support.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 5</div>
+        <p><strong>Titrating vasopressin dose.</strong> Vasopressin is prescribed at 0.03 U/min only — fixed. Increasing dose to "0.05" or "0.06" causes severe mesenteric ischaemia and digital gangrene. It is not a titratable drug.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 6</div>
+        <p><strong>Giving adrenaline IV instead of IM in anaphylaxis.</strong> IM adrenaline (anterolateral thigh) has faster, safer onset than IV in a non-arrested patient. IV adrenaline in a non-arrested patient causes hypertensive crisis and VT/VF.</p>
+      </div>
+    </section>
+
+    <section id="exam">
+      <h2>Exam Pearls (DrNB / PDCC / IFCCM)</h2>
+      <div class="exam-card"><p><strong>Q: First-line vasopressor in septic shock?</strong> → Noradrenaline (SSC 2021, Grade 1B)</p></div>
+      <div class="exam-card"><p><strong>Q: When do you add vasopressin?</strong> → When NE dose exceeds 0.25 mcg/kg/min. Dose = 0.03 U/min (FIXED, never titrated)</p></div>
+      <div class="exam-card"><p><strong>Q: Why not dopamine in septic shock?</strong> → SOAP II trial: more arrhythmias (24% vs 12%), worse mortality in cardiogenic subgroup. SSC 2021: weak recommendation against dopamine.</p></div>
+      <div class="exam-card"><p><strong>Q: MAP target in septic shock?</strong> → 65 mmHg (SEPSISPAM trial: higher target 80–85 only reduced need for RRT in hypertensives, no overall mortality benefit)</p></div>
+      <div class="exam-card"><p><strong>Q: What is "renal dose dopamine"?</strong> → A myth. No RCT shows renal protection. DOPAMINE-RCT proved no benefit. SSC recommends AGAINST low-dose dopamine for renal protection.</p></div>
+      <div class="exam-card"><p><strong>Q: Vasopressor for anaphylaxis?</strong> → IM Adrenaline 0.5 mg (1:1000) into anterolateral thigh. NOT IV unless cardiac arrest. NOT antihistamine first.</p></div>
+      <div class="exam-card"><p><strong>Q: IBW formula for male, 170 cm?</strong> → 170 cm = 67 inches → 50 + 2.3 × (67−60) = 50 + 16.1 = <strong>66.1 kg</strong></p></div>
+      <div class="exam-card"><p><strong>Q: NE infusion rate for 0.1 mcg/kg/min in 60 kg patient using 80 mcg/ml solution?</strong> → (0.1 × 60 × 60) ÷ 80 = 360 ÷ 80 = <strong>4.5 ml/hr</strong></p></div>
+    </section>
+
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Evans L, Rhodes A, Alhazzani W, et al.</strong> Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. <em>Crit Care Med.</em> 2021;49(11):e1063–e1143.</li>
+        <li><strong>De Backer D, Biston P, Devriendt J, et al.</strong> Comparison of Dopamine and Norepinephrine in the Treatment of Shock (SOAP II). <em>N Engl J Med.</em> 2010;362(9):779–789.</li>
+        <li><strong>Russell JA, Walley KR, Singer J, et al.</strong> Vasopressin versus Norepinephrine in Septic Shock (VASST). <em>N Engl J Med.</em> 2008;358(9):877–887.</li>
+        <li><strong>Asfar P, Meziani F, Hamel JF, et al.</strong> High versus Low Blood-Pressure Target in Septic Shock (SEPSISPAM). <em>N Engl J Med.</em> 2014;370(17):1583–1593.</li>
+        <li><strong>Khanna A, English SW, Wang XS, et al.</strong> Angiotensin II for Vasodilatory Shock (ATHOS-3). <em>N Engl J Med.</em> 2017;377(5):419–430.</li>
+        <li><strong>Myatra SN, et al.</strong> Indian Society of Critical Care Medicine Position Statement on Sepsis and Septic Shock. <em>Indian J Crit Care Med.</em> 2020;24(S1):S1–S28.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 4th edition. Chapters 18–21: Circulatory Shock. Lippincott Williams &amp; Wilkins; 2014.</li>
+        <li><strong>Parrillo JE, Dellinger RP (eds).</strong> Critical Care Medicine: Principles of Diagnosis and Management in the Adult, 5th edition. Elsevier; 2019.</li>
+        <li><strong>Hollenberg SM.</strong> Vasoactive Drugs in Circulatory Shock. <em>Am J Respir Crit Care Med.</em> 2011;183(7):847–855.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vasopressors & Inotropes — CritCare.in</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
 </head>
 <body>
-
 <nav class="nav">
   <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
   <ul class="nav-menu" id="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
     <li><a href="topics.html" class="active">ICU Topics</a></li>
-    <li><a href="ai-tool.html">AI Tool</a></li>
-    <li><a href="login.html" class="nav-cta">Login</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
 </nav>
-
 <header class="topic-hero">
   <div class="wrap">
     <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Vasopressors</div>
-    <h1>💊 Vasopressors &amp; Inotropes</h1>
+    <h1>💊 Vasopressors, Inotropes &amp; Shock Management</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">SSC 2021</span>
+      <span class="gbadge esicm">ESICM 2019</span>
+      <span class="gbadge isccm">ISCCM 2020</span>
+    </div>
     <div class="topic-hero-meta">
-      <span class="topic-tag">Shock</span>
-      <span class="topic-tag">Doses</span>
-      <span class="topic-tag">Haemodynamics</span>
-      <span class="topic-updated">Updated Jun 2025</span>
+      <span class="topic-tag">Shock</span><span class="topic-tag">Haemodynamics</span><span class="topic-tag">Drug Doses</span>
+      <span class="topic-updated">Last updated: Jun 2025</span>
     </div>
   </div>
 </header>
-
 <div class="topic-layout">
   <aside class="topic-sidebar">
     <nav class="toc">
@@ -41,131 +38,174 @@
       <ul class="toc-list">
         <li><a href="#shock">Shock Classification</a></li>
         <li><a href="#receptors">Receptor Pharmacology</a></li>
-        <li><a href="#drugs">Drug Reference</a></li>
+        <li><a href="#drugs">Drug Reference Table</a></li>
         <li><a href="#septic">Septic Shock Algorithm</a></li>
         <li><a href="#cardiogenic">Cardiogenic Shock</a></li>
         <li><a href="#anaphylaxis">Anaphylaxis</a></li>
+        <li><a href="#monitoring">Haemodynamic Monitoring</a></li>
         <li><a href="#pearls">Clinical Pearls</a></li>
+        <li><a href="#references">References</a></li>
       </ul>
       <a href="topics.html" class="toc-back">← All topics</a>
     </nav>
   </aside>
-
   <main class="topic-content">
 
     <section id="shock">
       <h2>Shock Classification</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Type</th><th>CO</th><th>SVR</th><th>PCWP</th><th>Examples</th></tr></thead>
+          <thead><tr><th>Type</th><th>CO/CI</th><th>SVR</th><th>PCWP</th><th>ScvO₂</th><th>Common Causes</th></tr></thead>
           <tbody>
-            <tr><td><strong>Distributive</strong></td><td>↑↑</td><td>↓↓</td><td>↓/N</td><td>Sepsis, anaphylaxis, neurogenic, adrenal crisis</td></tr>
-            <tr><td><strong>Cardiogenic</strong></td><td>↓↓</td><td>↑↑</td><td>↑↑</td><td>AMI, cardiomyopathy, myocarditis, severe MR/AS</td></tr>
-            <tr><td><strong>Hypovolaemic</strong></td><td>↓</td><td>↑</td><td>↓↓</td><td>Haemorrhage, GI losses, burns, dehydration</td></tr>
-            <tr><td><strong>Obstructive</strong></td><td>↓</td><td>↑</td><td>↑/↓</td><td>PE, tamponade, tension pneumothorax</td></tr>
+            <tr><td><strong>Distributive</strong></td><td>↑↑</td><td>↓↓</td><td>Normal/↓</td><td>↑ (maldistribution)</td><td>Sepsis, anaphylaxis, neurogenic, adrenal crisis, SIRS</td></tr>
+            <tr><td><strong>Cardiogenic</strong></td><td>↓↓</td><td>↑↑</td><td>↑↑</td><td>↓↓</td><td>STEMI, acute cardiomyopathy, myocarditis, severe valvular disease</td></tr>
+            <tr><td><strong>Hypovolaemic</strong></td><td>↓</td><td>↑↑</td><td>↓↓</td><td>↓</td><td>Haemorrhage, GI losses, burns, third-spacing</td></tr>
+            <tr><td><strong>Obstructive</strong></td><td>↓</td><td>↑</td><td>↑ (tamponade) / ↓ (PE)</td><td>↓</td><td>Massive PE, cardiac tamponade, tension pneumothorax</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Always rule out and treat obstructive and hypovolaemic causes before starting vasopressors. Vasopressors do not replace volume.</p>
+      <div class="warn-box">
+        <div class="kb-label">Always Exclude Obstructive Causes First</div>
+        <p>Tension pneumothorax and cardiac tamponade are immediately reversible if treated early. FAST echo and clinical examination are essential before starting vasopressors in undifferentiated shock.</p>
+      </div>
     </section>
 
     <section id="receptors">
-      <h2>Receptor Pharmacology</h2>
+      <h2>Adrenoreceptor Pharmacology</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Receptor</th><th>Location</th><th>Effect</th></tr></thead>
+          <thead><tr><th>Receptor</th><th>Location</th><th>Effect on Activation</th><th>Haemodynamic Result</th></tr></thead>
           <tbody>
-            <tr><td><strong>α1</strong></td><td>Vascular smooth muscle</td><td>↑SVR, vasoconstriction, ↑MAP</td></tr>
-            <tr><td><strong>β1</strong></td><td>Heart</td><td>↑HR, ↑contractility, ↑CO</td></tr>
-            <tr><td><strong>β2</strong></td><td>Vasculature, bronchi</td><td>Vasodilation, bronchodilation</td></tr>
-            <tr><td><strong>DA1/DA2</strong></td><td>Renal, splanchnic</td><td>Vasodilation at low doses (controversial)</td></tr>
-            <tr><td><strong>V1 (AVP)</strong></td><td>Vascular smooth muscle</td><td>Vasoconstriction (non-catecholamine)</td></tr>
+            <tr><td><strong>α₁</strong></td><td>Vascular smooth muscle, skin, splanchnic</td><td>Vasoconstriction</td><td>↑ SVR, ↑ MAP, ↓ tissue perfusion at high doses</td></tr>
+            <tr><td><strong>β₁</strong></td><td>Heart (SA node, AV node, myocardium)</td><td>↑ Heart rate, ↑ contractility, ↑ conduction</td><td>↑ CO, ↑ HR, ↑ myocardial O₂ demand</td></tr>
+            <tr><td><strong>β₂</strong></td><td>Vascular smooth muscle, bronchi</td><td>Vasodilation, bronchodilation</td><td>↓ SVR, bronchodilation, ↑ CO (mild)</td></tr>
+            <tr><td><strong>DA₁ / DA₂</strong></td><td>Renal, splanchnic, coronary</td><td>Vasodilation (dose-dependent)</td><td>↑ renal/splanchnic blood flow at low doses (controversial)</td></tr>
+            <tr><td><strong>V₁ (AVP)</strong></td><td>Vascular smooth muscle</td><td>Vasoconstriction (non-catecholamine)</td><td>↑ SVR without direct cardiac effect; useful in catecholamine-resistant vasoplegia</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
     <section id="drugs">
-      <h2>Drug Reference</h2>
+      <h2>Drug Reference — Doses &amp; Effects</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Drug</th><th>Dose range</th><th>Receptors</th><th>Primary effect</th><th>Key side effects</th></tr></thead>
+          <thead><tr><th>Drug</th><th>Dose Range</th><th>Main Receptors</th><th>Primary Effect</th><th>Key Side Effects</th><th>Indication</th></tr></thead>
           <tbody>
-            <tr><td><strong>Noradrenaline (NE)</strong></td><td>0.01–3 mcg/kg/min</td><td>α1 +++ β1 +</td><td>↑SVR, moderate ↑HR</td><td>Peripheral ischaemia at high doses, reflex bradycardia</td></tr>
-            <tr><td><strong>Vasopressin</strong></td><td>0.01–0.04 U/min (fixed dose)</td><td>V1 +++</td><td>↑SVR, no direct cardiac effect</td><td>Mesenteric ischaemia, hyponatraemia, skin necrosis</td></tr>
-            <tr><td><strong>Adrenaline (Epinephrine)</strong></td><td>0.01–1 mcg/kg/min</td><td>α1 ++ β1 +++ β2 ++</td><td>↑CO + ↑SVR, ↑HR</td><td>Tachyarrhythmia, raises lactate, splanchnic vasoconstriction</td></tr>
-            <tr><td><strong>Dobutamine</strong></td><td>2.5–20 mcg/kg/min</td><td>β1 +++ β2 ++</td><td>↑CO, ↓SVR (inotropy)</td><td>Tachyarrhythmia, hypotension, not for isolated vasoplegia</td></tr>
-            <tr><td><strong>Dopamine</strong></td><td>Low: 1–5 | Mid: 5–10 | High: &gt;10 mcg/kg/min</td><td>DA, β1, α1 (dose-dep)</td><td>Dose-dependent (inotropy → vasopressor)</td><td>Tachyarrhythmia (worse than NE) — avoid if possible</td></tr>
-            <tr><td><strong>Phenylephrine</strong></td><td>0.5–5 mcg/kg/min</td><td>α1 ++++</td><td>Pure vasoconstriction, ↓HR (reflex)</td><td>Reflex bradycardia, use in high-CO/tachycardic states</td></tr>
-            <tr><td><strong>Methylene blue</strong></td><td>1–2 mg/kg over 20–60 min</td><td>NO synthase inhibitor</td><td>↑SVR in vasoplegia</td><td>Haemolysis in G6PD, serotonin syndrome (do not use with serotoninergic drugs)</td></tr>
-            <tr><td><strong>Levosimendan</strong></td><td>0.05–0.2 mcg/kg/min (no loading in ICU)</td><td>Ca-sensitiser + KATP opener</td><td>↑contractility without ↑O2 demand, vasodilation</td><td>Hypotension, tachycardia; not licensed everywhere</td></tr>
+            <tr><td><strong>Noradrenaline (NE)</strong></td><td>0.01–3 mcg/kg/min</td><td>α₁+++ β₁+</td><td>↑↑ SVR, mild ↑ HR</td><td>Peripheral ischaemia (high doses), reflex bradycardia</td><td>First-line: septic/distributive shock</td></tr>
+            <tr><td><strong>Vasopressin</strong></td><td>0.01–0.04 U/min (fixed)</td><td>V₁+++</td><td>↑↑ SVR, no cardiac effect</td><td>Mesenteric ischaemia, hyponatraemia, skin necrosis</td><td>Add-on to NE in refractory septic shock; catecholamine-sparing</td></tr>
+            <tr><td><strong>Adrenaline (Epinephrine)</strong></td><td>0.01–1 mcg/kg/min</td><td>α₁++ β₁+++ β₂++</td><td>↑↑ CO + ↑ SVR</td><td>Tachyarrhythmia, ↑ lactate (β₂ mediated), splanchnic vasoconstriction</td><td>Anaphylaxis (IM/IV); refractory cardiogenic/septic shock</td></tr>
+            <tr><td><strong>Dobutamine</strong></td><td>2.5–20 mcg/kg/min</td><td>β₁+++ β₂++</td><td>↑↑ CO, ↓ SVR (inotropy)</td><td>Tachyarrhythmia, hypotension, NOT for isolated vasoplegia</td><td>Cardiogenic shock; septic cardiomyopathy (low CO, ↑ PCWP)</td></tr>
+            <tr><td><strong>Phenylephrine</strong></td><td>0.5–5 mcg/kg/min</td><td>α₁++++</td><td>↑↑↑ SVR, reflex bradycardia (no ↑ HR)</td><td>Reflex bradycardia, ↓ CO if ventricular dysfunction</td><td>Distributive shock with tachycardia; avoid in cardiogenic</td></tr>
+            <tr><td><strong>Dopamine</strong></td><td>1–20 mcg/kg/min</td><td>DA, β₁, α₁ (dose-dependent)</td><td>Dose-dependent (inotropy at 5–10; pressor at &gt;10)</td><td>Tachyarrhythmia more than NE; arrhythmias common</td><td>NOT recommended as first-line (SOAP II trial)</td></tr>
+            <tr><td><strong>Levosimendan</strong></td><td>0.05–0.2 mcg/kg/min (no loading in ICU)</td><td>Ca²⁺ sensitiser + K_ATP opener</td><td>↑ contractility WITHOUT ↑ O₂ demand; vasodilation</td><td>Hypotension, tachycardia; long half-life (active metabolite 80h)</td><td>Acute decompensated HF; post-cardiac surgery LV failure</td></tr>
+            <tr><td><strong>Methylene Blue</strong></td><td>1–2 mg/kg IV over 20–60 min; repeat at 1 mg/kg</td><td>Inhibits NO synthase &amp; guanylate cyclase</td><td>↑ SVR in vasoplegic syndrome</td><td>Haemolysis in G6PD deficiency; serotonin syndrome (with serotoninergic drugs)</td><td>Refractory vasoplegic shock (post-cardiac surgery, anaphylaxis, sepsis)</td></tr>
+            <tr><td><strong>Angiotensin II</strong></td><td>20–200 ng/kg/min</td><td>AT₁ receptor</td><td>↑ SVR via AT₁ receptor; catecholamine-sparing</td><td>Thromboembolism; ventricular hypertrophy</td><td>Catecholamine-resistant vasodilatory shock (ATHOS-3 trial)</td></tr>
           </tbody>
         </table>
-      </div>
-      <div class="warn-box">
-        <div class="kb-label">Avoid Dopamine</div>
-        <p>SOAP II trial (2010): Dopamine vs noradrenaline in shock — dopamine caused significantly more arrhythmias and higher mortality in cardiogenic shock. Use noradrenaline as the first-line vasopressor.</p>
       </div>
     </section>
 
     <section id="septic">
-      <h2>Septic Shock Algorithm</h2>
+      <h2>Septic Shock — Vasopressor Algorithm</h2>
       <div class="key-box">
-        <div class="kb-label">Step-up vasopressor approach</div>
+        <div class="kb-label">Step-up approach — SSC 2021 / ISCCM 2020</div>
         <ul>
-          <li><strong>Step 1:</strong> Noradrenaline — titrate to MAP ≥ 65 mmHg</li>
-          <li><strong>Step 2:</strong> NE dose &gt; 0.25 mcg/kg/min → add Vasopressin 0.03 U/min (fixed) — spares NE, reduces arrhythmia</li>
-          <li><strong>Step 3:</strong> Still refractory → add Adrenaline (replace or add to NE) OR consider Hydrocortisone 200mg/day</li>
-          <li><strong>Step 4:</strong> Evidence of low CO (cold extremities, elevated lactate, ScvO2 &lt;65%) → add Dobutamine 5–10 mcg/kg/min</li>
-          <li><strong>Step 5 (rescue):</strong> Consider Methylene blue 1–2 mg/kg, Angiotensin II, or ECMO</li>
+          <li><strong>Step 1:</strong> <strong>Noradrenaline</strong> — first-line; titrate to MAP ≥65 mmHg (Strong recommendation, 1B)</li>
+          <li><strong>Step 2:</strong> NE dose &gt;0.25 mcg/kg/min → add <strong>Vasopressin 0.03 U/min</strong> (fixed rate); reduces NE requirement and may reduce arrhythmias</li>
+          <li><strong>Step 3:</strong> Still refractory → add <strong>Adrenaline</strong> (0.1–0.5 mcg/kg/min) OR consider <strong>Hydrocortisone 200 mg/day</strong></li>
+          <li><strong>Step 4:</strong> Evidence of low CO (cold peripheries, ScvO₂ &lt;65%, elevated lactate despite adequate MAP) → add <strong>Dobutamine 5–10 mcg/kg/min</strong></li>
+          <li><strong>Step 5 (Rescue):</strong> Consider <strong>Methylene Blue 1–2 mg/kg</strong> or <strong>Angiotensin II</strong> for catecholamine-refractory vasoplegia</li>
         </ul>
       </div>
-      <p>Target MAP 65–70 mmHg in most patients. Higher MAP (80–85) only for patients with pre-existing hypertension and early AKI who don't tolerate lower MAP (SEPSISPAM trial).</p>
+      <p><strong>MAP target: 65–70 mmHg</strong> for most patients. Target MAP 80–85 mmHg only in hypertensives with early AKI (SEPSISPAM trial) — no overall mortality benefit but reduced RRT requirement.</p>
     </section>
 
     <section id="cardiogenic">
       <h2>Cardiogenic Shock</h2>
-      <p>Cardiogenic shock: CO ↓, SVR ↑, PCWP ↑. Primary goal is to improve CO and tissue perfusion.</p>
-      <h3>Drug choices</h3>
+      <p>Cardiogenic shock: ↓CO, ↑SVR, ↑PCWP, ↓ScvO₂. Primary goal is to restore CO and coronary perfusion.</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Scenario</th><th>First Choice</th><th>Second Choice</th><th>Avoid</th></tr></thead>
+          <tbody>
+            <tr><td>Pure LV failure + hypotension</td><td>Noradrenaline (maintain MAP) + Dobutamine (↑CO)</td><td>Levosimendan if on beta-blockers</td><td>Phenylephrine alone (↑afterload)</td></tr>
+            <tr><td>RV failure (massive PE, PHT)</td><td>Vasopressin (systemic pressor without ↑PVR) + inhaled NO/prostacyclin</td><td>Noradrenaline (cautious)</td><td>Dobutamine alone (↓SVR → hypotension)</td></tr>
+            <tr><td>Cardiogenic + distributive</td><td>Noradrenaline + Dobutamine</td><td>Adrenaline (combined vasopressor + inotrope)</td><td>Dopamine (more arrhythmias)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Mechanical Circulatory Support</h3>
       <ul>
-        <li><strong>Dobutamine 5–10 mcg/kg/min</strong> — first line inotrope, ↑CO, ↓SVR</li>
-        <li>If hypotensive + low CO: <strong>Noradrenaline + Dobutamine</strong> combination</li>
-        <li><strong>Levosimendan</strong> — where available; particularly useful in post-AMI and decompensated HF; does not raise O2 demand</li>
-        <li>Avoid pure vasopressors (phenylephrine, vasopressin) alone — worsen afterload</li>
+        <li><strong>IABP (Intra-aortic Balloon Pump):</strong> IABP-SHOCK II (2012) — no survival benefit in cardiogenic shock complicating MI. Still widely used for haemodynamic support pre-PCI.</li>
+        <li><strong>Impella:</strong> Provides up to 3.5–5.5 L/min support; superior haemodynamic support to IABP. Benefit on mortality inconclusive.</li>
+        <li><strong>VA-ECMO:</strong> For refractory cardiogenic shock — provides full cardiopulmonary support. Refer early to ECMO-capable centre.</li>
       </ul>
-      <h3>Mechanical support</h3>
-      <p>IABP (intra-aortic balloon pump) — no survival benefit (IABP-SHOCK II trial) but widely used. Impella/VA-ECMO — for severe refractory cardiogenic shock. Early transfer to ECMO centre if available.</p>
     </section>
 
     <section id="anaphylaxis">
       <h2>Anaphylaxis</h2>
       <div class="key-box">
-        <div class="kb-label">Adrenaline is the only first-line drug</div>
+        <div class="kb-label">Adrenaline — the Only First-Line Drug in Anaphylaxis</div>
         <ul>
-          <li><strong>Adrenaline 0.5 mg IM (1:1000)</strong> into anterolateral thigh — give immediately</li>
-          <li>If no response in 5–15 min → repeat IM adrenaline</li>
-          <li>IV adrenaline only in ICU with cardiac monitoring: 50–100 mcg boluses or 0.05–0.5 mcg/kg/min infusion</li>
-          <li>Adjuncts (secondary): Hydrocortisone 200mg IV, Chlorpheniramine 10mg IV, Salbutamol for bronchospasm</li>
-          <li>Position supine with legs elevated; IV fluids 1–2L rapidly</li>
+          <li><strong>Adrenaline 0.5 mg IM</strong> (1:1000 = 1 mg/ml) into anterolateral thigh — give IMMEDIATELY</li>
+          <li>Repeat every 5–15 min if no response (no ceiling)</li>
+          <li>IV adrenaline ONLY in ICU with monitoring: 50–100 mcg boluses IV or 0.05–0.5 mcg/kg/min infusion</li>
+          <li><strong>Adjuncts (secondary — after adrenaline):</strong></li>
+          <li>Hydrocortisone 200 mg IV (reduces biphasic reactions)</li>
+          <li>Chlorpheniramine 10 mg IV slow (antihistamine)</li>
+          <li>Salbutamol nebuliser 5 mg for bronchospasm</li>
+          <li>IV Fluids 1–2L crystalloid rapidly</li>
+          <li>Position: supine + legs elevated (unless respiratory distress)</li>
         </ul>
+      </div>
+      <p>Observe for minimum 6h after adrenaline for biphasic anaphylaxis. Discharge with adrenaline auto-injector (EpiPen) prescription and allergy referral.</p>
+    </section>
+
+    <section id="monitoring">
+      <h2>Haemodynamic Monitoring in Shock</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Tool</th><th>What it Measures</th><th>When to Use</th><th>Limitations</th></tr></thead>
+          <tbody>
+            <tr><td>Arterial Line</td><td>Beat-to-beat MAP, PPV, waveform</td><td>All vasopressor-requiring patients</td><td>Damping; need regular zeroing</td></tr>
+            <tr><td>Central Venous Catheter</td><td>CVP (unreliable), drug delivery, ScvO₂</td><td>Vasopressor delivery, ScvO₂ monitoring</td><td>CVP unreliable for preload assessment</td></tr>
+            <tr><td>Point-of-care Echo (POCUS)</td><td>Cardiac function, volume status, IVC, pericardial effusion</td><td>Undifferentiated shock, all ICU patients</td><td>Operator-dependent</td></tr>
+            <tr><td>PiCCO / LIDCO</td><td>Cardiac output, SVR, EVLWI, GEDVI</td><td>Complex haemodynamic instability, mixed shock</td><td>Invasive, calibration required</td></tr>
+            <tr><td>Pulmonary Artery Catheter (PAC)</td><td>PCWP, PA pressures, CO, SvO₂</td><td>Refractory mixed shock, severe PHT</td><td>Invasive; no mortality benefit (PACMAN trial)</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
     <section id="pearls">
       <h2>Clinical Pearls</h2>
       <ul>
-        <li>Always use an arterial line when titrating vasopressors — NIBP unreliable in shock states</li>
-        <li>Central line preferred for sustained vasopressor infusions; peripheral acceptable for short periods with frequent site checks</li>
-        <li>Lactate is the best marker of tissue perfusion — target clearance, not just MAP</li>
-        <li>ScvO2 &lt; 65% suggests mixed problem (low CO component) — consider dobutamine</li>
-        <li>Noradrenaline infusions: 4–8 mg in 50ml (80–160 mcg/ml); adjust concentration to clinical situation</li>
-        <li>Monitor for peripheral ischaemia (digits, nose) at high doses of vasoconstrictors</li>
+        <li><strong>Arterial line is mandatory</strong> once vasopressors are started — NIBP is unreliable in shock</li>
+        <li><strong>Lactate, not MAP</strong> is the best marker of tissue perfusion — target lactate clearance</li>
+        <li><strong>ScvO₂ &lt;65%</strong> suggests mixed problem (inadequate CO) — add dobutamine or inotrope</li>
+        <li><strong>Peripheral vasopressors:</strong> Acceptable for 6–12h in emergency situations (use antecubital or wrist with 2-cm catheter); inspect site every 30 min for extravasation; noradrenaline 4–8 mg in 50 ml (concentration 80–160 mcg/ml)</li>
+        <li><strong>Vasopressor weaning:</strong> Wean noradrenaline last; taper gradually (10–20% per hour)</li>
+        <li><strong>Monitor peripheries:</strong> Mottling score, cap refill, extremity temperature at high vasopressor doses</li>
+        <li><strong>Serotonin syndrome + Methylene Blue:</strong> Never give methylene blue to patients on SSRIs, SNRIs, MAOIs, fentanyl, tramadol — risk of fatal serotonin syndrome</li>
       </ul>
+    </section>
+
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>De Backer D, Biston P, Devriendt J, et al.</strong> Comparison of Dopamine and Norepinephrine in the Treatment of Shock (SOAP II). <em>N Engl J Med.</em> 2010;362(9):779–789.</li>
+        <li><strong>Russell JA, Walley KR, Singer J, et al.</strong> Vasopressin versus Norepinephrine Infusion in Patients with Septic Shock (VASST). <em>N Engl J Med.</em> 2008;358(9):877–887.</li>
+        <li><strong>Asfar P, Meziani F, Hamel JF, et al.</strong> High versus Low Blood-Pressure Target in Patients with Septic Shock (SEPSISPAM). <em>N Engl J Med.</em> 2014;370(17):1583–1593.</li>
+        <li><strong>Khanna A, English SW, Wang XS, et al.</strong> Angiotensin II for the Treatment of Vasodilatory Shock (ATHOS-3). <em>N Engl J Med.</em> 2017;377(5):419–430.</li>
+        <li><strong>Thiele H, Zeymer U, Neumann FJ, et al.</strong> Intraaortic Balloon Support for Myocardial Infarction with Cardiogenic Shock (IABP-SHOCK II). <em>N Engl J Med.</em> 2012;367(14):1287–1296.</li>
+        <li><strong>Evans L, Rhodes A, Alhazzani W, et al.</strong> Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. <em>Crit Care Med.</em> 2021;49(11):e1063–e1143.</li>
+        <li><strong>Hollenberg SM.</strong> Vasoactive Drugs in Circulatory Shock. <em>Am J Respir Crit Care Med.</em> 2011;183(7):847–855.</li>
+        <li><strong>Panchal AR, Bartos JA, Cabañas JG, et al.</strong> Part 3: Adult Basic and Advanced Life Support: 2020 American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. <em>Circulation.</em> 2020;142(16_suppl_2):S366–S468.</li>
+      </ol>
     </section>
 
   </main>
 </div>
-
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-brand">Crit<span>Care</span>.in</span>

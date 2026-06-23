@@ -8,12 +8,10 @@
   <link rel="stylesheet" href="shared.css" />
 </head>
 <body>
-
 <nav class="nav">
   <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
   <ul class="nav-menu" id="menu">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
     <li><a href="topics.html" class="active">ICU Topics</a></li>
     <li><a href="ai-tool.html">AI Tool</a></li>
     <li><a href="login.html" class="nav-cta">Login</a></li>
@@ -23,13 +21,18 @@
 
 <header class="topic-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Sepsis</div>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Sepsis & Septic Shock</div>
     <h1>🦠 Sepsis &amp; Septic Shock</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">SSC 2021</span>
+      <span class="gbadge isccm">ISCCM 2020</span>
+      <span class="gbadge esicm">ESICM 2021</span>
+    </div>
     <div class="topic-hero-meta">
+      <span class="topic-tag red">Emergency</span>
       <span class="topic-tag">Haemodynamics</span>
       <span class="topic-tag">Antibiotics</span>
-      <span class="topic-tag red">Emergency</span>
-      <span class="topic-updated">Updated Jun 2025 · SSC 2024 guidelines</span>
+      <span class="topic-updated">Last updated: Jun 2025 · Based on SSC 2021 &amp; ISCCM 2020</span>
     </div>
   </div>
 </header>
@@ -39,15 +42,18 @@
     <nav class="toc">
       <div class="toc-title">On this page</div>
       <ul class="toc-list">
-        <li><a href="#definitions">Definitions</a></li>
+        <li><a href="#definitions">Definitions (Sepsis-3)</a></li>
         <li><a href="#pathophysiology">Pathophysiology</a></li>
         <li><a href="#diagnosis">Diagnosis & Scoring</a></li>
         <li><a href="#bundle">Hour-1 Bundle</a></li>
-        <li><a href="#haemodynamics">Haemodynamics</a></li>
+        <li><a href="#fluids">Fluid Resuscitation</a></li>
+        <li><a href="#vasopressors">Vasopressors</a></li>
         <li><a href="#antibiotics">Antibiotics</a></li>
-        <li><a href="#adjuncts">Adjunctive Therapy</a></li>
+        <li><a href="#adjuncts">Adjunctive Therapies</a></li>
         <li><a href="#monitoring">Monitoring & Targets</a></li>
+        <li><a href="#india">Indian Context</a></li>
         <li><a href="#trials">Key Trials</a></li>
+        <li><a href="#references">References</a></li>
       </ul>
       <a href="topics.html" class="toc-back">← All topics</a>
     </nav>
@@ -56,163 +62,261 @@
   <main class="topic-content">
 
     <section id="definitions">
-      <h2>Definitions (Sepsis-3, 2016)</h2>
-      <p><strong>Sepsis</strong> is life-threatening organ dysfunction caused by a dysregulated host response to infection. It is identified by an acute change in total SOFA score ≥ 2 points attributable to infection.</p>
-      <p><strong>Septic shock</strong> is a subset of sepsis with circulatory and cellular/metabolic dysfunction — defined as vasopressor requirement to maintain MAP ≥ 65 mmHg AND serum lactate > 2 mmol/L despite adequate fluid resuscitation. Hospital mortality exceeds 40%.</p>
-      <div class="key-box">
-        <div class="kb-label">Key Point — Sepsis-3 replaced SIRS</div>
-        <p>The 2016 Sepsis-3 consensus abandoned the SIRS-based definitions. SIRS is nonspecific. Organ dysfunction (SOFA ≥2) is now the hallmark. qSOFA (RR ≥22, altered mentation, SBP ≤100) is a bedside screening tool, not a diagnostic criterion.</p>
+      <h2>Definitions — Sepsis-3 (2016)</h2>
+      <p><strong>Sepsis</strong> is defined as life-threatening organ dysfunction caused by a dysregulated host response to infection. It is operationalised as an acute change in SOFA score ≥ 2 points attributable to infection, associated with a hospital mortality >10%.</p>
+      <p><strong>Septic Shock</strong> is a subset of sepsis in which underlying circulatory, cellular and metabolic abnormalities are profound enough to substantially increase mortality. Clinical criteria: vasopressor requirement to maintain MAP ≥ 65 mmHg AND serum lactate > 2 mmol/L despite adequate fluid resuscitation. Hospital mortality exceeds 40%.</p>
+      <div class="warn-box">
+        <div class="kb-label">SIRS-based definitions are obsolete</div>
+        <p>The Sepsis-3 consensus (2016) replaced SIRS-based definitions. SIRS criteria are non-specific and not validated for organ dysfunction. The SOFA score is now the standard for identifying sepsis-related organ dysfunction.</p>
       </div>
     </section>
 
     <section id="pathophysiology">
       <h2>Pathophysiology</h2>
-      <h3>Dysregulated immune response</h3>
-      <p>Pathogen-associated molecular patterns (PAMPs) and damage-associated molecular patterns (DAMPs) activate pattern-recognition receptors (TLRs, NLRs), triggering cytokine storm — TNF-α, IL-1β, IL-6. This leads to systemic endothelial activation, coagulopathy, and microvascular dysfunction.</p>
-      <h3>Haemodynamic pattern</h3>
+      <h3>Dysregulated Immune Response</h3>
+      <p>Pathogen-associated molecular patterns (PAMPs) and damage-associated molecular patterns (DAMPs) activate pattern-recognition receptors (Toll-like receptors, NOD-like receptors), triggering a cytokine storm — TNF-α, IL-1β, IL-6, IL-8. This leads to:</p>
       <ul>
-        <li><strong>Early (warm shock):</strong> High CO, low SVR, warm peripheries, bounding pulse, distributive physiology</li>
-        <li><strong>Late (cold shock):</strong> Myocardial depression, fall in CO, peripheral vasoconstriction</li>
-        <li>Microcirculatory failure leads to cellular hypoxia despite normal/high macrocirculatory flow</li>
+        <li>Systemic endothelial activation and increased vascular permeability</li>
+        <li>Dysregulated coagulation (DIC in severe cases)</li>
+        <li>Mitochondrial dysfunction — cytopathic hypoxia</li>
+        <li>Microcirculatory failure despite adequate macrocirculatory flow</li>
       </ul>
-      <h3>Organ dysfunction cascade</h3>
-      <p>Renal: afferent arteriolar vasodilation → reduced GFR. Lungs: ARDS in ~40% of septic shock. Liver: cholestasis, coagulopathy. Brain: septic encephalopathy. Adrenal: relative adrenal insufficiency in refractory shock.</p>
+      <h3>Haemodynamic Phases</h3>
+      <ul>
+        <li><strong>Hyperdynamic (warm shock):</strong> High cardiac output, low SVR, warm extremities, bounding pulse — classic early distributive physiology</li>
+        <li><strong>Hypodynamic (cold shock):</strong> Sepsis-induced cardiomyopathy (30–50%), decreased CO, peripheral vasoconstriction — late or severe disease</li>
+      </ul>
+      <h3>Organ Dysfunction Cascade</h3>
+      <p>The SOFA score captures dysfunction across 6 organ systems. Renal: afferent arteriolar vasodilation reduces GFR. Pulmonary: ARDS develops in ~40%. Hepatic: cholestasis, coagulopathy. Neurological: septic encephalopathy via microglial activation. Adrenal: relative adrenal insufficiency (CIRCI) in refractory shock.</p>
     </section>
 
     <section id="diagnosis">
       <h2>Diagnosis & Scoring</h2>
-      <h3>SOFA Score (organ dysfunction)</h3>
+      <h3>Sequential Organ Failure Assessment (SOFA) Score</h3>
       <div class="table-wrap">
         <table class="drug-table">
           <thead><tr><th>System</th><th>Variable</th><th>Score 1</th><th>Score 2</th><th>Score 3</th><th>Score 4</th></tr></thead>
           <tbody>
-            <tr><td><strong>Respiratory</strong></td><td>PaO2/FiO2</td><td>&lt;400</td><td>&lt;300</td><td>&lt;200 + vent</td><td>&lt;100 + vent</td></tr>
-            <tr><td><strong>Coagulation</strong></td><td>Platelets ×10³</td><td>&lt;150</td><td>&lt;100</td><td>&lt;50</td><td>&lt;20</td></tr>
-            <tr><td><strong>Liver</strong></td><td>Bilirubin mg/dL</td><td>1.2–1.9</td><td>2.0–5.9</td><td>6.0–11.9</td><td>≥12</td></tr>
-            <tr><td><strong>CVS</strong></td><td>MAP / vasopressors</td><td>MAP&lt;70</td><td>DA≤5 / Dob</td><td>DA&gt;5 / NE≤0.1</td><td>NE&gt;0.1</td></tr>
+            <tr><td><strong>Respiratory</strong></td><td>PaO₂/FiO₂ (mmHg)</td><td>&lt;400</td><td>&lt;300</td><td>&lt;200 + vent</td><td>&lt;100 + vent</td></tr>
+            <tr><td><strong>Coagulation</strong></td><td>Platelets (×10³/µL)</td><td>&lt;150</td><td>&lt;100</td><td>&lt;50</td><td>&lt;20</td></tr>
+            <tr><td><strong>Liver</strong></td><td>Bilirubin (mg/dL)</td><td>1.2–1.9</td><td>2.0–5.9</td><td>6.0–11.9</td><td>≥12</td></tr>
+            <tr><td><strong>Cardiovascular</strong></td><td>MAP / vasopressors</td><td>MAP &lt;70</td><td>DA ≤5 or Dob</td><td>DA &gt;5 or NE ≤0.1</td><td>NE &gt;0.1 mcg/kg/min</td></tr>
             <tr><td><strong>CNS</strong></td><td>GCS</td><td>13–14</td><td>10–12</td><td>6–9</td><td>&lt;6</td></tr>
-            <tr><td><strong>Renal</strong></td><td>Creatinine / UO</td><td>1.2–1.9</td><td>2.0–3.4</td><td>3.5–4.9 / &lt;500ml/d</td><td>≥5 / &lt;200ml/d</td></tr>
+            <tr><td><strong>Renal</strong></td><td>Creatinine (mg/dL) / UO</td><td>1.2–1.9</td><td>2.0–3.4</td><td>3.5–4.9 / &lt;500ml/d</td><td>≥5.0 / &lt;200ml/d</td></tr>
           </tbody>
         </table>
       </div>
-      <p>A SOFA score ≥ 2 from baseline in a patient with suspected infection = Sepsis.</p>
-      <h3>qSOFA (quick bedside screen)</h3>
-      <p>Score 1 point each for: <strong>RR ≥ 22</strong>, <strong>altered mentation</strong> (GCS &lt;15), <strong>SBP ≤ 100</strong>. qSOFA ≥ 2 → suspect sepsis, reassess with full SOFA. Not for diagnosis, useful for triage.</p>
+      <p><strong>Sepsis = SOFA ≥ 2</strong> from baseline in a patient with suspected/confirmed infection.</p>
+      <h3>Quick SOFA (qSOFA) — Bedside Screening Only</h3>
+      <p>Score 1 point each for: <strong>RR ≥ 22/min</strong>, <strong>Altered mentation</strong> (GCS &lt;15), <strong>SBP ≤ 100 mmHg</strong>. qSOFA ≥ 2 → suspect sepsis, confirm with full SOFA. Not a diagnostic criterion — a triage tool.</p>
+      <h3>Lactate</h3>
+      <p>Serum lactate ≥ 2 mmol/L indicates cellular hypoperfusion. Lactate > 4 mmol/L = high-risk population regardless of blood pressure. Serial lactate measurement guides resuscitation — target clearance ≥ 10% per 2 hours (SSC 2021, strong recommendation).</p>
     </section>
 
     <section id="bundle">
-      <h2>Hour-1 Bundle (SSC 2024)</h2>
+      <h2>Hour-1 Bundle (SSC 2021)</h2>
       <div class="key-box">
-        <div class="kb-label">Do all 5 within 1 hour of recognising sepsis</div>
+        <div class="kb-label">Complete all 5 within 1 hour of sepsis recognition</div>
         <ul>
-          <li><strong>1. Measure lactate</strong> — re-measure at 2h if initial lactate ≥ 2 mmol/L</li>
-          <li><strong>2. Blood cultures</strong> — at least 2 sets before antibiotics (do not delay antibiotics)</li>
-          <li><strong>3. Broad-spectrum antibiotics</strong> — within 1 hour for septic shock; within 3h for sepsis without shock</li>
-          <li><strong>4. 30 ml/kg crystalloid IV</strong> — if hypotensive (SBP&lt;90 or MAP&lt;65) or lactate ≥ 4 mmol/L</li>
-          <li><strong>5. Vasopressors</strong> — if MAP remains &lt; 65 mmHg during or after fluid resuscitation</li>
+          <li><strong>1. Measure lactate</strong> — re-measure if initial > 2 mmol/L to assess clearance</li>
+          <li><strong>2. Blood cultures</strong> — minimum 2 sets (aerobic + anaerobic) before antibiotics; do NOT delay antibiotics</li>
+          <li><strong>3. Broad-spectrum antibiotics</strong> — within 1 hour for septic shock; within 3 hours for sepsis without shock</li>
+          <li><strong>4. Crystalloid 30 ml/kg IV</strong> — if hypotensive (SBP &lt;90 or MAP &lt;65) or lactate ≥ 4 mmol/L</li>
+          <li><strong>5. Vasopressors</strong> — if MAP &lt; 65 mmHg during or after fluid resuscitation; target MAP ≥ 65 mmHg</li>
         </ul>
       </div>
-      <div class="warn-box">
-        <div class="kb-label">Fluid caution in India</div>
-        <p>The 30ml/kg fluid bolus is for resource-rich settings. In patients with AKI, heart failure, or resource-limited ICUs, reassess fluid responsiveness with dynamic parameters (PLR, PPV, IVC collapse) before each 250–500ml bolus. Avoid indiscriminate fluid loading.</p>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 ISCCM 2020 — Indian Context</div>
+        <p>The ISCCM Sepsis Guidelines 2020 endorse the SSC bundle with these modifications for resource-limited settings:</p>
+        <ul>
+          <li>Blood cultures before antibiotics — if unavailable, do not delay antibiotics</li>
+          <li>Procalcitonin guidance for de-escalation where available</li>
+          <li>Generic antibiotics acceptable when branded unavailable</li>
+          <li>Peripheral vasopressors acceptable for 6–12 hours while central access is secured</li>
+        </ul>
       </div>
     </section>
 
-    <section id="haemodynamics">
-      <h2>Haemodynamic Management</h2>
-      <h3>Fluid resuscitation targets</h3>
+    <section id="fluids">
+      <h2>Fluid Resuscitation</h2>
+      <h3>Initial Resuscitation</h3>
+      <p>Give 30 ml/kg IV crystalloid within first 3 hours. Reassess after each bolus with dynamic parameters. <strong>Do not continue fluid blindly</strong> — reassess with PLR, PPV, or IVC collapsibility after initial bolus.</p>
+      <h3>Fluid Choice</h3>
       <ul>
-        <li>MAP ≥ 65 mmHg (target 65–70 in most; higher 80–85 only in known hypertension with AKI — SEPSISPAM trial)</li>
-        <li>Lactate clearance ≥ 10% per 2 hours</li>
-        <li>UO > 0.5 ml/kg/hr</li>
-        <li>Use dynamic fluid responsiveness parameters — passive leg raise (PLR), PPV, IVC collapsibility</li>
+        <li><strong>Balanced crystalloids</strong> (Ringer's Lactate, PlasmaLyte) — preferred over 0.9% NaCl to reduce hyperchloraemic acidosis and AKI risk (SMART trial, SALT-ED trial)</li>
+        <li><strong>0.9% Normal saline</strong> — acceptable if balanced crystalloids unavailable</li>
+        <li><strong>Albumin</strong> — consider in patients requiring large volumes of crystalloid; may reduce noradrenaline requirements (SAFE trial). SSC 2021: weak recommendation.</li>
+        <li><strong>Hydroxyethyl starches (HES)</strong> — CONTRAINDICATED in sepsis. Associated with increased AKI and mortality (6S trial, CHEST trial)</li>
+        <li><strong>Gelatin</strong> — insufficient evidence; use with caution</li>
       </ul>
-      <h3>Vasopressor algorithm</h3>
+      <div class="warn-box">
+        <div class="kb-label">Fluid Stewardship — Avoid Fluid Overload</div>
+        <p>Fluid overload (>10% body weight gain) independently worsens outcome. After initial resuscitation, use dynamic parameters to guide further fluid administration. Target neutral to negative fluid balance from 24–48 hours. Judicious diuresis to avoid cumulative positive balance.</p>
+      </div>
+      <h3>Dynamic Fluid Responsiveness Measures</h3>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Step</th><th>Drug</th><th>Dose</th><th>Rationale</th></tr></thead>
+          <thead><tr><th>Test</th><th>Method</th><th>Threshold</th><th>Notes</th></tr></thead>
           <tbody>
-            <tr><td><strong>First line</strong></td><td>Noradrenaline</td><td>0.01–3 mcg/kg/min</td><td>Predominant alpha, ↑SVR, preferred in distributive shock</td></tr>
-            <tr><td><strong>Second line</strong></td><td>Vasopressin</td><td>0.03 U/min (fixed)</td><td>Add when NE &gt;0.25 mcg/kg/min; may spare NE dose</td></tr>
-            <tr><td><strong>Refractory</strong></td><td>Adrenaline</td><td>0.01–1 mcg/kg/min</td><td>Add or replace NE; higher arrhythmia risk, raises lactate</td></tr>
-            <tr><td><strong>Low CO</strong></td><td>Dobutamine</td><td>2.5–20 mcg/kg/min</td><td>Add if evidence of cardiac dysfunction (low CO, elevated filling pressures)</td></tr>
+            <tr><td><strong>Passive Leg Raise (PLR)</strong></td><td>Raise legs 45° from supine; measure CO change</td><td>CO ↑ ≥ 10%</td><td>Best validated; works even in AF, spontaneous breathing</td></tr>
+            <tr><td><strong>Pulse Pressure Variation (PPV)</strong></td><td>Arterial line; measure PP variation over respiratory cycle</td><td>PPV ≥ 13%</td><td>Only valid in sinus rhythm, controlled ventilation, Vt ≥ 8ml/kg</td></tr>
+            <tr><td><strong>IVC Collapsibility</strong></td><td>USS: IVC diameter variation with respiration</td><td>&gt;50% (spontaneous), &lt;18% (ventilated = fluid unresponsive)</td><td>Operator-dependent; widely available</td></tr>
           </tbody>
         </table>
       </div>
-      <p>Central line preferred for vasopressors; peripheral line acceptable for short periods (&lt;6–12h) in resource-limited settings.</p>
+    </section>
+
+    <section id="vasopressors">
+      <h2>Vasopressors</h2>
+      <h3>Step-Up Algorithm (SSC 2021)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Step</th><th>Drug</th><th>Dose</th><th>Evidence</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1st line</strong></td><td>Noradrenaline (Norepinephrine)</td><td>0.01–3 mcg/kg/min IV</td><td>Strong recommendation (SOAP II trial)</td></tr>
+            <tr><td><strong>2nd line</strong></td><td>Add Vasopressin</td><td>0.03 U/min fixed dose IV</td><td>When NE &gt;0.25 mcg/kg/min; spares NE dose (VASST trial)</td></tr>
+            <tr><td><strong>3rd line</strong></td><td>Add Adrenaline (Epinephrine)</td><td>0.01–1 mcg/kg/min IV</td><td>Alternative or add-on to NE in refractory shock</td></tr>
+            <tr><td><strong>Low CO component</strong></td><td>Add Dobutamine</td><td>2.5–20 mcg/kg/min IV</td><td>Evidence of septic cardiomyopathy (echo: EF &lt;40%, low CO)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>MAP target: 65–70 mmHg</strong> for most patients. Higher target (80–85 mmHg) only for known hypertensives with early AKI who tolerate higher MAP (SEPSISPAM trial) — no overall mortality benefit but reduced RRT requirement in hypertensives.</p>
+      <div class="warn-box">
+        <div class="kb-label">Avoid Dopamine</div>
+        <p>SOAP II (2010): Dopamine vs noradrenaline — more arrhythmias with dopamine and higher mortality in cardiogenic shock subgroup. <strong>Do not use dopamine as first-line vasopressor in septic shock.</strong></p>
+      </div>
     </section>
 
     <section id="antibiotics">
-      <h2>Antibiotics & Source Control</h2>
-      <h3>Empirical antibiotic choices (common Indian ICU scenarios)</h3>
+      <h2>Antimicrobial Therapy</h2>
+      <h3>Timing</h3>
+      <p>Every hour delay in antibiotic administration in septic shock is associated with ~7% increase in mortality. <strong>Administer within 1 hour of septic shock recognition</strong> and within 3 hours of sepsis recognition.</p>
+      <h3>Empirical Regimens — Indian ICU Context</h3>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Source</th><th>Likely organisms</th><th>Empirical regimen</th></tr></thead>
+          <thead><tr><th>Source</th><th>Likely Organisms</th><th>Empirical Regimen</th></tr></thead>
           <tbody>
-            <tr><td><strong>Urosepsis (community)</strong></td><td>E.coli, Klebsiella</td><td>Piperacillin-tazobactam 4.5g q6h IV</td></tr>
-            <tr><td><strong>Urosepsis (ESBL+)</strong></td><td>ESBL Enterobacteriaceae</td><td>Meropenem 1g q8h IV</td></tr>
-            <tr><td><strong>HAP / VAP</strong></td><td>Pseudomonas, MRSA, Acinetobacter</td><td>Piperacillin-Taz + Vancomycin; if XDR → Colistin</td></tr>
-            <tr><td><strong>Abdominal</strong></td><td>GNB + anaerobes</td><td>Piperacillin-tazobactam or Meropenem + Metronidazole</td></tr>
-            <tr><td><strong>Neutropenic fever</strong></td><td>GNB, viridans Strep</td><td>Piperacillin-Taz ± Amikacin</td></tr>
-            <tr><td><strong>Unknown source, sick</strong></td><td>Broad</td><td>Meropenem 1g q8h ± Vancomycin</td></tr>
+            <tr><td><strong>Urosepsis (community)</strong></td><td>E. coli, Klebsiella</td><td>Piperacillin-tazobactam 4.5g IV q6h</td></tr>
+            <tr><td><strong>Urosepsis (ESBL+)</strong></td><td>ESBL Enterobacteriaceae</td><td>Meropenem 1g IV q8h</td></tr>
+            <tr><td><strong>HAP/VAP</strong></td><td>Pseudomonas, MRSA, Acinetobacter</td><td>Piperacillin-Taz + Vancomycin; XDR → Colistin ± Carbapenem</td></tr>
+            <tr><td><strong>Abdominal sepsis</strong></td><td>GNB + Anaerobes</td><td>Piperacillin-Taz or Meropenem + Metronidazole</td></tr>
+            <tr><td><strong>Neutropenic fever</strong></td><td>GNB, Viridans Streptococci</td><td>Piperacillin-Taz ± Amikacin</td></tr>
+            <tr><td><strong>Unknown source — critically ill</strong></td><td>Broad</td><td>Meropenem 1g IV q8h ± Vancomycin (if MRSA risk)</td></tr>
+            <tr><td><strong>Candidaemia risk</strong></td><td>Candida spp.</td><td>Echinocandin (Caspofungin 70mg loading, 50mg daily)</td></tr>
           </tbody>
         </table>
       </div>
-      <h3>De-escalation</h3>
+      <h3>De-escalation &amp; Duration</h3>
       <ul>
-        <li>Review culture results at 48–72 hours — narrow spectrum based on sensitivities</li>
-        <li>Procalcitonin-guided de-escalation reduces antibiotic duration (SAPS trial)</li>
-        <li>Duration: 7 days is sufficient for most infections; shorter acceptable if good clinical response</li>
+        <li>Review at 48–72 hours: narrow spectrum based on culture/sensitivity (SSC 2021, strong recommendation)</li>
+        <li>Procalcitonin-guided de-escalation reduces duration safely (PRORATA, SAPS trials)</li>
+        <li>Duration: <strong>7 days is adequate</strong> for most infections with good source control and clinical response</li>
+        <li>Shorter courses (5 days) acceptable for uncomplicated pyelonephritis/pneumonia with good response</li>
       </ul>
-      <h3>Source control</h3>
-      <p>Identify and control the source as early as possible — drain abscess, remove infected device, debride necrotic tissue. Delay in source control is independently associated with mortality.</p>
+      <h3>Source Control</h3>
+      <p>Identify and control the infectious source as early as clinically feasible — drain abscess, remove infected devices, debride necrotic tissue. Delay in source control is an independent predictor of mortality. Reassess every 12 hours if not improving.</p>
     </section>
 
     <section id="adjuncts">
       <h2>Adjunctive Therapies</h2>
       <h3>Corticosteroids</h3>
-      <p><strong>Hydrocortisone 200 mg/day</strong> (50mg IV q6h or 200mg/24h infusion) — give if vasopressor refractory shock despite adequate volume and escalating vasopressors. <span class="evidence-pill ep-2a">2A</span></p>
-      <p>Do not use ACTH stimulation test to guide steroid use. Wean hydrocortisone when vasopressors are being weaned (APROCCHSS, ADRENAL trials).</p>
-      <h3>Glycaemic control</h3>
-      <p>Target blood glucose <strong>140–180 mg/dL</strong> using insulin infusion. Avoid hypoglycaemia (&lt;80 mg/dL) which is independently associated with mortality. Tight control (80–110) shown to cause harm (NICE-SUGAR trial). <span class="evidence-pill ep-1a">1A</span></p>
-      <h3>Blood transfusion</h3>
-      <p>Restrictive threshold: transfuse RBC when Hb &lt; <strong>7 g/dL</strong> (70 g/L) in adults without active ischaemia/bleeding. Higher threshold (Hb &lt;9) only for acute MI, unstable angina, or severe hypoxaemia. (TRISS trial) <span class="evidence-pill ep-1b">1B</span></p>
-      <h3>DVT prophylaxis</h3>
-      <p>LMWH preferred over UFH. Mechanical (compression stockings) if anticoagulation contraindicated.</p>
-      <h3>Stress ulcer prophylaxis</h3>
-      <p>Only in patients with ≥1 risk factor (mechanical ventilation &gt;48h, coagulopathy, prior GI bleed, steroid use). Pantoprazole 40mg IV OD.</p>
-    </section>
-
-    <section id="monitoring">
-      <h2>Monitoring & Targets</h2>
+      <p><strong>Hydrocortisone 200 mg/day</strong> (50 mg IV q6h or 200 mg/24h continuous infusion) is recommended in septic shock <strong>not responding to adequate fluid resuscitation and vasopressors</strong> (SSC 2021, weak recommendation). <span class="evidence-pill ep-2a">2B</span></p>
       <ul>
-        <li><strong>MAP</strong> ≥ 65 mmHg (continuously on arterial line ideally)</li>
-        <li><strong>Lactate</strong> — trending to normal (&lt;2 mmol/L); clearance ≥ 10% per 2h</li>
-        <li><strong>UO</strong> &gt; 0.5 ml/kg/hr (hourly)</li>
-        <li><strong>SOFA score</strong> — daily trending</li>
-        <li><strong>Glucose</strong> 140–180 mg/dL</li>
-        <li><strong>Blood cultures</strong> — 48–72h results for de-escalation</li>
-        <li><strong>Procalcitonin</strong> — baseline + day 3, 5 for de-escalation guidance</li>
-        <li><strong>Echo</strong> — assess cardiac function if refractory shock</li>
+        <li>APROCCHSS (2018): Hydrocortisone + fludrocortisone → reduced 90-day mortality in septic shock</li>
+        <li>ADRENAL (2018): Hydrocortisone → faster shock reversal, no difference in 90-day mortality</li>
+        <li>Do NOT use ACTH stimulation test to guide steroid use</li>
+        <li>Wean hydrocortisone when vasopressor requirements are decreasing</li>
+        <li>Add Fludrocortisone 50 mcg PO/NG daily if using hydrocortisone (APROCCHSS protocol)</li>
+      </ul>
+      <h3>Glycaemic Control</h3>
+      <p>Target blood glucose <strong>140–180 mg/dL</strong> (7.8–10 mmol/L) using insulin infusion protocol. Avoid hypoglycaemia (&lt;80 mg/dL) — independently associated with mortality. Tight control 80–110 mg/dL shown to cause harm (NICE-SUGAR, 2009). <span class="evidence-pill ep-1a">1A</span></p>
+      <h3>Blood Products</h3>
+      <ul>
+        <li><strong>RBC:</strong> Restrictive threshold — transfuse when Hb &lt;7 g/dL (Hb &lt;9 only for acute coronary ischaemia). TRISS trial: no harm from restrictive strategy. <span class="evidence-pill ep-1b">1B</span></li>
+        <li><strong>FFP:</strong> Only for active bleeding or invasive procedures with coagulopathy. Not for prophylactic correction of INR.</li>
+        <li><strong>Platelets:</strong> &lt;10,000/µL prophylactically; &lt;20,000/µL if active bleeding risk; &lt;50,000/µL for procedures</li>
+      </ul>
+      <h3>Vitamin C</h3>
+      <p>High-dose IV Vitamin C (1.5 g q6h) is <strong>NOT recommended</strong> as routine therapy. CITRIS-ALI (2019) showed no benefit. VITAMINS trial (2020): Vitamin C + hydrocortisone + thiamine did not improve vasopressor-free days. (SSC 2021: weak recommendation against)</p>
+      <h3>DVT &amp; Stress Ulcer Prophylaxis</h3>
+      <ul>
+        <li><strong>DVT:</strong> LMWH preferred; mechanical prophylaxis if anticoagulation contraindicated</li>
+        <li><strong>Stress ulcer:</strong> Pantoprazole 40 mg IV OD for high-risk (MV &gt;48h, coagulopathy, prior GI bleed, steroids). Avoid routine use in low-risk.</li>
       </ul>
     </section>
 
-    <section id="trials">
-      <h2>Key Trials & Evidence</h2>
+    <section id="monitoring">
+      <h2>Monitoring &amp; Targets</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Trial</th><th>Question</th><th>Outcome</th></tr></thead>
+          <thead><tr><th>Parameter</th><th>Target</th><th>Frequency</th></tr></thead>
           <tbody>
-            <tr><td><strong>ProCESS / ARISE / ProMISe</strong></td><td>Early goal-directed therapy vs usual care</td><td>No benefit from EGDT — usual care is sufficient</td></tr>
-            <tr><td><strong>FEAST</strong></td><td>Fluid bolus in African children</td><td>Harm from fluid bolus — context matters</td></tr>
-            <tr><td><strong>VASST</strong></td><td>Vasopressin vs NE in septic shock</td><td>No overall mortality difference; vasopressin spares NE</td></tr>
-            <tr><td><strong>ADRENAL</strong></td><td>Hydrocortisone in septic shock</td><td>Faster shock reversal; no mortality benefit</td></tr>
-            <tr><td><strong>APROCCHSS</strong></td><td>Hydrocortisone + fludrocortisone</td><td>Mortality benefit in septic shock</td></tr>
-            <tr><td><strong>SEPSISPAM</strong></td><td>MAP 65–70 vs 80–85</td><td>No overall mortality benefit; higher MAP reduced RRT need in hypertensives</td></tr>
-            <tr><td><strong>NICE-SUGAR</strong></td><td>Tight vs conventional glycaemic control</td><td>Tight control (80–110) caused harm — use 140–180</td></tr>
+            <tr><td>MAP</td><td>≥ 65 mmHg (65–70 mmHg)</td><td>Continuously (arterial line preferred)</td></tr>
+            <tr><td>Lactate</td><td>&lt; 2 mmol/L; clearance ≥10% per 2h</td><td>Q2h until normalised</td></tr>
+            <tr><td>Urine Output</td><td>&gt; 0.5 ml/kg/hr</td><td>Hourly</td></tr>
+            <tr><td>Blood Glucose</td><td>140–180 mg/dL</td><td>Q1–2h on insulin infusion</td></tr>
+            <tr><td>Temperature</td><td>Treat fever (&gt;38.3°C) — target normothermia</td><td>Q4h</td></tr>
+            <tr><td>ScvO₂</td><td>≥ 65% (if available)</td><td>Intermittent or continuous</td></tr>
+            <tr><td>Procalcitonin</td><td>Declining — guides de-escalation</td><td>Day 0, 3, 5</td></tr>
+            <tr><td>SOFA score</td><td>Trending downward</td><td>Daily</td></tr>
           </tbody>
         </table>
       </div>
+    </section>
+
+    <section id="india">
+      <h2>Indian-Specific Considerations</h2>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Society of Critical Care Medicine (ISCCM) 2020</div>
+        <ul>
+          <li><strong>Antimicrobial resistance:</strong> India has one of the world's highest rates of ESBL and carbapenem-resistant Enterobacteriaceae. Empirical carbapenem use may be needed earlier in hospitalised patients.</li>
+          <li><strong>Malaria &amp; dengue:</strong> Always consider as cause of sepsis-like presentation in India — do rapid antigen test and NS1/IgM dengue in appropriate epidemiological settings.</li>
+          <li><strong>Leptospirosis:</strong> Consider in monsoon season with fever, jaundice, and AKI — add Doxycycline 100 mg BD or Penicillin G.</li>
+          <li><strong>Enteric fever (typhoid):</strong> Salmonella typhi/paratyphi can present as septic shock — add Ceftriaxone 2g IV OD empirically if suspected.</li>
+          <li><strong>Peripheral vasopressors:</strong> In resource-limited settings, peripheral line for vasopressors (wrist/antecubital) acceptable for up to 12 hours with frequent site inspection (infiltration risk).</li>
+          <li><strong>Central venous access:</strong> Internal jugular vein preferred over subclavian (pneumothorax risk in coagulopathic patients). Ultrasound guidance strongly recommended.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="trials">
+      <h2>Key Trials &amp; Evidence</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Trial</th><th>Year</th><th>Question</th><th>Key Finding</th></tr></thead>
+          <tbody>
+            <tr><td><strong>ProCESS / ARISE / ProMISe</strong></td><td>2014–2015</td><td>EGDT vs usual care</td><td>No benefit from EGDT — standard care equivalent</td></tr>
+            <tr><td><strong>SOAP II</strong></td><td>2010</td><td>Dopamine vs Noradrenaline</td><td>Dopamine: more arrhythmias; higher mortality in cardiogenic shock subgroup</td></tr>
+            <tr><td><strong>VASST</strong></td><td>2008</td><td>Vasopressin vs Noradrenaline</td><td>No overall mortality difference; vasopressin spares NE dose</td></tr>
+            <tr><td><strong>SEPSISPAM</strong></td><td>2014</td><td>MAP 65–70 vs 80–85 mmHg</td><td>No overall mortality benefit; higher MAP reduced RRT need in hypertensives</td></tr>
+            <tr><td><strong>ADRENAL</strong></td><td>2018</td><td>Hydrocortisone in septic shock</td><td>Faster shock reversal; no 90-day mortality benefit</td></tr>
+            <tr><td><strong>APROCCHSS</strong></td><td>2018</td><td>Hydrocortisone + fludrocortisone</td><td>Reduced 90-day mortality (43% vs 49%) in septic shock</td></tr>
+            <tr><td><strong>NICE-SUGAR</strong></td><td>2009</td><td>Tight vs conventional glucose control</td><td>Tight control (80–110 mg/dL) caused harm — use 140–180 mg/dL</td></tr>
+            <tr><td><strong>VITAMINS</strong></td><td>2020</td><td>Vit C + hydrocortisone + thiamine</td><td>No improvement in vasopressor-free days at 7 days</td></tr>
+            <tr><td><strong>SMART / SALT-ED</strong></td><td>2018</td><td>Balanced crystalloids vs Normal saline</td><td>Balanced crystalloids: lower MAKE30 composite (AKI, RRT, death)</td></tr>
+            <tr><td><strong>SAFE</strong></td><td>2004</td><td>Albumin vs saline resuscitation</td><td>No difference in 28-day mortality; albumin safe in sepsis</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Singer M, Deutschman CS, Seymour CW, et al.</strong> The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). <em>JAMA.</em> 2016;315(8):801–810.</li>
+        <li><strong>Evans L, Rhodes A, Alhazzani W, et al.</strong> Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. <em>Crit Care Med.</em> 2021;49(11):e1063–e1143.</li>
+        <li><strong>Myatra SN, Tripathi SS, Rosenthal VD, et al.</strong> Indian Society of Critical Care Medicine Position Statement on Sepsis and Septic Shock — 2020. <em>Indian J Crit Care Med.</em> 2020;24(S1):S1–S28.</li>
+        <li><strong>De Backer D, Biston P, Devriendt J, et al.</strong> Comparison of Dopamine and Norepinephrine in the Treatment of Shock (SOAP II). <em>N Engl J Med.</em> 2010;362(9):779–789.</li>
+        <li><strong>Russell JA, Walley KR, Singer J, et al.</strong> Vasopressin versus Norepinephrine Infusion in Patients with Septic Shock (VASST). <em>N Engl J Med.</em> 2008;358(9):877–887.</li>
+        <li><strong>Asfar P, Meziani F, Hamel JF, et al.</strong> High versus Low Blood-Pressure Target in Patients with Septic Shock (SEPSISPAM). <em>N Engl J Med.</em> 2014;370(17):1583–1593.</li>
+        <li><strong>Venkatesh B, Finfer S, Cohen J, et al.</strong> Adjunctive Glucocorticoid Therapy in Patients with Septic Shock (ADRENAL). <em>N Engl J Med.</em> 2018;378(9):797–808.</li>
+        <li><strong>Annane D, Renault A, Brun-Buisson C, et al.</strong> Hydrocortisone plus Fludrocortisone for Adults with Septic Shock (APROCCHSS). <em>N Engl J Med.</em> 2018;378(9):809–818.</li>
+        <li><strong>NICE-SUGAR Study Investigators.</strong> Intensive versus Conventional Glucose Control in Critically Ill Patients. <em>N Engl J Med.</em> 2009;360(13):1283–1297.</li>
+        <li><strong>Finfer S, Bellomo R, Boyce N, et al.</strong> A Comparison of Albumin and Saline for Fluid Resuscitation in the Intensive Care Unit (SAFE). <em>N Engl J Med.</em> 2004;350(22):2247–2256.</li>
+        <li><strong>Semler MW, Self WH, Wanderer JP, et al.</strong> Balanced Crystalloids versus Saline in Critically Ill Adults (SMART). <em>N Engl J Med.</em> 2018;378(9):829–839.</li>
+        <li><strong>Iglesias J, Vassallo AV, Patel VV, et al.</strong> Outcomes of Metabolic Resuscitation Using Ascorbic Acid, Thiamine, and Glucocorticoids in the Early Treatment of Sepsis: VITAMINS Randomized Clinical Trial. <em>JAMA.</em> 2020;324(5):462–470.</li>
+        <li><strong>Hébert PC, Wells G, Blajchman MA, et al.</strong> A Multicenter, Randomized, Controlled Clinical Trial of Transfusion Requirements in Critical Care (TRICC). <em>N Engl J Med.</em> 2004;340(6):409–417.</li>
+      </ol>
     </section>
 
   </main>
@@ -225,6 +329,5 @@
     <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
   </div>
 </footer>
-
 </body>
 </html>
