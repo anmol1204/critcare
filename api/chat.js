@@ -42,7 +42,7 @@ Be concise, practical, and adapted for resource-limited settings. Cite relevant 
 Always end with: This is clinical decision support only - always apply your own clinical judgement.`;
 
   try {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${process.env.GEMINI_API_KEY}`;
 
     const response = await fetch(url, {
       method: 'POST',
@@ -50,7 +50,7 @@ Always end with: This is clinical decision support only - always apply your own 
       body: JSON.stringify({
         system_instruction: { parts: [{ text: systemPrompt }] },
         contents: [{ parts: [{ text: message }] }],
-        generationConfig: { maxOutputTokens: 1024, temperature: 0.3 },
+        generationConfig: { maxOutputTokens: 2048, temperature: 0.3 },
       }),
     });
 
