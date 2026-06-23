@@ -9,8 +9,16 @@ module.exports = async function handler(req, res) {
   const { message } = req.body || {};
   if (!message) return res.status(400).json({ error: 'No message provided' });
 
+  // Debug: show which env vars are present (names only, not values)
+  const envKeys = Object.keys(process.env).filter(k =>
+    k.includes('GEMINI') || k.includes('ANTHROPIC') || k.includes('API')
+  );
+
   if (!process.env.GEMINI_API_KEY) {
-    return res.status(500).json({ error: 'GEMINI_API_KEY is not set in Vercel environment variables.' });
+    return res.status(500).json({
+      error: 'GEMINI_API_KEY not found.',
+      hint: 'Env vars containing GEMINI/API/ANTHROPIC found: ' + (envKeys.join(', ') || 'none'),
+    });
   }
 
   const systemPrompt = `You are CritCare AI, an ICU clinical decision support assistant designed for intensivists and emergency physicians in Indian hospitals.
