@@ -9,22 +9,11 @@ module.exports = async function handler(req, res) {
   const { message } = req.body || {};
   if (!message) return res.status(400).json({ error: 'No message provided' });
 
-  if (!process.env.ANTHROPIC_API_KEY) {
-    return res.status(500).json({ error: 'ANTHROPIC_API_KEY is not set in Vercel environment variables.' });
+  if (!process.env.GEMINI_API_KEY) {
+    return res.status(500).json({ error: 'GEMINI_API_KEY is not set in Vercel environment variables.' });
   }
 
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': process.env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
-      },
-      body: JSON.stringify({
-        model: 'claude-haiku-4-5-20251001',
-        max_tokens: 1024,
-        system: `You are CritCare AI, an ICU clinical decision support assistant designed for intensivists and emergency physicians in Indian hospitals.
+  const systemPrompt = `You are CritCare AI, an ICU clinical decision support assistant designed for intensivists and emergency physicians in Indian hospitals.
 
 When given a patient clinical summary, respond with a concise, structured, evidence-based management plan using this format:
 
@@ -42,8 +31,18 @@ When given a patient clinical summary, respond with a concise, structured, evide
 
 Be concise, practical, and adapted for resource-limited settings. Cite relevant guidelines (SSC, KDIGO, ARDSNet) briefly when applicable.
 
-Always end with: This is clinical decision support only - always apply your own clinical judgement.`,
-        messages: [{ role: 'user', content: message }],
+Always end with: This is clinical decision support only - always apply your own clinical judgement.`;
+
+  try {
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
+
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        system_instruction: { parts: [{ text: systemPrompt }] },
+        contents: [{ parts: [{ text: message }] }],
+        generationConfig: { maxOutputTokens: 1024, temperature: 0.3 },
       }),
     });
 
@@ -55,13 +54,11 @@ Always end with: This is clinical decision support only - always apply your own 
         const parsed = JSON.parse(responseText);
         detail = parsed.error && parsed.error.message ? parsed.error.message : responseText;
       } catch (_) {}
-      return res.status(502).json({
-        error: 'Anthropic API error (status ' + response.status + '): ' + detail,
-      });
+      return res.status(502).json({ error: 'Gemini API error (status ' + response.status + '): ' + detail });
     }
 
     const data = JSON.parse(responseText);
-    const reply = data.content[0].text;
+    const reply = data.candidates[0].content.parts[0].text;
     return res.json({ reply });
   } catch (err) {
     return res.status(500).json({ error: 'Server error: ' + err.message });
