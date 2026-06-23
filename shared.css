@@ -9,22 +9,112 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* ---- CLEAN CLINICAL WHITE & BLUE THEME ----
-     Change these 6 lines to re-theme the entire site. */
-  --blue:       #1e6fd9;   /* primary blue   */
-  --blue-dark:  #1453a8;   /* darker blue    */
-  --blue-soft:  #eaf2fd;   /* pale blue tint */
-  --ink:        #14233a;   /* near-black text*/
-  --slate:      #5b6b80;   /* muted grey text*/
-  --line:       #e2e8f1;   /* border lines   */
-  --bg:         #ffffff;   /* page background */
-  --bg-alt:     #f7fafd;   /* alt section bg  */
-  --accent:     #00b3a4;   /* teal accent     */
+  --blue:       #1e6fd9;
+  --blue-dark:  #1453a8;
+  --blue-soft:  #eaf2fd;
+  --ink:        #14233a;
+  --slate:      #5b6b80;
+  --line:       #e2e8f1;
+  --bg:         #ffffff;
+  --bg-alt:     #f7fafd;
+  --accent:     #00b3a4;
   --white:      #ffffff;
-
   --font-body: 'Inter', -apple-system, system-ui, sans-serif;
   --font-disp: 'Fraunces', Georgia, serif;
+  --dm-transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+html.dark {
+  --blue:       #4d9ff5;
+  --blue-dark:  #7bb8f7;
+  --blue-soft:  #1a2e48;
+  --ink:        #e8edf5;
+  --slate:      #94a3b8;
+  --line:       #2d3a4a;
+  --bg:         #0f1923;
+  --bg-alt:     #151f2e;
+  --accent:     #00c9b8;
+  --white:      #0f1923;
+}
+html.dark body { background: var(--bg); color: var(--ink); }
+html.dark .nav { background: rgba(15,25,35,0.95); border-color: var(--line); }
+html.dark .nav-menu { background: #151f2e; }
+html.dark .hero-photo-card,
+html.dark .about-photo-card,
+html.dark .demo-card,
+html.dark .card,
+html.dark .tcard,
+html.dark .login-form-panel,
+html.dark .login-box { background: var(--bg-alt); border-color: var(--line); color: var(--ink); }
+html.dark .card:hover, html.dark .tcard:hover { border-color: var(--blue); }
+html.dark .login-brand-panel { background: #0a1420; }
+html.dark .toc,
+html.dark .stats,
+html.dark .stat { background: var(--bg-alt); border-color: var(--line); }
+html.dark .hero, html.dark .topic-hero, html.dark .page-head { background: linear-gradient(180deg, var(--blue-soft) 0%, var(--bg) 100%); }
+html.dark .ai-banner { background: linear-gradient(120deg, #0a1420 0%, #0d1d30 100%); }
+html.dark .drug-table th { background: #1e3550; }
+html.dark .drug-table tr:hover td { background: #1a2a3a; }
+html.dark .drug-table td { border-color: var(--line); color: var(--slate); }
+html.dark .key-box { background: #1a2e48; border-color: var(--blue); }
+html.dark .key-box p, html.dark .key-box li { color: var(--ink); }
+html.dark .warn-box { background: #2a1e0a; border-color: #f59e0b; }
+html.dark .warn-box p, html.dark .warn-box li { color: #fcd34d; }
+html.dark .india-box { background: #2a1e0a; border-color: #f59e0b; }
+html.dark .india-box p, html.dark .india-box li { color: #fcd34d; }
+html.dark .update-box { background: #0a2a1e; border-color: #22c55e; }
+html.dark .update-box p, html.dark .update-box li { color: #86efac; }
+html.dark .pearl-card { background: #2a200a; border-color: #854d0e; }
+html.dark .pearl-card p { color: #fcd34d; }
+html.dark .mistake-card { background: #2a0a0a; border-color: #7f1d1d; }
+html.dark .mistake-card p { color: #fca5a5; }
+html.dark .exam-card { background: #0a1e3a; border-color: #1e3a8a; }
+html.dark .exam-card p { color: #93c5fd; }
+html.dark .dose-calc { background: #1e3550; }
+html.dark .ampoule-card { background: #151f2e; border-color: var(--line); }
+html.dark .demo-top { background: #1e3550; }
+html.dark .demo-input { background: var(--bg-alt); color: var(--ink); border-color: var(--line); }
+html.dark .demo-input:focus { border-color: var(--blue); }
+html.dark .demo-out { background: var(--blue-soft); }
+html.dark .disclaimer { background: #2a1e0a; border-color: #854d0e; color: #fcd34d; }
+html.dark .fg input, html.dark .fg select { background: var(--bg-alt); color: var(--ink); border-color: var(--line); }
+html.dark .lb-tabs { background: #151f2e; }
+html.dark .lb-tab.active { background: #1e3550; }
+html.dark .lb-note { background: var(--blue-soft); color: var(--blue); }
+html.dark .photo-meta, html.dark .about-photo-meta { background: var(--bg-alt); border-color: var(--line); }
+html.dark .photo-meta-name, html.dark .about-photo-meta .nm { color: var(--ink); }
+html.dark .ref-list li { border-color: var(--line); color: var(--slate); }
+html.dark .section-label { border-color: var(--line); color: var(--slate); }
+html.dark .ex-btn { background: var(--bg-alt); border-color: var(--line); color: var(--slate); }
+html.dark .table-wrap { border-color: var(--line); }
+html.dark .about-contact-mini .acm { background: var(--bg-alt); border-color: var(--line); color: var(--slate); }
+html.dark .tl-item { border-color: var(--line); }
+html.dark h1.display, html.dark h2.display { color: var(--ink); }
+html.dark .topic-content h2 { border-color: var(--blue-soft); }
+html.dark .dim { opacity: 0.5; }
+html.dark .gbadge.sccm  { background: #1a2e48; color: #7bb8f7; }
+html.dark .gbadge.esicm { background: #2a1e48; color: #c4b5fd; }
+html.dark .gbadge.isccm { background: #2a1e0a; color: #fcd34d; }
+html.dark .gbadge.kdigo { background: #0a2a1e; color: #86efac; }
+html.dark .change-new { background: #0a2a1e; border-color: #166534; color: #86efac; }
+html.dark .change-updated { background: #2a1e0a; border-color: #854d0e; color: #fcd34d; }
+html.dark .change-reversed { background: #2a0a1e; border-color: #9d174d; color: #f9a8d4; }
+
+/* Dark mode toggle button */
+.dm-toggle {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--bg-alt); border: 1.5px solid var(--line);
+  cursor: pointer; font-size: 1.05rem; transition: var(--dm-transition);
+  color: var(--ink); flex-shrink: 0; margin-left: 0.5rem;
+}
+.dm-toggle:hover { border-color: var(--blue); background: var(--blue-soft); }
+
+/* Apply transition to everything */
+*, *::before, *::after { transition: var(--dm-transition); }
 
 html { scroll-behavior: smooth; }
 body {

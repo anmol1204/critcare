@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Head Injury & TBI — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .pearl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+    .pearl-card { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 1rem 1.2rem; }
+    .pearl-card .pearl-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #92400e; margin-bottom: 0.5rem; }
+    .pearl-card p { font-size: 0.88rem; color: #78350f; line-height: 1.7; margin: 0; }
+    .mistake-card { background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 1rem 1.2rem; margin: 0.5rem 0; }
+    .mistake-card .m-label { font-size: 0.68rem; font-weight: 700; color: #991b1b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .mistake-card p { font-size: 0.88rem; color: #7f1d1d; line-height: 1.7; margin: 0; }
+    .exam-card { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 0.9rem 1.1rem; margin: 0.4rem 0; }
+    .exam-card p { font-size: 0.88rem; color: #1e40af; line-height: 1.7; margin: 0; }
+    .exam-card strong { color: #1e3a8a; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Head Injury</div>
+    <h1>🧠 Traumatic Brain Injury (TBI) &amp; Head Injury</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">BTF 2023 Prehospital</span>
+      <span class="gbadge esicm">BTF ICU Guidelines</span>
+      <span class="gbadge isccm">ISCCM</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Emergency</span>
+      <span class="topic-tag">SBP Target Updated</span>
+      <span class="topic-tag">ICP Management</span>
+      <span class="topic-updated">BTF Prehospital Guidelines 3rd Edition 2023 · braintrauma.org</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#btf-changes">BTF 2023 Key Changes</a></li>
+        <li><a href="#physiology">How TBI Works</a></li>
+        <li><a href="#classification">Classification</a></li>
+        <li><a href="#primary-survey">Primary Survey</a></li>
+        <li><a href="#bp-targets">BP & O₂ Targets</a></li>
+        <li><a href="#icp">ICP Management</a></li>
+        <li><a href="#icu-targets">ICU Targets</a></li>
+        <li><a href="#interventions">Specific Interventions</a></li>
+        <li><a href="#surgical">Surgical Indications</a></li>
+        <li><a href="#pearls">Clinical Pearls</a></li>
+        <li><a href="#mistakes">Common Mistakes</a></li>
+        <li><a href="#exam">Exam Pearls</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="btf-changes">
+      <h2>BTF 2023 — Key Changes in TBI Management</h2>
+      <div class="update-box">
+        <div class="kb-label">Brain Trauma Foundation Prehospital Guidelines 3rd Edition (2023)</div>
+        <p>The BTF 2023 update changes blood pressure thresholds for TBI. The old SBP &gt;90 mmHg threshold is replaced with higher, more protective targets based on newer evidence from the Arizona EPIC initiative and large prehospital databases.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>Old Threshold</th><th>BTF 2023 Updated Target</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Adult SBP target</strong></td><td>SBP &gt;90 mmHg (avoid hypotension)</td><td>SBP ≥110 mmHg (Strong) — optimal targets may be higher</td><td>Studies show SBP &lt;110 associated with worse outcomes even when &gt;90; threshold region should be avoided</td></tr>
+            <tr><td><strong>Oxygen target</strong></td><td>SpO₂ ≥90%</td><td>SpO₂ ≥90% maintained; avoid hypoxia (&lt;90%) as strongly harmful</td><td>Even brief hypoxia is profoundly harmful — continuously monitor and correct immediately</td></tr>
+            <tr><td><strong>Hyperventilation</strong></td><td>No prophylactic hyperventilation</td><td>Avoid EtCO₂ &lt;35 mmHg (prophylactic hyperventilation harmful) — Strong rec</td><td>Hyperventilation → cerebral vasoconstriction → ↓ CBF → ischaemia. Only brief use for herniation</td></tr>
+            <tr><td><strong>Temperature</strong></td><td>Avoid hyperthermia</td><td>Monitor continuously; avoid both hyperthermia AND hypothermia; treat fever aggressively</td><td>Both extremes worsen TBI outcome</td></tr>
+            <tr><td><strong>Prehospital antibiotics</strong></td><td>Not specifically addressed</td><td>Addressed in context of overall prehospital care; minimise on-scene time; transport priority</td><td>Time to definitive neurosurgical care is critical</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="physiology">
+      <h2>How TBI Works — Pathophysiology</h2>
+      <h3>Primary Brain Injury (Immediate — Unchangeable)</h3>
+      <p>Direct mechanical injury at moment of trauma: axonal shearing (diffuse axonal injury — DAI), contusions, haematomas, lacerations. Occurs in microseconds. No medical intervention can reverse it. <strong>All ICU care focuses on preventing secondary brain injury.</strong></p>
+      <h3>Secondary Brain Injury (Hours to Days — Preventable)</h3>
+      <p>The secondary injury cascade is triggered by the primary injury and evolves over hours to days. Every element is a potential treatment target:</p>
+      <ul>
+        <li><strong>Cerebral oedema:</strong> Vasogenic (BBB disruption → protein leak) + cytotoxic (cellular swelling from Na-K ATPase failure) → ↑ intracranial volume</li>
+        <li><strong>Raised ICP:</strong> ↑ intracranial volume → ↑ ICP → ↓ CPP (CPP = MAP − ICP) → ↓ CBF → ischaemia → more oedema → vicious cycle</li>
+        <li><strong>Excitotoxicity:</strong> Glutamate flood → NMDA receptor activation → Ca²⁺ influx → mitochondrial dysfunction → cell death</li>
+        <li><strong>Inflammation:</strong> Microglial activation → cytokines → BBB breakdown → oedema amplification</li>
+        <li><strong>Ischaemia:</strong> Haematoma compression, ↑ICP, hypotension, hypoxia, vasospasm — all reduce O₂ delivery to already-injured brain</li>
+        <li><strong>Seizures:</strong> ↑ metabolic demand, excitotoxicity, cortical spreading depolarisations</li>
+      </ul>
+      <h3>The Monro-Kellie Doctrine</h3>
+      <p>The skull is a rigid box. Total intracranial volume = Brain (80%) + CSF (10%) + Blood (10%) = CONSTANT. Any increase in one component must be compensated by decrease in another. Once compensatory mechanisms are exhausted → small increases in volume cause exponential rises in ICP → brainstem compression → death.</p>
+      <div class="key-box">
+        <div class="kb-label">The 4 Absolute Killers in TBI — Prevent These</div>
+        <ul>
+          <li><strong>Hypotension:</strong> SBP &lt;110 mmHg → ↓ CPP → ischaemia → secondary injury (BTF 2023: keep SBP ≥110)</li>
+          <li><strong>Hypoxia:</strong> SpO₂ &lt;90% → ↓ O₂ delivery to injured brain → ischaemia (even brief episodes are harmful)</li>
+          <li><strong>Hyperventilation (prophylactic):</strong> ↓ PaCO₂ → cerebral vasoconstriction → ↓ CBF → ischaemia</li>
+          <li><strong>Hyperthermia:</strong> ↑ metabolic demand → ↑ ICP → worsens injury (aggressive fever management)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="classification">
+      <h2>Classification of TBI</h2>
+      <h3>Severity (GCS-Based)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Severity</th><th>GCS Score</th><th>Clinical Features</th><th>Imaging Needed</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Mild</strong></td><td>13–15</td><td>Brief LOC (&lt;30 min); post-traumatic amnesia &lt;24h; normal CT</td><td>CT if: high-risk (anticoagulants, age &gt;65, focal deficit, vomiting, severe HA)</td></tr>
+            <tr><td><strong>Moderate</strong></td><td>9–12</td><td>LOC 30 min to 24h; amnesia 24h to 7 days; CT may show abnormality</td><td>CT head mandatory; admit for observation</td></tr>
+            <tr><td><strong>Severe</strong></td><td>≤8</td><td>LOC &gt;24h OR coma; CT usually abnormal</td><td>CT head + CT spine; ICU admission; neurosurgery consult</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Intracranial Haematomas</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Type</th><th>Location</th><th>Classic Presentation</th><th>CT Finding</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Extradural (EDH)</strong></td><td>Between skull and dura</td><td>Lucid interval → rapid deterioration; young patient; temporal skull fracture</td><td>Biconvex (lens-shaped) hyperdense collection; does NOT cross suture lines</td></tr>
+            <tr><td><strong>Subdural (SDH)</strong></td><td>Between dura and arachnoid</td><td>Variable; acute = high-energy trauma; chronic = elderly, anticoagulants</td><td>Concave (crescent-shaped) hyperdense (acute) or hypodense (chronic); crosses suture lines</td></tr>
+            <tr><td><strong>Contusion</strong></td><td>Brain parenchyma</td><td>Often frontal/temporal; may worsen over 24–72h ("contusion expansion")</td><td>Heterogeneous mixed density; may expand on repeat CT</td></tr>
+            <tr><td><strong>DAI</strong></td><td>White matter tracts</td><td>Severe mechanism; immediate coma; CT may be normal</td><td>CT often normal; MRI (DWI/SWI) shows punctate haemorrhages at grey-white junction</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="primary-survey">
+      <h2>Primary Survey — ABCDE in TBI</h2>
+      <p>In TBI, ABCDE must occur simultaneously. A is addressed while B and C are managed. The brain cannot tolerate ANY period of hypoxia or hypotension.</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Step</th><th>Action</th><th>TBI-Specific Considerations</th></tr></thead>
+          <tbody>
+            <tr><td><strong>A — Airway</strong></td><td>Ensure patent airway; C-spine protection</td><td>GCS ≤8: intubate. Use RSI. Assume C-spine injury in all high-velocity injuries. Manual inline stabilisation during intubation.</td></tr>
+            <tr><td><strong>B — Breathing</strong></td><td>O₂, ventilation</td><td>SpO₂ ≥90% mandatory (BTF: monitor continuously; correct immediately). EtCO₂ 35–45 mmHg — no prophylactic hyperventilation.</td></tr>
+            <tr><td><strong>C — Circulation</strong></td><td>BP, haemorrhage control</td><td>SBP ≥110 mmHg (BTF 2023). Treat hypotension aggressively with fluids (isotonic). Control external haemorrhage. Cushing response (↑BP + ↓HR + irregular breathing) = imminent herniation.</td></tr>
+            <tr><td><strong>D — Disability</strong></td><td>GCS, pupils, limb movements</td><td>GCS: open eyes/verbal/motor. Pupils: unilateral fixed dilated = uncal herniation (surgical emergency). Bilateral fixed dilated = bilateral herniation or death.</td></tr>
+            <tr><td><strong>E — Exposure/Environment</strong></td><td>Temp, spine, other injuries</td><td>Prevent hypothermia AND hyperthermia. Full spine clearance. Secondary survey for other injuries.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="bp-targets">
+      <h2>Blood Pressure &amp; Oxygenation Targets — BTF 2023</h2>
+      <div class="key-box">
+        <div class="kb-label">BTF 2023 — Updated BP Targets (Strong Recommendation)</div>
+        <ul>
+          <li><strong>Adults:</strong> SBP ≥110 mmHg (optimal targets may be even higher — evidence evolving)</li>
+          <li><strong>Children &gt;6 years and adolescents:</strong> SBP ≥100 mmHg</li>
+          <li><strong>Children 1–5 years:</strong> SBP ≥90 mmHg</li>
+          <li><strong>Children 1–12 months:</strong> SBP ≥84 mmHg</li>
+          <li><strong>Adults (Weak recommendation):</strong> SBP ≥110 provides better outcomes; avoid the threshold zone even below 110</li>
+        </ul>
+      </div>
+      <p><strong>Fluid choice for resuscitation:</strong> 0.9% Normal Saline (isotonic) — NOT hypotonic fluids (D5W, Ringer's Lactate in some formulations). Hypotonic fluids lower plasma osmolality → free water shifts into brain → worsens cerebral oedema.</p>
+      <p><strong>Vasopressors:</strong> If BP unresponsive to fluids → noradrenaline. Maintain CPP ≥60 mmHg (ICP + MAP).</p>
+      <h3>Oxygenation Targets</h3>
+      <ul>
+        <li>SpO₂ ≥90% (Strong recommendation — BTF 2023)</li>
+        <li>PaO₂ ≥60 mmHg</li>
+        <li>Monitor continuously with pulse oximetry — even brief desaturation episodes are profoundly harmful</li>
+        <li>Supplemental O₂ freely — hyperoxia does not worsen outcomes in TBI (unlike asthma/COPD)</li>
+      </ul>
+    </section>
+
+    <section id="icp">
+      <h2>ICP Management</h2>
+      <h3>ICP Monitoring — BTF Guidelines</h3>
+      <p>ICP monitoring recommended for all severe TBI (GCS ≤8) with abnormal CT scan. Normal ICP: 7–15 mmHg. Treat ICP &gt;22 mmHg (BTF threshold). Target CPP 60–70 mmHg.</p>
+      <h3>Tier 1 — First-Line ICP Management</h3>
+      <ul>
+        <li>Head of bed 30° elevation; maintain neutral head position (no neck rotation)</li>
+        <li>Optimise analgesia and sedation (pain/agitation = ↑ ICP)</li>
+        <li>Normocapnia: PaCO₂ 35–45 mmHg; EtCO₂ 35–40 mmHg</li>
+        <li>Normothermia: Treat fever aggressively (paracetamol + cooling)</li>
+        <li>Normoglycaemia: Target 140–180 mg/dL (hypoglycaemia severely harmful)</li>
+        <li>CSF drainage via EVD (if in situ)</li>
+      </ul>
+      <h3>Tier 2 — Osmotherapy (Second-Line)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Agent</th><th>Dose</th><th>Mechanism</th><th>Monitoring</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Mannitol 20%</strong></td><td>0.25–1 g/kg IV bolus over 15–20 min</td><td>Osmotic gradient → draws water from brain parenchyma; also ↑ CBF by ↓ viscosity</td><td>Serum osmolality (target &lt;320 mOsm/kg); serum Na; UO</td><td>Requires adequate BP; avoid if SBP &lt;90; repeat q4–6h; hold if osm gap &gt;20</td></tr>
+            <tr><td><strong>Hypertonic Saline (3% or 23.4%)</strong></td><td>3%: 250 ml IV bolus; 23.4%: 30 ml IV push</td><td>↑ plasma osmolality → draws water from brain; also ↑ CBF; no renal loss</td><td>Serum Na (target 150–155 mEq/L); osmolality</td><td>Preferred if hypotension or Na depletion; can use via peripheral line; 23.4% = central line only</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Tier 3 — Refractory Elevated ICP</h3>
+      <ul>
+        <li><strong>Barbiturate coma:</strong> Thiopentone or pentobarbital — burst suppression on EEG; only when all other measures failed; monitor cardiac function (profound myocardial depression)</li>
+        <li><strong>Decompressive craniectomy:</strong> For refractory ICP &gt;25 mmHg unresponsive to medical therapy — DECRA trial (modest ICP reduction, no mortality benefit); RESCUEicp trial (survival benefit but more vegetative state)</li>
+        <li><strong>Hypothermia:</strong> 35–36°C — may reduce ICP but no overall mortality benefit (Eurotherm3235 trial); rewarming complications; use selectively</li>
+      </ul>
+    </section>
+
+    <section id="icu-targets">
+      <h2>ICU Management Targets</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>Target</th><th>Rationale</th></tr></thead>
+          <tbody>
+            <tr><td>ICP</td><td>&lt;22 mmHg</td><td>Above 22 = treat; BTF threshold</td></tr>
+            <tr><td>CPP (MAP − ICP)</td><td>60–70 mmHg</td><td>Ensures adequate cerebral perfusion pressure</td></tr>
+            <tr><td>MAP</td><td>≥80 mmHg (to maintain CPP &gt;60 if ICP = 20)</td><td>Keep CPP adequate despite raised ICP</td></tr>
+            <tr><td>SBP</td><td>≥110 mmHg (BTF 2023, adults)</td><td>New higher threshold</td></tr>
+            <tr><td>SpO₂</td><td>≥90–95%</td><td>Avoid hypoxia; supplemental O₂ freely</td></tr>
+            <tr><td>PaCO₂</td><td>35–45 mmHg (normocapnia)</td><td>No prophylactic hyperventilation; hypocapnia = vasoconstriction = ischaemia</td></tr>
+            <tr><td>Temperature</td><td>36–37.5°C (normothermia)</td><td>Fever = ↑ metabolic demand = ↑ ICP; treat aggressively</td></tr>
+            <tr><td>Blood glucose</td><td>140–180 mg/dL</td><td>Hypoglycaemia severely harmful to injured brain; tight control also harmful</td></tr>
+            <tr><td>Serum Na</td><td>140–155 mEq/L (allow mild hypernatraemia)</td><td>Hyponatraemia = cerebral oedema; avoid hypotonic fluids</td></tr>
+            <tr><td>Hb</td><td>≥7 g/dL (some guidelines ≥9 in severe TBI)</td><td>O₂-carrying capacity; anaemia worsens outcome</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="interventions">
+      <h2>Specific Interventions</h2>
+      <h3>Seizure Prophylaxis</h3>
+      <p><strong>Levetiracetam 1000 mg BD × 7 days</strong> — first-line for post-traumatic seizure prophylaxis in severe TBI (GCS ≤8). Prevents early post-traumatic seizures (within 7 days) — NOT late seizures. Levetiracetam preferred over phenytoin (no cognitive impairment, no drug interactions).</p>
+      <h3>DVT Prophylaxis</h3>
+      <ul>
+        <li>Mechanical: Graduated compression stockings + intermittent pneumatic compression from day 1</li>
+        <li>Pharmacological: Start LMWH after 24–48h IF intracranial haemorrhage is stable on repeat CT and no active bleeding</li>
+      </ul>
+      <h3>Nutrition</h3>
+      <p>Early enteral nutrition within 24–48h. TBI patients are hypercatabolic. Target 25–30 kcal/kg/day. Avoid prolonged NPO — gut feeds maintain gut integrity and reduce infection risk.</p>
+      <h3>Steroids</h3>
+      <div class="warn-box">
+        <div class="kb-label">Steroids are CONTRAINDICATED in TBI</div>
+        <p>CRASH trial (2004, n=10,008): Methylprednisolone in TBI → INCREASED 14-day mortality. Strong evidence of harm. Do NOT give steroids for TBI under any circumstances.</p>
+      </div>
+      <h3>Hyperventilation — Only as Rescue</h3>
+      <p>Brief hyperventilation (PaCO₂ 30–35 mmHg) for imminent herniation (dilating pupil, Cushing's triad) as a BRIDGE to definitive treatment (mannitol, surgery, EVD). NOT for prophylaxis. Duration: minutes to hours only.</p>
+    </section>
+
+    <section id="surgical">
+      <h2>Surgical Indications</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Lesion</th><th>Surgical Indication</th><th>Urgency</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Extradural Haematoma</strong></td><td>Volume &gt;30 ml OR thickness &gt;15 mm OR midline shift &gt;5 mm OR any EDH with neurological deterioration</td><td>EMERGENCY — can deteriorate in minutes. Every minute counts.</td></tr>
+            <tr><td><strong>Acute Subdural Haematoma</strong></td><td>Thickness &gt;10 mm OR midline shift &gt;5 mm. GCS drop of ≥2 points from injury to hospital.</td><td>URGENT — within 4h ideally</td></tr>
+            <tr><td><strong>Intracerebral Contusion/Haematoma</strong></td><td>Volume &gt;20 ml in temporal lobe; &gt;30 ml in other locations; GCS worsening; refractory ICP</td><td>Often observe; surgery if neurological worsening or refractory ICP</td></tr>
+            <tr><td><strong>Depressed Skull Fracture</strong></td><td>Displacement &gt; skull thickness; open fractures; underlying haematoma</td><td>Urgent (usually within 24h)</td></tr>
+            <tr><td><strong>Decompressive Craniectomy</strong></td><td>Refractory ICP &gt;25 mmHg unresponsive to all medical management</td><td>Semi-elective (after medical measures exhausted)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="pearls">
+      <h2>Clinical Pearls</h2>
+      <div class="pearl-grid">
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 1 — BTF 2023: SBP ≥110 mmHg Not ≥90</div>
+          <p>The old SBP &gt;90 threshold is obsolete. BTF 2023 Strong recommendation: SBP ≥110 mmHg in adults. Evidence shows worse outcomes even with SBP 90–110. Keep the injured brain well-perfused.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 2 — Steroids Kill in TBI</div>
+          <p>CRASH trial: methylprednisolone in TBI → increased mortality. Steroids are ABSOLUTELY CONTRAINDICATED in TBI. If you see a patient getting steroids for TBI, stop it immediately.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 3 — Hyperventilation = Temporary Bridge Only</div>
+          <p>Prophylactic hyperventilation (PaCO₂ &lt;35) causes cerebral vasoconstriction → ischaemia → worsens TBI. Use hyperventilation ONLY as emergency bridge to buy time for definitive treatment (EVD, mannitol, OR) when there's imminent herniation.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 4 — Hypotonic Fluids are Contraindicated in TBI</div>
+          <p>Ringer's Lactate (slightly hypotonic) and D5W: AVOID in TBI. Hypotonic fluids lower plasma osmolality → free water shifts into brain → worsens cerebral oedema. Use 0.9% Normal Saline or hypertonic saline for resuscitation.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 5 — Cushing's Triad = Surgical Emergency</div>
+          <p>Hypertension + Bradycardia + Irregular respirations = Cushing's triad = brainstem compression from raised ICP. This is a pre-terminal finding. Give mannitol 1 g/kg IV NOW and call neurosurgeon IMMEDIATELY. Brief hyperventilation as bridge.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 6 — Levetiracetam Not Phenytoin</div>
+          <p>Levetiracetam 1000 mg BD × 7 days for post-traumatic seizure prophylaxis. Both work equally for early seizures, but levetiracetam has no cognitive side effects, no drug interactions, and no need for monitoring levels.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 7 — "Talk and Die" — Lucid Interval in EDH</div>
+          <p>Extradural haematoma classically presents with lucid interval — initial concussion, brief LOC, then recovery (because EDH expands slowly at first), then rapid deterioration as haematoma grows and herniates. Young patients with temporal skull fracture: always rule out EDH even if GCS 15.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 8 — CPP = MAP − ICP</div>
+          <p>Cerebral Perfusion Pressure = MAP − ICP. Target CPP 60–70 mmHg. If ICP = 20 and MAP = 80, CPP = 60 (adequate). If MAP drops to 70, CPP = 50 (inadequate — injury). Two levers: lower ICP or raise MAP.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common Mistakes</h2>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 1 — Giving Steroids for TBI</div>
+        <p>CRASH trial proved methylprednisolone increases mortality in TBI. Steroids are absolutely contraindicated. Never give dexamethasone or methylprednisolone for head injury.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 2 — SBP Target of 90 mmHg</div>
+        <p>BTF 2023 updated this to SBP ≥110 mmHg in adults. The zone 90–110 is no longer considered adequate. Studies show worse neurological outcomes even when SBP stays above 90 but below 110.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 3 — Prophylactic Hyperventilation</div>
+        <p>Routine hyperventilation (PaCO₂ 30–35) causes cerebral vasoconstriction → ischaemia. Only use for imminent herniation as a bridge to definitive treatment. Target normocapnia (PaCO₂ 35–45) in ICU.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 4 — Using Hypotonic Fluids</div>
+        <p>Ringer's Lactate (slightly hypotonic at 254 mOsm/L vs plasma 285) lowers plasma osmolality → free water enters brain → worsens oedema. Use 0.9% NaCl or hypertonic saline for TBI resuscitation. KDIGO 2026 also recommends 0.9% NaCl for TBI specifically.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 5 — Phenytoin for Seizure Prophylaxis</div>
+        <p>Levetiracetam is preferred over phenytoin for post-traumatic seizure prophylaxis. Phenytoin has cardiovascular side effects (hypotension with IV loading), drug interactions, cognitive impairment, and requires level monitoring. Same efficacy, worse side effect profile.</p>
+      </div>
+    </section>
+
+    <section id="exam">
+      <h2>Exam Pearls (DrNB / PDCC / IFCCM)</h2>
+      <div class="exam-card"><p><strong>Q: BTF 2023 SBP target in adult TBI?</strong> → SBP ≥110 mmHg (Strong recommendation). This is updated from the old ≥90 mmHg threshold. Optimal targets may be even higher.</p></div>
+      <div class="exam-card"><p><strong>Q: Steroid use in TBI?</strong> → ABSOLUTELY CONTRAINDICATED. CRASH trial: methylprednisolone → increased 14-day mortality in TBI. Never give steroids for head injury.</p></div>
+      <div class="exam-card"><p><strong>Q: What is CPP and target in severe TBI?</strong> → CPP = MAP − ICP. Target 60–70 mmHg. Treat ICP &gt;22 mmHg and/or CPP &lt;60 mmHg with escalating interventions (CSF drainage, osmotherapy, sedation, surgical).</p></div>
+      <div class="exam-card"><p><strong>Q: Drug of choice for post-traumatic seizure prophylaxis?</strong> → Levetiracetam 1000 mg BD × 7 days (prevents early post-traumatic seizures only — not late). Preferred over phenytoin.</p></div>
+      <div class="exam-card"><p><strong>Q: CT findings in EDH vs SDH?</strong> → EDH: Biconvex (lens-shaped), hyperdense, does NOT cross suture lines (bounded by dura attachment). SDH: Concave (crescent-shaped), crosses suture lines (no dural attachment).</p></div>
+      <div class="exam-card"><p><strong>Q: Why avoid Ringer's Lactate in TBI?</strong> → Slightly hypotonic (254 mOsm/L) → lowers plasma osmolality → free water shifts into brain → worsens cerebral oedema. Use 0.9% NaCl or hypertonic saline for TBI resuscitation.</p></div>
+      <div class="exam-card"><p><strong>Q: Cushing's triad significance?</strong> → Hypertension + Bradycardia + Irregular respirations = brainstem compression from severely raised ICP = imminent death. Emergency: Mannitol 1 g/kg IV + brief hyperventilation + call neurosurgeon immediately.</p></div>
+    </section>
+
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Lulla A, Lumba-Brown A, Totten AM, et al.</strong> Brain Trauma Foundation: Prehospital Guidelines for the Management of Traumatic Brain Injury – 3rd Edition. <em>Prehospital Emergency Care.</em> 2023;27(Sup1):S1–S100.</li>
+        <li><strong>Carney N, Totten AM, O'Reilly C, et al.</strong> Guidelines for the Management of Severe Traumatic Brain Injury, 4th Edition. <em>Neurosurgery.</em> 2017;80(1):6–15.</li>
+        <li><strong>Edwards P, Arango M, Balica L, et al. (CRASH trial collaborators).</strong> Final results of MRC CRASH, a randomised placebo-controlled trial of intravenous corticosteroid in adults with head injury. <em>Lancet.</em> 2005;365(9475):1957–1959.</li>
+        <li><strong>Hutchinson PJ, Kolias AG, Timofeev IS, et al. (RESCUEicp).</strong> Trial of Decompressive Craniectomy for Traumatic Intracranial Hypertension. <em>N Engl J Med.</em> 2016;375(12):1119–1130.</li>
+        <li><strong>Cooper DJ, Rosenfeld JV, Murray L, et al. (DECRA).</strong> Decompressive Craniectomy in Diffuse Traumatic Brain Injury. <em>N Engl J Med.</em> 2011;364(16):1493–1502.</li>
+        <li><strong>Andrews PJD, Sinclair HL, Rodriguez A, et al. (Eurotherm3235).</strong> Hypothermia for Intracranial Hypertension after Traumatic Brain Injury. <em>N Engl J Med.</em> 2015;373(25):2403–2412.</li>
+        <li><strong>Inaba K, Menaker J, Branco BC, et al.</strong> A prospective multicenter comparison of levetiracetam versus phenytoin for early post-traumatic seizure prophylaxis. <em>J Trauma Acute Care Surg.</em> 2013;74(3):766–771.</li>
+        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Chapter 49: Head Injuries. Elsevier; 2018.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 4th edition. Chapter 44: Traumatic Brain Injury. Lippincott Williams &amp; Wilkins; 2014.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+</body>
+</html>

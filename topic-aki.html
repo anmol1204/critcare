@@ -5,6 +5,21 @@
   <title>AKI & CRRT — CritCare.in</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .pearl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+    .pearl-card { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 1rem 1.2rem; }
+    .pearl-card .pearl-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #92400e; margin-bottom: 0.5rem; }
+    .pearl-card p { font-size: 0.88rem; color: #78350f; line-height: 1.7; margin: 0; }
+    .mistake-card { background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 1rem 1.2rem; margin: 0.5rem 0; }
+    .mistake-card .m-label { font-size: 0.68rem; font-weight: 700; color: #991b1b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .mistake-card p { font-size: 0.88rem; color: #7f1d1d; line-height: 1.7; margin: 0; }
+    .exam-card { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 0.9rem 1.1rem; margin: 0.4rem 0; }
+    .exam-card p { font-size: 0.88rem; color: #1e40af; line-height: 1.7; margin: 0; }
+    .exam-card strong { color: #1e3a8a; }
+    .change-new { background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; color: #15803d; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4rem; vertical-align: middle; }
+    .change-updated { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 6px; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4rem; vertical-align: middle; }
+  </style>
 </head>
 <body>
 <nav class="nav">
@@ -14,190 +29,269 @@
     <li><a href="topics.html" class="active">ICU Topics</a></li>
     <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
 </nav>
+
 <header class="topic-hero">
   <div class="wrap">
     <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › AKI & CRRT</div>
     <h1>🫘 Acute Kidney Injury &amp; Renal Replacement Therapy</h1>
     <div class="guideline-row">
-      <span class="gbadge kdigo">KDIGO 2012</span>
-      <span class="gbadge isccm">ISCCM 2020</span>
-      <span class="gbadge esicm">ESICM 2021</span>
+      <span class="gbadge kdigo">KDIGO 2026 ✦ Draft</span>
+      <span class="gbadge sccm">ADQI 2023</span>
+      <span class="gbadge isccm">ISCCM</span>
     </div>
     <div class="topic-hero-meta">
-      <span class="topic-tag">Nephrology</span><span class="topic-tag">CRRT</span><span class="topic-tag">Drug Dosing</span>
-      <span class="topic-updated">Last updated: Jun 2025 · KDIGO 2012, STARRT-AKI 2020</span>
+      <span class="topic-tag">Nephrology</span>
+      <span class="topic-tag">CRRT</span>
+      <span class="topic-tag">AKD New Entity</span>
+      <span class="topic-updated">KDIGO 2026 (Public Review Draft, March 2026) · kdigo.org</span>
     </div>
   </div>
 </header>
+
 <div class="topic-layout">
   <aside class="topic-sidebar">
     <nav class="toc">
       <div class="toc-title">On this page</div>
       <ul class="toc-list">
-        <li><a href="#staging">AKI Staging (KDIGO)</a></li>
+        <li><a href="#whats-new">What Changed KDIGO 2026</a></li>
+        <li><a href="#physiology">How AKI Works</a></li>
+        <li><a href="#definitions">AKI & AKD Definitions</a></li>
+        <li><a href="#staging">Staging System</a></li>
+        <li><a href="#biomarkers">Biomarkers</a></li>
         <li><a href="#causes">Causes & Workup</a></li>
         <li><a href="#prevention">Prevention</a></li>
-        <li><a href="#conservative">Conservative Management</a></li>
-        <li><a href="#indications">Indications for RRT</a></li>
-        <li><a href="#modality">Modality Choice</a></li>
+        <li><a href="#conservative">Conservative Mgmt</a></li>
+        <li><a href="#rrt-indications">RRT Indications</a></li>
         <li><a href="#crrt">CRRT Prescription</a></li>
         <li><a href="#anticoag">Anticoagulation</a></li>
-        <li><a href="#drugs">Drug Dosing in AKI</a></li>
-        <li><a href="#recovery">Renal Recovery</a></li>
+        <li><a href="#drugs">Drug Dosing</a></li>
+        <li><a href="#pearls">Clinical Pearls</a></li>
+        <li><a href="#mistakes">Common Mistakes</a></li>
+        <li><a href="#exam">Exam Pearls</a></li>
         <li><a href="#references">References</a></li>
       </ul>
       <a href="topics.html" class="toc-back">← All topics</a>
     </nav>
   </aside>
+
   <main class="topic-content">
 
-    <section id="staging">
-      <h2>AKI Staging — KDIGO 2012</h2>
+    <section id="whats-new">
+      <h2>🆕 What Changed in KDIGO 2026 vs 2012</h2>
+      <div class="update-box">
+        <div class="kb-label">KDIGO 2026 — Public Review Draft March 2026 | First Update Since KDIGO 2012 AKI Guidelines</div>
+        <p>This is a draft guideline published for public review. Evidence reviewed through June 2025. Significant expansion from 2012: now includes AKD as a distinct entity, biomarker staging, cystatin C, furosemide stress test, and updated RRT guidance.</p>
+      </div>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Stage</th><th>Serum Creatinine Criteria</th><th>Urine Output Criteria</th><th>Approximate Mortality</th></tr></thead>
+          <thead><tr><th>Topic</th><th>KDIGO 2012</th><th>KDIGO 2026 Change</th><th>Tag</th></tr></thead>
           <tbody>
-            <tr><td><strong>Stage 1</strong></td><td>× 1.5–1.9 baseline OR rise ≥ 0.3 mg/dL within 48h</td><td>&lt; 0.5 ml/kg/h for 6–12h</td><td>~10–15%</td></tr>
-            <tr><td><strong>Stage 2</strong></td><td>× 2.0–2.9 baseline</td><td>&lt; 0.5 ml/kg/h for ≥12h</td><td>~20–30%</td></tr>
-            <tr><td><strong>Stage 3</strong></td><td>× 3.0 baseline OR ≥ 4.0 mg/dL OR initiation of RRT OR eGFR &lt;35 (age &lt;18)</td><td>&lt; 0.3 ml/kg/h for ≥24h OR anuria ≥12h</td><td>~40–60%</td></tr>
+            <tr><td><strong>AKI criteria</strong></td><td>SCr + UO only</td><td>Added: serum cystatin C as alternative; biomarker criteria (TIMP-2*IGFBP7, NGAL) for structural AKI</td><td><span class="change-new">New</span></td></tr>
+            <tr><td><strong>AKD (new entity)</strong></td><td>Not defined</td><td>AKD = AKI/kidney dysfunction lasting 3–90 days. Distinct from AKI (≤7 days) and CKD (&gt;90 days)</td><td><span class="change-new">New entity</span></td></tr>
+            <tr><td><strong>Biomarker staging</strong></td><td>Functional only (SCr/UO)</td><td>B0/B1 biomarker staging added to severity classification (presence/absence of kidney damage biomarker)</td><td><span class="change-new">New</span></td></tr>
+            <tr><td><strong>Furosemide stress test</strong></td><td>Not mentioned</td><td>Suggest using FST to assess risk of progression to Stage 3 AKI (2C adults, 2B children)</td><td><span class="change-new">New</span></td></tr>
+            <tr><td><strong>Fluid choice</strong></td><td>Prefer isotonic crystalloids</td><td>STRONG recommendation (1B): buffered crystalloids over 0.9% saline (except TBI)</td><td><span class="change-updated">Upgraded to Strong</span></td></tr>
+            <tr><td><strong>Electronic AKI alerts</strong></td><td>Not addressed</td><td>STRONG recommendation (1B): AGAINST isolated interruptive creatinine-based electronic alerts without systematic response strategy</td><td><span class="change-new">New Strong Rec</span></td></tr>
+            <tr><td><strong>MAP target</strong></td><td>MAP ≥65 mmHg</td><td>Suggest MAP &gt;65 mmHg in critically ill at risk of AKI (2C). Higher/lower targets context-dependent</td><td><span class="change-updated">Clarified</span></td></tr>
+            <tr><td><strong>Elective major abdominal surgery fluids</strong></td><td>Not specifically addressed</td><td>Strong recommendation (1B): Liberal fluid strategy (positive balance 1–2 kg at 24h) over restrictive</td><td><span class="change-new">New Strong Rec</span></td></tr>
           </tbody>
         </table>
       </div>
-      <p>Use whichever criterion (creatinine OR urine output) gives the higher stage. <strong>Baseline creatinine:</strong> Lowest value within 3 months prior. If unavailable, estimate from MDRD assuming eGFR = 75 ml/min/1.73m².</p>
+    </section>
+
+    <section id="physiology">
+      <h2>How AKI Works — The Pathophysiology</h2>
+      <h3>The Kidney's Vulnerability</h3>
+      <p>The kidney receives 20–25% of cardiac output but consumes only 8% of O₂. This combination makes the renal medulla exquisitely sensitive to ischaemia — the medullary thick ascending limb (mTAL) has the highest O₂ consumption in the body and the lowest O₂ delivery. Any reduction in renal blood flow rapidly causes medullary hypoxia.</p>
+      <h3>Mechanisms of AKI</h3>
+      <ul>
+        <li><strong>Haemodynamic (pre-renal → ATN):</strong> ↓ renal perfusion pressure → afferent arteriolar vasoconstriction (autoregulation) → ↓ GFR. Prolonged → ischaemia → tubular cell death (ATN). In sepsis: efferent arteriolar vasodilation + afferent vasoconstriction + endothelial dysfunction</li>
+        <li><strong>Nephrotoxic ATN:</strong> Direct tubular cell toxicity from aminoglycosides (accumulate in proximal tubules), contrast (vasoconstriction + direct toxicity), myoglobin (Heme proteins → free radicals), vancomycin, NSAIDs</li>
+        <li><strong>Inflammatory:</strong> Sepsis-induced AKI — cytokine-mediated endothelial dysfunction, microvascular coagulation, mitochondrial dysfunction. NOT just ischaemia — cellular metabolic failure even with normal blood flow</li>
+        <li><strong>Obstructive:</strong> Raised intratubular pressure → back-pressure against filtration → ↓ GFR. Rapidly reversible if obstruction relieved within hours</li>
+      </ul>
+      <h3>The AKI-Fluid Overload Vicious Cycle</h3>
+      <p>AKI → oliguria → fluid accumulation → pulmonary oedema → ↓ O₂ delivery → worsening AKI → more fluid given → more overload. Fluid overload (&gt;10% body weight gain) independently increases mortality. Break the cycle with appropriate fluid assessment and early RRT for fluid removal if needed.</p>
+    </section>
+
+    <section id="definitions">
+      <h2>AKI &amp; AKD Definitions — KDIGO 2026</h2>
+      <h3>AKI (Acute Kidney Injury) — Updated 2026</h3>
+      <p>AKI is defined by <strong>functional OR structural</strong> criteria (KDIGO 2026 expansion from 2012):</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Criteria Type</th><th>Criterion</th><th>Time Frame</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Functional — SCr</strong></td><td>Rise ≥0.3 mg/dL (≥26.5 µmol/L)</td><td>Within 48 hours</td></tr>
+            <tr><td><strong>Functional — SCr</strong></td><td>Rise ≥1.5× baseline</td><td>Within 7 days</td></tr>
+            <tr><td><strong>Functional — Cystatin C</strong> <span class="change-new">New 2026</span></td><td>Rise ≥1.5× baseline cystatin C</td><td>Within 7 days</td></tr>
+            <tr><td><strong>Functional — Urine Output</strong></td><td>&lt;0.5 ml/kg/h (IBW)</td><td>For ≥6 hours</td></tr>
+            <tr><td><strong>Structural</strong> <span class="change-new">New 2026</span></td><td>Elevated validated kidney damage biomarker (NGAL, TIMP-2*IGFBP7)</td><td>Known or presumed within 7 days</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>AKD (Acute Kidney Disease) — New Entity in KDIGO 2026 <span class="change-new">New</span></h3>
+      <p>AKD is defined as kidney dysfunction (by AKI criteria OR GFR &lt;60 ml/min/1.73m² OR GFR decrease ≥35% OR SCr increase &gt;50% from baseline) with duration <strong>≤3 months</strong>. AKD fills the gap between AKI (≤7 days) and CKD (&gt;3 months).</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Entity</th><th>Duration</th><th>Key Implication</th></tr></thead>
+          <tbody>
+            <tr><td><strong>AKI</strong></td><td>≤7 days</td><td>Acute phase; focus on cause, haemodynamics, avoid nephrotoxins</td></tr>
+            <tr><td><strong>AKD</strong></td><td>7 days–3 months</td><td>New: recovery phase or persistent injury; monitoring and nephrology follow-up</td></tr>
+            <tr><td><strong>CKD</strong></td><td>&gt;3 months</td><td>Permanent; manage complications, CKD staging</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="staging">
+      <h2>AKI Staging — KDIGO 2026 (Expanded)</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Stage</th><th>SCr Criteria</th><th>Urine Output</th><th>Biomarker <span class="change-new">New</span></th><th>Approx Mortality</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Stage 1</strong></td><td>×1.5–1.9 baseline OR rise ≥0.3 mg/dL</td><td>&lt;0.5 ml/kg/h × 6–12h</td><td>B0 (negative) or B1 (positive)</td><td>~10–15%</td></tr>
+            <tr><td><strong>Stage 2</strong></td><td>×2.0–2.9 baseline</td><td>&lt;0.5 ml/kg/h × ≥12h</td><td>B0 or B1</td><td>~20–30%</td></tr>
+            <tr><td><strong>Stage 3</strong></td><td>×3.0 baseline OR SCr ≥4.0 mg/dL OR initiation of RRT</td><td>&lt;0.3 ml/kg/h × ≥24h OR anuria ×12h</td><td>B0 or B1</td><td>~40–60%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>New KDIGO 2026:</strong> Use the criterion (SCr or UO) giving the highest stage. B1 (positive damage biomarker) with any creatinine stage indicates structural kidney damage — higher risk of progression.</p>
+      <p><strong>Transient vs Persistent AKI (New 2026):</strong> Transient = SCr/UO returns to normal within 48h. Persistent = dysfunction &gt;48h. Persistent AKI has higher risk of AKD and CKD progression.</p>
+    </section>
+
+    <section id="biomarkers">
+      <h2>AKI Biomarkers — KDIGO 2026 <span class="change-new">New</span></h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Biomarker</th><th>Source</th><th>Best Use</th><th>Clinical Threshold</th></tr></thead>
+          <tbody>
+            <tr><td><strong>TIMP-2 × IGFBP7</strong> (NephroCheck)</td><td>Urine</td><td>Predict moderate-severe AKI risk within 12h in ICU; especially post-surgery or sepsis</td><td>&gt;0.3 = risk; &gt;2.0 = high risk of Stage 2–3 AKI</td></tr>
+            <tr><td><strong>NGAL</strong> (Neutrophil Gelatinase-Associated Lipocalin)</td><td>Urine or plasma</td><td>Early AKI detection (rises 2–6h before SCr); distinguish pre-renal from ATN</td><td>Urine NGAL &gt;150 ng/ml = high probability ATN</td></tr>
+            <tr><td><strong>Cystatin C</strong></td><td>Serum</td><td>Better GFR marker when SCr unreliable (muscle wasting, obesity, cirrhosis)</td><td>Rise ≥1.5× baseline = AKI per KDIGO 2026</td></tr>
+            <tr><td><strong>KIM-1</strong> (Kidney Injury Molecule-1)</td><td>Urine</td><td>Proximal tubule injury marker; elevated in ATN; research use mostly</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Furosemide Stress Test (FST) — New KDIGO 2026 Recommendation</h3>
+      <div class="key-box">
+        <div class="kb-label">KDIGO 2026 — Suggest using FST (2C adults, 2B children)</div>
+        <p><strong>Indication:</strong> Euvolaemic or hypervolaemic patients with Stage 1 or 2 AKI — predict risk of progression to Stage 3.</p>
+        <p><strong>Protocol:</strong> Furosemide 1.0–1.5 mg/kg IV (furosemide-naive) or 1.0 mg/kg (prior furosemide). Measure UO over 2 hours.</p>
+        <p><strong>Interpretation:</strong> UO &lt;200 ml in 2h → high risk of progression to Stage 3 AKI/RRT (sensitivity 87%, specificity 84%). UO ≥200 ml → low risk.</p>
+      </div>
     </section>
 
     <section id="causes">
       <h2>Causes &amp; Diagnostic Workup</h2>
-      <h3>Classification</h3>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Category</th><th>Causes</th><th>Urine Findings</th><th>Management</th></tr></thead>
+          <thead><tr><th>Category</th><th>Common Causes</th><th>Urine Findings</th><th>First Step</th></tr></thead>
           <tbody>
-            <tr><td><strong>Pre-renal</strong></td><td>Hypovolaemia, sepsis, cardiac failure, HRS, NSAID use</td><td>FeNa &lt;1%, UNa &lt;20 mEq/L, Uosm &gt;500, bland sediment</td><td>Volume/haemodynamic correction</td></tr>
-            <tr><td><strong>Intrinsic — ATN</strong></td><td>Ischaemia (prolonged pre-renal), nephrotoxins (aminoglycosides, contrast, vancomycin, NSAIDs)</td><td>FeNa &gt;2%, muddy brown granular casts, renal tubular epithelial cells</td><td>Remove cause, supportive</td></tr>
-            <tr><td><strong>Intrinsic — AIN</strong></td><td>Drug-induced (beta-lactams, PPIs, NSAIDs, rifampicin), infection, sarcoid</td><td>WBC casts, eosinophiluria (not reliable), mild proteinuria</td><td>Remove offending drug; steroids if severe</td></tr>
-            <tr><td><strong>Intrinsic — GN</strong></td><td>Vasculitis, anti-GBM, IgA nephropathy</td><td>RBC casts, heavy proteinuria, dysmorphic red cells</td><td>Nephrology consult, immunosuppression</td></tr>
-            <tr><td><strong>Post-renal</strong></td><td>BPH, pelvic mass, bilateral ureteric obstruction, blocked catheter</td><td>Normal sediment; hydronephrosis on USS</td><td>Relieve obstruction (first step — check catheter!)</td></tr>
+            <tr><td><strong>Pre-renal</strong></td><td>Hypovolaemia, sepsis, cardiac failure, HRS, NSAID</td><td>FeNa &lt;1%, UNa &lt;20, Uosm &gt;500, bland sediment</td><td>Volume challenge or haemodynamic correction</td></tr>
+            <tr><td><strong>ATN (ischaemic)</strong></td><td>Prolonged pre-renal, sepsis, major surgery, cardiac arrest</td><td>Muddy brown granular casts, RTE cells, FeNa &gt;2%</td><td>Remove precipitant; supportive</td></tr>
+            <tr><td><strong>ATN (nephrotoxic)</strong></td><td>Aminoglycosides, contrast, NSAIDs, vancomycin, myoglobin, haemoglobin</td><td>Granular casts, FeNa &gt;2%</td><td>Stop nephrotoxin; supportive</td></tr>
+            <tr><td><strong>AIN</strong></td><td>Beta-lactams, PPIs, NSAIDs, rifampicin, allopurinol</td><td>WBC casts, mild proteinuria, eosinophiluria (low sensitivity)</td><td>Stop offending drug; steroids if severe</td></tr>
+            <tr><td><strong>Post-renal (obstruction)</strong></td><td>Blocked catheter, BPH, pelvic mass, bilateral ureteric obstruction</td><td>Normal sediment; hydronephrosis on USS</td><td>CHECK CATHETER FIRST (most common cause)</td></tr>
           </tbody>
         </table>
       </div>
+      <h3>Nephrotoxic Drugs — Stop or Adjust in AKI</h3>
       <div class="warn-box">
-        <div class="kb-label">First Step: Check the Urinary Catheter</div>
-        <p>Before any workup, confirm the catheter is patent and correctly positioned. Kinked, blocked, or incorrectly placed catheters cause iatrogenic post-renal AKI. Flush with 10 ml sterile water if doubt.</p>
+        <div class="kb-label">Stop These in AKI</div>
+        <p>NSAIDs | ACE inhibitors / ARBs (unless strongly indicated) | Metformin (lactic acidosis) | Spironolactone (hyperkalaemia) | Aminoglycosides (switch to alternative) | IV contrast (use iso-osmolar; pre-hydrate) | Vancomycin + Piperacillin-Taz combination (↑ nephrotoxicity synergistically)</p>
       </div>
-      <h3>Nephrotoxic Drugs to Stop/Adjust in AKI</h3>
-      <ul>
-        <li>NSAIDs and COX-2 inhibitors</li>
-        <li>ACE inhibitors / ARBs (unless strongly indicated)</li>
-        <li>Aminoglycosides — switch to alternative if feasible</li>
-        <li>IV contrast — use iso-osmolar; pre-hydrate; avoid if AKI stage ≥2</li>
-        <li>Metformin — stop (lactic acidosis risk)</li>
-        <li>Spironolactone, eplerenone — hyperkalaemia risk</li>
-        <li>Amphotericin B — use liposomal form in AKI</li>
-      </ul>
     </section>
 
     <section id="prevention">
-      <h2>Prevention of AKI in ICU</h2>
+      <h2>Prevention of AKI — KDIGO 2026</h2>
       <ul>
-        <li><strong>Haemodynamic optimisation:</strong> Maintain MAP ≥ 65 mmHg; avoid hypovolaemia and excessive positive fluid balance</li>
-        <li><strong>Balanced crystalloids:</strong> Prefer Ringer's Lactate over 0.9% NaCl (SMART, SALT-ED trials)</li>
-        <li><strong>Avoid nephrotoxins:</strong> Check all drug doses and interactions; avoid unnecessary contrast</li>
-        <li><strong>Contrast nephropathy prophylaxis:</strong> IV hydration with 0.9% NaCl or sodium bicarbonate 1–1.5 ml/kg/h × 3–12h pre/post procedure; N-acetylcysteine 1200 mg PO BD before and after (weak evidence)</li>
-        <li><strong>Glycaemic control:</strong> Target 140–180 mg/dL</li>
-        <li><strong>Aminoglycoside dosing:</strong> Once-daily dosing reduces nephrotoxicity; monitor trough levels; avoid in existing AKI</li>
-        <li><strong>Vancomycin:</strong> Monitor AUC/MIC (target AUC 400–600 mg·h/L); avoid concomitant piperacillin-tazobactam (↑ nephrotoxicity)</li>
+        <li><strong>Haemodynamic optimisation:</strong> MAP &gt;65 mmHg; avoid hypovolaemia AND excessive fluid overload</li>
+        <li><strong>Buffered crystalloids:</strong> Strong recommendation (1B) — balanced crystalloids over 0.9% NaCl for volume expansion (except TBI where 0.9% saline preferred)</li>
+        <li><strong>Avoid nephrotoxins</strong> — review all drugs; avoid unnecessary contrast</li>
+        <li><strong>Contrast AKI prevention:</strong> IV hydration 0.9% NaCl or sodium bicarbonate 1–1.5 ml/kg/h × 3–12h pre/post procedure; iso-osmolar contrast; minimize contrast volume</li>
+        <li><strong>Glycaemic control:</strong> Target 140–180 mg/dL in ICU</li>
+        <li><strong>Elective major abdominal surgery:</strong> Liberal fluid strategy (positive balance 1–2 kg at 24h) — Strong recommendation (1B) — reduces AKI risk vs restrictive</li>
+        <li><strong>Vasopressors:</strong> Use in conjunction with fluids when haemodynamically unstable — MAP &gt;65 mmHg target</li>
       </ul>
     </section>
 
     <section id="conservative">
-      <h2>Conservative Management of AKI</h2>
+      <h2>Conservative Management of Established AKI</h2>
       <ul>
-        <li><strong>Fluid balance:</strong> Avoid both hypovolaemia (worsens AKI) and fluid overload (&gt;10% weight gain worsens outcome)</li>
-        <li><strong>Diuretics:</strong> Furosemide for fluid overload management; does NOT prevent AKI or accelerate renal recovery (FACTT-AKI) — use only to manage volume</li>
-        <li><strong>Nutritional support:</strong> Do NOT restrict protein in AKI — standard 0.8–1.2 g/kg/day; higher 1.5–2 g/kg/day on CRRT (amino acid losses)</li>
-        <li><strong>Potassium management:</strong> K &lt;5.5 mEq/L: dietary restriction, calcium resonium 15g PO TDS; K 5.5–6.5: add insulin-dextrose; K &gt;6.5 or ECG changes: urgent RRT</li>
-        <li><strong>Bicarbonate:</strong> Sodium bicarbonate infusion for severe metabolic acidosis (pH &lt;7.2) if RRT not immediately available — 1–2 mEq/kg slow IV infusion</li>
-        <li><strong>Medication review:</strong> Dose-adjust all renally-cleared drugs (see drug dosing section)</li>
+        <li><strong>Fluid balance:</strong> Avoid both hypovolaemia AND fluid overload; use dynamic assessment (PLR, PPV) to guide fluid decisions</li>
+        <li><strong>Diuretics:</strong> Furosemide for volume overload management — does NOT prevent AKI progression or improve renal recovery</li>
+        <li><strong>Nutrition:</strong> Normal protein (0.8–1.2 g/kg/day); higher if on CRRT (1.5–2 g/kg/day — amino acid losses through filter)</li>
+        <li><strong>Metabolic acidosis:</strong> IV bicarbonate if pH &lt;7.20 without urgent RRT indication — KDIGO 2026 suggests bicarbonate over RRT for isolated acidosis (2C)</li>
+        <li><strong>Potassium:</strong> K &lt;5.5 — dietary restriction ± resonium; K 5.5–6.5 → insulin-dextrose + salbutamol; K &gt;6.5 or ECG changes → urgent RRT or calcium gluconate + shifts</li>
+        <li><strong>Drug dose adjustment:</strong> All renally-cleared drugs — see drug dosing section</li>
       </ul>
     </section>
 
-    <section id="indications">
+    <section id="rrt-indications">
       <h2>Indications for Renal Replacement Therapy</h2>
       <div class="key-box">
-        <div class="kb-label">Absolute Indications — Start Immediately (AEIOU Mnemonic)</div>
+        <div class="kb-label">Absolute Indications — AEIOU Mnemonic</div>
         <ul>
-          <li><strong>A</strong>cidosis — metabolic acidosis pH &lt;7.1 refractory to bicarbonate therapy</li>
-          <li><strong>E</strong>lectrolytes — hyperkalaemia K &gt;6.5 mEq/L with ECG changes, or K &gt;7.0 regardless</li>
+          <li><strong>A</strong>cidosis — metabolic acidosis pH &lt;7.1 refractory to bicarbonate</li>
+          <li><strong>E</strong>lectrolytes — hyperkalaemia K &gt;6.5 with ECG changes, or K &gt;7.0 regardless</li>
           <li><strong>I</strong>ngestion — dialysable toxins (methanol, ethylene glycol, lithium, salicylates, metformin)</li>
           <li><strong>O</strong>verload — pulmonary oedema refractory to diuretics</li>
-          <li><strong>U</strong>raemia — uraemic encephalopathy, uraemic pericarditis, uraemic bleeding, urea &gt;150–200 mg/dL (25–33 mmol/L)</li>
+          <li><strong>U</strong>raemia — encephalopathy, pericarditis, uraemic bleeding; urea &gt;150–200 mg/dL</li>
         </ul>
       </div>
-      <h3>Timing of RRT — Standard Strategy (KDIGO / STARRT-AKI)</h3>
+      <h3>Timing of RRT — KDIGO 2026 Position</h3>
       <div class="update-box">
-        <div class="kb-label">STARRT-AKI (2020) — Key Evidence</div>
-        <p>Accelerated RRT initiation (within 12h of AKI stage 2–3) vs standard strategy (based on absolute indications) showed <strong>no difference in 90-day mortality</strong>. The standard (indication-based) strategy is preferred — it avoids unnecessary RRT in patients who may recover. Do NOT initiate RRT prophylactically.</p>
-      </div>
-      <p><strong>Standard strategy:</strong> Initiate RRT when at least ONE absolute indication (AEIOU) is present, or when AKI is Stage 3 with clinical deterioration despite conservative management.</p>
-    </section>
-
-    <section id="modality">
-      <h2>Modality Choice</h2>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Modality</th><th>When to Use</th><th>Advantages</th><th>Disadvantages</th></tr></thead>
-          <tbody>
-            <tr><td><strong>CRRT (CVVHDF)</strong></td><td>Haemodynamically unstable; cerebral oedema (ICP management); severe fluid overload</td><td>Better haemodynamic tolerance; continuous fluid removal; better solute clearance</td><td>Requires anticoagulation; filter clotting; limited mobility; higher cost</td></tr>
-            <tr><td><strong>Intermittent HD (IHD)</strong></td><td>Haemodynamically stable; need rapid solute removal (hyperkalaemia, toxins); planned switch from CRRT</td><td>Faster solute clearance; no continuous anticoagulation; easier mobility</td><td>Haemodynamic instability; rebound; not suitable in cerebral oedema</td></tr>
-            <tr><td><strong>SLED (Sustained Low-Efficiency Dialysis)</strong></td><td>Moderately unstable; bridge between CRRT and IHD</td><td>Better tolerated than IHD; less anticoagulation than CRRT; overnight sessions</td><td>Requires IHD machine; complex scheduling</td></tr>
-            <tr><td><strong>Peritoneal Dialysis (PD)</strong></td><td>Resource-limited; no vascular access</td><td>No anticoagulation; inexpensive; simple</td><td>Inadequate clearance in hypercatabolic patients; peritonitis risk</td></tr>
-          </tbody>
-        </table>
+        <div class="kb-label">KDIGO 2026 — Table 41: Deferred RRT Initiation Strategy</div>
+        <p>KDIGO 2026 supports a deferred (indication-based) RRT strategy for critically ill adults with AKI. This is consistent with STARRT-AKI (2020), which showed NO benefit from accelerated RRT initiation. <strong>Do NOT initiate RRT prophylactically.</strong> Wait for an absolute indication or clinical deterioration despite conservative management.</p>
       </div>
     </section>
 
     <section id="crrt">
-      <h2>CRRT Prescription</h2>
-      <h3>CVVHDF Settings (Standard)</h3>
+      <h2>CRRT Prescription — KDIGO 2026 + ADQI 2023</h2>
+      <h3>Modality Choice</h3>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Parameter</th><th>Setting</th><th>Notes</th></tr></thead>
+          <thead><tr><th>Modality</th><th>Best For</th><th>Avoid If</th></tr></thead>
           <tbody>
-            <tr><td><strong>Blood Flow Rate (Qb)</strong></td><td>150–250 ml/min</td><td>Higher flow reduces filter clotting; lower if citrate anticoagulation issues</td></tr>
-            <tr><td><strong>Effluent Dose</strong></td><td><strong>25 ml/kg/hr prescribed</strong> (delivers ~20 ml/kg/hr net)</td><td>KDIGO recommends ≥20 ml/kg/hr delivered. Prescribe higher to account for filter downtime (~25%)</td></tr>
-            <tr><td><strong>Dialysate Flow (Qd)</strong></td><td>50% of total effluent</td><td>Remainder = replacement fluid (pre- or post-dilution)</td></tr>
-            <tr><td><strong>Pre- vs Post-dilution</strong></td><td>Pre-dilution preferred</td><td>Pre-dilution: less clotting, slightly lower clearance; Post-dilution: better clearance, more clotting risk</td></tr>
-            <tr><td><strong>Ultrafiltration (Net UF)</strong></td><td>Per fluid balance goal</td><td>Set hourly net UF rate; adjust daily based on weight and clinical assessment</td></tr>
-            <tr><td><strong>Access</strong></td><td>Non-dominant femoral or right internal jugular</td><td>Subclavian: avoid (central venous stenosis risk); RIJ preferred; avoid femoral in mobile patients</td></tr>
-            <tr><td><strong>Buffer</strong></td><td>Bicarbonate-buffered solutions</td><td>Lactate-buffered acceptable in mild liver dysfunction; avoid in severe hepatic failure</td></tr>
+            <tr><td><strong>CVVHDF (CRRT)</strong></td><td>Haemodynamically unstable, cerebral oedema, fluid overload, continuous control needed</td><td>Stable patient who can tolerate IHD</td></tr>
+            <tr><td><strong>IHD (Intermittent HD)</strong></td><td>Haemodynamically stable, rapid solute removal needed (hyperkalaemia, toxins)</td><td>Haemodynamic instability, raised ICP</td></tr>
+            <tr><td><strong>SLED (Sustained Low-Efficiency)</strong></td><td>Bridge between CRRT and IHD; moderately unstable</td><td>—</td></tr>
+            <tr><td><strong>Peritoneal Dialysis</strong></td><td>Resource-limited; no vascular access; paediatric</td><td>Abdominal pathology, severe hypercatabolic states</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="warn-box">
-        <div class="kb-label">RENAL Trial (2009) — Higher Dose Not Better</div>
-        <p>RENAL trial: Higher effluent dose (40 ml/kg/hr) vs standard (25 ml/kg/hr) — NO difference in 90-day mortality. <strong>Do not prescribe doses above 25 ml/kg/hr routinely.</strong> Higher doses increase cost without benefit.</p>
+      <h3>CRRT Settings (CVVHDF)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>Setting</th><th>Rationale</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Effluent Dose</strong></td><td>25 ml/kg/hr prescribed → delivers ~20 ml/kg/hr net</td><td>KDIGO minimum 20 ml/kg/hr. RENAL trial: &gt;25 ml/kg/hr = no additional benefit</td></tr>
+            <tr><td><strong>Blood Flow Rate</strong></td><td>150–250 ml/min</td><td>Higher flow → less filter clotting; lower if citrate issues</td></tr>
+            <tr><td><strong>Dialysate:Replacement</strong></td><td>50:50 (CVVHDF)</td><td>Combines diffusion and convection; maximises clearance</td></tr>
+            <tr><td><strong>Pre vs Post-dilution</strong></td><td>Pre-dilution preferred</td><td>↓ clotting risk; slightly ↓ clearance</td></tr>
+            <tr><td><strong>Net Ultrafiltration</strong></td><td>Per fluid balance goal (hourly)</td><td>Set to achieve neutral or negative balance</td></tr>
+            <tr><td><strong>Access site</strong></td><td>Right internal jugular preferred; then femoral</td><td>Avoid subclavian (stenosis risk)</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
     <section id="anticoag">
-      <h2>Anticoagulation in CRRT</h2>
+      <h2>Anticoagulation in CRRT — KDIGO 2026</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Method</th><th>Indication</th><th>Protocol</th><th>Monitoring</th><th>Pitfalls</th></tr></thead>
+          <thead><tr><th>Method</th><th>Indication</th><th>Protocol</th><th>Monitor</th><th>Watch For</th></tr></thead>
           <tbody>
-            <tr><td><strong>Regional Citrate (RCA)</strong></td><td><strong>First choice — all patients</strong></td><td>Citrate pre-filter → chelates Ca²⁺ → anticoagulation in circuit; calcium replacement post-filter</td><td>Post-filter iCa 0.25–0.35 mmol/L; systemic iCa 1.10–1.35 mmol/L; total/iCa ratio &lt;2.5</td><td>Citrate accumulation in liver failure (total/iCa &gt;2.5; metabolic alkalosis)</td></tr>
-            <tr><td><strong>Unfractionated Heparin (UFH)</strong></td><td>No citrate availability; HIT excluded</td><td>500–2000 IU/hr pre-filter; adjust to aPTT 45–60s</td><td>aPTT q6h (system) or anti-Xa 0.3–0.5 IU/ml</td><td>Systemic anticoagulation; HIT risk; variable dosing</td></tr>
-            <tr><td><strong>No Anticoagulation</strong></td><td>Active bleeding; high haemorrhage risk; coagulopathy (INR &gt;2.5)</td><td>Pre-dilution to reduce clotting; saline flushes q30–60 min</td><td>Monitor transmembrane pressure; filter life</td><td>Short filter life (6–12h); labour-intensive</td></tr>
-            <tr><td><strong>Argatroban</strong></td><td>Confirmed HIT</td><td>0.5–1 mcg/kg/min IV; adjust to aPTT 1.5–3× normal</td><td>aPTT, liver function (hepatically metabolised)</td><td>Prolongs PT/INR; cannot use in severe liver disease</td></tr>
+            <tr><td><strong>Regional Citrate (RCA)</strong></td><td>FIRST CHOICE — all patients without citrate failure</td><td>Pre-filter citrate → chelates Ca²⁺ in circuit; post-filter calcium replacement</td><td>Post-filter iCa 0.25–0.35 mmol/L; systemic iCa 1.10–1.35 mmol/L; Total/iCa ratio &lt;2.5</td><td>Citrate accumulation (liver failure) — Total Ca/iCa &gt;2.5 + metabolic alkalosis</td></tr>
+            <tr><td><strong>UFH (systemic)</strong></td><td>No citrate available; HIT excluded</td><td>500–2000 IU/hr pre-filter</td><td>aPTT 45–60s</td><td>Bleeding; HIT</td></tr>
+            <tr><td><strong>No anticoagulation</strong></td><td>Active bleeding; INR &gt;2.5 (circuit is anticoagulated by patient's coagulopathy)</td><td>Pre-dilution + saline flushes q30–60 min</td><td>Transmembrane pressure; filter life</td><td>Short filter life (6–12h)</td></tr>
+            <tr><td><strong>Argatroban</strong></td><td>Confirmed HIT</td><td>0.5–1 mcg/kg/min; adjust to aPTT 1.5–3×</td><td>aPTT; LFTs (hepatically metabolised)</td><td>Prolongs PT/INR; avoid in severe liver disease</td></tr>
           </tbody>
         </table>
-      </div>
-      <div class="warn-box">
-        <div class="kb-label">Citrate Accumulation — How to Detect</div>
-        <p>Suspect if: Total Ca²⁺ / Ionised Ca²⁺ ratio &gt; 2.5; unexplained metabolic alkalosis (pH &gt;7.50); hypocalcaemia despite calcium replacement; worsening liver function. Action: Reduce citrate rate or switch to heparin anticoagulation.</p>
       </div>
     </section>
 
@@ -205,53 +299,111 @@
       <h2>Drug Dosing in AKI &amp; on CRRT</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Drug</th><th>Normal Dose</th><th>eGFR 10–30</th><th>On CRRT (CVVHDF)</th><th>Notes</th></tr></thead>
+          <thead><tr><th>Drug</th><th>Normal Dose</th><th>AKI (eGFR &lt;30)</th><th>CRRT (CVVHDF)</th><th>Key Note</th></tr></thead>
           <tbody>
-            <tr><td><strong>Meropenem</strong></td><td>1g q8h</td><td>1g q12–24h</td><td>1g q12h</td><td>Seizure risk at high doses; dose by severity of infection</td></tr>
-            <tr><td><strong>Piperacillin-Tazobactam</strong></td><td>4.5g q6h</td><td>2.25g q6–8h</td><td>4.5g q8h</td><td>Neurotoxicity in AKI — titrate carefully</td></tr>
-            <tr><td><strong>Vancomycin</strong></td><td>Weight-based q8–12h</td><td>Load 25mg/kg, then per levels</td><td>Load 25mg/kg, then 1g q12–24h (monitor AUC 400–600)</td><td>AUC-guided dosing preferred; avoid with pip-taz (↑ AKI)</td></tr>
-            <tr><td><strong>Linezolid</strong></td><td>600mg q12h</td><td>No dose change</td><td>No dose change</td><td>Thrombocytopenia with prolonged use; serotonin syndrome risk</td></tr>
-            <tr><td><strong>Colistin</strong></td><td>Loading dose, then 9 MIU/day ÷ q12h</td><td>Reduce maintenance by 50–75%</td><td>Variable; 4.5 MIU q12h</td><td>Nephrotoxic — avoid if alternative exists; monitor SCr daily</td></tr>
-            <tr><td><strong>Fluconazole</strong></td><td>400mg q24h</td><td>200mg q24h (eGFR&lt;50)</td><td>400mg q24h</td><td>Renally cleared — dose reduce in AKI; CRRT provides adequate clearance</td></tr>
-            <tr><td><strong>Enoxaparin</strong></td><td>40mg SC OD (prophylaxis)</td><td>Use UFH (UFH safer in AKI)</td><td>UFH preferred</td><td>Anti-Xa accumulation in AKI; use UFH for therapeutic anticoagulation</td></tr>
-            <tr><td><strong>Fentanyl</strong></td><td>Titrate infusion</td><td>Safe — preferred opioid</td><td>Safe</td><td>No active metabolites; preferred opioid in renal failure</td></tr>
+            <tr><td><strong>Meropenem</strong></td><td>1g q8h</td><td>1g q12–24h</td><td>1g q12h (extended infusion over 3h)</td><td>Extend infusion for time-dependent killing</td></tr>
+            <tr><td><strong>Pip-Taz</strong></td><td>4.5g q6h</td><td>2.25g q6h (eGFR &lt;20)</td><td>4.5g q8h</td><td>Neurotoxicity risk at high doses in AKI</td></tr>
+            <tr><td><strong>Vancomycin</strong></td><td>Weight-based q8–12h</td><td>Load 25 mg/kg; then monitor levels</td><td>Load 25 mg/kg; 1g q12–24h; target AUC 400–600</td><td>AUC-guided dosing preferred; avoid with Pip-Taz (synergistic nephrotoxicity)</td></tr>
+            <tr><td><strong>Linezolid</strong></td><td>600 mg q12h</td><td>No change</td><td>No change</td><td>Thrombocytopenia with prolonged use; serotonin syndrome risk</td></tr>
+            <tr><td><strong>Colistin</strong></td><td>9 MIU load; 4.5 MIU q12h</td><td>Reduce maintenance by 50%</td><td>4.5 MIU q12h (variable clearance)</td><td>Nephrotoxic; monitor SCr daily; last resort</td></tr>
+            <tr><td><strong>Fentanyl</strong></td><td>Infusion titrated</td><td>Safe — preferred opioid</td><td>Safe</td><td>No active metabolites; first choice in AKI</td></tr>
             <tr><td><strong>Morphine</strong></td><td>Infusion</td><td>AVOID</td><td>AVOID</td><td>M6G accumulates → prolonged sedation, respiratory depression</td></tr>
-            <tr><td><strong>Metformin</strong></td><td>500–1000mg BD</td><td>STOP if eGFR &lt;30</td><td>STOP</td><td>Lactic acidosis risk</td></tr>
-            <tr><td><strong>Digoxin</strong></td><td>0.125–0.25mg OD</td><td>Reduce 50% or alternate days</td><td>Monitor levels; variable clearance</td><td>Narrow therapeutic index; toxicity worsened by hypokalaemia</td></tr>
+            <tr><td><strong>Enoxaparin</strong></td><td>40 mg SC OD</td><td>Use UFH (anti-Xa monitoring in AKI unreliable)</td><td>UFH preferred</td><td>Anti-Xa accumulation in AKI</td></tr>
+            <tr><td><strong>Metformin</strong></td><td>500–1000 mg BD</td><td>STOP if eGFR &lt;30</td><td>STOP</td><td>Lactic acidosis risk</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section id="recovery">
-      <h2>Renal Recovery &amp; Discontinuation of RRT</h2>
-      <ul>
-        <li>Attempt IHD or SLED weaning trial when patient is haemodynamically stable</li>
-        <li>Signs of recovery: improving urine output (&gt;400 ml/day off RRT), falling creatinine, improving electrolytes</li>
-        <li>Trial off RRT: stop CRRT for 24–48h; if creatinine stable or improving and UO adequate → discontinue</li>
-        <li>If no renal recovery at 3 months → refer to nephrology for CKD management and potential long-term dialysis planning</li>
-        <li>Risk factors for non-recovery: older age, CKD at baseline, prolonged AKI, diabetic nephropathy, severe ATN</li>
-      </ul>
+    <section id="pearls">
+      <h2>Clinical Pearls</h2>
+      <div class="pearl-grid">
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 1 — Check the Catheter First</div>
+          <p>Before any AKI workup, confirm the urinary catheter is patent and correctly placed. Kinked, blocked, or malpositioned catheters are the most common cause of iatrogenic oliguria. Flush with 10 ml sterile water.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 2 — AKD is Now a Distinct Entity (KDIGO 2026)</div>
+          <p>If kidney dysfunction persists beyond 7 days but less than 90 days, this is now called AKD. These patients need close nephrology follow-up — 30–40% will progress to CKD. Don't discharge without outpatient kidney function monitoring plan.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 3 — Furosemide Stress Test for Progression Risk</div>
+          <p>KDIGO 2026 recommends FST: Give furosemide 1–1.5 mg/kg IV to euvolaemic/hypervolaemic Stage 1–2 AKI patients. UO &lt;200 ml in 2h = high risk of Stage 3 AKI → prepare for RRT.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 4 — Balanced Crystalloids Over Normal Saline (Strong Rec)</div>
+          <p>KDIGO 2026 Strong (1B): Buffered crystalloids (Ringer's Lactate, PlasmaLyte) over 0.9% NaCl for AKI patients. Hyperchloraemia from NS causes renal vasoconstriction and ↑ AKI risk. Exception: TBI (use 0.9% NaCl).</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 5 — Normal SCr Can Miss AKI</div>
+          <p>Serum creatinine can be falsely low in AKI: muscle wasting (ICU), low muscle mass (elderly, women, cirrhosis). KDIGO 2026 now includes serum cystatin C as alternative — more accurate in these settings. Use both.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 6 — Don't Combine Vancomycin + Pip-Taz</div>
+          <p>Synergistic nephrotoxicity proven — combination increases AKI risk 3-5 fold vs either alone. KDIGO 2026 lists this as a drug combination causing AKI. Use vancomycin + meropenem instead if broad-spectrum coverage needed.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 7 — Liberal Fluids After Major Abdominal Surgery</div>
+          <p>KDIGO 2026 Strong (1B): For elective major abdominal surgery, use a LIBERAL intravenous fluid strategy (positive balance 1–2 kg at 24h) over restrictive. This reduces postoperative AKI. Counter-intuitive but strongly supported.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 8 — India: Tropical AKI</div>
+          <p>KDIGO 2026 includes a table of tropical infections causing AKI (Table 24). In India: Leptospirosis, Malaria (P. falciparum), Scrub typhus, Dengue, Snake bite (Russell's viper). Always check for tropical causes in appropriate epidemiological context.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common Mistakes</h2>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 1 — Using Vancomycin + Piperacillin-Tazobactam Together</div>
+        <p>Synergistic nephrotoxicity — 3–5× higher AKI risk. KDIGO 2026 specifically lists this combination. Use vancomycin + meropenem instead when broad coverage is needed.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 2 — Starting RRT Too Early Without Indication</div>
+        <p>STARRT-AKI trial: no benefit from accelerated RRT initiation. KDIGO 2026 supports deferred strategy. Do NOT start RRT on creatinine alone — wait for absolute indication (AEIOU). Unnecessary RRT = line complications, hypotension, unnecessary anticoagulation.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 3 — Using 0.9% Normal Saline for All AKI Patients</div>
+        <p>KDIGO 2026 Strong (1B): buffered crystalloids over 0.9% NaCl. Hyperchloraemia from normal saline causes renal vasoconstriction, worsens AKI, and causes hyperchloraemic acidosis. Use Ringer's Lactate or PlasmaLyte (except TBI).</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 4 — Morphine in AKI</div>
+        <p>Morphine-6-glucuronide (M6G) accumulates in AKI → prolonged sedation, respiratory depression. Use FENTANYL instead — no active metabolites, safe in all degrees of renal failure. This is a classic exam and bedside trap.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 5 — Not Prescribing Higher Effluent Dose</div>
+        <p>KDIGO recommends ≥20 ml/kg/hr DELIVERED. Due to filter downtime (~25%), you must PRESCRIBE 25 ml/kg/hr to achieve 20 ml/kg/hr net. The RENAL trial showed higher doses (40 ml/kg/hr) don't help, but under-dosing does harm.</p>
+      </div>
+    </section>
+
+    <section id="exam">
+      <h2>Exam Pearls (DrNB / PDCC / IFCCM)</h2>
+      <div class="exam-card"><p><strong>Q: What is AKD and how does it differ from AKI?</strong> → New KDIGO 2026 entity. AKD = kidney dysfunction lasting 7 days–3 months. AKI is ≤7 days; CKD is &gt;90 days. AKD is the intermediate/recovery phase with significant risk of progression to CKD.</p></div>
+      <div class="exam-card"><p><strong>Q: KDIGO 2026 recommendation on fluid choice in AKI?</strong> → Strong (1B): Buffered crystalloids (balanced solutions) over 0.9% NaCl. Exception: TBI patients → 0.9% saline preferred. Colloids (albumin, starches): recommend AGAINST starches (1B); crystalloids alone preferred.</p></div>
+      <div class="exam-card"><p><strong>Q: When should you start RRT per KDIGO 2026?</strong> → Deferred (indication-based) strategy. Start when AEIOU criteria met: Acidosis pH &lt;7.1, Electrolytes (K &gt;6.5 with ECG changes), Ingestion (dialysable toxins), Overload (refractory pulmonary oedema), Uraemia (encephalopathy, pericarditis, bleeding).</p></div>
+      <div class="exam-card"><p><strong>Q: CRRT effluent dose — what to prescribe to deliver 20 ml/kg/hr?</strong> → Prescribe 25 ml/kg/hr. Filter downtime (~25%) reduces effective delivery. RENAL trial: &gt;25 ml/kg/hr = no additional benefit.</p></div>
+      <div class="exam-card"><p><strong>Q: What is the furosemide stress test and what does it predict?</strong> → Furosemide 1–1.5 mg/kg IV to euvolaemic Stage 1–2 AKI. UO &lt;200 ml/2h = high risk of Stage 3 AKI/RRT requirement (sensitivity 87%, specificity 84%). KDIGO 2026 recommends it (2C).</p></div>
+      <div class="exam-card"><p><strong>Q: Why is serum cystatin C preferred over SCr in ICU?</strong> → SCr is affected by muscle mass, catabolic state, and generation rate. ICU patients are often sarcopenic or hypercatabolic → SCr underestimates AKI severity. Cystatin C produced at constant rate regardless of muscle mass.</p></div>
     </section>
 
     <section id="references" class="references-section">
       <h2>References</h2>
       <ol class="ref-list">
-        <li><strong>KDIGO AKI Work Group.</strong> KDIGO Clinical Practice Guideline for Acute Kidney Injury. <em>Kidney Int Suppl.</em> 2012;2(1):1–138.</li>
+        <li><strong>KDIGO AKI Work Group (Ostermann M, James M, Co-Chairs).</strong> KDIGO 2026 Clinical Practice Guideline for Acute Kidney Injury (AKI) and Acute Kidney Disease (AKD). Public Review Draft March 2026. Available from: www.kdigo.org</li>
+        <li><strong>Kidney Disease: Improving Global Outcomes (KDIGO) AKI Work Group.</strong> KDIGO Clinical Practice Guideline for Acute Kidney Injury. <em>Kidney Int Suppl.</em> 2012;2(1):1–138.</li>
         <li><strong>STARRT-AKI Investigators, Bagshaw SM, Wald R, et al.</strong> Timing of Initiation of Renal-Replacement Therapy in Acute Kidney Injury. <em>N Engl J Med.</em> 2020;383(3):240–251.</li>
         <li><strong>RENAL Replacement Therapy Study Investigators, Bellomo R, Cass A, et al.</strong> Intensity of Continuous Renal-Replacement Therapy in Critically Ill Patients (RENAL). <em>N Engl J Med.</em> 2009;361(17):1627–1638.</li>
-        <li><strong>Zarbock A, Kellum JA, Schmidt C, et al.</strong> Effect of Early vs Delayed Initiation of Renal Replacement Therapy on Mortality in Critically Ill Patients With Acute Kidney Injury: ELAIN Randomized Clinical Trial. <em>JAMA.</em> 2016;315(20):2190–2199.</li>
-        <li><strong>Semler MW, Self WH, Wanderer JP, et al.</strong> Balanced Crystalloids versus Saline in Critically Ill Adults (SMART Trial). <em>N Engl J Med.</em> 2018;378(9):829–839.</li>
-        <li><strong>Bagshaw SM, Chakravarthi MR, Ricci Z, et al.</strong> Precision Continuous Renal Replacement Therapy and Solute Clearance. <em>Blood Purif.</em> 2016;42(3):238–247.</li>
-        <li><strong>Oudemans-van Straaten HM, Wester JP, de Pont AC, Schetz MR.</strong> Anticoagulation Strategies in Continuous Renal Replacement Therapy: Can the Choice Be Evidence Based? <em>Intensive Care Med.</em> 2006;32(2):188–202.</li>
-        <li><strong>Morabito S, Pistolesi V, Tritapepe L, Fiaccadori E.</strong> Regional Citrate Anticoagulation for RRTs in Critically Ill Patients with AKI. <em>Clin J Am Soc Nephrol.</em> 2014;9(12):2173–2188.</li>
-        <li><strong>Joannidis M, Druml W, Forni LG, et al.</strong> Prevention of Acute Kidney Injury and Protection of Renal Function in the Intensive Care Unit: Update 2017. <em>Intensive Care Med.</em> 2017;43(6):730–749.</li>
-        <li><strong>Khwaja A.</strong> KDIGO Clinical Practice Guidelines for Acute Kidney Injury. <em>Nephron Clin Pract.</em> 2012;120(4):c179–c184.</li>
+        <li><strong>Semler MW, Self WH, Wanderer JP, et al.</strong> Balanced Crystalloids versus Saline in Critically Ill Adults (SMART). <em>N Engl J Med.</em> 2018;378(9):829–839.</li>
+        <li><strong>Bagshaw SM, Haase M, Haase-Fielitz A, et al.</strong> A prospective evaluation of urine microscopy in septic and non-septic acute kidney injury. <em>Nephrol Dial Transplant.</em> 2012;27(2):582–588.</li>
+        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Chapter 47: Acute Kidney Injury. Elsevier; 2018.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 4th edition. Chapters 28–30: Oliguria, Renal Failure, Renal Replacement Therapy. Lippincott Williams &amp; Wilkins; 2014.</li>
       </ol>
     </section>
 
   </main>
 </div>
+
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-brand">Crit<span>Care</span>.in</span>

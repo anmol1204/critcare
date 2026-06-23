@@ -31,6 +31,7 @@
     .soon { position: absolute; top: 1.2rem; right: 1.2rem; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: #fff4e0; color: #b07d2a; padding: 0.22rem 0.5rem; border-radius: 5px; }
     .dim { opacity: 0.72; pointer-events: none; }
   </style>
+  <script src="darkmode.js"></script>
 </head>
 <body>
 
@@ -43,6 +44,7 @@
     <li><a href="ai-tool.html">AI Tool</a></li>
     <li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
 </nav>
 
@@ -54,13 +56,13 @@
 
 <section class="topics-area">
 
-  <div class="section-label">Core Critical Care — SSC 2021 · ESICM · ISCCM 2020</div>
+  <div class="section-label">Shock &amp; Haemodynamics — SSC 2026 · ESICM · ISCCM 2020</div>
   <div class="grid">
     <a href="topic-sepsis.html" class="card">
       <div class="card-ic">🦠</div>
       <div class="card-title">Sepsis &amp; Septic Shock</div>
-      <div class="card-desc">Sepsis-3 definitions, Hour-1 bundle, vasopressor algorithm, antibiotics, steroids. SSC 2021 + ISCCM 2020 guidelines. Full references.</div>
-      <div class="tags"><span class="tag">SSC 2021</span><span class="tag">ISCCM</span><span class="tag">Haemodynamics</span></div>
+      <div class="card-desc">What changed in SSC 2026 — new MAP targets for elderly, extended infusion beta-lactams, crystalloids over albumin. Full pathophysiology, doses, exam pearls.</div>
+      <div class="tags"><span class="tag">SSC 2026 ✦</span><span class="tag">ISCCM</span><span class="tag">Haemodynamics</span></div>
       <div class="card-arrow">Read article →</div>
     </a>
     <a href="topic-ards.html" class="card">
@@ -107,7 +109,65 @@
     </a>
   </div>
 
-  <div class="section-label">Organ-Specific Topics — KDIGO · APASL · BTF Guidelines</div>
+  <div class="section-label">Respiratory — GINA 2026 · GOLD 2026 · ARDSNet · ESICM</div>
+  <div class="grid">
+    <a href="topic-asthma.html" class="card">
+      <div class="card-ic">💨</div>
+      <div class="card-title">Acute Severe Asthma</div>
+      <div class="card-desc">GINA 2026: new O₂ targets (92–95%, NOT 100%), conservative SABA dosing, ICS-formoterol in ED. RSI with ketamine, ventilating asthma. Full references.</div>
+      <div class="tags"><span class="tag">GINA 2026 ✦</span><span class="tag">Emergency</span><span class="tag">Bronchospasm</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="topic-copd.html" class="card">
+      <div class="card-ic">🫁</div>
+      <div class="card-title">COPD Exacerbation</div>
+      <div class="card-desc">GOLD 2026: exacerbation chapter completely revised. 1 moderate exacerbation now triggers escalation. NIV first-line, controlled O₂ 88–92%, 5-day steroids.</div>
+      <div class="tags"><span class="tag">GOLD 2026 ✦</span><span class="tag">NIV</span><span class="tag">Controlled O₂</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+  </div>
+
+  <div class="section-label">Renal — KDIGO 2026 · ADQI 2023</div>
+  <div class="grid">
+    <a href="topic-aki.html" class="card">
+      <div class="card-ic">🫘</div>
+      <div class="card-title">AKI &amp; Renal Replacement Therapy</div>
+      <div class="card-desc">KDIGO 2026: AKD as new entity, biomarker staging, furosemide stress test, buffered crystalloids STRONG rec. CRRT prescription, drug dosing, citrate anticoagulation.</div>
+      <div class="tags"><span class="tag">KDIGO 2026 ✦</span><span class="tag">CRRT</span><span class="tag">AKD</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+  </div>
+
+  <div class="section-label">Cardiac — ACC/AHA 2025 · ESC 2023</div>
+  <div class="grid">
+    <a href="topic-acs.html" class="card">
+      <div class="card-ic">❤️</div>
+      <div class="card-title">Acute Coronary Syndromes</div>
+      <div class="card-desc">STEMI &amp; NSTEMI management. ACC/AHA 2025 guidelines. Door-to-balloon targets, fibrinolysis, antiplatelet dosing, cardiogenic shock, mechanical complications.</div>
+      <div class="tags"><span class="tag">ACC/AHA 2025 ✦</span><span class="tag">STEMI</span><span class="tag">NSTEMI</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+  </div>
+
+  <div class="section-label">Neurocritical Care — BTF 2023 · AHA/ASA · NCS 2024</div>
+  <div class="grid">
+    <a href="topic-tbi.html" class="card">
+      <div class="card-ic">🧠</div>
+      <div class="card-title">Head Injury &amp; TBI</div>
+      <div class="card-desc">BTF 2023: SBP ≥110 mmHg (updated from 90). Steroids CONTRAINDICATED. ICP management, mannitol vs hypertonic saline, surgical indications, levetiracetam.</div>
+      <div class="tags"><span class="tag">BTF 2023 ✦</span><span class="tag">ICP</span><span class="tag">Neuroprotection</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="topic-neuro.html" class="card">
+      <div class="card-ic">🧠</div>
+      <div class="card-title">Neurocritical Care</div>
+      <div class="card-desc">ICP management, TBI targets, stroke (ischaemic & haemorrhagic), status epilepticus algorithm, brain death. BTF, AHA/ASA, NCS 2024 guidelines.</div>
+      <div class="tags"><span class="tag">BTF</span><span class="tag">AHA/ASA</span><span class="tag">NCS</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+  </div>
+
+  <div class="section-label">Organ-Specific Topics — KDIGO · APASL · ESICM</div>
   <div class="grid">
     <a href="topic-toxicology.html" class="card">
       <div class="card-ic">☠️</div>

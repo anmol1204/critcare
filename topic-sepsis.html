@@ -20,6 +20,7 @@
     .change-updated { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 6px; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4rem; vertical-align: middle; }
     .change-reversed { background: #fce7f3; border: 1px solid #f9a8d4; border-radius: 6px; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; color: #9d174d; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4rem; vertical-align: middle; }
   </style>
+  <script src="darkmode.js"></script>
 </head>
 <body>
 <nav class="nav">
@@ -29,6 +30,7 @@
     <li><a href="topics.html" class="active">ICU Topics</a></li>
     <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
 </nav>
 

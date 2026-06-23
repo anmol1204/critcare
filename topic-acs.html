@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acute Coronary Syndromes — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .pearl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
+    .pearl-card { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 1rem 1.2rem; }
+    .pearl-card .pearl-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #92400e; margin-bottom: 0.5rem; }
+    .pearl-card p { font-size: 0.88rem; color: #78350f; line-height: 1.7; margin: 0; }
+    .mistake-card { background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 1rem 1.2rem; margin: 0.5rem 0; }
+    .mistake-card .m-label { font-size: 0.68rem; font-weight: 700; color: #991b1b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .mistake-card p { font-size: 0.88rem; color: #7f1d1d; line-height: 1.7; margin: 0; }
+    .exam-card { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 0.9rem 1.1rem; margin: 0.4rem 0; }
+    .exam-card p { font-size: 0.88rem; color: #1e40af; line-height: 1.7; margin: 0; }
+    .exam-card strong { color: #1e3a8a; }
+    .change-new { background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; color: #15803d; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4rem; vertical-align: middle; }
+    .change-updated { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 6px; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4rem; vertical-align: middle; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › ACS</div>
+    <h1>❤️ Acute Coronary Syndromes — STEMI &amp; NSTEMI</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ACC/AHA/ACEP 2025 ✦ Latest</span>
+      <span class="gbadge esicm">ESC 2023</span>
+      <span class="gbadge isccm">CSI India</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Emergency</span>
+      <span class="topic-tag">Time-Critical</span>
+      <span class="topic-tag">STEMI · NSTEMI · UA</span>
+      <span class="topic-updated">ACC/AHA/ACEP/NAEMSP/SCAI 2025 Guideline · JACC 2025</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#physiology">How ACS Works</a></li>
+        <li><a href="#classification">ACS Classification</a></li>
+        <li><a href="#diagnosis">Diagnosis</a></li>
+        <li><a href="#stemi">STEMI Management</a></li>
+        <li><a href="#nstemi">NSTEMI/UA Management</a></li>
+        <li><a href="#drugs">Drug Doses</a></li>
+        <li><a href="#antiplatelets">Antiplatelets</a></li>
+        <li><a href="#anticoag">Anticoagulation</a></li>
+        <li><a href="#complications">Complications in ICU</a></li>
+        <li><a href="#cardiogenic">Cardiogenic Shock in ACS</a></li>
+        <li><a href="#pearls">Clinical Pearls</a></li>
+        <li><a href="#mistakes">Common Mistakes</a></li>
+        <li><a href="#exam">Exam Pearls</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="physiology">
+      <h2>How ACS Works — The Pathophysiology</h2>
+      <h3>The Culprit: Coronary Plaque Rupture</h3>
+      <p>ACS is almost always caused by rupture or erosion of a coronary atherosclerotic plaque. Vulnerable plaques have a large lipid core, thin fibrous cap, and high inflammatory cell content (foam cells, macrophages). Triggers include:</p>
+      <ul>
+        <li>Shear stress from turbulent blood flow at bifurcations</li>
+        <li>Sympathetic surges (exercise, emotional stress, cocaine use)</li>
+        <li>Inflammation (infection, cold weather — higher AMI incidence in winter)</li>
+        <li>Paradoxically, statin use temporarily increases rupture risk as plaques stabilise (regression)</li>
+      </ul>
+      <h3>The Coagulation Cascade After Plaque Rupture</h3>
+      <ol>
+        <li>Plaque rupture exposes subendothelial collagen and tissue factor</li>
+        <li>Platelets adhere (GPIb-vWF), activate (ADP, TXA₂, thrombin), aggregate (GPIIb/IIIa-fibrinogen)</li>
+        <li>Thrombin generated → fibrin formed → white thrombus → red clot</li>
+        <li>Thrombus occludes lumen → cessation of coronary flow → ischaemia → infarction if prolonged</li>
+      </ol>
+      <h3>Time = Myocardium</h3>
+      <p>Myocardial cells die within <strong>20–40 minutes of complete ischaemia</strong>. Wavefront of necrosis progresses from subendocardium → transmural over 6–12 hours. Every minute of delay in STEMI = 1.7 additional lives lost per 1000 patients treated (De Luca, 2004).</p>
+      <div class="key-box">
+        <div class="kb-label">The ACS Spectrum — One Mechanism, Different Severity</div>
+        <ul>
+          <li><strong>Unstable Angina (UA):</strong> Plaque rupture + partial thrombus → reduced flow → ischaemia without infarction. Troponin NEGATIVE.</li>
+          <li><strong>NSTEMI:</strong> Partial or transient occlusion → subendocardial infarction. Troponin POSITIVE. No ST elevation.</li>
+          <li><strong>STEMI:</strong> Complete occlusion of a major coronary artery → transmural infarction. ST elevation + positive troponin.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="classification">
+      <h2>ACS Classification &amp; ECG Recognition</h2>
+      <h3>ECG Localisation of STEMI</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Territory</th><th>Artery</th><th>ECG Leads</th><th>Reciprocal Changes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Anterior</strong></td><td>LAD (proximal)</td><td>V1–V4</td><td>II, III, aVF</td></tr>
+            <tr><td><strong>Anterolateral</strong></td><td>LAD + LCx</td><td>I, aVL, V4–V6</td><td>II, III, aVF</td></tr>
+            <tr><td><strong>Inferior</strong></td><td>RCA (80%) or LCx (20%)</td><td>II, III, aVF</td><td>I, aVL (and V1–V4 if anterior extension)</td></tr>
+            <tr><td><strong>Posterior</strong></td><td>RCA or LCx</td><td>Tall R in V1, ST depression V1–V3 (mirror image)</td><td>ST elevation in posterior leads V7–V9</td></tr>
+            <tr><td><strong>RV Infarction</strong></td><td>Proximal RCA</td><td>ST elevation in V3R–V4R; inferior leads</td><td>Must do right-sided leads in ALL inferior STEMI</td></tr>
+            <tr><td><strong>Lateral</strong></td><td>LCx</td><td>I, aVL, V5–V6</td><td>II, III, aVF</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>STEMI Equivalents (No Obvious ST Elevation)</h3>
+      <ul>
+        <li><strong>LBBB (new or presumed new) + typical symptoms:</strong> Treat as STEMI (Sgarbossa criteria if needed)</li>
+        <li><strong>De Winter T-waves (V1–V6):</strong> Upsloping ST depression + peaked symmetrical T-waves = LAD occlusion equivalent</li>
+        <li><strong>aVR ST elevation + diffuse depression:</strong> Left main or proximal LAD occlusion — surgical emergency</li>
+        <li><strong>Wellens syndrome:</strong> Deeply inverted T-waves V2–V3 in pain-free state = LAD critical stenosis — high risk of anterior STEMI</li>
+      </ul>
+    </section>
+
+    <section id="diagnosis">
+      <h2>Diagnosis</h2>
+      <h3>High-Sensitivity Troponin (hs-cTnI / hs-cTnT)</h3>
+      <ul>
+        <li>Detectable within 1–3 hours of symptom onset (vs 4–6h for conventional troponin)</li>
+        <li><strong>0h/1h algorithm (ESC 2023):</strong> hs-cTn at 0h + 1h (or 0h + 2h); RULE IN if either &gt;5× URL; RULE OUT if both &lt;2 ng/L at 0h and rise &lt;4 ng/L at 1h</li>
+        <li>Troponin alone does NOT diagnose ACS — must be in clinical context with symptoms and ECG</li>
+        <li>Elevated troponin without plaque rupture = Type 2 MI (demand ischaemia: tachycardia, sepsis, PE, myocarditis)</li>
+      </ul>
+      <h3>Other Investigations</h3>
+      <ul>
+        <li>12-lead ECG within 10 min of presentation (ACC/AHA 2025: Class I)</li>
+        <li>Right-sided leads (V3R–V4R) in ALL inferior STEMI — detect RV infarction</li>
+        <li>Posterior leads (V7–V9) if ST depression V1–V3 — detect posterior MI</li>
+        <li>Echo: wall motion abnormalities, LV function, complications (VSD, MR, pericardial effusion)</li>
+        <li>CXR: pulmonary oedema, mediastinal widening (aortic dissection DDx)</li>
+      </ul>
+    </section>
+
+    <section id="stemi">
+      <h2>STEMI Management — Time-Critical</h2>
+      <div class="key-box">
+        <div class="kb-label">ACC/AHA 2025 — STEMI Time Targets</div>
+        <ul>
+          <li><strong>First Medical Contact (FMC) to ECG:</strong> ≤10 minutes</li>
+          <li><strong>FMC to Primary PCI (pPCI) — Door-to-Balloon:</strong> ≤90 minutes if PCI centre</li>
+          <li><strong>FMC to pPCI — if transfer needed:</strong> ≤120 minutes (if transfer &gt;120 min → fibrinolysis first)</li>
+          <li><strong>FMC to Fibrinolysis:</strong> ≤30 minutes (door-to-needle) if pPCI not available in time</li>
+          <li><strong>Symptom onset to Reperfusion:</strong> &lt;12 hours (consider up to 24h in selected patients)</li>
+        </ul>
+      </div>
+      <h3>Primary PCI (pPCI) — Preferred Strategy</h3>
+      <p>Primary PCI is the preferred reperfusion strategy when available within 120 minutes of FMC. Advantages over fibrinolysis: higher TIMI 3 flow rates (90% vs 60%), lower re-occlusion, lower intracranial haemorrhage risk, better outcomes in cardiogenic shock.</p>
+      <h3>Fibrinolysis — When PCI Not Available in Time</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Dose</th><th>Bolus/Infusion</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Tenecteplase (TNK-tPA)</strong></td><td>Weight-based single bolus: 30 mg (&lt;60 kg); 35 mg (60–70 kg); 40 mg (70–80 kg); 45 mg (80–90 kg); 50 mg (&gt;90 kg)</td><td>Single IV bolus over 10 sec</td><td>Most convenient; fibrin-specific; preferred. Check weight before dosing.</td></tr>
+            <tr><td><strong>Streptokinase</strong></td><td>1.5 million IU in 100 ml NS</td><td>IV over 60 min</td><td>Non-fibrin specific; cheaper; widely available in India; avoid if prior SK use within 6 months (antibodies)</td></tr>
+            <tr><td><strong>Alteplase (tPA)</strong></td><td>15 mg bolus → 0.75 mg/kg (max 50 mg) over 30 min → 0.5 mg/kg (max 35 mg) over 60 min</td><td>Bolus + infusion</td><td>Fibrin-specific; more complex dosing than TNK</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Contraindications to Fibrinolysis</h3>
+      <div class="warn-box">
+        <div class="kb-label">Absolute Contraindications — Do NOT give fibrinolysis</div>
+        <ul>
+          <li>Prior intracranial haemorrhage at any time</li>
+          <li>Structural cerebrovascular lesion (AVM, aneurysm)</li>
+          <li>Malignant intracranial neoplasm</li>
+          <li>Ischaemic stroke within 3 months (except acute ischaemic stroke within 4.5h)</li>
+          <li>Suspected aortic dissection</li>
+          <li>Active bleeding or bleeding diathesis (excluding menses)</li>
+          <li>Significant closed head or facial trauma within 3 months</li>
+          <li>Intracranial or intraspinal surgery within 2 months</li>
+          <li>Severe uncontrolled hypertension (SBP &gt;180 or DBP &gt;110 refractory to treatment)</li>
+        </ul>
+      </div>
+      <h3>Post-Fibrinolysis Management</h3>
+      <ul>
+        <li>Transfer to PCI centre for coronary angiography within 3–24h (pharmaco-invasive strategy)</li>
+        <li>Emergency PCI if: failed fibrinolysis (ST elevation persists at 60–90 min, ongoing pain, haemodynamic instability)</li>
+        <li>Anticoagulation: UFH or enoxaparin for minimum 48h post-fibrinolysis</li>
+      </ul>
+    </section>
+
+    <section id="nstemi">
+      <h2>NSTEMI/Unstable Angina Management</h2>
+      <h3>Risk Stratification — GRACE Score</h3>
+      <p>GRACE score stratifies NSTEMI/UA into low, intermediate, and high risk to determine timing of invasive strategy. Key components: age, HR, SBP, creatinine, Killip class, cardiac arrest, ST deviation, elevated cardiac markers.</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Risk Category</th><th>GRACE Score</th><th>Timing of Coronary Angiography</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Very High Risk</strong></td><td>GRACE &gt;140 OR haemodynamic instability/cardiogenic shock OR refractory ischaemia OR life-threatening arrhythmia</td><td>Immediate (&lt;2 hours) — STEMI-equivalent urgency</td></tr>
+            <tr><td><strong>High Risk</strong></td><td>GRACE 109–140 OR TIMI &gt;2</td><td>Early invasive (&lt;24 hours)</td></tr>
+            <tr><td><strong>Intermediate Risk</strong></td><td>GRACE &lt;109 with diabetes, CKD, EF &lt;40%, recent PCI/CABG, or positive troponin</td><td>Invasive strategy within 72 hours</td></tr>
+            <tr><td><strong>Low Risk</strong></td><td>GRACE &lt;109, no high-risk features, troponin negative at 0h and 2h</td><td>Conservative strategy; non-invasive testing; discharge if low probability</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="drugs">
+      <h2>Drug Doses in ACS</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Dose</th><th>Timing</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Aspirin</strong></td><td>300 mg PO (chewed/crushed) loading; then 75–100 mg OD</td><td>Immediately on ACS diagnosis</td><td>Chew and swallow — faster absorption. Give even before transport.</td></tr>
+            <tr><td><strong>Ticagrelor</strong></td><td>180 mg PO loading; then 90 mg BD</td><td>As early as possible</td><td>Preferred over clopidogrel for STEMI (PLATO trial). Avoid if prior ICH or active bleeding.</td></tr>
+            <tr><td><strong>Clopidogrel</strong></td><td>600 mg PO loading (for PCI); 300 mg (for fibrinolysis); then 75 mg OD</td><td>As early as possible</td><td>Use if ticagrelor unavailable or patient on OAC; also mandatory if fibrinolysis given</td></tr>
+            <tr><td><strong>Prasugrel</strong></td><td>60 mg PO loading; then 10 mg OD</td><td>At time of PCI (not pre-catheterisation if anatomy unknown)</td><td>TRITON-TIMI 38: superior to clopidogrel but more bleeding. Avoid if age &gt;75, weight &lt;60 kg, prior TIA/stroke</td></tr>
+            <tr><td><strong>Morphine</strong></td><td>2–4 mg IV titrated for pain</td><td>For refractory chest pain</td><td>Caution: morphine may reduce P2Y₁₂ inhibitor absorption (interaction); use sparingly</td></tr>
+            <tr><td><strong>Nitrates</strong></td><td>GTN 0.4 mg SL q5min × 3; IV nitrate if ongoing pain/hypertension/pulmonary oedema</td><td>For ongoing ischaemic pain</td><td>CONTRAINDICATED: SBP &lt;90, RV infarction, PDE5 inhibitor within 24–48h, severe AS</td></tr>
+            <tr><td><strong>Beta-blockers</strong></td><td>Metoprolol 25–50 mg PO BD (or IV 5 mg q5min × 3 doses if rate control needed)</td><td>Start within 24h if stable, no HF</td><td>CONTRAINDICATED if: cardiogenic shock, acute HF, severe bronchospasm, HR &lt;60, AV block</td></tr>
+            <tr><td><strong>ACE inhibitors/ARBs</strong></td><td>Ramipril 2.5 mg BD starting (titrate up); or Enalapril</td><td>Within 24h if anterior STEMI or EF &lt;40%</td><td>Start low; avoid if SBP &lt;100, bilateral RAS, AKI (SCr &gt;2.5)</td></tr>
+            <tr><td><strong>Statins (High-intensity)</strong></td><td>Atorvastatin 80 mg OD</td><td>As early as possible (within 24h)</td><td>PROVE IT: atorvastatin 80 mg reduced recurrent events vs pravastatin 40 mg</td></tr>
+            <tr><td><strong>O₂ supplementation</strong></td><td>Titrate to SpO₂ 90–96%</td><td>Only if SpO₂ &lt;90%</td><td>High-flow O₂ NOT beneficial and may be harmful in normoxic MI (AVOID-HF trial)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="antiplatelets">
+      <h2>Dual Antiplatelet Therapy (DAPT)</h2>
+      <div class="key-box">
+        <div class="kb-label">DAPT — Aspirin + P2Y₁₂ Inhibitor</div>
+        <ul>
+          <li><strong>Aspirin</strong> 75–100 mg OD — lifelong</li>
+          <li><strong>Ticagrelor 90 mg BD</strong> OR <strong>Clopidogrel 75 mg OD</strong> — minimum 12 months after STEMI/NSTEMI-PCI</li>
+          <li><strong>After bare-metal stent:</strong> Minimum 1 month DAPT</li>
+          <li><strong>After drug-eluting stent:</strong> Minimum 6–12 months DAPT</li>
+          <li><strong>Can extend to 24–36 months</strong> in high ischaemic risk and low bleeding risk patients</li>
+          <li><strong>Reduce to 3–6 months</strong> in high bleeding risk patients</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="anticoag">
+      <h2>Anticoagulation in ACS</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>STEMI-PCI</th><th>Fibrinolysis</th><th>NSTEMI</th></tr></thead>
+          <tbody>
+            <tr><td><strong>UFH</strong></td><td>70–100 IU/kg IV bolus at PCI; target ACT 250–350s</td><td>60 IU/kg bolus (max 4000); 12 IU/kg/hr (max 1000); aPTT 50–70s × 48h</td><td>60 IU/kg bolus (max 4000); 12 IU/kg/hr infusion; aPTT 50–70s</td></tr>
+            <tr><td><strong>Enoxaparin</strong></td><td>0.5 mg/kg IV at PCI (if pre-treated with enoxaparin SC)</td><td>30 mg IV bolus + 1 mg/kg SC q12h (age &lt;75); no bolus + 0.75 mg/kg q12h (age ≥75)</td><td>1 mg/kg SC q12h (preferred over UFH for NSTEMI)</td></tr>
+            <tr><td><strong>Bivalirudin</strong></td><td>0.75 mg/kg IV bolus + 1.75 mg/kg/hr infusion (useful if HIT)</td><td>—</td><td>0.1 mg/kg bolus + 0.25 mg/kg/hr</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="complications">
+      <h2>Mechanical Complications in ICU</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Complication</th><th>Timing</th><th>Clinical Features</th><th>Management</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Free Wall Rupture</strong></td><td>1–7 days (peak 3–5 days)</td><td>Sudden haemodynamic collapse, pulseless electrical activity (PEA)</td><td>Emergency surgery; pericardiocentesis as bridge; high mortality</td></tr>
+            <tr><td><strong>Papillary Muscle Rupture (Acute MR)</strong></td><td>2–7 days</td><td>Pulmonary oedema, new harsh systolic murmur, haemodynamic collapse; inferior MI (posteromedial PM — single blood supply)</td><td>Emergency surgical repair/replacement; IABP/MCS as bridge</td></tr>
+            <tr><td><strong>VSD (Post-MI)</strong></td><td>3–7 days</td><td>New harsh pansystolic murmur at left sternal edge; step-up in O₂ saturation in RV; biventricular failure</td><td>Emergency surgery; MCS (VA-ECMO) if cardiogenic shock; surgery ideally after 4 weeks if stable</td></tr>
+            <tr><td><strong>LV Aneurysm</strong></td><td>Weeks to months after anterior STEMI</td><td>Persistent ST elevation weeks after MI; systolic dysfunction; thrombus risk; arrhythmias</td><td>ACEi + anticoagulation if thrombus; surgical aneurysmectomy if refractory symptoms</td></tr>
+            <tr><td><strong>RV Infarction</strong></td><td>With inferior STEMI</td><td>Hypotension + JVP elevated + clear lungs (Kussmaul's triad); ST elevation V3R–V4R</td><td>Fluids (NOT diuretics); avoid nitrates; inotropes if refractory; early reperfusion</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="cardiogenic">
+      <h2>Cardiogenic Shock in ACS</h2>
+      <div class="warn-box">
+        <div class="kb-label">Cardiogenic Shock — 30–40% Mortality Despite PCI</div>
+        <p>Cardiogenic shock complicates 5–10% of STEMI and has mortality 30–40% even with modern PCI. Presentation: SBP &lt;90 mmHg + evidence of hypoperfusion (cold/clammy peripheries, altered mentation, UO &lt;30 ml/hr, elevated lactate).</p>
+      </div>
+      <h3>Management</h3>
+      <ul>
+        <li><strong>Immediate coronary angiography + PCI</strong> — SHOCK trial: early revascularisation reduces 6-month mortality. If multi-vessel CAD: only culprit vessel PCI initially.</li>
+        <li><strong>Vasopressors:</strong> Noradrenaline first-line. Dopamine NOT preferred (more arrhythmias). Add dobutamine for low CO. Target MAP ≥65 mmHg.</li>
+        <li><strong>Avoid:</strong> Aggressive fluid loading — cardiogenic shock is NOT fluid-responsive; fluids worsen pulmonary oedema</li>
+        <li><strong>Mechanical Circulatory Support:</strong>
+          <ul>
+            <li>IABP: No mortality benefit (IABP-SHOCK II); use as bridge to ECMO/surgery if needed</li>
+            <li>Impella: Provides 2.5–5.5 L/min support; ISAR-SHOCK and IMPRESS: no clear mortality benefit</li>
+            <li>VA-ECMO: Refractory cardiogenic shock; provides full cardiopulmonary support; refer early to ECMO centre</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section id="pearls">
+      <h2>Clinical Pearls</h2>
+      <div class="pearl-grid">
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 1 — STEMI: Time Is Muscle</div>
+          <p>Every 30 minutes delay in STEMI reperfusion = 7.5 additional deaths per 1000 patients. Get ECG within 10 min. Activate cath lab immediately. Do NOT wait for troponin results to call pPCI — STEMI is an ECG diagnosis.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 2 — Right-Sided ECG in ALL Inferior STEMI</div>
+          <p>RV infarction complicates 30–50% of inferior STEMI. Diagnosis: ST elevation V3R–V4R. Treatment is COMPLETELY different: aggressive fluids (NOT diuretics), avoid nitrates (cause hypotension), avoid morphine. Missing RV infarction = iatrogenic cardiac arrest.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 3 — No O₂ if SpO₂ Normal</div>
+          <p>ACC/AHA 2025 and ESC 2023: Supplemental O₂ NOT recommended if SpO₂ ≥90%. High-flow O₂ in normoxic MI may cause coronary vasoconstriction and increase infarct size (AVOID-HF, DETO2X-AMI). Give O₂ only if SpO₂ &lt;90%.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 4 — Nitrates CONTRAINDICATED in RV Infarction</div>
+          <p>RV infarction = preload-dependent. Nitrates cause venous dilation → ↓ preload → ↓ RV filling → sudden haemodynamic collapse. Also contraindicated with PDE5 inhibitors (sildenafil, tadalafil) — ask every patient before giving nitrates.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 5 — India: Streptokinase is Often the Reality</div>
+          <p>PCI is not universally available in India. Know streptokinase well: 1.5 million IU over 60 min. Check absolute contraindications. Give aspirin 300 mg + clopidogrel 300 mg at same time. Transfer for angiography within 24h after successful fibrinolysis.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 6 — Wellens Syndrome = Impending STEMI</div>
+          <p>Deeply inverted (Type A) or biphasic (Type B) T-waves in V2–V3 in a pain-free patient who had recent chest pain = critical LAD stenosis. Do NOT stress test — will precipitate massive anterior MI. Urgent angiography.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 7 — Loud New Systolic Murmur Post-MI = Emergency</div>
+          <p>New systolic murmur 3–7 days post-MI = papillary muscle rupture (MR — soft, radiates to axilla) OR ventricular septal defect (VSD — harsh, left sternal edge, step-up in RV O₂ saturation). Both are surgical emergencies.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 8 — IABP Has No Mortality Benefit</div>
+          <p>IABP-SHOCK II trial: IABP in cardiogenic shock = no survival benefit vs medical therapy. Do not expect IABP to save a patient. It can be used as a bridge to MCS or surgery. VA-ECMO provides definitive mechanical support for refractory cardiogenic shock.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common Mistakes</h2>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 1 — Not Doing Right-Sided ECG in Inferior STEMI</div>
+        <p>RV infarction = preload-dependent; giving nitrates → cardiovascular collapse. Missing it = iatrogenic catastrophe. Do right-sided leads (V3R–V4R) in ALL inferior STEMI routinely.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 2 — Giving O₂ to All MI Patients</div>
+        <p>ACC/AHA 2025: No supplemental O₂ if SpO₂ ≥90%. High-flow O₂ may increase infarct size (DETO2X-AMI trial). Give O₂ only if hypoxic. This is now a Class III (harm) recommendation in normoxic patients.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 3 — Giving Nitrates in RV Infarction or After PDE5 Inhibitor</div>
+        <p>Nitrates → ↓ preload → ↓ RV filling in RV infarction → haemodynamic collapse. Also: sildenafil/tadalafil + nitrates → severe hypotension. ALWAYS ask about PDE5 inhibitors before giving nitrates.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 4 — Giving Fluids in Cardiogenic Shock</div>
+        <p>Cardiogenic shock is pump failure — NOT hypovolaemia. Aggressive fluid loading worsens pulmonary oedema and RV afterload. Small cautious fluid challenge (250 ml) is acceptable to exclude pre-renal component, but DO NOT fluid-load a cardiogenic shock patient.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 5 — Waiting for Troponin to Call STEMI</div>
+        <p>STEMI is diagnosed on the ECG — not on troponin. Troponin may be negative in the first 1–2 hours. Call the cath lab based on ST elevation in ≥2 contiguous leads. Every minute of delay costs myocardium.</p>
+      </div>
+    </section>
+
+    <section id="exam">
+      <h2>Exam Pearls (DrNB / PDCC / IFCCM)</h2>
+      <div class="exam-card"><p><strong>Q: Door-to-Balloon time target in STEMI?</strong> → ≤90 minutes if PCI available. ≤120 minutes if transfer needed. ≤30 minutes door-to-needle if fibrinolysis given instead.</p></div>
+      <div class="exam-card"><p><strong>Q: When is fibrinolysis preferred over primary PCI in STEMI?</strong> → If PCI cannot be performed within 120 minutes of FMC AND symptom onset &lt;12 hours AND no absolute contraindications to fibrinolysis.</p></div>
+      <div class="exam-card"><p><strong>Q: Triad of RV infarction?</strong> → Hypotension + Elevated JVP + Clear lungs (Kussmaul's triad). Diagnose with right-sided ECG: ST elevation V3R–V4R. Treat with: IV fluids (NOT diuretics), avoid nitrates, inotropes if needed.</p></div>
+      <div class="exam-card"><p><strong>Q: New loud systolic murmur on day 4 post-inferior MI?</strong> → Papillary muscle rupture → acute severe mitral regurgitation. Posteromedial papillary muscle (single blood supply from RCA) most vulnerable. Emergency surgery ± MCS as bridge.</p></div>
+      <div class="exam-card"><p><strong>Q: Wellens syndrome ECG pattern and significance?</strong> → Deeply inverted (Type A) or biphasic (Type B) T-waves V2–V3 in pain-free patient who had chest pain = critical LAD stenosis = impending massive anterior STEMI. Urgent angiography. NO exercise testing.</p></div>
+      <div class="exam-card"><p><strong>Q: ACC/AHA 2025 recommendation on oxygen in ACS?</strong> → Do NOT give supplemental O₂ if SpO₂ ≥90%. High-flow O₂ in normoxic ACS may increase infarct size (Class III — Harm).</p></div>
+    </section>
+
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Rao SV, O'Donoghue ML, Ruel M, et al.</strong> 2025 ACC/AHA/ACEP/NAEMSP/SCAI Guideline for the Management of Patients with Acute Coronary Syndromes. <em>J Am Coll Cardiol.</em> 2025;85(9):e59–e161.</li>
+        <li><strong>Byrne RA, Rossello X, Coughlan JJ, et al.</strong> 2023 ESC Guidelines for the Management of Acute Coronary Syndromes. <em>Eur Heart J.</em> 2023;44(38):3720–3826.</li>
+        <li><strong>Hochman JS, Sleeper LA, Webb JG, et al. (SHOCK trial).</strong> Early Revascularization in Acute Myocardial Infarction Complicated by Cardiogenic Shock. <em>N Engl J Med.</em> 1999;341(9):625–634.</li>
+        <li><strong>Thiele H, Zeymer U, Neumann FJ, et al. (IABP-SHOCK II).</strong> Intraaortic Balloon Support for Myocardial Infarction with Cardiogenic Shock. <em>N Engl J Med.</em> 2012;367(14):1287–1296.</li>
+        <li><strong>Cannon CP, Braunwald E, McCabe CH, et al. (PROVE IT-TIMI 22).</strong> Intensive versus Moderate Lipid Lowering with Statins after Acute Coronary Syndromes. <em>N Engl J Med.</em> 2004;350(15):1495–1504.</li>
+        <li><strong>Stub D, Smith K, Bernard S, et al. (AVOID trial).</strong> Air versus Oxygen in ST-Segment Elevation Myocardial Infarction. <em>Circulation.</em> 2015;131(24):2143–2150.</li>
+        <li><strong>Wiviott SD, Braunwald E, McCabe CH, et al. (TRITON-TIMI 38).</strong> Prasugrel versus Clopidogrel in Patients with Acute Coronary Syndromes. <em>N Engl J Med.</em> 2007;357(20):2001–2015.</li>
+        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Chapter 24: Acute Coronary Syndromes. Elsevier; 2018.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 4th edition. Chapter 20: Acute Coronary Syndromes. Lippincott Williams &amp; Wilkins; 2014.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -40,6 +40,7 @@
     .ex-btn { font-size: 0.8rem; background: var(--bg-alt); border: 1px solid var(--line); border-radius: 6px; padding: 0.4rem 0.8rem; cursor: pointer; color: var(--slate); transition: border-color 0.18s, color 0.18s; margin: 0 0.3rem 0.4rem 0; }
     .ex-btn:hover { border-color: var(--blue); color: var(--blue); }
   </style>
+  <script src="darkmode.js"></script>
 </head>
 <body>
 
@@ -52,6 +53,7 @@
     <li><a href="ai-tool.html" class="active">AI Tool</a></li>
     <li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
 </nav>
 
