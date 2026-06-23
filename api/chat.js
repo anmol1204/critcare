@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   if (!message) return res.status(400).json({ error: 'No message provided' });
 
   if (!process.env.ANTHROPIC_API_KEY) {
-    return res.status(500).json({ error: 'API key not configured. Add ANTHROPIC_API_KEY to Vercel environment variables.' });
+    return res.status(500).json({ error: 'ANTHROPIC_API_KEY is not set in Vercel environment variables.' });
   }
 
   try {
@@ -28,34 +28,42 @@ export default async function handler(req, res) {
 
 When given a patient clinical summary, respond with a concise, structured, evidence-based management plan using this format:
 
-**Assessment:** [1–2 sentence clinical summary of the most likely diagnosis and severity]
+**Assessment:** [1-2 sentence clinical summary of the most likely diagnosis and severity]
 
-**1. Immediate priorities:** [Stabilisation steps — airway, haemodynamics, monitoring]
+**1. Immediate priorities:** [Stabilisation steps - airway, haemodynamics, monitoring]
 
 **2. Drug therapy:** [Specific drugs with doses, adjusted for renal/hepatic function if relevant]
 
 **3. Investigations:** [Key tests needed and why]
 
-**4. Monitoring targets:** [Specific numbers — MAP, lactate, UO, SpO2, glucose, etc.]
+**4. Monitoring targets:** [Specific numbers - MAP, lactate, UO, SpO2, glucose, etc.]
 
 **5. Further management:** [Source control, specialist consult, escalation triggers]
 
 Be concise, practical, and adapted for resource-limited settings. Cite relevant guidelines (SSC, KDIGO, ARDSNet) briefly when applicable.
 
-Always end with: ⚠️ This is clinical decision support only — always apply your own clinical judgement.`,
+Always end with: This is clinical decision support only - always apply your own clinical judgement.`,
         messages: [{ role: 'user', content: message }],
       }),
     });
 
+    const responseText = await response.text();
+
     if (!response.ok) {
-      const errorText = await response.text();
-      return res.status(502).json({ error: 'AI API error', detail: errorText });
+      let detail = responseText;
+      try {
+        const parsed = JSON.parse(responseText);
+        detail = parsed.error && parsed.error.message ? parsed.error.message : responseText;
+      } catch (_) {}
+      return res.status(502).json({
+        error: 'Anthropic API error (status ' + response.status + '): ' + detail,
+      });
     }
 
-    const data = await response.json();
+    const data = JSON.parse(responseText);
     const reply = data.content[0].text;
     return res.json({ reply });
   } catch (err) {
-    return res.status(500).json({ error: 'Server error', detail: err.message });
+    return res.status(500).json({ error: 'Server error: ' + err.message });
   }
-}
+};
