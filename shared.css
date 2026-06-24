@@ -318,6 +318,56 @@ h2.display {
   .toc { display: none; }
 }
 
+/* ============================================================
+   8-SECTION FORMAT — Standard topic structure
+   ============================================================ */
+.section-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.68rem; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 0.1em; padding: 0.3rem 0.8rem; border-radius: 20px;
+  margin-bottom: 0.8rem;
+}
+.sb-washington { background: #dbeafe; color: #1e40af; }
+.sb-marino    { background: #ede9fe; color: #5b21b6; }
+.sb-guideline { background: #dcfce7; color: #166534; }
+.sb-drugs     { background: #ffedd5; color: #9a3412; }
+.sb-flowchart { background: #f0fdf4; color: #14532d; border: 1px solid #86efac; }
+.sb-mistakes  { background: #fee2e2; color: #991b1b; }
+.sb-exam      { background: #fef9c3; color: #854d0e; }
+.sb-refs      { background: var(--bg-alt); color: var(--slate); border: 1px solid var(--line); }
+
+.flowchart-step {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 0; margin: 0; position: relative;
+}
+.flowchart-step::before {
+  content: ''; position: absolute; left: 20px; top: 40px;
+  width: 2px; height: calc(100% - 20px); background: var(--line); z-index: 0;
+}
+.flowchart-step:last-child::before { display: none; }
+.fc-node {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: .9rem; color: #fff;
+  position: relative; z-index: 1; margin-right: 1rem; margin-bottom: 1rem;
+}
+.fc-content {
+  background: var(--bg-alt); border: 1px solid var(--line); border-radius: 10px;
+  padding: 1rem 1.2rem; margin-bottom: .8rem; flex: 1;
+}
+.fc-content h4 { font-size: .88rem; font-weight: 700; color: var(--ink); margin-bottom: .4rem; }
+.fc-content p, .fc-content ul { font-size: .85rem; color: var(--slate); line-height: 1.7; margin: 0; }
+.fc-content ul { padding-left: 1.1rem; }
+.fc-content strong { color: var(--ink); }
+.fc-red    { background: #ef4444; }
+.fc-orange { background: #f97316; }
+.fc-yellow { background: #eab308; }
+.fc-green  { background: #22c55e; }
+.fc-blue   { background: var(--blue); }
+.fc-purple { background: #8b5cf6; }
+.fc-teal   { background: #14b8a6; }
+.fc-gray   { background: #6b7280; }
+
 /* ---- GUIDELINE BADGES ---- */
 .guideline-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.8rem 0 1.4rem; }
 .gbadge { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.28rem 0.65rem; border-radius: 5px; }
