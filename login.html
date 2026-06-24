@@ -73,7 +73,7 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="topics.html">ICU Topics</a></li>
-    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li>
     <li><a href="login.html" class="nav-cta active">Login</a></li>
   </ul>
   <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
@@ -98,13 +98,31 @@
   <div class="login-form-panel">
     <div class="login-box">
 
-      <!-- Logged-in panel -->
+      <!-- Logged-in dashboard -->
       <div class="user-panel" id="userPanel">
-        <img class="user-avatar" id="userPhoto" src="" alt="Profile" />
-        <div class="user-name" id="userName">Dr. Anmol</div>
-        <div class="user-email" id="userEmail">—</div>
-        <a href="ai-tool.html" class="btn btn-blue" style="display:inline-flex;margin-bottom:1rem;">Open CritCare AI →</a><br>
-        <button class="signout-btn" onclick="signOut()">Sign out</button>
+        <div style="display:flex;align-items:center;gap:.9rem;margin-bottom:1.5rem;">
+          <img class="user-avatar" id="userPhoto" src="" alt="Profile" style="width:52px;height:52px;" />
+          <div>
+            <div class="user-name" id="userName" style="font-size:1rem;">Dr. Anmol</div>
+            <div class="user-email" id="userEmail" style="font-size:.8rem;">—</div>
+          </div>
+        </div>
+        <p style="font-size:.84rem;color:var(--slate);margin-bottom:1.2rem;line-height:1.6;">Welcome to CritCare.in — your one-stop clinical reference. What would you like to do?</p>
+        <div style="display:flex;flex-direction:column;gap:.7rem;">
+          <a href="topics.html" class="btn btn-blue" style="display:flex;align-items:center;gap:.6rem;justify-content:center;">
+            📚 Browse Clinical Topics
+          </a>
+          <a href="scores.html" class="btn btn-line" style="display:flex;align-items:center;gap:.6rem;justify-content:center;">
+            📊 Clinical Score Calculators
+          </a>
+          <a href="ai-tool.html" class="btn btn-line" style="display:flex;align-items:center;gap:.6rem;justify-content:center;">
+            🤖 CritCare AI Decision Tool
+          </a>
+          <a href="topic-vasopressors-guide.html" class="btn btn-line" style="display:flex;align-items:center;gap:.6rem;justify-content:center;">
+            💊 Vasopressor Dilution Guide
+          </a>
+        </div>
+        <button class="signout-btn" onclick="signOut()" style="margin-top:1.2rem;width:100%;">Sign out</button>
       </div>
 
       <!-- Auth form -->
@@ -158,7 +176,7 @@
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-brand">Crit<span>Care</span>.in</span>
-    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
     <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
   </div>
 </footer>

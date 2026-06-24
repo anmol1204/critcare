@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clinical Score Calculators — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .scores-hero { background:linear-gradient(135deg,#0f1f3d,#1a3560); padding:3.5rem 5% 2.5rem; color:#fff; }
+    .scores-hero h1 { font-family:var(--font-disp); font-size:clamp(1.8rem,3.5vw,2.6rem); margin-bottom:.7rem; }
+    .scores-hero p { color:rgba(255,255,255,.7); max-width:600px; line-height:1.7; }
+
+    /* Tab navigation */
+    .score-tabs { background:var(--bg-alt); border-bottom:1px solid var(--line); position:sticky; top:66px; z-index:50; }
+    .score-tabs-inner { max-width:1160px; margin:0 auto; padding:0 5%; display:flex; gap:0; overflow-x:auto; scrollbar-width:none; }
+    .score-tabs-inner::-webkit-scrollbar { display:none; }
+    .score-tab { padding:.9rem 1.2rem; font-size:.82rem; font-weight:700; color:var(--slate); text-decoration:none; border-bottom:3px solid transparent; white-space:nowrap; cursor:pointer; background:none; border-left:none; border-right:none; border-top:none; font-family:var(--font-body); transition:color .2s; }
+    .score-tab:hover { color:var(--blue); }
+    .score-tab.active { color:var(--blue); border-bottom-color:var(--blue); }
+
+    /* Score grid */
+    .scores-area { max-width:1160px; margin:0 auto; padding:2.5rem 5%; }
+    .scores-section { display:none; }
+    .scores-section.active { display:block; }
+    .scores-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(340px,1fr)); gap:1.4rem; }
+
+    /* Score card */
+    .score-card {
+      background:var(--bg); border:1px solid var(--line); border-radius:14px;
+      overflow:hidden; transition:box-shadow .2s, border-color .2s;
+    }
+    .score-card:hover { border-color:var(--blue); box-shadow:0 8px 24px rgba(30,111,217,.1); }
+    .score-header { padding:1.2rem 1.4rem .9rem; border-bottom:1px solid var(--line); }
+    .score-header h3 { font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:.25rem; }
+    .score-header .score-desc { font-size:.78rem; color:var(--slate); line-height:1.5; }
+    .score-body { padding:1.2rem 1.4rem; }
+    .score-field { margin-bottom:.9rem; }
+    .score-field label { display:block; font-size:.75rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; color:var(--slate); margin-bottom:.4rem; }
+    .score-field select, .score-field input[type="number"] {
+      width:100%; padding:.6rem .8rem; border:1.5px solid var(--line); border-radius:8px;
+      font-size:.88rem; font-family:var(--font-body); color:var(--ink); background:var(--bg-alt);
+      outline:none; transition:border-color .2s;
+    }
+    .score-field select:focus, .score-field input:focus { border-color:var(--blue); }
+    .score-calc-btn {
+      width:100%; padding:.75rem; background:var(--blue); color:#fff; border:none;
+      border-radius:8px; font-family:var(--font-body); font-size:.9rem; font-weight:700;
+      cursor:pointer; transition:background .2s; margin-top:.3rem;
+    }
+    .score-calc-btn:hover { background:var(--blue-dark); }
+    .score-result { display:none; margin-top:1rem; padding:1rem 1.2rem; border-radius:10px; }
+    .score-result.show { display:block; }
+    .score-result .res-num { font-family:var(--font-disp); font-size:2rem; font-weight:600; }
+    .score-result .res-label { font-size:.78rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-bottom:.4rem; }
+    .score-result .res-interp { font-size:.85rem; line-height:1.6; margin-top:.4rem; }
+    .res-low { background:#f0fdf4; border:1px solid #86efac; }
+    .res-low .res-num, .res-low .res-label { color:#15803d; }
+    .res-low .res-interp { color:#14532d; }
+    .res-mod { background:#fef9c3; border:1px solid #fde047; }
+    .res-mod .res-num, .res-mod .res-label { color:#854d0e; }
+    .res-mod .res-interp { color:#713f12; }
+    .res-high { background:#fef2f2; border:1px solid #fca5a5; }
+    .res-high .res-num, .res-high .res-label { color:#b91c1c; }
+    .res-high .res-interp { color:#7f1d1d; }
+    .res-info { background:var(--blue-soft); border:1px solid #93c5fd; }
+    .res-info .res-num, .res-info .res-label { color:var(--blue-dark); }
+    .res-info .res-interp { color:#1e3a8a; }
+
+    .score-reference { font-size:.72rem; color:var(--slate); padding:.7rem 1.4rem; border-top:1px solid var(--line); background:var(--bg-alt); }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">ICU Topics</a></li>
+    <li><a href="scores.html" class="active">Scores</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="scores-hero">
+  <div class="wrap">
+    <h1>📊 Clinical Score Calculators</h1>
+    <p>Enter patient values — get the score instantly with interpretation and risk stratification. All calculators are validated against original publications. For educational and clinical decision support purposes.</p>
+  </div>
+</header>
+
+<nav class="score-tabs">
+  <div class="score-tabs-inner">
+    <button class="score-tab active" onclick="showSection('icu', this)">🫀 ICU Scores</button>
+    <button class="score-tab" onclick="showSection('emergency', this)">🚨 Emergency</button>
+    <button class="score-tab" onclick="showSection('respiratory', this)">🫁 Respiratory</button>
+    <button class="score-tab" onclick="showSection('cardiac', this)">❤️ Cardiac</button>
+    <button class="score-tab" onclick="showSection('neuro', this)">🧠 Neurology</button>
+    <button class="score-tab" onclick="showSection('renal', this)">🫘 Renal & Hepatic</button>
+    <button class="score-tab" onclick="showSection('surgical', this)">🔪 Surgical</button>
+  </div>
+</nav>
+
+<div class="scores-area">
+
+  <!-- ICU SCORES -->
+  <div class="scores-section active" id="sec-icu">
+    <div class="scores-grid">
+
+      <!-- SOFA -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>SOFA Score</h3>
+          <div class="score-desc">Sequential Organ Failure Assessment — diagnoses sepsis (SOFA ≥2) and predicts ICU mortality. Singer et al., JAMA 2016 (Sepsis-3).</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Respiratory — PaO₂/FiO₂ (mmHg)</label>
+            <select id="sofa_resp">
+              <option value="0">≥400 (0 pts)</option>
+              <option value="1">&lt;400 (1 pt)</option>
+              <option value="2">&lt;300 (2 pts)</option>
+              <option value="3">&lt;200 + ventilated (3 pts)</option>
+              <option value="4">&lt;100 + ventilated (4 pts)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Coagulation — Platelets (×10³/µL)</label>
+            <select id="sofa_coag">
+              <option value="0">≥150 (0 pts)</option>
+              <option value="1">&lt;150 (1 pt)</option>
+              <option value="2">&lt;100 (2 pts)</option>
+              <option value="3">&lt;50 (3 pts)</option>
+              <option value="4">&lt;20 (4 pts)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Liver — Bilirubin (mg/dL)</label>
+            <select id="sofa_liver">
+              <option value="0">&lt;1.2 (0 pts)</option>
+              <option value="1">1.2–1.9 (1 pt)</option>
+              <option value="2">2.0–5.9 (2 pts)</option>
+              <option value="3">6.0–11.9 (3 pts)</option>
+              <option value="4">≥12.0 (4 pts)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Cardiovascular — MAP / Vasopressors</label>
+            <select id="sofa_cvs">
+              <option value="0">MAP ≥70 mmHg (0 pts)</option>
+              <option value="1">MAP &lt;70 mmHg (1 pt)</option>
+              <option value="2">Dopamine ≤5 or Dobutamine (2 pts)</option>
+              <option value="3">Dopamine &gt;5 or NE/Adr ≤0.1 (3 pts)</option>
+              <option value="4">NE or Adrenaline &gt;0.1 (4 pts)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>CNS — GCS</label>
+            <select id="sofa_cns">
+              <option value="0">15 (0 pts)</option>
+              <option value="1">13–14 (1 pt)</option>
+              <option value="2">10–12 (2 pts)</option>
+              <option value="3">6–9 (3 pts)</option>
+              <option value="4">&lt;6 (4 pts)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Renal — Creatinine (mg/dL) or UO</label>
+            <select id="sofa_renal">
+              <option value="0">&lt;1.2 (0 pts)</option>
+              <option value="1">1.2–1.9 (1 pt)</option>
+              <option value="2">2.0–3.4 (2 pts)</option>
+              <option value="3">3.5–4.9 or UO &lt;500ml/d (3 pts)</option>
+              <option value="4">≥5.0 or UO &lt;200ml/d (4 pts)</option>
+            </select>
+          </div>
+          <button class="score-calc-btn" onclick="calcSOFA()">Calculate SOFA Score</button>
+          <div class="score-result" id="sofa_result"></div>
+        </div>
+        <div class="score-reference">📚 Singer M, et al. Sepsis-3 Definitions. JAMA. 2016;315(8):801. | Marino's ICU Book 5th Ed, Ch.17 (2025)</div>
+      </div>
+
+      <!-- qSOFA -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>qSOFA (Quick SOFA)</h3>
+          <div class="score-desc">Bedside sepsis prognostic tool (NOT diagnostic). qSOFA ≥2 predicts ICU admission or death. Use NEWS/MEWS for screening (SSC 2026).</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Respiratory Rate</label>
+            <select id="qsofa_rr">
+              <option value="0">RR &lt;22/min (0 pts)</option>
+              <option value="1">RR ≥22/min (1 pt)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Altered Mentation</label>
+            <select id="qsofa_gcs">
+              <option value="0">GCS = 15 (0 pts)</option>
+              <option value="1">GCS &lt;15 (1 pt)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Systolic Blood Pressure</label>
+            <select id="qsofa_sbp">
+              <option value="0">SBP &gt;100 mmHg (0 pts)</option>
+              <option value="1">SBP ≤100 mmHg (1 pt)</option>
+            </select>
+          </div>
+          <button class="score-calc-btn" onclick="calcQSOFA()">Calculate qSOFA</button>
+          <div class="score-result" id="qsofa_result"></div>
+        </div>
+        <div class="score-reference">📚 Singer M, et al. JAMA 2016. | SSC 2026 (Prescott et al., Crit Care Med 2026)</div>
+      </div>
+
+      <!-- GCS -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>Glasgow Coma Scale (GCS)</h3>
+          <div class="score-desc">Neurological assessment tool. Total 3–15. Mild TBI: 13–15; Moderate: 9–12; Severe: ≤8 (intubate). Teasdale & Jennett, Lancet 1974.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Eye Opening (E)</label>
+            <select id="gcs_e">
+              <option value="4">4 — Spontaneous</option>
+              <option value="3">3 — To voice</option>
+              <option value="2">2 — To pain</option>
+              <option value="1">1 — No response</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Verbal Response (V)</label>
+            <select id="gcs_v">
+              <option value="5">5 — Oriented</option>
+              <option value="4">4 — Confused</option>
+              <option value="3">3 — Inappropriate words</option>
+              <option value="2">2 — Incomprehensible</option>
+              <option value="1">1 — No response</option>
+              <option value="1">T — Intubated (score as 1)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Motor Response (M)</label>
+            <select id="gcs_m">
+              <option value="6">6 — Obeys commands</option>
+              <option value="5">5 — Localises to pain</option>
+              <option value="4">4 — Withdraws to pain</option>
+              <option value="3">3 — Flexion (decorticate)</option>
+              <option value="2">2 — Extension (decerebrate)</option>
+              <option value="1">1 — No response</option>
+            </select>
+          </div>
+          <button class="score-calc-btn" onclick="calcGCS()">Calculate GCS</button>
+          <div class="score-result" id="gcs_result"></div>
+        </div>
+        <div class="score-reference">📚 Teasdale G, Jennett B. Lancet 1974. | Marino's ICU Book 5th Ed, Ch.45 (2025)</div>
+      </div>
+
+      <!-- RASS -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>RASS — Richmond Agitation-Sedation Scale</h3>
+          <div class="score-desc">Assess sedation depth in ICU. Target RASS –1 to 0 for most ventilated patients. PADIS 2018 guidelines. Sessler et al., AJRCCM 2002.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Current Patient Behaviour</label>
+            <select id="rass_val">
+              <option value="+4">+4 — Combative (violent, immediate danger)</option>
+              <option value="+3">+3 — Very agitated (pulls at tubes)</option>
+              <option value="+2">+2 — Agitated (frequent non-purposeful movement)</option>
+              <option value="+1">+1 — Restless (anxious, not aggressive)</option>
+              <option value="0">0 — Alert &amp; calm</option>
+              <option value="-1">–1 — Drowsy (eye opening to voice &gt;10s)</option>
+              <option value="-2">–2 — Light sedation (eye contact &lt;10s)</option>
+              <option value="-3">–3 — Moderate (movement/eye opening to voice)</option>
+              <option value="-4">–4 — Deep (response to physical stimulation only)</option>
+              <option value="-5">–5 — Unarousable (no response)</option>
+            </select>
+          </div>
+          <button class="score-calc-btn" onclick="calcRASS()">Get RASS Interpretation</button>
+          <div class="score-result" id="rass_result"></div>
+        </div>
+        <div class="score-reference">📚 Sessler CN, et al. AJRCCM 2002. | Devlin JW, et al. PADIS 2018 (Crit Care Med 2018)</div>
+      </div>
+
+      <!-- CPOT -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>CPOT — Critical Care Pain Observation Tool</h3>
+          <div class="score-desc">Pain assessment in non-verbal/sedated ICU patients. Score 0–8. CPOT ≥3 = significant pain → increase analgesia. PADIS 2018. Gélinas et al., AJCC 2006.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Facial Expression</label>
+            <select id="cpot_face">
+              <option value="0">0 — Relaxed, neutral</option>
+              <option value="1">1 — Tense, frowning, grimacing</option>
+              <option value="2">2 — Grimacing, contorted</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Body Movements</label>
+            <select id="cpot_body">
+              <option value="0">0 — Absence of movement / normal position</option>
+              <option value="1">1 — Protection / guarding pain site</option>
+              <option value="2">2 — Pulling tubes / restlessness</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Muscle Tension (passive flexion/extension)</label>
+            <select id="cpot_muscle">
+              <option value="0">0 — Relaxed</option>
+              <option value="1">1 — Tense, rigid</option>
+              <option value="2">2 — Very tense / rigid</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Compliance with Ventilator (ventilated) / Vocalisations (not ventilated)</label>
+            <select id="cpot_vent">
+              <option value="0">0 — Tolerating vent / no pain vocalization</option>
+              <option value="1">1 — Coughing but tolerating / moaning</option>
+              <option value="2">2 — Fighting ventilator / crying out</option>
+            </select>
+          </div>
+          <button class="score-calc-btn" onclick="calcCPOT()">Calculate CPOT</button>
+          <div class="score-result" id="cpot_result"></div>
+        </div>
+        <div class="score-reference">📚 Gélinas C, et al. AJCC 2006. | Devlin JW, et al. PADIS 2018 (Crit Care Med 2018)</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EMERGENCY SCORES -->
+  <div class="scores-section" id="sec-emergency">
+    <div class="scores-grid">
+
+      <!-- CURB-65 -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>CURB-65 (Pneumonia Severity)</h3>
+          <div class="score-desc">Community-acquired pneumonia severity score. Guides admission decision. BTS Guidelines. Lim et al., Thorax 2003.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>C — Confusion (new onset)</label>
+            <select id="curb_c"><option value="0">No (0 pts)</option><option value="1">Yes (1 pt)</option></select>
+          </div>
+          <div class="score-field"><label>U — Urea &gt;7 mmol/L (BUN &gt;19 mg/dL)</label>
+            <select id="curb_u"><option value="0">No (0 pts)</option><option value="1">Yes (1 pt)</option></select>
+          </div>
+          <div class="score-field"><label>R — Respiratory Rate ≥30/min</label>
+            <select id="curb_r"><option value="0">No (0 pts)</option><option value="1">Yes (1 pt)</option></select>
+          </div>
+          <div class="score-field"><label>B — BP (SBP &lt;90 or DBP ≤60 mmHg)</label>
+            <select id="curb_b"><option value="0">No (0 pts)</option><option value="1">Yes (1 pt)</option></select>
+          </div>
+          <div class="score-field"><label>65 — Age ≥65 years</label>
+            <select id="curb_65"><option value="0">No (0 pts)</option><option value="1">Yes (1 pt)</option></select>
+          </div>
+          <button class="score-calc-btn" onclick="calcCURB65()">Calculate CURB-65</button>
+          <div class="score-result" id="curb65_result"></div>
+        </div>
+        <div class="score-reference">📚 Lim WS, et al. Thorax 2003;58(5):377. | Marino's ICU Book 5th Ed, Ch.29 (2025)</div>
+      </div>
+
+      <!-- NEWS2 -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>NEWS2 — National Early Warning Score 2</h3>
+          <div class="score-desc">Early warning score for acute deterioration. SSC 2026 recommends NEWS2 over qSOFA for sepsis screening. RCP Guidelines 2017.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Respiratory Rate (/min)</label>
+            <select id="news_rr">
+              <option value="3">≤8 (3 pts)</option>
+              <option value="0">9–11 (0 pts)</option>
+              <option value="1">12–20 (1 pt)</option>
+              <option value="2">21–24 (2 pts)</option>
+              <option value="3">≥25 (3 pts)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>SpO₂ — Scale 1 (no supplemental O₂)</label>
+            <select id="news_spo2">
+              <option value="3">≤91% (3 pts)</option>
+              <option value="2">92–93% (2 pts)</option>
+              <option value="1">94–95% (1 pt)</option>
+              <option value="0">≥96% (0 pts)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>On Supplemental O₂?</label>
+            <select id="news_o2"><option value="0">No (0 pts)</option><option value="2">Yes (2 pts)</option></select>
+          </div>
+          <div class="score-field"><label>Systolic BP (mmHg)</label>
+            <select id="news_sbp">
+              <option value="3">≤90 (3 pts)</option>
+              <option value="2">91–100 (2 pts)</option>
+              <option value="1">101–110 (1 pt)</option>
+              <option value="0">111–219 (0 pts)</option>
+              <option value="3">≥220 (3 pts)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Pulse Rate (/min)</label>
+            <select id="news_hr">
+              <option value="3">≤40 (3 pts)</option>
+              <option value="1">41–50 (1 pt)</option>
+              <option value="0">51–90 (0 pts)</option>
+              <option value="1">91–110 (1 pt)</option>
+              <option value="2">111–130 (2 pts)</option>
+              <option value="3">≥131 (3 pts)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Level of Consciousness (ACVPU)</label>
+            <select id="news_con">
+              <option value="0">Alert (0 pts)</option>
+              <option value="3">Confusion/Voice/Pain/Unresponsive (3 pts)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Temperature (°C)</label>
+            <select id="news_temp">
+              <option value="3">≤35.0 (3 pts)</option>
+              <option value="1">35.1–36.0 (1 pt)</option>
+              <option value="0">36.1–38.0 (0 pts)</option>
+              <option value="1">38.1–39.0 (1 pt)</option>
+              <option value="2">≥39.1 (2 pts)</option>
+            </select>
+          </div>
+          <button class="score-calc-btn" onclick="calcNEWS2()">Calculate NEWS2</button>
+          <div class="score-result" id="news2_result"></div>
+        </div>
+        <div class="score-reference">📚 Royal College of Physicians. NEWS2 (2017). | SSC 2026: Recommend NEWS/NEWS2 over qSOFA for sepsis screening.</div>
+      </div>
+
+      <!-- Wells DVT -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>Wells Score — DVT</h3>
+          <div class="score-desc">Pre-test probability for deep vein thrombosis. Wells et al., Lancet 1997. Use with D-dimer to guide imaging decisions.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Active cancer (treatment within 6 months or palliative)</label>
+            <select id="wdvt_1"><option value="0">No</option><option value="1">Yes (+1)</option></select>
+          </div>
+          <div class="score-field"><label>Paralysis, paresis, or recent plaster immobilisation of legs</label>
+            <select id="wdvt_2"><option value="0">No</option><option value="1">Yes (+1)</option></select>
+          </div>
+          <div class="score-field"><label>Recently bedridden &gt;3 days or major surgery within 12 weeks</label>
+            <select id="wdvt_3"><option value="0">No</option><option value="1">Yes (+1)</option></select>
+          </div>
+          <div class="score-field"><label>Localised tenderness along deep venous system</label>
+            <select id="wdvt_4"><option value="0">No</option><option value="1">Yes (+1)</option></select>
+          </div>
+          <div class="score-field"><label>Entire leg swollen</label>
+            <select id="wdvt_5"><option value="0">No</option><option value="1">Yes (+1)</option></select>
+          </div>
+          <div class="score-field"><label>Calf swelling &gt;3 cm compared to other leg</label>
+            <select id="wdvt_6"><option value="0">No</option><option value="1">Yes (+1)</option></select>
+          </div>
+          <div class="score-field"><label>Pitting oedema (greater in symptomatic leg)</label>
+            <select id="wdvt_7"><option value="0">No</option><option value="1">Yes (+1)</option></select>
+          </div>
+          <div class="score-field"><label>Collateral superficial veins (non-varicose)</label>
+            <select id="wdvt_8"><option value="0">No</option><option value="1">Yes (+1)</option></select>
+          </div>
+          <div class="score-field"><label>Alternative diagnosis at least as likely as DVT</label>
+            <select id="wdvt_9"><option value="0">No</option><option value="-2">Yes (−2)</option></select>
+          </div>
+          <button class="score-calc-btn" onclick="calcWellsDVT()">Calculate Wells DVT Score</button>
+          <div class="score-result" id="wellsdvt_result"></div>
+        </div>
+        <div class="score-reference">📚 Wells PS, et al. Lancet 1997;350(9094):1795. | Marino's ICU Book 5th Ed, Ch.5 (2025)</div>
+      </div>
+
+      <!-- Wells PE -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>Wells Score — Pulmonary Embolism</h3>
+          <div class="score-desc">Pre-test probability for pulmonary embolism. Use with D-dimer to decide CT-PA. Wells et al., Ann Intern Med 2001.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Clinical signs/symptoms of DVT (leg swelling, pain on deep vein palpation)</label>
+            <select id="wpe_1"><option value="0">No</option><option value="3">Yes (+3)</option></select>
+          </div>
+          <div class="score-field"><label>PE is #1 diagnosis OR equally likely</label>
+            <select id="wpe_2"><option value="0">No</option><option value="3">Yes (+3)</option></select>
+          </div>
+          <div class="score-field"><label>HR &gt;100 bpm</label>
+            <select id="wpe_3"><option value="0">No</option><option value="1.5">Yes (+1.5)</option></select>
+          </div>
+          <div class="score-field"><label>Immobilisation ≥3 days OR surgery in past 4 weeks</label>
+            <select id="wpe_4"><option value="0">No</option><option value="1.5">Yes (+1.5)</option></select>
+          </div>
+          <div class="score-field"><label>Previous DVT or PE</label>
+            <select id="wpe_5"><option value="0">No</option><option value="1.5">Yes (+1.5)</option></select>
+          </div>
+          <div class="score-field"><label>Haemoptysis</label>
+            <select id="wpe_6"><option value="0">No</option><option value="1">Yes (+1)</option></select>
+          </div>
+          <div class="score-field"><label>Malignancy (treatment within 6 months or palliative)</label>
+            <select id="wpe_7"><option value="0">No</option><option value="1">Yes (+1)</option></select>
+          </div>
+          <button class="score-calc-btn" onclick="calcWellsPE()">Calculate Wells PE Score</button>
+          <div class="score-result" id="wellspe_result"></div>
+        </div>
+        <div class="score-reference">📚 Wells PS, et al. Ann Intern Med 2001;135(2):98. | Marino's ICU Book 5th Ed, Ch.22 (2025)</div>
+      </div>
+
+      <!-- HEART Score -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>HEART Score (ACS Risk)</h3>
+          <div class="score-desc">History, ECG, Age, Risk factors, Troponin. Stratifies chest pain patients. HEART score ≥7: high risk (65% MACE). Backus et al., Heart 2010.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>H — History</label>
+            <select id="heart_h">
+              <option value="0">0 — Slightly suspicious</option>
+              <option value="1">1 — Moderately suspicious</option>
+              <option value="2">2 — Highly suspicious (typical: crushing, radiating, diaphoresis)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>E — ECG</label>
+            <select id="heart_e">
+              <option value="0">0 — Normal</option>
+              <option value="1">1 — Non-specific repolarisation disturbance (LBBB, LVH, ST depression)</option>
+              <option value="2">2 — Significant ST depression (&gt;1mm) / T-wave inversion</option>
+            </select>
+          </div>
+          <div class="score-field"><label>A — Age</label>
+            <select id="heart_a">
+              <option value="0">0 — &lt;45 years</option>
+              <option value="1">1 — 45–64 years</option>
+              <option value="2">2 — ≥65 years</option>
+            </select>
+          </div>
+          <div class="score-field"><label>R — Risk Factors (DM, HTN, hypercholesterolaemia, obesity BMI&gt;30, smoking, family Hx)</label>
+            <select id="heart_r">
+              <option value="0">0 — No known risk factors</option>
+              <option value="1">1 — 1–2 risk factors OR history of atherosclerotic disease</option>
+              <option value="2">2 — ≥3 risk factors OR history of coronary artery disease / PCI / CABG</option>
+            </select>
+          </div>
+          <div class="score-field"><label>T — Troponin (× upper limit of normal)</label>
+            <select id="heart_t">
+              <option value="0">0 — ≤ normal limit</option>
+              <option value="1">1 — 1–3× ULN</option>
+              <option value="2">2 — &gt;3× ULN</option>
+            </select>
+          </div>
+          <button class="score-calc-btn" onclick="calcHEART()">Calculate HEART Score</button>
+          <div class="score-result" id="heart_result"></div>
+        </div>
+        <div class="score-reference">📚 Backus BE, et al. Heart 2010;96(19):1569. | ACC/AHA/ACEP ACS Guidelines 2025</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RESPIRATORY -->
+  <div class="scores-section" id="sec-respiratory">
+    <div class="scores-grid">
+
+      <!-- DECAF -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>DECAF Score (COPD Exacerbation)</h3>
+          <div class="score-desc">Predicts in-hospital mortality in COPD exacerbation. DECAF ≥3 = high risk (29% mortality). Steer et al., Thorax 2012.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>D — Dyspnoea (MRC Grade 5b = too breathless to leave house or breathless when dressing)</label>
+            <select id="decaf_d"><option value="0">MRC ≤5a (0 pts)</option><option value="1">MRC 5b (1 pt)</option></select>
+          </div>
+          <div class="score-field"><label>E — Eosinopenia (eosinophils &lt;0.05×10⁹/L)</label>
+            <select id="decaf_e"><option value="0">No (0 pts)</option><option value="1">Yes (1 pt)</option></select>
+          </div>
+          <div class="score-field"><label>C — Consolidation on CXR</label>
+            <select id="decaf_c"><option value="0">No (0 pts)</option><option value="1">Yes (1 pt)</option></select>
+          </div>
+          <div class="score-field"><label>A — Acidaemia (pH &lt;7.30)</label>
+            <select id="decaf_a"><option value="0">No (0 pts)</option><option value="1">Yes (1 pt)</option></select>
+          </div>
+          <div class="score-field"><label>F — Atrial Fibrillation (on admission ECG or known AF)</label>
+            <select id="decaf_f"><option value="0">No (0 pts)</option><option value="1">Yes (1 pt)</option></select>
+          </div>
+          <button class="score-calc-btn" onclick="calcDECAF()">Calculate DECAF Score</button>
+          <div class="score-result" id="decaf_result"></div>
+        </div>
+        <div class="score-reference">📚 Steer J, et al. Thorax 2012;67(11):970. | GOLD 2026 Report (goldcopd.org)</div>
+      </div>
+
+      <!-- P/F Ratio -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>P/F Ratio (ARDS Severity)</h3>
+          <div class="score-desc">PaO₂/FiO₂ ratio — determines ARDS severity. 2023 Global ARDS Definition. Matthay et al., AJRCCM 2024.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>PaO₂ (mmHg) — from ABG</label>
+            <input type="number" id="pf_pao2" placeholder="e.g. 70" min="20" max="600" />
+          </div>
+          <div class="score-field"><label>FiO₂ (0.21–1.0) — fraction of inspired oxygen</label>
+            <input type="number" id="pf_fio2" placeholder="e.g. 0.5" min="0.21" max="1.0" step="0.01" />
+          </div>
+          <button class="score-calc-btn" onclick="calcPF()">Calculate P/F Ratio</button>
+          <div class="score-result" id="pf_result"></div>
+        </div>
+        <div class="score-reference">📚 ARDS Network. NEJM 2000. | Matthay MA, et al. AJRCCM 2024;209(4):374 (Global ARDS Definition 2023)</div>
+      </div>
+
+      <!-- Driving Pressure -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>Driving Pressure (ΔP)</h3>
+          <div class="score-desc">ΔP = Pplat − PEEP. Best predictor of ARDS mortality. Target &lt;14–15 cmH₂O. Amato et al., NEJM 2015.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Plateau Pressure (Pplat, cmH₂O)</label>
+            <input type="number" id="dp_pplat" placeholder="e.g. 28" min="0" max="60" />
+          </div>
+          <div class="score-field"><label>PEEP (cmH₂O)</label>
+            <input type="number" id="dp_peep" placeholder="e.g. 10" min="0" max="30" />
+          </div>
+          <button class="score-calc-btn" onclick="calcDrivingP()">Calculate Driving Pressure</button>
+          <div class="score-result" id="dp_result"></div>
+        </div>
+        <div class="score-reference">📚 Amato MB, et al. Driving Pressure and Survival in ARDS. NEJM 2015;372(8):747. | ARDSNet Protocol (2000)</div>
+      </div>
+
+      <!-- IBW and Vt Calculator -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>IBW &amp; Tidal Volume Calculator</h3>
+          <div class="score-desc">Predicted Body Weight (Devine formula) + lung-protective tidal volume (6–8 ml/kg PBW). ARDSNet 2000. Mandatory for ARDS ventilation.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Sex</label>
+            <select id="ibw_sex"><option value="male">Male</option><option value="female">Female</option></select>
+          </div>
+          <div class="score-field"><label>Height (cm)</label>
+            <input type="number" id="ibw_height" placeholder="e.g. 165" min="130" max="220" />
+          </div>
+          <button class="score-calc-btn" onclick="calcIBW()">Calculate IBW &amp; Vt Range</button>
+          <div class="score-result" id="ibw_result"></div>
+        </div>
+        <div class="score-reference">📚 Devine BJ. Drug Intelligence 1974. | ARDS Network. NEJM 2000;342:1301. | Marino's ICU Book 5th Ed, Ch.27 (2025)</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- CARDIAC -->
+  <div class="scores-section" id="sec-cardiac">
+    <div class="scores-grid">
+
+      <!-- GRACE Score -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>GRACE Score (ACS Mortality)</h3>
+          <div class="score-desc">Predicts 6-month post-discharge mortality in NSTEMI/UA. GRACE &gt;140: high risk → early invasive strategy (&lt;24h). Fox KAA, et al., BMJ 2006.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Age (years)</label>
+            <select id="grace_age">
+              <option value="0">&lt;30 (0)</option><option value="8">30–39 (8)</option><option value="25">40–49 (25)</option>
+              <option value="41">50–59 (41)</option><option value="58">60–69 (58)</option><option value="75">70–79 (75)</option>
+              <option value="91">80–89 (91)</option><option value="100">≥90 (100)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Heart Rate (bpm)</label>
+            <select id="grace_hr">
+              <option value="0">&lt;50 (0)</option><option value="3">50–69 (3)</option><option value="9">70–89 (9)</option>
+              <option value="15">90–109 (15)</option><option value="24">110–149 (24)</option><option value="38">150–199 (38)</option>
+              <option value="46">≥200 (46)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Systolic BP (mmHg)</label>
+            <select id="grace_sbp">
+              <option value="58">≤79 (58)</option><option value="53">80–99 (53)</option><option value="43">100–119 (43)</option>
+              <option value="34">120–139 (34)</option><option value="24">140–159 (24)</option><option value="16">160–199 (16)</option>
+              <option value="10">≥200 (10)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Serum Creatinine (mg/dL)</label>
+            <select id="grace_cr">
+              <option value="1">0–0.39 (1)</option><option value="4">0.40–0.79 (4)</option><option value="7">0.80–1.19 (7)</option>
+              <option value="10">1.20–1.59 (10)</option><option value="13">1.60–1.99 (13)</option><option value="21">2.00–3.99 (21)</option>
+              <option value="28">≥4.0 (28)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Killip Class (Heart Failure)</label>
+            <select id="grace_killip">
+              <option value="0">I — No HF (0)</option><option value="20">II — Rales, JVP elevation (20)</option>
+              <option value="39">III — Pulmonary oedema (39)</option><option value="59">IV — Cardiogenic shock (59)</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Cardiac Arrest at Admission</label>
+            <select id="grace_arrest"><option value="0">No (0)</option><option value="39">Yes (39)</option></select>
+          </div>
+          <div class="score-field"><label>Elevated Cardiac Enzymes/Troponin</label>
+            <select id="grace_troponin"><option value="0">No (0)</option><option value="14">Yes (14)</option></select>
+          </div>
+          <div class="score-field"><label>ST-Segment Deviation</label>
+            <select id="grace_st"><option value="0">No (0)</option><option value="28">Yes (28)</option></select>
+          </div>
+          <button class="score-calc-btn" onclick="calcGRACE()">Calculate GRACE Score</button>
+          <div class="score-result" id="grace_result"></div>
+        </div>
+        <div class="score-reference">📚 Fox KAA, et al. BMJ 2006;333:1091. | ACC/AHA/ACEP ACS Guidelines 2025</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- NEURO -->
+  <div class="scores-section" id="sec-neuro">
+    <div class="scores-grid">
+
+      <!-- NIHSS simplified -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>NIHSS — NIH Stroke Scale (Simplified)</h3>
+          <div class="score-desc">Quantifies stroke severity. NIHSS ≥4: significant deficit. &gt;16: severe. Guides tPA eligibility. Brott T, et al., Stroke 1989.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>1a. Level of Consciousness</label>
+            <select id="nihss_1a"><option value="0">0 — Alert</option><option value="1">1 — Drowsy</option><option value="2">2 — Stuporous</option><option value="3">3 — Coma/unresponsive</option></select>
+          </div>
+          <div class="score-field"><label>1b. LOC Questions (month + age — 0,1,2 errors)</label>
+            <select id="nihss_1b"><option value="0">0 — Both correct</option><option value="1">1 — One correct</option><option value="2">2 — Neither correct</option></select>
+          </div>
+          <div class="score-field"><label>1c. LOC Commands (open/close eyes + grip/release)</label>
+            <select id="nihss_1c"><option value="0">0 — Both correct</option><option value="1">1 — One correct</option><option value="2">2 — Neither correct</option></select>
+          </div>
+          <div class="score-field"><label>2. Gaze (horizontal eye movement)</label>
+            <select id="nihss_2"><option value="0">0 — Normal</option><option value="1">1 — Partial gaze palsy</option><option value="2">2 — Forced deviation</option></select>
+          </div>
+          <div class="score-field"><label>3. Visual Fields</label>
+            <select id="nihss_3"><option value="0">0 — No visual loss</option><option value="1">1 — Partial hemianopia</option><option value="2">2 — Complete hemianopia</option><option value="3">3 — Bilateral hemianopia</option></select>
+          </div>
+          <div class="score-field"><label>4. Facial Palsy</label>
+            <select id="nihss_4"><option value="0">0 — Normal</option><option value="1">1 — Minor</option><option value="2">2 — Partial lower face</option><option value="3">3 — Complete (upper + lower)</option></select>
+          </div>
+          <div class="score-field"><label>5a. Motor — Left Arm (10 sec test)</label>
+            <select id="nihss_5a"><option value="0">0 — No drift</option><option value="1">1 — Drift before 10s</option><option value="2">2 — Falls before 10s</option><option value="3">3 — No effort against gravity</option><option value="4">4 — No movement</option></select>
+          </div>
+          <div class="score-field"><label>5b. Motor — Right Arm</label>
+            <select id="nihss_5b"><option value="0">0 — No drift</option><option value="1">1 — Drift before 10s</option><option value="2">2 — Falls before 10s</option><option value="3">3 — No effort against gravity</option><option value="4">4 — No movement</option></select>
+          </div>
+          <div class="score-field"><label>6a. Motor — Left Leg (5 sec test)</label>
+            <select id="nihss_6a"><option value="0">0 — No drift</option><option value="1">1 — Drift before 5s</option><option value="2">2 — Falls before 5s</option><option value="3">3 — No effort against gravity</option><option value="4">4 — No movement</option></select>
+          </div>
+          <div class="score-field"><label>6b. Motor — Right Leg</label>
+            <select id="nihss_6b"><option value="0">0 — No drift</option><option value="1">1 — Drift before 5s</option><option value="2">2 — Falls before 5s</option><option value="3">3 — No effort against gravity</option><option value="4">4 — No movement</option></select>
+          </div>
+          <div class="score-field"><label>8. Sensory</label>
+            <select id="nihss_8"><option value="0">0 — Normal</option><option value="1">1 — Mild-moderate loss</option><option value="2">2 — Severe/total loss</option></select>
+          </div>
+          <div class="score-field"><label>9. Language/Aphasia</label>
+            <select id="nihss_9"><option value="0">0 — Normal</option><option value="1">1 — Mild aphasia</option><option value="2">2 — Severe aphasia</option><option value="3">3 — Mute/global aphasia</option></select>
+          </div>
+          <div class="score-field"><label>10. Dysarthria</label>
+            <select id="nihss_10"><option value="0">0 — Normal</option><option value="1">1 — Mild-moderate</option><option value="2">2 — Severe</option></select>
+          </div>
+          <button class="score-calc-btn" onclick="calcNIHSS()">Calculate NIHSS</button>
+          <div class="score-result" id="nihss_result"></div>
+        </div>
+        <div class="score-reference">📚 Brott T, et al. Stroke 1989;20(7):864. | AHA/ASA Ischaemic Stroke Guidelines 2023</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RENAL & HEPATIC -->
+  <div class="scores-section" id="sec-renal">
+    <div class="scores-grid">
+
+      <!-- MELD Score -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>MELD Score (Liver Disease)</h3>
+          <div class="score-desc">Model for End-Stage Liver Disease. Predicts 90-day mortality. Used for transplant prioritisation. MELD ≥18: consider transplant listing. Kamath et al., Hepatology 2001.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Bilirubin (mg/dL)</label>
+            <input type="number" id="meld_bili" placeholder="e.g. 3.5" min="0.1" max="50" step="0.1" />
+          </div>
+          <div class="score-field"><label>INR</label>
+            <input type="number" id="meld_inr" placeholder="e.g. 1.8" min="0.1" max="10" step="0.1" />
+          </div>
+          <div class="score-field"><label>Creatinine (mg/dL)</label>
+            <input type="number" id="meld_cr" placeholder="e.g. 1.5" min="0.1" max="20" step="0.1" />
+          </div>
+          <div class="score-field"><label>On Dialysis / CRRT (≥2×/week)?</label>
+            <select id="meld_dialysis"><option value="no">No</option><option value="yes">Yes (sets Cr = 4.0)</option></select>
+          </div>
+          <button class="score-calc-btn" onclick="calcMELD()">Calculate MELD Score</button>
+          <div class="score-result" id="meld_result"></div>
+        </div>
+        <div class="score-reference">📚 Kamath PS, et al. Hepatology 2001;33(2):464. | Marino's ICU Book 5th Ed, Ch.39 (2025)</div>
+      </div>
+
+      <!-- Child-Pugh -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>Child-Pugh Score</h3>
+          <div class="score-desc">Liver disease severity. Class A (5–6): good function. Class B (7–9): significant compromise. Class C (10–15): decompensated. Child & Turcotte, 1964.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Bilirubin (mg/dL)</label>
+            <select id="cp_bili"><option value="1">&lt;2 (1 pt)</option><option value="2">2–3 (2 pts)</option><option value="3">&gt;3 (3 pts)</option></select>
+          </div>
+          <div class="score-field"><label>Albumin (g/dL)</label>
+            <select id="cp_alb"><option value="1">&gt;3.5 (1 pt)</option><option value="2">2.8–3.5 (2 pts)</option><option value="3">&lt;2.8 (3 pts)</option></select>
+          </div>
+          <div class="score-field"><label>PT prolongation (seconds) / INR</label>
+            <select id="cp_pt"><option value="1">&lt;4s / INR &lt;1.7 (1 pt)</option><option value="2">4–6s / INR 1.7–2.2 (2 pts)</option><option value="3">&gt;6s / INR &gt;2.2 (3 pts)</option></select>
+          </div>
+          <div class="score-field"><label>Ascites</label>
+            <select id="cp_asc"><option value="1">Absent (1 pt)</option><option value="2">Slight/controlled (2 pts)</option><option value="3">Moderate/refractory (3 pts)</option></select>
+          </div>
+          <div class="score-field"><label>Hepatic Encephalopathy</label>
+            <select id="cp_enc"><option value="1">None (1 pt)</option><option value="2">Grade I–II (2 pts)</option><option value="3">Grade III–IV (3 pts)</option></select>
+          </div>
+          <button class="score-calc-btn" onclick="calcChildPugh()">Calculate Child-Pugh Score</button>
+          <div class="score-result" id="childpugh_result"></div>
+        </div>
+        <div class="score-reference">📚 Child CG, Turcotte JG. Surgery 1964. | Pugh RNH, et al. Br J Surg 1973. | Marino's ICU Book 5th Ed, Ch.39 (2025)</div>
+      </div>
+
+      <!-- Cockroft-Gault eGFR -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>eGFR — Cockcroft-Gault (CrCl)</h3>
+          <div class="score-desc">Estimates creatinine clearance for drug dosing in AKI/CKD. Essential for adjusting aminoglycosides, vancomycin, renally-cleared drugs.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Age (years)</label>
+            <input type="number" id="cg_age" placeholder="e.g. 65" min="18" max="100" /></div>
+          <div class="score-field"><label>Weight (kg) — use IBW if obese</label>
+            <input type="number" id="cg_weight" placeholder="e.g. 60" min="30" max="150" /></div>
+          <div class="score-field"><label>Serum Creatinine (mg/dL)</label>
+            <input type="number" id="cg_cr" placeholder="e.g. 1.2" min="0.1" max="20" step="0.1" /></div>
+          <div class="score-field"><label>Sex</label>
+            <select id="cg_sex"><option value="1">Male</option><option value="0.85">Female (×0.85)</option></select>
+          </div>
+          <button class="score-calc-btn" onclick="calcCG()">Calculate CrCl (ml/min)</button>
+          <div class="score-result" id="cg_result"></div>
+        </div>
+        <div class="score-reference">📚 Cockcroft DW, Gault MH. Nephron 1976;16(1):31. | KDIGO 2026 Drug Dosing Guidelines</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SURGICAL -->
+  <div class="scores-section" id="sec-surgical">
+    <div class="scores-grid">
+
+      <!-- Ranson's Criteria -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>Ranson's Criteria (Pancreatitis)</h3>
+          <div class="score-desc">Severity scoring for acute pancreatitis. Score ≥3: severe pancreatitis. At admission + at 48h criteria. Ranson JHC, et al., Surg Gynecol Obstet 1974.</div>
+        </div>
+        <div class="score-body">
+          <p style="font-size:.8rem;font-weight:700;color:var(--slate);margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.05em;">At Admission</p>
+          <div class="score-field"><label>Age &gt;55 years</label><select id="ran_age"><option value="0">No</option><option value="1">Yes (+1)</option></select></div>
+          <div class="score-field"><label>WBC &gt;16,000/mm³</label><select id="ran_wbc"><option value="0">No</option><option value="1">Yes (+1)</option></select></div>
+          <div class="score-field"><label>Blood Glucose &gt;200 mg/dL (11.1 mmol/L)</label><select id="ran_gluc"><option value="0">No</option><option value="1">Yes (+1)</option></select></div>
+          <div class="score-field"><label>Serum LDH &gt;350 IU/L</label><select id="ran_ldh"><option value="0">No</option><option value="1">Yes (+1)</option></select></div>
+          <div class="score-field"><label>AST &gt;250 IU/L</label><select id="ran_ast"><option value="0">No</option><option value="1">Yes (+1)</option></select></div>
+          <p style="font-size:.8rem;font-weight:700;color:var(--slate);margin:.8rem 0 .6rem;text-transform:uppercase;letter-spacing:.05em;">At 48 Hours</p>
+          <div class="score-field"><label>Haematocrit fall &gt;10%</label><select id="ran_hct"><option value="0">No</option><option value="1">Yes (+1)</option></select></div>
+          <div class="score-field"><label>BUN rise &gt;5 mg/dL</label><select id="ran_bun"><option value="0">No</option><option value="1">Yes (+1)</option></select></div>
+          <div class="score-field"><label>Serum Ca &lt;8 mg/dL (2 mmol/L)</label><select id="ran_ca"><option value="0">No</option><option value="1">Yes (+1)</option></select></div>
+          <div class="score-field"><label>Arterial PO₂ &lt;60 mmHg</label><select id="ran_po2"><option value="0">No</option><option value="1">Yes (+1)</option></select></div>
+          <div class="score-field"><label>Base deficit &gt;4 mEq/L</label><select id="ran_bd"><option value="0">No</option><option value="1">Yes (+1)</option></select></div>
+          <div class="score-field"><label>Fluid sequestration &gt;6L</label><select id="ran_fluid"><option value="0">No</option><option value="1">Yes (+1)</option></select></div>
+          <button class="score-calc-btn" onclick="calcRanson()">Calculate Ranson's Score</button>
+          <div class="score-result" id="ranson_result"></div>
+        </div>
+        <div class="score-reference">📚 Ranson JHC, et al. Surg Gynecol Obstet 1974;139:69. | Marino's ICU Book 5th Ed, Ch.40 (2025)</div>
+      </div>
+
+      <!-- ASA Physical Status -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>ASA Physical Status Classification</h3>
+          <div class="score-desc">American Society of Anesthesiologists classification. Assesses perioperative risk. ASA 2020 update. Essential for pre-operative assessment and consent.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Select Patient's Condition</label>
+            <select id="asa_class" onchange="calcASA()">
+              <option value="">— Select ASA Class —</option>
+              <option value="1">ASA I — Normal healthy patient, no medical problems</option>
+              <option value="2">ASA II — Mild systemic disease (well-controlled DM, mild HTN, obesity BMI&lt;40, smoking, social alcohol)</option>
+              <option value="3">ASA III — Severe systemic disease (poorly controlled DM/HTN, COPD, morbid obesity, active hepatitis, alcohol dependence, implanted pacemaker, moderate ESRD, EF&lt;60%)</option>
+              <option value="4">ASA IV — Severe systemic disease threatening life (recent (&lt;3m) MI/TIA/stroke, ongoing cardiac ischaemia, severe valve dysfunction, sepsis, ESRD not on regular dialysis)</option>
+              <option value="5">ASA V — Moribund, not expected to survive without surgery (ruptured AAA, massive trauma, intracranial bleed with midline shift, ischaemic bowel with cardiac pathology)</option>
+              <option value="6">ASA VI — Brain-dead patient for organ donation</option>
+            </select>
+          </div>
+          <div class="score-field"><label>Emergency Surgery? (Adds "E" suffix)</label>
+            <select id="asa_emergency"><option value="no">No</option><option value="yes">Yes (e.g., ASA IIE)</option></select>
+          </div>
+          <button class="score-calc-btn" onclick="calcASABtn()">Get ASA Interpretation</button>
+          <div class="score-result" id="asa_result"></div>
+        </div>
+        <div class="score-reference">📚 ASA Physical Status Classification System. American Society of Anesthesiologists. Updated 2020. | Washington Manual of Critical Care, 4th Ed.</div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showSection(id, tab) {
+  document.querySelectorAll('.scores-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.score-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  tab.classList.add('active');
+  window.scrollTo({top: document.querySelector('.score-tabs').offsetTop - 66, behavior: 'smooth'});
+}
+
+function showResult(id, score, label, interp, cls) {
+  const el = document.getElementById(id);
+  el.className = 'score-result show ' + cls;
+  el.innerHTML = `<div class="res-label">${label}</div><div class="res-num">${score}</div><div class="res-interp">${interp}</div>`;
+}
+
+// SOFA
+function calcSOFA() {
+  const s = ['sofa_resp','sofa_coag','sofa_liver','sofa_cvs','sofa_cns','sofa_renal']
+    .reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s <= 1) { cl='res-low'; interp='Predicted ICU mortality &lt;10%. Sepsis if acute rise ≥2 from baseline.'; }
+  else if(s <= 5) { cl='res-mod'; interp='Predicted ICU mortality ~20–30%. Monitor closely for deterioration.'; }
+  else if(s <= 9) { cl='res-high'; interp='Predicted ICU mortality ~40%. Severe multi-organ dysfunction — ICU level care essential.'; }
+  else { cl='res-high'; interp='Predicted ICU mortality &gt;50%. Critical illness — maximal support required.'; }
+  showResult('sofa_result', s + '/24', 'SOFA Score', `${interp}<br><br><strong>Sepsis:</strong> SOFA ≥2 from baseline in suspected infection. <strong>Septic Shock:</strong> SOFA ≥2 + vasopressors + lactate &gt;2 mmol/L.`, cl);
+}
+
+// qSOFA
+function calcQSOFA() {
+  const s = ['qsofa_rr','qsofa_gcs','qsofa_sbp'].reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s === 0) { cl='res-low'; interp='Low risk of deterioration. qSOFA &lt;2: unlikely to meet sepsis criteria. Continue monitoring.'; }
+  else if(s === 1) { cl='res-mod'; interp='Intermediate. Reassess frequently. Consider full SOFA score if infection suspected.'; }
+  else { cl='res-high'; interp='qSOFA ≥2: Increased risk of prolonged ICU stay or death. <strong>Note (SSC 2026):</strong> qSOFA is a prognostic tool, NOT a screening tool. Use NEWS/NEWS2/MEWS/SIRS for sepsis screening.'; }
+  showResult('qsofa_result', s + '/3', 'qSOFA Score', interp, cl);
+}
+
+// GCS
+function calcGCS() {
+  const e = parseInt(document.getElementById('gcs_e').value);
+  const v = parseInt(document.getElementById('gcs_v').value);
+  const m = parseInt(document.getElementById('gcs_m').value);
+  const s = e + v + m;
+  let cl, interp;
+  if(s >= 13) { cl='res-low'; interp='<strong>Mild TBI / Alert</strong> — GCS 13–15. Monitor neurologically. Assess for worsening.'; }
+  else if(s >= 9) { cl='res-mod'; interp='<strong>Moderate TBI</strong> — GCS 9–12. CT head mandatory. Neurosurgery consult. HDU/ICU admission.'; }
+  else { cl='res-high'; interp='<strong>Severe TBI</strong> — GCS ≤8. Intubate (airway protection mandatory). CT head emergency. Neurosurgery/neurocritical care. BTF 2023: SBP ≥110 mmHg, SpO₂ ≥90%, avoid prophylactic hyperventilation.'; }
+  showResult('gcs_result', s + '/15', `GCS: E${e} V${v} M${m}`, interp, cl);
+}
+
+// RASS
+function calcRASS() {
+  const v = document.getElementById('rass_val').value;
+  const n = parseInt(v);
+  let cl, interp;
+  if(n > 0) { cl='res-high'; interp='Patient is agitated. Assess and treat pain first (CPOT). If agitation persists after adequate analgesia, consider sedation (propofol or dexmedetomidine). RASS target: −1 to 0 for most ventilated patients.'; }
+  else if(n === 0 || n === -1) { cl='res-low'; interp='Optimal sedation range for most ICU patients (PADIS 2018). Continue current sedation strategy. Daily SAT (spontaneous awakening trial) recommended.'; }
+  else if(n >= -3) { cl='res-mod'; interp='Moderate sedation. Appropriate for: ARDS on proning, high ventilator support, elevated ICP. Otherwise — consider lightening sedation toward RASS −1 to 0.'; }
+  else { cl='res-high'; interp='Deep sedation (RASS −4 to −5). Reserve for: status epilepticus, NMB, severe ARDS on VV-ECMO. Daily SAT mandatory. Deep sedation independently associated with worse outcomes.'; }
+  showResult('rass_result', v, 'RASS Score', interp, cl);
+}
+
+// CPOT
+function calcCPOT() {
+  const s = ['cpot_face','cpot_body','cpot_muscle','cpot_vent'].reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s <= 2) { cl='res-low'; interp='Mild pain or no significant pain. Continue monitoring every 4h. Consider pre-procedural analgesia if painful procedure anticipated.'; }
+  else if(s <= 4) { cl='res-mod'; interp='Moderate pain (CPOT 3–4). Increase analgesia — consider fentanyl 25–50 mcg IV PRN or uptitrate infusion. Reassess in 30 minutes.'; }
+  else { cl='res-high'; interp='Severe pain (CPOT ≥5). Significant under-treatment. Immediate analgesic intervention required. eCASH principle: analgesia before sedation.'; }
+  showResult('cpot_result', s + '/8', 'CPOT Score', interp, cl);
+}
+
+// CURB-65
+function calcCURB65() {
+  const s = ['curb_c','curb_u','curb_r','curb_b','curb_65'].reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s <= 1) { cl='res-low'; interp='Low risk — mortality &lt;3%. Outpatient treatment appropriate. Oral amoxicillin-clavulanate or azithromycin 5 days.'; }
+  else if(s === 2) { cl='res-mod'; interp='Intermediate risk — mortality ~9%. Consider short inpatient stay or supervised outpatient. Parenteral antibiotics if unable to take oral.'; }
+  else { cl='res-high'; interp=`High risk — mortality 17–57% (score ${s}/5). Hospital admission required. Score 4–5: consider ICU consultation. IDSA/ATS: 3+ minor criteria OR 1 major criterion (septic shock/MV) = ICU admission.`; }
+  showResult('curb65_result', s + '/5', 'CURB-65 Score', interp, cl);
+}
+
+// NEWS2
+function calcNEWS2() {
+  const s = ['news_rr','news_spo2','news_o2','news_sbp','news_hr','news_con','news_temp']
+    .reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s <= 4 && document.getElementById('news_con').value == 0) { cl='res-low'; interp='Low risk. Routine monitoring 4–6 hourly. Review in 12h.'; }
+  else if(s <= 6) { cl='res-mod'; interp='Medium risk. Urgent medical assessment within 30–60 min. Increase monitoring frequency. Consider step-up care.'; }
+  else { cl='res-high'; interp=`High risk (NEWS2 ≥7 OR any single parameter =3). <strong>Emergency response required.</strong> SSC 2026 (Crit Care Med 2026): NEWS2 recommended over qSOFA for sepsis screening. Urgent senior clinical assessment. Consider ICU. Continuous monitoring.`; }
+  showResult('news2_result', s, 'NEWS2 Score', interp, cl);
+}
+
+// Wells DVT
+function calcWellsDVT() {
+  const s = ['wdvt_1','wdvt_2','wdvt_3','wdvt_4','wdvt_5','wdvt_6','wdvt_7','wdvt_8','wdvt_9']
+    .reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s <= 1) { cl='res-low'; interp=`Low probability (score ≤1). DVT prevalence ~3%. If D-dimer negative → DVT excluded (NPV &gt;99%). If D-dimer positive → proceed to Doppler USS.`; }
+  else if(s <= 2) { cl='res-mod'; interp=`Moderate probability (score 2). DVT prevalence ~17%. D-dimer + Doppler USS recommended. Do not rely on D-dimer alone to exclude.`; }
+  else { cl='res-high'; interp=`High probability (score ≥3). DVT prevalence ~75%. Proceed directly to Doppler USS without waiting for D-dimer. If USS negative, repeat in 5–7 days OR proceed to CT venography.`; }
+  showResult('wellsdvt_result', s, 'Wells DVT Score', interp, cl);
+}
+
+// Wells PE
+function calcWellsPE() {
+  const s = ['wpe_1','wpe_2','wpe_3','wpe_4','wpe_5','wpe_6','wpe_7']
+    .reduce((a,id) => a + parseFloat(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s <= 1) { cl='res-low'; interp=`Low probability (score ≤1). PE prevalence ~1–5%. If age-adjusted D-dimer negative → PE excluded. No CT-PA needed.`; }
+  else if(s <= 4) { cl='res-mod'; interp=`Moderate probability (score 2–4). PE prevalence ~17–28%. D-dimer + CT-PA if positive. If haemodynamically unstable → CT-PA directly.`; }
+  else { cl='res-high'; interp=`High probability (score &gt;4). PE prevalence ~40–67%. CT-PA indicated without D-dimer. If haemodynamically unstable (massive PE) → thrombolysis (alteplase 100mg IV over 2h) after CT confirmation. If CT unavailable and arresting → empirical thrombolysis.`; }
+  showResult('wellspe_result', s, 'Wells PE Score', interp, cl);
+}
+
+// HEART
+function calcHEART() {
+  const s = ['heart_h','heart_e','heart_a','heart_r','heart_t'].reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s <= 3) { cl='res-low'; interp='Low risk (0–3). MACE rate &lt;2% at 6 weeks. Consider discharge with outpatient follow-up after serial troponins negative. Outpatient stress testing appropriate.'; }
+  else if(s <= 6) { cl='res-mod'; interp='Intermediate risk (4–6). MACE rate ~12–15%. Admit for observation, serial troponins, and early stress testing or coronary angiography within 72h.'; }
+  else { cl='res-high'; interp='High risk (7–10). MACE rate ~65%. Early invasive strategy (&lt;24h). Dual antiplatelets + anticoagulation. Cardiology consult.'; }
+  showResult('heart_result', s + '/10', 'HEART Score', interp, cl);
+}
+
+// GRACE
+function calcGRACE() {
+  const s = ['grace_age','grace_hr','grace_sbp','grace_cr','grace_killip','grace_arrest','grace_troponin','grace_st']
+    .reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s < 109) { cl='res-low'; interp='Low risk (&lt;109). 6-month mortality &lt;3%. Conservative strategy acceptable. Invasive strategy within 72h.'; }
+  else if(s <= 140) { cl='res-mod'; interp='Intermediate risk (109–140). 6-month mortality 3–8%. Early invasive strategy within 24h. Dual antiplatelets + LMWH.'; }
+  else { cl='res-high'; interp='High risk (&gt;140). 6-month mortality &gt;8%. Very early invasive strategy (&lt;24h or immediate if haemodynamic instability). GRACE &gt;140 = Class I recommendation for early catheterisation (ESC/ACC-AHA 2025).'; }
+  showResult('grace_result', s, 'GRACE Score', interp, cl);
+}
+
+// NIHSS
+function calcNIHSS() {
+  const fields = ['nihss_1a','nihss_1b','nihss_1c','nihss_2','nihss_3','nihss_4','nihss_5a','nihss_5b','nihss_6a','nihss_6b','nihss_8','nihss_9','nihss_10'];
+  const s = fields.reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s === 0) { cl='res-low'; interp='No stroke symptoms. Reassess clinical picture.'; }
+  else if(s <= 4) { cl='res-low'; interp='Minor stroke (NIHSS 1–4). Consider tPA if within 4.5h and no contraindications. Admit for monitoring, secondary prevention.'; }
+  else if(s <= 15) { cl='res-mod'; interp='Moderate stroke (5–15). tPA if within 4.5h. Consider thrombectomy if LVO on CT-angiography (up to 24h). Stroke unit admission.'; }
+  else if(s <= 20) { cl='res-high'; interp='Moderate-severe stroke (16–20). tPA + thrombectomy if LVO. ICU level monitoring. Airway management if GCS falling.'; }
+  else { cl='res-high'; interp='Severe stroke (&gt;20). Immediate tPA + LVO assessment. Likely requires intubation for airway protection. Hemicraniectomy if malignant MCA infarction &lt;48h.'; }
+  showResult('nihss_result', s + '/42', 'NIHSS Score', interp, cl);
+}
+
+// MELD
+function calcMELD() {
+  let bili = parseFloat(document.getElementById('meld_bili').value) || 1;
+  let inr = parseFloat(document.getElementById('meld_inr').value) || 1;
+  let cr = parseFloat(document.getElementById('meld_cr').value) || 1;
+  if(document.getElementById('meld_dialysis').value === 'yes') cr = 4.0;
+  bili = Math.max(bili, 1); inr = Math.max(inr, 1); cr = Math.max(cr, 1);
+  bili = Math.min(bili, 40); cr = Math.min(cr, 4);
+  const s = Math.round(3.78*Math.log(bili) + 11.2*Math.log(inr) + 9.57*Math.log(cr) + 6.43);
+  let cl, interp;
+  if(s < 10) { cl='res-low'; interp='MELD &lt;10: 90-day mortality ~2%. Low urgency. Medical management.'; }
+  else if(s < 18) { cl='res-mod'; interp='MELD 10–17: 90-day mortality ~10–20%. Consider transplant evaluation. Optimise medical therapy.'; }
+  else if(s < 25) { cl='res-high'; interp='MELD 18–24: 90-day mortality ~30–40%. Transplant listing. Hospitalisation likely needed.'; }
+  else { cl='res-high'; interp='MELD ≥25: 90-day mortality &gt;50%. Priority transplant listing (UNOS status 2B). ICU care. Consider TIPS for refractory ascites/variceal bleeding.'; }
+  showResult('meld_result', s, 'MELD Score', interp, cl);
+}
+
+// Child-Pugh
+function calcChildPugh() {
+  const s = ['cp_bili','cp_alb','cp_pt','cp_asc','cp_enc'].reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp, cls;
+  if(s <= 6) { cl='A'; cls='res-low'; interp='Child-Pugh Class A (5–6). 1-year survival ~100%; 2-year ~85%. Well-compensated. Perioperative mortality: ~5%.'; }
+  else if(s <= 9) { cl='B'; cls='res-mod'; interp='Child-Pugh Class B (7–9). 1-year survival ~80%; 2-year ~60%. Significant compromise. Perioperative mortality: ~25%. Consider transplant evaluation.'; }
+  else { cl='C'; cls='res-high'; interp='Child-Pugh Class C (10–15). 1-year survival ~45%; 2-year ~35%. Decompensated cirrhosis. Perioperative mortality: ~50%. Transplant priority.'; }
+  showResult('childpugh_result', s + ' — Class ' + cl, 'Child-Pugh Score', interp, cls);
+}
+
+// Cockcroft-Gault
+function calcCG() {
+  const age = parseFloat(document.getElementById('cg_age').value);
+  const wt = parseFloat(document.getElementById('cg_weight').value);
+  const cr = parseFloat(document.getElementById('cg_cr').value);
+  const sex = parseFloat(document.getElementById('cg_sex').value);
+  if(!age || !wt || !cr) { alert('Please fill all fields'); return; }
+  const crcl = Math.round(((140 - age) * wt) / (72 * cr) * sex);
+  let cl, interp;
+  if(crcl >= 90) { cl='res-low'; interp='Normal renal function. Standard drug dosing appropriate.'; }
+  else if(crcl >= 60) { cl='res-low'; interp='Mildly reduced (CKD Stage 2). Minor dose adjustments for renally-cleared drugs. Monitor creatinine.'; }
+  else if(crcl >= 30) { cl='res-mod'; interp='Moderately reduced (CKD Stage 3). Dose reduce: vancomycin, aminoglycosides, meropenem, enoxaparin, metformin. Stop NSAIDs.'; }
+  else if(crcl >= 15) { cl='res-high'; interp='Severely reduced (CKD Stage 4). Major dose adjustments. Stop metformin, NSAIDs, ACEi/ARBs in acute setting. Nephrology consult.'; }
+  else { cl='res-high'; interp='Kidney failure (CKD Stage 5 / AKI Stage 3). RRT consideration. Extreme caution with all renally-cleared drugs. Many drugs require CRRT-adjusted dosing.'; }
+  showResult('cg_result', crcl + ' ml/min', 'Creatinine Clearance', interp, cl);
+}
+
+// DECAF
+function calcDECAF() {
+  const s = ['decaf_d','decaf_e','decaf_c','decaf_a','decaf_f'].reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s <= 1) { cl='res-low'; interp='Low risk (DECAF 0–1). In-hospital mortality ~1.4%. Ward-level care appropriate. Early discharge planning.'; }
+  else if(s === 2) { cl='res-mod'; interp='Medium risk (DECAF 2). In-hospital mortality ~9.2%. HDU-level monitoring. Watch for NIV need.'; }
+  else { cl='res-high'; interp='High risk (DECAF 3+). In-hospital mortality ~29%. ICU/HDU admission. Early NIV if pH &lt;7.35. Escalation planning. DNACPR discussion.'; }
+  showResult('decaf_result', s + '/5', 'DECAF Score', interp, cl);
+}
+
+// P/F Ratio
+function calcPF() {
+  const pao2 = parseFloat(document.getElementById('pf_pao2').value);
+  const fio2 = parseFloat(document.getElementById('pf_fio2').value);
+  if(!pao2 || !fio2) { alert('Please enter PaO₂ and FiO₂'); return; }
+  const pf = Math.round(pao2 / fio2);
+  let cl, interp;
+  if(pf > 300) { cl='res-low'; interp='Normal P/F ratio (&gt;300). No hypoxaemic respiratory failure. Continue monitoring.'; }
+  else if(pf > 200) { cl='res-mod'; interp='Mild ARDS (P/F 201–300 on PEEP ≥5, 2023 Global Definition). HFNO trial appropriate. Close monitoring. Consider intubation if worsening.'; }
+  else if(pf > 100) { cl='res-high'; interp='Moderate ARDS (P/F 101–200). Lung-protective ventilation (6 ml/kg PBW, Pplat ≤30). Consider prone positioning. Optimise PEEP.'; }
+  else { cl='res-high'; interp='Severe ARDS (P/F ≤100). Urgent: prone ≥16h/day (PROSEVA trial). Consider NMB (cisatracurium). Higher PEEP. VV-ECMO if refractory on optimal therapy.'; }
+  showResult('pf_result', pf, 'P/F Ratio (PaO₂/FiO₂)', interp, cl);
+}
+
+// Driving Pressure
+function calcDrivingP() {
+  const pplat = parseFloat(document.getElementById('dp_pplat').value);
+  const peep = parseFloat(document.getElementById('dp_peep').value);
+  if(!pplat || peep === undefined) { alert('Please enter Pplat and PEEP'); return; }
+  const dp = pplat - peep;
+  let cl, interp;
+  if(dp <= 13) { cl='res-low'; interp='Optimal driving pressure (≤13 cmH₂O). Associated with best ARDS outcomes (Amato NEJM 2015). Maintain current settings.'; }
+  else if(dp <= 15) { cl='res-mod'; interp='Acceptable driving pressure (14–15 cmH₂O). At upper limit. Optimise PEEP or reduce Vt by 1 ml/kg if possible.'; }
+  else { cl='res-high'; interp='High driving pressure (&gt;15 cmH₂O). Independently associated with ARDS mortality (Amato 2015). Reduce Vt (by 1 ml/kg PBW) and/or increase PEEP to find optimal ΔP &lt;14 cmH₂O.'; }
+  showResult('dp_result', dp + ' cmH₂O', 'Driving Pressure (ΔP = Pplat − PEEP)', interp, cl);
+}
+
+// IBW
+function calcIBW() {
+  const sex = document.getElementById('ibw_sex').value;
+  const h = parseFloat(document.getElementById('ibw_height').value);
+  if(!h) { alert('Please enter height'); return; }
+  const hIn = h / 2.54;
+  const ibw = sex === 'male' ? (50 + 2.3 * (hIn - 60)) : (45.5 + 2.3 * (hIn - 60));
+  const vt6 = Math.round(ibw * 6);
+  const vt8 = Math.round(ibw * 8);
+  const cl = 'res-info';
+  const interp = `<strong>IBW:</strong> ${ibw.toFixed(1)} kg<br><strong>Tidal Volume (6 ml/kg):</strong> ${vt6} ml — ARDS lung-protective target<br><strong>Tidal Volume (8 ml/kg):</strong> ${vt8} ml — standard initial setting (reduce to 6)<br><br>Always use IBW for tidal volume, NOT actual body weight. In obese patients, using actual weight causes volutrauma. (ARDSNet 2000)`;
+  showResult('ibw_result', ibw.toFixed(1) + ' kg', 'Ideal Body Weight', interp, cl);
+}
+
+// Ranson's
+function calcRanson() {
+  const s = ['ran_age','ran_wbc','ran_gluc','ran_ldh','ran_ast','ran_hct','ran_bun','ran_ca','ran_po2','ran_bd','ran_fluid']
+    .reduce((a,id) => a + parseInt(document.getElementById(id).value), 0);
+  let cl, interp;
+  if(s <= 2) { cl='res-low'; interp='Mild pancreatitis (score 0–2). Mortality &lt;5%. Supportive care — IV fluids, analgesia, NPO. Early enteral feeding (within 24–48h) recommended.'; }
+  else if(s <= 4) { cl='res-mod'; interp='Moderate pancreatitis (score 3–4). Mortality ~15%. ICU monitoring. CT scan for necrosis assessment. MRCP/ERCP if gallstones. Enteral nutrition.'; }
+  else { cl='res-high'; interp='Severe pancreatitis (score ≥5). Mortality 40–100%. ICU admission. CT-severity index. Early complications: ARDS, AKI, haemorrhagic necrosis. Nutrition via NJ tube. Antibiotics only if infected necrosis.'; }
+  showResult('ranson_result', s + '/11', "Ranson's Score", interp, cl);
+}
+
+// ASA
+function calcASABtn() {
+  const v = document.getElementById('asa_class').value;
+  const emerg = document.getElementById('asa_emergency').value;
+  if(!v) { alert('Please select ASA class'); return; }
+  const suffix = emerg === 'yes' ? 'E' : '';
+  const label = 'ASA ' + ['I','II','III','IV','V','VI'][parseInt(v)-1] + suffix;
+  const descriptions = ['','','','','','',''];
+  const interpMap = {
+    '1': { cl:'res-low', i:'Healthy patient. No restrictions on anaesthesia. Perioperative mortality &lt;0.1%.' },
+    '2': { cl:'res-low', i:'Mild systemic disease. Routine monitoring. Perioperative mortality 0.2%.' },
+    '3': { cl:'res-mod', i:'Severe systemic disease. Careful pre-op optimisation. Consider regional vs GA. Perioperative mortality 1.8%.' },
+    '4': { cl:'res-high', i:'Life-threatening disease. Surgery only if truly necessary. ICU post-op. Perioperative mortality 7.8%.' },
+    '5': { cl:'res-high', i:'Moribund — not expected to survive without surgery. Emergency surgery only. ICU mandatory. Perioperative mortality 9.4–25%.' },
+    '6': { cl:'res-info', i:'Brain-dead for organ donation. Anaesthesia protocol for donation surgery.' }
+  };
+  const { cl, i } = interpMap[v];
+  showResult('asa_result', label, 'ASA Physical Status', i + (emerg === 'yes' ? '<br><br><strong>Emergency surgery (E suffix):</strong> Higher perioperative risk than the same ASA class for elective surgery.' : ''), cl);
+}
+</script>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow · For clinical decision support; always apply clinical judgement</p>
+  </div>
+</footer>
+</body>
+</html>

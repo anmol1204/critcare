@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ICU Topics — CritCare.in</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
-  <style>
-    .page-head { background: linear-gradient(180deg, var(--blue-soft), #fff); padding: 4rem 5% 3rem; text-align: center; }
-    .page-head h1 { font-family: var(--font-disp); font-weight: 600; font-size: clamp(2rem,4vw,3rem); }
-    .page-head .eyebrow { justify-content: center; }
-    .page-head p { color: var(--slate); max-width: 540px; margin: 0.8rem auto 0; line-height: 1.7; }
-
-    .topics-area { max-width: 1160px; margin: 0 auto; padding: 3.5rem 5%; }
-    .section-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--slate); margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--line); }
-    .section-label:first-child { margin-top: 0; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
-    .card {
-      background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 1.7rem;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s; position: relative;
-      text-decoration: none; color: inherit; display: block;
-    }
-    .card:hover { border-color: var(--blue); box-shadow: 0 10px 26px rgba(30,111,217,0.1); transform: translateY(-3px); }
-    .card-ic { width: 50px; height: 50px; border-radius: 11px; background: var(--blue-soft); display: grid; place-items: center; font-size: 1.5rem; margin-bottom: 1rem; }
-    .card-title { font-weight: 700; font-size: 1.02rem; margin-bottom: 0.5rem; }
-    .card-desc { font-size: 0.87rem; color: var(--slate); line-height: 1.65; margin-bottom: 1rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; background: var(--blue-soft); color: var(--blue-dark); padding: 0.25rem 0.55rem; border-radius: 5px; }
-    .card-arrow { margin-top: 1rem; font-size: 0.82rem; font-weight: 700; color: var(--blue); }
-    .soon { position: absolute; top: 1.2rem; right: 1.2rem; font-size: 0.62rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: #fff4e0; color: #b07d2a; padding: 0.22rem 0.5rem; border-radius: 5px; }
-    .dim { opacity: 0.72; pointer-events: none; }
-  </style>
   <script src="darkmode.js"></script>
+  <style>
+    .topics-hero { background:linear-gradient(135deg,#0f1f3d,#1a3560); padding:3.5rem 5% 2.5rem; color:#fff; }
+    .topics-hero h1 { font-family:var(--font-disp); font-size:clamp(1.8rem,3.5vw,2.6rem); margin-bottom:.6rem; }
+    .topics-hero p { color:rgba(255,255,255,.7); max-width:580px; line-height:1.7; }
+    .topics-hero .hero-stats { display:flex; gap:2rem; margin-top:1.5rem; }
+    .topics-hero .hs { }
+    .topics-hero .hs-num { font-family:var(--font-disp); font-size:1.6rem; font-weight:600; color:#fff; }
+    .topics-hero .hs-lbl { font-size:.75rem; color:rgba(255,255,255,.6); }
+
+    .category-tabs { background:var(--bg-alt); border-bottom:1px solid var(--line); position:sticky; top:66px; z-index:50; }
+    .category-tabs-inner { max-width:1160px; margin:0 auto; padding:0 5%; display:flex; gap:0; overflow-x:auto; scrollbar-width:none; }
+    .category-tabs-inner::-webkit-scrollbar { display:none; }
+    .cat-tab { padding:.9rem 1.1rem; font-size:.8rem; font-weight:700; color:var(--slate); text-decoration:none; border-bottom:3px solid transparent; white-space:nowrap; cursor:pointer; background:none; border-left:none; border-right:none; border-top:none; font-family:var(--font-body); transition:color .2s; }
+    .cat-tab:hover { color:var(--blue); }
+    .cat-tab.active { color:var(--blue); border-bottom-color:var(--blue); }
+
+    .topics-area { max-width:1160px; margin:0 auto; padding:2.5rem 5%; }
+    .topic-section { display:none; }
+    .topic-section.active { display:block; }
+
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.1rem; }
+    .card { background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:1.5rem; text-decoration:none; color:inherit; display:block; transition:border-color .2s,box-shadow .2s,transform .2s; position:relative; }
+    .card:hover { border-color:var(--blue); box-shadow:0 8px 24px rgba(30,111,217,.1); transform:translateY(-3px); }
+    .card-ic { width:48px; height:48px; border-radius:10px; background:var(--blue-soft); display:grid; place-items:center; font-size:1.4rem; margin-bottom:.9rem; }
+    .card-title { font-weight:700; font-size:.96rem; margin-bottom:.4rem; }
+    .card-desc { font-size:.83rem; color:var(--slate); line-height:1.6; margin-bottom:.8rem; }
+    .tags { display:flex; flex-wrap:wrap; gap:.35rem; }
+    .tag { font-size:.66rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; background:var(--blue-soft); color:var(--blue-dark); padding:.22rem .5rem; border-radius:4px; }
+    .tag.new { background:#dcfce7; color:#166534; }
+    .card-arrow { margin-top:.9rem; font-size:.8rem; font-weight:700; color:var(--blue); }
+    .soon { position:absolute; top:1rem; right:1rem; font-size:.62rem; font-weight:700; text-transform:uppercase; letter-spacing:.05em; background:#fff4e0; color:#b07d2a; padding:.2rem .5rem; border-radius:4px; }
+    .dim { opacity:.65; pointer-events:none; }
+    .sec-intro { font-size:.88rem; color:var(--slate); line-height:1.7; margin-bottom:1.5rem; padding:.9rem 1.2rem; background:var(--blue-soft); border-radius:8px; border-left:3px solid var(--blue); }
+  </style>
 </head>
 <body>
 
@@ -40,207 +48,271 @@
   <ul class="nav-menu" id="menu">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li>
     <li><a href="ai-tool.html">AI Tool</a></li>
     <li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
-  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
 </nav>
 
-<header class="page-head">
-  <span class="eyebrow">Knowledge Hub</span>
-  <h1>ICU Topics for Clinicians</h1>
-  <p>Practical, evidence-based summaries of high-yield critical care topics — click any card to read the full article.</p>
+<header class="topics-hero">
+  <div class="wrap">
+    <h1>📚 Clinical Reference Library</h1>
+    <p>Evidence-based topics from Oh's Manual, Washington's Manual, Marino 5th Ed (2025), SSC 2026, GINA 2026, GOLD 2026, KDIGO 2026, BTF 2023, ACC/AHA 2025 — with pathophysiology, drug doses, clinical pearls, and exam prep.</p>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-num">30+</div><div class="hs-lbl">Topics</div></div>
+      <div class="hs"><div class="hs-num">2026</div><div class="hs-lbl">Guidelines</div></div>
+      <div class="hs"><div class="hs-num">4</div><div class="hs-lbl">Specialties</div></div>
+    </div>
+  </div>
 </header>
 
-<section class="topics-area">
+<nav class="category-tabs">
+  <div class="category-tabs-inner">
+    <button class="cat-tab active" onclick="showCat('shock', this)">🫀 Shock & Haemodynamics</button>
+    <button class="cat-tab" onclick="showCat('respiratory', this)">🫁 Respiratory</button>
+    <button class="cat-tab" onclick="showCat('renal', this)">🫘 Renal & Electrolytes</button>
+    <button class="cat-tab" onclick="showCat('cardiac', this)">❤️ Cardiac</button>
+    <button class="cat-tab" onclick="showCat('neuro', this)">🧠 Neuro & Emergency</button>
+    <button class="cat-tab" onclick="showCat('infections', this)">🦠 Infections</button>
+    <button class="cat-tab" onclick="showCat('supportive', this)">💉 Supportive Care</button>
+  </div>
+</nav>
 
-  <div class="section-label">Shock &amp; Haemodynamics — SSC 2026 · ESICM · ISCCM 2020</div>
-  <div class="grid">
-    <a href="topic-sepsis.html" class="card">
-      <div class="card-ic">🦠</div>
-      <div class="card-title">Sepsis &amp; Septic Shock</div>
-      <div class="card-desc">What changed in SSC 2026 — new MAP targets for elderly, extended infusion beta-lactams, crystalloids over albumin. Full pathophysiology, doses, exam pearls.</div>
-      <div class="tags"><span class="tag">SSC 2026 ✦</span><span class="tag">ISCCM</span><span class="tag">Haemodynamics</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-ards.html" class="card">
-      <div class="card-ic">🫁</div>
-      <div class="card-title">ARDS &amp; Lung-Protective Ventilation</div>
-      <div class="card-desc">2023 Global ARDS definition, ARDSNet protocol, prone positioning (PROSEVA), HFNO, NMB, VV-ECMO. Full references.</div>
-      <div class="tags"><span class="tag">2023 Definition</span><span class="tag">Proning</span><span class="tag">ESICM</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-mechanical-ventilation.html" class="card">
-      <div class="card-ic">⚙️</div>
-      <div class="card-title">Mechanical Ventilation</div>
-      <div class="card-desc">Indications, modes, initial settings, troubleshooting, VILI prevention, weaning protocol, SBT, extubation criteria, NIV. Full references.</div>
-      <div class="tags"><span class="tag">Weaning</span><span class="tag">SBT</span><span class="tag">NIV</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-aki.html" class="card">
-      <div class="card-ic">🫘</div>
-      <div class="card-title">AKI &amp; CRRT</div>
-      <div class="card-desc">KDIGO staging, indications for RRT, CRRT prescription, anticoagulation, drug dosing.</div>
-      <div class="tags"><span class="tag">Nephrology</span><span class="tag">CRRT</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-vasopressors.html" class="card">
-      <div class="card-ic">💊</div>
-      <div class="card-title">Vasopressors &amp; Inotropes</div>
-      <div class="card-desc">Receptor pharmacology, drug dose table, septic shock algorithm, cardiogenic shock.</div>
-      <div class="tags"><span class="tag">Shock</span><span class="tag">Doses</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-electrolytes.html" class="card">
-      <div class="card-ic">⚡</div>
-      <div class="card-title">Electrolyte Emergencies</div>
-      <div class="card-desc">Hyponatraemia correction rates, hyperkalaemia algorithm, Mg and phosphate replacement.</div>
-      <div class="tags"><span class="tag">Sodium</span><span class="tag">Potassium</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-sedation.html" class="card">
-      <div class="card-ic">💉</div>
-      <div class="card-title">Sedation, Analgesia &amp; Delirium</div>
-      <div class="card-desc">ABCDEF bundle, RASS, drug comparison table, CAM-ICU, delirium management.</div>
-      <div class="tags"><span class="tag">RASS</span><span class="tag">CAM-ICU</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
+<div class="topics-area">
+
+  <!-- SHOCK & HAEMODYNAMICS -->
+  <div class="topic-section active" id="sec-shock">
+    <p class="sec-intro">📖 Sources: Marino 5th Ed Ch.14–17 (2025) · SSC 2026 (Prescott et al., Crit Care Med 2026) · ISCCM 2020 · ESICM</p>
+    <div class="grid">
+      <a href="topic-sepsis.html" class="card">
+        <div class="card-ic">🦠</div>
+        <div class="card-title">Sepsis &amp; Septic Shock</div>
+        <div class="card-desc">SSC 2026 changes — MAP targets for elderly, extended infusion beta-lactams, crystalloids over albumin. Hour-1 bundle, vasopressor algorithm, antibiotics.</div>
+        <div class="tags"><span class="tag new">SSC 2026 ✦</span><span class="tag">ISCCM</span><span class="tag">Vasopressors</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-vasopressors-guide.html" class="card">
+        <div class="card-ic">💊</div>
+        <div class="card-title">Vasopressor Dilution Guide</div>
+        <div class="card-desc">Ampoule compositions, dilution protocols, dose tables for 50–80 kg, IBW formula, infusion rate calculations for every vasopressor and inotrope.</div>
+        <div class="tags"><span class="tag">Ampoule Guide</span><span class="tag">IBW</span><span class="tag">Dose Tables</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-vasopressors.html" class="card">
+        <div class="card-ic">⚡</div>
+        <div class="card-title">Vasopressors &amp; Inotropes — Clinical</div>
+        <div class="card-desc">Receptor pharmacology, shock classification, septic/cardiogenic shock algorithms. SOAP II, VASST, SEPSISPAM, ATHOS-3 trials.</div>
+        <div class="tags"><span class="tag">Shock</span><span class="tag">Haemodynamics</span><span class="tag">Trials</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-hypertensive-emergency.html" class="card">
+        <div class="card-ic">💉</div>
+        <div class="card-title">Hypertensive Emergency</div>
+        <div class="card-desc">Emergency vs urgency. Scenario-specific BP targets (dissection, ICH, stroke, eclampsia). IV drugs. ESC/ESH 2023. No sublingual nifedipine.</div>
+        <div class="tags"><span class="tag">ESC/ESH 2023</span><span class="tag">IV Drugs</span><span class="tag">Eclampsia</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+    </div>
   </div>
 
-  <div class="section-label">Respiratory — GINA 2026 · GOLD 2026 · ARDSNet · ESICM</div>
-  <div class="grid">
-    <a href="topic-asthma.html" class="card">
-      <div class="card-ic">💨</div>
-      <div class="card-title">Acute Severe Asthma</div>
-      <div class="card-desc">GINA 2026: new O₂ targets (92–95%, NOT 100%), conservative SABA dosing, ICS-formoterol in ED. RSI with ketamine, ventilating asthma. Full references.</div>
-      <div class="tags"><span class="tag">GINA 2026 ✦</span><span class="tag">Emergency</span><span class="tag">Bronchospasm</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-copd.html" class="card">
-      <div class="card-ic">🫁</div>
-      <div class="card-title">COPD Exacerbation</div>
-      <div class="card-desc">GOLD 2026: exacerbation chapter completely revised. 1 moderate exacerbation now triggers escalation. NIV first-line, controlled O₂ 88–92%, 5-day steroids.</div>
-      <div class="tags"><span class="tag">GOLD 2026 ✦</span><span class="tag">NIV</span><span class="tag">Controlled O₂</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
+  <!-- RESPIRATORY -->
+  <div class="topic-section" id="sec-respiratory">
+    <p class="sec-intro">📖 Sources: Marino 5th Ed Ch.23–30 (2025) · ARDSNet ARMA · PROSEVA · GINA 2026 · GOLD 2026 · ATS/ESICM</p>
+    <div class="grid">
+      <a href="topic-ards.html" class="card">
+        <div class="card-ic">🫁</div>
+        <div class="card-title">ARDS &amp; Lung-Protective Ventilation</div>
+        <div class="card-desc">2023 Global ARDS definition, ARDSNet protocol (6 ml/kg PBW), prone positioning (PROSEVA, NNT=6), HFNO, NMB, VV-ECMO criteria.</div>
+        <div class="tags"><span class="tag new">2023 Definition</span><span class="tag">Proning</span><span class="tag">ESICM</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-mechanical-ventilation.html" class="card">
+        <div class="card-ic">⚙️</div>
+        <div class="card-title">Mechanical Ventilation — Complete Guide</div>
+        <div class="card-desc">All modes explained, initial settings, IBW/Vt calculations, PEEP tables, auto-PEEP, DOPE mnemonic, weaning (SBT), extubation criteria, NIV.</div>
+        <div class="tags"><span class="tag">Modes</span><span class="tag">Weaning</span><span class="tag">NIV</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-asthma.html" class="card">
+        <div class="card-ic">💨</div>
+        <div class="card-title">Acute Severe Asthma</div>
+        <div class="card-desc">GINA 2026: O₂ target 92–95% (not 100%), conservative SABA dosing, ICS-formoterol in ED. RSI with ketamine, I:E 1:3–1:5, auto-PEEP management.</div>
+        <div class="tags"><span class="tag new">GINA 2026 ✦</span><span class="tag">Status Asthmaticus</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-copd.html" class="card">
+        <div class="card-ic">🫁</div>
+        <div class="card-title">COPD Exacerbation</div>
+        <div class="card-desc">GOLD 2026: 1 moderate exacerbation = escalate. Exacerbation chapter completely revised. NIV first-line, controlled O₂ 88–92%, 5-day steroids, antibiotic indications.</div>
+        <div class="tags"><span class="tag new">GOLD 2026 ✦</span><span class="tag">NIV</span><span class="tag">Controlled O₂</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-pneumonia-vap.html" class="card">
+        <div class="card-ic">🦠</div>
+        <div class="card-title">Pneumonia, HAP &amp; VAP</div>
+        <div class="card-desc">IDSA/ATS 2016: HCAP abolished, 7-day duration, CPIS scoring. VAP prevention bundle (5 elements). Indian MDR antibiotics (XDR Acinetobacter, colistin).</div>
+        <div class="tags"><span class="tag">IDSA/ATS 2016</span><span class="tag">VAP Bundle</span><span class="tag">MDR India</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+    </div>
   </div>
 
-  <div class="section-label">Renal — KDIGO 2026 · ADQI 2023</div>
-  <div class="grid">
-    <a href="topic-aki.html" class="card">
-      <div class="card-ic">🫘</div>
-      <div class="card-title">AKI &amp; Renal Replacement Therapy</div>
-      <div class="card-desc">KDIGO 2026: AKD as new entity, biomarker staging, furosemide stress test, buffered crystalloids STRONG rec. CRRT prescription, drug dosing, citrate anticoagulation.</div>
-      <div class="tags"><span class="tag">KDIGO 2026 ✦</span><span class="tag">CRRT</span><span class="tag">AKD</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
+  <!-- RENAL & ELECTROLYTES -->
+  <div class="topic-section" id="sec-renal">
+    <p class="sec-intro">📖 Sources: Marino 5th Ed Ch.34–38 (2025) · KDIGO 2026 (Public Review Draft) · ADQI 2023 · ESPEN/ESICM</p>
+    <div class="grid">
+      <a href="topic-aki.html" class="card">
+        <div class="card-ic">🫘</div>
+        <div class="card-title">AKI &amp; Renal Replacement Therapy</div>
+        <div class="card-desc">KDIGO 2026: AKD as new entity (7d–3m), biomarker staging, furosemide stress test, buffered crystalloids Strong (1B). CRRT prescription, citrate anticoagulation.</div>
+        <div class="tags"><span class="tag new">KDIGO 2026 ✦</span><span class="tag">CRRT</span><span class="tag">AKD New</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-electrolytes.html" class="card">
+        <div class="card-ic">⚡</div>
+        <div class="card-title">Electrolyte Emergencies</div>
+        <div class="card-desc">Hyponatraemia correction rates (ODS risk), hyperkalaemia AEIOU algorithm, hypomagnesaemia, hypophosphataemia (refeeding), hypercalcaemia. All correction formulas.</div>
+        <div class="tags"><span class="tag">Sodium</span><span class="tag">Potassium</span><span class="tag">Magnesium</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+    </div>
   </div>
 
-  <div class="section-label">Cardiac — ACC/AHA 2025 · ESC 2023</div>
-  <div class="grid">
-    <a href="topic-acs.html" class="card">
-      <div class="card-ic">❤️</div>
-      <div class="card-title">Acute Coronary Syndromes</div>
-      <div class="card-desc">STEMI &amp; NSTEMI management. ACC/AHA 2025 guidelines. Door-to-balloon targets, fibrinolysis doses, antiplatelet dosing, cardiogenic shock, Wellens syndrome.</div>
-      <div class="tags"><span class="tag">ACC/AHA 2025 ✦</span><span class="tag">STEMI</span><span class="tag">NSTEMI</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-hypertensive-emergency.html" class="card">
-      <div class="card-ic">💊</div>
-      <div class="card-title">Hypertensive Emergency</div>
-      <div class="card-desc">Emergency vs urgency distinction. Scenario-specific BP targets (dissection, ICH, stroke, eclampsia). IV drug reference with doses. MgSO₄ toxicity. No sublingual nifedipine.</div>
-      <div class="tags"><span class="tag">ESC/ESH 2023</span><span class="tag">End-Organ Damage</span><span class="tag">IV Drugs</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
+  <!-- CARDIAC -->
+  <div class="topic-section" id="sec-cardiac">
+    <p class="sec-intro">📖 Sources: Marino 5th Ed Ch.18–21 (2025) · ACC/AHA/ACEP 2025 · ESC 2023 · ESC/ESH 2023</p>
+    <div class="grid">
+      <a href="topic-acs.html" class="card">
+        <div class="card-ic">❤️</div>
+        <div class="card-title">Acute Coronary Syndromes</div>
+        <div class="card-desc">STEMI door-to-balloon &lt;90 min, fibrinolysis doses by weight, NSTEMI GRACE score stratification, antiplatelet/anticoagulation guide, cardiogenic shock, mechanical complications.</div>
+        <div class="tags"><span class="tag new">ACC/AHA 2025 ✦</span><span class="tag">STEMI</span><span class="tag">NSTEMI</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-vasopressors.html" class="card">
+        <div class="card-ic">💊</div>
+        <div class="card-title">Cardiogenic Shock &amp; Inotropes</div>
+        <div class="card-desc">Dobutamine vs levosimendan, NE + dobutamine combination, mechanical circulatory support (IABP, Impella, VA-ECMO). IABP-SHOCK II trial.</div>
+        <div class="tags"><span class="tag">Cardiogenic Shock</span><span class="tag">MCS</span><span class="tag">ECMO</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-hypertensive-emergency.html" class="card">
+        <div class="card-ic">💉</div>
+        <div class="card-title">Hypertensive Emergency</div>
+        <div class="card-desc">Aortic dissection (β-blocker before vasodilator), eclampsia MgSO₄, ICH targets (INTERACT-2), IV drug reference table. ESC/ESH 2023.</div>
+        <div class="tags"><span class="tag">ESC/ESH 2023</span><span class="tag">Dissection</span><span class="tag">Eclampsia</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+    </div>
   </div>
 
-  <div class="section-label">Neurocritical Care &amp; Emergency Neurology — BTF 2023 · NCS 2024 · AHA/ASA</div>
-  <div class="grid">
-    <a href="topic-tbi.html" class="card">
-      <div class="card-ic">🧠</div>
-      <div class="card-title">Head Injury &amp; TBI</div>
-      <div class="card-desc">BTF 2023: SBP ≥110 mmHg (updated from 90). Steroids CONTRAINDICATED (CRASH trial). ICP management, mannitol vs HTS, surgical indications, levetiracetam.</div>
-      <div class="tags"><span class="tag">BTF 2023 ✦</span><span class="tag">ICP</span><span class="tag">Neuroprotection</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-status-epilepticus.html" class="card">
-      <div class="card-ic">⚡</div>
-      <div class="card-title">Status Epilepticus</div>
-      <div class="card-desc">NCS 2024: 5-minute definition. IM midazolam = IV lorazepam (RAMPART). ESETT: LEV = VPA = Fosphenytoin. Refractory SE — EEG-guided anaesthesia. NCC in India.</div>
-      <div class="tags"><span class="tag">NCS 2024 ✦</span><span class="tag">Neurological Emergency</span><span class="tag">Time-Critical</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-neuro.html" class="card">
-      <div class="card-ic">🧠</div>
-      <div class="card-title">Neurocritical Care</div>
-      <div class="card-desc">ICP management, stroke (ischaemic &amp; haemorrhagic), brain death criteria. BTF, AHA/ASA, NCS guidelines with drug doses and clinical algorithms.</div>
-      <div class="tags"><span class="tag">BTF</span><span class="tag">AHA/ASA</span><span class="tag">NCS</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
+  <!-- NEURO & EMERGENCY -->
+  <div class="topic-section" id="sec-neuro">
+    <p class="sec-intro">📖 Sources: Marino 5th Ed Ch.45–47 (2025) · BTF 2023 · NCS 2024 · AHA/ASA 2022–2023 · Tintinalli's Emergency Medicine</p>
+    <div class="grid">
+      <a href="topic-tbi.html" class="card">
+        <div class="card-ic">🧠</div>
+        <div class="card-title">Head Injury &amp; TBI</div>
+        <div class="card-desc">BTF 2023: SBP ≥110 mmHg (NOT 90). Steroids CONTRAINDICATED (CRASH trial). ICP management, mannitol vs HTS, surgical indications. Levetiracetam over phenytoin.</div>
+        <div class="tags"><span class="tag new">BTF 2023 ✦</span><span class="tag">ICP</span><span class="tag">Neuroprotection</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-status-epilepticus.html" class="card">
+        <div class="card-ic">⚡</div>
+        <div class="card-title">Status Epilepticus</div>
+        <div class="card-desc">NCS 2024: 5-minute definition. RAMPART (IM midazolam = IV lorazepam). ESETT trial (LEV=VPA=Fosphenytoin). Refractory SE — burst suppression. NCC in India.</div>
+        <div class="tags"><span class="tag new">NCS 2024 ✦</span><span class="tag">Time-Critical</span><span class="tag">EEG</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-neuro.html" class="card">
+        <div class="card-ic">🧠</div>
+        <div class="card-title">Neurocritical Care</div>
+        <div class="card-desc">ICP management, ischaemic & haemorrhagic stroke, brain death criteria. AHA/ASA, NCS guidelines with drug doses and clinical decision algorithms.</div>
+        <div class="tags"><span class="tag">Stroke</span><span class="tag">AHA/ASA</span><span class="tag">Brain Death</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-ed-emergencies.html" class="card">
+        <div class="card-ic">🚨</div>
+        <div class="card-title">Acute ED Emergencies — Indian Context</div>
+        <div class="card-desc">ABCDE framework, RUSH shock protocol, acute dyspnoea/chest pain/coma approach, anaphylaxis, poisoning (OP/ALP), tropical fever (malaria, dengue, scrub typhus).</div>
+        <div class="tags"><span class="tag new">Emergency Med ✦</span><span class="tag">Indian Context</span><span class="tag">Toxicology</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+    </div>
   </div>
 
-  <div class="section-label">Emergency Medicine — Indian ED Context · ISCCM · WHO India</div>
-  <div class="grid">
-    <a href="topic-ed-emergencies.html" class="card">
-      <div class="card-ic">🚨</div>
-      <div class="card-title">Acute ED Emergencies — Structured Approach</div>
-      <div class="card-desc">ED framework: Dyspnoea, Chest Pain, Coma, Undifferentiated Shock, Anaphylaxis, Hypertensive Emergency, Poisoning (OP/ALP/snake bite), Tropical fever. Indian context throughout.</div>
-      <div class="tags"><span class="tag">Emergency Medicine ✦</span><span class="tag">Indian Context</span><span class="tag">Toxicology</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-pneumonia-vap.html" class="card">
-      <div class="card-ic">🫁</div>
-      <div class="card-title">Pneumonia, HAP &amp; VAP</div>
-      <div class="card-desc">IDSA/ATS 2016: HCAP abolished, 7-day duration, CPIS scoring. VAP prevention bundle (5 elements). Indian MDR landscape — Acinetobacter, CRPA. Colistin last resort.</div>
-      <div class="tags"><span class="tag">IDSA/ATS 2016</span><span class="tag">VAP Bundle</span><span class="tag">MDR India</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
+  <!-- INFECTIONS -->
+  <div class="topic-section" id="sec-infections">
+    <p class="sec-intro">📖 Sources: Marino 5th Ed Ch.29,41–42 (2025) · SSC 2026 · IDSA/ATS 2016 · ISCCM 2020 · WHO India</p>
+    <div class="grid">
+      <a href="topic-sepsis.html" class="card">
+        <div class="card-ic">🦠</div>
+        <div class="card-title">Sepsis — Antimicrobial Strategy</div>
+        <div class="card-desc">SSC 2026: extended infusion beta-lactams now STRONG recommendation. De-escalation STRONG recommendation. No anaerobic coverage without risk factors. Indian MDR regimens.</div>
+        <div class="tags"><span class="tag new">SSC 2026 ✦</span><span class="tag">Antibiotics</span><span class="tag">De-escalation</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-pneumonia-vap.html" class="card">
+        <div class="card-ic">🫁</div>
+        <div class="card-title">Pneumonia, HAP &amp; VAP</div>
+        <div class="card-desc">IDSA/ATS 2016: HCAP abolished, 7-day duration, VAP prevention bundle. Indian XDR organisms — colistin + meropenem protocols. MRSA — linezolid vs vancomycin.</div>
+        <div class="tags"><span class="tag">IDSA/ATS 2016</span><span class="tag">VAP Prevention</span><span class="tag">XDR India</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-toxicology.html" class="card">
+        <div class="card-ic">☠️</div>
+        <div class="card-title">Toxicology in the ICU</div>
+        <div class="card-desc">OP poisoning (atropine titration, pralidoxime), paracetamol (NAC), antidote quick reference, dialysable toxins. Indian context — ALP, snake bite.</div>
+        <div class="tags"><span class="tag">Antidotes</span><span class="tag">OP Poisoning</span><span class="tag">India</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+    </div>
   </div>
 
-  <div class="section-label">Organ-Specific Topics — KDIGO · APASL · ESICM</div>
-  <div class="grid">
-    <a href="topic-toxicology.html" class="card">
-      <div class="card-ic">☠️</div>
-      <div class="card-title">Toxicology in the ICU</div>
-      <div class="card-desc">Organophosphate poisoning, paracetamol overdose, antidote reference, dialysable toxins.</div>
-      <div class="tags"><span class="tag">Antidotes</span><span class="tag">Poisoning</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-alf.html" class="card">
-      <div class="card-ic">🫀</div>
-      <div class="card-title">Acute Liver Failure</div>
-      <div class="card-desc">King's College Criteria, encephalopathy grading, coagulopathy, transplant indications.</div>
-      <div class="tags"><span class="tag">Hepatology</span><span class="tag">Coagulopathy</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
-    <a href="topic-neuro.html" class="card">
-      <div class="card-ic">🧠</div>
-      <div class="card-title">Neurocritical Care</div>
-      <div class="card-desc">Raised ICP management, TBI targets, acute stroke, ICH, status epilepticus algorithm.</div>
-      <div class="tags"><span class="tag">Neuro</span><span class="tag">ICP</span></div>
-      <div class="card-arrow">Read article →</div>
-    </a>
+  <!-- SUPPORTIVE CARE -->
+  <div class="topic-section" id="sec-supportive">
+    <p class="sec-intro">📖 Sources: Marino 5th Ed Ch.6,39–40,48–51 (2025) · PADIS 2018 · KDIGO 2026 · APASL 2019 · ASPEN 2021</p>
+    <div class="grid">
+      <a href="topic-sedation.html" class="card">
+        <div class="card-ic">💉</div>
+        <div class="card-title">Sedation, Analgesia &amp; Delirium</div>
+        <div class="card-desc">PADIS 2018: ABCDEF bundle, eCASH, RASS/CPOT scoring, drug comparison (propofol vs dexmedetomidine vs midazolam), CAM-ICU, delirium management.</div>
+        <div class="tags"><span class="tag">PADIS 2018</span><span class="tag">RASS</span><span class="tag">CAM-ICU</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-alf.html" class="card">
+        <div class="card-ic">🫀</div>
+        <div class="card-title">Acute Liver Failure</div>
+        <div class="card-desc">King's College Criteria, hepatic encephalopathy grading, coagulopathy management (no routine FFP), cerebral oedema, AKI in ALF, transplant indications.</div>
+        <div class="tags"><span class="tag">APASL 2019</span><span class="tag">KCC</span><span class="tag">Transplant</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+    </div>
   </div>
 
-  <div class="section-label">Coming Soon</div>
-  <div class="grid">
-    <div class="card dim"><span class="soon">Coming Soon</span><div class="card-ic">🩸</div><div class="card-title">DIC &amp; Coagulation</div><div class="card-desc">Disseminated intravascular coagulopathy, TEG/ROTEM interpretation, blood product ratios.</div><div class="tags"><span class="tag">Haematology</span></div></div>
-    <div class="card dim"><span class="soon">Coming Soon</span><div class="card-ic">🥗</div><div class="card-title">ICU Nutrition</div><div class="card-desc">Early enteral feeding, caloric targets, refeeding syndrome prevention, TPN indications.</div><div class="tags"><span class="tag">Nutrition</span></div></div>
-    <div class="card dim"><span class="soon">Coming Soon</span><div class="card-ic">📊</div><div class="card-title">Haemodynamic Monitoring</div><div class="card-desc">Arterial line, CVP, PICCO, PAC, fluid responsiveness — dynamic parameters.</div><div class="tags"><span class="tag">Monitoring</span></div></div>
-    <div class="card dim"><span class="soon">Coming Soon</span><div class="card-ic">❤️</div><div class="card-title">Post-Cardiac Arrest Care</div><div class="card-desc">TTM, coronary angiography timing, prognostication, neuroprotection.</div><div class="tags"><span class="tag">Resuscitation</span></div></div>
-  </div>
+</div>
 
-</section>
+<script>
+function showCat(id, tab) {
+  document.querySelectorAll('.topic-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  tab.classList.add('active');
+}
+</script>
 
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-brand">Crit<span>Care</span>.in</span>
-    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
-    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
   </div>
 </footer>
-
 </body>
 </html>
