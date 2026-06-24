@@ -3,286 +3,253 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CritCare.in — Critical Care Medicine Resource</title>
+  <title>CritCare.in — Critical Care & Emergency Medicine Reference</title>
+  <meta name="description" content="India's most comprehensive critical care and emergency medicine reference — evidence-based, guideline-backed." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
   <style>
-    /* ===== HOMEPAGE-ONLY STYLES ===== */
-    .hero {
-      background: linear-gradient(180deg, var(--blue-soft) 0%, #fff 100%);
-      padding: 5rem 5% 5rem;
-      position: relative; overflow: hidden;
-    }
-    .hero-inner {
-      max-width: 1160px; margin: 0 auto;
-      display: grid; grid-template-columns: 1.1fr 0.9fr;
-      gap: 4rem; align-items: center;
-    }
-    /* NOTE: name is intentionally SMALL — this site is about the field,
-       not the person. The big headline is the mission statement. */
-    .hero-person {
-      display: flex; align-items: center; gap: 0.7rem;
-      margin-bottom: 1.5rem;
-    }
-    .hero-person-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
-    .hero-person-name {
-      font-size: 0.92rem; font-weight: 600; color: var(--slate);
-    }
-    .hero-person-name strong { color: var(--ink); font-weight: 700; }
-    .hero-headline {
-      font-family: var(--font-disp);
-      font-weight: 600;
-      font-size: clamp(2.2rem, 4.2vw, 3.6rem);
-      line-height: 1.08;
-      letter-spacing: -0.015em;
-      color: var(--ink);
-      margin-bottom: 1.3rem;
-    }
-    .hero-headline em { font-style: italic; color: var(--blue); }
-    .hero-sub {
-      font-size: 1.02rem; color: var(--slate);
-      line-height: 1.75; max-width: 480px; margin-bottom: 2.2rem;
-    }
-    .hero-btns { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+    .hero { background: linear-gradient(135deg,#0f1f3d 0%,#1a3560 50%,#0f1f3d 100%); padding:6rem 5% 5rem; position:relative; overflow:hidden; color:#fff; }
+    .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 70% 50%,rgba(30,111,217,.25) 0%,transparent 70%); }
+    .hero-inner { max-width:1160px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; position:relative; z-index:2; }
+    .hero-eyebrow { display:inline-flex; align-items:center; gap:.5rem; font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:1.2rem; }
+    .hero-eyebrow::before { content:''; width:22px; height:2px; background:var(--accent); }
+    .hero-headline { font-family:var(--font-disp); font-weight:600; font-size:clamp(2rem,4vw,3.2rem); line-height:1.1; letter-spacing:-.015em; margin-bottom:1.2rem; }
+    .hero-headline em { font-style:italic; color:#7bb8f7; }
+    .hero-sub { font-size:1.05rem; color:rgba(255,255,255,.72); line-height:1.75; max-width:480px; margin-bottom:2rem; }
+    .hero-btns { display:flex; gap:.9rem; flex-wrap:wrap; }
+    .btn-white { background:#fff; color:var(--ink); }
+    .btn-white:hover { background:#f0f5ff; }
+    .btn-ghost { background:rgba(255,255,255,.1); color:#fff; border:1.5px solid rgba(255,255,255,.3); }
+    .btn-ghost:hover { background:rgba(255,255,255,.2); }
+    .hero-visual { display:flex; flex-direction:column; gap:1rem; }
+    .hero-stat-cards { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; }
+    .hero-stat-card { background:rgba(255,255,255,.08); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.15); border-radius:12px; padding:1.2rem; text-align:center; }
+    .hero-stat-card .stat-num { font-family:var(--font-disp); font-size:1.8rem; font-weight:600; color:#fff; }
+    .hero-stat-card .stat-lbl { font-size:.75rem; color:rgba(255,255,255,.6); margin-top:3px; line-height:1.4; }
+    .hero-badge { background:rgba(0,179,164,.15); border:1px solid rgba(0,179,164,.4); border-radius:10px; padding:1rem 1.2rem; display:flex; align-items:center; gap:.8rem; }
+    .hero-badge .badge-icon { font-size:1.5rem; flex-shrink:0; }
+    .hero-badge p { font-size:.85rem; color:rgba(255,255,255,.8); line-height:1.5; margin:0; }
+    .hero-badge strong { color:var(--accent); }
 
-    .hero-visual { position: relative; }
-    .hero-photo-card {
-      background: #fff; border-radius: 16px;
-      border: 1px solid var(--line);
-      box-shadow: 0 20px 50px rgba(20,35,58,0.1);
-      overflow: hidden;
-    }
-    /* ===== PHOTO PLACEHOLDER =====
-       TO ADD YOUR PHOTO:
-       1. Save your photo as  anmol.jpg  in this same folder
-       2. Delete this whole <div class="photo-ph"> block
-       3. Paste instead:
-          <img src="anmol.jpg" alt="Dr. Anmol" style="width:100%;display:block;">
-    */
-    .photo-ph {
-      aspect-ratio: 4/5;
-      background: repeating-linear-gradient(45deg, #f0f5fb, #f0f5fb 14px, #e9f1fb 14px, #e9f1fb 28px);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: 0.8rem;
-      color: var(--slate); text-align: center; padding: 2rem;
-    }
-    .photo-ph .ic { font-size: 3rem; opacity: 0.5; }
-    .photo-ph p { font-size: 0.8rem; max-width: 170px; line-height: 1.55; }
-    .photo-meta {
-      padding: 1.1rem 1.3rem; border-top: 1px solid var(--line);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .photo-meta-name { font-weight: 700; font-size: 0.92rem; color: var(--ink); }
-    .photo-meta-role { font-size: 0.76rem; color: var(--slate); margin-top: 2px; }
-    .photo-meta-badge {
-      font-size: 0.68rem; font-weight: 700; color: var(--blue);
-      background: var(--blue-soft); padding: 0.3rem 0.6rem; border-radius: 5px;
-    }
+    .specialties { background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .spec-inner { max-width:1160px; margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); }
+    .spec-item { padding:1.6rem 1.4rem; border-right:1px solid var(--line); display:flex; align-items:center; gap:.9rem; }
+    .spec-item:last-child { border-right:none; }
+    .spec-icon { font-size:1.5rem; flex-shrink:0; }
+    .spec-name { font-weight:700; font-size:.88rem; color:var(--ink); }
+    .spec-desc { font-size:.76rem; color:var(--slate); margin-top:2px; }
 
-    /* stats strip */
-    .stats {
-      max-width: 1160px; margin: -2.5rem auto 0; position: relative; z-index: 5;
-      background: #fff; border: 1px solid var(--line); border-radius: 14px;
-      box-shadow: 0 10px 30px rgba(20,35,58,0.06);
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      overflow: hidden;
-    }
-    .stat { padding: 1.6rem 1.4rem; border-right: 1px solid var(--line); }
-    .stat:last-child { border-right: none; }
-    .stat-num { font-family: var(--font-disp); font-size: 1.5rem; font-weight: 600; color: var(--blue); }
-    .stat-lbl { font-size: 0.78rem; color: var(--slate); margin-top: 3px; }
+    .section { padding:5rem 5%; }
+    .section.alt { background:var(--bg-alt); }
+    .sec-head { text-align:center; max-width:640px; margin:0 auto 3rem; }
+    .sec-head .eyebrow { justify-content:center; }
+    .sec-head p { color:var(--slate); font-size:.98rem; margin-top:.8rem; line-height:1.7; }
 
-    /* topics preview */
-    .section { padding: 5rem 5%; }
-    .section.alt { background: var(--bg-alt); }
-    .sec-head { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
-    .sec-head .eyebrow { justify-content: center; }
-    .sec-head p { color: var(--slate); font-size: 0.98rem; margin-top: 0.8rem; line-height: 1.7; }
+    .feature-grid { max-width:1160px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.2rem; }
+    .feature-card { background:var(--bg); border:1px solid var(--line); border-radius:14px; padding:1.8rem; text-decoration:none; color:inherit; transition:border-color .2s,box-shadow .2s,transform .2s; display:block; }
+    .feature-card:hover { border-color:var(--blue); box-shadow:0 10px 30px rgba(30,111,217,.1); transform:translateY(-3px); }
+    .feature-card-ic { width:52px; height:52px; border-radius:12px; display:grid; place-items:center; font-size:1.5rem; margin-bottom:1.1rem; }
+    .fc-blue{background:var(--blue-soft);} .fc-green{background:#dcfce7;} .fc-purple{background:#ede9fe;} .fc-orange{background:#ffedd5;} .fc-red{background:#fee2e2;} .fc-teal{background:#ccfbf1;}
+    .feature-card h3 { font-size:1rem; font-weight:700; margin-bottom:.5rem; }
+    .feature-card p { font-size:.84rem; color:var(--slate); line-height:1.65; margin-bottom:.9rem; }
+    .feature-card .fc-link { font-size:.82rem; font-weight:700; color:var(--blue); }
 
-    .topic-grid {
-      max-width: 1160px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.1rem;
-    }
-    .tcard {
-      background: #fff; border: 1px solid var(--line); border-radius: 12px;
-      padding: 1.5rem; text-decoration: none; color: inherit;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-      position: relative;
-    }
-    .tcard:hover { border-color: var(--blue); box-shadow: 0 10px 26px rgba(30,111,217,0.1); transform: translateY(-3px); }
-    .tcard-ic {
-      width: 46px; height: 46px; border-radius: 10px;
-      background: var(--blue-soft); display: grid; place-items: center;
-      font-size: 1.4rem; margin-bottom: 1rem;
-    }
-    .tcard-title { font-weight: 700; font-size: 0.96rem; margin-bottom: 0.4rem; }
-    .tcard-desc { font-size: 0.83rem; color: var(--slate); line-height: 1.6; }
-    .tcard-arrow { margin-top: 1rem; font-size: 0.82rem; font-weight: 700; color: var(--blue); }
+    .guidelines-strip { background:var(--ink); padding:3rem 5%; }
+    .gl-inner { max-width:1160px; margin:0 auto; }
+    .gl-inner h2 { font-family:var(--font-disp); color:#fff; font-size:1.6rem; margin-bottom:.5rem; }
+    .gl-inner p { color:rgba(255,255,255,.6); font-size:.92rem; margin-bottom:1.5rem; }
+    .gl-badges { display:flex; flex-wrap:wrap; gap:.6rem; }
+    .gl-badge { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:8px; padding:.5rem 1rem; font-size:.78rem; font-weight:600; color:rgba(255,255,255,.8); white-space:nowrap; }
 
-    /* AI banner */
-    .ai-banner {
-      max-width: 1160px; margin: 0 auto;
-      background: linear-gradient(120deg, var(--ink) 0%, #1d3a5f 100%);
-      border-radius: 18px; padding: 3rem; color: #fff;
-      display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: center;
-      position: relative; overflow: hidden;
-    }
-    .ai-banner::after {
-      content: ''; position: absolute; right: -60px; top: -60px;
-      width: 240px; height: 240px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(0,179,164,0.25), transparent 70%);
-    }
-    .ai-banner h2 { font-family: var(--font-disp); font-weight: 600; font-size: 1.9rem; margin-bottom: 0.8rem; }
-    .ai-banner p { color: rgba(255,255,255,0.65); font-size: 0.94rem; line-height: 1.7; margin-bottom: 1.5rem; }
-    .ai-banner .eyebrow { color: var(--accent); }
-    .ai-banner .eyebrow::before { background: var(--accent); }
-    .ai-chip-list { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; position: relative; z-index: 2; }
-    .ai-chip-list li {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.85rem; color: rgba(255,255,255,0.8);
-      display: flex; align-items: center; gap: 0.6rem;
-    }
+    .how-grid { max-width:1160px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+    .how-step { text-align:center; }
+    .how-num { width:48px; height:48px; border-radius:50%; background:var(--blue); color:#fff; font-weight:800; font-size:1.1rem; display:grid; place-items:center; margin:0 auto 1rem; }
+    .how-step h3 { font-size:1rem; font-weight:700; margin-bottom:.4rem; }
+    .how-step p { font-size:.85rem; color:var(--slate); line-height:1.65; }
 
-    @media (max-width: 820px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
-      .hero-visual { max-width: 320px; margin: 0 auto; }
-      .stats { grid-template-columns: 1fr 1fr; }
-      .stat:nth-child(2) { border-right: none; }
-      .ai-banner { grid-template-columns: 1fr; padding: 2rem; }
+    .ai-banner { max-width:1160px; margin:0 auto; background:linear-gradient(120deg,#0f1f3d 0%,#1a3560 100%); border-radius:18px; padding:3rem; color:#fff; display:grid; grid-template-columns:1.2fr 1fr; gap:2.5rem; align-items:center; position:relative; overflow:hidden; }
+    .ai-banner::after { content:''; position:absolute; right:-60px; top:-60px; width:240px; height:240px; border-radius:50%; background:radial-gradient(circle,rgba(0,179,164,.3),transparent 70%); }
+    .ai-banner h2 { font-family:var(--font-disp); font-weight:600; font-size:1.9rem; margin-bottom:.8rem; }
+    .ai-banner p { color:rgba(255,255,255,.65); font-size:.94rem; line-height:1.7; margin-bottom:1.5rem; }
+    .ai-banner .eyebrow { color:var(--accent); }
+    .ai-banner .eyebrow::before { background:var(--accent); }
+    .ai-chip-list { list-style:none; display:flex; flex-direction:column; gap:.7rem; position:relative; z-index:2; }
+    .ai-chip-list li { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:8px; padding:.75rem 1rem; font-size:.85rem; color:rgba(255,255,255,.8); display:flex; align-items:center; gap:.6rem; }
+
+    @media(max-width:900px) {
+      .hero-inner{grid-template-columns:1fr;} .hero-visual{display:none;}
+      .spec-inner{grid-template-columns:1fr 1fr;}
+      .spec-item:nth-child(2){border-right:none;}
+      .spec-item:nth-child(3){border-top:1px solid var(--line); border-right:1px solid var(--line);}
+      .spec-item:nth-child(4){border-top:1px solid var(--line); border-right:none;}
+      .how-grid{grid-template-columns:1fr; gap:1.5rem;}
+      .ai-banner{grid-template-columns:1fr; padding:2rem;}
     }
   </style>
-  <script src="darkmode.js"></script>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
-  <a href="index.html" class="nav-brand">
-    <span class="nav-mark">🫀</span>
-    <span class="nav-name">Crit<span>Care</span>.in</span>
-  </a>
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
   <ul class="nav-menu" id="menu">
     <li><a href="index.html" class="active">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="topics.html">ICU Topics</a></li>
+    <li><a href="topics.html">Topics</a></li>
     <li><a href="ai-tool.html">AI Tool</a></li>
     <li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
-  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode">🌙</button>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
 </nav>
 
-<!-- HERO -->
 <header class="hero">
   <div class="hero-inner">
     <div>
-      <!-- Name is small & subtle here (site is about the field) -->
-      <div class="hero-person">
-        <span class="hero-person-dot"></span>
-        <span class="hero-person-name">Curated by <strong>Dr. Anmol Srivastava</strong> · SGPGIMS Lucknow</span>
-      </div>
-
-      <!-- The BIG headline is the mission, not the name -->
-      <h1 class="hero-headline">
-        Sharper decisions at the <em>ICU bedside.</em>
-      </h1>
-      <p class="hero-sub">
-        Evidence-based critical care knowledge, practical protocols, and an
-        AI clinical assistant — built for intensivists and emergency physicians
-        working in real-world Indian hospitals.
-      </p>
+      <div class="hero-eyebrow">India's Critical Care Reference</div>
+      <h1 class="hero-headline">Every guideline.<br>Every drug dose.<br><em>One place.</em></h1>
+      <p class="hero-sub">Built by <strong style="color:#fff">Dr. Anmol Srivastava</strong> (SR Emergency Medicine, SGPGIMS Lucknow) — evidence-based, guideline-referenced content for Emergency Medicine, Critical Care, Anaesthesia, and Pulmonary Medicine specialists.</p>
       <div class="hero-btns">
-        <a href="topics.html" class="btn btn-blue">Explore ICU Topics →</a>
-        <a href="about.html" class="btn btn-line">About Dr. Anmol</a>
+        <a href="topics.html" class="btn btn-white">Browse All Topics →</a>
+        <a href="ai-tool.html" class="btn btn-ghost">Try CritCare AI</a>
       </div>
     </div>
-
-    <!-- PHOTO CARD -->
     <div class="hero-visual">
-      <div class="hero-photo-card">
-        <img src="anmol.jpg" alt="Dr. Anmol Srivastava" style="width:100%;display:block;">
-        <div class="photo-meta">
-          <div>
-            <div class="photo-meta-name">Dr. Anmol Srivastava</div>
-            <div class="photo-meta-role">Emergency Medicine · Critical Care</div>
-          </div>
-          <span class="photo-meta-badge">SGPGIMS</span>
-        </div>
+      <div class="hero-stat-cards">
+        <div class="hero-stat-card"><div class="stat-num">25+</div><div class="stat-lbl">Clinical Topics</div></div>
+        <div class="hero-stat-card"><div class="stat-num">2026</div><div class="stat-lbl">Guidelines Updated</div></div>
+        <div class="hero-stat-card"><div class="stat-num">4</div><div class="stat-lbl">Specialties Served</div></div>
+        <div class="hero-stat-card"><div class="stat-num">AI</div><div class="stat-lbl">Decision Support</div></div>
+      </div>
+      <div class="hero-badge">
+        <span class="badge-icon">📚</span>
+        <p>Content from <strong>Oh's Manual · Washington's Manual · Marino's ICU Book</strong> + SSC 2026, GINA 2026, GOLD 2026, KDIGO 2026, BTF 2023, ACC/AHA 2025</p>
       </div>
     </div>
   </div>
 </header>
 
-<!-- STATS STRIP -->
-<div class="stats">
-  <div class="stat"><div class="stat-num">SGPGIMS</div><div class="stat-lbl">Senior Resident, Emergency Medicine</div></div>
-  <div class="stat"><div class="stat-num">DNB</div><div class="stat-lbl">Anaesthesiology & Critical Care</div></div>
-  <div class="stat"><div class="stat-num">ICU</div><div class="stat-lbl">Active Intensivist, BMC Superspeciality</div></div>
-  <div class="stat"><div class="stat-num">AI</div><div class="stat-lbl">Decision Support Tool in Development</div></div>
+<div class="specialties">
+  <div class="spec-inner">
+    <div class="spec-item"><span class="spec-icon">🚨</span><div><div class="spec-name">Emergency Medicine</div><div class="spec-desc">Resuscitation · Shock · Trauma · Toxicology</div></div></div>
+    <div class="spec-item"><span class="spec-icon">🫀</span><div><div class="spec-name">Critical Care Medicine</div><div class="spec-desc">ICU Protocols · Organ Support · Ventilation</div></div></div>
+    <div class="spec-item"><span class="spec-icon">💉</span><div><div class="spec-name">Anaesthesiology</div><div class="spec-desc">Airway · Sedation · Regional · DNB Exam Prep</div></div></div>
+    <div class="spec-item"><span class="spec-icon">🫁</span><div><div class="spec-name">Pulmonary Medicine</div><div class="spec-desc">COPD · Asthma · ARDS · Ventilator Weaning</div></div></div>
+  </div>
 </div>
 
-<!-- TOPICS PREVIEW -->
 <section class="section">
   <div class="sec-head">
-    <span class="eyebrow">Knowledge Hub</span>
-    <h2 class="display">High-Yield ICU Topics</h2>
-    <p>Concise, evidence-based summaries for physicians managing complex patients. Click any topic to read more.</p>
+    <span class="eyebrow">What CritCare.in Offers</span>
+    <h2 class="display">Everything a clinician needs, nothing they don't</h2>
+    <p>Designed for the Indian ICU and ED — practical, precise, and referenced to the latest international guidelines with Indian context where it matters.</p>
   </div>
-  <div class="topic-grid">
-    <a href="topics.html" class="tcard">
-      <div class="tcard-ic">🦠</div>
-      <div class="tcard-title">Sepsis & Septic Shock</div>
-      <div class="tcard-desc">Hour-1 bundle, vasopressors, fluid targets, SSC 2024 updates.</div>
-      <div class="tcard-arrow">Read →</div>
+  <div class="feature-grid">
+    <a href="topics.html" class="feature-card">
+      <div class="feature-card-ic fc-blue">📖</div>
+      <h3>Guideline-Referenced Topics</h3>
+      <p>25+ clinical topics from SSC 2026, GINA 2026, GOLD 2026, KDIGO 2026, BTF 2023, ACC/AHA 2025 — with what changed, drug doses, and exam pearls.</p>
+      <span class="fc-link">Browse Topics →</span>
     </a>
-    <a href="topics.html" class="tcard">
-      <div class="tcard-ic">🫁</div>
-      <div class="tcard-title">ARDS & Ventilation</div>
-      <div class="tcard-desc">Lung-protective settings, proning, 2023 global redefinition.</div>
-      <div class="tcard-arrow">Read →</div>
+    <a href="topic-vasopressors-guide.html" class="feature-card">
+      <div class="feature-card-ic fc-orange">💊</div>
+      <h3>Drug Dilution Guide</h3>
+      <p>Ampoule compositions, dilution protocols, dose tables for 50–80 kg patients, IBW calculations, and infusion rate formulas for every vasopressor.</p>
+      <span class="fc-link">View Drug Guide →</span>
     </a>
-    <a href="topics.html" class="tcard">
-      <div class="tcard-ic">🫘</div>
-      <div class="tcard-title">AKI & CRRT</div>
-      <div class="tcard-desc">Staging, timing of CRRT, anticoagulation, dosing.</div>
-      <div class="tcard-arrow">Read →</div>
+    <a href="ai-tool.html" class="feature-card">
+      <div class="feature-card-ic fc-teal">🤖</div>
+      <h3>CritCare AI Assistant</h3>
+      <p>Enter a patient's clinical picture — get a structured, evidence-based ICU management plan covering antibiotics, vasopressors, ventilation, and monitoring.</p>
+      <span class="fc-link">Try AI Tool →</span>
     </a>
-    <a href="topics.html" class="tcard">
-      <div class="tcard-ic">💊</div>
-      <div class="tcard-title">Vasopressors</div>
-      <div class="tcard-desc">Drug doses, receptors, shock decision algorithm.</div>
-      <div class="tcard-arrow">Read →</div>
+    <a href="topic-mechanical-ventilation.html" class="feature-card">
+      <div class="feature-card-ic fc-green">⚙️</div>
+      <h3>Ventilator Reference</h3>
+      <p>All modes explained, initial settings, IBW and tidal volume calculations, PEEP tables, troubleshooting, weaning protocol, and extubation criteria.</p>
+      <span class="fc-link">View Vent Guide →</span>
     </a>
-  </div>
-  <div style="text-align:center; margin-top:2.5rem;">
-    <a href="topics.html" class="btn btn-line">View all topics →</a>
+    <a href="topic-sepsis.html" class="feature-card">
+      <div class="feature-card-ic fc-red">🦠</div>
+      <h3>Sepsis & Shock — SSC 2026</h3>
+      <p>Everything that changed in SSC 2026 — new MAP targets, extended infusion antibiotics, crystalloids over albumin. Hour-1 bundle with Indian antibiotic patterns.</p>
+      <span class="fc-link">Read Sepsis →</span>
+    </a>
+    <a href="topics.html" class="feature-card">
+      <div class="feature-card-ic fc-purple">🏥</div>
+      <h3>Exam Pearls — DrNB/PDCC</h3>
+      <p>Every topic ends with high-yield exam questions and model answers for DrNB Anaesthesia, PDCC Critical Care, and IFCCM/EDIC examinations.</p>
+      <span class="fc-link">Browse All Topics →</span>
+    </a>
   </div>
 </section>
 
-<!-- AI BANNER -->
+<div class="guidelines-strip">
+  <div class="gl-inner">
+    <h2>Guidelines We Cover</h2>
+    <p>Every recommendation is referenced to the source guideline with the year clearly marked.</p>
+    <div class="gl-badges">
+      <span class="gl-badge">SSC 2026 (Surviving Sepsis)</span>
+      <span class="gl-badge">GINA 2026 (Asthma)</span>
+      <span class="gl-badge">GOLD 2026 (COPD)</span>
+      <span class="gl-badge">KDIGO 2026 (AKI)</span>
+      <span class="gl-badge">BTF 2023 (TBI)</span>
+      <span class="gl-badge">ACC/AHA/ACEP 2025 (ACS)</span>
+      <span class="gl-badge">PADIS 2018 (Sedation/Delirium)</span>
+      <span class="gl-badge">ARDSNet 2000 + 2023 Global ARDS</span>
+      <span class="gl-badge">ISCCM 2020 (Indian Guidelines)</span>
+      <span class="gl-badge">AHA/ASA 2022–2023 (Stroke/ICH)</span>
+      <span class="gl-badge">Oh's Intensive Care Manual</span>
+      <span class="gl-badge">Washington's Manual of Critical Care</span>
+      <span class="gl-badge">Marino's ICU Book 4th Ed</span>
+    </div>
+  </div>
+</div>
+
 <section class="section alt">
+  <div class="sec-head">
+    <span class="eyebrow">How to Use This Site</span>
+    <h2 class="display">Built for the bedside, not the bookshelf</h2>
+    <p>Whether you're managing a patient at 3am or preparing for your DrNB/PDCC exam, CritCare.in is structured for rapid, reliable clinical answers.</p>
+  </div>
+  <div class="how-grid">
+    <div class="how-step">
+      <div class="how-num">1</div>
+      <h3>Find Your Clinical Problem</h3>
+      <p>Browse by clinical problem or specialty — Sepsis, ARDS, ACS, TBI, COPD, AKI — each with 15 structured sections from pathophysiology to exam pearls.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">2</div>
+      <h3>Get Guideline-Backed Answers</h3>
+      <p>Every recommendation cites its source guideline and year. New vs changed 2026 recommendations are clearly tagged so you always know what's current.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-num">3</div>
+      <h3>Use CritCare AI for Complex Cases</h3>
+      <p>Describe your patient — get a structured management plan covering drugs, doses, monitoring targets, and escalation criteria. Free to use, built for Indian settings.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
   <div class="ai-banner">
     <div>
-      <span class="eyebrow">In Development</span>
-      <h2>CritCare AI — your ICU co-pilot</h2>
-      <p>
-        Enter a patient's vitals, labs, and clinical picture. Receive a structured,
-        evidence-based management plan in seconds — drug dosing, antibiotics,
-        ventilation, and fluid strategy, tuned for resource-limited settings.
-      </p>
-      <a href="ai-tool.html" class="btn btn-blue">Preview the tool →</a>
+      <span class="eyebrow">Clinical Decision Support</span>
+      <h2>CritCare AI — Your ICU Co-pilot</h2>
+      <p>Enter a patient's clinical picture and receive a structured, evidence-based management plan in seconds — drug dosing, antibiotics, ventilation, and fluid strategy, tuned for resource-limited Indian hospital settings.</p>
+      <a href="ai-tool.html" class="btn btn-blue">Try CritCare AI →</a>
     </div>
     <ul class="ai-chip-list">
-      <li>🩺 Full ICU management plans</li>
-      <li>💊 Renal & hepatic dose adjustment</li>
-      <li>🦠 Evidence-based antibiotic choice</li>
-      <li>🫁 Ventilation & sedation targets</li>
+      <li>🦠 Septic shock — vasopressor algorithm + antibiotic choice</li>
+      <li>🫁 ARDS — ventilator settings + proning decision</li>
+      <li>🫘 AKI — CRRT initiation + drug dose adjustment</li>
+      <li>❤️ Cardiogenic shock — inotrope + MCS guidance</li>
+      <li>💊 Drug dosing adjusted for renal/hepatic failure</li>
     </ul>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-brand">Crit<span>Care</span>.in</span>
@@ -292,7 +259,7 @@
       <li><a href="ai-tool.html">AI Tool</a></li>
       <li><a href="login.html">Login</a></li>
     </ul>
-    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow · For educational purposes only</p>
   </div>
 </footer>
 
