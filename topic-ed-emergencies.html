@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acute ED Emergencies — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .pearl-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1rem; margin:1.2rem 0; }
+    .pearl-card { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:1rem 1.2rem; }
+    .pearl-card .pearl-label { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#92400e; margin-bottom:.5rem; }
+    .pearl-card p { font-size:.88rem; color:#78350f; line-height:1.7; margin:0; }
+    .approach-step { background:var(--bg-alt); border:1px solid var(--line); border-radius:10px; padding:1.2rem; margin:.6rem 0; }
+    .approach-step h4 { font-size:.88rem; font-weight:700; color:var(--ink); margin-bottom:.5rem; display:flex; align-items:center; gap:.6rem; }
+    .approach-step p, .approach-step ul { font-size:.87rem; color:var(--slate); line-height:1.7; margin:0; }
+    .approach-step ul { padding-left:1.2rem; }
+    .emergency-card { border:1.5px solid var(--line); border-radius:12px; padding:1.5rem; margin:1.2rem 0; }
+    .emergency-card h3 { font-size:1.05rem; font-weight:700; margin-bottom:1rem; display:flex; align-items:center; gap:.6rem; }
+    .ec-red { border-color:#fca5a5; background:#fef2f2; }
+    .ec-red h3 { color:#991b1b; }
+    .ec-blue { border-color:#bfdbfe; background:#eff6ff; }
+    .ec-blue h3 { color:#1e40af; }
+    .ec-orange { border-color:#fed7aa; background:#fff7ed; }
+    .ec-orange h3 { color:#9a3412; }
+    .ec-purple { border-color:#ddd6fe; background:#f5f3ff; }
+    .ec-purple h3 { color:#5b21b6; }
+    .ec-green { border-color:#bbf7d0; background:#f0fdf4; }
+    .ec-green h3 { color:#14532d; }
+    .ec-teal { border-color:#99f6e4; background:#f0fdfa; }
+    .ec-teal h3 { color:#134e4a; }
+    .emergency-card ul { font-size:.87rem; color:var(--slate); line-height:1.75; padding-left:1.2rem; margin:0; }
+    .emergency-card strong { color:var(--ink); }
+    .exam-card { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:.9rem 1.1rem; margin:.4rem 0; }
+    .exam-card p { font-size:.88rem; color:#1e40af; line-height:1.7; margin:0; }
+    .exam-card strong { color:#1e3a8a; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › ED Emergencies</div>
+    <h1>🚨 Acute Medical Emergencies — ED Approach</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">AHA/ACC 2025</span>
+      <span class="gbadge esicm">ESICM</span>
+      <span class="gbadge isccm">ISCCM 2020</span>
+      <span class="gbadge who">WHO India</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Emergency Medicine</span>
+      <span class="topic-tag">Structured Approach</span>
+      <span class="topic-updated">Indian Emergency Department Context · Standard Treatment Guidelines</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#framework">The ED Framework</a></li>
+        <li><a href="#dyspnoea">Acute Dyspnoea</a></li>
+        <li><a href="#chest-pain">Chest Pain</a></li>
+        <li><a href="#coma">Altered Consciousness/Coma</a></li>
+        <li><a href="#shock">Undifferentiated Shock</a></li>
+        <li><a href="#anaphylaxis">Anaphylaxis</a></li>
+        <li><a href="#hypertensive">Hypertensive Emergency</a></li>
+        <li><a href="#poisoning">Acute Poisoning</a></li>
+        <li><a href="#fever">Fever &amp; Sepsis in ED</a></li>
+        <li><a href="#pearls">Clinical Pearls</a></li>
+        <li><a href="#exam">Exam Pearls</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="framework">
+      <h2>The ED Approach Framework — For Every Patient</h2>
+      <p><em>In the ED, assessment and treatment happen simultaneously. The following framework applies to every acute medical presentation.</em></p>
+      <div class="approach-step">
+        <h4>🔴 Step 1 — Is the Patient SICK or NOT SICK? (30 seconds)</h4>
+        <p>Look across the room: Mental status (awake vs altered), Work of breathing (laboured vs normal), Colour (pale, cyanotic, mottled). If sick → immediate intervention, don't wait for history.</p>
+      </div>
+      <div class="approach-step">
+        <h4>🟠 Step 2 — Primary Survey: ABCDE (1–2 minutes)</h4>
+        <ul>
+          <li><strong>A</strong> — Airway: patent? Stridor? Secretions? → If GCS ≤8: intubate</li>
+          <li><strong>B</strong> — Breathing: RR, SpO₂, work of breathing, breath sounds → O₂, bronchodilators, CPAP/NIV if needed</li>
+          <li><strong>C</strong> — Circulation: HR, BP, cap refill, pulses → IV access, fluid challenge or vasopressors, ECG</li>
+          <li><strong>D</strong> — Disability: GCS, pupils, glucose (MUST check glucose in all altered consciousness) → dextrose if hypoglycaemic</li>
+          <li><strong>E</strong> — Exposure: full examination, temperature, signs of injury, skin changes, rash, petechiae</li>
+        </ul>
+      </div>
+      <div class="approach-step">
+        <h4>🟡 Step 3 — Targeted History: AMPLE</h4>
+        <p><strong>A</strong>llergies | <strong>M</strong>edications | <strong>P</strong>ast medical history | <strong>L</strong>ast meal | <strong>E</strong>vents leading to presentation</p>
+      </div>
+      <div class="approach-step">
+        <h4>🟢 Step 4 — Investigations (based on differential diagnosis)</h4>
+        <p>ECG (must be done within 10 min for chest pain/dyspnoea) | POC glucose | SpO₂ | Troponin, D-dimer, BNP (as indicated) | FBC, metabolic panel | CXR | ABG (if respiratory distress) | Urine dipstick</p>
+      </div>
+      <div class="approach-step">
+        <h4>🔵 Step 5 — Disposition Decision</h4>
+        <p>Discharge with follow-up | Ward admission | HDU/Step-down | ICU | Operation Theatre | Transfer to higher centre. Make this decision early and communicate clearly.</p>
+      </div>
+    </section>
+
+    <section id="dyspnoea">
+      <h2>Acute Dyspnoea — Structured Approach</h2>
+      <div class="emergency-card ec-blue">
+        <h3>🫁 Acute Dyspnoea</h3>
+        <ul>
+          <li><strong>Immediate:</strong> Sit up, O₂ to target SpO₂ ≥94% (88–92% if COPD), IV access, ECG, SpO₂ monitoring</li>
+          <li><strong>Differentials to consider:</strong></li>
+          <li>Acute pulmonary oedema / acute heart failure → Furosemide 40–80 mg IV + GTN if SBP &gt;110 + CPAP</li>
+          <li>Acute severe asthma → Salbutamol nebuliser + ipratropium + steroids + O₂ 92–95% (GINA 2026)</li>
+          <li>COPD exacerbation → SABA + ipratropium + steroids + controlled O₂ (Venturi mask 24–28%) + NIV if pH &lt;7.35</li>
+          <li>Tension pneumothorax → Tracheal deviation, absent breath sounds, ↑JVP, hypotension → Needle decompression 2nd ICS MCL IMMEDIATELY, then chest drain</li>
+          <li>Massive PE → Raised JVP, hypoxia, tachycardia, haemodynamic compromise → Anticoagulate + thrombolysis if massive PE + haemodynamic compromise</li>
+          <li>Cardiac tamponade → Beck's triad (↑JVP + muffled heart sounds + hypotension) + pulsus paradoxus &gt;10 mmHg → ECHO + urgent pericardiocentesis</li>
+          <li><strong>Key bedside test:</strong> POCUS — assess LV function, IVC, pleural/pericardial fluid, lung B-lines (cardiogenic oedema) vs A-lines (pneumothorax)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="chest-pain">
+      <h2>Acute Chest Pain — Structured Approach</h2>
+      <div class="emergency-card ec-red">
+        <h3>❤️ Acute Chest Pain — Time-Critical Diagnoses</h3>
+        <ul>
+          <li><strong>Immediate ECG within 10 minutes</strong> — if STEMI: activate cath lab NOW (don't wait for troponin)</li>
+          <li><strong>5 life-threatening diagnoses to exclude:</strong></li>
+          <li><strong>1. STEMI:</strong> ST elevation ≥1mm in ≥2 contiguous limb leads or ≥2mm in precordial → primary PCI (door-to-balloon &lt;90 min) or fibrinolysis (door-to-needle &lt;30 min if PCI unavailable)</li>
+          <li><strong>2. Aortic dissection:</strong> Tearing/ripping pain, radiates to back, BP difference &gt;20 mmHg between arms, widened mediastinum on CXR, new aortic regurgitation → CT aortogram, NO anticoagulants, urgent surgical consult for Type A</li>
+          <li><strong>3. Massive PE:</strong> Pleuritic pain + dyspnoea + haemodynamic compromise + risk factors (immobility, cancer, prior DVT) → CT-PA + anticoagulation + thrombolysis if massive</li>
+          <li><strong>4. Tension Pneumothorax:</strong> Trauma/positive pressure ventilation context + above signs → treat immediately without waiting for CXR if haemodynamically compromised</li>
+          <li><strong>5. Cardiac Tamponade:</strong> Beck's triad + electrical alternans on ECG + low voltage → Echo + pericardiocentesis</li>
+          <li><strong>NSTEMI/UA:</strong> ST depression or T-wave changes + positive troponin → Antiplatelet + anticoagulation + early invasive strategy</li>
+          <li><strong>Pericarditis:</strong> Sharp pleuritic pain, relieved sitting forward, friction rub → Aspirin 750 mg TDS + Colchicine 0.5 mg BD × 3 months</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="coma">
+      <h2>Altered Consciousness / Coma — Structured Approach</h2>
+      <div class="emergency-card ec-orange">
+        <h3>🧠 Coma &amp; Altered Consciousness — AEIOU TIPS Mnemonic</h3>
+        <ul>
+          <li><strong>Immediate actions:</strong> Protect airway (intubate if GCS ≤8 or aspiration risk), IV access, check glucose (MUST), O₂, ECG, temperature</li>
+          <li><strong>A — Alcohol/Drugs:</strong> Alcohol breath, needle marks, pinpoint pupils (opioids) → Naloxone 0.4–2 mg IV/IM if opioid suspected; Flumazenil 0.2 mg IV for benzodiazepine OD</li>
+          <li><strong>E — Epilepsy:</strong> Post-ictal state vs ongoing SE (must rule out NCSE) → Levetiracetam if seizure suspected; EEG if prolonged coma</li>
+          <li><strong>I — Insulin (hypoglycaemia):</strong> ALWAYS check finger-prick glucose → 25g Dextrose IV (50 ml of 50% dextrose); then 10% dextrose infusion</li>
+          <li><strong>O — Overdose:</strong> History from bystanders, medication bottles → toxicology screen; activated charcoal if &lt;1h and airway protected</li>
+          <li><strong>U — Uraemia / Hepatic:</strong> Asterixis, ↑creatinine, jaundice, liver disease history → treat underlying cause; lactulose for hepatic encephalopathy</li>
+          <li><strong>T — Trauma:</strong> Head injury; cervical spine protection; CT head urgently</li>
+          <li><strong>I — Infection:</strong> Fever, neck stiffness, rash (meningococcal?) → LP if no raised ICP; Ceftriaxone 2g IV immediately + Dexamethasone 10 mg IV; DO NOT delay antibiotics for LP</li>
+          <li><strong>P — Psychiatric/Psychogenic:</strong> Diagnosis of exclusion; eyes resist opening; normal pupil reflexes; normal motor exam</li>
+          <li><strong>S — Stroke/Structural:</strong> Focal deficit, sudden onset → CT head (haemorrhage vs ischaemia); if ischaemic stroke &lt;4.5h → consider tPA</li>
+        </ul>
+      </div>
+      <div class="key-box">
+        <div class="kb-label">Rule of 5s — Never Miss These in Coma</div>
+        <ul>
+          <li>Glucose (always check first — hypoglycaemia is the most treatable cause)</li>
+          <li>Naloxone (if opioid toxidrome — pinpoint pupils, respiratory depression, miosis)</li>
+          <li>Thiamine (before glucose in alcoholics — prevents Wernicke's)</li>
+          <li>O₂ (hypoxia causes coma and worsens all other causes)</li>
+          <li>Temperature (hypothermia and hyperthermia both cause coma)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="shock">
+      <h2>Undifferentiated Shock — Systematic Approach</h2>
+      <div class="emergency-card ec-red">
+        <h3>💔 Undifferentiated Shock</h3>
+        <ul>
+          <li><strong>Definition:</strong> SBP &lt;90 OR MAP &lt;65 OR SBP drop &gt;40 from baseline + tissue hypoperfusion (altered mentation, oliguria, cold clammy skin, elevated lactate)</li>
+          <li><strong>Simultaneous resuscitation + diagnosis:</strong> 2 large-bore IVs, O₂, monitoring (SpO₂, continuous ECG, NIBP q5 min, urine catheter)</li>
+          <li><strong>RUSH Protocol (Rapid Ultrasound for Shock and Hypotension):</strong></li>
+          <li>1. Heart (PLAX, apical 4-chamber): LV function, RV size, pericardial effusion → Cardiogenic or tamponade</li>
+          <li>2. IVC (subcostal): Flat + collapsing &gt;50% = hypovolaemic/distributive (fluid responsive); Plethoric + no collapse = obstructive/cardiogenic</li>
+          <li>3. Lungs (bilateral anterior): B-lines = cardiogenic oedema; A-lines = normal or pneumothorax; unilateral absent sliding = pneumothorax</li>
+          <li>4. Abdomen: Free fluid (FAST) = haemoperitoneum/ectopic → surgical emergency</li>
+          <li>5. Aorta: AAA → surgical emergency; dissection → CT aortogram</li>
+          <li><strong>Fluid challenge:</strong> 250–500 ml crystalloid bolus + PLR test to assess fluid responsiveness</li>
+          <li><strong>If no response to fluids:</strong> Vasopressors (noradrenaline); AVOID waiting for central line — peripheral NE acceptable short-term</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="anaphylaxis">
+      <h2>Anaphylaxis</h2>
+      <div class="emergency-card ec-purple">
+        <h3>⚠️ Anaphylaxis — GINA 2026 / WAO Guidelines</h3>
+        <ul>
+          <li><strong>Diagnosis:</strong> Acute onset (minutes to hours) + involvement of skin/mucosa (urticaria, flushing, angioedema) + ONE of: Respiratory compromise OR ↓BP or end-organ dysfunction</li>
+          <li><strong>OR:</strong> Exposure to known allergen + ↓BP alone</li>
+          <li><strong>FIRST ACTION — Adrenaline IM (GINA 2026 update):</strong></li>
+          <li>Adults: <strong>Adrenaline 0.5 mg IM</strong> (0.5 ml of 1:1000 = 1 mg/ml) into anterolateral thigh</li>
+          <li>Children: 0.3 mg IM (6–12 years); 0.15 mg IM (&lt;6 years)</li>
+          <li>If no response in 5–15 min: REPEAT IM adrenaline (no ceiling on dose if haemodynamically compromised)</li>
+          <li><strong>If features of asthma + anaphylaxis:</strong> Adrenaline FIRST, then bronchodilators (GINA 2026)</li>
+          <li><strong>Simultaneously:</strong> Position supine + legs raised | Remove trigger | Call for help | O₂ | IV access</li>
+          <li><strong>Secondary (after adrenaline):</strong> IV crystalloid 1–2L rapid | Hydrocortisone 200 mg IV | Chlorpheniramine 10 mg IV slow | Salbutamol nebuliser if bronchospasm persists</li>
+          <li><strong>IV Adrenaline</strong> ONLY in ICU/resuscitation room with monitoring: 50–100 mcg slow IV boluses or 0.05–0.5 mcg/kg/min infusion</li>
+          <li><strong>Observe:</strong> Minimum 6 hours (24h if severe reaction) — biphasic anaphylaxis occurs in 5–20%</li>
+          <li><strong>Discharge:</strong> EpiPen prescription, allergy referral, written action plan</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="hypertensive">
+      <h2>Hypertensive Emergency</h2>
+      <div class="emergency-card ec-teal">
+        <h3>💊 Hypertensive Emergency — ESC/ACC-AHA Guidelines</h3>
+        <ul>
+          <li><strong>Definition:</strong> Severely elevated BP (usually &gt;180/120 mmHg) WITH acute end-organ damage</li>
+          <li><strong>End-organ damage = Hypertensive Emergency (needs IV treatment):</strong></li>
+          <li>Hypertensive encephalopathy: Confusion, headache, visual changes, seizures (BP usually &gt;200/130)</li>
+          <li>Hypertensive stroke: Ischaemic stroke requiring tPA (careful BP management) or haemorrhagic stroke (&gt;180/120 = treat)</li>
+          <li>Acute aortic dissection: BP &gt;180 → target SBP &lt;120 within 20 min (fastest BP lowering indication)</li>
+          <li>Acute pulmonary oedema with hypertension: GTN infusion + diuretics</li>
+          <li>Hypertensive emergency in pregnancy (eclampsia/HELLP): MgSO₄ seizure prophylaxis + Labetalol IV or Hydralazine IV</li>
+          <li>ACS with hypertension: GTN + beta-blocker (unless contraindicated)</li>
+          <li><strong>WITHOUT end-organ damage = Hypertensive Urgency:</strong> Oral medication, gradual BP reduction over 24–48h, NO need for IV treatment</li>
+          <li><strong>General target for hypertensive emergency:</strong> Reduce MAP by 10–20% in first hour (NOT to normal) → normalise over 24–48h. Exception: Aortic dissection (target SBP &lt;120 fast) and Ischaemic stroke (specific targets)</li>
+          <li><strong>IV Agents:</strong></li>
+          <li>Labetalol 20–80 mg IV bolus q10–15 min OR 0.5–2 mg/min infusion (most versatile)</li>
+          <li>GTN (Nitroglycerin) 5–200 mcg/min infusion — preferred in ACS, LVF</li>
+          <li>Sodium Nitroprusside 0.3–10 mcg/kg/min — fastest onset; cyanide toxicity with prolonged use; use with arterial line</li>
+          <li>Hydralazine 5–10 mg IV slowly — useful in pregnancy; unpredictable response</li>
+          <li>Clevidipine 1–21 mg/hr infusion (IV Ca-channel blocker) — if available; rapid-onset, predictable</li>
+          <li><strong>Avoid:</strong> Sublingual nifedipine (uncontrolled rapid BP fall → stroke, MI)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="poisoning">
+      <h2>Acute Poisoning — Indian ED Context</h2>
+      <div class="emergency-card ec-green">
+        <h3>☠️ Approach to Acute Poisoning</h3>
+        <ul>
+          <li><strong>Most common in India:</strong> Organophosphate (pesticide), aluminium phosphide (ALP/celphos), paracetamol, snake bite, alcohol, TCA, opioids, sedative-hypnotics, rodenticides (superwarfarin)</li>
+          <li><strong>ABCDE resuscitation first</strong> — treat airway/breathing/circulation before diagnosis</li>
+          <li><strong>History:</strong> What (substance name, container), how much (dose), when (time of ingestion), route (oral/inhaled/IV/skin), any treatment given</li>
+          <li><strong>Toxidrome Recognition:</strong></li>
+          <li>Cholinergic (OP poisoning): SLUDGE (Salivation, Lacrimation, Urination, Defaecation, GI cramps, Emesis) + Bronchospasm + Bradycardia + Miosis → Atropine + Pralidoxime</li>
+          <li>Opioid: Miosis + RR ↓ + coma + ↓BP → Naloxone 0.4–2 mg IV/IM; repeat q2–3 min; infusion if long-acting opioid</li>
+          <li>Sympathomimetic (cocaine, amphetamine): Tachycardia + hypertension + hyperthermia + dilated pupils + agitation → Benzodiazepines; avoid beta-blockers (unopposed alpha)</li>
+          <li>Anticholinergic (antihistamines, antipsychotics, TCAs): "Hot as a hare, dry as a bone, red as a beet, mad as a hatter, blind as a bat" → Physostigmine (specialist use); supportive</li>
+          <li>Sedative-hypnotic: Coma + ↓RR + miosis (BZD) or fixed pupils (barbiturates) → Flumazenil for BZD; supportive for others</li>
+          <li><strong>Decontamination:</strong> Activated charcoal 1 g/kg PO/NGT if &lt;1h of ingestion + protected airway + not corrosive/hydrocarbon</li>
+          <li><strong>Specific Antidotes (memorise):</strong></li>
+          <li>OP → Atropine 2–4 mg IV q5 min till secretions dry + Pralidoxime 1–2g IV over 30 min</li>
+          <li>Opioid → Naloxone | BZD → Flumazenil | Paracetamol → N-Acetylcysteine | CO → 100% O₂ | Methanol → Fomepizole or ethanol + dialysis | Cyanide → Hydroxocobalamin | Iron → Deferoxamine | Digoxin → Fab fragments | Warfarin → Vitamin K + PCC</li>
+          <li><strong>ALP (Aluminium Phosphide) Poisoning:</strong> No specific antidote; supportive only; 90%+ mortality; releases phosphine gas → multi-organ failure; magnesium sulphate and coconut oil anecdotally used in India</li>
+          <li><strong>Call Poison Control:</strong> National helpline (India) 1800-11-6117</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="fever">
+      <h2>Fever &amp; Sepsis in the Indian ED</h2>
+      <div class="emergency-card ec-orange">
+        <h3>🦠 Fever in the Indian ED — Don't Miss These</h3>
+        <ul>
+          <li><strong>Always consider tropical causes</strong> in addition to routine infection:</li>
+          <li><strong>Malaria:</strong> Rapid antigen test (HRP2 for falciparum, pLDH for vivax) in ALL febrile patients in endemic areas; P. falciparum = medical emergency (cerebral malaria, blackwater fever, ARDS, renal failure) → Artesunate 2.4 mg/kg IV at 0, 12, 24h then daily</li>
+          <li><strong>Dengue:</strong> NS1 antigen (days 1–5) + IgM ELISA (day 5+); Dengue shock syndrome (rapid deterioration, plasma leak, haematocrit rise) → IV crystalloid resuscitation (NOT colloids) carefully; platelet transfusion only if &lt;10,000 or &lt;20,000 + active bleeding</li>
+          <li><strong>Scrub Typhus:</strong> Eschar (painless, black, crusted) at bite site + fever + lymphadenopathy + monsoon season; ELISA positive; → Doxycycline 200 mg loading then 100 mg BD for 7 days (drug of choice)</li>
+          <li><strong>Leptospirosis (Weil's disease):</strong> Monsoon + fever + jaundice + AKI + conjunctival suffusion; Doxycycline 100 mg BD or Penicillin G IV for severe</li>
+          <li><strong>Meningococcal disease:</strong> Petechial/purpuric rash + fever + meningism = meningococcal septicaemia → EMERGENCY: Ceftriaxone 2g IV IMMEDIATELY (before LP), Dexamethasone 10 mg IV; isolate patient</li>
+          <li><strong>Typhoid:</strong> Relative bradycardia + rose spots + hepatosplenomegaly + step-ladder fever + positive Widal (though low specificity) → Blood culture (gold standard); Ceftriaxone 2g IV OD or Azithromycin 1g OD × 5 days</li>
+          <li><strong>Sepsis Bundle (SSC 2026):</strong> Apply Hour-1 bundle — blood cultures → antibiotics → crystalloid → lactate → vasopressors if needed</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="pearls">
+      <h2>Clinical Pearls for the Indian ED</h2>
+      <div class="pearl-grid">
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 1 — ECG in 10 Minutes for Every Chest Pain/Dyspnoea</div>
+          <p>The 10-minute ECG rule is an absolute standard. Every patient presenting with chest pain, dyspnoea, or syncope gets an ECG within 10 minutes. STEMI is an ECG diagnosis — don't wait for troponin. Every minute matters.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 2 — Check Glucose in EVERY Altered Consciousness</div>
+          <p>Hypoglycaemia is the most common reversible cause of coma and it costs nothing to check. ALWAYS do a bedside glucose before anything else in altered consciousness. Give 25g dextrose if &lt;60 mg/dL — immediate reversal is diagnostic.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 3 — Adrenaline FIRST in Anaphylaxis (GINA 2026)</div>
+          <p>GINA 2026 explicitly states: if anaphylaxis + asthma features → Adrenaline FIRST, then bronchodilators. The combination of anaphylaxis + asthma is the highest-risk scenario for fatal outcome. Never delay adrenaline.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 4 — Don't Lower BP to Normal in Hypertensive Emergency</div>
+          <p>Target: Reduce MAP by 10–20% in first hour. Chronic hypertension shifts cerebral autoregulation — too-rapid normalisation causes watershed infarction, stroke, or renal failure. Exception: Aortic dissection (target SBP &lt;120 rapidly).</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 5 — Petechiae + Fever = Meningococcal Until Proven Otherwise</div>
+          <p>Petechial/purpuric rash + fever = meningococcal septicaemia until proven otherwise. Give Ceftriaxone 2g IV immediately. Every hour of delay = worse outcome. Don't wait for LP result. Isolate the patient.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 6 — RUSH POCUS Saves Lives in Undifferentiated Shock</div>
+          <p>RUSH (Rapid Ultrasound for Shock) in 2–3 minutes can distinguish cardiogenic from distributive from hypovolaemic from obstructive shock. This changes your treatment completely. Every ED physician should perform RUSH routinely.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 7 — OP Poisoning: Atropine Target is DRY Secretions</div>
+          <p>In organophosphate poisoning, atropine is titrated to DRY secretions — NOT heart rate, NOT pupil size. Give 2–4 mg IV every 5 minutes until secretions dry. You may need 20–100+ mg total. Under-dosing atropine = preventable death.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 8 — Sublingual Nifedipine is Dangerous</div>
+          <p>Sublingual nifedipine causes uncontrolled, unpredictable BP drops → stroke, MI, death. It is NOT appropriate for hypertensive urgency or emergency. Use IV labetalol, nitrates, or oral amlodipine. Remove it from your practice completely.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam">
+      <h2>Exam Pearls (DrNB / PDCC / Emergency Medicine)</h2>
+      <div class="exam-card"><p><strong>Q: Triad of cardiac tamponade?</strong> → Beck's triad: ↑JVP + Muffled heart sounds + Hypotension. Plus: Pulsus paradoxus &gt;10 mmHg, Electrical alternans on ECG, Tachycardia. Confirm with echo → urgent pericardiocentesis.</p></div>
+      <div class="exam-card"><p><strong>Q: Antidote for organophosphate poisoning?</strong> → Atropine (to dry secretions — NOT for heart rate or pupils) + Pralidoxime (2-PAM) within 24–48h of exposure. Benzodiazepines for seizures. Avoid succinylcholine for intubation (pseudocholinesterase inhibition = prolonged paralysis).</p></div>
+      <div class="exam-card"><p><strong>Q: First-line treatment in anaphylaxis?</strong> → Adrenaline 0.5 mg IM (1:1000) into anterolateral thigh — immediately. Not antihistamines, not steroids, not beta-agonists. Adrenaline first, always.</p></div>
+      <div class="exam-card"><p><strong>Q: RUSH protocol — what does it assess?</strong> → Heart (LV function, pericardial effusion) + IVC (volume status) + Lungs (B-lines = cardiogenic oedema, A-lines ± absent sliding = pneumothorax) + Abdomen (FAST — free fluid) + Aorta (AAA, dissection).</p></div>
+      <div class="exam-card"><p><strong>Q: What is CURB-65 and its significance?</strong> → Pneumonia severity score: Confusion + Urea &gt;7 mmol/L + RR ≥30 + BP (SBP &lt;90 or DBP &lt;60) + Age ≥65. Score ≥3: admit; 4–5: consider ICU. Used to guide disposition in CAP.</p></div>
+      <div class="exam-card"><p><strong>Q: Why is sublingual nifedipine dangerous in hypertensive emergency?</strong> → Causes uncontrolled, unpredictable, precipitous BP drop → watershed stroke, myocardial infarction, death. It cannot be titrated. Use IV labetalol or GTN infusion instead.</p></div>
+    </section>
+
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Rao SV, O'Donoghue ML, Ruel M, et al.</strong> 2025 ACC/AHA/ACEP/NAEMSP/SCAI Guideline for the Management of Patients with Acute Coronary Syndromes. <em>J Am Coll Cardiol.</em> 2025;85(9):e59–e161.</li>
+        <li><strong>Global Initiative for Asthma (GINA).</strong> Global Strategy for Asthma Management and Prevention. Updated May 2026. Available from: www.ginasthma.org</li>
+        <li><strong>Simons FER, Ardusso LR, Bilo MB, et al. (WAO).</strong> World Allergy Organization Guidelines for the Assessment and Management of Anaphylaxis. <em>J Allergy Clin Immunol.</em> 2011;127(3):587–593.</li>
+        <li><strong>Prescott HC, Antonelli M, Alhazzani W, et al.</strong> Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2026. <em>Crit Care Med.</em> 2026;54(4):725–812.</li>
+        <li><strong>WHO.</strong> Guidelines for the Treatment of Malaria, 3rd Edition. World Health Organization; 2015.</li>
+        <li><strong>National Vector Borne Disease Control Programme (NVBDCP), India.</strong> Guidelines for Diagnosis and Treatment of Malaria, Dengue, Scrub Typhus. Directorate General of Health Services, Ministry of Health &amp; Family Welfare; Updated 2024.</li>
+        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Section on Emergency Medicine. Elsevier; 2018.</li>
+        <li><strong>Tintinalli JE, et al.</strong> Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th edition. McGraw-Hill; 2020.</li>
+        <li><strong>Washington Manual of Critical Care, 4th edition.</strong> Chapters 1–5: Critical Care Emergencies. Lippincott Williams &amp; Wilkins; 2020.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hypertensive Emergency — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .pearl-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1rem; margin:1.2rem 0; }
+    .pearl-card { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:1rem 1.2rem; }
+    .pearl-card .pearl-label { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#92400e; margin-bottom:.5rem; }
+    .pearl-card p { font-size:.88rem; color:#78350f; line-height:1.7; margin:0; }
+    .mistake-card { background:#fef2f2; border:1px solid #fecaca; border-radius:10px; padding:1rem 1.2rem; margin:.5rem 0; }
+    .mistake-card .m-label { font-size:.68rem; font-weight:700; color:#991b1b; text-transform:uppercase; letter-spacing:.08em; margin-bottom:.4rem; }
+    .mistake-card p { font-size:.88rem; color:#7f1d1d; line-height:1.7; margin:0; }
+    .exam-card { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:.9rem 1.1rem; margin:.4rem 0; }
+    .exam-card p { font-size:.88rem; color:#1e40af; line-height:1.7; margin:0; }
+    .exam-card strong { color:#1e3a8a; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Hypertensive Emergency</div>
+    <h1>💊 Hypertensive Emergency &amp; Crisis</h1>
+    <div class="guideline-row">
+      <span class="gbadge esicm">ESC/ESH 2023</span>
+      <span class="gbadge sccm">ACC/AHA 2017</span>
+      <span class="gbadge isccm">ISCCM</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Emergency</span>
+      <span class="topic-tag">End-Organ Damage</span>
+      <span class="topic-updated">ESC/ESH 2023 Hypertension Guidelines</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#definitions">Definitions</a></li>
+        <li><a href="#physiology">Pathophysiology</a></li>
+        <li><a href="#targets">BP Reduction Targets</a></li>
+        <li><a href="#drugs">IV Drug Reference</a></li>
+        <li><a href="#scenarios">Scenario-Specific Management</a></li>
+        <li><a href="#monitoring">Monitoring</a></li>
+        <li><a href="#india">Indian Context</a></li>
+        <li><a href="#pearls">Clinical Pearls</a></li>
+        <li><a href="#mistakes">Common Mistakes</a></li>
+        <li><a href="#exam">Exam Pearls</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="definitions">
+      <h2>Definitions — The Critical Distinction</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Term</th><th>BP</th><th>End-Organ Damage</th><th>Treatment</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Hypertensive Emergency</strong></td><td>Usually &gt;180/120 mmHg</td><td>PRESENT — acute (see below)</td><td>IV antihypertensives; lower MAP 10–20% in first hour</td></tr>
+            <tr><td><strong>Hypertensive Urgency</strong></td><td>&gt;180/120 mmHg</td><td>ABSENT</td><td>Oral medications; gradual reduction over 24–48h; NO need for IV treatment</td></tr>
+            <tr><td><strong>Hypertensive Pseudocrisis</strong></td><td>Elevated, highly variable</td><td>Absent</td><td>Identify anxiety/pain as cause; NOT a true hypertensive emergency</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>End-Organ Damage = Hypertensive Emergency</h3>
+      <ul>
+        <li>Hypertensive encephalopathy (PRES — Posterior Reversible Encephalopathy Syndrome)</li>
+        <li>Intracranial haemorrhage (ICH)</li>
+        <li>Acute ischaemic stroke with very high BP requiring management</li>
+        <li>Aortic dissection (Type A or B)</li>
+        <li>Acute pulmonary oedema / flash pulmonary oedema</li>
+        <li>Acute coronary syndrome (NSTEMI/UA with hypertension)</li>
+        <li>Acute kidney injury (hypertensive nephrosclerosis)</li>
+        <li>Eclampsia / severe pre-eclampsia</li>
+        <li>Hypertensive retinopathy (Grade III–IV — haemorrhages, papilloedema)</li>
+        <li>Microangiopathic haemolytic anaemia (TMA with severe hypertension)</li>
+      </ul>
+    </section>
+
+    <section id="physiology">
+      <h2>Pathophysiology — Why BP Causes Organ Damage</h2>
+      <h3>Loss of Cerebral Autoregulation</h3>
+      <p>Normally, cerebral blood flow (CBF) is maintained constant between MAP 60–150 mmHg (autoregulation). In chronic hypertension, this curve shifts right (higher range required). In hypertensive emergency, MAP exceeds the upper limit of autoregulation → pressure-passive flow → breakthrough hyperperfusion → cerebral oedema → hypertensive encephalopathy.</p>
+      <p><strong>Implication:</strong> Rapidly lowering BP to "normal" in a chronically hypertensive patient = CBF falls below their autoregulatory floor → watershed infarction. This is why we lower MAP by only 10–20% in the first hour.</p>
+      <h3>Endothelial Injury</h3>
+      <p>Very high BP → endothelial shear stress → fibrinoid necrosis of arterioles → microangiopathic haemolytic anaemia (MAHA) → target organ ischaemia. This produces the "malignant hypertension" picture: very high BP + papilloedema + MAHA + AKI.</p>
+      <h3>Renin-Angiotensin-Aldosterone Axis</h3>
+      <p>Renal ischaemia from BP crisis → ↑ renin → ↑ angiotensin II → vasoconstriction → further BP elevation → vicious cycle. Also: aldosterone → Na and water retention → volume expansion → more BP elevation.</p>
+    </section>
+
+    <section id="targets">
+      <h2>BP Reduction Targets — Scenario-Specific</h2>
+      <div class="warn-box">
+        <div class="kb-label">General Principle — Do NOT lower to normal in first hour</div>
+        <p>Rapid normalisation → cerebral and renal hypoperfusion due to shifted autoregulation. Target: reduce MAP by 10–20% in first 1 hour, then gradually to 160/100 over 2–6 hours, then to normal over next 24–48 hours. Exception: aortic dissection (fastest lowering needed).</p>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Scenario</th><th>BP Target</th><th>Timing</th><th>First-Line Drug</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Hypertensive encephalopathy / PRES</strong></td><td>Reduce MAP by 20–25% in first hour</td><td>Over 1–6 hours</td><td>Labetalol IV or Nicardipine infusion</td></tr>
+            <tr><td><strong>Ischaemic stroke (not for tPA)</strong></td><td>Treat only if &gt;220/120 mmHg; reduce by 15–25%</td><td>Over 24 hours; gentle lowering</td><td>Labetalol IV; avoid over-lowering (worsens penumbra)</td></tr>
+            <tr><td><strong>Ischaemic stroke — for tPA</strong></td><td>SBP &lt;185, DBP &lt;110 before tPA; maintain &lt;180/105 for 24h post-tPA</td><td>Before/during tPA</td><td>Labetalol 10 mg IV boluses; nicardipine infusion</td></tr>
+            <tr><td><strong>Intracerebral haemorrhage (ICH)</strong></td><td>SBP target &lt;140 mmHg (INTERACT-2, ATACH-2) — if SBP &gt;150–220</td><td>Within 1 hour; maintain for 24h</td><td>Nicardipine infusion; Labetalol IV</td></tr>
+            <tr><td><strong>Aortic dissection (Type A or B)</strong></td><td>SBP &lt;120 AND HR &lt;60 as rapidly as possible (within 20 min)</td><td>FASTEST BP lowering — minutes</td><td>Labetalol (alpha+beta blockade) OR Esmolol IV + Nitroprusside; β-blocker FIRST before vasodilator</td></tr>
+            <tr><td><strong>Acute pulmonary oedema</strong></td><td>Reduce by 20–30% rapidly</td><td>Over 30–60 min</td><td>GTN infusion + Furosemide IV; add CPAP/NIV</td></tr>
+            <tr><td><strong>ACS + hypertension</strong></td><td>Gradual reduction; target &lt;140/90</td><td>Over hours</td><td>GTN infusion; Metoprolol IV (if no contraindication)</td></tr>
+            <tr><td><strong>Eclampsia / Severe pre-eclampsia</strong></td><td>SBP &lt;160, DBP &lt;110 — DON'T over-treat</td><td>Over 30–60 min</td><td>Labetalol IV 20–80 mg OR Hydralazine 5–10 mg IV; MgSO₄ for seizure prophylaxis</td></tr>
+            <tr><td><strong>Hypertensive AKI</strong></td><td>Reduce MAP 10–20% over 1–2h</td><td>Gradual</td><td>Nicardipine or Labetalol; avoid ACEi/ARB in acute phase</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="drugs">
+      <h2>IV Antihypertensive Drug Reference</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Dose</th><th>Onset / Duration</th><th>Mechanism</th><th>Best For</th><th>Avoid</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Labetalol</strong></td><td>20–80 mg IV bolus q10–15 min OR 0.5–2 mg/min infusion (max 300 mg/24h)</td><td>5–10 min / 3–6h</td><td>α + β blockade</td><td>Most hypertensive emergencies; eclampsia; aortic dissection (combine with vasodilator)</td><td>Asthma, severe bradycardia, heart block, decompensated HF</td></tr>
+            <tr><td><strong>GTN (Nitroglycerin)</strong></td><td>5–200 mcg/min IV infusion (titrate)</td><td>1–2 min / 3–5 min</td><td>NO donor → venodilation &gt; arteriodilation</td><td>ACS, acute pulmonary oedema, hypertension with chest pain</td><td>PDE5 inhibitors, RV infarction, hypovolaemia</td></tr>
+            <tr><td><strong>Sodium Nitroprusside</strong></td><td>0.3–10 mcg/kg/min IV infusion (needs arterial line)</td><td>Seconds / 1–2 min</td><td>NO donor → arterial + venous dilation</td><td>Most hypertensive emergencies; aortic dissection (after β-blocker)</td><td>Renal/hepatic failure (cyanide accumulation); pregnancy; raised ICP</td></tr>
+            <tr><td><strong>Nicardipine</strong></td><td>5–15 mg/hr IV infusion</td><td>5–15 min / 4–6h</td><td>Ca²⁺ channel blocker (dihydropyridine)</td><td>Hypertensive encephalopathy, stroke, post-cardiac surgery</td><td>Decompensated HF, hepatic failure</td></tr>
+            <tr><td><strong>Esmolol</strong></td><td>500 mcg/kg bolus → 50–300 mcg/kg/min infusion</td><td>1–2 min / 10–30 min</td><td>Short-acting β₁ blocker</td><td>Aortic dissection (first-line β-blocker), intraoperative hypertension</td><td>Asthma, bradycardia, heart block</td></tr>
+            <tr><td><strong>Hydralazine</strong></td><td>5–10 mg IV slowly over 20 min; repeat q20 min</td><td>10–20 min / 3–8h</td><td>Direct arterial vasodilator</td><td>Eclampsia/pre-eclampsia; paediatric hypertension</td><td>Aortic dissection (reflex tachycardia); coronary artery disease</td></tr>
+            <tr><td><strong>Phentolamine</strong></td><td>2.5–5 mg IV bolus; repeat as needed</td><td>1–2 min / 15–30 min</td><td>α₁ + α₂ blocker</td><td>Phaeochromocytoma crisis; cocaine-induced hypertension; MAOI crisis</td><td>—</td></tr>
+            <tr><td><strong>Clevidipine</strong></td><td>1–21 mg/hr IV infusion</td><td>2–4 min / 5–15 min</td><td>Ultra-short Ca²⁺ channel blocker</td><td>Any hypertensive emergency; precise titration; perioperative</td><td>Soya/egg allergy (lipid emulsion); severe aortic stenosis</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="scenarios">
+      <h2>Specific Scenarios — Detailed Management</h2>
+      <h3>Hypertensive Encephalopathy / PRES</h3>
+      <p>Presents as: severe headache, nausea/vomiting, visual disturbances, confusion, seizures in setting of very high BP. MRI: FLAIR hyperintensity posterior parieto-occipital regions (PRES pattern). Treat BP → symptoms/MRI resolve within hours to days.</p>
+      <p>Management: Labetalol IV or nicardipine infusion. Target MAP reduction 20–25% in first hour. No specific drug for PRES — lowering BP is the treatment.</p>
+
+      <h3>Aortic Dissection</h3>
+      <div class="key-box">
+        <div class="kb-label">Aortic Dissection — Fastest BP Lowering Needed</div>
+        <p>Target: SBP &lt;120 AND HR &lt;60 within 20 minutes. Each additional mmHg of BP propagates the dissection and worsens prognosis. <strong>β-blocker FIRST to reduce HR and dP/dt, THEN vasodilator.</strong> Giving a vasodilator without a β-blocker causes reflex tachycardia → increases aortic wall stress → propagates dissection.</p>
+        <p>Protocol: Esmolol 500 mcg/kg bolus → 50–300 mcg/kg/min infusion (to achieve HR &lt;60) → THEN Sodium nitroprusside 0.5–10 mcg/kg/min to achieve SBP &lt;120.</p>
+      </div>
+
+      <h3>Eclampsia / Pre-eclampsia</h3>
+      <ul>
+        <li>Magnesium sulphate 4g IV loading over 15–20 min → 1–2g/hr infusion — for seizure prevention AND treatment</li>
+        <li>Antihypertensive if SBP ≥160 or DBP ≥110: Labetalol 20 mg IV → repeat 40 mg → 80 mg (total max 300 mg); OR Hydralazine 5 mg IV q20 min (max 20 mg); OR Nifedipine 10 mg PO (oral — NOT sublingual)</li>
+        <li>Target: SBP 140–155, DBP 90–105 — do NOT lower too aggressively (placental hypoperfusion)</li>
+        <li>Definitive treatment: Delivery of the foetus</li>
+        <li>Monitor: MgSO₄ toxicity (↓DTRs → first sign; respiratory arrest → needs calcium gluconate 1g IV antidote)</li>
+      </ul>
+    </section>
+
+    <section id="monitoring">
+      <h2>Monitoring in Hypertensive Emergency</h2>
+      <ul>
+        <li><strong>Arterial line:</strong> Mandatory for nitroprusside; strongly recommended for all IV antihypertensive infusions (allows beat-to-beat BP monitoring)</li>
+        <li><strong>Target-organ monitoring:</strong> Neuro: GCS, NIHSS; Cardiac: ECG, troponin, echo; Renal: hourly UO, creatinine; Ophthalmology: fundoscopy</li>
+        <li><strong>ECG:</strong> Continuous monitoring for ischaemia, arrhythmia</li>
+        <li><strong>Urinary catheter:</strong> Monitor UO hourly; oliguria suggests renal hypoperfusion (over-treatment) or ongoing hypertensive nephropathy</li>
+        <li><strong>MRI Brain:</strong> If encephalopathy/PRES suspected — FLAIR sequence most sensitive</li>
+      </ul>
+    </section>
+
+    <section id="india">
+      <h2>Indian Context</h2>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ED — Practical Considerations</div>
+        <ul>
+          <li><strong>Sublingual nifedipine is STILL used in India</strong> despite strong evidence of harm. Educate your team to stop this practice entirely — it causes uncontrolled BP falls, strokes, and MI.</li>
+          <li><strong>Hydralazine availability:</strong> More widely available in India than nicardipine; useful in eclampsia. Watch for reflex tachycardia — avoid in coronary disease.</li>
+          <li><strong>Nitroprusside:</strong> Requires arterial line and careful monitoring; cyanide toxicity with prolonged use or renal failure — limit to 10 mcg/kg/min × 10 min or 0.5 mcg/kg/min × 10h. Use thiosulphate co-infusion with prolonged use.</li>
+          <li><strong>Phaeochromocytoma in India:</strong> Consider in young hypertensive with paroxysmal BP, sweating, palpitations, headache. Urine VMA/metanephrines. Give phentolamine or phenoxybenzamine (PO) — NEVER give β-blocker without α-blockade (unopposed α → hypertensive crisis).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="pearls">
+      <h2>Clinical Pearls</h2>
+      <div class="pearl-grid">
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 1 — Urgency vs Emergency: The Organ Makes the Difference</div>
+          <p>Very high BP without end-organ damage = Hypertensive URGENCY → oral medications, gradual reduction over 24–48h. No IV treatment needed, no ICU admission. BP alone doesn't determine urgency — organs do.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 2 — 10–20% MAP Reduction in First Hour Only</div>
+          <p>Chronic hypertension shifts cerebral autoregulation rightward. Dropping BP rapidly to "normal" = CBF falls below autoregulatory floor = stroke. Reduce MAP by 10–20% only in first hour. Then gradually over 24–48h.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 3 — Aortic Dissection: β-Blocker BEFORE Vasodilator</div>
+          <p>Vasodilator alone → reflex tachycardia → ↑ aortic wall stress → propagates dissection. Always give β-blocker (esmolol or labetalol) first to achieve HR &lt;60, THEN add vasodilator to achieve SBP &lt;120.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 4 — ICH: Treat if SBP &gt;150–220 mmHg</div>
+          <p>INTERACT-2 and ATACH-2 trials support aggressive BP control (SBP &lt;140) in ICH within first 6h. Reduces haematoma expansion. BUT too-aggressive lowering can cause perihematoma ischaemia — watch for neurological worsening.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 5 — MgSO₄ Toxicity Signs: Loss of DTRs First</div>
+          <p>MgSO₄ toxicity progression: Loss of patellar reflex (Mg 4–5 mmol/L) → Respiratory paralysis (Mg 6–7 mmol/L) → Cardiac arrest (Mg &gt;12 mmol/L). Check DTRs before each dose. Antidote: Calcium gluconate 1g IV (10 ml of 10%).</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 6 — Phaeochromocytoma: α BEFORE β</div>
+          <p>Giving a β-blocker in phaeochromocytoma crisis without α-blockade → unopposed α-receptor stimulation → severe hypertensive crisis. ALWAYS start α-blockade (phentolamine IV or phenoxybenzamine PO) first, THEN add β-blocker if needed for tachycardia.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common Mistakes</h2>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 1 — Sublingual Nifedipine</div>
+        <p>Causes precipitous, uncontrolled BP drop → stroke, MI, death. Cannot be titrated. Absolutely contraindicated in hypertensive emergency/urgency. Use IV labetalol, nicardipine, or oral amlodipine.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 2 — Lowering BP Too Fast to Normal</div>
+        <p>Rapid normalisation of BP in chronically hypertensive patient = relative hypotension → watershed stroke, renal failure. Lower MAP by only 10–20% in first hour. Exception: aortic dissection.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 3 — Giving Vasodilator Without β-Blocker in Aortic Dissection</div>
+        <p>Vasodilators alone → reflex tachycardia → ↑ dp/dt → propagates dissection → death. Must give β-blocker first to reduce HR &lt;60, then vasodilator.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 4 — β-Blocker First in Phaeochromocytoma</div>
+        <p>β-blockade in phaeochromocytoma without α-blockade = unopposed α-stimulation = severe BP surge. ALWAYS establish α-blockade (phentolamine IV) before any β-blocker.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 5 — Not Checking for End-Organ Damage</div>
+        <p>BP of 200/120 without any symptoms may be hypertensive urgency (oral treatment only). The same BP with headache + confusion + papilloedema = hypertensive emergency (IV treatment). The target organ assessment determines urgency, not the BP number.</p>
+      </div>
+    </section>
+
+    <section id="exam">
+      <h2>Exam Pearls</h2>
+      <div class="exam-card"><p><strong>Q: Difference between hypertensive emergency and urgency?</strong> → Emergency = severely elevated BP WITH acute end-organ damage (encephalopathy, ICH, dissection, ACS, pulmonary oedema, eclampsia, AKI) → IV treatment. Urgency = elevated BP WITHOUT end-organ damage → oral treatment, gradual reduction.</p></div>
+      <div class="exam-card"><p><strong>Q: Drug of choice in aortic dissection with hypertension?</strong> → β-blocker FIRST (esmolol or labetalol) to achieve HR &lt;60, THEN vasodilator (nitroprusside or nicardipine) to achieve SBP &lt;120 within 20 min. Never give vasodilator alone.</p></div>
+      <div class="exam-card"><p><strong>Q: BP target in ischaemic stroke (no tPA)?</strong> → Do NOT treat unless SBP &gt;220 or DBP &gt;120. If treating: reduce by only 15–25% in first 24h. Most strokes need permissive hypertension to maintain penumbra perfusion.</p></div>
+      <div class="exam-card"><p><strong>Q: MgSO₄ toxicity — first sign and antidote?</strong> → First sign = loss of patellar (deep tendon) reflexes (Mg ~4–5 mmol/L). Antidote: Calcium gluconate 1g IV (10 ml of 10% solution). Respiratory arrest occurs at Mg ~6–7 mmol/L.</p></div>
+      <div class="exam-card"><p><strong>Q: Why is rapid BP normalisation dangerous in hypertensive emergency?</strong> → Chronic hypertension shifts cerebral autoregulation rightward. Rapid normalisation = MAP falls below patient's autoregulatory floor = passive CBF reduction = watershed ischaemia. Lower MAP by only 10–20% in first hour.</p></div>
+    </section>
+
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Mancia G, Kreutz R, Brunström M, et al.</strong> 2023 ESH Guidelines for the Management of Arterial Hypertension. <em>J Hypertens.</em> 2023;41(12):1874–2071.</li>
+        <li><strong>Anderson CS, Heeley E, Huang Y, et al. (INTERACT-2).</strong> Rapid Blood-Pressure Lowering in Patients with Acute Intracerebral Hemorrhage. <em>N Engl J Med.</em> 2013;368(25):2355–2365.</li>
+        <li><strong>Qureshi AI, Palesch YY, Barsan WG, et al. (ATACH-2).</strong> Intensive Blood-Pressure Lowering in Patients with Acute Cerebral Hemorrhage. <em>N Engl J Med.</em> 2016;375(11):1033–1043.</li>
+        <li><strong>Johnson RJ, Feehally J, Floege J (eds).</strong> Comprehensive Clinical Nephrology, 6th edition. Chapter 38: Hypertensive Emergency. Elsevier; 2019.</li>
+        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Chapter 25: Hypertensive Crises. Elsevier; 2018.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 4th edition. Chapter 21: Hypertensive Emergencies. Lippincott Williams &amp; Wilkins; 2014.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+</body>
+</html>

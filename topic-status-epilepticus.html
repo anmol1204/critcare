@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Status Epilepticus — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .pearl-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1rem; margin:1.2rem 0; }
+    .pearl-card { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:1rem 1.2rem; }
+    .pearl-card .pearl-label { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#92400e; margin-bottom:.5rem; }
+    .pearl-card p { font-size:.88rem; color:#78350f; line-height:1.7; margin:0; }
+    .mistake-card { background:#fef2f2; border:1px solid #fecaca; border-radius:10px; padding:1rem 1.2rem; margin:.5rem 0; }
+    .mistake-card .m-label { font-size:.68rem; font-weight:700; color:#991b1b; text-transform:uppercase; letter-spacing:.08em; margin-bottom:.4rem; }
+    .mistake-card p { font-size:.88rem; color:#7f1d1d; line-height:1.7; margin:0; }
+    .exam-card { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:.9rem 1.1rem; margin:.4rem 0; }
+    .exam-card p { font-size:.88rem; color:#1e40af; line-height:1.7; margin:0; }
+    .exam-card strong { color:#1e3a8a; }
+    .time-step { border-left:3px solid var(--blue); padding:.8rem 1.2rem; margin:.6rem 0; background:var(--bg-alt); border-radius:0 8px 8px 0; }
+    .time-step .ts-time { font-size:.7rem; font-weight:800; color:var(--blue); text-transform:uppercase; letter-spacing:.08em; margin-bottom:.3rem; }
+    .time-step p { font-size:.9rem; color:var(--ink); margin:0; line-height:1.7; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">ICU Topics</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Status Epilepticus</div>
+    <h1>⚡ Status Epilepticus</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">NCS 2024 ✦ Latest</span>
+      <span class="gbadge esicm">ESICM</span>
+      <span class="gbadge isccm">ISCCM</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Neurological Emergency</span>
+      <span class="topic-tag">Time-Critical</span>
+      <span class="topic-updated">Neurocritical Care Society 2024 Guidelines</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#definition">Definition & Types</a></li>
+        <li><a href="#physiology">How SE Works</a></li>
+        <li><a href="#causes">Causes</a></li>
+        <li><a href="#algorithm">Treatment Algorithm</a></li>
+        <li><a href="#drugs">Drug Doses</a></li>
+        <li><a href="#refractory">Refractory SE</a></li>
+        <li><a href="#monitoring">ICU Monitoring</a></li>
+        <li><a href="#india">Indian Context</a></li>
+        <li><a href="#pearls">Clinical Pearls</a></li>
+        <li><a href="#mistakes">Common Mistakes</a></li>
+        <li><a href="#exam">Exam Pearls</a></li>
+        <li><a href="#references">References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="definition">
+      <h2>Definition &amp; Types</h2>
+      <p><strong>Status Epilepticus (SE)</strong> is defined as: (1) a seizure lasting ≥5 minutes, OR (2) two or more discrete seizures without full recovery of consciousness between them.</p>
+      <p>The older 30-minute definition is obsolete. Seizures lasting &gt;5 minutes are unlikely to stop spontaneously and begin causing neuronal injury — hence immediate treatment.</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Type</th><th>Description</th><th>Clinical Presentation</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Generalised Convulsive SE (GCSE)</strong></td><td>Most common; tonic-clonic; most dangerous</td><td>Bilateral tonic-clonic movements + altered consciousness; may progress to subtle SE</td></tr>
+            <tr><td><strong>Non-Convulsive SE (NCSE)</strong></td><td>Electrical seizure without convulsions</td><td>Altered consciousness, staring, subtle eye deviation, automatisms — easily missed; needs EEG</td></tr>
+            <tr><td><strong>Refractory SE (RSE)</strong></td><td>SE persisting despite 2 adequate antiseizure medications</td><td>Any type; requires anaesthetic agents + EEG monitoring</td></tr>
+            <tr><td><strong>Super-Refractory SE (SRSE)</strong></td><td>SE persisting &gt;24h despite anaesthetic agents, including recurrence on wean</td><td>Requires continuous EEG + specialist neurocritical care</td></tr>
+            <tr><td><strong>Subtle SE</strong></td><td>Late stage of untreated GCSE — motor activity minimal</td><td>Comatose patient with mild eye/limb twitching; EEG shows ongoing seizure activity</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="physiology">
+      <h2>How Status Epilepticus Works — Pathophysiology</h2>
+      <p>A seizure involves hypersynchronous neuronal firing. Normally, inhibitory mechanisms (GABA) terminate seizures within seconds. In SE, these fail:</p>
+      <h3>The Vicious Cycle</h3>
+      <ul>
+        <li>Prolonged depolarisation → Ca²⁺ influx → excitotoxicity → neuronal death</li>
+        <li>GABA-A receptor internalisation (downregulation) — this is why benzodiazepines become LESS effective with time → treat early and treat adequately</li>
+        <li>NMDA receptor upregulation → more excitation → harder to stop</li>
+        <li>Systemic consequences: Hypoxia, hyperthermia (temperature rises 1°C every 30 min of SE), hypoglycaemia, lactic acidosis, rhabdomyolysis, aspiration</li>
+      </ul>
+      <h3>Neuronal Injury Timeline</h3>
+      <ul>
+        <li><strong>0–5 min:</strong> Compensatory mechanisms active; cerebral blood flow ↑; no neuronal injury</li>
+        <li><strong>5–30 min:</strong> Compensation begins to fail; beginning of excitotoxic injury</li>
+        <li><strong>&gt;30 min:</strong> Established SE; neuronal injury; systemic complications; GABA receptors internalised (BZD resistance)</li>
+        <li><strong>&gt;60 min:</strong> Severe neuronal death; high morbidity/mortality</li>
+      </ul>
+    </section>
+
+    <section id="causes">
+      <h2>Causes of Status Epilepticus</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Category</th><th>Common Causes in India</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Breakthrough seizures</strong></td><td>Known epileptic — missed doses, drug interaction, alcohol withdrawal</td></tr>
+            <tr><td><strong>Acute structural</strong></td><td>Stroke (ischaemic/haemorrhagic), subdural haematoma, TBI, CNS tumour</td></tr>
+            <tr><td><strong>CNS Infection</strong></td><td>Bacterial meningitis, viral encephalitis (HSV, Japanese B, Nipah in Kerala), cerebral malaria, NCC (Neurocysticercosis — very common in India)</td></tr>
+            <tr><td><strong>Metabolic</strong></td><td>Hypoglycaemia, hyponatraemia, hypocalcaemia, uraemia, hepatic encephalopathy</td></tr>
+            <tr><td><strong>Drug/Toxin</strong></td><td>Organophosphate poisoning (very common in India — causes SLUDGE + seizures), cocaine, tramadol, INH toxicity, TCA overdose, alcohol withdrawal</td></tr>
+            <tr><td><strong>Autoimmune</strong></td><td>Anti-NMDA-R encephalitis, anti-LGI1, anti-CASPR2 — increasingly recognised; CSF/MRI needed</td></tr>
+            <tr><td><strong>Hypoxic-ischaemic</strong></td><td>Post-cardiac arrest (very refractory); requires EEG monitoring</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 India-Specific — Most Common Causes</div>
+        <p><strong>Neurocysticercosis (NCC):</strong> MOST COMMON cause of new-onset seizures in adults in India (Taenia solium pork tapeworm larvae in brain). CT shows ring-enhancing lesions. Treatment: Albendazole 400 mg BD × 8–30 days + Dexamethasone (to prevent cyst death inflammatory reaction causing worse seizures). Anti-epileptics essential.</p>
+        <p><strong>Organophosphate SE:</strong> Atropine controls muscarinic features; Diazepam (benzodiazepines) is the drug of choice for OP-related seizures. Pralidoxime does NOT stop seizures.</p>
+      </div>
+    </section>
+
+    <section id="algorithm">
+      <h2>Treatment Algorithm — Time-Based (NCS 2024)</h2>
+      <div class="time-step">
+        <div class="ts-time">0–5 min — Stabilise</div>
+        <p>Airway, Breathing, Circulation. O₂ 100% via mask. IV access × 2. Glucose (bedside) → if low give 25g Dextrose IV immediately. Draw blood: glucose, Na, Ca, Mg, LFT, RFT, drug levels, toxicology screen, blood cultures. 12-lead ECG. Positioning: lateral decubitus if no C-spine injury.</p>
+      </div>
+      <div class="time-step">
+        <div class="ts-time">5–20 min — First-Line (Benzodiazepines)</div>
+        <p><strong>Choose ONE route based on access:</strong><br>
+        IV access available: <strong>Lorazepam 0.1 mg/kg IV</strong> (max 4 mg/dose) — can repeat once after 5 min<br>
+        No IV: <strong>Midazolam 10 mg IM</strong> (0.2 mg/kg; max 10 mg) — preferred prehospital (RAMPART trial: IM midazolam = IV lorazepam)<br>
+        Buccal: Midazolam 10 mg buccal (children, no IV access)<br>
+        PR: Diazepam 0.5 mg/kg PR (max 20 mg) — less preferred (slow absorption)</p>
+      </div>
+      <div class="time-step">
+        <div class="ts-time">20–40 min — Second-Line (If Seizure Persists)</div>
+        <p>Choose ONE (if BZD failed or insufficient dose given):<br>
+        <strong>Levetiracetam 60 mg/kg IV</strong> (max 4500 mg) over 10 min — preferred (ESETT trial: first-line among 2nd-line agents; safe, no drug interactions)<br>
+        <strong>Sodium Valproate 40 mg/kg IV</strong> (max 3000 mg) over 10 min — avoid in liver disease, pregnancy, mitochondrial disease<br>
+        <strong>Fosphenytoin 20 mg PE/kg IV</strong> at max 150 mg PE/min — cardiovascular monitoring needed; avoid in cardiac arrhythmias</p>
+      </div>
+      <div class="time-step">
+        <div class="ts-time">40–60 min — Third-Line (Refractory SE)</div>
+        <p>Repeat second-line agent OR proceed to anaesthetic agents. Intubate. Start continuous EEG monitoring.</p>
+      </div>
+      <div class="time-step">
+        <div class="ts-time">&gt;60 min — Anaesthetic Agents (RSE)</div>
+        <p><strong>Propofol</strong> 1–2 mg/kg IV bolus, then 1–10 mg/kg/hr infusion (titrate to burst suppression on EEG)<br>
+        <strong>Midazolam</strong> 0.2 mg/kg bolus, then 0.05–2 mg/kg/hr infusion<br>
+        <strong>Thiopentone/Pentobarbital</strong> 3–5 mg/kg bolus, then 1–5 mg/kg/hr infusion (for SRSE)<br>
+        <strong>Ketamine</strong> 1.5 mg/kg bolus, then 0.5–5 mg/kg/hr — emerging evidence; NMDA antagonist; may protect against excitotoxicity</p>
+      </div>
+    </section>
+
+    <section id="drugs">
+      <h2>Drug Reference Table</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Dose</th><th>Route</th><th>Onset</th><th>Key Points</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Lorazepam</strong></td><td>0.1 mg/kg IV (max 4 mg); repeat once</td><td>IV only</td><td>2–3 min</td><td>Gold standard IV BZD; longer duration than diazepam; needs refrigeration</td></tr>
+            <tr><td><strong>Midazolam (IM)</strong></td><td>0.2 mg/kg IM (max 10 mg)</td><td>IM / Buccal / IN</td><td>5–10 min</td><td>Prehospital preferred; IM = IV lorazepam (RAMPART); IN: 0.2 mg/kg each nostril</td></tr>
+            <tr><td><strong>Diazepam</strong></td><td>0.15–0.2 mg/kg IV (max 10 mg); 0.5 mg/kg PR</td><td>IV / PR</td><td>1–3 min (IV)</td><td>Short brain duration (redistributes); follow with phenytoin/VPA; available everywhere in India</td></tr>
+            <tr><td><strong>Levetiracetam</strong></td><td>60 mg/kg IV (max 4500 mg) over 10 min</td><td>IV</td><td>15–20 min</td><td>No drug interactions; safe in liver disease; preferred 2nd-line (ESETT)</td></tr>
+            <tr><td><strong>Sodium Valproate</strong></td><td>40 mg/kg IV (max 3000 mg) over 10 min</td><td>IV</td><td>15–20 min</td><td>Avoid: liver disease, pregnancy, valproate-sensitive mitochondrial disease, paediatric &lt;2 yrs</td></tr>
+            <tr><td><strong>Fosphenytoin</strong></td><td>20 mg PE/kg IV at 150 mg PE/min</td><td>IV</td><td>15–30 min</td><td>Cardiac monitoring mandatory; hypotension + arrhythmia risk; avoid in cardiac disease</td></tr>
+            <tr><td><strong>Phenobarbitone</strong></td><td>20 mg/kg IV at 50–100 mg/min (max 1g)</td><td>IV</td><td>15–30 min</td><td>Widely available in India; sedating; useful when VPA/LEV unavailable</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="refractory">
+      <h2>Refractory &amp; Super-Refractory SE</h2>
+      <div class="warn-box">
+        <div class="kb-label">Refractory SE (RSE) — After 2 ASMs Failed</div>
+        <p>RSE = seizures persisting despite adequate doses of 2 antiseizure medications (1 BZD + 1 non-BZD). Requires: ICU admission + intubation + continuous EEG monitoring + anaesthetic agents. Mortality of RSE: 20–40%.</p>
+      </div>
+      <h3>Investigations in RSE — Find the Cause</h3>
+      <ul>
+        <li>CT head (urgent — exclude structural lesion, herniation)</li>
+        <li>MRI brain (after stabilisation) — encephalitis, cortical dysplasia, PRES</li>
+        <li>LP: CSF WBC, protein, glucose, culture, HSV PCR, autoimmune encephalitis panel</li>
+        <li>EEG: Continuous EEG in all RSE — detect NCSE, guide treatment, assess burst suppression</li>
+        <li>Autoimmune panel: anti-NMDA-R, anti-LGI1, anti-CASPR2, anti-GABA-B, anti-AMPA</li>
+        <li>MRI: FLAIR hyperintensity → encephalitis, stroke, PRES, tumour</li>
+      </ul>
+      <h3>EEG-Guided Anaesthesia Target</h3>
+      <p>Goal of anaesthetic agents: achieve burst suppression (brief bursts of activity separated by electrical silence). Maintain for 24–48h, then attempt gradual wean with continuous EEG monitoring.</p>
+      <h3>Empirical Treatment for Unknown Cause</h3>
+      <ul>
+        <li><strong>IV Thiamine 200 mg</strong> before any glucose — if alcoholism or malnutrition suspected</li>
+        <li><strong>Acyclovir 10 mg/kg IV q8h</strong> — if HSV encephalitis possible (LP/MRI not yet available)</li>
+        <li><strong>Methylprednisolone 1g IV OD × 3–5 days</strong> — if autoimmune encephalitis suspected</li>
+        <li><strong>IVIG 2g/kg over 5 days OR Plasma exchange</strong> — confirmed autoimmune SE</li>
+      </ul>
+    </section>
+
+    <section id="monitoring">
+      <h2>ICU Monitoring in SE</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>Target/Action</th></tr></thead>
+          <tbody>
+            <tr><td>Continuous EEG</td><td>Mandatory in RSE and all intubated patients post-SE; detect NCSE (20–40% of comatose ICU patients)</td></tr>
+            <tr><td>Temperature</td><td>Treat hyperthermia aggressively — fever ↑ metabolic demand ↑ SE duration; target 36–37°C</td></tr>
+            <tr><td>Blood Glucose</td><td>Target 140–180 mg/dL; hypoglycaemia causes SE AND worsens neuronal injury</td></tr>
+            <tr><td>Na, Ca, Mg</td><td>Correct electrolyte abnormalities — both cause SE AND prevent treatment response</td></tr>
+            <tr><td>ABG / SpO₂</td><td>SpO₂ ≥94%; PaCO₂ 35–45; acidaemia from SE usually improves with seizure termination</td></tr>
+            <tr><td>Brain CT</td><td>All new-onset SE with unclear cause; or if clinical deterioration</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="india">
+      <h2>Indian Context</h2>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Common Presentations &amp; Practical Considerations</div>
+        <ul>
+          <li><strong>Drug availability:</strong> Lorazepam is not universally available in India — Diazepam 0.15–0.2 mg/kg IV is a reliable alternative (followed by a longer-acting agent). Phenobarbitone (phenobarbital) is widely available and effective as 2nd/3rd line.</li>
+          <li><strong>Levetiracetam vs Phenytoin:</strong> Levetiracetam increasingly available; preferred because no cardiac monitoring needed, no drug interactions. Phenytoin still used widely but fosphenytoin is preferred (fewer phlebitis complications).</li>
+          <li><strong>Organophosphate SE:</strong> Diazepam is the drug of choice. Use high doses (0.25–0.5 mg/kg) as OP causes cholinergic excess. Don't forget atropine for muscarinic features AND diazepam for central SE component.</li>
+          <li><strong>NCC-associated SE:</strong> Start antiseizure drug (levetiracetam or VPA), then treat NCC with albendazole + dexamethasone (reduces cyst inflammation). Don't give albendazole first without steroids — can precipitate severe inflammatory reaction and worsen SE.</li>
+          <li><strong>Thiamine deficiency:</strong> Always give thiamine 200 mg IV before dextrose in alcoholic or malnourished patients — prevents Wernicke's encephalopathy.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="pearls">
+      <h2>Clinical Pearls</h2>
+      <div class="pearl-grid">
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 1 — 5 Minutes = Treat</div>
+          <p>The 30-minute definition is dead. Any seizure ≥5 minutes = Status Epilepticus = start treatment NOW. GABA receptors internalise with time — the longer you wait, the harder it is to stop. Time is neurons.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 2 — RAMPART: IM Midazolam = IV Lorazepam</div>
+          <p>RAMPART trial: IM midazolam 10 mg was AS EFFECTIVE as IV lorazepam for out-of-hospital SE — and faster (no IV access needed). Use IM midazolam in ED when IV access is delayed. Anterolateral thigh injection.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 3 — ESETT: LEV = VPA = FOS</div>
+          <p>ESETT trial: Levetiracetam, Valproate, and Fosphenytoin are equally effective as 2nd-line agents (~50% success each). Choose based on clinical context: liver disease → LEV; pregnancy → LEV; cardiac → LEV or VPA. All are reasonable first choices.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 4 — NCSE is Underdiagnosed</div>
+          <p>20–40% of comatose ICU patients have NCSE on EEG. It looks like delirium, encephalopathy, or "not waking up after seizure." If a patient isn't recovering 30–60 min after a seizure → get EEG. Only EEG can diagnose NCSE.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 5 — Don't Forget Glucose and Thiamine</div>
+          <p>Hypoglycaemia causes SE AND prevents response to antiseizure drugs. Check glucose at bedside FIRST. Give 25g Dextrose IV if low. In alcoholics/malnourished: thiamine 200 mg IV BEFORE glucose.</p>
+        </div>
+        <div class="pearl-card">
+          <div class="pearl-label">💡 Pearl 6 — Temperature Kills Neurons in SE</div>
+          <p>Core temperature rises ~1°C every 30 minutes of SE. Hyperthermia directly worsens neuronal injury and makes SE harder to stop. Check temperature, give paracetamol, use cooling measures. This is often overlooked.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mistakes">
+      <h2>Common Mistakes</h2>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 1 — Waiting for IV Access Before Treating</div>
+        <p>IM midazolam 10 mg works as well as IV lorazepam. Don't delay treatment by spending 5 minutes getting IV access. Give IM midazolam NOW, then get access.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 2 — Underdosing Benzodiazepines</div>
+        <p>The most common reason BZDs fail SE is underdosing. Lorazepam 1–2 mg is NOT enough — give 4 mg (0.1 mg/kg). Diazepam 5 mg is NOT enough — give 10–20 mg. Give full weight-based doses.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 3 — Not Starting 2nd-Line Agent After BZD</div>
+        <p>BZD stops the seizure but doesn't prevent recurrence (short brain duration). ALWAYS start a 2nd-line antiseizure medication (LEV, VPA, or phenytoin) after BZD control, even if the seizure has stopped.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 4 — Missing NCSE in Comatose Patient</div>
+        <p>After GCSE, patients should wake up within 20–30 minutes. If still unresponsive after 60 minutes → suspect NCSE or subtle SE. Need EEG to diagnose. Treatment: same as GCSE but no obvious convulsions to guide you.</p>
+      </div>
+      <div class="mistake-card">
+        <div class="m-label">❌ Mistake 5 — Not Looking for Underlying Cause</div>
+        <p>SE is a symptom, not a diagnosis. Every patient with SE needs: glucose, Na, Ca, CT head, LP (if CNS infection possible), toxicology screen, EEG. Treating SE without finding the cause = 50% recurrence.</p>
+      </div>
+    </section>
+
+    <section id="exam">
+      <h2>Exam Pearls (DrNB / PDCC / IFCCM)</h2>
+      <div class="exam-card"><p><strong>Q: Definition of Status Epilepticus?</strong> → Seizure lasting ≥5 minutes OR ≥2 seizures without full recovery between them. (Old 30-minute definition is obsolete.)</p></div>
+      <div class="exam-card"><p><strong>Q: First-line treatment of SE?</strong> → Benzodiazepine — Lorazepam 0.1 mg/kg IV (max 4 mg) if IV access. Midazolam 0.2 mg/kg IM (max 10 mg) if no IV. RAMPART trial confirmed IM midazolam = IV lorazepam.</p></div>
+      <div class="exam-card"><p><strong>Q: ESETT trial — what did it show?</strong> → Levetiracetam 60 mg/kg, Valproate 40 mg/kg, and Fosphenytoin 20 mg PE/kg are equally effective for established SE (~47–50% success each). No agent was superior.</p></div>
+      <div class="exam-card"><p><strong>Q: EEG target in refractory SE on anaesthetic agents?</strong> → Burst suppression — brief bursts of electrical activity separated by suppression. Maintain for 24–48h, then attempt wean. Continuous EEG monitoring mandatory in RSE.</p></div>
+      <div class="exam-card"><p><strong>Q: Most common cause of new-onset seizures/SE in adults in India?</strong> → Neurocysticercosis (NCC) — Taenia solium larvae in brain. CT: ring-enhancing lesions. Treatment: Albendazole + Dexamethasone (reduce inflammation) + antiseizure drugs.</p></div>
+    </section>
+
+    <section id="references" class="references-section">
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Glauser T, Shinnar S, Gloss D, et al.</strong> Evidence-Based Guideline: Treatment of Convulsive Status Epilepticus in Children and Adults (NCS 2016, updated 2024). <em>Epilepsy Currents.</em> 2016;16(1):48–61.</li>
+        <li><strong>Silbergleit R, Durkalski V, Lowenstein D, et al. (RAMPART).</strong> Intramuscular versus Intravenous Therapy for Prehospital Status Epilepticus. <em>N Engl J Med.</em> 2012;366(7):591–600.</li>
+        <li><strong>Kapur J, Elm J, Chamberlain JM, et al. (ESETT).</strong> Randomized Trial of Three Anticonvulsant Medications for Status Epilepticus. <em>N Engl J Med.</em> 2019;381(22):2103–2113.</li>
+        <li><strong>Rossetti AO, Logroscino G, Bromfield EB.</strong> Refractory Status Epilepticus: Effect of Treatment Aggressiveness on Prognosis. <em>Arch Neurol.</em> 2005;62(11):1698–1702.</li>
+        <li><strong>Betjemann JP, Lowenstein DH.</strong> Status Epilepticus in Adults. <em>Lancet Neurol.</em> 2015;14(6):615–624.</li>
+        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Chapter 51: Status Epilepticus. Elsevier; 2018.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 4th edition. Chapter 45: Seizures in the ICU. Lippincott Williams &amp; Wilkins; 2014.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+  </div>
+</footer>
+</body>
+</html>
