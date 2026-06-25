@@ -12,7 +12,14 @@
     .abg-hero h1{font-family:var(--font-disp);font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:.5rem;}
     .abg-hero p{color:rgba(255,255,255,.7);max-width:600px;line-height:1.7;}
     .abg-wrap{max-width:1160px;margin:0 auto;padding:2.5rem 5%;display:grid;grid-template-columns:400px 1fr;gap:2rem;align-items:start;}
-    @media(max-width:900px){.abg-wrap{grid-template-columns:1fr;}}
+    @media(max-width:900px){
+      .abg-wrap{grid-template-columns:1fr;}
+      .input-panel{position:static;}
+      #resultsPanel{order:2;}
+      .results-jump{display:block !important;}
+    }
+    .results-jump{display:none;width:100%;padding:.85rem;background:linear-gradient(135deg,#1e6fd9,#1453a8);color:#fff;border:none;border-radius:10px;font-family:var(--font-body);font-size:.95rem;font-weight:700;cursor:pointer;margin-top:.5rem;text-align:center;}
+    .results-jump:hover{opacity:.9;}
 
     /* ── Input Panel ── */
     .input-panel{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:1.8rem;position:sticky;top:90px;}
@@ -226,6 +233,7 @@
     </div>
 
     <button class="calc-btn" onclick="analyseABG()">🔬 Analyse ABG</button>
+    <button class="results-jump" id="resultsJump" onclick="document.getElementById('abgResults').scrollIntoView({behavior:'smooth',block:'start'})" style="display:none;">📊 See Results Below ↓</button>
     <button class="reset-btn" onclick="resetABG()">↺ Reset All</button>
     <div style="font-size:.7rem;color:var(--slate);margin-top:.8rem;line-height:1.5;text-align:center;">All formulas from Marino's ICU Book 5th Ed, Ch.31 (2025)<br>For clinical decision support — always apply clinical judgement</div>
   </div>
@@ -864,6 +872,14 @@ function analyseABG() {
   </div>`;
 
   document.getElementById('abgResults').innerHTML = html;
+
+  // Show "See Results" jump button on mobile
+  document.getElementById('resultsJump').style.display = 'block';
+
+  // Scroll to results automatically — critical on mobile (results are below input panel)
+  setTimeout(() => {
+    document.getElementById('abgResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 150);
 }
 
 function resetABG() {
@@ -873,6 +889,7 @@ function resetABG() {
   document.getElementById('placeholder').style.display = 'block';
   document.getElementById('abgResults').style.display = 'none';
   document.getElementById('abgResults').innerHTML = '';
+  document.getElementById('resultsJump').style.display = 'none';
 }
 </script>
 
