@@ -1,140 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Acute Liver Failure — CritCare.in</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
   <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;}
+    .ec strong{color:#1e3a8a;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .cn{background:#f0fdf4;border:1px solid #86efac;border-radius:4px;padding:.15rem .4rem;font-size:.62rem;font-weight:800;color:#15803d;text-transform:uppercase;margin-left:.3rem;vertical-align:middle;}
+  </style>
 </head>
 <body>
 <nav class="nav">
   <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
   <ul class="nav-menu" id="menu">
     <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-    <li><a href="topics.html" class="active">ICU Topics</a></li>
-    <li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
     <li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
-  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
 </nav>
 <header class="topic-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Acute Liver Failure</div>
-    <h1>🫀 Acute Liver Failure</h1>
-    <div class="topic-hero-meta">
-      <span class="topic-tag">Hepatology</span><span class="topic-tag">Coagulopathy</span>
-      <span class="topic-tag red">Critical</span>
-      <span class="topic-updated">Updated Jun 2025</span>
-    </div>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Acute Liver Failure</div>
+    <h1>🫀 Acute Liver Failure (ALF)</h1>
+    <div class="guideline-row"><span class="gbadge sccm">APASL 2019</span><span class="gbadge esicm">EASL 2017</span><span class="gbadge isccm">ISCCM</span></div>
+    <div class="topic-hero-meta"><span class="topic-tag red">Critical</span><span class="topic-tag">King's College Criteria</span><span class="topic-tag">Early Transplant Referral</span><span class="topic-updated">Marino 5th Ed (2025, Ch.39) · King's College Criteria · APASL · EASL</span></div>
   </div>
 </header>
 <div class="topic-layout">
   <aside class="topic-sidebar">
     <nav class="toc">
       <div class="toc-title">On this page</div>
-      <ul class="toc-list">
-        <li><a href="#definition">Definition</a></li>
-        <li><a href="#causes">Causes</a></li>
-        <li><a href="#encephalopathy">Encephalopathy</a></li>
-        <li><a href="#management">ICU Management</a></li>
-        <li><a href="#transplant">Transplant Criteria</a></li>
-      </ul>
+      <ul class="toc-list"><li><a href="#s1">1. Washington Manual Summary</a></li><li><a href="#s2">2. Marino Physiology</a></li><li><a href="#s3">3. Guidelines & Evidence</a></li><li><a href="#s4">4. Drug Doses & Dilutions</a></li><li><a href="#s5">5. Clinical Flowchart</a></li><li><a href="#s6">6. Common Mistakes</a></li><li><a href="#s7">7. Exam Pearls</a></li><li><a href="#s8">8. References</a></li></ul>
       <a href="topics.html" class="toc-back">← All topics</a>
     </nav>
   </aside>
   <main class="topic-content">
-    <section id="definition">
-      <h2>Definition</h2>
-      <p><strong>Acute Liver Failure (ALF)</strong> = severe acute liver injury with <strong>coagulopathy</strong> (INR ≥ 1.5) AND <strong>encephalopathy</strong> in a patient without pre-existing liver disease, within 26 weeks of onset of jaundice.</p>
+
+    <section id="s1"><span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Washington Manual Summary</h2>
+      <div class="book-quote"><p>"Acute liver failure is defined as the development of hepatic encephalopathy and coagulopathy in a patient without pre-existing liver disease. The most common cause in the United States is acetaminophen toxicity. Liver transplantation remains the definitive therapy, and early referral to a transplant center is critical."</p>
+      <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Acute Liver Failure.</cite></div>
+      <h3>Clinical Synopsis</h3>
       <ul>
-        <li><strong>Hyperacute:</strong> Encephalopathy within 7 days of jaundice (paracetamol, HAV, HEV) — better prognosis</li>
-        <li><strong>Acute:</strong> 8–28 days</li>
-        <li><strong>Subacute:</strong> 4–26 weeks — worst prognosis without transplant</li>
+        <li><strong>Definition:</strong> Abrupt hepatic dysfunction (without prior liver disease) + coagulopathy (INR ≥1.5) + hepatic encephalopathy — occurring within 26 weeks of first symptoms</li>
+        <li><strong>Cause in India:</strong> Hepatitis E (most common in pregnant women), hepatitis B, drug-induced (anti-TB drugs, NSAIDs, herbal/ayurvedic medicines), ischaemic hepatitis</li>
+        <li><strong>Hyperacute ALF:</strong> Encephalopathy within 7 days of jaundice (paracetamol, hepatitis A/E) — better prognosis. Subacute: 4–26 weeks — worst prognosis</li>
+        <li><strong>Mortality without transplant:</strong> up to 80%; with transplant: 33% (Marino, p.658)</li>
+        <li><strong>Key: Early referral</strong> to liver transplant centre as soon as Grade II encephalopathy develops</li>
       </ul>
     </section>
-    <section id="causes">
-      <h2>Causes</h2>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Cause</th><th>Notes</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Paracetamol OD</strong></td><td>Most common in West; NAC antidote; good prognosis if treated early</td></tr>
-            <tr><td><strong>Viral hepatitis</strong></td><td>HEV most common in India (especially pregnancy); HBV reactivation; HAV</td></tr>
-            <tr><td><strong>Drug-induced (DILI)</strong></td><td>ATT (anti-TB), NSAIDs, amoxiclav, herbal remedies</td></tr>
-            <tr><td><strong>Wilson's disease</strong></td><td>Young patient, haemolytic anaemia, low ALP, Kayser-Fleischer rings</td></tr>
-            <tr><td><strong>Budd-Chiari</strong></td><td>Hepatic vein thrombosis; Doppler US diagnostic</td></tr>
-            <tr><td><strong>AFLP</strong></td><td>Acute fatty liver of pregnancy — deliver foetus immediately</td></tr>
-            <tr><td><strong>Indeterminate</strong></td><td>~15%; worst prognosis without transplant</td></tr>
-          </tbody>
-        </table>
+    <section id="s2"><span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — Ammonia, Cerebral Oedema &amp; Inflammation</h2>
+      <div class="book-quote"><p>"The management of patients with liver failure is a particular challenge because of the numerous life-supporting functions that are lost when the liver fails. These include: (a) the production of about 20,000 proteins, including all the coagulation factors and transport proteins in blood, (b) the metabolism of innumerable endogenous and exogenous substances, and (c) the removal of microbes that breach the mucosal barrier in the GI tract."</p>
+      <cite>Marino PL. The ICU Book, 5th Ed. Ch.39: Liver Failure. Wolters Kluwer; 2025. p.658</cite></div>
+      <div class="marino-box"><div class="mb-label">📗 Marino Ch.39, p.662 — Ammonia and Cerebral Oedema</div>
+        <p>Ammonia (byproduct of protein degradation, mainly in bowel) is normally cleared by the liver via the urea cycle. In ALF, this clearance fails → ammonia accumulates in blood → crosses the BBB → taken up by astrocytes → converted to <strong>glutamine</strong>.</p>
+        <p><strong>Glutamine accumulation creates an osmotic force that draws water into astrocytes</strong> → "cytotoxic" cerebral oedema → raised ICP → herniation.</p>
+        <p>Clinical threshold: <strong>Arterial ammonia &gt;150 μmol/L</strong> = high risk of cerebral oedema (Marino, p.663). Normal &lt;60 μmol/L.</p>
+      </div>
+      <div class="marino-box"><div class="mb-label">📗 Marino Ch.39, p.661 — Haemodynamics in ALF</div>
+        <p>The haemodynamic instability in ALF resembles septic shock: <strong>vasodilation + ↓ SVR + relative hypovolaemia</strong> (from hypoalbuminaemia). Management: volume resuscitation (albumin preferred when serum albumin &lt;3 g/dL) + vasopressors (noradrenaline) as needed.</p>
+        <p>Important: Avoid Ringer's Lactate in ALF — Marino specifically notes it is not advised because it promotes hyponatraemia, which will <strong>exacerbate cerebral oedema</strong> in hepatic encephalopathy.</p>
+      </div>
+      <div class="marino-box"><div class="mb-label">📗 Marino Ch.39, p.664 — CVVH Superior to Lactulose for Severe HE</div>
+        <p>"CVVH is considered superior to lactulose or rifaximin for patients with ALF and hepatic encephalopathy, and should be considered in the following situations: (a) persistent oliguria, (b) plasma ammonia level &gt;150 μmol/L, and (c) evidence of cerebral oedema, regardless of the serum creatinine. CVVH should be started as soon as possible, as its effectiveness is time-dependent."</p>
       </div>
     </section>
-    <section id="encephalopathy">
-      <h2>Hepatic Encephalopathy Grading</h2>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Grade</th><th>Features</th><th>Clinical</th></tr></thead>
-          <tbody>
-            <tr><td>I</td><td>Mild confusion, altered sleep</td><td>Subtle, may be missed</td></tr>
-            <tr><td>II</td><td>Lethargy, asterixis</td><td>Disorientated, drowsy</td></tr>
-            <tr><td>III</td><td>Marked confusion, somnolent</td><td>Arousable; incoherent speech</td></tr>
-            <tr><td>IV</td><td>Coma</td><td>Unresponsive — intubate prophylactically</td></tr>
-          </tbody>
-        </table>
-      </div>
+    <section id="s3"><span class="sb sb-g">📋 3 · Guidelines &amp; Evidence</span>
+      <h2>Key Guidelines — ALF Management</h2>
+      <div class="guideline-rec"><div class="gr-label">NAC for Acetaminophen ALF</div>
+        <div class="gr-text">N-Acetylcysteine (NAC): <strong>IV regimen:</strong> 150 mg/kg in 200 ml D5W over 1h → 50 mg/kg over 4h → 100 mg/kg over 16h. Give within 8h for maximum benefit; still give up to 24h. NAC has also been used empirically in non-acetaminophen ALF (some evidence of benefit). Mechanism: replenishes glutathione (the principal intracellular antioxidant).</div></div>
+      <div class="guideline-rec"><div class="gr-label">King's College Criteria — Transplant Referral</div>
+        <div class="gr-text"><strong>Paracetamol ALF:</strong> pH &lt;7.30 after resuscitation — OR — ALL 3: INR &gt;6.5 + Creatinine &gt;300 μmol/L + Grade III–IV encephalopathy.<br><strong>Non-paracetamol ALF:</strong> INR &gt;6.5 alone — OR — ANY 3 of: Age &lt;10 or &gt;40, aetiology (non-A non-B, DILI, Wilson's), jaundice-to-encephalopathy &gt;7 days, INR &gt;3.5, Bilirubin &gt;300 μmol/L.</div></div>
+      <div class="guideline-rec"><div class="gr-label">Hepatic Encephalopathy Grading</div>
+        <div class="gr-text">Grade I: personality change, mood disturbance | Grade II: asterixis, lethargy, disoriented to time | Grade III: stuporous but responsive, disoriented to place | Grade IV: coma. <strong>Grade II: ICU admission. Grade III–IV: intubate for airway protection.</strong></div></div>
+      <div class="guideline-rec"><div class="gr-label">Coagulopathy in ALF — Do NOT Correct Prophylactically</div>
+        <div class="gr-text">ALF causes balanced deficiency of both pro- and anti-coagulant factors. INR overestimates bleeding risk. DO NOT give FFP or vitamin K to "correct" INR unless: active bleeding or invasive procedure planned. Use TEG/ROTEM to guide transfusion. Platelet transfusion only if &lt;10,000 or invasive procedure.</div></div>
     </section>
-    <section id="management">
-      <h2>ICU Management</h2>
-      <h3>General</h3>
-      <ul>
-        <li>ICU admission for Grade II encephalopathy or above</li>
-        <li>Intubate for Grade III–IV (airway protection, ICP management)</li>
-        <li>Treat precipitants: infection, GI bleed, constipation, drugs</li>
-        <li>Low-protein diet is outdated — provide normal protein (1–1.2g/kg/day)</li>
-        <li>Lactulose: 30–60ml TDS titrated to 2–3 soft stools/day; rifaximin 550mg BD</li>
-      </ul>
-      <h3>Coagulopathy</h3>
-      <div class="warn-box">
-        <div class="kb-label">Do NOT correct coagulopathy prophylactically</div>
-        <p>INR in ALF is a prognostic marker. Do not give FFP or vitamin K unless active bleeding or invasive procedure planned. Liver has balanced deficiency of pro- and anti-coagulant factors — INR overestimates bleeding risk. Use TEG/ROTEM to guide transfusion.</p>
-      </div>
-      <h3>Cerebral oedema (Grade III–IV)</h3>
-      <ul>
-        <li>Head of bed 30°; minimise stimulation</li>
-        <li>Hypertonic saline (target Na 145–150 mEq/L) or Mannitol 0.5–1g/kg IV for ICP spikes</li>
-        <li>Avoid hypoxia, hypercapnia, hypoglycaemia, fever</li>
-        <li>ICP monitoring controversial — consider in Grade IV with worsening</li>
-        <li>Target CPP &gt; 50–60 mmHg</li>
-      </ul>
-      <h3>Renal</h3>
-      <p>AKI in 50% — avoid nephrotoxins; CRRT preferred over IHD (haemodynamic instability)</p>
-      <h3>Infection</h3>
-      <p>Empirical broad-spectrum antibiotics if suspected (fever, worsening encephalopathy) — cultures first. Antifungals (fluconazole) for Grade III–IV.</p>
-      <h3>Glucose</h3>
-      <p>Hypoglycaemia common (glycogen stores depleted) — 10–20% dextrose infusion; check glucose q1–2h.</p>
+    <section id="s4"><span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Drug Reference in ALF</h2>
+      <div class="table-wrap"><table class="drug-table"><thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead><tbody>
+        <tr><td><strong>N-Acetylcysteine</strong></td><td>Acetaminophen ALF (and empirical in non-Paracetamol)</td><td>IV: 150 mg/kg/1h → 50 mg/kg/4h → 100 mg/kg/16h</td><td>Within 8h = maximum benefit; up to 24h still effective</td></tr>
+        <tr><td><strong>Lactulose</strong></td><td>Hepatic encephalopathy — reduce ammonia</td><td>30 ml TDS to QDS PO/NGT; titrate to 2–3 soft stools/day</td><td>Metabolised by colonic bacteria → ↓ pH → ↓ ammonia absorption</td></tr>
+        <tr><td><strong>Rifaximin</strong></td><td>Chronic HE prevention + adjunct to lactulose</td><td>550 mg BD PO/NGT</td><td>Non-absorbed antibiotic; reduces ammonia-producing bacteria</td></tr>
+        <tr><td><strong>Mannitol 20%</strong></td><td>Cerebral oedema/ICP spikes</td><td>0.5–1 g/kg IV over 15–20 min</td><td>Target osmolality &lt;320 mOsm/kg; check UO — need adequate diuresis</td></tr>
+        <tr><td><strong>Hypertonic Saline 3%</strong></td><td>Target hypernatraemia to prevent cerebral oedema</td><td>Infuse to maintain Na 145–150 mEq/L</td><td>↑ Plasma osmolality → opposes osmotic cerebral oedema</td></tr>
+        <tr><td><strong>Noradrenaline</strong></td><td>Haemodynamic instability (vasodilatory)</td><td>0.05–1 mcg/kg/min IV</td><td>Albumin 5% preferred resuscitation fluid if albumin &lt;3 g/dL (Marino p.661)</td></tr>
+        <tr><td><strong>Pantoprazole</strong></td><td>Stress ulcer prophylaxis</td><td>40 mg IV OD</td><td>All ALF patients on ICU</td></tr>
+      </tbody></table></div>
     </section>
-    <section id="transplant">
-      <h2>Liver Transplant Criteria</h2>
-      <h3>King's College Criteria</h3>
-      <div class="key-box">
-        <div class="kb-label">List for transplant if ANY criterion met</div>
-        <p><strong>Paracetamol-induced:</strong><br>
-        Arterial pH &lt; 7.30 (after resuscitation) — OR — all 3: PT &gt;100s (INR&gt;6.5) + Creatinine &gt;300 µmol/L + Grade III–IV encephalopathy</p>
-        <p style="margin-top:0.8rem;"><strong>Non-paracetamol:</strong><br>
-        PT &gt;100s alone — OR — any 3 of 5: age &lt;10 or &gt;40; aetiology (non-A non-B, DILI, Wilson's); jaundice-to-encephalopathy &gt;7 days; PT &gt;50s; bilirubin &gt;300 µmol/L</p>
-      </div>
-      <p>Refer to transplant centre early — outcome dramatically better with living-related liver transplant in India.</p>
+    <section id="s5"><span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>ALF Management Algorithm</h2>
+      <div style="display:flex;flex-direction:column;gap:.8rem;"><div style="display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;">
+  <div style="width:40px;height:40px;border-radius:50%;background:#ef4444;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;margin-top:.2rem;">1</div>
+  <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;">
+    <h4 style="font-size:.88rem;font-weight:700;margin-bottom:.4rem;">Recognition & Early Referral</h4>
+    <p style="font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;">ALF = hepatic encephalopathy + coagulopathy (INR ≥1.5) without prior liver disease. ICU admission for Grade II or higher. <strong>Refer to transplant centre EARLY</strong> — as soon as Grade II encephalopathy. Do not wait for King's College criteria.</p>
+  </div>
+</div><div style="display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;">
+  <div style="width:40px;height:40px;border-radius:50%;background:#f97316;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;margin-top:.2rem;">2</div>
+  <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;">
+    <h4 style="font-size:.88rem;font-weight:700;margin-bottom:.4rem;">Specific Antidote (if paracetamol)</h4>
+    <p style="font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;">N-Acetylcysteine IV within 8h ideally; still give up to 24h. For non-paracetamol: consider empirical NAC. Check drug history carefully — anti-TB drugs, herbal medicines, NSAIDs common in India.</p>
+  </div>
+</div><div style="display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;">
+  <div style="width:40px;height:40px;border-radius:50%;background:#eab308;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;margin-top:.2rem;">3</div>
+  <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;">
+    <h4 style="font-size:.88rem;font-weight:700;margin-bottom:.4rem;">Haemodynamics</h4>
+    <p style="font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;">Target MAP ≥65 mmHg. Volume: albumin 5% if albumin &lt;3 g/dL (Marino); avoid Ringer's Lactate (worsens hyponatraemia → worsens cerebral oedema). Vasopressors: noradrenaline if needed. Avoid overload.</p>
+  </div>
+</div><div style="display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;">
+  <div style="width:40px;height:40px;border-radius:50%;background:#22c55e;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;margin-top:.2rem;">4</div>
+  <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;">
+    <h4 style="font-size:.88rem;font-weight:700;margin-bottom:.4rem;">Hepatic Encephalopathy & Ammonia</h4>
+    <p style="font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;">Lactulose + rifaximin (reduce ammonia). Check arterial ammonia — if &gt;150 μmol/L: high risk cerebral oedema → CVVH (Marino p.664 — superior to lactulose in severe HE). Head of bed 30°. Avoid sedatives; use fentanyl if needed.</p>
+  </div>
+</div><div style="display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;">
+  <div style="width:40px;height:40px;border-radius:50%;background:#3b82f6;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;margin-top:.2rem;">5</div>
+  <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;">
+    <h4 style="font-size:.88rem;font-weight:700;margin-bottom:.4rem;">Cerebral Oedema Prevention</h4>
+    <p style="font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;">Maintain Na 145–150 mEq/L (hypertonic saline infusion). ICP monitoring if Grade IV. Mannitol 0.5–1 g/kg for acute ICP spikes. Avoid: hypo-osmolar fluids, fever, seizures, hypoglycaemia (all worsen cerebral oedema).</p>
+  </div>
+</div><div style="display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;">
+  <div style="width:40px;height:40px;border-radius:50%;background:#8b5cf6;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0;margin-top:.2rem;">6</div>
+  <div style="background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;">
+    <h4 style="font-size:.88rem;font-weight:700;margin-bottom:.4rem;">AKI Management</h4>
+    <p style="font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;">CVVH preferred over IHD (haemodynamic instability). Indication: AKI + ammonia &gt;150 OR cerebral oedema OR oliguria (regardless of creatinine — Marino p.664). Citrate anticoagulation; avoid heparin (bleeding risk). NAC may help by improving hepatic perfusion to kidneys.</p>
+  </div>
+</div></div>
+    </section>
+    <section id="s6"><span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in ALF</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Giving FFP to Correct INR Prophylactically</div><p>ALF causes balanced coagulopathy — both pro- and anti-coagulant factors are deficient. INR is unreliable. Giving FFP "normalises" the INR but worsens fluid overload and doesn't prevent bleeding. Use TEG/ROTEM; transfuse only for active bleeding or planned procedures.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Using Ringer's Lactate as Resuscitation Fluid</div><p>Marino (Ch.39, p.661): RL is not advised in ALF because it promotes hyponatraemia, which exacerbates cerebral oedema. Use 0.9% NaCl or albumin 5% (especially if serum albumin &lt;3 g/dL).</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Delayed Transplant Referral</div><p>Do NOT wait until King's College criteria are met to refer. Refer to transplant centre as soon as Grade II encephalopathy develops. Mortality without transplant is 80%. Every hour of delay = worse outcomes.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Not Starting CVVH Early Enough</div><p>Marino (p.664): CVVH should be started as soon as possible in ALF with severe encephalopathy — its effectiveness is time-dependent. Don't wait for creatinine to rise. Indications: oliguria, ammonia &gt;150, or cerebral oedema regardless of creatinine.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Sedating with Benzodiazepines</div><p>Benzodiazepines worsen hepatic encephalopathy and have prolonged action due to impaired hepatic metabolism. Use fentanyl for analgesia/sedation (minimal hepatic metabolism). Propofol in low doses acceptable if haemodynamically stable.</p></div>
+    </section>
+    <section id="s7"><span class="sb sb-x">🎓 7 · Exam Pearls</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: Marino's pathophysiology of cerebral oedema in ALF?</strong><br>Liver failure → ↑ ammonia → crosses BBB → astrocytes convert to glutamine → glutamine creates osmotic force → draws water into astrocytes → "cytotoxic" cerebral oedema (Marino Ch.39, p.662). Target arterial ammonia &lt;150 μmol/L. CVVH is superior to lactulose in clearing ammonia.</p></div>
+      <div class="ec"><p><strong>Q: Marino's key point on fluid choice in ALF?</strong><br>Avoid Ringer's Lactate (promotes hyponatraemia → worsens cerebral oedema). Use 0.9% NaCl or albumin 5% (preferred if albumin &lt;3 g/dL). Maintain Na 145–150 mEq/L with hypertonic saline to prevent cerebral oedema (Marino Ch.39, p.661).</p></div>
+      <div class="ec"><p><strong>Q: King's College Criteria for transplant in paracetamol ALF?</strong><br>pH &lt;7.30 after resuscitation (alone sufficient) — OR — ALL 3: INR &gt;6.5 + Creatinine &gt;300 μmol/L + Grade III–IV encephalopathy. Any one criterion met = refer for liver transplant. Don't wait for all three.</p></div>
+      <div class="ec"><p><strong>Q: Why NOT correct INR with FFP in ALF?</strong><br>ALF causes balanced loss of pro- and anti-coagulant factors. INR overestimates true bleeding risk (measured by TEG/ROTEM = often near-normal clot formation). FFP worsens fluid overload and portal hypertension. Transfuse only for active bleeding or planned invasive procedure.</p></div>
+      <div class="ec"><p><strong>Q: Most common cause of ALF in India?</strong><br>Hepatitis E virus (particularly in pregnant women — very high mortality, up to 20%). Also: hepatitis B reactivation, anti-TB drug hepatotoxicity, ayurvedic/herbal medicines. Paracetamol toxicity is less common in India vs Western countries.</p></div>
+    </section>
+    <section id="s8" class="references-section"><span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Marino PL.</strong> Marino's The ICU Book, 5th edition. Chapter 39: Liver Failure (pp.658–688). Philadelphia, PA: Wolters Kluwer; 2025.</li>
+        <li><strong>O'Grady JG, Alexander GJM, Hayllar KM, Williams R.</strong> Early Indicators of Prognosis in Fulminant Hepatic Failure (King's College Criteria). <em>Gastroenterology.</em> 1989;97(2):439–445.</li>
+        <li><strong>Stravitz RT, Lee WM.</strong> Acute Liver Failure. <em>Lancet.</em> 2019;394(10201):869–881.</li>
+        <li><strong>Shalimar, Acharya SK.</strong> Management in Acute Liver Failure. <em>J Clin Exp Hepatol.</em> 2015;5(Suppl 1):S104–S115.</li>
+        <li><strong>Larson AM, Polson J, Fontana RJ, et al.</strong> Acetaminophen-Induced Acute Liver Failure: Results of a United States Multicenter, Prospective Study. <em>Hepatology.</em> 2005;42(6):1364–1372.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Ed.</strong> Kollef MH, Witt CA (eds). Wolters Kluwer; 2023.</li>
+        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Chapter 39: Acute Liver Failure. Elsevier; 2018.</li>
+      </ol>
     </section>
   </main>
 </div>
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-brand">Crit<span>Care</span>.in</span>
-    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
-    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
   </div>
 </footer>
 </body>

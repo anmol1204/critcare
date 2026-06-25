@@ -1,24 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Acute Severe Asthma — CritCare.in</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="shared.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
   <script src="darkmode.js"></script>
   <style>
-    .pearl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
-    .pearl-card { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 1rem 1.2rem; }
-    .pearl-card .pearl-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #92400e; margin-bottom: 0.5rem; }
-    .pearl-card p { font-size: 0.88rem; color: #78350f; line-height: 1.7; margin: 0; }
-    .mistake-card { background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 1rem 1.2rem; margin: 0.5rem 0; }
-    .mistake-card .m-label { font-size: 0.68rem; font-weight: 700; color: #991b1b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
-    .mistake-card p { font-size: 0.88rem; color: #7f1d1d; line-height: 1.7; margin: 0; }
-    .exam-card { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 0.9rem 1.1rem; margin: 0.4rem 0; }
-    .exam-card p { font-size: 0.88rem; color: #1e40af; line-height: 1.7; margin: 0; }
-    .exam-card strong { color: #1e3a8a; }
-    .change-new { background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; color: #15803d; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4rem; vertical-align: middle; }
-    .change-updated { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 6px; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4rem; vertical-align: middle; }
+    .bq{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .bq p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .bq cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .mb{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .mb .ml{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .mb p,.mb ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .mb ul{padding-left:1.2rem;}
+    .mb strong{color:#4c1d95;}
+    .gr{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .grl{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .grt{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gs{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gc{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .cn{background:#f0fdf4;border:1px solid #86efac;border-radius:4px;padding:.15rem .4rem;font-size:.62rem;font-weight:800;color:#15803d;text-transform:uppercase;margin-left:.3rem;vertical-align:middle;}
+    .cu{background:#fef9c3;border:1px solid #fcd34d;border-radius:4px;padding:.15rem .4rem;font-size:.62rem;font-weight:800;color:#b45309;text-transform:uppercase;margin-left:.3rem;vertical-align:middle;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml2{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;}
+    .ec strong{color:#1e3a8a;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sbw{background:#dbeafe;color:#1e40af;}
+    .sbm{background:#ede9fe;color:#5b21b6;}
+    .sbg{background:#dcfce7;color:#166534;}
+    .sbd{background:#ffedd5;color:#9a3412;}
+    .sbf{background:#f0fdf4;color:#14532d;border:1px solid #86efac;}
+    .sbe{background:#fee2e2;color:#991b1b;}
+    .sbx{background:#fef9c3;color:#854d0e;}
+    .sbr{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .fs{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;}
+    .fn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;flex-shrink:0;margin-top:.2rem;}
+    .fb{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;}
+    .fb h4{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;}
+    .fb p,.fb ul{font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;}
+    .fb ul{padding-left:1.1rem;}
+    .fb strong{color:var(--ink);}
   </style>
 </head>
 <body>
@@ -26,384 +51,211 @@
   <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
   <ul class="nav-menu" id="menu">
     <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-    <li><a href="topics.html" class="active">ICU Topics</a></li>
-    <li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
-  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
 </nav>
-
 <header class="topic-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Asthma</div>
-    <h1>🫁 Acute Severe Asthma &amp; Status Asthmaticus</h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Asthma</div>
+    <h1>💨 Acute Severe Asthma &amp; Status Asthmaticus</h1>
     <div class="guideline-row">
       <span class="gbadge sccm">GINA 2026 ✦ Latest</span>
       <span class="gbadge esicm">BTS/SIGN 2023</span>
       <span class="gbadge isccm">ISCCM</span>
     </div>
     <div class="topic-hero-meta">
-      <span class="topic-tag red">Emergency</span>
-      <span class="topic-tag">New O₂ Targets 2026</span>
-      <span class="topic-updated">GINA 2026 (Updated May 2026) · www.ginasthma.org</span>
+      <span class="topic-tag red">Emergency</span><span class="topic-tag">New O₂ Targets</span>
+      <span class="topic-updated">Marino 5th Ed (Ch.23, 2025) · GINA 2026 (Updated May 2026)</span>
     </div>
   </div>
 </header>
-
 <div class="topic-layout">
   <aside class="topic-sidebar">
     <nav class="toc">
       <div class="toc-title">On this page</div>
       <ul class="toc-list">
-        <li><a href="#whats-new">What Changed GINA 2026</a></li>
-        <li><a href="#physiology">How Asthma Works</a></li>
-        <li><a href="#severity">Severity Classification</a></li>
-        <li><a href="#ed-management">ED Management</a></li>
-        <li><a href="#oxygen">Oxygen Therapy 2026</a></li>
-        <li><a href="#drugs">Drug Doses</a></li>
-        <li><a href="#icu">ICU / Intubation</a></li>
-        <li><a href="#ventilation">Ventilating Asthma</a></li>
-        <li><a href="#discharge">Discharge Planning</a></li>
-        <li><a href="#pearls">Clinical Pearls</a></li>
-        <li><a href="#mistakes">Common Mistakes</a></li>
-        <li><a href="#exam">Exam Pearls</a></li>
-        <li><a href="#references">References</a></li>
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. GINA 2026 Guidelines</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
       </ul>
       <a href="topics.html" class="toc-back">← All topics</a>
     </nav>
   </aside>
-
   <main class="topic-content">
-
-    <section id="whats-new">
-      <h2>🆕 What Changed in GINA 2026</h2>
-      <div class="update-box">
-        <div class="kb-label">GINA 2026 — Published May 2026 | Major Changes in Acute Asthma Management</div>
-        <p>GINA 2026 introduces four new standardised flowcharts for acute asthma management in primary care and ED. Key changes affect oxygen targets, SABA dosing, and role of ICS-formoterol in acute settings.</p>
+    <section id="s1">
+      <span class="sb sbw">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Washington Manual Summary</h2>
+      <div class="bq">
+        <p>"Status asthmaticus is one of the most reversible causes of acute respiratory failure. With aggressive bronchodilator therapy and careful ventilator management, the majority of patients can be successfully managed in the ICU and extubated within 24–72 hours."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. (Kollef &amp; Witt, eds.) Wolters Kluwer 2023.</cite>
       </div>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Topic</th><th>Previous Guidance</th><th>GINA 2026 Change</th><th>Tag</th></tr></thead>
-          <tbody>
-            <tr><td><strong>O₂ targets</strong></td><td>Give O₂ freely in asthma</td><td>Do NOT give O₂ unless SpO₂ &lt;92%. If given, target 92–95% (NOT 100%)</td><td><span class="change-updated">Changed</span></td></tr>
-            <tr><td><strong>SABA doses</strong></td><td>High-dose SABA (6–10 puffs q20min)</td><td>More conservative SABA dosing — high-dose SABA causes lactic acidosis → hyperventilation mimicking worsening asthma</td><td><span class="change-updated">Revised down</span></td></tr>
-            <tr><td><strong>ICS-formoterol in ED</strong></td><td>SABA-only in acute settings</td><td>ICS-formoterol (budesonide-formoterol) added as option for mild exacerbations in primary care and ED</td><td><span class="change-new">New</span></td></tr>
-            <tr><td><strong>Anaphylaxis + asthma</strong></td><td>Bronchodilators first</td><td>Give epinephrine IM FIRST if anaphylaxis features present, THEN bronchodilators</td><td><span class="change-new">New explicit rec</span></td></tr>
-            <tr><td><strong>New flowcharts</strong></td><td>No standardised flowcharts</td><td>4 new standardised flowcharts for mild/moderate/severe/life-threatening — adults & children</td><td><span class="change-new">New</span></td></tr>
-            <tr><td><strong>OCS stewardship</strong></td><td>Liberal OCS use</td><td>OCS stewardship priority — optimise inhaled therapy; biologic therapy where indicated; avoid maintenance OCS</td><td><span class="change-updated">Strengthened</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="physiology">
-      <h2>How Asthma Works — The Pathophysiology</h2>
-      <p>Asthma is a chronic inflammatory disease of the airways characterised by variable airflow obstruction. Three pathological processes occur simultaneously:</p>
-      <h3>1. Airway Inflammation (the core lesion)</h3>
-      <p>Allergens, viral infections, or irritants trigger a Th2-driven immune response. Mast cells, eosinophils, and CD4+ T-helper cells release histamine, leukotrienes (LTC4, LTD4, LTE4), prostaglandins, and cytokines (IL-4, IL-5, IL-13). This causes:</p>
+      <h3>Clinical Synopsis</h3>
       <ul>
-        <li>Mucosal oedema — swelling of airway walls narrows lumen</li>
-        <li>Mucus hypersecretion — plugs narrow airways ("mucus plugging" in fatal asthma)</li>
-        <li>Epithelial damage — denuded mucosa exposes sensory nerve endings → hyperresponsiveness</li>
+        <li><strong>Definition:</strong> Acute exacerbation of asthma not responding to standard initial treatment; requiring escalating therapy or mechanical ventilation</li>
+        <li><strong>Mortality:</strong> Need for mechanical ventilation is the strongest risk factor for death (Marino Ch.23, p.405)</li>
+        <li><strong>Severity:</strong> Mild (PEFR ≥70% predicted) | Moderate (40–69%) | Severe (&lt;40%) — Marino (p.406)</li>
+        <li><strong>Rising PaCO₂ = danger:</strong> Normal PaCO₂ in severe asthma means the patient is TIRING (losing their compensatory hyperventilation) — impending respiratory arrest</li>
       </ul>
-      <h3>2. Bronchospasm (the acute trigger)</h3>
-      <p>Smooth muscle contraction (mediated by acetylcholine, histamine, leukotrienes) narrows the airway lumen. This is the reversible component — responds to bronchodilators. In severe/status asthmaticus, smooth muscle may be in sustained spasm despite maximal treatment.</p>
-      <h3>3. Airway Remodelling (in chronic disease)</h3>
-      <p>Repeated inflammation causes structural changes: sub-epithelial fibrosis, smooth muscle hypertrophy, angiogenesis. This leads to fixed airflow obstruction that does not fully reverse.</p>
-      <h3>The Physiological Cascade in Status Asthmaticus</h3>
-      <ul>
-        <li>Severe bronchospasm → markedly ↑ airway resistance → ↑ work of breathing</li>
-        <li>Air trapping → hyperinflation → auto-PEEP → haemodynamic compromise (↓ venous return)</li>
-        <li>Hypoxaemia → hypocapnia early (↑ RR, hyperventilation), then hypercapnia late (respiratory muscle fatigue)</li>
-        <li><strong>Rising PaCO₂ in a patient who was hyperventilating = RED FLAG — impending respiratory arrest</strong></li>
-        <li>Lactic acidosis from beta-agonist overuse (β₂ stimulation → glycolysis → lactic acid) — may mimic worsening asthma → vicious cycle of over-treatment</li>
-      </ul>
-    </section>
-
-    <section id="severity">
-      <h2>Severity Classification (GINA 2026)</h2>
+      <h3>Severity Assessment</h3>
       <div class="table-wrap">
         <table class="drug-table">
           <thead><tr><th>Feature</th><th>Mild</th><th>Moderate</th><th>Severe</th><th>Life-Threatening</th></tr></thead>
           <tbody>
-            <tr><td><strong>Breathlessness</strong></td><td>On walking</td><td>On talking (prefers sitting)</td><td>At rest (hunched forward)</td><td>Silent chest / cyanosis</td></tr>
-            <tr><td><strong>Sentences</strong></td><td>Full sentences</td><td>Short phrases</td><td>Words only</td><td>Unable to speak</td></tr>
-            <tr><td><strong>Alertness</strong></td><td>May be agitated</td><td>Usually agitated</td><td>Usually agitated</td><td>Drowsy or confused</td></tr>
-            <tr><td><strong>RR</strong></td><td>Normal–↑</td><td>↑ (&gt;20/min)</td><td>Often &gt;30/min</td><td>Slow or absent</td></tr>
-            <tr><td><strong>HR</strong></td><td>Normal–↑</td><td>↑ (&gt;100)</td><td>↑ (&gt;120)</td><td>Bradycardia (pre-arrest)</td></tr>
-            <tr><td><strong>SpO₂ (room air)</strong></td><td>≥95%</td><td>90–95%</td><td>&lt;90%</td><td>&lt;85% or cyanosis</td></tr>
-            <tr><td><strong>PEF</strong></td><td>&gt;80% predicted</td><td>60–80%</td><td>&lt;60% or unmeasurable</td><td>Unmeasurable</td></tr>
-            <tr><td><strong>PaCO₂</strong></td><td>&lt;40 (hyperventilation)</td><td>&lt;40</td><td>&lt;40 or rising toward normal</td><td>&gt;45 — DANGER SIGN</td></tr>
+            <tr><td>Breathlessness</td><td>Walking</td><td>Talking (prefers sitting)</td><td>At rest (hunched forward)</td><td>Silent chest</td></tr>
+            <tr><td>Sentences</td><td>Full sentences</td><td>Short phrases</td><td>Words only</td><td>Unable to speak</td></tr>
+            <tr><td>SpO₂ (room air)</td><td>≥95%</td><td>90–95%</td><td>&lt;90%</td><td>&lt;85% or cyanosis</td></tr>
+            <tr><td>PaCO₂</td><td>&lt;40 (hyperventilating)</td><td>&lt;40</td><td>Normal 35–45 = WARNING</td><td>&gt;45 = DANGER</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="warn-box">
-        <div class="kb-label">Life-Threatening Features — Intubate if ANY Present</div>
-        <p>Silent chest | Cyanosis | Poor respiratory effort | Bradycardia | Hypotension | Confusion/drowsiness | PaCO₂ &gt;45 mmHg (rising CO₂ = muscle fatigue, impending arrest) | SpO₂ &lt;85% despite O₂</p>
+    </section>
+    <section id="s2">
+      <span class="sb sbm">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — Asthma in the ICU</h2>
+      <div class="bq">
+        <p>"For patients with asthma, the need for mechanical ventilation has been identified as the strongest risk factor for death."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Chapter 23: Asthma and COPD in the ICU, p.405. Wolters Kluwer; 2025.</cite>
+      </div>
+      <h3>Drug Delivery — MDI vs Nebuliser (Marino Table 23.1)</h3>
+      <div class="mb">
+        <div class="ml">📗 Marino Ch.23, p.407 — Actual Lung Deposition Data</div>
+        <p>Marino Table 23.1 (actual data):</p>
+        <div class="table-wrap">
+          <table class="drug-table">
+            <thead><tr><th>Site</th><th>Nebuliser (2.5 mg)</th><th>MDI (200 mcg)</th><th>MDI + Spacer (200 mcg)</th></tr></thead>
+            <tbody>
+              <tr><td>Exhaled</td><td>20%</td><td>1%</td><td>1%</td></tr>
+              <tr><td>Apparatus</td><td>66%</td><td>10%</td><td>78%</td></tr>
+              <tr><td>Oropharynx</td><td>2%</td><td>80%</td><td>1%</td></tr>
+              <tr><td><strong>Lungs</strong></td><td><strong>12%</strong></td><td><strong>9%</strong></td><td><strong>20%</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>MDI with spacer delivers DOUBLE the lung deposition of either MDI alone or nebuliser. "Bronchodilator treatments with nebulizers and MDIs produce equivalent results despite a marked difference in drug dosage." (Marino, p.408). <strong>Spacers are recommended for all bronchodilator treatments using MDIs.</strong></p>
+      </div>
+      <h3>Auto-PEEP (Dynamic Hyperinflation) — The Ventilated Asthmatic</h3>
+      <div class="mb">
+        <div class="ml">📗 Marino Ch.23, p.416–419 — Critical ICU Concept</div>
+        <p>In ventilated asthmatics: severe bronchospasm → prolonged exhalation → gas trapping → <strong>auto-PEEP</strong> (intrinsic PEEP). High intrathoracic pressure → ↓ venous return → haemodynamic collapse. Marino: "If you want to feel what it is like to breathe in a hyperinflated state, take a deep breath, and try breathing from there."</p>
+        <p><strong>Prevention during MV:</strong> (1) Avoid inflation volumes &gt;6–8 ml/kg; (2) Maximise expiratory time — slow rate + ↑ inspiratory flow rate so inflation occupies only 1/3 of respiratory cycle; (3) Monitor intrinsic PEEP with expiratory hold.</p>
+        <p>Marino's A Final Word (Ch.23, p.419): "Give bronchodilators and corticosteroids to all patients... If the condition is severe, use noninvasive ventilation if possible, and conventional mechanical ventilation if necessary. That's about it."</p>
       </div>
     </section>
-
-    <section id="ed-management">
-      <h2>Emergency Department Management (GINA 2026)</h2>
-      <div class="key-box">
-        <div class="kb-label">GINA 2026 — Standardised ED Management Algorithm</div>
-        <ul>
-          <li><strong>Step 1 — Anaphylaxis?</strong> If features of anaphylaxis present (urticaria, angioedema, haemodynamic compromise): <strong>Adrenaline 0.5 mg IM FIRST</strong>, then bronchodilators</li>
-          <li><strong>Step 2 — Assess severity</strong> (table above). Measure SpO₂, PEF if possible, RR, HR, consciousness</li>
-          <li><strong>Step 3 — Start treatment simultaneously with assessment:</strong> SABA + ipratropium + systemic corticosteroids if moderate/severe</li>
-          <li><strong>Step 4 — Oxygen</strong> ONLY if SpO₂ &lt;92%; target 92–95% (NOT 100%)</li>
-          <li><strong>Step 5 — Reassess after 20 min:</strong> PEF, SpO₂, symptoms. If improving → continue; if not → escalate</li>
-          <li><strong>Step 6 — Spirometry/PEF before discharge</strong> — must measure, even after clinical improvement</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="oxygen">
-      <h2>Oxygen Therapy — GINA 2026 <span class="change-updated">Changed</span></h2>
-      <div class="warn-box">
-        <div class="kb-label">GINA 2026 — New Oxygen Guidance (Major Change)</div>
-        <p><strong>Do NOT give supplemental oxygen routinely in asthma.</strong> Give oxygen only if SpO₂ &lt;92%. If giving oxygen, target SpO₂ <strong>92–95%</strong> in adults and adolescents (NOT 100%).</p>
-        <p><strong>Why:</strong> High-concentration O₂ causes V/Q mismatch (Haldane effect) → worsens hypercapnia. Hyperoxia also abolishes hypoxic pulmonary vasoconstriction → increases dead space. Controlled O₂ is associated with lower mortality and better outcomes than high-concentration oxygen (Evidence A).</p>
-      </div>
-      <p>In children 5 years and younger: target SpO₂ ≥92% if oxygen is given.</p>
-    </section>
-
-    <section id="drugs">
-      <h2>Drug Doses in Acute Asthma (GINA 2026)</h2>
-      <h3>Short-Acting Beta-2 Agonists (SABA)</h3>
+    <section id="s3">
+      <span class="sb sbg">📋 3 · GINA 2026 Guidelines</span>
+      <h2>GINA 2026 — Key Recommendations</h2>
       <div class="update-box">
-        <div class="kb-label">GINA 2026 — Conservative SABA Dosing (Changed)</div>
-        <p>GINA 2026 reduces SABA doses due to evidence of SABA toxicity: lactic acidosis, hypokalaemia, tachycardia. Lactic acidosis from SABA causes compensatory hyperventilation that can be misinterpreted as worsening asthma → further SABA administration → vicious cycle.</p>
+        <div class="kb-label">Global Initiative for Asthma (GINA). Global Strategy for Asthma Management and Prevention. Updated May 2026. www.ginasthma.org</div>
       </div>
+      <div class="gr">
+        <div class="grl">GINA 2026 — Oxygen Targets <span class="cu">Changed from previous guidance</span></div>
+        <div class="grt">Do NOT give supplemental O₂ unless SpO₂ &lt;92%. If giving O₂, target SpO₂ <strong>92–95%</strong> in adults and adolescents (NOT 100%). High-concentration O₂ worsens outcomes (Haldane effect → V/Q mismatch). This is Evidence A. <span class="cu">Major 2026 Change</span></div>
+      </div>
+      <div class="gr">
+        <div class="grl">GINA 2026 — SABA Dosing <span class="cu">Conservative — Revised</span></div>
+        <div class="grt">More conservative SABA dosing recommended due to evidence of SABA toxicity: lactic acidosis → compensatory hyperventilation → misinterpreted as worsening → more SABA → vicious cycle. Shake pMDI before EACH actuation. Consider ICS-formoterol as alternative for mild exacerbations in ED. <span class="cu">Revised 2026</span></div>
+      </div>
+      <div class="gr">
+        <div class="grl">GINA 2026 — Anaphylaxis + Asthma <span class="cn">New 2026</span></div>
+        <div class="grt">If features of anaphylaxis as well as asthma: give <strong>Adrenaline IM FIRST</strong>, then bronchodilators. Epinephrine can be given intranasally in children. This is now explicit in all 4 new GINA 2026 flowcharts.</div>
+      </div>
+      <div class="gr">
+        <div class="grl">GINA 2026 — New Standardised Flowcharts <span class="cn">New 2026</span></div>
+        <div class="grt">4 new standardised flowcharts for acute asthma in primary care and ED (adults/adolescents/children). Includes criteria for mild/moderate/severe/life-threatening assessment. Validated clinical score (PRAM/PAS) recommended for children &lt;18 years.</div>
+      </div>
+    </section>
+    <section id="s4">
+      <span class="sb sbd">💊 4 · Drug Doses</span>
+      <h2>Drug Doses in Acute Severe Asthma</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Drug</th><th>Route</th><th>Dose (GINA 2026)</th><th>Notes</th></tr></thead>
+          <thead><tr><th>Drug</th><th>Route</th><th>Dose</th><th>Frequency</th><th>Notes</th></tr></thead>
           <tbody>
-            <tr><td><strong>Salbutamol (Albuterol)</strong></td><td>pMDI + spacer</td><td>4–8 puffs (100 mcg each = 400–800 mcg) q20min × 3, then 4 puffs q1h. <strong>SHAKE inhaler before EACH puff.</strong></td><td>Shake before each actuation — new inhaler can deliver ultra-high doses without shaking; old inhaler delivers lower doses</td></tr>
-            <tr><td><strong>Salbutamol</strong></td><td>Nebuliser</td><td>2.5–5 mg q20min × 3 (mild/moderate); continuous nebulisation 10 mg/hr (severe)</td><td>Nebuliser equivalent to pMDI + spacer — use pMDI+spacer in mild/moderate (faster, cheaper)</td></tr>
-            <tr><td><strong>Levosalbutamol (Levalbuterol)</strong></td><td>Nebuliser</td><td>0.63–1.25 mg q6–8h (less tachycardia)</td><td>Active R-isomer of salbutamol; available in India; fewer cardiovascular side effects</td></tr>
+            <tr><td><strong>Salbutamol</strong></td><td>pMDI + spacer</td><td>4–8 puffs (400–800 mcg)</td><td>q20 min × 3, then q1–4h</td><td>Shake before EACH puff (GINA 2026). MDI+spacer = 20% lung deposition (vs 12% nebuliser)</td></tr>
+            <tr><td><strong>Salbutamol</strong></td><td>Nebuliser</td><td>2.5–5 mg q20 min × 3</td><td>Continuous 10 mg/hr for severe</td><td>Equivalent to MDI+spacer clinically; preferred if unable to use MDI</td></tr>
+            <tr><td><strong>Salbutamol</strong></td><td>IV (ICU only)</td><td>250 mcg slow IV; then 5–20 mcg/min</td><td>Titrate</td><td>When inhaled route inadequate; monitor K⁺, glucose, HR</td></tr>
+            <tr><td><strong>Ipratropium</strong></td><td>pMDI / Neb</td><td>80–160 mcg (pMDI) / 0.5 mg (neb)</td><td>q20 min × 3 in ED then STOP</td><td>No benefit after first 1–2 hours in hospitalised patients; reduces hospitalisations in ED</td></tr>
+            <tr><td><strong>Hydrocortisone</strong></td><td>IV</td><td>100 mg IV q6h</td><td>Until able to take oral</td><td>Start immediately for moderate/severe; switch to oral prednisolone as soon as possible</td></tr>
+            <tr><td><strong>Prednisolone</strong></td><td>PO</td><td>40–50 mg OD adults; 1–2 mg/kg/day (max 40) children</td><td>5–7 days adults; 3–5 days children</td><td>No taper needed if &lt;2 weeks. OCS stewardship priority (GINA 2026)</td></tr>
+            <tr><td><strong>MgSO₄</strong></td><td>IV</td><td>2g IV over 20 minutes</td><td>Once</td><td>Evidence A: reduces hospitalisations in severe asthma not responding to initial treatment</td></tr>
+            <tr><td><strong>Aminophylline</strong></td><td>IV</td><td>5 mg/kg over 30 min (if not on theophylline)</td><td>Then 0.5 mg/kg/hr</td><td>Narrow therapeutic window; not routinely recommended; use only when other agents failed</td></tr>
           </tbody>
         </table>
       </div>
-      <h3>Ipratropium Bromide (Anticholinergic)</h3>
+      <h3>RSI for Status Asthmaticus</h3>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Route</th><th>Dose</th><th>Frequency</th><th>Evidence</th></tr></thead>
+          <thead><tr><th>Drug</th><th>Dose</th><th>Why in Asthma</th></tr></thead>
           <tbody>
-            <tr><td>pMDI + spacer</td><td>4–8 puffs (80–160 mcg)</td><td>q20min × 3 in ED</td><td>Evidence A: Adding ipratropium to SABA → fewer hospitalisations; greater PEF improvement vs SABA alone in moderate-severe</td></tr>
-            <tr><td>Nebuliser</td><td>0.5 mg</td><td>q20min × 3 then stop</td><td>No benefit when added to SABA in HOSPITALISED patients (only in ED)</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <h3>Systemic Corticosteroids</h3>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Indication</th><th>Drug</th><th>Adult Dose</th><th>Duration</th></tr></thead>
-          <tbody>
-            <tr><td>Moderate–severe exacerbation</td><td>Prednisolone/Prednisone PO</td><td>40–50 mg/day</td><td>5–7 days (no need to taper if &lt;2 weeks)</td></tr>
-            <tr><td>Unable to take oral (vomiting, severe)</td><td>Hydrocortisone IV</td><td>100 mg q6h (or 200 mg/day)</td><td>Switch to oral when able to take PO</td></tr>
-            <tr><td>Children 6–11 years</td><td>Prednisolone PO</td><td>1–2 mg/kg/day (max 40 mg/day)</td><td>3–5 days</td></tr>
-            <tr><td>Alternative to prednisolone</td><td>Dexamethasone</td><td>0.3–0.6 mg/kg (max 12 mg)</td><td>1–2 days only (equivalent efficacy, fewer doses)</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <h3>ICS-Formoterol in Acute Asthma — New GINA 2026 <span class="change-new">New</span></h3>
-      <p>For adults/adolescents with a <strong>mild exacerbation</strong> presenting in primary care or ED: <strong>Budesonide-formoterol (160/4.5 mcg or 200/6 mcg metered dose)</strong> is now an option as an anti-inflammatory reliever, as alternative or addition to SABA. Maximum 12 inhalations in 24h (combined as-needed + maintenance doses). This provides opportunity to start MART (maintenance-and-reliever therapy) before discharge to prevent future exacerbations.</p>
-      <h3>Magnesium Sulphate — Rescue Therapy</h3>
-      <div class="key-box">
-        <div class="kb-label">IV Magnesium — When SABA + Ipratropium + Steroids Fail</div>
-        <p><strong>Dose:</strong> MgSO₄ 2g IV over 20 minutes (adults). Evidence A: reduces hospitalisations in severe asthma not responding to initial treatment. Mechanism: smooth muscle relaxation (competes with Ca²⁺). Safe even with hypokalaemia from SABA. Check Mg levels — if low, replace as well.</p>
-      </div>
-      <h3>Other Agents in Severe/ICU Asthma</h3>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Drug</th><th>Dose</th><th>Evidence</th><th>Use</th></tr></thead>
-          <tbody>
-            <tr><td><strong>IV Salbutamol</strong></td><td>Loading: 250 mcg slow IV; Infusion: 5–20 mcg/min</td><td>When inhaled route inadequate (intubated, severe bronchospasm)</td><td>Reserve for life-threatening; monitor K⁺, glucose, HR</td></tr>
-            <tr><td><strong>Aminophylline IV</strong></td><td>Loading: 5 mg/kg over 30 min (if not on theophylline); Infusion: 0.5 mg/kg/hr</td><td>Controversial; GINA 2026 does not recommend routinely; narrow therapeutic window</td><td>Reserve when other agents failed; monitor levels (10–20 mcg/ml)</td></tr>
-            <tr><td><strong>Ketamine</strong></td><td>0.5–2 mg/kg IV for induction; 0.5–1 mg/kg/hr infusion</td><td>Bronchodilator (sympathomimetic) + dissociative anaesthetic; useful in severe pre-intubation</td><td>Pre-intubation sedation in status asthmaticus; preserves airway reflexes</td></tr>
-            <tr><td><strong>Heliox (He:O₂ 70:30 or 80:20)</strong></td><td>Via tight-fitting mask</td><td>Low-density gas reduces turbulence in narrowed airways; improves drug delivery</td><td>Adjunct in severe; not widely available in India</td></tr>
+            <tr><td><strong>Ketamine</strong> (induction)</td><td>1.5–2 mg/kg IV</td><td>Bronchodilator (releases catecholamines); preserves BP; analgesic; PREFERRED in asthma RSI</td></tr>
+            <tr><td><strong>Rocuronium</strong> (NMB)</td><td>1.2 mg/kg IV</td><td>Fast onset 60s; no histamine release. AVOID suxamethonium (histamine release)</td></tr>
+            <tr><td><strong>AVOID: Morphine</strong></td><td>—</td><td>Histamine release → worsens bronchospasm</td></tr>
+            <tr><td><strong>AVOID: Suxamethonium</strong></td><td>—</td><td>Histamine release → bronchospasm</td></tr>
           </tbody>
         </table>
       </div>
     </section>
-
-    <section id="icu">
-      <h2>ICU Admission &amp; Intubation</h2>
-      <h3>Indications for ICU Admission</h3>
-      <ul>
-        <li>Life-threatening features (any one) — see severity table</li>
-        <li>No improvement or deterioration after 1 hour of maximal treatment</li>
-        <li>PaCO₂ rising toward normal despite aggressive treatment</li>
-        <li>Requiring IV bronchodilators or magnesium</li>
-        <li>Concerns about fatigue or ability to maintain airway</li>
-      </ul>
-      <h3>When to Intubate</h3>
-      <div class="warn-box">
-        <div class="kb-label">Intubate Early — Don't Wait for Cardiac Arrest</div>
-        <ul>
-          <li>Respiratory arrest or peri-arrest</li>
-          <li>Altered consciousness (GCS &lt;13, confusion, agitation from hypercapnia)</li>
-          <li>Rising PaCO₂ despite maximal medical therapy</li>
-          <li>SpO₂ &lt;85% on FiO₂ 1.0 (no response to O₂)</li>
-          <li>Exhaustion — patient cannot maintain respiratory effort</li>
-        </ul>
-      </div>
-      <h3>RSI for Asthma — Drug Choices</h3>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Drug</th><th>Dose</th><th>Why in Asthma</th><th>Avoid</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Ketamine (induction)</strong></td><td>1.5–2 mg/kg IV</td><td>Bronchodilator; preserves BP; sympathomimetic; analgesic</td><td>Avoid in raised ICP</td></tr>
-            <tr><td><strong>Rocuronium (NMB)</strong></td><td>1.2 mg/kg IV</td><td>Fast onset (~60s); no histamine release</td><td>—</td></tr>
-            <tr><td><strong>Propofol (maintenance)</strong></td><td>50–200 mcg/kg/min</td><td>Bronchodilator at anaesthetic doses; smooth sedation</td><td>Watch for hypotension</td></tr>
-            <tr><td><strong>Thiopentone</strong></td><td>3–5 mg/kg IV</td><td>Bronchospasm-sparing induction</td><td>—</td></tr>
-            <tr><td><strong>Morphine/Suxamethonium</strong></td><td>—</td><td>—</td><td>AVOID: morphine releases histamine (worsens bronchospasm); suxamethonium = histamine release</td></tr>
-          </tbody>
-        </table>
+    <section id="s5">
+      <span class="sb sbf">🗺 5 · Clinical Flowchart</span>
+      <h2>Acute Severe Asthma — Step by Step</h2>
+      <div style="display:flex;flex-direction:column;gap:.8rem;">
+        <div class="fs"><div class="fn" style="background:#ef4444">1</div><div class="fb"><h4>Anaphylaxis? — Check First (GINA 2026)</h4><p>If urticaria/angioedema/haemodynamic compromise alongside asthma → <strong>Adrenaline 0.5 mg IM anterolateral thigh FIRST</strong>, then bronchodilators. Missing anaphylaxis = potentially fatal error.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#f97316">2</div><div class="fb"><h4>O₂ — Controlled (GINA 2026 Change)</h4><p>Give O₂ ONLY if SpO₂ &lt;92%. Target <strong>92–95%</strong> (NOT 100%). High-concentration O₂ worsens V/Q mismatch (Haldane effect) and increases risk of hypercapnia. Use Venturi mask 24–28% or titrated nasal prongs.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#eab308">3</div><div class="fb"><h4>Bronchodilators — Salbutamol + Ipratropium</h4><p>Salbutamol 4–8 puffs pMDI+spacer q20 min × 3 OR 2.5–5 mg neb q20 min × 3. Shake pMDI before each puff (GINA 2026). Add Ipratropium 0.5 mg neb × 3 in ED → STOP after initial phase (no benefit in hospitalised patients).</p></div></div>
+        <div class="fs"><div class="fn" style="background:#22c55e">4</div><div class="fb"><h4>Corticosteroids + MgSO₄</h4><p>Hydrocortisone 100 mg IV q6h OR Prednisolone 40–50 mg PO OD × 5–7 days. MgSO₄ 2g IV over 20 min if no response to initial salbutamol — Evidence A: reduces hospitalisations.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#3b82f6">5</div><div class="fb"><h4>Intubation — When to Intubate</h4><p>Indications: GCS falling, PaCO₂ rising (normal CO₂ in severe asthma = DANGER), SpO₂ &lt;85% on max O₂, exhaustion. RSI: Ketamine 1.5–2 mg/kg + Rocuronium 1.2 mg/kg. AVOID morphine + suxamethonium (histamine release).</p></div></div>
+        <div class="fs"><div class="fn" style="background:#8b5cf6">6</div><div class="fb"><h4>Ventilating the Asthmatic</h4><p>Mode: VCV. Vt 6–8 ml/kg PBW. RR 10–14/min (LOW — allow expiratory time). I:E 1:3 to 1:5. PEEP: minimal (3–5). Flow 60–100 L/min. Accept PaCO₂ up to 80 mmHg (pH ≥7.15). Monitor auto-PEEP. If sudden haemodynamic collapse: DISCONNECT from ventilator 30 sec.</p></div></div>
       </div>
     </section>
-
-    <section id="ventilation">
-      <h2>Ventilating the Asthmatic Patient — Special Considerations</h2>
-      <div class="warn-box">
-        <div class="kb-label">Asthma Ventilation is Different from ARDS</div>
-        <p>The primary problem is severe airflow obstruction (↑ resistance) NOT reduced compliance. Auto-PEEP and gas trapping are the main threats — not derecruitment. High PEEP and high RR are DANGEROUS in asthma.</p>
-      </div>
-      <div class="key-box">
-        <div class="kb-label">Ventilator Strategy for Status Asthmaticus</div>
-        <ul>
-          <li><strong>Mode:</strong> Volume Control AC (guaranteed Vt)</li>
-          <li><strong>Tidal Volume:</strong> 6–8 ml/kg IBW (lung-protective)</li>
-          <li><strong>Rate:</strong> 10–14/min (LOW — allow adequate expiratory time)</li>
-          <li><strong>I:E ratio:</strong> 1:3 to 1:5 (prolonged expiration — CRITICAL)</li>
-          <li><strong>Flow rate:</strong> 60–100 L/min (fast inspiration to allow more expiratory time)</li>
-          <li><strong>PEEP:</strong> Minimal (3–5 cmH₂O) — dynamic hyperinflation makes auto-PEEP; extrinsic PEEP worsens this</li>
-          <li><strong>FiO₂:</strong> Titrate to SpO₂ 92–95%</li>
-          <li><strong>Accept:</strong> Permissive hypercapnia (PaCO₂ up to 80–100 mmHg; pH ≥7.15) — safe in asthma</li>
-        </ul>
-      </div>
-      <h3>Auto-PEEP (Dynamic Hyperinflation) — The Major Danger</h3>
-      <p>Incomplete expiration → gas trapping → lungs over-inflate → ↑ intrathoracic pressure → ↓ venous return → hypotension. If sudden haemodynamic collapse on ventilator:</p>
-      <ol>
-        <li>Disconnect from ventilator immediately for 30–60 seconds (allow passive decompression)</li>
-        <li>If BP recovers → dynamic hyperinflation was the cause</li>
-        <li>Measure auto-PEEP with expiratory hold manoeuvre</li>
-        <li>Reduce RR, prolong expiratory time, reduce Vt</li>
-      </ol>
-      <h3>Mucus Plugging</h3>
-      <p>A major cause of refractory status asthmaticus. Consider bronchoscopy for mucus plug clearance in ventilated patients who are not improving despite maximal bronchodilator therapy. Warm humidified gases help mobilise secretions.</p>
-    </section>
-
-    <section id="discharge">
-      <h2>Discharge Planning (GINA 2026)</h2>
-      <ul>
-        <li>Spirometry or PEF before discharge — document baseline</li>
-        <li>Initiate or step up ICS-containing treatment: preferred = MART with ICS-formoterol at Step 4</li>
-        <li>SABA-only treatment is NO LONGER recommended — every patient needs ICS</li>
-        <li>Prescribe prednisolone 40–50 mg/day × 5–7 days (or dexamethasone 0.3–0.6 mg/kg × 1–2 days)</li>
-        <li>Written Asthma Action Plan — mandatory before discharge</li>
-        <li>Even one exacerbation = "red flag" → review inhaler technique, adherence, triggers</li>
-        <li>Follow-up within 1–2 weeks (preferably before stopping OCS)</li>
-      </ul>
-    </section>
-
-    <section id="pearls">
-      <h2>Clinical Pearls</h2>
-      <div class="pearl-grid">
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 1 — Normal CO₂ = Danger in Asthma</div>
-          <p>A patient with severe asthma SHOULD be hyperventilating → low PaCO₂. A "normal" CO₂ of 40 mmHg in a severe asthma attack means they're tiring — impending respiratory failure. Rising CO₂ = emergency.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 2 — O₂ Target Changed in 2026</div>
-          <p>GINA 2026: Don't give O₂ unless SpO₂ &lt;92%. Target 92–95%, NOT 100%. High-concentration O₂ worsens V/Q mismatch and may worsen hypercapnia (Haldane effect).</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 3 — SABA Causes Lactic Acidosis</div>
-          <p>High-dose SABA (β₂ stimulation) → glycolysis → lactate production → lactic acidosis → compensatory hyperventilation → misinterpreted as worsening asthma → more SABA. GINA 2026 now recommends conservative SABA dosing.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 4 — Magnesium is the Rescue Drug</div>
-          <p>When SABA + ipratropium + steroids aren't working after 1 hour → MgSO₄ 2g IV over 20 min. Evidence A for reducing hospitalisations. Safe, cheap, available everywhere in India.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 5 — Ketamine for Induction in Status Asthmaticus</div>
-          <p>Ketamine is the drug of choice for RSI in severe asthma. Releases catecholamines → bronchodilation. Also provides analgesia and sedation. Avoid morphine (histamine release) and suxamethonium (histamine release → worsening bronchospasm).</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 6 — Disconnect if Haemodynamic Collapse on Vent</div>
-          <p>Sudden hypotension in ventilated asthmatic = dynamic hyperinflation (auto-PEEP) or tension pneumothorax. First step: disconnect from ventilator. If BP recovers in 30–60 sec = auto-PEEP. Reduce rate, prolong expiratory time.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 7 — Don't Forget Anaphylaxis</div>
-          <p>GINA 2026 now explicitly states: if features of anaphylaxis accompany asthma exacerbation → Adrenaline IM FIRST, then bronchodilators. Food allergy + asthma = high-risk combination for fatal attacks.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 8 — Shake Salbutamol pMDI Each Time</div>
-          <p>GINA 2026 specifically highlights: shake the salbutamol inhaler immediately before EACH actuation. New inhaler without shaking delivers ultra-high doses; near-empty inhaler without shaking delivers very low doses. This simple step is often missed.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="mistakes">
+    <section id="s6">
+      <span class="sb sbe">⚠️ 6 · Common Mistakes</span>
       <h2>Common Mistakes</h2>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 1 — Giving 100% O₂ Routinely</div>
-        <p>GINA 2026 changed this. High-concentration O₂ worsens outcomes. Only give O₂ if SpO₂ &lt;92%, and target 92–95%. Controlled O₂ reduces mortality (Evidence A).</p>
-      </div>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 2 — Using Morphine for Sedation/Intubation</div>
-        <p>Morphine causes histamine release from mast cells → worsens bronchospasm. Also suxamethonium causes histamine release. Use ketamine + rocuronium for RSI in status asthmaticus.</p>
-      </div>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 3 — High PEEP and High RR on the Ventilator</div>
-        <p>Asthma is a high-resistance disease (not low compliance like ARDS). High RR → less expiratory time → more air trapping → auto-PEEP → haemodynamic collapse. Use RR 10–14/min, prolonged I:E (1:3 to 1:5), minimal extrinsic PEEP.</p>
-      </div>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 4 — Reassured by Normal SpO₂</div>
-        <p>In severe asthma, patients can maintain SpO₂ by extreme hyperventilation (tachypnoea + ↑ effort). Normal SpO₂ with RR &gt;30 and accessory muscle use = still severe. Watch PaCO₂ — normal CO₂ in this context = exhaustion and failure.</p>
-      </div>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 5 — Not Starting ICS at Discharge</div>
-        <p>Every patient who presents with an asthma exacerbation needs ICS-containing treatment started before or at discharge. SABA-only treatment is no longer recommended. Missed opportunity = higher risk of future attacks.</p>
-      </div>
+      <div class="mc"><div class="ml2">❌ Mistake 1 — Giving 100% O₂ Routinely</div><p>GINA 2026: Do NOT give O₂ unless SpO₂ &lt;92%. Target 92–95%, NOT 100%. High-concentration O₂ worsens V/Q mismatch, increases risk of hypercapnia (Haldane effect), and associated with worse outcomes. This was changed in GINA 2026.</p></div>
+      <div class="mc"><div class="ml2">❌ Mistake 2 — Missing Anaphylaxis Component</div><p>GINA 2026 now explicitly states: anaphylaxis + asthma → Adrenaline IM FIRST. Missing the anaphylaxis component and only giving bronchodilators can be fatal. Check for urticaria, angioedema, or haemodynamic compromise in every severe asthma presentation.</p></div>
+      <div class="mc"><div class="ml2">❌ Mistake 3 — Using Morphine or Suxamethonium for RSI</div><p>Both cause histamine release → severe bronchospasm → catastrophic worsening. Use ketamine (bronchodilator) + rocuronium for RSI in status asthmaticus. Ketamine is the drug of choice.</p></div>
+      <div class="mc"><div class="ml2">❌ Mistake 4 — High RR on the Ventilator</div><p>Marino (Ch.23, p.418): high RR + auto-PEEP in asthma = ↑ intrathoracic pressure → ↓ venous return → haemodynamic collapse. Use RR 10–14/min, I:E 1:3–1:5, high inspiratory flow rate (60–100 L/min) to maximise expiratory time. If sudden BP collapse: disconnect from ventilator.</p></div>
+      <div class="mc"><div class="ml2">❌ Mistake 5 — Normal CO₂ as Reassurance</div><p>Severe asthma patients hyperventilate → PaCO₂ should be LOW (25–35). A "normal" PaCO₂ of 40 means they are TIRING — impending respiratory arrest. Rising PaCO₂ toward normal = intubate urgently.</p></div>
     </section>
-
-    <section id="exam">
-      <h2>Exam Pearls (DrNB / PDCC / IFCCM)</h2>
-      <div class="exam-card"><p><strong>Q: GINA 2026 oxygen target in acute asthma?</strong> → Do NOT give O₂ unless SpO₂ &lt;92%. If giving O₂, target 92–95% (NOT 100%). High-concentration O₂ associated with worse outcomes (Haldane effect, V/Q mismatch worsening).</p></div>
-      <div class="exam-card"><p><strong>Q: Most dangerous sign in ventilated asthmatic?</strong> → Sudden haemodynamic collapse = auto-PEEP / dynamic hyperinflation. First action: disconnect from ventilator. If BP recovers → dynamic hyperinflation confirmed.</p></div>
-      <div class="exam-card"><p><strong>Q: Why is normal PaCO₂ dangerous in acute severe asthma?</strong> → Severe asthma → hypoxic drive → hyperventilation → PaCO₂ falls. A "normal" PaCO₂ (35–45) in severe asthma means the patient is no longer hyperventilating → respiratory muscle fatigue → impending arrest.</p></div>
-      <div class="exam-card"><p><strong>Q: Drug of choice for RSI in status asthmaticus?</strong> → Ketamine (bronchodilator, releases catecholamines) + Rocuronium. Avoid morphine (histamine → bronchospasm) and suxamethonium (histamine release).</p></div>
-      <div class="exam-card"><p><strong>Q: What is the new GINA 2026 recommendation for ICS-formoterol in acute asthma?</strong> → ICS-formoterol (budesonide-formoterol) is now an option for mild exacerbations in primary care and ED as alternative to SABA. Max 12 inhalations/24h (combined as-needed + maintenance doses).</p></div>
-      <div class="exam-card"><p><strong>Q: Rescue therapy for severe asthma not responding to SABA + ipratropium + steroids?</strong> → MgSO₄ 2g IV over 20 min. Evidence A: reduces hospitalisations in severe asthma.</p></div>
-      <div class="exam-card"><p><strong>Q: Ventilator I:E ratio in status asthmaticus?</strong> → 1:3 to 1:5 (prolonged expiratory time). This is opposite to ARDS (1:2). Low RR (10–14/min) to allow complete exhalation and prevent gas trapping.</p></div>
+    <section id="s7">
+      <span class="sb sbx">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: GINA 2026 O₂ target in acute asthma?</strong><br>Do NOT give O₂ unless SpO₂ &lt;92%. Target 92–95% (NOT 100%). High-concentration O₂ worsens V/Q mismatch (Haldane effect). This is a major GINA 2026 change (Evidence A). Controlled O₂ associated with lower mortality.</p></div>
+      <div class="ec"><p><strong>Q: MDI vs nebuliser — Marino's data?</strong><br>Marino Table 23.1 (Ch.23, p.407): Nebuliser delivers 12% to lungs; MDI alone 9%; MDI + spacer 20%. MDI+spacer delivers double the lung deposition. Clinically equivalent if correct technique used. Spacers recommended for all MDI bronchodilator treatments.</p></div>
+      <div class="ec"><p><strong>Q: Drug of choice for RSI in status asthmaticus?</strong><br>Ketamine 1.5–2 mg/kg IV — bronchodilator (releases catecholamines), preserves BP, analgesic. Muscle relaxant: Rocuronium 1.2 mg/kg IV. AVOID morphine (histamine release) and suxamethonium (histamine → bronchospasm).</p></div>
+      <div class="ec"><p><strong>Q: When do you intubate a patient with acute severe asthma?</strong><br>Indications: Falling GCS, rising PaCO₂ (toward or above normal), SpO₂ &lt;85% on max O₂, exhaustion, silent chest. Normal PaCO₂ in severe asthma = DANGER SIGN (patient losing their hyperventilatory compensation). Do not wait for arrest.</p></div>
+      <div class="ec"><p><strong>Q: Marino's A Final Word on asthma/COPD management?</strong><br>"Give bronchodilators and corticosteroids to all patients, plus antibiotics for patients with severe COPD. If the condition is severe or progresses despite the above measures, use noninvasive ventilation if possible, and conventional mechanical ventilation if necessary. That's about it." (Marino Ch.23, p.419)</p></div>
     </section>
-
-    <section id="references" class="references-section">
+    <section id="s8" class="references-section">
+      <span class="sb sbr">📚 8 · References</span>
       <h2>References</h2>
       <ol class="ref-list">
+        <li><strong>Marino PL.</strong> Marino's The ICU Book, 5th edition. Chapter 23: Asthma and COPD in the ICU (pp.405–421). Philadelphia, PA: Wolters Kluwer; 2025. ISBN: 978-1-975176-71-6.</li>
         <li><strong>Global Initiative for Asthma (GINA).</strong> Global Strategy for Asthma Management and Prevention. Updated May 2026. Available from: www.ginasthma.org</li>
-        <li><strong>British Thoracic Society/Scottish Intercollegiate Guidelines Network.</strong> British Guideline on the Management of Asthma. 2019 (Updated 2023). Available from: https://www.brit-thoracic.org.uk</li>
-        <li><strong>Camargo CA Jr, Spooner CH, Rowe BH.</strong> Continuous versus intermittent beta-agonists in the treatment of acute adult asthma. <em>Cochrane Database Syst Rev.</em> 2003.</li>
-        <li><strong>Rodrigo GJ, Castro-Rodriguez JA.</strong> Anticholinergics in the treatment of children and adults with acute asthma: a systematic review with meta-analysis. <em>Thorax.</em> 2005;60(9):740–746.</li>
+        <li><strong>British Thoracic Society / Scottish Intercollegiate Guidelines Network (BTS/SIGN).</strong> British Guideline on the Management of Asthma. Updated 2023. www.brit-thoracic.org.uk</li>
+        <li><strong>Rodrigo GJ, Castro-Rodriguez JA.</strong> Anticholinergics in the treatment of children and adults with acute asthma. <em>Thorax.</em> 2005;60(9):740–746.</li>
         <li><strong>Rowe BH, Bretzlaff JA, Bourdon C, et al.</strong> Magnesium sulfate for treating exacerbations of acute asthma in the emergency department. <em>Cochrane Database Syst Rev.</em> 2000.</li>
         <li><strong>Perrin K, Wijesinghe M, Healy B, et al.</strong> Randomised controlled trial of high concentration versus titrated oxygen therapy in severe exacerbations of asthma. <em>Thorax.</em> 2011;66(11):937–941.</li>
-        <li><strong>Weingart SD, Levitan RM.</strong> Preoxygenation and prevention of desaturation during emergency airway management. <em>Ann Emerg Med.</em> 2012;59(3):165–175.</li>
-        <li><strong>Marino PL.</strong> The ICU Book, 4th edition. Chapter 26: Asthma and Obstructive Airways Disease. Lippincott Williams &amp; Wilkins; 2014.</li>
-        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Chapter 35: Acute Severe Asthma. Elsevier; 2018.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Wolters Kluwer; 2023.</li>
+        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Chapter: Acute Severe Asthma. Elsevier; 2018.</li>
       </ol>
     </section>
-
   </main>
 </div>
-
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-brand">Crit<span>Care</span>.in</span>
-    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
-    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
   </div>
 </footer>
 </body>

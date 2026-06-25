@@ -1,0 +1,128 @@
+MARINO 5TH ED — CH29_VAP
+Found at page: 515
+============================================================
+
+--- Page 515 ---
+Chapter 29
+Ventilator-Associated Pneumonia
+Everything hinges on the matter of evidence.
+Carl Sagan
+Pneumonias that develop during mechanical ventilation can be characterized by one word:
+problematic. The problems include the nonspecific clinical presentation of ventilator-associated
+pneumonia, the uncertainties in identifying the culprit organism, and the difficulties created by
+the emergence of multidrug resistant organisms in this condition.
+This chapter addresses the multiple problems encountered in the approach to ventilator-
+associated pneumonia, and includes recommendations from the most recent clinical practice
+guidelines on the subject (1,2).
+GENERAL INFORMATION
+The following statements include some basic information about ventilator-associated pneumonia
+(VAP).
+1. ICU-acquired pneumonias are divided into ventilator-associated pneumonia (VAP), with onset
+≥48 hours after intubation, and hospital-acquired pneumonia (HAP), with onset ≥48 hours after
+ICU admission in nonintubated patients. VAP is further classified as early onset (2–4 days
+after intubation) or late-onset (≥5 days after intubation).
+2. VAP accounts for 80% of ICI-acquired pneumonias, and 60% of VAPs are late-onset.
+3. The predominant pathogens in VAP and HAP are gram-negative enteric organisms and
+staphylococci (see Table 29.1) (3). About one-quarter of the infections are polymicrobial.
+4. Multidrug-resistant pathogens are a growing concern, and are more likely to appear in patients
+who have received intravenous antibiotics in the past 90 days, in patients who are
+immunocompromised or receiving renal replacement therapy, and in patients with septic shock
+(2).
+5. Viruses are implicated in about 20% of cases of VAP and HAP (4). Candida species are
+common isolates in respiratory secretions, but are not known to cause pneumonia (5).
+--- Page 516 ---
+6. VAP prolongs the duration of mechanical ventilation, and increases the length of stay in the
+ICU (5), but the impact of VAP on survival is unclear (6). Some studies show that VAP has
+little of no effect on mortality rate (7,8), while others show a small but significant increase in
+mortality rate (3).
+PREVENTIVE MEASURES
+Aspiration of microbes from the oropharynx is the inciting event in most cases of VAP (9).
+Gram-negative aerobic bacilli are the predominant pathogens in the oropharynx of ICU patients
+(see Figure 4.4), and they are also the predominant pathogens in VAP, as shown in Table 29.1
+(3). Early cases of VAP (i.e., appear 2–4 days after intubation) are most likely caused by
+pathogens that are dragged into the airways during intubation.
+TABLE 29.1 Common Isolates in ICU-Acquired Pneumonia
+Pathogens Early VAPa Late VAPb HAPc
+Enterobacteriaceae 32% 34% 31%
+P. aeruginosa 14% 20% 16%
+Acinetobacter spp. 8% 21% 13%
+Staphylococcus aureus 30% 21% 20%
+MSSA 21% 9% 6%
+MRSA 9% 13% 13%
+Polymicrobial 26% 24% 21%
+None identified 25% 22% 38%
+From Reference 3. MSSA = methicillin-sensitive S. aureus, MRSA = methicillin-resistant S. aureus.
+a Onset 2–4 days after intubation.
+b Onset ≥5 days after intubation.
+c Onset ≥48 hrs after ICU admission in non-ventilated patients.
+Oral Decontamination
+The discovery that pathogens in the oropharynx are the culprits in VAP led to the introduction of
+oral decontamination as a preventive measure for VAP. Oral decontamination is described in
+Chapter 4, and is briefly reviewed here.
+Methods
+There are two methods for eliminating pathogens from the oropharynx (see Table 4.1). The
+popular (but problematic) method is topical application of 0.12% chlorhexidine gluconate to the
+oral mucosa every 6 hours. The problem is evidence of increased mortality associated with
+chlorhexidine (10), which is attributed to a chlorhexidine-induced mucositis that disrupts the
+mucosal barrier in the mouth and leads to septicemia with pathogenic mouth organisms (11).
+Because of this risk, chlorhexidine is no longer recommended for oral decontamination in the
+most recent guidelines on VAP (3).
+ALGrawany
+--- Page 517 ---
+The preferred decontamination method is selective oral decontamination (SOD) (3), which
+uses nonabsorbable antibiotics applied to the oral mucosa (see Table 4.1 for an example of an
+SOD regimen). The aim of SOD is to “selectively” eliminate pathogens while retaining the
+normal microbial environment in the mouth (which presumably helps to prevent further
+colonization with pathogens). The success of this approach is demonstrated in Figure 29.1, which
+shows that SOD is associated with a significant decrease in both tracheal colonization and
+pneumonia in ventilator-dependent patients (12). Unfortunately, SOD has been unpopular in the
+United States, primarily due to the unfounded fear that SOD will promote bacterial resistance.
+(See Chapter 4 for more on this topic.)
+FIGURE 29.1 The effects of selective oral decontamination (SOD) on tracheal colonization and
+pneumonia in ventilator-dependent patients. The p value in each graph indicates a significant
+difference between the groups. Data from Reference 12.
+The Ventilator Bundle
+The Institute for Healthcare Improvement has advocated the use of “bundles” which are a
+collection of practices that, when used together, will improve outcomes. The bundle introduced
+for ventilator-dependent patients is shown in Table 29.2. Although some of the practices in this
+bundle do not have a direct bearing on pneumonia, its use has been shown to reduce the
+incidence of VAP (13), and it is sometimes called the “VAP Bundle” (14).
+TABLE 29.2 The Ventilator Bundle
+1. Elevate head of the bed to 30–45° above horizontal.
+2. Prophylaxis for stress ulcer bleeding.
+3. Prophylaxis for venous thromboembolism.
+--- Page 518 ---
+4. Daily sedation holiday.
+5. Daily assessment of readiness to extubate.
+The Semirecumbent Position
+Elevation of the head of the bed to 30–45° (semirecumbent position) is considered an important
+measure for preventing gastroesophageal reflux and aspiration of gastric contents into the
+airways. However, while some studies have validated the benefit of the semirecumbent position
+(15), other studies have shown no difference in the incidence of VAP with patients in the supine
+and semirecumbent positions (16).
+COMMENT: Since the principal source of VAP is aspiration of pathogens in mouth secretions,
+elevating the head of the bed could increase the risk of VAP by promoting the movement of
+mouth secretions into the lungs (by gravity flow). This has never been studied, nor is it ever
+mentioned in discussions of the semirecumbent position to prevent VAP.
+Airway Care
+As mentioned in Chapter 28, tracheal tubes serve as a nidus for pathogenic colonization and
+biofilm formation (see Figure 28.4), and passing a suction catheter through the tubes can
+dislodge these biofilms and inoculate the lungs with pathogenic organisms (17). As a result of
+this risk, routine suctioning of the airways is not recommended (18). Instead, suctioning should
+be performed only when there is evidence of troublesome respiratory secretions.
+Subglottic Aspiration
+Inflation of the cuff on tracheal tubes does not prevent aspiration of mouth secretions into the
+lower airways, and concern about this aspiration prompted the introduction (in 1992) of
+specialized endotracheal tubes equipped with a suction port just above the cuff, as shown in
+Figure 29.2. The section port is connected to a source of continuous suction (usually not
+exceeding –20 cm H O) to clear the secretions that accumulate in the subglottic region. Clinical
+2
+studies have shown a significant reduction in the incidence of VAP when subglottic secretions
+are cleared using specialized endotracheal tubes (19).
+ALGrawany
+--- Page 519 ---
+FIGURE 29.2 Endotracheal tube with a suction port placed just above the cuff to clear
+secretions that accumulate in the subglottic region.
+CLINICAL MANIFESTATIONS
+The traditional clinical criteria for the diagnosis of VAP include: (a) fever or hypothermia, (b)
+leukocytosis or leukopenia, (c), an increase in volume of res

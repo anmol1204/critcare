@@ -1,0 +1,137 @@
+MARINO 5TH ED — CH6_SEDATION
+Found at page: 103
+============================================================
+
+--- Page 103 ---
+Chapter 6
+Analgesia and Sedation in the ICU
+To cure sometimes, to relieve often, and to comfort always.
+Edward Livingston Trudeau, MD (1848−1915)
+Contrary to popular perception, our principal function is not to save lives (since this is
+impossible on a consistent basis), but rather to relieve pain and suffering, and the ICU is the
+flagship of pain and suffering in hospitalized patients. In surveys of patients who have been
+discharged from the ICU, anxiety and unrelieved pain are the dominant recollections of the ICU
+stay (1). While it is not possible to completely eliminate the unpleasantness of the ICU stay,
+attention to patient comfort is always warranted, and surveys like one in Figure 6.1 (2) indicate
+that there is much work to be done.
+This chapter describes the pharmacological approach to pain and stress relief in the ICU,
+with a focus on intravenous drug regimens and recommendations from expert commentaries on
+the subject (3−7). Nonpharmacological measures are not included here, but are available in a
+clinical practice guideline listed at the end of the chapter (4).
+THE ICU EXPERIENCE
+It is axiomatic to state that the ICU stay is a stressful experience for patients. Several stressors
+have been identified, including unrelieved pain and anxiety, dyspnea, the inability to
+communicate (in intubated patients), and disrupted sleep. The stress of a prolonged ICU stay can
+have far-reaching neuropsychiatric consequences, as post-traumatic stress disorder has been
+reported in patients who required prolonged periods of mechanical ventilation (8).
+Pain in The ICU
+Unrelieved pain is the most frequently cited stressor in the ICU (9), and the frequency of painful
+experiences is equivalent in surgical and medical ICUs (10).
+Altered Pain Perception
+Pain is generally defined as an unpleasant sensory experience (11). The degree of this
+unpleasantness (i.e., pain intensity) varies with the type and strength of the nociceptive (pain
+--- Page 104 ---
+producing) stimulus, and is also influenced by the presence and severity of disease. This latter
+condition applies to critically ill patients, as summarized in the following statements:
+1. The sensation of pain is magnified in critically ill patients, and this condition of
+hypernociception can transform a minor event into a painful experience.
+2. A common source of pain in ICU patients is the simple act of being turned in bed (9), and
+about 50% of patients experience pain at rest (usually in the lower back and legs), in the
+absence of a noxious stimulus (4,9,10).
+3. The heightened pain sensation in critically ill patients is attributed to systemic inflammation
+(via the production of prostenoids) and prolonged immobility.
+Failure to recognize the exaggerated pain sensation in ICU patients is a source of inadequate
+pain control. However, this can be corrected with the use of pain assessment tools, like the ones
+described next.
+FIGURE 6.1 Percentage of resident physicians and ICU nurses who answered incorrectly when
+asked if diazepam (Valium) relieves pain.
+Monitoring Pain
+Routine assessments of pain intensity can be used to guide analgesic therapy. Because pain is a
+subjective sensation, the patient’s self-assessment is the most accurate measure of pain intensity.
+1. When patients are capable of self-assessment, the Numerical Ranking Scale is recommended to
+quantify pain intensity (4). This is a horizontal scale with 10 equally spaced divider markings,
+numbered 1 (no pain) to 10 (maximum pain). The patient points to the numbered marking that
+corresponds to the intensity of pain. A score greater than 3 indicates unacceptable pain.
+2. When patients are not capable of self-assessment due to heavy sedation (e.g., during assisted
+ventilation), then physical signs can be used to assess pain. This is the basis for the Behavioral
+Pain Scale shown in Table 6.1 (12), which includes 12 individual behaviors separated into
+ALGrawany
+--- Page 105 ---
+three categories: facial expression, arm flexion, and tolerance of mechanical ventilation. The
+final score ranges from 3 (no pain) to 12 (maximum pain). A score of 6 or higher indicates
+unacceptable pain.
+Vital Signs
+There is a tendency to look for changes in heart rate or blood pressure as evidence of pain, but
+this practice should be abandoned, because there is a poor correlation between pain intensity (as
+reported by patients) and changes in any of the vital signs (3,4).
+TABLE 6.1 The Behavioral Pain Scale
+Item Description Score
+Facial Expression • Relaxed 1
+• Partially tightened 2
+• Fully tightened 3
+4
+• Grimacing
+Upper Limbs • No movement 1
+• Partially bent 2
+• Fully bent, fingers flexed 3
+4
+• Permanently retracted
+Compliance with Ventilation • Tolerating ventilator 1
+• Coughing, but tolerating ventilator 2
+• Fighting ventilator 3
+4
+• Unable to control ventilation
+Total Score
+Score Interpretation
+3 No Pain
+≥6 Unacceptable pain
+12 Maximal pain
+From Reference 11.
+ANALGESIA WITH OPIOIDS
+The drugs described in this section are the most effective analgesics available (and hence the
+most popular drugs used for pain relief in the ICU). At the outset, a few definitions deserve
+mention:
+1. An opiate is a natural chemical derivative of opium.
+2. An opioid is a naturally-occurring or synthetic derivative of opium that acts by stimulating
+specific receptors (called opioid receptors) in the central nervous system and elsewhere.
+Stimulation of opioid receptors produces a variety of effects, including analgesia, sedation,
+euphoria, pupillary constriction, respiratory depression, bradycardia, constipation, nausea and
+vomiting, urinary retention, and pruritis.
+--- Page 106 ---
+3. A narcotic is an outdated term for an opioid, but it has also been adopted by law enforcement
+agencies to refer to an opioid that is obtained illegally and used for non-medical purposes.
+The terms opiate and opioid are often used interchangeably, but opioid is used here because it
+is a more accurate term for the drugs included in this section. In addition to their analgesic
+effects, opioids have the added benefit of producing mild sedation, but without amnesic effects
+(13). All opioids are metabolized in the liver, and the metabolites are excreted in the urine.
+Drugs and Dosing Regimens
+The opioids used most frequently in the ICU are morphine, fentanyl, and hydromorphone, and
+the recommended intravenous dosing for each drug is shown in Table 6.2 (3). It is important to
+emphasize that opioid dose requirements can vary widely in individual patients, and therefore the
+effective dose of an opioid is determined by each patient’s response, and not by the
+recommended dosing of the drug.
+TABLE 6.2 Commonly Used Intravenous Opioids
+Morphine Hydromorphone Fentanyl
+Onset 5–10 min 5–15 min 1–2 min
+Bolus Dosing 2–4 mg q 1–2 hr 0.2–0.6 mg q 1–2 hr 0.35–0.5 µg/kg q 0.5–1 hr
+Infusion Rate 2–30 mg/hr 0.5–3 mg/hr 0.7–10 µg/kg/hr
+PCA 0.5–3 mg 0.1–0.5 mg 15–75 µg
+Demand (bolus) Lockout Interval 10–20 min 5–15 min 3–10 min
+Lipid Solubility x 0.2x 600x
+Active Metabolites Yes Yes No
+Histamine Release Yes No No
+Dose Adjustment for Renal Failure ↓ 50% None ? Avoid†
+Dosing recommendations from Reference 3. †From Reference 5.
+Morphine
+Morphine is the principal alkaloid of opium, and has been the traditional opioid used for pain
+control in the ICU. However, morphine has the following disadvantages that have curbed its
+popularity:
+1. Morphine has active metabolites that accumulate in renal failure. One metabolite (morphine 3-
+glucuronide) can produce agitation with myoclonus and seizures (14), while another metabolite
+(morphine-6-glucuronide) has more potent analgesic effects than the parent drug (15). To
+avoid accumulation of these metabolites, the maintenance dose of morphine should be reduced
+by 50% in patients with renal failure (16).
+2. Morphine promotes the release of histamine, which produces systemic vasodilation and a
+decrease in blood pressure (17). Hypotension is typically seen in patients with a
+ALGrawany
+--- Page 107 ---

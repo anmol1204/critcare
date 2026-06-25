@@ -1,0 +1,133 @@
+MARINO 5TH ED — CH24_ARDS
+Start page: 304
+============================================================
+
+--- Page 304 ---
+inflammatory organ injury in critically ill patients is the acute respiratory distress syndrome
+(ARDS), which is a leading cause of acute respiratory failure that requires mechanical
+ventilation. (ARDS is the focus of Chapter 24.)
+TABLE 17.1 Inflammatory Organ Injury in Critically Ill Patients
+Organ System Clinical Condition
+Brain Septic encephalopathy
+Bone Marrow Anemia of critical Illness
+Circulatory System Septic shock, Anaphylactic shock
+Kidneys Acute Kidney Injury
+Lungs Acute respiratory distress syndrome
+Peripheral Nerves Critical illness polyneuropathy
+Skeletal Muscle Critical illness myopathy, Rhabdomyolysis
+The morbidity and mortality associated with inflammatory organ injury is not only related to the
+severity of involvement in individual organs, but also to the number of organs involved. This
+latter relationship is shown in Figure 17.2, which includes surveys from the United States (14)
+and Europe (15) showing a direct relationship between the mortality rate and the number of
+organ failures related to inflammation.
+FIGURE 17.2 The relationship between mortality rate and the number of inflammation-related
+organ failures. Data from References 12 and 13.
+ALGrawany
+--- Page 305 ---
+SEPTIC SHOCK
+Sepsis is responsible for one of every 2 to 3 in-hospital deaths in the United States (16), and one
+of every 5 deaths worldwide (17). The mortality rate varies by age and geographic locale: for
+septic shock in the United State, the mortality rate is about 30% when it is present on admission,
+and about 50% when it develops after admission (18). Despite the presumption of sepsis as
+infection, the mortality rate in sepsis is not related to the causative organism, including
+multidrug-resistant organisms (19). This observation is consistent with the notion that the major
+problem in sepsis is not the infection, but the host response to infection (see next).
+Definitions
+The current definitions of sepsis and septic shock are summarized below (20).
+1. Sepsis is an infection (suspected or confirmed) that is associated with life-threatening organ
+dysfunction, and is the result of a dysregulated host response to infection.
+2. Septic shock is a subset of sepsis that is characterized by the need for vasopressor support, and
+by a plasma lactate >2 mmol/L.
+These definitions were introduced in 2016, and they replaced the prior definitions established
+in 1992 (21), which defined sepsis as an infection that was accompanied by a systemic
+inflammatory response (i.e., fever, leukocytosis, etc.) (21), with the latter condition being
+elevated to a syndrome; i.e., the “systemic inflammatory response syndrome”, or SIRS.
+However, SIRS is a nonspecific finding in critically ill patients, as fewer than 50% of patients
+with SIRS have a documented infection (22,23), so SIRS was abandoned as a diagnostic criterion
+for sepsis. However, the definition of sepsis continues to be problematic, as explained next.
+A Better Definition
+The presence of infection is a central feature in the definition of sepsis and septic shock.
+However, there is often no documented infection in cases of sepsis; e.g., in a survey of 2.5
+million patients with sepsis and septic shock, there was no documented infection in 70% of the
+cases (18). Since the clinical suspicion of infection in cases of sepsis is typically based on the
+presence of a systemic inflammatory response (fever, leukocytosis, etc.), it seems likely that
+sepsis is a dysregulated host response to inflammation, not infection.
+Pathophysiology
+Regardless of whether the sepsis is a dysregulated response to infection or inflammation, septic
+shock is distinguished from sepsis by the presence of hemodynamic instability and mitochondrial
+dysfunction.
+Hemodynamic Alterations
+The hemodynamic aberrations in septic shock are summarized below:
+1. The principal hemodynamic problem is hypotension from systemic vasodilation. This has been
+attributed to the enhanced production of nitric oxide by the vascular endothelium (24), but the
+inactivation of nitric oxide by oxidant stress (see Equation 17.1) suggests the involvement of
+--- Page 306 ---
+other factors.
+2. Oxidant injury in the vascular endothelium leads to fluid extravasation and hypovolemia,
+which aggravates the hypotension.
+3. Proinflammatory cytokines promote cardiac dysfunction (both systolic and diastolic
+dysfunction), but the cardiac output is usually increased as a result of tachycardia and a
+decrease in left ventricular afterload (from vasodilation) (25). The cardiac output begins to
+decline in the advanced stages of shock, which carries a poor prognosis.
+4. Despite the increased cardiac output, splanchnic blood flow is typically reduced in septic shock
+(24). This can lead to disruption of the bowel mucosa and translocation of enteric pathogens
+into the systemic circulation, which aggravates the problem.
+Because of the high cardiac output and peripheral vasodilation, septic shock is also known as
+hyperdynamic shock or warm shock.
+Mitochondrial Dysfunction
+The organ dysfunction in sepsis and septic shock is attributed to a defect in the production of
+high-energy ATP molecules in mitochondria (26,27). This condition is attributed to oxidative
+damage in the electron transport chain (28), and to cytokine-mediated inhibition of pyruvate
+dehydrogenase, the enzyme that facilitates the entry of pyruvate into mitochondria (see Figure
+9.5) (29). The resulting decrease in O usage in mitochondria would explain the observation
+2
+shown in Figure 17.3, where the PO in skeletal muscle is increased in patients with severe
+2
+sepsis (30).
+The decrease in mitochondrial O consumption in sepsis is not consistent with the observed
+2
+increase in whole-body O consumption in patients with sepsis. This discrepancy can be resolved
+2
+by proposing that the increased O consumption in sepsis is a reflection of the marked increase in
+2
+O consumption that occurs during neutrophil activation (31).
+2
+ALGrawany
+--- Page 307 ---
+FIGURE 17.3 Direct measurements of tissue PO in the forearm muscles of healthy volunteers
+2
+and patients with severe sepsis. The height of the columns represents the mean value for each
+group, and the crossbars represent the standard error of the mean. Data from Reference 30.
+IMPLICATIONS: The mitochondrial dysfunction in sepsis and septic shock has two very important
+implications:
+1. Since tissue O levels are not impaired in septic shock, the liberal use of supplemental O to
+2 2
+promote tissue oxygenation is not justified, and could be harmful (by promoting oxidant
+stress).
+2. The increase in plasma lactate levels in septic shock is not the result of inadequate tissue
+oxygenation. Instead, the emerging paradigm is that lactate production increases during periods
+of metabolic stress, where lactate serves as an alternative energy source (see Table 9.6).
+Monitoring
+The approach to monitoring in patients with clinical shock is described in Chapter 14, but the
+following information about septic shock deserves mention.
+1. The decrease in mitochondrial O usage in septic shock is associated with a decrease in O
+2 2
+extraction from the microcirculation (i.e., a decrease in the arteriovenous O saturation
+2
+difference) As a result, the central venous O saturation (ScvO ) will be inappropriately
+2 2
+increased, and will be misleading as a measure of the adequacy of O delivery. (Oxygen
+2
+extraction is described in Chapter 9.)
+2. The PCO gap is not influenced by systemic oxygenation, and can be useful for identifying
+2
+tissue hypoperfusion (see Chapter 14).
+3. Although lactate is not a marker of anaerobic metabolism in septic shock, plasma lactate levels
+--- Page 308 ---
+have prognostic significance (see Figure 9.4), and normalization of lactate levels is an
+important goal of management.
+Management
+The initial management of septic shock is outlined in Table 17.2, using recommendations from
+the most recent clinical practice guidelines (32).
+Volume Resuscitation
+Volume infusion should be the initial interventi

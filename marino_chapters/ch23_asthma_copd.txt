@@ -1,0 +1,117 @@
+MARINO 5TH ED — CH23_ASTHMA_COPD
+Start page: 405
+============================================================
+
+--- Page 405 ---
+Chapter 23
+Asthma and COPD in the ICU
+Asthmatic distress calls for procedures which stimulate the
+sympathetic and dilate the bronchi.
+Lawrason Brown, MD (a)
+Admission to an ICU is an ominous sign for patients with acute exacerbations of asthma and
+chronic obstructive pulmonary disease (COPD). For COPD patients, one of every four will not
+survive the hospitalization, and 40% of the survivors will be readmitted within a year (1). And
+for patients with asthma, the need for mechanical ventilation has been identified as the strongest
+risk factor for death (2).
+This chapter describes the management of acute exacerbations of asthma and COPD,
+including some relevant issues related to positive pressure ventilation in patients with severe
+airflow obstructions. As customary, the recommendations in this chapter will follow the most
+recent clinical practice guidelines, which are listed in the bibliography at the end of the chapter
+(3–6).
+One point of interest deserves mention before proceeding. The management of asthma and
+COPD is centered on dilating the airways with adrenergic agents, which is very similar to the
+statement in the introductory quote. The interesting point is that this statement was made almost
+100 years ago, in 1931 (a). The significance of this is left to the judgment of the reader.
+BASICS
+Monitoring Airway Obstruction
+The management of obstructive airways disease is guided by the severity of obstruction in the
+airways.
+Clinical Evaluation
+During acute exacerbations of asthma or COPD, the clinical examination is often unreliable for
+determining the severity of airway obstruction (7). There are usually signs of respiratory distress,
+including tachycardia, tachypnea, use of accessory muscles of respiration, and inability to
+--- Page 406 ---
+complete sentences without taking a breath, and there may be altered mentation and pulsus
+paradoxus (i.e., an inspiratory drop in systolic pressure >12 mm Hg). However, none of these
+clinical findings is sensitive or specific for severe airways obstruction, and more objective
+measures are recommended (3).
+Measures of Peak Expiratory Flow
+For spontaneously breathing patients, a readily obtainable bedside measure of airway obstruction
+is the peak expiratory flow rate (PEFR) (3). The PEFR varies with age, gender, and height, and
+measurements are typically expressed as “% predicted” (observed result/predicted result × 100),
+with the predicted values derived from standard reference equations. (Appendix 2 contains tables
+of the predicted PEFR for age, gender, and height.) The correlations between the % predicted
+values and the severity of airway obstruction are shown below (3).
+% Predicted PEFR Severity of Obstruction
+≥70% Mild
+40–69% Moderate
+<40% Severe
+In general, a PEFR <200 L/min indicates severe airways obstruction, and hypercapnia does not
+occur until the PEFR falls below 25% of predicted (8).
+LIMITATION: The PEFR is effort-dependent, and accurate measurements requires a maximum
+inspiratory effort (to total lung capacity) followed by a maximum expiratory effort (to residual
+lung volume). Patients with acute exacerbations of asthma and COPD are typically unable to
+perform these maneuvers because of respiratory distress, and monitoring PEFR has not been
+popular in the acute care setting (9). However, after the respiratory distress subsides, periodic
+measurements of the PEFR can be used to monitor the course of the illness.
+Intrinsic PEEP
+One of the consequences of severe airflow obstruction is the inability to fully exhale the volume
+of air that is inhaled. The retained volume causes hyperinflation of the lungs and a positive
+pressure in the alveoli at the end of expiration. This positive end-expiratory pressure (PEEP),
+which is called intrinsic PEEP, is a reflection of the severity of airflow obstruction, and it can be
+monitored during mechanical ventilation. Intrinsic PEEP is described in more detail later in the
+chapter.
+Aerosol Drug Delivery
+Aerosolized bronchodilators are the backbone of management for obstructive airways disease,
+and there are three devices used to generate these aerosols: the nebulizer, the metered-dose
+inhaler, and the dry powder inhaler. There are three types of nebulizers (jet, mesh, and ultrasonic
+nebulizers), but the description here is limited to the jet nebulizer (the traditional device). The
+design of a jet nebulizer and a metered dose inhaler is shown in Figure 23.1. (Note: Dry powder
+inhalers are rarely used for life-threatening airways obstruction, and are not described here.)
+ALGrawany
+--- Page 407 ---
+Jet Nebulizer
+The pneumatic or jet nebulizer uses the same principle as an air-entrainment mask. A high-
+pressure gas source (e.g., 50 psi from a wall outlet) is passed through a narrow opening in the
+nebulizer, creating a high-velocity (jet) stream of gas that is passed over the opening of a narrow
+tube submerged in a drug solution. The gas jet draws the drug solution up the tube (by creating
+viscous drag) and then pulverizes the solution to create an aerosol spray that is inhaled by the
+patient. Small-volume jet nebulizers have a reservoir volume of 3–6 mL, and can completely
+aerosolize the reservoir volume in less than 10 minutes (10). Large-volume nebulizers have a
+reservoir volume >200 mL, and are used for continuous aerosol therapy (see later).
+LUNG DEPOSITION: Although small-volume nebulizers can completely aerosolize a drug solution,
+only a fraction of the drug aerosol reaches the lungs. This is demonstrated in Table 23.1, which
+shows the distribution of aerosolized albuterol with different aerosol generator systems (11).
+When the nebulizer is used, most of the drug aerosol impacts on the delivery apparatus or is
+exhaled, and only 12% of the intended dose reaches the lungs. Inefficient drug delivery is
+characteristic of aerosol drug therapy, and is not specific for the jet nebulizer.
+TABLE 23.1 Distribution of Aerosolized Albuterol by Delivery System
+Site of Deposition Nebulizer (2.5 mg) MDI (200 µg) MDI + Spacer (200 µg)
+Exhaled Gas 20% 1% 1%
+Apparatus 66% 10% 78%
+Oropharynx 2% 80% 1%
+Lungs 12% 9% 20%
+From Reference 11. MDI = metered dose inhaler. The MDI dose of 200 μg is equivalent to 2 puffs.
+Metered Dose Inhaler
+A metered dose inhaler (MDI) operates like a canister of hair spray. The MDI has a pressurized
+canister that contains a drug solution with a boiling point below room temperature. When the
+canister is squeezed between the thumb and fingers, a valve opens that releases a fixed volume of
+the drug solution. The liquid immediately vaporizes when it emerges from the canister, and a
+liquid propellant in the solution creates a high velocity spray.
+LUNG DEPOSITION: The spray generated by an MDI has a velocity in excess of 30 meters per
+second (over 60 miles per hour) (12), and when delivered directly into the mouth, most of the
+spray impacts on the posterior wall of the oropharynx (called “inertial impaction”), and is not
+inhaled. The data in Table 23.1 shows that 80% of the aerosolized drug is deposited in the
+oropharynx, and only 9% reaches the lungs. Drug deposition in the lungs can be increased by
+adding a holding chamber or “spacer” between the MDI and the mouth, which reduces the spray
+velocity. This is confirmed by the data in Table 23.1, which shows a more than two-fold increase
+in the inhaled drug spray when a spacer was used with the MDI. Spacers are recommended for
+all bronchodilator treatments that use MDIs (10).
+--- Page 408 ---
+FIGURE 23.1 Aerosol generators used to deliver bronchodilator drugs by inhalation. See text
+for explanation.
+Nebulizer vs. Metered-Dose Inhaler
+Bronchodilator treatments with nebulizers and MDIs produce equivalent results despite a marked
+difference in drug dosage. This is demonstrated in Figure 23.2 which shows a comparison of the
+bronchodilator responses to three treatments with albuterol given by nebulizer or MDI (with
+spacer) in patients with acute exacerbation of asthma (13). Note the similarity in bronc

@@ -1,0 +1,115 @@
+MARINO 5TH ED — CH52_OVERDOSES
+Found at page: 841
+============================================================
+
+--- Page 841 ---
+Chapter 52
+Pharmaceutical Drug Overdoses
+A desire to take medicine is, perhaps, the great feature which
+distinguishes man from other animals.
+Sir William Osler (a)
+Prescription drug use in the United States is commonplace, (see Figure 52.1), indicating that
+man’s desire to take drugs may be matched by physicians’ desire to prescribe them, and this may
+explain, at least in part, why deaths from drug overdoses have increased more than 5-fold in the
+past 20-odd years (from 20,000 deaths in the year 2000, to 108,000 deaths in 2022) (1). This
+chapter describes some of the more frequent or more problematic pharmaceutical drug
+overdoses, including intoxications from acetaminophen, benzodiazepines, β-blockers, opioids,
+and salicylates. You won’t have to spend much time in an ICU to encounter one of these
+overdoses.
+--- Page 842 ---
+FIGURE 52.1 Prescription drug use in the United States, 2015–2018, by age group. Data from
+the National Center for Health Statistics, Health United States, 2019: Table 039. Hyattsville, MD,
+2019. Available from www.cdc.gov/nchs/hus/data-finder.htm (Accessed 7/16/2024).
+ACETAMINOPHEN
+Acetaminophen is a ubiquitous, over-the-counter analgesic-antipyretic agent that is included in
+over 600 commercial drug preparations. It is also a hepatotoxin, and is the leading cause of acute
+liver failure in North America, Europe, and Australia (2). In the United States, acetaminophen is
+responsible for almost half of the cases of acute liver failure (see Figure 39.1) (3), and about half
+of the overdoses are unintentional (4). In 2011, the U.S. Food and Drug Administration (FDA)
+issued a mandate for more prominent labeling of the risks of acetaminophen hepatotoxicity,
+along with a requirement that prescription acetaminophen products be limited to 325 mg per
+dosage (5). Unfortunately, this mandate has had little impact on the prevalence of acute liver
+failure from acetaminophen. (See A FINAL WORD for more on this issue.)
+ALGrawany
+--- Page 843 ---
+FIGURE 52.2 The hepatic metabolism of acetaminophen. See text for explanation.
+Toxic Mechanism
+The toxicity of acetaminophen is related to its metabolism in the liver, and the metabolic
+pathways are shown Figure 52.2. The bulk of acetaminophen metabolism involves the formation
+of nontoxic sulfate and glucuronide conjugates, which are excreted in the urine. About 10% of
+the metabolism involves the oxidation of acetaminophen by a cytochrome P450 oxidase group of
+enzymes to form a toxic metabolite that is capable of lethal cell injury. When the daily dose of
+acetaminophen is not excessive, the toxic metabolite is removed by conjugation with the cysteine
+moiety in glutathione, the major intracellular antioxidant. (Note: Glutathione is a tripeptide that
+is composed of cysteine. glutamine, and glycine.) When the daily dose of acetaminophen is
+excessive (i.e., above 4 grams/day), the nontoxic conjugation pathway becomes saturated, which
+diverts acetaminophen metabolism to the pathway with the toxic metabolite. The increased
+traffic in this pathway begins to deplete glutathione reserves, and when glutathione levels fall by
+70%, the toxic acetaminophen metabolite accumulates and causes hepatocellular injury (3).
+Toxic Dose
+--- Page 844 ---
+1. The toxic dose of acetaminophen can vary in individual patients, but is somewhere between 7.5
+and 15 grams daily in most adults (6,7). Many poison control centers use 10 grams as a
+threshold dose that requires further investigation (8). However, certain conditions can increase
+the susceptibility to acetaminophen hepatotoxicity (see next section).
+2. According to the FDA, the maximum dose of acetaminophen that is safe in adults is 4 grams
+per day (9). However, some clinical practice guidelines recommend that for chronic
+acetaminophen use, the daily dose should not exceed 3 grams (10).
+Predisposing Conditions
+The following conditions can increase the risk of liver damage from acetaminophen. In the
+presence of these conditions, a daily acetaminophen dose of >4 grams should be considered as
+potentially toxic (8).
+1. Malnutrition, or prolonged periods of fasting, are recognized risk factors because of the
+potential for depletion of hepatic glutathione stores.
+2. Patients with chronic alcohol use disorder are at increased risk of acetaminophen
+hepatotoxicity, even when daily acetaminophen doses are below the recommended safe level
+(i.e., <4 grams daily) (11). This is likely due to the ability of alcohol to increase the activity of
+the cytochrome P450 enzyme, plus the possible contribution of glutathione depletion from
+poor nutrition.
+3. Patients with chronic liver disease are also considered high risk for acetaminophen
+hepatotoxicity (8), although the evidence for this is not convincing (12).
+4. Drugs that stimulate cytochrome P450 activity can increase the risk of liver damage from
+acetaminophen. These drugs include anticonvulsants (carbamazepine and phenytoin) and
+antituberculosis drugs (INH and rifampin) (12). Opioids can also increase the risk by
+competing for the nontoxic conjugation pathway, thereby diverting acetaminophen metabolism
+toward the production of the toxic metabolite (12).
+Clinical Presentation
+The clinical presentation of acetaminophen hepatotoxicity can be divided into three stages:
+1. Stage 1 (First 24 hours): Symptoms are absent or nonspecific (e.g., nausea, vomiting, malaise),
+and there may be no evidence of hepatic injury.
+2. Stage 2 (24–72 hours): Hepatic aminotransferases (aspartate aminotransferase [AST], alanine
+aminotransferase, [ALT]) begin to rise at 24 hours, and can reach levels of 10,000 IU/L (13).
+Signs of progressive hepatic injury (e.g., jaundice and prolonged INR) begin to appear, and
+there may be signs of renal impairment.
+3. Stage 3 (72–96 hours): The hepatic injury peaks at 72–96 hours (12). Hepatic encephalopathy
+may be evident at this time, along with progressive lactic acidosis and acute, oliguric renal
+failure. Death from multiorgan failure usually occurs at this time.
+Risk Assessment
+The evaluation of acetaminophen overdoses must include the following: (a) the time and dose
+ALGrawany
+--- Page 845 ---
+ingested, (b) the type of ingestion (acute overdose versus unintentional supratherapeutic dosing),
+(c) the drug preparation (immediate vs. extended release), (d) the presence of predisposing
+conditions, and (e) evidence of hepatic injury. If an overdose presents within 24 hours of
+ingestion of an immediate-release preparation, the plasma acetaminophen level can identify the
+need for antidotal therapy.
+FIGURE 52.3 Nomogram for predicting the risk of hepatotoxicity according to the plasma
+acetaminophen level between 4 and 24 hours after ingestion. See text for explanation.
+Nomogram redrawn from Reference 14.
+Predictive Nomogram
+Plasma acetaminophen levels obtained from 4 to 24 hours after an acute drug ingestion can be
+used to predict the risk of hepatotoxicity using the nomogram in Figure 52.3 (14). If the plasma
+level is above the treatment line (which extends from 150 μg/mL at 4 hrs, to 5 μg/mL at 24 hrs),
+the risk of hepatotoxicity is high enough to warrant antidotal therapy with N-acetylcysteine. If
+the plasma level is above the high-risk line (from 300 μg/mL at 4 hrs, to 10 μg/mL at 24 hrs),
+there is a 90% chance of developing hepatotoxicity, and these cases may require extended
+treatment with N-acetylcysteine (see later).
+The predictive nomogram is useful only for acute ingestions that can be accurately timed. If
+an extended-release preparation was ingested and the plasma acetaminophen level is not above
+--- Page 846 ---
+the treatment line at 4–12 hours after ingestion, a repeat level should be obtained after another 4–
+6 hours (14). For repeated supratherapeutic ingestions, plasma levels do not predict the risk of
+hepatotoxicity, and evaluating risk can be challenging.
+N-Acetylcysteine
+Glutathione does not readily cross cell membranes, so exogenous glutathione is not a viable
+treatment option for acetaminophen hepat

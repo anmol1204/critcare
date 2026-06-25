@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>COPD Exacerbation — CritCare.in</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="shared.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
   <script src="darkmode.js"></script>
   <style>
-    .pearl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem; margin: 1.2rem 0; }
-    .pearl-card { background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 1rem 1.2rem; }
-    .pearl-card .pearl-label { font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #92400e; margin-bottom: 0.5rem; }
-    .pearl-card p { font-size: 0.88rem; color: #78350f; line-height: 1.7; margin: 0; }
-    .mistake-card { background: #fef2f2; border: 1px solid #fecaca; border-radius: 10px; padding: 1rem 1.2rem; margin: 0.5rem 0; }
-    .mistake-card .m-label { font-size: 0.68rem; font-weight: 700; color: #991b1b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
-    .mistake-card p { font-size: 0.88rem; color: #7f1d1d; line-height: 1.7; margin: 0; }
-    .exam-card { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px; padding: 0.9rem 1.1rem; margin: 0.4rem 0; }
-    .exam-card p { font-size: 0.88rem; color: #1e40af; line-height: 1.7; margin: 0; }
-    .exam-card strong { color: #1e3a8a; }
-    .change-new { background: #f0fdf4; border: 1px solid #86efac; border-radius: 6px; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; color: #15803d; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4rem; vertical-align: middle; }
-    .change-updated { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 6px; padding: 0.2rem 0.5rem; font-size: 0.65rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-left: 0.4rem; vertical-align: middle; }
+    .bq{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}.bq p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}.bq cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .mb{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}.mb .ml{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}.mb p,.mb ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}.mb ul{padding-left:1.2rem;}.mb strong{color:#4c1d95;}
+    .gr{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}.grl{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}.grt{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gs{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gc{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .cu{background:#fef9c3;border:1px solid #fcd34d;border-radius:4px;padding:.15rem .4rem;font-size:.62rem;font-weight:800;color:#b45309;text-transform:uppercase;margin-left:.3rem;vertical-align:middle;}
+    .cn{background:#f0fdf4;border:1px solid #86efac;border-radius:4px;padding:.15rem .4rem;font-size:.62rem;font-weight:800;color:#15803d;text-transform:uppercase;margin-left:.3rem;vertical-align:middle;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}.mc .ml2{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}.mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}.ec p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;}.ec strong{color:#1e3a8a;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sbw{background:#dbeafe;color:#1e40af;}.sbm{background:#ede9fe;color:#5b21b6;}.sbg{background:#dcfce7;color:#166534;}.sbd{background:#ffedd5;color:#9a3412;}.sbf{background:#f0fdf4;color:#14532d;border:1px solid #86efac;}.sbe{background:#fee2e2;color:#991b1b;}.sbx{background:#fef9c3;color:#854d0e;}.sbr{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .fs{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;}.fn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;flex-shrink:0;margin-top:.2rem;}.fb{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;}.fb h4{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;}.fb p,.fb ul{font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;}.fb ul{padding-left:1.1rem;}.fb strong{color:var(--ink);}
   </style>
 </head>
 <body>
@@ -26,16 +26,17 @@
   <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
   <ul class="nav-menu" id="menu">
     <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-    <li><a href="topics.html" class="active">ICU Topics</a></li>
-    <li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
-  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()" title="Toggle dark mode"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
 </nav>
-
 <header class="topic-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › COPD</div>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › COPD</div>
     <h1>🫁 COPD Exacerbation &amp; Respiratory Failure</h1>
     <div class="guideline-row">
       <span class="gbadge sccm">GOLD 2026 ✦ Latest</span>
@@ -45,377 +46,196 @@
     <div class="topic-hero-meta">
       <span class="topic-tag red">Emergency</span>
       <span class="topic-tag">Exacerbation Chapter Revised</span>
-      <span class="topic-updated">GOLD 2026 Report (Published Dec 2025) · goldcopd.org</span>
+      <span class="topic-updated">Marino 5th Ed (Ch.23, 2025) · GOLD 2026 (Dec 2025)</span>
     </div>
   </div>
 </header>
-
 <div class="topic-layout">
   <aside class="topic-sidebar">
     <nav class="toc">
       <div class="toc-title">On this page</div>
       <ul class="toc-list">
-        <li><a href="#whats-new">What Changed GOLD 2026</a></li>
-        <li><a href="#physiology">How COPD Works</a></li>
-        <li><a href="#classification">GOLD Classification</a></li>
-        <li><a href="#exacerbation">Exacerbation Definition</a></li>
-        <li><a href="#severity">Severity Assessment</a></li>
-        <li><a href="#treatment">ED/ICU Treatment</a></li>
-        <li><a href="#oxygen">Controlled O₂ Therapy</a></li>
-        <li><a href="#niv">NIV in COPD</a></li>
-        <li><a href="#drugs">Drug Doses</a></li>
-        <li><a href="#ventilation">Invasive Ventilation</a></li>
-        <li><a href="#pearls">Clinical Pearls</a></li>
-        <li><a href="#mistakes">Common Mistakes</a></li>
-        <li><a href="#exam">Exam Pearls</a></li>
-        <li><a href="#references">References</a></li>
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. GOLD 2026 Guidelines</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
       </ul>
       <a href="topics.html" class="toc-back">← All topics</a>
     </nav>
   </aside>
-
   <main class="topic-content">
-
-    <section id="whats-new">
-      <h2>🆕 What Changed in GOLD 2026</h2>
-      <div class="update-box">
-        <div class="kb-label">GOLD 2026 — Major Revision | Chapter 4 (Exacerbations) Completely Revised</div>
+    <section id="s1">
+      <span class="sb sbw">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Washington Manual Summary</h2>
+      <div class="bq">
+        <p>"For COPD patients requiring ICU admission, one of every four will not survive the hospitalisation, and 40% of survivors will be readmitted within a year. NIV is the cornerstone of management for acute hypercapnic exacerbations and has Level A evidence for reducing intubation and mortality."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Kollef &amp; Witt (eds). Wolters Kluwer 2023. [Paraphrasing Marino Ch.23, p.405]</cite>
       </div>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Topic</th><th>Previous GOLD</th><th>GOLD 2026 Change</th><th>Tag</th></tr></thead>
-          <tbody>
-            <tr><td><strong>GOLD A/B/E exacerbation threshold</strong></td><td>≥2 moderate or ≥1 severe exacerbation to classify as GOLD E</td><td>ONE moderate exacerbation prior to starting therapy now triggers treatment escalation. Threshold lowered.</td><td><span class="change-updated">Changed</span></td></tr>
-            <tr><td><strong>Disease Activity concept</strong></td><td>Not addressed</td><td>New section: Disease Activity — aims for "low disease activity state" = no exacerbations</td><td><span class="change-new">New</span></td></tr>
-            <tr><td><strong>Exacerbation Chapter 4</strong></td><td>Previous exacerbation guidance</td><td>Completely revised with new figures and updated management</td><td><span class="change-updated">Major revision</span></td></tr>
-            <tr><td><strong>Initial vs Follow-up treatment</strong></td><td>Single treatment algorithm</td><td>Distinct algorithms for treatment-naïve vs patients on existing therapy</td><td><span class="change-updated">Clarified</span></td></tr>
-            <tr><td><strong>Biologic therapy</strong></td><td>Not addressed in COPD</td><td>New Figure 3.11 on evidence for biologic therapy in COPD (dupilumab, itepekimab for type 2 inflammation)</td><td><span class="change-new">New</span></td></tr>
-            <tr><td><strong>Vaccinations</strong></td><td>Influenza + pneumococcal</td><td>Updated: RSV vaccine added; updated influenza and COVID-19 recommendations</td><td><span class="change-updated">Updated</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="physiology">
-      <h2>How COPD Works — The Pathophysiology</h2>
-      <p>COPD is a heterogeneous lung condition characterised by chronic respiratory symptoms (dyspnoea, cough, sputum) and persistent, progressive airflow limitation. Two overlapping mechanisms:</p>
-      <h3>1. Small Airway Disease (the dominant mechanism)</h3>
-      <p>Cigarette smoke, biomass fuel combustion (common in India — chulhas, crop burning), and occupational dusts trigger neutrophilic inflammation in small airways (&lt;2 mm). This causes:</p>
-      <ul>
-        <li>Goblet cell hyperplasia → mucus hypersecretion → airway plugging</li>
-        <li>Peribronchial fibrosis → fixed airway narrowing</li>
-        <li>Loss of elastic lung recoil (emphysema) → dynamic airway collapse on expiration</li>
-        <li>Airflow limitation that is NOT fully reversible (unlike asthma)</li>
-      </ul>
-      <h3>2. Emphysema (parenchymal destruction)</h3>
-      <p>Protease-antiprotease imbalance (neutrophil elastase overwhelms α1-antitrypsin) → alveolar wall destruction → ↑ compliance → loss of elastic recoil → dynamic airway collapse → air trapping → hyperinflation. Hyperinflation pushes diaphragm flat → mechanical disadvantage → increased work of breathing.</p>
-      <h3>Pathophysiology of Type 2 Respiratory Failure in COPD</h3>
-      <ul>
-        <li>Airflow obstruction → ↑ work of breathing → respiratory muscle fatigue</li>
-        <li>V/Q mismatch → hypoxaemia (poorly ventilated lung areas still perfused)</li>
-        <li>Hypercapnia: CO₂ retention from alveolar hypoventilation + V/Q mismatch</li>
-        <li>Chronic CO₂ retention → renal compensation (↑ HCO₃) → chronic respiratory acidosis compensated metabolically</li>
-        <li><strong>Acute on chronic:</strong> During exacerbation → further ↑ airway resistance → acute hypercapnia on background of chronic compensated hypercapnia → dangerous acidaemia</li>
-      </ul>
-      <div class="warn-box">
-        <div class="kb-label">Hypoxic Drive — The Myth</div>
-        <p>The "hypoxic drive" rationale for withholding O₂ in COPD is largely outdated. The real reason for controlled O₂ is the Haldane effect (O₂ displaces CO₂ from haemoglobin → apparent rise in PaCO₂) and abolition of hypoxic pulmonary vasoconstriction (↑ V/Q mismatch). Controlled O₂ to SpO₂ 88–92% is safe and necessary — withholding O₂ entirely is dangerous and wrong.</p>
-      </div>
-    </section>
-
-    <section id="classification">
-      <h2>GOLD 2026 Classification</h2>
-      <h3>Spirometry-Based Severity (POST-bronchodilator FEV1/FVC &lt;0.70)</h3>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>GOLD Grade</th><th>Severity</th><th>Post-BD FEV1 (%predicted)</th></tr></thead>
-          <tbody>
-            <tr><td><strong>GOLD 1</strong></td><td>Mild</td><td>≥80%</td></tr>
-            <tr><td><strong>GOLD 2</strong></td><td>Moderate</td><td>50–79%</td></tr>
-            <tr><td><strong>GOLD 3</strong></td><td>Severe</td><td>30–49%</td></tr>
-            <tr><td><strong>GOLD 4</strong></td><td>Very severe</td><td>&lt;30%</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <h3>ABE Groups (Symptom Burden + Exacerbation Risk)</h3>
+      <h3>GOLD 2026 Classification (ABE Groups)</h3>
       <div class="table-wrap">
         <table class="drug-table">
           <thead><tr><th>Group</th><th>Symptoms</th><th>Exacerbation History</th><th>Initial Treatment</th></tr></thead>
           <tbody>
-            <tr><td><strong>A</strong></td><td>Low (mMRC 0–1, CAT &lt;10)</td><td>0 moderate or severe exacerbations</td><td>Bronchodilator (LAMA or LABA)</td></tr>
-            <tr><td><strong>B</strong></td><td>High (mMRC ≥2, CAT ≥10)</td><td>0 moderate or severe exacerbations</td><td>LAMA + LABA (dual bronchodilator)</td></tr>
-            <tr><td><strong>E</strong></td><td>Any</td><td>≥1 moderate OR ≥1 severe exacerbation <span class="change-updated">2026: threshold lowered — even 1 moderate triggers escalation</span></td><td>LAMA + LABA + ICS (triple if eosinophils ≥300)</td></tr>
+            <tr><td><strong>A</strong></td><td>Low (mMRC 0–1, CAT &lt;10)</td><td>0 moderate or severe</td><td>Bronchodilator (LAMA or LABA)</td></tr>
+            <tr><td><strong>B</strong></td><td>High (mMRC ≥2, CAT ≥10)</td><td>0 moderate or severe</td><td>LAMA + LABA (dual bronchodilator)</td></tr>
+            <tr><td><strong>E</strong></td><td>Any</td><td><strong>≥1 moderate OR ≥1 severe</strong> <span class="cu">Threshold lowered 2026</span></td><td>LAMA + LABA + ICS (triple if eosinophils ≥300)</td></tr>
           </tbody>
         </table>
       </div>
     </section>
-
-    <section id="exacerbation">
-      <h2>Exacerbation — Definitions (GOLD 2026)</h2>
-      <p>An <strong>exacerbation of COPD</strong> is an acute event characterised by a worsening of the patient's respiratory symptoms that is beyond normal day-to-day variation and leads to a change in medication.</p>
-      <h3>Severity Classification</h3>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Severity</th><th>Definition</th><th>Management Level</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Mild</strong></td><td>Treated with SABAs only</td><td>Community / outpatient</td></tr>
-            <tr><td><strong>Moderate</strong></td><td>Treated with SABAs + antibiotics and/or oral steroids</td><td>Hospital or supervised outpatient</td></tr>
-            <tr><td><strong>Severe</strong></td><td>Requires hospitalisation or ED visit</td><td>Hospital / ICU</td></tr>
-          </tbody>
-        </table>
+    <section id="s2">
+      <span class="sb sbm">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — COPD in the ICU</h2>
+      <div class="bq">
+        <p>"In cases of severe COPD with chronic hypercapnia, high concentrations of inhaled O₂ can promote further increases in arterial PCO₂. This was originally attributed to loss of hypoxic ventilatory drive, but more recent studies have shown that the oxygen-induced rise in arterial PCO₂ is not accompanied by a decrease in ventilatory drive. Oxygen unloading of CO₂ from haemoglobin (the Haldane Effect) may play a role."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Chapter 23: Asthma and COPD in the ICU, p.416–417. Wolters Kluwer; 2025.</cite>
       </div>
-      <h3>Causes of Exacerbation</h3>
-      <ul>
-        <li><strong>Infection (80%):</strong> Viral (rhinovirus, influenza, RSV — 40%); bacterial (H. influenzae, S. pneumoniae, M. catarrhalis, Pseudomonas in severe COPD — 40%)</li>
-        <li><strong>Environmental:</strong> Air pollution (PM2.5 — important in India), temperature changes, biomass smoke</li>
-        <li><strong>Non-adherence</strong> to maintenance medications</li>
-        <li><strong>Comorbidities:</strong> PE (5–10% of exacerbations), pneumothorax, cardiac failure</li>
-      </ul>
-    </section>
-
-    <section id="severity">
-      <h2>Severity Assessment in ED/ICU</h2>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Parameter</th><th>Mild-Moderate</th><th>Severe</th><th>Life-Threatening</th></tr></thead>
-          <tbody>
-            <tr><td>Dyspnoea</td><td>On exertion</td><td>At rest</td><td>Unable to speak</td></tr>
-            <tr><td>SpO₂ (on air)</td><td>≥90%</td><td>85–90%</td><td>&lt;85%</td></tr>
-            <tr><td>RR</td><td>20–25/min</td><td>25–30/min</td><td>&gt;30/min</td></tr>
-            <tr><td>Accessory muscles</td><td>Mild</td><td>Moderate–severe</td><td>Paradoxical breathing</td></tr>
-            <tr><td>pH</td><td>&gt;7.35</td><td>7.25–7.35</td><td>&lt;7.25</td></tr>
-            <tr><td>PaCO₂</td><td>Normal or mildly ↑</td><td>↑ (50–65 mmHg)</td><td>&gt;65 mmHg</td></tr>
-            <tr><td>Consciousness</td><td>Alert</td><td>Anxious/agitated</td><td>Drowsy, confused, coma</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <h3>DECAF Score — Predicting In-Hospital Mortality</h3>
-      <p>Score 1 point each for: Extended MRC dyspnoea score ≥5b | Eosinopenia (&lt;0.05×10⁹/L) | Consolidation on CXR | Atrial Fibrillation | pH &lt;7.30. Score 0–1: low risk (1.4% mortality); 2: medium (9.2%); 3–6: high (29% mortality)</p>
-    </section>
-
-    <section id="treatment">
-      <h2>ED and ICU Treatment</h2>
-      <div class="key-box">
-        <div class="kb-label">GOLD 2026 — Exacerbation Management Algorithm</div>
+      <h3>Step 1 — O₂ in COPD (Marino Ch.23, p.416–417)</h3>
+      <div class="mb">
+        <div class="ml">📗 Marino Ch.23, p.416 — Why High O₂ is Dangerous in COPD</div>
+        <p>High-concentration O₂ → ↑ arterial PCO₂ via two mechanisms:</p>
         <ul>
-          <li><strong>1. Controlled Oxygen</strong> — SpO₂ target 88–92% (NOT 100%) — see below</li>
-          <li><strong>2. Short-acting bronchodilators</strong> — SABA ± SAMA (ipratropium) via pMDI+spacer or nebuliser</li>
-          <li><strong>3. Systemic corticosteroids</strong> — Prednisolone 40 mg OD × 5 days (GOLD recommendation)</li>
-          <li><strong>4. Antibiotics</strong> — if purulent sputum or radiological evidence of pneumonia, or on MV</li>
-          <li><strong>5. NIV</strong> — if pH &lt;7.35 and PaCO₂ &gt;45 with adequate consciousness (FIRST-LINE over intubation)</li>
-          <li><strong>6. Invasive ventilation</strong> — if NIV fails or contraindicated</li>
+          <li><strong>Haldane Effect:</strong> O₂ displaces CO₂ from haemoglobin → CO₂ released into plasma → ↑ PaCO₂</li>
+          <li><strong>V/Q mismatch:</strong> High O₂ abolishes hypoxic pulmonary vasoconstriction → blood flow to poorly ventilated areas ↑ → ↑ dead space → ↑ CO₂ retention</li>
         </ul>
+        <p>Marino notes: "It is important to avoid high concentrations of inhaled O₂ in COPD patients with chronic hypercapnia." Target SpO₂ <strong>88–92%</strong>. Use Venturi mask (24%, 28%, 31%) for precise FiO₂ delivery.</p>
       </div>
-    </section>
-
-    <section id="oxygen">
-      <h2>Controlled Oxygen Therapy — The Critical Distinction</h2>
-      <div class="warn-box">
-        <div class="kb-label">Never Give 100% O₂ in COPD Exacerbation</div>
-        <p>Target SpO₂ 88–92% in COPD with known or suspected hypercapnia. High-concentration O₂ causes: (1) Haldane effect — O₂ displaces CO₂ from Hb → apparent ↑ PaCO₂; (2) Abolished hypoxic pulmonary vasoconstriction → worsened V/Q mismatch → ↑ dead space → ↑ CO₂ retention; (3) Blunted respiratory drive. Use 24% or 28% Venturi mask (reliable FiO₂) or 2–4 L/min nasal prongs.</p>
-      </div>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Device</th><th>FiO₂ Delivered</th><th>Flow Rate</th><th>Notes</th></tr></thead>
-          <tbody>
-            <tr><td>Nasal Prongs</td><td>Variable (~24–40%)</td><td>1–4 L/min (start at 1–2)</td><td>Convenient but imprecise; OK for mild exacerbations</td></tr>
-            <tr><td><strong>Venturi Mask (preferred)</strong></td><td>24%, 28%, 31%, 35%</td><td>Per mask instruction</td><td>Precise FiO₂; best for titrated O₂ in severe COPD</td></tr>
-            <tr><td>Simple face mask</td><td>35–50% (variable)</td><td>5–10 L/min</td><td>Avoid in COPD — FiO₂ not controllable</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="niv">
-      <h2>NIV in COPD Exacerbation — First-Line</h2>
-      <div class="key-box">
-        <div class="kb-label">GOLD 2026 — NIV Indications (Evidence A)</div>
-        <p>NIV should be the first mode of ventilatory support in COPD exacerbation with:</p>
+      <h3>Step 2 — Antibiotics in COPD (Marino Ch.23, p.416)</h3>
+      <div class="mb">
+        <div class="ml">📗 Marino Ch.23, p.416 — Antibiotic Indications</div>
+        <p>Marino (p.416): "Only about 50% [of COPD exacerbations] are caused by treatable bacterial infections, and this limits the benefit of antimicrobial therapy." Indications for antibiotics:</p>
         <ul>
-          <li>pH &lt;7.35 AND PaCO₂ &gt;45 mmHg (respiratory acidosis)</li>
-          <li>OR respiratory rate &gt;25/min despite maximal medical treatment</li>
-          <li>OR SpO₂ &lt;88% despite controlled O₂</li>
+          <li>Increase in sputum production</li>
+          <li>Grossly purulent sputum</li>
+          <li>Need for noninvasive or invasive mechanical ventilation</li>
         </ul>
-        <p>NIV reduces: mortality, intubation rate, length of hospital stay, treatment failure vs medical therapy alone (Evidence A).</p>
+        <p>Marino: "It is reasonable to assume that all ICU admissions for acute exacerbations of COPD are candidates for antibiotic therapy." Common isolates: H. influenzae, S. pneumoniae; Pseudomonas in ventilator-dependent patients. Empiric: cefepime covers both. Duration: 5–7 days.</p>
       </div>
-      <h3>NIV Settings for COPD Exacerbation</h3>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Parameter</th><th>Starting Value</th><th>Target</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Mode</strong></td><td>BiPAP (Bilevel Positive Airway Pressure)</td><td>IPAP 10–16 cmH₂O; EPAP 4–6 cmH₂O</td></tr>
-            <tr><td><strong>IPAP (Inspiratory)</strong></td><td>Start at 10 cmH₂O</td><td>Titrate up to 20–25 cmH₂O as tolerated; target RR &lt;25, VT adequate</td></tr>
-            <tr><td><strong>EPAP (Expiratory)</strong></td><td>4–5 cmH₂O</td><td>Can increase to 8 if auto-PEEP; counterbalances intrinsic PEEP</td></tr>
-            <tr><td><strong>FiO₂</strong></td><td>21–28%</td><td>Titrate to SpO₂ 88–92%</td></tr>
-            <tr><td><strong>Backup rate</strong></td><td>12–16/min</td><td>Ensures adequate minute ventilation if apnoea</td></tr>
-          </tbody>
-        </table>
+      <h3>Step 3 — Ventilating the COPD Patient (Marino Ch.23, p.418)</h3>
+      <div class="mb">
+        <div class="ml">📗 Marino Ch.23, p.418–419 — Ventilator Strategy</div>
+        <p>Dynamic hyperinflation (auto-PEEP) is the dominant hazard in ventilated COPD. Marino's ventilator adjustments to limit dynamic hyperinflation:</p>
+        <ul>
+          <li>Avoid inflation volumes exceeding 6–8 ml/kg IBW</li>
+          <li>Maximise expiratory time: slow RR with sedation if possible AND increase inspiratory flow rate so inspiration occupies only 1/3 of respiratory cycle</li>
+          <li>Monitor intrinsic PEEP with expiratory hold manoeuvre</li>
+        </ul>
+        <p><strong>Critical insight:</strong> In ventilated COPD patients, target their chronic baseline CO₂ (e.g., 55–65 mmHg), NOT 40 mmHg. Normalising CO₂ → alkalosis → renal HCO₃ excretion → on extubation, CO₂ rises with no buffer → failed weaning.</p>
       </div>
-      <h3>NIV Response Assessment</h3>
-      <ul>
-        <li>Check ABG at 1–2h after initiation</li>
-        <li><strong>Success:</strong> pH improving, PaCO₂ falling, RR falling, SpO₂ target reached, patient tolerating mask</li>
-        <li><strong>Failure criteria:</strong> pH worsening after 1–2h, altered consciousness, unable to tolerate mask, copious secretions, haemodynamic instability → intubate without delay</li>
-      </ul>
-      <h3>Contraindications to NIV in COPD</h3>
-      <ul>
-        <li>Respiratory arrest or impending arrest</li>
-        <li>Severe haemodynamic instability (cardiogenic shock)</li>
-        <li>Inability to protect airway (excessive secretions, GCS &lt;8)</li>
-        <li>Facial trauma preventing mask fit</li>
-        <li>Uncooperative patient who cannot tolerate mask</li>
-      </ul>
     </section>
-
-    <section id="drugs">
+    <section id="s3">
+      <span class="sb sbg">📋 3 · GOLD 2026 Guidelines</span>
+      <h2>GOLD 2026 — Key Changes</h2>
+      <div class="update-box">
+        <div class="kb-label">Global Initiative for COPD (GOLD). Global Strategy for Diagnosis, Management, and Prevention of COPD: 2026 Report. Published December 2025. goldcopd.org</div>
+      </div>
+      <div class="gr">
+        <div class="grl">GOLD 2026 — Exacerbation Threshold Lowered <span class="cu">Major Change</span></div>
+        <div class="grt">ONE moderate exacerbation now triggers treatment escalation to Group E (previously needed ≥2 moderate or ≥1 severe). Goal: achieve "low disease activity state" = no exacerbations. Earlier escalation to triple therapy (LAMA+LABA+ICS) if eosinophils ≥300.</div>
+      </div>
+      <div class="gr">
+        <div class="grl">GOLD 2026 — Chapter 4 (Exacerbations) Completely Revised <span class="cu">Major Revision</span></div>
+        <div class="grt">Exacerbations defined by: worsening of symptoms beyond normal day-to-day variation requiring change in medication. Severity: Mild (SABA only) | Moderate (SABA + steroids ± antibiotics) | Severe (hospitalisation). Chapter 4 has new figures and management algorithms.</div>
+      </div>
+      <div class="gr">
+        <div class="grl">GOLD 2026 — Biologic Therapy (NEW)<span class="cn">New 2026</span></div>
+        <div class="grt">New Figure 3.11 on biologic therapy in COPD: dupilumab, itepekimab (anti-IL-33) for COPD with type 2 inflammation (eosinophils ≥300). Reduces exacerbation risk in selected patients.</div>
+      </div>
+      <div class="gr">
+        <div class="grl">GOLD 2026 — Vaccinations Updated <span class="cu">Updated</span></div>
+        <div class="grt">RSV vaccine added (respiratory syncytial virus — approved for adults ≥60 years); updated influenza and COVID-19 recommendations. Pneumococcal vaccine (PCV20 or PCV15+PPSV23) recommended for all COPD patients.</div>
+      </div>
+      <div class="gr">
+        <div class="grl">NIV in Acute Exacerbation <span class="gs">Strong · Evidence A</span></div>
+        <div class="grt">NIV (BiPAP) for pH &lt;7.35 + PaCO₂ &gt;45 mmHg: reduces intubation rate, mortality, and ICU LOS. IPAP 10–16, EPAP 4–6 cmH₂O. Check ABG at 1–2h. ROC criteria (Ferrer): success predictors include improved pH and PaCO₂ at 1h. Failure = intubate without delay.</div>
+      </div>
+    </section>
+    <section id="s4">
+      <span class="sb sbd">💊 4 · Drug Doses</span>
       <h2>Drug Doses in COPD Exacerbation</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Drug</th><th>Route</th><th>Dose</th><th>Frequency</th><th>Notes</th></tr></thead>
+          <thead><tr><th>Drug</th><th>Dose</th><th>Frequency</th><th>Notes</th></tr></thead>
           <tbody>
-            <tr><td><strong>Salbutamol</strong></td><td>pMDI + spacer</td><td>4 puffs (400 mcg)</td><td>q4–6h; prn between</td><td>First-line bronchodilator</td></tr>
-            <tr><td><strong>Salbutamol</strong></td><td>Nebuliser</td><td>2.5–5 mg</td><td>q4–6h</td><td>If unable to use pMDI; not superior to pMDI+spacer</td></tr>
-            <tr><td><strong>Ipratropium (SAMA)</strong></td><td>pMDI / Neb</td><td>40–80 mcg (pMDI) / 0.5 mg (neb)</td><td>q6h</td><td>Add to SABA in moderate-severe; peak at 30–90 min</td></tr>
-            <tr><td><strong>Prednisolone</strong></td><td>PO/NGT</td><td>40 mg OD</td><td>5 days</td><td>GOLD 2026: 5 days = equivalent to longer courses; reduces treatment failure, LOS</td></tr>
-            <tr><td><strong>Methylprednisolone</strong></td><td>IV</td><td>125 mg q6h initially</td><td>Switch to oral when stable</td><td>Use IV if cannot take oral or very severe</td></tr>
-            <tr><td><strong>Amoxicillin-Clavulanate</strong></td><td>PO/IV</td><td>625 mg PO TDS or 1.2g IV TDS</td><td>5–7 days</td><td>First-line antibiotic for mild-moderate exacerbation</td></tr>
-            <tr><td><strong>Azithromycin</strong></td><td>PO</td><td>500 mg OD</td><td>5 days</td><td>Alternative; covers atypicals</td></tr>
-            <tr><td><strong>Moxifloxacin / Levofloxacin</strong></td><td>PO/IV</td><td>400 mg OD / 750 mg OD</td><td>5 days</td><td>Use if Pseudomonas unlikely; covers pneumococcus well</td></tr>
-            <tr><td><strong>Piperacillin-Tazobactam / Cefepime</strong></td><td>IV</td><td>4.5g q6h / 1–2g q8h</td><td>7 days</td><td>If Pseudomonas risk (FEV1 &lt;30%, frequent exacerbations, prior Pseudomonas)</td></tr>
+            <tr><td><strong>Salbutamol</strong></td><td>2.5–5 mg neb OR 4 puffs pMDI+spacer</td><td>q4–6h; prn between doses</td><td>First-line bronchodilator; pMDI+spacer not inferior to nebuliser (Marino Table 23.1)</td></tr>
+            <tr><td><strong>Ipratropium</strong></td><td>0.5 mg neb OR 40–80 mcg pMDI</td><td>q6h</td><td>Add to SABA; peak effect 30–90 min; anticholinergic</td></tr>
+            <tr><td><strong>Prednisolone</strong></td><td>40 mg OD</td><td>5 days</td><td>GOLD 2026: 5 days = equivalent to longer courses. Reduces treatment failure, LOS, and relapse rate.</td></tr>
+            <tr><td><strong>Hydrocortisone</strong></td><td>100–200 mg IV q6–8h</td><td>Until oral possible</td><td>Use IV if unable to take oral (vomiting, NIV, severe exacerbation)</td></tr>
+            <tr><td><strong>Amoxicillin-Clavulanate</strong></td><td>625 mg PO TDS or 1.2g IV TDS</td><td>5–7 days</td><td>First-line for community COPD exacerbation with purulent sputum</td></tr>
+            <tr><td><strong>Doxycycline</strong></td><td>100 mg BD</td><td>5–7 days</td><td>Alternative to amoxicillin; covers atypicals</td></tr>
+            <tr><td><strong>Cefepime / Pip-Taz</strong></td><td>1–2g q8h / 4.5g q6h IV</td><td>5–7 days</td><td>Pseudomonas risk: FEV1 &lt;30%, frequent exacerbations, prior Pseudomonas, prolonged steroid use</td></tr>
           </tbody>
         </table>
       </div>
-      <h3>Antibiotic Indications in COPD Exacerbation (GOLD 2026)</h3>
-      <ul>
-        <li><strong>Purulent (green/yellow) sputum</strong> — antibiotics reduce treatment failure and mortality</li>
-        <li><strong>On mechanical ventilation (NIV or invasive)</strong> — always give antibiotics</li>
-        <li><strong>Radiological pneumonia</strong> — treat as CAP</li>
-        <li><strong>Clear/white sputum without other indicators</strong> — antibiotics not routinely needed</li>
-        <li>PCT &lt;0.1 ng/ml — antibiotics unlikely to benefit</li>
-      </ul>
-    </section>
-
-    <section id="ventilation">
-      <h2>Invasive Mechanical Ventilation in COPD</h2>
-      <h3>Indications for Intubation</h3>
-      <ul>
-        <li>NIV failure (pH worsening after 1–2h, clinical deterioration)</li>
-        <li>NIV contraindicated</li>
-        <li>Respiratory arrest</li>
-        <li>GCS &lt;8 or inability to protect airway</li>
-      </ul>
-      <h3>Ventilator Settings for COPD</h3>
-      <div class="key-box">
-        <div class="kb-label">Ventilator Strategy — Prioritise Expiration</div>
-        <ul>
-          <li><strong>Mode:</strong> Volume Control AC (Volume Assist-Control)</li>
-          <li><strong>Tidal Volume:</strong> 6–8 ml/kg IBW</li>
-          <li><strong>Rate:</strong> 10–14/min (low — allow complete expiration)</li>
-          <li><strong>I:E ratio:</strong> 1:3 to 1:4 (prolonged expiratory time)</li>
-          <li><strong>PEEP:</strong> 3–8 cmH₂O (set at ~80% of auto-PEEP level to counterbalance intrinsic PEEP)</li>
-          <li><strong>FiO₂:</strong> Target SpO₂ 88–92%</li>
-          <li><strong>Accept:</strong> Permissive hypercapnia — allow PaCO₂ to rise gradually toward patient's chronic baseline (NOT normal range)</li>
-          <li><strong>Key goal:</strong> Correct acidaemia (pH), NOT normalise PaCO₂</li>
-        </ul>
-      </div>
-      <h3>Important: Target Chronic Baseline, Not Normal CO₂</h3>
-      <p>COPD patients are chronically hypercapnic with renal compensation (elevated HCO₃⁻). Their baseline PaCO₂ may be 50–60 mmHg with pH 7.40. If you ventilate them to PaCO₂ 40 mmHg (overventilate), alkalosis develops → renal HCO₃ excretion → post-extubation hypercapnia and weaning difficulty. Target their <strong>chronic baseline CO₂, not 40 mmHg</strong>.</p>
-    </section>
-
-    <section id="pearls">
-      <h2>Clinical Pearls</h2>
-      <div class="pearl-grid">
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 1 — NIV Before Intubation in COPD</div>
-          <p>NIV should be tried FIRST in COPD with pH &lt;7.35 and PaCO₂ &gt;45. Evidence A: NIV reduces mortality, intubation rate, and ICU LOS. If you intubate a COPD patient who could have had NIV first, you may be creating a ventilator-dependent patient.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 2 — Control O₂, Don't Withhold It</div>
-          <p>Don't withhold oxygen from a hypoxic COPD patient — that's dangerous. Titrate it carefully. Use Venturi mask (24% or 28%), target SpO₂ 88–92%. Check ABG 30–60 min after starting O₂ to detect CO₂ rise.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 3 — 5 Days of Steroids is Enough</div>
-          <p>GOLD 2026 confirms: Prednisolone 40 mg × 5 days = equivalent to longer courses for COPD exacerbation. Reduces treatment failure, hospitalisation, and LOS. Shorter courses = fewer side effects (hyperglycaemia, myopathy).</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 4 — Set PEEP at 80% of Auto-PEEP</div>
-          <p>Patients with severe COPD on MV have significant intrinsic auto-PEEP due to dynamic hyperinflation. Adding extrinsic PEEP at 80% of auto-PEEP level counterbalances intrinsic PEEP, reducing patient effort to trigger breaths. Measure auto-PEEP with expiratory hold manoeuvre.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 5 — India: Biomass = COPD</div>
-          <p>In India, 40–50% of COPD in women is due to biomass fuel exposure (chulhas, wood fires). Ask about cooking fuel type. These patients often present younger, with severe disease, and may not smoke. Standard GOLD ABE grouping still applies.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 6 — Rule Out PE in Exacerbation</div>
-          <p>PE causes 5–10% of COPD exacerbations. Suspect if: minimal purulent sputum, disproportionate dyspnoea, RV strain on ECG, elevated D-dimer, no infection trigger. CT-PA if clinical probability is intermediate-high.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 7 — GOLD 2026: 1 Moderate Exacerbation = Escalate</div>
-          <p>New in GOLD 2026: even ONE moderate exacerbation in the past year is enough to classify as GOLD E and escalate to triple therapy (LAMA + LABA + ICS) if eosinophils ≥300. Previous threshold was ≥2 moderate exacerbations.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 8 — Don't Over-Ventilate COPD</div>
-          <p>COPD patients' normal PaCO₂ may be 55–65 mmHg. Ventilating them to PaCO₂ 40 creates metabolic alkalosis + renal HCO₃ excretion. On extubation attempt, they will have high CO₂ drive without the buffer → fail immediately. Target their chronic baseline CO₂.</p>
-        </div>
+      <h3>NIV Settings (BiPAP)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>Starting Value</th><th>Target/Titrate</th></tr></thead>
+          <tbody>
+            <tr><td>IPAP (Inspiratory)</td><td>10 cmH₂O</td><td>Increase to 20–25 as tolerated (↓ RR, adequate Vt)</td></tr>
+            <tr><td>EPAP (Expiratory)</td><td>4–5 cmH₂O</td><td>Can increase to 8 to counterbalance intrinsic PEEP</td></tr>
+            <tr><td>FiO₂</td><td>21–28%</td><td>Titrate to SpO₂ 88–92%</td></tr>
+            <tr><td>Backup Rate</td><td>12–16/min</td><td>Ensures MV if apnoea</td></tr>
+            <tr><td>Check ABG</td><td>At 1–2h after NIV</td><td>pH improving, PaCO₂ falling = success. pH worsening = intubate</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
-
-    <section id="mistakes">
+    <section id="s5">
+      <span class="sb sbf">🗺 5 · Clinical Flowchart</span>
+      <h2>COPD Exacerbation — Step by Step</h2>
+      <div style="display:flex;flex-direction:column;gap:.8rem;">
+        <div class="fs"><div class="fn" style="background:#ef4444">1</div><div class="fb"><h4>Assess Severity</h4><p>pH, PaCO₂, SpO₂, RR, consciousness. DECAF score for mortality risk. pH &lt;7.35 + PaCO₂ &gt;45 = NIV candidate. pH &lt;7.25 = consider immediate NIV/intubation depending on clinical status.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#f97316">2</div><div class="fb"><h4>Controlled O₂ (NOT High-Flow)</h4><p>Venturi mask 24% or 28% (preferred — precise FiO₂). Target SpO₂ <strong>88–92%</strong>. Marino (p.416): high O₂ → Haldane Effect → ↑ PaCO₂. Check ABG 30–60 min after starting O₂ — detect CO₂ rise. Never withhold O₂ entirely from hypoxic patient.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#eab308">3</div><div class="fb"><h4>Bronchodilators + Steroids + Antibiotics</h4><p>Salbutamol neb q4–6h + Ipratropium q6h. Prednisolone 40 mg OD × 5 days (GOLD 2026). Antibiotics if: purulent sputum, increased sputum, or mechanical ventilation (Marino: all ICU admissions are candidates).</p></div></div>
+        <div class="fs"><div class="fn" style="background:#22c55e">4</div><div class="fb"><h4>NIV (pH &lt;7.35 + PaCO₂ &gt;45)</h4><p>BiPAP: IPAP 10 → titrate to 20–25; EPAP 4–6. FiO₂ to SpO₂ 88–92%. Check ABG at 1–2h. Success: pH improving, PaCO₂ falling, RR &lt;25, SpO₂ target reached. Failure: pH worsening → intubate without delay.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#3b82f6">5</div><div class="fb"><h4>Intubation (NIV Failure or Contraindicated)</h4><p>NIV failure criteria: pH worsening after 1–2h, altered consciousness, unable to tolerate mask, copious secretions, haemodynamic instability. Ventilate: target chronic CO₂ baseline (NOT 40 mmHg), RR 10–14, I:E 1:3–1:4. Monitor auto-PEEP.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#8b5cf6">6</div><div class="fb"><h4>Weaning — Switch to NIV Early</h4><p>Attempt NIV-facilitated weaning: extubate early to NIV rather than waiting for full extubation criteria in COPD. Reduces re-intubation and ICU LOS. Target chronic baseline CO₂ during MV — NOT 40 mmHg (will cause post-extubation failure).</p></div></div>
+      </div>
+    </section>
+    <section id="s6">
+      <span class="sb sbe">⚠️ 6 · Common Mistakes</span>
       <h2>Common Mistakes</h2>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 1 — 100% O₂ via Non-Rebreather Mask</div>
-        <p>High-concentration O₂ in COPD causes CO₂ retention (Haldane effect + V/Q mismatch). Always use controlled O₂ with Venturi mask, target SpO₂ 88–92%. Check ABG 30–60 min after any O₂ change.</p>
-      </div>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 2 — Intubating Before Trying NIV</div>
-        <p>NIV has Evidence A for COPD exacerbation with respiratory acidosis. Always try NIV first unless contraindicated. Even partial responders benefit. Intubation in COPD often leads to prolonged ventilator dependence.</p>
-      </div>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 3 — Targeting Normal CO₂ on Ventilator</div>
-        <p>Ventilating a chronically hypercapnic COPD patient to PaCO₂ 40 mmHg creates alkalosis + renal bicarbonate wasting. On extubation, CO₂ rises but there's no buffer → failed extubation, ventilator dependence. Target the patient's chronic CO₂ baseline.</p>
-      </div>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 4 — Giving Antibiotics for Every Exacerbation</div>
-        <p>GOLD 2026: antibiotics only if purulent sputum, on MV, or radiological pneumonia. Clear sputum exacerbations do NOT benefit from antibiotics. Overuse drives AMR — major problem in Indian ICUs.</p>
-      </div>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 5 — Not Escalating Treatment After 1 Exacerbation</div>
-        <p>GOLD 2026 changed the threshold: ONE moderate exacerbation in the past year = consider stepping up to LAMA + LABA + ICS (if eosinophils ≥300). Previous approach waited for 2 exacerbations. Earlier escalation prevents future events.</p>
-      </div>
+      <div class="mc"><div class="ml2">❌ Mistake 1 — High-Concentration O₂ in COPD</div><p>Marino (Ch.23, p.416): high O₂ → Haldane Effect → CO₂ retention. Target SpO₂ 88–92%. Use Venturi mask (precise FiO₂: 24%, 28%). Check ABG 30–60 min after any O₂ change. Withholding O₂ entirely from a hypoxic COPD patient is also wrong.</p></div>
+      <div class="mc"><div class="ml2">❌ Mistake 2 — Targeting PaCO₂ 40 mmHg on Ventilator</div><p>Chronic hypercapnic COPD patient: normal PaCO₂ may be 55–65 mmHg with compensatory HCO₃. Ventilating to 40 mmHg = alkalosis → renal HCO₃ excretion → extubation → CO₂ rises with no buffer = failed weaning and re-intubation. Target patient's CHRONIC CO₂ baseline.</p></div>
+      <div class="mc"><div class="ml2">❌ Mistake 3 — Not Starting NIV Early Enough</div><p>NIV has Evidence A in COPD exacerbation (Cochrane 2017): reduces intubation rate, mortality, ICU LOS. Start NIV when pH &lt;7.35 + PaCO₂ &gt;45. Do not delay for "one more hour of medical therapy." Early NIV prevents progression to intubation.</p></div>
+      <div class="mc"><div class="ml2">❌ Mistake 4 — Prolonged Steroid Courses</div><p>GOLD 2026: prednisolone 40 mg × 5 days = equivalent to 14-day courses (REDUCE trial). Longer courses = more hyperglycaemia, more muscle weakness, no additional benefit. 5 days is the standard.</p></div>
+      <div class="mc"><div class="ml2">❌ Mistake 5 — Antibiotics for Every COPD Exacerbation</div><p>Marino (Ch.23, p.416): only ~50% of COPD exacerbations are from treatable bacterial infections. Give antibiotics only if: purulent sputum, ↑ sputum, or mechanical ventilation. Avoid antibiotics for mild exacerbations with clear sputum = drives AMR.</p></div>
     </section>
-
-    <section id="exam">
-      <h2>Exam Pearls (DrNB / PDCC / IFCCM)</h2>
-      <div class="exam-card"><p><strong>Q: Oxygen target in COPD exacerbation?</strong> → SpO₂ 88–92%. Use Venturi mask (24% or 28%). Check ABG 30–60 min after initiation. Avoid high-concentration O₂ (worsens hypercapnia via Haldane effect).</p></div>
-      <div class="exam-card"><p><strong>Q: First-line ventilatory support in COPD with pH 7.28 and PaCO₂ 70 mmHg?</strong> → NIV (BiPAP), IPAP 10–16 cmH₂O, EPAP 4–6 cmH₂O. Check ABG at 1–2h. If pH improving → continue NIV. Evidence A for reducing mortality and intubation rate.</p></div>
-      <div class="exam-card"><p><strong>Q: Duration of steroids in COPD exacerbation per GOLD 2026?</strong> → Prednisolone 40 mg OD × 5 days. 5 days = equivalent to longer courses. Reduces treatment failure and LOS.</p></div>
-      <div class="exam-card"><p><strong>Q: GOLD 2026 change regarding exacerbation threshold?</strong> → ONE moderate exacerbation now triggers treatment escalation (previously ≥2). Goal is achieving "low disease activity state" with no exacerbations.</p></div>
-      <div class="exam-card"><p><strong>Q: Why do you NOT target PaCO₂ 40 mmHg when ventilating COPD?</strong> → COPD patients are chronically hypercapnic with compensatory elevated HCO₃⁻. Ventilating to PaCO₂ 40 creates alkalosis → renal HCO₃ excretion → on extubation, CO₂ rises with no buffer → failed weaning.</p></div>
-      <div class="exam-card"><p><strong>Q: PEEP setting in ventilated COPD with auto-PEEP?</strong> → Set extrinsic PEEP at ~80% of measured auto-PEEP to counterbalance intrinsic PEEP, ease triggering, and reduce work of breathing.</p></div>
+    <section id="s7">
+      <span class="sb sbx">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: GOLD 2026 major change — exacerbation threshold?</strong><br>ONE moderate exacerbation now classifies patient as Group E and triggers escalation to triple therapy (LAMA+LABA+ICS). Previously required ≥2 moderate or ≥1 severe. Goal: achieve "low disease activity state" with no exacerbations.</p></div>
+      <div class="ec"><p><strong>Q: Why is high O₂ dangerous in COPD? (Marino insight)</strong><br>Marino (Ch.23, p.416): Two mechanisms: (1) Haldane Effect — O₂ displaces CO₂ from Hb → CO₂ released to plasma → ↑ PaCO₂; (2) V/Q mismatch — high O₂ abolishes hypoxic pulmonary vasoconstriction → blood to poorly ventilated areas → ↑ dead space → ↑ CO₂. Target SpO₂ 88–92% with Venturi mask.</p></div>
+      <div class="ec"><p><strong>Q: NIV settings and evidence in COPD exacerbation?</strong><br>BiPAP: IPAP 10–25 cmH₂O, EPAP 4–6 cmH₂O, FiO₂ to SpO₂ 88–92%. Evidence A (Cochrane 2017): reduces intubation rate, mortality, ICU LOS vs medical therapy alone. Check ABG at 1–2h. If pH not improving → intubate without further delay.</p></div>
+      <div class="ec"><p><strong>Q: Why NOT target PaCO₂ 40 mmHg in ventilated COPD?</strong><br>Chronic COPD patient has compensatory metabolic alkalosis (↑ HCO₃) for their chronic hypercapnia. Ventilating to PaCO₂ 40 = uncompensated alkalosis → kidneys excrete HCO₃ → extubation → CO₂ rises with no buffer → failed weaning. Target patient's CHRONIC CO₂ baseline (often 55–65 mmHg).</p></div>
+      <div class="ec"><p><strong>Q: Antibiotic indications in COPD exacerbation (Marino + GOLD)?</strong><br>Marino (p.416): only if purulent sputum, ↑ sputum production, or need for mechanical ventilation. GOLD 2026: antibiotics also if DECAF score ≥3. All ICU admissions are candidates (Marino). Empirical: amoxicillin-clavulanate; Pseudomonas risk → cefepime or pip-taz. Duration 5–7 days.</p></div>
     </section>
-
-    <section id="references" class="references-section">
+    <section id="s8" class="references-section">
+      <span class="sb sbr">📚 8 · References</span>
       <h2>References</h2>
       <ol class="ref-list">
+        <li><strong>Marino PL.</strong> Marino's The ICU Book, 5th edition. Chapter 23: Asthma and COPD in the ICU (pp.405–421). Philadelphia, PA: Wolters Kluwer; 2025. ISBN: 978-1-975176-71-6.</li>
         <li><strong>Global Initiative for Chronic Obstructive Lung Disease (GOLD).</strong> Global Strategy for the Diagnosis, Management, and Prevention of COPD: 2026 Report. Published December 2025. Available from: www.goldcopd.org</li>
         <li><strong>Wedzicha JA, Miravitlles M, Hurst JR, et al.</strong> Management of COPD Exacerbations: A European Respiratory Society/American Thoracic Society Guideline. <em>Eur Respir J.</em> 2017;49(3):1600791.</li>
-        <li><strong>Plant PK, Owen JL, Elliott MW.</strong> Early use of non-invasive ventilation for acute exacerbations of chronic obstructive pulmonary disease on general respiratory wards: a multicentre randomised controlled trial. <em>Lancet.</em> 2000;355(9219):1931–1935.</li>
-        <li><strong>Ram FS, Picot J, Lightowler J, Wedzicha JA.</strong> Non-invasive positive pressure ventilation for treatment of respiratory failure due to exacerbations of chronic obstructive pulmonary disease. <em>Cochrane Database Syst Rev.</em> 2004.</li>
-        <li><strong>Leuppi JD, Schuetz P, Bingisser R, et al.</strong> Short-term vs conventional glucocorticoid therapy in acute exacerbations of chronic obstructive pulmonary disease (REDUCE trial). <em>JAMA.</em> 2013;309(21):2223–2231.</li>
-        <li><strong>Austin MA, Wills KE, Blizzard L, et al.</strong> Effect of high flow oxygen on mortality in chronic obstructive pulmonary disease patients in prehospital setting: randomised controlled trial. <em>BMJ.</em> 2010;341:c5462.</li>
-        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Chapter 34: Acute Exacerbation of COPD. Elsevier; 2018.</li>
-        <li><strong>Marino PL.</strong> The ICU Book, 4th edition. Chapter 27: Chronic Obstructive Pulmonary Disease. Lippincott Williams &amp; Wilkins; 2014.</li>
+        <li><strong>Osadnik CR, Tee VS, Carson-Chahhoud KV, et al.</strong> Non-invasive ventilation for the management of acute hypercapnic respiratory failure due to exacerbation of COPD. <em>Cochrane Database Syst Rev.</em> 2017;7:CD004104.</li>
+        <li><strong>Leuppi JD, Schuetz P, Bingisser R, et al. (REDUCE).</strong> Short-term vs conventional glucocorticoid therapy in acute exacerbations of COPD. <em>JAMA.</em> 2013;309(21):2223–2231.</li>
+        <li><strong>Steer J, Gibson J, Bourke SC.</strong> The DECAF Score: Predicting Hospital Mortality in Exacerbations of Chronic Obstructive Pulmonary Disease. <em>Thorax.</em> 2012;67(11):970–976.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Wolters Kluwer; 2023.</li>
+        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Chapter: COPD Exacerbation. Elsevier; 2018.</li>
       </ol>
     </section>
-
   </main>
 </div>
-
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-brand">Crit<span>Care</span>.in</span>
-    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li></ul>
-    <p>© 2025 Dr. Anmol Srivastava · Lucknow</p>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
   </div>
 </footer>
 </body>

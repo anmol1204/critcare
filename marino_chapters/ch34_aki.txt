@@ -1,0 +1,129 @@
+MARINO 5TH ED — CH34_AKI
+Found at page: 586
+============================================================
+
+--- Page 586 ---
+Chapter 34
+Acute Kidney Injury
+You can never solve all difficulties at once.
+Paul A.M. Dirac (a)
+As many as 60% of ICU patients experience an acute deterioration in renal function, which has
+been given the umbrella term, acute kidney injury (1). As expected, this condition has a
+multitude of etiologies, but most of the inciting factors can be classified as inflammatory,
+ischemic, or nephrotoxic in nature (2,3). The consequences of this condition are as varied as the
+etiologies, but about 15% of the patients require renal replacement therapy (4), and as many as
+60% of the patients will not survive (5).
+This chapter begins by presenting the diagnostic criteria for acute kidney injury (including
+the shortcomings), then proceeds with a description of the most common inciting conditions, and
+finishes with a description of the renal replacement therapies. Some authoritative reviews of this
+rather massive topic are included in the bibliography at the end of the chapter (2–4).
+DIAGNOSTIC CRITERIA
+The term “acute renal failure” was introduced in 1951 (5), but due to a lack of agreement about
+this condition, the term “acute kidney injury” (AKI) was introduced in 2002, and ten years later
+(in 2012), the defining criteria for AKI were adopted and published as the “Kidney Disease
+Improving Global Outcomes (KDIGO) guidelines (6), which are shown in Table 34.1.
+TABLE 34.1 Diagnostic Criteria for Acute Kidney Injury
+The diagnosis of acute kidney injury (AKI) requires one of the following conditions:
+1. An increase in serum creatinine of ≥0.3 mg/dL (≥26.5 μmol/L) within 48 hours.
+2. An increase in serum creatinine to ≥1.5 times baseline within the previous 7 days.
+3. Urine volume <0.5 mL/kg/hr (ideal body weight) for 6 hours.
+From Reference 6.
+Limitations
+ALGrawany
+--- Page 587 ---
+There are a number of limitations in the diagnostic criteria for AKI, and the major ones are listed
+below:
+1. The presence of oliguria (urine output <0.5 mL/kg/hr) can be an appropriate renal adjustment
+to decreased renal perfusion, rather than a sign of kidney “injury”.
+2. There is a lack of agreement about the minimum increase in serum creatinine required for the
+diagnosis of acute kidney injury.
+3. The baseline serum creatinine may not be known.
+4. The serum creatinine can be misleading as a marker of the glomerular filtration rate, as
+described next.
+Serum Creatinine
+The serum creatinine is the traditional marker of the glomerular filtration rate (GFR), and Figure
+34.1 shows the popular creatinine-based methods for estimating the GFR. However, the serum
+creatinine level has the following limitations as a marker of the GFR:
+1. The creatinine in blood is derived from the creatine produced in muscle, and thus is influenced
+by muscle mass, and the rate of creatine production in muscle.
+2. The serum creatinine concentration is influenced by changes in plasma volume.
+3. Creatinine is not only filtered at the glomerulus, but is also secreted by the renal tubules.
+The influence of creatine production in muscle is an important consideration because
+critically ill patients lose about 2% of their muscle mass each day (7), and a decreased rate of
+creatine production has been reported in sepsis (8), which is the most common cause of AKI (see
+later). As a result, the serum creatinine can be an unreliable marker of the GFR in critically ill
+patients. This is supported by studies showing that estimates of the GFR based on the serum
+creatinine level consistently overestimate the true GFR in critically ill patients (9,10). This has
+important implications not only for the evaluation of renal function, but also for the appropriate
+dosing of drugs based on estimates of the GFR.
+--- Page 588 ---
+FIGURE 34.1 Popular formulas for estimating the glomerular filtration rate (GFR) based on the
+serum creatinine level. MDRD = Modification of Diet in Renal Disease.
+CYSTATIN C: Cystatin C is a protein produced by most cells in the body that is completely cleared
+by the GFR. Serum levels of cystatin C are not influenced by muscle mass, which gives cystatin
+a potential advantage over creatinine. Estimates of the GFR based on the serum cystatin C level
+are more accurate than creatinine-based estimates, but they often underestimate the true GFR in
+critically ill patients (9,10). Combining cystatin-based and creatinine-based estimates of GFR
+increases the accuracy further (9,10), but the complexity of this approach is far from appealing.
+Other Monikers
+Acute kidney injury that persists for more than a few days is called acute kidney disease, and if
+this condition persists for ≥90 days, it is called chronic kidney disease (5). The reasoning for
+these distinctions is unclear (i.e., injury vs. disease, and 90 days vs. 60 days)
+COMMON CAUSES OF ACUTE KIDNEY INJURY
+As mentioned in the introduction, most cases of AKI are the result of inflammatory injury,
+hemodynamic aberrations, or a nephrotoxic agent, and Table 34.2 shows the common causes of
+AKI in each of these categories.
+TABLE 34.2 Common Causes of Acute Kidney Injury
+Mechanism Conditions
+Inflammation Major Surgery
+Multisystem Trauma
+Sepsis†
+ALGrawany
+--- Page 589 ---
+Hemodynamic Compromise Cardiac Arrest
+Heart Failure
+Hemorrhage
+Increased Abdominal Pressure
+Liver Failure
+Nephrotoxic Radiocontrast Dye
+Rhabdomyolysis
+Nephrotoxic Drugs & Toxins
+†The leading cause of acute kidney injury.
+FIGURE 34.2 Schematic depiction of the pressures that influence the glomerular filtration rate
+(GFR). Pā = mean arterial pressure, Pv = venous pressure, P = pressure in the proximal
+PT
+tubules.
+Relevant Pressures
+Before describing the common causes of AKI, a quick review of the pressures that influence the
+glomerular filtration rate (GFR) is warranted. This is illustrated in Figure 34.2. Flow through the
+glomerulus is determined by the difference between the mean arterial pressure and the renal
+venous pressure (Pā – Pv). This is also called the glomerular filtration pressure. The net
+filtration pressure across the glomerulus, which is also called the filtration gradient, is the
+difference between the glomerular filtration pressure and the pressure in the proximal renal
+tubules (P ); i.e.,
+PT
+Filtration Gradient = (Pā – Pv) − P (34.1)
+PT
+These relationships predict that the GFR will decrease not only when there is a decrease in
+mean arterial pressure, but also when there is an increase in venous pressure (i.e., renal venous
+pressure or central venous pressure) or an increase in pressure in the proximal tubules.
+Sepsis
+Sepsis is the leading cause of AKI, and is responsible for about half of the cases of AKI in the
+--- Page 590 ---
+ICU population (3). The principal mechanism is inflammatory (oxidative) injury involving both
+the capillary endothelium in the glomerulus and the epithelial lining of the renal tubules (11).
+The renal tubular injury is also called acute tubular necrosis (ATN), and is characterized by
+sloughing of the damaged cells into the lumen of the renal tubules, as shown in Figure 34.3 (12).
+This creates a luminal obstruction, which increases the pressure in the proximal tubules, and
+hence decreases the GFR (according to Figure 34.2). This phenomenon is called
+tubuloglomerular feedback (13).
+Major surgery and multisystem trauma are other causes of AKI in which inflammation plays
+a major role (although hemodynamic factors may also be involved). AKI has been reported in
+over 50% of patients after liver transplantation, in 18% of patients following cardiac surgery, and
+in 13% of patients undergoing major abdominal surgery (3). Multisystem trauma is accompanied
+by AKI in about 30% of cases, and rhabdomyolysis is responsible for 30% of these cases (14).
+Cardiorenal Syndrome
+Heart failure and renal dysfunction are common companions; i.e., in a review that included about
+80,000 hospitalized patients with heart failure, renal dysfunction was present in 63% of the
+patients (15). This association between heart failure and renal impairment is known as the
+cardiorenal sy

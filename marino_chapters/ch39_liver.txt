@@ -1,0 +1,125 @@
+MARINO 5TH ED — CH39_LIVER
+Start page: 658
+============================================================
+
+--- Page 658 ---
+Chapter 39
+Liver Failure
+Intellectually, we stand on an islet in the midst of an illimitable ocean
+of inexplicability. Our business . . . is to reclaim a little more land.
+T.H. Huxley (a)
+The management of patients with liver failure is a particular challenge because of the numerous
+life-supporting functions that are lost when the liver fails. These include: (a) the production of
+about 20,000 proteins, including all the coagulation factors and transport proteins in blood, (b)
+the metabolism of innumerable endogenous and exogenous substances, and (c) the removal of
+microbes that breach the mucosal barrier in the GI tract.
+This chapter describes the major problems that prompt ICU admission in patients with liver
+failure, and includes the problems associated with both acute liver failure (with no prior history
+of liver disease) and decompensated cirrhosis. This is an expansive topic that is only briefly
+described here, and a number of clinical practice guidelines are included in the bibliography at
+the end of the chapter (1–5).
+ACUTE LIVER FAILURE
+Acute liver failure (ALF) is an abrupt and rapid deterioration in liver function that occurs de
+novo, without prior liver disease. This is an uncommon condition, as demonstrated in Figure 39.1
+by the number of cases (2,614) recorded in the United States over a period of 20 years (6).
+Etiologies
+The conditions included in Figure 39.1 were responsible for about 80% of cases of ALF in the
+United States, and acetaminophen tops the list by a great margin.
+Acetaminophen
+Acetaminophen is the leading cause of ALF in both the United States and the United Kingdom
+(being responsible for 46% and 64% of cases, respectively) (6). Acetaminophen hepatotoxicity is
+described in detail in Chapter 52, and is only briefly reviewed here. The source of the liver injury
+is depletion of hepatic glutathione stores, which results in oxidative cell injury from an
+ALGrawany
+--- Page 659 ---
+acetaminophen metabolite. (Glutathione is the major intracellular antioxidant in the body, as
+described in Chapter 25.) The liver injury can begin as early as 12 hours after ingestion, and it
+peaks in 3 to 5 days (7). The laboratory abnormalities in the early stages of injury are
+characterized by high alanine aminotransferase (ALT) levels, with only mild increases in
+bilirubin (6). Acetaminophen-induced liver injury has two unfortunate features:
+FIGURE 39.1 Causes of acute liver failure recorded by the United States Adult Acute Liver
+Failure Registry over the time period from Jan, 1998 to March, 2019. Adapted from Reference 6.
+1. About half of acetaminophen overdoses are unintentional (7), and are the result of attempts to
+alleviate pain. This is partly due to consumer ignorance about the potential toxicity of
+acetaminophen, and is partly due to the inclusion of acetaminophen in more than 600 over-the-
+counter products.
+2. Acetaminophen is undetectable in the plasma in about 50% of the cases where it causes liver
+injury (8). This creates a risk of missed diagnoses and poor outcomes, since the condition is
+treatable.
+N-ACETYLCYSTEINE: The antidote for acetaminophen hepatotoxicity is N-acetylcysteine (NAC),
+which acts as a glutathione surrogate (see Figure 25.7). It is usually given intravenously (see
+Chapter 52 for the dosing regimen), and is started as soon as an acetaminophen overdose is
+confirmed or suspected. It is most effective when treatment is started within 10 hours of
+ingestion (7), and the efficacy declines with time thereafter. However, NAC is started at any time
+after a suspected or confirmed overdose of acetaminophen, and treatment is continued until there
+is evidence of improvement in liver function. About 75% of cases resolve without the need for
+liver transplantation (6).
+--- Page 660 ---
+The success of NAC in acetaminophen-induced ALF has led to its use in cases of ALF that
+are not linked to acetaminophen. Although there is no convincing evidence of benefit (9), it is
+considered reasonable to use NAC empirically in ALF of undetermined etiology (10).
+Other Drugs
+The drugs that have been reported to cause acute liver injury are listed in Table 39.1 (11). Drug-
+induced liver injury can be dose-related or idiosyncratic, and is more likely to occur in patients
+who are elderly, debilitated, or alcoholic. The idiosyncratic reactions are the most troublesome,
+with a survival rate of only 40% without liver transplantation (6).
+TABLE 39.1 Drugs Associated with Acute Liver Failure†
+Dose-Related Idiosyncratic
+Acetaminophen Amiodarone§
+Amiodarone§ Amoxicillin
+Antimetabolites Dantrolene
+Antiretroviral Drugs Halothane
+Cyclosporine Lisinopril
+Statins§ Phenytoin
+Valproic Acid Statins§
+Sulfonamides
+†For a more complete list, see References 6 and 11.
+§Hepatic injury can be dose-related or idiosyncratic.
+Ischemic Injury
+Ischemic liver injury (sometimes called ischemic hepatitis), typically follows a period of
+systemic hypoperfusion (e.g., from hemorrhagic shock), and is characterized by very high
+transaminase levels (e.g., >3,000 IU/L) with only mild increases in bilirubin (<5 mg/dL) (6).
+This condition tends to resolve if the hypoperfusion resolves, but about 25% of cases need liver
+transplantation (6).
+Acute Hepatitis
+Autoimmune hepatitis has a more insidious onset than the other sources of ALF, and the
+diagnosis often rests on a clinical history of autoimmune disease, or positive serologies (e.g.,
+antinuclear antibodies or anti-smooth muscle antibodies). About 80% of cases are in women (6),
+and hypergammaglobulinemia is common.
+Viral hepatitis is responsible for <10% of cases of ALF in developed countries (5). Most
+cases are caused by the hepatitis B virus, which can be a new infection, or a latent infection that
+is sparked by immunosuppressive therapy. Once liver failure develops, treatment (with
+nucleoside analogues) is of little value (12), and survival is only 25% without liver
+transplantation (6).
+Other Causes
+Causes of ALF that are not included in Figure 39.1 include the HELLP syndrome (hemolysis,
+elevated liver enzymes and low platelets in pregnant and post-partum women), Budd Chiari
+ALGrawany
+--- Page 661 ---
+syndrome (hepatic vein occlusion), other viral infections (e.g., herpes simplex), and infiltrating
+neoplasms (6).
+Clinical Features
+Unlike the liver failure associated with cirrhosis, ALF is not accompanied by ascites or bleeding
+from esophageal varices. Instead, the clinical picture is dominated by systemic inflammation
+(originating from the damaged liver) with hemodynamic instability and multiorgan dysfunction
+(similar to inflammatory shock, as described in Chapter 17).
+Hemodynamics
+The hemodynamic instability in ALF is due to vasodilation, and an ineffective circulating blood
+volume from hypoalbuminemia (10). The management involves volume resuscitation and
+vasopressors if needed, and albumin is recommended as the resuscitation fluid, especially when
+the serum albumin is below 3 g/dL (2). Albumin is available as a 5% solution that has an
+albumin concentration of 5 g/dL (similar to the normal concentration in plasma), and about 70%
+of the infused solution will remain in the intravascular space (see Figure 10.1). The use of
+Ringer’s lactate is not advised because it promotes hyponatremia, which will exacerbate the
+cerebral edema in hepatic encephalopathy.
+Acute Kidney Injury
+Acute kidney injury (AKI) is reported in 70% of patients with ALF, and is usually seen in
+patients with acetaminophen hepatotoxicity, or those with hypotension who require vasopressors
+(13). Renal replacement therapy is used more aggressively in ALF because it protects against
+hepatic encephalopathy by removing ammonia as well as excess volume (see next).
+Hepatic Encephalopathy
+Encephalopathy is the dominant feature of acute liver failure, and is characterized by cerebral
+edema (as shown in Figure 39.2).
+--- Page 662 ---
+FIGURE 39.2 CT images of the head in a patient with acute liver failure, taken before (image on
+the left) and after (image on the

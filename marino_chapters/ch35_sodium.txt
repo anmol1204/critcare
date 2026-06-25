@@ -1,0 +1,135 @@
+MARINO 5TH ED — CH35_SODIUM
+Found at page: 603
+============================================================
+
+--- Page 603 ---
+Chapter 35
+Sodium
+People say life can’t exist without air, but it does under water; in fact, it
+started in the sea.
+Richard Feynman (a)
+Life originated in a 3.5% salt water solution (i.e., the salinity of the ocean), and humans have
+retained some of that heritage, since our cells are bathed in a 0.6% salt water solution. The
+salinity (sodium concentration) of this extracellular bath is highly regulated, because it plays an
+important role in determining the volume of the intracellular and extracellular fluid
+compartments.
+This chapter begins by describing the forces that determine the distribution of total body
+water, and the importance of sodium in determining these forces, and then presents an organized
+approach to the “dysnatremias” (1,2); i.e., hypernatremia and hyponatremia.
+OSMOTIC ACTIVITY
+The movement of water between fluid compartments is determined by a property of fluids
+known as osmotic activity, which is a reflection of the number of solute particles per unit volume
+of solvent (3). Osmotic activity is a colligative property, and depends only on the number of
+solute particles in a fluid, and not on the electrical charge, size, or chemical behavior of the
+solutes. The total osmotic activity of a solution is the summed osmotic activity of all the solute
+particles in the solution.
+Relative Osmotic Activity
+When two fluid compartments are separated by a membrane that is permeable to solutes and
+water, the solutes in each fluid compartment will equilibrate across the membrane, and the
+osmotic activity will be equivalent in both fluid compartments. Since water movement follows
+solute movement, the volume in both fluid compartments will be equivalent. This is illustrated in
+the Figure 35.1 (see the panel on the left).
+Effective Osmotic Activity
+--- Page 604 ---
+When two fluid compartments are separated by a membrane that is not freely permeable to
+solutes, the solutes will not distribute evenly in the fluid compartments, and the osmotic activity
+will be different in each compartment. In this situation, water moves from the fluid with the
+lower osmotic activity (which has a higher water content) to the fluid with the higher osmotic
+activity (which has a lower water content), as demonstrated in the panel on the right in Figure
+35.1. The difference in osmotic activity between the fluid compartments is called the effective
+osmotic activity, and it is the force that drives the movement of water between the fluid
+compartments. This force is also called the osmotic pressure.
+The relative osmotic activity between two fluid compartments is expressed as tonicity; i.e., if
+the osmotic activity in the two compartments is equal, the fluids are described as isotonic (see
+the left-side panel in Figure 35.1), and if the osmotic activity differs, the fluid with the higher
+osmotic activity is described as hypertonic, and the fluid with the lower osmotic activity is
+described as hypotonic (see the right-side panel in Figure 35.1).
+FIGURE 35.1 Illustration of the relationship between osmotic activity and water movement
+between fluid compartments. See text for explanation.
+Summary
+The following statements summarize the relationship between osmotic activity and the
+transcellular shift of water.
+1. A change in the effective osmotic activity or tonicity of extracellular fluid produces a
+transcellular water shift.
+a. When the extracellular fluid is hypertonic, water moves out of cells.
+b. When the extracellular fluid is hypotonic, water moves into cells.
+Units of Osmotic Activity
+The unit of measurement for osmotic activity is the osmole (osm), which is defined as one gram
+molecular weight (one mole) of a nondissociable substance, and is equivalent to 6 × 1023
+particles (Avogadro’s Number). Osmotic activity can be expressed in relation to the volume of
+water in a solution, or in relation to the volume of the solution (4,5).
+ALGrawany
+--- Page 605 ---
+1. Osmotic activity per volume of solution is called osmolarity, and is expressed as milliosmoles
+per liter (mosm/L).
+2. Osmotic activity per volume of water is called osmolality, and is expressed as milliosmoles per
+kilogram of H O (mosm/kg H O, or mosm/kg).
+2 2
+Plasma is mostly (95%) water, so the osmotic activity in plasma is typically expressed as
+osmolality (mosm/kg H O). However, there is little difference between the osmolality and
+2
+osmolarity of extracellular fluid, and the two terms are often used interchangeably (5).
+Conversion Factors
+The following formulas (where n is the number of nondissociable particles) can be used to
+convert plasma solute concentrations to units of osmolality:
+1. For solute concentrations expressed in mEq/L:
+(35.1)
+Thus, for univalent ions like sodium, the plasma concentration in mEq/L is equivalent to the
+osmotic activity in mosm/kg H O.
+2
+1. For solute concentrations expressed in mg/dL:
+(35.2)
+where mol wt is molecular weight, and the factor 10 is used to convert deciliters (dL) to liters.
+For example, glucose has a molecular weight of 180, so a plasma glucose concentration of 90
+mg/dL is equivalent to (90 × 10/180) × 1 = 5 mosm/kg H O.
+2
+Plasma Osmolality
+The plasma osmolality can be measured or calculated.
+Measured Plasma Osmolality
+The standard method for measuring plasma osmolality is the freezing point depression method.
+Solute-free water freezes at 0º C, and this temperature decreases by 1.86° C for each osmole of
+solute that is added to one kilogram of water. Therefore, the extent of depression of the freezing
+point of an aqueous solution can be used to determine the osmotic activity of the solution. This
+method is considered the “gold-standard” for measuring plasma osmolality, and is available in
+most clinical laboratories. The normal plasma osmolality is 285–295 mosm/kg H O.
+2
+Calculated Plasma Osmolality
+Plasma osmolality can also be calculated using the concentrations of the principal solutes in
+plasma; i.e., sodium, chloride, glucose, and urea (3); i.e.,
+--- Page 606 ---
+(35.3)
+where Posm is the plasma osmolality in mosm/kg H O, Na is the plasma sodium concentration in
+2
+mEq/L, glucose and BUN are the plasma glucose and urea concentrations in mg/dL, and the
+factors 18 and 2.8 are the molecular weights of glucose and urea divided by 10, respectively
+(which converts their concentrations to mosm/kg H O). The sodium concentration is doubled to
+2
+account for the negative ions (mostly chloride) that electrically balance sodium.
+EXAMPLE: Using normal plasma concentrations of Na (140 mEq/L), glucose (90 mg/dL), and
+BUN (14 mg/dL), the plasma osmolality is: (2 × 140) + 90/18 + 14/2.8 = 290 mosm/kg H O.
+2
+This is within the range of the measured plasma osmolality (285–295 mosm/kg H O).
+2
+EFFECTIVE PLASMA OSMOLALITY: Urea readily crosses cell membranes, so an increase in blood
+urea nitrogen (BUN) will not increase the effective osmotic activity of plasma. In other words,
+azotemia is a hyperosmotic, but not a hypertonic, condition. Therefore, the calculation of
+effective plasma osmolality does not include the BUN; i.e.,
+(35.4)
+EXAMPLE: Using normal plasma concentrations of Na (140 mEq/L) and glucose (90 mg/dL), the
+effective plasma osmolality is (2 × 140) + 90/18 = 285 mosm/kg H O, which is very close to the
+2
+total osmolality (290 mosm/kg H O).
+2
+Spotlight on Sodium
+If the glucose is removed from Equation 35.4, the calculated Posm is 280 mosm/kg H O, which
+2
+is 98% of the calculated Posm that includes glucose (i.e., 285 mosm/kg H O). This demonstrates
+2
+the following:
+1. Sodium is responsible for 98% of the effective plasma osmolality.
+2. The sodium concentration in extracellular fluid (plasma) is the principal factor that determines
+the distribution of total body water in the intracellular and extracellular fluid compartments,
+and hence it is also the principal determinant of the extracellular volume.
+HYPERNATREMIA
+Hypernatremia (i.e., plasma sodium >145 mEq/L) has been reported in as many as 25% of ICU
+patients, and in most cases, it is acquired during the ICU stay 

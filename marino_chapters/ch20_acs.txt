@@ -1,0 +1,124 @@
+MARINO 5TH ED — CH20_ACS
+Start page: 356
+============================================================
+
+--- Page 356 ---
+Chapter 20
+Acute Coronary Syndromes
+The study of the causes of things must be preceded by the study of
+things caused.
+John Hughlings Jackson (1835–1911)
+One of the seminal moments in cardiac critical care was the discovery (in 1980) that transmural
+myocardial infarction (MI) was the result of an occlusive thrombus in a coronary artery. This led
+to the introduction of thrombolytic therapy (in the mid-1980s), followed by the superseding
+technology of balloon angioplasty and stent placement. Advances in reperfusion therapy have
+improved outcomes, and have contributed to 20% decline in the annual mortality rate from
+coronary disease over the past decade (from 2010 to 2020) (1). However, coronary artery disease
+continues to be the leading cause of death in the United States (1), so there is more work to be
+done.
+This chapter describes the diagnosis and early management of acute myocardial infarction
+and unstable angina (the acute coronary syndromes), with an emphasis on management in the
+first 24–36 hours after presentation. Also included is a section on acute aortic dissection, which
+has a clinical presentation that can be confused with acute coronary syndromes. Many of the
+recommendations in this chapter are derived from the clinical practice guidelines listed in the
+bibliography at the end of the chapter (2–7).
+CORONARY THROMBOSIS
+Pathogenesis
+As just mentioned, acute myocardial infarction is the result of an occlusive thrombus in one or
+more coronary arteries. The trigger for thrombus formation is rupture of an atherosclerotic
+plaque, which releases thrombogenic lipids (see Figure 20.1). Plaque disruption is attributed to
+inflammation (8), but hydraulic shear stress may also play a role, because ruptured plaques are
+typically located at branch points in the coronary circulation (9).
+Role of Oxidative Injury
+ALGrawany
+--- Page 357 ---
+Inflammation plays a major role in both the genesis and rupture of atherosclerotic plaques (10).
+The damaging effects of inflammation are largely due to the oxidative actions of “reactive
+oxygen species”, as described in Chapter 17 (see Figure 17.1), and this implicates oxidative
+injury as a major participant in coronary artery disease. The principle culprit in this scenario
+appears to be myeloperoxidase (MPO), an enzyme released by leukocytes that generates
+hypochlorite (the active ingredient in household bleach), and oxidizes lipoproteins in
+atherosclerotic plaques (11). Clinical studies have shown a direct correlation between plasma
+levels of MPO and the presence and severity of coronary artery disease (12,13), and autopsy
+studies in humans have shown extensive staining for MPO at the rupture site of coronary artery
+plaques (13). These observations suggest that inhibition of MPO is a potential treatment modality
+for coronary artery disease.
+FIGURE 20.1 Pathogenesis of acute coronary syndromes. Rupture of an atherosclerotic plaque
+releases thrombogenic lipids that activate platelets and clotting factors (upper panel), resulting in
+--- Page 358 ---
+the formation of an occlusive thrombus (lower panel).
+Clinical Syndromes
+Acute coronary thrombosis produces three distinct clinical syndromes (which are the acute
+coronary syndromes, or ACS), which are classified by the presence or absence of ST-segment
+elevation on a 12-lead electrocardiogram (ECG):
+1. ST-elevation myocardial infarction (STEMI), which is a transmural infarction caused by
+complete occlusion of the infarct-related artery.
+2. Non-ST-elevation myocardial infarction (NSTEMI), which is the result of incomplete or partial
+occlusion of the infarct-related artery.
+3. Unstable angina (UA), which is not associated with ST elevation on the ECG, and is the result
+of repetitive on-off episodes of coronary occlusion.
+NSTEMI and UA are typically grouped together as “non-ST-elevation acute coronary
+syndromes”, or NSTE-ACS.
+Diagnostic Evaluation
+The success of treating ACS is time-dependent, so the diagnostic evaluation must be completed
+as quickly as possible, The evaluation has three components: the clinical presentation, the 12-
+lead ECG, and the high-sensitivity troponin assay.
+CLINICAL PRESENTATION: The clinical presentation of ACS can vary widely, but about 80% of
+patients have some type of chest discomfort (e.g., pain, pressure, tightness, etc.) (3,4). The onset
+is abrupt, and lasts for longer than 15 minutes. The discomfort is a deep sensation that cannot be
+localized to a specific point, and can involve the shoulders, neck, arms, and abdomen. Patients
+are often apprehensive, and can complain of nausea, vomiting, and dyspnea.
+ACS is unlikely when chest pain is sharp or fleeting, or can be localized to a precise point,
+and also if the pain occurs during inspiration, or can be elicited by body movements or chest
+percussion. Of particular note, chest pain that is relieved by nitroglycerin is not evidence of
+myocardial ischemia, since nitroglycerin can also relieve chest pain from esophageal spasm
+(14).
+The initial evaluation may also reveal evidence of acute heart failure or cardiogenic shock.
+These complications are not considered in this chapter, but are described in detail in Chapters 16
+and 18.
+ELECTROCARDIOGRAM: A 12-lead electrocardiogram (ECG) should be obtained within 10 minutes
+of the first patient contact (2). Some of the ECG changes in ACS are shown in Table 20.1 ECG
+evidence of ST-elevation MI (STEMI) merits emergency reperfusion therapy (described later).
+NSTEMI and UA (NSTE-ACS) may be accompanied by ST depressions or T-wave inversions,
+but the ECG can also be normal in these conditions. Finally, ischemic changes in the ST segment
+can be masked by a bundle branch block or a paced rhythm, and when coronary ischemia is
+suspected, the presence of these ECG abnormalities is managed like a STEMI (i.e., with
+emergent reperfusion therapy).
+ALGrawany
+--- Page 359 ---
+TROPONIN ASSAY: Plasma levels of cardiac troponin (cTn) are used to detect the presence of
+myocardial cell injury, and a high-sensitivity assay (hs-cTn) can detect elevations of plasma cTn
+as early as 3 hours after the onset of symptoms (15). There are several commercial hs-cTn
+assays, and the normal or reference levels differ for each assay, and can differ for each hospital.
+The following protocol is recommended for hs-cTn levels (2–6).
+1. Plasma levels of hs-cTn are measured at the time of presentation, and again one hour later.
+2. Myocardial necrosis is likely if the initial hs-cTn level is elevated (usually above the 99%
+upper reference level for the assay), and there has been at least 3 hours since the onset of
+symptoms. Conditions other than ischemia can cause myocardial injury, hence a repeat hs-cTn
+level at one hour is used to determine if the myocardial injury is ischemic in origin (see next).
+3. A significant change (usually >10%) in the second hs-cTn level is evidence of acute ischemia
+(i.e., acute MI).
+There are several non-ischemic causes of elevated hs-cTn levels (e.g., cardiomyopathy, sustained
+tachycardia, heart failure, pulmonary hypertension, and even sepsis) (2,3) but these conditions
+should not cause an acute change in the hs-cTn levels. However, patients with markedly elevated
+hs-cTn levels are usually admitted to the hospital for further testing.
+TABLE 20.1 ECG Changes in Acute Coronary Syndromes
+Condition Pattern Criteria
+STEMI ST elevation at the J point in ≥2 contiguous leads: either ≥1.5 mm (females) or
+≥2.0 mm (males) in V –V₃, or ≥1 mm in the other leads.
+2
+Posterior ST depression in V –V with a positive T wave.
+1 3
+STEMI
+V – V
+1 3
+NSTE- J point depression ≥0.5 mm in V –V₃, or ≥1 mm in all other leads. ST segment
+2
+ACS can be horizontal or downsloping.
+NSTE- T wave inversion >1 mm in ≥5 leads, including I, II, aVL, and V –V .
+2 6
+ACS
+From Reference 5.
+REPERFUSION STRATEGIES
+When the likelihood of an acute coronary occlusion is very high using the evaluation just
+described, the next step is to determine the appropriate strategy for restoring flow in the occ

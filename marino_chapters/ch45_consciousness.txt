@@ -1,0 +1,133 @@
+MARINO 5TH ED — CH45_CONSCIOUSNESS
+Found at page: 732
+============================================================
+
+--- Page 732 ---
+Chapter 45
+Disorders of Consciousness
+I think, therefore I am.
+René Descartes (1644)
+The ability to recognize and interact with the surroundings (i.e., consciousness) is the sine qua
+non of the life experience, and loss of this ability is one of the dominant (and dreaded) signs of a
+life-threatening illness. This chapter describes the major disorders of consciousness that you will
+encounter in the ICU, with emphasis on delirium, coma, and the ultimate disorder of
+consciousness, brain death.
+ALTERED CONSCIOUSNESS
+Consciousness has two components: arousal and awareness.
+1. Arousal is the ability to experience your surroundings, and is also known as wakefulness.
+2. Awareness is the ability to understand your relationship to your surroundings, and is also
+known as responsiveness.
+These two components can be used to classify the altered states of consciousness, as indicated in
+Table 45.1 (1–3).
+TABLE 45.1 Altered States of Consciousness
+Can be Awakened and is Can be Awakened but is Not
+Aware Aware Cannot be Awakened and is Not Aware
+Anxiety Delirium Coma
+Lethargy Dementia Brain Death
+Locked-In State Psychosis
+Stupor
+Vegetative State
+ALGrawany
+--- Page 733 ---
+Altered States of Consciousness
+The principal states of altered consciousness are as follows:
+1. Anxiety and lethargy are conditions where arousal and awareness are intact, but there is a
+change in attentiveness (i.e., the degree of awareness).
+2. A locked-in state is a condition where arousal and awareness are intact, but there is almost total
+absence of motor responsiveness. This condition is caused by bilateral injury to the motor
+pathways in the ventral pons, which disrupts all voluntary movements except up-down ocular
+movements and eyelid blinking (3).
+3. Delirium and dementia are conditions where arousal is intact, but awareness is altered. The
+change in awareness can be fluctuating (with delirium) or permanent (with dementia).
+4. Stupor is a condition where the subject is difficult to arouse, and is unaware of some or all
+elements in the environment.
+5. A vegetative state is a condition where there is some degree of arousal (eyes can open), but
+there is no awareness. Spontaneous movements and motor responses to deep pain can be
+present, but the movements are purposeless. After one month, this condition is called a
+persistent vegetative state (4).
+6. Coma is the total absence of arousal and awareness (i.e., unarousable unawareness). Like the
+vegetative state, spontaneous movements and motor responses to deep pain can be present, but
+the movements are purposeless.
+7. Brain death is similar to coma in that there is a total absence of arousal and awareness.
+However, brain death differs from coma in two ways: (a) it involves loss of all brainstem
+function, including cranial nerve responses, and spontaneous respirations and (b) it is always
+irreversible.
+--- Page 734 ---
+FIGURE 45.1 Common sources of altered consciousness in ICU patients.
+Predisposing Conditions
+There are an innumerable number of conditions that can alter consciousness, and Figure 45.1
+shows a list of the most likely ones in critically ill patients. In a general medical-surgical ICU,
+the prominent causes of altered consciousness are likely to include the following:
+1. Sedation during mechanical ventilation.
+2. Clinical shock syndromes.
+3. Encephalopathies (ischemic, septic, and metabolic).
+4. Drug overdoses or withdrawal.
+It is worth mentioning that nonconvulsive seizures are an often overlooked cause of altered
+consciousness in ICU patients. (See Chapter 46 for more on this topic.)
+DELIRIUM
+The delirium described in this section is a manifestation of “brain dysfunction”, which is one part
+of the multiorgan dysfunction that plagues critically ill patients. The incidence of this type of
+delirium is about 25–50%, and it is especially common in elderly and ventilator-dependent
+patients (5). The delirium that is associated with alcohol withdrawal is a separate entity, and is
+described in a later section.
+ALGrawany
+--- Page 735 ---
+Clinical Features
+The clinical features of delirium are summarized in Figure 45.2 (6,7). As indicated, delirium is a
+state of inattentiveness (i.e., inability to focus) that has a rapid onset or a rapidly fluctuating
+course (i.e., changes occur within a 24-hour time period), and is accompanied by either
+disordered thinking (i.e., incoherent or illogical responses) or an altered level of consciousness
+(hyperactive or lethargic).
+Three types of ICU-related delirium are recognized: (a) hyperactive delirium, where the
+patient is restless and agitated, (b) hypoactive delirium, where the patient is lethargic and
+somnolent; and (c) mixed delirium, where there are alternating episodes of hyperactive and
+hypoactive delirium. Hypoactive delirium is the most common form (5), and is often overlooked
+because of the popular misperception that delirium is a state of severe agitation.
+Predisposing Conditions
+Any condition that is associated with an encephalopathy can be a source of delirium. The major
+ones in the ICU are sepsis, liver failure, uremia, and the use of sedative-hypnotic drugs (5).
+SEDATION: The use of heavy and prolonged sedation is considered a risk factor for delirium (8),
+and benzodiazepines are considered the principal sedatives that promote delirium in the ICU
+(9,10). As a result, avoidance of benzodiazepines is considered an important preventive measure
+for ICU-related delirium (10).
+Diagnosis
+Validated screening tools are considered essential for the detection of delirium (5), and the
+Confusion Assessment Method for the ICU (CAM-ICU) is probably the most popular of these
+diagnostic tools (6,7). A summary of the CAM-ICU method is included in Appendix II at the end
+of the book.
+Delirium versus Dementia
+Delirium and dementia are distinct mental disorders that can be confused because they have
+overlapping clinical features (i.e., attention deficits and disordered thinking). However, delirium
+has two characteristics that distinguish it from dementia: i.e., the acute onset and fluctuating
+course.
+Psychosis versus Delirium
+Delirium can be difficult to distinguish from psychosis. Over 40% of hospitalized patients with
+delirium have psychotic symptoms (e.g., visual hallucinations) (11), and delirium has been given
+the misnomer of “ICU psychosis” (12).
+Management
+No drug has proven effective in preventing or correcting ICU-related delirium, and drugs are
+recommended only to restore calm in severely agitated patients (which is not treating the
+underlying delirium) (5,10). The drugs that can be used for this purpose are included in Table
+45.2. Dexmedetomidine is the preferred agent (10), but can produce troublesome bradycardia
+and hypotension (see Chapter 6). Haloperidol is a popular agent for hyperactive delirium (see
+--- Page 736 ---
+Chapter 6), but has a relatively slow onset of action (which can be a disadvantage in severely
+agitated patients). Ziprasidone is an atypical antipsychotic agent that can be only be given
+intramuscularly, but this can be advantageous when intravenous access is problematic in a
+severely agitated patient (13).
+FIGURE 45.2 The clinical features of delirium in critically ill patients.
+TABLE 45.2 Drugs for Severe Agitation in ICU-Related Delirium
+ALGrawany
+--- Page 737 ---
+Drug Recommendations
+Dexmedetomidine Dosing: Loading dose (optional) is 1 μg/kg IV over 10 min. followed by an infusion of 0.2–1.5
+μg/kg/hr.
+Comment: Can produce bradycardia and hypotension. A withdrawal syndrome (with
+hyperexcitability) has been reported.
+Haloperidol Dosing: Start with 5 mg IV as a bolus dose. If no effect after 15 min, double the dose (10 mg
+IV), or switch to another agent. For maintenance dosing, use 25% of the initial
+effective dose every 6 hrs.
+Comment: Has a relatively slow onset of action. Not advised if the corrected QT interval is
+>500 msec.
+Ziprasidone Dosing: 10 mg IM every 2 hrs, or 20 mg IM every 4 hrs, to a total daily dose of 40 mg.
+Comment: The IM route can be useful if
