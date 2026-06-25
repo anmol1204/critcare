@@ -9,8 +9,8 @@ module.exports = async function handler(req, res) {
   const { message } = req.body || {};
   if (!message) return res.status(400).json({ error: 'No message provided' });
 
-  if (!process.env.GROQ_API_KEY) {
-    return res.status(500).json({ error: 'GROQ_API_KEY is not set in Vercel environment variables.' });
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return res.status(500).json({ error: 'ANTHROPIC_API_KEY is not set in Vercel environment variables.' });
   }
 
   const systemPrompt = `You are CritCare AI, an ICU clinical decision support assistant designed for intensivists and emergency physicians in Indian hospitals.
@@ -29,25 +29,23 @@ When given a patient clinical summary, respond with a concise, structured, evide
 
 **5. Further management:** [Source control, specialist consult, escalation triggers]
 
-Be concise, practical, and adapted for resource-limited settings. Cite relevant guidelines (SSC, KDIGO, ARDSNet) briefly when applicable.
+Be concise, practical, and adapted for resource-limited settings. Cite relevant guidelines (SSC 2026, KDIGO 2026, ARDSNet, GINA 2026, GOLD 2026) briefly when applicable.
 
-Always end with: This is clinical decision support only - always apply your own clinical judgement.`;
+Always end with: ⚠️ This is clinical decision support only — always apply your own clinical judgement.`;
 
   try {
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + process.env.GROQ_API_KEY,
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
       },
       body: JSON.stringify({
-        model: 'llama-3.3-70b-versatile',
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: message },
-        ],
+        model: 'claude-haiku-4-5-20251001',
         max_tokens: 1024,
-        temperature: 0.3,
+        system: systemPrompt,
+        messages: [{ role: 'user', content: message }],
       }),
     });
 
@@ -57,13 +55,13 @@ Always end with: This is clinical decision support only - always apply your own 
       let detail = responseText;
       try {
         const parsed = JSON.parse(responseText);
-        detail = parsed.error && parsed.error.message ? parsed.error.message : responseText;
+        detail = parsed.error?.message || responseText;
       } catch (_) {}
-      return res.status(502).json({ error: 'Groq API error (status ' + response.status + '): ' + detail });
+      return res.status(502).json({ error: 'Claude API error (status ' + response.status + '): ' + detail });
     }
 
     const data = JSON.parse(responseText);
-    const reply = data.choices[0].message.content;
+    const reply = data.content[0].text;
     return res.json({ reply });
   } catch (err) {
     return res.status(500).json({ error: 'Server error: ' + err.message });

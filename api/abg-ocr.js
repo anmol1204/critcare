@@ -5,109 +5,119 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  if (!process.env.GEMINI_API_KEY) {
-    return res.status(500).json({ error: 'GEMINI_API_KEY not configured in Vercel environment variables.' });
+  if (!process.env.ANTHROPIC_API_KEY) {
+    return res.status(500).json({ error: 'ANTHROPIC_API_KEY not configured in Vercel environment variables.' });
   }
 
   const { imageBase64, mimeType } = req.body || {};
   if (!imageBase64) return res.status(400).json({ error: 'No image data provided.' });
 
-  const prompt = `You are a medical ABG (Arterial Blood Gas) report reader.
-Extract ALL values visible in this ABG report image.
-Return ONLY a valid JSON object — nothing else, no explanation, no markdown.
+  const validMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+  const safeMimeType = validMimeTypes.includes(mimeType) ? mimeType : 'image/jpeg';
 
-Extract these fields (use null if not found or not visible):
+  const prompt = `You are reading an ABG (Arterial Blood Gas) report. Extract ALL numeric values visible in this image.
+
+Return ONLY a valid JSON object with no explanation or markdown. Use null for any value not found.
+
 {
-  "pH": number,
-  "pco2": number,
-  "hco3": number,
-  "pao2": number,
-  "fio2": number,
-  "spo2": number,
-  "na": number,
-  "cl": number,
-  "k": number,
-  "albumin": number,
-  "lactate": number,
-  "glucose": number,
-  "bun": number,
-  "osm": number,
-  "be": number,
-  "notes": "string with any other relevant values or observations visible"
+  "pH": number or null,
+  "pco2": number or null,
+  "hco3": number or null,
+  "pao2": number or null,
+  "fio2": number or null,
+  "spo2": number or null,
+  "na": number or null,
+  "cl": number or null,
+  "k": number or null,
+  "albumin": number or null,
+  "lactate": number or null,
+  "glucose": number or null,
+  "bun": number or null,
+  "osm": number or null,
+  "be": number or null,
+  "notes": "any other relevant info or values visible"
 }
 
-Important rules:
-- pH is typically between 6.8 and 7.8
-- PaCO2 (PCO2) is typically 20-100 mmHg
-- HCO3 (bicarbonate) is typically 5-45 mEq/L
-- PaO2 (PO2) is typically 40-600 mmHg
-- FiO2 is 0.21-1.0 (if written as percentage like 21%, convert to 0.21)
-- Sodium (Na) is typically 120-160 mEq/L
-- Chloride (Cl) is typically 90-115 mEq/L
-- Potassium (K) is typically 2.5-7.0 mEq/L
-- Lactate is typically 0.5-20 mmol/L
-- BE (Base Excess) is typically -20 to +20
-
-Return ONLY the JSON object.`;
+Rules:
+- pH: 6.8–7.8
+- PaCO2 (PCO2): 20–100 mmHg
+- HCO3 (bicarbonate, HCO3-): 5–45 mEq/L
+- PaO2 (PO2): 40–600 mmHg
+- FiO2: if shown as % (e.g. 21%), convert to decimal (0.21)
+- Na (sodium): 120–160 mEq/L
+- Cl (chloride): 80–120 mEq/L
+- K (potassium): 2.0–8.0 mEq/L
+- Lactate: 0.1–20 mmol/L
+- BE (base excess): -25 to +25
+- Return ONLY the JSON object, nothing else.`;
 
   try {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.GEMINI_API_KEY}`;
-
-    const response = await fetch(url, {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+      },
       body: JSON.stringify({
-        contents: [{
-          parts: [
+        model: 'claude-haiku-4-5-20251001',
+        max_tokens: 512,
+        messages: [{
+          role: 'user',
+          content: [
             {
-              inline_data: {
-                mime_type: mimeType || 'image/jpeg',
-                data: imageBase64
-              }
+              type: 'image',
+              source: {
+                type: 'base64',
+                media_type: safeMimeType,
+                data: imageBase64,
+              },
             },
-            { text: prompt }
-          ]
+            {
+              type: 'text',
+              text: prompt,
+            },
+          ],
         }],
-        generationConfig: {
-          temperature: 0.1,
-          maxOutputTokens: 512
-        }
-      })
+      }),
     });
 
     if (!response.ok) {
       const err = await response.text();
-      return res.status(502).json({ error: 'Gemini API error: ' + err });
+      let msg = err;
+      try { msg = JSON.parse(err).error?.message || err; } catch (_) {}
+      return res.status(502).json({ error: 'Claude API error: ' + msg });
     }
 
     const data = await response.json();
-    const rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+    const rawText = data.content?.[0]?.text || '';
 
-    // Extract JSON from response (remove any markdown code fences if present)
+    // Extract JSON from response
     const jsonMatch = rawText.match(/\{[\s\S]*\}/);
     if (!jsonMatch) {
       return res.status(422).json({
-        error: 'Could not extract values from image. Please ensure the image is clear and contains an ABG report.',
-        rawResponse: rawText.slice(0, 200)
+        error: 'Could not read values from this image. Please ensure the ABG report is clearly visible and well-lit.',
+        rawResponse: rawText.slice(0, 200),
       });
     }
 
     const values = JSON.parse(jsonMatch[0]);
 
-    // Validate and sanitise extracted values
+    // Sanitise and validate
     const sanitised = {};
     const numFields = ['pH','pco2','hco3','pao2','fio2','spo2','na','cl','k','albumin','lactate','glucose','bun','osm','be'];
     numFields.forEach(f => {
-      if (values[f] !== null && values[f] !== undefined && !isNaN(values[f])) {
-        sanitised[f] = parseFloat(values[f]);
+      const v = values[f];
+      if (v !== null && v !== undefined && !isNaN(parseFloat(v))) {
+        sanitised[f] = parseFloat(v);
       }
     });
-    if (values.notes) sanitised.notes = String(values.notes).slice(0, 300);
+    if (values.notes) sanitised.notes = String(values.notes).slice(0, 400);
 
     return res.json({
       success: true,
       values: sanitised,
-      fieldsFound: Object.keys(sanitised).filter(k => k !== 'notes').length
+      fieldsFound: Object.keys(sanitised).filter(k => k !== 'notes').length,
     });
 
   } catch (err) {
