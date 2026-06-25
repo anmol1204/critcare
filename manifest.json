@@ -1,0 +1,46 @@
+{
+  "name": "CritCare.in — ICU Clinical Reference",
+  "short_name": "CritCare",
+  "description": "Evidence-based ICU reference for Emergency Medicine, Critical Care, Anaesthesia & Pulmonary Medicine. SSC 2026, GINA 2026, GOLD 2026, KDIGO 2026.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f1f3d",
+  "theme_color": "#1e6fd9",
+  "orientation": "any",
+  "lang": "en",
+  "categories": ["medical", "health", "education"],
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icon-apple.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "shortcuts": [
+    {
+      "name": "ABG Calculator",
+      "short_name": "ABG",
+      "url": "/abg-calculator.html",
+      "description": "Analyse arterial blood gases instantly"
+    },
+    {
+      "name": "ICU Topics",
+      "short_name": "Topics",
+      "url": "/topics.html",
+      "description": "Browse clinical reference topics"
+    },
+    {
+      "name": "Score Calculators",
+      "short_name": "Scores",
+      "url": "/scores.html",
+      "description": "SOFA, GCS, CURB-65, GRACE and more"
+    },
+    {
+      "name": "AI Clinical Tool",
+      "short_name": "AI Tool",
+      "url": "/ai-tool.html",
+      "description": "AI-powered ICU management plans"
+    }
+  ]
+}
