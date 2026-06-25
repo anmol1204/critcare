@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>ABG Analyser — CritCare.in</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <script src="darkmode.js"></script>
+  <style>
+    /* ── Layout ── */
+    .abg-hero{background:linear-gradient(135deg,#0f1f3d,#1a3560);padding:3rem 5% 2.5rem;color:#fff;}
+    .abg-hero h1{font-family:var(--font-disp);font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:.5rem;}
+    .abg-hero p{color:rgba(255,255,255,.7);max-width:600px;line-height:1.7;}
+    .abg-wrap{max-width:1160px;margin:0 auto;padding:2.5rem 5%;display:grid;grid-template-columns:400px 1fr;gap:2rem;align-items:start;}
+    @media(max-width:900px){.abg-wrap{grid-template-columns:1fr;}}
+
+    /* ── Input Panel ── */
+    .input-panel{background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:1.8rem;position:sticky;top:90px;}
+    .input-panel h2{font-size:1rem;font-weight:700;color:var(--ink);margin-bottom:1.4rem;display:flex;align-items:center;gap:.5rem;}
+    .input-section{margin-bottom:1.4rem;}
+    .input-section h3{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--slate);margin-bottom:.8rem;padding-bottom:.4rem;border-bottom:1px solid var(--line);}
+    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:.6rem;}
+    .field{display:flex;flex-direction:column;}
+    .field label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--slate);margin-bottom:.3rem;}
+    .field input{padding:.6rem .8rem;border:1.5px solid var(--line);border-radius:8px;font-family:var(--font-body);font-size:.9rem;color:var(--ink);background:var(--bg-alt);outline:none;transition:border-color .2s;width:100%;}
+    .field input:focus{border-color:var(--blue);}
+    .field .unit{font-size:.68rem;color:var(--slate);margin-top:.2rem;}
+    .calc-btn{width:100%;padding:1rem;background:linear-gradient(135deg,#1e6fd9,#1453a8);color:#fff;border:none;border-radius:10px;font-family:var(--font-body);font-size:1rem;font-weight:700;cursor:pointer;transition:opacity .2s;margin-top:.8rem;letter-spacing:.02em;}
+    .calc-btn:hover{opacity:.9;}
+    .reset-btn{width:100%;padding:.6rem;background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);border-radius:8px;font-family:var(--font-body);font-size:.82rem;font-weight:600;cursor:pointer;margin-top:.5rem;transition:border-color .2s;}
+    .reset-btn:hover{border-color:var(--blue);color:var(--blue);}
+
+    /* ── Results Panel ── */
+    .results-panel{display:flex;flex-direction:column;gap:1.2rem;}
+    .result-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;overflow:hidden;transition:border-color .3s;}
+    .result-card.normal{border-color:#22c55e;background:linear-gradient(to right,#f0fdf4,var(--bg));}
+    .result-card.danger{border-color:#ef4444;background:linear-gradient(to right,#fef2f2,var(--bg));}
+    .result-card.warning{border-color:#f59e0b;background:linear-gradient(to right,#fffbeb,var(--bg));}
+    .result-card.info{border-color:var(--blue);background:linear-gradient(to right,var(--blue-soft),var(--bg));}
+    .card-header{padding:1rem 1.4rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;}
+    .card-header h3{font-size:.92rem;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:.6rem;}
+    .card-badge{font-size:.75rem;font-weight:700;padding:.3rem .8rem;border-radius:20px;white-space:nowrap;}
+    .badge-green{background:#dcfce7;color:#166534;}
+    .badge-red{background:#fee2e2;color:#991b1b;}
+    .badge-orange{background:#ffedd5;color:#9a3412;}
+    .badge-blue{background:var(--blue-soft);color:var(--blue-dark);}
+    .badge-yellow{background:#fef9c3;color:#854d0e;}
+    .badge-purple{background:#ede9fe;color:#5b21b6;}
+    .badge-gray{background:var(--bg-alt);color:var(--slate);}
+    .card-body{padding:0 1.4rem 1.2rem;}
+    .result-row{display:flex;justify-content:space-between;align-items:baseline;padding:.45rem 0;border-bottom:1px solid var(--line);font-size:.88rem;}
+    .result-row:last-child{border-bottom:none;}
+    .result-row .rl{color:var(--slate);}
+    .result-row .rv{font-weight:700;color:var(--ink);}
+    .rv.ok{color:#15803d;}
+    .rv.hi{color:#b91c1c;}
+    .rv.lo{color:#1d4ed8;}
+    .rv.warn{color:#b45309;}
+    .result-interp{margin-top:.8rem;padding:.8rem 1rem;border-radius:8px;font-size:.84rem;line-height:1.7;}
+    .interp-green{background:#f0fdf4;border:1px solid #86efac;color:#14532d;}
+    .interp-red{background:#fef2f2;border:1px solid #fca5a5;color:#7f1d1d;}
+    .interp-orange{background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;}
+    .interp-blue{background:var(--blue-soft);border:1px solid #93c5fd;color:#1e3a8a;}
+    .interp-yellow{background:#fefce8;border:1px solid #fde047;color:#713f12;}
+    .interp-purple{background:#f5f3ff;border:1px solid #c4b5fd;color:#4c1d95;}
+    .mnemonic-box{margin-top:.8rem;padding:.9rem 1rem;background:var(--bg-alt);border-radius:8px;border:1px solid var(--line);}
+    .mnemonic-box h4{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--slate);margin-bottom:.5rem;}
+    .mnemonic-grid{display:grid;grid-template-columns:1fr 1fr;gap:.3rem;}
+    .mnemonic-item{font-size:.8rem;color:var(--slate);}<br>
+    .mnemonic-item strong{color:var(--blue-dark);}
+    .step-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;font-size:.72rem;font-weight:800;color:#fff;flex-shrink:0;}
+    .sn-blue{background:var(--blue);}
+    .sn-green{background:#16a34a;}
+    .sn-red{background:#dc2626;}
+    .sn-orange{background:#d97706;}
+    .sn-purple{background:#7c3aed;}
+    .placeholder{text-align:center;padding:3rem;color:var(--slate);}
+    .placeholder .ph-icon{font-size:3rem;opacity:.4;margin-bottom:1rem;}
+    .placeholder h3{font-size:1rem;font-weight:600;margin-bottom:.5rem;}
+    .placeholder p{font-size:.85rem;line-height:1.6;}
+    .marino-cite{font-size:.72rem;color:var(--slate);font-style:italic;margin-top:.6rem;border-top:1px solid var(--line);padding-top:.5rem;}
+
+    /* Dark mode additions */
+    html.dark .input-panel{background:var(--bg-alt);}
+    html.dark .result-card{background:var(--bg-alt);}
+    html.dark .result-card.normal{background:linear-gradient(to right,#0a2a1e,var(--bg-alt));}
+    html.dark .result-card.danger{background:linear-gradient(to right,#2a0a0a,var(--bg-alt));}
+    html.dark .result-card.warning{background:linear-gradient(to right,#2a1a0a,var(--bg-alt));}
+    html.dark .result-card.info{background:linear-gradient(to right,#0a1e3a,var(--bg-alt));}
+    html.dark .interp-green{background:#0a2a1e;color:#86efac;border-color:#166534;}
+    html.dark .interp-red{background:#2a0a0a;color:#fca5a5;border-color:#991b1b;}
+    html.dark .interp-orange{background:#2a1a0a;color:#fed7aa;border-color:#92400e;}
+    html.dark .interp-blue{background:#0a1e3a;color:#93c5fd;border-color:#1e40af;}
+    html.dark .interp-yellow{background:#2a200a;color:#fde047;border-color:#854d0e;}
+    html.dark .interp-purple{background:#1a0a3a;color:#c4b5fd;border-color:#5b21b6;}
+    html.dark .mnemonic-box{background:#151f2e;}
+    html.dark .badge-green{background:#0a2a1e;color:#86efac;}
+    html.dark .badge-red{background:#2a0a0a;color:#fca5a5;}
+    html.dark .badge-orange{background:#2a1a0a;color:#fed7aa;}
+    html.dark .badge-blue{background:#0a1e3a;color:#93c5fd;}
+    html.dark .badge-yellow{background:#2a200a;color:#fde047;}
+    html.dark .badge-purple{background:#1a0a3a;color:#c4b5fd;}
+    html.dark .badge-gray{background:#1a2a3a;color:var(--slate);}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="abg-calculator.html" class="active">ABG</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="abg-hero">
+  <div class="wrap">
+    <h1>🩺 ABG Analyser</h1>
+    <p>Complete arterial blood gas analysis — primary disorder, compensation, anion gap, gap-gap ratio, oxygenation, lactate interpretation, and bicarbonate replacement. Based on Marino's ICU Book 5th Edition (2025), Chapter 31.</p>
+  </div>
+</header>
+
+<div class="abg-wrap">
+
+  <!-- INPUT PANEL -->
+  <div class="input-panel">
+    <h2>📋 Enter ABG Values</h2>
+
+    <div class="input-section">
+      <h3>🔴 Blood Gas</h3>
+      <div class="field-row">
+        <div class="field"><label>pH</label><input type="number" id="pH" step="0.01" min="6.5" max="8.0" placeholder="7.40"/><span class="unit">Normal: 7.35–7.45</span></div>
+        <div class="field"><label>PaCO₂</label><input type="number" id="pco2" step="0.1" placeholder="40"/><span class="unit">mmHg · Normal: 35–45</span></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>HCO₃⁻</label><input type="number" id="hco3" step="0.1" placeholder="24"/><span class="unit">mEq/L · Normal: 22–26</span></div>
+        <div class="field"><label>PaO₂</label><input type="number" id="pao2" step="0.1" placeholder="95"/><span class="unit">mmHg · Normal: 80–100</span></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>FiO₂</label><input type="number" id="fio2" step="0.01" min="0.21" max="1.0" placeholder="0.21"/><span class="unit">0.21–1.0 (room air = 0.21)</span></div>
+        <div class="field"><label>SpO₂</label><input type="number" id="spo2" step="0.1" placeholder="98"/><span class="unit">% · Optional</span></div>
+      </div>
+    </div>
+
+    <div class="input-section">
+      <h3>🧪 Electrolytes</h3>
+      <div class="field-row">
+        <div class="field"><label>Sodium (Na⁺)</label><input type="number" id="na" placeholder="140"/><span class="unit">mEq/L · Normal: 135–145</span></div>
+        <div class="field"><label>Chloride (Cl⁻)</label><input type="number" id="cl" placeholder="102"/><span class="unit">mEq/L · Normal: 98–106</span></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>Potassium (K⁺)</label><input type="number" id="k" step="0.1" placeholder="4.0"/><span class="unit">mEq/L · Normal: 3.5–5.0</span></div>
+        <div class="field"><label>Albumin</label><input type="number" id="albumin" step="0.1" placeholder="4.5"/><span class="unit">g/dL · Normal: 3.5–5.0</span></div>
+      </div>
+    </div>
+
+    <div class="input-section">
+      <h3>🩸 Additional Parameters</h3>
+      <div class="field-row">
+        <div class="field"><label>Lactate</label><input type="number" id="lactate" step="0.1" placeholder="1.0"/><span class="unit">mmol/L · Normal: &lt;2.0</span></div>
+        <div class="field"><label>Glucose</label><input type="number" id="glucose" placeholder="100"/><span class="unit">mg/dL</span></div>
+      </div>
+      <div class="field-row">
+        <div class="field"><label>BUN / Urea</label><input type="number" id="bun" placeholder="14"/><span class="unit">mg/dL (BUN) or mmol/L×2.8</span></div>
+        <div class="field"><label>Measured Osmolality</label><input type="number" id="osm" placeholder="290"/><span class="unit">mOsm/kg · Optional</span></div>
+      </div>
+    </div>
+
+    <div class="input-section">
+      <h3>👤 Patient Details</h3>
+      <div class="field-row">
+        <div class="field"><label>Weight (kg)</label><input type="number" id="weight" placeholder="60"/><span class="unit">For HCO₃ replacement</span></div>
+        <div class="field"><label>Age (years)</label><input type="number" id="age" placeholder="45"/><span class="unit">For A-a gradient</span></div>
+      </div>
+    </div>
+
+    <button class="calc-btn" onclick="analyseABG()">🔬 Analyse ABG</button>
+    <button class="reset-btn" onclick="resetABG()">↺ Reset All</button>
+    <div style="font-size:.7rem;color:var(--slate);margin-top:.8rem;line-height:1.5;text-align:center;">All formulas from Marino's ICU Book 5th Ed, Ch.31 (2025)<br>For clinical decision support — always apply clinical judgement</div>
+  </div>
+
+  <!-- RESULTS PANEL -->
+  <div class="results-panel" id="resultsPanel">
+    <div class="placeholder" id="placeholder">
+      <div class="ph-icon">🩺</div>
+      <h3>Enter ABG values and click Analyse</h3>
+      <p>Complete pH, PaCO₂, HCO₃, Na, Cl, and PaO₂ for full analysis.<br>Additional fields (albumin, lactate, glucose, BUN) enable gap-gap ratio, osmolal gap, and lactate interpretation.</p>
+    </div>
+    <div id="abgResults" style="display:none;"></div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="topics.html">Topics</a></li>
+      <li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="abg-calculator.html">ABG Analyser</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow · Clinical Decision Support Only</p>
+  </div>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════════════════════
+// ABG ANALYSER — Based on Marino's ICU Book 5th Ed, Chapter 31
+// All equations referenced by Marino's equation numbers
+// ═══════════════════════════════════════════════════════════════
+
+function v(id) { return parseFloat(document.getElementById(id).value) || null; }
+
+function analyseABG() {
+  const pH = v('pH'), pco2 = v('pco2'), hco3 = v('hco3'), pao2 = v('pao2');
+  const fio2 = v('fio2') || 0.21;
+  const na = v('na'), cl = v('cl'), k = v('k'), albumin = v('albumin') || 4.5;
+  const lactate = v('lactate'), glucose = v('glucose'), bun = v('bun');
+  const osm_measured = v('osm'), weight = v('weight') || 70, age = v('age') || 45;
+
+  if (!pH || !pco2 || !hco3) {
+    alert('Please enter at minimum: pH, PaCO₂, and HCO₃⁻');
+    return;
+  }
+
+  document.getElementById('placeholder').style.display = 'none';
+  document.getElementById('abgResults').style.display = 'flex';
+  document.getElementById('abgResults').style.flexDirection = 'column';
+  document.getElementById('abgResults').style.gap = '1.2rem';
+
+  let html = '';
+
+  // ── STEP 1: PRIMARY DISORDER ──────────────────────────────────
+  // Marino Stage I: Compare directional changes (Ch.31, p.550)
+  // "If PaCO₂ and pH change in same direction → primary METABOLIC disorder"
+  // "If PaCO₂ and pH change in opposite directions → primary RESPIRATORY disorder"
+
+  const pH_low = pH < 7.35, pH_high = pH > 7.45, pH_normal = pH >= 7.35 && pH <= 7.45;
+  const pco2_low = pco2 < 35, pco2_high = pco2 > 45, pco2_normal = pco2 >= 35 && pco2 <= 45;
+  const hco3_low = hco3 < 22, hco3_high = hco3 > 26, hco3_normal = hco3 >= 22 && hco3 <= 26;
+
+  let primaryDisorder = '', primaryType = '', isPrimMetAcid = false, isPrimMetAlk = false;
+  let isPrimRespAcid = false, isPrimRespAlk = false, isNormal = false;
+
+  if (pH_normal && pco2_normal && hco3_normal) {
+    isNormal = true;
+    primaryDisorder = '✅ Normal ABG';
+    primaryType = 'normal';
+  } else if (pH_normal && (pco2_high || pco2_low)) {
+    // Rule 2: pH normal but PaCO₂ abnormal = mixed
+    if (pco2_high) { primaryDisorder = 'Mixed: Respiratory Acidosis + Metabolic Alkalosis'; isPrimRespAcid = true; }
+    else { primaryDisorder = 'Mixed: Respiratory Alkalosis + Metabolic Acidosis'; isPrimRespAlk = true; }
+    primaryType = 'warning';
+  } else if (pH_low) {
+    if ((pco2_low && hco3_low) || (!pco2_high && hco3_low)) {
+      primaryDisorder = 'Metabolic Acidosis'; isPrimMetAcid = true; primaryType = 'danger';
+    } else if (pco2_high && !hco3_high) {
+      primaryDisorder = 'Respiratory Acidosis'; isPrimRespAcid = true; primaryType = 'danger';
+    } else if (pco2_high && hco3_high) {
+      primaryDisorder = 'Respiratory Acidosis (partially compensated)'; isPrimRespAcid = true; primaryType = 'danger';
+    }
+  } else if (pH_high) {
+    if ((pco2_high && hco3_high) || (!pco2_low && hco3_high)) {
+      primaryDisorder = 'Metabolic Alkalosis'; isPrimMetAlk = true; primaryType = 'normal';
+    } else if (pco2_low && !hco3_low) {
+      primaryDisorder = 'Respiratory Alkalosis'; isPrimRespAlk = true; primaryType = 'normal';
+    } else if (pco2_low && hco3_low) {
+      primaryDisorder = 'Respiratory Alkalosis (partially compensated)'; isPrimRespAlk = true; primaryType = 'normal';
+    }
+  }
+
+  if (!primaryDisorder) primaryDisorder = 'Complex/Mixed Disorder — Review carefully';
+
+  const cardClass = primaryType === 'danger' ? 'danger' : primaryType === 'normal' ? 'normal' : 'warning';
+  const badgeClass = primaryType === 'danger' ? 'badge-red' : primaryType === 'normal' ? 'badge-green' : 'badge-orange';
+
+  html += `<div class="result-card ${cardClass}">
+    <div class="card-header">
+      <h3><span class="step-num sn-${primaryType === 'danger' ? 'red' : primaryType === 'normal' ? 'green' : 'orange'}">1</span> Primary Disorder</h3>
+      <span class="card-badge ${badgeClass}">${primaryDisorder}</span>
+    </div>
+    <div class="card-body">
+      <div class="result-row"><span class="rl">pH</span><span class="rv ${pH_normal ? 'ok' : pH_low ? 'hi' : 'lo'}">${pH.toFixed(2)} <small>(Normal: 7.35–7.45)</small></span></div>
+      <div class="result-row"><span class="rl">PaCO₂</span><span class="rv ${pco2_normal ? 'ok' : pco2_high ? 'hi' : 'lo'}">${pco2} mmHg <small>(Normal: 35–45)</small></span></div>
+      <div class="result-row"><span class="rl">HCO₃⁻</span><span class="rv ${hco3_normal ? 'ok' : hco3_low ? 'hi' : 'lo'}">${hco3} mEq/L <small>(Normal: 22–26)</small></span></div>
+      <div class="result-row"><span class="rl">[H⁺] calculated</span><span class="rv">${(Math.pow(10, -pH) * 1e9).toFixed(1)} nmol/L <small>(Normal: 36–44)</small></span></div>
+      <div class="marino-cite">📗 Marino Ch.31, p.550: "If PaCO₂ and pH change in same direction → primary metabolic disorder. If opposite directions → primary respiratory disorder." (Stage I approach)</div>
+    </div>
+  </div>`;
+
+  // ── STEP 2: COMPENSATION ──────────────────────────────────────
+  // Marino Equations 31.3–31.11
+  let compHTML = '', compBadge = '', compClass = 'badge-blue', secondaryDisorder = '';
+
+  if (isPrimMetAcid) {
+    // Marino Eq.31.3-31.4: ΔPaCO₂ = 1.2 × ΔHCO₃
+    // Expected PaCO₂ = 40 − [1.2 × (24 − HCO₃)]
+    const expectedPco2 = 40 - (1.2 * (24 - hco3));
+    const expectedLow = expectedPco2 - 2, expectedHigh = expectedPco2 + 2;
+    const compAdequate = pco2 >= expectedLow && pco2 <= expectedHigh;
+    const hasSecRespAcid = pco2 > expectedHigh;
+    const hasSecRespAlk = pco2 < expectedLow;
+    if (hasSecRespAcid) { secondaryDisorder = '⚠️ + Secondary Respiratory Acidosis (inadequate ventilatory response)'; compClass = 'badge-red'; }
+    else if (hasSecRespAlk) { secondaryDisorder = '⚠️ + Secondary Respiratory Alkalosis (over-ventilating)'; compClass = 'badge-orange'; }
+    else { secondaryDisorder = '✅ Appropriate respiratory compensation'; compClass = 'badge-green'; }
+    compBadge = `Expected PaCO₂: ${expectedLow.toFixed(1)}–${expectedHigh.toFixed(1)} mmHg`;
+    compHTML = `<div class="result-row"><span class="rl">Expected PaCO₂ (Winter's formula)</span><span class="rv ${compAdequate ? 'ok' : 'warn'}">${expectedLow.toFixed(1)}–${expectedHigh.toFixed(1)} mmHg</span></div>
+    <div class="result-row"><span class="rl">Measured PaCO₂</span><span class="rv ${compAdequate ? 'ok' : pco2 > expectedHigh ? 'hi' : 'lo'}">${pco2} mmHg</span></div>
+    <div class="result-row"><span class="rl">Last 2 digits of pH rule</span><span class="rv">${pco2.toFixed(0)} vs expected ≈ ${Math.abs((pH*100)%100).toFixed(0)}</span></div>
+    <div class="result-interp interp-blue">
+      <strong>Marino Eq.31.3-31.4:</strong> ΔPaCO₂ = 1.2 × ΔHCO₃ | Expected PaCO₂ = 40 − [1.2 × (24 − ${hco3})] = <strong>${expectedPco2.toFixed(1)} ± 2 mmHg</strong><br>${secondaryDisorder}
+    </div>
+    <div class="marino-cite">📗 Marino Ch.31, p.548 (Eq.31.4): "Expected PaCO₂ = 40 − [1.2 × (24 − current HCO₃)]"</div>`;
+  }
+
+  else if (isPrimMetAlk) {
+    // Marino Eq.31.5-31.6: ΔPaCO₂ = 0.7 × ΔHCO₃
+    const expectedPco2 = 40 + (0.7 * (hco3 - 24));
+    const expectedLow = expectedPco2 - 2, expectedHigh = expectedPco2 + 2;
+    const compAdequate = pco2 >= expectedLow && pco2 <= expectedHigh;
+    if (pco2 > expectedHigh) { secondaryDisorder = '⚠️ + Secondary Respiratory Acidosis'; compClass = 'badge-red'; }
+    else if (pco2 < expectedLow) { secondaryDisorder = '⚠️ + Secondary Respiratory Alkalosis'; compClass = 'badge-orange'; }
+    else { secondaryDisorder = '✅ Appropriate compensation'; compClass = 'badge-green'; }
+    compBadge = `Expected PaCO₂: ${expectedLow.toFixed(1)}–${expectedHigh.toFixed(1)} mmHg`;
+    compHTML = `<div class="result-row"><span class="rl">Expected PaCO₂ (Marino Eq.31.6)</span><span class="rv ${compAdequate ? 'ok' : 'warn'}">${expectedLow.toFixed(1)}–${expectedHigh.toFixed(1)} mmHg</span></div>
+    <div class="result-row"><span class="rl">Measured PaCO₂</span><span class="rv">${pco2} mmHg</span></div>
+    <div class="result-interp interp-blue"><strong>Marino Eq.31.5-31.6:</strong> ΔPaCO₂ = 0.7 × ΔHCO₃ | Expected PaCO₂ = 40 + [0.7 × (${hco3} − 24)] = <strong>${expectedPco2.toFixed(1)} ± 2 mmHg</strong><br>${secondaryDisorder}</div>
+    <div class="marino-cite">📗 Marino Ch.31, p.548 (Eq.31.6): "Expected PaCO₂ = 40 + [0.7 × (current HCO₃ − 24)]"</div>`;
+  }
+
+  else if (isPrimRespAcid) {
+    // Acute: ΔHCO₃ = 0.1 × ΔPaCO₂ (Eq.31.7)
+    // Chronic: ΔHCO₃ = 0.4 × ΔPaCO₂ (Eq.31.9)
+    const dpco2 = pco2 - 40;
+    const expHco3Acute = 24 + (0.1 * dpco2);
+    const expHco3Chronic = 24 + (0.4 * dpco2);
+    let acuteOrChronic = '';
+    if (hco3 < expHco3Acute - 1) { acuteOrChronic = '⚠️ HCO₃ BELOW acute range → Secondary metabolic acidosis'; compClass = 'badge-red'; }
+    else if (hco3 >= expHco3Acute - 1 && hco3 <= expHco3Acute + 2) { acuteOrChronic = '🔵 Acute respiratory acidosis (uncompensated)'; compClass = 'badge-blue'; }
+    else if (hco3 > expHco3Acute + 2 && hco3 < expHco3Chronic - 2) { acuteOrChronic = '🟡 Partially compensated (between acute and chronic)'; compClass = 'badge-yellow'; }
+    else if (hco3 >= expHco3Chronic - 2 && hco3 <= expHco3Chronic + 3) { acuteOrChronic = '✅ Chronic respiratory acidosis (fully compensated)'; compClass = 'badge-green'; }
+    else { acuteOrChronic = '⚠️ HCO₃ ABOVE chronic range → Secondary metabolic alkalosis'; compClass = 'badge-orange'; }
+    compBadge = `Acute exp HCO₃: ${expHco3Acute.toFixed(1)} | Chronic: ${expHco3Chronic.toFixed(1)}`;
+    compHTML = `<div class="result-row"><span class="rl">Acute expected HCO₃ (Eq.31.7)</span><span class="rv">${expHco3Acute.toFixed(1)} mEq/L <small>(0.1 × ΔPaCO₂)</small></span></div>
+    <div class="result-row"><span class="rl">Chronic expected HCO₃ (Eq.31.9)</span><span class="rv">${expHco3Chronic.toFixed(1)} mEq/L <small>(0.4 × ΔPaCO₂)</small></span></div>
+    <div class="result-row"><span class="rl">Measured HCO₃</span><span class="rv">${hco3} mEq/L</span></div>
+    <div class="result-interp interp-blue"><strong>Marino Eq.31.7 (acute):</strong> ΔHCO₃ = 0.1 × (${pco2}−40) = ${(0.1*dpco2).toFixed(1)} → exp ${expHco3Acute.toFixed(1)}<br><strong>Marino Eq.31.9 (chronic):</strong> ΔHCO₃ = 0.4 × (${pco2}−40) = ${(0.4*dpco2).toFixed(1)} → exp ${expHco3Chronic.toFixed(1)}<br>${acuteOrChronic}</div>
+    <div class="marino-cite">📗 Marino Ch.31, p.549 (Eq.31.7, 31.9): Acute resp acidosis ΔHCO₃=0.1×ΔPaCO₂; Chronic ΔHCO₃=0.4×ΔPaCO₂</div>`;
+  }
+
+  else if (isPrimRespAlk) {
+    // Acute: ΔHCO₃ = 0.2 × ΔPaCO₂ (Eq.31.8)
+    // Chronic: ΔHCO₃ = 0.4 × ΔPaCO₂ (Eq.31.9-11)
+    const dpco2 = 40 - pco2;
+    const expHco3Acute = 24 - (0.2 * dpco2);
+    const expHco3Chronic = 24 - (0.4 * dpco2);
+    let acuteOrChronic = '';
+    if (hco3 > expHco3Acute + 1) { acuteOrChronic = '⚠️ HCO₃ above acute range → Secondary metabolic alkalosis'; compClass = 'badge-orange'; }
+    else if (hco3 <= expHco3Acute + 1 && hco3 >= expHco3Acute - 2) { acuteOrChronic = '🔵 Acute respiratory alkalosis (uncompensated)'; compClass = 'badge-blue'; }
+    else if (hco3 < expHco3Acute - 2 && hco3 > expHco3Chronic + 2) { acuteOrChronic = '🟡 Partially compensated (between acute and chronic)'; compClass = 'badge-yellow'; }
+    else if (hco3 <= expHco3Chronic + 2 && hco3 >= expHco3Chronic - 2) { acuteOrChronic = '✅ Chronic respiratory alkalosis (fully compensated)'; compClass = 'badge-green'; }
+    else { acuteOrChronic = '⚠️ HCO₃ below chronic range → Secondary metabolic acidosis'; compClass = 'badge-red'; }
+    compBadge = `Acute exp HCO₃: ${expHco3Acute.toFixed(1)} | Chronic: ${expHco3Chronic.toFixed(1)}`;
+    compHTML = `<div class="result-row"><span class="rl">Acute expected HCO₃ (Eq.31.8)</span><span class="rv">${expHco3Acute.toFixed(1)} mEq/L <small>(0.2 × ΔPaCO₂)</small></span></div>
+    <div class="result-row"><span class="rl">Chronic expected HCO₃ (Eq.31.11)</span><span class="rv">${expHco3Chronic.toFixed(1)} mEq/L <small>(0.4 × ΔPaCO₂)</small></span></div>
+    <div class="result-row"><span class="rl">Measured HCO₃</span><span class="rv">${hco3} mEq/L</span></div>
+    <div class="result-interp interp-blue"><strong>Marino Eq.31.8 (acute):</strong> ΔHCO₃ = 0.2 × (40−${pco2}) = ${(0.2*dpco2).toFixed(1)} → exp ${expHco3Acute.toFixed(1)}<br><strong>Marino Eq.31.11 (chronic):</strong> ΔHCO₃ = 0.4 × (40−${pco2}) = ${(0.4*dpco2).toFixed(1)} → exp ${expHco3Chronic.toFixed(1)}<br>${acuteOrChronic}</div>
+    <div class="marino-cite">📗 Marino Ch.31, p.549 (Eq.31.8, 31.11): Acute resp alkalosis ΔHCO₃=0.2×ΔPaCO₂; Chronic ΔHCO₃=0.4×ΔPaCO₂</div>`;
+  }
+
+  if (compHTML) {
+    html += `<div class="result-card info">
+      <div class="card-header">
+        <h3><span class="step-num sn-blue">2</span> Compensation Analysis</h3>
+        <span class="card-badge ${compClass}">${secondaryDisorder || compBadge}</span>
+      </div>
+      <div class="card-body">${compHTML}</div>
+    </div>`;
+  }
+
+  // ── STEP 3: ANION GAP ──────────────────────────────────────────
+  // Marino Eq.31.14: AG = Na − (Cl + HCO₃)
+  // Marino Eq.31.15: Corrected AG = AG + [2.5 × (4.5 − albumin)]
+  if (na && cl) {
+    const ag = na - (cl + hco3);
+    const correctedAG = ag + (2.5 * (4.5 - albumin));
+    const agNormal = ag >= 8 && ag <= 12;
+    const agCorrNormal = correctedAG >= 8 && correctedAG <= 12;
+    const agElevated = correctedAG > 12;
+    const agLow = ag < 8;
+
+    let agInterp = '', agInterpClass = 'interp-blue';
+    if (agElevated) { agInterp = '🔴 HIGH Anion Gap Metabolic Acidosis — see MUDPILES'; agInterpClass = 'interp-red'; }
+    else if (agLow) { agInterp = '🟡 LOW anion gap — consider: hypoalbuminaemia, multiple myeloma, severe hyperlipidaemia, lithium toxicity'; agInterpClass = 'interp-yellow'; }
+    else { agInterp = '✅ Normal Anion Gap — if metabolic acidosis present: consider USED CARP (hyperchloraemic causes)'; agInterpClass = 'interp-green'; }
+
+    const agCardClass = agElevated ? 'danger' : agLow ? 'warning' : 'normal';
+    const agBadgeClass = agElevated ? 'badge-red' : agLow ? 'badge-yellow' : 'badge-green';
+
+    html += `<div class="result-card ${agCardClass}">
+      <div class="card-header">
+        <h3><span class="step-num sn-${agElevated ? 'red' : agLow ? 'orange' : 'green'}">3</span> Anion Gap</h3>
+        <span class="card-badge ${agBadgeClass}">AG=${ag.toFixed(1)} | Corrected=${correctedAG.toFixed(1)}</span>
+      </div>
+      <div class="card-body">
+        <div class="result-row"><span class="rl">Anion Gap (Na − Cl − HCO₃)</span><span class="rv ${agNormal ? 'ok' : ag > 12 ? 'hi' : 'lo'}">${ag.toFixed(1)} mEq/L <small>(Normal: 8–12)</small></span></div>
+        <div class="result-row"><span class="rl">Albumin-corrected AG (Marino Eq.31.15)</span><span class="rv ${agCorrNormal ? 'ok' : correctedAG > 12 ? 'hi' : 'lo'}">${correctedAG.toFixed(1)} mEq/L <small>(Normal: 8–12)</small></span></div>
+        <div class="result-row"><span class="rl">Albumin used</span><span class="rv">${albumin} g/dL <small>(Normal: 3.5–5.0)</small></span></div>
+        <div class="result-row"><span class="rl">Formula used</span><span class="rv" style="font-size:.78rem;color:var(--slate)">AG + [2.5 × (4.5 − ${albumin})]</span></div>
+        <div class="result-interp ${agInterpClass}">${agInterp}
+          ${albumin < 3.5 ? '<br>⚠️ <strong>Hypoalbuminaemia present</strong> — uncorrected AG may be FALSELY NORMAL. Always use corrected AG in ICU patients (Marino: hypoalbuminaemia in up to 90% of ICU patients).' : ''}
+        </div>
+        ${agElevated ? `<div class="mnemonic-box">
+          <h4>🔴 MUDPILES — High Anion Gap Causes (Marino Table 31.3)</h4>
+          <div class="mnemonic-grid">
+            <div class="mnemonic-item"><strong>M</strong> — Methanol (→ formic acid)</div>
+            <div class="mnemonic-item"><strong>U</strong> — Uraemia (advanced renal failure)</div>
+            <div class="mnemonic-item"><strong>D</strong> — Diabetic Ketoacidosis (DKA)</div>
+            <div class="mnemonic-item"><strong>P</strong> — Pyroglutamic acid (chronic paracetamol ingestion)</div>
+            <div class="mnemonic-item"><strong>I</strong> — Isoniazid / Iron toxicity</div>
+            <div class="mnemonic-item"><strong>L</strong> — Lactic acidosis (most common in ICU)</div>
+            <div class="mnemonic-item"><strong>E</strong> — Ethylene glycol (→ oxalic acid)</div>
+            <div class="mnemonic-item"><strong>S</strong> — Salicylates (salicylic acid)</div>
+          </div>
+          <div style="margin-top:.5rem;font-size:.78rem;color:var(--slate)">Also consider: D-lactic acid (short bowel syndrome), propylene glycol toxicity</div>
+        </div>` : ''}
+        ${!agElevated && isPrimMetAcid ? `<div class="mnemonic-box">
+          <h4>✅ USED CARP — Normal Anion Gap (Hyperchloraemic) Acidosis Causes</h4>
+          <div class="mnemonic-grid">
+            <div class="mnemonic-item"><strong>U</strong> — Ureteral diversions</div>
+            <div class="mnemonic-item"><strong>S</strong> — Small bowel fistula</div>
+            <div class="mnemonic-item"><strong>E</strong> — Extra chloride (0.9% NaCl infusion)</div>
+            <div class="mnemonic-item"><strong>D</strong> — Diarrhoea (most common)</div>
+            <div class="mnemonic-item"><strong>C</strong> — Carbonic anhydrase inhibitors</div>
+            <div class="mnemonic-item"><strong>A</strong> — Adrenal insufficiency</div>
+            <div class="mnemonic-item"><strong>R</strong> — RTA (Renal Tubular Acidosis)</div>
+            <div class="mnemonic-item"><strong>P</strong> — Pancreatic fistula</div>
+          </div>
+        </div>` : ''}
+        <div class="marino-cite">📗 Marino Ch.31, p.552 (Eq.31.14): AG = Na − (Cl + HCO₃) | p.553 (Eq.31.15): Corrected AG = AG + [2.5 × (4.5 − albumin)] | Table 31.3</div>
+      </div>
+    </div>`;
+
+    // ── STEP 4: GAP-GAP RATIO (Delta-Delta) ─────────────────────
+    // Marino p.555: Delta gap = ΔAG / ΔHCO₃
+    // "In high AG metabolic acidosis, increase in AG should equal decrease in HCO₃ → delta gap = 1.0"
+    // Delta gap <1 → co-existing normal AG acidosis
+    // Delta gap >1 → co-existing metabolic alkalosis
+    const normalAG = 10, normalHCO3 = 24;
+    const deltaAG = correctedAG - normalAG;  // increase in AG
+    const deltaHCO3 = normalHCO3 - hco3;   // decrease in HCO3
+
+    if (agElevated && deltaHCO3 !== 0) {
+      const deltaRatio = deltaAG / Math.max(deltaHCO3, 0.1);
+      let drInterp = '', drClass = 'interp-blue', drBadge = '', drBadgeClass = 'badge-blue';
+
+      if (deltaRatio < 0.4) {
+        drInterp = '⚠️ Delta ratio &lt;0.4: Predominantly HYPERCHLORAEMIC (non-AG) metabolic acidosis. Little/no high-AG component.';
+        drClass = 'interp-yellow'; drBadgeClass = 'badge-yellow'; drBadge = '<0.4: Non-AG acidosis';
+      } else if (deltaRatio < 1.0) {
+        drInterp = '🔴 Delta ratio 0.4–1.0: MIXED HIGH-AG + NORMAL-AG metabolic acidosis. HCO₃ decrease greater than AG increase → co-existing hyperchloraemic acidosis (e.g., DKA + saline resuscitation).';
+        drClass = 'interp-red'; drBadgeClass = 'badge-red'; drBadge = '0.4–1.0: Mixed AGMA+NAGMA';
+      } else if (deltaRatio <= 2.0) {
+        drInterp = '✅ Delta ratio 1.0–2.0: PURE high-AG metabolic acidosis. Appropriate HCO₃ decrease for AG increase.';
+        drClass = 'interp-green'; drBadgeClass = 'badge-green'; drBadge = '1.0–2.0: Pure AGMA';
+      } else {
+        drInterp = '🟡 Delta ratio &gt;2.0: HIGH-AG metabolic acidosis + co-existing METABOLIC ALKALOSIS. HCO₃ higher than expected for the degree of AG elevation (e.g., vomiting + DKA, diuretics + lactic acidosis).';
+        drClass = 'interp-orange'; drBadgeClass = 'badge-orange'; drBadge = '>2.0: AGMA + Met Alkalosis';
+      }
+
+      html += `<div class="result-card info">
+        <div class="card-header">
+          <h3><span class="step-num sn-blue">4</span> Gap-Gap Ratio (Delta-Delta / Δ-Δ)</h3>
+          <span class="card-badge ${drBadgeClass}">${drBadge}</span>
+        </div>
+        <div class="card-body">
+          <div class="result-row"><span class="rl">ΔAnion Gap (Corrected AG − 10)</span><span class="rv">${deltaAG.toFixed(1)} mEq/L</span></div>
+          <div class="result-row"><span class="rl">ΔHCO₃ (24 − measured HCO₃)</span><span class="rv">${deltaHCO3.toFixed(1)} mEq/L</span></div>
+          <div class="result-row"><span class="rl">Gap-Gap Ratio (ΔAG ÷ ΔHCO₃)</span><span class="rv" style="font-size:1.2rem;font-weight:800;">${deltaRatio.toFixed(2)}</span></div>
+          <div class="result-interp ${drClass}">
+            <strong>Interpretation:</strong> ${drInterp}
+            <br><br>
+            <strong>Reference ranges:</strong><br>
+            &lt;0.4 → Non-AG metabolic acidosis dominant<br>
+            0.4–1.0 → Mixed AGMA + NAGMA<br>
+            1.0–2.0 → Pure AGMA (normal ratio for high-AG acidosis)<br>
+            &gt;2.0 → AGMA + Metabolic Alkalosis
+          </div>
+          <div class="marino-cite">📗 Marino Ch.31, p.555: "In metabolic acidoses from non-volatile acids, the increase in AG should equal the decrease in HCO₃ → delta gap should be 1.0. Delta gap &lt;1 indicates co-existing normal AG acidosis. Delta gap &gt;1 indicates co-existing metabolic alkalosis."</div>
+        </div>
+      </div>`;
+    }
+
+    // ── STEP 5: OSMOLAL GAP ──────────────────────────────────────
+    // Marino Eq.31.17: Calculated Osm = 2×Na + glucose/18 + BUN/2.8
+    if (glucose && bun) {
+      const calcOsm = (2 * na) + (glucose / 18) + (bun / 2.8);
+      const osmGap = osm_measured ? osm_measured - calcOsm : null;
+
+      html += `<div class="result-card info">
+        <div class="card-header">
+          <h3><span class="step-num sn-blue">5</span> Osmolal Gap</h3>
+          <span class="card-badge ${osmGap !== null ? (osmGap > 10 ? 'badge-red' : 'badge-green') : 'badge-gray'}">${osmGap !== null ? `Gap: ${osmGap.toFixed(1)} mOsm/kg` : 'Enter measured osmolality'}</span>
+        </div>
+        <div class="card-body">
+          <div class="result-row"><span class="rl">Calculated osmolality (Eq.31.17)</span><span class="rv">${calcOsm.toFixed(1)} mOsm/kg</span></div>
+          <div class="result-row"><span class="rl">Formula</span><span class="rv" style="font-size:.78rem;color:var(--slate)">2×${na} + ${glucose}/18 + ${bun}/2.8</span></div>
+          ${osm_measured ? `<div class="result-row"><span class="rl">Measured osmolality</span><span class="rv">${osm_measured} mOsm/kg</span></div>
+          <div class="result-row"><span class="rl">Osmolal Gap</span><span class="rv ${osmGap > 10 ? 'hi' : 'ok'}">${osmGap.toFixed(1)} mOsm/kg <small>(Normal: &lt;10)</small></span></div>
+          <div class="result-interp ${osmGap > 10 ? 'interp-red' : 'interp-green'}">
+            ${osmGap > 10 ? '🔴 <strong>ELEVATED osmolal gap (&gt;10):</strong> Suggests unmeasured osmole — consider: Methanol, Ethylene glycol, Isopropanol, Propylene glycol, D-lactic acid, Mannitol, Ethanol<br><em>In high-AG metabolic acidosis with unexplained gap: elevated osmolal gap strongly suggests toxic alcohol ingestion.</em>' : '✅ Normal osmolal gap (&lt;10). No evidence of unmeasured osmole.'}
+          </div>` : `<div class="result-interp interp-blue">Enter measured osmolality to calculate osmolal gap. Useful when high-AG acidosis present without clear cause (methanol, ethylene glycol suspicion).</div>`}
+          <div class="marino-cite">📗 Marino Ch.31, p.556 (Eq.31.17): "Calculated Osm = 2×Na + glucose/18 + BUN/2.8. Elevated osmolal gap can indicate occult toxin."</div>
+        </div>
+      </div>`;
+    }
+  }
+
+  // ── STEP 6: OXYGENATION ─────────────────────────────────────────
+  if (pao2) {
+    // A-a gradient = PAO₂ − PaO₂
+    // PAO₂ = FiO₂ × (Pb − PH₂O) − PaCO₂/RQ = FiO₂ × 713 − PaCO₂/0.8
+    const pao2_alv = (fio2 * 713) - (pco2 / 0.8);
+    const aaGrad = pao2_alv - pao2;
+    const normalAaGrad = (age / 4) + 4;  // Expected max A-a gradient
+    const pf_ratio = pao2 / fio2;
+
+    let pf_interp = '', pf_class = 'badge-green';
+    if (pf_ratio >= 400) { pf_interp = 'Normal oxygenation'; pf_class = 'badge-green'; }
+    else if (pf_ratio >= 300) { pf_interp = 'Mild hypoxaemia'; pf_class = 'badge-yellow'; }
+    else if (pf_ratio >= 200) { pf_interp = '🔴 Mild ARDS (P/F 201–300)'; pf_class = 'badge-orange'; }
+    else if (pf_ratio >= 100) { pf_interp = '🔴 Moderate ARDS (P/F 101–200) — Consider proning'; pf_class = 'badge-red'; }
+    else { pf_interp = '🔴🔴 Severe ARDS (P/F ≤100) — PRONE ≥16h (PROSEVA NNT=6), consider NMB, VV-ECMO'; pf_class = 'badge-red'; }
+
+    const aaHigh = aaGrad > normalAaGrad + 5;
+    let aaInterp = '';
+    if (aaGrad < 0) aaInterp = '⚠️ Negative A-a gradient (unusual — check values or hypoventilation)';
+    else if (aaHigh) aaInterp = `🔴 Elevated A-a gradient (>${normalAaGrad.toFixed(0)} for age ${age}) → V/Q mismatch, diffusion defect, or shunt`;
+    else aaInterp = `✅ Normal A-a gradient for age ${age} (expected max ${(normalAaGrad + 5).toFixed(0)} mmHg)`;
+
+    html += `<div class="result-card ${aaHigh || pf_ratio < 300 ? 'danger' : 'normal'}">
+      <div class="card-header">
+        <h3><span class="step-num sn-${aaHigh ? 'red' : 'green'}">6</span> Oxygenation</h3>
+        <span class="card-badge ${pf_class}">P/F = ${pf_ratio.toFixed(0)} — ${pf_interp.replace(/🔴🔴 |🔴 |✅ /g,'')}</span>
+      </div>
+      <div class="card-body">
+        <div class="result-row"><span class="rl">PaO₂ (measured)</span><span class="rv ${pao2 < 60 ? 'hi' : 'ok'}">${pao2} mmHg <small>(Normal: 80–100 on room air)</small></span></div>
+        <div class="result-row"><span class="rl">FiO₂</span><span class="rv">${fio2} (${(fio2*100).toFixed(0)}%)</span></div>
+        <div class="result-row"><span class="rl">Alveolar PO₂ (PAO₂)</span><span class="rv">${pao2_alv.toFixed(1)} mmHg</div>
+        <div class="result-row"><span class="rl">A-a gradient (PAO₂ − PaO₂)</span><span class="rv ${aaHigh ? 'hi' : 'ok'}">${aaGrad.toFixed(1)} mmHg <small>(Expected max: ${(normalAaGrad+5).toFixed(0)} at age ${age})</small></span></div>
+        <div class="result-row"><span class="rl">P/F Ratio (PaO₂÷FiO₂)</span><span class="rv" style="font-size:1.1rem;font-weight:800;color:${pf_ratio<100?'#b91c1c':pf_ratio<200?'#9a3412':pf_ratio<300?'#854d0e':pf_ratio<400?'#15803d':'#166534'}">${pf_ratio.toFixed(0)}</span></div>
+        <div class="result-interp ${aaHigh ? 'interp-red' : 'interp-green'}">${aaInterp}<br>${pf_interp}</div>
+        <div class="marino-cite">📗 PAO₂ = FiO₂ × 713 − PaCO₂/0.8 | A-a gradient normal = age/4 + 4 | P/F ratio: ARDS Berlin Definition 2012 + 2023 Global ARDS Definition</div>
+      </div>
+    </div>`;
+  }
+
+  // ── STEP 7: LACTATE ──────────────────────────────────────────────
+  if (lactate !== null) {
+    let lacInterp = '', lacClass = 'badge-green', lacCardClass = 'normal', lacInterpClass = 'interp-green';
+    if (lactate <= 1.0) { lacInterp = '✅ Normal lactate. No hypoperfusion.'; lacCardClass = 'normal'; }
+    else if (lactate <= 2.0) { lacInterp = '✅ Upper normal range. Monitor — no immediate concern.'; lacCardClass = 'normal'; }
+    else if (lactate <= 4.0) {
+      lacInterp = '⚠️ Mild-moderate hyperlactataemia (2–4 mmol/L). Investigate cause. Initiate resuscitation if clinical shock.';
+      lacClass = 'badge-orange'; lacCardClass = 'warning'; lacInterpClass = 'interp-orange';
+    } else {
+      lacInterp = '🔴 SEVERE hyperlactataemia (&gt;4 mmol/L). Septic shock criterion (SSC 2026). Tissue hypoperfusion — urgent resuscitation. Serial lactate monitoring q2h. Target clearance ≥10% per 2 hours.';
+      lacClass = 'badge-red'; lacCardClass = 'danger'; lacInterpClass = 'interp-red';
+    }
+
+    html += `<div class="result-card ${lacCardClass}">
+      <div class="card-header">
+        <h3><span class="step-num sn-${lacCardClass === 'danger' ? 'red' : lacCardClass === 'warning' ? 'orange' : 'green'}">7</span> Lactate Analysis</h3>
+        <span class="card-badge ${lacClass}">Lactate: ${lactate} mmol/L</span>
+      </div>
+      <div class="card-body">
+        <div class="result-row"><span class="rl">Serum Lactate</span><span class="rv ${lactate > 2 ? 'hi' : 'ok'}">${lactate} mmol/L <small>(Normal: &lt;2.0)</small></span></div>
+        <div class="result-row"><span class="rl">Septic shock criterion (SSC 2026)</span><span class="rv ${lactate > 2 ? 'hi' : 'ok'}">${lactate > 2 ? '⚠️ YES — lactate >2 + vasopressors = septic shock' : 'No — lactate ≤2 mmol/L'}</span></div>
+        <div class="result-interp ${lacInterpClass}">
+          ${lacInterp}
+          ${lactate > 2 ? `<br><br><strong>Marino's insight (Ch.32, p.307):</strong> In septic shock, elevated lactate is NOT primarily from anaerobic metabolism. Mitochondrial dysfunction → inhibition of pyruvate dehydrogenase → lactate as alternative energy source during metabolic stress. This explains why ScvO₂ can be ELEVATED in sepsis despite hypoperfusion.<br><br>
+          <strong>Type A vs Type B lactataemia:</strong><br>
+          Type A (tissue hypoxia): sepsis, cardiogenic shock, cardiac arrest, mesenteric ischaemia, severe anaemia<br>
+          Type B (non-hypoxic): liver failure, metformin, thiamine deficiency, β₂-agonist excess (salbutamol), malignancy` : ''}
+        </div>
+        <div class="marino-cite">📗 Marino's ICU Book 5th Ed, Ch.17 p.307; Ch.32: Lactic Acidosis. SSC 2026 (Prescott et al., Crit Care Med 2026) — lactate >2 mmol/L = septic shock criterion with vasopressors.</div>
+      </div>
+    </div>`;
+  }
+
+  // ── STEP 8: BICARBONATE REPLACEMENT ─────────────────────────────
+  if (isPrimMetAcid && hco3 < 15) {
+    const targetHCO3 = 15;  // Do NOT target normal — avoid overshoot
+    const hco3Deficit = 0.4 * weight * (targetHCO3 - hco3);  // Space of distribution = 0.4×weight
+    const mmolNaHCO3 = hco3Deficit;  // 1 mmol NaHCO3 provides 1 mEq HCO3
+    const mlOf84 = (mmolNaHCO3 / 1) * (1000/1000);  // 8.4% NaHCO3 = 1 mmol/ml
+
+    html += `<div class="result-card warning">
+      <div class="card-header">
+        <h3><span class="step-num sn-orange">8</span> Bicarbonate Replacement</h3>
+        <span class="card-badge badge-orange">HCO₃ deficit: ${hco3Deficit.toFixed(0)} mEq</span>
+      </div>
+      <div class="card-body">
+        <div class="result-row"><span class="rl">Actual HCO₃</span><span class="rv hi">${hco3} mEq/L</span></div>
+        <div class="result-row"><span class="rl">Target HCO₃</span><span class="rv">${targetHCO3} mEq/L (NOT normal — to avoid overshoot)</span></div>
+        <div class="result-row"><span class="rl">Patient weight</span><span class="rv">${weight} kg</span></div>
+        <div class="result-row"><span class="rl">HCO₃ deficit (0.4 × wt × [target−actual])</span><span class="rv warn">${hco3Deficit.toFixed(0)} mEq</span></div>
+        <div class="result-row"><span class="rl">8.4% NaHCO₃ (1 mmol/ml)</span><span class="rv">${mlOf84.toFixed(0)} ml</span></div>
+        <div class="result-row"><span class="rl">Give over</span><span class="rv">30–60 minutes IV infusion (not bolus)</span></div>
+        <div class="result-interp interp-orange">
+          ⚠️ <strong>NaHCO₃ is only indicated when:</strong> Severe metabolic acidosis pH &lt;7.10–7.15 AND likely NOT lactic acidosis (bicarbonate does NOT benefit lactic acidosis — BICAR-ICU trial 2018).<br>
+          <br><strong>Indications:</strong> DKA with pH &lt;6.9, severe hyperchloraemic acidosis (diarrhoea/RTA), refractory acidosis on RRT<br>
+          <strong>Do NOT give for:</strong> Lactic acidosis (raises CO₂, worsens intracellular acidosis), septic shock<br>
+          <br>Give half the calculated deficit first, recheck ABG, then give remainder if needed.
+        </div>
+        <div class="marino-cite">📗 HCO₃ deficit formula: 0.4 × weight × (target − actual HCO₃). Target 15 mEq/L to avoid overcorrection. Do NOT target 24 mEq/L — overshoot alkalosis risk.</div>
+      </div>
+    </div>`;
+  }
+
+  // ── SUMMARY ───────────────────────────────────────────────────────
+  html += `<div class="result-card info" style="border-color:#7c3aed;background:linear-gradient(to right,#f5f3ff,var(--bg));">
+    <div class="card-header">
+      <h3><span class="step-num" style="background:#7c3aed">✓</span> Summary</h3>
+      <span class="card-badge badge-purple">Marino 5th Ed, Ch.31 (2025)</span>
+    </div>
+    <div class="card-body">
+      <p style="font-size:.85rem;color:var(--slate);line-height:1.7;margin-bottom:.6rem;">
+        <strong>Primary:</strong> ${primaryDisorder}<br>
+        ${secondaryDisorder ? `<strong>Secondary:</strong> ${secondaryDisorder}<br>` : ''}
+        ${na && cl ? `<strong>Anion Gap:</strong> ${(na-(cl+hco3)).toFixed(1)} (corrected: ${(na-(cl+hco3) + 2.5*(4.5-albumin)).toFixed(1)})<br>` : ''}
+        ${pao2 ? `<strong>P/F Ratio:</strong> ${(pao2/fio2).toFixed(0)}<br>` : ''}
+        ${lactate !== null ? `<strong>Lactate:</strong> ${lactate} mmol/L<br>` : ''}
+      </p>
+      <div class="result-interp interp-purple">
+        <strong>Marino's Stepwise Approach (Ch.31, p.550):</strong><br>
+        Stage I: pH + PaCO₂ direction → identify primary disorder<br>
+        Stage II: Calculate expected compensation → identify secondary disorder<br>
+        Stage III: Use gaps (AG, delta-delta, osmolal) → identify cause of metabolic acidosis<br>
+        <br><em>"Seek simplicity, and distrust it." — Alfred North Whitehead (Marino Ch.31 epigraph)</em>
+      </div>
+    </div>
+  </div>`;
+
+  document.getElementById('abgResults').innerHTML = html;
+}
+
+function resetABG() {
+  ['pH','pco2','hco3','pao2','fio2','spo2','na','cl','k','albumin','lactate','glucose','bun','osm','weight','age'].forEach(id => {
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('placeholder').style.display = 'block';
+  document.getElementById('abgResults').style.display = 'none';
+  document.getElementById('abgResults').innerHTML = '';
+}
+</script>
+
+</body>
+</html>
