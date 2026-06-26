@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>GI Emergencies in ICU — GI Bleed, Pancreatitis — CritCare.in</title>
+  <meta name="description" content="ICU management of GI emergencies: upper and lower GI bleed, Blatchford score, octreotide, acute pancreatitis severity, CTSI, enteral nutrition. ASGE 2021 and ACG guidelines." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;}
+    .ec strong{color:#1e3a8a;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .sb-sup{background:#fce7f3;color:#9d174d;border:1px solid #f9a8d4;}
+    .cn{background:#f0fdf4;border:1px solid #86efac;border-radius:4px;padding:.15rem .4rem;font-size:.62rem;font-weight:800;color:#15803d;text-transform:uppercase;margin-left:.3rem;vertical-align:middle;}
+    .severity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1rem 0;}
+    .sev-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .sev-mild{background:#f0fdf4;border-color:#86efac;}
+    .sev-mod{background:#fefce8;border-color:#fde68a;}
+    .sev-sev{background:#fef2f2;border-color:#fecaca;}
+    .sev-card h4{font-size:.8rem;font-weight:800;margin-bottom:.5rem;}
+    .sev-mild h4{color:#166534;} .sev-mod h4{color:#854d0e;} .sev-sev h4{color:#991b1b;}
+    .sev-card ul{font-size:.8rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    .blatchford-grid{display:grid;grid-template-columns:1fr auto;gap:.3rem .8rem;font-size:.86rem;margin:.6rem 0;}
+    .blatchford-grid span:nth-child(odd){color:var(--ink);padding:.25rem 0;border-bottom:1px solid var(--line);}
+    .blatchford-grid span:nth-child(even){color:var(--blue);font-weight:800;text-align:right;padding:.25rem 0;border-bottom:1px solid var(--line);}
+    @media(max-width:600px){.severity-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › GI Emergencies</div>
+    <h1>🫃 GI Emergencies in the ICU</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ASGE 2021</span>
+      <span class="gbadge esicm">ACG 2013</span>
+      <span class="gbadge kdigo">Revised Atlanta 2012</span>
+      <span class="gbadge isccm">IAP 2022</span>
+      <span class="gbadge apasl">ESPEN 2020</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">GI Bleed · Pancreatitis · Stress Ulcer</span>
+      <span class="topic-tag">Blatchford Score</span>
+      <span class="topic-tag">Enteral Nutrition</span>
+      <span class="topic-updated">ASGE 2021 · ACG Pancreatitis 2013 · Revised Atlanta Classification 2012 · Marino 5th Ed (2025)</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual — GI Bleed</a></li>
+        <li><a href="#s2">2. Marino — Pancreatitis Physiology</a></li>
+        <li><a href="#s3">3. Guidelines (ASGE + ACG)</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Stress Ulcer Prophylaxis</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>GI Bleed — Classification &amp; Initial Assessment</h2>
+      <div class="book-quote">
+        <p>"Upper gastrointestinal bleeding (UGIB), defined as haemorrhage from a source proximal to the ligament of Treitz, is a common ICU emergency with in-hospital mortality of 2–10%. Immediate priorities include haemodynamic resuscitation, risk stratification using validated scores, and early endoscopy in high-risk cases. Over-transfusion is as dangerous as under-resuscitation — the TRIGGER trial demonstrated that a restrictive haemoglobin transfusion threshold (70–80 g/L) reduces mortality compared to a liberal strategy."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Gastrointestinal Haemorrhage.</cite>
+      </div>
+
+      <h3>UGIB Causes (by Frequency)</h3>
+      <ul>
+        <li><strong>Peptic ulcer disease</strong> (40–50%) — gastric or duodenal ulcer; NSAIDs, H. pylori, stress</li>
+        <li><strong>Oesophageal/gastric varices</strong> (10–20%) — portal hypertension; high rebleed risk; specific management</li>
+        <li><strong>Mallory-Weiss tear</strong> (5–15%) — vomiting-related; usually self-limiting</li>
+        <li><strong>Erosive gastritis/oesophagitis</strong> (5–10%)</li>
+        <li><strong>Dieulafoy lesion</strong> — visible vessel without ulceration; in fundus; difficult to identify endoscopically</li>
+        <li><strong>Aortoenteric fistula</strong> — rare but immediately fatal if missed; consider in any patient with prior aortic surgery + UGIB</li>
+      </ul>
+
+      <h3>Glasgow-Blatchford Score (GBS) — Triage Tool</h3>
+      <div class="key-box">
+        <div class="kb-label">Blatchford Score Variables &amp; Points</div>
+        <div class="blatchford-grid">
+          <span><strong>Urea ≥6.5 &lt;8.0 mmol/L</strong></span><span>+2</span>
+          <span><strong>Urea ≥8.0 &lt;10.0</strong></span><span>+3</span>
+          <span><strong>Urea ≥10.0 &lt;25.0</strong></span><span>+4</span>
+          <span><strong>Urea ≥25.0 mmol/L</strong></span><span>+6</span>
+          <span><strong>Hb &lt;130 g/L (male) / &lt;120 g/L (female)</strong></span><span>+1 to +6</span>
+          <span><strong>SBP 100–109 mmHg</strong></span><span>+1</span>
+          <span><strong>SBP 90–99 mmHg</strong></span><span>+2</span>
+          <span><strong>SBP &lt;90 mmHg</strong></span><span>+3</span>
+          <span><strong>HR ≥100 bpm</strong></span><span>+1</span>
+          <span><strong>Melaena present</strong></span><span>+1</span>
+          <span><strong>Syncope</strong></span><span>+2</span>
+          <span><strong>Hepatic disease present</strong></span><span>+2</span>
+          <span><strong>Cardiac failure present</strong></span><span>+2</span>
+        </div>
+        <p style="margin-top:.8rem;font-size:.85rem;"><strong>Score 0:</strong> Very low risk — outpatient management possible | <strong>Score ≥1:</strong> Hospital admission | <strong>Score ≥6:</strong> High risk — urgent endoscopy, HDU/ICU</p>
+      </div>
+
+      <h3>Initial Resuscitation — UGIB</h3>
+      <ul>
+        <li><strong>Airway:</strong> Active haematemesis with altered consciousness → intubate before endoscopy</li>
+        <li><strong>2 large-bore (≥16G) peripheral IVs</strong>; consider CVC if peripheral access poor</li>
+        <li><strong>Transfusion threshold:</strong> Hb &lt;70 g/L (restrictive strategy — TRIGGER trial) — target Hb 70–90 g/L. Exception: ACS or haemodynamic instability → transfuse to Hb 80–100 g/L</li>
+        <li><strong>Variceal bleed:</strong> Hb target 70–80 g/L — over-transfusion raises portal pressure and increases rebleed risk</li>
+        <li><strong>Coagulopathy correction:</strong> FFP if INR &gt;1.5 and active bleeding; platelets if &lt;50 × 10⁹/L and active bleed</li>
+        <li><strong>Antibiotics:</strong> ALL variceal UGIB patients need prophylactic antibiotics (ceftriaxone 1g IV 24h → ciprofloxacin 400 mg BD for 7 days) — reduces spontaneous bacterial peritonitis and mortality</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Acute Pancreatitis — Pathophysiology</h2>
+      <div class="book-quote">
+        <p>"Acute pancreatitis is an inflammatory condition of the pancreas that can range from mild self-limited disease to a life-threatening multi-organ failure syndrome. The inciting event — whether gallstone, alcohol, or other cause — triggers premature intrapancreatic activation of digestive enzymes, leading to autodigestion of pancreatic and peripancreatic tissue. The subsequent inflammatory cascade, particularly in severe disease, extends far beyond the pancreas and drives a SIRS-like systemic response indistinguishable from septic shock."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. GI Failure. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Pathophysiology Cascade</div>
+        <p>In normal physiology, digestive enzymes are synthesised as inactive zymogens (trypsinogen, chymotrypsinogen) and activated only in the duodenum. In pancreatitis:</p>
+        <ul>
+          <li><strong>Trigger</strong> (gallstone obstruction, alcohol, hypertriglyceridaemia, ERCP) → <strong>trypsinogen activation within pancreatic acinar cells</strong></li>
+          <li>Active trypsin activates all other zymogens → autodigestion of pancreatic parenchyma and fat</li>
+          <li>Phospholipase A₂ → lecithin → lysolecithin → cell membrane disruption → <strong>local tissue necrosis</strong></li>
+          <li>Activated inflammatory cells (macrophages, neutrophils) → <strong>cytokine storm</strong> (TNF-α, IL-1, IL-6) → SIRS → distant organ injury</li>
+          <li><strong>Consequence:</strong> ARDS (pulmonary), AKI, cardiovascular collapse, coagulopathy (DIC), gut barrier failure</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Revised Atlanta Classification (2012)</div>
+        <p>Two types of necrosis, two timeframes, three severity grades:</p>
+        <p><strong>Local complications:</strong></p>
+        <ul>
+          <li><strong>Acute peri-pancreatic fluid collection (APFC):</strong> First 4 weeks, no wall, no necrosis — usually resolves spontaneously</li>
+          <li><strong>Pancreatic pseudocyst:</strong> After 4 weeks, well-defined wall, liquid content, no necrosis</li>
+          <li><strong>Acute necrotic collection (ANC):</strong> First 4 weeks, contains necrosis — high infection risk</li>
+          <li><strong>Walled-off necrosis (WON):</strong> After 4 weeks, organised wall around necrotic material — the target for drainage if infected</li>
+        </ul>
+        <p><strong>Infected necrosis:</strong> Gas in collection on CT (pathognomonic) or FNA culture-positive. Treatment: antibiotics + endoscopic/surgical step-up necrosectomy.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Why the Pancreas Must Be Rested... but the Gut Must Be Fed</div>
+        <p>The old teaching of "pancreatic rest" (nil-by-mouth until amylase normalises) is <strong>wrong and harmful</strong>. Multiple RCTs confirm:</p>
+        <ul>
+          <li>Early enteral nutrition (within 24–48h) maintains gut mucosal integrity, prevents bacterial translocation, reduces infectious complications</li>
+          <li>Total parenteral nutrition (TPN) alone increases infectious morbidity, line sepsis, and cost</li>
+          <li>NG feeding is equivalent to NJ feeding (nasojejunal) — either route is acceptable</li>
+        </ul>
+        <p>The pancreas itself tolerates enteral feeds well — it is the systemic inflammatory response that requires supportive care, not pancreatic rest.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · ASGE 2021 (GI Bleed) &amp; ACG 2013 (Pancreatitis)</span>
+      <h2>Evidence-Based Guidelines</h2>
+
+      <h3>UGIB — ASGE 2021 Guidelines</h3>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Endoscopy Timing — ASGE 2021</div>
+        <div class="gr-text">
+          <strong>High-risk UGIB (GBS ≥6, haemodynamic instability, active bleeding):</strong> Endoscopy within <strong>24h</strong> of presentation <span class="gr-s">STRONG — ASGE 2021</span><br>
+          <strong>Low-risk UGIB (GBS ≤2, no haemodynamic compromise, haematemesis resolved):</strong> Endoscopy within <strong>72h</strong> — outpatient or next-day elective<br>
+          <strong>Very early endoscopy (&lt;6h) for all UGIB:</strong> NOT recommended — no mortality benefit and increases procedure complication rate in unstable patients<br>
+          <strong>Pre-endoscopy PPI infusion:</strong> Omeprazole 80 mg IV bolus → 8 mg/h infusion — does NOT prevent rebleed or reduce mortality, but reduces the need for endoscopic intervention (downstages lesions). Still standard practice.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Variceal UGIB — Specific Management</div>
+        <div class="gr-text">
+          <strong>Terlipressin</strong> (first-line vasoactive drug): 2 mg IV every 4h for 48h → 1 mg 4-hourly (ongoing) for up to 5 days <span class="gr-s">STRONG</span><br>
+          Alternative: Octreotide 50 μg IV bolus → 50 μg/h infusion for 5 days<br>
+          <strong>Endoscopic variceal ligation (EVL)</strong> for oesophageal varices — within 12–24h; superior to injection sclerotherapy<br>
+          <strong>TIPSS (Transjugular Intrahepatic Portosystemic Shunt):</strong> For refractory variceal bleeding after 2 failed endoscopic attempts — also early TIPSS in Child-Pugh C or high HVPG reduces 6-week mortality <span class="gr-s">STRONG</span><br>
+          <strong>Sengstaken-Blakemore tube:</strong> Temporary tamponade bridge (not definitive) — maximum 24h; use only when all other options fail or as bridge to TIPSS/surgery
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Transfusion Strategy — TRIGGER Trial</div>
+        <div class="gr-text">
+          <strong>Restrictive strategy (Hb threshold 70 g/L):</strong> Associated with lower 28-day mortality (4.9% vs 11%) compared to liberal strategy (Hb 90 g/L) in acute UGIB <span class="gr-s">STRONG 1A — TRIGGER 2015</span><br>
+          Exception: Hb 80–90 g/L threshold for patients with ACS (type 2 MI from blood loss)<br>
+          <strong>FFP:</strong> Only for INR &gt;1.5 with active bleeding — not to correct INR prophylactically<br>
+          <strong>Platelets:</strong> Transfuse if &lt;50 × 10⁹/L and actively bleeding
+        </div>
+      </div>
+
+      <h3>Acute Pancreatitis — ACG 2013 Guidelines</h3>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Severity Assessment — Revised Atlanta + CTSI</div>
+        <div class="gr-text">
+          <strong>Revised Atlanta Severity:</strong><br>
+          • Mild: No organ failure, no local complications — 90% of cases, mortality &lt;1%, discharge within 3–5 days<br>
+          • Moderately severe: Transient organ failure (&lt;48h) OR local complications — mortality ~5%<br>
+          • Severe: Persistent organ failure (&gt;48h), single or multi-organ — mortality 20–40%<br><br>
+          <strong>CT Severity Index (CTSI = Balthazar grade + necrosis score):</strong> CTSI ≥7 = severe; CT indicated if diagnosis uncertain or no improvement at 48–72h; NOT required routinely in mild disease (radiation without benefit).<br><br>
+          <strong>Bedside scoring:</strong> BISAP score (BUN &gt;25, impaired mental status, SIRS, age &gt;60, pleural effusion) ≥3 = high mortality risk
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Fluid Resuscitation — ACG 2013 + Recent Evidence</div>
+        <div class="gr-text">
+          <strong>Lactated Ringer's (LR) preferred over Normal Saline</strong> <span class="gr-s">STRONG — ACG 2013 + WATERFALL trial 2022</span><br>
+          LR reduces systemic inflammation (Ca²⁺ in LR may inhibit pancreatic trypsin activation; LR has lower chloride — less hyperchloraemic acidosis)<br>
+          <strong>Rate:</strong> 250–500 mL/h in first 24–48h; titrate to BUN, HCT, UO (target &gt;0.5 mL/kg/h), clinical assessment<br>
+          <strong>Reassess at 6h:</strong> If BUN increasing or HCT rising → more aggressive resuscitation; if HCT falling with adequate UO → adequate resuscitation<br>
+          <strong>Avoid over-resuscitation:</strong> WATERFALL trial showed that aggressive (rapid) fluid resuscitation was NOT superior to standard resuscitation and increased fluid overload complications.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Nutrition in Pancreatitis</div>
+        <div class="gr-text">
+          <strong>Mild pancreatitis:</strong> Oral low-fat diet as soon as pain allows — NBM not required <span class="gr-s">STRONG — ACG 2013</span><br>
+          <strong>Severe pancreatitis (predicted):</strong> Enteral nutrition within <strong>24–48h</strong> via NG or NJ tube <span class="gr-s">STRONG — ESPEN 2020</span><br>
+          <strong>TPN:</strong> Only if EN fails or is contraindicated (fistula, abdominal compartment syndrome) — associated with higher infection and mortality<br>
+          <strong>NG feeding = NJ feeding</strong> for tolerability and outcomes — NG is simpler and preferred<br>
+          Target: 25 kcal/kg/day; protein 1.2–1.5 g/kg/day; semi-elemental formula preferred in severe disease
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Antibiotics in Pancreatitis — ACG 2013</div>
+        <div class="gr-text">
+          <strong>NO prophylactic antibiotics</strong> in acute pancreatitis — even in severe or necrotising disease <span class="gr-s">STRONG 1A — ACG 2013</span><br>
+          Multiple RCTs including Isenmann (2004), Dellinger (2007) show no benefit to prophylactic carbapenems or quinolones in sterile necrosis.<br>
+          <strong>Antibiotics indicated ONLY for:</strong><br>
+          • Confirmed infected necrosis (gas on CT, positive FNA culture)<br>
+          • Concurrent cholangitis (biliary sepsis)<br>
+          • Extra-pancreatic infection (UTI, pneumonia)<br>
+          <strong>Antibiotic choice for infected necrosis:</strong> Meropenem 500 mg–1g IV TDS (good pancreatic tissue penetration) OR imipenem-cilastatin. Add antifungal if Candida isolated.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">ERCP in Gallstone Pancreatitis</div>
+        <div class="gr-text">
+          <strong>Urgent ERCP (within 24h):</strong> Only if concurrent acute cholangitis or persistent biliary obstruction (rising bilirubin, dilated CBD on US) <span class="gr-s">STRONG</span><br>
+          <strong>No benefit of urgent ERCP</strong> in predicted severe gallstone pancreatitis without cholangitis — may worsen outcomes<br>
+          <strong>Cholecystectomy:</strong> Perform during same admission for mild gallstone pancreatitis (reduces recurrence risk); delay by 4–6 weeks for severe disease or peripancreatic fluid collections.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Tropical pancreatitis:</strong> Chronic calcific pancreatitis secondary to cassava (tapioca) consumption — endemic in Kerala and other states; typically presents young, recurrent acute-on-chronic episodes. Low serum trypsinogen levels.</p>
+        <p><strong>Hypertriglyceridaemia-induced pancreatitis:</strong> Common in Indian diabetics and metabolic syndrome patients. Triglycerides &gt;11.3 mmol/L (1000 mg/dL). Treatment: insulin infusion (activates lipoprotein lipase) + plasmapheresis if severe. Standard pancreatitis management thereafter.</p>
+        <p><strong>GI bleed causes in India:</strong> Variceal bleeding is more common in Indian ICUs (due to higher prevalence of hepatitis B/C cirrhosis). Always ask about alcohol use and jaundice history in all UGIB presentations.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Drug Reference — GI Emergencies</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Pantoprazole / Omeprazole IV</strong></td><td>UGIB — non-variceal</td><td>80 mg IV bolus → 8 mg/h infusion for 72h</td><td>Post-endoscopic therapy; also pre-endoscopy to downstage lesion</td></tr>
+            <tr><td><strong>Terlipressin</strong></td><td>Variceal UGIB (first-line)</td><td>2 mg IV every 4h × 48h → 1 mg every 4h × 5 days total</td><td>Contraindicated: severe IHD, peripheral vascular disease; watch for hypertension &amp; bradycardia</td></tr>
+            <tr><td><strong>Octreotide</strong></td><td>Variceal UGIB (alternative to terlipressin)</td><td>50 μg IV bolus → 50 μg/h continuous infusion × 5 days</td><td>More widely available in India; equivalent efficacy to terlipressin</td></tr>
+            <tr><td><strong>Ceftriaxone</strong></td><td>Variceal bleed antibiotic prophylaxis</td><td>1g IV OD for 5–7 days (preferred in ascites or Child-Pugh C)</td><td>Reduces SBP, bacteraemia, and rebleeding rate; reduces mortality in cirrhosis</td></tr>
+            <tr><td><strong>Norfloxacin</strong></td><td>Variceal bleed prophylaxis (if no ascites)</td><td>400 mg PO BD for 7 days</td><td>Oral alternative to ceftriaxone; inferior in advanced cirrhosis</td></tr>
+            <tr><td><strong>Lactated Ringer's</strong></td><td>Pancreatitis fluid resuscitation</td><td>250–500 mL/h initial × 24–48h; titrate to UO &gt;0.5 mL/kg/h</td><td>Preferred over NS; reduces systemic inflammation; contains Ca²⁺</td></tr>
+            <tr><td><strong>Meropenem</strong></td><td>Infected pancreatic necrosis</td><td>500 mg–1g IV TDS (adjusted for renal function)</td><td>Good pancreatic tissue penetration; use only when infected necrosis confirmed</td></tr>
+            <tr><td><strong>Insulin (regular) IV infusion</strong></td><td>Hypertriglyceridaemia-induced pancreatitis</td><td>0.1–0.3 U/kg/h; titrate to reduce TG to &lt;5.6 mmol/L</td><td>Activates lipoprotein lipase; concurrent dextrose infusion to prevent hypoglycaemia</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗂 5 · Clinical Flowchart</span>
+      <h2>UGIB &amp; Pancreatitis Management Algorithms</h2>
+
+      <h3>UGIB Management Ladder</h3>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Resuscitate</h4>
+          <ul>
+            <li>2 large-bore IVs, crossmatch, bloods, type and screen</li>
+            <li>Transfuse to Hb ≥70 g/L (≥80 if ACS)</li>
+            <li>Airway protection if haematemesis + reduced GCS</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Risk Stratify</h4>
+          <ul>
+            <li>Calculate Glasgow-Blatchford Score</li>
+            <li>Is this likely variceal? (chronic liver disease, portal hypertension history)</li>
+            <li>If variceal: terlipressin + ceftriaxone immediately</li>
+            <li>If non-variceal: PPI infusion (80 mg → 8 mg/h)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Endoscopy Timing Decision</h4>
+          <ul>
+            <li><strong>Unstable / GBS ≥6:</strong> OGD within 24h</li>
+            <li><strong>Stable / GBS &lt;6:</strong> OGD within 72h</li>
+            <li><strong>Variceal:</strong> OGD within 12–24h (EVL preferred)</li>
+            <li>Pre-endoscopy erythromycin 250 mg IV if large haematemesis (clears stomach)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>Post-Endoscopy Care</h4>
+          <ul>
+            <li>Haemostasis achieved: Oral PPI (omeprazole 40 mg BD) for 4 weeks; H. pylori eradication if positive</li>
+            <li>Rebleed after endoscopic therapy: Second attempt OGD → TIPSS or surgery if fails</li>
+            <li>Variceal: Continue terlipressin/octreotide for 5 days total; propranolol for secondary prophylaxis when stable</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Pancreatitis Severity Algorithm</h3>
+      <div class="severity-grid">
+        <div class="sev-card sev-mild">
+          <h4>✅ Mild (Interstitial)</h4>
+          <ul>
+            <li>No organ failure</li>
+            <li>No local complications</li>
+            <li>Amylase/lipase elevation</li>
+            <li>CT: oedema only</li>
+            <li>Oral diet ASAP</li>
+            <li>Discharge 3–5 days</li>
+            <li>Mortality &lt;1%</li>
+          </ul>
+        </div>
+        <div class="sev-card sev-mod">
+          <h4>⚠️ Moderately Severe</h4>
+          <ul>
+            <li>Transient organ failure (&lt;48h)</li>
+            <li>OR local complications</li>
+            <li>CTSI 4–6</li>
+            <li>Enteral nutrition early</li>
+            <li>HDU monitoring</li>
+            <li>Watch for deterioration</li>
+            <li>Mortality ~5%</li>
+          </ul>
+        </div>
+        <div class="sev-card sev-sev">
+          <h4>🔴 Severe (Necrotising)</h4>
+          <ul>
+            <li>Persistent organ failure (&gt;48h)</li>
+            <li>CTSI ≥7</li>
+            <li>Multi-organ dysfunction</li>
+            <li>ICU admission</li>
+            <li>LR resuscitation</li>
+            <li>Early EN within 24–48h</li>
+            <li>Antibiotics only if infected</li>
+            <li>Mortality 20–40%</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-sup">🛡 6 · Stress Ulcer Prophylaxis</span>
+      <h2>Stress Ulcer Prophylaxis in ICU</h2>
+      <div class="book-quote">
+        <p>"Stress-related mucosal disease (SRMD) occurs in critically ill patients as a result of splanchnic hypoperfusion, increased gastric acid secretion, and breakdown of mucosal defence mechanisms. Clinically significant bleeding occurs in 1.5–8% of ICU patients without prophylaxis. Risk is highest in patients receiving mechanical ventilation for &gt;48h or with coagulopathy — these are the two strongest evidence-based indications for stress ulcer prophylaxis."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Chapter: Stress-Related Mucosal Bleeding.</cite>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Indications for SUP (ASHP Guidelines + SUP-ICU Trial Evidence)</div>
+        <div class="gr-text">
+          <strong>Strong indications (prescribe in all):</strong><br>
+          • Mechanical ventilation &gt;48h <span class="gr-s">STRONG</span><br>
+          • Coagulopathy: INR &gt;1.5 OR platelets &lt;50 × 10⁹/L OR aPTT &gt;2× normal<br><br>
+          <strong>Additional risk factors (consider individually):</strong><br>
+          • Burns &gt;35% BSA<br>
+          • Head injury (Cushing's ulcer — direct gastric acid hypersecretion)<br>
+          • History of GI ulceration in past year<br>
+          • Glucocorticoid therapy (&gt;250 mg/day hydrocortisone equivalent)<br>
+          • Liver failure<br>
+          • Renal replacement therapy<br><br>
+          <strong>Low-risk patients (NO SUP needed):</strong> Enterally fed patients on IMV without coagulopathy — enteral nutrition itself is protective (buffers gastric pH)
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Drug Choice — PPIs vs H₂ Blockers (SUP-ICU 2018 Trial)</div>
+        <div class="gr-text">
+          SUP-ICU (NEJM 2018, n=3298): Pantoprazole vs placebo — no significant difference in 90-day mortality (31.1% vs 30.4%), but significant reduction in GI bleeding (3.7% vs 5.3%) <span class="gr-c">CONDITIONAL</span><br>
+          <strong>PPIs (omeprazole/pantoprazole):</strong> More effective at raising gastric pH; may slightly increase pneumonia risk (reduced gastric acid = less protection against oral colonisation)<br>
+          <strong>H₂ blockers (ranitidine — now removed; famotidine):</strong> Comparable efficacy to PPIs in multiple trials; less pneumonia risk<br>
+          <strong>Current practice:</strong> IV PPI (pantoprazole 40 mg OD IV) when NBM; switch to oral PPI when enteral route available; <strong>de-escalate as soon as risk factors resolve</strong>
+        </div>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ De-escalate SUP</div>
+        <p>Prolonged PPI use in ICU is associated with <em>Clostridioides difficile</em> infection, ventilator-associated pneumonia, hypomagnesaemia, and vitamin B₁₂ deficiency. Stop SUP as soon as the patient is haemodynamically stable, receiving enteral feeds, and extubated.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in GI Emergencies</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Keeping Pancreatitis Patients Nil-by-Mouth Until Amylase Normalises</div>
+        <p>Amylase normalisation is irrelevant to feeding decisions — it often stays elevated for days after clinical improvement. Early enteral nutrition (within 24–48h) in severe pancreatitis reduces infectious complications, gut barrier failure, and mortality. There is no "pancreatic rest" benefit from prolonged fasting — TPN alone worsens outcomes.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Prophylactic Antibiotics in Necrotising Pancreatitis</div>
+        <p>Multiple RCTs (Isenmann 2004, Dellinger 2007) show no benefit of prophylactic imipenem/meropenem in sterile pancreatic necrosis. Routine antibiotic use increases MDR organism risk and fungal infections. Antibiotics are indicated ONLY when infection is confirmed (gas on CT, positive FNA, concurrent cholangitis).</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Over-Transfusing Upper GI Bleed</div>
+        <p>Liberal transfusion (Hb target 90 g/L) is associated with HIGHER rebleeding rates and mortality in UGIB, especially in variceal bleeding — it raises portal pressure. The TRIGGER trial established Hb 70 g/L as the transfusion threshold. Transfuse to 70–80 g/L unless concurrent ACS or cardiovascular compromise.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Missing Aortoenteric Fistula</div>
+        <p>Any patient with prior aortic surgery (EVAR, open AAA repair) presenting with UGIB — no matter how minor — should be considered to have an aortoenteric fistula until proven otherwise. This condition has a characteristic "herald bleed" (minor bleed that stops spontaneously) followed by catastrophic exsanguination. CT aortogram is mandatory before OGD if there is any prior aortic surgery history.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Using Normal Saline for Pancreatitis Resuscitation</div>
+        <p>Normal saline causes hyperchloraemic metabolic acidosis (Cl⁻ load), which independently worsens pancreatitis outcomes. Lactated Ringer's is strongly preferred — evidence from multiple RCTs and the WATERFALL trial 2022 confirms LR superiority. However, do not over-resuscitate — aggressive rapid fluid resuscitation increases fluid overload complications without improving organ failure.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Giving Iodine (Lugol's) Before Antithyroid Drug in Thyroid Storm</div>
+        <p><em>(See Endocrine Emergencies topic for full detail)</em> — applies when managing thyroid storm presenting with GI symptoms (vomiting, diarrhoea) alongside shock.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Barkun AN, Almadi M, Kuipers EJ et al. (ASGE).</strong> Management of Nonvariceal Upper Gastrointestinal Bleeding: Guideline Recommendations from the International Consensus Group. Ann Intern Med 2019;171:805–822. (ASGE 2021 update reinforces these recommendations)</li>
+          <li><strong>Villanueva C, Colomo A, Bosch A et al. (TRIGGER Trial equivalent).</strong> Transfusion Strategies for Acute Upper Gastrointestinal Bleeding. NEJM 2013;368:11–21.</li>
+          <li><strong>Frossard JL, Steer ML, Pastor CM.</strong> Acute pancreatitis. Lancet 2008;371:143–152.</li>
+          <li><strong>Tenner S, Baillie J, DeWitt J, Vege SS. (ACG).</strong> American College of Gastroenterology Guideline: Management of Acute Pancreatitis. Am J Gastroenterol 2013;108:1400–1415.</li>
+          <li><strong>Banks PA, Bollen TL, Dervenis C et al.</strong> Classification of Acute Pancreatitis — 2012: Revision of the Atlanta Classification and Definitions. Gut 2013;62:102–111. (Revised Atlanta Classification)</li>
+          <li><strong>de-Madaria E, Buxbaum JL, Maisonneuve P et al. (WATERFALL Trial).</strong> Aggressive or Moderate Fluid Resuscitation in Acute Pancreatitis. NEJM 2022;387:989–1000.</li>
+          <li><strong>Krag M, Marker S, Perner A et al. (SUP-ICU Trial).</strong> Pantoprazole in Patients at Risk for Gastrointestinal Bleeding in the ICU. NEJM 2018;379:2199–2208.</li>
+          <li><strong>Singer P, Blaser AR, Berger MM et al. (ESPEN).</strong> ESPEN Guideline on Clinical Nutrition in the Intensive Care Unit. Clin Nutr 2019;38:48–79.</li>
+          <li><strong>Marino PL.</strong> The ICU Book, 5th Ed. GI Failure; Nutrition in Critical Illness. Wolters Kluwer; 2025.</li>
+          <li><strong>Washington Manual of Critical Care, 4th Ed.</strong> GI Haemorrhage; Stress-Related Mucosal Bleeding. Wolters Kluwer 2023.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Search — CritCare.in</title>
+  <meta name="description" content="Search CritCare.in for ICU topics, clinical scores, drug doses, guidelines, tools and more." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="search-index.js"></script>
+  <style>
+    .search-hero { background: linear-gradient(135deg,#0f1f3d,#1a3560); padding:3.5rem 5% 3rem; color:#fff; }
+    .search-hero h1 { font-family:var(--font-disp); font-size:clamp(1.8rem,3.5vw,2.6rem); margin-bottom:.7rem; }
+    .search-hero p { color:rgba(255,255,255,.7); max-width:580px; line-height:1.7; }
+    .search-page-wrap { max-width:780px; margin:0 auto; padding:2.5rem 5% 4rem; }
+    .search-page-box { background:var(--bg); border:1.5px solid var(--line); border-radius:14px; padding:1rem 1.2rem; display:flex; align-items:center; gap:.8rem; margin-bottom:1.8rem; box-shadow:0 4px 18px rgba(30,111,217,.08); }
+    .search-page-box:focus-within { border-color:var(--blue); box-shadow:0 4px 18px rgba(30,111,217,.15); }
+    .search-page-input { flex:1; border:none; background:transparent; font-family:var(--font-body); font-size:1.05rem; color:var(--ink); outline:none; min-width:0; }
+    .search-page-input::placeholder { color:var(--slate); }
+    .search-page-icon { color:var(--slate); flex-shrink:0; }
+    .search-page-kbd { font-size:.7rem; font-weight:700; color:var(--slate); border:1.5px solid var(--line); border-radius:5px; padding:.15rem .45rem; font-family:var(--font-body); background:var(--bg-alt); flex-shrink:0; }
+    .search-count { font-size:.82rem; color:var(--slate); margin-bottom:1rem; }
+    .search-results { display:flex; flex-direction:column; gap:.5rem; }
+    .sr-item { display:flex; flex-wrap:wrap; align-items:baseline; gap:.3rem .6rem; text-decoration:none; color:inherit; padding:.9rem 1rem; border-radius:10px; transition:background .15s; border:1px solid var(--line); background:var(--bg); }
+    .sr-item:hover { border-color:var(--blue); background:var(--blue-soft); box-shadow:0 4px 14px rgba(30,111,217,.08); }
+    .sr-type { font-size:.6rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; padding:.15rem .45rem; border-radius:4px; flex-shrink:0; }
+    .sr-topic  { background:#dbeafe; color:#1e40af; }
+    .sr-score  { background:#dcfce7; color:#166534; }
+    .sr-tool   { background:#ede9fe; color:#5b21b6; }
+    .sr-page   { background:var(--bg-alt); color:var(--slate); border:1px solid var(--line); }
+    .sr-title  { font-weight:700; font-size:.95rem; color:var(--ink); flex:1 0 100%; }
+    .sr-desc   { font-size:.82rem; color:var(--slate); line-height:1.55; flex:1 0 100%; }
+    .sr-item mark { background:#fef08a; color:#713f12; border-radius:2px; padding:0 1px; }
+    .sr-empty { text-align:center; padding:3rem 0; color:var(--slate); }
+    .sr-empty p { font-size:1rem; margin-bottom:.5rem; }
+    .sr-empty small { font-size:.85rem; }
+    .filter-row { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom:1.2rem; }
+    .filter-btn { font-size:.75rem; font-weight:700; padding:.35rem .8rem; border-radius:20px; border:1.5px solid var(--line); background:var(--bg-alt); color:var(--slate); cursor:pointer; font-family:var(--font-body); transition:.15s; }
+    .filter-btn:hover,.filter-btn.active { background:var(--blue); border-color:var(--blue); color:#fff; }
+    html.dark .search-page-box { background:var(--bg-alt); border-color:var(--line); }
+    html.dark .sr-item { background:var(--bg-alt); border-color:var(--line); }
+    html.dark .sr-item:hover { background:var(--blue-soft); border-color:var(--blue); }
+    html.dark .sr-item mark { background:#713f12; color:#fef08a; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="search-hero">
+  <div class="wrap">
+    <h1>🔍 Search CritCare.in</h1>
+    <p>Search 22+ topics, 24+ score calculators, drug doses, guidelines, clinical algorithms, and tools.</p>
+  </div>
+</header>
+
+<div class="search-page-wrap">
+  <div class="search-page-box">
+    <svg class="search-page-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input id="sp-input" class="search-page-input" type="search" placeholder="sepsis, DKA, ventilation, SOFA score, drug doses…" autocomplete="off" autocorrect="off" spellcheck="false" />
+    <span class="search-page-kbd">/ or Ctrl+K</span>
+  </div>
+
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+    <button class="filter-btn" onclick="setFilter('topic', this)">Topics</button>
+    <button class="filter-btn" onclick="setFilter('score', this)">Scores</button>
+    <button class="filter-btn" onclick="setFilter('tool', this)">Tools</button>
+  </div>
+
+  <div id="sp-count" class="search-count"></div>
+  <div id="sp-results" class="search-results"></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="topics.html">Topics</a></li>
+      <li><a href="scores.html">Scores</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+
+<script>
+var activeFilter = 'all';
+
+function typeLabel(type) {
+  if (type === 'topic') return '<span class="sr-type sr-topic">Topic</span>';
+  if (type === 'score') return '<span class="sr-type sr-score">Score</span>';
+  if (type === 'tool')  return '<span class="sr-type sr-tool">Tool</span>';
+  return '<span class="sr-type sr-page">Page</span>';
+}
+
+function highlight(text, query) {
+  if (!query) return text;
+  var re = new RegExp('(' + query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+  return text.replace(re, '<mark>$1</mark>');
+}
+
+function setFilter(f, btn) {
+  activeFilter = f;
+  document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  renderSearch(document.getElementById('sp-input').value);
+}
+
+function renderSearch(query) {
+  var out = document.getElementById('sp-results');
+  var cnt = document.getElementById('sp-count');
+  var idx = window.CRITCARE_INDEX || [];
+  query = (query || '').trim();
+  var q = query.toLowerCase();
+
+  var matches = idx.filter(function(item) {
+    var typeOk = activeFilter === 'all' || item.type === activeFilter;
+    if (!typeOk) return false;
+    if (!q || q.length < 2) return activeFilter !== 'all';
+    return (item.title + ' ' + item.tags + ' ' + item.desc).toLowerCase().includes(q);
+  });
+
+  if (!q && activeFilter === 'all') {
+    cnt.textContent = '';
+    out.innerHTML = '<div class="sr-empty"><p>Start typing to search…</p><small>Try: sepsis, DKA, ventilation, SOFA, octreotide, pronation</small></div>';
+    return;
+  }
+
+  if (matches.length === 0) {
+    cnt.textContent = '';
+    out.innerHTML = '<div class="sr-empty"><p>No results' + (q ? ' for <strong>' + query + '</strong>' : '') + '</p><small>Try a different term — drug name, diagnosis, guideline, or tool name</small></div>';
+    return;
+  }
+
+  cnt.textContent = matches.length + ' result' + (matches.length === 1 ? '' : 's') + (q ? ' for "' + query + '"' : '');
+  out.innerHTML = matches.map(function(item) {
+    return '<a href="' + item.url + '" class="sr-item">' +
+      typeLabel(item.type) +
+      '<span class="sr-title">' + highlight(item.title, query) + '</span>' +
+      '<span class="sr-desc">' + item.desc + '</span>' +
+      '</a>';
+  }).join('');
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  var input = document.getElementById('sp-input');
+
+  // Pre-fill from URL param ?q=
+  var params = new URLSearchParams(window.location.search);
+  var q = params.get('q') || '';
+  if (q) { input.value = q; renderSearch(q); }
+  else { renderSearch(''); }
+
+  input.addEventListener('input', function() {
+    renderSearch(this.value);
+    // Update URL without reloading
+    var url = new URL(window.location);
+    if (this.value) { url.searchParams.set('q', this.value); }
+    else { url.searchParams.delete('q'); }
+    history.replaceState({}, '', url);
+  });
+
+  input.focus();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Post-Cardiac Arrest Care (ROSC) — CritCare.in</title>
+  <meta name="description" content="Post-cardiac arrest care and ROSC management: TTM, coronary angio timing, neuroprognostication, AHA 2025 guidelines for ICU physicians." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;}
+    .ec strong{color:#1e3a8a;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .cn{background:#f0fdf4;border:1px solid #86efac;border-radius:4px;padding:.15rem .4rem;font-size:.62rem;font-weight:800;color:#15803d;text-transform:uppercase;margin-left:.3rem;vertical-align:middle;}
+    .trial-badge{display:inline-block;font-size:.65rem;font-weight:800;padding:.15rem .5rem;border-radius:4px;background:#fef3c7;color:#92400e;margin-left:.4rem;letter-spacing:.03em;}
+    .pcas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:.8rem;margin:1rem 0;}
+    .pcas-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .pcas-brain{background:#eff6ff;border-color:#bfdbfe;}
+    .pcas-heart{background:#fef2f2;border-color:#fecaca;}
+    .pcas-sys{background:#fefce8;border-color:#fde68a;}
+    .pcas-cause{background:#f0fdf4;border-color:#bbf7d0;}
+    .pcas-card h4{font-size:.8rem;font-weight:800;margin-bottom:.4rem;}
+    .pcas-brain h4{color:#1e40af;} .pcas-heart h4{color:#991b1b;} .pcas-sys h4{color:#854d0e;} .pcas-cause h4{color:#166534;}
+    .pcas-card p{font-size:.82rem;line-height:1.6;margin:0;color:var(--slate);}
+    .prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0;}
+    .prog-card{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;}
+    .prog-card h4{font-size:.8rem;font-weight:800;color:var(--ink);margin-bottom:.4rem;}
+    .prog-card ul{font-size:.82rem;color:var(--slate);line-height:1.65;padding-left:1.1rem;margin:0;}
+    @media(max-width:600px){.prog-grid{grid-template-columns:1fr;}.pcas-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Post-Cardiac Arrest Care</div>
+    <h1>❤️ Post-Cardiac Arrest Care &amp; ROSC</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">AHA 2025</span>
+      <span class="gbadge esicm">ILCOR 2023</span>
+      <span class="gbadge kdigo">ERC 2021</span>
+      <span class="gbadge isccm">TTM2 2021</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Time-Critical</span>
+      <span class="topic-tag">Targeted Temperature Management</span>
+      <span class="topic-tag">Neuroprognostication</span>
+      <span class="topic-updated">AHA 2025 CPR Guidelines · ILCOR CoSTR 2023 · Marino 5th Ed (2025, Ch.45)</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. AHA 2025 Guidelines</a></li>
+        <li><a href="#s4">4. Drug Doses &amp; Targets</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Neuroprognostication</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Washington Manual Summary — Post-Cardiac Arrest Syndrome</h2>
+      <div class="book-quote">
+        <p>"Restoration of spontaneous circulation (ROSC) after cardiac arrest leads to a complex, multi-organ pathophysiological state termed post-cardiac arrest syndrome (PCAS). PCAS encompasses four interacting components, each of which independently worsens outcome: post-cardiac arrest brain injury, post-cardiac arrest myocardial dysfunction, systemic ischaemia/reperfusion injury, and the precipitating pathology that caused the arrest."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Post-Cardiac Arrest Care.</cite>
+      </div>
+
+      <h3>The Four Components of PCAS</h3>
+      <div class="pcas-grid">
+        <div class="pcas-card pcas-brain">
+          <h4>🧠 Brain Injury (most important)</h4>
+          <p>Hypoxic-ischaemic encephalopathy · cerebral oedema · seizures (including non-convulsive) · Responsible for 68% of in-hospital deaths after ROSC</p>
+        </div>
+        <div class="pcas-card pcas-heart">
+          <h4>❤️ Myocardial Dysfunction</h4>
+          <p>Transient global myocardial stunning · reduced EF (often &lt;30%) · haemodynamic instability · Usually reversible over 24–72h if supported</p>
+        </div>
+        <div class="pcas-card pcas-sys">
+          <h4>⚡ Systemic I/R Injury</h4>
+          <p>Resembles septic shock phenotype · elevated lactate · coagulopathy · activation of inflammatory cascades · endothelial dysfunction</p>
+        </div>
+        <div class="pcas-card pcas-cause">
+          <h4>🎯 Precipitating Pathology</h4>
+          <p>Must be identified and treated · ACS, PE, hypoxia, electrolyte, toxin · VF/VT → coronary angio (if STEMI) · PEA → rule out 5 Hs &amp; 5 Ts</p>
+        </div>
+      </div>
+
+      <h3>Immediate ICU Priorities at ROSC</h3>
+      <ul>
+        <li><strong>Airway:</strong> Intubate if not already done, confirm placement (ETCO₂)</li>
+        <li><strong>Haemodynamics:</strong> Target MAP ≥65–70 mmHg, SBP ≥100 mmHg; start noradrenaline if hypotensive</li>
+        <li><strong>Oxygenation:</strong> SpO₂ 94–98% — avoid hyperoxia (PaO₂ &gt;300 mmHg independently worsens neurological outcome)</li>
+        <li><strong>12-lead ECG:</strong> Identify STEMI → immediate PCI; no STEMI → delay angio (see Section 3)</li>
+        <li><strong>Fever prevention:</strong> Paracetamol ± active cooling to maintain T° ≤37.5°C</li>
+        <li><strong>Glucose:</strong> Target 6–10 mmol/L; avoid both hypoglycaemia and marked hyperglycaemia</li>
+        <li><strong>Seizure detection:</strong> EEG monitoring within 24h — non-convulsive SE occurs in 30–40%</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — Cerebral Ischaemia &amp; Reperfusion</h2>
+      <div class="book-quote">
+        <p>"Global cerebral ischaemia during cardiac arrest sets in motion a cascade of events that continue and worsen after restoration of circulation. The paradox of reperfusion injury — where restoring blood flow to ischaemic tissue causes additional damage — is mediated by calcium overload, free radical generation, and inflammatory activation. This means that post-arrest management is not simply about maintaining perfusion; it is about actively preventing secondary injury."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Ch.45: Altered States of Consciousness. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino Ch.45 — The No-Reflow Phenomenon</div>
+        <p>After global ischaemia, restoration of circulation does not guarantee adequate cerebral perfusion. Three mechanisms contribute:</p>
+        <ul>
+          <li><strong>Microvascular obstruction:</strong> Oedematous astrocytes, platelet aggregates, and leucocyte adhesion occlude capillaries</li>
+          <li><strong>Vasospasm:</strong> Ca²⁺ influx into smooth muscle cells causes arteriolar constriction</li>
+          <li><strong>Loss of autoregulation:</strong> Cerebral autoregulation is impaired for 12–24h post-arrest; MAP fluctuations directly affect cerebral blood flow</li>
+        </ul>
+        <p><strong>Clinical implication:</strong> Maintaining MAP ≥65–70 mmHg is critical in the first 24h to overcome no-reflow and restore adequate CBF.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino Ch.45 — Calcium Overload &amp; Free Radical Cascade</div>
+        <p>During ischaemia, ATP depletion causes Na⁺/K⁺-ATPase failure → intracellular Na⁺ accumulation → reverse Na⁺/Ca²⁺ exchanger → <strong>massive Ca²⁺ influx</strong>.</p>
+        <p>Ca²⁺ excess activates:</p>
+        <ul>
+          <li>Phospholipases A₂ and C → membrane phospholipid degradation → arachidonic acid release → prostaglandins + free radicals</li>
+          <li>Proteases → cytoskeletal destruction</li>
+          <li>Nitric oxide synthase → excess NO → peroxynitrite (potent oxidant)</li>
+        </ul>
+        <p><strong>Reperfusion paradox:</strong> Reoxygenation provides the substrate (O₂) for the free radical burst that was "primed" during ischaemia. This is why the first minutes after ROSC carry the highest risk of secondary neuronal death.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino Ch.45 — Why Fever is Catastrophic Post-Arrest</div>
+        <p>Each 1°C rise in brain temperature above 37°C increases cerebral metabolic rate (CMRO₂) by approximately <strong>8%</strong>. In the post-arrest brain with impaired CBF and autoregulation, this metabolic demand cannot be met → secondary ischaemia → accelerated neuronal death.</p>
+        <p>Clinical threshold: Temperature &gt;37.5°C ("post-arrest fever") independently worsens neurological outcome. The goal is not cooling — it is <strong>fever prevention</strong>.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · AHA 2025 CPR Guidelines &amp; Key Trials</span>
+      <h2>AHA 2025 Guidelines — Post-ROSC Management</h2>
+
+      <div class="update-box">
+        <div class="kb-label">⚡ AHA 2025 Major Change from Prior Guidelines</div>
+        <p><strong>Targeted Temperature Management (TTM) is no longer recommended for all ROSC patients.</strong> The TTM2 trial (2021, NEJM, n=1900) showed NO benefit of targeting 33°C vs fever avoidance at 37.5°C for shockable rhythms. AHA 2025 now recommends <strong>fever avoidance (T° ≤37.5°C)</strong> rather than active cooling to 32–36°C for most patients.</p>
+        <p>Exception: Some centres still use active cooling for selected comatose patients with witnessed, shockable cardiac arrest with short no-flow time — but this is no longer routine practice.</p>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Temperature Management</div>
+        <div class="gr-text">
+          <strong>Target:</strong> Maintain T° ≤37.5°C for at least 72h after ROSC <span class="gr-s">STRONG 1B — AHA 2025</span><br>
+          Fever (&gt;37.5°C) must be actively prevented with paracetamol (1g QDS IV) ± cooling blankets.<br>
+          <strong>Do NOT target 32–36°C routinely</strong> — TTM2 trial showed no benefit over fever avoidance <span class="trial-badge">TTM2 2021</span><br>
+          Duration: At least 72h post-ROSC (secondary temperature surges can occur).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Coronary Angiography Timing (AHA 2025)</div>
+        <div class="gr-text">
+          <strong>STEMI on ECG → Immediate PCI</strong> regardless of neurological status <span class="gr-s">STRONG 1A</span><br>
+          <strong>No STEMI → NO routine immediate coronary angiography</strong> <span class="gr-s">STRONG 1A</span><br>
+          Evidence: TOMAHAWK trial (2021, NEJM, n=554): immediate angio = 30-day mortality 54% vs 46% in delayed group <span class="trial-badge">TOMAHAWK 2021</span><br>
+          COACT trial (2019, NEJM, n=552): no survival benefit to immediate angio in shockable arrest without STEMI <span class="trial-badge">COACT 2019</span><br>
+          <strong>Conclusion:</strong> Coronary angio should still be performed in non-STEMI ROSC patients — but it can be done within 24–72h once haemodynamically stable, unless there is a compelling clinical suspicion (e.g., ECG changes, anginal prodrome, cardiogenic shock).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Oxygenation &amp; Ventilation Targets</div>
+        <div class="gr-text">
+          <strong>SpO₂:</strong> 94–98% — avoid hyperoxia <span class="gr-s">STRONG 1B — AHA 2025</span><br>
+          <strong>PaO₂:</strong> Target 75–100 mmHg (10–13 kPa). PaO₂ &gt;300 mmHg independently increases in-hospital mortality (large observational data).<br>
+          <strong>PaCO₂:</strong> Target 35–45 mmHg (normocapnia). Hypocarbia causes cerebral vasoconstriction and worsens cerebral ischaemia.<br>
+          <strong>TV:</strong> 6–8 ml/kg IBW (lung-protective even in non-ARDS post-arrest lungs).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Haemodynamic Targets (AHA 2025)</div>
+        <div class="gr-text">
+          <strong>MAP ≥65–70 mmHg</strong> (some centres target MAP ≥80 in first 12h based on observational data) <span class="gr-c">CONDITIONAL 2C</span><br>
+          <strong>SBP ≥100 mmHg</strong><br>
+          <strong>Noradrenaline</strong> is first-line vasopressor for post-arrest shock<br>
+          <strong>Dobutamine</strong> if myocardial dysfunction (EF &lt;30%, cardiogenic shock phenotype) — add to noradrenaline<br>
+          Fluid resuscitation: Balanced crystalloids (PlasmaLyte or LR); avoid large-volume normal saline.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Glucose Management</div>
+        <div class="gr-text">
+          Target blood glucose <strong>6–10 mmol/L (108–180 mg/dL)</strong> <span class="gr-s">STRONG 1B</span><br>
+          Both hypoglycaemia (&lt;4 mmol/L) and marked hyperglycaemia (&gt;14 mmol/L) independently worsen neurological outcomes.<br>
+          Use IV insulin infusion with hourly monitoring. NICE-SUGAR protocol: avoid tight control (4–6 mmol/L) — excessive hypoglycaemia risk.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Seizure Management</div>
+        <div class="gr-text">
+          EEG monitoring within 24h of ROSC — non-convulsive seizures in 30–40% of comatose post-arrest patients <span class="gr-s">STRONG 1B</span><br>
+          <strong>Prophylaxis:</strong> Not routinely recommended by AHA 2025 (no proven benefit)<br>
+          <strong>Treatment of confirmed seizures:</strong> Levetiracetam 1–3g/day IV (first-line) or sodium valproate 1200–2000 mg/day; benzodiazepines for acute termination.<br>
+          Refractory status post-arrest: Poor prognostic sign; propofol or midazolam infusion for burst suppression.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ICU Context</div>
+        <p><strong>ECPR (ECMO-CPR):</strong> VA-ECMO during refractory cardiac arrest is available at select tertiary centres. If &lt;65y, witnessed arrest, &lt;15 min no-flow, consider early ECPR referral if available.</p>
+        <p><strong>Resource constraints:</strong> Continuous EEG not available at most centres — use intermittent 20–30 min EEG recordings every 12h in comatose post-arrest patients. Spot EEG can detect burst-suppression and overt seizure patterns.</p>
+        <p><strong>Out-of-hospital arrest:</strong> India has poor out-of-hospital survival (bystander CPR uncommon); most cardiac arrests presenting to Indian ICUs are in-hospital. IHCA has better neurological outcome than OHCA.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses &amp; Physiological Targets</span>
+      <h2>Drug Reference — Post-ROSC Care</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug / Intervention</th><th>Indication</th><th>Dose / Target</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Noradrenaline</strong></td><td>Post-arrest haemodynamic shock</td><td>0.05–0.5 μg/kg/min IV infusion; titrate to MAP ≥65–70</td><td>First-line; no superiority of vasopressin over NE for PCAS</td></tr>
+            <tr><td><strong>Dobutamine</strong></td><td>Post-arrest myocardial stunning</td><td>2–20 μg/kg/min IV, add to NE when EF &lt;30% or CI &lt;2.2</td><td>Transient — stunning usually resolves in 24–72h; reassess daily</td></tr>
+            <tr><td><strong>Paracetamol (IV)</strong></td><td>Fever prevention (≤37.5°C)</td><td>1g IV QDS (every 6h) routinely</td><td>Start immediately on ICU admission post-ROSC; continue 72h</td></tr>
+            <tr><td><strong>Insulin (IV infusion)</strong></td><td>Glucose control</td><td>Titrate to BG 6–10 mmol/L (hourly checks initially)</td><td>NICE-SUGAR protocol; avoid hypoglycaemia (&lt;4 mmol/L)</td></tr>
+            <tr><td><strong>Levetiracetam</strong></td><td>Confirmed post-arrest seizures</td><td>1g IV loading dose → 500mg–1.5g BD IV/PO</td><td>Preferred over phenytoin; minimal drug interactions; renally cleared</td></tr>
+            <tr><td><strong>Midazolam</strong></td><td>Acute seizure termination</td><td>0.1 mg/kg IV bolus (up to 10mg); repeat × 1 if needed</td><td>Follow with levetiracetam load; IM lorazepam 4mg if no IV access</td></tr>
+            <tr><td><strong>Propofol</strong></td><td>Sedation + burst suppression for refractory SE</td><td>1–4 mg/kg/h IV; titrate to burst suppression on EEG</td><td>Propofol infusion syndrome risk at &gt;4 mg/kg/h for &gt;48h — monitor TG, pH</td></tr>
+            <tr><td><strong>Cooling blanket / Ice packs</strong></td><td>Fever management if paracetamol insufficient</td><td>Surface cooling to maintain T° ≤37.5°C</td><td>Target fever avoidance, not hypothermia; avoid T° &lt;35°C</td></tr>
+            <tr><td><strong>PCI / Thrombolysis</strong></td><td>Confirmed STEMI on ROSC ECG</td><td>Immediate PCI (door-to-balloon &lt;90 min); thrombolysis if PCI unavailable</td><td>Do not withhold reperfusion for coma — neurological outcome often improves post-PCI</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Physiological Targets at a Glance</h3>
+      <div class="key-box">
+        <div class="kb-label">Post-ROSC Bundle Targets</div>
+        <ul>
+          <li><strong>Temperature:</strong> ≤37.5°C for 72h minimum</li>
+          <li><strong>MAP:</strong> ≥65–70 mmHg (consider ≥80 if cerebral perfusion concerns)</li>
+          <li><strong>SpO₂:</strong> 94–98% | <strong>PaO₂:</strong> 10–13 kPa (75–100 mmHg)</li>
+          <li><strong>PaCO₂:</strong> 4.5–6.0 kPa (35–45 mmHg) — normocapnia</li>
+          <li><strong>Glucose:</strong> 6–10 mmol/L</li>
+          <li><strong>Lactate:</strong> Target clearance &gt;10% per hour; &lt;2 mmol/L by 6h</li>
+          <li><strong>Haemoglobin:</strong> ≥80–100 g/L (no anaemia in brain-injured patients)</li>
+          <li><strong>Sodium:</strong> 135–145 mmol/L (normonatraemia)</li>
+          <li><strong>EEG:</strong> Continuous or frequent monitoring for ≥24h in comatose patients</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗂 5 · Clinical Flowchart</span>
+      <h2>Post-ROSC Management — Hour-by-Hour Algorithm</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">0</div>
+        <div class="fc-content">
+          <h4>Immediately at ROSC (0–5 min)</h4>
+          <ul>
+            <li>Confirm ETT position (ETCO₂ waveform)</li>
+            <li>12-lead ECG → STEMI? → Activate cath lab immediately</li>
+            <li>FiO₂ to achieve SpO₂ 94–98% — wean O₂ if SpO₂ &gt;98%</li>
+            <li>IV access × 2, ABG, bloods (troponin, lactate, glucose, electrolytes, FBC, coagulation)</li>
+            <li>Start noradrenaline if MAP &lt;65 — target ≥65–70 mmHg</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">1</div>
+        <div class="fc-content">
+          <h4>Within 1 Hour of ROSC</h4>
+          <ul>
+            <li>Transfer to ICU with continuous monitoring</li>
+            <li>Paracetamol 1g IV for fever prevention (start proactively)</li>
+            <li>Glucose check → insulin infusion if &gt;10 mmol/L</li>
+            <li>Bedside echo: LV function, pericardial effusion, wall motion abnormality, RV size (PE?)</li>
+            <li>Identify and treat 5 Hs &amp; 5 Ts (reversible causes)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">6</div>
+        <div class="fc-content">
+          <h4>6–24 Hours — Stabilisation Phase</h4>
+          <ul>
+            <li><strong>Coronary angio decision (no-STEMI):</strong> Stabilise haemodynamics → angio within 24–72h if stable; strong clinical suspicion (ACS story, ECG changes) → earlier</li>
+            <li>CT brain: exclude haemorrhagic cause if not done pre-arrest</li>
+            <li>EEG monitoring: start within 24h in all comatose patients</li>
+            <li>Target temperature ≤37.5°C — active cooling if paracetamol insufficient</li>
+            <li>Mechanical ventilation: TV 6–8 ml/kg IBW, normocapnia</li>
+            <li>Consider nasogastric feeding if expected coma &gt;24h</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">24</div>
+        <div class="fc-content">
+          <h4>24–72 Hours — Monitoring Phase</h4>
+          <ul>
+            <li>Continue fever prevention — secondary temperature surges are common day 2–3</li>
+            <li>Reassess haemodynamics — post-arrest myocardial stunning begins to recover</li>
+            <li>Daily neurological assessment (pupils, GCS withdrawal, corneal reflex)</li>
+            <li>EEG findings: continuous monitoring if burst-suppression or seizures identified</li>
+            <li>Repeat echo at 24h to reassess LV function</li>
+            <li>Troponin peak (usually 24h post-arrest) — not reliable for diagnosing ACS alone in this context</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">72</div>
+        <div class="fc-content">
+          <h4>≥72 Hours — Prognostication Phase</h4>
+          <ul>
+            <li><strong>Neuroprognostication:</strong> Begin multimodal assessment at ≥72h from ROSC (or ≥72h after TTM if used)</li>
+            <li>Assess: GCS, pupil reactivity, corneal reflex, EEG pattern, SSEP (N20), CT/MRI brain, NSE levels</li>
+            <li><strong>No single test is sufficient</strong> for withdrawal of care — at least 2 poor prognostic indicators required</li>
+            <li>Involve neurology, family, ethics if prognosis poor</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Coronary Angio Decision Tree (AHA 2025)</h3>
+      <div class="key-box">
+        <div class="kb-label">ROSC + ECG</div>
+        <p><strong>STEMI present → Immediate PCI (door-to-balloon &lt;90 min)</strong> regardless of consciousness level</p>
+        <p><strong>No STEMI → No routine immediate angio.</strong> Stabilise in ICU. Perform angio within 24–72h if:
+          <br>• Strong clinical suspicion (anginal prodrome, dynamic ECG changes, high troponin)
+          <br>• Haemodynamic instability not explained by other cause
+          <br>• Shockable rhythm (VF/VT) with no obvious non-cardiac cause</p>
+        <p><strong>PEA/Asystole (non-shockable):</strong> Lower yield for coronary disease — focus on reversible non-cardiac causes first</p>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-x">🔬 6 · Neuroprognostication</span>
+      <h2>Neuroprognostication — When and How</h2>
+
+      <div class="update-box">
+        <div class="kb-label">AHA 2025 Timing Rule</div>
+        <p>Do NOT make withdrawal of life-sustaining treatment decisions before <strong>72h from ROSC</strong>. If active fever management was used, wait ≥72h after temperature target achieved. Sedative effects must be excluded before assessment.</p>
+      </div>
+
+      <div class="prog-grid">
+        <div class="prog-card">
+          <h4>✅ Favourable Prognostic Signs</h4>
+          <ul>
+            <li>Return of pupil reactivity by 72h</li>
+            <li>Motor response (M≥3) at 72h</li>
+            <li>Normal EEG background</li>
+            <li>Absent burst-suppression at 48h</li>
+            <li>Normal CT brain at 24h</li>
+            <li>Low NSE at 48h (&lt;17 μg/L)</li>
+            <li>Present cortical SSEP N20 waves</li>
+          </ul>
+        </div>
+        <div class="prog-card">
+          <h4>⚠️ Poor Prognostic Signs</h4>
+          <ul>
+            <li>Bilaterally absent pupil light reflex at 72h</li>
+            <li>Bilaterally absent SSEP N20 waves</li>
+            <li>Malignant EEG: burst-suppression or suppression-burst</li>
+            <li>NSE &gt;60 μg/L at 48h or &gt;33 μg/L at 72h</li>
+            <li>CT brain: generalised cortical oedema, loss of grey-white differentiation</li>
+            <li>Status epilepticus on EEG</li>
+            <li>GCS motor = 1 (no response) at 72h + 2 other poor indicators</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Multimodal Approach — ERC 2021 / AHA 2025</h3>
+      <p>A minimum of <strong>two independent poor prognostic indicators</strong> are required before considering withdrawal. The most robust single predictor is:</p>
+      <ul>
+        <li><strong>Bilaterally absent SSEP N20:</strong> False positive rate for poor outcome &lt;1%. If available, this is the most reliable single predictor. N20 = primary cortical somatosensory evoked response at 20 ms after median nerve stimulation.</li>
+        <li><strong>NSE (Neuron-Specific Enolase):</strong> Released from damaged neurons. Trend from 24h to 72h is more informative than single value. NSE &gt;60 μg/L at 48h = strong predictor of poor outcome (high specificity).</li>
+        <li><strong>CT/MRI brain:</strong> Early CT showing grey-white ratio (GWR) &lt;1.10 = severe cortical oedema, very poor prognosis. MRI at 5–7 days: DWI restriction in basal ganglia/cortex = poor prognosis.</li>
+      </ul>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Post-Arrest Care</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Hyperoxia</div>
+        <p>Giving 100% FiO₂ "to be safe" after ROSC. PaO₂ &gt;300 mmHg is independently associated with increased in-hospital mortality. Wean FiO₂ immediately to achieve SpO₂ 94–98%. This is analogous to avoiding hyperoxia in prematurity (retinopathy).</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Targeting 33°C Hypothermia Routinely</div>
+        <p>Persisting with TTM 32–36°C for all post-arrest patients. TTM2 (2021) definitively showed no benefit over fever avoidance. Active cooling to 33°C without evidence is harmful (arrhythmias, electrolyte shifts, increased infection risk). Fever prevention (≤37.5°C) is the AHA 2025 standard.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Early Prognostication and Premature Withdrawal</div>
+        <p>Declaring "brain death" or withdrawing care before 72h. Sedative effects, metabolic derangement, and hypothermia all suppress neurological responses — mimicking poor prognosis. Many patients with coma at 24–48h have meaningful recovery by day 5–7. Withdraw only after multimodal assessment at ≥72h.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Routine Immediate Coronary Angio for All Non-STEMI ROSC</div>
+        <p>TOMAHAWK and COACT showed immediate angio in non-STEMI ROSC may INCREASE 30-day mortality (due to contrast-related complications in haemodynamically unstable patients, delayed ICU management). Stabilise first, angio when haemodynamically stable unless STEMI or strong clinical indication.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Neglecting Glucose and Permitting Hypoglycaemia</div>
+        <p>In attempting tight glucose control, inducing hypoglycaemia (&lt;4 mmol/L) is as damaging as hyperglycaemia. The post-arrest brain cannot extract adequate glucose at low serum levels. Target 6–10 mmol/L; check glucose hourly while on insulin infusion.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Missing Non-Convulsive Status Epilepticus</div>
+        <p>Non-convulsive SE occurs in 30–40% of comatose post-arrest patients — it is clinically silent and can only be detected on EEG. Without EEG monitoring, it will be missed. These patients appear "comatose" but are actually seizing. EEG within 24h is essential for all comatose post-arrest patients.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>AHA 2025 Cardiac Arrest Guidelines.</strong> American Heart Association. CPR &amp; Emergency Cardiovascular Care Science with Treatment Recommendations. Circulation 2025.</li>
+          <li><strong>ILCOR CoSTR 2023.</strong> International Liaison Committee on Resuscitation. Consensus on Science with Treatment Recommendations. Resuscitation 2023.</li>
+          <li><strong>Dankiewicz J et al. (TTM2 Trial).</strong> Hypothermia versus Normothermia after Out-of-Hospital Cardiac Arrest. NEJM 2021;384:2283–2294.</li>
+          <li><strong>Desch S et al. (TOMAHAWK Trial).</strong> Angiography after Out-of-Hospital Cardiac Arrest without ST-Segment Elevation. NEJM 2021;385:2544–2553.</li>
+          <li><strong>Lemkes JS et al. (COACT Trial).</strong> Coronary Angiography after Cardiac Arrest without ST-Segment Elevation. NEJM 2019;380:1397–1407.</li>
+          <li><strong>Nolan JP, Sandroni C, Böttiger BW et al.</strong> ERC and ESICM Guidelines for Post-Resuscitation Care 2021. Intensive Care Med 2021;47:369–421.</li>
+          <li><strong>Marino PL.</strong> The ICU Book, 5th Ed. Ch.45: Altered States of Consciousness. Wolters Kluwer; 2025.</li>
+          <li><strong>Washington Manual of Critical Care, 4th Ed.</strong> Chapter: Post-Cardiac Arrest Care. Wolters Kluwer 2023.</li>
+          <li><strong>Sandroni C, D'Arrigo S, Nolan JP.</strong> Prognostication after Cardiac Arrest. Crit Care 2018;22:150. (systematic review on neuroprognostication accuracy)</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

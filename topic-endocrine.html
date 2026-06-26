@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Endocrine Emergencies — DKA, HHS, Thyroid Storm, Adrenal Crisis — CritCare.in</title>
+  <meta name="description" content="ICU management of endocrine emergencies: DKA protocol, HHS fluid resuscitation, thyroid storm Burch-Wartofsky score, adrenal crisis. ADA 2024 guidelines with drug doses." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;}
+    .ec strong{color:#1e3a8a;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .sb-extra{background:#fce7f3;color:#9d174d;border:1px solid #f9a8d4;}
+    .cn{background:#f0fdf4;border:1px solid #86efac;border-radius:4px;padding:.15rem .4rem;font-size:.62rem;font-weight:800;color:#15803d;text-transform:uppercase;margin-left:.3rem;vertical-align:middle;}
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;}
+    .compare-card{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;}
+    .compare-card h4{font-size:.82rem;font-weight:800;margin-bottom:.6rem;}
+    .compare-card.dka h4{color:#b91c1c;} .compare-card.hhs h4{color:#1e40af;}
+    .compare-card ul{font-size:.82rem;color:var(--slate);padding-left:1.1rem;line-height:1.65;margin:0;}
+    .compare-card li strong{color:var(--ink);}
+    .k-replace-table{width:100%;border-collapse:collapse;font-size:.86rem;margin:.8rem 0;}
+    .k-replace-table th{background:#0f1f3d;color:#fff;padding:.5rem .8rem;text-align:left;font-size:.72rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;}
+    .k-replace-table td{padding:.55rem .8rem;border-bottom:1px solid var(--line);color:var(--slate);vertical-align:top;}
+    .k-replace-table tr:last-child td{border-bottom:none;}
+    .k-replace-table td strong{color:var(--ink);}
+    .bw-score{display:grid;grid-template-columns:1fr auto;gap:.3rem .8rem;font-size:.86rem;margin:.8rem 0;}
+    .bw-item{display:contents;}
+    .bw-cat{font-weight:600;color:var(--ink);padding:.3rem 0;border-bottom:1px solid var(--line);}
+    .bw-pts{color:var(--blue);font-weight:800;text-align:right;padding:.3rem 0;border-bottom:1px solid var(--line);}
+    @media(max-width:600px){.compare-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Endocrine Emergencies</div>
+    <h1>🔬 Endocrine Emergencies</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ADA 2024</span>
+      <span class="gbadge esicm">Endocrine Society</span>
+      <span class="gbadge kdigo">Joint British DKA 2023</span>
+      <span class="gbadge isccm">ISCCM</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">DKA · HHS · Thyroid Storm · Adrenal Crisis</span>
+      <span class="topic-tag">ADA 2024 Protocol</span>
+      <span class="topic-tag">Potassium Before Insulin</span>
+      <span class="topic-updated">ADA Standards of Care 2024 · Joint British DKA Guidelines 2023 · Marino 5th Ed (2025)</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. ADA 2024 Guidelines</a></li>
+        <li><a href="#s4">4. Drug Doses &amp; Tables</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Thyroid Storm &amp; Adrenal Crisis</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Washington Manual Summary — DKA vs HHS</h2>
+      <div class="book-quote">
+        <p>"Diabetic ketoacidosis and hyperosmolar hyperglycaemic state represent the two extreme ends of the spectrum of hyperglycaemic crises. Both are medical emergencies associated with significant morbidity and mortality if not recognised and treated promptly. The cornerstone of management in both is aggressive intravenous fluid resuscitation, insulin therapy, and electrolyte replacement, with particular attention to potassium — which must be corrected before insulin is started."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Hyperglycaemic Emergencies.</cite>
+      </div>
+
+      <h3>DKA vs HHS — Comparison at a Glance</h3>
+      <div class="compare-grid">
+        <div class="compare-card dka">
+          <h4>🔴 DKA (Diabetic Ketoacidosis)</h4>
+          <ul>
+            <li><strong>Glucose:</strong> Usually 14–33 mmol/L (250–600 mg/dL)</li>
+            <li><strong>pH:</strong> &lt;7.30 (acidosis — defining feature)</li>
+            <li><strong>Anion gap:</strong> &gt;12 mEq/L (elevated)</li>
+            <li><strong>Serum ketones:</strong> ≥3 mmol/L (βOHB) or large</li>
+            <li><strong>Bicarbonate:</strong> &lt;18 mEq/L</li>
+            <li><strong>Osmolality:</strong> Variable, usually &lt;320 mOsm/kg</li>
+            <li><strong>Consciousness:</strong> Usually alert to drowsy</li>
+            <li><strong>T1DM:</strong> More common; also T2DM (SGLT2i DKA)</li>
+            <li><strong>Onset:</strong> Hours to 1–2 days</li>
+            <li><strong>Mortality:</strong> ~1–5%</li>
+          </ul>
+        </div>
+        <div class="compare-card hhs">
+          <h4>🔵 HHS (Hyperosmolar Hyperglycaemic State)</h4>
+          <ul>
+            <li><strong>Glucose:</strong> Usually &gt;33 mmol/L (600 mg/dL), often 55–110</li>
+            <li><strong>pH:</strong> ≥7.30 (no significant acidosis)</li>
+            <li><strong>Anion gap:</strong> Normal or mildly elevated</li>
+            <li><strong>Serum ketones:</strong> Absent or mild</li>
+            <li><strong>Bicarbonate:</strong> ≥18 mEq/L</li>
+            <li><strong>Osmolality:</strong> &gt;320 mOsm/kg (often 340–380)</li>
+            <li><strong>Consciousness:</strong> Often obtunded or comatose</li>
+            <li><strong>T2DM:</strong> Almost exclusively; elderly</li>
+            <li><strong>Onset:</strong> Days to weeks</li>
+            <li><strong>Mortality:</strong> ~15–20% (higher — older patients, comorbidities)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>ICU Admission Criteria</h3>
+      <ul>
+        <li>DKA with: pH &lt;7.0, GCS &lt;13, potassium &lt;3.0 or &gt;6.0 mEq/L, suspected precipitant (ACS, sepsis), inability to protect airway</li>
+        <li>HHS: all patients (high mortality, need close monitoring)</li>
+        <li>Any hyperglycaemic crisis with haemodynamic instability</li>
+      </ul>
+
+      <h3>Common Precipitants (6 Is)</h3>
+      <ul>
+        <li><strong>Infection</strong> — most common (50–60%); UTI, pneumonia, foot infection</li>
+        <li><strong>Insulin omission/dose error</strong> — common in T1DM</li>
+        <li><strong>Ischaemia</strong> — ACS, stroke, mesenteric ischaemia</li>
+        <li><strong>Intoxication</strong> — alcohol, cocaine</li>
+        <li><strong>Inflammation</strong> — acute pancreatitis (also caused by DKA)</li>
+        <li><strong>Iatrogenic</strong> — steroids, SGLT2 inhibitors (euglycaemic DKA — BG may be normal!), thiazides</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — Osmolarity, Anion Gap &amp; Ketone Chemistry</h2>
+      <div class="book-quote">
+        <p>"The fundamental pathophysiology of DKA is absolute or relative insulin deficiency combined with excess of counter-regulatory hormones (glucagon, catecholamines, cortisol, growth hormone). This drives three simultaneous metabolic disasters: uncontrolled gluconeogenesis and glycogenolysis, impaired peripheral glucose uptake, and accelerated lipolysis with ketone production. The resulting metabolic acidosis is a high anion gap acidosis from ketoacids (betahydroxybutyrate and acetoacetate)."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Metabolic &amp; Endocrine Crises. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Anion Gap in DKA</div>
+        <p><strong>Anion Gap (AG) = Na⁺ − (Cl⁻ + HCO₃⁻)</strong></p>
+        <p>Normal AG = 8–12 mEq/L (if albumin normal). In DKA: AG typically 20–30 mEq/L.</p>
+        <p><strong>βOHB vs acetoacetate:</strong> βOHB is the predominant ketone in DKA (3:1 ratio) but is NOT detected by urine dipstick (which only detects acetoacetate). Serum βOHB (point-of-care) ≥3 mmol/L confirms DKA and is superior for monitoring resolution.</p>
+        <p><strong>Paradox during treatment:</strong> As DKA resolves, βOHB is converted to acetoacetate — urine ketones can appear to WORSEN even as the patient improves. Do not judge resolution by urine ketones alone.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Osmolarity Calculation in HHS</div>
+        <p><strong>Effective Osmolarity = 2 × Na⁺ + Glucose (mmol/L)</strong></p>
+        <p>Normal: 275–295 mOsm/kg. HHS defined by eff.osm &gt;320 mOsm/kg.</p>
+        <p><strong>Corrected Sodium in Hyperglycaemia:</strong> For every 5.6 mmol/L (100 mg/dL) rise in glucose above normal, actual Na⁺ is 1.6 mEq/L lower than measured. As glucose falls with treatment, Na⁺ will rise — this is expected and normal. <strong>Watch for hypernatraemia</strong> as glucose normalises (switch from NS to ½NS at that point).</p>
+        <p><strong>Why is HHS more lethal?</strong> The extreme hyperosmolarity (340–380 mOsm/kg) causes dehydration of brain cells → coma, thrombosis, rhabdomyolysis. These patients are often elderly with multiple comorbidities and present days late.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Potassium in DKA: The Paradox</div>
+        <p>Total body potassium is always DEPLETED in DKA (average deficit 3–5 mEq/kg). However, serum K⁺ may be <strong>normal, high, or low</strong> at presentation because:</p>
+        <ul>
+          <li>Acidosis drives K⁺ out of cells into plasma (every 0.1 unit fall in pH → 0.5–1 mEq/L rise in serum K⁺)</li>
+          <li>Insulin deficiency prevents cellular K⁺ uptake</li>
+        </ul>
+        <p><strong>Clinical implication:</strong> When insulin is given and acidosis corrects, K⁺ will shift back into cells → serum K⁺ can fall precipitously → life-threatening hypokalaemia → cardiac arrest.</p>
+        <p><strong>Rule:</strong> NEVER start insulin until serum K⁺ ≥3.5 mEq/L. If K⁺ is 3.0–3.5, replace and re-check before insulin. If K⁺ &lt;3.0, do NOT start insulin — replace aggressively first.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Cerebral Oedema in DKA</div>
+        <p>Most feared complication, primarily in children (&lt;21 years), but can occur in adults. Pathophysiology debated: possibly related to rapid osmolarity shifts from aggressive hypotonic fluid or excessively rapid glucose correction.</p>
+        <p><strong>Signs:</strong> Headache, altered consciousness, Cushing triad during treatment — NOT at presentation.</p>
+        <p><strong>ADA 2024 prevention:</strong> Use isotonic fluids (NS) not hypotonic saline initially; avoid bicarbonate (causes CSF paradoxical acidosis); correct glucose no faster than 2–4 mmol/L/h once target glucose 10–14 mmol/L is reached.</p>
+        <p><strong>Treatment:</strong> IV mannitol 0.5–1 g/kg over 15 min (first line) or 3% NaCl 5–10 mL/kg.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · ADA 2024 Guidelines &amp; Joint British DKA Guidelines</span>
+      <h2>Evidence-Based Management Protocol</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Fluid Resuscitation — DKA</div>
+        <div class="gr-text">
+          <strong>1st Hour:</strong> 0.9% NaCl (normal saline) 1000 mL over 1h (if no hypernatraemia) <span class="gr-s">STRONG — ADA 2024</span><br>
+          <strong>2nd–4th Hour:</strong> 250–500 mL/h NS or 0.45% NaCl (if corrected Na⁺ normal or high)<br>
+          <strong>When BG &lt;13.9 mmol/L (250 mg/dL):</strong> Switch to 5% Dextrose + 0.45% NaCl at 150–250 mL/h — this allows insulin to continue without causing hypoglycaemia<br>
+          <strong>Total 24h fluid:</strong> Typically 4–6 litres in adults. Avoid fluid overload (pulmonary oedema risk, especially in elderly).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Fluid Resuscitation — HHS</div>
+        <div class="gr-text">
+          HHS patients have <strong>much larger fluid deficits</strong> (average 8–12 litres) <span class="gr-s">ADA 2024</span><br>
+          <strong>1st Hour:</strong> 1000 mL NS over 1h<br>
+          <strong>Hour 2 onwards:</strong> Switch to 0.45% NaCl once corrected Na⁺ is normal — at 200–500 mL/h<br>
+          Target: Reduce osmolality by 3–8 mOsm/kg/h (do NOT correct too fast — brain oedema risk)<br>
+          <strong>Glucose target:</strong> 13–15 mmol/L for HHS (slower correction than DKA); add dextrose when BG &lt;16 mmol/L
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Insulin Protocol — DKA</div>
+        <div class="gr-text">
+          <strong>Fixed-rate insulin infusion (FRII):</strong> 0.1 units/kg/h of actrapid (regular insulin) IV <span class="gr-s">STRONG — Joint British 2023</span><br>
+          <strong>Do NOT give IV insulin bolus</strong> — Joint British 2023 removed the loading bolus; it increases hypokalaemia risk without clinical benefit<br>
+          <strong>Prerequisite:</strong> K⁺ must be ≥3.5 mEq/L before starting insulin<br>
+          <strong>Target:</strong> Reduce BG by 2–4 mmol/L/h; reduce ketones by ≥0.5 mmol/L/h or bicarbonate rise of 3 mEq/L/h<br>
+          <strong>Switch to subcutaneous insulin:</strong> When ketones &lt;0.3 mmol/L, bicarbonate ≥15, pH ≥7.3, patient eating — overlap SC insulin with IV by 30–60 min before stopping infusion
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Bicarbonate — ADA 2024 Position</div>
+        <div class="gr-text">
+          <strong>ONLY consider bicarbonate if pH &lt;6.9</strong> (severe life-threatening acidosis) <span class="gr-c">CONDITIONAL — ADA 2024</span><br>
+          Dose: 100 mEq NaHCO₃ in 400 mL sterile water over 2h; repeat until pH ≥7.0<br>
+          <strong>Do NOT give bicarb routinely</strong> — no benefit shown in multiple RCTs; risks: paradoxical CSF acidosis, hypokalaemia (bicarb drives K⁺ into cells), delay in ketone clearance<br>
+          Joint British 2023: bicarb contraindicated in DKA unless pH &lt;6.9 with haemodynamic compromise.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">DKA Resolution Criteria (ADA 2024)</div>
+        <div class="gr-text">
+          All three must be met:<br>
+          1. <strong>BG &lt;11.1 mmol/L (200 mg/dL)</strong><br>
+          2. <strong>Serum βOHB &lt;0.3 mmol/L</strong> (or urine ketones trace/negative)<br>
+          3. <strong>Venous pH &gt;7.30</strong> and bicarbonate ≥15 mEq/L<br>
+          Check every 2–4h during treatment; do NOT stop insulin infusion until all three met AND patient eating.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ICU Context</div>
+        <p><strong>βOHB point-of-care testing:</strong> Available in most major centres now; strongly preferred over urine ketones for monitoring DKA resolution.</p>
+        <p><strong>SGLT2 inhibitor DKA (Euglycaemic DKA):</strong> Increasingly seen with empagliflozin/dapagliflozin use. BG may be normal (7–12 mmol/L). Classic insulin protocol still applies; hold SGLT2i. High clinical suspicion needed — a patient on an SGLT2i with high AG acidosis + normal BG has DKA until proven otherwise.</p>
+        <p><strong>Phosphate replacement:</strong> Not routinely given in Indian centres due to limited availability; consider in severe hypophosphataemia (&lt;0.3 mmol/L) with weakness or haemolysis.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses &amp; Tables</span>
+      <h2>Drug Reference — DKA &amp; HHS</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Normal Saline 0.9%</strong></td><td>Initial fluid — DKA &amp; HHS</td><td>1000 mL over 1h; then 250–500 mL/h</td><td>Switch to 0.45% NaCl when corrected Na⁺ normal or high</td></tr>
+            <tr><td><strong>Actrapid (Regular Insulin) IV</strong></td><td>DKA insulin infusion</td><td>0.1 U/kg/h fixed rate (e.g. 70 kg → 7 U/h)</td><td>Only start when K⁺ ≥3.5 mEq/L; no IV bolus</td></tr>
+            <tr><td><strong>Dextrose 5% + 0.45% NaCl</strong></td><td>DKA when BG &lt;13.9 mmol/L</td><td>150–250 mL/h (allows insulin continuation)</td><td>Run alongside saline if needed; check BG 1–2 hourly</td></tr>
+            <tr><td><strong>Sodium Bicarbonate 8.4%</strong></td><td>DKA with pH &lt;6.9 only</td><td>100 mEq in 400 mL sterile water over 2h</td><td>Repeat until pH ≥7.0; do NOT use routinely</td></tr>
+            <tr><td><strong>Phosphate (Potassium phosphate)</strong></td><td>Severe hypophosphataemia (&lt;0.3 mmol/L)</td><td>0.2–0.4 mmol/kg over 6h IV</td><td>Rare indication; monitor Ca²⁺ (hypocalcaemia risk)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Potassium Replacement Protocol</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Serum K⁺</th><th>Insulin</th><th>K⁺ Replacement Rate</th></tr></thead>
+          <tbody>
+            <tr><td><strong>&lt;3.0 mEq/L</strong></td><td><strong style="color:#b91c1c">HOLD INSULIN</strong></td><td>40 mEq/h IV (via central line) until K⁺ ≥3.5</td></tr>
+            <tr><td><strong>3.0–3.5 mEq/L</strong></td><td><strong style="color:#b91c1c">HOLD INSULIN</strong></td><td>20–40 mEq/h IV; recheck in 1h before starting insulin</td></tr>
+            <tr><td><strong>3.5–5.0 mEq/L</strong></td><td>✅ Start/continue insulin</td><td>20–30 mEq/h IV in fluids (mix in saline bag)</td></tr>
+            <tr><td><strong>&gt;5.0 mEq/L</strong></td><td>✅ Start/continue insulin</td><td>Monitor — no replacement; recheck every 2h</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Critical Rule</div>
+        <p><strong>NEVER start insulin with K⁺ &lt;3.5 mEq/L.</strong> Insulin drives K⁺ into cells — if starting from a low baseline, serum K⁺ can fall to 2.5–3.0 mEq/L within 1–2h → VT/VF cardiac arrest. This is the leading cause of preventable death in DKA.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗂 5 · Clinical Flowchart — DKA/HHS Management</span>
+      <h2>Step-by-Step Management Algorithm</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Hour 0–1: Resuscitation &amp; Diagnosis</h4>
+          <ul>
+            <li>IV access × 2; bloods: BG, βOHB, VBG/ABG, U&amp;E, Mg²⁺, PO₄, FBC, LFT, CRP, blood cultures</li>
+            <li>12-lead ECG (look for hyperkalaemia changes: peaked T waves, wide QRS), chest X-ray, urinalysis</li>
+            <li>Calculate AG: Na⁺ − (Cl⁻ + HCO₃⁻); calculate effective osmolarity</li>
+            <li>1000 mL NS over 1h — start immediately</li>
+            <li>Check K⁺: if &lt;3.5, replace before insulin</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Hour 1–2: Insulin &amp; Electrolytes</h4>
+          <ul>
+            <li>Start insulin infusion 0.1 U/kg/h ONLY if K⁺ ≥3.5</li>
+            <li>Add KCl 20–40 mEq to each litre of saline if K⁺ 3.5–5.0</li>
+            <li>Fluid rate: 250–500 mL/h saline (depending on dehydration severity)</li>
+            <li>Monitoring: BG hourly, K⁺ every 2h, VBG every 2–4h</li>
+            <li>Identify and treat precipitant (antibiotics for infection, ACS workup)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>BG Reaches 13.9 mmol/L (250 mg/dL)</h4>
+          <ul>
+            <li>Add 5% Dextrose to fluids (D5W + 0.45% NaCl 150–250 mL/h)</li>
+            <li>Continue insulin infusion (do NOT stop — acidosis may still be present)</li>
+            <li>Reduce insulin rate if BG falling fast or &lt;10 mmol/L (target 8–12 mmol/L)</li>
+            <li>Continue K⁺ monitoring and replacement</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>DKA Resolution: Transition to SC Insulin</h4>
+          <ul>
+            <li>Resolution criteria met: pH &gt;7.30 + HCO₃⁻ ≥15 + βOHB &lt;0.3 mmol/L + patient eating</li>
+            <li>Give SC long-acting insulin (e.g. glargine) at least <strong>30–60 min BEFORE</strong> stopping IV infusion</li>
+            <li>Do NOT abruptly stop IV insulin without SC cover — rebound ketosis</li>
+            <li>If patient's usual insulin unknown — start at 0.2–0.3 U/kg SC BD (basal-bolus)</li>
+            <li>Diabetes team review, patient education on sick-day rules</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-extra">🦋 6 · Thyroid Storm &amp; Adrenal Crisis</span>
+      <h2>Thyroid Storm &amp; Adrenal Crisis</h2>
+
+      <h3>Thyroid Storm (Thyrotoxic Crisis)</h3>
+      <p>Life-threatening exacerbation of thyrotoxicosis — mortality 10–25% even with treatment. Precipitants: surgery, infection, trauma, iodine load, radioiodine, abrupt antithyroid drug withdrawal.</p>
+
+      <div class="key-box">
+        <div class="kb-label">Burch-Wartofsky Score (BWS) — Diagnosis</div>
+        <p><strong>Score ≥45: Thyroid storm (treat immediately) | 25–44: Impending storm (treat aggressively) | &lt;25: Unlikely storm</strong></p>
+        <div style="margin-top:.6rem;font-size:.85rem;">
+          <div style="display:grid;grid-template-columns:1fr auto;gap:.3rem .8rem;">
+            <span style="color:var(--ink)"><strong>Temperature:</strong> 37.2–37.7°C (5), 37.8–38.3°C (10), 38.4–38.8°C (15), 38.9–39.4°C (20), 39.5–39.9°C (25), ≥40°C (30)</span><span></span>
+            <span style="color:var(--ink)"><strong>Tachycardia:</strong> 100–109 (5), 110–119 (10), 120–129 (15), 130–139 (20), ≥140 bpm (25)</span><span></span>
+            <span style="color:var(--ink)"><strong>AF present:</strong> +10</span><span></span>
+            <span style="color:var(--ink)"><strong>CNS:</strong> Agitation (10), Delirium (20), Seizure/Psychosis (30), Coma (40)</span><span></span>
+            <span style="color:var(--ink)"><strong>Heart failure:</strong> Mild (5), Moderate (10), Severe (15)</span><span></span>
+            <span style="color:var(--ink)"><strong>GI:</strong> Diarrhoea/nausea (10), Jaundice (20)</span><span></span>
+            <span style="color:var(--ink)"><strong>Precipitant:</strong> Present (10)</span><span></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Thyroid Storm — Treatment Sequence (The ABCDE of Thyroid Storm)</div>
+        <div class="gr-text">
+          Give in this EXACT sequence — order matters:<br>
+          <strong>1. Beta-blocker FIRST:</strong> Propranolol 60–80 mg PO/NGT every 4–6h (or esmolol IV if unstable) — controls heart rate, blocks T4→T3 conversion<br>
+          <strong>2. Antithyroid drug (ATD):</strong> PTU 500–1000 mg loading dose → 250 mg every 4h PO/NGT (preferred over methimazole — also blocks T4→T3 conversion) OR Methimazole 20–30 mg QDS<br>
+          <strong>3. Iodine (give AFTER ATD — ≥1h gap):</strong> Lugol's iodine 8 drops QDS or potassium iodide (SSKI) 5 drops every 6h PO — blocks new thyroid hormone release. MUST give ATD first — iodine alone provides substrate for more hormone synthesis (Jod-Basedow).<br>
+          <strong>4. Hydrocortisone:</strong> 100 mg IV every 8h — reduces T4→T3 conversion; treats possible co-existent relative adrenal insufficiency; anti-inflammatory<br>
+          <strong>5. Supportive:</strong> Cooling blankets (avoid salicylates — displace T4 from TBG), IV fluids, treat AF (digoxin or amiodarone if beta-blocker insufficient), treat precipitant
+        </div>
+      </div>
+
+      <h3>Adrenal Crisis (Acute Adrenal Insufficiency)</h3>
+      <div class="book-quote">
+        <p>Adrenal crisis should be suspected in any patient with unexplained hypotension or cardiovascular collapse that does not respond appropriately to fluids and vasopressors — particularly in those with known adrenal disease, on chronic steroids, with pituitary disease, or after abrupt steroid withdrawal. It is a life-threatening emergency where treatment must precede laboratory confirmation.</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Chapter: Adrenal Disorders.</cite>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Adrenal Crisis — Management (Endocrine Society 2016)</div>
+        <div class="gr-text">
+          <strong>Resuscitation:</strong> 1000 mL NS over 1h (often requires 2–4L in first 24h — adrenal insufficiency causes mineralocorticoid deficiency → salt wasting + hypovolaemia)<br>
+          <strong>Hydrocortisone:</strong> 100 mg IV bolus IMMEDIATELY → 50–100 mg IV every 6h (or continuous infusion 200 mg/24h) <span class="gr-s">STRONG</span><br>
+          <strong>Glucose:</strong> Add dextrose — these patients commonly have hypoglycaemia (cortisol is a counter-regulatory hormone)<br>
+          <strong>Electrolytes:</strong> Hyponatraemia + hyperkalaemia = classic pattern (aldosterone deficiency). Correct Na⁺ with saline; K⁺ usually resolves with cortisol replacement.<br>
+          <strong>Do NOT use dexamethasone for adrenal crisis</strong> — it has no mineralocorticoid activity. Use hydrocortisone (which has both gluco- and mineralocorticoid effects).<br>
+          <strong>Taper:</strong> Once stable and oral intake resumed → taper to physiological replacement: hydrocortisone 10–20 mg/day PO (or prednisolone 5–7.5 mg/day) + fludrocortisone 0.1 mg daily.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Sick Day Rules / Stress Dosing (all patients on chronic steroids)</div>
+        <div class="gr-text">
+          <strong>Minor illness (fever, vomiting):</strong> Double oral steroid dose for duration of illness<br>
+          <strong>Major illness/surgery:</strong> Hydrocortisone 100 mg IV 8-hourly (stress dose) until stable<br>
+          <strong>Patients on chronic steroids (&gt;5 mg prednisolone/day for &gt;4 weeks)</strong> — always assume HPA axis suppression and give stress doses perioperatively
+        </div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Endocrine Emergencies</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Starting Insulin Before Correcting Potassium</div>
+        <p>The single most dangerous error in DKA management. Insulin causes K⁺ to shift intracellularly — if serum K⁺ is 3.3 mEq/L at baseline, it can fall to 2.6 mEq/L within 2h of insulin, precipitating fatal arrhythmia. Check K⁺ first, replace to ≥3.5 mEq/L, then start insulin.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Giving IV Bicarbonate Routinely in DKA</div>
+        <p>Bicarb does not improve DKA outcomes and causes harm: it drives K⁺ into cells (worsening hypokalaemia), creates paradoxical CSF acidosis (worsening cerebral oedema risk), and delays ketone clearance. ADA 2024 restricts bicarb to pH &lt;6.9 only.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Stopping IV Insulin Without SC Cover</div>
+        <p>Stopping IV insulin without giving SC basal insulin first leads to rebound ketoacidosis within hours (particularly in T1DM). Always give long-acting SC insulin (glargine) 30–60 min before stopping the infusion, when the patient is eating and meeting resolution criteria.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Missing Euglycaemic DKA (SGLT2 Inhibitor Patients)</div>
+        <p>Blood glucose may be 7–12 mmol/L in SGLT2i-associated DKA — the elevated glucose threshold for diagnosis is absent. A patient on an SGLT2 inhibitor with high AG acidosis + ketones has DKA regardless of glucose level. These drugs increase urinary glucose excretion, masking the expected hyperglycaemia.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Giving Iodine Before Antithyroid Drug in Thyroid Storm</div>
+        <p>Iodine must be given AFTER antithyroid drugs (≥1h gap). Giving iodine first provides substrate for additional thyroid hormone synthesis (Jod-Basedow phenomenon), worsening thyrotoxicosis. The ATD must first block the organification pathway before iodine can be used to block hormone release.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Using Dexamethasone for Adrenal Crisis</div>
+        <p>Dexamethasone has no mineralocorticoid activity — it corrects the cortisol deficit but not the aldosterone deficit, so salt wasting and hyperkalaemia continue. Use hydrocortisone 100 mg IV (which has significant mineralocorticoid action) for adrenal crisis. Dexamethasone may be used short-term only if hydrocortisone unavailable and serum cortisol sample must be drawn first.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>American Diabetes Association.</strong> Standards of Care in Diabetes — 2024. Diabetic Ketoacidosis and Hyperosmolar Hyperglycemic State. Diabetes Care 2024;47(Suppl 1):S282–S292.</li>
+          <li><strong>Joint British Diabetes Societies Inpatient Care Group.</strong> The Management of Diabetic Ketoacidosis in Adults, 4th Ed. 2023. Available at JBDS-IP website.</li>
+          <li><strong>Kitabchi AE, Umpierrez GE, Miles JM, Fisher JN.</strong> Hyperglycemic Crises in Adult Patients with Diabetes. Diabetes Care 2009;32:1335–1343. (foundational ADA guidelines)</li>
+          <li><strong>Burch HB, Wartofsky L.</strong> Life-threatening Thyrotoxicosis: Thyroid Storm. Endocrinol Metab Clin North Am 1993;22:263–277. (Burch-Wartofsky Score)</li>
+          <li><strong>Bartalena L, Bogazzi F, Chiovato L et al.</strong> 2018 European Thyroid Association (ETA) Guidelines for the Management of Amiodarone-Associated Thyroid Dysfunction. Eur Thyroid J 2018;7:55–66.</li>
+          <li><strong>Bornstein SR, Allolio B, Arlt W et al.</strong> Diagnosis and Treatment of Primary Adrenal Insufficiency: An Endocrine Society Clinical Practice Guideline. J Clin Endocrinol Metab 2016;101:364–389.</li>
+          <li><strong>Marino PL.</strong> The ICU Book, 5th Ed. Metabolic &amp; Endocrine Emergencies. Wolters Kluwer; 2025.</li>
+          <li><strong>Washington Manual of Critical Care, 4th Ed.</strong> Chapters: Hyperglycaemic Emergencies; Thyroid Disorders; Adrenal Disorders. Wolters Kluwer 2023.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
