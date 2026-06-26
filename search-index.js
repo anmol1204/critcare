@@ -48,6 +48,9 @@ window.CRITCARE_INDEX = [
   { title: "P/F Ratio — Oxygenation", url: "scores.html", type: "score", tags: "PF ratio PaO2 FiO2 ARDS oxygenation index lung injury", desc: "PaO₂/FiO₂ ratio — Berlin ARDS definition thresholds." },
   { title: "IBW & Tidal Volume Calculator", url: "scores.html", type: "score", tags: "IBW ideal body weight tidal volume ventilator settings 6 ml/kg ARDS lung protective height gender", desc: "Calculate IBW and 6 ml/kg tidal volume for ventilator setup." },
 
+  // ── DNB PAPERS ──────────────────────────────────────────────────────────────
+  { title: "DNB Anaesthesiology — June 2026 Solved Papers", url: "dnb.html", type: "tool", tags: "DNB anaesthesia anesthesia solved papers June 2026 previous year questions answers MCQ long answer short answer exam preparation Paper 1 2 3 4", desc: "40 fully solved DNB Anaesthesiology June 2026 questions — model answers, key points, exam tips, extra marks content." },
+
   // ── PAGES ───────────────────────────────────────────────────────────────────
   { title: "About Dr. Anmol Srivastava", url: "about.html", type: "page", tags: "about Dr Anmol Srivastava emergency medicine SGPGIMS ICU anaesthesiology critical care contact", desc: "Dr. Anmol Srivastava — Senior Resident Emergency Medicine, SGPGIMS Lucknow." },
   { title: "All ICU Topics", url: "topics.html", type: "page", tags: "topics ICU reference library clinical cardiology respiratory renal neuro infections supportive care", desc: "Full topic library — 22+ evidence-based critical care topics." },

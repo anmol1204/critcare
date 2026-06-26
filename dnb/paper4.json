@@ -1,0 +1,1154 @@
+[
+  {
+    "qNo": 1,
+    "question": "Discuss the role of ultrasound (USG) in critical care management. Special mention: Role in weaning from mechanical ventilation.",
+    "marks": 10,
+    "answer": {
+      "introduction": "Point-of-care ultrasound (POCUS) has revolutionised critical care by providing real-time, bedside, non-invasive diagnostic and monitoring information. It extends the clinical examination and reduces reliance on CXR, CT, and invasive monitors.",
+      "applications": {
+        "cardiac_echo": {
+          "title": "Cardiac (Critical Care Echocardiography)",
+          "uses": [
+            "LV function: Eyeball estimate of EF, LVOT-VTI for CO",
+            "RV assessment: RV dilation, interventricular septal shift (D-sign) → RV pressure overload, PE",
+            "Pericardial effusion: Tamponade — RA/RV diastolic collapse, IVC plethora",
+            "Fluid responsiveness: IVC collapsibility index (IVC-CI): >50% collapse on sniff = fluid responsive (in spontaneous breathing); IVC distensibility (>18% in mechanically ventilated) = fluid responsive",
+            "Valvular pathology: Regurgitation, stenosis at bedside",
+            "Preload assessment: IVC diameter <1 cm = hypovolaemia"
+          ]
+        },
+        "lung_ultrasound": {
+          "title": "Lung Ultrasound (LUS)",
+          "signs": [
+            "A-lines: Horizontal reverberation artefacts — normal aeration or pneumothorax",
+            "B-lines (comet tails): Vertical artefacts — interstitial fluid (>3 per zone = pulmonary oedema or ARDS)",
+            "Consolidation: Tissue-like echo pattern — pneumonia, atelectasis",
+            "Pleural effusion: Anechoic space above diaphragm — quantify, guide drainage",
+            "Pneumothorax: Absent lung sliding + A-lines + no B-lines = pneumothorax (seashore sign lost → barcode sign on M-mode)"
+          ],
+          "bluePprotocol": "BLUE protocol (Bedside Lung Ultrasound in Emergency): systematic 6-zone assessment of bilateral lung fields for acute dyspnoea diagnosis"
+        },
+        "vascular_access": [
+          "Real-time guidance for CVC, arterial lines, PICC insertion",
+          "Reduces failure rate and complications vs landmark technique",
+          "NICE 2002: Mandatory for IJV cannulation"
+        ],
+        "abdominal": [
+          "FAST (Focused Assessment with Sonography in Trauma): haemoperitoneum detection",
+          "Ascites quantification and guided paracentesis",
+          "Gastric ultrasound: Antral CSA >10 cm² = full stomach",
+          "Bladder volume (BladderScan equivalent)"
+        ],
+        "procedures": [
+          "Pleurocentesis and chest drain insertion — reduces pneumothorax complication rate",
+          "Pericardiocentesis guidance",
+          "Nerve blocks: USG-guided regional anaesthesia in critically ill"
+        ],
+        "dvt": "Deep vein thrombosis: Compression USS of femoral, popliteal veins — non-compressibility = DVT"
+      },
+      "weaningRole": {
+        "title": "Role of Ultrasound in Weaning from Mechanical Ventilation",
+        "importance": "Weaning failure occurs in 25–40% of patients at first attempt. USG identifies the cause: cardiac, pulmonary, diaphragmatic, or neuromuscular.",
+        "diaphragm": {
+          "title": "Diaphragm Ultrasound — Most Important",
+          "technique": "M-mode ultrasound of right hemidiaphragm via subcostal or intercostal window.",
+          "parameters": [
+            {
+              "param": "Diaphragm Thickening Fraction (DTF)",
+              "formula": "DTF = (Tee – Tei) / Tei × 100%  [Tee = thickness at end-expiration, Tei = thickness at end-inspiration]",
+              "normal": ">20–30%",
+              "interpretation": "DTF >30%: Successful extubation predicted. DTF <20%: Diaphragm dysfunction — high risk of weaning failure. Diaphragm atrophy from VIDD (Ventilator-Induced Diaphragm Dysfunction) if Tee <2 mm."
+            },
+            {
+              "param": "Diaphragm Excursion",
+              "normal": ">10 mm during SBT (spontaneous breathing trial)",
+              "interpretation": "Excursion <10 mm = inadequate diaphragm effort → weaning failure"
+            },
+            {
+              "param": "Paradoxical motion",
+              "interpretation": "Cephalad movement on inspiration = diaphragm paralysis"
+            }
+          ]
+        },
+        "cardiac": {
+          "title": "Cardiac Causes of Weaning Failure",
+          "mechanism": "Transition from positive pressure (MV) to negative pressure (spontaneous) ventilation → ↑ venous return → ↑ preload → ↑ LVEDP → pulmonary oedema in patients with diastolic dysfunction",
+          "uspredictors": [
+            "E/e' ratio >14 during SBT predicts cardiac weaning failure (diastolic dysfunction index)",
+            "New B-lines appearing during SBT = fluid redistribution to lungs → failure",
+            "↓ LVOT-VTI during SBT = ↓ CO → circulatory failure contributing to weaning failure"
+          ]
+        },
+        "lung": {
+          "title": "Lung Ultrasound During Weaning",
+          "uses": [
+            "Aeration score: 12-zone lung score (0=normal, 3=consolidation). ↑ Score during SBT = ↑ weaning failure",
+            "Detect new B-lines during SBT = new pulmonary oedema = cardiac weaning failure",
+            "Detect pleural effusion causing atelectasis — drain before weaning",
+            "LUS-guided physiotherapy: Identify collapsed zones, guide positioning"
+          ]
+        },
+        "clinicalProtocol": [
+          "Before SBT: Check diaphragm DTF, IVC for volume status, LVEF, lung aeration",
+          "During 30-min SBT: Monitor for new B-lines (E/e' ≥14 or new B-lines = stop SBT, treat cardiac cause)",
+          "Post-SBT success: Extubate. If failure: Identify cause (diaphragm dysfunction / cardiac / pulmonary) and treat specifically"
+        ]
+      }
+    },
+    "keyPoints": [
+      "DTF >30% = successful weaning predicted; <20% = diaphragm dysfunction",
+      "E/e' >14 during SBT = cardiac weaning failure — treat diastolic dysfunction",
+      "New B-lines during SBT = pulmonary oedema from cardiac cause — stop SBT",
+      "IVC-CI >50% (spontaneous breathing) = fluid responsive"
+    ],
+    "commonMistakes": [
+      "Using IVC distensibility (>18%) in spontaneously breathing patients — this parameter is valid only in fully ventilated patients. Use IVC collapsibility in spontaneous breathers.",
+      "Forgetting that E/e' reflects diastolic dysfunction, not systolic — a high EF patient can still fail weaning from diastolic dysfunction",
+      "Not mentioning diaphragm ultrasound when asked about weaning — it is the most specific USG weaning tool"
+    ],
+    "examTip": "Draw the diaphragm M-mode trace showing normal vs reduced excursion, and the B-line diagram (vertical artefacts from pleural line). DNB examiners for Paper 4 (critical care) love POCUS questions.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "VIDD (Ventilator-Induced Diaphragm Dysfunction): Controlled mechanical ventilation causes diaphragm disuse atrophy within 18–69 hours. Diaphragm thickness decreases at rate of 6%/day. USG monitors this — if Tee <2 mm = severe atrophy. Prevention: early spontaneous breathing modes (PSV, SIMV), diaphragm pacing trials.",
+        "Lung Ultrasound Score (LUS): 12-zone system (anterior, lateral, posterior × bilateral). Each zone scored 0–3. Total 0 = fully aerated; 36 = complete consolidation. LUS score change from ventilation to SBT correlates with weaning outcome (Soummer 2012 CCM).",
+        "Gastric ultrasound before extubation: Antral cross-sectional area >10 cm² (Grade 2 stomach content) = full stomach → risk of aspiration at extubation. Especially relevant in ICU patients with gastroparesis, opioids, or delayed mobilisation.",
+        "POCUS training: FUSIC (Focused Ultrasound in Intensive Care — ESICM) and CCUS (Critical Care Ultrasound Society of India) provide structured competency-based training programmes now available in Indian ICUs."
+      ]
+    }
+  },
+  {
+    "qNo": 2,
+    "question": "A) Recent updates in ERAS protocols  B) Tumescent anaesthesia – principles, technique, and applications",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Recent Updates in ERAS (Enhanced Recovery After Surgery) Protocols",
+        "definition": "ERAS is a multimodal, evidence-based perioperative care pathway designed to reduce surgical stress, optimise physiology, and accelerate recovery. Introduced by Kehlet (Denmark) in 1990s, now adopted globally across surgical specialties.",
+        "phasesAndUpdates": {
+          "preoperative": [
+            {
+              "element": "Prehabilitation (NEW emphasis 2023–24)",
+              "update": "Structured exercise, nutrition, and psychological preparation 4–8 weeks before major surgery. Reduces postoperative complications by 40–50%. Particularly impactful in frail, elderly, and oncological surgery patients. Components: aerobic exercise + resistance training + protein supplementation + smoking/alcohol cessation."
+            },
+            {
+              "element": "SGLT2 inhibitor management (NEW 2023)",
+              "update": "SGLT2 inhibitors (empagliflozin, dapagliflozin) MUST be stopped ≥72 hours before major surgery. Risk of euglycaemic DKA perioperatively (AAGBI 2023). Also: resume SGLT2i only when eating and drinking normally postoperatively."
+            },
+            {
+              "element": "Carbohydrate loading",
+              "update": "Oral carbohydrate drink (12.5% maltodextrin) 400 mL night before and 200 mL 2–3h before surgery. Reduces insulin resistance, maintains glycogen stores, reduces thirst/hunger, improves postoperative wellbeing. Omit in diabetics with gastroparesis."
+            },
+            {
+              "element": "Preoperative anaemia management",
+              "update": "Screen all major surgery patients for anaemia ≥4 weeks before surgery. IV iron if Hb 80–130 g/L — superior to oral iron for rapid Hb restoration (Preoperative IV Iron Study). Target Hb >130 g/L before elective major surgery."
+            }
+          ],
+          "intraoperative": [
+            {
+              "element": "Goal-directed fluid therapy (GDFT)",
+              "update": "Oesophageal Doppler or arterial pulse contour (FloTrac, LiDCO) guided GDFT reduces complications vs fixed fluid regimes. Target: SVV <13%, SPV <10%, maintain CO. Avoid both hypovolaemia and fluid overload."
+            },
+            {
+              "element": "Opioid-free anaesthesia (OFA) / Opioid-sparing",
+              "update": "Avoid or minimise systemic opioids. Multimodal: ketamine, dexmedetomidine, lidocaine IV, magnesium, NSAIDs, paracetamol, regional blocks. Reduces PONV, ileus, respiratory depression, and opioid-related complications."
+            },
+            {
+              "element": "Normothermia maintenance",
+              "update": "Active warming mandatory (forced air warming blanket). Target core temperature ≥36°C. Each 1°C drop: ↑ SSI risk 3×, ↑ blood loss, ↑ cardiac events."
+            },
+            {
+              "element": "Lung-protective ventilation",
+              "update": "TV 6–8 mL/kg IBW, PEEP 5–8 cmH2O, FiO2 0.4–0.6, regular recruitment manoeuvres. Reduces postoperative pulmonary complications (PROVHILO trial concept adapted for routine ERAS)."
+            }
+          ],
+          "postoperative": [
+            {
+              "element": "Early oral feeding",
+              "update": "Clear fluids 2–4h post-surgery, normal diet within 24h for most surgeries. Eliminates routine NGT. Reduces ileus, hospital stay."
+            },
+            {
+              "element": "Multimodal analgesia and opioid minimisation",
+              "update": "Paracetamol + NSAID + COX-2 inhibitor as backbone. Regional (TAP block, ESP block, epidural) as procedure-specific. Oral tramadol/codeine as rescue only."
+            },
+            {
+              "element": "Urinary catheter removal",
+              "update": "Remove within 24–48h (not routine prolonged catheterisation). Reduces UTI, immobility."
+            },
+            {
+              "element": "VTE prophylaxis",
+              "update": "LMWH within 6–12h post-op + mechanical (TED stockings, pneumatic compression) + early mobilisation. Extended LMWH for 28 days in major oncological surgery."
+            }
+          ]
+        }
+      },
+      "partB": {
+        "title": "Tumescent Anaesthesia",
+        "definition": "Tumescent anaesthesia is a technique involving subcutaneous infiltration of a large volume of very dilute local anaesthetic solution (typically lidocaine 0.05–0.1% with epinephrine 1:1,000,000) into adipose tissue, causing it to become swollen and firm (tumescent = 'swollen').",
+        "solution": {
+          "standard": "Normal saline 1000 mL + Lidocaine 500 mg (50 mL of 1%) + Adrenaline 1 mg (1:1,000,000) + Sodium bicarbonate 10 mEq (buffers pH → reduces injection pain)",
+          "concentration": "Lidocaine 0.05%, adrenaline 1:1,000,000",
+          "volume": "Typically 2–3 × volume of fat to be removed"
+        },
+        "pharmacology": {
+          "maxDose": "Lidocaine maximum safe dose in tumescent: 35–55 mg/kg (vastly higher than standard 7 mg/kg with adrenaline). Safe because: extremely dilute solution, adrenaline causes prolonged vasoconstriction → very slow absorption, large distribution in fat.",
+          "peakAbsorption": "Peak plasma lidocaine level: 8–12 hours post-infiltration (delayed and prolonged). LAST risk persists for up to 24h.",
+          "epinephrine": "Adrenaline 1:1,000,000 causes vasoconstriction → bloodless surgical field, reduces haemorrhage by 90%, slows lidocaine absorption → reduces systemic toxicity"
+        },
+        "technique": [
+          "Use 16–18G multi-hole infiltration cannulae",
+          "Infiltrate subcutaneously throughout adipose tissue to be treated",
+          "Solution infused via infiltration pump at low pressure",
+          "Wait 20–30 minutes after infiltration before surgery (allows vasoconstriction to fully develop)",
+          "Wetting solution: Equal volume to aspirate. Super-wet: 1:1. Dry technique (no infiltration — historical, not used now)"
+        ],
+        "applications": [
+          "Liposuction (most common): Provides analgesia, reduces bleeding, facilitates fat removal",
+          "Facelift, blepharoplasty, breast surgery",
+          "Skin and subcutaneous surgery",
+          "Abdominoplasty",
+          "Vein surgery (phlebectomy)",
+          "Dermatological procedures"
+        ],
+        "advantages": [
+          "Near-bloodless field (90% reduction in blood loss)",
+          "Prolonged postoperative analgesia (up to 18 hours)",
+          "Reduced anaesthetic requirement (MAC reduction)",
+          "Can be performed under IV sedation only (avoiding GA) for small areas"
+        ],
+        "risks": [
+          "LAST: Peak at 8–12 hours — must monitor in recovery for this delayed window",
+          "Fluid overload: Large volumes infiltrated → absorbed — monitor fluid balance",
+          "Hypothermia: Cold solution → monitor temperature, warm solution if large volumes",
+          "Lidocaine toxicity: Despite high total dose, systemic toxicity rare if dilute and with adrenaline — but can occur with errors in concentration"
+        ]
+      }
+    },
+    "keyPoints": [
+      "ERAS 2024 additions: Prehabilitation, SGLT2i stop 72h preop, preop IV iron, OFA",
+      "Tumescent lidocaine: 35–55 mg/kg safe (vs 7 mg/kg standard with adrenaline) — due to dilution + vasoconstriction",
+      "Peak plasma lidocaine in tumescent: 8–12 hours — LAST risk is delayed",
+      "GDFT: SVV <13% = fluid non-responsive; SVV >13% = fluid responsive"
+    ],
+    "commonMistakes": [
+      "Applying standard maximum lidocaine dose (7 mg/kg) to tumescent technique — the pharmacokinetics are completely different",
+      "Discharging tumescent liposuction patients too early — LAST risk peaks at 8–12h postoperatively",
+      "Forgetting sodium bicarbonate in tumescent solution — reduces injection pain by buffering pH"
+    ],
+    "examTip": "ERAS 'prehabilitation' and SGLT2i management are 2024 additions — very likely to come in exams as 'recent updates'. Know the SGLT2i perioperative guideline specifically: stop ≥72h before, restart only when eating normally.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Prehabilitation evidence: CHEETAH trial (2024): 8-week prehabilitation before colorectal surgery reduced 30-day complications by 34% vs standard care. Particularly effective in frail patients (CFS 4–6). Components: aerobic exercise 150 min/week moderate intensity, protein 1.5g/kg/day, smoking cessation, alcohol reduction.",
+        "GDFT monitoring tools: Oesophageal Doppler (CardioQ) — corrected flow time (FTc) 330–360ms = euvolaemia; SV variation. FloTrac (Edwards): arterial waveform analysis. Both require trained operator and validation in specific surgical contexts. GDFT reduces complications in major abdominal surgery (Edwards 2010 meta-analysis, NNT=6 to prevent one complication).",
+        "Tumescent — Klein's original technique: Jeffrey Klein (1987) first described tumescent technique for large-volume liposuction under local anaesthesia alone. Up to 5000 mL fat safely removed without transfusion. Revolutionised liposuction safety.",
+        "ERAS for ICU patients: ERAS-ICU protocol adapts ERAS principles to critically ill: early enteral nutrition within 24-48h, early mobilisation (passive/active), minimise sedation (ABCDEF bundle integration), early tracheostomy in prolonged ventilation, structured family involvement."
+      ]
+    }
+  },
+  {
+    "qNo": 3,
+    "question": "Discuss enteral nutrition in a 45-year-old septic patient weighing 50 kg",
+    "marks": 10,
+    "answer": {
+      "introduction": "Nutritional support is a critical component of ICU management. In a septic patient, hypercatabolic state accelerates protein breakdown and muscle wasting. Enteral nutrition (EN) is preferred over parenteral nutrition (PN) whenever the GI tract is functioning.",
+      "whyEnteralFirst": [
+        "Preserves gut mucosal integrity (prevents bacterial translocation)",
+        "Maintains gut-associated lymphoid tissue (GALT) function",
+        "Stimulates bile flow, prevents cholestasis",
+        "Reduces CLABSI risk (no central line for nutrition if EN used)",
+        "Cheaper than PN",
+        "Physiological (promotes normal GI hormone release)"
+      ],
+      "timing": {
+        "guideline": "ESPEN 2023 and ASPEN/SCCM 2021: Start EN within 24–48 hours of ICU admission if haemodynamically stable. Do NOT delay for return of bowel sounds or passage of flatus.",
+        "contraindications": [
+          "Haemodynamic instability requiring escalating vasopressors — defer until stable",
+          "Active upper GI bleeding",
+          "High-output intestinal fistula",
+          "Bowel obstruction, ischaemia, perforation"
+        ]
+      },
+      "calculation": {
+        "caloricTarget": {
+          "acute": "Acute phase (Day 1–3): Hypocaloric feeding 15–20 kcal/kg/day to avoid overfeeding. Overfeeding worsens hyperglycaemia, CO2 production, respiratory failure.",
+          "stabilised": "Stable phase (Day 4 onwards): Full caloric target 25–30 kcal/kg/day.",
+          "patientExample": "50 kg patient: Acute = 750–1000 kcal/day. Full target = 1250–1500 kcal/day.",
+          "indirect_calorimetry": "Gold standard for caloric prescription: Indirect calorimetry measures REE directly. If unavailable, use weight-based formula."
+        },
+        "proteinTarget": {
+          "target": "1.2–2 g/kg/day in critical illness. Higher end (1.5–2 g/kg) in: hypermetabolic state, burns, trauma, sepsis, continuous RRT (CRRT causes amino acid loss).",
+          "patientExample": "50 kg patient: 60–100 g protein/day. If on CRRT: ≥2 g/kg = 100 g/day.",
+          "monitoring": "24-hour urinary urea nitrogen (UUN) × 1.25 = estimated nitrogen loss. Nitrogen balance = protein intake/6.25 – nitrogen loss. Target: positive or zero balance."
+        }
+      },
+      "route": {
+        "nasogastric": "First choice — NGT. Insert and confirm position (pH <5, CXR confirmation). Start at 20–25 mL/hr, titrate up over 24–48h.",
+        "postpyloric": "Nasojejunal (NJT) or nasoduodenal: If high GRV (>500 mL), recurrent aspiration, gastroparesis. Reduces aspiration pneumonia.",
+        "peg": "PEG (Percutaneous Endoscopic Gastrostomy): For prolonged EN >4 weeks. More comfortable, lower displacement rate."
+      },
+      "formula": {
+        "standard": "1 kcal/mL standard polymeric formula for most ICU patients",
+        "highProtein": "High-protein formula if protein targets not met with standard feed",
+        "specificFormulas": [
+          "Renal: Restricted protein formula (0.6–0.8 g/kg) if NOT on CRRT. Potassium and phosphate restricted.",
+          "Hepatic: BCAA-enriched if hepatic encephalopathy.",
+          "Diabetic: Low glycaemic index formula — reduces hyperglycaemia.",
+          "Immune-modulating: Arginine, omega-3 FA, glutamine — evidence mixed. IV glutamine avoided in MOF/shock (REDOXS trial: harm)."
+        ]
+      },
+      "gastric_residual": {
+        "gRV": "GRV monitoring: Check every 4–6h. GRV >500 mL = high gastric residual — consider prokinetics.",
+        "prokinetics": [
+          "Metoclopramide 10 mg IV TDS — first line",
+          "Erythromycin 250 mg IV BD — motilin agonist, effective prokinetic. Use for maximum 5 days (tachyphylaxis).",
+          "Combination: More effective than monotherapy"
+        ]
+      },
+      "monitoring": [
+        "Daily: Weight (fluid balance), stool chart, abdominal examination",
+        "Biochemical: Na+, K+, Mg2+, PO4, glucose — daily initially",
+        "Refeeding syndrome prevention: Check PO4 before starting — if low (<0.65 mmol/L), replete before EN. At-risk: malnourished, alcoholic, prolonged fasting >5 days.",
+        "Blood glucose: Target 6–10 mmol/L (NICE-SUGAR trial)"
+      ],
+      "when_to_use_pn": "Supplement with PN if EN target not reached by Day 7 (ESPEN) or Day 8 (ASPEN). Avoid PN in first 7 days if EN is partially meeting needs — early PN worsens outcomes (EPaNIC trial)."
+    },
+    "keyPoints": [
+      "Start EN within 24–48h in haemodynamically stable septic patients",
+      "50 kg septic patient: 1250–1500 kcal/day + 75–100 g protein/day",
+      "Avoid IV glutamine in MOF or shock (REDOXS trial showed harm)",
+      "Refeeding syndrome: Check PO4 before starting EN in malnourished patients"
+    ],
+    "commonMistakes": [
+      "Waiting for bowel sounds before starting EN — completely unnecessary and delays nutrition",
+      "Starting full caloric target from Day 1 — increases overfeeding; use 15–20 kcal/kg in acute phase",
+      "Giving IV glutamine in multi-organ failure — REDOXS trial showed increased mortality"
+    ],
+    "examTip": "Always calculate the specific caloric and protein targets for the 50 kg patient given in the question. DNB examiners want to see: 50 kg × 25 kcal = 1250 kcal/day and 50 kg × 1.5 g = 75 g protein/day. Show the calculation.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "REDOXS trial (2013, NEJM): 1223 critically ill patients. IV glutamine + antioxidants → INCREASED 28-day mortality in patients with MOF. Mechanism: glutamine oxidation may worsen mitochondrial dysfunction in established MOF. Conclusion: IV glutamine contraindicated in MOF and shock.",
+        "EPaNIC trial (2011, NEJM): 4640 patients. Early PN (within 48h) vs late PN (after Day 8). Late PN group: shorter ICU stay, fewer infections, faster weaning. Conclusion: Do not start PN in first 7 days if EN even partially successful.",
+        "NICE-SUGAR trial (2009, NEJM): Intensive insulin (target glucose 4.5–6.0 mmol/L) vs conventional (target <10 mmol/L). Intensive group: higher mortality (27.5% vs 24.9%), more hypoglycaemia. Conclusion: Target glucose 6–10 mmol/L in ICU. Avoid hypoglycaemia.",
+        "Muscle ultrasound in ICU nutrition monitoring: Serial quadriceps muscle thickness measurement by USG — decline of >10% in first week = inadequate protein intake. Non-invasive, bedside, objective. Emerging as standard nutrition monitoring tool."
+      ]
+    }
+  },
+  {
+    "qNo": 4,
+    "question": "Define and discuss ARDS diagnosis. Describe ventilation strategies in ARDS.",
+    "marks": 10,
+    "answer": {
+      "definition": {
+        "berlinDefinition": "The Berlin Definition (2012, AECC revision) defines ARDS as:",
+        "criteria": [
+          "Timing: Within 1 week of known clinical insult or new/worsening respiratory symptoms",
+          "Chest imaging: Bilateral opacities on CXR or CT — not fully explained by effusions, collapse, or nodules",
+          "Origin of oedema: Not fully explained by cardiac failure or fluid overload. Objective assessment (Echo) needed if no clear risk factor",
+          "Oxygenation (on PEEP/CPAP ≥5 cmH2O): Mild: P/F ratio 200–300 mmHg; Moderate: P/F ratio 100–200 mmHg; Severe: P/F ratio <100 mmHg"
+        ]
+      },
+      "pathophysiology": {
+        "phases": [
+          {
+            "phase": "Exudative (Day 1–7)",
+            "changes": "Diffuse alveolar damage (DAD) → capillary leak → protein-rich exudate floods alveoli → hyaline membrane formation → surfactant dysfunction → atelectasis → profound hypoxaemia. Diffuse bilateral infiltrates."
+          },
+          {
+            "phase": "Proliferative (Day 7–21)",
+            "changes": "Type II pneumocyte proliferation → organising exudate → early fibrosis. Some patients improve; others progress."
+          },
+          {
+            "phase": "Fibrotic (>21 days)",
+            "changes": "Established fibrosis → honeycombing → chronic respiratory failure. Poor prognosis."
+          }
+        ]
+      },
+      "ventilationStrategies": {
+        "lungProtective": {
+          "title": "Lung-Protective Ventilation (ARDSNet Protocol — ARMA Trial)",
+          "tidalVolume": "Low tidal volume: 6 mL/kg of Ideal Body Weight (IBW). Prevents volutrauma and barotrauma.",
+          "ibwFormula": "IBW (male) = 50 + 0.91 × (height in cm – 152.4); IBW (female) = 45.5 + 0.91 × (height in cm – 152.4)",
+          "plateauPressure": "Plateau pressure ≤30 cmH2O (check by inspiratory hold). If >30, reduce TV further to 4–5 mL/kg.",
+          "drivingPressure": "Driving pressure = Pplat – PEEP. Target <14–15 cmH2O. Strongest predictor of ARDS mortality (Amato 2015 NEJM) — even more important than TV alone.",
+          "peep": "PEEP: titrate by PEEP-FiO2 table (ARDSNet) or by lung recruitability assessment. Target: lowest PEEP maintaining SpO2 >88% without ↑ plateau pressure.",
+          "fio2": "Minimise FiO2 — target SpO2 88–95% or PaO2 55–80 mmHg",
+          "rr": "RR 14–35/min to manage pH >7.25",
+          "permissiveHypercapnia": "Accept PaCO2 45–65 mmHg (up to 80 in severe) to allow low TV strategy. pH target >7.20."
+        },
+        "proning": {
+          "title": "Prone Ventilation (PROSEVA trial)",
+          "indication": "P/F ratio <150 mmHg (moderate-severe ARDS) despite optimal ventilation on FiO2 ≥0.6 and PEEP ≥5",
+          "duration": "≥16 hours/day cycles",
+          "evidence": "PROSEVA trial (2013, NEJM): 466 patients. Prone ≥16h/day vs supine. 28-day mortality: 16% vs 32.8% (NNT = 6). Remarkable effect size.",
+          "mechanism": "Redistributes oedema to dorsal lung → recruits dorsal alveoli → reduces V/Q mismatch → reduces shunt. Also reduces lung stress and strain in dependent zones.",
+          "complications": "Pressure ulcers (face, chest), ETT dislodgement, line displacement, facial oedema, retinal ischaemia"
+        },
+        "corticosteroids": {
+          "title": "Corticosteroids in ARDS",
+          "indication": "Early-moderate ARDS (within 72–96h, P/F <200) NOT responding to standard management",
+          "evidence": "DEXA-ARDS trial (2020, Lancet Resp Med): Dexamethasone 20 mg/day × 5 days → 10 mg/day × 5 days. Reduced 60-day mortality (21% vs 36%, absolute risk reduction 15%).",
+          "dose": "Dexamethasone 20 mg IV daily for 5 days, then 10 mg IV daily for 5 days",
+          "mechanism": "↓ inflammatory cytokines, prevents fibroproliferative phase",
+          "note": "NOT recommended in COVID-ARDS beyond dexamethasone 6 mg (RECOVERY trial) without additional evidence."
+        },
+        "recruitment": {
+          "title": "Recruitment Manoeuvres (RM)",
+          "technique": "Sustained inflation: 40 cmH2O CPAP for 40 seconds, or incremental PEEP titration",
+          "evidence": "ART trial (2017, JAMA): Aggressive RM + high PEEP — INCREASED mortality vs low-PEEP strategy in unselected ARDS. RM now used selectively (recruitable lung identified by CT/USG/P-V curve).",
+          "current": "Do NOT routinely perform RM in all ARDS. Use only if clearly recruitable lung and worsening hypoxaemia."
+        },
+        "nmba": {
+          "title": "Neuromuscular Blocking Agents (NMBA)",
+          "previous": "ACURASYS trial (2010): cisatracurium infusion for 48h in severe ARDS → improved survival",
+          "current": "ROSE trial (2019, NEJM): Continuous NMBA + deep sedation vs usual care (light sedation). No mortality benefit. Early routine NMBA no longer recommended.",
+          "current_role": "Cisatracurium 48h infusion: Reserve for severe dysynchrony despite deep sedation, refractory hypoxaemia, prone positioning facilitation"
+        },
+        "ecmo": {
+          "title": "VV-ECMO (Veno-Venous Extracorporeal Membrane Oxygenation)",
+          "indication": "Severe ARDS refractory to all conventional measures: P/F <80 mmHg for >6h, or P/F <100 for >3h, or pH <7.25 with PaCO2 >60 for >6h despite optimised ventilation (ELSO criteria 2021)",
+          "evidence": "CESAR trial (2009): VV-ECMO referral centre vs conventional — survival benefit. EOLIA trial (2018): Not significant primary endpoint but 13% absolute mortality reduction (NS). Post-hoc analysis and ESCAPE-ARDS: support early ECMO in severe ARDS.",
+          "principle": "Blood drained via femoral vein → oxygenator → reinfused via jugular vein. Lung rest ventilation (TV 3 mL/kg, PEEP 10, FiO2 0.3)."
+        }
+      }
+    },
+    "keyPoints": [
+      "Berlin criteria: bilateral opacities + P/F ratio (PEEP ≥5): Mild 200–300, Moderate 100–200, Severe <100",
+      "ARDSNet: TV 6 mL/kg IBW + Pplat ≤30 + Driving pressure <14 cmH2O",
+      "Prone ventilation: P/F <150, ≥16h/day, NNT=6 (PROSEVA trial)",
+      "Dexamethasone: DEXA-ARDS — 20 mg × 5 days then 10 mg × 5 days"
+    ],
+    "commonMistakes": [
+      "Using actual body weight instead of IDEAL body weight for TV calculation — will overdose volume in obese patients",
+      "Giving 6 mL/kg and thinking driving pressure is automatically safe — always CHECK driving pressure separately",
+      "Routine recruitment manoeuvres in all ARDS patients — ART trial showed harm in unselected patients"
+    ],
+    "examTip": "ARDS is probably the highest-yield critical care topic for DNB Paper 4. Know all 4 major trials by name: ARMA (6 mL/kg), PROSEVA (prone), DEXA-ARDS (steroids), ROSE (NMBA). Examiners are impressed when trials are cited correctly.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Driving pressure as the key variable: Amato et al. (NEJM 2015) — re-analysis of 9 ARDS trials (n=3562). Driving pressure (ΔP = Pplat – PEEP) was the ventilatory variable most strongly associated with survival. ΔP <14 cmH2O associated with reduced mortality. Even if TV is 6 mL/kg, if PEEP is very low, ΔP may be >14 — both TV and PEEP must be optimised together.",
+        "Lung recruitability: Only 50% of ARDS patients have recruitable lung (Gattinoni CT study). Routinely applying RM or high PEEP to non-recruitable lung causes overdistension of already-open alveoli → haemodynamic compromise. Assess recruitability by: CT (response to PEEP increase), LUS (aeration score change), P-V curve (upper inflection point).",
+        "EOLIA trial crossover analysis: 28% of control group received rescue ECMO after crossing over. Including these crossovers: absolute mortality benefit of early ECMO ~15%. This supports early ECMO referral consideration in severe ARDS despite technically negative primary endpoint.",
+        "Awake ECMO / walking ECMO: Patients on VV-ECMO without mechanical ventilation, awake, ambulatory. Allows weaning of sedation, physiotherapy, oral intake. Emerging technique at specialist ECMO centres — reduces VILI and ARDS complications."
+      ]
+    }
+  },
+  {
+    "qNo": 5,
+    "question": "A) Antibiotic stewardship  B) Diagnosis of septic shock",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Antibiotic Stewardship",
+        "definition": "Antibiotic stewardship is a coordinated programme that promotes the appropriate use of antimicrobials to improve patient outcomes, reduce antimicrobial resistance (AMR), and decrease adverse effects including C. difficile infections.",
+        "why": "AMR is projected to cause 10 million deaths/year by 2050 (WHO). India is a major contributor — high OTC antibiotic use, inadequate prescription, widespread agriculture use.",
+        "principles": [
+          "Right drug: Based on culture/sensitivity. Empirical → definitive de-escalation.",
+          "Right dose: PK/PD-optimised dosing — not standard doses.",
+          "Right duration: Shortest effective course. PCT (procalcitonin)-guided de-escalation.",
+          "Right route: IV → oral switch as early as possible (48–72h if improving).",
+          "Right timing: First dose within 1 hour of sepsis diagnosis."
+        ],
+        "strategies": {
+          "preauthorisation": "Restriction of broad-spectrum antibiotics — require ID/microbiology approval (Carbapenems, Colistin, Tigecycline, antifungals)",
+          "deEscalation": "Review antibiotic at 48–72h with culture results — step down to narrower spectrum",
+          "pct_guidance": {
+            "definition": "Procalcitonin (PCT) is a biomarker of bacterial infection. PCT-guided antibiotic de-escalation reduces antibiotic duration without worsening outcomes.",
+            "algorithm": [
+              "PCT <0.25 mcg/L: Antibiotics unlikely needed — stop or withhold",
+              "PCT 0.25–0.5: Low-grade infection — consider stopping",
+              "PCT >0.5: Infection likely — continue antibiotics",
+              "PCT falling by ≥80% from peak: De-escalate or stop"
+            ],
+            "evidence": "ProHOSP trial (JAMA 2012): PCT-guided protocol reduced antibiotic exposure by 30% with equivalent outcomes in CAP and LRTI."
+          },
+          "pkpd": {
+            "title": "PK/PD-Optimised Dosing",
+            "betalactams": "Time-dependent killing: Maximise % time above MIC. Extended or continuous infusion of beta-lactams superior to bolus. Example: Piperacillin-tazobactam 4.5g over 4h q8h (extended infusion) vs 4.5g over 30 min q8h.",
+            "aminoglycosides": "Concentration-dependent: Once-daily dosing (gentamicin 5–7 mg/kg/day) achieves high Cmax:MIC ratio, equivalent efficacy, less nephrotoxicity than TDS dosing.",
+            "vancomycin": "AUC/MIC 400–600 is target (ASHP/IDSA 2020) — replace trough-only monitoring."
+          },
+          "diagnostics": "Blood cultures × 2 before antibiotics. Respiratory cultures, wound cultures, urine cultures. Rapid diagnostics: BioFire multiplex PCR, MALDI-TOF — reduces time to targeted therapy.",
+          "antimicrobial_cycling": "Rotating antibiotic classes (cycling) — theoretical but evidence limited.",
+          "colistin": "Reserve for XDR (extensively drug-resistant) Gram-negatives. Combination with carbapenem + rifampicin for synergy in CR-Klebsiella (MSKCC protocol)."
+        }
+      },
+      "partB": {
+        "title": "Diagnosis of Septic Shock",
+        "sepsis3Definition": "Sepsis-3 (2016 JAMA consensus): Sepsis is life-threatening organ dysfunction caused by a dysregulated host response to infection.",
+        "organdysfunction": "Organ dysfunction identified as acute change in SOFA score ≥2 points from baseline. SOFA includes: PaO2/FiO2 (respiratory), GCS (neurological), creatinine (renal), bilirubin (hepatic), MAP/vasopressors (cardiovascular), platelets (haematological).",
+        "septicShockCriteria": {
+          "definition": "Septic shock is a subset of sepsis in which circulatory, cellular, and metabolic abnormalities are profound enough to substantially increase mortality.",
+          "clinicalCriteria": [
+            "Sepsis (Sepsis-3 definition) PLUS",
+            "Vasopressor requirement to maintain MAP ≥65 mmHg despite adequate fluid resuscitation PLUS",
+            "Serum lactate >2 mmol/L in the absence of hypovolaemia"
+          ],
+          "mortality": "In-hospital mortality >40% for septic shock (vs ~10% for sepsis alone)"
+        },
+        "quicksofa": "qSOFA (quick SOFA): Rapid bedside screen. 1 point each for: RR ≥22/min, altered mentation (GCS <15), systolic BP ≤100 mmHg. qSOFA ≥2 = high risk — escalate to full SOFA. NOT a diagnostic criterion for sepsis.",
+        "managementBundle": {
+          "survivingSepsisCampaign2024": "SSC 2024 Hour-1 Bundle:",
+          "elements": [
+            "Measure lactate. Re-measure if initial lactate >2 mmol/L.",
+            "Blood cultures before antibiotics (do not delay antibiotics >45 min for cultures)",
+            "Broad-spectrum antibiotics within 1 hour of recognition",
+            "IV fluids: 30 mL/kg crystalloid if hypotensive OR lactate ≥4 mmol/L",
+            "Vasopressors if hypotension persists during/after fluids: Target MAP ≥65 mmHg"
+          ],
+          "vasopressor": "Noradrenaline (norepinephrine): First-line vasopressor. Dose: 0.01–3 mcg/kg/min. Targets α1 and β1 — ↑ SVR, maintains HR.",
+          "additionalVasopressors": [
+            "Vasopressin 0.03–0.04 units/min: Add if noradrenaline >0.25 mcg/kg/min (VASST trial — reduces noradrenaline requirement)",
+            "Adrenaline: If cardiac dysfunction contributing",
+            "Angiotensin II (Giapreza): New FDA-approved vasopressor for vasodilatory shock"
+          ],
+          "hydrocortisone": "If vasopressor-refractory septic shock: Hydrocortisone 200 mg/day continuous infusion (ADRENAL trial, APROCCHSS trial). Reduces duration of shock, accelerates resolution."
+        }
+      }
+    },
+    "keyPoints": [
+      "Septic shock criteria: Sepsis + vasopressor requirement + lactate >2 mmol/L",
+      "SSC 2024: Antibiotics within 1 hour, cultures before antibiotics, 30 mL/kg crystalloid, vasopressors if needed",
+      "PCT-guided de-escalation: ≥80% fall from peak = safe to stop antibiotics",
+      "Noradrenaline: first-line vasopressor in septic shock"
+    ],
+    "commonMistakes": [
+      "Using qSOFA as a diagnostic criterion for sepsis — it is only a screening tool",
+      "Delaying antibiotics to get multiple cultures — cultures should not delay antibiotics beyond 45 minutes",
+      "Giving 30 mL/kg regardless of volume status — reassess after each 500 mL bolus; stop if signs of overload"
+    ],
+    "examTip": "Sepsis-3 definitions from 2016 JAMA — SOFA ≥2 for sepsis, vasopressor + lactate >2 for septic shock. Know these by heart. SSC Hour-1 bundle (2024) is the most recent update — 5 elements, 1 hour, all mandatory.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Surviving Sepsis Campaign 2024 update: Key changes from 2021 — (1) IV vitamin C no longer recommended (CITRIS-ALI trial: negative). (2) Thiamine recommended in thiamine-deficient high-risk patients. (3) Stress ulcer prophylaxis: only in high-risk patients (SUDDICU trial: little benefit in general ICU). (4) Blood glucose 7.8–10 mmol/L target (not 4.5–6.0 — hypoglycaemia risk).",
+        "SMART trial (2018, NEJM): Balanced crystalloid (Plasma-Lyte, LR) vs NS (0.9% NaCl) in ICU. Balanced crystalloid: ↓ major adverse kidney events (MAKE30) by 1% absolute. Large NS volumes → hyperchloraemic metabolic acidosis → ↓ renal blood flow → AKI. Current recommendation: use balanced crystalloids for fluid resuscitation in sepsis.",
+        "Lactate clearance: Serial lactate measurement is more important than single absolute value. Lactate clearance >10–20% over 2 hours predicts better outcome (Surviving Sepsis Campaign endorsed). Target: lactate <2 mmol/L within 6h. Persistent elevation = poor prognosis.",
+        "Antibiotic stewardship in India: ICMR 2017 national action plan on AMR. Priority pathogens in India: CR-Klebsiella, CR-Acinetobacter, MRSA, VRE. Key Indian ASP tools: AYUSH antibiotic guidelines, hospital antibiograms, National AMR network (NARS-NET) surveillance."
+      ]
+    }
+  },
+  {
+    "qNo": 6,
+    "question": "A) Pain assessment in the postoperative ward  B) Newer techniques in postoperative pain management for total knee replacement",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Pain Assessment in the Postoperative Ward",
+        "importance": "Adequate pain assessment is the foundation of pain management. Undertreated acute pain leads to: PONV, respiratory complications, delayed mobilisation, prolonged hospital stay, chronic post-surgical pain (CPSP).",
+        "tools": [
+          {
+            "tool": "Numerical Rating Scale (NRS)",
+            "description": "Patient rates pain 0–10. 0 = no pain; 10 = worst imaginable. Simple, validated, most widely used in adults. Assess at rest AND on movement — movement pain drives rehabilitation.",
+            "cutoffs": "Mild: 1–3; Moderate: 4–6; Severe: 7–10. Intervention target: NRS ≤3 at rest, ≤4 on movement."
+          },
+          {
+            "tool": "Visual Analogue Scale (VAS)",
+            "description": "10 cm line from 'no pain' to 'worst pain'. Patient marks position. Score measured in mm. Less practical than NRS bedside but more precise for research."
+          },
+          {
+            "tool": "Verbal Rating Scale (VRS)",
+            "description": "Descriptive: None / Mild / Moderate / Severe. Useful in elderly, cognitively impaired, low literacy patients."
+          },
+          {
+            "tool": "Faces Pain Scale (Wong-Baker)",
+            "description": "6 cartoon faces from smiling to crying. For children ≥3 years and adults who cannot use numerical scales."
+          },
+          {
+            "tool": "FLACC Scale",
+            "description": "Face, Legs, Activity, Cry, Consolability. Behavioural scale for preverbal children and non-communicating adults (ICU, dementia). Each domain 0–2; total 0–10.",
+            "useIn": "Children <3 years, sedated or intubated patients"
+          },
+          {
+            "tool": "CPOT (Critical Care Pain Observation Tool)",
+            "description": "For ICU patients unable to self-report. Domains: facial expression, body movements, muscle tension, ventilator compliance/vocalisation. Score 0–8. Score ≥2 = significant pain — intervene.",
+            "validation": "Best validated behavioural pain tool for ICU. Endorsed by SSC and PADIS guidelines (2018)."
+          },
+          {
+            "tool": "Objective Pupillometry (Algiscan)",
+            "description": "Pupillary diameter changes in response to noxious stimulus (pupillary pain index — PPI). Emerging objective measure. Useful in sedated, paralysed, or non-cooperative patients. Not yet standard of care."
+          }
+        ],
+        "frequency": "Pain should be assessed: Before and after any analgesic intervention, at regular intervals (every 2–4h in acute postoperative period), and whenever patient's condition changes.",
+        "principles": [
+          "Always ask about pain at rest AND on movement",
+          "Document: location, quality, radiation, intensity (NRS), aggravating/relieving factors",
+          "Use the same scale consistently throughout admission for trend monitoring"
+        ]
+      },
+      "partB": {
+        "title": "Newer Techniques in Postoperative Pain Management for Total Knee Replacement (TKR)",
+        "background": "TKR is associated with severe acute postoperative pain (NRS 7–9). Adequate analgesia is critical for early rehabilitation and physiotherapy which determines functional outcome.",
+        "multimodalAnalgesia": [
+          "Paracetamol 1g QID (scheduled, not PRN)",
+          "NSAIDs/COX-2 inhibitors: Celecoxib 200 mg BD or Etoricoxib 90 mg OD",
+          "Gabapentin/pregabalin: 300 mg OD–TDS preoperatively + postoperatively (reduces opioid requirement)",
+          "Minimal opioids: Tramadol or short-acting oxycodone as rescue only"
+        ],
+        "regionalTechniques": {
+          "femoral_nerve_block": {
+            "historical": "Femoral nerve block (FNB): Previously gold standard. Blocks anterior knee. Problem: Profound quadriceps weakness → falls, delayed mobilisation."
+          },
+          "adductor_canal_block": {
+            "name": "Adductor Canal Block (ACB) — CURRENT STANDARD",
+            "anatomy": "Adductor canal contains saphenous nerve (sensory only from femoral nerve) + nerve to vastus medialis + medial femoral cutaneous nerve. Does NOT block motor fibres of femoral nerve.",
+            "advantage": "Analgesia equivalent to FNB for medial/anterior knee WITHOUT quadriceps weakness. Preserves motor function → early rehabilitation possible.",
+            "technique": "USG-guided injection at mid-thigh level within adductor canal. 15–20 mL of 0.25–0.375% ropivacaine or 0.25% bupivacaine.",
+            "evidence": "Multiple RCTs and meta-analyses: ACB = FNB for pain, superior to FNB for motor preservation."
+          },
+          "iPACK": {
+            "name": "IPACK Block (Infiltration between the Popliteal Artery and Capsule of the Knee)",
+            "anatomy": "Injection of LA in the anatomical plane between the popliteal artery and the posterior knee capsule. Targets the genicular nerves and the obturator nerve's articular branch supplying the posterior knee.",
+            "advantage": "Addresses posterior knee pain — the component not covered by ACB. ACB + IPACK together = complete knee analgesia.",
+            "technique": "USG-guided. 20 mL 0.25% ropivacaine between popliteal artery and posterior femoral condyle.",
+            "note": "Geniculate nerve ablation (radiofrequency) — for chronic TKR pain; not acute."
+          },
+          "lia": {
+            "name": "Local Infiltration Analgesia (LIA) / Periarticular Injection",
+            "technique": "Surgeon injects LA cocktail (ropivacaine + adrenaline + ketorolac ± morphine) into periarticular tissues, posterior capsule, and wound at end of surgery.",
+            "advantage": "Simple, no nerve block skills required, effective for first 12–24h.",
+            "limitation": "Duration limited; repeated injections needed."
+          },
+          "combination": "GOLD STANDARD 2024: ACB + IPACK + LIA = best analgesic coverage for TKR. Covers anterior, medial, posterior knee. Preserves motor function. Allows same-day mobilisation."
+        },
+        "neuraxialTechniques": [
+          "Spinal anaesthesia (intrathecal morphine 0.1–0.2 mg): Simple, effective, but side effects (pruritis, nausea, urinary retention, delayed respiratory depression)",
+          "Epidural: Now rarely used for TKR — bilateral lower limb weakness, urinary catheter, reduced mobility"
+        ]
+      }
+    },
+    "keyPoints": [
+      "NRS 0–10: simplest validated adult scale. CPOT: best for ICU/non-communicating patients",
+      "ACB = adductor canal block: same analgesia as femoral nerve block WITHOUT quadriceps weakness",
+      "IPACK block: covers posterior knee pain — complement to ACB",
+      "ACB + IPACK + LIA = complete TKR analgesia with preserved motor function"
+    ],
+    "commonMistakes": [
+      "Still using femoral nerve block routinely for TKR — replaced by ACB for motor preservation",
+      "Assessing pain only at rest — movement pain assessment is essential for TKR rehabilitation targets",
+      "Using VAS in ICU patients — CPOT is the validated tool for non-communicating patients"
+    ],
+    "examTip": "IPACK block is the most recent addition to TKR pain management — very likely in DNB as 'newer technique'. Know the anatomy (between popliteal artery and posterior capsule) and what nerves it targets (genicular nerves).",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Geniculate nerve block/ablation: Cooled radiofrequency ablation (C-RFA) of genicular nerves (superolateral, superomedial, inferomedial) — for chronic post-TKR pain or patients not fit for surgery. Evidence: 50–70% pain reduction at 12 months (Kapural 2020).",
+        "Chronic post-surgical pain (CPSP) after TKR: 20–30% of TKR patients develop CPSP (pain >3 months post-surgery). Risk factors: severe preoperative pain, anxiety/depression, catastrophising, genetic polymorphisms (COMT, OPRM1). Preventive strategies: preoperative pain management, psychological preparation, perioperative ketamine.",
+        "RACE trial (2022): Adductor canal block vs femoral nerve block in TKR — ACB superior for ambulation distance on POD1 (18.8m vs 14.6m), equal VAS at rest. Confirms ACB as superior for functional recovery.",
+        "Pain assessment and documentation in India: JCI/NABH accreditation requires pain to be documented as the 5th vital sign. Standardised pain assessment tools and reassessment after analgesia are mandatory for hospital accreditation. ISACON guidelines (Indian Society of Anaesthesiologists) endorse NRS + CPOT as standard tools."
+      ]
+    }
+  },
+  {
+    "qNo": 7,
+    "question": "Non-neuraxial techniques in labour analgesia. Explain indications, technique, advantages, and disadvantages of any one method.",
+    "marks": 10,
+    "answer": {
+      "introduction": "Labour pain is one of the most severe acute pains experienced. While neuraxial techniques (epidural, spinal, CSE) remain the gold standard, non-neuraxial techniques are important when neuraxial methods are contraindicated or unavailable.",
+      "nonNeuraxialMethods": [
+        {
+          "method": "Remifentanil PCA (Patient-Controlled Analgesia)",
+          "category": "Systemic opioid"
+        },
+        {
+          "method": "Entonox (50% N2O + 50% O2)",
+          "category": "Inhalational"
+        },
+        {
+          "method": "Pethidine/Morphine IM",
+          "category": "Systemic opioid"
+        },
+        {
+          "method": "TENS (Transcutaneous Electrical Nerve Stimulation)",
+          "category": "Physical/neuromodulation"
+        },
+        {
+          "method": "Pudendal nerve block",
+          "category": "Regional (non-neuraxial)"
+        },
+        {
+          "method": "Paracervical block",
+          "category": "Regional (non-neuraxial)"
+        },
+        {
+          "method": "Hydrotherapy/water immersion",
+          "category": "Non-pharmacological"
+        }
+      ],
+      "remifentanilPCA": {
+        "title": "Remifentanil PCA — Detailed Discussion",
+        "pharmacology": {
+          "class": "Ultra-short-acting selective mu-opioid receptor agonist",
+          "metabolism": "Hydrolysed by non-specific tissue and plasma esterases (independent of hepatic/renal function). Context-sensitive half-life = 3–5 minutes regardless of infusion duration.",
+          "onset": "Peak effect: 60–90 seconds. Offset: <5 minutes. Ideal kinetics for labour PCA."
+        },
+        "contraindications": [
+          "Refusal of monitoring",
+          "High-dependency/staffing constraints (1:1 midwife care mandatory)",
+          "Severe asthma (opioid-induced bronchospasm risk — use cautiously)",
+          "Known allergy to remifentanil",
+          "Already significantly sedated patient"
+        ],
+        "technique": {
+          "dose": "Standard: Bolus 0.4 mcg/kg (weight-based) on demand. Lockout: 2 minutes (allows peak effect before next dose).",
+          "alternative": "Fixed bolus: 20–40 mcg bolus with 2-minute lockout. Background infusion generally NOT recommended (↑ respiratory depression risk).",
+          "monitoring": "MANDATORY: Continuous SpO2, etCO2 (side-stream capnography), continuous 1:1 midwife monitoring with pulse oximetry alarmed. High-flow O2 available.",
+          "setting": "Dedicated IV line for remifentanil. Do not co-administer with other drugs via same line (error risk)."
+        },
+        "indications": [
+          "Contraindications to neuraxial: coagulopathy, severe thrombocytopenia, patient refusal, local infection, previous spinal surgery",
+          "Rapidly progressing labour (neuraxial may not be established in time)",
+          "Patient preference for non-neuraxial method",
+          "Needle phobia",
+          "Scarce anaesthetic resources"
+        ],
+        "advantages": [
+          "Effective analgesia: Better than pethidine, comparable to epidural for moderate pain",
+          "Maternal control (PCA → empowerment)",
+          "Rapid onset and offset — titrable to contraction peaks",
+          "No motor block — free mobility in labour",
+          "No orthostattic hypotension (unlike epidural)",
+          "No instrumental delivery increase (unlike high-concentration epidural)",
+          "No effect on neonatal neurobehaviour at birth (rapidly cleared from neonatal plasma)",
+          "Simple setup — no anaesthetic skill required once PCA established"
+        ],
+        "disadvantages": [
+          "RESPIRATORY DEPRESSION: Most critical risk. Maternal apnoea reported. SpO2 monitoring + 1:1 care MANDATORY — non-negotiable.",
+          "Maternal sedation: Somnolence between contractions, particularly cumulative",
+          "Limited efficacy: Less effective than epidural for severe labour pain, second-stage pain",
+          "Nausea and vomiting",
+          "Transplacental transfer: UV/MA ratio ~0.9. Rapidly metabolised by fetal plasma esterases — low effective neonatal exposure. Apgar scores comparable to epidural (RESPITE trial).",
+          "Maternal desaturation: Brief desaturation episodes common — O2 supplementation standard",
+          "Resource intensive: 1:1 midwife monitoring, SpO2 + etCO2 continuous — not feasible in low-resource settings"
+        ],
+        "evidence": "RESPITE trial (2017, Lancet): UK RCT. Remifentanil PCA vs pethidine IM in 400 women. Primary outcome: Epidural crossover: 19% vs 41% (remifentanil significantly better). Maternal satisfaction higher. No difference in neonatal outcomes.",
+        "comparison": [
+          "vs Epidural: Epidural superior for severe pain but remifentanil allows mobility, avoids hypotension, no catheter placement",
+          "vs Pethidine: Remifentanil clearly superior — better analgesia, faster recovery, less neonatal sedation",
+          "vs Entonox: Remifentanil provides sustained analgesia; Entonox short-acting per contraction"
+        ]
+      }
+    },
+    "keyPoints": [
+      "Remifentanil PCA: 0.4 mcg/kg bolus, 2-min lockout, 1:1 monitoring MANDATORY",
+      "RESPITE trial: Remifentanil reduced epidural crossover from 41% to 19%",
+      "Remifentanil: UV/MA ~0.9 but metabolised by fetal esterases — safe for neonate",
+      "No background infusion — only patient-triggered boluses to avoid over-sedation"
+    ],
+    "commonMistakes": [
+      "Setting lockout time to <2 minutes — peak effect is at 60–90 sec; need 2 min to feel full effect before redosing",
+      "Running a background infusion of remifentanil in labour — greatly increases apnoea risk",
+      "Not emphasising 1:1 monitoring requirement — this is an absolute prerequisite"
+    ],
+    "examTip": "RESPITE trial (2017, Lancet) — quote by name. 'Remifentanil PCA vs pethidine — 19% vs 41% epidural crossover.' This single data point will impress DNB examiners and demonstrates current evidence-based practice.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Entonox (50% N2O + 50% O2) in labour: Most widely used non-neuraxial analgesic globally. Mechanism: NMDA antagonism + endorphin release. Onset: 30–45 sec → must start inhaling at contraction onset. Advantages: self-administered, no motor block, rapid recovery, safe for fetus. Disadvantages: PONV (20%), mild sedation, dizziness, environmental N2O exposure to staff (scavenging required), not effective for severe pain.",
+        "Pethidine (meperidine) — why it's falling out of favour: Metabolite norpethidine accumulates → neonatal CNS depression (t½ 60h in neonate vs 3h in adult). Apgar scores reduced. Neonatal naloxone may be needed. RCOG 2018: pethidine no longer recommended as first-line. Remifentanil PCA and morphine 2 mg IV are preferred alternatives.",
+        "TENS (Transcutaneous Electrical Nerve Stimulation) in labour: Gate control mechanism — stimulates A-beta fibres → inhibits C-fibre pain transmission. Evidence: Cochrane 2011 — small reduction in pain intensity, no harmful effects, women report high satisfaction (sense of control). Best for early labour and back pain. Not effective for late labour.",
+        "Nalbuphine: Kappa agonist, partial mu antagonist. Used in labour in India — less neonatal respiratory depression than pethidine (partial mu antagonism limits neonatal effect). 10–20 mg IM. Still causes maternal sedation. Ceiling effect for analgesia."
+      ]
+    }
+  },
+  {
+    "qNo": 8,
+    "question": "A) Role of Artificial Intelligence and Machine Learning in Anaesthesia  B) Opioid-free anaesthesia (OFA)",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Artificial Intelligence and Machine Learning in Anaesthesia",
+        "definitions": {
+          "ai": "Artificial Intelligence (AI): Computer systems that perform tasks requiring human intelligence — pattern recognition, decision-making, prediction.",
+          "ml": "Machine Learning (ML): A subset of AI where algorithms learn from data without explicit programming — improving performance with experience.",
+          "deepLearning": "Deep Learning: Neural networks with multiple layers — excels at image recognition, waveform analysis."
+        },
+        "applications": [
+          {
+            "area": "Depth of Anaesthesia Monitoring",
+            "detail": "BIS (Bispectral Index): First major AI application in anaesthesia. ML algorithm analyses EEG to produce 0–100 index. BIS 40–60 = adequate depth. Reduces anaesthetic use, awareness, and POCD when used to guide dosing.",
+            "new": "Hypotension Prediction Index (HPI, Edwards Lifesciences): Acumen AI algorithm. Analyses 3000 arterial waveform parameters/second. Predicts hypotension (MAP <65 mmHg) 5–15 minutes BEFORE occurrence. Allows preemptive intervention. FLASH trial: HPI reduced hypotension duration by 60% in non-cardiac surgery."
+          },
+          {
+            "area": "Closed-Loop Anaesthesia Delivery",
+            "detail": "BIS-guided closed-loop propofol infusion (CLADS): AI controller adjusts propofol Ce in real-time to maintain BIS 40–60. Human anaesthetist oversees. Multiple RCTs: BIS maintained within target 80% of time vs 60% manual. Less drug used, faster emergence.",
+            "remifentanil": "Closed-loop remifentanil (CLRM): Nociception monitor (ANI — Analgesia Nociception Index) drives remifentanil infusion. Maintains haemodynamic stability during surgical stress."
+          },
+          {
+            "area": "Predictive Analytics",
+            "detail": "Preoperative risk stratification: ML models using EHR data predict postoperative complications (acute kidney injury, cardiac events, mortality) more accurately than traditional scores (ASA, Lee index). E.g., POTTER algorithm, Epic Deterioration Index.",
+            "sepsis": "Sepsis prediction: ML algorithms analyse vital signs, labs → early warning systems. Epic Sepsis Model: controversial evidence."
+          },
+          {
+            "area": "Image Recognition",
+            "detail": "Airway assessment: Deep learning analysis of patient photographs → predicts difficult airway (Mallampati equivalent). In development.",
+            "ecg": "Perioperative ECG analysis: AI detects subtle ST changes, arrhythmias, QTc prolongation faster than human review.",
+            "ultrasound": "AI-guided USS: Automated identification of needle tip, nerve structures, cardiac chambers. Reduces skill threshold for POCUS."
+          },
+          {
+            "area": "Drug Interaction and TCI",
+            "detail": "AI-enhanced PK/PD models incorporating patient genomics, real-time drug levels (if available) for individualised TCI. Pharmacogenomics: ML identifies CYP450 polymorphisms affecting drug metabolism."
+          },
+          {
+            "area": "Natural Language Processing",
+            "detail": "AI-generated anaesthetic records, preoperative assessment tools, post-anaesthetic patient communication (chatbots). Automated documentation reduces administrative burden."
+          }
+        ],
+        "limitations": [
+          "Black-box algorithms — explainability limited",
+          "Training data biases (mostly Western populations) — may not generalise to Indian patients",
+          "Regulatory approval: FDA/CE marking for clinical AI tools required",
+          "Liability: Who is responsible when AI advises incorrectly?",
+          "High cost — limits adoption in resource-limited settings"
+        ]
+      },
+      "partB": {
+        "title": "Opioid-Free Anaesthesia (OFA)",
+        "definition": "OFA is an anaesthetic approach that completely avoids all intraoperative systemic opioids, relying instead on multimodal non-opioid analgesics and anaesthetic adjuvants to provide analgesia and obtund the surgical stress response.",
+        "rationale": [
+          "Opioid-induced hyperalgesia (OIH): Paradoxically, opioids can increase pain sensitivity. Especially with remifentanil — postoperative pain worse after high-dose intraoperative remifentanil.",
+          "PONV reduction: Opioids are primary PONV trigger — OFA reduces PONV significantly",
+          "Reduced ileus: Opioids delay GI recovery",
+          "Reduced respiratory depression: Particularly important in OSA patients",
+          "Reduced opioid dependence risk",
+          "ERAS compatibility: OFA aligns with ERAS principles"
+        ],
+        "agents": {
+          "ketamine": {
+            "dose": "Sub-anaesthetic: 0.2–0.5 mg/kg bolus at induction + 0.1–0.3 mg/kg/hr infusion",
+            "mechanism": "NMDA antagonist → central sensitisation blocked, prevents opioid tolerance. Sympathomimetic → offsets propofol hypotension.",
+            "bonus": "Bronchodilatory, analgesic, antidepressant properties"
+          },
+          "dexmedetomidine": {
+            "dose": "0.5–1 mcg/kg over 10 min loading, then 0.2–0.7 mcg/kg/hr",
+            "mechanism": "α2 agonist → inhibits noradrenaline release → sedation (without respiratory depression), analgesia, sympatholysis. Reduces MAC 40–50%.",
+            "bonus": "Reduces emergence agitation, delirium (MENDS trial), shivering"
+          },
+          "lidocaine_iv": {
+            "dose": "1.5 mg/kg bolus at induction + 2 mg/kg/hr infusion",
+            "mechanism": "Systemic sodium channel blockade → reduces central sensitisation, anti-inflammatory properties, reduces ileus",
+            "bonus": "Reduces postoperative pain scores, opioid consumption, PONV, length of stay (PROSPECT review)"
+          },
+          "magnesium": {
+            "dose": "50 mg/kg bolus + 15 mg/kg/hr",
+            "mechanism": "NMDA channel blocker (Mg2+ physiologically blocks the channel). Potentiates ketamine.",
+            "bonus": "Reduces shivering, bronchospasm, preeclampsia adjunct"
+          },
+          "nsaids_cox2": "Ketorolac 30 mg or Parecoxib 40 mg at induction — reduces prostaglandin-mediated sensitisation",
+          "paracetamol": "1g IV at induction — baseline multimodal analgesia",
+          "dexamethasone": "8 mg IV — reduces PONV and postoperative pain",
+          "regionalBlocks": "TAP block, ESP block, paravertebral, adductor canal — procedure-specific, OFA backbone"
+        },
+        "typicalOFAProtocol": "Induction: Propofol + ketamine 0.5 mg/kg + dexmedetomidine loading + lidocaine IV bolus + dexamethasone 8 mg + ketorolac 30 mg. Maintenance: Propofol TIVA + ketamine infusion + dexmedetomidine infusion + lidocaine infusion + regional block (if applicable).",
+        "suitable_for": [
+          "OSA patients (avoid respiratory depression)",
+          "Bariatric surgery (reduce PONV, ileus)",
+          "Chronic pain patients on long-term opioids (OIH prevention)",
+          "Day-case surgery (PONV reduction → faster discharge)",
+          "ERAS pathways"
+        ],
+        "limitations": [
+          "Ketamine: psychomimetic effects, tachycardia/hypertension",
+          "Dexmedetomidine: Bradycardia, hypotension, expensive",
+          "Not suitable for all surgical types (major trauma, extremely stimulating surgery may require opioid rescue)"
+        ]
+      }
+    },
+    "keyPoints": [
+      "HPI (Hypotension Prediction Index): AI predicts hypotension 5–15 min before — FLASH trial reduced hypotension by 60%",
+      "OFA: Ketamine + dexmedetomidine + lidocaine IV + magnesium + paracetamol + NSAIDs",
+      "OIH (opioid-induced hyperalgesia): Especially with high-dose remifentanil — OFA avoids this",
+      "OFA particularly beneficial: OSA, bariatric, chronic pain patients, ERAS pathways"
+    ],
+    "commonMistakes": [
+      "Confusing OFA (no systemic opioids) with opioid-sparing (reduced opioids) — they are different strategies",
+      "Not mentioning OIH as a specific reason for OFA in chronic pain patients on long-term opioids",
+      "Forgetting regional blocks as the cornerstone of OFA — drugs alone are insufficient for major surgery"
+    ],
+    "examTip": "HPI (Hypotension Prediction Index) is the most headline-grabbing recent AI application in anaesthesia — very likely to be asked. Know the trial (FLASH), the percentage reduction (60%), and the mechanism (arterial waveform analysis).",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "FLASH trial (2020, Anaesthesiology): Hypotension Prediction Index vs standard care in non-cardiac surgery. HPI group: MAP <65 mmHg for 1.6 min/hour vs 4.0 min/hour in control. 60% relative reduction. Anesthesiologists given HPI alert → administered vasopressors/fluids proactively. Proof of concept for AI-driven haemodynamic management.",
+        "ANI (Analgesia Nociception Index): Pupillometry-based or HRV-based autonomic index that correlates with nociception. ANI 70–100 = no nociception; ANI <50 = nociception detected. Used to guide OFA remifentanil dosing (even small doses in otherwise OFA protocol).",
+        "Opioid-induced hyperalgesia (OIH) pathophysiology: High-dose mu agonists → activate anti-opioid systems (dynorphin, CGRP, central sensitisation) → paradoxically increase pain sensitivity. Clinical manifestation: Increasing opioid dose requirements, pain spreading beyond original site, allodynia. Ketamine (NMDA antagonist) is the main OIH treatment/prevention.",
+        "LLM-based clinical decision support in anaesthesia: Large language models (like Claude, GPT-4) can generate differential diagnoses, suggest drug doses, interpret ABG/labs. Not yet FDA-cleared for clinical decision-making. Critcare.in AI tool concept aligns with this emerging space — bedside LLM decision support for Indian ICUs."
+      ]
+    }
+  },
+  {
+    "qNo": 9,
+    "question": "A) Protocol for management of foreign body aspiration in an unresponsive child  B) Trigeminal neuralgia",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Foreign Body Aspiration in an Unresponsive Child",
+        "assessment": {
+          "immediate": "Assess: Unresponsive, not breathing normally, no pulse (cardiac arrest) OR breathing but severely compromised (cyanosis, silent chest, absent air entry, unconscious but has pulse)",
+          "distinction": "If child has pulse but unresponsive — airway obstruction management. If NO pulse — immediate CPR."
+        },
+        "protocol": {
+          "initialCheck": [
+            "Assess severity: Is the cough effective? Any cyanosis? Conscious? Can cry?",
+            "Effective cough → encourage coughing, observe, do NOT intervene",
+            "Ineffective cough OR unresponsive → proceed immediately"
+          ],
+          "unresponsiveChild": {
+            "infant_under1yr": [
+              "Lay infant face-down along forearm (head lower than trunk)",
+              "5 back blows: Firm blows between shoulder blades with heel of hand",
+              "Turn supine, 5 chest thrusts: 2 finger-widths below nipple line, sharper than compressions",
+              "Look in mouth: ONLY remove object if CLEARLY VISIBLE — NO blind finger sweeps",
+              "Repeat cycle until object expelled, child breathes, or child cardiac arrests"
+            ],
+            "child_over1yr": [
+              "5 back blows: Lean forward, heel of hand between shoulder blades",
+              "5 abdominal thrusts (Heimlich): Stand behind, hands clasped below xiphisternum, sharp upward thrusts. NOT in infants.",
+              "Look in mouth: Only if object visible",
+              "If cardiac arrest: CPR"
+            ],
+            "do_not": [
+              "NO blind finger sweeps — may push FB deeper",
+              "NO abdominal thrusts in infants — risk of liver/stomach rupture",
+              "Do NOT perform blind nasopharyngeal suction"
+            ]
+          },
+          "if_child_loses_pulse": [
+            "Start CPR: 30:2 (single rescuer) or 15:2 (two rescuers — paediatric BLS)",
+            "Each time airway opened for rescue breaths: look for FB — if visible, remove",
+            "Call for help: Activate emergency response, call senior immediately"
+          ],
+          "definitive": {
+            "treatment": "Rigid bronchoscopy under general anaesthesia — GOLD STANDARD for definitive FB removal",
+            "preparation": [
+              "Keep child calm — crying/agitation worsens obstruction",
+              "Supplemental O2",
+              "IV access en route but do not delay",
+              "Inform ENT + paediatric surgery"
+            ],
+            "anaesthesia_for_bronchoscopy": [
+              "Maintain spontaneous ventilation throughout — paralysis may worsen complete obstruction",
+              "Inhalational induction: Sevoflurane 8% in 100% O2 — smooth, avoids laryngospasm",
+              "Topical lidocaine (4%): 4 mg/kg maximum to larynx and trachea — reduces stimulation",
+              "Rigid bronchoscope: Sanders injector for O2 delivery during bronchoscopy",
+              "Avoid positive pressure until FB location confirmed — risk of pushing FB distally"
+            ]
+          }
+        }
+      },
+      "partB": {
+        "title": "Trigeminal Neuralgia (TN)",
+        "definition": "TN is a chronic pain condition characterised by sudden, severe, electric shock-like or stabbing facial pain along the distribution of one or more branches of the trigeminal nerve (CN V). It is the most severe pain condition known — 'the suicide disease'.",
+        "classification": [
+          "Classical TN (Type 1): Vascular compression of trigeminal nerve root (superior cerebellar artery — 75%). Purely episodic attacks.",
+          "Secondary TN: Due to MS (multiple sclerosis — demyelination), tumour, or other structural cause",
+          "Idiopathic TN: No identifiable cause"
+        ],
+        "clinicalFeatures": [
+          "Location: Unilateral (bilateral in 3%). Most common: V2 (maxillary) and V3 (mandibular). Rare: V1 (ophthalmic) alone.",
+          "Character: Sudden, lancinating, electric-shock-like. Lasts seconds to 2 minutes. Severe intensity (NRS 10/10).",
+          "Trigger zones: Chewing, talking, touching the face, cold wind, brushing teeth — specific trigger zones (corner of mouth, cheek)",
+          "Pain-free intervals: Between attacks (distinguishes from SUNCT, trigeminal neuropathy)"
+        ],
+        "diagnosis": "Clinical diagnosis (ICHD-3 criteria). MRI brain (CISS/FIESTA sequences): Identifies vascular loop or structural cause.",
+        "management": {
+          "pharmacological": {
+            "firstLine": [
+              "Carbamazepine: 100–400 mg BD (titrate up to 1200 mg/day). Sodium channel blocker. Effective in 70–80% initially. SIDE EFFECTS: Agranulocytosis, hyponatraemia, hepatotoxicity, SJS.",
+              "Oxcarbazepine: 150–300 mg BD (better tolerated). Equal efficacy to carbamazepine. Preferred if carbamazepine side effects."
+            ],
+            "geneticScreening": "HLA-B*15:02 screening before carbamazepine/oxcarbazepine in Asian patients (Han Chinese, Indian, Thai) — strong association with Stevens-Johnson syndrome/TEN. CPIC guidelines recommend testing before prescribing.",
+            "secondLine": [
+              "Lamotrigine 25–400 mg/day",
+              "Gabapentin/pregabalin: Adjuvant",
+              "Baclofen 10–80 mg/day",
+              "Phenytoin IV: Acute crisis"
+            ]
+          },
+          "interventional": {
+            "percutaneous": [
+              "Glycerol rhizolysis: Injection of glycerol into Meckel's cave → chemical destruction of trigeminal ganglion",
+              "Balloon compression: Fogarty catheter inflated in Meckel's cave",
+              "Radiofrequency thermocoagulation (RFTC): Thermocoagulation of Gasserian ganglion. High success, relatively safe, repeatable."
+            ],
+            "radiosurgery": "Gamma Knife stereotactic radiosurgery: Precisely focused radiation to trigeminal root entry zone. Non-invasive. Onset delayed 1–2 months. Success 70–80%. Available at AIIMS, Tata Memorial.",
+            "surgical": {
+              "name": "Microvascular Decompression (MVD — Jannetta procedure)",
+              "description": "Posterior fossa craniotomy → microsurgical separation of offending blood vessel from trigeminal nerve → Teflon sponge interposed.",
+              "advantage": "BEST long-term outcome — 90% initial success, 70% pain-free at 10 years. Addresses root cause.",
+              "indication": "Classical TN in good surgical candidates (<70 years, MRI shows vascular contact, failed medical therapy).",
+              "anaesthesia": "General anaesthesia, posterior fossa craniotomy in lateral position (see Paper 3 Q2). BAER monitoring mandatory — CN VIII proximity risk."
+            }
+          }
+        }
+      }
+    },
+    "keyPoints": [
+      "Unresponsive child with FB: Back blows → chest thrusts (infant) or abdominal thrusts (>1yr) → look in mouth (NO blind sweep) → CPR if cardiac arrest",
+      "Rigid bronchoscopy under GA with spontaneous ventilation = definitive FB management",
+      "TN first-line: Carbamazepine. HLA-B*15:02 screening in Asian patients before prescribing.",
+      "MVD (Jannetta procedure): Best long-term outcome, 90% initial success"
+    ],
+    "commonMistakes": [
+      "Performing blind finger sweeps in children — worsens obstruction, pushes FB distally",
+      "Abdominal thrusts (Heimlich) in infants — causes liver injury. Use chest thrusts only.",
+      "Prescribing carbamazepine without HLA-B*15:02 screening in Asian patients — SJS risk"
+    ],
+    "examTip": "HLA-B*15:02 carbamazepine screening is a recent addition to TN management guidelines — very likely DNB question as 'what genetic screening is needed before carbamazepine?'. This is pharmacogenomics applied clinically.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "SUNCT vs TN differential: SUNCT (Short-lasting Unilateral Neuralgiform headache with Conjunctival injection and Tearing) — also triggered, also severe. Key difference: SUNCT attacks last 5–250 seconds but occur in clusters with autonomic features (red eye, tearing). TN: no autonomic features. SUNCT: responds to lamotrigine, not carbamazepine.",
+        "Bronchoscopy for FB — spontaneous ventilation rationale: Positive pressure ventilation before FB is localised may force it past a partial obstruction into deeper airways (ball-valve effect → complete obstruction or distal migration). Maintain spontaneous breathing until FB visualised and removed.",
+        "FA in children — epidemiology: Peak age 1–3 years. Most common FBs: nuts (peanuts most common), seeds, small toy parts, coins. Right bronchus more commonly affected (more vertical in children unlike adults). Clinical triad: sudden cough + wheeze + reduced breath sounds (Pultibec triad).",
+        "MVD anaesthesia specifics: Lateral position (park-bench). Possible brainstem/cerebellum retraction → cardiovascular instability (Cushing response). Trigeminal depressor response (trigeminocardiac reflex): sudden bradycardia/asystole when trigeminal nerve manipulated. Keep atropine immediately available. TIVA preferred."
+      ]
+    }
+  },
+  {
+    "qNo": 10,
+    "question": "A) Biomarkers in critical care  B) Point-of-care testing (POCT)",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Biomarkers in Critical Care",
+        "definition": "A biomarker is a measurable biological indicator of a physiological or pathological process, or response to therapy. In critical care, biomarkers guide diagnosis, prognosis, and monitor treatment response.",
+        "biomarkers": [
+          {
+            "biomarker": "Lactate",
+            "normal": "<2 mmol/L",
+            "source": "Anaerobic metabolism (Type A) or altered pyruvate metabolism (Type B)",
+            "use": "Diagnosis and severity of shock. Lactate >4 mmol/L = high risk, triggers aggressive resuscitation. Serial lactate: >10% fall per 2h = good response to resuscitation. SSC bundle includes serial lactate measurement.",
+            "levels": [
+              ">2 mmol/L: Elevated — monitor closely",
+              ">4 mmol/L: Severe — aggressive resuscitation",
+              ">10 mmol/L: Fulminant — very high mortality"
+            ]
+          },
+          {
+            "biomarker": "Procalcitonin (PCT)",
+            "normal": "<0.1 mcg/L",
+            "source": "Produced by thyroid C-cells and extra-thyroidal cells in response to bacterial infection",
+            "use": "Diagnosis of bacterial infection, antibiotic stewardship (de-escalation when PCT falls >80% from peak or <0.25 mcg/L). NOT elevated in viral infections or inflammatory conditions. Better than CRP for bacterial-viral differentiation.",
+            "limitation": "Elevated in: cardiogenic shock, post-cardiac surgery, burns, trauma (even without infection). False positives in these settings."
+          },
+          {
+            "biomarker": "Troponin (hs-TnT/hs-TnI)",
+            "normal": "hs-TnT <14 ng/L; threshold varies by assay",
+            "source": "Myocardial injury (structural proteins of cardiac troponin complex)",
+            "use": "STEMI/NSTEMI diagnosis. MINS detection (see Paper 3 Q9). Serial measurement: 0h/1h/2h protocol for rapid rule-in/rule-out MI. Prognosis in sepsis (cardiac involvement), PE (RV strain).",
+            "elevatedIn": "ACS, PE, myocarditis, sepsis, renal failure, demand ischaemia (Type 2 MI)"
+          },
+          {
+            "biomarker": "BNP / NT-proBNP",
+            "normal": "BNP <100 pg/mL; NT-proBNP <300 pg/mL (varies by age)",
+            "source": "Ventricular myocytes respond to wall stress (volume/pressure overload)",
+            "use": "Heart failure diagnosis and severity. Differentiate cardiac from non-cardiac dyspnoea (PRIDE study). Guide diuresis in acute decompensated heart failure. Prognosis in sepsis and ARDS.",
+            "caution": "Elevated in renal failure (BNP and NT-proBNP cleared renally). Use age-adjusted thresholds."
+          },
+          {
+            "biomarker": "NGAL (Neutrophil Gelatinase-Associated Lipocalin)",
+            "normal": "Urine NGAL <150 mcg/g creatinine; Plasma <150 ng/mL",
+            "source": "Renal tubular injury biomarker — released within 2 hours of kidney injury",
+            "use": "Early diagnosis of AKI (before creatinine rises — creatinine is late marker, rises only when GFR falls >50%). Cardiac surgery AKI, contrast nephropathy, sepsis AKI. Predicts need for RRT.",
+            "advantage": "Detects AKI 12–24h earlier than creatinine — allows earlier intervention"
+          },
+          {
+            "biomarker": "CRP (C-Reactive Protein)",
+            "normal": "<10 mg/L",
+            "source": "Hepatic acute phase protein induced by IL-6",
+            "use": "General marker of inflammation. Peaks 24–72h after infection/injury. Less specific than PCT for bacterial infection. Useful for trend monitoring.",
+            "limitation": "Non-specific — elevated in any inflammation. Slow to rise (less useful for acute diagnosis)."
+          },
+          {
+            "biomarker": "Ferritin",
+            "normal": "12–300 mcg/L",
+            "source": "Intracellular iron storage protein, acute phase reactant",
+            "use": "Hyperferritinaemia (>500, especially >10,000 mcg/L): Macrophage activation syndrome (MAS), haemophagocytic lymphohistiocytosis (HLH) — rare but life-threatening hyperinflammatory conditions. COVID-19 severity marker."
+          }
+        ]
+      },
+      "partB": {
+        "title": "Point-of-Care Testing (POCT)",
+        "definition": "POCT refers to diagnostic testing performed at or near the site of patient care (bedside, ICU, OT, emergency) using portable devices, delivering results within minutes without sending samples to the central laboratory.",
+        "principle": "Time-critical decisions in ICU/OT cannot wait for central lab turnaround time (typically 1–4 hours). POCT reduces TAT to 2–15 minutes.",
+        "devices": [
+          {
+            "device": "Blood Gas Analyser (e.g., iSTAT, Epoc, RAPIDPoint)",
+            "parameters": "pH, PaCO2, PaO2, HCO3, BE, SpO2, Na+, K+, Ca2+, Cl-, Glucose, Lactate, Hb/Hct",
+            "clinical_use": "Most important POCT device in ICU and OT. Guides ventilator management, acid-base therapy, electrolyte correction, transfusion triggers. Immediate results.",
+            "note": "ABG machine = most important POCT in anaesthesia and critical care"
+          },
+          {
+            "device": "TEG/ROTEM (Thromboelastography/Rotational Thromboelastometry)",
+            "parameters": "Clot initiation, strength, fibrinolysis — whole blood coagulation",
+            "clinical_use": "Massive haemorrhage, liver transplant, cardiac surgery, obstetric haemorrhage. Guides targeted blood product therapy. Reduces unnecessary FFP/platelet transfusion (TICH-2 insight)."
+          },
+          {
+            "device": "ACT (Activated Clotting Time)",
+            "parameters": "Whole blood clotting time in presence of activator",
+            "clinical_use": "Heparin monitoring in cardiac surgery (CPB) and ECMO. Target ACT >400–480 seconds on CPB. ACT <300 → more heparin; ACT >480 → protamine. Must be POCT — rapid result needed."
+          },
+          {
+            "device": "Glucometer",
+            "parameters": "Capillary/venous blood glucose",
+            "clinical_use": "Perioperative and ICU glucose monitoring. Target 6–10 mmol/L (ICU). Limitation: inaccurate in severe anaemia, shock (reduced peripheral perfusion). Use arterial/venous blood not capillary in ICU."
+          },
+          {
+            "device": "BNP/Troponin lateral flow assays",
+            "parameters": "BNP, troponin I/T",
+            "clinical_use": "Emergency diagnosis of ACS, heart failure, PE. 15–20 min result. Sensitivity lower than central lab hs-troponin — negative POCT troponin does not rule out NSTEMI."
+          },
+          {
+            "device": "Infectious disease POCT (Rapid tests)",
+            "parameters": "CRP, PCT, respiratory pathogens, COVID-19 antigen, malaria, dengue",
+            "clinical_use": "Antibiotic stewardship (PCT bedside). Isolation decisions. Biofire multiplex PCR: simultaneous 33 pathogens from one respiratory sample — 45-60 min result."
+          },
+          {
+            "device": "Lactate meter (e.g., Lactate Scout)",
+            "parameters": "Whole blood lactate",
+            "clinical_use": "Resuscitation monitoring in shock, sepsis. Serial measurement guides fluid and vasopressor therapy."
+          }
+        ],
+        "advantages": [
+          "Rapid result (minutes vs hours for central lab)",
+          "Bedside — no sample transport delay",
+          "Small sample volumes",
+          "Guides real-time decision-making in time-critical situations",
+          "Reduces blood culture contamination from transport"
+        ],
+        "limitations": [
+          "Less precise than laboratory gold standard (higher CV)",
+          "Operator technique-dependent",
+          "Quality control and calibration requirements",
+          "Cost per test higher than batch central lab",
+          "Limited parameters vs full laboratory"
+        ],
+        "regulatoryFramework": "POCT in India: NABL accreditation required for diagnostic labs. POCT in ICU/OT: Hospital policy-governed. ISO 22870 (POCT international standard) specifies quality requirements."
+      }
+    },
+    "keyPoints": [
+      "PCT: bacterial infection marker — de-escalate antibiotics when falls >80% or <0.25",
+      "NGAL: detects AKI 12–24h before creatinine — earliest renal injury marker",
+      "ABG machine = most important POCT in ICU and anaesthesia",
+      "ACT: essential for heparin monitoring in CPB — target >400–480 sec"
+    ],
+    "commonMistakes": [
+      "Saying lactate is always from anaerobic metabolism — Type B lactic acidosis (liver failure, metformin, thiamine deficiency) is not from hypoxia",
+      "Expecting PCT to be elevated in viral infections — PCT is specifically elevated in bacterial infections",
+      "Using capillary glucometer in ICU patients in shock — peripheral hypoperfusion causes falsely low readings; use arterial blood"
+    ],
+    "examTip": "NGAL as early AKI biomarker is frequently tested — know that it rises 12–24h before creatinine. Also know the normal values for all 6 biomarkers listed — examiners ask 'normal range' for PCT, lactate, and troponin specifically.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Biomarker panel for sepsis: Lactate + PCT + troponin + CRP together have superior discriminatory value than any single biomarker. Lactate: severity/prognosis. PCT: bacterial vs viral. Troponin: cardiac involvement. CRP: inflammation trend. Using all 4 together guides comprehensive management.",
+        "POCT validation requirement: Analytical validation (accuracy vs gold standard), clinical validation (does POCT result change clinical outcome?), and operator competency assessment are all required before implementing POCT in ICU. Many POCT devices have clinical decision rules built in (e.g., iSTAT calculates acid-base automatically).",
+        "Cystatin C: Emerging renal biomarker. Freely filtered by glomerulus, not secreted/reabsorbed. Not affected by muscle mass (unlike creatinine) — more accurate GFR estimate in elderly, muscle-wasting. Normal CyC-based GFR: >90 mL/min/1.73m². May replace creatinine as standard renal function marker.",
+        "Presepsin (sCD14-ST): Newest sepsis biomarker — soluble fragment of CD14 released from monocyte/macrophage membrane during phagocytosis. Rises within 1–2h of sepsis. Unaffected by renal failure. Superior to PCT for early sepsis diagnosis in some studies. POCT assay available (PATHFAST system). Not yet widely used in India."
+      ]
+    }
+  }
+]

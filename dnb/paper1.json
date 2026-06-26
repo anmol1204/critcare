@@ -1,0 +1,873 @@
+[
+  {
+    "qNo": 1,
+    "question": "Define Minimum Alveolar Concentration (MAC). Factors influencing MAC. Effects of inhalational anesthetics on the CNS.",
+    "marks": 10,
+    "answer": {
+      "definition": "MAC is defined as the minimum alveolar concentration of an inhalational anaesthetic agent at 1 atmosphere that prevents purposeful movement in response to a standard surgical stimulus (skin incision) in 50% of unpremedicated patients. It is a measure of anaesthetic potency and correlates inversely with lipid solubility (Meyer-Overton rule).",
+      "macValues": {
+        "heading": "Standard MAC values (in O2 at 1 atm, 40-year-old):",
+        "values": [
+          "Halothane: 0.75%",
+          "Isoflurane: 1.15%",
+          "Sevoflurane: 2.05%",
+          "Desflurane: 6.0%",
+          "Nitrous oxide: 104% (cannot achieve alone at 1 atm)"
+        ]
+      },
+      "factorsIncreasing": {
+        "heading": "Factors that INCREASE MAC (↑ anaesthetic requirement):",
+        "list": [
+          "Hyperthermia",
+          "Chronic alcoholism",
+          "Hyperthyroidism",
+          "Young age (peak at 6 months)",
+          "Hypernatraemia",
+          "CNS stimulants (amphetamines, cocaine — acute use)",
+          "Red hair (genotype-related)"
+        ]
+      },
+      "factorsDecreasing": {
+        "heading": "Factors that DECREASE MAC (↓ anaesthetic requirement):",
+        "list": [
+          "Hypothermia (most important — 5% decrease per °C)",
+          "Increasing age",
+          "Hypotension (MAP <40 mmHg)",
+          "Anaemia (Hb <5 g/dL)",
+          "Hyponatraemia",
+          "Pregnancy (MAC reduced by 30–40% from 8 weeks)",
+          "Opioids, benzodiazepines, alpha-2 agonists",
+          "Hypothyroidism",
+          "Acute alcohol intoxication",
+          "Lithium",
+          "Severe hypoxia (PaO2 <40 mmHg)"
+        ]
+      },
+      "noEffect": "Factors with NO effect on MAC: sex, duration of anaesthesia, hypo/hypercapnia (within mild range), anaemia (mild), metabolic acidosis/alkalosis.",
+      "cnsEffects": {
+        "heading": "CNS effects of inhalational anaesthetics:",
+        "subSections": [
+          {
+            "title": "Cerebral blood flow (CBF):",
+            "content": "All agents except N2O cause dose-dependent cerebral vasodilation → ↑CBF → ↑ICP. Order of vasodilation: Halothane > Enflurane > Desflurane > Isoflurane > Sevoflurane. Sevoflurane is safest for neuroanaesthesia."
+          },
+          {
+            "title": "Cerebral metabolic rate (CMRO2):",
+            "content": "All agents reduce CMRO2 (except N2O which mildly increases it). This uncoupling of CBF and CMRO2 is called 'luxury perfusion.'"
+          },
+          {
+            "title": "ICP:",
+            "content": "All agents ↑ICP (vasodilation > metabolic depression). Sevoflurane has least effect. Avoid all volatiles in severe intracranial hypertension."
+          },
+          {
+            "title": "EEG effects:",
+            "content": "Isoflurane → burst suppression at 2 MAC (neuroprotective). Enflurane → epileptiform spikes (epileptogenic, avoid in seizure patients). Sevoflurane → spike-wave complexes especially in children. Desflurane → burst suppression."
+          },
+          {
+            "title": "Neuroprotection:",
+            "content": "Isoflurane and sevoflurane show ischaemic preconditioning effects via KATP channels — reduce infarct size in animal models."
+          }
+        ]
+      }
+    },
+    "keyPoints": [
+      "MAC is population median (ED50) — not an individual value",
+      "MAC-awake: 0.3–0.4 MAC (patient follows commands)",
+      "MAC-BAR: 1.5 MAC (blocks adrenergic response to incision)",
+      "MAC-intubation: 1.3 MAC",
+      "Sevoflurane preferred in neuroanaesthesia due to least ICP rise"
+    ],
+    "commonMistakes": [
+      "Saying MAC is affected by sex or duration — it is NOT",
+      "Confusing acute vs chronic alcohol: acute ↓MAC, chronic ↑MAC",
+      "Forgetting pregnancy reduces MAC significantly",
+      "Stating N2O reduces CMRO2 — it actually mildly increases it"
+    ],
+    "examTip": "Draw the inverse correlation graph of MAC vs oil:gas partition coefficient (Meyer-Overton). DNB examiners love this graph.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "MAC-awake is the concentration at which 50% patients open eyes to command — typically 0.3-0.4 MAC, clinically relevant for TIVA vs volatile comparison",
+        "Meyer-Overton correlation: MAC × oil:gas partition coefficient = constant (~150). Proves lipid solubility theory of anaesthesia.",
+        "Quantal vs graded dose-response: MAC is quantal (movement or no movement), unlike BP response which is graded",
+        "Iso-MAC concept: 1 MAC sevoflurane + 0.5 MAC N2O = 1.5 MAC total — additivity is the basis of balanced anaesthesia",
+        "Recent challenge to lipid theory: Protein (GABA-A, NMDA, glycine receptor) binding may be the true mechanism — Meyer-Overton has exceptions (non-immobilisers)"
+      ]
+    }
+  },
+  {
+    "qNo": 2,
+    "question": "A) Capnography  B) Upper Lip Bite Test",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Capnography",
+        "definition": "Capnography is the continuous, real-time measurement and waveform display of CO2 concentration in expired and inspired gases throughout the respiratory cycle.",
+        "types": [
+          "Mainstream (in-line): sensor at airway — faster, no sampling delay, heavier",
+          "Sidestream: aspirates gas sample — lighter, can analyse N2O, slight delay"
+        ],
+        "normalWaveform": {
+          "phases": [
+            "Phase I (A-B): Baseline — anatomical dead space, CO2 = 0",
+            "Phase II (B-C): Rapid rise — mixing of dead space and alveolar gas",
+            "Phase III (C-D): Alveolar plateau — pure alveolar gas, CO2 ~38 mmHg",
+            "Phase IV (D): Rapid fall — inspiration begins, CO2 falls to zero"
+          ],
+          "etCO2Normal": "35–45 mmHg (normally 2–5 mmHg less than PaCO2)"
+        },
+        "clinicalInterpretation": [
+          "Gradual ↑ etCO2: hypoventilation, ↑ metabolic rate, malignant hyperthermia (early sign)",
+          "Sudden ↑ etCO2: venous CO2 embolism being absorbed, tourniquet release",
+          "Gradual ↓ etCO2: hyperventilation, ↓ CO2 production",
+          "Sudden ↓ etCO2 to zero: oesophageal intubation, circuit disconnect, cardiac arrest",
+          "Sudden ↓ etCO2 (not to zero): pulmonary embolism, ↓ cardiac output",
+          "Cleft waveform in plateau: spontaneous breathing effort — 'curare cleft'",
+          "Shark-fin waveform (slow plateau rise): bronchospasm, COPD"
+        ],
+        "uses": [
+          "Confirm ETT placement (gold standard non-invasive method)",
+          "CPR quality monitoring (target etCO2 >10 mmHg during CPR)",
+          "Return of spontaneous circulation: sudden rise in etCO2",
+          "Guide ventilation in head injury (target PaCO2 35–40 mmHg)",
+          "Malignant hyperthermia — earliest and most sensitive sign",
+          "Procedural sedation monitoring",
+          "PONV — ↑ etCO2 precedes nausea in laparoscopy"
+        ]
+      },
+      "partB": {
+        "title": "Upper Lip Bite Test (ULBT)",
+        "definition": "A bedside airway assessment tool where the patient is asked to bite the upper lip with the lower incisors to assess mandibular prognathism and predict difficult laryngoscopy.",
+        "grading": [
+          "Class I: Lower incisors bite above vermilion border of upper lip (can cover mucosa) — EASY laryngoscopy",
+          "Class II: Lower incisors bite below vermilion border but above mucosal line — MODERATE difficulty",
+          "Class III: Lower incisors cannot bite upper lip at all — DIFFICULT laryngoscopy"
+        ],
+        "significance": "Class III ULBT has better sensitivity and specificity than Mallampati for predicting difficult laryngoscopy. Less affected by patient cooperation.",
+        "advantages": [
+          "Simple, quick, no equipment needed",
+          "Not affected by mouth opening per se (tests jaw relationship)",
+          "Better predictor than Mallampati alone",
+          "Useful in edentulous patients (modified version)"
+        ],
+        "limitations": [
+          "Dental pathology, missing teeth affect assessment",
+          "Requires patient cooperation",
+          "Poor inter-rater reliability reported in some studies"
+        ]
+      }
+    },
+    "keyPoints": [
+      "etCO2 zero = oesophageal intubation or cardiac arrest — act immediately",
+      "MH: CO2 is the earliest capnographic sign, precedes temperature rise",
+      "ULBT Class III = predict difficult airway — have plan B ready",
+      "Capnography is now mandatory monitoring in all GA and sedation (AAGBI/ASA standards)"
+    ],
+    "commonMistakes": [
+      "Forgetting the PaCO2-etCO2 gradient — etCO2 is LOWER than PaCO2 by 2–5 mmHg normally (↑gradient in PE, ↓CO)",
+      "Saying sudden fall to zero = always oesophageal — also occurs in circuit disconnect",
+      "Confusing ULBT Class I (easy) with Class III (difficult)"
+    ],
+    "examTip": "Always draw the capnography waveform with labelled phases in the exam — Phase I, II, III, IV with the D point labeled as peak etCO2.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Volumetric capnography: CO2 plotted against tidal volume (not time). Area under phase III = alveolar dead space. Useful in ARDS, PE diagnosis.",
+        "etCO2 in CPR: etCO2 <10 mmHg during CPR predicts poor ROSC. Sudden rise >40 mmHg = ROSC. AHA 2020 endorses this.",
+        "ULBT was described by Khan et al. (1998) and validated as superior predictor over Mallampati in multiple studies",
+        "Capnography in non-intubated patients (nasal cannula CO2): now mandatory in procedural sedation per ASA 2018 guidelines — detects apnoea earlier than SpO2"
+      ]
+    }
+  },
+  {
+    "qNo": 3,
+    "question": "A) Randomization and types of randomization  B) Student's t-test",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Randomization",
+        "definition": "Randomization is the process of allocating subjects to treatment groups by chance, ensuring each participant has an equal probability of being assigned to any group. It is the cornerstone of RCTs — eliminating selection bias and ensuring comparability of groups.",
+        "purpose": [
+          "Eliminates selection bias",
+          "Ensures confounding variables are equally distributed",
+          "Validates use of statistical tests that assume random sampling",
+          "Produces comparable groups at baseline"
+        ],
+        "types": [
+          {
+            "name": "Simple randomization",
+            "description": "Coin toss, random number table, computer-generated. Suitable for large trials (n>200). May produce unequal group sizes in small trials."
+          },
+          {
+            "name": "Block randomization",
+            "description": "Subjects divided into blocks of fixed size (e.g., blocks of 4 or 6). Ensures equal group sizes at any point in the trial. Most common in clinical trials."
+          },
+          {
+            "name": "Stratified randomization",
+            "description": "Subjects first stratified by important prognostic variables (age, sex, disease severity), then randomized within each stratum. Ensures balance of key variables."
+          },
+          {
+            "name": "Cluster randomization",
+            "description": "Groups (hospitals, villages) rather than individuals are randomized. Used when individual randomization is impractical. Has 'design effect' — need larger sample size."
+          },
+          {
+            "name": "Minimization",
+            "description": "Dynamic allocation that minimises imbalance in multiple prognostic factors simultaneously. Used in small trials with many covariates. Quasi-randomization."
+          },
+          {
+            "name": "Systematic randomization",
+            "description": "Every nth subject assigned to treatment. NOT true randomization — subject to selection bias."
+          }
+        ]
+      },
+      "partB": {
+        "title": "Student's t-test",
+        "definition": "A parametric statistical test used to compare the means of two groups to determine if they are significantly different from each other. Developed by William Gosset (published under pseudonym 'Student').",
+        "assumptions": [
+          "Data is normally distributed (parametric)",
+          "Data is continuous (interval or ratio scale)",
+          "Groups are independent (for independent t-test)",
+          "Homogeneity of variance (for independent t-test — tested by Levene's test)"
+        ],
+        "types": [
+          {
+            "name": "One-sample t-test",
+            "use": "Compares sample mean to a known/hypothetical population mean. E.g., 'Is our ward's average SpO2 different from 98%?'"
+          },
+          {
+            "name": "Independent (unpaired) t-test",
+            "use": "Compares means of two independent groups. E.g., 'Is MAP different between sevoflurane vs propofol groups?'"
+          },
+          {
+            "name": "Paired t-test",
+            "use": "Compares means of the same group at two time points or under two conditions. E.g., 'Is HR before vs after intubation different?' — More powerful than unpaired."
+          }
+        ],
+        "interpretation": "If p < 0.05 (at 95% CI), the difference is statistically significant — we reject the null hypothesis. t-value is compared to critical value from t-distribution table using degrees of freedom (n-1 or n1+n2-2).",
+        "nonParametricEquivalent": "If data is not normally distributed: use Mann-Whitney U test (unpaired) or Wilcoxon signed-rank test (paired)."
+      }
+    },
+    "keyPoints": [
+      "Block randomization is the most used in anaesthesia RCTs",
+      "Allocation concealment (hiding future allocation from recruiters) is separate from blinding — equally important",
+      "t-test compares means of TWO groups only — for 3+ groups use ANOVA",
+      "Paired t-test is more powerful than unpaired — use when same subject measured twice"
+    ],
+    "commonMistakes": [
+      "Confusing randomization with allocation concealment — they are different concepts",
+      "Using t-test for non-normal data — should use Mann-Whitney U",
+      "Using t-test for more than two groups — causes Type I error inflation; use ANOVA",
+      "Confusing statistical significance with clinical significance"
+    ],
+    "examTip": "DNB often asks: 'What non-parametric test replaces t-test?' — Mann-Whitney U (unpaired) and Wilcoxon signed-rank (paired). Memorise this pair.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Concealed allocation: Even after randomization, if the recruiter knows future allocations, they can bias recruitment. Achieved by central allocation, sealed opaque envelopes, or telephone randomization.",
+        "CONSORT statement (Consolidated Standards of Reporting Trials): Mandates reporting of randomization method, allocation concealment, and blinding in RCT publications.",
+        "Effect of non-normality: Central Limit Theorem states that with large n (>30), t-test is robust even if data is slightly non-normal.",
+        "Degrees of freedom for paired t-test = n-1 (n = number of pairs), for unpaired = n1+n2-2"
+      ]
+    }
+  },
+  {
+    "qNo": 4,
+    "question": "A) Oxygen failure safety devices  B) SPIKES protocol",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Oxygen Failure Safety Devices",
+        "purpose": "Prevent delivery of a hypoxic gas mixture to the patient in the event of oxygen supply failure during anaesthesia.",
+        "devices": [
+          {
+            "name": "Oxygen Failure Protection Device (OFPD) / Bosun Whistle",
+            "mechanism": "When O2 pipeline pressure falls below 200 kPa, it triggers an audible alarm (whistle) AND simultaneously cuts off N2O flow. Ensures patient cannot receive pure N2O without O2.",
+            "note": "The audible alarm must sound BEFORE N2O is cut off — gives the anaesthetist a warning."
+          },
+          {
+            "name": "Oxygen-N2O Proportioning System (Link-25 / Ratio Controller)",
+            "mechanism": "Mechanically links O2 and N2O flowmeters so that N2O flow cannot exceed a ratio that would deliver less than 25% O2. If O2 falls, N2O is proportionally reduced.",
+            "types": "Link-25 (chain-link mechanical coupling) in Datex-Ohmeda; Oxylog system in Draeger."
+          },
+          {
+            "name": "Minimum Oxygen Flow Knob",
+            "mechanism": "O2 flowmeter has a stop that prevents flow being turned to zero — ensures a minimum flow of ~150–200 mL/min O2 always delivered.",
+            "limitation": "Does not protect against hypoxic mixture if high N2O is deliberately set."
+          },
+          {
+            "name": "Oxygen Analyser / Paramagnetic O2 analyser",
+            "mechanism": "Continuously monitors FiO2 at the common gas outlet. Sets off alarm if FiO2 <21%. This is the final safety net.",
+            "note": "Mandatory on all modern anaesthetic machines. Most important monitor for oxygen safety."
+          },
+          {
+            "name": "Oxygen Supply Pressure Gauge",
+            "mechanism": "Shows pipeline and cylinder pressure. Allows anaesthetist to detect impending supply failure."
+          }
+        ],
+        "hypoxicGuardConcept": "Despite all safety devices, hypoxic mixtures CAN be delivered if: (1) cylinders are mislabelled, (2) pipeline gases are crossed, (3) O2 analyser not used. Always check FiO2 with analyser."
+      },
+      "partB": {
+        "title": "SPIKES Protocol",
+        "purpose": "A structured 6-step communication framework for breaking bad news to patients and families. Widely used in oncology, critical care, and palliative settings.",
+        "steps": [
+          {
+            "step": "S — Setting up the interview",
+            "detail": "Private, quiet space. Sit down (don't stand over patient). Ensure appropriate support persons present. Silence phones. Ensure adequate time. Offer tissues."
+          },
+          {
+            "step": "P — Perception",
+            "detail": "Assess what the patient already knows. 'What have you been told about your condition so far?' Before you tell, ask. Corrects misconceptions, establishes baseline."
+          },
+          {
+            "step": "I — Invitation",
+            "detail": "Determine how much the patient wants to know. 'Are you the kind of person who likes to know all the details?' Respects autonomy. Some patients prefer less information."
+          },
+          {
+            "step": "K — Knowledge",
+            "detail": "Deliver information in small chunks. Use plain language, avoid jargon. 'I'm afraid I have serious news...' — warning shot. Pause after each key piece. Check understanding."
+          },
+          {
+            "step": "E — Emotions and Empathy",
+            "detail": "Acknowledge and respond to emotional reactions. Name the emotion: 'This must be very shocking for you.' Do not rush past this step. Silence is therapeutic. Do not say 'I know how you feel.'"
+          },
+          {
+            "step": "S — Strategy and Summary",
+            "detail": "Summarise the discussion. Explain the management plan clearly. Ensure the patient/family know next steps. Provide written information if possible. Schedule follow-up."
+          }
+        ]
+      }
+    },
+    "keyPoints": [
+      "OFPD = whistle alarm + N2O cutoff — O2 alarm comes FIRST",
+      "Link-25 ensures minimum 25% O2 in O2/N2O mixture",
+      "O2 analyser is the most important safety monitor — never skip checking it",
+      "SPIKES: critical care application — breaking news of death, poor prognosis, ICU goals of care discussions"
+    ],
+    "commonMistakes": [
+      "Confusing OFPD (cuts N2O) with O2 flush valve",
+      "Thinking safety devices make hypoxia impossible — crossed pipelines have caused deaths",
+      "In SPIKES, skipping the Perception step and launching into information delivery"
+    ],
+    "examTip": "SPIKES is increasingly asked in DNB with reference to ICU/palliative care. Know all 6 steps with their rationale — examiners want the 'why' not just the 'what'.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Pin Index System: Prevents wrong cylinder being connected to wrong yoke. Each gas has unique pin arrangement (O2 = 2,5; N2O = 3,5; CO2 = 1,6). ONLY protects at cylinder level, NOT pipeline.",
+        "Diameter Index Safety System (DISS): For pipeline connections — each gas has unique diameter fitting preventing cross-connection.",
+        "SPIKES was developed by Baile et al. (2000) in oncology. Now adopted by ISCCM for critical care communication.",
+        "Evidence for SPIKES: Patients who receive structured bad news delivery show less anxiety, better recall, higher satisfaction (RCT evidence from Fallowfield 2002)"
+      ]
+    }
+  },
+  {
+    "qNo": 5,
+    "question": "A) Environmental impact of anesthetic agents  B) Clinical significance and changes in SpO2",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Environmental Impact of Anaesthetic Agents",
+        "globalWarmingPotential": {
+          "definition": "Global Warming Potential (GWP) is the heat-trapping ability of a gas relative to CO2 over 100 years (GWP of CO2 = 1).",
+          "values": [
+            "Desflurane: GWP = 2540 (worst — fluorine-rich, atmospheric lifetime 14 years)",
+            "Isoflurane: GWP = 510",
+            "Sevoflurane: GWP = 130 (best among volatiles)",
+            "N2O: GWP = 298 (also an ozone-depleting substance)",
+            "Halothane: GWP = 40",
+            "Air/O2: GWP = 0"
+          ]
+        },
+        "ozoneDepleting": "N2O depletes stratospheric ozone — now the single largest ozone-depleting substance in use. CFCs previously used in MDIs were worse but have been phased out.",
+        "magnitude": "Anaesthetic gases account for ~5% of NHS carbon footprint. A 1-hour desflurane anaesthetic has the same carbon footprint as driving 235 miles.",
+        "strategies": [
+          "Switch from desflurane to sevoflurane or TIVA (propofol has negligible environmental impact)",
+          "Low-flow anaesthesia (↓ fresh gas flow ↓ atmospheric venting)",
+          "Avoid N2O where possible",
+          "Use air instead of N2O as carrier gas",
+          "Anaesthetic gas recapture/scavenging systems",
+          "TIVA for short procedures",
+          "Laryngeal mask airways (lower FGF needed vs ETT)",
+          "Desflurane ban: UK NHS banned desflurane in 2020; several countries following"
+        ]
+      },
+      "partB": {
+        "title": "Clinical Significance and Changes in SpO2",
+        "definition": "SpO2 is the peripheral oxygen saturation measured by pulse oximetry — estimates SaO2 (arterial oxygen saturation) non-invasively using the differential absorption of red (660nm) and infrared (940nm) light by oxyhaemoglobin and deoxyhaemoglobin.",
+        "normalValue": "SpO2 ≥95% in healthy adults breathing room air. Target ≥94% intraoperatively.",
+        "clinicalSignificance": [
+          "SpO2 <90% = clinically significant hypoxaemia — requires immediate intervention",
+          "SpO2 <85% = severe hypoxaemia — central cyanosis visible",
+          "SpO2 <80% = impaired consciousness likely",
+          "SpO2 94–96% is recommended target in acutely ill patients (BTS 2017) — avoiding hyperoxia"
+        ],
+        "causesOfFalseReading": [
+          "Falsely LOW: nail varnish (blue/green/black), methaemoglobinaemia (reads ~85% regardless), motion artifact, poor perfusion, venous pulsation (tricuspid regurgitation)",
+          "Falsely HIGH: COHb (carboxyhaemoglobin) — SpO2 reads near 100% even with CO poisoning (HbCO absorbs red light like HbO2). This is the MOST DANGEROUS false reading."
+        ],
+        "limitationsOfSpO2": [
+          "Cannot detect hyperoxia (reads 100% whether PaO2 is 100 or 500 mmHg)",
+          "Lag time — detects hypoxaemia 30–60 seconds after onset",
+          "Inaccurate in dark skin pigmentation (tendency to overestimate — FDA alert 2021)",
+          "Cannot distinguish between types of Hb (MetHb, COHb)"
+        ],
+        "oxyhaemoglobinDissociationCurve": "SpO2 correlates with PaO2 via the sigmoid ODC. The flat upper portion (SpO2 90–100%) means large PaO2 changes cause small SpO2 changes here. The steep portion (SpO2 70–90%) means small PaO2 changes cause large SpO2 changes — dangerous zone."
+      }
+    },
+    "keyPoints": [
+      "Desflurane has GWP of 2540 — worst greenhouse gas in anaesthesia",
+      "CO poisoning: SpO2 falsely reads near 100% — use co-oximetry ABG",
+      "N2O: both greenhouse gas AND ozone depleter — dual environmental impact",
+      "TIVA has negligible environmental footprint — green anaesthesia first choice"
+    ],
+    "commonMistakes": [
+      "Thinking methaemoglobinaemia causes SpO2 to read 100% — it reads ~85% regardless of true saturation",
+      "Confusing CO (reads high) with MetHb (reads 85%)",
+      "Stating sevoflurane is environmentally harmless — it still has GWP 130"
+    ],
+    "examTip": "The 'racial bias' of pulse oximetry (overestimation in dark skin) is a very recent hot topic — cite the NEJM 2020 study and FDA 2021 alert for extra marks.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Sustainable Anaesthesia: The 'Anaesthesia Sustainability Toolkit' by AAGBI recommends switching to TIVA + low-flow as primary environmental strategy.",
+        "Desflurane ban: Already banned by NHS England (2020), French health service (2021). India yet to formally regulate.",
+        "Fractional inspired O2 (FiO2) and hyperoxia: SpO2 cannot detect PaO2 >100 mmHg. Unnecessary supplemental O2 causes: atelectasis, reactive oxygen species, worsened outcomes in MI, stroke, COPD. Target SpO2 94–96%, not 100%.",
+        "Perfusion Index (PI) on advanced pulse oximeters: ratio of pulsatile to non-pulsatile signal. Low PI (<1) = poor peripheral perfusion → unreliable SpO2. Alerts anaesthetist to check probe position."
+      ]
+    }
+  },
+  {
+    "qNo": 6,
+    "question": "A) Delta ratio  B) Metabolic Equivalents (METs)",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Delta Ratio",
+        "definition": "The delta ratio (delta-delta ratio) is used to determine whether a mixed acid-base disorder exists in the presence of a high anion gap metabolic acidosis (HAGMA). It compares the rise in anion gap to the fall in bicarbonate.",
+        "formula": "Delta ratio = (Measured AG – Normal AG) / (Normal HCO3 – Measured HCO3) = ΔAG / ΔHCO3. Normal AG = 12 ± 2 mEq/L. Normal HCO3 = 24 mEq/L.",
+        "interpretation": [
+          "Delta ratio <0.4: HAGMA + concurrent NAGMA (hyperchloraemic acidosis). AG rise less than HCO3 fall — non-gap component present.",
+          "Delta ratio 0.4–1.0: Pure HAGMA — lactic acidosis, DKA, typically fall in this range.",
+          "Delta ratio 1.0–2.0: Pure HAGMA (expected range for most HAGMA)",
+          "Delta ratio >2.0: HAGMA + concurrent metabolic alkalosis. AG rise greater than HCO3 fall — pre-existing alkalosis 'masking' the acidosis."
+        ],
+        "clinicalExample": "DKA patient with vomiting: AG ↑ from DKA ketones, but HCO3 not as low as expected because concurrent metabolic alkalosis from vomiting → delta ratio >2.",
+        "when_to_use": "ONLY applicable when anion gap is high (>12). Does not apply to normal AG metabolic acidosis."
+      },
+      "partB": {
+        "title": "Metabolic Equivalents (METs)",
+        "definition": "MET is the ratio of metabolic rate during activity to metabolic rate at rest. 1 MET = oxygen consumption at rest = 3.5 mL O2/kg/min. Used to quantify functional capacity and estimate perioperative cardiac risk.",
+        "clinicalSignificance": "The ACC/AHA perioperative guidelines (2014, updated 2024) use METs to guide preoperative cardiac evaluation and the need for further testing.",
+        "levels": [
+          "1–4 METs (Poor capacity): Eating, dressing, walking on level ground at 4 km/hr",
+          "4–10 METs (Moderate capacity): Climbing one flight of stairs, walking uphill, moderate housework, golf",
+          ">10 METs (Excellent capacity): Strenuous sports, swimming, singles tennis, running >10 km/hr"
+        ],
+        "perioperativeImplication": [
+          "≥4 METs without symptoms: Acceptable cardiac risk. Proceed with surgery without further cardiac testing in most cases.",
+          "<4 METs or unable to assess: Further evaluation needed if undergoing intermediate/high-risk surgery.",
+          "Duke Activity Status Index (DASI): Validated questionnaire for MET estimation"
+        ],
+        "surgeryrisk": [
+          "Low risk surgery (<1% MACE): Proceed regardless of METs",
+          "Intermediate risk (1–5% MACE): METs guide decision for stress testing",
+          "High risk (>5% MACE): Cardiology referral often warranted"
+        ]
+      }
+    },
+    "keyPoints": [
+      "Delta ratio >2: HAGMA + metabolic alkalosis — think DKA with vomiting, diuretics",
+      "Delta ratio <0.4: HAGMA + NAGMA — think DKA with saline resuscitation",
+      "4 METs = climbing one flight of stairs = adequate functional capacity",
+      "METs <4 with poor functional capacity → need further cardiac evaluation before intermediate/high-risk surgery"
+    ],
+    "commonMistakes": [
+      "Applying delta ratio when AG is normal — it is only valid in HAGMA",
+      "Forgetting that delta ratio >2 means an ALKALOSIS is masking the bicarbonate fall",
+      "Saying 4 METs = running — it is walking uphill or climbing stairs, NOT running"
+    ],
+    "examTip": "Write the delta ratio formula clearly and draw the interpretation table. For METs, list common daily activities at each level — examiners want practical clinical correlation.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Anion gap = Na - (Cl + HCO3). Normal 8-12 mEq/L. If albumin is low (each 1g/dL fall in albumin, AG falls by 2.5), correct AG = measured AG + 2.5 × (4 – albumin). Critical in ICU where hypoalbuminaemia is common.",
+        "Stewart approach to acid-base: Physicochemical model — pH determined by SID (strong ion difference), PCO2, and weak acid concentration (albumin, phosphate). More comprehensive but less used clinically in India.",
+        "Wearable technology and METs: Apple Watch, Fitbit can now estimate MET-hours continuously. ASA 2024 guidelines discuss wearable-derived functional capacity as a valid preoperative tool.",
+        "DASI (Duke Activity Status Index): Validated 12-item questionnaire to estimate METs without formal exercise testing. Score >34 ≈ ≥10 METs."
+      ]
+    }
+  },
+  {
+    "qNo": 7,
+    "question": "A) Diabetic neuropathic pain – clinical features and management  B) Coaxial circuits – analysis and advantages",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Diabetic Neuropathic Pain",
+        "definition": "Pain arising from diabetes mellitus-related damage to peripheral or autonomic nerves, occurring in the absence of other causes. Affects ~50% of diabetics with peripheral neuropathy.",
+        "pathophysiology": "Chronic hyperglycaemia → polyol pathway activation, advanced glycation end products, oxidative stress, neuroinflammation → peripheral sensitisation, central sensitisation, loss of inhibitory interneurons.",
+        "clinicalFeatures": {
+          "distribution": "Typically 'stocking and glove' distribution — distal, symmetric, lower > upper limbs.",
+          "characteristics": [
+            "Burning, shooting, stabbing, or electric-shock-like pain",
+            "Allodynia (pain from non-painful stimulus)",
+            "Hyperalgesia (exaggerated pain from painful stimulus)",
+            "Paraesthesias (tingling, numbness)",
+            "Worse at night — nocturnal exacerbation characteristic",
+            "Associated: autonomic features (postural hypotension, gastroparesis, urinary dysfunction)"
+          ],
+          "diagnosis": "Clinical + NCS (nerve conduction studies) shows reduced amplitude and velocity. DN4 questionnaire (score ≥4/10 = neuropathic pain) — validated tool."
+        },
+        "management": {
+          "firstLine": [
+            "Pregabalin: 75–300 mg/day in 2–3 divided doses (superior to gabapentin in bioavailability). Reduces central sensitisation via α2δ subunit of VGCC.",
+            "Duloxetine: 60–120 mg/day. SNRI — FDA-approved for DPNP. Dual noradrenergic/serotonergic reuptake inhibition.",
+            "Amitriptyline: 10–75 mg nocte. TCA — cheap, effective. Limited by side effects in elderly."
+          ],
+          "secondLine": [
+            "Tapentadol (opioid with NRI activity) — preferred opioid in neuropathic pain",
+            "Tramadol",
+            "Topical agents: Capsaicin 0.075% cream, Lidocaine 5% patches"
+          ],
+          "adjuncts": [
+            "Glycaemic optimisation (HbA1c <7%) — slows progression",
+            "α-Lipoic acid — antioxidant, shown to reduce neuropathic symptoms",
+            "Physical therapy",
+            "Spinal cord stimulation: for refractory cases"
+          ],
+          "noClearEvidence": "Gabapentin, opioids (except tapentadol), SSRIs (less effective than SNRIs)"
+        }
+      },
+      "partB": {
+        "title": "Coaxial Circuits",
+        "definition": "Breathing circuits in which the inspiratory limb is housed inside the expiratory limb (or vice versa), sharing a common outer tube. Most efficient design for heat and moisture conservation.",
+        "types": [
+          {
+            "name": "Bain Circuit (Coaxial Mapleson D)",
+            "description": "Inner tube carries fresh gas to patient; outer corrugated tube is expiratory limb. FGF enters near the patient end. Patient valve at machine end.",
+            "FGF": "Controlled ventilation: 70 mL/kg/min. Spontaneous: 200–300 mL/kg/min.",
+            "advantage": "Fresh gas warms in the inner tube (surrounded by warm expired gas in outer) — heat and moisture conservation."
+          },
+          {
+            "name": "Lack Circuit (Coaxial Mapleson A)",
+            "description": "Outer tube carries fresh gas; inner tube is the expiratory limb (APL valve at machine end). More efficient for spontaneous ventilation.",
+            "FGF": "Spontaneous: 70 mL/kg/min. Controlled: 200 mL/kg/min.",
+            "note": "Most efficient for spontaneous breathing (same as standard Mapleson A)."
+          }
+        ],
+        "advantages": [
+          "Lighter and less bulky — single tube instead of two",
+          "Heat and moisture conservation — inner tube warmed by expired gas",
+          "Reduced dead space",
+          "Less drag on airway device",
+          "Easier to use in remote or shared airway scenarios"
+        ],
+        "disadvantage": "If inner tube disconnects/kinks — causes rebreathing without obvious alarm. Must check inner tube patency before use (Pethick test for Bain).",
+        "pethickTest": "Pethick test for Bain circuit integrity: Occlude patient end → fill with O2 from flush valve → release → Venturi effect should empty circuit rapidly if inner tube is patent. If inner tube is kinked/disconnected, circuit remains inflated."
+      }
+    },
+    "keyPoints": [
+      "DN4 score ≥4/10 = neuropathic pain — always mention validated tool",
+      "Pregabalin + duloxetine = first-line combination for DPNP",
+      "Bain = coaxial Mapleson D; Lack = coaxial Mapleson A",
+      "Pethick test MUST be done before every use of Bain circuit"
+    ],
+    "commonMistakes": [
+      "Giving only gabapentin for neuropathic pain — pregabalin has better bioavailability",
+      "Saying Bain is Mapleson A — it is Mapleson D",
+      "Not mentioning the catastrophic risk of inner tube disconnection in coaxial circuits"
+    ],
+    "examTip": "Draw the Bain circuit diagram clearly showing inner tube, outer tube, FGF entry point, and APL valve location.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "NICE 2023 guidelines on neuropathic pain: Amitriptyline, duloxetine, gabapentin, pregabalin as first-line. Topical capsaicin for localised pain. Opioids are second-line only.",
+        "Capsaicin 8% patch (Qutenza): Dermal application, single 30–60 min treatment. Depletes substance P from TRPV1 receptors. Lasts 3 months. NHS-approved for peripheral neuropathic pain.",
+        "Spinal cord stimulation (SCS): NICE-approved for CRPS and failed back surgery syndrome. Evidence emerging for DPNP. Gate control theory mechanism.",
+        "Coaxial vs parallel circuits: Coaxial circuits risk silent disconnection; parallel Mapleson circuits are more reliable but bulkier. ICU ventilators use parallel limb circuits for this reason."
+      ]
+    }
+  },
+  {
+    "qNo": 8,
+    "question": "A) Gastrointestinal changes in pregnancy  B) Acid aspiration prophylaxis",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Gastrointestinal Changes in Pregnancy",
+        "changes": [
+          {
+            "system": "Lower oesophageal sphincter (LOS)",
+            "change": "Tone decreased due to progesterone → increased gastro-oesophageal reflux. Upward displacement of stomach by gravid uterus worsens this."
+          },
+          {
+            "system": "Gastric emptying",
+            "change": "Delayed from second trimester onwards. Progesterone reduces motilin, ↓ peristalsis. Opioids worsen this further. Laboring patients — considered full stomach from onset of labor."
+          },
+          {
+            "system": "Gastric volume and pH",
+            "change": "Gastric volume increases. pH decreases — increased gastrin secretion (from placenta). pH <2.5 in up to 80% pregnant women at term (Mendelson's syndrome threshold)."
+          },
+          {
+            "system": "Intragastric pressure",
+            "change": "Increases as pregnancy progresses due to gravid uterus. Gradient between intragastric pressure and LOS tone = high regurgitation risk."
+          },
+          {
+            "system": "Nausea and vomiting",
+            "change": "First trimester: due to hCG (hyperemesis gravidarum if severe). Third trimester: mechanical pressure + delayed emptying."
+          }
+        ],
+        "clinicalImplication": "All pregnant women from 18–20 weeks onwards are considered to have FULL STOMACH. RSI is mandatory for GA in obstetrics."
+      },
+      "partB": {
+        "title": "Acid Aspiration Prophylaxis",
+        "rationale": "Mendelson's syndrome: aspiration of acidic gastric contents (pH <2.5, volume >25 mL) → chemical pneumonitis → severe ARDS-like picture. Prevention is critical.",
+        "pharmacological": [
+          {
+            "drug": "Sodium citrate 0.3M — 30 mL oral",
+            "timing": "Immediately before induction (within 15 minutes)",
+            "mechanism": "Non-particulate antacid. Rapidly neutralises gastric acid. Works immediately.",
+            "note": "MUST be given — most important single drug. Particulate antacids (Mg trisilicate) are avoided as their aspiration itself causes granulomatous pneumonitis."
+          },
+          {
+            "drug": "Ranitidine 150 mg oral / 50 mg IV",
+            "timing": "Night before + morning of surgery (oral), or 1–2 hours pre-op (IV)",
+            "mechanism": "H2 blocker — reduces acid secretion. Not immediate — needs time to act.",
+            "note": "Ranitidine largely replaced by proton pump inhibitors in modern practice but still widely used in India."
+          },
+          {
+            "drug": "Omeprazole/Pantoprazole 40 mg oral/IV",
+            "timing": "Night before + morning of surgery",
+            "mechanism": "PPI — most potent acid suppression. Takes 1–2 hours for effect.",
+            "note": "Now preferred over H2 blockers in elective obstetric anaesthesia."
+          },
+          {
+            "drug": "Metoclopramide 10 mg IV",
+            "timing": "30–60 minutes before induction",
+            "mechanism": "Prokinetic — increases LOS tone, promotes gastric emptying. Anti-emetic.",
+            "caution": "Avoid in known bowel obstruction."
+          }
+        ],
+        "nonPharmacological": [
+          "RSI with cricoid pressure (Sellick's manoeuvre) — 30–44 N force",
+          "Awake fibreoptic intubation if difficult airway anticipated",
+          "Avoidance of supine position in labour (aortocaval compression also)",
+          "Regional anaesthesia preferred over GA in obstetrics wherever possible"
+        ]
+      }
+    },
+    "keyPoints": [
+      "Full stomach from 18 weeks — RSI mandatory for obstetric GA",
+      "Sodium citrate: give within 15 min before induction — only non-particulate antacid",
+      "Avoid Mg trisilicate tablets — particulate, dangerous if aspirated",
+      "Mendelson's threshold: pH <2.5 AND volume >25 mL"
+    ],
+    "commonMistakes": [
+      "Giving particulate antacid (Mg trisilicate) — wrong, use sodium citrate only",
+      "Forgetting that gastric emptying is normal in early first trimester",
+      "Omitting metoclopramide from the regimen (often forgotten in exams)"
+    ],
+    "examTip": "Always list acid aspiration prophylaxis in order: sodium citrate → metoclopramide → H2/PPI. Then technique: RSI with cricoid. DNB expects all three drug components.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Sellick's manoeuvre: 30N before induction, 44N after loss of consciousness. Bimanual technique (support thyroid cartilage posteriorly). Controversial: may worsen laryngoscopy view. ILMA insertion requires cricoid pressure release.",
+        "Cricoid pressure effectiveness: Challenged by Cook et al. — some evidence it worsens laryngoscopy without clearly preventing regurgitation. Current consensus: still recommended in RSI until ETT confirmed.",
+        "WHO Safe Surgery Checklist mentions aspiration risk explicitly — 'Has the patient confirmed they have fasted?'",
+        "Aspiration management: Suction, bronchoscopy, supportive ventilation. Steroids and antibiotics NOT routinely recommended (don't prevent or treat chemical pneumonitis)."
+      ]
+    }
+  },
+  {
+    "qNo": 9,
+    "question": "A) Thromboelastography (TEG) – diagram and interpretation  B) Changes in stored blood after 21 days",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Thromboelastography (TEG)",
+        "definition": "TEG is a viscoelastic point-of-care test that assesses the entire process of clot formation, strength, and fibrinolysis in whole blood in real time. Developed by Hartert (1948).",
+        "parameters": [
+          {
+            "param": "R time (Reaction time)",
+            "normal": "5–10 min",
+            "meaning": "Time to initial fibrin formation. Reflects coagulation factors. ↑R = factor deficiency → give FFP."
+          },
+          {
+            "param": "K time (Kinetic time)",
+            "normal": "1–3 min",
+            "meaning": "Time to reach clot amplitude of 20mm. Reflects fibrinogen activity. ↑K = ↓ fibrinogen → give cryoprecipitate."
+          },
+          {
+            "param": "Alpha (α) angle",
+            "normal": "53–72°",
+            "meaning": "Rate of clot formation. Reflects fibrinogen. ↓α = ↓ fibrinogen → cryoprecipitate."
+          },
+          {
+            "param": "MA (Maximum Amplitude)",
+            "normal": "50–70 mm",
+            "meaning": "Greatest clot strength. Reflects platelet function (80%) and fibrinogen (20%). ↓MA = thrombocytopenia or platelet dysfunction → give platelets."
+          },
+          {
+            "param": "LY30 (Lysis at 30 min)",
+            "normal": "<7.5%",
+            "meaning": "Clot lysis 30 min after MA. ↑LY30 = hyperfibrinolysis → give tranexamic acid."
+          },
+          {
+            "param": "CI (Coagulation Index)",
+            "normal": "-3 to +3",
+            "meaning": "Overall summary index. Negative = hypocoagulable; positive = hypercoagulable."
+          }
+        ],
+        "clinicalUse": [
+          "Massive haemorrhage — guides targeted blood component therapy",
+          "Liver transplantation — complex coagulopathy",
+          "Cardiac surgery with CPB — heparin effect and reversal",
+          "Obstetric haemorrhage",
+          "Trauma — identifies hyperfibrinolysis early"
+        ],
+        "diagramNote": "Draw a TEG trace showing the spindle shape with R, K, α angle, MA, and LY30 labelled clearly."
+      },
+      "partB": {
+        "title": "Changes in Stored Blood after 21 Days",
+        "context": "Blood stored in CPD-A (Citrate-Phosphate-Dextrose-Adenine) solution at 4°C has a shelf life of 35 days. Significant biochemical and cellular changes accumulate — the 'storage lesion'.",
+        "changes": [
+          "↓ pH: Lactic acid accumulates → pH falls from 7.4 to ~6.8 by day 21",
+          "↑ K+: RBC membrane Na/K-ATPase fails → K+ leaks out → hyperkalemia on transfusion (critical in neonates and rapid transfusion)",
+          "↓ 2,3-DPG: Falls to near zero by day 14. Causes left shift of ODC (↑ O2 affinity, ↓ O2 delivery to tissues). Recovers 24 hours post-transfusion.",
+          "↓ Platelet viability: Virtually nil by day 1–2 of storage",
+          "↓ Factor V and VIII: Labile factors. Near-absent by 21 days.",
+          "↑ Free Hb: RBC lysis → free Hb → renal toxicity, NO scavenging → vasoconstriction",
+          "Microaggregates: Form from platelets and leucocytes — can cause TRALI, pulmonary microemboli",
+          "↑ Citrate: Can chelate Ca2+ → hypocalcaemia with rapid massive transfusion",
+          "↑ Ammonia: From RBC metabolism — relevant in hepatic failure",
+          "RBC deformability ↓: Membrane stiffening → poor microcirculatory flow"
+        ],
+        "clinicalImplication": "Use freshest available blood in neonates, rapid massive transfusion, and high-risk cardiac surgery. Leucodepletion reduces microaggregate and TRALI risk."
+      }
+    },
+    "keyPoints": [
+      "R↑ → FFP; K↑/α↓ → cryoprecipitate; MA↓ → platelets; LY30↑ → tranexamic acid",
+      "Stored blood: ↑K+, ↓pH, ↓2,3-DPG, ↓F V & VIII — all worsen with age",
+      "2,3-DPG depletion: left shift ODC, recovered at 24h — short-term tissue hypoxia risk",
+      "Hyperkalemia from stored blood is critical risk in neonates and rapid transfusion"
+    ],
+    "commonMistakes": [
+      "Confusing R time (clotting factors) with MA (platelets) — common exam error",
+      "Forgetting LY30 and tranexamic acid — fibrinolysis is frequently missed",
+      "Thinking that stored blood K+ causes immediate clinical hyperkalaemia in all patients — only clinically significant in rapid massive transfusion or neonates"
+    ],
+    "examTip": "Mandatory to draw the TEG spindle in the exam with all 5 parameters labelled and their normal ranges. Then draw 4 abnormal tracings (↑R, ↓MA, ↑LY30, flat line = fibrinolysis).",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "ROTEM (Rotational Thromboelastometry): Equivalent to TEG but uses different nomenclature (EXTEM, INTEM, FIBTEM channels). CT = R; CFT = K; MCF = MA. ROTEM is more standardised for obstetric haemorrhage in WOMAN trial-based protocols.",
+        "PROP trial (Prospective Randomised On Transfusion): Showed no significant benefit of fresh blood over standard blood in most ICU patients (NEJM 2015 — ABLE trial).",
+        "Storage lesion reversal: Pathirajaetal showed rejuvenation solutions (REJUVESOL) can partially restore 2,3-DPG and ATP in stored RBCs but not commercially practical.",
+        "TRALI (Transfusion-Related Acute Lung Injury): Leading cause of transfusion-related death. Related to stored plasma antibodies + microaggregates. Leucodepletion reduces risk."
+      ]
+    }
+  },
+  {
+    "qNo": 10,
+    "question": "A) Target-Controlled Infusion (TCI)  B) Intraoperative measures to reduce intracranial pressure (ICP)",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Target-Controlled Infusion (TCI)",
+        "definition": "TCI is an infusion system that uses pharmacokinetic (PK) models to calculate and automatically adjust drug infusion rates to achieve and maintain a target plasma or effect-site concentration specified by the anaesthetist.",
+        "principle": "The TCI device uses a three-compartment PK model (central compartment = blood; peripheral compartments = tissues). It calculates infusion rate needed to rapidly achieve the target concentration then maintain it, accounting for distribution and elimination.",
+        "models": [
+          {
+            "drug": "Propofol",
+            "models": [
+              "Marsh model: Targets plasma concentration. Uses body weight. Widely used.",
+              "Schnider model: Targets effect-site concentration. Uses age, weight, height, LBM. More accurate in elderly."
+            ]
+          },
+          {
+            "drug": "Remifentanil",
+            "models": ["Minto model: Uses age, weight, LBM. Effect-site targeting."]
+          },
+          {
+            "drug": "Sufentanil/Fentanyl",
+            "models": ["Shafer and Varvel models"]
+          }
+        ],
+        "components": [
+          "PK model stored in pump software",
+          "Patient demographic data input (weight, age, sex, height)",
+          "Target concentration display (Cp — plasma; Ce — effect-site)",
+          "Auto-calculated infusion rate",
+          "Bias and imprecision monitoring in modern pumps"
+        ],
+        "advantages": [
+          "Smooth induction and maintenance",
+          "Predictable pharmacology",
+          "Rapid titration to clinical endpoints",
+          "Reduces drug wastage compared to manual TIVA",
+          "Better haemodynamic stability"
+        ],
+        "limitations": [
+          "PK models are population-derived — individual variability",
+          "No feedback mechanism (open-loop) — unlike closed-loop systems",
+          "Target represents predicted, not measured concentration",
+          "Not validated in extremes of weight, liver/renal failure, paediatrics (some models)"
+        ]
+      },
+      "partB": {
+        "title": "Intraoperative Measures to Reduce ICP",
+        "normalICP": "ICP 5–15 mmHg. CPP = MAP – ICP (target CPP >60–70 mmHg in TBI).",
+        "measures": {
+          "positioning": [
+            "Head-up 15–30° — improves cerebral venous drainage",
+            "Head in neutral position — avoid neck flexion/rotation (compresses jugular veins)",
+            "Avoid prone position if possible in raised ICP"
+          ],
+          "ventilation": [
+            "Normocapnia (PaCO2 35–40 mmHg) — avoid hypercapnia (vasodilation ↑CBF ↑ICP)",
+            "Mild hypercapnia can be used as a rescue: target PaCO2 30–35 mmHg temporarily",
+            "Avoid PEEP >5 cmH2O if possible — impedes venous drainage"
+          ],
+          "anaestheticAgents": [
+            "Propofol: Reduces CMRO2 and CBF — drug of choice for neuroanaesthesia maintenance",
+            "Avoid halothane/desflurane — maximal cerebral vasodilation",
+            "Sevoflurane acceptable at <1 MAC",
+            "Avoid ketamine (↑CMRO2, ↑CBF, ↑ICP)"
+          ],
+          "osmotherapy": [
+            "Mannitol 0.25–1 g/kg IV over 15–20 min: Osmotic diuretic. Reduces brain water. Keep serum osmolality <320 mOsm/L.",
+            "Hypertonic saline (3% NaCl): May be superior to mannitol in some scenarios (maintains intravascular volume). Target Na 145–155 mEq/L."
+          ],
+          "csf_drainage": "Lumbar drain or EVD (external ventricular drain) — direct CSF removal for acute ICP reduction",
+          "steroids": "Only in vasogenic oedema (brain tumour, abscess) — NOT in TBI or stroke (CRASH trial evidence of harm)",
+          "avoidHarmful": [
+            "Avoid hypotension — maintain MAP to ensure CPP",
+            "Avoid hypoxaemia — O2 is critical for injured brain",
+            "Avoid hyperglycaemia (target BG 6–10 mmol/L)",
+            "Avoid hyperthermia — every 1°C ↑ = 7% ↑ CMRO2"
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "TCI Marsh model = weight-based, plasma target; Schnider model = effect-site target",
+      "CPP = MAP – ICP; target >60 mmHg in TBI",
+      "Mannitol 0.25–1 g/kg; hold if serum osmolality >320",
+      "Steroids: only for tumour/abscess oedema, never TBI"
+    ],
+    "commonMistakes": [
+      "Confusing Marsh (plasma Cp) and Schnider (effect-site Ce) models",
+      "Using ketamine in raised ICP — it increases CMRO2 and ICP",
+      "Giving steroids in TBI — CRASH trial showed harm"
+    ],
+    "examTip": "For TCI questions, always mention open-loop vs closed-loop and the BIS-guided closed-loop system as the future direction — examiner will be impressed.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Closed-loop TCI: BIS or entropy is used as feedback to automatically adjust propofol Ce. CLADS (Closed-Loop Anesthesia Delivery System) — commercial systems available. Superior to manual TIVA in maintaining BIS 40–60 (RCT evidence).",
+        "Effect-site targeting vs plasma targeting: Effect-site (Ce) targeting causes initial overshoot of plasma concentration to rapidly achieve Ce. Potentially dangerous in elderly/compromised patients — choose plasma targeting.",
+        "Lumbar drain in ICP: Contraindicated in posterior fossa masses (risk of herniation with sudden CSF removal). Useful in communicating hydrocephalus, SAH.",
+        "ICP monitoring: Bolts (Codman), EVD, Licox (PbtO2 monitoring). BEST-TRIP trial (NEJM 2012): ICP monitoring did not improve outcomes vs clinical+imaging protocol — but remains standard of care in TBI."
+      ]
+    }
+  }
+]

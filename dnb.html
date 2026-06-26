@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>DNB Anaesthesia — Solved Question Papers — CritCare.in</title>
+  <meta name="description" content="DNB Anaesthesia June 2026 solved question papers — Paper 1, 2, 3, 4. Complete model answers with key points, exam tips, and extra marks content." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    /* ── HERO ─────────────────────────────────────────────────────── */
+    .dnb-hero { background:linear-gradient(135deg,#0f1f3d 0%,#1a3560 60%,#0f2a4a 100%); padding:3.5rem 5% 2.5rem; color:#fff; position:relative; overflow:hidden; }
+    .dnb-hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 80% 50%,rgba(139,92,246,.2) 0%,transparent 65%); }
+    .dnb-hero-inner { max-width:1160px; margin:0 auto; position:relative; z-index:2; }
+    .dnb-hero-eye { display:inline-flex; align-items:center; gap:.5rem; font-size:.7rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:#a78bfa; margin-bottom:1rem; }
+    .dnb-hero-eye::before { content:''; width:20px; height:2px; background:#a78bfa; }
+    .dnb-hero h1 { font-family:var(--font-disp); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:600; margin-bottom:.7rem; letter-spacing:-.015em; }
+    .dnb-hero p { color:rgba(255,255,255,.7); max-width:600px; line-height:1.75; font-size:.95rem; }
+    .dnb-hero-stats { display:flex; gap:2rem; margin-top:1.5rem; flex-wrap:wrap; }
+    .dnb-stat .n { font-family:var(--font-disp); font-size:1.7rem; font-weight:600; color:#fff; }
+    .dnb-stat .l { font-size:.72rem; color:rgba(255,255,255,.55); margin-top:1px; }
+
+    /* ── BREADCRUMB ───────────────────────────────────────────────── */
+    .dnb-breadcrumb { font-size:.78rem; color:rgba(255,255,255,.5); margin-bottom:1rem; }
+    .dnb-breadcrumb a { color:rgba(255,255,255,.7); text-decoration:none; }
+    .dnb-breadcrumb a:hover { color:#fff; }
+
+    /* ── EXAM SELECTOR ────────────────────────────────────────────── */
+    .dnb-selector-bar { background:var(--bg-alt); border-bottom:1px solid var(--line); }
+    .dnb-selector-inner { max-width:1160px; margin:0 auto; padding:0 5%; display:flex; align-items:center; gap:0; overflow-x:auto; scrollbar-width:none; }
+    .dnb-selector-inner::-webkit-scrollbar { display:none; }
+    .dnb-sel-label { font-size:.72rem; font-weight:800; color:var(--slate); letter-spacing:.1em; text-transform:uppercase; padding:.9rem 1rem .9rem 0; margin-right:.5rem; border-right:1px solid var(--line); white-space:nowrap; flex-shrink:0; }
+    .dnb-paper-btn { padding:.9rem 1.2rem; font-size:.82rem; font-weight:700; color:var(--slate); background:none; border:none; border-bottom:3px solid transparent; cursor:pointer; font-family:var(--font-body); transition:color .18s; white-space:nowrap; flex-shrink:0; }
+    .dnb-paper-btn:hover { color:var(--blue); }
+    .dnb-paper-btn.active { color:#7c3aed; border-bottom-color:#7c3aed; }
+
+    /* ── MAIN AREA ────────────────────────────────────────────────── */
+    .dnb-main { max-width:900px; margin:0 auto; padding:2.5rem 5% 5rem; }
+    .dnb-paper-head { margin-bottom:1.8rem; }
+    .dnb-paper-head h2 { font-family:var(--font-disp); font-size:1.5rem; font-weight:600; color:var(--ink); margin-bottom:.3rem; }
+    .dnb-paper-head p { font-size:.86rem; color:var(--slate); line-height:1.6; }
+    .dnb-paper-badge { display:inline-flex; align-items:center; gap:.4rem; font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.1em; padding:.25rem .7rem; border-radius:20px; background:#ede9fe; color:#5b21b6; margin-bottom:.6rem; }
+
+    /* ── QUESTION CARDS ───────────────────────────────────────────── */
+    .dnb-q-list { display:flex; flex-direction:column; gap:1rem; }
+    .dnb-q-card { background:var(--bg); border:1px solid var(--line); border-radius:14px; overflow:hidden; transition:border-color .2s, box-shadow .2s; }
+    .dnb-q-card:hover { border-color:#c4b5fd; box-shadow:0 4px 20px rgba(124,58,237,.08); }
+    .dnb-q-card.open { border-color:#7c3aed; box-shadow:0 6px 24px rgba(124,58,237,.12); }
+
+    .dnb-q-header { padding:1.2rem 1.4rem; cursor:pointer; display:grid; grid-template-columns:auto 1fr auto; gap:.8rem 1rem; align-items:start; user-select:none; }
+    .dnb-q-num { width:36px; height:36px; border-radius:9px; background:#ede9fe; color:#5b21b6; font-weight:800; font-size:.88rem; display:grid; place-items:center; flex-shrink:0; margin-top:1px; }
+    .dnb-q-card.open .dnb-q-num { background:#7c3aed; color:#fff; }
+    .dnb-q-meta { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; margin-bottom:.35rem; }
+    .dnb-marks-badge { font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; padding:.18rem .5rem; border-radius:4px; background:#fef3c7; color:#92400e; }
+    .dnb-q-text { font-size:.95rem; font-weight:600; color:var(--ink); line-height:1.55; }
+    .dnb-q-toggle { width:30px; height:30px; border-radius:8px; background:var(--bg-alt); border:1.5px solid var(--line); display:grid; place-items:center; color:var(--slate); flex-shrink:0; margin-top:3px; font-size:1.1rem; transition:.2s; }
+    .dnb-q-card.open .dnb-q-toggle { background:#7c3aed; border-color:#7c3aed; color:#fff; }
+
+    /* ── ANSWER PANEL ─────────────────────────────────────────────── */
+    .dnb-answer-panel { display:none; border-top:1px solid var(--line); }
+    .dnb-q-card.open .dnb-answer-panel { display:block; }
+    .dnb-answer-body { padding:1.4rem 1.6rem 1.6rem; }
+
+    /* ── ANSWER CONTENT ───────────────────────────────────────────── */
+    .dnb-section { margin-bottom:1.2rem; }
+    .dnb-section-label { font-size:.65rem; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:#5b21b6; margin-bottom:.5rem; display:block; }
+    .dnb-p { font-size:.9rem; color:var(--slate); line-height:1.8; margin-bottom:.6rem; }
+    .dnb-subhead { font-size:.88rem; font-weight:700; color:var(--ink); margin:.9rem 0 .4rem; }
+    .dnb-list { font-size:.88rem; color:var(--slate); line-height:1.75; padding-left:1.3rem; margin-bottom:.6rem; }
+    .dnb-list li { margin-bottom:.2rem; }
+    .dnb-list li strong { color:var(--ink); }
+    .dnb-sub-section { background:var(--bg-alt); border-left:3px solid #c4b5fd; border-radius:0 8px 8px 0; padding:.8rem 1rem; margin:.6rem 0; }
+    .dnb-sub-section .dnb-subhead { margin-top:0; }
+    .dnb-field { margin-bottom:.7rem; }
+    .dnb-field-label { display:block; font-size:.67rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#7c3aed; margin-bottom:.3rem; }
+    .dnb-part-divider { border:none; border-top:2px dashed var(--line); margin:1.2rem 0; }
+    .dnb-part-label { display:inline-flex; align-items:center; gap:.4rem; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:.1em; padding:.25rem .7rem; border-radius:20px; background:#dbeafe; color:#1e40af; margin-bottom:.7rem; }
+
+    /* ── SPECIAL SECTIONS ─────────────────────────────────────────── */
+    .dnb-keypoints { background:#f0fdf4; border:1px solid #86efac; border-radius:10px; padding:1rem 1.2rem; margin:.8rem 0; }
+    .dnb-keypoints .dnb-sec-title { font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#166534; margin-bottom:.6rem; display:flex; align-items:center; gap:.4rem; }
+    .dnb-keypoints ul { font-size:.88rem; color:#14532d; line-height:1.7; padding-left:1.2rem; margin:0; }
+    .dnb-keypoints li { margin-bottom:.2rem; }
+
+    .dnb-mistakes { background:#fef2f2; border:1px solid #fecaca; border-radius:10px; padding:1rem 1.2rem; margin:.8rem 0; }
+    .dnb-mistakes .dnb-sec-title { font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#991b1b; margin-bottom:.6rem; display:flex; align-items:center; gap:.4rem; }
+    .dnb-mistakes ul { font-size:.88rem; color:#7f1d1d; line-height:1.7; padding-left:1.2rem; margin:0; }
+    .dnb-mistakes li { margin-bottom:.2rem; }
+
+    .dnb-examtip { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:1rem 1.2rem; margin:.8rem 0; }
+    .dnb-examtip .dnb-sec-title { font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#92400e; margin-bottom:.5rem; display:flex; align-items:center; gap:.4rem; }
+    .dnb-examtip p { font-size:.88rem; color:#78350f; line-height:1.7; margin:0; }
+
+    .dnb-extramarks { background:linear-gradient(135deg,#faf5ff,#ede9fe); border:1px solid #c4b5fd; border-radius:10px; padding:1rem 1.2rem; margin:.8rem 0; }
+    .dnb-extramarks .dnb-sec-title { font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#5b21b6; margin-bottom:.6rem; display:flex; align-items:center; gap:.4rem; }
+    .dnb-extramarks-head { font-size:.82rem; font-weight:700; color:#4c1d95; margin-bottom:.4rem; }
+    .dnb-extramarks ul,.dnb-extramarks p { font-size:.88rem; color:#3b0764; line-height:1.7; padding-left:1.2rem; margin:0; }
+    .dnb-extramarks li { margin-bottom:.2rem; }
+
+    /* ── LOADING ──────────────────────────────────────────────────── */
+    .dnb-loading { text-align:center; padding:4rem 0; color:var(--slate); }
+    .dnb-loading .spin { width:40px; height:40px; border:3px solid var(--line); border-top-color:#7c3aed; border-radius:50%; animation:spin .7s linear infinite; margin:0 auto 1rem; }
+    @keyframes spin { to { transform:rotate(360deg); } }
+    .dnb-error { text-align:center; padding:3rem 0; color:#b91c1c; }
+
+    /* ── DARK MODE ────────────────────────────────────────────────── */
+    html.dark .dnb-q-card { background:var(--bg-alt); }
+    html.dark .dnb-q-num { background:#2d1b69; color:#a78bfa; }
+    html.dark .dnb-q-card.open .dnb-q-num { background:#7c3aed; color:#fff; }
+    html.dark .dnb-q-toggle { background:var(--bg); }
+    html.dark .dnb-sub-section { background:rgba(124,58,237,.08); }
+    html.dark .dnb-keypoints { background:#0a2a1e; border-color:#166534; }
+    html.dark .dnb-keypoints ul { color:#86efac; }
+    html.dark .dnb-keypoints .dnb-sec-title { color:#4ade80; }
+    html.dark .dnb-mistakes { background:#2a0a0a; border-color:#7f1d1d; }
+    html.dark .dnb-mistakes ul { color:#fca5a5; }
+    html.dark .dnb-mistakes .dnb-sec-title { color:#f87171; }
+    html.dark .dnb-examtip { background:#2a1e0a; border-color:#854d0e; }
+    html.dark .dnb-examtip p { color:#fcd34d; }
+    html.dark .dnb-examtip .dnb-sec-title { color:#fbbf24; }
+    html.dark .dnb-extramarks { background:linear-gradient(135deg,#1a0a2e,#2d1b69); border-color:#5b21b6; }
+    html.dark .dnb-extramarks ul, html.dark .dnb-extramarks p { color:#c4b5fd; }
+    html.dark .dnb-extramarks .dnb-sec-title { color:#a78bfa; }
+    html.dark .dnb-extramarks-head { color:#ddd6fe; }
+    html.dark .dnb-selector-bar { background:var(--bg-alt); }
+    html.dark .dnb-paper-btn.active { color:#a78bfa; border-bottom-color:#a78bfa; }
+    html.dark .dnb-paper-badge { background:#2d1b69; color:#a78bfa; }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────────── */
+    @media (max-width:600px) {
+      .dnb-q-header { grid-template-columns:auto 1fr auto; gap:.6rem .7rem; padding:1rem; }
+      .dnb-answer-body { padding:1rem 1rem 1.2rem; }
+      .dnb-q-text { font-size:.88rem; }
+      .dnb-main { padding:1.5rem 4% 4rem; }
+      .dnb-hero { padding:2.5rem 4% 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html" class="active" style="color:var(--blue)">DNB</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<!-- HERO -->
+<header class="dnb-hero">
+  <div class="dnb-hero-inner">
+    <div class="dnb-breadcrumb"><a href="index.html">Home</a> › <a href="#">DNB Exams</a> › DNB Anaesthesiology</div>
+    <div class="dnb-hero-eye">DNB Previous Year Papers</div>
+    <h1>🎓 DNB Anaesthesiology</h1>
+    <p>June 2026 — Fully solved papers with model answers, key points, common mistakes, exam tips, and extra marks content. Structured for exam revision.</p>
+    <div class="dnb-hero-stats">
+      <div class="dnb-stat"><div class="n">4</div><div class="l">Papers</div></div>
+      <div class="dnb-stat"><div class="n">40</div><div class="l">Questions Solved</div></div>
+      <div class="dnb-stat"><div class="n">400</div><div class="l">Marks</div></div>
+      <div class="dnb-stat"><div class="n">June 2026</div><div class="l">Examination</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- PAPER TABS -->
+<nav class="dnb-selector-bar" id="paperTabs">
+  <div class="dnb-selector-inner">
+    <span class="dnb-sel-label">Select Paper</span>
+    <button class="dnb-paper-btn active" onclick="loadPaper(1, this)">📄 Paper I</button>
+    <button class="dnb-paper-btn" onclick="loadPaper(2, this)">📄 Paper II</button>
+    <button class="dnb-paper-btn" onclick="loadPaper(3, this)">📄 Paper III</button>
+    <button class="dnb-paper-btn" onclick="loadPaper(4, this)">📄 Paper IV</button>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div class="dnb-main" id="dnbMain">
+  <div class="dnb-loading"><div class="spin"></div><p>Loading Paper I…</p></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="topics.html">Topics</a></li>
+      <li><a href="scores.html">Scores</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li>
+      <li><a href="dnb.html">DNB Papers</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="dnb.html" class="active"><span class="mn-icon">🎓</span>DNB</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+
+<script>
+// ── Cache ─────────────────────────────────────────────────────────────────────
+var paperCache = {};
+var currentPaper = 0;
+
+// ── Key label formatter ────────────────────────────────────────────────────────
+function keyToLabel(k) {
+  return k
+    .replace(/([A-Z])/g, ' $1')
+    .replace(/_/g, ' ')
+    .replace(/^./, function(c){ return c.toUpperCase(); })
+    .trim();
+}
+
+// ── Recursive value renderer ───────────────────────────────────────────────────
+function renderValue(val, depth) {
+  depth = depth || 0;
+  if (val === null || val === undefined || val === '') return '';
+
+  if (typeof val === 'string') {
+    return '<p class="dnb-p">' + escHtml(val) + '</p>';
+  }
+  if (typeof val === 'number') {
+    return '<p class="dnb-p">' + val + '</p>';
+  }
+  if (Array.isArray(val)) {
+    if (val.length === 0) return '';
+    // Array of objects → render each as subsection
+    if (typeof val[0] === 'object' && val[0] !== null && !Array.isArray(val[0])) {
+      return val.map(function(item){ return renderObject(item, depth + 1); }).join('');
+    }
+    // Array of strings/numbers → bullet list
+    return '<ul class="dnb-list">' +
+      val.map(function(s){ return '<li>' + escHtml(String(s)) + '</li>'; }).join('') +
+      '</ul>';
+  }
+  if (typeof val === 'object') {
+    return renderObject(val, depth);
+  }
+  return '<p class="dnb-p">' + escHtml(String(val)) + '</p>';
+}
+
+function renderObject(obj, depth) {
+  depth = depth || 0;
+  var keys = Object.keys(obj);
+
+  // Pattern: {heading, list} or {heading, values}
+  if (keys.indexOf('heading') !== -1) {
+    var items = obj.list || obj.values || obj.content;
+    var html = '';
+    if (obj.heading) html += '<h4 class="dnb-subhead">' + escHtml(obj.heading) + '</h4>';
+    if (Array.isArray(items)) {
+      if (items.length > 0 && typeof items[0] === 'object') {
+        html += items.map(function(item){ return renderObject(item, depth+1); }).join('');
+      } else {
+        html += '<ul class="dnb-list">' + items.map(function(s){ return '<li>' + escHtml(String(s)) + '</li>'; }).join('') + '</ul>';
+      }
+    } else if (typeof items === 'string') {
+      html += '<p class="dnb-p">' + escHtml(items) + '</p>';
+    }
+    return '<div class="dnb-field">' + html + '</div>';
+  }
+
+  // Pattern: {title, content} where content is string or array
+  if (keys.indexOf('title') !== -1 && keys.indexOf('content') !== -1 && keys.length <= 3) {
+    var html = '<div class="dnb-sub-section">';
+    html += '<h4 class="dnb-subhead">' + escHtml(obj.title) + '</h4>';
+    if (typeof obj.content === 'string') {
+      html += '<p class="dnb-p">' + escHtml(obj.content) + '</p>';
+    } else if (Array.isArray(obj.content)) {
+      if (obj.content.length > 0 && typeof obj.content[0] === 'object') {
+        html += obj.content.map(function(item){ return renderObject(item, depth+1); }).join('');
+      } else {
+        html += '<ul class="dnb-list">' + obj.content.map(function(s){ return '<li>' + escHtml(String(s)) + '</li>'; }).join('') + '</ul>';
+      }
+    }
+    html += '</div>';
+    return html;
+  }
+
+  // Pattern: {title, ...many keys} — title as heading, rest as fields
+  if (keys.indexOf('title') !== -1 && keys.length > 2) {
+    var html = '<div class="dnb-sub-section">';
+    keys.forEach(function(k) {
+      if (k === 'title') {
+        html += '<h4 class="dnb-subhead">' + escHtml(obj[k]) + '</h4>';
+      } else {
+        html += renderValue(obj[k], depth + 1);
+      }
+    });
+    html += '</div>';
+    return html;
+  }
+
+  // Pattern: partA / partB split
+  if (keys.indexOf('partA') !== -1 || keys.indexOf('partB') !== -1) {
+    var html = '';
+    if (obj.partA) {
+      html += '<div class="dnb-part-label">Part A</div>';
+      html += renderObject(obj.partA, depth + 1);
+    }
+    if (obj.partB) {
+      html += '<hr class="dnb-part-divider"><div class="dnb-part-label">Part B</div>';
+      html += renderObject(obj.partB, depth + 1);
+    }
+    return html;
+  }
+
+  // General: iterate all keys
+  return keys.map(function(k) {
+    var v = obj[k];
+    var label = keyToLabel(k);
+    if (typeof v === 'string') {
+      return '<div class="dnb-field"><span class="dnb-field-label">' + escHtml(label) + '</span><p class="dnb-p">' + escHtml(v) + '</p></div>';
+    }
+    return '<div class="dnb-field"><span class="dnb-field-label">' + escHtml(label) + '</span>' + renderValue(v, depth + 1) + '</div>';
+  }).join('');
+}
+
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+
+// ── Render a single question card ─────────────────────────────────────────────
+function renderQuestion(q) {
+  var id = 'q-' + q.qNo;
+  var marksLabel = q.marks ? '<span class="dnb-marks-badge">' + q.marks + ' Marks</span>' : '';
+
+  // Answer body
+  var ansHtml = '<div class="dnb-section">';
+  ansHtml += '<span class="dnb-section-label">Model Answer</span>';
+  ansHtml += renderValue(q.answer, 0);
+  ansHtml += '</div>';
+
+  // Key points
+  if (q.keyPoints && q.keyPoints.length) {
+    ansHtml += '<div class="dnb-keypoints"><div class="dnb-sec-title">✅ Key Points</div><ul>' +
+      q.keyPoints.map(function(p){ return '<li>' + escHtml(p) + '</li>'; }).join('') +
+      '</ul></div>';
+  }
+
+  // Common mistakes
+  if (q.commonMistakes && q.commonMistakes.length) {
+    ansHtml += '<div class="dnb-mistakes"><div class="dnb-sec-title">❌ Common Mistakes to Avoid</div><ul>' +
+      q.commonMistakes.map(function(m){ return '<li>' + escHtml(m) + '</li>'; }).join('') +
+      '</ul></div>';
+  }
+
+  // Exam tip
+  if (q.examTip) {
+    ansHtml += '<div class="dnb-examtip"><div class="dnb-sec-title">💡 Examiner Tip</div><p>' + escHtml(q.examTip) + '</p></div>';
+  }
+
+  // Extra marks
+  if (q.extraMarks) {
+    var em = q.extraMarks;
+    var emContent = '';
+    if (em.heading) emContent += '<div class="dnb-extramarks-head">' + escHtml(em.heading) + '</div>';
+    if (em.content) {
+      if (Array.isArray(em.content)) {
+        emContent += '<ul>' + em.content.map(function(c){ return '<li>' + escHtml(c) + '</li>'; }).join('') + '</ul>';
+      } else {
+        emContent += '<p>' + escHtml(em.content) + '</p>';
+      }
+    }
+    if (emContent) {
+      ansHtml += '<div class="dnb-extramarks"><div class="dnb-sec-title">⭐ Extra Marks Content</div>' + emContent + '</div>';
+    }
+  }
+
+  return '<div class="dnb-q-card" id="' + id + '">' +
+    '<div class="dnb-q-header" onclick="toggleQ(\'' + id + '\')">' +
+      '<div class="dnb-q-num">Q' + q.qNo + '</div>' +
+      '<div>' +
+        '<div class="dnb-q-meta">' + marksLabel + '</div>' +
+        '<div class="dnb-q-text">' + escHtml(q.question) + '</div>' +
+      '</div>' +
+      '<div class="dnb-q-toggle" aria-label="Toggle answer">+</div>' +
+    '</div>' +
+    '<div class="dnb-answer-panel">' +
+      '<div class="dnb-answer-body">' + ansHtml + '</div>' +
+    '</div>' +
+  '</div>';
+}
+
+// ── Toggle question open/closed ────────────────────────────────────────────────
+function toggleQ(id) {
+  var card = document.getElementById(id);
+  if (!card) return;
+  var isOpen = card.classList.contains('open');
+  card.classList.toggle('open', !isOpen);
+  var toggle = card.querySelector('.dnb-q-toggle');
+  if (toggle) toggle.textContent = isOpen ? '+' : '×';
+}
+
+// ── Load a paper ──────────────────────────────────────────────────────────────
+function loadPaper(num, btn) {
+  if (currentPaper === num) return;
+  currentPaper = num;
+
+  // Update tabs
+  document.querySelectorAll('.dnb-paper-btn').forEach(function(b){ b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+
+  var main = document.getElementById('dnbMain');
+  main.innerHTML = '<div class="dnb-loading"><div class="spin"></div><p>Loading Paper ' + ['I','II','III','IV'][num-1] + '…</p></div>';
+
+  if (paperCache[num]) {
+    renderPaper(num, paperCache[num]);
+    return;
+  }
+
+  fetch('dnb/paper' + num + '.json')
+    .then(function(r){
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.json();
+    })
+    .then(function(data){
+      paperCache[num] = data;
+      renderPaper(num, data);
+    })
+    .catch(function(err){
+      main.innerHTML = '<div class="dnb-error"><p>Could not load Paper ' + num + '.</p><small>' + err.message + '</small></div>';
+    });
+}
+
+function renderPaper(num, questions) {
+  var romanNums = ['I','II','III','IV'];
+  var main = document.getElementById('dnbMain');
+  var html = '<div class="dnb-paper-head">' +
+    '<div class="dnb-paper-badge">📄 DNB Anaesthesiology · June 2026</div>' +
+    '<h2>Paper ' + romanNums[num-1] + '</h2>' +
+    '<p>' + questions.length + ' questions · ' + (questions.length * 10) + ' marks · Model answers with key points, exam tips &amp; extra marks content</p>' +
+  '</div>' +
+  '<div class="dnb-q-list">' +
+  questions.map(renderQuestion).join('') +
+  '</div>';
+  main.innerHTML = html;
+  window.scrollTo({ top: document.getElementById('paperTabs').offsetTop - 70, behavior: 'smooth' });
+}
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function() {
+  loadPaper(1, document.querySelector('.dnb-paper-btn'));
+});
+</script>
+</body>
+</html>

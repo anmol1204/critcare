@@ -1,0 +1,952 @@
+[
+  {
+    "qNo": 1,
+    "question": "A) HbA1c – definition, preoperative cut-off  B) DKA – management",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "HbA1c — Definition and Preoperative Cut-off",
+        "definition": "HbA1c (glycated haemoglobin) is the percentage of haemoglobin with glucose irreversibly bound to the N-terminal valine of the beta chain. It reflects the average blood glucose over the preceding 8–12 weeks (lifespan of RBC). Expressed as % (NGSP) or mmol/mol (IFCC).",
+        "normalValues": [
+          "Non-diabetic: <5.7% (<39 mmol/mol)",
+          "Pre-diabetes: 5.7–6.4% (39–47 mmol/mol)",
+          "Diabetes diagnosed: ≥6.5% (≥48 mmol/mol)",
+          "Good diabetic control: <7% (<53 mmol/mol)",
+          "Poor control: >8% (>64 mmol/mol)"
+        ],
+        "preoperativeCutoff": {
+          "threshold": "HbA1c >8.5% (>69 mmol/mol) — consider postponing elective surgery",
+          "rationale": "HbA1c >8.5% predicts: 2× higher risk of SSI, impaired wound healing, higher risk of postoperative hyperglycaemia, higher cardiovascular complication risk",
+          "action": "HbA1c >8.5%: Optimise glycaemic control and re-test in 3 months before elective surgery. Emergency surgery: proceed with careful perioperative glucose management.",
+          "guidelines": "NHS England/AAGBI 2023: HbA1c 8.5–10%: Request endocrinology input, consider 3-month optimisation. >10%: Strongly consider postponement.",
+          "note": "Misleading HbA1c: Haemoglobinopathies (sickle cell, thalassaemia), haemolytic anaemia, recent transfusion — all lower HbA1c falsely. Use fructosamine instead."
+        }
+      },
+      "partB": {
+        "title": "Diabetic Ketoacidosis (DKA) — Management",
+        "definition": "DKA is an acute metabolic emergency of absolute or relative insulin deficiency leading to hyperglycaemia, ketonaemia, and metabolic acidosis. Diagnostic triad: pH <7.3, HCO3 <15, ketones ≥3 mmol/L (or ++ on urine dip), glucose >11 mmol/L.",
+        "severity": [
+          "Mild: pH 7.25–7.3, HCO3 15–18",
+          "Moderate: pH 7.0–7.25, HCO3 10–15",
+          "Severe: pH <7.0, HCO3 <10"
+        ],
+        "management": {
+          "resuscitation": [
+            "Airway: Protect if GCS <8 — intubate (caution: acidosis compensation lost if respiratory rate drops after RSI)",
+            "IV access: 2 large-bore cannulae",
+            "Monitoring: ECG (hyperkalaemia-induced arrhythmias), continuous SpO2, urine catheter"
+          ],
+          "fluids": [
+            "0.9% NaCl: 1L in first hour, then 500 mL/hr for 2 hours, then 250 mL/hr",
+            "Replace 6–8L deficit over 24 hours (DKA has massive fluid loss from osmotic diuresis)",
+            "Add KCl to fluid when K+ <5.5 mEq/L (see potassium below)",
+            "Switch to 5% dextrose + 0.45% NaCl when glucose <14 mmol/L (to allow insulin to continue clearing ketones)"
+          ],
+          "insulin": [
+            "FIXED RATE IV insulin infusion (FRIII): 0.1 unit/kg/hour of actrapid/regular insulin",
+            "Do NOT give insulin bolus (worsens hypokalaemia rapidly)",
+            "Continue until pH >7.3 AND ketones <0.3 mmol/L AND HCO3 >18",
+            "Do NOT stop insulin before establishing SC insulin regime (2–4 hour overlap)"
+          ],
+          "potassium": [
+            "K+ ALWAYS low or will become low with insulin — insulin drives K+ into cells",
+            "K+ ≥5.5: No KCl replacement yet — monitor hourly",
+            "K+ 3.5–5.5: Add 40 mEq KCl/L fluid",
+            "K+ <3.5: Add 40 mEq KCl/L AND reduce insulin rate — critical hypokalaemia"
+          ],
+          "bicarbonate": "NOT routinely given. Only if pH <6.9: Sodium bicarbonate 1.26% 500 mL with 40 mEq KCl over 1 hour. Risks: cerebral oedema, paradoxical intracellular acidosis, ↑ CO2.",
+          "monitoring": [
+            "Glucose: hourly",
+            "Ketones: 1–2 hourly (bedside ketone meter)",
+            "U&E/blood gas: 2-hourly initially",
+            "Urine output: hourly (target >0.5 mL/kg/hr)"
+          ],
+          "precipitant": "Identify and treat: infection (most common), omission of insulin, MI, pancreatitis, stroke, drugs (SGLT2 inhibitors — euglycaemic DKA).",
+          "cerebralOedema": "Risk in children. Signs: headache, behaviour change, bradycardia, ↑ BP, ↓ GCS. Treatment: Mannitol 0.5–1 g/kg or 3% NaCl."
+        }
+      }
+    },
+    "keyPoints": [
+      "HbA1c >8.5% → consider postponing elective surgery; optimise first",
+      "DKA management: Fluids → Insulin (FRIII) → Potassium replacement in that order",
+      "Never give insulin bolus in DKA — worsens hypokalaemia",
+      "Add dextrose when glucose <14 mmol/L — allow insulin to continue clearing ketones"
+    ],
+    "commonMistakes": [
+      "Stopping insulin when glucose normalises — must continue until ketones clear and pH >7.3",
+      "Giving bicarbonate routinely — only if pH <6.9",
+      "Forgetting SGLT2 inhibitors can cause euglycaemic DKA (glucose near normal but pH <7.3)"
+    ],
+    "examTip": "JBDS (Joint British Diabetes Societies) 2023 DKA guidelines are the most current — quote them. Specifically: FRIII 0.1 unit/kg/hour, potassium targets, and the 'resolution criteria' (pH, HCO3, ketones).",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "SGLT2 inhibitor-associated DKA (Euglycaemic DKA): Glucose 10–15 mmol/L (not dramatically elevated). Mechanism: SGLT2i increase glucagon and ketone production, reduce renal glucose excretion of ketones. Perioperatively: omit SGLT2i ≥3 days before major surgery (AAGBI 2023).",
+        "Phosphate depletion in DKA: Severe DKA → phosphate depleted (intracellular shift with insulin). Hypophosphataemia weakens respiratory muscles. Consider phosphate replacement if severe (PO4 <0.5 mmol/L) — use potassium phosphate.",
+        "Perioperative DKA risk: Major surgery + physiological stress → counter-regulatory hormones → insulin resistance → DKA in insulin-dependent DM. Give IV insulin infusion perioperatively (GIK: glucose-insulin-potassium). Avoid prolonged fasting.",
+        "Intracerebral complication: Osmotic shift during DKA correction — glucose falls faster than brain osmolality → brain oedema. Risk reduced by: gradual glucose reduction (aim 3–4 mmol/L/hr), switching to dextrose saline at glucose 14."
+      ]
+    }
+  },
+  {
+    "qNo": 2,
+    "question": "Posterior fossa surgery – anaesthetic considerations and perioperative management",
+    "marks": 10,
+    "answer": {
+      "introduction": "Posterior fossa surgery involves operations on cerebellum, brainstem, cranial nerves, and surrounding structures. It presents unique anaesthetic challenges due to position, ICP issues, proximity to vital centres, and risk of venous air embolism.",
+      "preoperative": {
+        "assessment": [
+          "Neurological status: GCS, cranial nerve deficits, cerebellar signs, bulbar function (dysphagia, dysarthria → aspiration risk)",
+          "ICP status: Papilloedema, CT/MRI — hydrocephalus, midline shift",
+          "Cardiac assessment: Posterior fossa lesions may cause ECG changes (T-wave inversions, ST changes) — neurogenic",
+          "Respiratory: Brainstem lesions → irregular breathing, ↑ aspiration risk"
+        ],
+        "optimisation": [
+          "Anti-oedema: Dexamethasone 4–8 mg 6-hourly — reduces peritumoral oedema",
+          "Anticonvulsants: Maintain perioperatively",
+          "EVD (external ventricular drain) if obstructive hydrocephalus — pre-op or intraoperative"
+        ]
+      },
+      "positioning": {
+        "positions": [
+          {
+            "name": "Sitting (beach chair) position",
+            "advantages": "Best surgical access to posterior fossa, ↓ bleeding (lower venous pressure at surgical field), ↓ ICP (cerebral venous drainage), excellent view for surgeon",
+            "risks": "Venous air embolism (VAE) — HIGHEST RISK position for VAE (negative pressure at surgical field), Paradoxical embolism (if PFO present), Haemodynamic instability (↓ venous return, ↓ CO), Cervical spine injury from extreme flexion, Pneumocephalus, MacIntosh's 'broken neck' risk",
+            "vae_incidence": "VAE in sitting position: 25–45% using Doppler, 10% haemodynamically significant"
+          },
+          {
+            "name": "Prone position",
+            "advantages": "No VAE risk, good cerebellar exposure",
+            "risks": "Airway complications, ETT dislodgement, pressure injury, eye injury, brachial plexus"
+          },
+          {
+            "name": "Lateral (park-bench) position",
+            "advantages": "Intermediate VAE risk, good for CPA angle tumours",
+            "risks": "Brachial plexus, peroneal nerve, axillary vessel compression"
+          }
+        ]
+      },
+      "vae": {
+        "monitoring": [
+          "Precordial Doppler (most sensitive — detects 0.05 mL/kg air)",
+          "Transoesophageal echo (most sensitive for paradoxical embolism)",
+          "etCO2 (sudden fall = VAE — ↓ CO → ↓ CO2 delivery to lungs)",
+          "Central venous catheter (right heart) — aspiration of air",
+          "PA catheter — ↑ PAP"
+        ],
+        "management": [
+          "Alert surgeon immediately — flood field, compress jugulars to find source",
+          "Head-down tilt, left lateral if possible",
+          "Aspirate air via CVC (multiorifice catheter at SVC-RA junction)",
+          "100% O2 (displaces N2O from bubbles — avoid N2O entirely if VAE risk)",
+          "CPR if cardiovascular collapse"
+        ]
+      },
+      "anaesthesiaManagement": {
+        "induction": [
+          "Propofol-based TIVA preferred (↓ CMRO2, ↓ ICP, antiemetic)",
+          "Avoid ketamine (↑ ICP)",
+          "Remifentanil infusion provides haemodynamic stability and rapid emergence"
+        ],
+        "maintenance": [
+          "TIVA (propofol + remifentanil) preferred over volatile agents — less vasodilation, better ICP control",
+          "If volatile used: ≤1 MAC sevoflurane with hyperventilation",
+          "Avoid N2O — expands VAE bubbles, ↑ ICP (debated), ↑ PONV",
+          "Controlled normocapnia (PaCO2 35–40) or mild hypocapnia (PaCO2 32–35) for ICP"
+        ],
+        "monitoring": [
+          "Arterial line: Continuous MAP monitoring, ABG (ICP management requires precise CO2 control)",
+          "CVC: Right heart (aspiration channel at RA — confirmed by ECG/X-ray), CVP, drug administration",
+          "Precordial/TOE Doppler: VAE monitoring",
+          "ICP monitoring: May have pre-existing bolt/EVD",
+          "Neuromonitoring: SSEP, BAER (brainstem auditory evoked responses) in posterior fossa tumours"
+        ],
+        "emergence": [
+          "Smooth emergence essential — coughing/straining → ↑ ICP → haematoma",
+          "Lidocaine 1.5 mg/kg IV or remifentanil infusion during emergence to blunt response",
+          "Extubate awake — neurological assessment immediately post-op critical",
+          "Delayed extubation if: brainstem involvement, prolonged surgery, bulbar function impaired"
+        ]
+      },
+      "postoperative": [
+        "ICU/HDU admission mandatory",
+        "Airway assessment: Swallowing function before oral intake — video fluoroscopy if bulbar signs",
+        "PONV: 70–80% after posterior fossa surgery — multimodal prophylaxis (ondansetron + dexamethasone + TIVA)",
+        "Pneumocephalus: Headache, confusion post-sitting surgery. Self-limiting; 100% O2 hastens absorption",
+        "Delayed awakening: Posterior fossa haematoma, pneumocephalus, cerebellar oedema — urgent CT"
+      ]
+    },
+    "keyPoints": [
+      "Sitting position: highest VAE risk — precordial Doppler mandatory",
+      "CVC tip at SVC-RA junction for air aspiration — confirm position before surgery",
+      "TIVA preferred over volatile in posterior fossa surgery",
+      "Never use N2O in posterior fossa surgery — paradoxical embolism risk and pneumocephalus"
+    ],
+    "commonMistakes": [
+      "Not placing CVC for VAE monitoring in sitting position — critical omission",
+      "Using N2O in posterior fossa surgery",
+      "Forgetting BAER monitoring — brainstem auditory evoked responses are key for posterior fossa surgery near CN VIII"
+    ],
+    "examTip": "Examiners will ask about VAE monitoring sensitivity order: TOE > precordial Doppler > etCO2 > PA catheter. Know the order and 'air volume detected' for Doppler (0.05 mL/kg).",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Paradoxical air embolism (PAE): Air crosses from right to left heart via PFO (present in 25% of population) → cerebral air embolism → stroke. TOE identifies PFO. Consider sitting position contraindicated if large PFO detected.",
+        "Macintosh 'quadriplegia after posterior fossa surgery': Extreme neck flexion in sitting position → cervical spinal cord ischaemia or atlanto-axial subluxation. Ensure 2-finger breadth (3 cm) gap between chin and sternum. SSEP monitoring detects cord ischaemia.",
+        "Tension pneumocephalus: Rare but life-threatening. Air accumulates under tension intracranially (valve mechanism). Signs: 'Mount Fuji sign' on CT (bilateral frontal air separation of frontal lobes). Treatment: Burr hole decompression.",
+        "BAER (Brainstem Auditory Evoked Responses): Tests function of CN VIII and brainstem auditory pathway. Used in acoustic neuroma surgery. Latency changes >1ms or amplitude drop >50% from baseline = CN VIII at risk → surgeon warned."
+      ]
+    }
+  },
+  {
+    "qNo": 3,
+    "question": "A) Postoperative laryngospasm  B) Hepatorenal syndrome",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Postoperative Laryngospasm",
+        "definition": "Laryngospasm is reflex closure of the larynx by sustained contraction of intrinsic laryngeal muscles (thyroarytenoid, aryepiglottic folds), causing partial or complete upper airway obstruction. It is the most common serious airway complication in anaesthesia.",
+        "incidence": "Overall: 0.87%. Children: 1–2% (especially 1–3 years). Risk highest: upper airway surgery (adenotonsillectomy, laryngoscopy), light plane of anaesthesia.",
+        "mechanism": "Stimulation of superior laryngeal nerve (branch of CN X) by secretions, blood, airway manipulation → reflex closure. Persistent beyond stimulus removal = pathological.",
+        "riskFactors": [
+          "Paediatric age (1–3 years highest risk)",
+          "URTI in past 2–6 weeks",
+          "Light plane of anaesthesia at extubation",
+          "Secretions/blood in larynx",
+          "Airway instrumentation (laryngoscopy, ETT, LMA)",
+          "Smoking history (active smokers OR passive exposure in children)"
+        ],
+        "recognition": [
+          "Partial: High-pitched inspiratory stridor (crowing) — still some air passage",
+          "Complete: Silent obstruction — paradoxical chest/abdominal movement, SpO2 ↓, no breath sounds, suprasternal and intercostal recession"
+        ],
+        "management": {
+          "partial": [
+            "Remove stimulating agent (suction secretions, blood from larynx)",
+            "Jaw thrust — opens airway, stretches larynx",
+            "100% O2 via face mask with gentle CPAP (5–10 cmH2O) — positive pressure opens vocal cords",
+            "Deepen anaesthesia (propofol 0.5 mg/kg IV) if patient has IV access"
+          ],
+          "complete": [
+            "Jaw thrust + 100% O2",
+            "If no response in 15–20 seconds: Propofol 0.5–1 mg/kg IV (breaks laryngospasm) OR",
+            "Succinylcholine 0.1–0.25 mg/kg IV (intramuscular 4 mg/kg if no IV access — IM deltoid or tongue) — DEFINITIVE treatment",
+            "If succinylcholine given: Re-intubate and ventilate until consciousness returns",
+            "Larson's manoeuvre: Firm pressure in the 'laryngospasm notch' (behind ear, between mastoid process and ascending mandible ramus) — stimulates pain → breaks reflex. Useful if no drugs available."
+          ],
+          "cardiac_arrest": "Complete laryngospasm → hypoxia → cardiac arrest. Immediate succinylcholine and ventilation. PALAS (Post-Anesthetic Laryngeal Spasm) cardiac arrest — document, debrief."
+        },
+        "prevention": [
+          "Extubate either deep (Stage 3) OR fully awake (cough, commands) — avoid stage 2 (excitement phase)",
+          "Lidocaine 1.5–2 mg/kg IV 90 seconds before extubation — reduces laryngeal reflexes",
+          "Suction pharynx under deep anaesthesia",
+          "Avoid surgery in children with active URTI if possible"
+        ]
+      },
+      "partB": {
+        "title": "Hepatorenal Syndrome (HRS)",
+        "definition": "HRS is a potentially reversible form of acute kidney injury occurring in patients with advanced cirrhosis and ascites, characterised by intense renal vasoconstriction and hypoperfusion in the absence of intrinsic renal disease.",
+        "pathophysiology": "Portal hypertension → splanchnic vasodilation (NO, prostacyclin) → effective arterial blood volume (EABV) ↓ → compensatory SNS activation + RAAS + ADH → severe renal vasoconstriction → renal hypoperfusion → AKI. It is a functional, not structural, kidney disease.",
+        "types": [
+          {
+            "type": "HRS-AKI (previously HRS-1)",
+            "description": "Rapid deterioration: sCr increase ≥0.3 mg/dL within 48h OR increase ≥50% from baseline within 7 days. Often precipitated by SBP, GI bleed, alcohol, drugs. Median survival: 2–4 weeks without treatment."
+          },
+          {
+            "type": "HRS-CKD (previously HRS-2)",
+            "description": "Gradual decline in GFR. Persistent AKI not meeting AKI criteria. Median survival: 3–6 months."
+          }
+        ],
+        "diagnosis": {
+          "criteria": [
+            "Cirrhosis with ascites",
+            "Serum creatinine >1.5 mg/dL (or KDIGO AKI criteria)",
+            "No improvement after 2 days of diuretic withdrawal AND volume expansion with albumin (1g/kg/day, max 100g/day)",
+            "Absence of shock",
+            "No nephrotoxic drugs",
+            "No intrinsic renal disease (no proteinuria >500mg/day, microhaematuria, normal renal USS)"
+          ]
+        },
+        "management": {
+          "firstLine": [
+            "Terlipressin: 0.5–2 mg IV bolus 4–6 hourly OR 2–12 mg/day continuous infusion. Vasopressin analogue → splanchnic vasoconstriction → ↑ EABV → ↓ renal vasoconstriction. Shown to reverse HRS in 40–50% (CONFIRM trial).",
+            "Albumin: 20–40 g/day IV alongside terlipressin. Expands EABV, anti-inflammatory properties.",
+            "Noradrenaline + albumin: Alternative to terlipressin. Use in ICU where haemodynamic monitoring available. 0.5–3 mg/hour."
+          ],
+          "definitive": "Liver transplantation — only definitive cure. Renal function usually recovers post-transplant. Simultaneous liver-kidney transplant if HRS-CKD >3 months or evidence of intrinsic renal disease.",
+          "bridge": [
+            "TIPS (Transjugular Intrahepatic Portosystemic Shunt): ↓ portal pressure → ↑ EABV. Bridge to transplantation. Contraindicated in HE >grade 2.",
+            "MARS/SPAD (liver dialysis): Removes albumin-bound toxins. Limited evidence.",
+            "RRT/CRRT: Supportive — does NOT treat underlying pathophysiology. Bridge to transplant."
+          ],
+          "precipitant": "Treat precipitant: SBP → 3rd gen cephalosporin + albumin (1.5g/kg day 1, 1g/kg day 3). GI bleed → variceal management. Avoid nephrotoxins."
+        }
+      }
+    },
+    "keyPoints": [
+      "Laryngospasm: Succinylcholine 0.1–0.25 mg/kg IV = definitive — don't delay",
+      "Larson's notch manoeuvre: painful pressure behind mastoid — breaks reflex without drugs",
+      "HRS: Terlipressin + albumin = first-line (40–50% reversal rate)",
+      "Liver transplantation = only definitive treatment for HRS"
+    ],
+    "commonMistakes": [
+      "Giving succinylcholine 1.5 mg/kg (intubating dose) for laryngospasm — 0.1–0.25 mg/kg is sufficient and avoids prolonged apnoea",
+      "Diagnosing HRS without ruling out hypovolaemia — albumin challenge must show no improvement",
+      "Confusing HRS-AKI (rapidly progressive, short survival) with HRS-CKD (slower course)"
+    ],
+    "examTip": "For laryngospasm, write the management in a clear step-by-step flowchart format — partial vs complete, and time-critical steps. Succinylcholine IM (4 mg/kg) in the deltoid is critical knowledge for paediatric laryngospasm without IV access.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Laryngospasm in PACU: Most laryngospasms occur in PACU in stage 2 of emergence. SpO2 monitoring is mandatory in all PACU patients. Recovery nurses must be trained to recognise and escalate.",
+        "Negative pressure pulmonary oedema (NPPE): Consequence of complete laryngospasm — forceful inhalation against closed glottis creates high negative intrathoracic pressure → fluid shifts into alveoli → pulmonary oedema. Treat: positive pressure ventilation, diuretics, may need re-intubation.",
+        "CONFIRM trial (2021, NEJM): Terlipressin + albumin vs placebo in HRS-AKI. HRS reversal 32% vs 17% (p<0.001). HRS reversal = sCr ≤1.5 mg/dL without RRT. FDA approved terlipressin for HRS in USA in 2022.",
+        "SBP prophylaxis and HRS prevention: Norfloxacin 400 mg/day OR ciprofloxacin — for secondary prophylaxis of SBP. Albumin 1.5g/kg at SBP diagnosis + 1g/kg day 3 reduces HRS incidence from 33% to 10% (Sort trial, NEJM 1999)."
+      ]
+    }
+  },
+  {
+    "qNo": 4,
+    "question": "A) Difficult airway management in thyroid surgery  B) Unilateral recurrent laryngeal nerve injury – diagnosis and perioperative management",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Difficult Airway Management in Thyroid Surgery",
+        "causes": [
+          "Large goitre: Tracheal compression, deviation (usually right), or displacement",
+          "Retrosternal goitre: Tracheal compression from below — can cause superior vena cava syndrome",
+          "Malignant infiltration of trachea: Fixed, rigid trachea — may cause tracheomalacia",
+          "Previous neck surgery/radiotherapy: Fibrosis, restricted neck movement",
+          "Thyroid malignancy: Extracapsular spread, lymph nodes compressing airway"
+        ],
+        "preoperativeAssessment": [
+          "History: Dyspnoea on exertion or lying flat (orthopnoea), stridor, dysphagia, change in voice (RLN involvement)",
+          "Indirect laryngoscopy/nasopharyngoscopy: Assess vocal cord mobility, subglottic narrowing",
+          "CT neck and chest: Degree of tracheal compression, length of stenosis, retrosternal extension",
+          "CXR: Tracheal deviation, retrosternal extension, intrathoracic goitre",
+          "Pulmonary function tests (flow-volume loop): Extrathoracic vs intrathoracic obstruction pattern",
+          "CT trachea: Cross-sectional area at narrowest point — <10 mm2 = severe"
+        ],
+        "airwayManagement": {
+          "awakeIntubation": {
+            "indication": [
+              "Tracheal deviation >1 cm on CXR",
+              "CT tracheal cross-section <50% normal",
+              "Stridor at rest",
+              "Previous failed intubation",
+              "Retrosternal goitre with superior mediastinal syndrome",
+              "Suspected tracheomalacia"
+            ],
+            "technique": "Awake fibreoptic intubation (AFOI) — gold standard. Topicalise airway (lidocaine spray, nebulisation, nerve blocks). Sedation: remifentanil target-controlled or dexmedetomidine. Pass scope through nose or mouth. Identify vocal cords, pass ETT."
+          },
+          "specificConcerns": [
+            "Tracheomalacia: Post-thyroidectomy trachea may collapse when goitre removed — 'tracheomalacia test' (gentle tracheal palpation after gland removal — tracheal ring integrity). If tracheomalacia confirmed: prolonged intubation, Montgomery T-tube, airway stenting",
+            "Haematoma (post-thyroidectomy): Neck swelling, stridor, dyspnoea within 24h. Emergency: Open wound IMMEDIATELY at bedside (remove clips/sutures) to decompress haematoma → then formal operative management. Do NOT wait for theatre.",
+            "Retrosternal goitre and CV complications: SVC obstruction (Pemberton's sign — facial flushing, JVD on arm elevation). MUST have two IV accesses in LOWER limb if SVC obstruction."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Unilateral Recurrent Laryngeal Nerve (RLN) Injury",
+        "anatomy": "RLN is a branch of vagus nerve. Right RLN loops around right subclavian artery. Left RLN loops around arch of aorta. Both ascend in tracheo-oesophageal groove to enter larynx. Supplies all intrinsic laryngeal muscles EXCEPT cricothyroid (which is supplied by external branch of superior laryngeal nerve).",
+        "incidence": "Post-thyroidectomy RLN injury: 0.5–5% (temporary), 0.5–1% permanent (total thyroidectomy).",
+        "diagnosis": {
+          "intraoperative": [
+            "RLN monitoring: Continuous EMG using NIM (Nerve Integrity Monitor) — standard of care in thyroid surgery. Electrodes in ETT cuff or on vocal cords. Loss of signal = RLN at risk.",
+            "Intraoperative laryngoscopy: If RLN integrity uncertain"
+          ],
+          "postoperative": [
+            "Dysphonia (hoarse voice) — most common sign",
+            "Breathy voice quality (air escape through incompletely closed glottis)",
+            "Aspiration of liquids (superior laryngeal nerve too if both nerves involved)",
+            "Flexible laryngoscopy: Paralysed cord in paramedian or lateral position (unable to adduct fully)"
+          ]
+        },
+        "perioperativeManagement": {
+          "anaestheticConsiderations": [
+            "Awake or early post-op laryngoscopy if RLN signal lost intraoperatively",
+            "Unilateral injury: Usually tolerate extubation (contralateral cord compensates partially)",
+            "Assess voice quality immediately on emergence — early recognition",
+            "Refer to ENT/speech therapy early"
+          ],
+          "treatment": [
+            "Conservative: Most temporary injuries recover within 6 months (neuropraxia)",
+            "Speech therapy: Vocal cord exercises, compensatory strategies",
+            "Injection laryngoplasty: Inject paralysed cord with material (collagen, fat, hyaluronic acid) to medialise it — improves voice and reduces aspiration",
+            "Thyroplasty (Type I): Surgical medialisation of paralysed cord — permanent voice improvement"
+          ],
+          "bilateralRLNInjury": {
+            "presentation": "Bilateral vocal cord paralysis: cords in paramedian position → SEVERE STRIDOR on extubation, respiratory distress (cords too close together — airway blocked)",
+            "management": "Immediate re-intubation. Tracheostomy may be required. Surgical options: arytenoidectomy, lateralisation suture — open the posterior glottic space at the expense of voice quality."
+          }
+        }
+      }
+    },
+    "keyPoints": [
+      "Awake FOI: Indicated for tracheal deviation >1 cm, stridor at rest, suspected tracheomalacia",
+      "Post-thyroidectomy haematoma: Open wound immediately at bedside — do NOT wait",
+      "NIM monitoring: Standard of care for RLN monitoring in thyroid surgery",
+      "Bilateral RLN injury: Stridor, respiratory distress — re-intubate immediately"
+    ],
+    "commonMistakes": [
+      "Waiting for bilateral RLN palsy to resolve spontaneously — airway emergency, re-intubate",
+      "Not checking SVC obstruction in retrosternal goitre — MUST have lower limb IV if SVC compressed",
+      "Omitting intraoperative RLN monitoring — now standard of care"
+    ],
+    "examTip": "Pemberton's sign is a classic thyroid surgery question: patient raises both arms — face becomes plethoric, cyanosed, JVD appears due to SVC compression by retrosternal goitre. Always mention this in the context of retrosternal goitre anaesthesia.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Flow-volume loop in airway obstruction: Extrathoracic (thyroid goitre, subglottic stenosis): Flat inspiratory loop (inspiration limited). Intrathoracic: Flat expiratory loop. Fixed obstruction: Both loops flat. This pattern distinguishes the site of obstruction non-invasively.",
+        "Superior laryngeal nerve (SLN) injury: External branch supplies cricothyroid → loss = cannot raise pitch, monotone voice, early vocal fatigue. Less dramatic than RLN injury but significant for professional voice users. Tested by asking patient to sustain a high note.",
+        "Tracheomalacia classification: Type 1 (congenital), Type 2 (from extrinsic compression — goitre), Type 3 (post-intubation, post-tracheostomy). Significant if tracheal collapse >50% on dynamic CT/bronchoscopy.",
+        "NIM tube (Medtronic): Special ETT with EMG electrodes on the cuff at cord level. Requires placement at specific depth confirmed by direct laryngoscopy. Must be placed before paralysis administered (EMG requires muscle activity) or after reversal if monitoring needed throughout."
+      ]
+    }
+  },
+  {
+    "qNo": 5,
+    "question": "A) Premedication in children  B) Massive transfusion protocol in obstetric haemorrhage",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Premedication in Children",
+        "aims": [
+          "Reduce anxiety and facilitate separation from parents",
+          "Facilitate smooth IV cannulation",
+          "Reduce risk of emergence agitation",
+          "Reduce secretions (anticholinergics if needed)",
+          "Analgesia and PONV prophylaxis",
+          "Reduce aspiration risk"
+        ],
+        "agents": [
+          {
+            "drug": "Midazolam",
+            "dose": "0.5 mg/kg oral (max 15 mg), given 30–45 min preoperatively. IV: 0.1 mg/kg.",
+            "onset": "Oral: 15–30 min. Onset visible as drowsiness and reduced anxiety.",
+            "advantages": "Best studied paediatric premedicant. Reduces anxiety, facilitates mask induction. Anti-emetic effect.",
+            "disadvantages": "Paradoxical excitement in some children. May delay recovery. Contraindicated in obstructive sleep apnoea (caution).",
+            "note": "Midazolam is the most commonly used and best-evidence paediatric premedicant worldwide."
+          },
+          {
+            "drug": "Ketamine",
+            "dose": "4–6 mg/kg IM or 6–10 mg/kg oral",
+            "advantages": "Produces sedation even in uncooperative children. Maintains airway reflexes.",
+            "disadvantages": "Increased secretions (give atropine), emergence phenomena in older children, longer recovery."
+          },
+          {
+            "drug": "Clonidine (α2-agonist)",
+            "dose": "4 mcg/kg oral",
+            "advantages": "Reduces emergence agitation (especially after sevoflurane), provides analgesia, reduces PONV.",
+            "disadvantages": "Slow onset (45–60 min), bradycardia risk."
+          },
+          {
+            "drug": "Dexmedetomidine",
+            "dose": "1–2 mcg/kg intranasal",
+            "advantages": "Excellent sedation without respiratory depression, reduces emergence agitation. Intranasal route avoids injection.",
+            "disadvantages": "Expensive, bradycardia."
+          },
+          {
+            "drug": "EMLA cream / Ametop gel",
+            "dose": "EMLA: Apply 1–2 hours before. Ametop: 30–45 minutes before.",
+            "purpose": "Local anaesthesia for IV cannulation — reduces pain and child's anxiety about 'needle'."
+          },
+          {
+            "drug": "Atropine",
+            "dose": "0.02 mg/kg IV/IM",
+            "purpose": "Reduces secretions (ketamine-induced), prevents bradycardia (halothane — now less relevant), vagal inhibition during intubation. Less routinely used now."
+          }
+        ],
+        "nonPharmacological": [
+          "Parental presence at induction (where resources allow — evidence mixed)",
+          "Child Life Specialists",
+          "Distraction techniques: tablets, toys, music",
+          "Play therapy preparation"
+        ]
+      },
+      "partB": {
+        "title": "Massive Transfusion Protocol (MTP) in Obstetric Haemorrhage",
+        "definition": "Massive transfusion: >10 units RBC in 24h OR replacement of entire blood volume in 24h OR >4 units RBC in 1 hour with anticipated ongoing haemorrhage.",
+        "obstetricContext": "PPH is the leading cause of maternal mortality worldwide. PROMPT activation of MTP when anticipated blood loss >1.5L or clinically haemorrhaging woman not responding to initial measures.",
+        "protocol": {
+          "activation": "Activate MTP code by obstetrician/anaesthetist. Notify: blood bank, haematology, theatre, senior anaesthetist, consultant obstetrician.",
+          "componentRatios": {
+            "description": "Damage control resuscitation: Fixed ratio blood product transfusion mimics whole blood",
+            "ratios": "RBC:FFP:Platelets = 1:1:1 (per unit or as pack). E.g., 4 RBC : 4 FFP : 1 pool platelets (1 pool = 4–6 units) OR 1 apheresis platelet.",
+            "evidence": "WOMAN trial demonstrated benefit of early tranexamic acid. ROTEM/TEG-guided therapy allows modification of fixed ratios."
+          },
+          "sequentialManagement": [
+            "Stage 1 (Early PPH <1L): Oxytocin 5 units slow IV, ergometrine, misoprostol, uterine massage",
+            "Stage 2 (PPH 1–2L, MTP activation): Tranexamic acid 1g IV (give within 3h of onset — WOMAN trial), 4 units O-negative or group-specific RBC, 4 units FFP, call senior help",
+            "Stage 3 (PPH >2L): Full MTP pack, additional vasopressors (noradrenaline), surgical haemostasis (B-Lynch suture, uterine artery ligation, hysterectomy), IR (uterine artery embolisation if available)",
+            "Fibrinogen: Give cryoprecipitate (10 units) or fibrinogen concentrate (2–4g) if fibrinogen <2 g/L. Obstetric target: fibrinogen >2 g/L (higher than surgical threshold of 1.5)."
+          ],
+          "calciumReplacement": "Give calcium gluconate 10 mL (10%) IV with every 4 units blood — citrate in stored blood chelates ionised calcium → hypocalcaemia → cardiac depression.",
+          "laboratory": [
+            "FBC, coagulation (PT, APTT, fibrinogen), TEG/ROTEM, electrolytes, blood gas — every 30 minutes",
+            "Fibrinogen is best early predictor of DIC in PPH (FEISTY study)"
+          ],
+          "pointOfCare": "ROTEM/TEG guides product therapy: EXTEM CT ↑ → FFP; FIBTEM MCF ↓ → cryoprecipitate/fibrinogen; EXTEM MCF ↓ → platelets; LY30 ↑ → tranexamic acid."
+        }
+      }
+    },
+    "keyPoints": [
+      "Midazolam 0.5 mg/kg oral: best evidence, first-line paediatric premedicant",
+      "MTP ratio: RBC:FFP:Platelets = 1:1:1",
+      "Tranexamic acid 1g IV within 3 hours of PPH onset — WOMAN trial evidence",
+      "Obstetric fibrinogen target >2 g/L (higher than surgical)"
+    ],
+    "commonMistakes": [
+      "Forgetting calcium supplementation during massive transfusion",
+      "Giving tranexamic acid after 3 hours — WOMAN trial showed no benefit and possible harm",
+      "Using gabapentin premedication in children — not well evidenced in paediatrics"
+    ],
+    "examTip": "WOMAN trial (2017, Lancet) is essential knowledge: 20,000 women, TXA 1g IV within 3h of PPH → reduced death from bleeding by 19%. DNB examiners frequently test this. Know the trial name, number, and key finding.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Dexmedetomidine intranasal premedication: Emerging evidence in paediatrics — reduces emergence agitation without respiratory depression. Particularly useful in children with OSA where midazolam is relatively contraindicated. Dose: 1–2 mcg/kg IN.",
+        "WOMAN trial (2017): World Maternal Antifibrinolytic Trial. 20,060 women, 21 countries. TXA 1g IV within 3h: death from PPH reduced from 1.9% to 1.5% (RR 0.81, p=0.045). No increase in thromboembolic events. TXA 2h after onset: no significant benefit — timing critical.",
+        "FEISTY (Fibrinogen Early In Severe Haemorrhage) study: Fibrinogen <2 g/L within 30 min of PPH diagnosis = best predictor of severe haemorrhage requiring massive transfusion. Bedside Clauss fibrinogen assay (or ROTEM FIBTEM) enables rapid decision.",
+        "Fondaparinux and anticoagulation in obstetric MTP: Patients may be on LMWH for DVT prophylaxis. If PPH occurs: Protamine sulphate 1mg per 100 units heparin (partially reverses enoxaparin). Factor Xa inhibitor reversal agents not yet fully validated in obstetrics."
+      ]
+    }
+  },
+  {
+    "qNo": 6,
+    "question": "Squint surgery in a 6-year-old – anaesthetic management",
+    "marks": 10,
+    "answer": {
+      "introduction": "Squint (strabismus) surgery in children presents unique challenges: paediatric airway management, oculocardiac reflex, high PONV risk, and the specific physiological demands of ophthalmic surgery in an uncooperative age group.",
+      "preoperativeAssessment": [
+        "Fasting: ASA 2011 (NPO): solids/formula 6h, breast milk 4h, clear fluids 2h",
+        "Pre-existing medical conditions: Prematurity (apnoea risk), Down syndrome (congenital heart disease, atlantoaxial instability, difficult airway), Marfan syndrome",
+        "Previous anaesthesia: PONV history, difficult airway, family history of MH",
+        "Associated conditions: Myopathies (Graves disease, myasthenia) — if present, careful NMB use",
+        "Medications: Topical timolol (systemic beta-blockade), cyclopentolate (anticholinergic effects)"
+      ],
+      "premedication": [
+        "Midazolam 0.5 mg/kg oral (max 15 mg) 30 minutes preoperatively — 6 years: cooperative but may be anxious",
+        "EMLA cream to dorsum of both hands — facilitates IV cannulation",
+        "Parental presence during induction"
+      ],
+      "anaestheticConsiderations": {
+        "oculocardiacReflex": {
+          "definition": "OCR is a trigeminovagal reflex: traction/pressure on extraocular muscles or eyeball → afferent via trigeminal (nasociliary branch, ophthalmic division) → cardioinhibitory centre → efferent via vagus → sinus bradycardia, junctional rhythm, VT, asystole.",
+          "incidence": "Occurs in 32–90% of squint surgery cases. Highest with medial rectus traction.",
+          "prevention": [
+            "Deep plane of anaesthesia",
+            "Retrobulbar/peribulbar block (controversial — may worsen OCR)",
+            "IV atropine 20 mcg/kg prophylactically (controversial — not universally recommended)",
+            "Avoid hypercapnia and hypoxia (sensitise)"
+          ],
+          "management": [
+            "Ask surgeon to STOP traction immediately",
+            "Ensure adequate ventilation, normocapnia",
+            "Atropine 20 mcg/kg IV if bradycardia persists",
+            "If asystole: atropine + CPR",
+            "Wait before retraction — OCR fatigues with repeated stimulation"
+          ]
+        },
+        "inductionMaintenance": [
+          "Induction: IV propofol 2–3 mg/kg (after midazolam premedication) OR inhalational sevoflurane 8% in O2/air",
+          "Airway: LMA preferable — avoids stimulation of laryngeal reflexes that worsen OCR. ProSeal LMA: better seals, prevents CO2 insufflation of larynx.",
+          "If LMA fails or contraindicated: ETT with NMB",
+          "Maintenance: Sevoflurane in O2/air OR propofol TIVA — TIVA reduces PONV",
+          "Analgesia: Paracetamol 15 mg/kg oral preoperatively. Diclofenac 1 mg/kg oral if no contraindications.",
+          "Avoid opioids: ↑ PONV — use paracetamol + NSAIDs as primary analgesia"
+        ],
+        "ponvProphylaxis": [
+          "Squint surgery has highest PONV risk of all paediatric surgeries (70–80% without prophylaxis)",
+          "Risk factors: Squint surgery + volatile agents + paediatric age + post-op opioids",
+          "Multimodal: Ondansetron 0.15 mg/kg IV + dexamethasone 0.15 mg/kg IV — reduces PONV to <30%",
+          "TIVA with propofol: Reduces PONV further vs volatile"
+        ],
+        "specific": [
+          "IOP management: Succinylcholine transiently ↑ IOP (4–8 mmHg for ~5 min). Avoid if open globe injury. For squint: no open globe — succinylcholine acceptable.",
+          "Eye drops: Cyclopentolate → CNS effects in children (agitation, hallucinations, tachycardia). Timolol → bradycardia, bronchospasm.",
+          "Emergence: Smooth — avoid coughing/straining (↑ IOP, surgical stress).",
+          "Adequate analgesia at emergence reduces agitation and prevents disturbing eye dressing."
+        ]
+      },
+      "postoperative": [
+        "Recovery: Semi-lateral position prevents aspiration",
+        "Antiemetics: Continue for 24h if significant PONV risk",
+        "Analgesia: Paracetamol + ibuprofen suspension",
+        "Eye care: Patch for first few hours, topical antibiotic drops",
+        "Discharge criteria: Alert, tolerating oral fluids, pain controlled, PONV absent, SpO2 normal, accompanying adult"
+      ]
+    },
+    "keyPoints": [
+      "OCR: Traction on medial rectus → bradycardia/asystole → STOP TRACTION immediately",
+      "PONV rate 70–80% in squint surgery without prophylaxis — highest in paediatrics",
+      "LMA preferred over ETT in squint surgery to reduce OCR and airway stimulation",
+      "TIVA reduces PONV further vs volatile — consider in high-risk patients"
+    ],
+    "commonMistakes": [
+      "Using opioids as primary analgesia in squint surgery — dramatically increases PONV",
+      "Not giving dual PONV prophylaxis (ondansetron alone is insufficient)",
+      "Forgetting emergence agitation in children — pain and PONV both cause this"
+    ],
+    "examTip": "OCR afferent pathway (ophthalmic branch of trigeminal → Gasserian ganglion → cardioinhibitory centre) and efferent (vagus) is classic examination anatomy. Draw the arc for extra marks.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Oculocardiac reflex: Habituates with repeated stimulation — if bradycardia recurs after recovery, it is less severe. Tell surgeon 'small pause, then try again.' This practical approach avoids repeated atropine doses.",
+        "Propofol TIVA vs sevoflurane in squint: Meta-analysis (Schnabel 2011): TIVA reduces PONV from 62% to 27% compared to sevoflurane. Number needed to treat = 3. Strong evidence for TIVA preference.",
+        "Retrobulbar vs peribulbar block in squint: Adult squint correction under LA + MAC: blocks reduce OCR OR may trigger it (direct globe pressure). Not standard for paediatric squint (requires GA).",
+        "Post-operative diplopia: Common after squint correction — warn parents preoperatively. Usually resolves as oedema subsides. Prismatic glasses may be needed temporarily."
+      ]
+    }
+  },
+  {
+    "qNo": 7,
+    "question": "A) Preoperative assessment in geriatric patient  B) Hypoxic pulmonary vasoconstriction",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Preoperative Assessment in Geriatric Patient",
+        "definition": "Geriatric patients (typically >65 years, especially >80) have reduced physiological reserve and increased risk of postoperative complications. Standard risk scores may underestimate risk — comprehensive geriatric assessment (CGA) is recommended.",
+        "physiologicalChanges": [
+          {
+            "system": "Cardiovascular",
+            "changes": "↓ Maximum HR (HRmax = 220-age), ↓ CO reserve, ↑ systolic BP (aortic stiffening), diastolic dysfunction, ↑ SVR, ↑ risk AF. Left ventricular hypertrophy common."
+          },
+          {
+            "system": "Respiratory",
+            "changes": "↓ FVC, ↓ FEV1 (25 mL/year from age 25), ↑ FRC, ↑ closing volume (CV exceeds FRC when supine → ↑ atelectasis), ↓ VC, ↓ PaO2, ↓ CO2 response, ↑ dead space."
+          },
+          {
+            "system": "Renal",
+            "changes": "GFR declines 1 mL/min/year from age 40. Normal creatinine may mask significant GFR reduction (↓ muscle mass → ↓ creatinine production). Use CKD-EPI formula, not creatinine alone."
+          },
+          {
+            "system": "Hepatic",
+            "changes": "↓ Hepatic mass and blood flow (40% by age 80). ↓ Phase I metabolism. ↓ Albumin → ↑ free drug fraction. Drug interactions more likely."
+          },
+          {
+            "system": "Neurological",
+            "changes": "↓ Brain volume, ↓ neurotransmitters, ↑ sensitivity to CNS drugs (↓ MAC requirement). High risk: delirium, POCD, falls."
+          },
+          {
+            "system": "Pharmacological",
+            "changes": "↑ Body fat:muscle ratio → ↑ Vd for lipid-soluble drugs. ↓ Plasma proteins → ↑ free drug. ↓ Renal/hepatic clearance → prolonged drug effect."
+          }
+        ],
+        "cga": {
+          "frailty": "Frailty is the single most important predictor of postoperative complications in elderly (better than ASA or comorbidities alone). Tools: Clinical Frailty Scale (1–9), FRAIL questionnaire, Fried criteria (weight loss, exhaustion, slow gait, low grip, low activity — 3/5 = frail).",
+          "cognitiveAssessment": "Mini-Mental State Examination (MMSE), Montreal Cognitive Assessment (MoCA) — baseline cognitive function. Pre-existing dementia ↑ POCD and delirium risk.",
+          "polypharmacy": "Review all medications — anticholinergics, anticoagulants, antihypertensives, diuretics. Anticholinergic burden ↑ delirium risk.",
+          "nutritional": "MNA (Mini Nutritional Assessment) or serum albumin. Malnutrition → ↑ wound infection, prolonged recovery.",
+          "functional": "ADLs (Activities of Daily Living) and IADLs — baseline functional status predicts recovery trajectory.",
+          "falls": "Falls history and gait assessment — bone health, fall risk postoperatively"
+        },
+        "specific_concerns": [
+          "POCD (Postoperative Cognitive Dysfunction): Subtle cognitive decline persisting weeks to months. Risk: ↑ age, ↑ surgery duration, BIS-guided anaesthesia reduces risk.",
+          "Delirium: Acute confusion postoperatively. Risk factors: age >70, pre-existing cognitive impairment, sleep deprivation, immobility, pain, polypharmacy. Prevention: HELP protocol (Hospital Elder Life Programme).",
+          "Anaesthetic implications: ↓ MAC (reduce volatile by 4–6% per decade above 40), ↓ opioid doses, avoid anticholinergics, prefer regional, target BIS 40–60."
+        ]
+      },
+      "partB": {
+        "title": "Hypoxic Pulmonary Vasoconstriction (HPV)",
+        "definition": "HPV is a local, homeostatic reflex mechanism whereby pulmonary arterioles constrict in response to alveolar hypoxia (low PAO2), diverting blood flow away from poorly ventilated areas towards better-ventilated areas, thus improving V/Q matching and arterial oxygenation.",
+        "trigger": "Alveolar PO2 <70 mmHg. Both alveolar PO2 and mixed venous PO2 contribute, but alveolar PO2 is the dominant stimulus.",
+        "mechanism": "Hypoxia → inhibition of K+ channels (Kv) in PASMC → membrane depolarisation → ↑ intracellular Ca2+ via voltage-gated Ca2+ channels + release from SR → smooth muscle contraction. NO and reactive oxygen species modulate response.",
+        "clinicalSignificance": [
+          "One-lung ventilation (OLV): Critical — HPV diverts blood from collapsed (non-ventilated) lung to ventilated lung, reducing shunt fraction by 40–50%.",
+          "COPD: Local HPV improves V/Q matching. Chronic hypoxia → sustained vasoconstriction → pulmonary hypertension (maladaptive).",
+          "High altitude: Global alveolar hypoxia → global HPV → pulmonary hypertension → altitude sickness (HAPE).",
+          "Neonates: Critical at birth — conversion from fetal to adult circulation. Persistent HPV = PPHN."
+        ],
+        "inhibitors": [
+          "Inhaled anaesthetics (dose-dependent): Sevoflurane < isoflurane < halothane in inhibiting HPV",
+          "Vasodilators: Nitroprusside, GTN, hydralazine",
+          "β2 agonists (high dose)",
+          "Calcium channel blockers",
+          "Hypocapnia (↓ CO2 → ↓ HPV at physiological levels)",
+          "Alkalosis"
+        ],
+        "enhancers": "Almitrine (drug that enhances HPV — used in Europe to improve oxygenation during OLV). Hypercapnia, acidosis.",
+        "olv_management": "During OLV: TIVA (propofol) preserves HPV better than volatile agents. Keep FiO2 high (0.8–1.0). CPAP (5–10 cmH2O) to non-ventilated lung can help if HPV inadequate. Limit peak airway pressure in ventilated lung."
+      }
+    },
+    "keyPoints": [
+      "Frailty: Most important predictor of geriatric surgical outcome — use Clinical Frailty Scale",
+      "HPV: Alveolar hypoxia → pulmonary vasoconstriction → improves V/Q matching",
+      "HPV inhibited by volatile agents — TIVA preferred during OLV",
+      "POCD vs delirium: POCD = persistent subtle cognitive decline; delirium = acute fluctuating confusion"
+    ],
+    "commonMistakes": [
+      "Using normal serum creatinine to rule out renal impairment in elderly — muscle mass is reduced, creatinine may be normal despite GFR <60",
+      "Giving anticholinergic drugs in elderly (hyoscine, atropine) — worsen delirium",
+      "Confusing HPV with pulmonary hypertension — HPV is normal physiology; PH is pathological persistent elevation"
+    ],
+    "examTip": "HPV and OLV is a high-frequency DNB question. Write: HPV diverts blood from collapsed lung → ↓ shunt → maintains SpO2. Then explain why volatiles impair this and why TIVA/propofol is better for thoracic surgery.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Almitrine bismesilate (Vectarion): Peripheral chemoreceptor agonist that potentiates HPV. Used in France/Europe during OLV. Not available in India/UK. Caution: pulmonary hypertension and neuropathy with long-term use.",
+        "BIS monitoring in elderly: BIS 40–60 during GA reduces depth of anaesthesia and POCD incidence. B-Aware trial: BIS reduces awareness. B-Unaware/BAG-RECALL: BIS not superior to etCO2 monitoring for depth in unselected patients. In elderly: BIS guidance reduces POCD (Sieber 2018).",
+        "HELP protocol for delirium prevention: Cognitive stimulation (orientation, activities), sleep (non-pharmacological), early mobilisation, vision/hearing aids, hydration, pain control. Reduces delirium by 33% (Inouye 1999 NEJM).",
+        "V/Q mismatch types: Dead space (V>Q) — pulmonary embolism. Shunt (Q>V) — atelectasis, pneumonia. HPV specifically addresses shunt by ↓ Q to low-V areas."
+      ]
+    }
+  },
+  {
+    "qNo": 8,
+    "question": "Oocyte retrieval in a 38-year-old female – anaesthetic management",
+    "marks": 10,
+    "answer": {
+      "introduction": "Oocyte retrieval (OPU — Ovum Pick-Up) is a transvaginal ultrasound-guided procedure for IVF. It requires deep sedation or general anaesthesia (GA) as it involves transvaginal needle aspiration of multiple follicles and is painful.",
+      "procedureCharacteristics": [
+        "Short duration: 15–30 minutes typically",
+        "Highly stimulated ovaries: OHSS risk",
+        "Outpatient/day care setting",
+        "Patient may be anxious and emotionally vulnerable",
+        "Paracervical block may reduce pain (local technique)"
+      ],
+      "preoperativeAssessment": {
+        "history": [
+          "OHSS (Ovarian Hyperstimulation Syndrome): Assess severity — ascites, pleural effusion, thromboembolic risk, haemoconcentration",
+          "BMI: Obesity common in infertility patients",
+          "Allergies, medications: Gonadotrophins, GnRH agonists/antagonists",
+          "Fasting status: Standard NPO",
+          "Coagulation: OHSS associated with thrombotic risk; check if on anticoagulants",
+          "Previous anaesthesia"
+        ],
+        "ohss": {
+          "definition": "Exaggerated ovarian response to gonadotrophins. Severe OHSS: ovarian enlargement, ascites, pleural effusion, haemoconcentration (Hct >45%), oliguria, electrolyte disturbance.",
+          "anaesthetic_risk": "↑ aspiration risk (ascites, delayed gastric emptying), thromboembolism, respiratory compromise, difficult IV access (oedema)"
+        }
+      },
+      "anaesthesiaOptions": {
+        "monitored_sedation": {
+          "agents": [
+            "Propofol: 1–2 mg/kg, then 25–75 mcg/kg/min infusion. Most common worldwide. Rapidly titratable.",
+            "Remifentanil: 0.05–0.1 mcg/kg/min. Excellent analgesia with rapid recovery.",
+            "Ketamine: Sub-anaesthetic 0.25–0.5 mg/kg — dissociative analgesia without apnoea. Useful adjunct.",
+            "Fentanyl + propofol combination: Common in Indian practice."
+          ],
+          "airway": "Spontaneous breathing with supplemental O2 (nasal cannula or face mask). Ensure availability of bag-mask, LMA, emergency equipment.",
+          "monitoring": "SpO2, ETCO2 (capnometry even in sedation — APSF recommendation), ECG, NIBP, BIS (optional).",
+          "advantage": "Rapid recovery, suitable for day care, avoids muscle relaxants and intubation."
+        },
+        "general_anaesthesia": {
+          "indication": [
+            "Patient refusal of sedation",
+            "Severe OHSS with ascites",
+            "Expected difficult airway",
+            "High aspiration risk"
+          ],
+          "technique": "TIVA (propofol + remifentanil) preferred — low PONV, rapid recovery. LMA acceptable if not high aspiration risk. ETT with RSI if full stomach/severe OHSS ascites."
+        },
+        "regional_supplement": "Paracervical block: Lidocaine 1% or bupivacaine 0.25% bilateral — reduces anaesthetic requirement significantly. Simple technique, safe."
+      },
+      "specificConsiderations": [
+        "Embryo toxicity concern: Anecdotal concern that volatile agents may be teratogenic/embryotoxic at high concentrations. No clinical evidence of harm at standard anaesthetic concentrations. TIVA avoids theoretical concern.",
+        "N2O: Controversial — some evidence N2O inhibits methionine synthase → folate metabolism disruption. Avoid N2O in IVF.",
+        "Sympathomimetics: Ephedrine preferred over phenylephrine for hypotension (phenylephrine reduces uterine blood flow in pregnant patients — not applicable here but principle guides choice).",
+        "PONV: Day care — aggressive prophylaxis (ondansetron 4 mg + dexamethasone 4 mg). TIVA reduces baseline risk.",
+        "Post-procedure: Pain from follicular bleeding and uterine cramping — regular paracetamol + NSAIDs (ibuprofen 400 mg). Discharge when fully awake, pain controlled, tolerating fluids."
+      ]
+    },
+    "keyPoints": [
+      "Short procedure — propofol sedation with oxygen supplementation is the gold standard",
+      "Avoid N2O in IVF — theoretical methionine synthase inhibition",
+      "Severe OHSS: ↑ aspiration risk, haemoconcentration, thromboembolism — may need GA + RSI",
+      "Paracervical block reduces anaesthetic requirement significantly"
+    ],
+    "commonMistakes": [
+      "Forgetting OHSS assessment preoperatively — severe OHSS changes entire anaesthetic plan",
+      "Using N2O in IVF — should be avoided",
+      "Not monitoring etCO2 during sedation — capnometry in sedation is increasingly mandated"
+    ],
+    "examTip": "This question tests your ability to plan day-care anaesthesia for a short procedure in a potentially high-risk patient. Structure your answer as: assessment → technique choice → specific concerns → recovery. Mention OHSS explicitly.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "OHSS pathophysiology: VEGF (vascular endothelial growth factor) released by stimulated ovaries → ↑ vascular permeability → fluid shift from intravascular to third space → haemoconcentration, ascites, pleural effusions, ↑ thrombotic risk.",
+        "N2O and IVF — evidence: N2O inhibits methionine synthase → ↓ DNA synthesis and folate metabolism. Animal studies show embryotoxicity at prolonged exposure. Human studies inconclusive but most IVF centres avoid N2O as precautionary principle.",
+        "Propofol and oocyte quality: In vitro studies showed propofol may affect oocyte mitochondria and fertilisation rates. Clinical studies inconclusive. Some IVF centres prefer non-propofol sedation (midazolam + fentanyl) for this reason — controversial.",
+        "Elective egg freezing: Now more common (fertility preservation before chemotherapy, social egg freezing). Same anaesthetic approach as fresh IVF OPU. Population typically younger, healthier."
+      ]
+    }
+  },
+  {
+    "qNo": 9,
+    "question": "A) Myocardial injury in non-cardiac surgery  B) Rapid sequence induction",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Myocardial Injury in Non-Cardiac Surgery (MINS)",
+        "definition": "MINS is defined as myocardial injury caused by ischaemia that occurs during or within 30 days of non-cardiac surgery, evidenced by a peak troponin elevation (≥14–65 ng/L depending on assay) without necessarily fulfilling criteria for MI. It represents a spectrum from subclinical troponin leak to Type 1 or Type 2 MI.",
+        "incidence": "~20% of patients aged >65 undergoing major non-cardiac surgery have MINS (VISION trial). Associated with 30-day mortality of 9% (vs 1.1% without MINS).",
+        "classification": [
+          "MINS without MI criteria: Troponin ↑ without symptoms, ECG changes, or new wall motion abnormality",
+          "Type 1 MI: Plaque rupture/coronary artery thrombosis",
+          "Type 2 MI (most common perioperative MI): Supply-demand mismatch — tachycardia, hypotension, anaemia, hypertension"
+        ],
+        "pathophysiology": "Perioperative stress → sympathetic activation → ↑ HR, ↑ myocardial O2 demand + haemodynamic instability → ↓ myocardial O2 supply → subendocardial ischaemia → troponin leak. Most perioperative MI is Type 2.",
+        "riskFactors": [
+          "Age >65, diabetes, hypertension, known IHD",
+          "Emergency surgery",
+          "High-risk surgery (vascular, major abdominal, thoracic)",
+          "Perioperative hypotension (MAP <65 for >10 min)",
+          "Perioperative tachycardia"
+        ],
+        "prevention": [
+          "Aspirin: Continue perioperatively in established IHD (stop only for neurosurgery/spinal/ophthalmology)",
+          "Statins: Continue perioperatively — plaque-stabilising effect",
+          "Beta-blockers: Continue if already prescribed; initiation for MINS prevention has failed trials (POISE trial: metoprolol reduced MI but increased stroke and mortality)",
+          "Maintain haemodynamic stability: Avoid MAP <65 mmHg for >10 min",
+          "Correction of anaemia, hypothermia, pain control"
+        ],
+        "management": [
+          "If MINS detected (troponin rise): Cardiology consultation",
+          "Aspirin if not already prescribed",
+          "Dabigatran 110 mg BD: Shown to reduce MINS-associated 30-day mortality in MANAGE trial",
+          "Maintain coronary perfusion: Avoid hypotension, tachycardia",
+          "ECG, echo, repeat troponin",
+          "Avoid NSAIDs post-MINS"
+        ],
+        "monitoring": "High-sensitivity troponin T/I — 6th generation assays detect MINS earlier and more sensitively. VISION trial used hs-TnT. Routine postoperative troponin measurement advocated in high-risk elderly patients."
+      },
+      "partB": {
+        "title": "Rapid Sequence Induction (RSI)",
+        "definition": "RSI is a technique of anaesthetic induction designed to minimise the risk of pulmonary aspiration of gastric contents by achieving rapid loss of consciousness and fast onset of neuromuscular blockade, enabling rapid tracheal intubation.",
+        "indications": [
+          "Full stomach (emergency surgery, recent meal)",
+          "Symptomatic GORD/hiatus hernia",
+          "Pregnancy from 18–20 weeks",
+          "Intestinal obstruction, bowel ileus",
+          "Trauma",
+          "Obesity with hiatus hernia",
+          "Delayed gastric emptying (opioids, diabetic gastroparesis)"
+        ],
+        "classicRSITechnique": [
+          "Preoxygenation: 100% O2 for 3 min (ear-to-sternal notch position, oxygen flush) — target SpO2 100%, maximise nitrogen washout",
+          "Preparation: IV access × 2, suction available, tilted trolley, RSI drugs drawn up, difficult airway equipment available",
+          "Pre-oxygenation: NODESAT (Nasal oxygen During Efforts at Securing A Tube) — high-flow nasal O2 4–15 L/min during laryngoscopy — extends apnoea time",
+          "Induction drug: Propofol 1.5–2 mg/kg OR thiopentone 3–5 mg/kg (historically). Ketamine 1.5 mg/kg in haemodynamic instability.",
+          "Succinylcholine: 1.5–2 mg/kg IV (onset 45–60 sec, duration 10–12 min) — traditional RSI agent",
+          "Alternative: Rocuronium 1.2 mg/kg IV (onset 60–90 sec) — equivalent to succinylcholine when sugammadex (16 mg/kg) available for reversal. ERSA trial: no difference in intubating conditions.",
+          "Cricoid pressure: 30N pre-induction, 44N post-induction (Sellick). Remove if: impedes laryngoscopy or mask seal, regurgitation occurs, BURP preferred, during ILMA insertion.",
+          "No manual ventilation: Traditional RSI — no mask ventilation after induction. Modified RSI: Gentle mask ventilation if SpO2 falls — reduces atelectasis and extends apnoea time.",
+          "Intubation: Laryngoscopy and ETT when fasciculations subside (with succinylcholine) or 60 sec after rocuronium",
+          "Confirm: Bilateral chest rise, etCO2 waveform — no PDPH-like symptoms. Inflate cuff, secure ETT."
+        ],
+        "modifications": [
+          "Modified RSI: Gentle positive pressure ventilation (PEEP 5–10 cmH2O) during apnoea if SpO2 <94% — reduces risk of hypoxia, especially in obese/pregnant/paediatric",
+          "Awake RSI (AFOI): In known difficult airway + full stomach — highest risk, plan carefully"
+        ]
+      }
+    },
+    "keyPoints": [
+      "MINS: troponin rise without full MI criteria — occurs in 20% of elderly after major surgery",
+      "RSI: Preoxygenation → induction → succinylcholine/rocuronium 1.2 mg/kg → no ventilation → intubate",
+      "Dabigatran post-MINS reduces 30-day mortality (MANAGE trial)",
+      "NODESAT: High-flow nasal O2 during laryngoscopy extends apnoea time — use in RSI"
+    ],
+    "commonMistakes": [
+      "Using succinylcholine without checking for contraindications: hyperkalaemia, malignant hyperthermia history, burns >24h, denervation injuries",
+      "Applying excessive cricoid pressure — impedes laryngoscopy and ETT passage",
+      "Not having sugammadex available when using rocuronium for RSI"
+    ],
+    "examTip": "POISE trial is a classic DNB question: Perioperative metoprolol reduced MI but increased stroke and death — therefore routine beta-blocker initiation for MINS prevention is NOT recommended. Cite POISE.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "ERSA trial (2023): Equivalent RSI Agents trial. Rocuronium 1.2 mg/kg + sugammadex 16 mg/kg for reversal vs succinylcholine for RSI in emergency surgery. Non-inferior for intubating conditions, time to intubation. No difference in aspiration. Rocuronium RSI now acceptable equivalent when sugammadex available.",
+        "NODESAT vs THRIVE (Transnasal Humidified Rapid-Insufflation Ventilatory Exchange): High-flow nasal O2 via heated, humidified circuit (Airvo device) at 70 L/min — achieves passive oxygenation + CO2 washout during apnoea. THRIVE: Maintains oxygenation >25 minutes in healthy adults (Patel 2015). Extended safe apnoea window for difficult airway management.",
+        "MANAGE trial (2018, Lancet): 1,754 patients with MINS. Dabigatran 110 mg BD vs placebo. Primary outcome (major vascular complications): 11% vs 15% (HR 0.72, p=0.09, NS). But significant reduction in major vascular complications on secondary analysis. Now guideline-mentioned option.",
+        "POISE trial (2008, Lancet): 8,351 patients, extended-release metoprolol vs placebo. MI reduced 27%. BUT: stroke doubled (1.0% vs 0.5%), death increased (3.1% vs 2.3%). Conclusion: Do NOT routinely initiate beta-blockers perioperatively for MINS prevention."
+      ]
+    }
+  },
+  {
+    "qNo": 10,
+    "question": "Mitral stenosis in pregnancy – anaesthetic management",
+    "marks": 10,
+    "answer": {
+      "introduction": "Mitral stenosis (MS) is the most common valvular heart disease in pregnancy in India (rheumatic heart disease still prevalent). It represents a high-risk combination because pregnancy's haemodynamic changes directly worsen MS physiology.",
+      "pathophysiology": {
+        "msPhysiology": "Normal MVA = 4–6 cm². MS causes obstruction to left atrial (LA) emptying → ↑ LA pressure → ↑ pulmonary venous pressure → pulmonary oedema. ↑ HR worsens MS (↓ diastolic filling time → ↓ LV filling, ↑ LA pressure).",
+        "severityMVA": [
+          "Mild MS: MVA >1.5 cm²",
+          "Moderate MS: MVA 1.0–1.5 cm²",
+          "Severe MS: MVA <1 cm²"
+        ],
+        "pregnancyWorsensMSWhy": [
+          "↑ Blood volume (40–50% increase) → ↑ preload → ↑ LA pressure → pulmonary oedema",
+          "↑ HR (20 bpm above baseline by third trimester) → ↓ diastolic time → worsens gradient",
+          "↑ CO requirement (50% increase) → demands more flow across stenotic valve",
+          "↓ SVR (vasodilation of pregnancy) → reflex tachycardia worsens MS",
+          "Peripartum: Pain, anxiety, uterine contractions → ↑ HR → acute decompensation"
+        ]
+      },
+      "preoperativeManagement": [
+        "Echo: MVA, gradient, LA size, PAP (pulmonary arterial pressure), LV function",
+        "Cardiology review: Multidisciplinary team",
+        "Severe MS (MVA <1 cm²): Consider balloon mitral valvuloplasty (BMV) before 28 weeks if symptomatic. Safest second trimester.",
+        "Rate control: Beta-blockers (metoprolol) to maintain HR <80/min. Digoxin if AF.",
+        "Anticoagulation: If AF, large LA (>4.5 cm), or mechanical valve — LMWH first/third trimester, warfarin (fetal risk) second trimester (if mechanical valve — individual decision).",
+        "Optimise volume: Careful diuretic use — avoid hypovolaemia (↑ HR compensates) OR overload (↑ LA pressure)",
+        "Avoid: Tocolytics (ritodrine — tachycardia), oxytocin bolus (↓ SVR → reflex tachycardia)"
+      ],
+      "intrapartum": {
+        "monitoring": [
+          "Invasive arterial line: Continuous BP — detect sudden changes",
+          "Central venous catheter: Assess volume and drug administration",
+          "Consider PA catheter or TOE: Severe MS, pulmonary hypertension",
+          "ECG: Detect AF — immediate rate control",
+          "Fluid: Restricted fluid — 'tight and dry' strategy"
+        ],
+        "laborAnalgesia": [
+          "Epidural analgesia: GOLD STANDARD in MS in labour",
+          "Benefits: ↓ pain → ↓ tachycardia, ↓ SVR (gradual — well tolerated in MS), ↓ cardiac work, blocks sympathetic response to contractions",
+          "Technique: Incremental low-dose epidural (bupivacaine 0.1% + fentanyl 2 mcg/mL). Avoid bolus doses → sudden SVR drop → reflex tachycardia.",
+          "Avoid spinal alone: Rapid ↓ SVR → reflex tachycardia = catastrophic in severe MS. If used: low-dose CSE (spinal component 1–1.5 mL of 0.5% bupivacaine + epidural top-up slowly)."
+        ],
+        "caesareanSection": {
+          "regional": "Incremental epidural preferred. CSE with low intrathecal dose. Avoid single-shot spinal for severe MS.",
+          "ga": "Only if regional contraindicated. RSI. Avoid tachycardia during laryngoscopy (esmolol 0.5 mg/kg or alfentanil 15 mcg/kg before laryngoscopy). Maintain sinus rhythm and HR <80. TIVA: propofol + remifentanil.",
+          "thirdStage": [
+            "Oxytocin: Give as INFUSION (5 units over 30 min) — NOT bolus (bolus → ↓ SVR → tachycardia → cardiac decompensation)",
+            "Ergometrine: CONTRAINDICATED in MS (vasoconstriction → ↑ PAP, hypertension)",
+            "Carboprost: Caution — bronchospasm, pulmonary hypertension"
+          ]
+        }
+      },
+      "postpartum": [
+        "Highest risk period: First 24–48 hours. Autotransfusion from uterine contraction → ↑ preload → pulmonary oedema",
+        "Continue invasive monitoring for 24–48 hours",
+        "Diuretics: Frusemide if pulmonary oedema signs",
+        "Rate control: Maintain HR <80",
+        "HDU/ICU admission",
+        "Anticoagulation: Resume if AF"
+      ]
+    },
+    "keyPoints": [
+      "MS worsens in pregnancy: ↑ CO, ↑ HR, ↑ BV all worsen the fixed obstruction",
+      "HR control (HR <80 bpm) is the most critical management priority",
+      "Epidural is best for labour: ↓ pain → ↓ HR, gradual ↓ SVR (well tolerated)",
+      "Oxytocin: INFUSION only — bolus causes tachycardia and cardiovascular collapse"
+    ],
+    "commonMistakes": [
+      "Giving oxytocin as a bolus — absolutely contraindicated in MS",
+      "Using ergometrine for PPH — causes severe pulmonary hypertension and vasoconstriction in MS",
+      "Single-shot spinal for CS in severe MS — rapid SVR fall → reflex tachycardia → acute decompensation"
+    ],
+    "examTip": "MS in pregnancy is the highest-yield cardiac disease + obstetric anaesthesia question in DNB. Structure: pathophysiology of why pregnancy worsens MS → labour management → CS management → postpartum risk. The 'haemodynamic goals' table (HR ↓, preload maintain, ↑ SVR) is essential.",
+    "extraMarks": {
+      "heading": "⭐ Extra marks content:",
+      "content": [
+        "Haemodynamic goals in MS: Heart rate ↓ (avoid tachycardia), Preload: maintain (avoid both hypo and hypervolaemia), SVR: maintain (avoid ↓ SVR), PVR: avoid ↑ (avoid hypoxia, hypercapnia, acidosis), Cardiac rhythm: sinus (AF is catastrophic — 15% ↑ mortality risk). Memorise as: 'slow, full, contracted, sinus'",
+        "Balloon mitral valvuloplasty (BMV) in pregnancy: Safest in second trimester (6–28 weeks). Radiofrequency technique with lead shielding to fetus. Inoue balloon technique. Reduces gradient, improves MVA. Evidence: successful in >90% with MVA <1 cm² and suitable anatomy (Wilkins score ≤8).",
+        "Critical MS in labour: Severe MS (MVA <1 cm²) + acute pulmonary oedema: Immediate IV frusemide, sit up, oxygen, rate control (IV metoprolol or esmolol), morphine (cautiously). May need emergency CS if deteriorating despite medical management.",
+        "Rheumatic MS in India: 90% of MS in India is rheumatic (streptococcal fever → rheumatic carditis → mitral valve leaflet thickening, fusion, calcification). Penicillin prophylaxis and early diagnosis remain a public health priority."
+      ]
+    }
+  }
+]
