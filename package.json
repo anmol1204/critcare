@@ -1,0 +1,33 @@
+{
+  "name": "critcare",
+  "version": "1.0.0",
+  "description": "CritCare.in — Evidence-based ICU clinical reference app",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "sync": "npm run build && npx cap sync android",
+    "open:android": "npm run sync && npx cap open android",
+    "test": "echo \"No tests configured\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anmol1204/critcare.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/anmol1204/critcare/issues"
+  },
+  "homepage": "https://github.com/anmol1204/critcare#readme",
+  "dependencies": {
+    "@capacitor/android": "^8.4.1",
+    "@capacitor/app": "^8.1.0",
+    "@capacitor/cli": "^8.4.1",
+    "@capacitor/core": "^8.4.1",
+    "@capacitor/haptics": "^8.0.2",
+    "@capacitor/push-notifications": "^8.1.1",
+    "@capacitor/splash-screen": "^8.0.1",
+    "@capacitor/status-bar": "^8.0.2"
+  }
+}

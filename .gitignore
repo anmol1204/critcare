@@ -1,0 +1,16 @@
+# Build output
+www/
+node_modules/
+
+# Android build artefacts (keep the project, ignore build output)
+android/.gradle/
+android/build/
+android/app/build/
+android/.idea/
+
+# macOS
+.DS_Store
+
+# Large PDFs (source files, not needed in git)
+DNB/DEC\ PAPER\ 4\ 2025\ ANSWERS.pdf
+DNB/DNB\ Anaesthesiology\ Paper4.pdf

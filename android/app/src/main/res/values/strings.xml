@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">CritCare</string>
+    <string name="title_activity_main">CritCare</string>
+    <string name="package_name">in.critcare.app</string>
+    <string name="custom_url_scheme">in.critcare.app</string>
+</resources>
