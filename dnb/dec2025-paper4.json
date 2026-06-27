@@ -1,0 +1,1143 @@
+[
+  {
+    "qNo": 1,
+    "question": "a) Abdominal compartment syndrome. [5]  b) High anion gap metabolic acidosis. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Abdominal Compartment Syndrome (ACS)",
+        "definition": "ACS is defined as a sustained intra-abdominal pressure (IAP) >20 mmHg (with or without abdominal perfusion pressure <60 mmHg) associated with new onset organ dysfunction or failure. Intra-abdominal Hypertension (IAH) = IAP ≥12 mmHg.",
+        "keyFormulas": [
+          "Abdominal Perfusion Pressure (APP) = MAP − IAP. Minimum APP of 60 mmHg is required to maintain adequate perfusion of viscera.",
+          "IAP measured by bladder intraluminal method (gold standard): 25 mL saline instilled, transduced via urinary catheter in supine position."
+        ],
+        "classification": {
+          "title": "Types of ACS",
+          "content": [
+            "Primary ACS: Due to abdomino-pelvic pathology — e.g., ruptured AAA, retroperitoneal haemorrhage, trauma",
+            "Secondary ACS: Extra-abdominal conditions — massive bowel oedema, sepsis, major burns, massive fluid resuscitation",
+            "Recurrent (Tertiary) ACS: Re-development after treatment of primary or secondary ACS"
+          ]
+        },
+        "pathophysiology": {
+          "title": "Effects of Raised IAP on Organ Systems",
+          "content": [
+            "Cardiovascular: ↓ splanchnic blood flow, mediastinal compression → ↓ venous return → ↓ CO, haemodynamic collapse",
+            "Respiratory: Elevated diaphragm → ↓ lung compliance → hypoxaemia and hypercarbia",
+            "Renal: Renal vein compression + ↓ APP → oliguria → AKI (most sensitive organ)",
+            "CNS: ↑ ICP via ↑ intrathoracic pressure → ↓ CPP"
+          ]
+        },
+        "management": {
+          "title": "Management of ACS",
+          "content": [
+            "Non-operative: Nasogastric decompression, enemas, avoid excessive fluid, paracentesis, neuromuscular blockade",
+            "Surgical (Definitive): Decompressive laparotomy — temporary abdominal closure using Bogota bag or vacuum-assisted closure (VAC). Indicated when IAP >25 mmHg with organ dysfunction failing non-operative measures.",
+            "Multidisciplinary management with daily wound care and planned re-exploration for fascial closure"
+          ]
+        }
+      },
+      "partB": {
+        "title": "High Anion Gap Metabolic Acidosis (HAGMA)",
+        "definition": "HAGMA is a metabolic acidosis in which the anion gap is elevated due to accumulation of unmeasured anions.",
+        "anionGap": {
+          "title": "Anion Gap Calculation",
+          "content": [
+            "AG = (Na⁺ + K⁺) − (Cl⁻ + HCO₃⁻)",
+            "Normal AG = 14–16 mEq/L (if K⁺ included); 8–12 mEq/L (if K⁺ excluded)",
+            "The 'gap' represents unmeasured anions: anionic proteins (albumin), phosphate, sulphate"
+          ]
+        },
+        "albuminCorrection": {
+          "title": "Albumin Correction (Critical in ICU Patients)",
+          "content": [
+            "Critically ill patients are often hypoalbuminaemic → AG falsely low → may mask HAGMA",
+            "Corrected AG = Observed AG + 2.5 × (Normal albumin − Observed albumin in g/dL)",
+            "Normal albumin = 4.4 g/dL. AG falls by ~2.5 mEq/L for every 1 g/dL fall in albumin."
+          ]
+        },
+        "causes": {
+          "title": "Causes — GOLD MARK Mnemonic",
+          "content": [
+            "G — Glycols (ethylene glycol, propylene glycol)",
+            "O — Oxoproline (5-oxoproline; toxic metabolite of excessive paracetamol/acetaminophen)",
+            "L — L-Lactate (↑ in lactic acidosis: sepsis, shock, liver failure, ischaemia)",
+            "D — D-Lactate (exogenous lactic acid produced by gut bacteria — short bowel syndrome)",
+            "M — Methanol",
+            "A — Aspirin / Salicylic acid",
+            "R — Renal failure (uraemic acidosis — accumulation of sulphates, phosphates)",
+            "K — Ketones (DKA, alcoholic ketoacidosis, starvation ketoacidosis)"
+          ]
+        },
+        "osmolarGap": "Osmolar Gap = Measured Osmolality − Calculated Osmolality. Calculated Osm = 2(Na) + Glucose/18 + BUN/2.8. Elevated osmolar gap (>10 mOsm/kg) suggests toxic alcohol ingestion (methanol, ethylene glycol). Failure of osmolar gap to close after treatment of DKA suggests toxic alcohol co-ingestion.",
+        "treatment": {
+          "title": "Management",
+          "content": [
+            "Treat the underlying cause (most important)",
+            "Supportive: IV fluids, respiratory support",
+            "Alkali therapy (sodium bicarbonate or sodium citrate): only if pH <7.1 — risk of paradoxical CNS acidosis and overshoot alkalosis",
+            "Toxic alcohols: Fomepizole (alcohol dehydrogenase inhibitor) — blocks conversion to toxic metabolites. Expensive — give with thiamine and folate.",
+            "Prepare for emergent haemodialysis in methanol/ethylene glycol toxicity or severe uraemia",
+            "Antibiotics and source control if infective cause; insulin + fluids for DKA"
+          ]
+        }
+      }
+    },
+    "sources": [
+      "Marino PL. The ICU Book, 4th Edition — Acid-Base Disorders chapter",
+      "Kirkpatrick AW et al. Intra-abdominal hypertension and the abdominal compartment syndrome. Intensive Care Medicine 2013; WSACS Guidelines",
+      "Irwin RS, Rippe JM. Intensive Care Medicine, 8th Edition — Metabolic Acidosis",
+      "Gabow PA. Disorders associated with an altered anion gap. Kidney Int 1985"
+    ],
+    "keyPoints": [
+      "ACS = IAP >20 mmHg + new organ dysfunction. APP = MAP − IAP; target APP ≥60 mmHg",
+      "Bladder pressure = gold standard IAP measurement method",
+      "GOLD MARK: the correct mnemonic for HAGMA (replaced the older MUDPILES)",
+      "Always correct AG for albumin in ICU patients — hypoalbuminaemia masks HAGMA",
+      "Osmolar gap >10 suggests toxic alcohol; fomepizole blocks alcohol dehydrogenase"
+    ],
+    "commonMistakes": [
+      "Forgetting to correct anion gap for albumin — in critically ill patients, uncorrected AG will underestimate the true gap",
+      "Diagnosing ACS at IAP >12 mmHg — this is IAH. ACS requires >20 mmHg PLUS organ dysfunction",
+      "Using sodium bicarbonate routinely in HAGMA — it is indicated only when pH <7.1 and only as a bridge to treating the cause"
+    ],
+    "examTip": "In 5-mark ACS question: always include the formula APP = MAP − IAP and mention target APP ≥60 mmHg. For HAGMA: write GOLD MARK in full — examiners are impressed. Corrected AG formula for albumin is a frequent examiner favourite in Paper 4.",
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Abdominal Compartment Syndrome — Bogota Bag: A sterile 3-litre irrigation bag split open and sutured to the skin fascia as temporary abdominal closure after decompressive laparotomy. Modern approach uses commercial negative-pressure wound therapy (VAC-AbThera) — actively removes exudate, reduces fascial retraction, and facilitates delayed primary fascial closure at 3–7 days.",
+        "Delta-delta ratio (ΔAG/ΔHCO₃): Used to detect mixed acid-base disorders in HAGMA. If (ΔAG/ΔHCO₃) >2 → metabolic alkalosis co-existing. If <1 → normal anion gap metabolic acidosis also present. Formula: ΔAG = Calculated AG − Normal AG (12). ΔHCO₃ = 24 − Measured HCO₃.",
+        "Pyroglutamic acidosis (Oxoproline): Increasingly recognised cause of HAGMA in ICU patients on paracetamol (acetaminophen) — especially females, malnourished patients, those on flucloxacillin. Often missed. Treat by stopping paracetamol and giving N-acetylcysteine.",
+        "WSACS Grading: IAH Grade I = IAP 12–15 mmHg; Grade II = 16–20; Grade III = 21–25; Grade IV = >25 mmHg. ACS occurs when Grade III/IV + new organ dysfunction. Treatment escalates with grade."
+      ]
+    }
+  },
+  {
+    "qNo": 2,
+    "question": "a) What are the indications for tracheostomy in ICU? [3]  b) Care of tracheostomy in ICU. [3]  c) Complications of tracheostomy. [4]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Indications for Tracheostomy in ICU",
+        "content": [
+          "i) Relief of upper airway obstruction: tumours, infection (Ludwig's angina, epiglottitis), trauma (facial fractures, laryngeal injury), bilateral vocal cord paralysis, burns with inhalation injury, foreign body obstruction",
+          "ii) Prolonged mechanical ventilation (>7–10 days) in ICU patients — reduces sedation requirements, VAP risk, and ICU stay; facilitates weaning",
+          "iii) Tracheobronchial toileting: patients with inability to clear secretions (neuromuscular disease, head injury, post-surgical)",
+          "iv) Weaning from mechanical ventilation: ↓ dead space, ↓ work of breathing, easier transition to spontaneous breathing",
+          "v) Airway protection in unconscious patients or those with compromised airway reflexes (GCS ≤8, post-CVA, bulbar palsy)",
+          "vi) Elective: planned surgical procedures involving the upper airway or head & neck",
+          "Early tracheostomy (within 7 days) is associated with ↓ VAP rate, ↓ sedation use, ↓ ICU stay (TracMan trial: no difference in mortality but trend to earlier liberation)"
+        ]
+      },
+      "partB": {
+        "title": "Care of Tracheostomy in ICU",
+        "immediatePostOp": {
+          "title": "1. Immediate Post-operative Care",
+          "content": [
+            "Maintain airway patency — check tube position and fixation",
+            "Chest X-ray to confirm position and exclude pneumothorax",
+            "Cuff pressure: maintain at 20–25 cmH₂O. High pressure → tracheal ischaemia and stenosis; low pressure → aspiration and leak"
+          ]
+        },
+        "humidification": "2. Humidification: Essential as upper airway (natural humidifier) is bypassed. Use Heated Humidifier or Heat-and-Moisture Exchanger (HME/Swedish nose). Prevents mucus plugging, ciliary damage, and tube obstruction.",
+        "suctioning": "3. Tracheobronchial Suctioning: Sterile technique, pre-oxygenate with 100% O₂, limit suction to 10–15 seconds, use closed suction systems to reduce hypoxaemia and VAP risk. Suction only when clinically indicated (not routine).",
+        "stoma": "4. Stoma Care: Keep area dry and clean. Change dressings regularly. Monitor for infection, bleeding, subcutaneous emphysema.",
+        "tubeChange": "5. Tube Change: First change typically at 5–7 days (once tract is established). Always have replacement tube and bougie at bedside. Difficult airway equipment available.",
+        "cuff": "6. Cuff Management: Monitor cuff pressure with manometer every 8 hours. Target 20–25 cmH₂O. Consider cuff-down trials when patient improves for swallowing assessment.",
+        "other": "7. Additional: Nutritional support, SpO₂ and capnography monitoring, encourage chest physiotherapy, communication aids for the patient."
+      },
+      "partC": {
+        "title": "Complications of Tracheostomy",
+        "immediate": {
+          "title": "Immediate (Intra-operative & <24h)",
+          "content": [
+            "Haemorrhage (intraoperative) — most common immediate complication",
+            "Pneumothorax / Pneumomediastinum",
+            "Air embolism",
+            "Recurrent laryngeal nerve (RLN) injury",
+            "Apnoea — loss of hypercapnic drive at decannulation of ET tube",
+            "Aspiration of blood",
+            "Injury to adjacent structures (oesophagus, thyroid, great vessels)"
+          ]
+        },
+        "late": {
+          "title": "Late Complications",
+          "content": [
+            "Tracheal stenosis (most common late complication) — from cuff overinflation causing ischaemia",
+            "Tracheomalacia — cartilage destruction from prolonged pressure",
+            "Tracheo-Oesophageal Fistula (TEF) — erosion of posterior tracheal wall",
+            "Voice changes (dysphonia)",
+            "Tube obstruction (blood clot, secretions) — most common cause of sudden death in tracheostomy patient",
+            "Accidental decannulation — life-threatening if tract not established",
+            "Infection of stoma",
+            "Dysphagia — impaired laryngeal elevation",
+            "Persistent tracheocutaneous fistula after decannulation"
+          ]
+        },
+        "lifeThreatening": "Life-threatening complications requiring immediate action: Accidental decannulation (before tract matured — <7 days — risk of inability to reinsert), tube obstruction, tension pneumothorax, Tracheo-Innominate Artery Fistula (TIA fistula) — presents with sentinel bleed → massive haemorrhage."
+      }
+    },
+    "sources": [
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Edition — Airway Management",
+      "Irwin RS, Rippe JM. Intensive Care Medicine, 8th Edition — Tracheostomy chapter",
+      "Oh's Intensive Care Manual, 8th Edition",
+      "TracMan Trial: Young D et al. JAMA 2013 — Early vs Late Tracheostomy in ICU"
+    ],
+    "keyPoints": [
+      "Prolonged MV (>7–10 days) is the most common ICU indication for tracheostomy",
+      "Cuff pressure: 20–25 cmH₂O. High → ischaemia/stenosis; Low → aspiration",
+      "Most common cause of sudden death in tracheostomy patient: tube blockage",
+      "Late complications include stenosis, TEF, and tracheomalacia — all from prolonged cuff pressure",
+      "First tube change: 5–7 days (after tract is established)"
+    ],
+    "commonMistakes": [
+      "Suction duration >15 seconds — causes hypoxaemia and mucosal injury; limit to 10–15 sec max",
+      "Using only HME in patients with thick secretions — heated humidifier is more effective for these patients",
+      "Forgetting TIA fistula as a life-threatening late complication — presents with sentinel haemorrhage followed by torrential bleeding"
+    ],
+    "examTip": "For complications question (4 marks): always divide into Immediate / Early / Late / Life-threatening. Tracheo-Innominate Artery fistula, TEF, and tracheal stenosis are the high-yield late complications. Tube obstruction as the MC cause of sudden death is frequently asked.",
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Percutaneous Dilational Tracheostomy (PDT): Now preferred over surgical tracheostomy in ICU. Ciaglia Blue Rhino technique — single-step Seldinger technique over wire, serial dilation. Advantages over surgical: fewer infections, better cosmesis, can be done at bedside. Contraindications: coagulopathy, ↑ ICP, morbid obesity, neck anatomy issues. USG guidance reduces posterior wall injury.",
+        "Subglottic secretion drainage (SSD): Specialised tracheostomy tubes with a suction port above the cuff drain subglottic pooled secretions (major reservoir for VAP organisms). Continuous or intermittent SSD reduces VAP incidence by 45–50% (Cochrane review). Now standard in most ICUs for patients expected to need MV >48–72h.",
+        "Fenestrated tracheostomy tube: Has a fenestration (hole) in the outer cannula above the cuff. When inner cannula removed and cuff deflated, patient can breathe around and through the tube — used for weaning, speech rehabilitation (with speaking valve like Passy-Muir), and assessing swallowing before decannulation.",
+        "Decannulation checklist: Before removing tracheostomy — patient must tolerate cuff-deflated breathing with tube occluded, pass swallowing assessment, have adequate cough, GCS sufficient for airway protection, and minimal secretion burden. Gradual downsizing (progressively smaller tubes) before decannulation."
+      ]
+    }
+  },
+  {
+    "qNo": 3,
+    "question": "Describe the pathophysiology, diagnosis, clinical features and current guidelines in the management of ARDS. [2+2+2+4]",
+    "marks": 10,
+    "answer": {
+      "definition": "ARDS (Acute Respiratory Distress Syndrome) is a form of non-cardiogenic pulmonary oedema characterised by respiratory failure, bilateral pulmonary infiltrates, severe hypoxaemia, and reduced lung compliance.",
+      "pathophysiology": {
+        "title": "Pathophysiology [2 marks]",
+        "mechanism": "Trigger (sepsis/infection/trauma) → release of inflammatory mediators (TNF-α, IL-1, IL-8) → neutrophil sequestration in pulmonary capillaries → neutrophils become more immature, less deformable, less motile → adhesiveness to endothelium → migration into pulmonary interstitium and alveoli → degranulation releasing proteolytic enzymes and reactive oxygen species → epithelial and endothelial cell injury → ↑ capillary permeability → exudation of protein-rich fluid, erythrocytes and platelets → alveolar flooding with exudates → alveolar collapse → ↑ V/Q mismatch → intrapulmonary shunting (Qs/Qt ↑) → profound hypoxaemia",
+        "phases": [
+          "Exudative phase (Days 1–7): Diffuse alveolar damage, hyaline membrane formation, surfactant dysfunction, atelectasis",
+          "Proliferative phase (Days 7–21): Type II pneumocyte proliferation, organising exudate",
+          "Fibrotic phase (>21 days): Established fibrosis, honeycombing — poor prognosis"
+        ]
+      },
+      "diagnosis": {
+        "title": "Diagnosis — Berlin Definition 2012 [2 marks]",
+        "content": [
+          "Timing: Onset within 1 week of known clinical insult or new/worsening respiratory symptoms",
+          "Chest Imaging: Bilateral opacities on CXR or CT, not fully explained by effusions, lobar collapse, or nodules",
+          "Origin of Oedema: Not fully explained by cardiac failure or fluid overload. Echo required if no clear risk factor to exclude cardiogenic pulmonary oedema.",
+          "Oxygenation (on PEEP/CPAP ≥5 cmH₂O): Mild ARDS: P/F ratio 200–300 mmHg; Moderate: P/F 100–200 mmHg; Severe: P/F <100 mmHg"
+        ]
+      },
+      "clinicalFeatures": {
+        "title": "Clinical Features [2 marks]",
+        "content": [
+          "Acute onset severe dyspnoea — within 6–72 hours of precipitating event",
+          "Tachypnoea, use of accessory muscles, cyanosis",
+          "Bilateral crackles on auscultation",
+          "Severe refractory hypoxaemia (SpO₂ low despite high FiO₂)",
+          "CXR: bilateral diffuse infiltrates ('white out')",
+          "Reduced lung compliance (stiff lungs — high airway pressures needed)",
+          "Evidence of precipitating cause (sepsis, pneumonia, pancreatitis, trauma)"
+        ]
+      },
+      "management": {
+        "title": "Current Guidelines in Management [4 marks]",
+        "lungProtective": {
+          "title": "1. Lung-Protective Ventilation (ARDSNet Protocol — ARMA Trial)",
+          "content": [
+            "Tidal Volume: 6 mL/kg Predicted Body Weight (PBW). PBW (male) = 50 + 2.3 × (height in inches − 60); PBW (female) = 45.5 + 2.3 × (height in inches − 60)",
+            "Plateau Pressure ≤30 cmH₂O (measured by inspiratory hold manoeuvre)",
+            "Driving Pressure = Pplat − PEEP. Target <14 cmH₂O — strongest predictor of ARDS mortality (Amato, NEJM 2015)",
+            "PEEP: titrated by ARDSNet PEEP-FiO₂ table or by lung recruitability assessment. Prevents derecruitment.",
+            "Target: SpO₂ 88–95% or PaO₂ 55–80 mmHg. Permissive hypercapnia: PaCO₂ 45–65 mmHg acceptable if pH >7.20"
+          ]
+        },
+        "prone": "2. Prone Positioning (PROSEVA Trial): For P/F <150 on FiO₂ ≥0.6 and PEEP ≥5 cmH₂O. Duration ≥16 hours/day. Reduces 28-day mortality from 32.8% to 16% (NNT = 6). Redistributes oedema, recruits dorsal alveoli, reduces V/Q mismatch.",
+        "corticosteroids": "3. Corticosteroids (DEXA-ARDS Trial, 2020): Dexamethasone 20 mg/day × 5 days → 10 mg/day × 5 days — reduces 60-day mortality (21% vs 36%). Initiated within 72–96 hours of moderate-severe ARDS not improving on standard care.",
+        "fluidManagement": "4. Conservative Fluid Strategy (FACTT Trial): After initial resuscitation, target neutral to negative fluid balance. ↓ ventilator days and ICU days without increasing renal failure.",
+        "posture": "5. Avoid Routine Recruitment Manoeuvres: ART trial (2017) showed increased mortality with aggressive RM + high PEEP in unselected patients. Use RM only in recruitable lung (identified by CT or LUS).",
+        "ecmo": "6. VV-ECMO: For refractory severe ARDS (P/F <80 for >6h despite optimised ventilation) — refer to ECMO centre. EOLIA trial: 13% absolute mortality reduction (not statistically significant but clinically important)."
+      }
+    },
+    "sources": [
+      "ARDS Definition Task Force. Acute Respiratory Distress Syndrome: The Berlin Definition. JAMA 2012",
+      "ARDSNet: Ventilation with Smaller Tidal Volumes. NEJM 2000 (ARMA Trial)",
+      "Guérin C et al. Prone Positioning in Severe ARDS. NEJM 2013 (PROSEVA Trial)",
+      "Villar J et al. Dexamethasone treatment for ARDS. Lancet Resp Med 2020 (DEXA-ARDS)",
+      "Amato MB et al. Driving Pressure and Survival in ARDS. NEJM 2015"
+    ],
+    "keyPoints": [
+      "Berlin definition: bilateral opacities + P/F ratio (on PEEP ≥5): Mild 200–300, Moderate 100–200, Severe <100",
+      "TV = 6 mL/kg PBW (not actual weight). Pplat ≤30, Driving pressure <14 cmH₂O",
+      "Prone ventilation: P/F <150, ≥16h/day cycles, NNT=6 (PROSEVA)",
+      "Dexamethasone 20 mg × 5 days → 10 mg × 5 days (DEXA-ARDS)",
+      "Conservative fluids after initial resuscitation reduces ventilator days (FACTT)"
+    ],
+    "commonMistakes": [
+      "Using actual body weight instead of PREDICTED (ideal) body weight for TV calculation — in obese patients this will cause volutrauma",
+      "Not measuring driving pressure separately — a 6 mL/kg TV may still give a dangerous driving pressure if PEEP is very low",
+      "Applying routine recruitment manoeuvres in all ARDS — ART trial showed harm in unselected patients; only use in recruitable lung"
+    ],
+    "examTip": "For 10-mark ARDS question, always mention all 4 Berlin criteria and use the marks breakdown: 2 marks each for pathophysiology, diagnosis, clinical features. For management (4 marks): ARDSNet + PROSEVA + DEXA-ARDS + ECMO. Cite trial names — this impresses DNB examiners in Paper 4.",
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Baby lung concept (Gattinoni): In ARDS, only 30–40% of lung parenchyma is available for ventilation (non-dependent regions) — the rest is consolidated or atelectatic. Conventional tidal volumes delivered to this 'baby lung' cause volutrauma and barotrauma. This is why 6 mL/kg based on ideal body weight is essential — it is a fraction of the normal 500 mL but is delivered to a markedly reduced lung volume.",
+        "Driving Pressure as the key variable: Amato et al. (NEJM 2015) re-analysed 9 ARDS RCTs (n=3562). Driving pressure was the ventilatory variable most strongly associated with survival — even after adjusting for TV and PEEP. ΔP <14 cmH₂O was associated with reduced mortality. Clinical implication: titrate PEEP upward to reduce driving pressure even if plateau pressure is <30.",
+        "HFOV (High-Frequency Oscillatory Ventilation): Once thought promising for ARDS. OSCAR and OSCILLATE trials (2013) showed no benefit (OSCILLATE showed increased mortality with HFOV). HFOV is no longer recommended for ARDS outside of specialist salvage therapy.",
+        "COVID-19 ARDS vs Classical ARDS: COVID ARDS phenotypes: Type L (low elastance, low V/Q mismatch, nearly normal compliance — responds to prone) and Type H (high elastance, high shunt, low compliance — behaves like classical ARDS). Type L patients may paradoxically tolerate higher TV without volutrauma. Dexamethasone 6 mg (RECOVERY trial) is standard in COVID requiring O₂ — not the full DEXA-ARDS protocol."
+      ]
+    }
+  },
+  {
+    "qNo": 4,
+    "question": "a) Weaning criteria in ICU. [5]  b) HACOR scoring for non-invasive ventilation. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Weaning from Mechanical Ventilation — Criteria",
+        "definition": "Weaning is the process of withdrawing mechanical ventilatory support and transferring the work of breathing progressively from the ventilator to the patient.",
+        "prerequisites": {
+          "title": "Prior to Weaning: Patient Must Fulfil ALL Criteria",
+          "clinicalCriteria": {
+            "title": "Clinical Criteria",
+            "content": [
+              "Resolution of the acute phase of the precipitating disease",
+              "Adequate cough and ability to protect airway",
+              "Absence of excessive secretions",
+              "Cardiovascular and haemodynamic stability (no escalating vasopressors)"
+            ]
+          },
+          "ventilatorCriteria": {
+            "title": "Ventilator Criteria",
+            "content": [
+              "Spontaneous breathing trial (SBT) tolerated for 20–30 minutes",
+              "PaCO₂ <50 mmHg with normal pH",
+              "Vital Capacity (VC) >10 mL/kg",
+              "Tidal Volume (VT) >5 mL/kg",
+              "Respiratory Rate <35 breaths/min",
+              "Minute Ventilation <10 L/min with satisfactory ABG"
+            ]
+          },
+          "oxygenCriteria": {
+            "title": "Oxygenation Criteria",
+            "content": [
+              "PaO₂ ≥60 mmHg without PEEP, or PaO₂/PEEP >100 on FiO₂ ≤0.4",
+              "SaO₂ >90%",
+              "P/F ratio >150 mmHg",
+              "Shunt fraction (Qs/Qt) <20%",
+              "P(A-a)O₂ <350 mmHg at FiO₂ = 1.0"
+            ]
+          },
+          "pulmonaryReserve": {
+            "title": "Pulmonary Reserve Criteria",
+            "content": [
+              "Vital Capacity (VC) >10–15 mL/kg",
+              "Maximum Inspiratory Pressure (MIP/NIF) > −30 cmH₂O sustained for 20 seconds",
+              "Static compliance >30 mL/cmH₂O",
+              "VD/VT (dead space ratio) <60% when intubated"
+            ]
+          }
+        },
+        "rsbi": {
+          "title": "Rapid Shallow Breathing Index (RSBI / Yang-Tobin Index)",
+          "content": [
+            "RSBI = f/VT (respiratory rate in breaths/min ÷ tidal volume in litres)",
+            "Measured during 1–2 minutes of spontaneous breathing on T-piece or CPAP",
+            "RSBI <80 breaths/min/L → predicts weaning success",
+            "RSBI >105 breaths/min/L → predicts weaning failure",
+            "RSBI 80–105 → indeterminate — proceed cautiously"
+          ]
+        },
+        "sbtProtocol": {
+          "title": "Spontaneous Breathing Trial (SBT) Protocol",
+          "content": [
+            "Conduct SBT for 30–120 minutes using T-piece or Low-level PSV (5–8 cmH₂O) or CPAP",
+            "Signs of SBT failure: SpO₂ <90%, RR >35/min, HR or BP change >20%, agitation, diaphoresis, altered consciousness",
+            "Successful SBT → extubate. Failed SBT → return to MV, investigate cause, retry next day",
+            "Patients failing SBT who are not suitable for extubation → transition to NIV (reduces reintubation in COPD, cardiac patients)"
+          ]
+        }
+      },
+      "partB": {
+        "title": "HACOR Score for Non-Invasive Ventilation",
+        "definition": "HACOR (Heart rate, Acidosis, Consciousness, Oxygenation, Respiratory rate) is a validated bedside scoring tool for early prediction of NIV failure in patients with acute respiratory failure.",
+        "variables": {
+          "title": "HACOR Score Components",
+          "content": [
+            "H — Heart Rate: ≤120 bpm = 0 pts; ≥121 bpm = 1 pt",
+            "A — Acidosis (pH): ≥7.35 = 0 pts; 7.30–7.34 = 2 pts; 7.25–7.29 = 3 pts; <7.25 = 4 pts",
+            "C — Consciousness (GCS): 15 = 0 pts; 13–14 = 2 pts; 11–12 = 5 pts; ≤10 = 10 pts",
+            "O — Oxygenation (PaO₂/FiO₂): ≥201 = 0 pts; 176–200 = 2 pts; 151–175 = 3 pts; 126–150 = 4 pts; 101–125 = 5 pts; ≤100 = 6 pts",
+            "R — Respiratory Rate: ≤30/min = 0 pts; 31–35 = 1 pt; 36–40 = 2 pts; 41–45 = 3 pts; ≥46 = 4 pts"
+          ]
+        },
+        "interpretation": {
+          "title": "Interpretation",
+          "content": [
+            "HACOR score >5 at 1 hour of NIV = >80% risk of NIV failure — regardless of diagnosis, age, and disease severity",
+            "Early identification allows prompt escalation to invasive ventilation before further deterioration",
+            "Validated across multiple diagnoses: AECOPD, CAP, AHRF, cardiogenic pulmonary oedema",
+            "Total possible score = 25 (GCS contributes highest weight — neurological status is the strongest predictor of NIV failure)"
+          ]
+        },
+        "clinicalUse": "HACOR >5 at 1 hour of NIV → reassess cause of failure, consider urgent intubation. Delayed intubation in high HACOR patients is associated with increased mortality (post-NIV intubation has higher mortality than primary intubation)."
+      }
+    },
+    "sources": [
+      "Yang KL, Tobin MJ. A prospective study of indexes predicting the outcome of trials of weaning from mechanical ventilation. NEJM 1991 (RSBI validation)",
+      "Tobin MJ. Principles and Practice of Mechanical Ventilation, 3rd Edition",
+      "Du B et al. HACOR score to predict NIV failure. Critical Care 2017",
+      "Irwin RS, Rippe JM. Intensive Care Medicine, 8th Edition — Weaning chapter"
+    ],
+    "keyPoints": [
+      "RSBI = f/VT: <80 = success predicted; >105 = failure predicted",
+      "SBT duration: 30–120 minutes. Failure signs: SpO₂ <90%, RR >35, agitation, haemodynamic instability",
+      "HACOR >5 at 1 hour NIV = >80% risk of NIV failure → prepare for intubation",
+      "GCS contributes up to 10 points in HACOR — neurological status is the key predictor",
+      "Patients failing SBT in COPD/cardiac failure → bridge with NIV before re-attempt"
+    ],
+    "commonMistakes": [
+      "Measuring RSBI while patient is still on ventilator support — it must be measured during 1–2 min of spontaneous breathing on T-piece/CPAP",
+      "Using HACOR only at initiation of NIV — it must be reassessed at 1 HOUR of NIV to have predictive value",
+      "Attempting weaning without haemodynamic stability — vasopressor requirement is an absolute contraindication to SBT"
+    ],
+    "examTip": "HACOR score table is frequently asked in DNB Paper 4 — memorise the 5 variables and their point allocation. The key number to know: HACOR >5 at 1 hour = >80% NIV failure risk. RSBI threshold: <80 = good, >105 = bad. Yang-Tobin is the eponymous name for RSBI.",
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "HACOR score validation study (Du et al., Critical Care 2017): 1069 patients with acute respiratory failure on NIV. HACOR score >5 at 1h predicted NIV failure with sensitivity 72.2% and specificity 80.3%. AUC 0.85. Score was superior to individual parameters and validated across AECOPD, pneumonia, and de novo AHRF.",
+        "P-SILI (Patient Self-Inflicted Lung Injury): A key reason to intubate NIV-failing patients promptly. Strong spontaneous breathing effort in ARDS generates large negative pleural pressures → excessive transpulmonary pressure → lung injury equivalent to volutrauma. NIV masks respiratory distress while allowing ongoing P-SILI. Monitoring for P-SILI: oesophageal manometry (Pes >15 cmH₂O on inspiration), elevated PTP (pressure-time product).",
+        "Weaning from Tracheostomy vs ETT: Tracheostomy weaning uses different thresholds — phased cuff-down trials, speaking valve tolerance, mini-trach toilet. RSBI can be measured at the tracheostomy site. Gradual tube downsizing (8→7→6 French) before decannulation. Patients tolerate spontaneous breathing trials more easily via tracheostomy (↓ dead space, ↓ resistance vs ETT).",
+        "SBT failure causes — the 5 domains: (1) Increased respiratory load (secretions, bronchospasm, auto-PEEP), (2) Decreased respiratory capacity (muscle weakness, VIDD), (3) Cardiac dysfunction (weaning-induced pulmonary oedema — most missed), (4) Psychosocial (anxiety, delirium), (5) Metabolic (electrolyte disturbances, hypothyroidism). Systematically address each domain before re-attempting SBT."
+      ]
+    }
+  },
+  {
+    "qNo": 5,
+    "question": "a) Nosocomial infections in ICU. [5]  b) Hyponatraemia and its management in ICU. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Nosocomial Infections in ICU",
+        "definition": "Nosocomial (hospital-acquired) infections develop >48 hours after hospital or ICU admission. They are the most common complication in ICU patients and significantly increase morbidity, mortality, and length of stay.",
+        "riskFactors": {
+          "title": "Risk Factors",
+          "content": [
+            "Patient factors: Immunosuppression, diabetes mellitus, malnutrition, age extremes",
+            "Device-related: Mechanical ventilator (VAP), urinary catheter (CAUTI), central venous catheter (CLABSI), duration of device use",
+            "ICU factors: Prolonged stay, antibiotic use (disrupting normal flora), cross-infection (healthcare worker hands), poor hand hygiene compliance"
+          ]
+        },
+        "commonTypes": {
+          "title": "Common Types in ICU",
+          "content": [
+            "VAP (Ventilator-Associated Pneumonia): Most common ICU infection. Pneumonia developing >48h after intubation",
+            "CLABSI (Central Line-Associated Bloodstream Infection)",
+            "CAUTI (Catheter-Associated Urinary Tract Infection): Most common HAI globally",
+            "SSI (Surgical Site Infection) — particularly in post-operative ICU patients",
+            "CDAD (Clostridioides difficile-associated diarrhoea) — after antibiotic exposure"
+          ]
+        },
+        "organisms": {
+          "title": "Common Organisms in ICU",
+          "content": [
+            "Gram-negative bacilli: Pseudomonas aeruginosa, Klebsiella pneumoniae (often ESBL/carbapenem-resistant), Acinetobacter baumannii — most problematic in Indian ICUs",
+            "Gram-positive: MRSA (Methicillin-Resistant Staphylococcus aureus), Enterococcus",
+            "Fungi: Candida species (especially in immunocompromised, post-broad-spectrum antibiotics)"
+          ]
+        },
+        "pathophysiology": "Pathophysiology of VAP: Colonisation with biofilm formation → microaspiration of oropharyngeal secretions around ETT cuff → seeding of lower respiratory tract → infection. Biofilm on ETT inner lumen is the reservoir.",
+        "prevention": {
+          "title": "Prevention Bundles",
+          "content": [
+            "Hand hygiene (HH): Cornerstone of all HAI prevention — WHO 5 moments technique",
+            "VAP Bundle (VENTILATE): Head elevation 30–45°, Daily sedation vacation (DSV), Oral care with chlorhexidine, Subglottic secretion drainage (SSD), Stress ulcer prophylaxis if indicated",
+            "CLABSI Bundle: Maximal barrier precautions during insertion, chlorhexidine skin prep, subclavian preference over femoral, daily review of line necessity — remove when no longer needed",
+            "CAUTI: Closed drainage systems, daily review of catheter necessity, remove ASAP",
+            "Antibiotic stewardship: Avoid unnecessary antibiotics, de-escalate early based on cultures, minimise broad-spectrum use"
+          ]
+        },
+        "management": "Management: Early clinical diagnosis, blood cultures × 2 peripheral + catheter (for CLABSI), BAL/tracheal aspirate (for VAP). Start empirical antibiotics (covering likely organisms based on local antibiogram) within 1 hour if septic. De-escalate at 48–72h based on culture results. Source control: remove infected device."
+      },
+      "partB": {
+        "title": "Hyponatraemia and its Management in ICU",
+        "definition": "Hyponatraemia = serum sodium <135 mEq/L. It is the most common electrolyte disorder in ICU patients. True hyponatraemia (hypotonic) must be distinguished from pseudo-hyponatraemia.",
+        "pseudoHypo": "Pseudo-hyponatraemia: Serum sodium appears low due to excess glucose, hyperlipidaemia, or paraproteins — water is unmeasured by the machine. No actual hypo-osmolality. Osmolality is normal or high. No treatment needed for the Na itself.",
+        "classification": {
+          "title": "Classification of True (Hypotonic) Hyponatraemia by Volume Status",
+          "content": [
+            "Hypovolaemic hyponatraemia (↓ Na > ↓ H₂O loss): Urine Na <20 mEq/L → extrarenal losses (diarrhoea, vomiting, burns). Urine Na >20 mEq/L → renal losses (diuretics, Addison's disease, salt-wasting nephropathy)",
+            "Isovolaemic (euvolaemic) hyponatraemia: SIADH (most common cause), hypothyroidism, glucocorticoid deficiency. Urine Na >40 mEq/L, urine osmolality high (inappropriately concentrated urine despite hypo-osmolality)",
+            "Hypervolaemic hyponatraemia (↑ H₂O > ↑ Na): Heart failure, cirrhosis, nephrotic syndrome, renal failure — Urine Na <20 mEq/L in cardiac/hepatic causes; high in renal failure"
+          ]
+        },
+        "siadh": {
+          "title": "SIADH — Causes in ICU",
+          "content": [
+            "CNS disorders: Meningitis, encephalitis, head trauma, SAH, stroke",
+            "Pulmonary: Pneumonia, TB, mechanical ventilation (PEEP)",
+            "Drugs: Morphine, carbamazepine, SSRIs, NSAIDs, desmopressin",
+            "Ectopic ADH: Small cell lung cancer",
+            "Diagnostic criteria: Serum Na <135, serum osmolality <275 mOsm/kg, urine Na >40, urine osmolality >100 mOsm/kg, euvolaemia, no diuretics"
+          ]
+        },
+        "treatment": {
+          "title": "Management — Rate of Correction is Critical",
+          "content": [
+            "AVOID aggressive correction — rate of rise of Na >8–10 mEq/L per 24 hours risks Central Pontine Myelinolysis (CPM/ODS) — dysarthria, dysphagia, quadriparesis",
+            "Symptomatic severe hyponatraemia (seizures, coma): 3% Hypertonic Saline (514 mEq Na/L) — 1–2 mL/kg bolus. Target: raise Na by 1–2 mEq/L/hour until symptoms resolve, then slower rate.",
+            "Water deficit = TBW × (Desired Na / Observed Na − 1). Rate of IV = Desired Na − Observed Na × TBW (in mL of 3% NaCl per hour)",
+            "Hypovolaemic hyponatraemia: 0.9% normal saline to replace volume — Na will correct as volume is restored",
+            "Hypervolaemic hyponatraemia (heart failure/cirrhosis): fluid restriction, diuretics, treat underlying cause",
+            "SIADH: fluid restriction (800–1000 mL/day) first line. If refractory: Vaptans — Tolvaptan (oral, 15 mg/day) or Conivaptan (IV) — vasopressin V2 receptor antagonists (aquaretics — excrete free water without sodium)"
+          ]
+        }
+      }
+    },
+    "sources": [
+      "Spasovski G et al. Clinical practice guideline on diagnosis and treatment of hyponatraemia. Nephrology Dialysis Transplantation 2014 (ESE/ERA-EDTA guideline)",
+      "CDC/NHSN definitions for HAI: nhsn.cdc.gov",
+      "Irwin RS, Rippe JM. Intensive Care Medicine, 8th Edition — Nosocomial Infections & Hyponatraemia",
+      "Oh's Intensive Care Manual, 8th Edition — Electrolyte Disorders",
+      "Marino PL. The ICU Book, 4th Edition — Hyponatraemia chapter"
+    ],
+    "keyPoints": [
+      "Nosocomial = >48h after hospital/ICU admission. VAP most common ICU infection; CAUTI most common HAI globally",
+      "HAGMA organisms in Indian ICUs: Pseudomonas, Klebsiella (ESBL/CR), Acinetobacter — multi-drug resistant",
+      "Hyponatraemia correction rate: max 8–10 mEq/L per 24h — faster risks Central Pontine Myelinolysis",
+      "SIADH treatment: fluid restriction first → if refractory, Tolvaptan (V2 antagonist)",
+      "3% hypertonic saline: 514 mEq Na/L — only for symptomatic hyponatraemia (seizures, coma)"
+    ],
+    "commonMistakes": [
+      "Correcting hyponatraemia too rapidly — even 12 mEq/L per 24h can cause ODS/CPM. Target <8–10 mEq/L per day",
+      "Treating pseudo-hyponatraemia with sodium supplementation — check osmolality first",
+      "Giving normal saline in SIADH — worsens hyponatraemia as kidney excretes the salt and retains water"
+    ],
+    "examTip": "For hyponatraemia: always classify by volume status first (hypo/eu/hypervolaemic) then by urine Na and urine osmolality. The correction rate limit (8–10 mEq/L/24h) and CPM risk is the single most tested clinical pearl. Vaptans mechanism (V2 receptor antagonist) is high-yield for Paper 4.",
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Osmotic Demyelination Syndrome (ODS) / Central Pontine Myelinolysis (CPM): Occurs when serum Na is corrected too rapidly — myelin sheath in pons undergoes osmotic stress and demyelinates. Clinical features: locked-in syndrome, pseudobulbar palsy, quadriparesis, dysarthria (develops 2–6 days after overcorrection). MRI: symmetric pontine T2 signal change. Risk factors: liver disease, malnutrition, alcoholism, hypokalaemia — these patients need even slower correction (6 mEq/L/24h). Treatment: supportive; relowering Na with DDAVP + free water may limit damage if caught early.",
+        "SIADH vs Cerebral Salt Wasting (CSW): Both occur in neurosurgical patients and present with hyponatraemia + high urine Na. Differentiation is crucial because treatment is OPPOSITE. SIADH = euvolaemia, fluid restriction. CSW = hypovolaemia (urine Na loss), treat with salt + fluid replacement (0.9% NS or 3% NaCl). Clinical clue: patient with CSW is clinically hypovolaemic (dry, postural hypotension); SIADH patient is euvolaemic.",
+        "VAP diagnosis criteria: Clinical Pulmonary Infection Score (CPIS) ≥6 supports VAP diagnosis: includes temperature, WBC, tracheal secretions, PaO₂/FiO₂ ratio, CXR infiltrates, tracheal aspirate culture. However, BAL (bronchoalveolar lavage) with quantitative cultures >10⁴ CFU/mL remains the gold standard for definitive VAP diagnosis, reducing overtreatment of colonisation.",
+        "Conivaptan vs Tolvaptan: Both are vaptans (vasopressin receptor antagonists) used in SIADH. Conivaptan is V1a + V2 antagonist (IV) — used for short-term in-hospital use only (≤4 days). Tolvaptan is selective V2 antagonist (oral) — used for outpatient SIADH in cirrhosis and CHF but AVOID in hepatic impairment (Townsend warning — liver injury risk). Both cause aquaresis (free water excretion without electrolyte loss) but must be started in hospital with close monitoring of Na rise rate."
+      ]
+    }
+  },
+  {
+    "qNo": 6,
+    "question": "a) Neurogenic claudication and its management. [5]  b) Role of N-methyl D aspartate receptors in pain. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Neurogenic Claudication and its Management",
+        "definition": "Neurogenic claudication is pain, weakness, and paraesthesia in one or both lower limbs that develops with walking or prolonged standing, caused by ischaemia of nerve roots from lumbar spinal canal stenosis.",
+        "aetiology": [
+          "Lumbar canal stenosis (most common cause) — degenerative osteophytes, ligamentum flavum hypertrophy",
+          "Disc herniation compressing nerve roots",
+          "Degenerative spondylolisthesis",
+          "Paget's disease of bone"
+        ],
+        "pathophysiology": "Spinal canal narrowing → compression of cauda equina and nerve roots → ischaemia of nerves (arterial supply compressed) → symptoms during extension (lumbar lordosis worsens stenosis → worse walking uphill/downhill with extended spine) → relief with flexion (cycling, sitting, leaning forward — increases AP diameter of spinal canal, reduces stenosis).",
+        "clinicalFeatures": {
+          "title": "Clinical Features",
+          "content": [
+            "Bilateral leg pain, numbness, and weakness developing with walking or prolonged standing",
+            "Typically relieved by sitting, squatting, or bending forward (lumbar flexion)",
+            "Worse going downhill or when erect; better going uphill (flexed posture)",
+            "May have urinary symptoms with severe stenosis (cauda equina involvement)"
+          ]
+        },
+        "differentialVascular": {
+          "title": "Neurogenic vs Vascular Claudication",
+          "content": [
+            "Pain relief: Neurogenic = flexion (sitting/bending); Vascular = rest alone",
+            "Peripheral pulses: Neurogenic = Normal; Vascular = ↓ or absent",
+            "Walking uphill: Neurogenic = Better (flexed posture); Vascular = Worse",
+            "Cycling: Neurogenic = Possible (flexed spine); Vascular = May cause pain (ischaemia)"
+          ]
+        },
+        "diagnosis": [
+          "MRI spine (gold standard): Shows canal stenosis, degree of nerve root compression, ligamentum flavum thickening, disc disease",
+          "CT myelogram: If MRI contraindicated (pacemaker, claustrophobia)",
+          "NCS/EMG: Differentiates from peripheral neuropathy"
+        ],
+        "management": {
+          "title": "Management",
+          "conservative": {
+            "title": "1. Conservative (First-line)",
+            "content": [
+              "Physiotherapy: Lumbar flexion exercises, core strengthening",
+              "NSAIDs: Reduce inflammation and pain",
+              "Lifestyle: Weight loss, walking aids, avoiding extension-heavy activities"
+            ]
+          },
+          "interventional": {
+            "title": "2. Interventional",
+            "content": [
+              "Epidural steroid injections (ESI): Transforaminal or interlaminar. Reduces nerve root inflammation and oedema. Provides 6–12 weeks of relief. Multiple injections may be needed.",
+              "Caudal epidural steroids: For multilevel disease"
+            ]
+          },
+          "surgical": {
+            "title": "3. Surgical Management",
+            "content": [
+              "Decompressive laminectomy: Gold standard surgical treatment. Removes lamina and hypertrophied ligamentum flavum to widen the canal.",
+              "Spinal fusion (TLIF/PLIF): If associated instability or spondylolisthesis",
+              "Interspinous process device (X-Stop): Maintains lumbar flexion — less invasive option for mild-moderate stenosis in high-risk surgical patients"
+            ]
+          },
+          "anaesthetic": {
+            "title": "Anaesthetic Considerations for Surgery",
+            "content": [
+              "Often elderly with multiple comorbidities — thorough preoperative assessment",
+              "Difficult positioning: Prone — careful padding, avoid pressure on eyes, abdomen, avoid extreme neck flexion",
+              "Chronic pain patients may have high opioid tolerance — multimodal analgesia",
+              "Consider spinal or epidural anaesthesia (if anatomy allows) to reduce GA risks in elderly"
+            ]
+          }
+        }
+      },
+      "partB": {
+        "title": "Role of N-Methyl-D-Aspartate (NMDA) Receptors in Pain",
+        "definition": "NMDA receptors are ionotropic glutamate receptors found throughout the CNS (brain, spinal cord dorsal horn) that play a pivotal role in pain transmission, amplification, and the development of chronic pain states.",
+        "normalPhysiology": "Under normal conditions, NMDA channels are blocked by Mg²⁺ (voltage-dependent block). Brief, low-intensity stimuli do not open NMDA channels significantly — normal pain processing through AMPA and neurokinin receptors.",
+        "mechanismOfActivation": {
+          "title": "Mechanism of NMDA Receptor Activation in Pain",
+          "content": [
+            "Persistent or intense noxious stimuli → repeated firing of C-fibres",
+            "Release of glutamate + Substance P → partial depolarisation of dorsal horn neuron",
+            "Repeated stimulation → sufficient depolarisation to remove Mg²⁺ block from NMDA channel",
+            "NMDA channels open → massive Ca²⁺ influx into postsynaptic neuron",
+            "Ca²⁺ activates intracellular kinases (PKC, PKA, CaMKII) and signalling cascades",
+            "↑ Excitability of dorsal horn neurons → CENTRAL SENSITISATION",
+            "Wind-up: Progressive increase in action potential discharge with repeated same-intensity stimuli"
+          ]
+        },
+        "clinicalRoles": {
+          "title": "Clinical Roles of NMDA Receptors in Pain",
+          "content": [
+            "Central sensitisation: Foundation of chronic pain — lowered threshold for pain, allodynia (pain from non-painful stimuli), hyperalgesia (exaggerated pain from painful stimuli)",
+            "Neuropathic pain: NMDA activation maintains ongoing pain after nerve injury (e.g., postherpetic neuralgia, phantom limb pain, CRPS)",
+            "Cancer pain: Contributes to opioid tolerance and cancer-related central sensitisation",
+            "Post-operative pain: Central sensitisation contributes to post-surgical chronic pain (CPSP) — NMDA receptor activation during and after surgery amplifies postoperative pain",
+            "Opioid tolerance and OIH: Chronic opioid use activates NMDA receptors → reduces analgesic effect (tolerance) and paradoxically increases pain (Opioid-Induced Hyperalgesia/OIH)"
+          ]
+        },
+        "pharmacologicalImplications": {
+          "title": "Pharmacological Implications — NMDA Antagonists",
+          "content": [
+            "Ketamine (non-competitive NMDA antagonist): Sub-anaesthetic doses (0.1–0.3 mg/kg/h infusion) block central sensitisation. Used for: opioid-tolerant patients, chronic pain, OIH, pre-emptive analgesia.",
+            "Magnesium (physiological NMDA channel blocker): Restores Mg²⁺ channel block. Used as adjunct in multimodal analgesia.",
+            "Methadone: Has NMDA antagonist properties in addition to mu-opioid agonism — effective in neuropathic pain and opioid rotation.",
+            "Amantadine, Memantine: NMDA antagonists used for neuropathic pain and OIH in research settings.",
+            "Pre-emptive analgesia concept: Blocking NMDA receptors BEFORE surgical stimulus prevents central sensitisation and reduces postoperative pain and CPSP"
+          ]
+        }
+      }
+    },
+    "sources": [
+      "Katz JN, Harris MB. Lumbar Spinal Stenosis. NEJM 2008",
+      "Woolf CJ. Central sensitization: Implications for the diagnosis and treatment of pain. Pain 2011",
+      "Dickenson AH, Sullivan AF. Evidence for a role of the NMDA receptor in the frequency dependent potentiation of deep rat dorsal horn nociceptive neurones. Neuropharmacology 1987",
+      "Miller's Anesthesia, 9th Edition — Pain Physiology and Pharmacology",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Edition — Pain Management"
+    ],
+    "keyPoints": [
+      "Neurogenic claudication: pain with walking, relieved by flexion (sitting/bending). Caused by lumbar canal stenosis.",
+      "Distinguish from vascular: pulses normal, uphill walking better, cycling possible in neurogenic",
+      "MRI spine is the gold standard investigation for neurogenic claudication",
+      "NMDA receptors = glutamate-gated Ca²⁺ channels, normally blocked by Mg²⁺",
+      "Central sensitisation from NMDA activation = mechanism of chronic pain, OIH, allodynia",
+      "Ketamine (NMDA antagonist): key drug for pre-emptive analgesia and OIH"
+    ],
+    "commonMistakes": [
+      "Confusing neurogenic with vascular claudication — key differentiator: neurogenic relieves with flexion, not just rest; pulses are normal",
+      "Forgetting opioid-induced hyperalgesia as a clinical consequence of NMDA receptor activation — very important in ICU chronic pain management",
+      "Not mentioning wind-up phenomenon when discussing NMDA receptor role in pain — it's the classic demonstration of central sensitisation"
+    ],
+    "examTip": "For NMDA receptors (5 marks): structure your answer as: (1) Define NMDA receptor, (2) Normal Mg²⁺ block, (3) Mechanism of activation: persistent noxious stimuli → Ca²⁺ influx → central sensitisation, (4) Clinical consequences: OIH, neuropathic pain, CPSP, (5) Pharmacology: ketamine, Mg, methadone. Wind-up phenomenon = key term to impress examiner.",
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Wind-up phenomenon: Repeated stimulation of C-fibres at >0.3 Hz results in a progressive increase in action potential discharge from dorsal horn neurons — disproportionate to the stimulus. This is NMDA-receptor dependent and Mg²⁺-sensitive. Wind-up is the electrophysiological basis of central sensitisation observed clinically as temporal summation of pain (pain gets worse with each repeated same-intensity stimulus).",
+        "CRPS (Complex Regional Pain Syndrome) and NMDA: CRPS Type I and II have central sensitisation as a core mechanism — NMDA receptor hyperactivation in the spinal cord and brain. Treatment approach includes low-dose ketamine infusion (0.1–0.5 mg/kg/h), graded motor imagery, mirror visual feedback, and sympathetic blocks.",
+        "Minimally invasive decompression (MILD procedure): For lumbar canal stenosis, image-guided percutaneous lumbar decompression removes excess ligamentum flavum through a 5-cm incision. Evidence from MILD RCT: 45% reduction in pain at 2 years vs epidural steroids alone. Suitable for elderly, high-anaesthetic risk patients who cannot tolerate open laminectomy.",
+        "Pre-emptive vs Preventive analgesia: Pre-emptive = given before surgical incision (before sensitisation). Preventive = multimodal analgesics given throughout perioperative period to prevent establishment of central sensitisation. Current evidence supports preventive analgesia (which includes pre-emptive plus intraoperative and early postoperative components) rather than single pre-incision drug alone."
+      ]
+    }
+  },
+  {
+    "qNo": 7,
+    "question": "a) Portal hypertension. [5]  b) Anticoagulation in the ICU. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Portal Hypertension",
+        "definition": "Portal hypertension is defined as: Hepatic Venous Pressure Gradient (HVPG) >5 mmHg OR elevated portal venous pressure >12 mmHg. Clinically significant portal hypertension = HVPG >10 mmHg (threshold for varices and ascites).",
+        "aetiology": {
+          "title": "Aetiology",
+          "content": [
+            "Pre-hepatic: Portal vein thrombosis, splenic vein thrombosis",
+            "Intra-hepatic (most common): Cirrhosis (alcohol, NAFLD, viral hepatitis — MCC worldwide), schistosomiasis, veno-occlusive disease (SOS), PBC/PSC, sarcoidosis",
+            "Post-hepatic: Budd-Chiari Syndrome (hepatic vein thrombosis), Right Heart Failure, Constrictive pericarditis, IVC obstruction"
+          ]
+        },
+        "pathophysiology": {
+          "title": "Pathophysiology",
+          "content": [
+            "Cirrhosis → hepatic fibrosis → ↑ intra-hepatic resistance to portal flow",
+            "Splanchnic vasodilation (↑ nitric oxide production) → ↑ portal blood flow into already high-resistance system",
+            "↑ Portal pressure → development of portosystemic collaterals",
+            "Portal-systemic shunts: Oesophageal varices (left gastric vein → azygos), Rectal varices (IMV → haemorrhoidal), Caput medusae (umbilical vein recanalization), Anorectal varices",
+            "Hyperdynamic circulation: ↑ CO, ↓ SVR (systemic vasodilation from NO, prostacyclin) — characteristic of chronic liver disease"
+          ]
+        },
+        "clinicalFeatures": [
+          "Splenomegaly → hypersplenism (thrombocytopaenia, anaemia, leukopenia)",
+          "Ascites (fluid in peritoneal cavity from hypoalbuminaemia + ↑ hydrostatic pressure)",
+          "Variceal bleeding — most life-threatening complication",
+          "Hepatic encephalopathy (portal-systemic shunting of ammonia)",
+          "Spider naevi, palmar erythema, gynaecomastia (from oestrogen excess)"
+        ],
+        "diagnosis": [
+          "Doppler USG: Portal vein diameter >13 mm, reversed portal flow, ascites, splenomegaly",
+          "UGI Endoscopy: Direct visualisation of varices, classification (grades I–IV)",
+          "HVPG measurement (gold standard): Transjugular hepatic vein catheterisation",
+          "CT Abdomen with contrast: Varices, spleen size, liver morphology, ascites"
+        ],
+        "management": {
+          "general": "Treat underlying cause (antivirals for HBV/HCV, abstinence in alcoholic cirrhosis, immunosuppression in autoimmune hepatitis)",
+          "variceal": {
+            "title": "Variceal Bleeding Management",
+            "content": [
+              "Resuscitation: IV access, blood transfusion (Hb target 70–80 g/L — avoid overtransfusion as ↑ portal pressure)",
+              "Pharmacological: Terlipressin (most evidence) or Octreotide — ↓ splanchnic blood flow and portal pressure",
+              "Endoscopic Band Ligation (EBL): Treatment of choice for oesophageal variceal haemorrhage",
+              "Antibiotics: Prophylactic ceftriaxone or norfloxacin (reduce bacterial translocation and SBP risk in acute variceal bleed — reduces mortality)",
+              "TIPS (Transjugular Intrahepatic Portosystemic Shunt): For refractory bleeding or prevention of recurrent bleeding — connects portal vein to hepatic vein via liver parenchyma"
+            ]
+          },
+          "ascites": {
+            "title": "Ascites Management",
+            "content": [
+              "Sodium restriction (80 mEq/day), fluid restriction if Na <130",
+              "Diuretics: Spironolactone (first-line) ± frusemide in 100:40 mg ratio",
+              "Large Volume Paracentesis (LVP): For tense ascites — drain with albumin replacement (6–8 g/L of ascites drained)"
+            ]
+          }
+        }
+      },
+      "partB": {
+        "title": "Anticoagulation in the ICU",
+        "rationale": "Anticoagulation in ICU prevents and treats thromboembolic events (VTE — DVT, PE) and is used for specific conditions. Critically ill patients have competing risks: ↑ VTE risk (immobility, inflammation, lines) AND ↑ bleeding risk (procedures, coagulopathy).",
+        "indications": {
+          "prophylactic": {
+            "title": "Prophylactic Anticoagulation",
+            "content": [
+              "All ICU patients unless bleeding contraindication",
+              "Indications: Immobility, prolonged ICU stay, post-operative, trauma",
+              "LMWH preferred over UFH (predictable response, once-daily dosing, no routine monitoring needed)"
+            ]
+          },
+          "therapeutic": {
+            "title": "Therapeutic Anticoagulation",
+            "content": [
+              "DVT/PE: Full-dose anticoagulation — LMWH or UFH infusion",
+              "ACS/coronary thrombosis: UFH infusion per ACS protocol",
+              "Atrial fibrillation: Rate + rhythm control, anticoagulation to prevent stroke",
+              "CRRT (Continuous Renal Replacement Therapy): Anticoagulation of circuit — UFH or regional citrate anticoagulation (RCA) — RCA preferred (less systemic bleeding)"
+            ]
+          },
+          "special": {
+            "title": "Special Situations in ICU",
+            "content": [
+              "ECMO: UFH infusion titrated to ACT 180–220 seconds",
+              "Mechanical heart valves: Therapeutic anticoagulation — warfarin (INR 2.5–3.5)",
+              "Atrial fibrillation in ICU: Heparin bridge to warfarin or DOAC when stable"
+            ]
+          }
+        },
+        "agents": {
+          "title": "Types of Anticoagulants",
+          "content": [
+            "UFH (Unfractionated Heparin): Activates antithrombin III → inhibits IIa (thrombin) and Xa. Advantages: rapid onset, short half-life, easily reversible (protamine), can use in renal failure. Monitoring: aPTT (target 60–100 sec or 1.5–2.5× normal). Disadvantages: ↑ HIT risk, variable response, frequent monitoring.",
+            "LMWH (Low Molecular Weight Heparin — e.g., enoxaparin): Preferentially inhibits Xa. Predictable response, once-daily dosing, no routine monitoring needed (anti-Xa levels if CKD or extremes of weight). Advantages: less HIT than UFH, easy subcutaneous use. Avoid in severe renal failure (GFR <30 mL/min — accumulation).",
+            "DOACs (Direct Oral Anticoagulants): Rivaroxaban, apixaban (Xa inhibitors), dabigatran (IIa inhibitor). Limited ICU use — no IV form, no reliable monitoring, limited reversal agents.",
+            "Warfarin (VKA): Inhibits vitamin K-dependent clotting factors (II, VII, IX, X). Monitoring = INR. Slow onset, narrow therapeutic range, many drug-food interactions."
+          ]
+        },
+        "complications": [
+          "Bleeding: Most common complication — reverse with protamine (UFH), vitamin K/FFP/PCC (warfarin), idarucizumab (dabigatran reversal), andexanet alfa (Xa inhibitor reversal)",
+          "HIT (Heparin-Induced Thrombocytopaenia): Type II — immune-mediated (IgG to PF4-heparin complex) → paradoxical thrombosis. Platelet fall >50% after 5–14 days of heparin. STOP heparin, switch to argatroban or bivalirudin.",
+          "Osteoporosis: With long-term heparin use"
+        ]
+      }
+    },
+    "sources": [
+      "de Franchis R. Expanding consensus in portal hypertension: Report of the Baveno VI Consensus Workshop. Journal of Hepatology 2015",
+      "Tripodi A, Mannucci PM. Coagulopathy in liver disease. NEJM 2011",
+      "Irwin RS, Rippe JM. Intensive Care Medicine, 8th Edition — Anticoagulation in ICU",
+      "Garcia-Tsao G et al. Prevention and management of varices and variceal haemorrhage. AASLD Practice Guidance 2022"
+    ],
+    "keyPoints": [
+      "Portal HTN = HVPG >5 mmHg or portal venous pressure >12 mmHg. Clinically significant = HVPG >10 mmHg",
+      "Variceal bleeding: Terlipressin + EBL + antibiotics (ceftriaxone) — all three components essential",
+      "HIT: Platelet fall >50% after heparin, paradoxical thrombosis. Stop heparin → argatroban",
+      "LMWH preferred for VTE prophylaxis in ICU; UFH for circuits (ECMO/CRRT)",
+      "Regional citrate anticoagulation (RCA) preferred for CRRT — anticoagulates circuit, not patient"
+    ],
+    "commonMistakes": [
+      "Overtransfusing in variceal haemorrhage — target Hb 70–80 g/L, NOT normal. Higher haemoglobin → ↑ portal pressure → ↑ bleeding risk",
+      "Forgetting prophylactic antibiotics in acute variceal bleed — ceftriaxone reduces bacterial translocation and 5-day mortality",
+      "Using LMWH in severe renal failure (GFR <30) without dose adjustment — accumulation causes bleeding"
+    ],
+    "examTip": "For portal hypertension: pathophysiology flowchart is key — fibrosis → ↑ resistance → splanchnic vasodilation (↑ NO) → portosystemic collaterals → varices. For anticoagulation: UFH vs LMWH comparison table impresses examiners. Always mention HIT as the most important UFH complication.",
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "TIPS (Transjugular Intrahepatic Portosystemic Shunt): A radiologically inserted stent connecting the portal vein to the hepatic vein through liver parenchyma, creating an artificial portosystemic shunt. Reduces portal pressure by bypassing hepatic resistance. Indications: refractory variceal bleed (salvage TIPS), refractory ascites (TIPS for LVP-refractory), Budd-Chiari syndrome. Complications: hepatic encephalopathy (shunts ammonia-rich blood directly to systemic circulation), stent stenosis/occlusion, haemolysis.",
+        "Coagulopathy in liver disease — the balanced coagulopathy concept: Liver disease affects both pro-coagulant (↓ II, V, VII, IX, X) AND anti-coagulant (↓ protein C, protein S, antithrombin) factors. Standard INR overestimates bleeding risk — PT/INR measures pro-coagulant loss only. Viscoelastic testing (TEG/ROTEM) gives a complete picture. This explains why patients with cirrhosis can develop both bleeding AND thrombosis — they are not simply 'auto-anticoagulated.'",
+        "Anti-Xa monitoring for LMWH: Indicated in obesity (>100 kg), pregnancy, renal impairment (GFR 15–30), extremes of weight. Sample 4 hours after dose. Target anti-Xa: prophylaxis 0.2–0.4 IU/mL; therapeutic 0.6–1.0 IU/mL (twice-daily dosing). In renal failure (GFR <15) — use UFH, not LMWH.",
+        "Pre-operative assessment for liver disease: Child-Pugh Score and MELD score predict operative mortality in cirrhotics. Child A (score 5–6): acceptable risk. Child B (7–9): significant risk. Child C (≥10): prohibitive risk for elective surgery. MELD >15: consider hepatology referral before any elective surgery."
+      ]
+    }
+  },
+  {
+    "qNo": 8,
+    "question": "Pathophysiology and the management of central line associated bloodstream infection. [5+5]",
+    "marks": 10,
+    "answer": {
+      "definition": "CLABSI (Central Line-Associated Bloodstream Infection) is defined as a laboratory-confirmed bloodstream infection in a patient with a central venous catheter (CVC) in place for >48 hours, with no other identifiable source of infection.",
+      "pathophysiology": {
+        "title": "Pathophysiology [5 marks]",
+        "routes": {
+          "title": "Routes of Infection",
+          "content": [
+            "Extra-luminal (most common — 65%): Skin flora at insertion site → colonisation along external catheter surface → migration into bloodstream",
+            "Intra-luminal: Hub contamination during IV line manipulation → microorganisms travel through catheter lumen",
+            "Haematogenous seeding: Bacteraemia from a distant site seeds the catheter (less common)"
+          ]
+        },
+        "biofilm": {
+          "title": "Biofilm — Core Mechanism",
+          "content": [
+            "Microorganisms adhere to catheter surface within hours of insertion",
+            "Biofilm matrix (polysaccharide + proteins) forms — protects bacteria from immune defences and antibiotics (100–1000× more antibiotic resistance in biofilm)",
+            "Biofilm detachment → bacterial seeding into bloodstream → systemic invasion",
+            "Release of TNF-α, IL-1, IL-6 → systemic inflammatory response → organ dysfunction (sepsis/septic shock)"
+          ]
+        },
+        "riskFactors": {
+          "title": "Risk Factors",
+          "content": [
+            "Patient factors: Immunosuppression, diabetes mellitus, malnutrition, extremes of age",
+            "Device factors: Duration of catheter (↑ risk >5 days), multilumen catheters, femoral site (highest risk) vs subclavian (lowest) vs jugular (intermediate)",
+            "ICU factors: Poor hand hygiene, frequent catheter manipulation, poor aseptic insertion technique",
+            "Antibiotic overuse: Alters skin microbiome, selects for resistant organisms"
+          ]
+        },
+        "commonOrganisms": {
+          "title": "Common Causative Organisms",
+          "content": [
+            "Gram-positive: Coagulase-Negative Staphylococci (CoNS) — most common overall; Staphylococcus aureus (including MRSA)",
+            "Gram-negative: Klebsiella pneumoniae, Pseudomonas aeruginosa, Enterobacter",
+            "Fungi: Candida species — especially in patients on TPN, broad-spectrum antibiotics, or immunocompromised"
+          ]
+        }
+      },
+      "management": {
+        "title": "Management of CLABSI [5 marks]",
+        "diagnosis": {
+          "title": "Diagnosis",
+          "content": [
+            "Clinical: Fever, chills, rigors, local signs at insertion site (erythema, purulence, tenderness)",
+            "Blood cultures: ≥2 sets — simultaneously from peripheral vein AND central catheter lumen",
+            "Differential Time to Positivity (DTP): Catheter culture turns positive ≥2 hours before peripheral culture → confirms CLABSI",
+            "Catheter-tip culture: After removal, semi-quantitative roll-plate method (Maki technique) — ≥15 CFU = significant colonisation"
+          ]
+        },
+        "catheterManagement": {
+          "title": "Catheter Management",
+          "content": [
+            "Remove catheter: Most important step in CLABSI management. Remove and culture the tip.",
+            "Catheter salvage (consider only if): Tunnel infection absent, no S. aureus/Candida/Pseudomonas (poor outcome if salvage attempted), catheter cannot be easily replaced (e.g., only viable access). Use antibiotic lock therapy (ALT) — concentrated antibiotic instilled into catheter lumen for 12–24h dwells.",
+            "New CVC: If ongoing access needed, insert at fresh site (NOT over a wire through infected catheter — avoids contaminating new catheter)"
+          ]
+        },
+        "antimicrobials": {
+          "title": "Antimicrobial Therapy",
+          "content": [
+            "Empirical: Vancomycin IV (covers MRSA and CoNS) ± anti-Gram-negative cover (piperacillin-tazobactam or carbapenem) based on patient risk and local resistance patterns",
+            "De-escalation: At 48–72h based on culture and sensitivity results",
+            "Duration: CoNS — 5–7 days after catheter removal if uncomplicated. S. aureus — minimum 14 days IV (endocarditis work-up mandatory). Candida — 14 days after last positive culture, fluconazole or echinocandin based on sensitivity.",
+            "Echocardiography: Mandatory for S. aureus CLABSI (TEE preferred) — rule out infective endocarditis before shortening duration"
+          ]
+        },
+        "prevention": {
+          "title": "Prevention — CLABSI Bundle",
+          "content": [
+            "Hand hygiene: Before all catheter access and insertion",
+            "Maximum sterile barrier precautions at insertion: cap, mask, sterile gown, gloves, full-body drape",
+            "Chlorhexidine (2%) skin antisepsis — allow to dry completely before insertion",
+            "Subclavian site preferred over femoral (lowest infection and DVT risk)",
+            "Review daily: Is the catheter still necessary? Remove as soon as possible",
+            "Chlorhexidine-impregnated dressings and antimicrobial-coated catheters (for high-risk patients)",
+            "Antibiotic Lock Therapy (ALT): In patients requiring long-term central access who are at high CLABSI risk"
+          ]
+        },
+        "complications": [
+          "Septic shock (most serious immediate complication)",
+          "Infective endocarditis — especially with S. aureus",
+          "Septic thrombophlebitis",
+          "Metastatic infection: Osteomyelitis, septic arthritis, psoas abscess",
+          "Renal failure (from sepsis, nephrotoxic antibiotics)"
+        ]
+      }
+    },
+    "sources": [
+      "O'Grady NP et al. Guidelines for the prevention of intravascular catheter-related infections. CDC/HICPAC 2011",
+      "Mermel LA et al. Clinical practice guidelines for the diagnosis and management of intravascular catheter-related infection: IDSA 2009",
+      "Pronovost P et al. An intervention to decrease catheter-related bloodstream infections in the ICU. NEJM 2006 (Keystone ICU project)",
+      "Oh's Intensive Care Manual, 8th Edition — Infections in ICU"
+    ],
+    "keyPoints": [
+      "CLABSI = lab-confirmed BSI with CVC in place >48h and no other identifiable source",
+      "Biofilm is the core mechanism — protects bacteria from antibiotics and immune system",
+      "Most common organisms: CoNS (most common overall), MRSA, Candida",
+      "Remove catheter first — catheter salvage only in specific limited circumstances",
+      "S. aureus CLABSI: minimum 14 days IV antibiotics + mandatory echocardiogram",
+      "Prevention bundle: HH + maximal barriers + chlorhexidine + subclavian preference + daily review"
+    ],
+    "commonMistakes": [
+      "Replacing catheter over a guidewire in suspected CLABSI — this contaminates the new catheter from the infected old one",
+      "Treating S. aureus CLABSI for only 7–10 days — minimum 14 days mandatory, longer if IE identified",
+      "Not doing echocardiogram for S. aureus BSI — infective endocarditis must be ruled out before shortening treatment duration"
+    ],
+    "examTip": "CLABSI is a classic 10-mark Paper 4 question. Structure as: Definition (1 mark), Pathophysiology including biofilm mechanism (5 marks), Management including diagnosis + catheter removal + antimicrobials + prevention bundle (5 marks). Pronovost's Keystone project is the landmark study showing CLABSI bundles reduce infections to near-zero — worth mentioning.",
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Pronovost Keystone ICU Project (NEJM 2006): Implementation of a 5-item CLABSI prevention checklist in 103 Michigan ICUs. CLABSI rates fell from 2.7 to 0 per 1000 catheter-days within 3 months. Sustained for 18 months. Prevented an estimated 1500 deaths and $175 million in costs. Demonstrated that near-zero CLABSI is achievable with consistent bundle compliance — a landmark patient safety study.",
+        "Differential Time to Positivity (DTP): The gold standard microbiological technique to confirm CLABSI without catheter removal. Blood cultures drawn simultaneously from catheter hub and peripheral vein. If catheter culture turns positive ≥120 minutes (2 hours) before peripheral culture — confirms catheter as the source (due to higher bacterial concentration in catheter lumen). DTP <120 min — inconclusive. Sensitivity ~80%, specificity ~90% for CLABSI.",
+        "Antibiotic Lock Therapy (ALT): High-concentration antibiotic (100–1000× MIC) instilled into catheter lumen and 'locked' for 12–24 hours between uses. Effective against biofilm. Examples: vancomycin 2.5 mg/mL ± heparin lock; ethanol lock (70% ethanol) for Candida. Used for catheter salvage in tunnelled catheters (Hickman lines, dialysis catheters) or ports where catheter cannot be removed.",
+        "Catheter-Associated VTE: CVCs cause DVT in 10–15% of patients (subclavian < jugular < femoral). Upper extremity DVT from CVC is increasingly recognised and can cause PE (5% of UE DVT leads to PE). Management: remove catheter if possible + therapeutic anticoagulation for 3 months minimum."
+      ]
+    }
+  },
+  {
+    "qNo": 9,
+    "question": "a) Define hypertensive emergency. Discuss the pathophysiology of hypertensive emergency. [2+2]  b) Discuss the relative advantages and disadvantages of sodium nitroprusside, nitroglycerin and labetalol in hypertensive crisis. [6]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Hypertensive Emergency — Definition and Pathophysiology",
+        "definition": {
+          "title": "Definition [2 marks]",
+          "content": [
+            "Hypertensive emergency: A condition where SBP >180 mmHg AND/OR DBP >120 mmHg WITH acute end-organ damage/dysfunction.",
+            "In contrast to hypertensive urgency: BP similarly elevated but WITHOUT end-organ damage. Management differs — hypertensive urgency managed with oral agents over 24–48 hours; emergency requires IV therapy and ICU admission.",
+            "Common causes: Anti-hypertensive drug withdrawal (rebound), cocaine/amphetamines, autonomic hyperreactivity, head trauma, pheochromocytoma, pre-eclampsia/eclampsia, renovascular hypertension"
+          ]
+        },
+        "pathophysiology": {
+          "title": "Pathophysiology [2 marks]",
+          "content": [
+            "Sudden severe rise in BP → exceeds autoregulatory capacity of vessels (normally MAP 60–150 mmHg) → forced hyperperfusion and capillary damage",
+            "Activation of RAAS (renin-angiotensin-aldosterone system) → further vasoconstriction → endothelial injury",
+            "Endothelial injury → ↑ vascular permeability + release of inflammatory mediators → fibrinoid necrosis of vessel walls",
+            "↑ Platelet aggregation → microthrombosis formation → microangiopathic haemolytic anaemia (MAHA) in severe cases",
+            "End-organ damage: CNS (hypertensive encephalopathy, ICH), CVS (ACS, aortic dissection, LV failure), Renal (AKI, ↓GFR), Retinal (papilloedema, haemorrhages)"
+          ]
+        },
+        "endOrganDamage": {
+          "title": "End-Organ Manifestations",
+          "content": [
+            "Neurological: Hypertensive encephalopathy (headache, confusion, altered consciousness), ICH, ischaemic stroke. Mechanism: Breakdown of blood-brain barrier → cerebral oedema",
+            "Cardiovascular: Angina, acute MI, acute LV failure (flash pulmonary oedema), aortic dissection",
+            "Renal: AKI, ↓GFR, haematuria, proteinuria",
+            "Retinal: Papilloedema, flame haemorrhages — signs of grade III/IV hypertensive retinopathy"
+          ]
+        }
+      },
+      "partB": {
+        "title": "Sodium Nitroprusside (SNP), Nitroglycerin (NTG), and Labetalol — Comparison [6 marks]",
+        "snp": {
+          "title": "Sodium Nitroprusside (SNP) — Arterial AND Venous Dilator",
+          "content": [
+            "Mechanism: Releases NO → direct relaxation of arterial and venous smooth muscle → ↓ preload AND ↓ afterload",
+            "Dose: 0.25–10 mcg/kg/min IV infusion (start low, titrate)",
+            "Onset: Immediate (seconds); Duration: 1–2 minutes — most titratable agent",
+            "Advantages: Rapid onset, easily titratable, reduces both preload and afterload, effective in virtually all hypertensive emergencies",
+            "Disadvantages: Cyanide toxicity — SNP → nitric oxide + cyanide + thiocyanate. Risk with high doses (>2 mcg/kg/min), prolonged infusion, or renal/hepatic failure. Signs: lactic acidosis, altered mentation, tachycardia despite BP control. Treatment: sodium thiosulphate, hydroxocobalamin (cyanide antidote).",
+            "Caution: ↑ ICP (cerebral vasodilation — avoid in head injury, hypertensive encephalopathy). Coronary steal possible in ischaemic heart disease.",
+            "N&V, muscle twitching, sweating (signs of cyanide toxicity). Requires light-protected infusion."
+          ]
+        },
+        "ntg": {
+          "title": "Nitroglycerin (NTG) — Predominantly VENOUS Dilator",
+          "content": [
+            "Mechanism: Releases NO → predominantly venodilation (venous > arterial at low doses) → ↓ preload; at higher doses: arteriodilation → ↓ afterload also",
+            "Dose: 5–100 mcg/min IV (start at 5 mcg/min, titrate up)",
+            "Onset: 2–5 minutes; Duration: 5–10 minutes",
+            "Advantages: No cyanide toxicity. Preferred in hypertensive emergency WITH coronary ischaemia (ACS, acute MI) — coronary vasodilator. Ideal for acute pulmonary oedema (venodilation → ↓ preload → ↓ pulmonary congestion). Safe in pregnancy.",
+            "Disadvantages: Tolerance develops rapidly with continuous infusion (tachyphylaxis within 24–48h). Headache (common — from cerebral vasodilation), nausea, vomiting. Methemoglobinaemia with high doses. Less potent than SNP for BP reduction — may not control extreme hypertension alone.",
+            "Caution: Avoid with phosphodiesterase-5 inhibitors (sildenafil) — profound hypotension risk."
+          ]
+        },
+        "labetalol": {
+          "title": "Labetalol — Alpha + Beta Adrenergic Blocker",
+          "content": [
+            "Mechanism: Combined α1 and β-blockade (α:β ratio = 1:7 IV). ↓ SVR (via α-block) without reflex tachycardia (via β-block). Maintains CO.",
+            "Dose: 20–80 mg IV boluses every 10 min, OR 0.5–2 mg/min IV infusion. Maximum cumulative dose 300 mg.",
+            "Onset: 2–5 minutes; Duration: 3–6 hours",
+            "Advantages: No reflex tachycardia (β-blockade prevents). Maintains CPP, renal perfusion, and coronary perfusion pressure. Preferred in: hypertensive emergency in pregnancy (pre-eclampsia), aortic dissection (reduces shear stress + HR), cocaine-induced hypertension (some controversy), neurological emergencies (maintains CPP without cerebral vasodilation).",
+            "Disadvantages: Bronchospasm (avoid in asthma/COPD). Heart block and bradycardia. Should NOT be used in acute heart failure / cardiogenic shock (negative inotropy worsens decompensation). Hypotension on standing. Cannot titrate rapidly (long duration).",
+            "Not to be used in patients with bradycardia, AV block, or severe asthma."
+          ]
+        }
+      }
+    },
+    "sources": [
+      "Whelton PK et al. ACC/AHA 2017 Hypertension Guidelines. J Am Coll Cardiol 2018",
+      "ESH/ESC Guidelines for the management of arterial hypertension 2018. European Heart Journal",
+      "Miller's Anesthesia, 9th Edition — Hypertensive Emergencies",
+      "Marik PE, Varon J. Hypertensive Crises: Challenges and Management. Chest 2007"
+    ],
+    "keyPoints": [
+      "Hypertensive emergency = BP >180/120 mmHg WITH end-organ damage. Urgency = same BP WITHOUT end-organ damage",
+      "SNP: most titratable, both preload & afterload reduction, but cyanide toxicity risk",
+      "NTG: preferred if coronary ischaemia or pulmonary oedema present; venodilation predominant",
+      "Labetalol: preferred in pregnancy, aortic dissection. Avoids reflex tachycardia. Avoid in asthma and AHF",
+      "Target BP reduction: reduce MAP by max 20–25% in first hour — do NOT normalise BP acutely (risk of cerebral ischaemia)"
+    ],
+    "commonMistakes": [
+      "Normalising BP too rapidly in hypertensive emergency — cerebral autoregulation is reset upward; rapid normalisation causes cerebral ischaemia. Target max 20–25% MAP reduction in 1st hour.",
+      "Using labetalol in acute decompensated heart failure — negative inotropy worsens cardiogenic shock",
+      "Forgetting cyanide toxicity with SNP — always look for signs (↑ mixed venous pO₂, lactic acidosis, tachycardia despite controlled BP) especially if dose >2 mcg/kg/min or >24h infusion"
+    ],
+    "examTip": "For the 6-mark comparison question: create a structured table in your answer booklet with 3 rows (SNP, NTG, Labetalol) and 4 columns (Mechanism, Dose/Onset, Advantages, Disadvantages). Examiners reward organised comparative answers. Key differentiation: SNP = most titratable but cyanide risk; NTG = coronary ischaemia/oedema; Labetalol = pregnancy/dissection.",
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Cyanide toxicity from SNP — mechanism and treatment: Each SNP molecule releases 5 cyanide ions. Cyanide binds cytochrome c oxidase → inhibits mitochondrial electron transport → cellular hypoxia despite adequate O₂ delivery. Signs: high mixed venous PO₂ (tissues cannot use O₂), lactic acidosis, pink skin, tachycardia with controlled BP. Prevention: limit dose <2 mcg/kg/min and duration <72h. Treatment: Hydroxocobalamin (vitamin B12a) — chelates cyanide — first-line antidote. Sodium thiosulphate — donates sulphur for hepatic detoxification of cyanide to thiocyanate.",
+        "Clevidipine: A newer IV calcium channel blocker (dihydropyridine class) for hypertensive emergency. Ultra-short-acting (onset <2 min, offset 5–15 min). No cyanide toxicity. Metabolised by plasma esterases (like remifentanil) — independent of renal/hepatic function. ECLIPSE trials showed clevidipine superior to SNP, NTG, and nicardipine for BP control in cardiac surgical patients. Emerging as preferred agent for intraoperative/ICU hypertension.",
+        "Hypertensive emergency in pregnancy (pre-eclampsia/eclampsia): Labetalol IV (first-line), hydralazine IV, oral nifedipine. Avoid ACE inhibitors (fetal renal toxicity), ARBs, and SNP (cyanide crosses placenta). Magnesium sulphate is the drug of choice for seizure prevention and treatment in eclampsia — not an antihypertensive but reduces CNS excitability. Definitive treatment = delivery.",
+        "Aortic dissection hypertensive crisis: Requires DUAL therapy — (1) β-blocker first (esmolol infusion preferred — short-acting, titratable) to reduce HR <60 bpm and ↓ aortic shear stress, THEN (2) add vasodilator (SNP or nicardipine) for BP control. Never give vasodilator alone without β-blockade — reflex tachycardia worsens aortic shear stress and propagates dissection."
+      ]
+    }
+  },
+  {
+    "qNo": 10,
+    "question": "a) Draw the algorithm for the management of an adult patient with pulseless electrical activity. [5]  b) Discuss the post cardiac arrest intensive care. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "PEA Management Algorithm (AHA ACLS 2020)",
+        "definition": "Pulseless Electrical Activity (PEA): Presence of organised electrical activity on ECG (non-shockable rhythm) WITHOUT a palpable pulse. A non-shockable rhythm — defibrillation is NOT indicated.",
+        "algorithm": {
+          "title": "Step-by-Step Algorithm",
+          "content": [
+            "STEP 1: Start CPR — Push hard (5–6 cm depth), fast (100–120/min), minimize interruptions. BVM ventilation with O₂, attach monitor/defibrillator.",
+            "STEP 2: Assess Rhythm — IS THE RHYTHM SHOCKABLE? PEA/Asystole = NON-SHOCKABLE → go to non-shockable pathway.",
+            "STEP 3 (Non-Shockable — PEA/Asystole): Give ADRENALINE (Epinephrine) 1 mg IV/IO ASAP (as soon as IV/IO access obtained). Repeat every 3–5 minutes throughout resuscitation.",
+            "STEP 4: CPR × 2 minutes — Obtain IV/IO access. Consider advanced airway (video laryngoscopy, ETT or SGD). Confirm placement with waveform capnography.",
+            "STEP 5: Reassess Rhythm at 2 minutes. If still non-shockable: Continue CPR. If NOW shockable (VF/pVT): → Switch to shockable pathway (defibrillation).",
+            "STEP 6: Treat REVERSIBLE CAUSES during CPR — H's and T's:",
+            "H's: Hypovolaemia (IV fluids), Hypoxia (airway/O₂), Hydrogen ion/Acidosis (sodium bicarbonate), Hypo/Hyperkalaemia (electrolyte replacement), Hypothermia (rewarm)",
+            "T's: Tension Pneumothorax (needle decompression → chest drain), Tamponade (pericardiocentesis), Toxins (antidotes), Thrombosis-Pulmonary (thrombolytics if PE suspected — 60–90 min CPR post-thrombolytic), Thrombosis-Coronary (consider ECPR and cath lab if suspected STEMI)",
+            "STEP 7: If ROSC (Return of Spontaneous Circulation) obtained: → Initiate Post-Cardiac Arrest Care.",
+            "STEP 8: If no ROSC after adequate resuscitation: Consider appropriateness of continued resuscitation (discuss with team, consider duration, reversible causes addressed, patient advance directives)."
+          ]
+        },
+        "adrenalineTiming": "Adrenaline in PEA/Asystole: Give FIRST available dose as soon as IV/IO access obtained — ideally within 3 minutes of cardiac arrest. Earlier adrenaline is associated with better ROSC (PARAMEDIC-2 trial: adrenaline significantly increases short-term survival, though neurological outcomes similar at 3 months)."
+      },
+      "partB": {
+        "title": "Post-Cardiac Arrest Intensive Care",
+        "definition": "Post-cardiac arrest syndrome (PCAS) is a multisystem injury caused by whole-body ischaemia-reperfusion following cardiac arrest and resuscitation. Intensive care aims to optimise survival with good neurological outcome.",
+        "domains": {
+          "airway": {
+            "title": "1. Airway and Ventilation",
+            "content": [
+              "Confirm ETT position — waveform capnography (gold standard), CXR",
+              "Titrate FiO₂: Target SpO₂ 94–98%, PaO₂ 75–100 mmHg. AVOID hyperoxia (↑ reperfusion injury from oxygen free radicals)",
+              "Target normocapnia: PaCO₂ 35–45 mmHg (avoid hyperventilation → cerebral vasoconstriction → ↑ secondary brain injury)"
+            ]
+          },
+          "haemodynamics": {
+            "title": "2. Haemodynamic Targets",
+            "content": [
+              "Maintain MAP ≥65–70 mmHg (some centres target ≥80 mmHg for neuroprotection)",
+              "If hypotension: IV fluids + noradrenaline as first-line vasopressor",
+              "12-lead ECG: Mandatory immediately post-ROSC — identify STEMI or new LBBB → activate cath lab for emergency PCI",
+              "Bedside echocardiography: Assess LV/RV function, identify pericardial effusion, guide haemodynamic management"
+            ]
+          },
+          "ttm": {
+            "title": "3. Temperature Management (Target Temperature Management — TTM)",
+            "content": [
+              "TTM2 Trial (NEJM 2021): Targeted hypothermia at 33°C vs fever prevention at 37.5°C — NO difference in 6-month survival or neurological outcome in adult out-of-hospital CA",
+              "Current recommendation (ERC/ESICM 2021): Prevent fever (T >37.7°C) in all unconscious post-CA patients for at least 72 hours. Active cooling to 33°C is a reasonable option in select patients.",
+              "Avoid hyperthermia at all times — fever worsens neurological outcome",
+              "Methods of cooling: Cold IV fluids, surface cooling devices (Arctic Sun), intravascular cooling catheters"
+            ]
+          },
+          "neuro": {
+            "title": "4. Neurological Assessment and Neuroprognostication",
+            "content": [
+              "Sedation and NMB: Give adequate sedation to prevent shivering during TTM. Assess neurological status after rewarming and drug clearance (≥72h post-CA).",
+              "Multimodal neuroprognostication: Begin NO EARLIER than 72 hours post-ROSC. Combine multiple modalities:",
+              "Clinical: Absent pupillary light reflexes, absent corneal reflexes, presence of myoclonus (status) at 72h — poor prognostic signs",
+              "EEG: Burst suppression, generalised suppression, malignant patterns — poor outcome",
+              "SSEP (Somatosensory Evoked Potentials): Bilateral absent N20 — strongest predictor of poor neurological outcome",
+              "CT/MRI brain: Cerebral oedema on CT, diffuse cortical DWI signal on MRI — confirms anoxic brain injury",
+              "Neuron-specific enolase (NSE): >60 mcg/L at 48–72h associated with poor outcome"
+            ]
+          },
+          "seizures": {
+            "title": "5. Seizure Management",
+            "content": [
+              "Post-anoxic seizures occur in up to 30% — often non-convulsive (NCSE) requiring cEEG monitoring",
+              "Treat with: Levetiracetam or Valproate IV (first-line for post-anoxic seizures)",
+              "Avoid phenytoin (less effective in anoxic seizures and pro-arrhythmic)"
+            ]
+          },
+          "cath": "6. Emergency Coronary Angiography: For STEMI (or STEMI-equivalent) identified post-ROSC — emergency PCI should not be delayed. For no obvious non-cardiac cause of arrest with ROSC: coronary angiography reasonable even if ECG non-diagnostic (ARREST trial: immediate cath lab after CA from VF improved outcomes vs conventional care).",
+          "prognosis": "7. Prognosis and Family Communication: Prognostication should be multimodal and deferred to ≥72h post-ROSC. Avoid self-fulfilling prophecy (early withdrawal based on single marker). Honest, compassionate communication with family is essential throughout."
+        }
+      }
+    },
+    "sources": [
+      "AHA/ILCOR 2020 Guidelines for CPR and ECC. Circulation 2020",
+      "Nolan JP et al. European Resuscitation Council and ESICM Guidelines 2021: Post-resuscitation care. Resuscitation 2021",
+      "TTM2 Trial: Dankiewicz J et al. Hypothermia versus Normothermia after Out-of-Hospital Cardiac Arrest. NEJM 2021",
+      "PARAMEDIC-2 Trial: Perkins GD et al. A Randomized Trial of Epinephrine in Out-of-Hospital Cardiac Arrest. NEJM 2018"
+    ],
+    "keyPoints": [
+      "PEA = organised ECG with no pulse — NON-shockable. DO NOT defibrillate.",
+      "Adrenaline 1 mg IV/IO ASAP, then every 3–5 min. Treat reversible H's and T's during CPR.",
+      "Post-ROSC: SpO₂ 94–98%, PaCO₂ 35–45 mmHg, MAP ≥65 mmHg",
+      "TTM2 trial 2021: 33°C hypothermia NOT superior to fever prevention at 37.5°C — current recommendation: prevent fever ≥37.7°C",
+      "Neuroprognostication: earliest at 72h post-ROSC, multimodal. Bilateral absent N20 on SSEP = strongest poor prognostic marker"
+    ],
+    "commonMistakes": [
+      "Attempting defibrillation in PEA — PEA is a non-shockable rhythm. Defibrillation is futile and wastes time.",
+      "Giving adrenaline late in PEA/asystole — evidence supports earliest possible administration; every minute delay worsens ROSC rates",
+      "Using hyperoxia post-ROSC — SpO₂ >98% with high FiO₂ causes reperfusion injury. Titrate FiO₂ down to keep SpO₂ 94–98%",
+      "Prognosticating neurology before 72h post-ROSC — residual sedation and the 'dying brain' phenomenon cause falsely poor signs early; multimodal assessment after 72h is mandatory"
+    ],
+    "examTip": "For the PEA algorithm (5 marks): draw a clear flowchart. The H's and T's (5+5 = 10 reversible causes) must be listed completely — examiners check this. For post-CA care (5 marks): use the ABCDE structure: Airway/ventilation targets → Haemodynamics → Temperature (mention TTM2 trial update) → Neuro assessment → Coronary angiography. TTM2 trial is the most important recent update.",
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "ECPR (Extra-Corporeal CPR): Initiation of VA-ECMO during ongoing cardiac arrest in patients with reversible causes (massive PE, hypothermia, refractory VF, drug toxicity). Provides perfusion while the reversible cause is treated. ARREST trial (Lancet 2020): ECPR vs standard CPR for refractory out-of-hospital VF — ECPR group: 43% vs 7% survival to discharge. ECPR is now recommended by AHA/ERC as a rescue strategy for refractory VF in centres with expertise. Requires <5 min time-to-cannula.",
+        "Post-anoxic myoclonus (Lance-Adams Syndrome vs. malignant myoclonus): Malignant post-anoxic myoclonus: generalised myoclonic status epilepticus in first 24h post-CA, EEG-confirmed — very poor prognosis. Lance-Adams Syndrome (benign): cortical action myoclonus appearing days to weeks after ROSC — patients may recover good neurological function. Distinguishing the two is critical for prognostication: absent SSEPs + malignant EEG = poor; Lance-Adams + preserved SSEPs = potentially good outcome.",
+        "Coronary angiography after cardiac arrest — COACT and TOMAHAWK trials: Two landmark trials in patients with ROSC after out-of-hospital CA WITHOUT ST-elevation. COACT (NEJM 2019) and TOMAHAWK (NEJM 2021): Immediate angiography vs delayed angiography showed NO 90-day survival benefit from immediate cath. Current guideline: immediate PCI only if STEMI or haemodynamic instability. Routine immediate angiography for non-STEMI post-CA is not recommended.",
+        "Brain death declaration post-cardiac arrest: Following CA, time required before brain death declaration varies by jurisdiction. In India, THOA (Transplantation of Human Organs Act) requires 2 sets of tests at 6-hour intervals by a prescribed team (intensivist, neurologist/neurosurgeon, hospital administrator). Brain death in CA must occur in absence of residual sedation, NMB, hypothermia, and metabolic encephalopathy — all must be corrected before testing."
+      ]
+    }
+  }
+]

@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="/icon-apple.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
   <title>DNB Anaesthesia — Solved Question Papers — CritCare.in</title>
-  <meta name="description" content="DNB Anaesthesia June 2026 solved question papers — Paper 1, 2, 3, 4. Complete model answers with key points, exam tips, and extra marks content." />
+  <meta name="description" content="DNB Anaesthesia solved question papers — June 2026 and December 2025. Complete model answers with key points, exam tips, sources, and extra marks content." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
   <script src="darkmode.js"></script>
@@ -104,6 +104,29 @@
     .dnb-extramarks ul,.dnb-extramarks p { font-size:.88rem; color:#3b0764; line-height:1.7; padding-left:1.2rem; margin:0; }
     .dnb-extramarks li { margin-bottom:.2rem; }
 
+    /* ── SESSION BAR ─────────────────────────────────────────────── */
+    .dnb-session-bar { background:var(--bg); border-bottom:2px solid var(--line); }
+    .dnb-session-inner { max-width:1160px; margin:0 auto; padding:0 5%; display:flex; align-items:center; gap:0; overflow-x:auto; scrollbar-width:none; }
+    .dnb-session-inner::-webkit-scrollbar { display:none; }
+    .dnb-sess-label { font-size:.7rem; font-weight:800; color:var(--slate); letter-spacing:.1em; text-transform:uppercase; padding:.7rem 1rem .7rem 0; margin-right:.6rem; border-right:1px solid var(--line); white-space:nowrap; flex-shrink:0; }
+    .dnb-sess-btn { padding:.7rem 1.1rem; font-size:.8rem; font-weight:700; color:var(--slate); background:none; border:none; border-bottom:3px solid transparent; cursor:pointer; font-family:var(--font-body); transition:color .18s; white-space:nowrap; flex-shrink:0; }
+    .dnb-sess-btn:hover { color:var(--blue); }
+    .dnb-sess-btn.active { color:#7c3aed; border-bottom-color:#7c3aed; }
+    .dnb-sess-btn .sess-badge { display:inline-flex; align-items:center; gap:.3rem; }
+    .dnb-sess-btn .sess-new { font-size:.56rem; font-weight:900; text-transform:uppercase; letter-spacing:.08em; background:#dcfce7; color:#166534; padding:.1rem .35rem; border-radius:3px; margin-left:.3rem; }
+
+    /* ── SOURCES ─────────────────────────────────────────────────── */
+    .dnb-sources { background:#f0f9ff; border:1px solid #7dd3fc; border-radius:10px; padding:1rem 1.2rem; margin:.8rem 0; }
+    .dnb-sources .dnb-sec-title { font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#0369a1; margin-bottom:.6rem; display:flex; align-items:center; gap:.4rem; }
+    .dnb-sources ol { font-size:.82rem; color:#0c4a6e; line-height:1.7; padding-left:1.3rem; margin:0; }
+    .dnb-sources li { margin-bottom:.15rem; }
+
+    /* ── COMING SOON ─────────────────────────────────────────────── */
+    .dnb-coming-soon { text-align:center; padding:4rem 2rem; }
+    .dnb-coming-soon .cs-icon { font-size:3rem; margin-bottom:1rem; }
+    .dnb-coming-soon h3 { font-family:var(--font-disp); font-size:1.3rem; color:var(--ink); margin-bottom:.5rem; }
+    .dnb-coming-soon p { font-size:.9rem; color:var(--slate); line-height:1.65; max-width:400px; margin:0 auto; }
+
     /* ── LOADING ──────────────────────────────────────────────────── */
     .dnb-loading { text-align:center; padding:4rem 0; color:var(--slate); }
     .dnb-loading .spin { width:40px; height:40px; border:3px solid var(--line); border-top-color:#7c3aed; border-radius:50%; animation:spin .7s linear infinite; margin:0 auto 1rem; }
@@ -132,6 +155,11 @@
     html.dark .dnb-selector-bar { background:var(--bg-alt); }
     html.dark .dnb-paper-btn.active { color:#a78bfa; border-bottom-color:#a78bfa; }
     html.dark .dnb-paper-badge { background:#2d1b69; color:#a78bfa; }
+    html.dark .dnb-session-bar { background:var(--bg-alt); }
+    html.dark .dnb-sess-btn.active { color:#a78bfa; border-bottom-color:#a78bfa; }
+    html.dark .dnb-sources { background:#0c1e2e; border-color:#0284c7; }
+    html.dark .dnb-sources .dnb-sec-title { color:#38bdf8; }
+    html.dark .dnb-sources ol { color:#7dd3fc; }
 
     /* ── RESPONSIVE ───────────────────────────────────────────────── */
     @media (max-width:600px) {
@@ -167,15 +195,28 @@
     <div class="dnb-breadcrumb"><a href="index.html">Home</a> › <a href="#">DNB Exams</a> › DNB Anaesthesiology</div>
     <div class="dnb-hero-eye">DNB Previous Year Papers</div>
     <h1>🎓 DNB Anaesthesiology</h1>
-    <p>June 2026 — Fully solved papers with model answers, key points, common mistakes, exam tips, and extra marks content. Structured for exam revision.</p>
+    <p>Fully solved papers with model answers, cited sources, key points, common mistakes, exam tips, and extra marks content. Available for June 2026 and December 2025.</p>
     <div class="dnb-hero-stats">
-      <div class="dnb-stat"><div class="n">4</div><div class="l">Papers</div></div>
-      <div class="dnb-stat"><div class="n">40</div><div class="l">Questions Solved</div></div>
-      <div class="dnb-stat"><div class="n">400</div><div class="l">Marks</div></div>
-      <div class="dnb-stat"><div class="n">June 2026</div><div class="l">Examination</div></div>
+      <div class="dnb-stat"><div class="n">2</div><div class="l">Exam Sessions</div></div>
+      <div class="dnb-stat"><div class="n">50</div><div class="l">Questions Solved</div></div>
+      <div class="dnb-stat"><div class="n">500</div><div class="l">Marks</div></div>
+      <div class="dnb-stat"><div class="n">Jun 2026 + Dec 2025</div><div class="l">Examinations</div></div>
     </div>
   </div>
 </header>
+
+<!-- SESSION SELECTOR -->
+<nav class="dnb-session-bar" id="sessionBar">
+  <div class="dnb-session-inner">
+    <span class="dnb-sess-label">Session</span>
+    <button class="dnb-sess-btn active" onclick="switchSession('june2026', this)">
+      <span class="sess-badge">📅 June 2026</span>
+    </button>
+    <button class="dnb-sess-btn" onclick="switchSession('dec2025', this)">
+      <span class="sess-badge">📅 December 2025 <span class="sess-new">New</span></span>
+    </button>
+  </div>
+</nav>
 
 <!-- PAPER TABS -->
 <nav class="dnb-selector-bar" id="paperTabs">
@@ -216,9 +257,25 @@
 </nav>
 
 <script>
-// ── Cache ─────────────────────────────────────────────────────────────────────
+// ── Cache & State ─────────────────────────────────────────────────────────────
 var paperCache = {};
 var currentPaper = 0;
+var currentSession = 'june2026';
+
+var sessionMeta = {
+  june2026: {
+    label: 'June 2026',
+    badge: '📄 DNB Anaesthesiology · June 2026',
+    path: function(num){ return 'dnb/paper' + num + '.json'; },
+    availablePapers: [1,2,3,4]
+  },
+  dec2025: {
+    label: 'December 2025',
+    badge: '📄 DNB Anaesthesiology · December 2025',
+    path: function(num){ return 'dnb/dec2025-paper' + num + '.json'; },
+    availablePapers: [4]
+  }
+};
 
 // ── Key label formatter ────────────────────────────────────────────────────────
 function keyToLabel(k) {
@@ -372,6 +429,13 @@ function renderQuestion(q) {
     ansHtml += '<div class="dnb-examtip"><div class="dnb-sec-title">💡 Examiner Tip</div><p>' + escHtml(q.examTip) + '</p></div>';
   }
 
+  // Sources
+  if (q.sources && q.sources.length) {
+    ansHtml += '<div class="dnb-sources"><div class="dnb-sec-title">📚 Sources &amp; References</div><ol>' +
+      q.sources.map(function(s){ return '<li>' + escHtml(s) + '</li>'; }).join('') +
+      '</ol></div>';
+  }
+
   // Extra marks
   if (q.extraMarks) {
     var em = q.extraMarks;
@@ -414,30 +478,63 @@ function toggleQ(id) {
   if (toggle) toggle.textContent = isOpen ? '+' : '×';
 }
 
+// ── Switch session ────────────────────────────────────────────────────────────
+function switchSession(sess, btn) {
+  if (currentSession === sess) return;
+  currentSession = sess;
+  currentPaper = 0;
+
+  // Update session buttons
+  document.querySelectorAll('.dnb-sess-btn').forEach(function(b){ b.classList.remove('active'); });
+  if (btn) btn.classList.add('active');
+
+  // Reset to Paper I (or Paper IV for dec2025 which only has P4)
+  var defaultPaper = (sess === 'dec2025') ? 4 : 1;
+  var paperBtns = document.querySelectorAll('.dnb-paper-btn');
+  paperBtns.forEach(function(b){ b.classList.remove('active'); });
+  if (paperBtns[defaultPaper - 1]) paperBtns[defaultPaper - 1].classList.add('active');
+
+  loadPaper(defaultPaper, null);
+}
+
 // ── Load a paper ──────────────────────────────────────────────────────────────
 function loadPaper(num, btn) {
-  if (currentPaper === num) return;
   currentPaper = num;
 
   // Update tabs
-  document.querySelectorAll('.dnb-paper-btn').forEach(function(b){ b.classList.remove('active'); });
-  if (btn) btn.classList.add('active');
+  if (btn) {
+    document.querySelectorAll('.dnb-paper-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+  }
 
+  var sess = sessionMeta[currentSession];
   var main = document.getElementById('dnbMain');
-  main.innerHTML = '<div class="dnb-loading"><div class="spin"></div><p>Loading Paper ' + ['I','II','III','IV'][num-1] + '…</p></div>';
 
-  if (paperCache[num]) {
-    renderPaper(num, paperCache[num]);
+  // Coming Soon for unavailable papers
+  if (sess.availablePapers.indexOf(num) === -1) {
+    main.innerHTML = '<div class="dnb-coming-soon">' +
+      '<div class="cs-icon">🔜</div>' +
+      '<h3>Paper ' + ['I','II','III','IV'][num-1] + ' — Coming Soon</h3>' +
+      '<p>Solved answers for ' + sess.label + ' Paper ' + ['I','II','III','IV'][num-1] + ' are being prepared. Check back soon — Paper IV is already available.</p>' +
+      '</div>';
     return;
   }
 
-  fetch('dnb/paper' + num + '.json')
+  var cacheKey = currentSession + '-' + num;
+  main.innerHTML = '<div class="dnb-loading"><div class="spin"></div><p>Loading Paper ' + ['I','II','III','IV'][num-1] + '…</p></div>';
+
+  if (paperCache[cacheKey]) {
+    renderPaper(num, paperCache[cacheKey]);
+    return;
+  }
+
+  fetch(sess.path(num))
     .then(function(r){
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
     })
     .then(function(data){
-      paperCache[num] = data;
+      paperCache[cacheKey] = data;
       renderPaper(num, data);
     })
     .catch(function(err){
@@ -447,17 +544,19 @@ function loadPaper(num, btn) {
 
 function renderPaper(num, questions) {
   var romanNums = ['I','II','III','IV'];
+  var sess = sessionMeta[currentSession];
+  var totalMarks = questions.reduce(function(s,q){ return s + (q.marks || 10); }, 0);
   var main = document.getElementById('dnbMain');
   var html = '<div class="dnb-paper-head">' +
-    '<div class="dnb-paper-badge">📄 DNB Anaesthesiology · June 2026</div>' +
+    '<div class="dnb-paper-badge">' + sess.badge + '</div>' +
     '<h2>Paper ' + romanNums[num-1] + '</h2>' +
-    '<p>' + questions.length + ' questions · ' + (questions.length * 10) + ' marks · Model answers with key points, exam tips &amp; extra marks content</p>' +
+    '<p>' + questions.length + ' questions · ' + totalMarks + ' marks · Model answers with cited sources, key points, exam tips &amp; extra marks content</p>' +
   '</div>' +
   '<div class="dnb-q-list">' +
   questions.map(renderQuestion).join('') +
   '</div>';
   main.innerHTML = html;
-  window.scrollTo({ top: document.getElementById('paperTabs').offsetTop - 70, behavior: 'smooth' });
+  window.scrollTo({ top: document.getElementById('sessionBar').offsetTop - 70, behavior: 'smooth' });
 }
 
 // ── Init ──────────────────────────────────────────────────────────────────────
