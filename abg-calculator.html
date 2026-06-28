@@ -127,6 +127,45 @@
       .result-row .rv{text-align:right;}
     }
 
+    /* OCR collapsed state — after analysis, shrink to a small bar */
+    .ocr-section.collapsed { padding: .5rem 1rem; }
+    .ocr-section.collapsed .ocr-drop,
+    .ocr-section.collapsed .ocr-mobile-btns,
+    .ocr-section.collapsed .ocr-preview,
+    .ocr-section.collapsed .ocr-btn,
+    .ocr-section.collapsed .ocr-status,
+    .ocr-section.collapsed .ocr-confirm { display: none !important; }
+    .ocr-collapsed-bar { display: none; align-items: center; justify-content: space-between; gap: .5rem; }
+    .ocr-section.collapsed .ocr-collapsed-bar { display: flex; }
+    .ocr-expand-btn { background: none; border: 1px solid rgba(255,255,255,.3); color: rgba(255,255,255,.8); border-radius: 6px; padding: .3rem .7rem; font-family: var(--font-body); font-size: .75rem; cursor: pointer; white-space: nowrap; }
+
+    /* Floating "View Results" button — mobile only, shown after OCR analysis */
+    #viewResultsFloat {
+      display: none;
+      position: fixed;
+      bottom: 72px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 300;
+      background: linear-gradient(135deg, #1e6fd9, #1453a8);
+      color: #fff;
+      border: none;
+      border-radius: 28px;
+      padding: .85rem 2rem;
+      font-family: var(--font-body);
+      font-size: .95rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 24px rgba(30,111,217,.55);
+      animation: floatPulse 2s ease-in-out infinite;
+      white-space: nowrap;
+    }
+    @keyframes floatPulse {
+      0%,100% { box-shadow: 0 4px 24px rgba(30,111,217,.55); transform: translateX(-50%) translateY(0); }
+      50% { box-shadow: 0 8px 32px rgba(30,111,217,.8); transform: translateX(-50%) translateY(-3px); }
+    }
+    @media(min-width: 901px) { #viewResultsFloat { display: none !important; } }
+
     /* Dark mode additions */
     html.dark .input-panel{background:var(--bg-alt);}
     html.dark .result-card{background:var(--bg-alt);}
@@ -251,6 +290,11 @@
       </button>
       <div class="ocr-status" id="ocrStatus"></div>
       <div class="ocr-confirm" id="ocrConfirm"></div>
+      <!-- Collapsed bar shown after analysis -->
+      <div class="ocr-collapsed-bar" id="ocrCollapsedBar">
+        <span style="font-size:.8rem;color:#a7f3d0">✅ OCR complete — form filled</span>
+        <button class="ocr-expand-btn" onclick="expandOCR()">📷 Retake</button>
+      </div>
     </div>
 
     <div class="input-section">
@@ -492,6 +536,26 @@ async function extractABG() {
   }
 }
 
+function scrollToResults() {
+  const el = document.getElementById('abgResults');
+  if (!el) return;
+  // Use window.scrollTo — more reliable than scrollIntoView on iOS Safari
+  const navH = 70;
+  const y = el.getBoundingClientRect().top + window.pageYOffset - navH;
+  window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+  // Hide float button after user taps it
+  setTimeout(() => { document.getElementById('viewResultsFloat').style.display = 'none'; }, 800);
+}
+
+function collapseOCR() {
+  document.querySelector('.ocr-section').classList.add('collapsed');
+}
+
+function expandOCR() {
+  document.querySelector('.ocr-section').classList.remove('collapsed');
+  clearImage();
+}
+
 function fillFromOCR() {
   if (!ocrExtracted) return;
 
@@ -519,20 +583,30 @@ function fillFromOCR() {
     });
   }, 2500);
 
-  const status = document.getElementById('ocrStatus');
-  status.className = 'ocr-status success';
-  status.innerHTML = `🎉 Filled <strong>${filled} value${filled !== 1 ? 's' : ''}</strong> from image — analysing now…`;
-
   document.getElementById('ocrConfirm').style.display = 'none';
 
-  // Auto-analyse immediately after filling
+  // Collapse OCR section so it stops blocking the view
+  collapseOCR();
+
+  // Run analysis (flag so analyseABG doesn't double-scroll)
+  window._ocrTriggered = true;
   setTimeout(() => {
     analyseABG();
-    // On mobile, results appear below — scroll down to them
+
+    // Show floating "View Results" button on mobile, then auto-scroll
     setTimeout(() => {
-      document.getElementById('abgResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 250);
-  }, 350);
+      const isMobile = window.innerWidth <= 900;
+      if (isMobile) {
+        // Show pulsing float button
+        const floatBtn = document.getElementById('viewResultsFloat');
+        floatBtn.style.display = 'block';
+        // Also auto-scroll after short delay
+        setTimeout(scrollToResults, 400);
+      } else {
+        scrollToResults();
+      }
+    }, 300);
+  }, 200);
 }
 
 // Drag-and-drop support
@@ -1153,10 +1227,11 @@ function analyseABG() {
   // Show "See Results" jump button on mobile
   document.getElementById('resultsJump').style.display = 'block';
 
-  // Scroll to results automatically — critical on mobile (results are below input panel)
-  setTimeout(() => {
-    document.getElementById('abgResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 150);
+  // Scroll to results (manual Analyse button path)
+  if (!window._ocrTriggered) {
+    setTimeout(scrollToResults, 150);
+  }
+  window._ocrTriggered = false;
 }
 
 function resetABG() {
@@ -1168,6 +1243,8 @@ function resetABG() {
   document.getElementById('abgResults').style.display = 'none';
   document.getElementById('abgResults').innerHTML = '';
   document.getElementById('resultsJump').style.display = 'none';
+  document.getElementById('viewResultsFloat').style.display = 'none';
+  document.querySelector('.ocr-section')?.classList.remove('collapsed');
 }
 
 function buildManagementPlan({ isPrimMetAcid, isPrimMetAlk, isPrimRespAcid, isPrimRespAlk,
@@ -1287,6 +1364,9 @@ function buildManagementPlan({ isPrimMetAcid, isPrimMetAlk, isPrimRespAcid, isPr
   return out;
 }
 </script>
+  <!-- Floating results button — mobile only, shows after OCR analysis -->
+  <button id="viewResultsFloat" onclick="scrollToResults()">📊 View Results ↓</button>
+
   <nav class="mobile-nav-bar">
     <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
     <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
