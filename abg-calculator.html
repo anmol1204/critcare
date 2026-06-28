@@ -127,6 +127,31 @@
       .result-row .rv{text-align:right;}
     }
 
+    /* ── Mobile results-mode: hide form, show only results ── */
+    @media(max-width:900px){
+      .abg-wrap.results-mode .input-panel { display:none !important; }
+      .abg-wrap.results-mode #resultsPanel { display:block !important; }
+      .back-to-form { display:flex !important; }
+    }
+    .back-to-form {
+      display:none;
+      align-items:center;
+      gap:.5rem;
+      width:100%;
+      padding:.75rem 1rem;
+      margin-bottom:1rem;
+      background:var(--bg);
+      border:2px solid var(--blue);
+      border-radius:10px;
+      color:var(--blue);
+      font-family:var(--font-body);
+      font-size:.9rem;
+      font-weight:700;
+      cursor:pointer;
+      box-sizing:border-box;
+    }
+    .back-to-form:hover { background:var(--blue-soft); }
+
     /* OCR collapsed state — after analysis, shrink to a small bar */
     .ocr-section.collapsed { padding: .5rem 1rem; }
     .ocr-section.collapsed .ocr-drop,
@@ -367,6 +392,7 @@
 
   <!-- RESULTS PANEL -->
   <div class="results-panel" id="resultsPanel">
+    <button class="back-to-form" onclick="showForm()">← Back to Form / Edit Values</button>
     <div class="placeholder" id="placeholder">
       <div class="ph-icon">🩺</div>
       <h3>Enter ABG values and click Analyse</h3>
@@ -536,15 +562,18 @@ async function extractABG() {
   }
 }
 
-function scrollToResults() {
-  const el = document.getElementById('abgResults');
-  if (!el) return;
-  // Use window.scrollTo — more reliable than scrollIntoView on iOS Safari
-  const navH = 70;
-  const y = el.getBoundingClientRect().top + window.pageYOffset - navH;
-  window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
-  // Hide float button after user taps it
-  setTimeout(() => { document.getElementById('viewResultsFloat').style.display = 'none'; }, 800);
+function showResults() {
+  // On mobile: hide the entire form, show only results at top of page
+  if (window.innerWidth <= 900) {
+    document.querySelector('.abg-wrap').classList.add('results-mode');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  document.getElementById('viewResultsFloat').style.display = 'none';
+}
+
+function showForm() {
+  document.querySelector('.abg-wrap').classList.remove('results-mode');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function collapseOCR() {
@@ -588,24 +617,11 @@ function fillFromOCR() {
   // Collapse OCR section so it stops blocking the view
   collapseOCR();
 
-  // Run analysis (flag so analyseABG doesn't double-scroll)
+  // Run analysis, then switch to results view on mobile
   window._ocrTriggered = true;
   setTimeout(() => {
     analyseABG();
-
-    // Show floating "View Results" button on mobile, then auto-scroll
-    setTimeout(() => {
-      const isMobile = window.innerWidth <= 900;
-      if (isMobile) {
-        // Show pulsing float button
-        const floatBtn = document.getElementById('viewResultsFloat');
-        floatBtn.style.display = 'block';
-        // Also auto-scroll after short delay
-        setTimeout(scrollToResults, 400);
-      } else {
-        scrollToResults();
-      }
-    }, 300);
+    setTimeout(showResults, 100);
   }, 200);
 }
 
@@ -1224,12 +1240,12 @@ function analyseABG() {
 
   document.getElementById('abgResults').innerHTML = html;
 
-  // Show "See Results" jump button on mobile
+  // Show "See Results" jump button on mobile (desktop only fallback)
   document.getElementById('resultsJump').style.display = 'block';
 
-  // Scroll to results (manual Analyse button path)
+  // Switch to results view on mobile (skip if OCR already called showResults)
   if (!window._ocrTriggered) {
-    setTimeout(scrollToResults, 150);
+    showResults();
   }
   window._ocrTriggered = false;
 }
@@ -1245,6 +1261,7 @@ function resetABG() {
   document.getElementById('resultsJump').style.display = 'none';
   document.getElementById('viewResultsFloat').style.display = 'none';
   document.querySelector('.ocr-section')?.classList.remove('collapsed');
+  document.querySelector('.abg-wrap')?.classList.remove('results-mode');
 }
 
 function buildManagementPlan({ isPrimMetAcid, isPrimMetAlk, isPrimRespAcid, isPrimRespAlk,
