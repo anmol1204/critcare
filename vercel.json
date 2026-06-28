@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "functions": {
+    "api/abg-ocr.js": { "maxDuration": 30 },
+    "api/chat.js": { "maxDuration": 30 }
+  }
+}
