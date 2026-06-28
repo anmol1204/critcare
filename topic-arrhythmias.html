@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Atrial Fibrillation &amp; Tachyarrhythmias in the ICU — Rate, Rhythm, Cardioversion — CritCare.in</title>
+  <meta name="description" content="ICU management of atrial fibrillation and tachyarrhythmias: rate vs rhythm control, electrical cardioversion, ACLS tachycardia algorithm, new-onset AF in sepsis, anticoagulation. Marino, Washington Manual, AHA/ESC with drug doses." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    html.dark .marino-box{background:linear-gradient(135deg,#1e1640,#2a1a4d);border-color:#5b21b6;}
+    html.dark .marino-box p,html.dark .marino-box ul{color:#ddd6fe;}
+    html.dark .marino-box strong{color:#c4b5fd;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    html.dark .mc{background:#2a0a0a;border-color:#7f1d1d;}
+    html.dark .mc p{color:#fca5a5;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .algo-box{background:#0f1f3d;border-radius:12px;padding:1.2rem;margin:1rem 0;color:#fff;}
+    .algo-box h4{color:#7dd3fc;font-size:.9rem;margin-bottom:.8rem;}
+    .algo-box .step{display:flex;gap:.7rem;padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:.85rem;line-height:1.6;}
+    .algo-box .step:last-child{border-bottom:none;}
+    .algo-box .step b{color:#fcd34d;}
+    .algo-box .unstable{color:#fca5a5;font-weight:700;}
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;}
+    .compare-card{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;}
+    .compare-card h4{font-size:.82rem;font-weight:800;margin-bottom:.6rem;}
+    .compare-card.rate h4{color:#1e40af;} .compare-card.rhythm h4{color:#b45309;}
+    .compare-card ul{font-size:.82rem;color:var(--slate);padding-left:1.1rem;line-height:1.65;margin:0;}
+    .compare-card li strong{color:var(--ink);}
+    @media(max-width:600px){.compare-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Atrial Fibrillation &amp; Tachyarrhythmias</div>
+    <h1>💓 Atrial Fibrillation &amp; Tachyarrhythmias in the ICU</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">AHA/ACC 2023</span>
+      <span class="gbadge esicm">ESC 2024</span>
+      <span class="gbadge isccm">ACLS 2020</span>
+      <span class="gbadge who">ISCCM</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Stable vs Unstable</span>
+      <span class="topic-tag">Rate vs Rhythm</span>
+      <span class="topic-tag">DC Cardioversion · ACLS</span>
+      <span class="topic-updated">AHA/ACC/HRS 2023 AF · ESC 2024 AF · AHA ACLS 2020 · Marino 5th Ed (2025)</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. The Unstable Patient — ACLS</a></li>
+        <li><a href="#s4">4. AF: Rate vs Rhythm</a></li>
+        <li><a href="#s5">5. Narrow &amp; Wide Complex SVT/VT</a></li>
+        <li><a href="#s6">6. Drug Doses &amp; Tables</a></li>
+        <li><a href="#s7">7. Anticoagulation</a></li>
+        <li><a href="#s8">8. Common Mistakes</a></li>
+        <li><a href="#s9">9. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Overview — Arrhythmias Are a Symptom, Not the Disease</h2>
+      <div class="book-quote">
+        <p>"New-onset atrial fibrillation in the critically ill is rarely a primary cardiac event — it is most often a marker of an underlying physiological insult: sepsis, hypovolaemia, hypoxia, electrolyte derangement, pain, or catecholamine excess. The first therapeutic question is never 'which antiarrhythmic?' but 'what is driving this rhythm?'. Correcting the precipitant frequently restores sinus rhythm without any rhythm-specific drug."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Cardiac Arrhythmias.</cite>
+      </div>
+
+      <h3>The First Branch Point — Stable or Unstable?</h3>
+      <p>Every tachyarrhythmia is triaged by the same question: is the patient <strong>haemodynamically unstable because of the rhythm?</strong> The four signs of instability are:</p>
+      <ul>
+        <li><strong>Hypotension / shock</strong> — poor perfusion, mottling, lactate</li>
+        <li><strong>Acute altered mental status</strong> — reduced cerebral perfusion</li>
+        <li><strong>Ischaemic chest pain</strong> — rate-related demand ischaemia</li>
+        <li><strong>Acute heart failure / pulmonary oedema</strong></li>
+      </ul>
+      <p>If instability is <em>caused by</em> the arrhythmia → <strong>immediate synchronised DC cardioversion</strong> (for tachy­arrhythmias with a pulse). If the patient is stable → there is time to identify the rhythm and treat pharmacologically.</p>
+
+      <div class="key-box">
+        <div class="kb-label">Reversible Drivers — The ICU "Hunt List"</div>
+        <p>Before and alongside rhythm treatment, correct: <strong>hypoxia, hypovolaemia, electrolytes (K⁺, Mg²⁺, Ca²⁺), acidosis, sepsis/fever, pain &amp; agitation, anaemia, hyperthyroidism, drug effects (inotropes, aminophylline), PE, and myocardial ischaemia.</strong> Magnesium is the most commonly under-replaced — keep Mg²⁺ &gt;1.0 mmol/L (ideally &gt;1.0–1.2) in any ICU arrhythmia.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — Rate, Filling &amp; the Cost of Losing Atrial Kick</h2>
+      <div class="book-quote">
+        <p>"Two consequences of a sustained tachyarrhythmia threaten the critically ill heart. First, diastole shortens disproportionately as heart rate rises, curtailing both ventricular filling and coronary perfusion — which occurs almost entirely in diastole. Second, the loss of organised atrial contraction removes the atrial 'kick', which contributes up to 25–30% of ventricular filling in a stiff or poorly compliant ventricle. In the patient who depends on preload, this combination can precipitate abrupt cardiovascular collapse."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Tachyarrhythmias. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Why Rate Control Improves Output in AF</div>
+        <p>In rapid AF, the very fast ventricular rate is often counter-productive: shortened diastole means each beat fills less, so stroke volume falls and cardiac output can <em>drop</em> despite the high rate. Slowing the rate (target initially &lt;110/min, "lenient" control) lengthens diastole, improves filling, restores coronary perfusion, and frequently raises blood pressure. This is why a rate-controlling agent — not a pressor — is often the correct first move in a hypotensive patient whose hypotension is rate-driven.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Magnesium: the Universal Membrane Stabiliser</div>
+        <p>Magnesium suppresses triggered activity and is first-line for <strong>torsades de pointes</strong> (2 g IV over 1–2 min, even when serum Mg is normal). It also slows AV nodal conduction (useful adjunct in rapid AF) and reduces post-operative AF. Hypomagnesaemia is common in the ICU (diuretics, GI losses, alcohol, refeeding) and frequently coexists with hypokalaemia — replacing K⁺ without Mg²⁺ often fails because hypomagnesaemia drives renal K⁺ wasting.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Regular vs Irregular: Reading the Rhythm</div>
+        <ul>
+          <li><strong>Irregularly irregular, no P waves</strong> → atrial fibrillation</li>
+          <li><strong>Regular, narrow, rate ~150</strong> → think atrial flutter with 2:1 block (flutter rate ~300) or AVNRT/AVRT</li>
+          <li><strong>Regular, narrow, rate 100–160 with visible P of varying morphology</strong> → sinus tachycardia or (multifocal) atrial tachycardia — MAT is classic in decompensated COPD; do NOT cardiovert, treat the lung disease</li>
+          <li><strong>Regular, WIDE complex</strong> → assume <strong>VT until proven otherwise</strong>, especially with structural heart disease</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-e">⚡ 3 · The Unstable Patient — ACLS Tachycardia Algorithm</span>
+      <h2>Synchronised Cardioversion — When the Rhythm Is Killing the Patient</h2>
+
+      <div class="algo-box">
+        <h4>⚡ Unstable Tachycardia WITH a Pulse (ACLS)</h4>
+        <div class="step"><span class="unstable">UNSTABLE?</span> <span>Hypotension · altered mental status · ischaemic chest pain · acute heart failure — and the rhythm is the cause</span></div>
+        <div class="step"><b>1.</b> <span>Sedate if conscious (e.g. ketamine 1–2 mg/kg or midazolam + fentanyl) — do NOT delay cardioversion in peri-arrest</span></div>
+        <div class="step"><b>2.</b> <span><b>Synchronised</b> DC cardioversion. Narrow regular: 50–100 J. Narrow irregular (AF): 120–200 J biphasic. Wide regular: 100 J. Wide irregular (e.g. AF + WPW / polymorphic): treat as VF → <b>UNsynchronised</b> high-energy shock</span></div>
+        <div class="step"><b>3.</b> <span>Escalate energy stepwise if unsuccessful; correct K⁺/Mg²⁺; consider amiodarone 300 mg IV then re-shock</span></div>
+        <div class="step"><b>4.</b> <span>Polymorphic VT (torsades) → <b>magnesium 2 g IV</b>, stop QT-prolonging drugs, overdrive pace / defibrillate if pulseless</span></div>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Synchronised vs Unsynchronised</div>
+        <p><strong>Synchronise</strong> for organised rhythms with a pulse (AF, flutter, SVT, monomorphic VT) — the shock is timed to the R wave to avoid the vulnerable T-wave period (R-on-T → VF). <strong>Do NOT synchronise</strong> for pulseless VT/VF or polymorphic VT — the defibrillator may fail to find an R wave and never discharge; deliver an immediate high-energy unsynchronised shock instead.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-g">📋 4 · Atrial Fibrillation — Rate vs Rhythm Control</span>
+      <h2>The Stable Patient in Rapid AF</h2>
+
+      <div class="compare-grid">
+        <div class="compare-card rate">
+          <h4>🔵 Rate Control (usual first choice)</h4>
+          <ul>
+            <li><strong>Target:</strong> &lt;110/min lenient (RACE II); tighter if symptomatic</li>
+            <li><strong>Beta-blocker:</strong> metoprolol 2.5–5 mg IV q5min, or esmolol infusion (titratable, short-acting)</li>
+            <li><strong>Non-DHP CCB:</strong> diltiazem 0.25 mg/kg IV — avoid in HFrEF / hypotension</li>
+            <li><strong>Digoxin:</strong> add-on in heart failure / hypotension (works at rest, weak in high-catecholamine states)</li>
+            <li><strong>Amiodarone:</strong> rate control when others contraindicated (sepsis, shock) — also a "soft" rhythm agent</li>
+          </ul>
+        </div>
+        <div class="compare-card rhythm">
+          <h4>🟠 Rhythm Control (selected cases)</h4>
+          <ul>
+            <li><strong>When:</strong> AF clearly driving instability, recent onset, reversible trigger treated, or fails rate control</li>
+            <li><strong>Electrical:</strong> synchronised DCCV (most effective)</li>
+            <li><strong>Chemical:</strong> amiodarone (safe in structural disease / low EF); flecainide/propafenone ONLY if structurally normal heart</li>
+            <li><strong>Timing &amp; clot risk:</strong> if AF &gt;48h (or unknown), cardioversion risks thromboembolism — anticoagulate or exclude LA thrombus on TOE first (unless unstable)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 New-Onset AF in Sepsis — A Special Case</div>
+        <p>New AF complicates ~10–15% of severe sepsis. It is usually <strong>driven by the septic state</strong> (catecholamines, inflammation, volume shifts, hypomagnesaemia). Priorities: <strong>treat the sepsis, optimise volume, replace K⁺ and Mg²⁺.</strong> If pharmacological rate control is needed in a vasoplegic patient, <strong>amiodarone</strong> is often preferred (less hypotension than beta-blockers/diltiazem). Many patients revert spontaneously as the sepsis resolves. Cardioversion has a high early recurrence rate while the driver persists.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-x">🔍 5 · Narrow &amp; Wide Complex Tachycardias</span>
+      <h2>Other Tachyarrhythmias You Will Meet</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Regular Narrow-Complex SVT (AVNRT / AVRT)</div>
+        <div class="gr-text">
+          <strong>1. Vagal manoeuvres</strong> — modified Valsalva (REVERT trial: leg-raise after strain ↑ success).<br>
+          <strong>2. Adenosine 6 mg rapid IV push + 20 mL flush</strong> → 12 mg → 12 mg. Warn the patient (brief chest tightness, impending-doom feeling, transient asystole). Continuous ECG/rhythm strip — diagnostic if it unmasks flutter waves.<br>
+          <strong>3.</strong> If recurs/refractory: diltiazem or beta-blocker. <span class="gr-c">Avoid adenosine in severe asthma → bronchospasm</span>
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Atrial Flutter</div>
+        <div class="gr-text">
+          Regular, "sawtooth" flutter waves, atrial rate ~300 with 2:1 block giving ventricular rate ~150. Rate control is harder than AF. <strong>Low-energy synchronised DCCV (50 J)</strong> is highly effective. Same anticoagulation/thromboembolic rules as AF. Definitive therapy is cavotricuspid isthmus ablation.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Wide-Complex Tachycardia — Assume VT</div>
+        <div class="gr-text">
+          A regular monomorphic WCT in a patient with structural heart disease / prior MI is <strong>VT until proven otherwise</strong>. <span class="gr-s">If in doubt, treat as VT</span><br>
+          <strong>Stable:</strong> amiodarone 300 mg IV over 20–60 min (or procainamide). <strong>Unstable:</strong> synchronised DCCV.<br>
+          <strong>Never</strong> give an AV-nodal blocker (verapamil/diltiazem) to a WCT you cannot confidently call SVT — it can precipitate haemodynamic collapse in VT and in pre-excited AF.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Polymorphic VT / Torsades de Pointes</div>
+        <div class="gr-text">
+          <strong>Magnesium 2 g IV</strong> over 1–2 min (first-line, even if Mg normal). Stop all QT-prolonging drugs; correct K⁺ (target high-normal 4.5–5.0), Ca²⁺, Mg²⁺. <strong>Overdrive pacing</strong> or isoprenaline for bradycardia-dependent (long-QT) torsades. <strong>Pulseless → immediate defibrillation.</strong>
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ICU Context</div>
+        <p><strong>Multifocal atrial tachycardia (MAT)</strong> is common in our large burden of decompensated COPD/cor pulmonale — recognise it (≥3 distinct P-wave morphologies, irregular), do NOT cardiovert; treat hypoxia, theophylline toxicity and electrolytes; verapamil or metoprolol if rate control needed (beta-blocker cautious in bronchospasm).</p>
+        <p><strong>Drug availability:</strong> esmolol may be limited in smaller centres — metoprolol IV and diltiazem are widely available. Amiodarone is the ICU workhorse. Streptokinase-era allergy notes do not apply here. Ensure magnesium sulphate (widely stocked for eclampsia) is used proactively.</p>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-d">💊 6 · Drug Doses &amp; Tables</span>
+      <h2>Drug Reference — ICU Tachyarrhythmias</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Cautions</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Metoprolol IV</strong></td><td>Rate control AF/flutter, SVT</td><td>2.5–5 mg IV over 2 min, repeat q5min up to 15 mg</td><td>Avoid in decompensated HF, severe bronchospasm, hypotension</td></tr>
+            <tr><td><strong>Esmolol</strong></td><td>Titratable rate control</td><td>500 µg/kg bolus → 50–200 µg/kg/min infusion</td><td>Ultra-short acting — ideal if unsure of tolerance</td></tr>
+            <tr><td><strong>Diltiazem</strong></td><td>Rate control AF (preserved EF)</td><td>0.25 mg/kg IV over 2 min → 5–15 mg/h infusion</td><td>Avoid in HFrEF, hypotension, WPW-AF</td></tr>
+            <tr><td><strong>Amiodarone</strong></td><td>AF/VT, rate &amp; rhythm in shock/HF</td><td>300 mg IV over 20–60 min → 900 mg/24h; arrest VT/VF: 300 mg bolus</td><td>Phlebitis (central line for infusion); dilute in D5W; hypotension if pushed fast</td></tr>
+            <tr><td><strong>Digoxin</strong></td><td>Rate control add-on (HF/hypotension)</td><td>500 µg IV → 250 µg q6h ×2 (load ~1 mg/24h)</td><td>Weak in high-catecholamine states; toxicity in renal failure / hypokalaemia</td></tr>
+            <tr><td><strong>Adenosine</strong></td><td>Regular narrow SVT (diagnose/treat)</td><td>6 mg rapid IV push + flush → 12 mg → 12 mg</td><td>Avoid in asthma; warn patient; transient asystole expected</td></tr>
+            <tr><td><strong>Magnesium sulphate</strong></td><td>Torsades; AF adjunct; post-op AF</td><td>2 g IV over 1–2 min (torsades); 2 g over 20 min (AF)</td><td>Monitor reflexes; caution in renal failure</td></tr>
+            <tr><td><strong>Flecainide / Propafenone</strong></td><td>Pharmacological cardioversion AF</td><td>Flecainide 2 mg/kg IV (max 150 mg) over 10 min</td><td><strong>ONLY structurally normal heart</strong> — proarrhythmic in ischaemia/HF</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="key-box">
+        <div class="kb-label">DC Cardioversion Energy Selector (Biphasic)</div>
+        <p><strong>Narrow regular (SVT):</strong> 50–100 J · <strong>Atrial flutter:</strong> 50 J · <strong>Atrial fibrillation:</strong> 120–200 J · <strong>Monomorphic VT (with pulse):</strong> 100 J · <strong>Polymorphic VT / pulseless:</strong> max-energy UNsynchronised. Always sedate the conscious patient; ensure the SYNC button is re-armed before each shock (most defibrillators drop out of sync mode after a discharge).</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-g">🩸 7 · Anticoagulation &amp; Stroke Prevention</span>
+      <h2>Thromboembolic Risk in AF</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">CHA₂DS₂-VASc — Who Needs Long-Term Anticoagulation</div>
+        <div class="gr-text">
+          <strong>C</strong>HF +1 · <strong>H</strong>ypertension +1 · <strong>A</strong>ge ≥75 +2 · <strong>D</strong>iabetes +1 · <strong>S</strong>troke/TIA +2 · <strong>V</strong>ascular disease +1 · <strong>A</strong>ge 65–74 +1 · <strong>S</strong>ex (female) +1.<br>
+          Anticoagulate if score ≥2 (men) / ≥3 (women) <span class="gr-s">AHA/ACC 2023, ESC 2024</span>. DOAC preferred over warfarin (except mechanical valve or moderate–severe mitral stenosis → warfarin). Assess bleeding with HAS-BLED (modifiable factors), but a high HAS-BLED is NOT a reason to withhold anticoagulation.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Cardioversion &amp; the 48-Hour Rule</div>
+        <div class="gr-text">
+          AF &lt;48h: cardiovert with lower stroke risk (still anticoagulate peri-procedure if risk factors). <strong>AF ≥48h or unknown duration:</strong> either <strong>3 weeks therapeutic anticoagulation before</strong> cardioversion, OR <strong>TOE to exclude LA/LAA thrombus</strong>, then cardiovert. Anticoagulate for <strong>≥4 weeks after</strong> any cardioversion (atrial stunning → thrombus even in sinus). The unstable patient is cardioverted immediately regardless — start anticoagulation as soon as feasible.
+        </div>
+      </div>
+
+      <div class="ec" style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.6rem 0;">
+        <p style="font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;"><strong>ICU caveat:</strong> Critically ill patients frequently have competing high bleeding risk (post-op, thrombocytopenia, planned procedures). Anticoagulation decisions for new ICU AF are individualised and often deferred until the acute bleeding risk settles — but document the plan and reassess daily so it is not forgotten at discharge.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-e">❌ 8 · Common Mistakes</span>
+      <h2>Common Mistakes in ICU Arrhythmia Management</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Treating the Monitor Instead of the Patient</div>
+        <p>Cardioverting sinus tachycardia or MAT because the number is high is harmful. Sinus tachycardia is a compensatory response (hypovolaemia, sepsis, pain, PE) — slowing it removes a needed compensation and can cause collapse. Always confirm the rhythm and ask what is driving it before treating.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Giving AV-Nodal Blockers in Pre-Excited AF (WPW)</div>
+        <p>In AF with WPW (irregular, wide, very fast — often &gt;250/min), verapamil, diltiazem, digoxin and adenosine block the AV node and accelerate conduction down the accessory pathway → VF. Use synchronised DCCV (or procainamide if stable). The same "assume VT" caution applies to any wide irregular tachycardia.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Forgetting to Re-Arm SYNC Between Shocks</div>
+        <p>Most defibrillators revert to unsynchronised mode after each synchronised shock. If a second cardioversion is needed, the SYNC button must be pressed again — otherwise either the shock lands on the T wave (R-on-T → VF) or, if you intended sync, the machine waits for an R wave it cannot find and never fires.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Replacing Potassium Without Magnesium</div>
+        <p>Hypomagnesaemia causes renal potassium wasting, so hypokalaemia is refractory until Mg²⁺ is corrected. In any ICU arrhythmia, replace both — and keep K⁺ 4.5–5.0 and Mg²⁺ &gt;1.0 mmol/L. This single habit prevents a large fraction of ICU tachyarrhythmias and torsades.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Pushing IV Amiodarone Too Fast</div>
+        <p>Rapid amiodarone bolus causes hypotension (vasodilatory solvent effect). Outside cardiac arrest, give the loading dose over 20–60 minutes and use a central line for ongoing infusion (peripheral phlebitis). Dilute in 5% dextrose — it precipitates in saline.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Cardioverting AF &gt;48h Without Addressing Clot Risk</div>
+        <p>Restoring sinus rhythm in AF of &gt;48 h (or unknown duration) without prior anticoagulation or TOE risks dislodging a left atrial appendage thrombus → embolic stroke. Unless the patient is unstable, exclude thrombus (TOE) or anticoagulate for 3 weeks first, and anticoagulate ≥4 weeks afterwards.</p>
+      </div>
+    </section>
+
+    <section id="s9">
+      <span class="sb sb-r">📑 9 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Joglar JA, Chung MK, Armbruster AL et al.</strong> 2023 ACC/AHA/ACCP/HRS Guideline for the Diagnosis and Management of Atrial Fibrillation. Circulation 2024;149:e1–e156.</li>
+          <li><strong>Van Gelder IC, Rienstra M, Bunting KV et al.</strong> 2024 ESC Guidelines for the management of atrial fibrillation. Eur Heart J 2024;45:3314–3414.</li>
+          <li><strong>Panchal AR, Bartos JA, Cabañas JG et al.</strong> Part 3: Adult Basic and Advanced Life Support: 2020 AHA Guidelines for CPR and ECC. Circulation 2020;142(suppl 2):S366–S468.</li>
+          <li><strong>Van Gelder IC, Groenveld HF, Crijns HJ et al. (RACE II).</strong> Lenient versus strict rate control in patients with atrial fibrillation. N Engl J Med 2010;362:1363–1373.</li>
+          <li><strong>Appelboam A, Reuben A, Mann C et al. (REVERT).</strong> Postural modification to the standard Valsalva manoeuvre for emergency treatment of supraventricular tachycardias. Lancet 2015;386:1747–1753.</li>
+          <li><strong>Marino PL.</strong> The ICU Book, 5th Ed. Tachyarrhythmias. Wolters Kluwer; 2025.</li>
+          <li><strong>Irwin RS, Rippe JM.</strong> Irwin and Rippe's Intensive Care Medicine, 8th Ed. Supraventricular &amp; Ventricular Arrhythmias. Wolters Kluwer; 2018.</li>
+          <li><strong>Washington Manual of Critical Care, 4th Ed.</strong> Chapter: Cardiac Arrhythmias. Wolters Kluwer 2023.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

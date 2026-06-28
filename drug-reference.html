@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Drug Reference Guide — CritCare.in</title>
+  <meta name="description" content="ICU & Emergency drug reference — concentrations, correction formulas, dose calculators, and vial guide for electrolytes, vasopressors, sedation and NMBA."/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <script src="darkmode.js"></script>
+  <style>
+    /* ── Page wrapper ── */
+    .dp-page{max-width:1120px;margin:0 auto;padding:1.5rem 1rem 4rem;}
+    .dp-hero{background:linear-gradient(135deg,#0f1f3d,#1a3560);padding:2.5rem 5%;color:#fff;margin-bottom:0;}
+    .dp-hero h1{font-family:var(--font-disp,serif);font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:.4rem;}
+    .dp-hero p{color:rgba(255,255,255,.7);font-size:.9rem;max-width:600px;line-height:1.6;}
+
+    /* ── Search ── */
+    .dp-search-wrap{position:relative;margin:1.5rem 0 1rem;}
+    .dp-search{width:100%;padding:.7rem 1rem .7rem 2.4rem;border:2px solid var(--line);border-radius:12px;font-size:.95rem;background:var(--bg);color:var(--ink);box-sizing:border-box;}
+    .dp-search:focus{outline:none;border-color:var(--accent);}
+    .dp-search-wrap::before{content:'🔍';position:absolute;left:.85rem;top:50%;transform:translateY(-50%);}
+
+    /* ── Category pills ── */
+    .cat-row{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.4rem;}
+    .cat-pill{padding:.3rem .85rem;border-radius:20px;border:2px solid var(--line);background:var(--bg);color:var(--slate);font-size:.74rem;font-weight:700;cursor:pointer;transition:all .15s;white-space:nowrap;}
+    .cat-pill.active,.cat-pill:hover{border-color:var(--accent);background:var(--accent);color:#fff;}
+
+    /* ── Drug grid ── */
+    .drug-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.1rem;}
+    .no-results{grid-column:1/-1;text-align:center;padding:3rem;color:var(--slate);}
+
+    /* ── Drug card ── */
+    .drug-card{background:var(--bg);border:2px solid var(--line);border-radius:14px;overflow:hidden;transition:box-shadow .2s,border-color .2s;}
+    .drug-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.1);}
+    .drug-card.open{border-color:var(--accent);}
+    .dc-head{display:flex;gap:.9rem;padding:.9rem 1rem;cursor:pointer;align-items:flex-start;}
+
+    /* ── Vial CSS ── */
+    .vial-vis{flex-shrink:0;display:flex;flex-direction:column;align-items:center;width:52px;}
+    .v-cap{width:24px;height:11px;border-radius:6px 6px 0 0;}
+    .v-neck{width:14px;height:5px;opacity:.75;}
+    .v-body{width:46px;flex:1;min-height:64px;border:2.5px solid;border-radius:2px 2px 6px 6px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3px 2px;text-align:center;background:rgba(255,255,255,.85);}
+    html.dark .v-body{background:rgba(30,40,60,.7);}
+    .v-name{font-size:.48rem;font-weight:900;text-transform:uppercase;letter-spacing:.04em;line-height:1.2;}
+    .v-conc{font-size:.6rem;font-weight:800;margin-top:2px;}
+    .v-ml{font-size:.46rem;color:var(--slate);margin-top:2px;}
+    .v-base{width:48px;height:5px;border-radius:0 0 4px 4px;}
+
+    /* ── Drug info panel ── */
+    .dc-info{flex:1;min-width:0;}
+    .dc-name{font-size:.98rem;font-weight:800;color:var(--ink);line-height:1.2;}
+    .dc-brand{font-size:.7rem;color:var(--slate);margin-bottom:.2rem;}
+    .dc-badge{display:inline-block;padding:.1rem .45rem;border-radius:12px;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.3rem;}
+    .dc-key{font-size:.77rem;color:var(--ink);line-height:1.55;}
+    .tap-hint{font-size:.67rem;color:var(--accent);font-weight:600;margin-top:.3rem;}
+    .drug-card.open .tap-hint::before{content:'▲ ';}.drug-card:not(.open) .tap-hint::before{content:'▼ ';}
+
+    /* ── Expanded body ── */
+    .dc-body{display:none;padding:.9rem 1rem;border-top:2px solid var(--line);}
+    .drug-card.open .dc-body{display:block;}
+
+    /* ── Section headers ── */
+    .dsect{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--slate);padding:.6rem 0 .2rem;border-top:1px solid var(--line);margin-top:.5rem;}
+    .dsect.first{border-top:none;padding-top:0;margin-top:0;}
+
+    /* ── Concentration table ── */
+    .ctab{width:100%;border-collapse:collapse;font-size:.79rem;margin:.35rem 0 .6rem;}
+    .ctab th{background:var(--bg-alt);padding:.35rem .5rem;text-align:left;font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);border-bottom:2px solid var(--line);}
+    .ctab td{padding:.35rem .5rem;border-bottom:1px solid var(--line);vertical-align:top;}
+    .ctab tr:last-child td{border-bottom:none;}
+    .c-hi{font-weight:700;color:var(--ink);}
+    .c-note{font-size:.68rem;color:var(--slate);}
+    .c-warn{font-size:.68rem;font-weight:700;color:#dc2626;}
+
+    /* ── Correction table ── */
+    .corr-box{background:var(--bg-alt);border-radius:8px;padding:.5rem .7rem;margin:.35rem 0;}
+    .corr-row{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;padding:.25rem 0;border-bottom:1px solid var(--line);font-size:.79rem;}
+    .corr-row:last-child{border-bottom:none;}
+    .corr-dose{color:var(--slate);flex:1;}
+    .corr-delta{font-weight:800;color:var(--ink);text-align:right;}
+    .corr-note{font-size:.65rem;color:var(--slate);text-align:right;}
+
+    /* ── Prep steps ── */
+    .prep-step{display:flex;gap:.5rem;padding:.28rem 0;font-size:.78rem;line-height:1.55;border-bottom:1px dashed var(--line);}
+    .prep-step:last-child{border-bottom:none;}
+    .pnum{font-weight:800;color:var(--accent);flex-shrink:0;min-width:16px;}
+
+    /* ── Side effects ── */
+    .se-row{display:flex;flex-wrap:wrap;gap:.3rem;margin:.3rem 0;}
+    .se{padding:.15rem .42rem;border-radius:6px;font-size:.68rem;font-weight:700;}
+    .se-r{background:#fee2e2;color:#991b1b;}
+    .se-a{background:#fff7ed;color:#9a3412;}
+    .se-b{background:#eff6ff;color:#1d4ed8;}
+
+    /* ── Notes ── */
+    .d-note{font-size:.76rem;line-height:1.6;padding:.4rem .6rem;border-radius:7px;margin-top:.4rem;}
+    .d-amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e;}
+    .d-red{background:#fee2e2;border:1px solid #fca5a5;color:#991b1b;}
+    .d-blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af;}
+    .d-green{background:#f0fdf4;border:1px solid #86efac;color:#14532d;}
+
+    /* ── Inline Calculator ── */
+    .calc-box{border:2px solid var(--accent);border-radius:10px;padding:.7rem;margin-top:.6rem;background:var(--bg);}
+    .calc-box h5{font-size:.78rem;font-weight:800;color:var(--accent);margin-bottom:.5rem;}
+    .ci-grid{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-bottom:.5rem;}
+    .ci-field label{display:block;font-size:.62rem;font-weight:700;text-transform:uppercase;color:var(--slate);margin-bottom:.18rem;}
+    .ci-field input,.ci-field select{width:100%;padding:.38rem .5rem;border:1.5px solid var(--line);border-radius:7px;font-size:.85rem;font-weight:600;background:var(--bg);color:var(--ink);box-sizing:border-box;}
+    .ci-go{width:100%;padding:.45rem;background:var(--accent);color:#fff;border:none;border-radius:7px;font-weight:700;font-size:.82rem;cursor:pointer;margin-bottom:.5rem;}
+    .ci-out{font-size:.8rem;line-height:1.9;padding:.5rem .7rem;background:var(--bg-alt);border:1px solid var(--line);border-radius:7px;display:none;}
+    .ci-out.show{display:block;}
+    .ci-out strong{color:var(--ink);}
+
+    /* ── Dilution table (vasopressors) ── */
+    .dil-box{background:var(--bg-alt);border-radius:8px;padding:.5rem .7rem;margin:.35rem 0;}
+    .dil-row{display:flex;justify-content:space-between;font-size:.78rem;padding:.22rem 0;border-bottom:1px solid var(--line);}
+    .dil-row:last-child{border-bottom:none;}
+    .dil-l{color:var(--slate);}
+    .dil-r{font-weight:700;color:var(--ink);}
+
+    /* ── Alert badge ── */
+    .high-alert{display:inline-block;background:#dc2626;color:#fff;font-size:.6rem;font-weight:800;padding:.1rem .4rem;border-radius:4px;margin-left:.4rem;vertical-align:middle;letter-spacing:.04em;}
+
+    @media(max-width:600px){
+      .drug-grid{grid-template-columns:1fr;}
+      .ci-grid{grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="drug-reference.html" class="active">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="dp-hero">
+  <h1>💊 Drug Reference Guide</h1>
+  <p>ICU & Emergency — Concentrations · Correction Formulas · Dose Calculators · Side Effects. Round-ready answers at your fingertips.</p>
+</header>
+
+<div class="dp-page">
+  <div class="dp-search-wrap">
+    <input type="text" class="dp-search" id="dpSearch" placeholder="Search drug name e.g. KCl, Noradrenaline, Propofol…" oninput="dpFilter()">
+  </div>
+  <div class="cat-row" id="catRow"></div>
+  <div class="drug-grid" id="drugGrid"></div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="abg-calculator.html">ABG Analyser</a></li>
+      <li><a href="drug-reference.html">Drug Reference</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow · Clinical Decision Support Only</p>
+  </div>
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════════════════════
+// DRUG DATA
+// ══════════════════════════════════════════════════════════════════
+const CATS = [
+  { id:'all',        label:'All Drugs' },
+  { id:'electrolyte',label:'⚡ Electrolytes' },
+  { id:'vasopressor',label:'💉 Vasopressors' },
+  { id:'sedation',   label:'💤 Sedation' },
+  { id:'analgesic',  label:'💊 Analgesics' },
+  { id:'nmba',       label:'🔒 NMBAs' },
+  { id:'cardiac',    label:'❤️ Cardiac' },
+  { id:'other',      label:'🏥 Other ICU' },
+];
+const CAT_COLORS = {
+  electrolyte:['#ca8a04','#fefce8'],
+  vasopressor:['#1d4ed8','#eff6ff'],
+  sedation:   ['#7c3aed','#f5f3ff'],
+  analgesic:  ['#ea580c','#fff7ed'],
+  nmba:       ['#475569','#f8fafc'],
+  cardiac:    ['#dc2626','#fee2e2'],
+  other:      ['#0d9488','#f0fdfa'],
+};
+
+const DRUGS = [
+/* ─────────────────── ELECTROLYTES ─────────────────── */
+{
+  id:'kcl', name:'Potassium Chloride', brand:'KCl Injection 7.45%', cat:'electrolyte',
+  vialCap:'#ca8a04', vialBody:'#fefce8', vialBorder:'#ca8a04', vialLabel:'KCl', vialConc:'7.45%', vialMl:'20 mL',
+  highAlert:true,
+  keyFact:'7.45% = 1 mEq/mL · 20 mL ampoule = 20 mEq · MUST dilute before IV',
+  concs:[
+    {label:'7.45% (1 mEq/mL)',vols:'10 mL=10 mEq · 20 mL=20 mEq · 50 mL=50 mEq',note:'Standard in India — NEVER give undiluted',warn:true},
+    {label:'15% (2 mEq/mL)',vols:'10 mL=20 mEq',note:'High-conc vial — some centres',warn:false},
+  ],
+  dose:'Peripheral: 20 mEq in 100 mL NS over 2h (10 mEq/hr max) · Central: 40 mEq/100 mL NS, up to 40 mEq/hr with ECG',
+  corr:[
+    {dose:'10 mEq IV',delta:'K ↑ ~0.1 mEq/L',note:'Recheck in 1h'},
+    {dose:'20 mEq IV',delta:'K ↑ ~0.2 mEq/L',note:'Over 2h peripheral'},
+    {dose:'40 mEq IV',delta:'K ↑ ~0.4 mEq/L',note:'Over 2h via CVC'},
+    {dose:'80 mEq IV',delta:'K ↑ ~0.8 mEq/L',note:'Over 4h via CVC + ECG'},
+  ],
+  prep:[
+    '20 mEq (20 mL of 7.45%) + 80 mL NS = 100 mL → 0.2 mEq/mL → peripheral at 10 mEq/hr',
+    '40 mEq (40 mL of 7.45%) + 60 mL NS = 100 mL → 0.4 mEq/mL → CVC at max 20 mEq/hr with ECG',
+    'Oral KCl 40 mEq q6h if tolerating PO and K >2.5 mEq/L (preferred route)',
+    'Never give undiluted — cardiac arrest risk',
+  ],
+  admin:'Peripheral max 10 mEq/hr · CVC max 20–40 mEq/hr with continuous ECG · Must replace Mg²⁺ simultaneously (hypoMg causes refractory hypoK)',
+  se:[
+    {label:'Cardiac arrest (undiluted)',cls:'se-r'},
+    {label:'Arrhythmia (rapid IV)',cls:'se-r'},
+    {label:'Phlebitis (peripheral)',cls:'se-a'},
+    {label:'Hyperkalaemia (overdose)',cls:'se-r'},
+    {label:'Nausea/pain (oral)',cls:'se-a'},
+  ],
+  warn:'⛔ NEVER give undiluted IV — fatal cardiac arrest risk. Replace Mg²⁺ simultaneously — hypoMg causes refractory hypokalaemia.',
+  note:'🔵 Rule of thumb: ~200 mEq total KCl needed per 1 mEq/L deficit below target. Recheck serum K after each 40 mEq infused.',
+  hasCalc:true, calcId:'kclCalc',
+},
+{
+  id:'mgso4', name:'Magnesium Sulphate', brand:'MgSO₄ 50% Injection', cat:'electrolyte',
+  vialCap:'#7c3aed', vialBody:'#f5f3ff', vialBorder:'#7c3aed', vialLabel:'MgSO₄', vialConc:'50%', vialMl:'10 mL',
+  keyFact:'50% = 500 mg/mL = 4 mEq Mg/mL · 2g = 4 mL · MUST dilute for IV',
+  concs:[
+    {label:'50% (500 mg/mL = 4 mEq Mg/mL)',vols:'2 mL=1g · 5 mL=2.5g · 10 mL=5g',note:'Standard in India — must dilute for IV infusion',warn:false},
+    {label:'25% (250 mg/mL = 2 mEq Mg/mL)',vols:'10 mL=2.5g',note:'Less concentrated version',warn:false},
+  ],
+  dose:'Hypomagnesaemia: 2g (4 mL) in 100 mL NS IV over 20–30 min · Eclampsia: 4g IV load over 20 min then 1g/hr infusion · Torsades: 2g IV over 2 min',
+  corr:[
+    {dose:'2g (4 mL 50%) IV over 20 min',delta:'Mg ↑ ~0.2–0.4 mmol/L',note:'Single dose'},
+    {dose:'4g (8 mL 50%) IV over 30 min',delta:'Mg ↑ ~0.5–0.8 mmol/L',note:'Double dose'},
+    {dose:'1g/hr infusion',delta:'Maintains Mg level',note:'Pump infusion'},
+  ],
+  prep:[
+    '2g dose: 4 mL of 50% MgSO₄ + 96 mL NS = 100 mL → infuse over 20–30 min',
+    '4g eclampsia load: 8 mL of 50% + 92 mL NS = 100 mL → over 20 min',
+    'Maintenance 1g/hr: 10g (20 mL 50%) in 500 mL NS = 20 g/L → run at 50 mL/hr via pump',
+  ],
+  admin:'IV only — must dilute. Max infusion rate 150 mg Mg/min. Monitor DTRs (patellar reflex) in eclampsia. Flush NS before and after.',
+  se:[
+    {label:'Respiratory arrest (Mg >7.5 mmol/L)',cls:'se-r'},
+    {label:'Loss of deep tendon reflexes (Mg >5)',cls:'se-r'},
+    {label:'Hypotension (rapid IV)',cls:'se-r'},
+    {label:'Flushing/warmth',cls:'se-a'},
+    {label:'Nausea',cls:'se-a'},
+  ],
+  warn:'⛔ Monitor patellar reflex q2h in eclampsia — loss = Mg toxicity. Stop infusion if DTRs lost. Antidote: Ca gluconate 10 mL (10%) IV over 10 min.',
+  note:'🔵 Correct Mg BEFORE K in combined deficiency — hypoMg causes refractory hypokalaemia by impairing renal K retention.',
+  hasCalc:false,
+},
+{
+  id:'nahco3', name:'Sodium Bicarbonate', brand:'NaHCO₃ 8.4% Injection', cat:'electrolyte',
+  vialCap:'#0891b2', vialBody:'#ecfeff', vialBorder:'#0891b2', vialLabel:'NaHCO₃', vialConc:'8.4%', vialMl:'50 mL',
+  keyFact:'8.4% = 1 mEq/mL · 50 mL vial = 50 mEq · Space of distribution: 0.5 × weight',
+  concs:[
+    {label:'8.4% (1 mEq/mL)',vols:'10 mL=10 mEq · 25 mL=25 mEq · 50 mL=50 mEq · 100 mL=100 mEq',note:'Standard for IV bolus use',warn:false},
+    {label:'4.2% (0.5 mEq/mL)',vols:'250 mL=125 mEq',note:'Slower infusion option',warn:false},
+    {label:'1.4% isotonic (0.16 mEq/mL)',vols:'500 mL=83 mEq',note:'Isotonic — safe long infusion',warn:false},
+  ],
+  dose:'Deficit = 0.5 × weight × (target HCO₃ − actual HCO₃) · Give 50% over 30–60 min; recheck ABG; give remainder if needed. Target HCO₃ 15, NOT 24.',
+  corr:[
+    {dose:'50 mEq (50 mL 8.4%) IV',delta:'HCO₃ ↑ ~1.4 mEq/L*',note:'*70 kg: 50÷35=1.4'},
+    {dose:'100 mEq (100 mL 8.4%) IV',delta:'HCO₃ ↑ ~2.9 mEq/L*',note:'*70 kg, give in 2 doses'},
+    {dose:'150 mEq IV',delta:'HCO₃ ↑ ~4.3 mEq/L*',note:'*70 kg, over 2–3h'},
+  ],
+  prep:[
+    '50 mEq: give 50 mL of 8.4% IV over 30 min',
+    'Drip: 100 mEq in 500 mL 5% D/W → over 4h',
+    'Do NOT mix with Ca²⁺ solutions — CaCO₃ precipitate',
+  ],
+  admin:'Peripheral IV acceptable. Avoid rapid bolus (hypernatraemia, volume overload). Only for pH <7.10–7.15, non-lactic cause.',
+  se:[
+    {label:'Metabolic alkalosis (rebound)',cls:'se-r'},
+    {label:'Hypernatraemia',cls:'se-a'},
+    {label:'Hypokalaemia',cls:'se-a'},
+    {label:'Paradoxical CSF acidosis',cls:'se-a'},
+    {label:'Hypocalcaemia worsened',cls:'se-a'},
+  ],
+  warn:'⛔ BICAR-ICU 2018: NO mortality benefit in lactic acidosis. Do NOT use for hyperlactataemia. Do not give in same line as Ca²⁺.',
+  note:'🔵 In DKA: not recommended unless pH <6.9 (ADA 2024). Formula: Deficit (mEq) = 0.5 × weight × (Target HCO₃ − Actual HCO₃). Volume of 8.4% = Deficit mL.',
+  hasCalc:true, calcId:'hco3Calc',
+},
+{
+  id:'nacl3', name:'Hypertonic Saline 3%', brand:'3% NaCl (High Alert)', cat:'electrolyte',
+  vialCap:'#dc2626', vialBody:'#fff1f2', vialBorder:'#dc2626', vialLabel:'3%\nNaCl', vialConc:'513 mEq/L', vialMl:'250 mL',
+  highAlert:true,
+  keyFact:'3% NaCl = 513 mEq Na/L · Adrogue-Madias: ΔNa = (513 − serum Na) ÷ (TBW+1) per litre',
+  concs:[
+    {label:'3% NaCl (513 mEq Na/L)',vols:'100 mL · 250 mL · 500 mL bags',note:'High Alert — restricted. CVC preferred; peripheral short-term only',warn:true},
+    {label:'0.9% NaCl (154 mEq Na/L)',vols:'100 · 250 · 500 · 1000 mL',note:'Standard saline — much slower Na correction',warn:false},
+    {label:'0.45% NaCl (77 mEq Na/L)',vols:'500 · 1000 mL',note:'Half normal — for hypernatraemia free-water correction',warn:false},
+  ],
+  dose:'Symptomatic hyponatraemia (seizures): 100 mL 3% NaCl over 10–20 min × up to 3 boluses · Chronic: rate to raise Na 0.5 mEq/L/hr · Max 8 mEq/L per 24h',
+  corr:[],
+  prep:[
+    'Use Adrogue-Madias calculator below → get volume and rate',
+    '3% NaCl via CVC or dedicated peripheral line (large bore) — causes phlebitis',
+    'Symptomatic bolus: 100 mL 3% IV over 10–20 min; repeat up to ×3 to raise Na 5 mEq/L',
+  ],
+  admin:'CVC strongly preferred. Peripheral only if CVC unavailable and symptomatic. Change site q12h (phlebitis).',
+  se:[
+    {label:'Osmotic demyelination (ODS) if overcorrected',cls:'se-r'},
+    {label:'Phlebitis (peripheral)',cls:'se-a'},
+    {label:'Hypernatraemia (overshoot)',cls:'se-r'},
+    {label:'Volume overload / pulmonary oedema',cls:'se-a'},
+  ],
+  warn:'⛔ HIGH ALERT. Max 8–10 mEq/L per 24h (NEVER >12 mEq/L/24h). ODS risk factors: chronic hyponatraemia >48h, alcoholism, malnutrition, liver disease.',
+  note:'🔴 Symptomatic severe hyponatraemia (seizures, coma): 100 mL 3% NaCl IV × 3 boluses (30 min apart) to raise Na ~5 mEq/L rapidly. Use Adrogue-Madias for chronic correction.',
+  hasCalc:true, calcId:'naCalc',
+},
+{
+  id:'caglu', name:'Calcium Gluconate', brand:'Ca Gluconate 10%', cat:'electrolyte',
+  vialCap:'#9333ea', vialBody:'#faf5ff', vialBorder:'#9333ea', vialLabel:'Ca\nGluco', vialConc:'10%', vialMl:'10 mL',
+  keyFact:'10 mL (1 ampoule) = 4.65 mEq Ca²⁺ = 93 mg elemental Ca · Peripheral-safe · Onset 1–3 min',
+  concs:[
+    {label:'10% Ca Gluconate (0.465 mEq Ca²⁺/mL)',vols:'10 mL ampoule = 4.65 mEq Ca = 93 mg elemental Ca',note:'FIRST-LINE for hyperkalaemia membrane stabilisation — peripheral safe',warn:false},
+  ],
+  dose:'Hyperkalaemia: 10 mL (1 amp) IV over 10 min; repeat in 5 min if ECG still abnormal · Hypocalcaemia: 1–2g (10–20 mL) IV over 10–20 min',
+  corr:[
+    {dose:'10 mL (1 ampoule) IV',delta:'Membrane stabilised',note:'Onset 1–3 min, lasts 30–60 min'},
+    {dose:'20 mL (2 ampoules) IV',delta:'Prolonged effect ~60 min',note:'Severe hyperkalaemia / K >7'},
+  ],
+  prep:[
+    '10 mL undiluted over 10 min (peripheral acceptable)',
+    'Can dilute in 50 mL NS for slower infusion',
+    'Flush line with NS before/after — incompatible with NaHCO₃ and phosphate',
+  ],
+  admin:'Peripheral IV safe (unlike CaCl₂). Give slowly over 10 min — cardiac arrest risk if too rapid. Monitor ECG during infusion.',
+  se:[
+    {label:'Bradycardia/cardiac arrest (too rapid)',cls:'se-r'},
+    {label:'Hypercalcaemia',cls:'se-a'},
+    {label:'Flushing/warmth',cls:'se-a'},
+    {label:'Nausea',cls:'se-a'},
+  ],
+  warn:'⛔ Does NOT lower K — only stabilises membrane for 30–60 min. Follow immediately with K-lowering agents (insulin-dextrose, salbutamol). Incompatible with NaHCO₃ (same line).',
+  note:'🔵 Ca gluconate vs CaCl₂: gluconate safer peripheral (3× less elemental Ca per mL). In cardiac arrest, prefer CaCl₂ for faster/higher Ca delivery.',
+  hasCalc:false,
+},
+{
+  id:'cacl2', name:'Calcium Chloride', brand:'CaCl₂ 10% (High Alert)', cat:'electrolyte',
+  vialCap:'#991b1b', vialBody:'#fee2e2', vialBorder:'#991b1b', vialLabel:'CaCl₂', vialConc:'10%', vialMl:'10 mL',
+  highAlert:true,
+  keyFact:'10 mL = 13.6 mEq Ca²⁺ = 272 mg Ca · 3× more potent than Ca gluconate · CVC ONLY',
+  concs:[
+    {label:'10% CaCl₂ (1.36 mEq Ca²⁺/mL)',vols:'10 mL = 13.6 mEq Ca = 272 mg elemental Ca',note:'CVC ONLY — peripheral causes severe tissue necrosis',warn:true},
+  ],
+  dose:'Cardiac arrest (hyperkalaemia, hypocalcaemia, Ca-channel OD): 10 mL (1g) IV over 5 min via CVC · Repeat q10 min if needed',
+  corr:[
+    {dose:'10 mL (1g) IV via CVC',delta:'Membrane stabilised — onset <1 min',note:'Preferred in cardiac arrest'},
+  ],
+  prep:[
+    '10 mL undiluted IV over 5 min — CVC ONLY',
+    'Can dilute in 50 mL NS for peripheral ONLY in life-threatening emergency (necrosis risk)',
+  ],
+  admin:'CVC ONLY. Extravasation = severe tissue necrosis (calcium burn). Monitor ECG. Do not mix with NaHCO₃ or phosphate.',
+  se:[
+    {label:'Tissue necrosis (extravasation)',cls:'se-r'},
+    {label:'Bradycardia/cardiac arrest (rapid)',cls:'se-r'},
+    {label:'Hypercalcaemia',cls:'se-a'},
+    {label:'Hypotension',cls:'se-a'},
+  ],
+  warn:'⛔ HIGH ALERT. CVC ONLY. Peripheral extravasation = tissue necrosis. Do NOT confuse with Ca gluconate — CaCl₂ is 3× more potent (13.6 vs 4.65 mEq per 10 mL).',
+  hasCalc:false,
+},
+{
+  id:'dex50', name:'Dextrose 50%', brand:'D50W (50% Dextrose)', cat:'electrolyte',
+  vialCap:'#d97706', vialBody:'#fffbeb', vialBorder:'#d97706', vialLabel:'D50W', vialConc:'50%', vialMl:'25 mL',
+  keyFact:'50% = 500 mg/mL · 25 mL = 12.5g glucose · Combined with insulin for K shift in hyperkalaemia',
+  concs:[
+    {label:'50% Dextrose (500 mg glucose/mL)',vols:'25 mL=12.5g · 50 mL=25g',note:'For insulin-dextrose in hyperkalaemia; hypoglycaemia rescue',warn:false},
+  ],
+  dose:'Hyperkalaemia: 50 mL (25g) IV + 10 units Regular Insulin IV · Hypoglycaemia: 25–50 mL IV push · GKI infusion: 500 mL 10% dextrose + 20 units insulin + 20 mEq KCl over 24h',
+  corr:[
+    {dose:'50 mL (25g) + 10 units RI IV',delta:'K ↓ ~0.5–1.0 mEq/L',note:'Onset 15–30 min, lasts 2–4h'},
+    {dose:'100 mL (50g) + 20 units RI',delta:'K ↓ ~1.0–1.5 mEq/L',note:'Larger shift, more hypoglycaemia risk'},
+  ],
+  prep:['50 mL IV push over 5–10 min + Regular insulin 10 units IV push simultaneously · Monitor glucose q1h × 4h'],
+  admin:'Peripheral IV acceptable. High osmolarity — phlebitis if repeated. Always pair with insulin (do NOT give insulin without glucose unless pre-existing hyperglycaemia).',
+  se:[
+    {label:'Rebound hypoglycaemia (4–6h)',cls:'se-r'},
+    {label:'Hyperglycaemia',cls:'se-a'},
+    {label:'Phlebitis (high osmolarity)',cls:'se-a'},
+  ],
+  warn:'⛔ Monitor glucose q1h × 4h after insulin-dextrose — rebound hypoglycaemia occurs at 4–6h. Keep dextrose 10% maintenance if patient not eating.',
+  hasCalc:false,
+},
+
+/* ─────────────────── VASOPRESSORS ─────────────────── */
+{
+  id:'norepi', name:'Noradrenaline', brand:'Norepinephrine · 1 mg/mL', cat:'vasopressor',
+  vialCap:'#1e3a8a', vialBody:'#eff6ff', vialBorder:'#1e3a8a', vialLabel:'NorEpi', vialConc:'1 mg/mL', vialMl:'4 mL',
+  keyFact:'1 mg/mL · Standard dilution: 8 mg in 50 mL NS = 160 mcg/mL · FIRST-LINE for septic shock (SSC 2026)',
+  concs:[
+    {label:'1 mg/mL (noradrenaline base)',vols:'2 mL=2 mg · 4 mL=4 mg ampoules',note:'Protect from light. Standard dilution: 8 mg in 50 mL NS',warn:false},
+  ],
+  dose:'Start: 0.01–0.05 mcg/kg/min · Usual: 0.05–0.5 mcg/kg/min · CVC or IO ONLY',
+  corr:[],
+  dilutions:[
+    {label:'Standard (8 mg in 50 mL NS = 160 mcg/mL)'},
+    {dose:'0.05 mcg/kg/min (70 kg)',rate:'1.3 mL/hr'},
+    {dose:'0.1 mcg/kg/min (70 kg)',rate:'2.6 mL/hr'},
+    {dose:'0.2 mcg/kg/min (70 kg)',rate:'5.3 mL/hr'},
+    {dose:'0.3 mcg/kg/min (70 kg)',rate:'7.9 mL/hr'},
+    {dose:'0.5 mcg/kg/min (70 kg)',rate:'13.1 mL/hr'},
+  ],
+  prep:[
+    'Standard: 8 mg (4×2 mL ampoules) + 42 mL NS = 50 mL → 160 mcg/mL → syringe pump',
+    'Rate (mL/hr) = dose (mcg/kg/min) × weight (kg) × 60 ÷ 160',
+    'For 70 kg at 0.1 mcg/kg/min: 0.1 × 70 × 60 ÷ 160 = 2.6 mL/hr',
+  ],
+  admin:'CVC required (extravasation = ischaemia/necrosis). IO acceptable in emergency. Monitor MAP continuously. Titrate 0.01–0.02 mcg/kg/min every 5–10 min.',
+  se:[
+    {label:'Peripheral ischaemia/gangrene (extravasation)',cls:'se-r'},
+    {label:'Hypertension',cls:'se-r'},
+    {label:'Reflex bradycardia',cls:'se-a'},
+    {label:'Arrhythmias',cls:'se-a'},
+    {label:'Hyperglycaemia',cls:'se-a'},
+  ],
+  warn:'⛔ Extravasation antidote: Phentolamine 5–10 mg in 10 mL NS injected SC around site within 12h. If >0.25 mcg/kg/min despite resuscitation — add Vasopressin 0.03 units/min.',
+  note:'🔵 First-line vasopressor for septic shock. Target MAP ≥65 mmHg. Add Vasopressin 0.03 units/min (fixed) when dose >0.25 mcg/kg/min.',
+  hasCalc:true, calcId:'norepiCalc',
+},
+{
+  id:'epi', name:'Adrenaline', brand:'Epinephrine 1:1000 (1 mg/mL)', cat:'vasopressor',
+  vialCap:'#dc2626', vialBody:'#fee2e2', vialBorder:'#dc2626', vialLabel:'Epi\n1:1000', vialConc:'1 mg/mL', vialMl:'1 mL',
+  highAlert:true,
+  keyFact:'1:1000 = 1 mg/mL (IM anaphylaxis) · 1:10,000 = 0.1 mg/mL (IV cardiac) · NEVER mix up concentrations',
+  concs:[
+    {label:'1:1000 (1 mg/mL) — IM/SC/nebulisation',vols:'1 mL=1 mg',note:'Anaphylaxis IM — NOT for IV bolus',warn:true},
+    {label:'1:10,000 (0.1 mg/mL) — IV cardiac',vols:'10 mL=1 mg',note:'ACLS cardiac arrest IV · Make by diluting 1 mL (1:1000) into 10 mL',warn:false},
+  ],
+  dose:'Anaphylaxis: 0.5 mg (0.5 mL of 1:1000) IM lateral thigh, repeat q5–15 min · Cardiac arrest (ACLS): 1 mg IV q3–5 min · Infusion: 0.01–1 mcg/kg/min',
+  corr:[
+    {dose:'Anaphylaxis: 0.5 mg IM (1:1000)',delta:'Onset 5–10 min',note:'Repeat after 5 min if needed'},
+    {dose:'ACLS: 1 mg IV (1:10,000)',delta:'Repeat q3–5 min',note:'Via CVC or IO'},
+  ],
+  prep:[
+    'Anaphylaxis: draw 0.5 mL of 1:1000 (=0.5 mg) into syringe; inject IM lateral thigh',
+    'ACLS: 1 mL of 1:1000 + 9 mL NS = 10 mL of 1:10,000 → push 10 mL IV',
+    'Infusion: 4 mg in 250 mL NS = 16 mcg/mL → start at 0.01 mcg/kg/min',
+  ],
+  admin:'IM (anaphylaxis) or IV/IO CVC (cardiac/infusion). Incompatible with NaHCO₃ (alkaline destroys adrenaline).',
+  se:[
+    {label:'Arrhythmias (VF/VT)',cls:'se-r'},
+    {label:'Hypertension',cls:'se-r'},
+    {label:'Tachycardia',cls:'se-a'},
+    {label:'Hyperglycaemia',cls:'se-a'},
+    {label:'Pulmonary oedema',cls:'se-a'},
+  ],
+  warn:'⛔ FATAL CONFUSION RISK: 1:1000 vs 1:10,000 — always read the label. IM dose for anaphylaxis is 0.5 mg, NOT 1 mg. IV undiluted 1:1000 = cardiac arrest.',
+  hasCalc:false,
+},
+{
+  id:'vaso', name:'Vasopressin', brand:'ADH · 20 units/mL', cat:'vasopressor',
+  vialCap:'#4338ca', vialBody:'#eef2ff', vialBorder:'#4338ca', vialLabel:'Vaso\npressin', vialConc:'20 U/mL', vialMl:'1 mL',
+  keyFact:'20 units/mL · Standard: 20 units in 100 mL NS = 0.2 units/mL · FIXED dose 0.03 units/min — do NOT titrate',
+  concs:[
+    {label:'20 units/mL aqueous vasopressin',vols:'1 mL=20 units',note:'Fixed dose vasopressor — add to noradrenaline',warn:false},
+  ],
+  dose:'Septic shock adjunct: 0.03 units/min IV (FIXED — not titrated) · Diabetes Insipidus: 2–4 units/hr IV or 5–10 units SC q4–6h',
+  corr:[
+    {dose:'0.03 units/min (fixed)',delta:'MAP ↑ 5–15 mmHg',note:'Add to NA when NA >0.25 mcg/kg/min'},
+  ],
+  prep:['20 units (1 mL) + 99 mL NS = 100 mL → 0.2 units/mL · At 0.03 units/min → 9 mL/hr · Set and leave (not titrated)'],
+  admin:'CVC preferred. Add as second vasopressor when NA dose is high. Do not titrate vasopressin dose.',
+  se:[
+    {label:'Mesenteric/skin ischaemia',cls:'se-r'},
+    {label:'Hyponatraemia (water retention)',cls:'se-a'},
+    {label:'Bradycardia',cls:'se-a'},
+    {label:'Hepatic ischaemia (high dose)',cls:'se-r'},
+  ],
+  note:'🔵 SSC 2026: add vasopressin when NA >0.25 mcg/kg/min to reduce NA requirements and achieve MAP target. Fixed dose — do NOT increase.',
+  hasCalc:false,
+},
+
+/* ─────────────────── SEDATION ─────────────────── */
+{
+  id:'prop', name:'Propofol', brand:'Diprivan · 1% (10 mg/mL)', cat:'sedation',
+  vialCap:'#0e7490', vialBody:'#fdf6e3', vialBorder:'#0e7490', vialLabel:'Propofol', vialConc:'1%', vialMl:'50 mL',
+  keyFact:'1% = 10 mg/mL · White emulsion · Max 4 mg/kg/hr (Propofol Infusion Syndrome above this)',
+  concs:[
+    {label:'1% Propofol (10 mg/mL)',vols:'20 mL=200 mg · 50 mL=500 mg · 100 mL=1g',note:'White opaque emulsion — use aseptic technique; change line q12h',warn:false},
+    {label:'2% Propofol (20 mg/mL)',vols:'50 mL=1g',note:'Fluid-restricted patients',warn:false},
+  ],
+  dose:'Induction: 1–2.5 mg/kg IV · Sedation: 0.3–4 mg/kg/hr (RASS −2 to 0 target) · Max 4 mg/kg/hr',
+  corr:[
+    {dose:'0.5 mg/kg/hr (70 kg)',delta:'= 35 mg/hr = 3.5 mL/hr (1%)',note:'Light sedation'},
+    {dose:'2 mg/kg/hr (70 kg)',delta:'= 140 mg/hr = 14 mL/hr (1%)',note:'Moderate sedation'},
+    {dose:'4 mg/kg/hr — MAX (70 kg)',delta:'= 280 mg/hr = 28 mL/hr (1%)',note:'Absolute maximum'},
+  ],
+  prep:['Use undiluted. Dedicated line. Change infusion set q12h. Aseptic technique — lipid supports bacterial growth.'],
+  admin:'CVC preferred. Titrate in 0.3–0.5 mg/kg/hr increments every 5–10 min. Check TG if >48h at high dose.',
+  se:[
+    {label:'Propofol Infusion Syndrome (>4 mg/kg/hr × >48h)',cls:'se-r'},
+    {label:'Hypotension (bolus/rapid increase)',cls:'se-r'},
+    {label:'Apnoea',cls:'se-r'},
+    {label:'Hypertriglyceridaemia',cls:'se-a'},
+    {label:'Pain on injection',cls:'se-a'},
+  ],
+  warn:'⛔ Propofol Infusion Syndrome (PRIS): metabolic acidosis + cardiac failure + rhabdomyolysis + renal failure at >4 mg/kg/hr × >48h. Check CK and TG daily at high doses.',
+  note:'🔵 Propofol 1% = 1.1 kcal/mL (lipid emulsion) — subtract from nutritional prescription. Preferred sedation agent for most ICU patients (rapid awakening, daily SAT).',
+  hasCalc:true, calcId:'propofolCalc',
+},
+{
+  id:'midaz', name:'Midazolam', brand:'Versed · Dormicum · 5 mg/mL', cat:'sedation',
+  vialCap:'#16a34a', vialBody:'#f0fdf4', vialBorder:'#16a34a', vialLabel:'Midazo\nlam', vialConc:'5 mg/mL', vialMl:'5 mL',
+  keyFact:'5 mg/mL · Dilute to 1 mg/mL for infusion · Context-sensitive half-life (problematic >72h)',
+  concs:[
+    {label:'5 mg/mL',vols:'3 mL=15 mg · 5 mL=25 mg · 10 mL=50 mg',note:'Dilute for infusion. Active metabolite accumulates in renal failure.',warn:false},
+  ],
+  dose:'Bolus: 0.02–0.05 mg/kg IV (0.01–0.02 in elderly) · Infusion: 0.02–0.1 mg/kg/hr · Status epilepticus: 0.1–0.2 mg/kg IV over 5 min',
+  corr:[
+    {dose:'0.04 mg/kg/hr (70 kg)',delta:'= 2.8 mg/hr = 2.8 mL/hr (1 mg/mL)',note:'Light sedation'},
+    {dose:'0.1 mg/kg/hr (70 kg)',delta:'= 7 mg/hr = 7 mL/hr (1 mg/mL)',note:'Moderate sedation'},
+  ],
+  prep:[
+    'Dilute to 1 mg/mL: 50 mg (10 mL of 5 mg/mL) + 40 mL NS = 50 mL total → 1 mg/mL',
+    'Status epilepticus: 10–20 mg undiluted IV slowly over 5 min (0.1–0.2 mg/kg)',
+  ],
+  admin:'IV peripheral or CVC. Avoid prolonged use (>72h) — accumulates. Preferred: propofol for most ICU. Antidote: Flumazenil.',
+  se:[
+    {label:'Respiratory depression/apnoea',cls:'se-r'},
+    {label:'Hypotension',cls:'se-r'},
+    {label:'Prolonged sedation (accumulation)',cls:'se-a'},
+    {label:'Delirium/paradoxical agitation',cls:'se-a'},
+  ],
+  warn:'⛔ Antidote: Flumazenil 0.2 mg IV over 30s; repeat 0.1 mg q60s to max 1 mg. Short-acting — resedation can occur. NOT suitable for prolonged ICU sedation (accumulates).',
+  hasCalc:false,
+},
+
+/* ─────────────────── ANALGESICS ─────────────────── */
+{
+  id:'fentanyl', name:'Fentanyl', brand:'Sublimaze · 50 mcg/mL', cat:'analgesic',
+  vialCap:'#ea580c', vialBody:'#fff7ed', vialBorder:'#ea580c', vialLabel:'Fentanyl', vialConc:'50 mcg/mL', vialMl:'10 mL',
+  keyFact:'50 mcg/mL (0.05 mg/mL) · ~100× more potent than morphine · Preferred in renal failure (no active metabolites)',
+  concs:[
+    {label:'50 mcg/mL (0.05 mg/mL)',vols:'2 mL=100 mcg · 5 mL=250 mcg · 10 mL=500 mcg',note:'Standard ICU. Some brands: 25 mcg/mL — verify before use.',warn:false},
+  ],
+  dose:'Bolus: 1–2 mcg/kg IV (0.5 in elderly) · Infusion: 25–200 mcg/hr · RSI adjunct: 2–3 mcg/kg IV over 1 min before induction',
+  corr:[
+    {dose:'25 mcg/hr infusion',delta:'= 0.5 mL/hr (50 mcg/mL)',note:'Starting dose, mild pain'},
+    {dose:'50 mcg/hr infusion',delta:'= 1 mL/hr (50 mcg/mL)',note:'Standard analgosedation'},
+    {dose:'100 mcg/hr infusion',delta:'= 2 mL/hr (50 mcg/mL)',note:'Mechanically ventilated'},
+  ],
+  prep:[
+    'Undiluted (50 mcg/mL) via syringe pump',
+    'Or dilute: 500 mcg (10 mL) + 40 mL NS = 50 mL → 10 mcg/mL (low-dose precision)',
+  ],
+  admin:'IV push over 3–5 min (rapid = chest wall rigidity). Monitor RR, SpO₂, RASS/NRS score.',
+  se:[
+    {label:'Respiratory depression',cls:'se-r'},
+    {label:'Chest wall rigidity (rapid IV)',cls:'se-r'},
+    {label:'Bradycardia',cls:'se-a'},
+    {label:'Constipation/ileus',cls:'se-b'},
+    {label:'Nausea',cls:'se-a'},
+  ],
+  warn:'⛔ Antidote: Naloxone 0.4 mg IV q3 min (up to 10 mg). Titrate carefully — avoid acute withdrawal and pain crisis.',
+  note:'🔵 Preferred over morphine in renal failure (no active metabolites). No histamine release. Standard first-line ICU opioid analgesic.',
+  hasCalc:false,
+},
+{
+  id:'ketamine', name:'Ketamine', brand:'Ketalar · 50 mg/mL', cat:'analgesic',
+  vialCap:'#0f766e', vialBody:'#f0fdfa', vialBorder:'#0f766e', vialLabel:'Ketamine', vialConc:'50 mg/mL', vialMl:'10 mL',
+  keyFact:'50 mg/mL standard · RSI dose: 1.5 mg/kg IV · Sub-dissociative analgesia: 0.2–0.3 mg/kg IV · Bronchodilator + sympathomimetic',
+  concs:[
+    {label:'50 mg/mL',vols:'10 mL=500 mg',note:'Standard for RSI and procedural sedation',warn:false},
+    {label:'10 mg/mL (diluted)',vols:'20 mL=200 mg',note:'Sub-dissociative use; some pre-diluted brands',warn:false},
+    {label:'100 mg/mL (high-conc)',vols:'10 mL=1g',note:'VERIFY concentration before use — 2× error risk',warn:true},
+  ],
+  dose:'RSI: 1.5 mg/kg IV push · Analgesia: 0.2–0.3 mg/kg IV over 5 min · Sedation infusion: 0.1–0.5 mg/kg/hr · Status asthmaticus: 1–2 mg/kg IV, then 1–2 mg/kg/hr',
+  corr:[
+    {dose:'RSI: 1.5 mg/kg (70 kg)',delta:'= 105 mg = 2.1 mL (50 mg/mL)',note:'Onset 30s; duration 10–15 min'},
+    {dose:'Analgesia: 0.3 mg/kg (70 kg)',delta:'= 21 mg = 0.4 mL (50 mg/mL) in 10 mL NS',note:'Sub-dissociative; onset 1 min'},
+  ],
+  prep:[
+    'RSI: draw up 1.5 mg/kg of 50 mg/mL; push IV over 30–60s immediately after',
+    'Analgesia: dilute dose in 10 mL NS → IV over 5 min',
+    'Pre-treat with midazolam 1–2 mg IV to reduce emergence reactions',
+  ],
+  admin:'IV preferred. IM at 6–13 mg/kg (paediatric procedural). Pre-medicate with benzodiazepine to reduce emergence dysphoria.',
+  se:[
+    {label:'Emergence reactions/dysphoria',cls:'se-a'},
+    {label:'Hypertension/tachycardia',cls:'se-a'},
+    {label:'Laryngospasm (rare)',cls:'se-r'},
+    {label:'Hypersalivation',cls:'se-a'},
+    {label:'Raised ICP (minimal at clinical doses)',cls:'se-b'},
+  ],
+  note:'🔵 Drug of choice for RSI in haemodynamic instability, active bronchospasm, status asthmaticus, and trauma. ICP elevation controversial — evidence shows minimal effect at clinical doses.',
+  hasCalc:false,
+},
+
+/* ─────────────────── NMBAs ─────────────────── */
+{
+  id:'rocuronium', name:'Rocuronium', brand:'Esmeron · Zemuron · 10 mg/mL', cat:'nmba',
+  vialCap:'#92400e', vialBody:'#fef3c7', vialBorder:'#b45309', vialLabel:'Roc', vialConc:'10 mg/mL', vialMl:'5 mL',
+  keyFact:'10 mg/mL · RSI: 1.2 mg/kg · Onset 60–90s · Reversal: Sugammadex 16 mg/kg (full RSI reversal)',
+  concs:[
+    {label:'10 mg/mL',vols:'5 mL=50 mg · 10 mL=100 mg',note:'Refrigerate at 2–8°C. Stable 12 weeks at room temp.',warn:false},
+  ],
+  dose:'RSI: 1.2 mg/kg IV · Maintenance: 0.1–0.2 mg/kg boluses PRN · Infusion: 0.3–0.6 mg/kg/hr',
+  corr:[
+    {dose:'1.2 mg/kg RSI (70 kg)',delta:'= 84 mg = 8.4 mL · Onset 60–90s, duration 60 min',note:'Full intubating dose'},
+    {dose:'0.6 mg/kg (70 kg) modified RSI',delta:'= 42 mg = 4.2 mL · Onset ~90s',note:'Faster return of spontaneous breathing if failed'},
+  ],
+  prep:['Draw up 1.2 mg/kg undiluted. Push IV over 5–10s immediately after induction agent. Do NOT mix with other drugs in same syringe.'],
+  admin:'IV only. Push rapidly after induction. Sugammadex available if reversal needed.',
+  se:[
+    {label:'Prolonged NMB (accumulation)',cls:'se-a'},
+    {label:'Anaphylaxis (rare — 1:1000)',cls:'se-r'},
+    {label:'Tachycardia (vagolytic)',cls:'se-a'},
+    {label:'Skin flushing',cls:'se-a'},
+  ],
+  warn:'⛔ REVERSAL: Sugammadex 16 mg/kg (emergency RSI reversal) · 4 mg/kg (deep block) · 2 mg/kg (moderate). Neostigmine NOT effective at deep block. NO safe period for FULL reversal if can\'t intubate — consider surgical airway.',
+  note:'🔵 Preferred RSI NMBA when succinylcholine contraindicated (hyperkalaemia, burns, crush, denervation, myopathy, pseudocholinesterase deficiency). Sugammadex makes it fully reversible.',
+  hasCalc:false,
+},
+{
+  id:'cisatrac', name:'Cisatracurium', brand:'Nimbex · 2 mg/mL', cat:'nmba',
+  vialCap:'#1d4ed8', vialBody:'#eff6ff', vialBorder:'#1d4ed8', vialLabel:'Cis\natrac', vialConc:'2 mg/mL', vialMl:'10 mL',
+  keyFact:'2 mg/mL · Hofmann elimination (no renal/hepatic metabolism) · ARDS dose: 37.5 mg/hr × 48h (ACURASYS 2010)',
+  concs:[
+    {label:'2 mg/mL',vols:'5 mL=10 mg · 10 mL=20 mg',note:'Refrigerate. Hofmann degradation at body temp — safe in organ failure.',warn:false},
+  ],
+  dose:'ARDS (P/F <150): 37.5 mg/hr × 48h (ACURASYS 2010) · Intubation: 0.15–0.2 mg/kg IV (onset 2–3 min)',
+  corr:[
+    {dose:'37.5 mg/hr ARDS infusion',delta:'= 18.75 mL/hr (2 mg/mL)',note:'Fixed dose — no titration per ACURASYS'},
+    {dose:'0.15 mg/kg intubation (70 kg)',delta:'= 10.5 mg = 5.25 mL',note:'Slower onset — NOT for RSI'},
+  ],
+  prep:[
+    'ARDS infusion: 150 mg (75 mL of 2 mg/mL) + 75 mL NS = 150 mL → 1 mg/mL → run at 37.5 mL/hr',
+    'Or undiluted 2 mg/mL at 18.75 mL/hr',
+  ],
+  admin:'CVC preferred. Hofmann elimination — safe in renal/hepatic failure. No reversal agent.',
+  se:[
+    {label:'Prolonged NMB',cls:'se-a'},
+    {label:'Laudanosine accumulation (theoretical)',cls:'se-b'},
+    {label:'Histamine release (mild)',cls:'se-a'},
+  ],
+  note:'🔵 Cannot be reversed with sugammadex. Use in renal/hepatic failure where rocuronium accumulates. Must use TOF monitoring every 4–6h.',
+  hasCalc:false,
+},
+
+/* ─────────────────── CARDIAC ─────────────────── */
+{
+  id:'amio', name:'Amiodarone', brand:'Cordarone · 50 mg/mL', cat:'cardiac',
+  vialCap:'#b91c1c', vialBody:'#fef2f2', vialBorder:'#b91c1c', vialLabel:'Amio\ndarone', vialConc:'50 mg/mL', vialMl:'3 mL',
+  highAlert:true,
+  keyFact:'50 mg/mL · 3 mL=150 mg · MUST dilute in 5% D/W only (incompatible with NS)',
+  concs:[
+    {label:'50 mg/mL',vols:'3 mL=150 mg · 10 mL=500 mg',note:'Light-sensitive. Dilute in D5W ONLY — precipitates in NS.',warn:true},
+  ],
+  dose:'VF/VT arrest: 300 mg IV push in 20 mL D5W → 150 mg if recurs · AF rate/rhythm control: 150 mg over 10 min → 1 mg/min × 6h → 0.5 mg/min × 18h',
+  corr:[
+    {dose:'VT/VF: 300 mg IV push',delta:'For shock-refractory VF (3rd shock)',note:'In 20 mL D5W over 5 min'},
+    {dose:'AF load: 150 mg over 10 min',delta:'= 100 mL D5W drip × 10 min',note:'Then infusion'},
+    {dose:'Infusion: 1 mg/min',delta:'= 60 mg/hr over 6h = 900 mg in 500 mL D5W at 33 mL/hr',note:''},
+  ],
+  prep:[
+    'VT/VF bolus: 300 mg (6 mL of 50 mg/mL) + 14 mL D5W = 20 mL → push over 5 min',
+    'AF load: 150 mg (3 mL) + 97 mL D5W = 100 mL → infuse over 10 min',
+    'Infusion: 900 mg (18 mL) + 482 mL D5W = 500 mL → at 33 mL/hr × 6h (= 1 mg/min)',
+    'Wrap infusion bags — light sensitive. Change bag if colour changes.',
+  ],
+  admin:'CVC for prolonged infusion (phlebitis). Peripheral acceptable for emergency bolus.',
+  se:[
+    {label:'Hypotension (bolus)',cls:'se-r'},
+    {label:'Bradycardia/AV block',cls:'se-r'},
+    {label:'Phlebitis (peripheral)',cls:'se-a'},
+    {label:'Thyroid dysfunction (chronic)',cls:'se-a'},
+    {label:'Pulmonary toxicity (chronic)',cls:'se-a'},
+  ],
+  warn:'⛔ MUST dilute in D5W — precipitates in NS. Check TFTs before starting. Highly protein-bound — many drug interactions (warfarin, digoxin, statins).',
+  hasCalc:false,
+},
+{
+  id:'atropine', name:'Atropine', brand:'Atropine Sulphate · 0.6 mg/mL', cat:'cardiac',
+  vialCap:'#9a3412', vialBody:'#fff7ed', vialBorder:'#9a3412', vialLabel:'Atropine', vialConc:'0.6 mg/mL', vialMl:'1 mL',
+  keyFact:'0.6 mg/mL in India · Bradycardia: 0.6–1.2 mg IV · Max 3 mg total · Onset 1–2 min',
+  concs:[
+    {label:'0.6 mg/mL',vols:'1 mL=0.6 mg',note:'Standard in India. Some: 1 mg/mL — check local.',warn:false},
+  ],
+  dose:'Symptomatic bradycardia: 0.6–1.2 mg IV q3–5 min (max 3 mg) · Pre-op: 0.01 mg/kg · Organophosphate poisoning: 2–4 mg IV q5–10 min titrated',
+  corr:[
+    {dose:'0.6 mg (1 mL) IV push',delta:'HR ↑ ~10–20 bpm',note:'Onset 1–2 min, repeat if inadequate'},
+    {dose:'1.2 mg (2 mL) IV push',delta:'HR ↑ ~20–30 bpm',note:'If 0.6 mg insufficient'},
+  ],
+  prep:['Undiluted IV push over 15–30s · IO route acceptable in cardiac arrest'],
+  admin:'IV push. For organophosphate: titrate to reduced secretions (NOT to HR).',
+  se:[
+    {label:'Paradoxical bradycardia (<0.5 mg IV adults)',cls:'se-r'},
+    {label:'Tachycardia',cls:'se-a'},
+    {label:'Urinary retention',cls:'se-a'},
+    {label:'Confusion (elderly)',cls:'se-a'},
+    {label:'Mydriasis/blurred vision',cls:'se-b'},
+  ],
+  warn:'⛔ NEVER give <0.5 mg IV in adults — paradoxical bradycardia. NOT effective for infranodal block (Mobitz II, complete AV block) — use transcutaneous pacing (TCP) instead.',
+  hasCalc:false,
+},
+{
+  id:'adenosine', name:'Adenosine', brand:'Adenocor · 3 mg/mL', cat:'cardiac',
+  vialCap:'#047857', vialBody:'#f0fdf4', vialBorder:'#047857', vialLabel:'Adeno\nsine', vialConc:'3 mg/mL', vialMl:'2 mL',
+  keyFact:'3 mg/mL · 2 mL=6 mg · Half-life 10 seconds · Must give rapid IV push + immediate 20 mL NS flush',
+  concs:[
+    {label:'3 mg/mL',vols:'2 mL=6 mg',note:'Ultra-short half-life. MUST push rapidly and flush immediately',warn:false},
+  ],
+  dose:'SVT: 6 mg rapid IV push → if no response in 1–2 min: 12 mg → one more 12 mg if needed · Diagnostic (WPW?): same doses with continuous ECG/rhythm strip',
+  corr:[
+    {dose:'6 mg (2 mL) IV push',delta:'SVT → sinus: ~60% success',note:'First dose'},
+    {dose:'12 mg (4 mL) IV push',delta:'SVT conversion: ~90% cumulative',note:'Second/third dose'},
+  ],
+  prep:[
+    '6 mg: draw 2 mL undiluted into 5 mL syringe',
+    'Push over 1–2 SECONDS into most proximal IV site',
+    'Immediately flush 20 mL NS as rapid bolus (2-syringe technique)',
+    'Run continuous ECG — record rhythm strip before, during, and after',
+  ],
+  admin:'Most proximal IV (antecubital or CVC). Peripheral antecubital preferred over hand/wrist IV. Must push and flush in rapid succession.',
+  se:[
+    {label:'Transient asystole (expected, brief)',cls:'se-a'},
+    {label:'Chest tightness/dyspnoea (transient)',cls:'se-a'},
+    {label:'Bronchospasm — avoid in asthma',cls:'se-r'},
+    {label:'Flushing',cls:'se-a'},
+    {label:'Atrial fibrillation (rare)',cls:'se-a'},
+  ],
+  warn:'⛔ Contraindicated in asthma (bronchospasm). Caution in WPW (may accelerate accessory conduction → VF). Warn patient of brief unpleasant sensation. Caffeine and theophylline block effect — need higher doses.',
+  hasCalc:false,
+},
+
+/* ─────────────────── OTHER ICU ─────────────────── */
+{
+  id:'furosemide', name:'Furosemide', brand:'Lasix · Frusemide · 10 mg/mL', cat:'other',
+  vialCap:'#0369a1', vialBody:'#e0f2fe', vialBorder:'#0369a1', vialLabel:'Lasix', vialConc:'10 mg/mL', vialMl:'4 mL',
+  keyFact:'10 mg/mL · 40 mg IV = 40 mg PO equivalent · Max IV rate 4 mg/min · Light-sensitive',
+  concs:[
+    {label:'10 mg/mL',vols:'2 mL=20 mg · 4 mL=40 mg · 10 mL=100 mg',note:'Light-sensitive. IV dose ≡ PO dose (unlike most drugs).',warn:false},
+  ],
+  dose:'APO/fluid overload: 40 mg IV push · Resistance: 80–120 mg IV · Infusion: 5–40 mg/hr · Loop: 100 mg IV stat (poor evidence in AKI)',
+  corr:[
+    {dose:'20 mg IV (2 mL)',delta:'Urine output ↑ within 30 min',note:'Mild fluid overload'},
+    {dose:'40 mg IV (4 mL)',delta:'Brisk diuresis within 20 min',note:'Standard dose'},
+    {dose:'80 mg IV (8 mL)',delta:'For resistance or renal impairment',note:'Max 400 mg/24h'},
+  ],
+  prep:[
+    'Bolus: undiluted IV push over 1–2 min',
+    'Infusion: 100 mg in 100 mL NS = 1 mg/mL → pump at 5–40 mL/hr',
+    'Do NOT mix with acidic solutions (incompatible)',
+  ],
+  admin:'IV/IM/oral. Max IV rate 4 mg/min (ototoxicity). Do NOT give with aminoglycosides if avoidable.',
+  se:[
+    {label:'Hypokalaemia (replace aggressively)',cls:'se-r'},
+    {label:'Hyponatraemia',cls:'se-a'},
+    {label:'Ototoxicity (rapid IV high dose)',cls:'se-r'},
+    {label:'Hypovolaemia',cls:'se-a'},
+    {label:'Hyperuricaemia',cls:'se-b'},
+  ],
+  warn:'⛔ Ototoxicity with rapid IV or concurrent aminoglycosides. Max rate 4 mg/min IV. Aggressively replace K and Mg after each dose.',
+  hasCalc:false,
+},
+{
+  id:'mannitol', name:'Mannitol 20%', brand:'Osmitrol · 20% Mannitol', cat:'other',
+  vialCap:'#475569', vialBody:'#f8fafc', vialBorder:'#475569', vialLabel:'Mannitol', vialConc:'20%', vialMl:'250 mL',
+  keyFact:'20% = 200 mg/mL = 1100 mOsm/L · ICP: 0.25–1 g/kg IV over 15–30 min · Must use filter needle (crystals)',
+  concs:[
+    {label:'20% Mannitol (200 mg/mL = 1100 mOsm/L)',vols:'100 mL=20g · 250 mL=50g · 500 mL=100g',note:'Use 5-micron in-line filter. Warm if crystals present.',warn:false},
+  ],
+  dose:'Raised ICP: 0.25–1 g/kg IV over 15–30 min · Repeat q4–6h if needed · Stop when serum Osm >320 mOsm/kg',
+  corr:[
+    {dose:'0.5 g/kg (70 kg) = 35g = 175 mL 20%',delta:'ICP ↓ in 20–30 min, peak at 60 min',note:'Target: ICP <20 mmHg'},
+    {dose:'1 g/kg (70 kg) = 70g = 350 mL 20%',delta:'Maximum effect',note:'Monitor Osm q4h'},
+  ],
+  prep:[
+    'Warm to 37°C if crystals present (hot water bath 10 min)',
+    'Use 5-micron in-line filter for administration',
+    'Insert Foley catheter before starting (large diuresis expected)',
+  ],
+  admin:'IV via filter. Peripheral acceptable (high Osm — phlebitis risk). Catheterise patient. Check serum Osm and K every 4h.',
+  se:[
+    {label:'Acute renal failure (osmotic nephrosis)',cls:'se-r'},
+    {label:'Dehydration/hypovolaemia',cls:'se-a'},
+    {label:'Hyperkalaemia (cell lysis)',cls:'se-a'},
+    {label:'Pulmonary oedema (large doses)',cls:'se-a'},
+    {label:'Rebound cerebral oedema',cls:'se-a'},
+  ],
+  warn:'⛔ Stop if serum Osm >320 mOsm/kg — osmotic nephrosis/AKI risk. Contraindicated in anuria. Foley mandatory. Alternative: 3% NaCl 250 mL (maintains intravascular volume better in haemodynamic instability).',
+  hasCalc:false,
+},
+{
+  id:'naloxone', name:'Naloxone', brand:'Narcan · 0.4 mg/mL', cat:'other',
+  vialCap:'#dc2626', vialBody:'#fef2f2', vialBorder:'#dc2626', vialLabel:'Narcan', vialConc:'0.4 mg/mL', vialMl:'1 mL',
+  keyFact:'0.4 mg/mL · Half-life 30–90 min (shorter than most opioids — resedation risk!) · Up to 10 mg total',
+  concs:[
+    {label:'0.4 mg/mL',vols:'1 mL=0.4 mg',note:'Standard. Also available 2 mg/mL intranasal spray (Nyxoid).',warn:false},
+  ],
+  dose:'Opioid OD: 0.4 mg IV q3 min up to 10 mg · Post-op titrated: 0.04–0.1 mg IV q2–3 min · Infusion: 2/3 of reversal dose per hour',
+  corr:[
+    {dose:'0.4 mg (1 mL) IV',delta:'Opioid reversal in 1–2 min',note:'Repeat q3 min if inadequate'},
+    {dose:'0.04 mg diluted (titrated reversal)',delta:'Gentle reversal in post-op',note:'0.4 mg + 9 mL NS = 0.04 mg/mL → 1 mL aliquots'},
+  ],
+  prep:[
+    'Opioid OD: draw 0.4 mg (1 mL) → push IV q3 min',
+    'Titrated post-op: dilute 0.4 mg (1 mL) + 9 mL NS = 10 mL → 0.04 mg/mL → give 1 mL aliquots until adequate ventilation',
+  ],
+  admin:'IV preferred. IM/SC/IO/IN (intranasal spray) in field. Must observe 2–4h minimum after reversal.',
+  se:[
+    {label:'Acute opioid withdrawal (agitation, seizures)',cls:'se-r'},
+    {label:'Pulmonary oedema',cls:'se-r'},
+    {label:'Hypertension/tachycardia',cls:'se-a'},
+    {label:'Resedation (naloxone wears off first)',cls:'se-r'},
+  ],
+  warn:'⛔ RESEDATION RISK — naloxone half-life shorter than most opioids. Observe 2–4h or start infusion at 2/3 reversal dose per hour. In opioid-dependent patients: titrate VERY slowly to avoid precipitating withdrawal.',
+  hasCalc:false,
+},
+{
+  id:'hydrocort', name:'Hydrocortisone', brand:'Solu-Cortef · Efcorlin · 50 mg/mL', cat:'other',
+  vialCap:'#0d9488', vialBody:'#f0fdfa', vialBorder:'#0d9488', vialLabel:'Hydro\ncortisone', vialConc:'50 mg/mL', vialMl:'2 mL',
+  keyFact:'50 mg/mL · Vasopressor-refractory septic shock (SSC 2026): 200 mg/day · Anaphylaxis: 200 mg IV',
+  concs:[
+    {label:'50 mg/mL (as sodium succinate)',vols:'2 mL=100 mg · 4 mL=200 mg',note:'Reconstitute with provided diluent (WFI). Compatible with NS and D5W.',warn:false},
+  ],
+  dose:'Septic shock: 200 mg IV continuous over 24h OR 50 mg IV q6h × 7d · Anaphylaxis: 200 mg IV bolus (after adrenaline) · Adrenal crisis: 100 mg IV bolus, then 200 mg/24h',
+  corr:[
+    {dose:'Septic shock: 50 mg q6h or 200 mg/24h',delta:'Vasopressor requirement ↓ by 24–48h',note:'SSC 2026: when NA >0.25'},
+    {dose:'Anaphylaxis: 200 mg IV',delta:'Delayed effect (4–6h) — adjunct only',note:'Adrenaline is primary'},
+  ],
+  prep:[
+    'Reconstitute with 2 mL WFI (provided) → then dilute in 50–100 mL NS → bolus or 24h infusion',
+    '200 mg in 50 mL NS via pump over 24h = 2 mL/hr',
+  ],
+  admin:'IV, IM, or oral. Compatible with NS and D5W. Can give bolus or as infusion.',
+  se:[
+    {label:'Hyperglycaemia (monitor glucose)',cls:'se-a'},
+    {label:'Hypokalaemia',cls:'se-a'},
+    {label:'ICU myopathy (prolonged course)',cls:'se-a'},
+    {label:'GI bleeding (+ NSAIDs)',cls:'se-a'},
+    {label:'Immunosuppression',cls:'se-b'},
+  ],
+  warn:'⛔ SSC 2026: only for vasopressor-refractory shock (NA >0.25 mcg/kg/min). Taper gradually after >7d — do not stop abruptly (adrenal insufficiency). Monitor glucose q4h.',
+  hasCalc:false,
+},
+];
+
+// ══════════════════════════════════════════════════════════════════
+// RENDER ENGINE
+// ══════════════════════════════════════════════════════════════════
+let activecat = 'all', searchTerm = '';
+
+function dpInit() {
+  // Category pills
+  const row = document.getElementById('catRow');
+  CATS.forEach(c => {
+    const b = document.createElement('button');
+    b.className = 'cat-pill' + (c.id==='all'?' active':'');
+    b.textContent = c.label;
+    b.onclick = () => { activecat = c.id; row.querySelectorAll('.cat-pill').forEach(x=>x.classList.remove('active')); b.classList.add('active'); dpRender(); };
+    row.appendChild(b);
+  });
+  dpRender();
+}
+
+function dpFilter() { searchTerm = document.getElementById('dpSearch').value.toLowerCase(); dpRender(); }
+
+function dpRender() {
+  const grid = document.getElementById('drugGrid');
+  const filtered = DRUGS.filter(d => {
+    const matchCat = activecat === 'all' || d.cat === activecat;
+    const matchSearch = !searchTerm || d.name.toLowerCase().includes(searchTerm) || d.brand.toLowerCase().includes(searchTerm);
+    return matchCat && matchSearch;
+  });
+  if (!filtered.length) { grid.innerHTML = '<div class="no-results">No drugs found. Try a different search.</div>'; return; }
+  grid.innerHTML = filtered.map(renderCard).join('');
+}
+
+function renderCard(d) {
+  const [cc, cb] = CAT_COLORS[d.cat] || ['#64748b','#f8fafc'];
+  const catLabel = CATS.find(c=>c.id===d.cat)?.label?.replace(/^.{0,2}\s/,'') || d.cat;
+  const corrRows = d.corr?.map(r=>`<div class="corr-row"><span class="corr-dose">${r.dose}</span><div style="text-align:right"><div class="corr-delta">${r.delta}</div><div class="corr-note">${r.note||''}</div></div></div>`).join('') || '';
+  const concRows = d.concs?.map(c=>`<tr><td class="c-hi">${c.label}</td><td>${c.vols}</td><td>${c.warn?`<span class="c-warn">⛔ ${c.note}</span>`:`<span class="c-note">${c.note||''}</span>`}</td></tr>`).join('') || '';
+  const prepHtml = (d.prep||[]).map((p,i)=>`<div class="prep-step"><span class="pnum">${i+1}.</span><span>${p}</span></div>`).join('');
+  const seHtml = (d.se||[]).map(s=>`<span class="se ${s.cls}">${s.label}</span>`).join('');
+  const dilHtml = (d.dilutions||[]).map((r,i)=>i===0?`<div style="font-size:.74rem;font-weight:700;color:var(--slate);margin-bottom:.2rem;">${r.label}</div>`:
+    `<div class="dil-row"><span class="dil-l">${r.dose}</span><span class="dil-r">${r.rate}</span></div>`).join('');
+
+  return `<div class="drug-card" id="card-${d.id}">
+    <div class="dc-head" onclick="toggleCard('${d.id}')">
+      <div class="vial-vis">${vialSVG(d)}</div>
+      <div class="dc-info">
+        <div class="dc-name">${d.name}${d.highAlert?'<span class="high-alert">HIGH ALERT</span>':''}</div>
+        <div class="dc-brand">${d.brand}</div>
+        <span class="dc-badge" style="background:${cb};color:${cc};">${catLabel}</span>
+        <div class="dc-key">${d.keyFact}</div>
+        <div class="tap-hint">Tap for full details, concentrations &amp; calculator</div>
+      </div>
+    </div>
+    <div class="dc-body">
+      <div class="dsect first">📦 Available Concentrations</div>
+      <table class="ctab"><thead><tr><th>Concentration</th><th>Volumes / Content</th><th>Notes</th></tr></thead><tbody>${concRows}</tbody></table>
+
+      <div class="dsect">💉 Standard Dose</div>
+      <div style="font-size:.8rem;line-height:1.7;padding:.3rem 0;">${d.dose}</div>
+
+      ${d.corr?.length ? `<div class="dsect">📊 Expected Correction per Dose</div><div class="corr-box">${corrRows}</div>` : ''}
+      ${dilHtml ? `<div class="dsect">⚡ Rate Table (Standard Dilution)</div><div class="dil-box">${dilHtml}</div>` : ''}
+
+      <div class="dsect">🧪 Preparation Steps</div>
+      <div style="padding:.2rem 0;">${prepHtml}</div>
+
+      <div class="dsect">🚦 Administration</div>
+      <div style="font-size:.79rem;line-height:1.65;padding:.2rem 0;">${d.admin||''}</div>
+
+      <div class="dsect">⚠️ Side Effects</div>
+      <div class="se-row">${seHtml}</div>
+
+      ${d.warn ? `<div class="d-note d-red">⛔ ${d.warn.replace('⛔ ','')}</div>` : ''}
+      ${d.note ? `<div class="d-note d-blue">${d.note}</div>` : ''}
+
+      ${d.hasCalc ? calcHTML(d) : ''}
+    </div>
+  </div>`;
+}
+
+function vialSVG(d) {
+  const cap = d.vialCap, body = d.vialBody, border = d.vialBorder;
+  return `<div class="vial-vis">
+    <div class="v-cap" style="background:${cap};"></div>
+    <div class="v-neck" style="background:${cap};"></div>
+    <div class="v-body" style="border-color:${border};background:${body};">
+      <div class="v-name" style="color:${cap};">${d.vialLabel}</div>
+      <div class="v-conc" style="color:${cap};">${d.vialConc}</div>
+      <div class="v-ml">${d.vialMl}</div>
+    </div>
+    <div class="v-base" style="background:${cap};"></div>
+  </div>`;
+}
+
+function calcHTML(d) {
+  if (d.calcId === 'kclCalc') return `
+    <div class="dsect">🧮 K⁺ Replacement Calculator</div>
+    <div class="calc-box">
+      <h5>🧮 How much KCl to give?</h5>
+      <div class="ci-grid">
+        <div class="ci-field"><label>Current K (mEq/L)</label><input type="number" id="kclK" step="0.1" placeholder="2.8"></div>
+        <div class="ci-field"><label>Target K (mEq/L)</label><input type="number" id="kclTgt" step="0.1" value="4.0"></div>
+        <div class="ci-field"><label>Weight (kg)</label><input type="number" id="kclWt" placeholder="70"></div>
+        <div class="ci-field"><label>Route</label><select id="kclRoute"><option value="peripheral">Peripheral IV</option><option value="cvc">CVC</option></select></div>
+      </div>
+      <button class="ci-go" onclick="calcKCl()">Calculate KCl Replacement</button>
+      <div class="ci-out" id="kclOut"></div>
+    </div>`;
+
+  if (d.calcId === 'hco3Calc') return `
+    <div class="dsect">🧮 NaHCO₃ Replacement Calculator</div>
+    <div class="calc-box">
+      <h5>🧮 How much NaHCO₃ to give?</h5>
+      <div class="ci-grid">
+        <div class="ci-field"><label>Current HCO₃ (mEq/L)</label><input type="number" id="hco3Cur" step="0.1" placeholder="10"></div>
+        <div class="ci-field"><label>Target HCO₃ (mEq/L)</label><input type="number" id="hco3Tgt" step="0.1" value="15"></div>
+        <div class="ci-field"><label>Weight (kg)</label><input type="number" id="hco3Wt" placeholder="70"></div>
+      </div>
+      <button class="ci-go" onclick="calcHCO3()">Calculate NaHCO₃</button>
+      <div class="ci-out" id="hco3Out"></div>
+    </div>`;
+
+  if (d.calcId === 'naCalc') return `
+    <div class="dsect">🧮 Sodium Correction Calculator (Adrogue-Madias)</div>
+    <div class="calc-box">
+      <h5>🧮 3% NaCl Correction (Adrogue-Madias Formula)</h5>
+      <div class="ci-grid">
+        <div class="ci-field"><label>Serum Na (mEq/L)</label><input type="number" id="naNa" placeholder="118"></div>
+        <div class="ci-field"><label>Sex</label><select id="naSex"><option value="M">Male (TBW = 0.6 × wt)</option><option value="F">Female (TBW = 0.5 × wt)</option></select></div>
+        <div class="ci-field"><label>Weight (kg)</label><input type="number" id="naWt" placeholder="70"></div>
+        <div class="ci-field"><label>Target ΔNa in 24h (mEq/L)</label><input type="number" id="naDelta" value="8"></div>
+      </div>
+      <button class="ci-go" onclick="calcNa()">Calculate 3% NaCl Rate</button>
+      <div class="ci-out" id="naOut"></div>
+    </div>`;
+
+  if (d.calcId === 'norepiCalc') return `
+    <div class="dsect">🧮 Noradrenaline Rate Calculator</div>
+    <div class="calc-box">
+      <h5>🧮 Noradrenaline Rate (Standard 8 mg / 50 mL = 160 mcg/mL)</h5>
+      <div class="ci-grid">
+        <div class="ci-field"><label>Weight (kg)</label><input type="number" id="nrWt" placeholder="70"></div>
+        <div class="ci-field"><label>Desired dose (mcg/kg/min)</label><input type="number" id="nrDose" step="0.01" placeholder="0.1"></div>
+      </div>
+      <button class="ci-go" onclick="calcNorepi()">Calculate mL/hr</button>
+      <div class="ci-out" id="nrOut"></div>
+    </div>`;
+
+  if (d.calcId === 'propofolCalc') return `
+    <div class="dsect">🧮 Propofol Rate Calculator</div>
+    <div class="calc-box">
+      <h5>🧮 Propofol Infusion Rate (1% = 10 mg/mL)</h5>
+      <div class="ci-grid">
+        <div class="ci-field"><label>Weight (kg)</label><input type="number" id="ppWt" placeholder="70"></div>
+        <div class="ci-field"><label>Desired dose (mg/kg/hr)</label><input type="number" id="ppDose" step="0.1" placeholder="1.0"></div>
+      </div>
+      <button class="ci-go" onclick="calcPropofol()">Calculate mL/hr</button>
+      <div class="ci-out" id="ppOut"></div>
+    </div>`;
+
+  return '';
+}
+
+function toggleCard(id) {
+  const card = document.getElementById('card-'+id);
+  card.classList.toggle('open');
+}
+
+// ══════════════════════════════════════════════════════════════════
+// CALCULATORS
+// ══════════════════════════════════════════════════════════════════
+function calcKCl() {
+  const k = parseFloat(document.getElementById('kclK').value);
+  const tgt = parseFloat(document.getElementById('kclTgt').value);
+  const wt = parseFloat(document.getElementById('kclWt').value);
+  const route = document.getElementById('kclRoute').value;
+  const out = document.getElementById('kclOut');
+  if (!k || !tgt || !wt) { out.innerHTML='Please fill all fields.'; out.classList.add('show'); return; }
+  const deficit = Math.round((tgt - k) * 200);
+  const mL745 = Math.round(deficit); // 7.45% = 1 mEq/mL, so mEq = mL
+  const peripheral_rate = route==='peripheral' ? 10 : 20; // mEq/hr
+  const hours = Math.ceil(deficit / peripheral_rate);
+  // Increment predictions
+  const preds = [[10,0.1],[20,0.2],[40,0.4],[80,0.8],[100,1.0]].map(([mEq, rise])=>
+    `${mEq} mEq → K predicted ~<strong>${(k+rise).toFixed(1)} mEq/L</strong> (+${rise} mEq/L)`).join('<br>');
+
+  out.innerHTML = `<strong>Estimated Total Deficit:</strong> ~${deficit} mEq<br>
+<strong>Volume of 7.45% KCl (1 mEq/mL):</strong> ${mL745} mL<br>
+<strong>Suggested infusion:</strong> ${route==='cvc'?'40 mEq in 100 mL NS × '+Math.ceil(deficit/40)+' bags via CVC':'20 mEq in 100 mL NS × '+Math.ceil(deficit/20)+' bags peripherally'}<br>
+<strong>Rate:</strong> ${peripheral_rate} mEq/hr → ~${hours} hours total<br>
+<strong>Recheck K after each 40 mEq infused.</strong><br><br>
+<strong>Correction Table (rule of thumb):</strong><br>${preds}<br><br>
+<span style="color:#991b1b;font-weight:600;">⛔ Replace Mg²⁺ simultaneously. Oral route preferred when K >2.5 and PO tolerated.</span>`;
+  out.classList.add('show');
+}
+
+function calcHCO3() {
+  const cur = parseFloat(document.getElementById('hco3Cur').value);
+  const tgt = parseFloat(document.getElementById('hco3Tgt').value);
+  const wt = parseFloat(document.getElementById('hco3Wt').value);
+  const out = document.getElementById('hco3Out');
+  if (!cur || !tgt || !wt) { out.innerHTML='Please fill all fields.'; out.classList.add('show'); return; }
+  const deficit = Math.round(0.5 * wt * (tgt - cur));
+  const mL84 = deficit; // 8.4% = 1 mEq/mL, so mEq = mL
+  const halfDose = Math.round(mL84/2);
+  out.innerHTML = `<strong>Formula:</strong> Deficit = 0.5 × ${wt} kg × (${tgt} − ${cur}) = <strong>${deficit} mEq</strong><br>
+<strong>Volume of 8.4% NaHCO₃ needed:</strong> <strong>${mL84} mL</strong> (1 mEq/mL)<br>
+<strong>Give FIRST dose:</strong> ${halfDose} mL (50%) over 30–60 min → recheck ABG<br>
+<strong>Give REMAINDER:</strong> ${mL84-halfDose} mL if needed after recheck<br><br>
+<strong>Expected HCO₃ rise per 50 mL 8.4% (50 mEq):</strong> ${(50/(0.5*wt)).toFixed(1)} mEq/L<br>
+<span style="color:#991b1b;font-weight:600;">⛔ BICAR-ICU 2018: NOT for lactic acidosis. Use only for pH <7.10–7.15 with non-lactic cause. Target HCO₃ 15 only — NOT 24.</span>`;
+  out.classList.add('show');
+}
+
+function calcNa() {
+  const na = parseFloat(document.getElementById('naNa').value);
+  const sex = document.getElementById('naSex').value;
+  const wt = parseFloat(document.getElementById('naWt').value);
+  const delta = parseFloat(document.getElementById('naDelta').value) || 8;
+  const out = document.getElementById('naOut');
+  if (!na || !wt) { out.innerHTML='Please fill all fields.'; out.classList.add('show'); return; }
+  const tbw = (sex==='F' ? 0.5 : 0.6) * wt;
+  // Adrogue-Madias: ΔNa/L = (Na_inf - Na_serum) / (TBW + 1)
+  const dNa_per_L_3 = (513 - na) / (tbw + 1);
+  const dNa_per_L_09 = (154 - na) / (tbw + 1);
+  const vol3_for_delta = Math.round(delta / dNa_per_L_3 * 1000);
+  const rate3 = Math.round(vol3_for_delta / 24);
+  // Per 100/250/500 mL predictions
+  const p100 = (0.1 * (513-na)/(tbw+1)).toFixed(2);
+  const p250 = (0.25 * (513-na)/(tbw+1)).toFixed(2);
+  const p500 = (0.5 * (513-na)/(tbw+1)).toFixed(2);
+  const p1000_09 = (1.0 * (154-na)/(tbw+1)).toFixed(2);
+
+  out.innerHTML = `<strong>Adrogue-Madias Formula:</strong> ΔNa/L = (Na_inf − ${na}) ÷ (${tbw.toFixed(1)} + 1)<br><br>
+<strong>TBW:</strong> ${tbw.toFixed(1)} L (${sex==='F'?'Female: 0.5×'+wt:'Male: 0.6×'+wt})<br>
+<strong>3% NaCl (513 mEq/L):</strong><br>
+&nbsp;→ Per 100 mL: Na ↑ <strong>+${p100} mEq/L</strong><br>
+&nbsp;→ Per 250 mL: Na ↑ <strong>+${p250} mEq/L</strong><br>
+&nbsp;→ Per 500 mL: Na ↑ <strong>+${p500} mEq/L</strong><br><br>
+<strong>To safely raise Na by ${delta} mEq/L in 24h:</strong><br>
+&nbsp;→ Give <strong>${vol3_for_delta} mL</strong> of 3% NaCl<br>
+&nbsp;→ Rate: <strong>${rate3} mL/hr</strong> via ${vol3_for_delta > 200 ? 'CVC' : 'peripheral or CVC'}<br>
+&nbsp;→ Target Na: ${na} → <strong>${na + delta} mEq/L</strong> in 24h<br><br>
+<strong>0.9% NaCl (154 mEq/L):</strong> Per 1L → Na ↑ <strong>+${p1000_09} mEq/L</strong> (slow correction)<br><br>
+<span style="color:#991b1b;font-weight:600;">⛔ Never exceed +8–10 mEq/L per 24h. Check Na q2–4h during correction. ODS risk if overcorrected.</span>`;
+  out.classList.add('show');
+}
+
+function calcNorepi() {
+  const wt = parseFloat(document.getElementById('nrWt').value);
+  const dose = parseFloat(document.getElementById('nrDose').value);
+  const out = document.getElementById('nrOut');
+  if (!wt || !dose) { out.innerHTML='Please fill all fields.'; out.classList.add('show'); return; }
+  const rate = (dose * wt * 60 / 160).toFixed(2);
+  const tableRows = [0.02, 0.05, 0.1, 0.15, 0.2, 0.3, 0.5].map(d =>
+    `<div style="display:flex;justify-content:space-between;font-size:.76rem;padding:.2rem 0;border-bottom:1px solid var(--line);">
+      <span style="color:var(--slate);">${d} mcg/kg/min</span>
+      <strong>${(d * wt * 60 / 160).toFixed(1)} mL/hr</strong>
+    </div>`).join('');
+
+  out.innerHTML = `<strong>Standard dilution:</strong> 8 mg in 50 mL NS = 160 mcg/mL<br>
+<strong>Formula:</strong> Rate = ${dose} × ${wt} × 60 ÷ 160 = <strong>${rate} mL/hr</strong><br><br>
+<strong>Rate table for ${wt} kg (160 mcg/mL):</strong><br>${tableRows}<br>
+<span style="color:#1d4ed8;font-weight:600;">Target MAP ≥65 mmHg. Add vasopressin 0.03 units/min when dose >0.25 mcg/kg/min.</span>`;
+  out.classList.add('show');
+}
+
+function calcPropofol() {
+  const wt = parseFloat(document.getElementById('ppWt').value);
+  const dose = parseFloat(document.getElementById('ppDose').value);
+  const out = document.getElementById('ppOut');
+  if (!wt || !dose) { out.innerHTML='Please fill all fields.'; out.classList.add('show'); return; }
+  const rate1 = (dose * wt / 10).toFixed(1);   // 1% = 10 mg/mL
+  const rate2 = (dose * wt / 20).toFixed(1);   // 2% = 20 mg/mL
+  const daily1 = (dose * wt * 24).toFixed(0);
+  const kcal = (dose * wt * 24 * 0.11).toFixed(0); // 1.1 kcal/mL of 1%
+  out.innerHTML = `<strong>1% Propofol (10 mg/mL):</strong> <strong>${rate1} mL/hr</strong><br>
+<strong>2% Propofol (20 mg/mL):</strong> <strong>${rate2} mL/hr</strong><br><br>
+<strong>Daily dose at ${dose} mg/kg/hr for ${wt} kg:</strong> ${daily1} mg/day<br>
+<strong>Caloric contribution (1%):</strong> ~${kcal} kcal/day<br><br>
+${parseFloat(dose) > 4 ? '<span style="color:#dc2626;font-weight:700;">⛔ DOSE >4 mg/kg/hr — PRIS RISK. Reduce dose.</span>' :
+parseFloat(dose) >= 3 ? '<span style="color:#d97706;font-weight:600;">⚠️ High dose. Check CK and TG daily.</span>' :
+'<span style="color:#15803d;font-weight:600;">✅ Within safe range.</span>'}`;
+  out.classList.add('show');
+}
+
+dpInit();
+</script>
+</body>
+</html>

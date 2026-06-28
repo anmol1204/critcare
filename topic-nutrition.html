@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Nutrition in Critical Illness — Enteral, Parenteral, Refeeding — CritCare.in</title>
+  <meta name="description" content="ICU nutrition: ASPEN/ESPEN 2022 targets, early enteral nutrition, when to start parenteral, refeeding syndrome, protein dosing, gastric residual volumes. Marino, Washington Manual with practical protocols." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    html.dark .marino-box{background:linear-gradient(135deg,#1e1640,#2a1a4d);border-color:#5b21b6;}
+    html.dark .marino-box p,html.dark .marino-box ul{color:#ddd6fe;}
+    html.dark .marino-box strong{color:#c4b5fd;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    html.dark .mc{background:#2a0a0a;border-color:#7f1d1d;}
+    html.dark .mc p{color:#fca5a5;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .target-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem;margin:1rem 0;}
+    .target-card{background:linear-gradient(135deg,#ecfdf5,#d1fae5);border:1px solid #6ee7b7;border-radius:10px;padding:1rem;text-align:center;}
+    .target-card .tv{font-size:1.5rem;font-weight:800;color:#047857;line-height:1.1;}
+    .target-card .tl{font-size:.74rem;color:#065f46;margin-top:.3rem;line-height:1.4;}
+    html.dark .target-card{background:linear-gradient(135deg,#052e22,#064e3b);border-color:#047857;}
+    html.dark .target-card .tv{color:#6ee7b7;} html.dark .target-card .tl{color:#a7f3d0;}
+    @media(max-width:600px){.target-grid{grid-template-columns:1fr 1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Nutrition in Critical Illness</div>
+    <h1>🥣 Nutrition in Critical Illness</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ASPEN 2022</span>
+      <span class="gbadge esicm">ESPEN 2023</span>
+      <span class="gbadge isccm">ISCCM</span>
+      <span class="gbadge who">NICE</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag">Early Enteral Nutrition</span>
+      <span class="topic-tag">Protein 1.2–2.0 g/kg</span>
+      <span class="topic-tag red">Refeeding Syndrome</span>
+      <span class="topic-updated">ASPEN/SCCM 2022 · ESPEN ICU 2023 · Marino 5th Ed (2025) · EFFORT-Protein, TARGET, NUTRIREA trials</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. Targets — Calories &amp; Protein</a></li>
+        <li><a href="#s4">4. Enteral Nutrition</a></li>
+        <li><a href="#s5">5. Parenteral Nutrition</a></li>
+        <li><a href="#s6">6. Refeeding Syndrome</a></li>
+        <li><a href="#s7">7. Practical Protocol &amp; India</a></li>
+        <li><a href="#s8">8. Common Mistakes</a></li>
+        <li><a href="#s9">9. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Overview — Nutrition Is Therapy, Not Hotel Service</h2>
+      <div class="book-quote">
+        <p>"Critical illness triggers a profound catabolic state in which the body cannibalises its own lean muscle to fuel the inflammatory response — a process exogenous nutrition cannot fully suppress in the acute phase. The goals of ICU nutrition have therefore shifted: not to 'feed the patient up' aggressively in the first days, but to attenuate the loss of muscle mass, preserve gut integrity, and avoid the twin harms of underfeeding and overfeeding. Timing, route, and dose all matter — and more is not better early on."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Nutrition in the Critically Ill.</cite>
+      </div>
+
+      <h3>The Two Metabolic Phases</h3>
+      <ul>
+        <li><strong>Acute (ebb &amp; early flow) phase — days 1–3:</strong> dominated by endogenous energy production (the body makes its own glucose from muscle breakdown). Aggressive full feeding here does <em>not</em> override catabolism and may cause harm (overfeeding, hyperglycaemia). Feed <strong>hypocaloric/trophic</strong> and ramp up gradually.</li>
+        <li><strong>Late (recovery) phase — after ~day 3–7:</strong> anabolism becomes possible; this is when meeting full caloric and protein targets matters most for rehabilitation and muscle recovery.</li>
+      </ul>
+
+      <div class="key-box">
+        <div class="kb-label">First Question: Can the Gut Be Used?</div>
+        <p><strong>"If the gut works, use it."</strong> Enteral nutrition (EN) is preferred over parenteral (PN) in almost every case — it maintains gut mucosal integrity, supports gut-associated lymphoid tissue, reduces bacterial translocation, costs less, and avoids line sepsis. PN is reserved for when the gut cannot be used or cannot meet needs.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — Substrate, the RQ &amp; the Cost of Overfeeding</h2>
+      <div class="book-quote">
+        <p>"The danger in nutritional support is not only giving too little but giving too much. Overfeeding generates excess CO₂ from carbohydrate oxidation — a real burden on the patient with marginal respiratory reserve or who is being weaned — and produces hyperglycaemia, hepatic steatosis, and azotaemia. The metabolic cost of nutrition is as important as the nutrition itself."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Nutritional Requirements &amp; Support. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Why Overfeeding Worsens Ventilation</div>
+        <p>The <strong>respiratory quotient (RQ)</strong> is the ratio of CO₂ produced to O₂ consumed. Fat oxidation has an RQ of ~0.7; carbohydrate ~1.0; <strong>lipogenesis from carbohydrate overfeeding has an RQ &gt;1.0</strong>, generating large amounts of CO₂. In a patient with limited ventilatory reserve, carbohydrate overfeeding can raise CO₂ production enough to prevent weaning. The fix is not a special "pulmonary" formula but simply <strong>avoiding total caloric overfeeding</strong>.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Protein Is the Priority Macronutrient</div>
+        <p>Critically ill patients lose up to <strong>1–2% of muscle mass per day</strong> in the first week. Protein (amino acids) is the macronutrient most associated with preserving lean mass and function, and it is the one most often under-delivered. Marino emphasises adequate protein (1.2–2.0 g/kg/day) even when total calories are deliberately kept modest in the early phase — "permissive underfeeding of calories" should <strong>not</strong> mean underfeeding protein.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Indirect Calorimetry vs Predictive Equations</div>
+        <p>Predictive weight-based equations (e.g. 25 kcal/kg/day) are convenient but inaccurate in the critically ill (oedema, obesity, changing metabolic rate). <strong>Indirect calorimetry</strong> — measuring actual O₂ consumption and CO₂ production — is the gold standard for setting energy targets and is recommended by both ASPEN and ESPEN where available. Where it isn't, use a weight-based estimate and avoid early full feeding.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Targets — Calories &amp; Protein</span>
+      <h2>How Much to Give (ASPEN/ESPEN 2022–2023)</h2>
+
+      <div class="target-grid">
+        <div class="target-card"><div class="tv">25</div><div class="tl">kcal/kg/day energy target (full, late phase)</div></div>
+        <div class="target-card"><div class="tv">1.2–2.0</div><div class="tl">g/kg/day protein</div></div>
+        <div class="target-card"><div class="tv">&lt;70%</div><div class="tl">of target calories in week 1 (avoid early full feeding)</div></div>
+        <div class="target-card"><div class="tv">24–48h</div><div class="tl">start EN within this window</div></div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Energy</div>
+        <div class="gr-text">
+          Use <strong>indirect calorimetry</strong> if available; otherwise <strong>25 kcal/kg/day</strong> as the eventual target <span class="gr-s">ESPEN 2023</span>. <strong>Do not give full calories from day 1.</strong> Both ASPEN and ESPEN advise <strong>hypocaloric/gradual feeding in the acute phase</strong> (reach &lt;70% of target in the first week, then advance toward 80–100% after day 3–7). Use measured weight; in obesity (BMI &gt;30) use adjusted/ideal body weight and consider high-protein hypocaloric feeding.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Protein</div>
+        <div class="gr-text">
+          <strong>1.2–2.0 g/kg/day</strong> <span class="gr-s">ASPEN/SCCM 2022</span>; higher (up to 2.0–2.5) historically advised in burns, trauma, CRRT (amino-acid losses), and obesity. <strong>Caveat — EFFORT-Protein (2023):</strong> very high protein (≥2.2 g/kg) did not improve outcomes and was possibly <em>harmful</em> in the sickest patients (those with AKI / high organ failure). Current pragmatic target: <strong>~1.3 g/kg/day</strong>, advanced gradually, individualised.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Glucose Control Alongside Feeding</div>
+        <div class="gr-text">
+          Target blood glucose <strong>140–180 mg/dL</strong> (7.8–10 mmol/L) <span class="gr-c">NICE-SUGAR</span>. Tight control (&lt;110) increases hypoglycaemia and mortality. Feeding and insulin are managed together — do not starve a patient to control glucose; titrate insulin instead.
+        </div>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">🍽 4 · Enteral Nutrition — The Default Route</span>
+      <h2>Early Enteral Nutrition — Start Within 24–48 h</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">When &amp; How to Start</div>
+        <div class="gr-text">
+          Start EN within <strong>24–48 h</strong> of ICU admission in the haemodynamically stable patient who cannot eat <span class="gr-s">ASPEN/ESPEN — Strong</span>. Begin at a low trophic rate (e.g. 10–20 mL/h) and advance over 48–72 h. A standard polymeric 1 kcal/mL formula suits most patients; semi-elemental formulas only for documented malabsorption.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Gastric vs Post-Pyloric</div>
+        <div class="gr-text">
+          <strong>Gastric feeding is first-line</strong> (simpler, faster to start). Switch to <strong>post-pyloric (naso-jejunal)</strong> only for repeated intolerance, high aspiration risk, or severe gastroparesis. Routine post-pyloric placement is not needed and delays feeding.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Managing Intolerance — Forget Routine GRVs</div>
+        <div class="gr-text">
+          <strong>Do NOT routinely measure gastric residual volumes (GRVs)</strong> <span class="gr-s">REGANE / NUTRIREA</span> — routine GRV monitoring leads to unnecessary feed interruptions without reducing aspiration or pneumonia. If used at all, a threshold of <strong>≥500 mL</strong> (not 200 mL) defines intolerance. For intolerance: prokinetics (metoclopramide ± erythromycin), elevate head of bed 30–45°, and only then consider post-pyloric access. Do not stop feed for a single high GRV.
+        </div>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ EN in Shock / Vasopressors</div>
+        <p>Withhold EN in <strong>uncontrolled shock</strong> (escalating vasopressors, rising lactate, unresuscitated). Once <strong>stable on low/stable-dose vasopressors</strong>, low-rate "trophic" EN is reasonable and probably protects the gut. <strong>NUTRIREA-2</strong> showed full-dose early EN in shock caused more bowel ischaemia than PN — so feed cautiously and at low rate in the vasopressor-dependent patient, not aggressively.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-x">💧 5 · Parenteral Nutrition — When the Gut Can't</span>
+      <h2>Parenteral Nutrition (PN)</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Indications</div>
+        <div class="gr-text">
+          PN when EN is contraindicated or fails to meet needs: <strong>non-functioning gut</strong> (bowel obstruction, ischaemia, high-output fistula, short bowel, prolonged ileus), or EN delivering &lt;60% of target after several days.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Timing — The Big Trial-Driven Shift</div>
+        <div class="gr-text">
+          <strong>Well-nourished patient:</strong> if EN is insufficient, do <strong>not</strong> rush to early supplemental PN — <strong>EPaNIC (2011)</strong> showed that <em>late</em> PN (after day 7) gave faster recovery and fewer infections than early PN (day 1–2). <span class="gr-c">ESPEN: start supplemental PN day 4–7</span><br>
+          <strong>Severely malnourished / high nutritional risk (e.g. NRS-2002 ≥5, NUTRIC high):</strong> if EN not feasible, start PN earlier — these patients have less reserve to tolerate underfeeding.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Delivering PN Safely</div>
+        <div class="gr-text">
+          Central access for hyperosmolar formulas (peripheral PN only for short-term, lower-osmolarity). Advance to target over 2–3 days (avoid overfeeding and refeeding). Monitor glucose, triglycerides (lipid clearance), LFTs, and electrolytes. Watch for <strong>catheter-related bloodstream infection</strong> — the major hazard of PN.
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Refeeding Syndrome</span>
+      <h2>Refeeding Syndrome — The Lethal Complication of Doing the Right Thing</h2>
+      <div class="book-quote">
+        <p>"Refeeding syndrome is the potentially fatal shift in fluids and electrolytes that occurs when nutrition is reintroduced to a starved patient. As carbohydrate drives insulin release, phosphate, potassium and magnesium move rapidly into cells — and serum levels can plummet within hours, precipitating arrhythmia, respiratory failure, seizures and sudden death. The patients at greatest risk are precisely those we are most eager to feed."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Chapter: Nutrition.</cite>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Who Is at Risk (NICE criteria)</div>
+        <div class="gr-text">
+          <strong>High risk — any one of:</strong> BMI &lt;16 · unintentional weight loss &gt;15% in 3–6 months · little/no intake &gt;10 days · low pre-feeding K⁺, PO₄³⁻ or Mg²⁺.<br>
+          <strong>Or any two of:</strong> BMI &lt;18.5 · weight loss &gt;10% · little intake &gt;5 days · history of alcohol misuse / drugs (insulin, chemo, antacids, diuretics).<br>
+          In India, also consider chronic illness, TB, malignancy, and the elderly malnourished — a large at-risk population.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Prevention &amp; Management</div>
+        <div class="gr-text">
+          <strong>Start low, go slow:</strong> begin at <strong>10 kcal/kg/day</strong> (as low as 5 in extreme cases), increasing to target over 4–7 days <span class="gr-s">NICE</span>.<br>
+          <strong>Thiamine 200–300 mg IV/PO daily BEFORE and during feeding</strong> (×at least 3–5 days) — prevents Wernicke's; give thiamine before any glucose-containing fluid in the at-risk patient.<br>
+          <strong>Replace electrolytes aggressively and proactively</strong> — check PO₄³⁻, K⁺, Mg²⁺ at least daily (twice daily in the highest risk); replace as they fall. Do not delay feeding waiting for normal levels — feed slowly and replace concurrently.
+        </div>
+      </div>
+
+      <div class="key-box">
+        <div class="kb-label">The Hallmark — Hypophosphataemia</div>
+        <p>A falling serum phosphate in the first 72 h of feeding is the classic marker of refeeding syndrome. Severe hypophosphataemia (&lt;0.3 mmol/L) impairs diaphragmatic contractility (respiratory failure / failure to wean), causes haemolysis, rhabdomyolysis and arrhythmia. Replace IV phosphate and slow the feed rate.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-f">🗂 7 · Practical Daily Protocol &amp; Indian Context</span>
+      <h2>A Workable Bedside Approach</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">1</div>
+        <div class="fc-content">
+          <h4>Day 1 — Assess &amp; Plan</h4>
+          <ul>
+            <li>Screen nutritional risk (NRS-2002 / NUTRIC). Identify refeeding risk.</li>
+            <li>Decide route: gut usable → plan EN; not usable → plan PN timing by nutritional risk.</li>
+            <li>Set targets: ~25 kcal/kg and 1.2–1.3 g/kg protein as eventual goals (lower if refeeding risk).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-teal">2</div>
+        <div class="fc-content">
+          <h4>Day 1–2 — Start Enteral, Low &amp; Early</h4>
+          <ul>
+            <li>Start EN within 24–48 h once haemodynamically stable; trophic rate, advance over 48–72 h.</li>
+            <li>Head of bed 30–45°; standard polymeric formula; no routine GRV.</li>
+            <li>Thiamine + electrolyte replacement if any refeeding risk.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Day 3–7 — Advance Toward Target</h4>
+          <ul>
+            <li>Increase EN toward 80–100% of target as the acute phase resolves.</li>
+            <li>If EN persistently &lt;60% and well-nourished: add supplemental PN around day 4–7 (not earlier — EPaNIC).</li>
+            <li>Reassess protein delivery daily — it is the most under-delivered component.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>Recovery — Transition &amp; Rehab</h4>
+          <ul>
+            <li>Transition to oral diet with speech/swallow assessment post-extubation.</li>
+            <li>Continue high protein into recovery to support rehabilitation and muscle rebuilding.</li>
+            <li>Monitor for ICU-acquired weakness; pair nutrition with early mobilisation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ICU Context</div>
+        <p><strong>Kitchen/blenderised feeds</strong> are widely used and cost-effective but vary in caloric/protein density and carry higher contamination and tube-blockage risk — standardise recipes and hygiene, and prefer commercial polymeric feeds where affordable for consistent delivery.</p>
+        <p><strong>High baseline malnutrition &amp; TB burden:</strong> a larger proportion of patients are at refeeding risk on admission — screen everyone and give empirical thiamine liberally (cheap, safe).</p>
+        <p><strong>Protein gaps:</strong> locally available whey/soy protein supplements and protein-fortified feeds help reach 1.2–1.3 g/kg; involve a dietitian where available.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-e">❌ 8 · Common Mistakes</span>
+      <h2>Common Mistakes in ICU Nutrition</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Aggressive Full-Calorie Feeding From Day 1</div>
+        <p>Early full feeding does not override acute-phase catabolism and increases overfeeding harms (hyperglycaemia, CO₂ load, hepatic steatosis, possibly more infections). Feed hypocaloric/trophic early and advance after day 3, while still delivering adequate protein.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Stopping Feeds for Every High Gastric Residual</div>
+        <p>Routine GRV monitoring and low thresholds (200 mL) cause repeated unnecessary feed interruptions and chronic underfeeding without reducing aspiration. Don't measure GRVs routinely; if you do, use ≥500 mL. Use prokinetics and head-up positioning rather than stopping feed.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Rushing to Parenteral Nutrition in the Well-Nourished</div>
+        <p>EPaNIC showed early PN (day 1–2) in patients with insufficient EN delayed recovery and increased infections versus waiting until day 7. In the previously well-nourished, tolerate a few days of caloric deficit rather than starting early PN.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Forgetting Refeeding Risk &amp; Thiamine</div>
+        <p>Feeding a starved patient at full rate without thiamine and electrolyte replacement can cause fatal hypophosphataemia and Wernicke's encephalopathy. Identify risk, start at 10 kcal/kg, give thiamine before glucose, and replace phosphate/potassium/magnesium proactively.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Under-Delivering Protein While Chasing Calories</div>
+        <p>"Permissive underfeeding" applies to calories, not protein. Protein is the macronutrient most tied to preserving muscle, and it is routinely under-delivered. Track g/kg/day separately from total calories and supplement protein to reach ~1.2–1.3 g/kg.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Feeding Aggressively Through Uncontrolled Shock</div>
+        <p>NUTRIREA-2 linked full-dose early EN during shock to bowel ischaemia. In the unresuscitated, escalating-vasopressor patient, withhold or give only low-rate trophic EN until haemodynamically stabilised.</p>
+      </div>
+    </section>
+
+    <section id="s9">
+      <span class="sb sb-r">📑 9 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Compher C, Bingham AL, McCall M et al.</strong> Guidelines for the provision of nutrition support therapy in the adult critically ill patient: ASPEN. JPEN J Parenter Enteral Nutr 2022;46:12–41.</li>
+          <li><strong>Singer P, Blaser AR, Berger MM et al.</strong> ESPEN practical and partial guideline: Clinical nutrition in the intensive care unit. Clin Nutr 2023;42:1671–1689.</li>
+          <li><strong>Casaer MP, Mesotten D, Hermans G et al. (EPaNIC).</strong> Early versus late parenteral nutrition in critically ill adults. N Engl J Med 2011;365:506–517.</li>
+          <li><strong>Reignier J, Boisramé-Helms J, Brisard L et al. (NUTRIREA-2).</strong> Enteral versus parenteral early nutrition in ventilated adults with shock. Lancet 2018;391:133–143.</li>
+          <li><strong>Heyland DK, Patel J, Compher C et al. (EFFORT-Protein).</strong> The effect of higher protein dosing in critically ill patients. Lancet 2023;401:568–576.</li>
+          <li><strong>Marino PL.</strong> The ICU Book, 5th Ed. Nutritional Requirements &amp; Enteral/Parenteral Nutrition. Wolters Kluwer; 2025.</li>
+          <li><strong>National Institute for Health and Care Excellence (NICE).</strong> Nutrition support for adults (CG32) — refeeding syndrome. 2017 update.</li>
+          <li><strong>Washington Manual of Critical Care, 4th Ed.</strong> Chapter: Nutrition in the Critically Ill. Wolters Kluwer 2023.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Acid–Base Disorders — Systematic 6-Step Interpretation — CritCare.in</title>
+  <meta name="description" content="ICU acid-base interpretation: systematic 6-step approach, Winter's formula, anion gap, delta-delta ratio, osmolar gap, MUDPILES, Stewart physicochemical model. Marino, Washington Manual with worked examples." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    html.dark .marino-box{background:linear-gradient(135deg,#1e1640,#2a1a4d);border-color:#5b21b6;}
+    html.dark .marino-box p,html.dark .marino-box ul{color:#ddd6fe;}
+    html.dark .marino-box strong{color:#c4b5fd;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    html.dark .mc{background:#2a0a0a;border-color:#7f1d1d;}
+    html.dark .mc p{color:#fca5a5;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .formula-box{background:#0f1f3d;color:#fff;border-radius:10px;padding:1rem 1.2rem;margin:.8rem 0;font-size:.9rem;line-height:1.8;}
+    .formula-box .fl{color:#7dd3fc;font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:.3rem;}
+    .formula-box code{background:rgba(255,255,255,.12);padding:.15rem .45rem;border-radius:4px;font-size:.9rem;color:#fcd34d;}
+    .formula-box b{color:#fcd34d;}
+    .example-box{background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:1rem 1.2rem;margin:.8rem 0;}
+    .example-box .el{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#15803d;margin-bottom:.5rem;}
+    .example-box p{font-size:.86rem;color:#14532d;line-height:1.75;margin:0 0 .4rem;}
+    .example-box strong{color:#166534;}
+    html.dark .example-box{background:#0a2a1a;border-color:#15803d;}
+    html.dark .example-box p{color:#86efac;}
+    .step-flow{counter-reset:acidstep;margin:1rem 0;}
+    .step-flow .sf{display:flex;gap:.9rem;padding:.9rem 0;border-bottom:1px solid var(--line);}
+    .step-flow .sf:last-child{border-bottom:none;}
+    .step-flow .sfn{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;}
+    .step-flow .sfc h4{font-size:.9rem;font-weight:700;color:var(--ink);margin:0 0 .3rem;}
+    .step-flow .sfc p{font-size:.85rem;color:var(--slate);line-height:1.65;margin:0;}
+    .step-flow .sfc code{background:var(--bg-alt);padding:.1rem .4rem;border-radius:4px;font-size:.82rem;color:var(--blue-dark);}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Acid–Base Disorders</div>
+    <h1>⚗️ Acid–Base Disorders</h1>
+    <div class="guideline-row">
+      <span class="gbadge esicm">Marino Ch.31–33</span>
+      <span class="gbadge sccm">Washington Manual</span>
+      <span class="gbadge isccm">Stewart Approach</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">6-Step Systematic Approach</span>
+      <span class="topic-tag">Winter's · Δ/Δ · Osmolar Gap</span>
+      <span class="topic-tag">MUDPILES · Worked Examples</span>
+      <span class="topic-updated">Marino 5th Ed Ch.31–33 (2025) · Washington Manual 4th Ed · Pairs with the ABG Analyser tool</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. The 6-Step Approach</a></li>
+        <li><a href="#s4">4. Key Formulas</a></li>
+        <li><a href="#s5">5. The Five Disorders</a></li>
+        <li><a href="#s6">6. Worked Examples</a></li>
+        <li><a href="#s7">7. Stewart Approach</a></li>
+        <li><a href="#s8">8. Common Mistakes</a></li>
+        <li><a href="#s9">9. References</a></li>
+      </ul>
+      <a href="abg-calculator.html" class="toc-back" style="margin-bottom:.4rem;">🩺 Open ABG Analyser →</a>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Overview — Why a System Beats Pattern-Recognition</h2>
+      <div class="book-quote">
+        <p>"The most common error in acid–base interpretation is stopping at the first abnormality. A pH of 7.36 looks reassuring, yet may conceal a severe metabolic acidosis fully compensated by respiratory alkalosis with a coexisting metabolic alkalosis — three disorders in one 'near-normal' gas. A disciplined, stepwise method uncovers every process present and, more importantly, points to the diagnoses driving them."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Acid–Base Disorders.</cite>
+      </div>
+
+      <h3>The Vocabulary — Get It Right First</h3>
+      <ul>
+        <li><strong>Acidaemia / Alkalaemia</strong> — the actual blood pH (&lt;7.35 / &gt;7.45). Describes the <em>blood</em>.</li>
+        <li><strong>Acidosis / Alkalosis</strong> — the <em>process</em> that tends to lower/raise pH. You can have an acidosis without acidaemia (if a competing alkalosis dominates).</li>
+        <li><strong>Primary disorder</strong> — the initiating process. <strong>Compensation</strong> — the predictable, secondary physiological response that limits the pH change but <em>never fully corrects or overcorrects</em> it.</li>
+      </ul>
+
+      <div class="key-box">
+        <div class="kb-label">The Golden Rule of Compensation</div>
+        <p>The body <strong>never overcompensates</strong>. If you calculate "compensation" that would push the pH past normal to the other side, a <strong>second primary disorder</strong> is present. Likewise, compensation outside the predicted range (too much or too little) signals a <strong>mixed disorder</strong>. This single principle is what turns acid–base from guesswork into diagnosis.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — The Henderson–Hasselbalch Backbone</h2>
+      <div class="book-quote">
+        <p>"All of clinical acid–base analysis rests on a single relationship between the three measured quantities: pH is determined by the ratio of bicarbonate to the partial pressure of carbon dioxide. A metabolic process changes the numerator (HCO₃⁻); a respiratory process changes the denominator (PaCO₂). Every acid–base problem is, at heart, a question of which term moved first and how the other responded."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Acid–Base Interpretation. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="formula-box">
+        <span class="fl">Henderson–Hasselbalch</span>
+        pH ∝ <b>HCO₃⁻ (metabolic, kidney)</b> ÷ <b>PaCO₂ (respiratory, lung)</b><br>
+        <span style="font-size:.8rem;opacity:.85;">↑HCO₃⁻ or ↓PaCO₂ → alkalaemia · ↓HCO₃⁻ or ↑PaCO₂ → acidaemia</span>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Respiratory Is Fast, Metabolic Is Slow</div>
+        <p>Respiratory compensation (changing ventilation to adjust PaCO₂) begins within <strong>minutes</strong> and is complete within hours. Renal (metabolic) compensation (retaining or excreting HCO₃⁻) takes <strong>2–5 days</strong> to be complete. This is why respiratory acidosis has separate <em>acute</em> and <em>chronic</em> compensation expectations — the kidney needs days to catch up. Knowing the tempo tells you the chronicity of the disturbance.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — The Anion Gap: Unmeasured Anions</div>
+        <p>The anion gap exposes acids whose anion isn't on the routine panel (lactate, ketoacids, etc.). Because albumin is the dominant unmeasured anion, a <strong>low albumin lowers the "normal" gap</strong>: for every 1 g/dL fall in albumin below 4.5, the expected gap falls by ~2.5 mEq/L. The hypoalbuminaemic ICU patient can have a "normal" gap of 4–6 — so a measured gap of 12 in that patient is actually a high-gap acidosis. <strong>Always use the albumin-corrected anion gap in the critically ill.</strong></p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · The Systematic 6-Step Approach</span>
+      <h2>The Method That Never Misses a Disorder</h2>
+
+      <div class="step-flow">
+        <div class="sf"><div class="sfn">1</div><div class="sfc">
+          <h4>Look at the pH — acidaemia or alkalaemia?</h4>
+          <p>pH &lt;7.35 = acidaemia; &gt;7.45 = alkalaemia. Even a "normal" pH (7.35–7.45) can hide balanced mixed disorders — keep going regardless.</p>
+        </div></div>
+        <div class="sf"><div class="sfn">2</div><div class="sfc">
+          <h4>Identify the primary process — metabolic or respiratory?</h4>
+          <p>Find which of HCO₃⁻ and PaCO₂ explains the pH. If pH and PaCO₂ move in <strong>opposite</strong> directions → primary <strong>respiratory</strong>. If they move in the <strong>same</strong> direction → primary <strong>metabolic</strong>. (e.g. low pH + low HCO₃ = metabolic acidosis; low pH + high PaCO₂ = respiratory acidosis.)</p>
+        </div></div>
+        <div class="sf"><div class="sfn">3</div><div class="sfc">
+          <h4>Check compensation — is it appropriate?</h4>
+          <p>Apply the expected-compensation formula (step 4). If the actual value sits outside the predicted range → a <strong>second primary disorder</strong> is present. Compensation never normalises the pH.</p>
+        </div></div>
+        <div class="sf"><div class="sfn">4</div><div class="sfc">
+          <h4>Calculate the anion gap (albumin-corrected)</h4>
+          <p><code>AG = Na − (Cl + HCO₃)</code>; correct for albumin. A high gap = a high-anion-gap metabolic acidosis is present — <em>even if the pH or HCO₃ look normal.</em> Always calculate the gap on every gas with electrolytes.</p>
+        </div></div>
+        <div class="sf"><div class="sfn">5</div><div class="sfc">
+          <h4>If high gap → check the delta-delta (Δ/Δ) ratio</h4>
+          <p>Compares the rise in anion gap to the fall in bicarbonate. Reveals a <strong>coexisting</strong> normal-gap acidosis (ratio &lt;1) or metabolic alkalosis (ratio &gt;2) hiding behind the high-gap acidosis.</p>
+        </div></div>
+        <div class="sf"><div class="sfn">6</div><div class="sfc">
+          <h4>Find the cause — and (if high gap) the osmolar gap</h4>
+          <p>Build the differential (MUDPILES / GI vs renal). In high-gap acidosis of unclear cause, calculate the <strong>osmolar gap</strong> to screen for toxic alcohols (methanol, ethylene glycol). Then treat the underlying disease — not the number.</p>
+        </div></div>
+      </div>
+
+      <div class="ec" style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.6rem 0;">
+        <p style="font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;">💡 <strong>Let the tool do the arithmetic:</strong> the <a href="abg-calculator.html" style="color:#1e3a8a;font-weight:700;">ABG Analyser</a> performs all six steps automatically — primary disorder, Winter's/compensation check, corrected anion gap, delta-delta ratio, osmolar gap, and an acute management plan. This page is the "why" behind what the tool computes.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">🔢 4 · Key Formulas</span>
+      <h2>The Numbers You Must Know</h2>
+
+      <div class="formula-box">
+        <span class="fl">Winter's Formula — expected PaCO₂ in metabolic acidosis</span>
+        Expected PaCO₂ = <code>(1.5 × HCO₃) + 8 ± 2</code><br>
+        <span style="font-size:.8rem;opacity:.85;">Actual &gt; expected → concurrent respiratory acidosis · Actual &lt; expected → concurrent respiratory alkalosis</span>
+      </div>
+
+      <div class="formula-box">
+        <span class="fl">Metabolic alkalosis — expected compensation</span>
+        Expected PaCO₂ = <code>0.7 × (HCO₃ − 24) + 40 ± 2</code> &nbsp;(rises ~0.7 mmHg per 1 mEq/L HCO₃)
+      </div>
+
+      <div class="formula-box">
+        <span class="fl">Respiratory acidosis — expected HCO₃ rise per 10 mmHg ↑PaCO₂</span>
+        Acute: <code>+1 mEq/L</code> &nbsp;|&nbsp; Chronic: <code>+3.5–4 mEq/L</code><br>
+        <span class="fl" style="margin-top:.5rem;">Respiratory alkalosis — expected HCO₃ fall per 10 mmHg ↓PaCO₂</span>
+        Acute: <code>−2 mEq/L</code> &nbsp;|&nbsp; Chronic: <code>−4–5 mEq/L</code>
+      </div>
+
+      <div class="formula-box">
+        <span class="fl">Anion Gap &amp; albumin correction</span>
+        AG = <code>Na − (Cl + HCO₃)</code> &nbsp;(normal 8–12)<br>
+        Corrected AG = <code>AG + 2.5 × (4.5 − albumin g/dL)</code>
+      </div>
+
+      <div class="formula-box">
+        <span class="fl">Delta-Delta (Δ/Δ) ratio</span>
+        Δ/Δ = <code>(measured AG − 12) ÷ (24 − measured HCO₃)</code><br>
+        <span style="font-size:.8rem;opacity:.85;">&lt;0.4 pure NAGMA · 0.4–0.8 mixed high+normal gap · 1–2 pure high-gap · &gt;2 high-gap + metabolic alkalosis (or chronic resp acidosis)</span>
+      </div>
+
+      <div class="formula-box">
+        <span class="fl">Osmolar Gap</span>
+        Calculated osm = <code>2×Na + glucose/18 + BUN/2.8</code> (mg/dL units)<br>
+        Osmolar gap = measured − calculated. <b>&gt;10–15</b> → toxic alcohol (methanol, ethylene glycol), mannitol, or other unmeasured osmole.
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-x">🧭 5 · The Five Primary Disorders &amp; Their Causes</span>
+      <h2>Differentials You Can Recall at the Bedside</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">High-Anion-Gap Metabolic Acidosis — "GOLD MARK" / "MUDPILES"</div>
+        <div class="gr-text">
+          <strong>G</strong>lycols (ethylene, propylene) · <strong>O</strong>xoproline (chronic paracetamol) · <strong>L</strong>-lactate · <strong>D</strong>-lactate · <strong>M</strong>ethanol · <strong>A</strong>spirin · <strong>R</strong>enal failure (uraemia) · <strong>K</strong>etoacidosis (DKA, alcoholic, starvation).<br>
+          Lactate and ketoacidosis are by far the commonest in the ICU. Always send a lactate and ketones; calculate the osmolar gap if the cause isn't obvious.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Normal-Anion-Gap (Hyperchloraemic) Metabolic Acidosis — "USED CARP"</div>
+        <div class="gr-text">
+          GI HCO₃ loss (diarrhoea, high-output stoma/fistula) · Renal tubular acidosis (types 1, 2, 4) · Carbonic anhydrase inhibitors (acetazolamide) · large-volume <strong>0.9% saline</strong> resuscitation (dilutional/hyperchloraemic) · ureteric diversions.<br>
+          The <strong>urine anion gap</strong> (Na + K − Cl) separates the two big groups: <em>negative</em> UAG → GI loss (appropriate renal NH₄⁺ excretion); <em>positive</em> UAG → renal cause (RTA).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Metabolic Alkalosis — Saline-Responsive vs Resistant</div>
+        <div class="gr-text">
+          <strong>Saline-responsive (urine Cl &lt;20):</strong> vomiting / NG suction, diuretics, post-hypercapnia. Treat with 0.9% saline + K⁺ replacement.<br>
+          <strong>Saline-resistant (urine Cl &gt;20):</strong> hyperaldosteronism, Cushing's, severe hypokalaemia, Bartter/Gitelman. Treat the cause; saline won't fix it.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Respiratory Acidosis (hypoventilation) &amp; Alkalosis (hyperventilation)</div>
+        <div class="gr-text">
+          <strong>Acidosis:</strong> CNS depression (opioids, sedatives), neuromuscular weakness, severe COPD/asthma, chest wall/obesity, fatigue. <strong>Alkalosis:</strong> pain/anxiety, hypoxaemia, sepsis, PE, pregnancy, salicylates (early), CNS lesions, over-ventilation. Distinguish acute from chronic by the bicarbonate compensation (formulas above).
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-f">🧮 6 · Worked Examples</span>
+      <h2>Putting the 6 Steps Together</h2>
+
+      <div class="example-box">
+        <div class="el">Example 1 — The Triple Disorder Hiding in a "Normal" Gas</div>
+        <p><strong>ABG:</strong> pH 7.38, PaCO₂ 28, HCO₃ 16, Na 140, Cl 96, albumin 4.0.</p>
+        <p><strong>Step 1–2:</strong> pH near-normal but low HCO₃ + low PaCO₂ → a metabolic acidosis with respiratory response.</p>
+        <p><strong>Step 3 (Winter's):</strong> expected PaCO₂ = 1.5×16 + 8 = 32 ± 2 (30–34). Actual 28 is <strong>lower</strong> → an <strong>additional respiratory alkalosis</strong>.</p>
+        <p><strong>Step 4 (AG):</strong> 140 − (96 + 16) = 28; corrected +2.5×(4.5−4.0)=+1.25 → ~29. <strong>High-gap acidosis.</strong></p>
+        <p><strong>Step 5 (Δ/Δ):</strong> (28−12)/(24−16) = 16/8 = 2.0 → at the upper limit; a coexisting metabolic alkalosis is possible.</p>
+        <p><strong>Conclusion:</strong> high-gap metabolic acidosis + respiratory alkalosis (± metabolic alkalosis) — e.g. salicylate poisoning or sepsis. The near-normal pH concealed three processes.</p>
+      </div>
+
+      <div class="example-box">
+        <div class="el">Example 2 — DKA With a Twist</div>
+        <p><strong>ABG:</strong> pH 7.20, PaCO₂ 24, HCO₃ 9, Na 138, Cl 110, albumin 4.5, glucose high, ketones positive.</p>
+        <p><strong>Step 1–3:</strong> acidaemia, metabolic acidosis. Winter's expected PaCO₂ = 1.5×9+8 = 21.5 ± 2 (19.5–23.5); actual 24 is slightly high → respiratory compensation is mildly inadequate (early fatigue).</p>
+        <p><strong>Step 4 (AG):</strong> 138 − (110 + 9) = 19 → high gap (ketoacidosis).</p>
+        <p><strong>Step 5 (Δ/Δ):</strong> (19−12)/(24−9) = 7/15 = 0.47 → <strong>&lt;1</strong> → a <strong>coexisting normal-gap acidosis</strong> (here, hyperchloraemia from saline resuscitation / urinary ketone loss).</p>
+        <p><strong>Conclusion:</strong> high-gap (ketoacidosis) + normal-gap (hyperchloraemic) metabolic acidosis. Explains why the HCO₃ stays low even as ketones clear — anticipate this during DKA treatment.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🔬 7 · The Stewart (Physicochemical) Approach</span>
+      <h2>When the Traditional Model Falls Short</h2>
+      <div class="book-quote">
+        <p>"The Stewart approach treats pH as a dependent variable determined by three independent factors: the strong ion difference, the total weak acid concentration (largely albumin and phosphate), and PaCO₂. Its great clinical contribution is explaining the acidosis of large-volume saline — not a gain of acid, but a fall in the strong ion difference as chloride rises relative to sodium."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Acid–Base Interpretation (Stewart approach). Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Stewart in One Paragraph</div>
+        <p><strong>Strong Ion Difference (SID)</strong> = (Na + K + Ca + Mg) − (Cl + lactate). Normal ~40 mEq/L. A <strong>fall in SID</strong> (e.g. ↑Cl from saline, ↑lactate) causes acidosis; a <strong>rise in SID</strong> causes alkalosis. Albumin and phosphate are the weak acids — <strong>hypoalbuminaemia is independently alkalinising</strong> (it explains why malnourished ICU patients often have a metabolic alkalosis you can't otherwise account for). You don't need to compute Stewart at the bedside, but it gives a coherent explanation for the three commonest ICU puzzles: saline (hyperchloraemic) acidosis, dilutional acidosis, and hypoalbuminaemic alkalosis.</p>
+      </div>
+
+      <div class="key-box">
+        <div class="kb-label">Practical Takeaway</div>
+        <p>The traditional Henderson/anion-gap method and Stewart usually agree on the bedside diagnosis. Use the anion-gap method day-to-day (fast, validated), and reach for Stewart concepts to explain the otherwise-puzzling gas: the saline-resuscitated trauma patient with a hyperchloraemic acidosis, or the hypoalbuminaemic patient whose "metabolic alkalosis" is really just a low weak-acid state. Switching to <strong>balanced crystalloids</strong> (Plasma-Lyte / Ringer's lactate) avoids the iatrogenic hyperchloraemic acidosis of large-volume saline.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-e">❌ 8 · Common Mistakes</span>
+      <h2>Common Mistakes in Acid–Base Interpretation</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Stopping at the First Disorder</div>
+        <p>A pH near 7.40 is not "normal acid–base" until you have calculated the anion gap and checked compensation. Balanced mixed disorders (e.g. metabolic acidosis + metabolic alkalosis) produce a deceptively normal pH. Always complete all six steps.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Ignoring Albumin When Reading the Gap</div>
+        <p>In the hypoalbuminaemic ICU patient, the "normal" anion gap is reduced by ~2.5 per 1 g/dL fall in albumin. An uncorrected gap of 10–12 may actually represent a significant high-gap acidosis. Always use the albumin-corrected anion gap in critical illness.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Forgetting the Delta-Delta in High-Gap Acidosis</div>
+        <p>A high-gap acidosis can coexist with a normal-gap acidosis or a metabolic alkalosis that the anion gap alone hides. Skipping the Δ/Δ ratio means missing the third process — e.g. the DKA patient who is also vomiting (alkalosis) or saline-loaded (hyperchloraemic acidosis).</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Mistaking Chronic Respiratory Acidosis for a Primary Metabolic Alkalosis</div>
+        <p>A chronic CO₂ retainer (COPD) has a compensatory high bicarbonate — that is appropriate compensation, not a separate metabolic alkalosis. Use the acute vs chronic compensation formulas before labelling the bicarbonate abnormal, and beware over-ventilating these patients to a "normal" CO₂ (causes post-hypercapnic alkalosis).</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Treating Lactic Acidosis With Bicarbonate</div>
+        <p>BICAR-ICU showed no benefit from bicarbonate in lactic acidosis (a possible signal only in concurrent AKI). Bicarbonate raises CO₂, can worsen intracellular acidosis, and lowers ionised calcium. Treat the cause (perfusion, sepsis, toxin) — reserve bicarbonate for pH &lt;7.1 with specific indications.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Missing Toxic Alcohols by Skipping the Osmolar Gap</div>
+        <p>In an unexplained high-gap acidosis, a normal osmolar gap does not fully exclude toxic alcohol late (the parent alcohol is metabolised to acid, closing the osmolar gap as the anion gap opens), but a high osmolar gap early is a red flag. Send the osmolality and act before confirmatory levels return — fomepizole/ethanol and dialysis are time-critical.</p>
+      </div>
+    </section>
+
+    <section id="s9">
+      <span class="sb sb-r">📑 9 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Marino PL.</strong> The ICU Book, 5th Ed. Acid–Base Interpretation; Organic Acidoses; Metabolic Alkalosis (Ch.31–33). Wolters Kluwer; 2025.</li>
+          <li><strong>Berend K, de Vries APJ, Gans ROB.</strong> Physiological Approach to Assessment of Acid–Base Disturbances. N Engl J Med 2014;371:1434–1445.</li>
+          <li><strong>Kraut JA, Madias NE.</strong> Lactic Acidosis. N Engl J Med 2014;371:2309–2319.</li>
+          <li><strong>Jaber S, Paugam C, Futier E et al. (BICAR-ICU).</strong> Sodium bicarbonate therapy for patients with severe metabolic acidaemia in the ICU. Lancet 2018;392:31–40.</li>
+          <li><strong>Stewart PA.</strong> Modern quantitative acid–base chemistry. Can J Physiol Pharmacol 1983;61:1444–1461.</li>
+          <li><strong>Semler MW, Self WH, Wanderer JP et al. (SMART).</strong> Balanced Crystalloids versus Saline in Critically Ill Adults. N Engl J Med 2018;378:829–839.</li>
+          <li><strong>Irwin RS, Rippe JM.</strong> Irwin and Rippe's Intensive Care Medicine, 8th Ed. Acid–Base Disorders. Wolters Kluwer; 2018.</li>
+          <li><strong>Washington Manual of Critical Care, 4th Ed.</strong> Chapter: Acid–Base Disorders. Wolters Kluwer 2023.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

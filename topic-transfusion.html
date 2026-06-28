@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Transfusion &amp; Coagulopathy in the ICU — Thresholds, MTP, DIC, Reversal — CritCare.in</title>
+  <meta name="description" content="ICU transfusion and coagulopathy: restrictive Hb thresholds (TRICC/TRISS), massive transfusion protocol 1:1:1, DIC, thrombocytopenia, anticoagulant reversal, TACO vs TRALI. Marino, Washington Manual, AABB with drug doses." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    html.dark .marino-box{background:linear-gradient(135deg,#1e1640,#2a1a4d);border-color:#5b21b6;}
+    html.dark .marino-box p,html.dark .marino-box ul{color:#ddd6fe;}
+    html.dark .marino-box strong{color:#c4b5fd;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    html.dark .mc{background:#2a0a0a;border-color:#7f1d1d;}
+    html.dark .mc p{color:#fca5a5;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .thresh-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem;margin:1rem 0;}
+    .thresh-card{border-radius:10px;padding:1rem;border:2px solid #ef4444;background:#fef2f2;text-align:center;}
+    .thresh-card .tv{font-size:1.35rem;font-weight:800;color:#b91c1c;line-height:1.1;}
+    .thresh-card .tl{font-size:.74rem;color:#7f1d1d;margin-top:.3rem;line-height:1.4;}
+    html.dark .thresh-card{background:#2a0a0a;} html.dark .thresh-card .tv{color:#fca5a5;} html.dark .thresh-card .tl{color:#fca5a5;}
+    .product-table{width:100%;border-collapse:collapse;font-size:.84rem;margin:.8rem 0;}
+    .product-table th{background:#0f1f3d;color:#fff;padding:.5rem .7rem;text-align:left;font-size:.7rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;}
+    .product-table td{padding:.5rem .7rem;border-bottom:1px solid var(--line);color:var(--slate);vertical-align:top;}
+    .product-table tr:last-child td{border-bottom:none;}
+    .product-table td strong{color:var(--ink);}
+    @media(max-width:600px){.thresh-grid{grid-template-columns:1fr 1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Transfusion &amp; Coagulopathy</div>
+    <h1>🩸 Transfusion &amp; Coagulopathy in the ICU</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">AABB 2023</span>
+      <span class="gbadge esicm">ISTH</span>
+      <span class="gbadge isccm">BSH</span>
+      <span class="gbadge who">TRICC/TRISS</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Restrictive Hb 70 g/L</span>
+      <span class="topic-tag">MTP 1:1:1 · DIC</span>
+      <span class="topic-tag">Anticoagulant Reversal</span>
+      <span class="topic-updated">AABB 2023 · TRICC/TRISS/TRIGGER · CRASH-2 · Marino 5th Ed (2025)</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. Transfusion Thresholds</a></li>
+        <li><a href="#s4">4. Massive Transfusion</a></li>
+        <li><a href="#s5">5. DIC &amp; Thrombocytopenia</a></li>
+        <li><a href="#s6">6. Anticoagulant Reversal</a></li>
+        <li><a href="#s7">7. Transfusion Reactions</a></li>
+        <li><a href="#s8">8. Common Mistakes</a></li>
+        <li><a href="#s9">9. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Overview — Less Blood Is Usually Better Blood</h2>
+      <div class="book-quote">
+        <p>"For decades the reflex response to a low haemoglobin was to transfuse toward 'normal'. A generation of randomised trials has overturned that instinct: in most critically ill patients a restrictive strategy — transfusing only when haemoglobin falls below 70 g/L — is as safe as, or safer than, a liberal one. Every unit of blood carries cost and risk; the burden of proof now lies with the decision to transfuse, not to withhold."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Transfusion Medicine.</cite>
+      </div>
+
+      <h3>Why the Pendulum Swung to Restrictive</h3>
+      <ul>
+        <li><strong>TRICC (1999):</strong> the landmark trial — a restrictive threshold (70 g/L) was at least as good as liberal (100 g/L), with a survival signal favouring restrictive in younger and less sick patients.</li>
+        <li><strong>TRISS (2014):</strong> in septic shock, 70 g/L was as safe as 90 g/L.</li>
+        <li><strong>TRIGGER / upper-GI-bleed (Villanueva 2013):</strong> a restrictive threshold (70 g/L) <em>improved</em> survival and reduced rebleeding vs liberal (90 g/L).</li>
+        <li>Transfusion is not benign: immunomodulation (TRIM), volume overload (TACO), lung injury (TRALI), and — in resource-limited settings — infection risk and scarcity.</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — Oxygen Delivery, Not the Number</h2>
+      <div class="book-quote">
+        <p>"The purpose of red cells is to deliver oxygen, and the relevant question at the bedside is never the haemoglobin in isolation but whether oxygen delivery is adequate for the patient's needs. A haemoglobin of 75 g/L in a young, euvolaemic, well-perfused patient is entirely adequate; the same value in a patient with ongoing ischaemia and a rising lactate may not be. Treat the patient and the physiology, not the laboratory value."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Anaemia &amp; Red Cell Transfusion. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — The Oxygen Delivery Equation</div>
+        <p><strong>DO₂ = Cardiac Output × [(1.34 × Hb × SaO₂) + (0.003 × PaO₂)]</strong></p>
+        <p>Haemoglobin is only one of three levers on oxygen delivery — the others are <strong>cardiac output</strong> and <strong>arterial saturation</strong>. A patient with low DO₂ may be better served by improving cardiac output (fluids/inotropes) or oxygenation than by transfusion. The body also compensates for anaemia by increasing cardiac output and oxygen extraction, which is why chronic, euvolaemic anaemia is tolerated to surprisingly low levels.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Why Stored Blood Isn't Fresh Blood</div>
+        <p>Stored red cells undergo the "storage lesion": 2,3-DPG falls (left-shifting the O₂ dissociation curve, so transfused cells initially release less O₂), cells become less deformable, and potassium leaks into the supernatant. This is why transfusion does not instantly improve tissue oxygenation, and why large-volume transfusion of older units can cause hyperkalaemia (relevant in massive transfusion and in neonates/renal failure). <strong>Age of blood does not change the threshold</strong> — large RCTs (ABLE, INFORM) found fresh blood gave no benefit over standard-issue blood.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Transfusion Thresholds (AABB 2023)</span>
+      <h2>When to Transfuse — Component by Component</h2>
+
+      <div class="thresh-grid">
+        <div class="thresh-card"><div class="tv">70 g/L</div><div class="tl">RBC — most ICU patients</div></div>
+        <div class="thresh-card"><div class="tv">80 g/L</div><div class="tl">RBC — cardiac surgery / pre-existing CAD</div></div>
+        <div class="thresh-card"><div class="tv">&lt;10 ×10⁹</div><div class="tl">Platelets — prophylactic (stable)</div></div>
+        <div class="thresh-card"><div class="tv">&lt;50 ×10⁹</div><div class="tl">Platelets — bleeding / pre-procedure</div></div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Red Cells</div>
+        <div class="gr-text">
+          <strong>Hb &lt;70 g/L</strong> — restrictive threshold for most haemodynamically stable adults <span class="gr-s">AABB 2023 Strong</span>.<br>
+          <strong>Hb &lt;80 g/L</strong> — for cardiac surgery and patients with pre-existing cardiovascular disease/active ACS.<br>
+          Transfuse <strong>one unit at a time</strong> and reassess — most non-bleeding patients need only a single unit. Do not transfuse on the number alone if asymptomatic and not bleeding.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Platelets</div>
+        <div class="gr-text">
+          Prophylactic if <strong>&lt;10 ×10⁹/L</strong> (stable, no bleeding). <strong>&lt;20</strong> with fever/sepsis or minor procedure. <strong>&lt;50</strong> for active bleeding, major surgery, or invasive procedure. <strong>&lt;100</strong> for neurosurgery/CNS bleeding. <span class="gr-c">Avoid in TTP/HIT unless life-threatening bleeding — adds fuel to thrombosis</span>
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Fresh Frozen Plasma (FFP) &amp; Cryoprecipitate</div>
+        <div class="gr-text">
+          <strong>FFP (12–15 mL/kg)</strong> only for <strong>bleeding</strong> or pre-procedure with significant coagulopathy (e.g. INR &gt;1.5–2.0) — NOT to "correct" a mildly abnormal INR in a non-bleeding patient. <strong>Cryoprecipitate</strong> for <strong>fibrinogen &lt;1.5 g/L</strong> (&lt;2.0 in obstetric haemorrhage) — the most rapidly depleted factor in major bleeding. Vitamin K for warfarin/nutritional coagulopathy.
+        </div>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Don't Transfuse Plasma for a Number</div>
+        <p>The INR poorly predicts procedural bleeding risk, and FFP barely corrects a mildly raised INR (you would need huge volumes). Giving FFP to a non-bleeding patient with INR 1.4 before a line insertion exposes them to TACO/TRALI for no benefit. Reserve plasma for active bleeding or genuinely deranged coagulation before a high-risk procedure.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-e">🚨 4 · Massive Haemorrhage &amp; Transfusion Protocol</span>
+      <h2>Massive Transfusion — Balanced Resuscitation</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Activate Early, Resuscitate Balanced</div>
+        <div class="gr-text">
+          Massive transfusion ≈ ≥10 units RBC/24h, or ≥4 units/1h with ongoing bleeding. <strong>Give RBC:FFP:Platelets in a 1:1:1 ratio</strong> <span class="gr-s">PROPPR 2015</span> — empiric balanced resuscitation reproduces whole blood and reduces death from exsanguination versus RBC-heavy strategies. Activate the institutional Massive Haemorrhage Protocol early; don't wait for lab results to start.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Tranexamic Acid — Give It Early</div>
+        <div class="gr-text">
+          <strong>TXA 1 g IV over 10 min → 1 g over 8 h</strong> within <strong>3 hours</strong> of injury <span class="gr-s">CRASH-2</span>. In trauma it reduces death from bleeding; benefit is lost (and possibly harmful) after 3 h. Also benefits postpartum haemorrhage (<strong>WOMAN trial</strong>) and is used in major surgical/GI bleeding.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Address the "Lethal Triad" &amp; Calcium</div>
+        <div class="gr-text">
+          Aggressively prevent/correct <strong>hypothermia, acidosis, and coagulopathy</strong> — each worsens the others. <strong>Replace calcium</strong>: citrate in stored blood chelates ionised calcium; massive transfusion causes hypocalcaemia which impairs both clotting and cardiac contractility. Give calcium gluconate/chloride guided by ionised Ca²⁺. Use goal-directed correction with <strong>viscoelastic testing (ROTEM/TEG)</strong> where available to target the specific deficit (fibrinogen, platelets, factors).
+        </div>
+      </div>
+
+      <div class="key-box">
+        <div class="kb-label">Permissive Hypotension (in trauma, pre-haemostasis)</div>
+        <p>Before surgical/radiological control of bleeding, target a lower BP (e.g. SBP ~80–90 mmHg, or a palpable radial pulse / mentation in penetrating trauma) to avoid "popping the clot" and dilutional coagulopathy — until haemorrhage is controlled. This does <strong>not</strong> apply to traumatic brain injury, where cerebral perfusion must be maintained.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-x">🧬 5 · DIC &amp; ICU Thrombocytopenia</span>
+      <h2>Coagulopathy of the Critically Ill</h2>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 DIC — Consumption Gone Wrong</div>
+        <p>Disseminated intravascular coagulation is <strong>not a primary diagnosis</strong> — it is always secondary to a trigger (sepsis is the commonest; also trauma, malignancy, obstetric catastrophe, snakebite). Systemic activation of coagulation consumes platelets and factors and generates fibrin (microvascular thrombosis + organ failure) while simultaneously causing bleeding. Labs: <strong>↓platelets, ↑PT/aPTT, ↓fibrinogen, ↑↑D-dimer</strong>; use the <strong>ISTH DIC score</strong> (≥5 = overt DIC).</p>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">DIC Management — Treat the Cause</div>
+        <div class="gr-text">
+          <strong>Treat the underlying trigger</strong> — this is the only definitive therapy. Support with blood products <strong>only if bleeding or pre-procedure</strong>: platelets (&lt;50 if bleeding), FFP (prolonged PT/aPTT + bleeding), cryoprecipitate (fibrinogen &lt;1.5). In the predominantly <strong>thrombotic</strong> phenotype (or to prevent VTE), prophylactic heparin is reasonable once bleeding is controlled. Do not chase the numbers in a non-bleeding patient.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">The ICU Thrombocytopenia Differential</div>
+        <div class="gr-text">
+          Common and multifactorial: <strong>sepsis/DIC</strong> (most common), <strong>drug-induced</strong>, <strong>dilutional</strong> (massive transfusion), <strong>HIT</strong>, <strong>TTP/HUS</strong> (the microangiopathies — do NOT give platelets), <strong>hypersplenism</strong>, immune (ITP), mechanical (IABP/ECMO/CRRT circuits).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">HIT — Don't Miss It (4Ts Score)</div>
+        <div class="gr-text">
+          Heparin-Induced Thrombocytopenia: a <strong>prothrombotic</strong> immune reaction, typically a <strong>&gt;50% platelet fall 5–10 days</strong> after heparin exposure, with new thrombosis. Use the <strong>4Ts score</strong> (Thrombocytopenia, Timing, Thrombosis, oTher causes). If suspected: <strong>STOP all heparin (including LMWH and flushes), start a non-heparin anticoagulant</strong> (argatroban/fondaparinux/danaparoid), send HIT antibodies — and crucially <strong>do NOT transfuse platelets</strong> (fuels thrombosis) and <strong>do not start warfarin until platelets recover</strong> (venous limb gangrene risk).
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-d">💊 6 · Anticoagulant Reversal</span>
+      <h2>Reversing the Bleeding Anticoagulated Patient</h2>
+      <div class="table-wrap">
+        <table class="product-table">
+          <thead><tr><th>Agent</th><th>Reversal</th><th>Dose / Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Warfarin</strong> (major bleed)</td><td>4-factor PCC + Vitamin K</td><td>PCC 25–50 IU/kg (INR-guided) IV — faster &amp; better than FFP; <strong>+ Vitamin K 5–10 mg IV</strong> (sustains reversal). FFP only if PCC unavailable.</td></tr>
+            <tr><td><strong>Warfarin</strong> (high INR, no bleed)</td><td>Vitamin K ± hold</td><td>INR &gt;9: oral vit K 2.5–5 mg + hold. Minor bleed: vit K IV. Don't over-reverse if mechanical valve.</td></tr>
+            <tr><td><strong>Dabigatran</strong> (direct thrombin inh.)</td><td>Idarucizumab</td><td>5 g IV (two 2.5 g vials) — specific antidote, rapid. Dialysis also removes dabigatran.</td></tr>
+            <tr><td><strong>Apixaban / Rivaroxaban</strong> (anti-Xa)</td><td>Andexanet alfa or PCC</td><td>Andexanet alfa (where available/affordable) OR 4-factor PCC 50 IU/kg as practical alternative.</td></tr>
+            <tr><td><strong>Unfractionated heparin</strong></td><td>Protamine sulphate</td><td>1 mg per 100 U heparin given in last 2–3 h (max 50 mg); slow IV (hypotension).</td></tr>
+            <tr><td><strong>LMWH (enoxaparin)</strong></td><td>Protamine (partial)</td><td>~60% reversal: 1 mg per 1 mg enoxaparin if within 8 h. No complete antidote.</td></tr>
+            <tr><td><strong>Thrombolytic (tPA) bleed</strong></td><td>Cryoprecipitate ± TXA</td><td>Stop infusion; cryoprecipitate (fibrinogen), FFP, platelets; TXA; reverse the fibrinolytic state.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ICU Context</div>
+        <p><strong>Idarucizumab and andexanet alfa</strong> are expensive and not universally stocked — <strong>4-factor PCC</strong> (or, where PCC is unavailable, FFP) is the pragmatic reversal for DOAC-associated life-threatening bleeding in many centres; activated charcoal helps if the last dose was &lt;2–4 h ago.</p>
+        <p><strong>Snakebite (viper) consumption coagulopathy</strong> is a major cause of DIC-like bleeding in India — the specific treatment is <strong>polyvalent anti-snake venom (ASV)</strong>, not blood products alone; use the 20-minute whole-blood clotting test (20-WBCT) to guide ASV and recovery. Avoid unnecessary FFP/platelets unless actively bleeding after adequate ASV.</p>
+        <p><strong>Blood product availability</strong> can be limiting — restrictive thresholds and single-unit transfusion are doubly important stewardship in our setting.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-f">⚠️ 7 · Transfusion Reactions — TACO vs TRALI</span>
+      <h2>Recognising the Dangerous Reactions</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">TACO (Circulatory Overload) vs TRALI (Acute Lung Injury)</div>
+        <div class="gr-text">
+          Both present as <strong>acute dyspnoea/hypoxaemia with bilateral infiltrates during or within 6 h of transfusion</strong> — distinguishing them matters:<br>
+          <strong>TACO:</strong> hydrostatic/volume overload — hypertension, raised JVP/BNP, responds to diuretics. Commonest cause of transfusion death. Risk: elderly, cardiac/renal failure, fast/large transfusion. <em>Prevent</em>: transfuse slowly, single units, pre-emptive diuretic in at-risk patients.<br>
+          <strong>TRALI:</strong> immune-mediated permeability lung injury — often hypotension, fever, normal/low filling pressures, does <em>not</em> respond to diuretics; supportive/lung-protective care. Mitigated by male-predominant plasma donor policies.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Acute Haemolytic Reaction (ABO Incompatibility)</div>
+        <div class="gr-text">
+          A medical emergency, usually from <strong>clerical/identification error</strong>. Fever, loin/flank pain, hypotension, haemoglobinuria, DIC, AKI — even after a small volume. <strong>STOP the transfusion immediately</strong>, maintain IV access with saline, support BP and urine output, recheck identity/labels, send samples (DAT, repeat crossmatch, haemolysis screen), inform the blood bank. Prevention is rigorous bedside identity checking.
+        </div>
+      </div>
+
+      <div class="key-box">
+        <div class="kb-label">First Move for Any Acute Reaction</div>
+        <p><strong>Stop the transfusion, keep the line open with saline, and assess ABC.</strong> Recheck the patient's identity against the unit. Mild febrile non-haemolytic or urticarial reactions may allow cautious restart after treatment; fever with hypotension, respiratory distress, or haemolysis means the unit does not go back up — escalate and notify the blood bank.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-e">❌ 8 · Common Mistakes</span>
+      <h2>Common Mistakes in Transfusion &amp; Coagulopathy</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Transfusing to a "Normal" Haemoglobin</div>
+        <p>Liberal transfusion to Hb 90–100 g/L in stable patients offers no benefit and may harm (TRICC, TRISS, TRIGGER). Use a restrictive 70 g/L threshold (80 for cardiac disease), transfuse single units, and reassess between units.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Giving FFP to Correct a Number</div>
+        <p>FFP for a mildly raised INR in a non-bleeding patient barely changes the INR and exposes the patient to TACO/TRALI. Reserve plasma for active bleeding or significant coagulopathy before a high-risk procedure — and use PCC (not FFP) for warfarin-related major bleeding.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Transfusing Platelets in TTP or HIT</div>
+        <p>In the thrombotic microangiopathies (TTP/HUS) and in HIT, platelet transfusion can precipitate catastrophic thrombosis. Withhold platelets unless there is life-threatening bleeding; treat the underlying disorder (plasma exchange for TTP; non-heparin anticoagulation for HIT).</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Forgetting Calcium &amp; Warmth in Massive Transfusion</div>
+        <p>Citrate chelates ionised calcium and stored blood is cold — hypocalcaemia and hypothermia both worsen coagulopathy and cardiac function. Warm the blood and patient, monitor ionised calcium, and replace it during massive transfusion. And give TXA early (within 3 h).</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Treating DIC With Products Instead of the Cause</div>
+        <p>DIC is always secondary. Pouring in FFP and platelets without controlling the trigger (sepsis source control, delivery in obstetric DIC, ASV in snakebite) is futile. Support with products only if bleeding/pre-procedure; the cure is treating the cause.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Blaming "TRALI" and Reaching for Diuretics, or Vice Versa</div>
+        <p>TACO and TRALI look alike but are managed oppositely — diuresis helps TACO and is useless/harmful thinking in TRALI. Assess filling status (JVP, BNP, response to diuretic, blood pressure) to distinguish them, and prevent the commoner TACO by transfusing slowly in single units with pre-emptive diuretics in at-risk patients.</p>
+      </div>
+    </section>
+
+    <section id="s9">
+      <span class="sb sb-r">📑 9 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Carson JL, Stanworth SJ, Guyatt G et al.</strong> Red Blood Cell Transfusion: 2023 AABB International Guidelines. JAMA 2023;330:1892–1902.</li>
+          <li><strong>Hébert PC, Wells G, Blajchman MA et al. (TRICC).</strong> A multicenter, randomized, controlled clinical trial of transfusion requirements in critical care. N Engl J Med 1999;340:409–417.</li>
+          <li><strong>Holst LB, Haase N, Wetterslev J et al. (TRISS).</strong> Lower versus higher hemoglobin threshold for transfusion in septic shock. N Engl J Med 2014;371:1381–1391.</li>
+          <li><strong>Holcomb JB, Tilley BC, Baraniuk S et al. (PROPPR).</strong> Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs 1:1:2 ratio. JAMA 2015;313:471–482.</li>
+          <li><strong>CRASH-2 Collaborators.</strong> Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients. Lancet 2010;376:23–32.</li>
+          <li><strong>Marino PL.</strong> The ICU Book, 5th Ed. Anaemia, Transfusion &amp; Haemostatic Disorders. Wolters Kluwer; 2025.</li>
+          <li><strong>Levi M, Toh CH, Thachil J, Watson HG.</strong> Guidelines for the diagnosis and management of disseminated intravascular coagulation. Br J Haematol 2009;145:24–33 (ISTH/BSH).</li>
+          <li><strong>Washington Manual of Critical Care, 4th Ed.</strong> Chapters: Transfusion Medicine; Coagulopathy. Wolters Kluwer 2023.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Pulmonary Embolism &amp; VTE — Risk Stratification, Thrombolysis, Prophylaxis — CritCare.in</title>
+  <meta name="description" content="ICU management of pulmonary embolism: ESC 2019 risk stratification, sPESI, thrombolysis criteria, catheter-directed therapy, DVT prophylaxis. Marino, Washington Manual, Irwin & Rippe with drug doses." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    html.dark .marino-box{background:linear-gradient(135deg,#1e1640,#2a1a4d);border-color:#5b21b6;}
+    html.dark .marino-box p,html.dark .marino-box ul{color:#ddd6fe;}
+    html.dark .marino-box strong{color:#c4b5fd;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    html.dark .mc{background:#2a0a0a;border-color:#7f1d1d;}
+    html.dark .mc p{color:#fca5a5;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .risk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;margin:1rem 0;}
+    .risk-card{border-radius:10px;padding:1rem;border:2px solid;}
+    .risk-card h4{font-size:.85rem;font-weight:800;margin-bottom:.5rem;}
+    .risk-card p{font-size:.78rem;line-height:1.6;margin:0;}
+    .risk-high{background:#fef2f2;border-color:#ef4444;} .risk-high h4{color:#b91c1c;} .risk-high p{color:#7f1d1d;}
+    .risk-int{background:#fffbeb;border-color:#f59e0b;} .risk-int h4{color:#b45309;} .risk-int p{color:#78350f;}
+    .risk-low{background:#f0fdf4;border-color:#22c55e;} .risk-low h4{color:#15803d;} .risk-low p{color:#14532d;}
+    html.dark .risk-high{background:#2a0a0a;} html.dark .risk-int{background:#2a1f08;} html.dark .risk-low{background:#0a2a1a;}
+    html.dark .risk-high p,html.dark .risk-high h4{color:#fca5a5;} html.dark .risk-int p,html.dark .risk-int h4{color:#fcd34d;} html.dark .risk-low p,html.dark .risk-low h4{color:#86efac;}
+    @media(max-width:600px){.risk-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Pulmonary Embolism &amp; VTE</div>
+    <h1>🫁 Pulmonary Embolism &amp; VTE</h1>
+    <div class="guideline-row">
+      <span class="gbadge esicm">ESC 2019</span>
+      <span class="gbadge sccm">AHA 2011</span>
+      <span class="gbadge isccm">ISTH</span>
+      <span class="gbadge who">CHEST 2021</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Massive · Submassive · Low-risk</span>
+      <span class="topic-tag">sPESI · RV Strain · Thrombolysis</span>
+      <span class="topic-tag">DVT Prophylaxis</span>
+      <span class="topic-updated">ESC 2019 Acute PE Guidelines · CHEST 2021 Antithrombotic · Marino 5th Ed (2025)</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. Diagnosis &amp; Risk Stratification</a></li>
+        <li><a href="#s4">4. ESC 2019 Treatment</a></li>
+        <li><a href="#s5">5. Drug Doses &amp; Tables</a></li>
+        <li><a href="#s6">6. Clinical Flowchart</a></li>
+        <li><a href="#s7">7. DVT Prophylaxis</a></li>
+        <li><a href="#s8">8. Common Mistakes</a></li>
+        <li><a href="#s9">9. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Overview — The Spectrum of Acute PE</h2>
+      <div class="book-quote">
+        <p>"Acute pulmonary embolism is the third most common cause of cardiovascular death after myocardial infarction and stroke. The clinical spectrum ranges from asymptomatic incidental emboli to sudden cardiac death from massive obstruction. The single most important determinant of early mortality is not the anatomical clot burden but the haemodynamic consequence — right ventricular dysfunction. Management is therefore stratified by risk, not by the size of the clot on imaging."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Venous Thromboembolism.</cite>
+      </div>
+
+      <h3>Why RV Function Drives Everything</h3>
+      <p>The thin-walled right ventricle is exquisitely sensitive to acute increases in afterload. When &gt;30–50% of the pulmonary vascular bed is obstructed, pulmonary artery pressure rises abruptly. The unconditioned RV cannot generate a mean PA pressure above ~40 mmHg acutely — beyond this it dilates, fails, and the resulting spiral of RV ischaemia → reduced LV preload → systemic hypotension → reduced coronary perfusion → worsening RV ischaemia is the lethal pathway in massive PE.</p>
+
+      <h3>Classification by Haemodynamic Severity</h3>
+      <div class="risk-grid">
+        <div class="risk-card risk-high">
+          <h4>🔴 High-risk (Massive)</h4>
+          <p>SBP &lt;90 mmHg for &gt;15 min, or drop ≥40 mmHg, or need for vasopressors / cardiac arrest. Mortality &gt;15% (up to 50% if arrest). <strong>Thrombolysis indicated.</strong></p>
+        </div>
+        <div class="risk-card risk-int">
+          <h4>🟠 Intermediate (Submassive)</h4>
+          <p>Normotensive BUT RV dysfunction (echo/CT) AND/OR raised troponin/BNP. Intermediate-high = both positive. Mortality 3–15%. <strong>Monitor; rescue lysis if deteriorates.</strong></p>
+        </div>
+        <div class="risk-card risk-low">
+          <h4>🟢 Low-risk</h4>
+          <p>Normotensive, no RV dysfunction, normal biomarkers, sPESI = 0. Mortality &lt;1%. <strong>Anticoagulation; consider early discharge / outpatient.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — Dead Space, Hypoxaemia &amp; the ECG</h2>
+      <div class="book-quote">
+        <p>"Pulmonary embolism produces a region of lung that is ventilated but not perfused — the definition of alveolar dead space. Yet the hallmark of acute PE is hypoxaemia, which seems paradoxical for a dead-space disease. The explanation lies in the redistribution of blood flow and the opening of low V̇/Q̇ units, intracardiac shunting through a patent foramen ovale, and a fall in mixed venous oxygen saturation from the low cardiac output state."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Venous Thromboembolism. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Why the A–a Gradient Widens</div>
+        <p>Acute PE classically produces <strong>hypoxaemia with a widened A–a gradient and a respiratory alkalosis</strong> (tachypnoea-driven hypocapnia). Mechanisms of hypoxaemia:</p>
+        <ul>
+          <li><strong>V̇/Q̇ mismatch</strong> — overperfusion of non-embolised lung creates low V̇/Q̇ units</li>
+          <li><strong>Low mixed venous O₂</strong> — the low cardiac output extracts more O₂ peripherally, so blood returning to the lung is more desaturated</li>
+          <li><strong>Right-to-left shunt</strong> — raised RA pressure can open a PFO (present in ~25% of adults)</li>
+        </ul>
+        <p><strong>Pitfall:</strong> A normal PaO₂ does NOT exclude PE — up to 40% of patients with proven PE have a normal PaO₂, and ~20% have a normal A–a gradient. Never rule out PE on blood gas alone.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — ECG Signs of RV Strain</div>
+        <p>The ECG is neither sensitive nor specific but offers prognostic clues. Sinus tachycardia is the most common finding. Signs of acute RV strain (correlate with severity):</p>
+        <ul>
+          <li><strong>S1Q3T3</strong> — classic but present in only ~20%; deep S in I, Q wave + inverted T in III</li>
+          <li><strong>T-wave inversion V1–V4</strong> — the most common "strain" sign; reversible with treatment</li>
+          <li><strong>New incomplete/complete RBBB</strong></li>
+          <li><strong>Right axis deviation, P pulmonale</strong></li>
+          <li><strong>Atrial fibrillation</strong> — new AF in ~5–10%</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — The "Reverse" of the D-dimer Logic</div>
+        <p>D-dimer has high sensitivity but poor specificity. Its value is in <strong>ruling OUT PE in low/intermediate pre-test probability</strong> — a normal D-dimer with a low Wells score essentially excludes PE (negative predictive value &gt;99%). It has NO role in high pre-test probability (go straight to CTPA) and is frequently falsely positive in sepsis, malignancy, pregnancy, post-op, and the elderly. Use <strong>age-adjusted D-dimer</strong> (age × 10 µg/L for age &gt;50) to improve specificity.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Diagnosis &amp; Risk Stratification</span>
+      <h2>From Suspicion to Stratified Diagnosis</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Step 1 — Assess Haemodynamic Stability FIRST</div>
+        <div class="gr-text">
+          If the patient is <strong>shocked / hypotensive</strong> with suspected PE → do NOT wait for CTPA if too unstable to travel. Bedside <strong>echocardiography</strong> showing RV dilatation/dysfunction in a shocked patient is sufficient to justify reperfusion (ESC 2019). If stabilised, confirm with CTPA. <span class="gr-s">ESC 2019 Class I</span>
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Step 2 — Pre-Test Probability (Wells Score)</div>
+        <div class="gr-text">
+          <strong>Clinical signs of DVT</strong> +3 · <strong>PE most likely diagnosis</strong> +3 · <strong>HR &gt;100</strong> +1.5 · <strong>Immobilisation/surgery in 4 wks</strong> +1.5 · <strong>Previous DVT/PE</strong> +1.5 · <strong>Haemoptysis</strong> +1 · <strong>Malignancy</strong> +1<br>
+          <strong>Two-level:</strong> ≤4 = PE unlikely (do D-dimer); &gt;4 = PE likely (do CTPA).<br>
+          <strong>PERC rule</strong> (in low-risk ED patients): if all 8 criteria negative, PE excluded without D-dimer.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Step 3 — Confirm: CTPA (first-line)</div>
+        <div class="gr-text">
+          <strong>CT Pulmonary Angiography</strong> is the diagnostic gold standard. <strong>V̇/Q̇ scan</strong> if contrast contraindicated (renal failure, contrast allergy) or in pregnancy (lower breast radiation, esp. with normal CXR). <strong>Bilateral leg compression ultrasound</strong> — a proximal DVT in a patient with symptoms suggestive of PE confirms VTE and may avoid CTPA.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Step 4 — Prognosticate: sPESI + RV Assessment</div>
+        <div class="gr-text">
+          <strong>Simplified PESI (sPESI)</strong> — 1 point each: Age &gt;80 · Cancer · Chronic cardiopulmonary disease · HR ≥110 · SBP &lt;100 · SpO₂ &lt;90%.<br>
+          <strong>sPESI = 0</strong> → low-risk (30-day mortality ~1%). <strong>sPESI ≥1</strong> → assess RV: echo (RV/LV ratio &gt;1.0, McConnell's sign, TAPSE &lt;16 mm) + troponin + BNP.<br>
+          <strong>Intermediate-HIGH</strong> = RV dysfunction AND positive troponin → highest risk of decompensation; admit to monitored bed.
+        </div>
+      </div>
+
+      <div class="key-box">
+        <div class="kb-label">McConnell's Sign</div>
+        <p>Echocardiographic finding relatively specific for acute PE: <strong>akinesia of the RV mid-free wall with preserved motion of the RV apex</strong> ("apical sparing"). Suggests acute (rather than chronic) RV pressure overload. Also look for a dilated RV (RV/LV ratio &gt;1), septal flattening (D-sign), dilated IVC, and a tricuspid regurgitation jet allowing PASP estimation.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · ESC 2019 Treatment — Reperfusion &amp; Anticoagulation</span>
+      <h2>Evidence-Based Management by Risk Category</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">High-risk (Massive) PE — Systemic Thrombolysis</div>
+        <div class="gr-text">
+          <strong>Alteplase (tPA) 100 mg IV over 2 hours</strong> is the standard regimen <span class="gr-s">ESC 2019 Class I</span>. Accelerated <strong>0.6 mg/kg over 15 min (max 50 mg)</strong> in cardiac arrest / peri-arrest.<br>
+          Start/continue <strong>unfractionated heparin</strong> (easier to reverse, titratable) around thrombolysis. Hold the UFH infusion during the tPA bolus, restart when aPTT &lt;2× normal.<br>
+          <strong>If thrombolysis contraindicated or failed</strong> → surgical embolectomy or catheter-directed therapy.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Intermediate-high Risk — Monitor, Don't Routinely Lyse</div>
+        <div class="gr-text">
+          <strong>Anticoagulate</strong> and admit to a monitored bed. Do NOT give routine systemic thrombolysis <span class="gr-c">ESC 2019 — PEITHO trial</span>: full-dose lysis in submassive PE reduced decompensation but DOUBLED major bleeding and tripled haemorrhagic stroke, with no mortality benefit.<br>
+          <strong>Rescue reperfusion</strong> if haemodynamic deterioration occurs.<br>
+          <strong>Catheter-directed therapy</strong> (reduced-dose CDT / mechanical thrombectomy) increasingly used as a middle path — consider via a PE Response Team (PERT).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Low / Intermediate-low Risk — Anticoagulation</div>
+        <div class="gr-text">
+          <strong>DOAC first-line</strong> (apixaban or rivaroxaban — no bridging needed) <span class="gr-s">ESC 2019 Class I, CHEST 2021</span>.<br>
+          Apixaban 10 mg BD × 7 days → 5 mg BD. Rivaroxaban 15 mg BD × 21 days → 20 mg OD.<br>
+          Dabigatran / edoxaban require ≥5 days of initial parenteral heparin first.<br>
+          <strong>LMWH preferred</strong> in cancer-associated VTE (or a DOAC if no GI/GU tumour), pregnancy (DOACs contraindicated), and severe renal failure (use UFH if CrCl &lt;15–30).
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ICU Context</div>
+        <p><strong>Tenecteplase (TNK)</strong> is widely available and cheaper than alteplase in India; though off-label for PE, it is frequently used (single weight-based bolus). Alteplase remains the guideline-endorsed agent.</p>
+        <p><strong>Streptokinase</strong> (250,000 IU loading over 30 min → 100,000 IU/h × 12–24h) is a low-cost option still used in resource-limited settings, though more allergenic and less used globally.</p>
+        <p><strong>Catheter-directed therapy and ECMO</strong> availability is limited to tertiary centres — early transfer/PERT activation matters. VA-ECMO can bridge a peri-arrest massive PE to embolectomy or lysis.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-d">💊 5 · Drug Doses &amp; Tables</span>
+      <h2>Drug Reference — PE &amp; VTE</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Alteplase (tPA)</strong></td><td>High-risk PE thrombolysis</td><td>100 mg IV over 2h; arrest: 0.6 mg/kg over 15 min (max 50 mg)</td><td>Hold UFH during bolus; absolute CI: active bleed, recent haemorrhagic stroke, intracranial tumour</td></tr>
+            <tr><td><strong>Tenecteplase</strong></td><td>PE lysis (off-label, India common)</td><td>Weight-based single bolus 30–50 mg (as per STEMI table)</td><td>Used in PEITHO trial; convenient single bolus</td></tr>
+            <tr><td><strong>Unfractionated Heparin</strong></td><td>High-risk PE, renal failure, peri-lysis</td><td>80 U/kg bolus → 18 U/kg/h, titrate to aPTT 1.5–2.5×</td><td>Preferred when lysis likely (rapidly reversible with protamine)</td></tr>
+            <tr><td><strong>Enoxaparin (LMWH)</strong></td><td>Most haemodynamically stable PE</td><td>1 mg/kg SC BD (or 1.5 mg/kg OD)</td><td>Reduce/avoid if CrCl &lt;30; anti-Xa monitoring in obesity/renal/pregnancy</td></tr>
+            <tr><td><strong>Apixaban</strong></td><td>Stable PE (DOAC, no bridging)</td><td>10 mg BD × 7d → 5 mg BD</td><td>Lowest bleeding risk DOAC; avoid in severe renal/hepatic failure</td></tr>
+            <tr><td><strong>Rivaroxaban</strong></td><td>Stable PE (DOAC, no bridging)</td><td>15 mg BD × 21d → 20 mg OD with food</td><td>Take with food (absorption); avoid CrCl &lt;15</td></tr>
+            <tr><td><strong>Dabigatran / Edoxaban</strong></td><td>Stable PE (after heparin lead-in)</td><td>150 mg BD / 60 mg OD</td><td>Need ≥5 days parenteral heparin first</td></tr>
+            <tr><td><strong>Protamine sulphate</strong></td><td>UFH reversal (bleeding)</td><td>1 mg per 100 U heparin given in last 2–3h (max 50 mg)</td><td>Partial LMWH reversal only (~60%)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Absolute Contraindications to Thrombolysis</div>
+        <p>Prior intracranial haemorrhage · Known structural cerebrovascular lesion / intracranial malignancy · Ischaemic stroke within 3 months · Active bleeding · Recent brain/spinal surgery · Recent significant closed head trauma · Bleeding diathesis. In <strong>life-threatening massive PE with cardiac arrest</strong>, contraindications become relative — the alternative is death.</p>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-f">🗂 6 · Clinical Flowchart — Suspected Acute PE</span>
+      <h2>Step-by-Step Management Algorithm</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Is the patient haemodynamically unstable?</h4>
+          <ul>
+            <li><strong>YES (SBP &lt;90 / shock / arrest):</strong> Bedside echo. RV dysfunction + high suspicion → treat as high-risk. CTPA only if can be stabilised to travel.</li>
+            <li><strong>NO:</strong> Proceed to risk-based pathway (step 2).</li>
+            <li>Resuscitate: cautious fluids (250–500 mL — over-filling worsens RV failure), noradrenaline first-line, add dobutamine for low output, O₂.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Stable: Wells score → D-dimer or CTPA</h4>
+          <ul>
+            <li>PE unlikely (Wells ≤4): age-adjusted D-dimer → if negative, PE excluded.</li>
+            <li>PE likely (Wells &gt;4) or D-dimer positive: CTPA (V̇/Q̇ if contrast contraindicated).</li>
+            <li>Start empirical anticoagulation while awaiting imaging if delay expected and bleeding risk low.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>PE confirmed: Risk-stratify</h4>
+          <ul>
+            <li>sPESI + RV assessment (echo/CT RV/LV ratio) + troponin + BNP.</li>
+            <li>Intermediate-high (RV dysfunction + raised troponin): monitored bed, watch for deterioration.</li>
+            <li>Low-risk (sPESI 0, normal biomarkers): consider early discharge / outpatient DOAC (Hestia criteria).</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>Treat &amp; plan duration</h4>
+          <ul>
+            <li>Reperfusion for high-risk; anticoagulation for the rest.</li>
+            <li>Provoked by major transient risk factor (surgery): 3 months. Unprovoked / persistent factor / recurrent: extended/indefinite, reassess bleeding risk annually.</li>
+            <li>Consider thrombophilia workup and occult malignancy screen in unprovoked VTE; IVC filter ONLY if anticoagulation absolutely contraindicated.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🛡 7 · DVT Prophylaxis in the ICU</span>
+      <h2>VTE Prophylaxis — Every ICU Patient, Every Day</h2>
+      <p>Critically ill patients are at high VTE risk (immobility, sepsis, central lines, vasopressors). Prophylaxis should be a daily checklist item.</p>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Pharmacological Prophylaxis (first-line)</div>
+        <div class="gr-text">
+          <strong>LMWH:</strong> Enoxaparin 40 mg SC OD (reduce to 20–30 mg if CrCl &lt;30) — preferred <span class="gr-s">CHEST 2021</span><br>
+          <strong>UFH:</strong> 5000 U SC BD–TDS — for severe renal failure (CrCl &lt;30) or imminent procedures (shorter half-life)<br>
+          Dose adjustment / anti-Xa monitoring in extremes of weight.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Mechanical Prophylaxis</div>
+        <div class="gr-text">
+          <strong>Intermittent pneumatic compression (IPC)</strong> when pharmacological prophylaxis is contraindicated (active bleeding, severe thrombocytopenia &lt;50, high bleeding risk). Combine IPC + pharmacological in the highest-risk patients (major trauma, post-neurosurgery once safe). Graduated compression stockings alone are inferior and avoided in peripheral arterial disease.
+        </div>
+      </div>
+
+      <div class="key-box">
+        <div class="kb-label">When to Hold Prophylaxis</div>
+        <p>Platelets &lt;50 ×10⁹/L · Active bleeding · INR &gt;1.5 (untreated) · Within 24h of high-bleeding-risk surgery · Epidural catheter (time around insertion/removal). Use IPC in the interim and reassess daily — prophylaxis is too often forgotten when temporarily held.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-e">❌ 8 · Common Mistakes</span>
+      <h2>Common Mistakes in PE Management</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Aggressive Fluid Loading in RV Failure</div>
+        <p>The instinct to give large fluid boluses to a hypotensive PE patient is harmful. An already-dilated, failing RV is volume-overloaded; further filling worsens RV distension, increases wall tension, bows the septum into the LV (reducing LV filling), and drops cardiac output further. Give a cautious 250–500 mL challenge at most; reach for noradrenaline early.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Ruling Out PE on a Normal PaO₂ / SpO₂</div>
+        <p>Up to 40% of patients with proven PE have a normal PaO₂ and ~20% a normal A–a gradient. A normal SpO₂ provides false reassurance. Risk-stratify with a validated score and D-dimer/imaging — never the blood gas alone.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Routine Full-Dose Thrombolysis for Submassive PE</div>
+        <p>PEITHO showed full-dose lysis in intermediate-risk PE doubles major bleeding and triples haemorrhagic stroke with no mortality benefit. Reserve systemic lysis for high-risk (haemodynamically unstable) PE or as rescue therapy on deterioration; consider catheter-directed therapy as a middle path.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Using a DOAC in Antiphospholipid Syndrome or Pregnancy</div>
+        <p>DOACs are inferior to warfarin in triple-positive antiphospholipid syndrome (higher arterial thrombosis) and are contraindicated in pregnancy. Use LMWH (pregnancy) or warfarin (APS). DOACs are also avoided in severe renal failure and at extremes of body weight without monitoring.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Forgetting Age-Adjusted D-dimer</div>
+        <p>A fixed D-dimer cut-off (500 µg/L) is frequently exceeded in older patients without PE, driving unnecessary CTPAs. Use the age-adjusted cut-off (age × 10 µg/L above 50 years) to safely increase specificity in the low/intermediate probability group.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Reflex IVC Filter Placement</div>
+        <p>IVC filters do not replace anticoagulation and carry their own thrombotic complications. They are indicated only when anticoagulation is absolutely contraindicated (e.g. active major bleeding) in a patient with acute proximal VTE. Retrieve the filter once anticoagulation can be safely started.</p>
+      </div>
+    </section>
+
+    <section id="s9">
+      <span class="sb sb-r">📑 9 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Konstantinides SV, Meyer G, Becattini C et al.</strong> 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism developed in collaboration with the ERS. Eur Heart J 2020;41:543–603.</li>
+          <li><strong>Meyer G, Vicaut E, Danays T et al. (PEITHO Investigators).</strong> Fibrinolysis for patients with intermediate-risk pulmonary embolism. N Engl J Med 2014;370:1402–1411.</li>
+          <li><strong>Stevens SM, Woller SC, Kreuziger LB et al.</strong> Antithrombotic Therapy for VTE Disease: Second Update of the CHEST Guideline. Chest 2021;160:e545–e608.</li>
+          <li><strong>Jaff MR, McMurtry MS, Archer SL et al.</strong> Management of Massive and Submassive Pulmonary Embolism… AHA Scientific Statement. Circulation 2011;123:1788–1830.</li>
+          <li><strong>Righini M, Van Es J, Den Exter PL et al.</strong> Age-adjusted D-dimer cutoff levels to rule out pulmonary embolism (ADJUST-PE). JAMA 2014;311:1117–1124.</li>
+          <li><strong>Marino PL.</strong> The ICU Book, 5th Ed. Venous Thromboembolism. Wolters Kluwer; 2025.</li>
+          <li><strong>Irwin RS, Rippe JM.</strong> Irwin and Rippe's Intensive Care Medicine, 8th Ed. Pulmonary Embolism. Wolters Kluwer; 2018.</li>
+          <li><strong>Washington Manual of Critical Care, 4th Ed.</strong> Chapter: Venous Thromboembolism. Wolters Kluwer 2023.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
