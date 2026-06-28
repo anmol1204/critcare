@@ -126,9 +126,19 @@
     .ocr-drop .drop-icon{font-size:1.8rem;margin-bottom:.4rem;}
     .ocr-drop p{font-size:.8rem;color:rgba(255,255,255,.7);margin:0;line-height:1.5;}
     .ocr-drop small{font-size:.7rem;color:rgba(255,255,255,.4);}
+    /* Mobile: replace drop zone with large tap buttons */
+    .ocr-mobile-btns{display:none;gap:.6rem;margin-bottom:.3rem;}
+    .ocr-cam-btn,.ocr-gal-btn{flex:1;padding:1rem .5rem;border:none;border-radius:10px;font-family:var(--font-body);font-size:.9rem;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:.3rem;line-height:1.3;}
+    .ocr-cam-btn{background:var(--accent);color:#fff;}
+    .ocr-gal-btn{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);}
+    .ocr-cam-btn .btn-sub,.ocr-gal-btn .btn-sub{font-size:.68rem;font-weight:400;opacity:.8;}
+    @media(max-width:768px){
+      .ocr-drop{display:none;}
+      .ocr-mobile-btns{display:flex;}
+    }
     .ocr-preview{display:none;margin-top:.8rem;position:relative;}
     .ocr-preview img{width:100%;border-radius:8px;border:1px solid rgba(255,255,255,.2);max-height:200px;object-fit:contain;background:#000;}
-    .ocr-preview .remove-img{position:absolute;top:.4rem;right:.4rem;background:rgba(0,0,0,.7);color:#fff;border:none;border-radius:50%;width:24px;height:24px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;}
+    .ocr-preview .remove-img{position:absolute;top:.4rem;right:.4rem;background:rgba(0,0,0,.7);color:#fff;border:none;border-radius:50%;width:28px;height:28px;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;}
     .ocr-btn{width:100%;padding:.7rem;background:var(--accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:.85rem;font-weight:700;cursor:pointer;margin-top:.7rem;transition:opacity .2s;display:flex;align-items:center;justify-content:center;gap:.5rem;}
     .ocr-btn:hover{opacity:.9;}
     .ocr-btn:disabled{opacity:.5;cursor:not-allowed;}
@@ -140,8 +150,8 @@
     .ocr-confirm-header{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.6);margin-bottom:.5rem;}
     .ocr-value-chip{display:inline-flex;align-items:center;gap:.3rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:.2rem .5rem;font-size:.75rem;color:rgba(255,255,255,.9);margin:.2rem;}
     .ocr-confirm-btns{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:.7rem;}
-    .btn-fill{padding:.6rem;background:var(--accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:.82rem;font-weight:700;cursor:pointer;}
-    .btn-retry{padding:.6rem;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:8px;font-family:var(--font-body);font-size:.82rem;font-weight:600;cursor:pointer;}
+    .btn-fill{padding:.75rem;background:var(--accent);color:#fff;border:none;border-radius:8px;font-family:var(--font-body);font-size:.88rem;font-weight:700;cursor:pointer;}
+    .btn-retry{padding:.75rem;background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:8px;font-family:var(--font-body);font-size:.88rem;font-weight:600;cursor:pointer;}
   </style>
   <script src="app-native.js" defer></script>
 </head>
@@ -175,19 +185,37 @@
 
     <!-- OCR UPLOAD SECTION -->
     <div class="ocr-section">
-      <h3>📷 Auto-fill from Photo</h3>
+      <h3>📷 Auto-Read from Photo</h3>
+
+      <!-- Desktop: drag-and-drop zone -->
       <div class="ocr-drop" id="ocrDrop">
         <input type="file" id="ocrFile" accept="image/*" onchange="handleImageSelect(event)"/>
         <div class="drop-icon">📸</div>
-        <p><strong>Upload or take a photo</strong> of your ABG report</p>
-        <small>AI reads the values and fills the form automatically</small>
+        <p><strong>Click or drag a photo</strong> of your ABG report</p>
+        <small>AI reads values, fills form, and analyses automatically</small>
       </div>
+
+      <!-- Mobile: large tap buttons -->
+      <div class="ocr-mobile-btns">
+        <button class="ocr-cam-btn" onclick="document.getElementById('ocrCamera').click()">
+          📷 Take Photo
+          <span class="btn-sub">Open camera</span>
+        </button>
+        <button class="ocr-gal-btn" onclick="document.getElementById('ocrGallery').click()">
+          🖼️ Gallery
+          <span class="btn-sub">Choose image</span>
+        </button>
+      </div>
+      <!-- Hidden mobile inputs -->
+      <input type="file" id="ocrCamera" accept="image/*" capture="environment" style="display:none" onchange="handleImageSelect(event)"/>
+      <input type="file" id="ocrGallery" accept="image/*" style="display:none" onchange="handleImageSelect(event)"/>
+
       <div class="ocr-preview" id="ocrPreview">
         <img id="ocrImg" src="" alt="ABG Report"/>
         <button class="remove-img" onclick="clearImage()" title="Remove">✕</button>
       </div>
       <button class="ocr-btn" id="ocrBtn" onclick="extractABG()" disabled>
-        🔬 <span id="ocrBtnText">Extract Values from Image</span>
+        🔬 <span id="ocrBtnText">Read & Analyse Image</span>
       </button>
       <div class="ocr-status" id="ocrStatus"></div>
       <div class="ocr-confirm" id="ocrConfirm"></div>
@@ -307,10 +335,13 @@ function clearImage() {
   document.getElementById('ocrImg').src = '';
   document.getElementById('ocrPreview').style.display = 'none';
   document.getElementById('ocrBtn').disabled = true;
-  document.getElementById('ocrBtnText').textContent = 'Extract Values from Image';
+  document.getElementById('ocrBtnText').textContent = 'Read & Analyse Image';
   document.getElementById('ocrStatus').style.display = 'none';
   document.getElementById('ocrConfirm').style.display = 'none';
-  document.getElementById('ocrFile').value = '';
+  ['ocrFile','ocrCamera','ocrGallery'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
 }
 
 async function extractABG() {
@@ -366,20 +397,20 @@ async function extractABG() {
     }
 
     confirm.innerHTML = `
-      <div class="ocr-confirm-header">Extracted values — verify before filling:</div>
+      <div class="ocr-confirm-header">Extracted values — verify before analysing:</div>
       <div>${chipsHtml}</div>
       <div class="ocr-confirm-btns">
-        <button class="btn-fill" onclick="fillFromOCR()">✅ Fill Form</button>
-        <button class="btn-retry" onclick="clearImage()">🔄 Try Different Image</button>
+        <button class="btn-fill" onclick="fillFromOCR()">🔬 Analyse These Values</button>
+        <button class="btn-retry" onclick="clearImage()">🔄 Retake Photo</button>
       </div>
     `;
     confirm.style.display = 'block';
-    btnText.textContent = 'Re-extract';
+    btnText.textContent = 'Re-read Image';
     btn.disabled = false;
 
   } catch (err) {
     status.className = 'ocr-status error';
-    status.innerHTML = `❌ ${err.message}<br><small>Tips: Ensure good lighting, image is in focus, and ABG values are clearly visible. Try a cropped/zoomed photo.</small>`;
+    status.innerHTML = `❌ ${err.message}<br><small>Tips: Ensure good lighting, the report is in focus, and ABG values are clearly visible. Try a closer/cropped photo.</small>`;
     btnText.textContent = 'Try Again';
     btn.disabled = false;
   }
@@ -410,18 +441,22 @@ function fillFromOCR() {
       const el = document.getElementById(id);
       if (el && el.style.borderColor === 'rgb(0, 179, 164)') el.style.borderColor = '';
     });
-  }, 2000);
+  }, 2500);
 
   const status = document.getElementById('ocrStatus');
   status.className = 'ocr-status success';
-  status.innerHTML = `🎉 Auto-filled <strong>${filled} field${filled !== 1 ? 's' : ''}</strong>! Review values below, then click "Analyse ABG".`;
+  status.innerHTML = `🎉 Filled <strong>${filled} value${filled !== 1 ? 's' : ''}</strong> from image — analysing now…`;
 
   document.getElementById('ocrConfirm').style.display = 'none';
 
-  // Scroll to calculate button
+  // Auto-analyse immediately after filling
   setTimeout(() => {
-    document.querySelector('.calc-btn')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }, 300);
+    analyseABG();
+    // On mobile, results appear below — scroll down to them
+    setTimeout(() => {
+      document.getElementById('abgResults').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 250);
+  }, 350);
 }
 
 // Drag-and-drop support
