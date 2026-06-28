@@ -127,6 +127,28 @@
       .result-row .rv{text-align:right;}
     }
 
+    /* ── Snapshot grid ── */
+    .abg-snap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(82px,1fr));gap:.35rem;margin-bottom:.9rem;}
+    .snap-cell{border-radius:8px;padding:.5rem .35rem;text-align:center;border:2px solid transparent;}
+    .snap-cell.ok{border-color:#22c55e;background:#f0fdf4;}
+    .snap-cell.lo{border-color:#3b82f6;background:#eff6ff;}
+    .snap-cell.hi{border-color:#ef4444;background:#fef2f2;}
+    .snap-cell.na{border-color:var(--line);background:var(--bg-alt);}
+    .snap-name{font-size:.58rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--slate);}
+    .snap-val{font-size:1.15rem;font-weight:800;line-height:1.1;margin:.15rem 0;}
+    .snap-val.ok-c{color:#15803d;} .snap-val.lo-c{color:#1d4ed8;} .snap-val.hi-c{color:#b91c1c;} .snap-val.na-c{color:var(--slate);}
+    .snap-unit{font-size:.58rem;color:var(--slate);}
+    html.dark .snap-cell.ok{background:#0a2a1e;} html.dark .snap-cell.lo{background:#0a1e3a;} html.dark .snap-cell.hi{background:#2a0a0a;} html.dark .snap-cell.na{background:#1a2a3a;}
+
+    /* ── Analysis table ── */
+    .at-row{display:flex;justify-content:space-between;align-items:baseline;padding:.42rem 0;border-bottom:1px solid var(--line);gap:.5rem;}
+    .at-row:last-child{border-bottom:none;}
+    .at-label{font-size:.81rem;color:var(--slate);font-weight:500;flex:1;}
+    .at-value{font-size:.84rem;font-weight:700;color:var(--ink);text-align:right;}
+    .at-value.ok{color:#15803d;} .at-value.hi{color:#b91c1c;} .at-value.lo{color:#1d4ed8;} .at-value.warn{color:#92400e;}
+    .at-note{font-size:.72rem;color:var(--slate);text-align:right;margin-top:.05rem;}
+    .at-sect{font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--slate);padding:.65rem 0 .15rem;border-top:1px solid var(--line);margin-top:.2rem;}
+
     /* ── Mobile results-mode: hide form, show only results ── */
     @media(max-width:900px){
       .abg-wrap.results-mode .input-panel { display:none !important; }
@@ -651,602 +673,459 @@ if (dropZone) {
 function v(id) { return parseFloat(document.getElementById(id).value) || null; }
 
 function analyseABG() {
+  // ─── INPUTS ──────────────────────────────────────────────────────
   const pH = v('pH'), pco2 = v('pco2'), hco3 = v('hco3'), pao2 = v('pao2');
   const fio2 = v('fio2') || 0.21;
   const na = v('na'), cl = v('cl'), k = v('k'), albumin = v('albumin') || 4.5;
   const lactate = v('lactate'), glucose = v('glucose'), bun = v('bun');
   const osm_measured = v('osm'), weight = v('weight') || 70, age = v('age') || 45;
-
-  if (!pH || !pco2 || !hco3) {
-    alert('Please enter at minimum: pH, PaCO₂, and HCO₃⁻');
-    return;
-  }
-
-  document.getElementById('placeholder').style.display = 'none';
-  document.getElementById('abgResults').style.display = 'flex';
-  document.getElementById('abgResults').style.flexDirection = 'column';
-  document.getElementById('abgResults').style.gap = '1.2rem';
-
-  let html = '';
-
-  // ── STEP 1: PRIMARY DISORDER ──────────────────────────────────
-  // Marino Stage I: Compare directional changes (Ch.31, p.550)
-  // "If PaCO₂ and pH change in same direction → primary METABOLIC disorder"
-  // "If PaCO₂ and pH change in opposite directions → primary RESPIRATORY disorder"
-
-  const pH_low = pH < 7.35, pH_high = pH > 7.45, pH_normal = pH >= 7.35 && pH <= 7.45;
-  const pco2_low = pco2 < 35, pco2_high = pco2 > 45, pco2_normal = pco2 >= 35 && pco2 <= 45;
-  const hco3_low = hco3 < 22, hco3_high = hco3 > 26, hco3_normal = hco3 >= 22 && hco3 <= 26;
-
-  let primaryDisorder = '', primaryType = '', isPrimMetAcid = false, isPrimMetAlk = false;
-  let isPrimRespAcid = false, isPrimRespAlk = false, isNormal = false;
-
-  if (pH_normal && pco2_normal && hco3_normal) {
-    isNormal = true;
-    primaryDisorder = '✅ Normal ABG';
-    primaryType = 'normal';
-  } else if (pH_normal && (pco2_high || pco2_low)) {
-    // Rule 2: pH normal but PaCO₂ abnormal = mixed
-    if (pco2_high) { primaryDisorder = 'Mixed: Respiratory Acidosis + Metabolic Alkalosis'; isPrimRespAcid = true; }
-    else { primaryDisorder = 'Mixed: Respiratory Alkalosis + Metabolic Acidosis'; isPrimRespAlk = true; }
-    primaryType = 'warning';
-  } else if (pH_low) {
-    if ((pco2_low && hco3_low) || (!pco2_high && hco3_low)) {
-      primaryDisorder = 'Metabolic Acidosis'; isPrimMetAcid = true; primaryType = 'danger';
-    } else if (pco2_high && !hco3_high) {
-      primaryDisorder = 'Respiratory Acidosis'; isPrimRespAcid = true; primaryType = 'danger';
-    } else if (pco2_high && hco3_high) {
-      primaryDisorder = 'Respiratory Acidosis (partially compensated)'; isPrimRespAcid = true; primaryType = 'danger';
-    }
-  } else if (pH_high) {
-    if ((pco2_high && hco3_high) || (!pco2_low && hco3_high)) {
-      primaryDisorder = 'Metabolic Alkalosis'; isPrimMetAlk = true; primaryType = 'normal';
-    } else if (pco2_low && !hco3_low) {
-      primaryDisorder = 'Respiratory Alkalosis'; isPrimRespAlk = true; primaryType = 'normal';
-    } else if (pco2_low && hco3_low) {
-      primaryDisorder = 'Respiratory Alkalosis (partially compensated)'; isPrimRespAlk = true; primaryType = 'normal';
-    }
-  }
-
-  if (!primaryDisorder) primaryDisorder = 'Complex/Mixed Disorder — Review carefully';
-
-  const cardClass = primaryType === 'danger' ? 'danger' : primaryType === 'normal' ? 'normal' : 'warning';
-  const badgeClass = primaryType === 'danger' ? 'badge-red' : primaryType === 'normal' ? 'badge-green' : 'badge-orange';
-
-  html += `<div class="result-card ${cardClass}">
-    <div class="card-header">
-      <h3><span class="step-num sn-${primaryType === 'danger' ? 'red' : primaryType === 'normal' ? 'green' : 'orange'}">1</span> Primary Disorder</h3>
-      <span class="card-badge ${badgeClass}">${primaryDisorder}</span>
-    </div>
-    <div class="card-body">
-      <div class="result-row"><span class="rl">pH</span><span class="rv ${pH_normal ? 'ok' : pH_low ? 'hi' : 'lo'}">${pH.toFixed(2)} <small>(Normal: 7.35–7.45)</small></span></div>
-      <div class="result-row"><span class="rl">PaCO₂</span><span class="rv ${pco2_normal ? 'ok' : pco2_high ? 'hi' : 'lo'}">${pco2} mmHg <small>(Normal: 35–45)</small></span></div>
-      <div class="result-row"><span class="rl">HCO₃⁻</span><span class="rv ${hco3_normal ? 'ok' : hco3_low ? 'hi' : 'lo'}">${hco3} mEq/L <small>(Normal: 22–26)</small></span></div>
-      <div class="result-row"><span class="rl">[H⁺] calculated</span><span class="rv">${(Math.pow(10, -pH) * 1e9).toFixed(1)} nmol/L <small>(Normal: 36–44)</small></span></div>
-      <div class="marino-cite">📗 Marino Ch.31, p.550: "If PaCO₂ and pH change in same direction → primary metabolic disorder. If opposite directions → primary respiratory disorder." (Stage I approach)</div>
-    </div>
-  </div>`;
-
-  // ── STEP 2: COMPENSATION ──────────────────────────────────────
-  // Marino Equations 31.3–31.11
-  let compHTML = '', compBadge = '', compClass = 'badge-blue', secondaryDisorder = '';
-
-  if (isPrimMetAcid) {
-    // Marino Eq.31.3-31.4: ΔPaCO₂ = 1.2 × ΔHCO₃
-    // Expected PaCO₂ = 40 − [1.2 × (24 − HCO₃)]
-    const expectedPco2 = 40 - (1.2 * (24 - hco3));
-    const expectedLow = expectedPco2 - 2, expectedHigh = expectedPco2 + 2;
-    const compAdequate = pco2 >= expectedLow && pco2 <= expectedHigh;
-    const hasSecRespAcid = pco2 > expectedHigh;
-    const hasSecRespAlk = pco2 < expectedLow;
-    if (hasSecRespAcid) { secondaryDisorder = '⚠️ + Secondary Respiratory Acidosis (inadequate ventilatory response)'; compClass = 'badge-red'; }
-    else if (hasSecRespAlk) { secondaryDisorder = '⚠️ + Secondary Respiratory Alkalosis (over-ventilating)'; compClass = 'badge-orange'; }
-    else { secondaryDisorder = '✅ Appropriate respiratory compensation'; compClass = 'badge-green'; }
-    compBadge = `Expected PaCO₂: ${expectedLow.toFixed(1)}–${expectedHigh.toFixed(1)} mmHg`;
-    compHTML = `<div class="result-row"><span class="rl">Expected PaCO₂ (Winter's formula)</span><span class="rv ${compAdequate ? 'ok' : 'warn'}">${expectedLow.toFixed(1)}–${expectedHigh.toFixed(1)} mmHg</span></div>
-    <div class="result-row"><span class="rl">Measured PaCO₂</span><span class="rv ${compAdequate ? 'ok' : pco2 > expectedHigh ? 'hi' : 'lo'}">${pco2} mmHg</span></div>
-    <div class="result-row"><span class="rl">Last 2 digits of pH rule</span><span class="rv">${pco2.toFixed(0)} vs expected ≈ ${Math.abs((pH*100)%100).toFixed(0)}</span></div>
-    <div class="result-interp interp-blue">
-      <strong>Marino Eq.31.3-31.4:</strong> ΔPaCO₂ = 1.2 × ΔHCO₃ | Expected PaCO₂ = 40 − [1.2 × (24 − ${hco3})] = <strong>${expectedPco2.toFixed(1)} ± 2 mmHg</strong><br>${secondaryDisorder}
-    </div>
-    <div class="marino-cite">📗 Marino Ch.31, p.548 (Eq.31.4): "Expected PaCO₂ = 40 − [1.2 × (24 − current HCO₃)]"</div>`;
-  }
-
-  else if (isPrimMetAlk) {
-    // Marino Eq.31.5-31.6: ΔPaCO₂ = 0.7 × ΔHCO₃
-    const expectedPco2 = 40 + (0.7 * (hco3 - 24));
-    const expectedLow = expectedPco2 - 2, expectedHigh = expectedPco2 + 2;
-    const compAdequate = pco2 >= expectedLow && pco2 <= expectedHigh;
-    if (pco2 > expectedHigh) { secondaryDisorder = '⚠️ + Secondary Respiratory Acidosis'; compClass = 'badge-red'; }
-    else if (pco2 < expectedLow) { secondaryDisorder = '⚠️ + Secondary Respiratory Alkalosis'; compClass = 'badge-orange'; }
-    else { secondaryDisorder = '✅ Appropriate compensation'; compClass = 'badge-green'; }
-    compBadge = `Expected PaCO₂: ${expectedLow.toFixed(1)}–${expectedHigh.toFixed(1)} mmHg`;
-    compHTML = `<div class="result-row"><span class="rl">Expected PaCO₂ (Marino Eq.31.6)</span><span class="rv ${compAdequate ? 'ok' : 'warn'}">${expectedLow.toFixed(1)}–${expectedHigh.toFixed(1)} mmHg</span></div>
-    <div class="result-row"><span class="rl">Measured PaCO₂</span><span class="rv">${pco2} mmHg</span></div>
-    <div class="result-interp interp-blue"><strong>Marino Eq.31.5-31.6:</strong> ΔPaCO₂ = 0.7 × ΔHCO₃ | Expected PaCO₂ = 40 + [0.7 × (${hco3} − 24)] = <strong>${expectedPco2.toFixed(1)} ± 2 mmHg</strong><br>${secondaryDisorder}</div>
-    <div class="marino-cite">📗 Marino Ch.31, p.548 (Eq.31.6): "Expected PaCO₂ = 40 + [0.7 × (current HCO₃ − 24)]"</div>`;
-  }
-
-  else if (isPrimRespAcid) {
-    // Acute: ΔHCO₃ = 0.1 × ΔPaCO₂ (Eq.31.7)
-    // Chronic: ΔHCO₃ = 0.4 × ΔPaCO₂ (Eq.31.9)
-    const dpco2 = pco2 - 40;
-    const expHco3Acute = 24 + (0.1 * dpco2);
-    const expHco3Chronic = 24 + (0.4 * dpco2);
-    let acuteOrChronic = '';
-    if (hco3 < expHco3Acute - 1) { acuteOrChronic = '⚠️ HCO₃ BELOW acute range → Secondary metabolic acidosis'; compClass = 'badge-red'; }
-    else if (hco3 >= expHco3Acute - 1 && hco3 <= expHco3Acute + 2) { acuteOrChronic = '🔵 Acute respiratory acidosis (uncompensated)'; compClass = 'badge-blue'; }
-    else if (hco3 > expHco3Acute + 2 && hco3 < expHco3Chronic - 2) { acuteOrChronic = '🟡 Partially compensated (between acute and chronic)'; compClass = 'badge-yellow'; }
-    else if (hco3 >= expHco3Chronic - 2 && hco3 <= expHco3Chronic + 3) { acuteOrChronic = '✅ Chronic respiratory acidosis (fully compensated)'; compClass = 'badge-green'; }
-    else { acuteOrChronic = '⚠️ HCO₃ ABOVE chronic range → Secondary metabolic alkalosis'; compClass = 'badge-orange'; }
-    compBadge = `Acute exp HCO₃: ${expHco3Acute.toFixed(1)} | Chronic: ${expHco3Chronic.toFixed(1)}`;
-    compHTML = `<div class="result-row"><span class="rl">Acute expected HCO₃ (Eq.31.7)</span><span class="rv">${expHco3Acute.toFixed(1)} mEq/L <small>(0.1 × ΔPaCO₂)</small></span></div>
-    <div class="result-row"><span class="rl">Chronic expected HCO₃ (Eq.31.9)</span><span class="rv">${expHco3Chronic.toFixed(1)} mEq/L <small>(0.4 × ΔPaCO₂)</small></span></div>
-    <div class="result-row"><span class="rl">Measured HCO₃</span><span class="rv">${hco3} mEq/L</span></div>
-    <div class="result-interp interp-blue"><strong>Marino Eq.31.7 (acute):</strong> ΔHCO₃ = 0.1 × (${pco2}−40) = ${(0.1*dpco2).toFixed(1)} → exp ${expHco3Acute.toFixed(1)}<br><strong>Marino Eq.31.9 (chronic):</strong> ΔHCO₃ = 0.4 × (${pco2}−40) = ${(0.4*dpco2).toFixed(1)} → exp ${expHco3Chronic.toFixed(1)}<br>${acuteOrChronic}</div>
-    <div class="marino-cite">📗 Marino Ch.31, p.549 (Eq.31.7, 31.9): Acute resp acidosis ΔHCO₃=0.1×ΔPaCO₂; Chronic ΔHCO₃=0.4×ΔPaCO₂</div>`;
-  }
-
-  else if (isPrimRespAlk) {
-    // Acute: ΔHCO₃ = 0.2 × ΔPaCO₂ (Eq.31.8)
-    // Chronic: ΔHCO₃ = 0.4 × ΔPaCO₂ (Eq.31.9-11)
-    const dpco2 = 40 - pco2;
-    const expHco3Acute = 24 - (0.2 * dpco2);
-    const expHco3Chronic = 24 - (0.4 * dpco2);
-    let acuteOrChronic = '';
-    if (hco3 > expHco3Acute + 1) { acuteOrChronic = '⚠️ HCO₃ above acute range → Secondary metabolic alkalosis'; compClass = 'badge-orange'; }
-    else if (hco3 <= expHco3Acute + 1 && hco3 >= expHco3Acute - 2) { acuteOrChronic = '🔵 Acute respiratory alkalosis (uncompensated)'; compClass = 'badge-blue'; }
-    else if (hco3 < expHco3Acute - 2 && hco3 > expHco3Chronic + 2) { acuteOrChronic = '🟡 Partially compensated (between acute and chronic)'; compClass = 'badge-yellow'; }
-    else if (hco3 <= expHco3Chronic + 2 && hco3 >= expHco3Chronic - 2) { acuteOrChronic = '✅ Chronic respiratory alkalosis (fully compensated)'; compClass = 'badge-green'; }
-    else { acuteOrChronic = '⚠️ HCO₃ below chronic range → Secondary metabolic acidosis'; compClass = 'badge-red'; }
-    compBadge = `Acute exp HCO₃: ${expHco3Acute.toFixed(1)} | Chronic: ${expHco3Chronic.toFixed(1)}`;
-    compHTML = `<div class="result-row"><span class="rl">Acute expected HCO₃ (Eq.31.8)</span><span class="rv">${expHco3Acute.toFixed(1)} mEq/L <small>(0.2 × ΔPaCO₂)</small></span></div>
-    <div class="result-row"><span class="rl">Chronic expected HCO₃ (Eq.31.11)</span><span class="rv">${expHco3Chronic.toFixed(1)} mEq/L <small>(0.4 × ΔPaCO₂)</small></span></div>
-    <div class="result-row"><span class="rl">Measured HCO₃</span><span class="rv">${hco3} mEq/L</span></div>
-    <div class="result-interp interp-blue"><strong>Marino Eq.31.8 (acute):</strong> ΔHCO₃ = 0.2 × (40−${pco2}) = ${(0.2*dpco2).toFixed(1)} → exp ${expHco3Acute.toFixed(1)}<br><strong>Marino Eq.31.11 (chronic):</strong> ΔHCO₃ = 0.4 × (40−${pco2}) = ${(0.4*dpco2).toFixed(1)} → exp ${expHco3Chronic.toFixed(1)}<br>${acuteOrChronic}</div>
-    <div class="marino-cite">📗 Marino Ch.31, p.549 (Eq.31.8, 31.11): Acute resp alkalosis ΔHCO₃=0.2×ΔPaCO₂; Chronic ΔHCO₃=0.4×ΔPaCO₂</div>`;
-  }
-
-  if (compHTML) {
-    html += `<div class="result-card info">
-      <div class="card-header">
-        <h3><span class="step-num sn-blue">2</span> Compensation Analysis</h3>
-        <span class="card-badge ${compClass}">${secondaryDisorder || compBadge}</span>
-      </div>
-      <div class="card-body">${compHTML}</div>
-    </div>`;
-  }
-
-  // ── STEP 3: ANION GAP ──────────────────────────────────────────
-  // Marino Eq.31.14: AG = Na − (Cl + HCO₃)
-  // Marino Eq.31.15: Corrected AG = AG + [2.5 × (4.5 − albumin)]
-  if (na && cl) {
-    const ag = na - (cl + hco3);
-    const correctedAG = ag + (2.5 * (4.5 - albumin));
-    const agNormal = ag >= 8 && ag <= 12;
-    const agCorrNormal = correctedAG >= 8 && correctedAG <= 12;
-    const agElevated = correctedAG > 12;
-    const agLow = ag < 8;
-
-    let agInterp = '', agInterpClass = 'interp-blue';
-    if (agElevated) { agInterp = '🔴 HIGH Anion Gap Metabolic Acidosis — see MUDPILES'; agInterpClass = 'interp-red'; }
-    else if (agLow) { agInterp = '🟡 LOW anion gap — consider: hypoalbuminaemia, multiple myeloma, severe hyperlipidaemia, lithium toxicity'; agInterpClass = 'interp-yellow'; }
-    else { agInterp = '✅ Normal Anion Gap — if metabolic acidosis present: consider USED CARP (hyperchloraemic causes)'; agInterpClass = 'interp-green'; }
-
-    const agCardClass = agElevated ? 'danger' : agLow ? 'warning' : 'normal';
-    const agBadgeClass = agElevated ? 'badge-red' : agLow ? 'badge-yellow' : 'badge-green';
-
-    html += `<div class="result-card ${agCardClass}">
-      <div class="card-header">
-        <h3><span class="step-num sn-${agElevated ? 'red' : agLow ? 'orange' : 'green'}">3</span> Anion Gap</h3>
-        <span class="card-badge ${agBadgeClass}">AG=${ag.toFixed(1)} | Corrected=${correctedAG.toFixed(1)}</span>
-      </div>
-      <div class="card-body">
-        <div class="result-row"><span class="rl">Anion Gap (Na − Cl − HCO₃)</span><span class="rv ${agNormal ? 'ok' : ag > 12 ? 'hi' : 'lo'}">${ag.toFixed(1)} mEq/L <small>(Normal: 8–12)</small></span></div>
-        <div class="result-row"><span class="rl">Albumin-corrected AG (Marino Eq.31.15)</span><span class="rv ${agCorrNormal ? 'ok' : correctedAG > 12 ? 'hi' : 'lo'}">${correctedAG.toFixed(1)} mEq/L <small>(Normal: 8–12)</small></span></div>
-        <div class="result-row"><span class="rl">Albumin used</span><span class="rv">${albumin} g/dL <small>(Normal: 3.5–5.0)</small></span></div>
-        <div class="result-row"><span class="rl">Formula used</span><span class="rv" style="font-size:.78rem;color:var(--slate)">AG + [2.5 × (4.5 − ${albumin})]</span></div>
-        <div class="result-interp ${agInterpClass}">${agInterp}
-          ${albumin < 3.5 ? '<br>⚠️ <strong>Hypoalbuminaemia present</strong> — uncorrected AG may be FALSELY NORMAL. Always use corrected AG in ICU patients (Marino: hypoalbuminaemia in up to 90% of ICU patients).' : ''}
-        </div>
-        ${agElevated ? `<div class="mnemonic-box">
-          <h4>🔴 MUDPILES — High Anion Gap Causes (Marino Table 31.3)</h4>
-          <div class="mnemonic-grid">
-            <div class="mnemonic-item"><strong>M</strong> — Methanol (→ formic acid)</div>
-            <div class="mnemonic-item"><strong>U</strong> — Uraemia (advanced renal failure)</div>
-            <div class="mnemonic-item"><strong>D</strong> — Diabetic Ketoacidosis (DKA)</div>
-            <div class="mnemonic-item"><strong>P</strong> — Pyroglutamic acid (chronic paracetamol ingestion)</div>
-            <div class="mnemonic-item"><strong>I</strong> — Isoniazid / Iron toxicity</div>
-            <div class="mnemonic-item"><strong>L</strong> — Lactic acidosis (most common in ICU)</div>
-            <div class="mnemonic-item"><strong>E</strong> — Ethylene glycol (→ oxalic acid)</div>
-            <div class="mnemonic-item"><strong>S</strong> — Salicylates (salicylic acid)</div>
-          </div>
-          <div style="margin-top:.5rem;font-size:.78rem;color:var(--slate)">Also consider: D-lactic acid (short bowel syndrome), propylene glycol toxicity</div>
-        </div>` : ''}
-        ${!agElevated && isPrimMetAcid ? `<div class="mnemonic-box">
-          <h4>✅ USED CARP — Normal Anion Gap (Hyperchloraemic) Acidosis Causes</h4>
-          <div class="mnemonic-grid">
-            <div class="mnemonic-item"><strong>U</strong> — Ureteral diversions</div>
-            <div class="mnemonic-item"><strong>S</strong> — Small bowel fistula</div>
-            <div class="mnemonic-item"><strong>E</strong> — Extra chloride (0.9% NaCl infusion)</div>
-            <div class="mnemonic-item"><strong>D</strong> — Diarrhoea (most common)</div>
-            <div class="mnemonic-item"><strong>C</strong> — Carbonic anhydrase inhibitors</div>
-            <div class="mnemonic-item"><strong>A</strong> — Adrenal insufficiency</div>
-            <div class="mnemonic-item"><strong>R</strong> — RTA (Renal Tubular Acidosis)</div>
-            <div class="mnemonic-item"><strong>P</strong> — Pancreatic fistula</div>
-          </div>
-        </div>` : ''}
-        <div class="marino-cite">📗 Marino Ch.31, p.552 (Eq.31.14): AG = Na − (Cl + HCO₃) | p.553 (Eq.31.15): Corrected AG = AG + [2.5 × (4.5 − albumin)] | Table 31.3</div>
-      </div>
-    </div>`;
-
-    // ── STEP 4: GAP-GAP RATIO (Delta-Delta) ─────────────────────
-    // Marino p.555: Delta gap = ΔAG / ΔHCO₃
-    // "In high AG metabolic acidosis, increase in AG should equal decrease in HCO₃ → delta gap = 1.0"
-    // Delta gap <1 → co-existing normal AG acidosis
-    // Delta gap >1 → co-existing metabolic alkalosis
-    const normalAG = 10, normalHCO3 = 24;
-    const deltaAG = correctedAG - normalAG;  // increase in AG
-    const deltaHCO3 = normalHCO3 - hco3;   // decrease in HCO3
-
-    if (agElevated && deltaHCO3 !== 0) {
-      const deltaRatio = deltaAG / Math.max(deltaHCO3, 0.1);
-      let drInterp = '', drClass = 'interp-blue', drBadge = '', drBadgeClass = 'badge-blue';
-
-      if (deltaRatio < 0.4) {
-        drInterp = '⚠️ Delta ratio &lt;0.4: Predominantly HYPERCHLORAEMIC (non-AG) metabolic acidosis. Little/no high-AG component.';
-        drClass = 'interp-yellow'; drBadgeClass = 'badge-yellow'; drBadge = '<0.4: Non-AG acidosis';
-      } else if (deltaRatio < 1.0) {
-        drInterp = '🔴 Delta ratio 0.4–1.0: MIXED HIGH-AG + NORMAL-AG metabolic acidosis. HCO₃ decrease greater than AG increase → co-existing hyperchloraemic acidosis (e.g., DKA + saline resuscitation).';
-        drClass = 'interp-red'; drBadgeClass = 'badge-red'; drBadge = '0.4–1.0: Mixed AGMA+NAGMA';
-      } else if (deltaRatio <= 2.0) {
-        drInterp = '✅ Delta ratio 1.0–2.0: PURE high-AG metabolic acidosis. Appropriate HCO₃ decrease for AG increase.';
-        drClass = 'interp-green'; drBadgeClass = 'badge-green'; drBadge = '1.0–2.0: Pure AGMA';
-      } else {
-        drInterp = '🟡 Delta ratio &gt;2.0: HIGH-AG metabolic acidosis + co-existing METABOLIC ALKALOSIS. HCO₃ higher than expected for the degree of AG elevation (e.g., vomiting + DKA, diuretics + lactic acidosis).';
-        drClass = 'interp-orange'; drBadgeClass = 'badge-orange'; drBadge = '>2.0: AGMA + Met Alkalosis';
-      }
-
-      html += `<div class="result-card info">
-        <div class="card-header">
-          <h3><span class="step-num sn-blue">4</span> Gap-Gap Ratio (Delta-Delta / Δ-Δ)</h3>
-          <span class="card-badge ${drBadgeClass}">${drBadge}</span>
-        </div>
-        <div class="card-body">
-          <div class="result-row"><span class="rl">ΔAnion Gap (Corrected AG − 10)</span><span class="rv">${deltaAG.toFixed(1)} mEq/L</span></div>
-          <div class="result-row"><span class="rl">ΔHCO₃ (24 − measured HCO₃)</span><span class="rv">${deltaHCO3.toFixed(1)} mEq/L</span></div>
-          <div class="result-row"><span class="rl">Gap-Gap Ratio (ΔAG ÷ ΔHCO₃)</span><span class="rv" style="font-size:1.2rem;font-weight:800;">${deltaRatio.toFixed(2)}</span></div>
-          <div class="result-interp ${drClass}">
-            <strong>Interpretation:</strong> ${drInterp}
-            <br><br>
-            <strong>Reference ranges:</strong><br>
-            &lt;0.4 → Non-AG metabolic acidosis dominant<br>
-            0.4–1.0 → Mixed AGMA + NAGMA<br>
-            1.0–2.0 → Pure AGMA (normal ratio for high-AG acidosis)<br>
-            &gt;2.0 → AGMA + Metabolic Alkalosis
-          </div>
-          <div class="marino-cite">📗 Marino Ch.31, p.555: "In metabolic acidoses from non-volatile acids, the increase in AG should equal the decrease in HCO₃ → delta gap should be 1.0. Delta gap &lt;1 indicates co-existing normal AG acidosis. Delta gap &gt;1 indicates co-existing metabolic alkalosis."</div>
-        </div>
-      </div>`;
-    }
-
-    // ── STEP 5: OSMOLAL GAP ──────────────────────────────────────
-    // Marino Eq.31.17: Calculated Osm = 2×Na + glucose/18 + BUN/2.8
-    if (glucose && bun) {
-      const calcOsm = (2 * na) + (glucose / 18) + (bun / 2.8);
-      const osmGap = osm_measured ? osm_measured - calcOsm : null;
-
-      html += `<div class="result-card info">
-        <div class="card-header">
-          <h3><span class="step-num sn-blue">5</span> Osmolal Gap</h3>
-          <span class="card-badge ${osmGap !== null ? (osmGap > 10 ? 'badge-red' : 'badge-green') : 'badge-gray'}">${osmGap !== null ? `Gap: ${osmGap.toFixed(1)} mOsm/kg` : 'Enter measured osmolality'}</span>
-        </div>
-        <div class="card-body">
-          <div class="result-row"><span class="rl">Calculated osmolality (Eq.31.17)</span><span class="rv">${calcOsm.toFixed(1)} mOsm/kg</span></div>
-          <div class="result-row"><span class="rl">Formula</span><span class="rv" style="font-size:.78rem;color:var(--slate)">2×${na} + ${glucose}/18 + ${bun}/2.8</span></div>
-          ${osm_measured ? `<div class="result-row"><span class="rl">Measured osmolality</span><span class="rv">${osm_measured} mOsm/kg</span></div>
-          <div class="result-row"><span class="rl">Osmolal Gap</span><span class="rv ${osmGap > 10 ? 'hi' : 'ok'}">${osmGap.toFixed(1)} mOsm/kg <small>(Normal: &lt;10)</small></span></div>
-          <div class="result-interp ${osmGap > 10 ? 'interp-red' : 'interp-green'}">
-            ${osmGap > 10 ? '🔴 <strong>ELEVATED osmolal gap (&gt;10):</strong> Suggests unmeasured osmole — consider: Methanol, Ethylene glycol, Isopropanol, Propylene glycol, D-lactic acid, Mannitol, Ethanol<br><em>In high-AG metabolic acidosis with unexplained gap: elevated osmolal gap strongly suggests toxic alcohol ingestion.</em>' : '✅ Normal osmolal gap (&lt;10). No evidence of unmeasured osmole.'}
-          </div>` : `<div class="result-interp interp-blue">Enter measured osmolality to calculate osmolal gap. Useful when high-AG acidosis present without clear cause (methanol, ethylene glycol suspicion).</div>`}
-          <div class="marino-cite">📗 Marino Ch.31, p.556 (Eq.31.17): "Calculated Osm = 2×Na + glucose/18 + BUN/2.8. Elevated osmolal gap can indicate occult toxin."</div>
-        </div>
-      </div>`;
-    }
-  }
-
-  // ── STEP 6: OXYGENATION ─────────────────────────────────────────
-  if (pao2) {
-    // A-a gradient = PAO₂ − PaO₂
-    // PAO₂ = FiO₂ × (Pb − PH₂O) − PaCO₂/RQ = FiO₂ × 713 − PaCO₂/0.8
-    const pao2_alv = (fio2 * 713) - (pco2 / 0.8);
-    const aaGrad = pao2_alv - pao2;
-    const normalAaGrad = (age / 4) + 4;  // Expected max A-a gradient
-    const pf_ratio = pao2 / fio2;
-
-    let pf_interp = '', pf_class = 'badge-green';
-    if (pf_ratio >= 400) { pf_interp = 'Normal oxygenation'; pf_class = 'badge-green'; }
-    else if (pf_ratio >= 300) { pf_interp = 'Mild hypoxaemia'; pf_class = 'badge-yellow'; }
-    else if (pf_ratio >= 200) { pf_interp = '🔴 Mild ARDS (P/F 201–300)'; pf_class = 'badge-orange'; }
-    else if (pf_ratio >= 100) { pf_interp = '🔴 Moderate ARDS (P/F 101–200) — Consider proning'; pf_class = 'badge-red'; }
-    else { pf_interp = '🔴🔴 Severe ARDS (P/F ≤100) — PRONE ≥16h (PROSEVA NNT=6), consider NMB, VV-ECMO'; pf_class = 'badge-red'; }
-
-    const aaHigh = aaGrad > normalAaGrad + 5;
-    let aaInterp = '';
-    if (aaGrad < 0) aaInterp = '⚠️ Negative A-a gradient (unusual — check values or hypoventilation)';
-    else if (aaHigh) aaInterp = `🔴 Elevated A-a gradient (>${normalAaGrad.toFixed(0)} for age ${age}) → V/Q mismatch, diffusion defect, or shunt`;
-    else aaInterp = `✅ Normal A-a gradient for age ${age} (expected max ${(normalAaGrad + 5).toFixed(0)} mmHg)`;
-
-    html += `<div class="result-card ${aaHigh || pf_ratio < 300 ? 'danger' : 'normal'}">
-      <div class="card-header">
-        <h3><span class="step-num sn-${aaHigh ? 'red' : 'green'}">6</span> Oxygenation</h3>
-        <span class="card-badge ${pf_class}">P/F = ${pf_ratio.toFixed(0)} — ${pf_interp.replace(/🔴🔴 |🔴 |✅ /g,'')}</span>
-      </div>
-      <div class="card-body">
-        <div class="result-row"><span class="rl">PaO₂ (measured)</span><span class="rv ${pao2 < 60 ? 'hi' : 'ok'}">${pao2} mmHg <small>(Normal: 80–100 on room air)</small></span></div>
-        <div class="result-row"><span class="rl">FiO₂</span><span class="rv">${fio2} (${(fio2*100).toFixed(0)}%)</span></div>
-        <div class="result-row"><span class="rl">Alveolar PO₂ (PAO₂)</span><span class="rv">${pao2_alv.toFixed(1)} mmHg</div>
-        <div class="result-row"><span class="rl">A-a gradient (PAO₂ − PaO₂)</span><span class="rv ${aaHigh ? 'hi' : 'ok'}">${aaGrad.toFixed(1)} mmHg <small>(Expected max: ${(normalAaGrad+5).toFixed(0)} at age ${age})</small></span></div>
-        <div class="result-row"><span class="rl">P/F Ratio (PaO₂÷FiO₂)</span><span class="rv" style="font-size:1.1rem;font-weight:800;color:${pf_ratio<100?'#b91c1c':pf_ratio<200?'#9a3412':pf_ratio<300?'#854d0e':pf_ratio<400?'#15803d':'#166534'}">${pf_ratio.toFixed(0)}</span></div>
-        <div class="result-interp ${aaHigh ? 'interp-red' : 'interp-green'}">${aaInterp}<br>${pf_interp}</div>
-        <div class="marino-cite">📗 PAO₂ = FiO₂ × 713 − PaCO₂/0.8 | A-a gradient normal = age/4 + 4 | P/F ratio: ARDS Berlin Definition 2012 + 2023 Global ARDS Definition</div>
-      </div>
-    </div>`;
-  }
-
-  // ── STEP 7: LACTATE ──────────────────────────────────────────────
-  if (lactate !== null) {
-    let lacInterp = '', lacClass = 'badge-green', lacCardClass = 'normal', lacInterpClass = 'interp-green';
-    if (lactate <= 1.0) { lacInterp = '✅ Normal lactate. No hypoperfusion.'; lacCardClass = 'normal'; }
-    else if (lactate <= 2.0) { lacInterp = '✅ Upper normal range. Monitor — no immediate concern.'; lacCardClass = 'normal'; }
-    else if (lactate <= 4.0) {
-      lacInterp = '⚠️ Mild-moderate hyperlactataemia (2–4 mmol/L). Investigate cause. Initiate resuscitation if clinical shock.';
-      lacClass = 'badge-orange'; lacCardClass = 'warning'; lacInterpClass = 'interp-orange';
-    } else {
-      lacInterp = '🔴 SEVERE hyperlactataemia (&gt;4 mmol/L). Septic shock criterion (SSC 2026). Tissue hypoperfusion — urgent resuscitation. Serial lactate monitoring q2h. Target clearance ≥10% per 2 hours.';
-      lacClass = 'badge-red'; lacCardClass = 'danger'; lacInterpClass = 'interp-red';
-    }
-
-    html += `<div class="result-card ${lacCardClass}">
-      <div class="card-header">
-        <h3><span class="step-num sn-${lacCardClass === 'danger' ? 'red' : lacCardClass === 'warning' ? 'orange' : 'green'}">7</span> Lactate Analysis</h3>
-        <span class="card-badge ${lacClass}">Lactate: ${lactate} mmol/L</span>
-      </div>
-      <div class="card-body">
-        <div class="result-row"><span class="rl">Serum Lactate</span><span class="rv ${lactate > 2 ? 'hi' : 'ok'}">${lactate} mmol/L <small>(Normal: &lt;2.0)</small></span></div>
-        <div class="result-row"><span class="rl">Septic shock criterion (SSC 2026)</span><span class="rv ${lactate > 2 ? 'hi' : 'ok'}">${lactate > 2 ? '⚠️ YES — lactate >2 + vasopressors = septic shock' : 'No — lactate ≤2 mmol/L'}</span></div>
-        <div class="result-interp ${lacInterpClass}">
-          ${lacInterp}
-          ${lactate > 2 ? `<br><br><strong>Marino's insight (Ch.32, p.307):</strong> In septic shock, elevated lactate is NOT primarily from anaerobic metabolism. Mitochondrial dysfunction → inhibition of pyruvate dehydrogenase → lactate as alternative energy source during metabolic stress. This explains why ScvO₂ can be ELEVATED in sepsis despite hypoperfusion.<br><br>
-          <strong>Type A vs Type B lactataemia:</strong><br>
-          Type A (tissue hypoxia): sepsis, cardiogenic shock, cardiac arrest, mesenteric ischaemia, severe anaemia<br>
-          Type B (non-hypoxic): liver failure, metformin, thiamine deficiency, β₂-agonist excess (salbutamol), malignancy` : ''}
-        </div>
-        <div class="marino-cite">📗 Marino's ICU Book 5th Ed, Ch.17 p.307; Ch.32: Lactic Acidosis. SSC 2026 (Prescott et al., Crit Care Med 2026) — lactate >2 mmol/L = septic shock criterion with vasopressors.</div>
-      </div>
-    </div>`;
-  }
-
-  // ── STEP 8: BICARBONATE REPLACEMENT ─────────────────────────────
-  if (isPrimMetAcid && hco3 < 15) {
-    const targetHCO3 = 15;  // Do NOT target normal — avoid overshoot
-    const hco3Deficit = 0.4 * weight * (targetHCO3 - hco3);  // Space of distribution = 0.4×weight
-    const mmolNaHCO3 = hco3Deficit;  // 1 mmol NaHCO3 provides 1 mEq HCO3
-    const mlOf84 = (mmolNaHCO3 / 1) * (1000/1000);  // 8.4% NaHCO3 = 1 mmol/ml
-
-    html += `<div class="result-card warning">
-      <div class="card-header">
-        <h3><span class="step-num sn-orange">8</span> Bicarbonate Replacement</h3>
-        <span class="card-badge badge-orange">HCO₃ deficit: ${hco3Deficit.toFixed(0)} mEq</span>
-      </div>
-      <div class="card-body">
-        <div class="result-row"><span class="rl">Actual HCO₃</span><span class="rv hi">${hco3} mEq/L</span></div>
-        <div class="result-row"><span class="rl">Target HCO₃</span><span class="rv">${targetHCO3} mEq/L (NOT normal — to avoid overshoot)</span></div>
-        <div class="result-row"><span class="rl">Patient weight</span><span class="rv">${weight} kg</span></div>
-        <div class="result-row"><span class="rl">HCO₃ deficit (0.4 × wt × [target−actual])</span><span class="rv warn">${hco3Deficit.toFixed(0)} mEq</span></div>
-        <div class="result-row"><span class="rl">8.4% NaHCO₃ (1 mmol/ml)</span><span class="rv">${mlOf84.toFixed(0)} ml</span></div>
-        <div class="result-row"><span class="rl">Give over</span><span class="rv">30–60 minutes IV infusion (not bolus)</span></div>
-        <div class="result-interp interp-orange">
-          ⚠️ <strong>NaHCO₃ is only indicated when:</strong> Severe metabolic acidosis pH &lt;7.10–7.15 AND likely NOT lactic acidosis (bicarbonate does NOT benefit lactic acidosis — BICAR-ICU trial 2018).<br>
-          <br><strong>Indications:</strong> DKA with pH &lt;6.9, severe hyperchloraemic acidosis (diarrhoea/RTA), refractory acidosis on RRT<br>
-          <strong>Do NOT give for:</strong> Lactic acidosis (raises CO₂, worsens intracellular acidosis), septic shock<br>
-          <br>Give half the calculated deficit first, recheck ABG, then give remainder if needed.
-        </div>
-        <div class="marino-cite">📗 HCO₃ deficit formula: 0.4 × weight × (target − actual HCO₃). Target 15 mEq/L to avoid overcorrection. Do NOT target 24 mEq/L — overshoot alkalosis risk.</div>
-      </div>
-    </div>`;
-  }
-
-  // ── STEP 9: SODIUM ANALYSIS ─────────────────────────────────────
   const sex = document.querySelector('.sex-btn.active')?.dataset?.sex || 'M';
   const clinCtx = document.getElementById('clinCtx')?.value?.trim() || '';
-  const tbwFactor = sex === 'F' ? 0.5 : 0.6;
-  const tbw = tbwFactor * weight;
+  const tbw = (sex === 'F' ? 0.5 : 0.6) * weight;
 
+  if (!pH || !pco2 || !hco3) { alert('Please enter at minimum: pH, PaCO₂, and HCO₃⁻'); return; }
+
+  // ─── PRIMARY DISORDER ─────────────────────────────────────────────
+  const pH_low = pH < 7.35, pH_high = pH > 7.45, pH_normal = !pH_low && !pH_high;
+  const pco2_high = pco2 > 45, pco2_normal = pco2 >= 35 && pco2 <= 45;
+  const hco3_low = hco3 < 22, hco3_high = hco3 > 26, hco3_normal = !hco3_low && !hco3_high;
+  let primary = '', severity = 'warning';
+  let isPrimMetAcid = false, isPrimMetAlk = false, isPrimRespAcid = false, isPrimRespAlk = false, isNormal = false;
+
+  if (pH_normal && pco2_normal && hco3_normal) {
+    isNormal = true; primary = 'Normal ABG'; severity = 'normal';
+  } else if (pH_normal && pco2_high) {
+    primary = 'Mixed: Resp Acidosis + Met Alkalosis'; isPrimRespAcid = true;
+  } else if (pH_normal && pco2 < 35) {
+    primary = 'Mixed: Resp Alkalosis + Met Acidosis'; isPrimRespAlk = true;
+  } else if (pH_low) {
+    if (pco2_high) { primary = 'Respiratory Acidosis'; isPrimRespAcid = true; }
+    else { primary = 'Metabolic Acidosis'; isPrimMetAcid = true; }
+    severity = pH < 7.10 ? 'critical' : pH < 7.20 ? 'danger' : 'warning';
+  } else if (pH_high) {
+    if (pco2 < 35 && !hco3_high) { primary = 'Respiratory Alkalosis'; isPrimRespAlk = true; }
+    else if (pco2 < 35 && hco3_low) { primary = 'Resp Alkalosis (partially compensated)'; isPrimRespAlk = true; }
+    else { primary = 'Metabolic Alkalosis'; isPrimMetAlk = true; }
+    severity = pH > 7.60 ? 'critical' : pH > 7.55 ? 'danger' : 'normal';
+  }
+  if (!primary) { primary = 'Complex Mixed Disorder'; severity = 'warning'; }
+
+  // ─── COMPENSATION ─────────────────────────────────────────────────
+  let compStatus = '', compDetail = '', compExp = '', secondaryDx = '', isAdequate = false;
+  if (isPrimMetAcid) {
+    const exp = 40 - (1.2 * (24 - hco3)), expL = exp - 2, expH = exp + 2;
+    isAdequate = pco2 >= expL && pco2 <= expH;
+    compExp = `${expL.toFixed(1)}–${expH.toFixed(1)} mmHg`;
+    compDetail = `Winter's formula: expected PaCO₂ ${compExp}`;
+    if (isAdequate) compStatus = '✅ Adequate';
+    else if (pco2 > expH) { compStatus = '⚠️ Inadequate (↑ PaCO₂)'; secondaryDx = '+ Secondary Respiratory Acidosis'; }
+    else { compStatus = '⚠️ Over-compensated'; secondaryDx = '+ Secondary Respiratory Alkalosis'; }
+  } else if (isPrimMetAlk) {
+    const exp = 40 + (0.7 * (hco3 - 24)), expL = exp - 2, expH = exp + 2;
+    isAdequate = pco2 >= expL && pco2 <= expH;
+    compExp = `${expL.toFixed(1)}–${expH.toFixed(1)} mmHg`;
+    compDetail = `Expected PaCO₂ ${compExp}`;
+    compStatus = isAdequate ? '✅ Adequate' : pco2 > expH ? '⚠️ + Sec Resp Acidosis' : '⚠️ + Sec Resp Alkalosis';
+    if (!isAdequate) secondaryDx = pco2 > expH ? '+ Secondary Resp Acidosis' : '+ Secondary Resp Alkalosis';
+  } else if (isPrimRespAcid) {
+    const dp = pco2 - 40;
+    const eA = 24 + 0.1 * dp, eC = 24 + 0.4 * dp;
+    compExp = `Acute ${eA.toFixed(1)} / Chronic ${eC.toFixed(1)} mEq/L`;
+    compDetail = `Acute HCO₃ +0.1×ΔPaCO₂ | Chronic HCO₃ +0.4×ΔPaCO₂`;
+    if (hco3 < eA - 1) { compStatus = '⚠️ Below acute range'; secondaryDx = '+ Secondary Metabolic Acidosis'; }
+    else if (hco3 <= eA + 2) { compStatus = '🔵 Acute (uncompensated)'; isAdequate = true; }
+    else if (hco3 < eC - 2) { compStatus = '🟡 Partially compensated'; isAdequate = true; }
+    else if (hco3 <= eC + 3) { compStatus = '✅ Chronic (fully compensated)'; isAdequate = true; }
+    else { compStatus = '⚠️ Above chronic range'; secondaryDx = '+ Secondary Metabolic Alkalosis'; }
+  } else if (isPrimRespAlk) {
+    const dp = 40 - pco2;
+    const eA = 24 - 0.2 * dp, eC = 24 - 0.4 * dp;
+    compExp = `Acute ${eA.toFixed(1)} / Chronic ${eC.toFixed(1)} mEq/L`;
+    compDetail = `Acute HCO₃ −0.2×ΔPaCO₂ | Chronic HCO₃ −0.4×ΔPaCO₂`;
+    if (hco3 > eA + 1) { compStatus = '⚠️ Above acute'; secondaryDx = '+ Secondary Metabolic Alkalosis'; }
+    else if (hco3 >= eA - 2) { compStatus = '🔵 Acute (uncompensated)'; isAdequate = true; }
+    else if (hco3 > eC + 2) { compStatus = '🟡 Partially compensated'; isAdequate = true; }
+    else if (hco3 >= eC - 2) { compStatus = '✅ Chronic (fully compensated)'; isAdequate = true; }
+    else { compStatus = '⚠️ Below chronic range'; secondaryDx = '+ Secondary Metabolic Acidosis'; }
+  }
+
+  // ─── ANION GAP ────────────────────────────────────────────────────
+  let ag = null, corrAG = null, agHigh = false, agLow = false, deltaRatio = null, deltaLabel = '';
+  if (na && cl) {
+    ag = na - (cl + hco3);
+    corrAG = ag + 2.5 * (4.5 - albumin);
+    agHigh = corrAG > 12; agLow = ag < 8;
+    if (agHigh) {
+      const dAG = corrAG - 10, dHCO3 = Math.max(24 - hco3, 0.1);
+      deltaRatio = dAG / dHCO3;
+      if (deltaRatio < 0.4) deltaLabel = `${deltaRatio.toFixed(2)} — Non-AG acidosis dominant`;
+      else if (deltaRatio < 1.0) deltaLabel = `${deltaRatio.toFixed(2)} — Mixed AGMA + NAGMA`;
+      else if (deltaRatio <= 2.0) deltaLabel = `${deltaRatio.toFixed(2)} — Pure AGMA ✅`;
+      else deltaLabel = `${deltaRatio.toFixed(2)} — AGMA + Metabolic Alkalosis`;
+    }
+  }
+
+  // ─── OSMOLAL GAP ──────────────────────────────────────────────────
+  let calcOsm = null, osmGap = null;
+  if (na && glucose && bun) {
+    calcOsm = 2 * na + glucose / 18 + bun / 2.8;
+    if (osm_measured) osmGap = osm_measured - calcOsm;
+  }
+
+  // ─── OXYGENATION ──────────────────────────────────────────────────
+  let pf = null, aaGrad = null, pAlv = null, oxyLabel = '';
+  if (pao2) {
+    pAlv = fio2 * 713 - pco2 / 0.8;
+    aaGrad = pAlv - pao2;
+    pf = pao2 / fio2;
+    oxyLabel = pf >= 400 ? 'Normal' : pf >= 300 ? 'Mild hypoxaemia' : pf >= 200 ? 'Mild ARDS' : pf >= 100 ? 'Moderate ARDS' : 'Severe ARDS';
+  }
+
+  // ─── SODIUM ───────────────────────────────────────────────────────
+  let corrNa = na;
+  let naReplRows = [];
   if (na) {
-    // Corrected Na for hyperglycaemia (Katz formula: +2.4 per 100 mg/dL rise)
-    let corrNa = na;
-    let corrNaNote = '';
-    if (glucose && glucose > 100) {
-      corrNa = na + (2.4 * (glucose - 100) / 100);
-      corrNaNote = `Corrected Na = ${na} + [2.4 × (${glucose}−100)/100] = <strong>${corrNa.toFixed(1)} mEq/L</strong> — use this for management decisions in hyperglycaemia`;
-    }
-    const naLow = corrNa < 135, naHigh = corrNa > 145;
-    const naCritLow = corrNa < 125, naCritHigh = corrNa > 160;
-
-    if (naLow || naHigh || (glucose && glucose > 100)) {
-      let naBody = '', naCard = 'info', naBadge = 'badge-blue', naBadgeLabel = '';
-
-      naBody += `<div class="result-row"><span class="rl">Sodium (Na⁺) — measured</span><span class="rv ${na < 135 ? 'hi' : na > 145 ? 'hi' : 'ok'}">${na} mEq/L <small>(Normal: 135–145)</small></span></div>`;
-      if (glucose && glucose > 100) {
-        naBody += `<div class="result-row"><span class="rl">Glucose-corrected Na⁺</span><span class="rv ${naLow ? 'hi' : naHigh ? 'hi' : 'ok'}">${corrNa.toFixed(1)} mEq/L</span></div>`;
-        naBody += `<div class="result-interp interp-blue">${corrNaNote}</div>`;
-      }
-
-      if (naLow) {
-        naCard = naCritLow ? 'danger' : 'warning';
-        naBadge = naCritLow ? 'badge-red' : 'badge-orange';
-        naBadgeLabel = `Hyponatraemia — Na ${corrNa.toFixed(1)} mEq/L`;
-        // Na deficit to target Na+8 in 24h (max safe correction)
-        const targetNa24h = Math.min(corrNa + 8, 135);
-        const naDeficit = tbw * (targetNa24h - corrNa);
-        const ml3NaCl = Math.round(naDeficit * 1000 / 513); // 3% NaCl: 513 mEq/L
-        const ratePerHr3pct = Math.round(ml3NaCl / 24);
-        naBody += `<div class="result-row"><span class="rl">Total Body Water (${sex === 'F' ? '0.5' : '0.6'} × ${weight} kg)</span><span class="rv">${tbw.toFixed(1)} L</span></div>`;
-        naBody += `<div class="result-row"><span class="rl">Safe correction target (max +8 mEq/L in 24h)</span><span class="rv">${targetNa24h.toFixed(1)} mEq/L</span></div>`;
-        naBody += `<div class="result-row"><span class="rl">Na⁺ deficit = TBW × (target − actual)</span><span class="rv warn">${naDeficit.toFixed(0)} mEq</span></div>`;
-        naBody += `<div class="result-row"><span class="rl">3% NaCl (513 mEq/L) volume needed</span><span class="rv">${ml3NaCl} mL over 24h (~${ratePerHr3pct} mL/hr)</span></div>`;
-        naBody += `<div class="result-interp ${naCritLow ? 'interp-red' : 'interp-orange'}">
-          ${naCritLow ? '🔴 <strong>Severe hyponatraemia</strong> — risk of seizures, cerebral oedema.' : '⚠️ <strong>Moderate hyponatraemia.</strong>'}
-          <br>• Symptomatic (seizures/coma): 3% NaCl 100–150 mL IV bolus over 20 min → repeat ×2 if no improvement (EJI 2014 guidelines)
-          <br>• Asymptomatic/chronic: Correct at 0.5–1 mEq/L/hr; <strong>max 8–10 mEq/L per 24h</strong> to avoid osmotic demyelination syndrome (ODS)
-          <br>• Fluid restrict to 500–800 mL/day if SIADH; avoid hypotonic fluids
-        </div>
-        <div class="marino-cite">📗 Marino Ch.35 (Sodium disorders); EJI 2014 Hyponatraemia Guidelines: max correction 10 mEq/L/24h (8 mEq/L if high ODS risk)</div>`;
-      } else if (naHigh) {
-        naCard = naCritHigh ? 'danger' : 'warning';
-        naBadge = naCritHigh ? 'badge-red' : 'badge-orange';
-        naBadgeLabel = `Hypernatraemia — Na ${corrNa.toFixed(1)} mEq/L`;
-        const fwDeficit = tbw * (corrNa / 140 - 1);
-        const ml5DW = Math.round(fwDeficit * 1000); // 5% dextrose replaces free water
-        const ratePerHr = Math.round(fwDeficit * 1000 / 24);
-        naBody += `<div class="result-row"><span class="rl">Total Body Water</span><span class="rv">${tbw.toFixed(1)} L</span></div>`;
-        naBody += `<div class="result-row"><span class="rl">Free water deficit = TBW × (Na/140 − 1)</span><span class="rv warn">${fwDeficit.toFixed(2)} L (${ml5DW} mL)</span></div>`;
-        naBody += `<div class="result-row"><span class="rl">Replace as 5% Dextrose</span><span class="rv">${ml5DW} mL over 24–48h (~${ratePerHr} mL/hr)</span></div>`;
-        naBody += `<div class="result-interp ${naCritHigh ? 'interp-red' : 'interp-orange'}">
-          ${naCritHigh ? '🔴 <strong>Severe hypernatraemia</strong> — risk of cerebral haemorrhage.' : '⚠️ <strong>Hypernatraemia.</strong>'}
-          <br>• Correct at <strong>max 10–12 mEq/L per 24h</strong> to avoid cerebral oedema from rapid shift
-          <br>• Rate: ~0.5 mEq/L/hr (can increase to 1 mEq/L/hr if acute onset <48h)
-          <br>• Fluid: 5% Dextrose IV OR 0.45% NaCl if mild volume depletion; oral water if alert
-          <br>• Identify cause: insensible losses, osmotic diuresis, central/nephrogenic DI
-        </div>
-        <div class="marino-cite">📗 Marino Ch.35; AJEM 2020 Hypernatraemia Review: Max correction 10–12 mEq/L/24h; free water deficit = TBW × (Na/140 − 1)</div>`;
-      }
-
-      if (!naBadgeLabel) naBadgeLabel = `Na correction for glucose`;
-      html += `<div class="result-card ${naCard}">
-        <div class="card-header">
-          <h3><span class="step-num sn-${naCard === 'danger' ? 'red' : naCard === 'warning' ? 'orange' : 'blue'}">9</span> Sodium Analysis</h3>
-          <span class="card-badge ${naBadge}">${naBadgeLabel}</span>
-        </div>
-        <div class="card-body">${naBody}</div>
-      </div>`;
+    if (glucose && glucose > 100) corrNa = na + 2.4 * (glucose - 100) / 100;
+    if (corrNa < 135) {
+      const deficit = tbw * (corrNa + 8 - corrNa); // max 8 mEq/L in 24h
+      const actualDef = tbw * 8; // target +8 in first 24h
+      const ml3 = Math.round(actualDef * 1000 / 513);
+      naReplRows = [
+        `Free water space (TBW): ${tbw.toFixed(1)} L`,
+        `Safe correction target: +8 mEq/L in 24h → Na ${(corrNa + 8).toFixed(1)} mEq/L`,
+        `3% NaCl needed: ${ml3} mL over 24h (~${Math.round(ml3 / 24)} mL/hr)`,
+        `Max rate: 0.5–1 mEq/L/hr; ⛔ never >10 mEq/L per 24h (ODS risk)`
+      ];
+    } else if (corrNa > 145) {
+      const fwDef = tbw * (corrNa / 140 - 1);
+      naReplRows = [
+        `Free water deficit: ${fwDef.toFixed(2)} L`,
+        `Replace as 5% Dextrose: ${Math.round(fwDef * 1000)} mL over 24–48h`,
+        `Max correction: 10–12 mEq/L per 24h; avoid rapid correction (cerebral oedema)`
+      ];
     }
   }
 
-  // ── STEP 10: POTASSIUM MANAGEMENT ────────────────────────────────
+  // ─── POTASSIUM ────────────────────────────────────────────────────
+  let kReplRows = [];
   if (k !== null) {
-    const kLow = k < 3.5, kHigh = k > 5.0;
-    const kCritLow = k < 2.5, kCritHigh = k > 6.5;
-
-    if (kLow || kHigh) {
-      let kBody = '', kCard = 'warning', kBadge = 'badge-orange', kLabel = '';
-
-      kBody += `<div class="result-row"><span class="rl">Potassium (K⁺)</span><span class="rv ${kLow ? 'hi' : kHigh ? 'hi' : 'ok'}">${k} mEq/L <small>(Normal: 3.5–5.0)</small></span></div>`;
-
-      if (kLow) {
-        kCard = kCritLow ? 'danger' : 'warning';
-        kBadge = kCritLow ? 'badge-red' : 'badge-orange';
-        kLabel = kCritLow ? 'Severe Hypokalaemia' : 'Hypokalaemia';
-        // K deficit: each 1 mEq/L drop below 3.5 ≈ 200 mEq TBK deficit (rough clinical estimate)
-        const kDrop = 3.5 - k;
-        const kDefLow = Math.round(kDrop * 150); // conservative
-        const kDefHigh = Math.round(kDrop * 300); // upper estimate
-        kBody += `<div class="result-row"><span class="rl">Estimated K⁺ body deficit (empirical)</span><span class="rv warn">~${kDefLow}–${kDefHigh} mEq <small>(each 1 mEq/L drop ≈ 200–400 mEq)</small></span></div>`;
-        kBody += `<div class="result-row"><span class="rl">IV replacement route</span><span class="rv">${k < 3.0 ? 'Central line preferred' : 'Peripheral IV acceptable'}</span></div>`;
-        kBody += `<div class="result-row"><span class="rl">IV rate (peripheral)</span><span class="rv">Max 10 mEq/hr in 100 mL NS (with ECG monitoring)</span></div>`;
-        kBody += `<div class="result-row"><span class="rl">IV rate (central)</span><span class="rv">10–20 mEq/hr via CVC with continuous cardiac monitoring</span></div>`;
-        kBody += `<div class="result-interp ${kCritLow ? 'interp-red' : 'interp-orange'}">
-          ${kCritLow ? '🔴 <strong>Severe hypokalaemia</strong> — high risk of ventricular arrhythmia. 12-lead ECG now (look for U waves, flat T waves, ST depression).' : '⚠️ <strong>Hypokalaemia</strong> — replace before considering insulin or NaHCO₃ (both drive K into cells).'}
-          <br>${k >= 2.5 ? '<br>• <strong>Oral KCl</strong> preferred if tolerating PO: 40 mEq PO q6h (Slow-K or liquid KCl)' : '• IV replacement mandatory — oral not sufficient at this level'}
-          <br>• <strong>IV KCl</strong>: dilute in NS (not dextrose — glucose lowers K further); max concentration 40 mEq/L peripheral
-          <br>• Replace Mg²⁺ simultaneously — hypomagnesaemia causes refractory hypokalaemia
-          ${isPrimMetAlk ? '<br>• <strong>In metabolic alkalosis:</strong> K depletion perpetuates alkalosis — aggressive K replacement essential' : ''}
-          ${isPrimMetAcid && glucose > 250 ? '<br>• <strong>In DKA:</strong> Do NOT start insulin until K ≥ 3.5 mEq/L — insulin drives K into cells' : ''}
-        </div>
-        <div class="marino-cite">📗 Marino Ch.35 Potassium Disorders; SSC 2026: target K ≥3.5 mEq/L; AHA 2023: IV K max 10 mEq/hr peripheral, 20 mEq/hr central</div>`;
-      } else if (kHigh) {
-        kCard = kCritHigh ? 'danger' : 'warning';
-        kBadge = kCritHigh ? 'badge-red' : 'badge-orange';
-        kLabel = kCritHigh ? 'Severe Hyperkalaemia' : 'Hyperkalaemia';
-        kBody += `<div class="result-interp ${kCritHigh ? 'interp-red' : 'interp-orange'}">
-          ${kCritHigh ? '🔴 <strong>Severe hyperkalaemia — cardiac arrest risk. 12-lead ECG IMMEDIATELY</strong> (peaked T waves, widened QRS, sine wave pattern).' : '⚠️ <strong>Significant hyperkalaemia</strong> — ECG + cardiac monitoring.'}
-          <br><br><strong>Step 1 — Membrane stabilisation (immediate):</strong>
-          <br>Calcium gluconate 10 mL of 10% solution IV over 10 min (onset 1–3 min; repeat q5 min if ECG changes persist; does NOT lower K)
-          <br><br><strong>Step 2 — Shift K into cells (onset 15–30 min):</strong>
-          <br>Insulin-dextrose: Actrapid 10 units IV + 50 mL 50% Dextrose; monitor glucose q1h (hypoglycaemia risk)
-          <br>Salbutamol 10–20 mg nebulised (lowers K by 0.5–1 mEq/L; additive to insulin)
-          <br>NaHCO₃ 50 mEq IV if pH <7.2 (limited effect in normal-pH patients)
-          <br><br><strong>Step 3 — Remove K from body:</strong>
-          <br>Sodium zirconium cyclosilicate (Lokelma) 10g PO × 3 days OR Patiromer 8.4g PO
-          <br>Furosemide 40–80 mg IV if renal function allows; Kayexalate (Na polystyrene) if others unavailable
-          <br>Dialysis (RRT) if K >7.0 OR refractory OR anuric renal failure
-        </div>
-        <div class="marino-cite">📗 Marino Ch.35; NICE 2020 Hyperkalaemia Pathway; AHA Hyperkalaemia Algorithm 2023</div>`;
-      }
-
-      html += `<div class="result-card ${kCard}">
-        <div class="card-header">
-          <h3><span class="step-num sn-${kCard === 'danger' ? 'red' : 'orange'}">10</span> Potassium Management</h3>
-          <span class="card-badge ${kBadge}">${kLabel} — K⁺ ${k} mEq/L</span>
-        </div>
-        <div class="card-body">${kBody}</div>
-      </div>`;
+    if (k < 3.5) {
+      const drop = 3.5 - k;
+      kReplRows = [
+        `Estimated deficit: ~${Math.round(drop * 150)}–${Math.round(drop * 300)} mEq (200–400 mEq per 1 mEq/L drop)`,
+        `IV peripheral: KCl in NS, max 10 mEq/hr (not dextrose — glucose lowers K further)`,
+        `IV central: 10–20 mEq/hr via CVC with continuous cardiac monitoring`,
+        k >= 2.5 ? `Oral KCl: 40 mEq q6h if tolerating PO (preferred when K >2.5)` : null,
+        `Replace Mg²⁺ simultaneously — hypomagnesaemia causes refractory hypokalaemia`
+      ].filter(Boolean);
+    } else if (k > 5.0) {
+      kReplRows = [
+        `Step 1 — Membrane stabilisation: Ca gluconate 10 mL (10%) IV over 10 min; repeat q5 min if ECG changes persist`,
+        `Step 2 — Shift into cells: Insulin 10 units IV + 50 mL 50% dextrose; monitor glucose q1h`,
+        `Step 2b — Salbutamol 10–20 mg nebulised (additive to insulin, lowers K ~0.5–1 mEq/L)`,
+        `Step 3 — Remove from body: Lokelma (ZS-9) 10g PO ×3d OR Patiromer 8.4g PO`,
+        k > 6.5 ? `Step 4 — Dialysis if K >7.0, anuric renal failure, or refractory` : null
+      ].filter(Boolean);
     }
   }
 
-  // ── STEP 11: MANAGEMENT PLAN ─────────────────────────────────────
-  if (!isNormal) {
-    const pf_r = pao2 ? (pao2 / fio2) : null;
-    const mgmtHTML = buildManagementPlan({
-      isPrimMetAcid, isPrimMetAlk, isPrimRespAcid, isPrimRespAlk,
-      pH, pco2, hco3, pao2, fio2, na, k, albumin, lactate, glucose,
-      weight, agElevated: na && cl ? ((na-(cl+hco3)+(2.5*(4.5-albumin))) > 12) : false,
-      pf_ratio: pf_r, hco3Deficit: isPrimMetAcid && hco3 < 15 ? (0.4 * weight * (15 - hco3)) : null,
-      clinCtx, sex
-    });
-    html += `<div class="result-card info" style="border-color:#0369a1;">
-      <div class="card-header">
-        <h3><span class="step-num" style="background:#0369a1">🏥</span> Management Plan</h3>
-        <span class="card-badge badge-blue">${clinCtx ? clinCtx.slice(0,40) + (clinCtx.length > 40 ? '…' : '') : 'Evidence-based protocol'}</span>
-      </div>
-      <div class="card-body">${mgmtHTML}</div>
-    </div>`;
+  // ─── BICARBONATE ──────────────────────────────────────────────────
+  let hco3ReplRows = [];
+  if (isPrimMetAcid && hco3 < 15) {
+    const def = 0.4 * weight * (15 - hco3);
+    hco3ReplRows = [
+      `Deficit = 0.4 × ${weight} kg × (15 − ${hco3}) = ${def.toFixed(0)} mEq`,
+      `8.4% NaHCO₃ (1 mEq/mL): ${Math.round(def)} mL IV over 30–60 min`,
+      `Give 50% first → recheck ABG → give remainder if needed`,
+      `Target HCO₃ 15 mEq/L only — do NOT target 24 (overshoot → alkalosis)`,
+      `⛔ Only indicated if: pH <7.10–7.15 AND non-lactic cause`
+    ];
   }
 
-  // ── SUMMARY ───────────────────────────────────────────────────────
-  html += `<div class="result-card info" style="border-color:#7c3aed;background:linear-gradient(to right,#f5f3ff,var(--bg));">
-    <div class="card-header">
-      <h3><span class="step-num" style="background:#7c3aed">✓</span> Summary</h3>
-      <span class="card-badge badge-purple">Marino 5th Ed, Ch.31 (2025)</span>
+  // ─── ISSUES (PRIORITY ORDER) ──────────────────────────────────────
+  const issues = [];
+  const refs = new Set(["Marino's ICU Book 5th Ed (2025) Ch.31"]);
+
+  // P1: Life threats
+  if (pH < 7.10) {
+    issues.push({ p:1, title:`CRITICAL ACIDAEMIA — pH ${pH.toFixed(2)}`, steps:[
+      'Urgent treatment of underlying cause',
+      isPrimRespAcid ? 'Ventilatory support — prepare RSI: Ketamine 1.5 mg/kg + Rocuronium 1.2 mg/kg' : null,
+      !isPrimRespAcid ? 'NaHCO₃ 1–2 mEq/kg IV slowly if non-lactic cause, haemodynamically unstable' : null
+    ].filter(Boolean)});
+  }
+  if (pH > 7.60) {
+    issues.push({ p:1, title:`CRITICAL ALKALAEMIA — pH ${pH.toFixed(2)}`, steps:[
+      'ICU monitoring — risk of seizures and life-threatening arrhythmias',
+      isPrimMetAlk ? 'Stop precipitant (diuretics, NG suction); 0.9% NaCl IV' : null,
+      'Correct K⁺ and Mg²⁺ deficits urgently'
+    ].filter(Boolean)});
+  }
+  if (lactate !== null && lactate > 4) {
+    issues.push({ p:1, title:`SEVERE LACTIC ACIDOSIS — Lactate ${lactate} mmol/L → Septic Shock criterion`, steps:[
+      '30 mL/kg crystalloid (0.9% NaCl or Plasmalyte) IV bolus within 3 hours',
+      'Noradrenaline 0.1–0.3 mcg/kg/min via CVC if MAP <65 mmHg after fluid resuscitation',
+      'Blood cultures ×2 → Broad-spectrum antibiotics IV within 1 hour of recognition',
+      'Serial lactate q2h — target ≥10% clearance per 2h; goal <2 mmol/L in 6h'
+    ], warns:['Do NOT give NaHCO₃ — BICAR-ICU trial 2018: no mortality benefit in lactic acidosis']});
+    refs.add('SSC 2026 (Prescott et al., Crit Care Med)');
+  }
+  if (k !== null && k < 2.5) {
+    issues.push({ p:1, title:`SEVERE HYPOKALAEMIA — K⁺ ${k} mEq/L`, steps:kReplRows,
+      warns:['12-lead ECG now — U waves, flat T waves, widened QRS = arrhythmia risk']});
+  }
+  if (k !== null && k > 6.5) {
+    issues.push({ p:1, title:`SEVERE HYPERKALAEMIA — K⁺ ${k} mEq/L`, steps:kReplRows,
+      warns:['12-lead ECG IMMEDIATELY — peaked T waves, widened QRS, sine wave = cardiac arrest risk']});
+  }
+
+  // P2: Significant problems
+  if (pf !== null && pf < 200) {
+    const grade = pf < 100 ? 'SEVERE' : 'MODERATE';
+    const steps = [
+      `Lung-protective ventilation: TV 6 mL/kg IBW, PEEP ≥${pf < 150 ? 12 : 8} cmH₂O, plateau <30 cmH₂O`,
+      pf < 150 ? 'Prone positioning ≥16h/day — PROSEVA 2013: NNT=6 for 28-day mortality when P/F <150' : null,
+      pf < 150 ? 'Neuromuscular blockade: Cisatracurium 37.5 mg/hr IV × 48h (ACURASYS 2010)' : null,
+      pf < 80 ? 'Consider VV-ECMO referral if P/F <80 despite optimal ventilation' : null
+    ].filter(Boolean);
+    issues.push({ p: pf < 150 ? 1 : 2, title:`${grade} ARDS — P/F Ratio ${pf.toFixed(0)}`, steps });
+    refs.add('ARDSNet ARMA 2000; Berlin Definition 2012; PROSEVA 2013');
+  }
+  if (pf !== null && pf >= 200 && pf < 300) {
+    issues.push({ p:3, title:`MILD ARDS — P/F Ratio ${pf.toFixed(0)}`, steps:[
+      'Lung-protective ventilation: TV 6 mL/kg IBW, PEEP ≥5–8 cmH₂O',
+      'Optimise fluid balance; treat underlying cause (pneumonia, aspiration, sepsis)',
+      'Prone if worsening; reassess P/F in 4–6h'
+    ]});
+    refs.add('ARDSNet ARMA 2000; Berlin Definition 2012');
+  }
+  if (isPrimRespAcid && pH < 7.35) {
+    const steps = [
+      'Identify cause: COPD exacerbation, opiate, asthma, obesity hypoventilation, neuromuscular',
+      'Naloxone 0.4 mg IV q3 min (up to 10 mg) if opiate-induced (miosis, GCS <8)',
+      'Salbutamol 5 mg + Ipratropium 0.5 mg nebulised if wheeze/bronchospasm',
+      pH < 7.30 ? 'NIV (BiPAP): IPAP 14–18 / EPAP 4–6 cmH₂O — first-line COPD (GOLD 2026; NNT=5)' : null,
+      pH < 7.25 ? '🔴 pH <7.25 — prepare RSI if NIV fails: Ketamine 1.5 mg/kg + Rocuronium 1.2 mg/kg' : null
+    ].filter(Boolean);
+    issues.push({ p:2, title:`RESPIRATORY ACIDOSIS — pH ${pH.toFixed(2)}, PaCO₂ ${pco2} mmHg`, steps });
+    refs.add('GOLD 2026; BTS/ICS NIV Guidelines 2023');
+  }
+  if (lactate !== null && lactate > 2 && lactate <= 4) {
+    issues.push({ p:2, title:`HYPERLACTATAEMIA — Lactate ${lactate} mmol/L`, steps:[
+      'Fluid bolus 500 mL crystalloid; reassess clinically',
+      'Investigate: sepsis, cardiogenic shock, mesenteric ischaemia, thiamine deficiency, metformin',
+      'Serial lactate q2h; target <2 mmol/L'
+    ]});
+    refs.add('SSC 2026');
+  }
+  if (isPrimMetAcid && agHigh && (!lactate || lactate <= 2) && glucose && glucose > 250) {
+    issues.push({ p:2, title:'DIABETIC KETOACIDOSIS — High AG + Elevated Glucose', steps:[
+      '0.9% NaCl 1 L/hr × 2h → switch to 0.45% NaCl 250–500 mL/hr',
+      k !== null && k < 3.5 ? `K = ${k} mEq/L → HOLD insulin; give KCl first until K ≥3.5` : 'Regular insulin 0.1 units/kg/hr IV infusion (only when K ≥3.5 confirmed)',
+      'Blood glucose q1h; electrolytes q2–4h; urine/blood ketones',
+      'Transition to SubQ insulin when: HCO₃ ≥18 + AG normal + tolerating PO'
+    ]});
+    refs.add('ADA 2024 Hyperglycaemic Crises Guidelines');
+  }
+  if (k !== null && k >= 2.5 && k < 3.5) {
+    issues.push({ p:3, title:`HYPOKALAEMIA — K⁺ ${k} mEq/L`, steps:kReplRows });
+    refs.add('AHA 2023; Marino Ch.35');
+  }
+  if (k !== null && k > 5.0 && k <= 6.5) {
+    issues.push({ p:2, title:`HYPERKALAEMIA — K⁺ ${k} mEq/L`, steps:kReplRows });
+    refs.add('NICE 2020 Hyperkalaemia Pathway; AHA 2023');
+  }
+
+  // P3: Significant but not immediate
+  if (isPrimMetAlk) {
+    issues.push({ p:3, title:`METABOLIC ALKALOSIS — HCO₃ ${hco3} mEq/L, pH ${pH.toFixed(2)}`, steps:[
+      'Saline-responsive (most common): 0.9% NaCl 500–1000 mL IV; correct K⁺ and Cl⁻',
+      'Saline-resistant (urine Cl >40): investigate hyperaldosteronism, Cushing\'s, Bartter\'s',
+      'Stop precipitant if possible: diuretics, NG suction',
+      hco3 > 35 ? 'Acetazolamide 250–500 mg IV BD if ventilated (blocks renal HCO₃ reabsorption)' : null
+    ].filter(Boolean)});
+  }
+  if (isPrimRespAlk) {
+    issues.push({ p:3, title:`RESPIRATORY ALKALOSIS — pH ${pH.toFixed(2)}, PaCO₂ ${pco2} mmHg`, steps:[
+      'Common causes: pain, anxiety, sepsis (early), PE, hepatic failure, over-ventilation',
+      'Investigate: ECG; D-dimer / CTPA if tachycardic + pleuritic chest pain',
+      'Treat underlying cause — ⛔ avoid paper bag rebreathing (ineffective; hypoxia risk)'
+    ]});
+  }
+  if (isPrimMetAcid && !agHigh) {
+    issues.push({ p:3, title:'NORMAL AG (HYPERCHLORAEMIC) METABOLIC ACIDOSIS', steps:[
+      'Urine anion gap: (positive) → Distal RTA; (negative) → GI loss / saline excess',
+      'Diarrhoea (most common): IV fluids + KCl replacement; ORS if tolerating PO',
+      hco3ReplRows.length ? `NaHCO₃ replacement: ${hco3ReplRows[0]}` : null,
+      'Switch from 0.9% NaCl to Plasmalyte/Hartmann\'s if saline-induced'
+    ].filter(Boolean)});
+  }
+  if (na && corrNa < 135) {
+    issues.push({ p: corrNa < 125 ? 2 : 3, title:`HYPONATRAEMIA — Na⁺ ${corrNa.toFixed(1)} mEq/L${glucose && glucose > 100 ? ` (corrected for glucose: measured ${na})` : ''}`, steps:naReplRows,
+      warns: corrNa < 125 ? ['Osmotic demyelination syndrome — max +10 mEq/L per 24h; if symptomatic (seizures): 3% NaCl 100 mL IV bolus × 3'] : []});
+    refs.add("Marino Ch.35; EJI 2014 Hyponatraemia Guidelines");
+  }
+  if (na && corrNa > 145) {
+    issues.push({ p: corrNa > 160 ? 2 : 3, title:`HYPERNATRAEMIA — Na⁺ ${corrNa.toFixed(1)} mEq/L`, steps:naReplRows });
+    refs.add('Marino Ch.35; AJEM 2020');
+  }
+
+  issues.sort((a, b) => a.p - b.p);
+
+  // ─── RENDER ───────────────────────────────────────────────────────
+  document.getElementById('placeholder').style.display = 'none';
+  const res = document.getElementById('abgResults');
+  res.style.display = res.style.flexDirection = '';
+  res.style.display = 'flex'; res.style.flexDirection = 'column'; res.style.gap = '1rem';
+
+  const sc = (v, lo, hi) => v === null ? 'na' : v < lo ? 'lo' : v > hi ? 'hi' : 'ok';
+  const vc = (v, lo, hi) => v === null ? 'na-c' : v < lo ? 'lo-c' : v > hi ? 'hi-c' : 'ok-c';
+
+  // SNAPSHOT
+  const snaps = [
+    { n:'pH',      v:pH,           lo:7.35, hi:7.45, d:2, u:''       },
+    { n:'PaCO₂',   v:pco2,         lo:35,   hi:45,   d:0, u:'mmHg'   },
+    { n:'HCO₃⁻',   v:hco3,         lo:22,   hi:26,   d:0, u:'mEq/L'  },
+    pao2 ? { n:'PaO₂', v:pao2,     lo:80,  hi:600,   d:0, u:'mmHg'   } : null,
+    lactate !== null ? { n:'Lactate', v:lactate, lo:0, hi:2, d:1, u:'mmol/L' } : null,
+    na     ? { n:'Na⁺',  v:corrNa,    lo:135, hi:145,  d:0, u:'mEq/L'  } : null,
+    k !== null ? { n:'K⁺', v:k,        lo:3.5, hi:5.0,  d:1, u:'mEq/L'  } : null,
+    glucose ? { n:'Glucose', v:glucose, lo:70, hi:180,  d:0, u:'mg/dL'  } : null,
+  ].filter(Boolean);
+
+  const sevMap = {
+    critical:{ label:'CRITICAL', c:'#7f1d1d', bg:'#fee2e2', br:'#dc2626' },
+    danger:  { label:'SEVERE',   c:'#7f1d1d', bg:'#fef2f2', br:'#ef4444' },
+    warning: { label:'MODERATE', c:'#7c2d12', bg:'#fff7ed', br:'#f97316' },
+    normal:  { label:'NORMAL',   c:'#14532d', bg:'#f0fdf4', br:'#22c55e' },
+  };
+  const sev = sevMap[severity] || sevMap.warning;
+
+  let html = `<div class="result-card" style="border:2px solid ${sev.br};">
+    <div class="card-header" style="cursor:default;padding-bottom:.4rem;">
+      <h3 style="font-size:.92rem;">🩺 ABG Snapshot</h3>
+      <span class="card-badge" style="background:${sev.bg};color:${sev.c};border:1px solid ${sev.br};">${sev.label}</span>
     </div>
-    <div class="card-body">
-      <p style="font-size:.85rem;color:var(--slate);line-height:1.7;margin-bottom:.6rem;">
-        <strong>Primary:</strong> ${primaryDisorder}<br>
-        ${secondaryDisorder ? `<strong>Secondary:</strong> ${secondaryDisorder}<br>` : ''}
-        ${na && cl ? `<strong>Anion Gap:</strong> ${(na-(cl+hco3)).toFixed(1)} (corrected: ${(na-(cl+hco3) + 2.5*(4.5-albumin)).toFixed(1)})<br>` : ''}
-        ${pao2 ? `<strong>P/F Ratio:</strong> ${(pao2/fio2).toFixed(0)}<br>` : ''}
-        ${lactate !== null ? `<strong>Lactate:</strong> ${lactate} mmol/L<br>` : ''}
-      </p>
-      <div class="result-interp interp-purple">
-        <strong>Marino's Stepwise Approach (Ch.31, p.550):</strong><br>
-        Stage I: pH + PaCO₂ direction → identify primary disorder<br>
-        Stage II: Calculate expected compensation → identify secondary disorder<br>
-        Stage III: Use gaps (AG, delta-delta, osmolal) → identify cause of metabolic acidosis<br>
-        <br><em>"Seek simplicity, and distrust it." — Alfred North Whitehead (Marino Ch.31 epigraph)</em>
+    <div class="card-body" style="padding-top:.2rem;">
+      <div class="abg-snap-grid">${snaps.map(s=>`<div class="snap-cell ${sc(s.v,s.lo,s.hi)}"><div class="snap-name">${s.n}</div><div class="snap-val ${vc(s.v,s.lo,s.hi)}">${s.v!==null?s.v.toFixed(s.d):'—'}</div><div class="snap-unit">${s.u}</div></div>`).join('')}</div>
+      <div style="border-radius:10px;padding:.85rem 1rem;background:${sev.bg};border:2px solid ${sev.br};">
+        <div style="font-size:1rem;font-weight:800;color:${sev.c};">${primary.toUpperCase()} — ${sev.label}</div>
+        <div style="font-size:.8rem;color:var(--slate);margin-top:.25rem;line-height:1.65;">
+          ${secondaryDx ? `<strong>Secondary:</strong> ${secondaryDx} · ` : ''}pH ${pH.toFixed(2)} · PaCO₂ ${pco2} · HCO₃ ${hco3}
+          ${compStatus ? `<br><span style="color:#0369a1;font-weight:600;">Compensation: ${compStatus}</span><span style="color:var(--slate);"> · ${compDetail}${compExp ? ' — Expected: ' + compExp : ''}</span>` : ''}
+          ${ag !== null ? `<br><span style="font-weight:600;">Anion gap: ${ag.toFixed(1)} (corrected: ${corrAG.toFixed(1)}) — ${agHigh ? '⬆ HIGH → MUDPILES' : agLow ? '⬇ LOW' : '✅ Normal'}</span>${deltaRatio !== null ? ` · Delta ratio: ${deltaLabel}` : ''}` : ''}
+          ${pf !== null ? `<br>P/F ratio: ${pf.toFixed(0)} — ${oxyLabel} · A-a gradient: ${aaGrad.toFixed(1)} mmHg` : ''}
+          ${clinCtx ? `<br><em style="color:var(--slate);">Context: ${clinCtx}</em>` : ''}
+        </div>
       </div>
     </div>
   </div>`;
 
-  document.getElementById('abgResults').innerHTML = html;
-
-  // Show "See Results" jump button on mobile (desktop only fallback)
-  document.getElementById('resultsJump').style.display = 'block';
-
-  // Switch to results view on mobile (skip if OCR already called showResults)
-  if (!window._ocrTriggered) {
-    showResults();
+  // ACUTE ISSUES
+  if (issues.length > 0) {
+    const pc = { 1:'#dc2626', 2:'#d97706', 3:'#2563eb' };
+    const pbg = { 1:'linear-gradient(to right,#fef2f2,var(--bg))', 2:'linear-gradient(to right,#fffbeb,var(--bg))', 3:'linear-gradient(to right,#eff6ff,var(--bg))' };
+    html += `<div class="result-card" style="border:2px solid #dc2626;">
+      <div class="card-header" style="cursor:default;">
+        <h3>⚡ Acute Issues — Priority Order</h3>
+        <span class="card-badge badge-red">${issues.length} issue${issues.length>1?'s':''} identified</span>
+      </div>
+      <div class="card-body">
+        ${issues.map((iss,i)=>`<div style="display:flex;gap:.75rem;padding:.7rem;margin-bottom:.55rem;border-radius:8px;border-left:4px solid ${pc[iss.p]||'#6b7280'};background:${pbg[iss.p]||'var(--bg)'};">
+          <div style="min-width:24px;height:24px;border-radius:50%;background:${pc[iss.p]||'#6b7280'};display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.75rem;color:#fff;flex-shrink:0;margin-top:.1rem;">${i+1}</div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:.3rem;line-height:1.3;">${iss.title}</div>
+            <div style="font-size:.79rem;color:var(--ink);line-height:1.85;">${iss.steps.map(s=>`<span style="display:block;"><span style="color:${pc[iss.p]};font-weight:700;">→</span> ${s}</span>`).join('')}</div>
+            ${iss.warns?.length?iss.warns.map(w=>`<div style="font-size:.76rem;color:#9a3412;margin-top:.35rem;font-weight:600;line-height:1.4;">⛔ ${w}</div>`).join(''):''}
+          </div>
+        </div>`).join('')}
+      </div>
+    </div>`;
   }
+
+  // ANALYSIS DETAIL TABLE
+  const rows = [];
+  const R = (label, val, cls, note) => rows.push({label, val, cls:'at-value '+(cls||''), note});
+  const S = (title) => rows.push({sect: title});
+
+  S('🔬 Acid-Base');
+  R('pH', `${pH.toFixed(2)}`, pH_normal?'ok':'hi', 'Normal: 7.35–7.45');
+  R('[H⁺]', `${(Math.pow(10,-pH)*1e9).toFixed(1)} nmol/L`, '', 'Normal: 36–44');
+  R('PaCO₂', `${pco2} mmHg`, pco2_normal?'ok':pco2_high?'hi':'lo', 'Normal: 35–45');
+  R('HCO₃⁻', `${hco3} mEq/L`, hco3_normal?'ok':hco3_low?'hi':'lo', 'Normal: 22–26');
+  if (compStatus) R('Compensation (Marino Eq.31.3–31.11)', compStatus, isAdequate?'ok':'warn', compDetail + (compExp ? ' · Expected: ' + compExp : ''));
+
+  if (ag !== null) {
+    S('🔴 Anion Gap');
+    R('AG = Na − (Cl + HCO₃)', `${ag.toFixed(1)} mEq/L`, agHigh?'hi':agLow?'lo':'ok', 'Normal: 8–12 mEq/L');
+    R('Corrected AG (for albumin)', `${corrAG.toFixed(1)} mEq/L`, agHigh?'hi':'ok', `+ [2.5 × (4.5 − ${albumin})]`);
+    if (albumin < 3.5) R('⚠️ Hypoalbuminaemia', `${albumin} g/dL`, 'warn', 'Use corrected AG — raw AG may be falsely normal in ICU');
+    if (agHigh) R('Differential (MUDPILES)', 'Methanol · Uraemia · DKA · Pyroglutamic · Isoniazid · Lactic · Ethylene glycol · Salicylates', '', '');
+    if (!agHigh && isPrimMetAcid) R('Differential (USED CARP)', 'Uraemia · Small bowel · Extra Cl · Diarrhoea · CA inhibitors · Adrenal · RTA · Pancreatic', '', '');
+    if (deltaRatio !== null) R('Delta Ratio (Δ-Δ) = ΔAG ÷ ΔHCO₃', deltaLabel, (deltaRatio>=1&&deltaRatio<=2)?'ok':'warn', '<0.4 non-AG · 0.4–1 mixed · 1–2 pure AGMA · >2 AGMA+Met Alk');
+    if (osmGap !== null) R('Osmolal Gap (measured − calculated)', `${osmGap.toFixed(1)} mOsm/kg`, osmGap>10?'hi':'ok', osmGap>10?'ELEVATED → toxic alcohol / mannitol':'Normal (<10)');
+    else if (calcOsm) R('Calculated Osmolality', `${calcOsm.toFixed(1)} mOsm/kg`, '', 'Enter measured Osm to calculate gap');
+  }
+
+  if (pao2) {
+    S('💨 Oxygenation');
+    R('PaO₂', `${pao2} mmHg`, pao2<60?'hi':pao2>=80?'ok':'warn', 'Normal: 80–100 mmHg on room air');
+    R('Alveolar PO₂ (PAO₂)', `${pAlv.toFixed(1)} mmHg`, '', 'FiO₂ × 713 − PaCO₂/0.8');
+    R('A-a Gradient (PAO₂ − PaO₂)', `${aaGrad.toFixed(1)} mmHg`, aaGrad>(age/4+9)?'hi':'ok', `Expected max: ${((age/4)+9).toFixed(0)} mmHg for age ${age}`);
+    R('P/F Ratio (PaO₂ ÷ FiO₂)', `${pf.toFixed(0)}`, pf>=400?'ok':pf>=300?'warn':'hi', oxyLabel);
+  }
+
+  if (lactate !== null) {
+    S('🩸 Lactate');
+    R('Serum Lactate', `${lactate} mmol/L`, lactate>4?'hi':lactate>2?'warn':'ok', lactate>4?'SEVERE — Septic shock criterion (SSC 2026)':lactate>2?'Elevated — investigate':'Normal');
+    if (lactate > 2) {
+      R('Type A (tissue hypoxia)', 'Sepsis · Cardiogenic shock · Cardiac arrest · Mesenteric ischaemia', '', '');
+      R('Type B (non-hypoxic)', 'Liver failure · Metformin · Thiamine def · β₂-agonist excess · Malignancy', '', '');
+      R('SSC 2026 target', 'Serial lactate q2h · target ≥10% clearance · goal <2 mmol/L in 6h', '', '');
+    }
+  }
+
+  if (na) {
+    S('🧂 Electrolytes');
+    if (glucose && glucose > 100) R('Glucose-corrected Na⁺', `${corrNa.toFixed(1)} mEq/L`, (corrNa<135||corrNa>145)?'hi':'ok', `Katz: +2.4 per 100 mg/dL glucose rise above 100 (measured: ${na})`);
+    R('Sodium (Na⁺)', `${na} mEq/L`, (na<135||na>145)?'hi':'ok', 'Normal: 135–145 mEq/L');
+    if (k !== null) R('Potassium (K⁺)', `${k} mEq/L`, (k<3.5||k>5)?'hi':'ok', 'Normal: 3.5–5.0 mEq/L');
+  }
+
+  html += `<div class="result-card info">
+    <div class="card-header" style="cursor:default;"><h3>📊 Analysis Detail</h3><span class="card-badge badge-blue">Stepwise — Marino Ch.31</span></div>
+    <div class="card-body">
+      ${rows.map(r => r.sect
+        ? `<div class="at-sect">${r.sect}</div>`
+        : `<div class="at-row"><span class="at-label">${r.label}</span><div style="text-align:right;"><div class="${r.cls}">${r.val}</div>${r.note?`<div class="at-note">${r.note}</div>`:''}</div></div>`
+      ).join('')}
+    </div>
+  </div>`;
+
+  // REPLACEMENT CALCULATIONS
+  const hasCalcs = hco3ReplRows.length || naReplRows.length || kReplRows.length;
+  if (hasCalcs) {
+    const rSect = (title, rows) => rows.length ? `<div style="margin-bottom:.9rem;"><div class="at-sect" style="border-top:none;padding-top:0;margin-bottom:.4rem;">${title}</div>${rows.map(r=>`<div class="at-row"><span class="at-label" style="font-size:.8rem;color:var(--ink);">${r}</span></div>`).join('')}</div>` : '';
+    html += `<div class="result-card warning">
+      <div class="card-header" style="cursor:default;"><h3>🧮 Replacement Calculations</h3><span class="card-badge badge-orange">Patient: ${weight} kg · ${sex === 'F' ? 'Female' : 'Male'} · TBW ${tbw.toFixed(1)} L</span></div>
+      <div class="card-body">
+        ${rSect('💊 NaHCO₃ Replacement (pH <7.10–7.15, non-lactic)', hco3ReplRows)}
+        ${rSect('🧂 Sodium Correction', naReplRows)}
+        ${rSect(`⚡ K⁺ ${k !== null && k < 3.5 ? 'Replacement' : 'Management'}`, kReplRows)}
+      </div>
+    </div>`;
+  }
+
+  // REFERENCES
+  refs.add("Marino's ICU Book 5th Ed (2025) Ch.31");
+  html += `<div style="padding:.6rem 1rem;background:var(--bg-alt);border-radius:8px;border:1px solid var(--line);">
+    <div style="font-size:.72rem;color:var(--slate);line-height:1.8;"><strong style="color:var(--ink);">📗 References:</strong> ${[...refs].join(' · ')}</div>
+    <div style="font-size:.72rem;color:#b45309;margin-top:.2rem;">⚠️ Clinical decision support only — always apply clinical judgement. Verify doses against local protocols.</div>
+  </div>`;
+
+  res.innerHTML = html;
+  document.getElementById('resultsJump').style.display = 'block';
+  if (!window._ocrTriggered) showResults();
   window._ocrTriggered = false;
 }
 
@@ -1264,125 +1143,10 @@ function resetABG() {
   document.querySelector('.abg-wrap')?.classList.remove('results-mode');
 }
 
-function buildManagementPlan({ isPrimMetAcid, isPrimMetAlk, isPrimRespAcid, isPrimRespAlk,
-    pH, pco2, hco3, pao2, fio2, na, k, albumin, lactate, glucose, weight,
-    agElevated, pf_ratio, hco3Deficit, clinCtx, sex }) {
 
-  const imm = [], spec = [], mon = [], refs = new Set();
-  refs.add("Marino's ICU Book 5th Ed (2025)");
-
-  // IMMEDIATE — universal
-  imm.push('Airway: Ensure patent; sit upright; oxygen via NRM 15 L/min → titrate to SpO₂ 94–98%');
-  imm.push('Access: 2× large-bore IV (14–16G), cardiac monitor, continuous SpO₂');
-  imm.push('Labs: FBC, RFT, LFT, coagulation, glucose, electrolytes, blood cultures if febrile/septic');
-  if (pH < 7.10) imm.unshift('🔴 CRITICAL pH <7.10 — risk of cardiac arrhythmia; immediate senior/ICU review');
-  if (pH > 7.60) imm.unshift('🔴 CRITICAL pH >7.60 — risk of seizures/arrhythmia; ICU review now');
-
-  // METABOLIC ACIDOSIS
-  if (isPrimMetAcid) {
-    if (agElevated) {
-      spec.push('High anion gap metabolic acidosis — work up MUDPILES: Methanol, Uraemia, DKA, Pyroglutamic, Isoniazid, Lactic, Ethylene glycol, Salicylates');
-      if (lactate && lactate > 2) {
-        spec.push('Fluid resuscitation: 30 mL/kg 0.9% NaCl or Plasmalyte IV within 3 hours (SSC 2026)');
-        refs.add('SSC 2026 (Prescott et al., Crit Care Med 2026)');
-        if (lactate > 4) {
-          spec.push('Vasopressor: Start Noradrenaline 0.1–0.3 mcg/kg/min via CVC if MAP <65 after fluid resuscitation (first-line; SSC 2026)');
-          spec.push('Antibiotics: Broad-spectrum IV within 1h of septic shock recognition (blood cultures ×2 first)');
-        }
-        spec.push('⛔ Do NOT give NaHCO₃ for lactic acidosis — BICAR-ICU trial (2018) showed no mortality benefit; acutely raises PaCO₂' + (pH < 7.10 ? ' — only consider if pH <7.10 with life-threatening haemodynamic instability' : ''));
-      }
-      if (glucose && glucose > 250) {
-        spec.push('DKA protocol: 0.9% NaCl 1 L/hr × 2h → switch to 0.45% NaCl 250–500 mL/hr (adjust for haemodynamics)');
-        spec.push(k !== null && k < 3.5
-          ? `⚠️ K = ${k} mEq/L: HOLD insulin until K ≥ 3.5 — give IV KCl first, then start insulin`
-          : 'Regular insulin 0.1 units/kg/hr IV infusion (start only when K ≥ 3.5 mEq/L confirmed)');
-        spec.push('Target glucose 150–200 mg/dL; transition to SubQ insulin when HCO₃ ≥18 + AG normal + patient tolerating PO');
-        refs.add('ADA 2024 Hyperglycaemic Crises Guidelines');
-      }
-    } else {
-      spec.push('Normal AG (hyperchloraemic) metabolic acidosis — likely diarrhoea, RTA, or excess saline');
-      spec.push('Urine anion gap: (+) → RTA (distal); (−) → GI loss (diarrhoea) or proximal RTA');
-      spec.push('Diarrhoea: IV 0.9% NaCl + KCl replacement; oral rehydration salts if tolerating PO');
-      if (hco3Deficit) spec.push(`NaHCO₃ replacement: ${Math.round(hco3Deficit)} mEq needed → give 50% over 4–6h as 8.4% NaHCO₃ IV; recheck ABG`);
-      spec.push('Avoid further 0.9% NaCl if saline-induced — switch to Plasmalyte or Hartmann\'s solution');
-    }
-    if (pH < 7.10) spec.push('Consider NaHCO₃ 1–2 mEq/kg IV slowly if pH <7.10 + non-lactic cause; target pH 7.15–7.20 only');
-  }
-
-  // RESPIRATORY ACIDOSIS
-  if (isPrimRespAcid) {
-    spec.push('Identify precipitant: opiates/sedatives, COPD exacerbation, asthma, neuromuscular disease, obesity hypoventilation, PE');
-    spec.push('Naloxone: 0.4 mg IV q3 min (up to 10 mg) if opiate-induced hypoventilation suspected (GCS low + small pupils)');
-    spec.push('Bronchodilators if wheeze: Salbutamol 5 mg neb + Ipratropium 0.5 mg neb q20 min × 3, then PRN');
-    if (pH < 7.35) {
-      spec.push('NIV (BiPAP): IPAP 14–18 / EPAP 4–6 cmH₂O — first-line for COPD acute exacerbation; NNT 5 to prevent intubation (GOLD 2026)');
-      refs.add('GOLD 2026; BTS/ICS NIV Guidelines 2023');
-    }
-    if (pH < 7.25) {
-      spec.push('🔴 pH <7.25 or NIV failure → Prepare RSI: Ketamine 1.5 mg/kg IV + Rocuronium 1.2 mg/kg IV');
-      spec.push('Post-intubation vent: TV 6–8 mL/kg IBW, RR 16–20/min; allow permissive hypercapnia in chronic COPD (target pH >7.25, not normalise CO₂)');
-    }
-    refs.add('GOLD 2026; BTS/ICS NIV Guidelines 2023');
-  }
-
-  // RESPIRATORY ALKALOSIS
-  if (isPrimRespAlk) {
-    spec.push('Common causes: pain, anxiety/panic, sepsis, PE, hepatic encephalopathy, pregnancy, over-ventilation, early ARDS');
-    spec.push('Investigate: Pain assessment, ECG, CXR; D-dimer/CTPA if tachycardic + pleuritic pain + low SpO₂ (PE)');
-    spec.push('LFTs + serum ammonia if encephalopathy suspected; blood cultures if sepsis likely');
-    if (pf_ratio && pf_ratio < 300) spec.push('⚠️ Low P/F ratio + respiratory alkalosis — exclude pneumonia, early ARDS, PE as concurrent diagnoses');
-    spec.push('Treat the underlying cause; ⛔ avoid paper bag rebreathing in adults — ineffective, risk of hypoxia');
-  }
-
-  // METABOLIC ALKALOSIS
-  if (isPrimMetAlk) {
-    spec.push('Most common causes: vomiting/NG suction (H⁺ loss), loop/thiazide diuretics, post-hypercapnia alkalosis, milk-alkali syndrome');
-    spec.push('Saline-responsive (urine Cl <20 mEq/L — most cases): 0.9% NaCl 500–1000 mL IV bolus + aggressive K replacement');
-    spec.push('Saline-resistant (urine Cl >40 mEq/L): Investigate hyperaldosteronism (Conn\'s), Cushing\'s, Bartter\'s, Gitelman\'s syndrome');
-    if (k && k < 3.5) spec.push('⚠️ Hypokalaemia perpetuates metabolic alkalosis — K replacement is essential and must run concurrently with fluids');
-    spec.push('Ventilated patients: Acetazolamide 250–500 mg IV BD — inhibits renal HCO₃ reabsorption; also useful in post-hypercapnia alkalosis');
-    if (hco3 > 40) spec.push('🔴 Severe alkalosis (HCO₃ >40) — risk of seizures, tetany, arrhythmia; ICU monitoring; consider 0.1N HCl infusion via CVC if refractory');
-  }
-
-  // OXYGENATION-BASED ADDITIONS
-  if (pf_ratio && pf_ratio < 200) {
-    spec.push('ARDS lung-protective ventilation: TV 6 mL/kg IBW, PEEP ≥8 cmH₂O, plateau pressure <30 cmH₂O, FiO₂ titrated to SpO₂ 88–95% (ARDSNet)');
-    refs.add('ARDSNet ARMA 2000; Berlin ARDS Definition 2012');
-    if (pf_ratio < 150) {
-      spec.push('Prone positioning ≥16h/day: PROSEVA trial (2013) — NNT=6 for 28-day mortality when P/F <150');
-      spec.push('Neuromuscular blockade: Cisatracurium 37.5 mg/hr IV for first 48h if P/F <150 (ACURASYS 2010)');
-      refs.add('PROSEVA 2013; ACURASYS 2010');
-    }
-  }
-
-  // MONITORING
-  mon.push('Repeat ABG: 1–2h post-intervention (earlier if deteriorating)');
-  mon.push('MAP ≥65 mmHg | UO ≥0.5 mL/kg/hr | SpO₂ 94–98% | HR <100 bpm');
-  if (lactate && lactate > 2) {
-    mon.push('Serial lactate q2h — target ≥10% clearance per 2h; goal <2 mmol/L within 6h (SSC 2026)');
-  }
-  if (glucose && (isPrimMetAcid || glucose > 180)) {
-    mon.push('Blood glucose: q1–2h during active treatment; target 140–180 mg/dL (NICE-SUGAR 2009)');
-    refs.add('NICE-SUGAR trial 2009');
-  }
-  mon.push('Electrolytes (Na, K, HCO₃, Mg): q4–6h during active replacement');
-  if (isPrimRespAcid) mon.push('Capnography if intubated; avoid rapid CO₂ correction in chronic hypercapnia — risks post-hypercapnia metabolic alkalosis');
-
-  const makeList = (arr) => arr.map(i => `<div class="mgmt-item">${i}</div>`).join('');
-  const sect = (title, arr) => arr.length ? `<div class="mgmt-section"><h4>${title}</h4>${makeList(arr)}</div>` : '';
-
-  let out = '';
-  if (clinCtx) out += `<div style="margin-bottom:.7rem;padding:.5rem .8rem;background:var(--bg-alt);border-radius:7px;font-size:.8rem;color:var(--slate);border:1px solid var(--line);">📋 Clinical context: <strong>${clinCtx}</strong></div>`;
-  out += sect('⚡ Immediate Priorities', imm);
-  out += sect('🎯 Specific Treatment', spec);
-  out += sect('📊 Monitoring Targets', mon);
-  out += `<div class="marino-cite" style="margin-top:.8rem">📗 ${[...refs].join(' | ')}</div>`;
-  out += `<div class="mgmt-alert orange" style="margin-top:.7rem">⚠️ Clinical decision support only — always apply your own clinical judgement. Doses must be verified against local protocols and individual patient factors (weight, renal function, allergies).</div>`;
-  return out;
-}
 </script>
   <!-- Floating results button — mobile only, shows after OCR analysis -->
-  <button id="viewResultsFloat" onclick="scrollToResults()">📊 View Results ↓</button>
+  <button id="viewResultsFloat" onclick="showResults()">📊 View Results ↓</button>
 
   <nav class="mobile-nav-bar">
     <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
