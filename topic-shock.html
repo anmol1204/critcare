@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Shock — Classification &amp; Approach (4 Types, RUSH, Targets) — CritCare.in</title>
+  <meta name="description" content="Undifferentiated shock: the 4 types (hypovolaemic, cardiogenic, distributive, obstructive), haemodynamic profiles, RUSH exam, lactate & MAP targets, fluid responsiveness. Marino, Washington Manual with drug doses." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    /* variable-based table → auto dark-aware */
+    .hemo-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.6rem 0;}
+    .hemo-table th{background:var(--bg-alt);padding:.45rem .5rem;text-align:left;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--slate);border-bottom:2px solid var(--line);}
+    .hemo-table td{padding:.45rem .5rem;border-bottom:1px solid var(--line);color:var(--ink);vertical-align:top;}
+    .hemo-table tr:last-child td{border-bottom:none;}
+    .hemo-table td.lbl{font-weight:800;}
+    .up{color:#dc2626;font-weight:800;} .dn{color:#2563eb;font-weight:800;} .eq{color:var(--slate);font-weight:700;}
+    @media(max-width:680px){.hemo-table{font-size:.72rem;} .hemo-table th,.hemo-table td{padding:.35rem .3rem;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Shock — Classification &amp; Approach</div>
+    <h1>🩸 Shock — Classification &amp; Approach</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Marino 5th Ed</span>
+      <span class="gbadge esicm">Washington Manual</span>
+      <span class="gbadge isccm">SSC 2026</span>
+      <span class="gbadge who">RUSH</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">4 Types of Shock</span>
+      <span class="topic-tag">Haemodynamic Profiles</span>
+      <span class="topic-tag">RUSH Exam · MAP/Lactate Targets</span>
+      <span class="topic-updated">Marino 5th Ed (2025) · Washington Manual of Critical Care 4th Ed · SSC 2026</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. The 4 Types &amp; Profiles</a></li>
+        <li><a href="#s4">4. RUSH Exam &amp; Workup</a></li>
+        <li><a href="#s5">5. Resuscitation Targets &amp; Drugs</a></li>
+        <li><a href="#s6">6. Clinical Flowchart</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Overview — Shock Is Inadequate Tissue Oxygenation</h2>
+      <div class="book-quote">
+        <p>"Shock is not a blood pressure — it is a state of inadequate cellular oxygen utilisation. A patient may be in shock with a normal blood pressure (compensated), and conversely a chronically low pressure may not represent shock at all. The clinician's task is to recognise tissue hypoperfusion early — through lactate, mentation, urine output, and skin — determine which of the four mechanisms is responsible, and reverse it before irreversible organ injury occurs."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Approach to Shock.</cite>
+      </div>
+
+      <h3>The Three Windows of Perfusion (clinical, fast, free)</h3>
+      <ul>
+        <li><strong>Brain</strong> — altered mentation (agitation → confusion → obtundation)</li>
+        <li><strong>Kidney</strong> — urine output &lt;0.5 mL/kg/h</li>
+        <li><strong>Skin</strong> — cold, mottled, prolonged capillary refill (&gt;3 s) — though warm in early distributive shock</li>
+      </ul>
+      <p>Add a <strong>lactate</strong> (&gt;2 mmol/L suggests hypoperfusion; &gt;4 is severe) and you have a rapid bedside assessment of shock severity before any monitor is attached.</p>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — Oxygen Delivery &amp; the Determinants of Pressure</h2>
+      <div class="book-quote">
+        <p>"All forms of shock converge on a single end-point: a mismatch between oxygen delivery and oxygen demand. Blood pressure is the product of cardiac output and systemic vascular resistance, and cardiac output is itself the product of heart rate and stroke volume — which depends on preload, contractility, and afterload. Localising a shock state is the discipline of asking which of these variables has failed."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Circulatory Shock. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — The Equations That Localise Shock</div>
+        <p><strong>MAP = CO × SVR</strong> &nbsp;and&nbsp; <strong>CO = HR × SV</strong> &nbsp;(SV depends on preload, contractility, afterload)</p>
+        <ul>
+          <li><strong>Hypovolaemic / haemorrhagic</strong> → ↓preload → ↓SV → ↓CO (SVR rises to compensate)</li>
+          <li><strong>Cardiogenic</strong> → ↓contractility (pump failure) → ↓SV → ↓CO (SVR rises)</li>
+          <li><strong>Obstructive</strong> → mechanical block to filling/output (tamponade, tension PTX, massive PE) → ↓CO</li>
+          <li><strong>Distributive</strong> → ↓SVR (vasodilatation, capillary leak) → CO usually high/normal</li>
+        </ul>
+        <p>This is why the <strong>three "low CO / high SVR" shocks feel cold</strong> and the <strong>distributive shock feels warm</strong> early — the body's compensation (or its failure) is written on the skin.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Oxygen Delivery (DO₂) &amp; the Goal of Resuscitation</div>
+        <p><strong>DO₂ = CO × [(1.34 × Hb × SaO₂) + (0.003 × PaO₂)]</strong></p>
+        <p>Resuscitation works on the modifiable levers of DO₂: <strong>cardiac output</strong> (fluids, inotropes), <strong>haemoglobin</strong> (transfusion when truly needed), and <strong>arterial saturation</strong> (oxygen, ventilation). A normal blood pressure achieved by vasoconstriction alone can mask a dangerously low cardiac output — treat flow and perfusion, not just the pressure number.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · The Four Types &amp; Their Haemodynamic Profiles</span>
+      <h2>Pattern Recognition at a Glance</h2>
+
+      <div class="table-wrap">
+        <table class="hemo-table">
+          <thead><tr><th>Parameter</th><th>Hypovolaemic</th><th>Cardiogenic</th><th>Obstructive</th><th>Distributive</th></tr></thead>
+          <tbody>
+            <tr><td class="lbl">Preload (CVP/PCWP)</td><td><span class="dn">↓</span></td><td><span class="up">↑</span></td><td>↑ / variable*</td><td><span class="dn">↓</span> / normal</td></tr>
+            <tr><td class="lbl">Cardiac output</td><td><span class="dn">↓</span></td><td><span class="dn">↓</span></td><td><span class="dn">↓</span></td><td><span class="up">↑</span> / normal</td></tr>
+            <tr><td class="lbl">SVR (afterload)</td><td><span class="up">↑</span></td><td><span class="up">↑</span></td><td><span class="up">↑</span></td><td><span class="dn">↓↓</span></td></tr>
+            <tr><td class="lbl">SvO₂ (mixed venous)</td><td><span class="dn">↓</span></td><td><span class="dn">↓</span></td><td><span class="dn">↓</span></td><td><span class="up">↑</span> / normal</td></tr>
+            <tr><td class="lbl">Skin</td><td>Cold</td><td>Cold</td><td>Cold</td><td>Warm (early)</td></tr>
+            <tr><td class="lbl">Examples</td><td>Haemorrhage, GI loss, burns, DKA</td><td>MI, arrhythmia, severe HF, myocarditis</td><td>Tamponade, tension PTX, massive PE</td><td>Sepsis, anaphylaxis, neurogenic, adrenal</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:.78rem;color:var(--slate);">*Obstructive: tamponade gives equalised high filling pressures; tension pneumothorax/PE give a high CVP with a small, underfilled left heart.</p>
+
+      <div class="key-box">
+        <div class="kb-label">Shock Can Be Mixed — and Often Is</div>
+        <p>The critically ill frequently have more than one mechanism at once: septic shock (distributive) with septic cardiomyopathy (cardiogenic) and hypovolaemia (capillary leak + poor intake); or trauma with haemorrhage (hypovolaemic) plus tension pneumothorax (obstructive). Re-assess continuously — the dominant mechanism can shift during resuscitation.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-x">🔍 4 · The RUSH Exam &amp; Bedside Workup</span>
+      <h2>RUSH — Rapid Ultrasound in SHock</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">"Pump · Tank · Pipes"</div>
+        <div class="gr-text">
+          <strong>Pump (heart):</strong> contractility (good vs poor → cardiogenic), pericardial effusion/tamponade (obstructive), RV strain/D-sign (massive PE → obstructive).<br>
+          <strong>Tank (volume):</strong> IVC size &amp; collapsibility (small/collapsing → hypovolaemic/distributive; full/fixed → cardiogenic/obstructive), lung B-lines (pulmonary oedema), pleural/peritoneal free fluid (haemorrhage), pneumothorax (absent lung sliding).<br>
+          <strong>Pipes (vessels):</strong> aorta (AAA/dissection), femoral/popliteal veins (DVT → supports PE).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Core Workup for Undifferentiated Shock</div>
+        <div class="gr-text">
+          ABG + <strong>lactate</strong>, FBC, U&amp;E, LFT, coagulation, glucose, cultures (if sepsis), troponin + <strong>ECG</strong> (cardiogenic/PE), CXR (pneumothorax, oedema, mediastinum), bedside <strong>echo/RUSH</strong>, point-of-care Hb. Establish invasive arterial line early in established shock; central access for vasopressors. SvO₂/ScvO₂ and dynamic indices guide ongoing resuscitation.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ED/ICU Context</div>
+        <p><strong>Distributive (septic) shock</strong> dominates — tropical infections, late presentations. Always look for an occult source (urinary, abdominal, soft-tissue, tropical fever — see the Febrile Illness topic).</p>
+        <p><strong>Haemorrhagic shock</strong> from trauma (RTAs) and obstetric causes is common; whole blood and early TXA are pragmatic where component MTP is limited.</p>
+        <p><strong>Point-of-care ultrasound (RUSH)</strong> is increasingly available and invaluable where advanced monitoring is scarce — it localises the shock type in minutes at the bedside.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-d">💊 5 · Resuscitation Targets &amp; Drugs</span>
+      <h2>Targets &amp; the Right Vasoactive for Each Shock</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">Resuscitation Targets</div>
+        <div class="gr-text">
+          <strong>MAP ≥65 mmHg</strong> (individualise — higher if chronic hypertension; SSC 2026 notes a lower target may be acceptable in selected older patients). <strong>Lactate clearance</strong> ≥10%/2h, goal &lt;2 mmol/L. <strong>Urine output</strong> ≥0.5 mL/kg/h. Normalising mentation and skin perfusion (capillary refill) are validated bedside endpoints (ANDROMEDA-SHOCK: capillary-refill-guided resuscitation non-inferior/possibly better than lactate).
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Shock type</th><th>First steps</th><th>Vasoactive / definitive</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Hypovolaemic / haemorrhagic</strong></td><td>Stop the loss; fluids; blood products (1:1:1) for haemorrhage; TXA</td><td>Vasopressors only as a bridge; <em>definitive = volume/haemostasis</em></td></tr>
+            <tr><td><strong>Distributive (septic)</strong></td><td>30 mL/kg crystalloid (individualised), source control, antibiotics &lt;1h</td><td><strong>Noradrenaline</strong> first-line; add vasopressin 0.03 U/min; steroids if refractory</td></tr>
+            <tr><td><strong>Distributive (anaphylactic)</strong></td><td>IM adrenaline, fluids, remove trigger</td><td><strong>Adrenaline</strong> (IM → infusion); see Anaphylaxis topic</td></tr>
+            <tr><td><strong>Cardiogenic</strong></td><td>Treat cause (PCI for MI), cautious fluids, optimise rhythm</td><td><strong>Noradrenaline</strong> for pressure + <strong>dobutamine</strong> for output; MCS (IABP/Impella/VA-ECMO)</td></tr>
+            <tr><td><strong>Obstructive</strong></td><td>Relieve the obstruction</td><td>Tamponade → pericardiocentesis; tension PTX → decompress; massive PE → thrombolysis</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Match the Treatment to the Mechanism</div>
+        <p>Fluids help hypovolaemic and (initially) distributive shock but <strong>harm cardiogenic and obstructive shock</strong> (worsen pulmonary oedema / RV distension). Vasopressors raise pressure but do not fix obstruction or haemorrhage. The first job is always to identify the mechanism — then the treatment follows logically. See the dedicated <a href="topic-vasopressors.html" style="color:var(--blue);font-weight:600;">Vasopressors</a> and <a href="topic-sepsis.html" style="color:var(--blue);font-weight:600;">Sepsis</a> topics.</p>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-f">🗂 6 · Clinical Flowchart</span>
+      <h2>Undifferentiated Shock — Step by Step</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Recognise shock</h4>
+          <ul><li>Hypotension OR signs of hypoperfusion (lactate, mentation, urine, skin) — even with normal BP.</li>
+          <li>ABC, high-flow O₂, two large IVs/IO, monitor, arterial line; send lactate + bloods.</li></ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Localise with RUSH + ECG</h4>
+          <ul><li>Pump/Tank/Pipes scan; ECG + troponin; CXR.</li>
+          <li>Assign the dominant mechanism (often mixed).</li></ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Treat the mechanism</h4>
+          <ul><li>Fluids/blood (hypovolaemic), antibiotics + noradrenaline (septic), inotrope + revascularise (cardiogenic), decompress/lyse (obstructive).</li>
+          <li>Assess fluid responsiveness dynamically before each bolus (see Haemodynamic Monitoring topic).</li></ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Reassess to targets</h4>
+          <ul><li>MAP ≥65, lactate clearance, urine output, capillary refill, mentation.</li>
+          <li>Re-scan if not improving — the mechanism may have shifted or be mixed.</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Shock</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Waiting for Hypotension to Diagnose Shock</div><p>Compensated shock maintains BP through vasoconstriction until sudden collapse. Use lactate, mentation, urine output and skin perfusion to recognise hypoperfusion early — a "normal" BP is not reassurance.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — One-Size-Fits-All Fluids</div><p>Large fluid boluses help hypovolaemic/early distributive shock but worsen cardiogenic and obstructive shock. Identify the mechanism (RUSH) before reflexively loading fluid.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Chasing Blood Pressure With Vasopressors Alone</div><p>A normal MAP from vasoconstriction can hide a low cardiac output and ongoing tissue hypoxia. Treat flow and perfusion (lactate, ScvO₂, capillary refill), not just the pressure.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Missing Obstructive Shock</div><p>Tension pneumothorax, tamponade and massive PE kill quickly and need a mechanical fix, not fluids/pressors. A focused echo/lung scan in any unexplained shock prevents this lethal miss.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Forgetting Shock Is Often Mixed</div><p>Septic patients develop cardiomyopathy; trauma patients develop tension pneumothorax; treating only the first-identified mechanism leaves the patient in shock. Reassess continuously.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Delaying Source Control / Definitive Therapy</div><p>Vasopressors and fluids buy time but rarely cure — haemorrhage needs haemostasis, sepsis needs source control + antibiotics, cardiogenic MI needs revascularisation, obstruction needs decompression. Don't let stabilisation delay the definitive intervention.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Marino PL.</strong> The ICU Book, 5th Ed. Circulatory Shock; Haemodynamic Monitoring. Wolters Kluwer; 2025.</li>
+          <li><strong>Washington Manual of Critical Care, 4th Ed.</strong> Chapter: Approach to Shock. Wolters Kluwer 2023.</li>
+          <li><strong>Vincent JL, De Backer D.</strong> Circulatory Shock. N Engl J Med 2013;369:1726–1734.</li>
+          <li><strong>Hernández G, Ospina-Tascón GA, Damiani LP et al. (ANDROMEDA-SHOCK).</strong> Effect of a resuscitation strategy targeting peripheral perfusion status vs serum lactate on mortality in septic shock. JAMA 2019;321:654–664.</li>
+          <li><strong>Perera P, Mailhot T, Riley D, Mandavia D.</strong> The RUSH exam: Rapid Ultrasound in SHock. Emerg Med Clin North Am 2010;28:29–56.</li>
+          <li><strong>Evans L, Rhodes A, Alhazzani W et al.</strong> Surviving Sepsis Campaign Guidelines (and 2026 update). Crit Care Med.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="drug-reference.html">Drug Reference</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

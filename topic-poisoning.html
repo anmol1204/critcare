@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Acute Poisoning — Toxidromes, Decontamination &amp; Antidotes — CritCare.in</title>
+  <meta name="description" content="Emergency approach to the poisoned patient: resuscitation, the classic toxidromes, decontamination, enhanced elimination, antidote quick-reference, and Indian context (OP, aluminium phosphide, paraquat). Tintinalli's, Rosen's, NPIC." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .em-box{background:linear-gradient(135deg,#fff1f2,#ffe4e6);border:1px solid #fda4af;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .em-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#9f1239;margin-bottom:.6rem;}
+    .em-box p,.em-box ul{font-size:.9rem;color:#881337;line-height:1.75;margin:0;}
+    .em-box ul{padding-left:1.2rem;}
+    .em-box strong{color:#9f1239;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .crit-box{background:#fee2e2;border:2px solid #ef4444;border-radius:12px;padding:1.2rem;margin:1rem 0;}
+    .crit-box h4{color:#b91c1c;font-size:.95rem;margin-bottom:.6rem;}
+    .crit-box p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:.3rem 0 0;}
+    .tox-table{width:100%;border-collapse:collapse;font-size:.79rem;margin:.6rem 0;}
+    .tox-table th{background:var(--bg-alt);padding:.45rem .5rem;text-align:left;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--slate);border-bottom:2px solid var(--line);}
+    .tox-table td{padding:.45rem .5rem;border-bottom:1px solid var(--line);color:var(--ink);vertical-align:top;}
+    .tox-table tr:last-child td{border-bottom:none;}
+    .tox-table td.lbl{font-weight:800;}
+    @media(max-width:680px){.tox-table{font-size:.72rem;}.tox-table th,.tox-table td{padding:.35rem .3rem;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Acute Poisoning</div>
+    <h1>☠️ Acute Poisoning — Toxidromes &amp; Antidotes</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Tintinalli's</span>
+      <span class="gbadge esicm">Rosen's</span>
+      <span class="gbadge isccm">AACT/EAPCCT</span>
+      <span class="gbadge who">NPIC India</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Resuscitate First</span>
+      <span class="topic-tag">5 Toxidromes</span>
+      <span class="topic-tag">Decontamination · Antidotes</span>
+      <span class="topic-updated">Tintinalli's 9th Ed · Rosen's 10th Ed · AACT/EAPCCT position statements · Indian poisoning data (NPIC)</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Tintinalli's Summary</a></li>
+        <li><a href="#s2">2. Rosen's — The Toxidromes</a></li>
+        <li><a href="#s3">3. Decontamination &amp; Elimination</a></li>
+        <li><a href="#s4">4. Antidote Quick Reference</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Indian Poisons</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+      <a href="topic-toxicology.html" class="toc-back" style="margin-top:.4rem;">→ ICU Toxicology (deep-dive)</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📕 1 · Tintinalli's Emergency Medicine, 9th Ed</span>
+      <h2>Tintinalli's Summary — Treat the Patient, Not the Poison</h2>
+      <div class="book-quote">
+        <p>"The overwhelming majority of poisoned patients do well with meticulous supportive care alone — airway, breathing, circulation, and correction of the metabolic consequences. Specific antidotes exist for only a minority of toxins. The initial approach is therefore generic: resuscitate, identify a toxidrome to narrow the agent, decontaminate when appropriate, give an antidote if one is available and indicated, and consider enhanced elimination for the few toxins it benefits."</p>
+        <cite>Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Ed. McGraw-Hill 2020. Section: Toxicology — General Approach.</cite>
+      </div>
+
+      <h3>The Core Message (Tintinalli's)</h3>
+      <ul>
+        <li><strong>Resuscitation first</strong> — ABC, glucose, oxygen; most deaths are from airway loss, hypoventilation, arrhythmia or seizures, not from lack of an antidote.</li>
+        <li><strong>The "coma cocktail" thoughtfully:</strong> check glucose (give dextrose if low), consider <strong>thiamine</strong>, <strong>naloxone</strong> for opioid hypoventilation; flumazenil is rarely used (seizure risk).</li>
+        <li><strong>Identify a toxidrome</strong> from vitals + pupils + skin + mental state to narrow a vast differential to a manageable one.</li>
+        <li><strong>Risk-assess and consult</strong> the poisons centre; observe for delayed toxicity (sustained-release drugs, paracetamol, toxic alcohols).</li>
+      </ul>
+
+      <div class="crit-box">
+        <h4>🧪 Two Bedside Tests in Every Overdose</h4>
+        <p><strong>Glucose</strong> (instant, reversible cause of coma) and a <strong>12-lead ECG</strong> (QRS widening → sodium-channel blockade e.g. TCA → needs bicarbonate; QTc prolongation → torsades risk). Add a <strong>paracetamol level</strong> in any deliberate self-poisoning — it is common, silent early, and lethal but treatable.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📘 2 · Rosen's Emergency Medicine, 10th Ed</span>
+      <h2>Rosen's — The Classic Toxidromes</h2>
+      <div class="book-quote">
+        <p>"A toxidrome is a constellation of signs — vital signs, pupil size, skin, bowel sounds, and mental status — that points to a class of poison. Recognising the pattern allows the clinician to begin specific treatment before any laboratory confirmation, and to avoid being misled by an unreliable history. The pupils, the skin (wet versus dry), and the bowel sounds are the great discriminators between the cholinergic and anticholinergic states that are so often confused."</p>
+        <cite>Rosen's Emergency Medicine: Concepts and Clinical Practice, 10th Ed. Elsevier 2023. Chapter: General Approach to the Poisoned Patient.</cite>
+      </div>
+
+      <div class="table-wrap">
+        <table class="tox-table">
+          <thead><tr><th>Toxidrome</th><th>Key features</th><th>Pupils</th><th>Examples</th><th>Treatment</th></tr></thead>
+          <tbody>
+            <tr><td class="lbl">Cholinergic</td><td>SLUDGE/DUMBELS, wet, bradycardia, bronchorrhoea, fasciculations</td><td>Miosis</td><td>Organophosphates, carbamates, nerve agents</td><td>Atropine (to dry chest) + pralidoxime</td></tr>
+            <tr><td class="lbl">Anticholinergic</td><td>"Mad, hot, dry, red, blind" — delirium, dry skin, ↑HR, urinary retention, mydriasis</td><td>Mydriasis</td><td>TCAs, antihistamines, atropine, datura</td><td>Supportive; benzodiazepines; physostigmine (selected)</td></tr>
+            <tr><td class="lbl">Sympathomimetic</td><td>Agitation, ↑HR, ↑BP, ↑temp, <strong>sweaty</strong> (vs dry anticholinergic)</td><td>Mydriasis</td><td>Cocaine, amphetamines, cathinones</td><td>Benzodiazepines; cooling; avoid β-blockers (cocaine)</td></tr>
+            <tr><td class="lbl">Opioid</td><td>↓RR (hallmark), ↓GCS, ↓BP</td><td>Miosis (pinpoint)</td><td>Heroin, morphine, fentanyl, tramadol</td><td>Naloxone; ventilatory support</td></tr>
+            <tr><td class="lbl">Sedative-hypnotic</td><td>↓GCS, normal/↓vitals, RR relatively preserved</td><td>Variable</td><td>Benzodiazepines, barbiturates, alcohol</td><td>Supportive; flumazenil rarely (seizure risk)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Rosen's — Cholinergic vs Anticholinergic: the Skin &amp; Pupils</div>
+        <p>These two are the most dangerous to confuse. <strong>Cholinergic = WET</strong> (salivation, lacrimation, bronchorrhoea, sweating), miosis, bradycardia — the killer is the airway drowning in secretions (organophosphate). <strong>Anticholinergic = DRY</strong> (dry skin/mouth, urinary retention, ileus), mydriasis, tachycardia, delirium with picking movements. Mnemonic for anticholinergic: "hot as a hare, dry as a bone, red as a beet, mad as a hatter, blind as a bat."</p>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Rosen's — The Toxic Anion-Gap Acidosis &amp; Osmolar Gap</div>
+        <p>An unexplained <strong>high anion-gap metabolic acidosis</strong> in a poisoned patient should trigger thoughts of <strong>toxic alcohols (methanol, ethylene glycol), salicylates, metformin (lactate), and iron</strong>. A raised <strong>osmolar gap</strong> early supports toxic alcohol (before it is metabolised to acid). See the <a href="topic-acid-base.html" style="color:var(--blue);font-weight:600;">Acid–Base Disorders</a> topic — these are time-critical (fomepizole/ethanol + dialysis).</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Decontamination &amp; Enhanced Elimination</span>
+      <h2>What Actually Helps (and What Doesn't)</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">GI Decontamination</div>
+        <div class="gr-text">
+          <strong>Activated charcoal 1 g/kg</strong> (50 g adult) is the main modality — most effective <strong>within 1 hour</strong> of ingestion of a charcoal-binding toxin, in an alert/protected airway. <span class="gr-s">AACT/EAPCCT</span> Not for: caustics, hydrocarbons, alcohols, metals (iron, lithium), or the obtunded unprotected airway (aspiration risk).<br>
+          <strong>Gastric lavage</strong> is rarely indicated (only very recent, life-threatening ingestion, protected airway). <strong>Ipecac is obsolete.</strong> <strong>Whole-bowel irrigation</strong> (PEG) for sustained-release/enteric-coated drugs, iron, lithium, body packers.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Enhanced Elimination</div>
+        <div class="gr-text">
+          <strong>Urinary alkalinisation</strong> (sodium bicarbonate, target urine pH 7.5–8) — salicylates, phenobarbital.<br>
+          <strong>Haemodialysis</strong> for dialysable toxins — remember <strong>"I-STUMBLE"</strong>: Isopropanol, Salicylates, Theophylline, Uraemia, Methanol, Barbiturates, Lithium, Ethylene glycol (also metformin-associated lactic acidosis, valproate, severe).<br>
+          <strong>Multi-dose activated charcoal</strong> — carbamazepine, dapsone, phenobarbital, quinine, theophylline (drugs with enterohepatic recirculation).
+        </div>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Antidote Quick Reference</span>
+      <h2>Antidotes Every ED Should Stock</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Poison</th><th>Antidote</th><th>Dose</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Paracetamol</strong></td><td>N-acetylcysteine (NAC)</td><td>IV regimen (e.g. 150 mg/kg → 50 → 100, or 2-bag); per nomogram/timing</td></tr>
+            <tr><td><strong>Opioids</strong></td><td>Naloxone</td><td>0.4 mg IV q2–3 min (titrate to ventilation); infusion if needed</td></tr>
+            <tr><td><strong>Organophosphate / carbamate</strong></td><td>Atropine + Pralidoxime</td><td>Atropine 2–4 mg IV, double q5 min to atropinisation; pralidoxime 30 mg/kg</td></tr>
+            <tr><td><strong>Benzodiazepines</strong></td><td>Flumazenil (rare)</td><td>0.2 mg IV — avoid if dependence/co-ingestion (seizures)</td></tr>
+            <tr><td><strong>TCA (wide QRS)</strong></td><td>Sodium bicarbonate</td><td>1–2 mEq/kg IV bolus for QRS &gt;100 ms / arrhythmia / hypotension</td></tr>
+            <tr><td><strong>Beta-blocker / Ca-channel blocker</strong></td><td>Glucagon; high-dose insulin euglycaemia (HIET); calcium</td><td>Glucagon 5–10 mg IV; HIET 1 U/kg bolus → 0.5–1 U/kg/h + glucose</td></tr>
+            <tr><td><strong>Methanol / ethylene glycol</strong></td><td>Fomepizole (or ethanol) + dialysis</td><td>Fomepizole 15 mg/kg IV load; haemodialysis</td></tr>
+            <tr><td><strong>Iron</strong></td><td>Desferrioxamine</td><td>15 mg/kg/h IV infusion for severe toxicity</td></tr>
+            <tr><td><strong>Digoxin</strong></td><td>Digoxin-specific Fab</td><td>Per level/ingested dose; empirically for life-threatening arrhythmia/hyperK</td></tr>
+            <tr><td><strong>Methaemoglobinaemia</strong></td><td>Methylene blue</td><td>1–2 mg/kg IV over 5 min</td></tr>
+            <tr><td><strong>Local anaesthetic / lipophilic drug toxicity</strong></td><td>IV lipid emulsion (Intralipid 20%)</td><td>1.5 mL/kg bolus → 0.25 mL/kg/min</td></tr>
+            <tr><td><strong>Cyanide</strong></td><td>Hydroxocobalamin (or Na thiosulfate)</td><td>5 g IV</td></tr>
+            <tr><td><strong>Snake envenomation</strong></td><td>Anti-snake venom</td><td>See the <a href="topic-snakebite.html" style="color:var(--blue);font-weight:600;">Snakebite</a> topic</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗂 5 · Clinical Flowchart</span>
+      <h2>The Poisoned Patient — Step by Step</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Resuscitate (ABC) + glucose + ECG</h4>
+          <ul><li>Airway/ventilation (intubate for airway loss/hypoventilation), circulation, seizures (benzodiazepines).</li>
+          <li>Capillary glucose; 12-lead ECG (QRS, QTc); consider naloxone/thiamine.</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Identify a toxidrome &amp; risk-assess</h4>
+          <ul><li>Vitals + pupils + skin (wet/dry) + mental state + bowel sounds → toxidrome.</li>
+          <li>Bloods: paracetamol &amp; salicylate level, VBG + lactate, U&amp;E, anion &amp; osmolar gap, drug levels as relevant; call the poisons centre.</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Decontaminate &amp; give antidote</h4>
+          <ul><li>Activated charcoal if &lt;1 h, suitable toxin, protected airway.</li>
+          <li>Specific antidote if indicated (table above); sodium bicarbonate for wide-QRS TCA, etc.</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Enhanced elimination, observe &amp; psych</h4>
+          <ul><li>Haemodialysis / urinary alkalinisation / MDAC for the few toxins that benefit.</li>
+          <li>Observe for delayed/sustained-release toxicity; risk-assess for self-harm and arrange psychiatric review before discharge.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-x">🇮🇳 6 · Poisons That Dominate Indian Practice</span>
+      <h2>High-Burden Indian Poisonings</h2>
+      <div class="em-box">
+        <div class="mb-label">🇮🇳 The Big Ones</div>
+        <ul>
+          <li><strong>Organophosphate / carbamate (pesticides)</strong> — the classic cholinergic crisis; <strong>atropine titrated to a dry chest</strong> (huge doses), pralidoxime, intubation for respiratory failure / intermediate syndrome. (See ICU Toxicology for detail.)</li>
+          <li><strong>Aluminium phosphide ("rice tablet"/Celphos)</strong> — releases phosphine; profound, often refractory cardiogenic shock and metabolic acidosis; <strong>no antidote</strong> — supportive care, intensive haemodynamic support; very high mortality. Avoid contact aspiration; consider IV lipid/magnesium per local protocols.</li>
+          <li><strong>Paraquat</strong> — corrosive; delayed pulmonary fibrosis; <strong>avoid supplemental oxygen unless SpO₂ low</strong> (oxygen worsens free-radical lung injury); early charcoal/Fuller's earth; poor prognosis with significant ingestion.</li>
+          <li><strong>Yellow oleander / cardiac glycoside plants</strong> — brady-arrhythmias/hyperkalaemia like digoxin; Fab fragments where available.</li>
+          <li><strong>Corrosives (acids/alkalis)</strong> — do NOT induce vomiting or give charcoal; endoscopy assessment; airway protection.</li>
+          <li><strong>Snakebite, alcohol, sedative overdoses</strong> — common; see relevant topics.</li>
+        </ul>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Poisons Information</div>
+        <div class="gr-text">
+          Use the <strong>National Poisons Information Centre (NPIC, AIIMS New Delhi)</strong> and regional poison centres for agent-specific guidance and antidote sourcing. Antidote stocking (Fab, fomepizole, hydroxocobalamin, lipid emulsion) is variable — know what your hospital actually holds.
+        </div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Poisoning</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Chasing an Antidote Instead of Resuscitating</div><p>Most poisoned patients survive on supportive care alone; few toxins have antidotes. Secure the airway, support ventilation and circulation, treat seizures, and correct glucose first — the antidote is secondary.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Missing the Silent Paracetamol Co-Ingestion</div><p>Paracetamol is common in deliberate self-poisoning, asymptomatic early, and lethal but eminently treatable with NAC. Check a paracetamol level in every deliberate overdose regardless of the stated agent.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Confusing Cholinergic with Anticholinergic</div><p>Wet + miosis + bradycardia = cholinergic (organophosphate) needing atropine; dry + mydriasis + tachycardia + delirium = anticholinergic. Mixing them up leads to dangerously wrong treatment — read the skin and pupils.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Giving Charcoal to the Wrong Patient</div><p>Activated charcoal in an obtunded, unprotected airway causes aspiration; it doesn't bind alcohols, metals, hydrocarbons or caustics. Give it only to alert patients within ~1 h of a charcoal-binding toxin.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Routine Flumazenil for Benzodiazepine Overdose</div><p>Flumazenil can precipitate seizures (in dependence or with pro-convulsant co-ingestions like TCAs) and refractory status. Benzodiazepine overdose is usually managed with supportive airway/ventilation, not reversal.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Giving Oxygen Liberally in Paraquat</div><p>Supplemental oxygen accelerates paraquat's free-radical pulmonary injury. Withhold oxygen unless the patient is genuinely hypoxic, and target the lowest SpO₂ acceptable — the opposite of the usual instinct.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Tintinalli JE, Ma OJ, Yealy DM et al.</strong> Tintinalli's Emergency Medicine, 9th Ed. Section: Toxicology. McGraw-Hill; 2020.</li>
+          <li><strong>Walls RM, Hockberger RS, Gausche-Hill M et al.</strong> Rosen's Emergency Medicine, 10th Ed. General Approach to the Poisoned Patient. Elsevier; 2023.</li>
+          <li><strong>Chyka PA, Seger D, Krenzelok EP, Vale JA (AACT/EAPCCT).</strong> Position paper: Single-dose activated charcoal. Clin Toxicol 2005;43:61–87.</li>
+          <li><strong>Eddleston M, Buckley NA, Eyer P, Dawson AH.</strong> Management of acute organophosphorus pesticide poisoning. Lancet 2008;371:597–607.</li>
+          <li><strong>Goldfrank's Toxicologic Emergencies, 11th Ed.</strong> McGraw-Hill; 2019 (antidotes &amp; toxidromes reference).</li>
+          <li><strong>National Poisons Information Centre (NPIC), AIIMS New Delhi.</strong> Indian poisoning management guidance.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="drug-reference.html">Drug Reference</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Acute Ischaemic Stroke — Thrombolysis, Thrombectomy, Time Windows — CritCare.in</title>
+  <meta name="description" content="Emergency management of acute ischaemic stroke: NIHSS, thrombolysis (alteplase/tenecteplase) within 4.5h, thrombectomy windows (DAWN/DEFUSE-3 to 24h), BP targets, exclusions, stroke mimics. Tintinalli's, Rosen's, AHA/ASA 2019 with Indian context." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .em-box{background:linear-gradient(135deg,#fff1f2,#ffe4e6);border:1px solid #fda4af;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .em-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#9f1239;margin-bottom:.6rem;}
+    .em-box p,.em-box ul{font-size:.9rem;color:#881337;line-height:1.75;margin:0;}
+    .em-box ul{padding-left:1.2rem;}
+    .em-box strong{color:#9f1239;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .crit-box{background:#fee2e2;border:2px solid #ef4444;border-radius:12px;padding:1.2rem;margin:1rem 0;}
+    .crit-box h4{color:#b91c1c;font-size:.95rem;margin-bottom:.6rem;}
+    .crit-box .big{font-size:1.3rem;font-weight:800;color:#b91c1c;}
+    .crit-box p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:.3rem 0 0;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Acute Ischaemic Stroke</div>
+    <h1>🧠 Acute Ischaemic Stroke</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">AHA/ASA 2019</span>
+      <span class="gbadge esicm">ESO 2021</span>
+      <span class="gbadge isccm">DAWN / DEFUSE-3</span>
+      <span class="gbadge who">Tintinalli's</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Time Is Brain</span>
+      <span class="topic-tag">Thrombolysis ≤4.5h · Thrombectomy ≤24h</span>
+      <span class="topic-tag">NIHSS · BP Targets</span>
+      <span class="topic-updated">Tintinalli's 9th Ed · Rosen's 10th Ed · AHA/ASA 2019 (2019 update) · DAWN/DEFUSE-3</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Tintinalli's Summary</a></li>
+        <li><a href="#s2">2. Rosen's — Penumbra &amp; Time</a></li>
+        <li><a href="#s3">3. Thrombolysis &amp; Thrombectomy</a></li>
+        <li><a href="#s4">4. BP, Drugs &amp; Exclusions</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Mimics &amp; Posterior Stroke</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📕 1 · Tintinalli's Emergency Medicine, 9th Ed</span>
+      <h2>Tintinalli's Summary — Time Is Brain</h2>
+      <div class="book-quote">
+        <p>"Acute ischaemic stroke is a time-critical emergency in which roughly 1.9 million neurons are lost every minute that reperfusion is delayed. The emergency physician's job is a choreographed race: recognise the deficit, exclude haemorrhage with immediate non-contrast CT, establish the time of onset, and deliver reperfusion — intravenous thrombolysis and/or endovascular thrombectomy — to eligible patients as fast as possible. Door-to-needle should be under 60 minutes."</p>
+        <cite>Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Ed. McGraw-Hill 2020. Chapter: Stroke.</cite>
+      </div>
+
+      <h3>The Core Message (Tintinalli's)</h3>
+      <ul>
+        <li><strong>Non-contrast CT first</strong> — its only essential job in the hyperacute phase is to <em>exclude haemorrhage</em> and obvious mimics; early ischaemia is often invisible.</li>
+        <li><strong>Establish "last known well"</strong> — eligibility for reperfusion is driven by time from when the patient was last seen normal, not when symptoms were discovered.</li>
+        <li><strong>Reperfusion eligibility:</strong> IV thrombolysis ≤4.5 h; endovascular thrombectomy for large-vessel occlusion up to 24 h in selected patients (perfusion imaging).</li>
+        <li><strong>Check glucose immediately</strong> — hypoglycaemia is a classic stroke mimic and is instantly reversible.</li>
+      </ul>
+
+      <div class="crit-box">
+        <h4>⏱️ The Time Targets</h4>
+        <p><span class="big">Door-to-CT ≤25 min · Door-to-needle ≤60 min.</span> IV thrombolysis window ≤4.5 h from last-known-well. Thrombectomy for LVO: ≤6 h (all eligible), and <strong>6–24 h</strong> in selected patients with favourable perfusion imaging (DAWN/DEFUSE-3).</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📘 2 · Rosen's Emergency Medicine, 10th Ed</span>
+      <h2>Rosen's — The Ischaemic Penumbra</h2>
+      <div class="book-quote">
+        <p>"At the core of an arterial occlusion lies tissue that is already infarcted; surrounding it is the ischaemic penumbra — neurons that are electrically silent but still viable, sustained by collateral flow. This penumbra is salvageable tissue, and it is the entire target of acute reperfusion therapy. The penumbra shrinks with time as the core expands, which is why 'time is brain' — and why perfusion imaging, by measuring the core-to-penumbra mismatch, can extend the treatment window in patients with good collaterals."</p>
+        <cite>Rosen's Emergency Medicine: Concepts and Clinical Practice, 10th Ed. Elsevier 2023. Chapter: Stroke.</cite>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Rosen's — Core vs Penumbra &amp; Why Windows Extended</div>
+        <p>The trial revolution (DAWN, DEFUSE-3) showed that <strong>some patients have a small infarct core but a large penumbra well beyond the traditional time windows</strong> — these "slow progressors" with good collaterals benefit from thrombectomy up to 24 hours. The decision shifted from "time on the clock" to "tissue at risk on imaging" (CT perfusion or MRI DWI/PWI mismatch). This is the single biggest change in acute stroke care of the last decade.</p>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Rosen's — Localising the Lesion (NIHSS)</div>
+        <p>The <strong>NIH Stroke Scale (NIHSS)</strong> quantifies deficit severity (0–42) and guides therapy: higher scores correlate with large-vessel occlusion (LVO). Cortical signs suggesting LVO (and thus thrombectomy candidacy): <strong>gaze deviation, hemineglect, aphasia, dense hemiparesis</strong> (NIHSS often ≥6). Always document a baseline NIHSS — it tracks deterioration and response.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Reperfusion — Thrombolysis &amp; Thrombectomy</span>
+      <h2>The Two Pillars of Reperfusion (AHA/ASA 2019)</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Intravenous Thrombolysis</div>
+        <div class="gr-text">
+          <strong>Alteplase 0.9 mg/kg IV</strong> (max 90 mg; 10% as a bolus over 1 min, remainder over 60 min) within <strong>4.5 hours</strong> of last-known-well <span class="gr-s">AHA/ASA Class I</span>.<br>
+          <strong>Tenecteplase 0.25 mg/kg</strong> (single bolus, max 25 mg) is increasingly used — non-inferior to alteplase, easier single bolus, and preferred before thrombectomy (EXTEND-IA TNK). <span class="gr-c">Practice shift</span><br>
+          Benefit is strongly time-dependent — treat as early as possible within the window.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Endovascular Thrombectomy (EVT)</div>
+        <div class="gr-text">
+          For <strong>large-vessel occlusion</strong> (ICA, proximal MCA/M1) <span class="gr-s">AHA/ASA Class I</span>:<br>
+          <strong>0–6 h:</strong> EVT for eligible LVO (small core, good baseline function).<br>
+          <strong>6–24 h:</strong> EVT in selected patients meeting <strong>DAWN</strong> or <strong>DEFUSE-3</strong> criteria (clinical–core or perfusion mismatch).<br>
+          Give IV thrombolysis first if eligible (do not skip it to go straight to EVT, unless contraindicated) — "drip and ship/retrieve".
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ED Context</div>
+        <p><strong>Tenecteplase</strong> is widely available and substantially cheaper than alteplase in India and is frequently used for stroke thrombolysis (single bolus is operationally simpler). Cost and availability of alteplase are real barriers; TNK has improved access.</p>
+        <p><strong>Late presentation</strong> is common (delayed recognition, transport, awareness) — many patients fall outside the thrombolysis window; perfusion-based selection for thrombectomy and organised <strong>stroke-ready/telestroke networks</strong> are expanding but unevenly distributed.</p>
+        <p><strong>Always exclude hypoglycaemia and check the platelet count/INR</strong> early; coagulopathy and thrombocytopenia (e.g. from tropical illness) are relevant exclusions in our setting.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Blood Pressure, Drugs &amp; Exclusions</span>
+      <h2>BP Targets &amp; Thrombolysis Eligibility</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Blood Pressure</div>
+        <div class="gr-text">
+          <strong>If thrombolysis planned:</strong> lower BP to <strong>&lt;185/110 mmHg before</strong> giving alteplase, and keep <strong>&lt;180/105 mmHg for 24 h after</strong>. Use titratable IV agents (labetalol, nicardipine).<br>
+          <strong>If NOT thrombolysing:</strong> permissive hypertension — only treat if <strong>&gt;220/120 mmHg</strong> (or end-organ damage: ACS, dissection, pulmonary oedema, encephalopathy), lowering by ~15% in the first 24 h. Aggressive BP lowering in ischaemic stroke worsens penumbral perfusion.
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Role</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Alteplase (tPA)</strong></td><td>IV thrombolysis</td><td>0.9 mg/kg (max 90 mg): 10% bolus, rest over 60 min</td><td>Window ≤4.5 h; monitor for angioedema &amp; ICH</td></tr>
+            <tr><td><strong>Tenecteplase</strong></td><td>IV thrombolysis (increasingly preferred)</td><td>0.25 mg/kg single bolus (max 25 mg)</td><td>Non-inferior; convenient; favoured pre-thrombectomy</td></tr>
+            <tr><td><strong>Labetalol</strong></td><td>BP control pre/post lysis</td><td>10–20 mg IV over 1–2 min, repeat/double q10 min</td><td>Avoid in bradycardia/severe asthma/HF</td></tr>
+            <tr><td><strong>Nicardipine</strong></td><td>BP control (infusion)</td><td>5 mg/h IV, titrate by 2.5 mg/h q5–15 min (max 15)</td><td>Smooth titratable control</td></tr>
+            <tr><td><strong>Aspirin</strong></td><td>Antiplatelet (non-lysis / after 24 h)</td><td>300 mg PO/PR, then 75–100 mg OD</td><td>Start within 48 h; <strong>delay 24 h after thrombolysis</strong></td></tr>
+            <tr><td><strong>Dextrose 25%</strong></td><td>Reverse hypoglycaemia (mimic)</td><td>If glucose low — treat immediately</td><td>Always check glucose before calling it a stroke</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Key Thrombolysis Contraindications</div>
+        <p>Any intracranial haemorrhage on CT · prior ICH · ischaemic stroke or serious head trauma in 3 months · intracranial neoplasm/AVM/aneurysm · recent intracranial/spinal surgery · active internal bleeding · platelets &lt;100 · INR &gt;1.7 / therapeutic anticoagulation / DOAC within 48 h · BP &gt;185/110 not controllable · blood glucose grossly abnormal. <strong>If post-lysis: sudden headache, vomiting, ↓GCS or BP surge → stop infusion, urgent CT for haemorrhagic transformation.</strong></p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗂 5 · Clinical Flowchart</span>
+      <h2>Hyperacute Stroke — Step by Step</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Recognise &amp; activate the stroke pathway</h4>
+          <ul><li>FAST/BE-FAST positive → call stroke team; note <strong>last-known-well</strong>.</li>
+          <li>ABC, O₂ only if hypoxic, IV access, <strong>capillary glucose</strong>, baseline NIHSS.</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Immediate non-contrast CT (± CTA/CT perfusion)</h4>
+          <ul><li>Exclude haemorrhage; CTA to find LVO; CT perfusion if extended-window EVT considered.</li>
+          <li>Bloods: glucose, FBC (platelets), coagulation/INR, U&amp;E.</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Reperfuse the eligible patient</h4>
+          <ul><li>≤4.5 h &amp; no contraindication → IV thrombolysis (control BP &lt;185/110 first).</li>
+          <li>LVO → thrombectomy (≤6 h, or 6–24 h if perfusion-eligible).</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Stroke-unit care &amp; secondary prevention</h4>
+          <ul><li>Post-lysis BP &lt;180/105 ×24 h; neuro obs; CT before any antiplatelet (start aspirin after 24 h if lysed).</li>
+          <li>Swallow screen, glucose &amp; temperature control, VTE prophylaxis (mechanical first), workup aetiology (carotid, AF, echo).</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-x">🔬 6 · Stroke Mimics &amp; Posterior Circulation</span>
+      <h2>Don't Be Fooled</h2>
+      <div class="em-box">
+        <div class="mb-label">📘 Common Stroke Mimics</div>
+        <ul>
+          <li><strong>Hypoglycaemia</strong> (always check glucose) and hyperglycaemia</li>
+          <li><strong>Seizure / Todd's paresis</strong> (post-ictal focal weakness)</li>
+          <li><strong>Complex migraine</strong> (with aura)</li>
+          <li><strong>Bell's palsy</strong> (peripheral CN VII — forehead involved, unlike a cortical facial droop)</li>
+          <li><strong>Functional / conversion</strong> disorder, sepsis/encephalopathy unmasking an old deficit, drug toxicity</li>
+        </ul>
+        <p>Mimics are common; however, <strong>do not withhold thrombolysis solely for fear of a mimic</strong> in a clear acute deficit within window — the risk of harm from lysing a mimic is low, and AHA/ASA supports treating when stroke is the most likely diagnosis.</p>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Posterior Circulation — Easy to Miss</div>
+        <div class="gr-text">
+          Brainstem/cerebellar strokes present with the <strong>"D's": dizziness/vertigo, diplopia, dysarthria, dysphagia, dysmetria</strong>, ataxia, and crossed signs — often without classic limb weakness. <strong>NIHSS underscores posterior strokes</strong>, so a low NIHSS does not exclude a significant posterior LVO (e.g. basilar occlusion — high mortality, may warrant thrombectomy in extended windows). Use <strong>HINTS</strong> exam to separate central from peripheral vertigo. Sudden severe headache → think haemorrhage/SAH or dissection.
+        </div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Acute Stroke</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Not Checking Glucose</div><p>Hypoglycaemia perfectly mimics stroke and is instantly reversible. A point-of-care glucose is mandatory before committing to the stroke pathway or thrombolysis.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Aggressively Lowering BP in Non-Lysis Stroke</div><p>Outside thrombolysis, permissive hypertension preserves penumbral perfusion. Only treat BP &gt;220/120 (or with end-organ damage), lowering gently. Over-treatment expands the infarct.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Delaying or Skipping Reperfusion Assessment</div><p>Every minute costs neurons. Door-to-CT ≤25 min, door-to-needle ≤60 min. Don't wait for all bloods if the patient is clearly eligible and haemorrhage is excluded (glucose, and platelets/INR if anticoagulation suspected, are the essentials).</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Missing the Large-Vessel Occlusion / Extended Window</div><p>A high NIHSS with cortical signs suggests LVO needing thrombectomy — arrange CTA. And patients beyond 4.5 h are not automatically untreatable: perfusion imaging may make them thrombectomy candidates up to 24 h (DAWN/DEFUSE-3).</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Giving Antiplatelets Too Early After Thrombolysis</div><p>Aspirin within 24 h of thrombolysis increases haemorrhage risk. Delay antiplatelet therapy 24 h and confirm no haemorrhagic transformation on repeat imaging first.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Underestimating Posterior Circulation Stroke</div><p>Basilar/cerebellar strokes present with vertigo, diplopia and ataxia and score low on NIHSS — they are frequently misdiagnosed as peripheral vertigo. Use the HINTS exam and a low threshold for posterior imaging; basilar occlusion is devastating but treatable.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Tintinalli JE, Ma OJ, Yealy DM et al.</strong> Tintinalli's Emergency Medicine, 9th Ed. Chapter: Stroke. McGraw-Hill; 2020.</li>
+          <li><strong>Walls RM, Hockberger RS, Gausche-Hill M et al.</strong> Rosen's Emergency Medicine, 10th Ed. Chapter: Stroke. Elsevier; 2023.</li>
+          <li><strong>Powers WJ, Rabinstein AA, Ackerson T et al.</strong> Guidelines for the Early Management of Patients With Acute Ischemic Stroke: 2019 Update. AHA/ASA. Stroke 2019;50:e344–e418.</li>
+          <li><strong>Nogueira RG, Jadhav AP, Haussen DC et al. (DAWN).</strong> Thrombectomy 6 to 24 Hours after Stroke with a Mismatch. N Engl J Med 2018;378:11–21.</li>
+          <li><strong>Albers GW, Marks MP, Kemp S et al. (DEFUSE 3).</strong> Thrombectomy for Stroke at 6 to 16 Hours with Selection by Perfusion Imaging. N Engl J Med 2018;378:708–718.</li>
+          <li><strong>Campbell BCV, Mitchell PJ, Churilov L et al. (EXTEND-IA TNK).</strong> Tenecteplase versus Alteplase before Thrombectomy for Ischemic Stroke. N Engl J Med 2018;378:1573–1582.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="drug-reference.html">Drug Reference</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

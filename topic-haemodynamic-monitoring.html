@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Haemodynamic Monitoring &amp; Fluid Responsiveness — CritCare.in</title>
+  <meta name="description" content="ICU haemodynamic monitoring: why CVP fails, dynamic indices (PPV/SVV), passive leg raise, fluid challenge, lactate & ScvO2, arterial line, the fluid responsiveness concept. Marino, Washington Manual." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .hemo-table{width:100%;border-collapse:collapse;font-size:.8rem;margin:.6rem 0;}
+    .hemo-table th{background:var(--bg-alt);padding:.45rem .5rem;text-align:left;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--slate);border-bottom:2px solid var(--line);}
+    .hemo-table td{padding:.45rem .5rem;border-bottom:1px solid var(--line);color:var(--ink);vertical-align:top;}
+    .hemo-table tr:last-child td{border-bottom:none;}
+    .hemo-table td.lbl{font-weight:800;}
+    @media(max-width:680px){.hemo-table{font-size:.74rem;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Haemodynamic Monitoring</div>
+    <h1>📈 Haemodynamic Monitoring &amp; Fluid Responsiveness</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Marino 5th Ed</span>
+      <span class="gbadge esicm">Washington Manual</span>
+      <span class="gbadge isccm">FENICE / PLR evidence</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Why CVP Fails</span>
+      <span class="topic-tag">PPV/SVV · Passive Leg Raise</span>
+      <span class="topic-tag">Fluid Challenge · ScvO₂</span>
+      <span class="topic-updated">Marino 5th Ed (2025) · Washington Manual 4th Ed · Monnet/Teboul fluid-responsiveness evidence</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. Why CVP Fails</a></li>
+        <li><a href="#s4">4. Dynamic Tests of Responsiveness</a></li>
+        <li><a href="#s5">5. Monitors &amp; What to Track</a></li>
+        <li><a href="#s6">6. Practical Flowchart</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Overview — The Only Reason to Give Fluid Is to Increase Stroke Volume</h2>
+      <div class="book-quote">
+        <p>"The decision to give a fluid bolus should be answered by one question: will this fluid increase the patient's stroke volume? Roughly half of haemodynamically unstable patients are not fluid-responsive, and in them a bolus only causes harm — oedema, worsened oxygenation, and a positive fluid balance that independently predicts mortality. Modern haemodynamic monitoring exists to predict fluid responsiveness, not merely to measure pressures."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Haemodynamic Monitoring.</cite>
+      </div>
+
+      <h3>Fluid Responsiveness — The Central Concept</h3>
+      <p>A patient is <strong>fluid-responsive</strong> if a fluid bolus increases stroke volume/cardiac output by ≥10–15%. Only responders benefit from fluid. Both ventricles must be on the <strong>steep (preload-dependent) part of the Frank–Starling curve</strong> for fluid to help; on the flat part, fluid adds volume overload without raising output.</p>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Marino Physiology — Frank–Starling &amp; Heart–Lung Interaction</h2>
+      <div class="book-quote">
+        <p>"The Frank–Starling relationship is the physiological heart of fluid management: increasing preload increases stroke volume only while the ventricle operates on the ascending limb of its function curve. The art of haemodynamic monitoring is to determine, at the bedside and in real time, where on that curve a given patient's ventricle is sitting — because that, not any single pressure, dictates whether volume will help or harm."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Haemodynamic Monitoring &amp; Fluid Responsiveness. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — The Physiology Behind PPV/SVV</div>
+        <p>In a <strong>mechanically ventilated, passive patient in sinus rhythm</strong>, each positive-pressure breath transiently alters venous return and stroke volume. If both ventricles are preload-dependent, this produces a large cyclical swing in arterial pressure and stroke volume.</p>
+        <ul>
+          <li><strong>Pulse Pressure Variation (PPV) &gt;13%</strong> or <strong>Stroke Volume Variation (SVV) &gt;13%</strong> predicts fluid responsiveness</li>
+          <li>It works <em>because</em> the heart–lung interaction "stress-tests" the Starling curve every breath</li>
+        </ul>
+        <p><strong>The catch — when PPV/SVV is NOT valid:</strong> spontaneous breathing, cardiac arrhythmia (AF), low tidal volume (&lt;8 mL/kg), open chest, very high respiratory rate, raised intra-abdominal pressure, or RV failure. In these (common) situations, use the passive leg raise or a fluid challenge instead.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — Static Pressures Measure the Wrong Thing</div>
+        <p>CVP and PCWP are <strong>static pressures</strong> — they reflect a point on the venous/cardiac pressure–volume relationship, not the slope of the Starling curve. Because venous compliance, ventricular compliance, intrathoracic pressure and right-heart function all vary widely between patients, a given CVP corresponds to wildly different volume states in different people. This is why a single CVP cannot predict whether fluid will increase cardiac output.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-e">📉 3 · Why CVP Fails to Predict Fluid Responsiveness</span>
+      <h2>Abandoning the CVP Number</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">The Evidence</div>
+        <div class="gr-text">
+          Multiple systematic reviews (Marik et al.) show <strong>no reliable relationship between CVP (or its change) and fluid responsiveness</strong> — the area under the ROC curve is little better than a coin toss. <span class="gr-s">Do not use a single CVP to decide on fluids</span> CVP still has uses (a <em>trend</em>, a marker of RV failure / venous congestion, an extreme low or high value), but a "normal" CVP neither confirms nor excludes fluid responsiveness.
+        </div>
+      </div>
+      <div class="key-box">
+        <div class="kb-label">What CVP Is Still Useful For</div>
+        <p>A <strong>very high CVP</strong> suggests volume overload / RV failure / tamponade / fluid intolerance (a reason NOT to give fluid). A rising CVP during resuscitation flags developing venous congestion (linked to AKI). But for the everyday question "should I give a bolus?", use a <strong>dynamic</strong> test, not the CVP.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-g">📋 4 · Dynamic Tests of Fluid Responsiveness</span>
+      <h2>The Tests That Actually Work</h2>
+      <div class="table-wrap">
+        <table class="hemo-table">
+          <thead><tr><th>Test</th><th>Threshold</th><th>Use when</th><th>Caveats</th></tr></thead>
+          <tbody>
+            <tr><td class="lbl">Passive Leg Raise (PLR)</td><td>↑CO/SV ≥10%</td><td>Almost any patient — the most robust, reversible "auto-bolus"</td><td>Need a real-time CO/SV monitor (or VTI on echo); not in ↑ICP; measure within 60–90 s</td></tr>
+            <tr><td class="lbl">PPV / SVV</td><td>&gt;13%</td><td>Ventilated, passive, sinus rhythm, TV ≥8 mL/kg</td><td>Invalid in spontaneous breathing, arrhythmia, low TV, open chest, RV failure</td></tr>
+            <tr><td class="lbl">Fluid challenge</td><td>↑SV/CO ≥10–15%</td><td>When dynamic tests unavailable</td><td>Give a defined small bolus (e.g. 4 mL/kg / 250 mL over 5–10 min) &amp; measure response; commits volume</td></tr>
+            <tr><td class="lbl">End-expiratory occlusion</td><td>↑CO ≥5%</td><td>Ventilated patient who tolerates a 15-s breath hold</td><td>Needs precise CO monitor</td></tr>
+            <tr><td class="lbl">IVC distensibility (echo)</td><td>&gt;~12–18%</td><td>Ventilated; quick bedside screen</td><td>Less reliable in spontaneous breathing, high intra-abdominal pressure, RV failure</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Passive Leg Raise — the Universal Test</div>
+        <p>PLR transfers ~300 mL of venous blood from the legs and splanchnic bed to the central circulation — a <strong>reversible, internal fluid bolus</strong>. Start the patient semi-recumbent (trunk 45°), then lay the trunk flat and raise the legs to 45°, and measure the change in <strong>cardiac output/stroke volume (not blood pressure)</strong> within 60–90 seconds. A rise ≥10% predicts the patient will respond to real fluid. Its great advantage: it works in spontaneously breathing and arrhythmic patients where PPV/SVV fail, and it commits no actual fluid.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-d">🖥 5 · Monitors &amp; What to Track</span>
+      <h2>From Arterial Line to Cardiac Output</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">The Monitoring Ladder</div>
+        <div class="gr-text">
+          <strong>Arterial line</strong> — beat-to-beat BP, MAP, repeated ABGs, and the waveform for PPV. <strong>Pulse-contour devices</strong> (e.g. PiCCO/FloTrac/LiDCO) — continuous CO, SVV, SVR. <strong>Echocardiography</strong> — the most versatile bedside tool: contractility, filling, VTI for PLR/fluid response, RV function, tamponade. <strong>Pulmonary artery catheter</strong> — now reserved for selected complex cases (severe RV failure, mixed shock, pulmonary hypertension), not routine (PAC-Man / ESCAPE: no routine benefit). <strong>ScvO₂/SvO₂ &amp; lactate</strong> — markers of the global O₂ supply–demand balance.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">What to Actually Track in Resuscitation</div>
+        <div class="gr-text">
+          <strong>MAP ≥65 mmHg</strong>, <strong>lactate clearance</strong> (≥10%/2h, goal &lt;2), <strong>urine output</strong> ≥0.5 mL/kg/h, <strong>capillary refill / mottling</strong>, and — when titrating fluid — a <strong>dynamic responsiveness test before each bolus</strong>. A central venous–arterial CO₂ gap (&gt;6 mmHg) and ScvO₂ help judge whether output is adequate for demand.
+        </div>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ICU Context</div>
+        <p><strong>Point-of-care echo</strong> is the most accessible and cost-effective haemodynamic tool in most Indian ICUs — VTI-based PLR/fluid-response assessment needs only a probe and is far more informative than a CVP line.</p>
+        <p>Advanced pulse-contour monitors are limited to tertiary centres; the <strong>passive leg raise + serial lactate + clinical perfusion</strong> triad is a robust, low-cost resuscitation strategy everywhere.</p>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-f">🗂 6 · Practical Flowchart</span>
+      <h2>"Should I Give Fluid?" — Step by Step</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Is there evidence of hypoperfusion?</h4>
+          <ul><li>Lactate, mentation, urine, skin, MAP. If perfusion is adequate → stop giving fluid.</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Assess fluid responsiveness (dynamically)</h4>
+          <ul><li>Ventilated, passive, sinus, TV ≥8 → PPV/SVV &gt;13%.</li>
+          <li>Otherwise → passive leg raise (measure CO/SV) or a small defined fluid challenge.</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Responder → give a defined bolus &amp; reassess</h4>
+          <ul><li>e.g. 250–500 mL balanced crystalloid; re-measure SV/CO and perfusion.</li>
+          <li>Repeat the responsiveness test before the next bolus — responsiveness disappears as you fill.</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Non-responder (or fluid-intolerant) → stop fluids</h4>
+          <ul><li>Switch to vasopressors / inotropes per shock type; consider de-resuscitation once stable (a positive cumulative balance worsens outcomes).</li>
+          <li>Look for fluid intolerance: rising CVP, new B-lines, worsening oxygenation.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Haemodynamic Monitoring</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Using CVP to Decide on Fluids</div><p>A single CVP value does not predict fluid responsiveness — the evidence is unequivocal. Use dynamic tests (PLR, PPV/SVV, fluid challenge with SV measurement). Reserve CVP for trends and recognising venous congestion/RV failure.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Trusting PPV/SVV in the Wrong Patient</div><p>PPV/SVV are only valid in ventilated, passive, sinus-rhythm patients with adequate tidal volume. In spontaneous breathing, AF, or low TV they mislead — switch to the passive leg raise.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Measuring Blood Pressure (Not Stroke Volume) During PLR</div><p>The passive leg raise must be assessed by the change in cardiac output/stroke volume (or aortic VTI on echo). Blood pressure alone is insensitive and will miss true responders/non-responders.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Giving Fluid to a Responsive but Already Well-Perfused Patient</div><p>Being fluid-responsive is normal physiology — most healthy people are. Fluid is only indicated when there is BOTH hypoperfusion AND responsiveness. Chasing responsiveness in a perfusing patient just causes oedema.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Ignoring the Cumulative Fluid Balance</div><p>A persistently positive fluid balance independently predicts mortality, AKI and prolonged ventilation. Once the patient is stable, shift from resuscitation to maintenance and consider active de-resuscitation.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Routine Pulmonary Artery Catheterisation</div><p>Trials (PAC-Man, ESCAPE) show no routine mortality benefit and potential harm. Reserve the PAC for selected complex cases (severe/mixed RV failure, pulmonary hypertension) and prefer echo + dynamic tests otherwise.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Marino PL.</strong> The ICU Book, 5th Ed. Haemodynamic Monitoring; Fluid Responsiveness. Wolters Kluwer; 2025.</li>
+          <li><strong>Washington Manual of Critical Care, 4th Ed.</strong> Chapter: Haemodynamic Monitoring. Wolters Kluwer 2023.</li>
+          <li><strong>Marik PE, Cavallazzi R.</strong> Does the central venous pressure predict fluid responsiveness? An updated meta-analysis. Crit Care Med 2013;41:1774–1781.</li>
+          <li><strong>Monnet X, Marik PE, Teboul JL.</strong> Passive leg raising for predicting fluid responsiveness: a systematic review and meta-analysis. Intensive Care Med 2016;42:1935–1947.</li>
+          <li><strong>Cecconi M, De Backer D, Antonelli M et al.</strong> Consensus on circulatory shock and haemodynamic monitoring (ESICM Task Force). Intensive Care Med 2014;40:1795–1815.</li>
+          <li><strong>Harvey S, Young D, Brampton W et al. (PAC-Man).</strong> Assessment of the clinical effectiveness of pulmonary artery catheters. Lancet 2005;366:472–477.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="drug-reference.html">Drug Reference</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
