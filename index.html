@@ -16,6 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
   <script src="darkmode.js"></script>
+  <script src="access.js"></script>
   <style>
     .hero { background: linear-gradient(135deg,#0f1f3d 0%,#1a3560 50%,#0f1f3d 100%); padding:6rem 5% 5rem; position:relative; overflow:hidden; color:#fff; }
     .hero::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 70% 50%,rgba(30,111,217,.25) 0%,transparent 70%); }
@@ -63,6 +64,15 @@
     .feature-card p { font-size:.84rem; color:var(--slate); line-height:1.65; margin-bottom:.9rem; }
     .feature-card .fc-link { font-size:.82rem; font-weight:700; color:var(--blue); }
 
+    .free-chips { max-width:1160px; margin:0 auto 2rem; display:flex; flex-wrap:wrap; gap:.7rem; justify-content:center; }
+    .free-chips a { background:var(--bg); border:1px solid var(--line); border-radius:30px; padding:.6rem 1.1rem; font-size:.85rem; font-weight:600; color:var(--ink); text-decoration:none; transition:border-color .2s,transform .2s,color .2s; }
+    .free-chips a:hover { border-color:var(--blue); color:var(--blue); transform:translateY(-2px); }
+    .pro-cta { max-width:1160px; margin:0 auto; background:linear-gradient(135deg,var(--blue-soft),var(--bg)); border:1px solid var(--blue); border-radius:16px; padding:1.6rem 1.8rem; display:flex; align-items:center; justify-content:space-between; gap:1.5rem; flex-wrap:wrap; }
+    .pro-cta h3 { font-size:1.05rem; color:var(--ink); margin-bottom:.3rem; }
+    .pro-cta p { font-size:.88rem; color:var(--slate); margin:0; line-height:1.6; }
+    .pro-cta-btns { display:flex; gap:.7rem; flex-wrap:wrap; }
+    .btn-ghost-dark { background:var(--bg); border:1px solid var(--line); color:var(--ink); }
+    .btn-ghost-dark:hover { border-color:var(--blue); color:var(--blue); }
     .guidelines-strip { background:var(--ink); padding:3rem 5%; }
     .gl-inner { max-width:1160px; margin:0 auto; }
     .gl-inner h2 { font-family:var(--font-disp); color:#fff; font-size:1.6rem; margin-bottom:.5rem; }
@@ -190,6 +200,33 @@
       <p>Every topic ends with high-yield exam questions and model answers for DrNB Anaesthesia, PDCC Critical Care, and IFCCM/EDIC examinations.</p>
       <span class="fc-link">Browse All Topics →</span>
     </a>
+  </div>
+</section>
+
+<!-- FREE TOPICS + CRITCARE PRO -->
+<section class="section alt">
+  <div class="sec-head">
+    <span class="eyebrow">Start Reading — Free</span>
+    <h2 class="display">Free to read, no login needed</h2>
+    <p>A taster of CritCare.in. Create a free account to unlock all 36 topics, the ABG Analyser, the AI Tool, the Drug Reference and every score calculator.</p>
+  </div>
+  <div class="free-chips">
+    <a href="topic-sepsis.html">🦠 Sepsis &amp; Septic Shock</a>
+    <a href="topic-ards.html">🫁 ARDS</a>
+    <a href="topic-shock.html">🩸 Shock — 4 Types</a>
+    <a href="topic-anaphylaxis.html">🚑 Anaphylaxis</a>
+    <a href="topic-stroke.html">🧠 Acute Stroke</a>
+    <a href="topic-acid-base.html">⚗️ Acid–Base</a>
+  </div>
+  <div class="pro-cta">
+    <div>
+      <h3>✦ CritCare Pro — unlock everything</h3>
+      <p>All topics + ABG Analyser + AI Tool + Drug Reference + scores. <strong>₹3,000/year</strong> — <strong>free right now</strong> with a login.</p>
+    </div>
+    <div class="pro-cta-btns">
+      <a class="btn btn-blue" href="login.html?next=topics.html">Create free account</a>
+      <a class="btn btn-ghost-dark" href="pro.html">See CritCare Pro →</a>
+    </div>
   </div>
 </section>
 

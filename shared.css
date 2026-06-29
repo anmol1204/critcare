@@ -254,6 +254,64 @@ html.dark .footer { background: #0a0a0c; border-top: 1px solid var(--line); }
 html.dark .guidelines-strip { background: #141518; }
 html.dark .footer-brand { color: #f2f2f3; }
 
+/* ============================================================
+   ACCESS GATE (client-side soft paywall)
+   ============================================================ */
+html.cc-locked, html.cc-locked body { overflow: hidden; }
+.cc-gate {
+  position: fixed; left: 0; right: 0; top: 66px; bottom: 0; z-index: 95;
+  display: flex; align-items: flex-start; justify-content: center;
+  padding: clamp(1.5rem, 8vh, 5rem) 1rem; overflow-y: auto;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px);
+}
+html.dark .cc-gate { background: rgba(0,0,0,0.62); }
+.cc-gate-card {
+  max-width: 460px; width: 100%; background: var(--bg);
+  border: 1px solid var(--line); border-radius: 18px;
+  padding: 2.2rem 1.8rem; text-align: center;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.22);
+}
+.cc-gate-lock { font-size: 2.4rem; margin-bottom: 0.4rem; }
+.cc-gate-card h2 { font-family: var(--font-disp); font-size: 1.5rem; color: var(--ink); margin-bottom: 0.6rem; }
+.cc-gate-card p { color: var(--slate); font-size: 0.92rem; line-height: 1.7; margin-bottom: 1.3rem; }
+.cc-btn {
+  display: block; width: 100%; padding: 0.85rem 1rem; border-radius: 10px;
+  font-family: var(--font-body); font-size: 0.92rem; font-weight: 700;
+  text-decoration: none; margin-bottom: 0.6rem; transition: opacity 0.2s, background 0.2s;
+}
+.cc-btn-primary { background: linear-gradient(135deg, #1e6fd9, #1453a8); color: #fff; }
+.cc-btn-primary:hover { opacity: 0.92; }
+.cc-btn-ghost { background: var(--bg-alt); color: var(--ink); border: 1px solid var(--line); }
+.cc-btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+.cc-gate-free { margin-top: 1.1rem; font-size: 0.78rem; color: var(--slate); line-height: 1.8; }
+.cc-gate-free a { color: var(--blue); text-decoration: none; font-weight: 600; }
+.cc-gate-free a:hover { text-decoration: underline; }
+
+/* Lock badge on locked topic/feature cards */
+.cc-lock-badge {
+  display: inline-block; margin-top: 0.7rem; font-size: 0.66rem; font-weight: 800;
+  letter-spacing: 0.03em; text-transform: uppercase; padding: 0.25rem 0.6rem;
+  border-radius: 6px; background: #fef3c7; color: #92400e;
+}
+html.dark .cc-lock-badge { background: #241d06; color: #fde047; }
+.cc-card-locked { position: relative; }
+.nav-pro a, a.nav-pro { color: var(--accent) !important; font-weight: 800; }
+.sr-lock { font-size: 0.8rem; }
+
+/* Login banner (shown only to logged-out visitors) */
+.cc-login-banner {
+  max-width: 1160px; margin: 1.2rem auto 0; padding: 0.9rem 1.2rem;
+  display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap;
+  background: linear-gradient(135deg, var(--blue-soft), var(--bg));
+  border: 1px solid var(--blue); border-radius: 12px;
+}
+html.cc-auth .cc-login-banner { display: none; }
+.cc-login-banner .ccb-ic { font-size: 1.3rem; }
+.cc-login-banner p { font-size: 0.85rem; color: var(--ink); margin: 0; flex: 1; min-width: 200px; line-height: 1.5; }
+.cc-login-banner a.ccb-btn { background: var(--blue); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 0.5rem 1rem; border-radius: 8px; text-decoration: none; white-space: nowrap; }
+.cc-login-banner a.ccb-btn:hover { opacity: 0.9; }
+
 /* Dark mode toggle button */
 .dm-toggle {
   display: flex; align-items: center; gap: 0.4rem;

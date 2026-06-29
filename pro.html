@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>CritCare Pro — Unlock Everything — CritCare.in</title>
+  <meta name="description" content="CritCare Pro — full access to all 36 topics, the ABG Analyser, AI decision-support tool, drug reference and score calculators. ₹3,000/year. Currently free with a login." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <style>
+    .pro-hero { background: linear-gradient(135deg,#0f1f3d,#1a3560); color:#fff; padding: 3.5rem 5% 2.5rem; text-align:center; }
+    .pro-hero .eyebrow { display:inline-flex; align-items:center; gap:.5rem; font-size:.72rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
+    .pro-hero h1 { font-family:var(--font-disp); font-size:clamp(2rem,4vw,2.8rem); margin-bottom:.6rem; }
+    .pro-hero p { color:rgba(255,255,255,.75); max-width:560px; margin:0 auto; line-height:1.7; }
+    .pro-wrap { max-width:920px; margin:0 auto; padding:2.5rem 5% 4rem; }
+    .free-banner { background:linear-gradient(135deg,#ecfdf5,#d1fae5); border:1px solid #6ee7b7; border-radius:14px; padding:1.2rem 1.4rem; margin-bottom:2rem; display:flex; gap:1rem; align-items:center; }
+    html.dark .free-banner { background:linear-gradient(135deg,#052e22,#064e3b); border-color:#047857; }
+    .free-banner .fb-ic { font-size:1.8rem; }
+    .free-banner h3 { font-size:1rem; color:#065f46; margin-bottom:.2rem; }
+    .free-banner p { font-size:.85rem; color:#047857; line-height:1.6; margin:0; }
+    html.dark .free-banner h3 { color:#6ee7b7; } html.dark .free-banner p { color:#a7f3d0; }
+    .free-banner a { color:inherit; font-weight:800; text-decoration:underline; }
+    .plans { display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; }
+    @media(max-width:680px){ .plans{ grid-template-columns:1fr; } }
+    .plan { border:1px solid var(--line); border-radius:18px; padding:2rem 1.6rem; background:var(--bg); }
+    .plan.pro { border:2px solid var(--blue); box-shadow:0 16px 50px rgba(30,111,217,.12); position:relative; }
+    .plan.pro::before { content:'MOST POPULAR'; position:absolute; top:-11px; left:50%; transform:translateX(-50%); background:var(--blue); color:#fff; font-size:.62rem; font-weight:800; letter-spacing:.08em; padding:.25rem .7rem; border-radius:20px; }
+    .plan h2 { font-size:1.1rem; color:var(--ink); margin-bottom:.3rem; }
+    .plan .price { font-family:var(--font-disp); font-size:2.4rem; font-weight:600; color:var(--ink); line-height:1; margin:.6rem 0 .2rem; }
+    .plan .price small { font-size:.9rem; color:var(--slate); font-weight:400; }
+    .plan .price .strike { font-size:1.1rem; color:var(--slate); text-decoration:line-through; margin-right:.4rem; }
+    .plan .sub { font-size:.82rem; color:var(--slate); margin-bottom:1.2rem; }
+    .plan ul { list-style:none; margin:1.2rem 0; padding:0; }
+    .plan li { font-size:.86rem; color:var(--ink); padding:.4rem 0; display:flex; gap:.6rem; align-items:flex-start; border-bottom:1px solid var(--line); }
+    .plan li:last-child { border-bottom:none; }
+    .plan li .tick { color:#16a34a; font-weight:800; flex-shrink:0; }
+    .plan li .cross { color:#cbd5e1; font-weight:800; flex-shrink:0; }
+    html.dark .plan li .cross { color:#475569; }
+    .plan-btn { display:block; width:100%; padding:.95rem; border-radius:11px; border:none; font-family:var(--font-body); font-size:.95rem; font-weight:700; cursor:pointer; text-align:center; text-decoration:none; transition:opacity .2s, border-color .2s; }
+    .plan-btn.primary { background:linear-gradient(135deg,#1e6fd9,#1453a8); color:#fff; }
+    .plan-btn.primary:hover { opacity:.92; }
+    .plan-btn.ghost { background:var(--bg-alt); color:var(--ink); border:1px solid var(--line); }
+    .plan-btn.ghost:hover { border-color:var(--blue); color:var(--blue); }
+    .pay-note { font-size:.74rem; color:var(--slate); margin-top:.7rem; line-height:1.5; text-align:center; }
+    .pay-methods { display:flex; gap:.5rem; justify-content:center; flex-wrap:wrap; margin-top:.8rem; }
+    .pay-methods span { font-size:.66rem; font-weight:700; color:var(--slate); background:var(--bg-alt); border:1px solid var(--line); border-radius:6px; padding:.25rem .55rem; }
+    .pro-status { text-align:center; margin:1.5rem 0; padding:1rem; border-radius:12px; background:var(--bg-alt); border:1px solid var(--line); font-size:.88rem; color:var(--ink); display:none; }
+    .pro-status.show { display:block; }
+    .faq { margin-top:2.5rem; }
+    .faq h2 { font-family:var(--font-disp); font-size:1.4rem; color:var(--ink); margin-bottom:1rem; text-align:center; }
+    .faq-item { border:1px solid var(--line); border-radius:10px; padding:1rem 1.2rem; margin-bottom:.7rem; background:var(--bg); }
+    .faq-item h4 { font-size:.9rem; color:var(--ink); margin-bottom:.3rem; }
+    .faq-item p { font-size:.84rem; color:var(--slate); line-height:1.65; margin:0; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="pro-hero">
+  <div class="eyebrow">✦ CritCare Pro</div>
+  <h1>Unlock all of CritCare.in</h1>
+  <p>Every topic, the ABG Analyser, the AI decision-support tool, the drug reference and all score calculators — in one membership.</p>
+</header>
+
+<div class="pro-wrap">
+
+  <div class="free-banner">
+    <div class="fb-ic">🎉</div>
+    <div>
+      <h3>Early access — it's FREE right now</h3>
+      <p>While we launch, CritCare Pro is unlocked with just a <a href="login.html">free account</a>. The ₹3,000 price below is the upcoming launch price — create your account now and keep access.</p>
+    </div>
+  </div>
+
+  <div class="pro-status" id="proStatus"></div>
+
+  <div class="plans">
+    <!-- FREE -->
+    <div class="plan">
+      <h2>Free</h2>
+      <div class="price">₹0</div>
+      <div class="sub">Taster access, no account needed</div>
+      <ul>
+        <li><span class="tick">✓</span> 6 starter articles (Sepsis, ARDS, Shock, Anaphylaxis, Stroke, Acid–Base)</li>
+        <li><span class="tick">✓</span> Homepage &amp; tool previews</li>
+        <li><span class="cross">✕</span> Other 30+ topics</li>
+        <li><span class="cross">✕</span> ABG Analyser, AI Tool, Drug Reference, Scores</li>
+      </ul>
+      <a class="plan-btn ghost" href="topics.html">Browse free topics</a>
+    </div>
+
+    <!-- PRO -->
+    <div class="plan pro">
+      <h2>✦ CritCare Pro</h2>
+      <div class="price"><span class="strike">₹3,000</span> Free<small> / year — launch offer</small></div>
+      <div class="sub">Everything unlocked</div>
+      <ul>
+        <li><span class="tick">✓</span> <strong>All 36+ topics</strong> — CCM &amp; Emergency Medicine, fully referenced</li>
+        <li><span class="tick">✓</span> <strong>ABG Analyser</strong> with management plan &amp; OCR</li>
+        <li><span class="tick">✓</span> <strong>AI decision-support tool</strong></li>
+        <li><span class="tick">✓</span> <strong>Drug Reference</strong> — doses, concentrations, calculators</li>
+        <li><span class="tick">✓</span> <strong>24+ score calculators</strong> + DNB/exam prep</li>
+        <li><span class="tick">✓</span> Offline access (PWA) &amp; guideline updates</li>
+      </ul>
+      <a class="plan-btn primary" href="login.html?next=topics.html" style="margin-bottom:.6rem;">Create free account — unlock now</a>
+      <button class="plan-btn ghost" onclick="payPro()">Pay ₹3,000 — Get Pro</button>
+      <div class="pay-methods"><span>UPI</span><span>PhonePe</span><span>Google Pay</span><span>Cards</span><span>Net Banking</span></div>
+      <div class="pay-note">Secure payments by Razorpay. You won't be charged during the free launch period.</div>
+    </div>
+  </div>
+
+  <div class="faq">
+    <h2>Questions</h2>
+    <div class="faq-item">
+      <h4>Is it really free right now?</h4>
+      <p>Yes. During launch, a free account unlocks everything. The ₹3,000/year price is what CritCare Pro will cost later — early members keep access.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How do I pay when it goes live?</h4>
+      <p>Through Razorpay — UPI, PhonePe, Google Pay, credit/debit cards and net banking are all supported. No card details are stored by CritCare.in.</p>
+    </div>
+    <div class="faq-item">
+      <h4>What's included?</h4>
+      <p>All clinical topics, the ABG Analyser, the AI decision-support tool, the full drug reference, every score calculator, and exam prep — with updates as guidelines change.</p>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li>
+      <li><a href="pro.html">CritCare Pro</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="pro.html"><span class="mn-icon">✦</span>Pro</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+
+<!-- Razorpay Checkout -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+  // ════════════════════════════════════════════════════════════════
+  // RAZORPAY SETUP — paste your Key ID below to go live.
+  // 1. Create a free account at razorpay.com (UPI/PhonePe/cards).
+  // 2. Dashboard → Settings → API Keys → generate; paste the Key ID here.
+  // 3. For REAL security, also create the order + verify the payment
+  //    signature on a backend (e.g. a Vercel serverless function).
+  //    Without that, this is a prototype checkout only.
+  // ════════════════════════════════════════════════════════════════
+  var RAZORPAY_KEY_ID = 'rzp_test_REPLACE_WITH_YOUR_KEY';
+
+  function showProStatus(msg) {
+    var el = document.getElementById('proStatus');
+    el.innerHTML = msg; el.classList.add('show');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  function payPro() {
+    if (RAZORPAY_KEY_ID.indexOf('REPLACE') !== -1) {
+      showProStatus('💡 <strong>Payments aren\'t switched on yet.</strong> CritCare Pro is currently <strong>free</strong> — just <a href="login.html?next=topics.html" style="color:var(--blue);font-weight:700;">create a free account</a> to unlock everything. (To enable paid checkout, add your Razorpay Key ID in pro.html.)');
+      return;
+    }
+    if (typeof Razorpay === 'undefined') { showProStatus('Payment library failed to load. Check your connection and retry.'); return; }
+    var options = {
+      key: RAZORPAY_KEY_ID,
+      amount: 300000,          // ₹3,000 in paise
+      currency: 'INR',
+      name: 'CritCare.in',
+      description: 'CritCare Pro — 1 year membership',
+      image: '/icon-apple.png',
+      handler: function (response) {
+        // ⚠️ In production, verify response.razorpay_payment_id on a backend before granting access.
+        if (window.CritCareAccess) window.CritCareAccess.setPro();
+        showProStatus('✅ <strong>Payment successful!</strong> CritCare Pro is now unlocked. Payment ID: ' + response.razorpay_payment_id + '. <a href="topics.html" style="color:var(--blue);font-weight:700;">Start reading →</a>');
+      },
+      theme: { color: '#1e6fd9' }
+    };
+    try {
+      var rzp = new Razorpay(options);
+      rzp.on('payment.failed', function () { showProStatus('Payment failed or was cancelled. You can try again any time.'); });
+      rzp.open();
+    } catch (e) {
+      showProStatus('Could not open the payment window. Please try again.');
+    }
+  }
+</script>
+</body>
+</html>

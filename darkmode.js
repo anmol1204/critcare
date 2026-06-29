@@ -61,11 +61,14 @@
     if (matches.length === 0) {
       out.innerHTML = '<p class="sr-hint">No results for <strong>' + query + '</strong></p>'; return;
     }
+    var acc = window.CritCareAccess;
+    var locked = acc && !acc.loggedIn();
     out.innerHTML = matches.map(function (item) {
-      return '<a href="' + item.url + '" class="sr-item" onclick="closeSearch()">' +
+      var isLocked = locked && acc.isGated(item.url);
+      return '<a href="' + (isLocked ? 'login.html?next=' + encodeURIComponent(item.url) : item.url) + '" class="sr-item" onclick="closeSearch()">' +
         typeLabel(item.type) +
-        '<span class="sr-title">' + highlight(item.title, query) + '</span>' +
-        '<span class="sr-desc">' + item.desc + '</span>' +
+        '<span class="sr-title">' + highlight(item.title, query) + (isLocked ? ' <span class="sr-lock">🔒</span>' : '') + '</span>' +
+        '<span class="sr-desc">' + (isLocked ? 'Create a login to access all topics &amp; tools.' : item.desc) + '</span>' +
         '</a>';
     }).join('');
   }

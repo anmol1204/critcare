@@ -71,6 +71,7 @@
     }
   </style>
   <script src="darkmode.js"></script>
+  <script src="access.js"></script>
   <script src="app-native.js" defer></script>
 </head>
 <body>
@@ -223,9 +224,19 @@
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
-  // Watch auth state
+  // Redirect target after an explicit login (respects ?next=)
+  function gotoNext() {
+    var params = new URLSearchParams(location.search);
+    var next = params.get('next') || 'topics.html';
+    // only allow same-site .html targets
+    if (!/^[a-z0-9._-]+\.html$/i.test(next)) next = 'topics.html';
+    location.href = next;
+  }
+
+  // Watch auth state — keep the cross-page access flag in sync with Firebase
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      try { localStorage.setItem('critcare-auth', '1'); } catch (e) {}
       document.getElementById('authForm').style.display = 'none';
       document.getElementById('userPanel').style.display = 'block';
       document.getElementById('userName').textContent = user.displayName || 'Doctor';
@@ -233,6 +244,7 @@
       if (user.photoURL) document.getElementById('userPhoto').src = user.photoURL;
       else document.getElementById('userPhoto').style.display = 'none';
     } else {
+      try { localStorage.removeItem('critcare-auth'); localStorage.removeItem('critcare-pro'); } catch (e) {}
       document.getElementById('authForm').style.display = 'block';
       document.getElementById('userPanel').style.display = 'none';
     }
@@ -241,6 +253,8 @@
   window.googleLogin = async () => {
     try {
       await signInWithPopup(auth, provider);
+      try { localStorage.setItem('critcare-auth', '1'); } catch (e) {}
+      gotoNext();
     } catch (err) {
       setNote('⚠️ ' + (err.message || 'Google sign-in failed. Check Firebase config.'), true);
     }
@@ -257,12 +271,14 @@
       } else {
         await signInWithEmailAndPassword(auth, email, password);
       }
+      try { localStorage.setItem('critcare-auth', '1'); } catch (e) {}
+      gotoNext();
     } catch (err) {
       setNote('⚠️ ' + err.message, true);
     }
   };
 
-  window.signOut = () => fbSignOut(auth);
+  window.signOut = () => { try { localStorage.removeItem('critcare-auth'); localStorage.removeItem('critcare-pro'); } catch (e) {} fbSignOut(auth); };
 
   function setNote(msg, isError) {
     const n = document.getElementById('authNote');
