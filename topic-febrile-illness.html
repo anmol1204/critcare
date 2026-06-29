@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Acute Undifferentiated Febrile Illness — Dengue, Malaria, Scrub Typhus, Lepto — CritCare.in</title>
+  <meta name="description" content="Emergency approach to acute undifferentiated febrile illness in the tropics: dengue (warning signs, fluid management), severe malaria (IV artesunate), scrub typhus (doxycycline), leptospirosis. Tintinalli's, Rosen's, ICMR & NCVBDC India guidelines." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .em-box{background:linear-gradient(135deg,#fff1f2,#ffe4e6);border:1px solid #fda4af;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .em-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#9f1239;margin-bottom:.6rem;}
+    .em-box p,.em-box ul{font-size:.9rem;color:#881337;line-height:1.75;margin:0;}
+    .em-box ul{padding-left:1.2rem;}
+    .em-box strong{color:#9f1239;}
+    html.dark .em-box{background:linear-gradient(135deg,#2a0a12,#3a0f1a);border-color:#9f1239;}
+    html.dark .em-box p,html.dark .em-box ul{color:#fda4af;}
+    html.dark .em-box strong{color:#fecdd3;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    html.dark .mc{background:#2a0a0a;border-color:#7f1d1d;}
+    html.dark .mc p{color:#fca5a5;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .crit-box{background:#fef9c3;border:2px solid #eab308;border-radius:12px;padding:1.2rem;margin:1rem 0;}
+    .crit-box h4{color:#854d0e;font-size:.95rem;margin-bottom:.6rem;}
+    .crit-box p{font-size:.88rem;color:#713f12;line-height:1.7;margin:.3rem 0 0;}
+    html.dark .crit-box{background:#2a2208;border-color:#eab308;} html.dark .crit-box p{color:#fde047;}
+    .dis-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;}
+    .dis-card{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;}
+    .dis-card h4{font-size:.85rem;font-weight:800;margin-bottom:.5rem;color:var(--ink);}
+    .dis-card ul{font-size:.8rem;color:var(--slate);padding-left:1.05rem;line-height:1.6;margin:0;}
+    .dis-card li strong{color:var(--ink);}
+    @media(max-width:600px){.dis-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Acute Undifferentiated Febrile Illness</div>
+    <h1>🌡️ Acute Undifferentiated Febrile Illness</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">WHO Dengue</span>
+      <span class="gbadge esicm">NVBDCP/NCVBDC</span>
+      <span class="gbadge isccm">ICMR</span>
+      <span class="gbadge who">Tintinalli's</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Dengue · Malaria · Scrub Typhus · Lepto</span>
+      <span class="topic-tag">Warning Signs</span>
+      <span class="topic-tag">IV Artesunate · Doxycycline</span>
+      <span class="topic-updated">Tintinalli's 9th Ed · Rosen's 10th Ed · WHO Dengue 2009 · NVBDCP/NCVBDC &amp; ICMR (India)</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Tintinalli's Summary</a></li>
+        <li><a href="#s2">2. Rosen's — The Tropical Approach</a></li>
+        <li><a href="#s3">3. Dengue</a></li>
+        <li><a href="#s4">4. Malaria, Scrub Typhus, Lepto</a></li>
+        <li><a href="#s5">5. Drugs &amp; Flowchart</a></li>
+        <li><a href="#s6">6. Empirical Therapy &amp; Red Flags</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📕 1 · Tintinalli's Emergency Medicine, 9th Ed</span>
+      <h2>Tintinalli's Summary — Geography, Timing &amp; the Sick-or-Not Question</h2>
+      <div class="book-quote">
+        <p>"The evaluation of the febrile patient returning from — or living in — the tropics is an exercise in epidemiology and pattern recognition. Three questions structure the approach: where has the patient been and what is endemic there, how long since exposure (the incubation period narrows the differential), and — most importantly — is this patient septic or showing organ dysfunction now? Malaria must be excluded urgently in anyone with a relevant exposure, because falciparum malaria can kill within 24 hours."</p>
+        <cite>Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Ed. McGraw-Hill 2020. Chapter: The Febrile Patient / Travel-Related Illness.</cite>
+      </div>
+
+      <h3>The Core Message (Tintinalli's)</h3>
+      <ul>
+        <li><strong>Exclude malaria first and urgently</strong> in any febrile patient with relevant exposure — falciparum can be rapidly fatal; a single negative smear does not exclude it (repeat ×3, or use RDT).</li>
+        <li><strong>Identify the critically ill early</strong> — treat sepsis/shock per standard resuscitation in parallel with the diagnostic workup; do not wait for a serological diagnosis.</li>
+        <li><strong>Use incubation period &amp; geography</strong> to prioritise — short incubation (&lt;10 days): dengue, malaria, scrub typhus, leptospirosis, rickettsiae; longer: typhoid, malaria (relapsing), TB, amoebic abscess.</li>
+        <li><strong>Many tropical fevers are treatable and time-critical</strong> — scrub typhus (doxycycline), severe malaria (IV artesunate), leptospirosis — empirical cover saves lives when diagnosis is delayed.</li>
+      </ul>
+
+      <div class="crit-box">
+        <h4>⚠️ The Must-Not-Miss</h4>
+        <p><strong>Severe falciparum malaria</strong> (any one: impaired consciousness, prostration, repeated seizures, acidosis, hypoglycaemia, severe anaemia, AKI, jaundice, pulmonary oedema, shock, abnormal bleeding, haemoglobinuria, parasitaemia &gt;2–5%) → <strong>IV artesunate immediately</strong>. Don't wait for the full panel.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📘 2 · Rosen's Emergency Medicine, 10th Ed</span>
+      <h2>Rosen's — Syndromic Reasoning in Tropical Fever</h2>
+      <div class="book-quote">
+        <p>"In the undifferentiated febrile patient, associated clinical features convert an impossible differential into a manageable one: fever with thrombocytopenia and a tourniquet-positive rash suggests dengue; fever with an eschar suggests scrub typhus or other rickettsioses; fever with jaundice and conjunctival suffusion suggests leptospirosis; fever with cyclical rigors and splenomegaly suggests malaria. The eschar in particular is a frequently missed, pathognomonic clue that must be actively searched for in skin folds."</p>
+        <cite>Rosen's Emergency Medicine: Concepts and Clinical Practice, 10th Ed. Elsevier 2023. Chapter: Tropical Infections / Fever in the Returning Traveler.</cite>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Rosen's — Fever + a Second Feature → Narrowed Differential</div>
+        <ul>
+          <li><strong>Fever + thrombocytopenia:</strong> dengue, malaria, scrub typhus, leptospirosis, sepsis (overlap is huge in India — co-infections occur)</li>
+          <li><strong>Fever + eschar:</strong> scrub typhus (and other rickettsioses) — search axillae, groin, under breasts, waistline</li>
+          <li><strong>Fever + jaundice + conjunctival suffusion + myalgia:</strong> leptospirosis</li>
+          <li><strong>Fever + altered sensorium:</strong> cerebral malaria, scrub typhus meningoencephalitis, viral encephalitis, typhoid, sepsis</li>
+          <li><strong>Fever + AKI:</strong> severe malaria, leptospirosis, scrub typhus, dengue, sepsis</li>
+        </ul>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Rosen's — Don't Anchor on a Single Diagnosis</div>
+        <p>In high-transmission settings, <strong>co-infection is common</strong> (e.g. dengue + scrub typhus, malaria + bacterial sepsis), and a positive test for one disease does not exclude another or exclude a bacterial focus. The decompensating febrile patient should be treated as sepsis until proven otherwise, with empirical cover for the locally important treatable causes, while the specific diagnostics are pursued.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">🦟 3 · Dengue</span>
+      <h2>Dengue — It's About the Plasma Leak, Not the Platelets</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">WHO Classification &amp; Warning Signs</div>
+        <div class="gr-text">
+          <strong>Dengue without warning signs · Dengue WITH warning signs · Severe dengue.</strong> <span class="gr-s">WHO 2009</span><br>
+          <strong>Warning signs</strong> (admit &amp; observe): abdominal pain/tenderness, persistent vomiting, clinical fluid accumulation (ascites/effusion), mucosal bleeding, lethargy/restlessness, liver enlargement &gt;2 cm, rising haematocrit with rapid platelet fall.<br>
+          <strong>Severe dengue:</strong> (1) severe plasma leakage → shock (DSS) or respiratory distress; (2) severe bleeding; (3) severe organ involvement (AST/ALT ≥1000, impaired consciousness, myocarditis).
+        </div>
+      </div>
+
+      <div class="crit-box">
+        <h4>💧 The Critical Phase &amp; Fluid Management</h4>
+        <p>The danger period is the <strong>critical phase (~day 3–7, as fever defervesces)</strong> when plasma leakage peaks. Management is <strong>judicious isotonic crystalloid titrated to perfusion/haematocrit/urine output — NOT aggressive fluids</strong>. Over-resuscitation causes fluid overload (the leading cause of dengue death in over-treated patients); under-resuscitation causes prolonged shock. Use the haematocrit trend: <strong>rising Hct + falling BP = leak (give fluid); falling Hct after the leak resolves = reabsorption (slow/stop fluid) or bleeding.</strong></p>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Platelets &amp; Bleeding</div>
+        <div class="gr-text">
+          <strong>Do NOT transfuse platelets based on the count alone.</strong> Prophylactic platelet transfusion for thrombocytopenia without bleeding does not prevent bleeding and may harm. Transfuse only for <strong>significant active bleeding</strong>. Avoid NSAIDs/aspirin and IM injections; use paracetamol for fever. Most thrombocytopenia recovers spontaneously in the recovery phase.
+        </div>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-x">🦠 4 · Malaria, Scrub Typhus &amp; Leptospirosis</span>
+      <h2>The Other Big Tropical Killers</h2>
+
+      <div class="dis-grid">
+        <div class="dis-card">
+          <h4>🦟 Severe Malaria (P. falciparum / vivax)</h4>
+          <ul>
+            <li><strong>Diagnose:</strong> RDT + thick/thin smear (parasite count); repeat smears if negative &amp; suspicion high</li>
+            <li><strong>Severe → IV ARTESUNATE</strong> (2.4 mg/kg at 0, 12, 24 h, then daily) — superior to quinine (SEAQUAMAT/AQUAMAT)</li>
+            <li>Watch <strong>hypoglycaemia</strong>, cerebral malaria, AKI, ARDS, acidosis, blackwater fever</li>
+            <li>Complete with a full oral ACT course; check G6PD before primaquine (vivax radical cure)</li>
+            <li><strong>Post-artesunate delayed haemolysis</strong> — recheck Hb ~1–2 weeks later</li>
+          </ul>
+        </div>
+        <div class="dis-card">
+          <h4>🐛 Scrub Typhus (Orientia tsutsugamushi)</h4>
+          <ul>
+            <li><strong>Search for the ESCHAR</strong> (painless black necrotic ulcer in skin folds) — pathognomonic, frequently missed</li>
+            <li>Fever + thrombocytopenia + raised transaminases ± ARDS/AKI/meningoencephalitis</li>
+            <li><strong>Doxycycline 100 mg BD</strong> (or azithromycin in pregnancy/children) — dramatic response, treat empirically on suspicion</li>
+            <li>A major cause of "AUFI with MODS" and ARDS in India — don't wait for serology</li>
+          </ul>
+        </div>
+        <div class="dis-card">
+          <h4>💧 Leptospirosis</h4>
+          <ul>
+            <li>Water/flood/animal exposure; <strong>conjunctival suffusion</strong>, severe myalgia (calves), jaundice</li>
+            <li><strong>Weil's disease</strong>: jaundice + AKI + bleeding; pulmonary haemorrhage is a lethal form</li>
+            <li><strong>Doxycycline</strong> (mild) or <strong>IV ceftriaxone/penicillin</strong> (severe)</li>
+            <li>Overlaps clinically with scrub typhus — empirical doxycycline covers both</li>
+          </ul>
+        </div>
+        <div class="dis-card">
+          <h4>🩸 Enteric Fever (Typhoid)</h4>
+          <ul>
+            <li>Gradual fever, relative bradycardia, abdominal symptoms, rose spots; later GI bleed/perforation</li>
+            <li>Blood culture (gold standard); rising MDR/XDR <em>S. Typhi</em></li>
+            <li><strong>Ceftriaxone</strong> empirically for severe/admitted; azithromycin for uncomplicated; carbapenem for XDR</li>
+            <li>Longer incubation than the others — consider in the more indolent presentation</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ED Context</div>
+        <p><strong>Seasonality:</strong> monsoon and post-monsoon (roughly Aug–Nov) bring the peak of dengue, scrub typhus, leptospirosis and malaria simultaneously — the classic "acute undifferentiated febrile illness with thrombocytopenia and MODS" surge.</p>
+        <p><strong>Empirical doxycycline</strong> for suspected rickettsial/leptospiral illness in the AUFI patient with no clear focus is a widely practised, life-saving strategy in India (covers scrub typhus + leptospirosis).</p>
+        <p><strong>National programmes:</strong> NCVBDC (formerly NVBDCP) for malaria/dengue and ICMR guidance direct diagnosis &amp; treatment; IV artesunate is the national first-line for severe malaria. Notify dengue/malaria as per programme requirements.</p>
+        <p><strong>Beware co-infection</strong> and a concurrent bacterial focus — a positive dengue NS1 does not rule out scrub typhus or sepsis.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-d">💊 5 · Drugs &amp; Flowchart</span>
+      <h2>Drug Reference — Tropical Febrile Illness</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Condition</th><th>Drug</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Severe malaria</strong></td><td>IV Artesunate</td><td>2.4 mg/kg IV at 0, 12, 24 h, then daily</td><td>First-line (SEAQUAMAT/AQUAMAT); monitor glucose; watch delayed haemolysis</td></tr>
+            <tr><td><strong>Uncomplicated malaria</strong></td><td>ACT (e.g. artemether-lumefantrine)</td><td>Per weight, 3-day course</td><td>Add primaquine (check G6PD); chloroquine for sensitive vivax regions</td></tr>
+            <tr><td><strong>Scrub typhus / rickettsia</strong></td><td>Doxycycline</td><td>100 mg PO/IV BD × 7 days</td><td>Azithromycin in pregnancy/children; treat empirically on suspicion</td></tr>
+            <tr><td><strong>Leptospirosis (mild)</strong></td><td>Doxycycline</td><td>100 mg BD × 7 days</td><td>Doxycycline conveniently covers lepto + scrub typhus</td></tr>
+            <tr><td><strong>Leptospirosis (severe)</strong></td><td>IV Ceftriaxone / Penicillin G</td><td>Ceftriaxone 1 g OD–BD IV</td><td>Watch Jarisch-Herxheimer reaction</td></tr>
+            <tr><td><strong>Enteric fever (severe)</strong></td><td>IV Ceftriaxone</td><td>2 g OD IV</td><td>Azithromycin (uncomplicated); carbapenem for XDR Typhi</td></tr>
+            <tr><td><strong>Dengue</strong></td><td>Isotonic crystalloid + paracetamol</td><td>Titrated fluids; paracetamol for fever</td><td>NO routine platelets; avoid NSAIDs/aspirin/IM injections</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Resuscitate &amp; identify the sick patient</h4>
+          <ul>
+            <li>ABC; treat shock/sepsis per standard resuscitation; check glucose (malaria hypoglycaemia).</li>
+            <li>Bloods: CBC (platelets, Hct), smear + malaria RDT, renal/liver, lactate, cultures, dengue NS1/serology, scrub typhus/lepto serology as available.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Use geography, incubation &amp; the "second feature"</h4>
+          <ul>
+            <li>Exclude malaria urgently. Search actively for an <strong>eschar</strong>. Look for warning signs of dengue, jaundice/suffusion of lepto.</li>
+            <li>Map fever + (thrombocytopenia / eschar / jaundice / AKI / altered sensorium) to the differential.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Treat specifically + empirically</h4>
+          <ul>
+            <li>Severe malaria → IV artesunate now. Suspected scrub/lepto → doxycycline. Sick/no focus → empirical doxycycline + a beta-lactam (cover bacterial sepsis + rickettsia/lepto).</li>
+            <li>Dengue → titrated isotonic fluids by haematocrit/perfusion; avoid overload.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>Monitor the critical phase &amp; complications</h4>
+          <ul>
+            <li>Dengue → serial Hct/platelets, watch for shock and overload through the critical phase.</li>
+            <li>Watch for MODS (ARDS, AKI, hepatic, myocarditis); notify as per national programme; re-evaluate if not improving (co-infection?).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-x">🔬 6 · Empirical Therapy &amp; Red Flags</span>
+      <h2>When You Can't Wait for the Diagnosis</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">The Sick AUFI Patient With No Clear Focus</div>
+        <div class="gr-text">
+          A reasonable, widely used empirical strategy in endemic India for the critically ill undifferentiated febrile patient: <strong>IV artesunate if any chance of severe malaria + doxycycline (covers scrub typhus &amp; leptospirosis) + a broad-spectrum beta-lactam (e.g. ceftriaxone/piperacillin-tazobactam) for bacterial sepsis/enteric fever</strong>, with fluid resuscitation guided by perfusion. De-escalate as results return. This "cover the treatable killers" approach prevents deaths from diagnostic delay.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Red Flags Mandating ICU / Urgent Escalation</div>
+        <div class="gr-text">
+          Shock or narrow pulse pressure · altered consciousness/seizures · respiratory distress/SpO₂ &lt;94% · oliguria/AKI · spontaneous bleeding · jaundice with bleeding (Weil's/severe leptospirosis) · rapidly rising haematocrit then sudden fall · severe acidosis/lactate · hypoglycaemia · parasitaemia &gt;2–5%. Any of these → resuscitate aggressively, treat empirically, and admit to a monitored/ICU bed.
+        </div>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Pitfalls Worth Repeating</div>
+        <p>A single negative malaria smear/RDT does not exclude malaria — repeat. NS1 positivity for dengue does not exclude a concurrent treatable bacterial or rickettsial infection. The eschar of scrub typhus is painless and hidden — it is missed unless deliberately sought. And in dengue, the most preventable deaths in hospital come from <strong>iatrogenic fluid overload</strong>, not from the disease itself.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Acute Febrile Illness</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Not Excluding Malaria Urgently</div>
+        <p>Falciparum malaria can kill within 24 hours. Failing to test (and re-test) for malaria, or delaying IV artesunate in severe malaria, is a fatal error. A single negative smear does not exclude it — repeat smears/RDT and treat severe disease empirically.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Aggressive Fluids in Dengue</div>
+        <p>Over-resuscitation during the critical phase causes fluid overload and pulmonary oedema — a leading cause of dengue mortality in hospital. Give judicious isotonic fluid titrated to perfusion and haematocrit, and reduce fluids as the leak resolves (falling Hct in recovery).</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Prophylactic Platelet Transfusion in Dengue</div>
+        <p>Transfusing platelets for a low count without bleeding does not prevent bleeding and exposes the patient to transfusion harm. Reserve platelets for significant active bleeding; most thrombocytopenia recovers spontaneously.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Missing the Eschar / Withholding Doxycycline</div>
+        <p>Scrub typhus is common, treatable and lethal if missed; the diagnostic eschar is painless and hidden in skin folds. Search for it actively and start empirical doxycycline on clinical suspicion rather than waiting for serology — the response is rapid.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Anchoring on One Diagnosis</div>
+        <p>A positive test for dengue (or any single pathogen) does not exclude co-infection or a bacterial focus. In the deteriorating patient, treat as sepsis and cover the treatable tropical killers empirically while pursuing specific diagnostics.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Giving NSAIDs / IM Injections in the Bleeding-Prone Febrile Patient</div>
+        <p>In dengue and other thrombocytopenic/coagulopathic febrile illnesses, NSAIDs and aspirin increase bleeding and IM injections cause haematomas. Use paracetamol for fever and the IV/oral routes; avoid NSAIDs until the diagnosis and platelet/coagulation status are clear.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Tintinalli JE, Ma OJ, Yealy DM et al.</strong> Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Ed. Chapters: Fever; World Travelers / Tropical Infections. McGraw-Hill; 2020.</li>
+          <li><strong>Walls RM, Hockberger RS, Gausche-Hill M et al.</strong> Rosen's Emergency Medicine: Concepts and Clinical Practice, 10th Ed. Chapters: Malaria; Tropical Infections; Fever in the Returning Traveler. Elsevier; 2023.</li>
+          <li><strong>World Health Organization.</strong> Dengue: Guidelines for Diagnosis, Treatment, Prevention and Control. WHO; 2009 (+ subsequent updates).</li>
+          <li><strong>World Health Organization.</strong> Guidelines for the Treatment of Malaria, 3rd Ed. WHO; 2015.</li>
+          <li><strong>Dondorp AM, Fanello CI, Hendriksen IC et al. (AQUAMAT).</strong> Artesunate versus quinine in the treatment of severe falciparum malaria in African children. Lancet 2010;376:1647–1657.</li>
+          <li><strong>National Center for Vector Borne Diseases Control (NCVBDC / formerly NVBDCP), India.</strong> National guidelines for malaria &amp; dengue diagnosis and treatment.</li>
+          <li><strong>Indian Council of Medical Research (ICMR).</strong> Guidelines on management of scrub typhus &amp; rickettsial diseases; leptospirosis.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="drug-reference.html">Drug Reference</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

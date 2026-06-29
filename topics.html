@@ -90,7 +90,7 @@
     <h1>📚 Clinical Reference Library</h1>
     <p>Evidence-based Critical Care &amp; Emergency Medicine — Marino 5th Ed (2025), Washington Manual, Irwin &amp; Rippe, SSC 2026, GINA/GOLD 2026, KDIGO 2026, ESC, AHA/ACC. Pathophysiology, drug doses, clinical pearls, exam prep.</p>
     <div class="hero-stats">
-      <div class="hs"><div class="hs-num">27+</div><div class="hs-lbl">Topics</div></div>
+      <div class="hs"><div class="hs-num">32+</div><div class="hs-lbl">Topics</div></div>
       <div class="hs"><div class="hs-num">2026</div><div class="hs-lbl">Guidelines</div></div>
       <div class="hs"><div class="hs-num">2</div><div class="hs-lbl">Specialties</div></div>
     </div>
@@ -115,7 +115,8 @@
     <button class="cat-tab" data-cat="respiratory" onclick="showCat('respiratory', this)">🫁 Respiratory</button>
     <button class="cat-tab" data-cat="cardiac" onclick="showCat('cardiac', this)">❤️ Cardiac</button>
     <button class="cat-tab" data-cat="renal" onclick="showCat('renal', this)">🫘 Renal, Acid-Base &amp; Electrolytes</button>
-    <button class="cat-tab" data-cat="neuro" onclick="showCat('neuro', this)">🧠 Neuro &amp; Emergency</button>
+    <button class="cat-tab" data-cat="neuro" onclick="showCat('neuro', this)">🧠 Neurology</button>
+    <button class="cat-tab" data-cat="emergency" onclick="showCat('emergency', this)">🚑 Emergency &amp; Trauma</button>
     <button class="cat-tab" data-cat="infections" onclick="showCat('infections', this)">🦠 Infections</button>
     <button class="cat-tab" data-cat="haem" onclick="showCat('haem', this)">🩸 Haematology &amp; Coagulation</button>
     <button class="cat-tab" data-cat="supportive" onclick="showCat('supportive', this)">💉 Supportive Care</button>
@@ -160,6 +161,14 @@
         <div class="card-title">Hypertensive Emergency</div>
         <div class="card-desc">Emergency vs urgency. Scenario-specific BP targets (dissection, ICH, stroke, eclampsia). IV drugs. ESC/ESH 2023. No sublingual nifedipine.</div>
         <div class="tags"><span class="tag">ESC/ESH 2023</span><span class="tag">IV Drugs</span><span class="tag">Eclampsia</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-anaphylaxis.html" class="card" data-spec="em ccm">
+        <span class="spec-chip both">CCM · EM</span>
+        <div class="card-ic">🚑</div>
+        <div class="card-title">Anaphylaxis (Distributive Shock)</div>
+        <div class="card-desc">WAO 2020 / RCUK 2021 criteria, IM adrenaline first-line, supine positioning, aggressive fluids for distributive shock, refractory anaphylaxis adrenaline infusion.</div>
+        <div class="tags"><span class="tag new">RCUK 2021 ✦</span><span class="tag">IM Adrenaline</span><span class="tag">Refractory</span></div>
         <div class="card-arrow">Read article →</div>
       </a>
     </div>
@@ -330,12 +339,60 @@
         <div class="tags"><span class="tag">Stroke</span><span class="tag">AHA/ASA</span><span class="tag">Brain Death</span></div>
         <div class="card-arrow">Read article →</div>
       </a>
+    </div>
+    <div class="sec-empty">No topics in this specialty for this category. Switch specialty or category above.</div>
+  </div>
+
+  <!-- EMERGENCY & TRAUMA -->
+  <div class="topic-section" id="sec-emergency">
+    <p class="sec-intro">📖 Sources: Tintinalli's Emergency Medicine 9th Ed · Rosen's Emergency Medicine 10th Ed · ATLS 10th Ed · WAO/RCUK · National Snakebite Management Protocol · ICMR/NCVBDC · Wilderness Medical Society</p>
+    <div class="grid">
       <a href="topic-ed-emergencies.html" class="card" data-spec="em">
         <span class="spec-chip em">EM</span>
         <div class="card-ic">🚨</div>
         <div class="card-title">Acute ED Emergencies — Indian Context</div>
         <div class="card-desc">ABCDE framework, RUSH shock protocol, acute dyspnoea/chest pain/coma approach, anaphylaxis, poisoning (OP/ALP), tropical fever (malaria, dengue, scrub typhus).</div>
-        <div class="tags"><span class="tag new">Emergency Med ✦</span><span class="tag">Indian Context</span><span class="tag">Toxicology</span></div>
+        <div class="tags"><span class="tag new">Emergency Med ✦</span><span class="tag">Indian Context</span><span class="tag">RUSH</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-anaphylaxis.html" class="card" data-spec="em ccm">
+        <span class="spec-chip both">CCM · EM</span>
+        <div class="card-ic">🚑</div>
+        <div class="card-title">Anaphylaxis</div>
+        <div class="card-desc">WAO 2020 / RCUK 2021 criteria, IM adrenaline 0.5 mg first-line, positioning (supine — sitting up kills), refractory anaphylaxis infusions, biphasic reactions, β-blocked patients (glucagon).</div>
+        <div class="tags"><span class="tag new">RCUK 2021 ✦</span><span class="tag">IM Adrenaline</span><span class="tag">Tintinalli's</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-trauma.html" class="card" data-spec="em ccm">
+        <span class="spec-chip both">CCM · EM</span>
+        <div class="card-ic">🚑</div>
+        <div class="card-title">Trauma — Primary Survey &amp; Resuscitation</div>
+        <div class="card-desc">ATLS C-ABCDE primary survey, damage control resuscitation, permissive hypotension, massive transfusion 1:1:1, TXA (CRASH-2/3), FAST, tension pneumothorax, pelvic binder.</div>
+        <div class="tags"><span class="tag new">ATLS 10th ✦</span><span class="tag">Damage Control</span><span class="tag">Rosen's</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-snakebite.html" class="card" data-spec="em ccm">
+        <span class="spec-chip both">CCM · EM</span>
+        <div class="card-ic">🐍</div>
+        <div class="card-title">Snakebite &amp; Envenomation</div>
+        <div class="card-desc">India's Big Four, 20-minute whole blood clotting test, ASV dosing (same in children), neurotoxic vs haemotoxic syndromes, neostigmine trial, ASV reactions, AKI.</div>
+        <div class="tags"><span class="tag new">National Protocol ✦</span><span class="tag">20-WBCT</span><span class="tag">ASV</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-environmental.html" class="card" data-spec="em ccm">
+        <span class="spec-chip both">CCM · EM</span>
+        <div class="card-ic">🌡️</div>
+        <div class="card-title">Environmental Emergencies</div>
+        <div class="card-desc">Heat stroke (cool first, target 39°C, no antipyretics), accidental hypothermia rewarming ("not dead until warm and dead"), drowning, electrical &amp; lightning injury.</div>
+        <div class="tags"><span class="tag new">WMS ✦</span><span class="tag">Heat Stroke</span><span class="tag">Hypothermia</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-febrile-illness.html" class="card" data-spec="em ccm">
+        <span class="spec-chip both">CCM · EM</span>
+        <div class="card-ic">🌡️</div>
+        <div class="card-title">Acute Undifferentiated Febrile Illness</div>
+        <div class="card-desc">Tropical fever approach — dengue (warning signs, fluid management), severe malaria (IV artesunate), scrub typhus (eschar, doxycycline), leptospirosis, empirical therapy.</div>
+        <div class="tags"><span class="tag new">ICMR ✦</span><span class="tag">Dengue · Malaria</span><span class="tag">Scrub Typhus</span></div>
         <div class="card-arrow">Read article →</div>
       </a>
     </div>
@@ -368,6 +425,22 @@
         <div class="card-title">Toxicology in the ICU</div>
         <div class="card-desc">OP poisoning (atropine titration, pralidoxime), paracetamol (NAC), antidote quick reference, dialysable toxins. Indian context — ALP, snake bite.</div>
         <div class="tags"><span class="tag">Antidotes</span><span class="tag">OP Poisoning</span><span class="tag">India</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-febrile-illness.html" class="card" data-spec="em ccm">
+        <span class="spec-chip both">CCM · EM</span>
+        <div class="card-ic">🌡️</div>
+        <div class="card-title">Acute Undifferentiated Febrile Illness</div>
+        <div class="card-desc">Tropical fever approach — dengue, severe malaria (IV artesunate), scrub typhus (eschar, doxycycline), leptospirosis, enteric fever, empirical therapy for the sick AUFI patient.</div>
+        <div class="tags"><span class="tag new">ICMR ✦</span><span class="tag">Dengue · Malaria</span><span class="tag">Scrub Typhus</span></div>
+        <div class="card-arrow">Read article →</div>
+      </a>
+      <a href="topic-snakebite.html" class="card" data-spec="em ccm">
+        <span class="spec-chip both">CCM · EM</span>
+        <div class="card-ic">🐍</div>
+        <div class="card-title">Snakebite &amp; Envenomation</div>
+        <div class="card-desc">India's Big Four, 20-WBCT, polyvalent ASV dosing, neurotoxic vs haemotoxic syndromes, neostigmine trial, ASV anaphylaxis, Russell's viper AKI.</div>
+        <div class="tags"><span class="tag new">National Protocol ✦</span><span class="tag">20-WBCT</span><span class="tag">ASV</span></div>
         <div class="card-arrow">Read article →</div>
       </a>
     </div>

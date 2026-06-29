@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Trauma — Primary Survey, Damage Control Resuscitation, Massive Transfusion — CritCare.in</title>
+  <meta name="description" content="Emergency trauma management: ATLS primary survey (C-ABCDE), damage control resuscitation, permissive hypotension, massive transfusion 1:1:1, TXA, FAST, tension pneumothorax, pelvic binder. Tintinalli's, Rosen's, ATLS 10th Ed." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .em-box{background:linear-gradient(135deg,#fff1f2,#ffe4e6);border:1px solid #fda4af;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .em-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#9f1239;margin-bottom:.6rem;}
+    .em-box p,.em-box ul{font-size:.9rem;color:#881337;line-height:1.75;margin:0;}
+    .em-box ul{padding-left:1.2rem;}
+    .em-box strong{color:#9f1239;}
+    html.dark .em-box{background:linear-gradient(135deg,#2a0a12,#3a0f1a);border-color:#9f1239;}
+    html.dark .em-box p,html.dark .em-box ul{color:#fda4af;}
+    html.dark .em-box strong{color:#fecdd3;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    html.dark .mc{background:#2a0a0a;border-color:#7f1d1d;}
+    html.dark .mc p{color:#fca5a5;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .abcde{margin:1rem 0;}
+    .abcde .row{display:flex;gap:.9rem;padding:.8rem 0;border-bottom:1px solid var(--line);}
+    .abcde .row:last-child{border-bottom:none;}
+    .abcde .letter{flex-shrink:0;width:36px;height:36px;border-radius:9px;background:#0f1f3d;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.05rem;}
+    .abcde .ac h4{font-size:.9rem;font-weight:700;color:var(--ink);margin:0 0 .25rem;}
+    .abcde .ac p{font-size:.84rem;color:var(--slate);line-height:1.6;margin:0;}
+    .abcde .ac strong{color:var(--ink);}
+    .crit-box{background:#fee2e2;border:2px solid #ef4444;border-radius:12px;padding:1.2rem;margin:1rem 0;}
+    .crit-box h4{color:#b91c1c;font-size:.95rem;margin-bottom:.6rem;}
+    .crit-box p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:.3rem 0 0;}
+    html.dark .crit-box{background:#2a0a0a;border-color:#ef4444;} html.dark .crit-box p{color:#fca5a5;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Trauma — Primary Survey &amp; Resuscitation</div>
+    <h1>🚑 Trauma — Primary Survey &amp; Resuscitation</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ATLS 10th Ed</span>
+      <span class="gbadge esicm">EAST</span>
+      <span class="gbadge isccm">CRASH-2/3</span>
+      <span class="gbadge who">Tintinalli's</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">C-ABCDE Primary Survey</span>
+      <span class="topic-tag">Damage Control · 1:1:1</span>
+      <span class="topic-tag">Permissive Hypotension · TXA</span>
+      <span class="topic-updated">Tintinalli's 9th Ed · Rosen's 10th Ed · ATLS 10th Ed · CRASH-2 / CRASH-3 · EAST Guidelines</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Tintinalli's Summary</a></li>
+        <li><a href="#s2">2. Rosen's — Trauma Physiology</a></li>
+        <li><a href="#s3">3. The Primary Survey (C-ABCDE)</a></li>
+        <li><a href="#s4">4. Damage Control &amp; Drugs</a></li>
+        <li><a href="#s5">5. Resuscitation Flowchart</a></li>
+        <li><a href="#s6">6. Life-Threats &amp; Adjuncts</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📕 1 · Tintinalli's Emergency Medicine, 9th Ed</span>
+      <h2>Tintinalli's Summary — A System That Treats Killers in Order</h2>
+      <div class="book-quote">
+        <p>"The strength of the trauma primary survey is that it imposes order on chaos: it forces the resuscitation team to identify and treat the most rapidly lethal injuries first, in a fixed sequence, before moving on. The survey is not a single pass but a continuous loop — any deterioration sends you back to A. The modern modification is to place catastrophic haemorrhage control before the airway, because exsanguination kills faster than anything else."</p>
+        <cite>Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Ed. McGraw-Hill 2020. Chapter: Trauma — Initial Approach &amp; Resuscitation.</cite>
+      </div>
+
+      <h3>The Core Message (Tintinalli's)</h3>
+      <ul>
+        <li><strong>Find and fix what kills first.</strong> The primary survey (C-ABCDE) is a priority sequence, not a checklist to complete — treat each problem as you find it before moving on.</li>
+        <li><strong>Catastrophic external haemorrhage comes first</strong> ("C-ABCDE") — direct pressure, tourniquet, haemostatic dressing — because it kills in minutes.</li>
+        <li><strong>Reassess continuously</strong> — if the patient deteriorates, go back to A. The leading preventable causes of trauma death are airway obstruction, tension pneumothorax, and haemorrhage.</li>
+        <li><strong>Haemorrhagic shock is the default diagnosis</strong> for the hypotensive trauma patient until proven otherwise — look for blood "on the floor and four more" (chest, abdomen, pelvis, long bones).</li>
+      </ul>
+
+      <div class="crit-box">
+        <h4>🩸 The Five Sites of Major Blood Loss</h4>
+        <p><strong>"On the floor and four more":</strong> external/scene, <strong>chest, abdomen, pelvis/retroperitoneum, and long-bone (femur) fractures.</strong> A hypotensive trauma patient is bleeding into one of these until you prove otherwise — FAST, chest &amp; pelvis X-ray, and examination localise it fast.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📘 2 · Rosen's Emergency Medicine, 10th Ed</span>
+      <h2>Rosen's — Shock, the Lethal Triad &amp; Damage Control</h2>
+      <div class="book-quote">
+        <p>"Haemorrhagic shock in trauma is not simply a volume problem; it is accompanied by an acute coagulopathy of trauma driven by tissue injury, hypoperfusion, and the activation of protein C — present in up to a quarter of major trauma patients on arrival, before any dilution from fluids. This is why modern resuscitation prioritises blood products over crystalloid and aims to interrupt the lethal triad of hypothermia, acidosis, and coagulopathy."</p>
+        <cite>Rosen's Emergency Medicine: Concepts and Clinical Practice, 10th Ed. Elsevier 2023. Chapter: Shock &amp; Trauma Resuscitation.</cite>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Rosen's — The Lethal Triad (Trauma's Vicious Cycle)</div>
+        <p>Three factors reinforce each other and drive exsanguinating trauma death:</p>
+        <ul>
+          <li><strong>Hypothermia</strong> — impairs clotting enzyme function and platelet activity (keep the patient warm — warmed fluids/blood, remove wet clothes, active warming)</li>
+          <li><strong>Acidosis</strong> — hypoperfusion → lactic acidosis → further impairs the coagulation cascade and myocardial function</li>
+          <li><strong>Coagulopathy</strong> — both the acute coagulopathy of trauma and dilution/consumption → more bleeding → more shock</li>
+        </ul>
+        <p>Breaking this cycle is the whole rationale of <strong>damage control resuscitation</strong>: stop the bleeding, give balanced blood products, keep warm, and limit crystalloid.</p>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Rosen's — Classes of Haemorrhagic Shock (caveat)</div>
+        <p>The classic ATLS four-class system (Class I &lt;15%, II 15–30%, III 30–40%, IV &gt;40% blood loss) is a useful teaching framework but is <strong>unreliable in practice</strong> — tachycardia may be absent (especially in the young, the elderly, on β-blockers, or in compensated bleeding), and hypotension is a late sign. <strong>A normal blood pressure does not exclude significant haemorrhage.</strong> Trend the physiology (HR, mentation, skin, lactate/base deficit, urine output), not a single snapshot.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · The Primary Survey — C-ABCDE (ATLS 10th Ed)</span>
+      <h2>The Priority Sequence</h2>
+
+      <div class="abcde">
+        <div class="row"><div class="letter">C</div><div class="ac"><h4>Catastrophic Haemorrhage</h4><p>Control compressible external bleeding immediately — <strong>direct pressure, tourniquet for limbs, haemostatic dressing/wound packing</strong> for junctional bleeds. Done before/with airway.</p></div></div>
+        <div class="row"><div class="letter">A</div><div class="ac"><h4>Airway with C-spine protection</h4><p>Assess patency; talking = patent for now. <strong>Manual in-line stabilisation</strong> of the cervical spine. Definitive airway (RSI) for GCS ≤8, airway burns/oedema, or failure to maintain/protect. Anticipate the difficult trauma airway (blood, vomit, distortion).</p></div></div>
+        <div class="row"><div class="letter">B</div><div class="ac"><h4>Breathing &amp; ventilation</h4><p>Expose chest, look/feel/listen. Identify and treat immediately: <strong>tension pneumothorax</strong> (decompress — don't wait for X-ray), <strong>open pneumothorax</strong> (3-sided dressing), <strong>massive haemothorax</strong>, flail chest. High-flow O₂.</p></div></div>
+        <div class="row"><div class="letter">C</div><div class="ac"><h4>Circulation &amp; haemorrhage control</h4><p>Two large-bore IVs; identify shock; <strong>FAST</strong> + chest/pelvis X-ray; <strong>pelvic binder</strong> for suspected pelvic fracture; splint long bones. <strong>Start balanced blood products (1:1:1)</strong> for haemorrhagic shock; activate massive haemorrhage protocol; give <strong>TXA</strong> early.</p></div></div>
+        <div class="row"><div class="letter">D</div><div class="ac"><h4>Disability (neuro)</h4><p>GCS, pupils, lateralising signs, blood glucose. Compute GCS; a falling GCS or unequal pupils suggests rising ICP → neuroprotection (see TBI topic). Don't attribute altered mentation to alcohol until other causes excluded.</p></div></div>
+        <div class="row"><div class="letter">E</div><div class="ac"><h4>Exposure &amp; Environment</h4><p>Fully expose to find all injuries (log-roll, back, perineum), then <strong>prevent hypothermia</strong> — warm blankets, warmed fluids/blood, warm room. Hypothermia worsens the lethal triad.</p></div></div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ED / Trauma Context</div>
+        <p><strong>Road traffic injury</strong> is a massive burden; pre-hospital systems are variable, so patients often arrive late, under-resuscitated, hypothermic, and without spinal precautions — a high index for occult haemorrhage and the lethal triad is essential.</p>
+        <p><strong>Resource adaptation:</strong> where rapid component therapy/MTP is limited, <strong>whole blood</strong> and early TXA are pragmatic; tourniquets and pelvic binders (or an improvised sheet binder) are cheap, effective and underused.</p>
+        <p><strong>CRASH-2</strong> showed the greatest TXA mortality benefit in low-resource settings — give 1 g within 3 hours to any bleeding trauma patient or those at risk.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Damage Control Resuscitation &amp; Drugs</span>
+      <h2>Damage Control Resuscitation (DCR)</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Balanced Transfusion (1:1:1) &amp; Limit Crystalloid</div>
+        <div class="gr-text">
+          Resuscitate haemorrhagic shock with <strong>packed red cells : FFP : platelets in a 1:1:1 ratio</strong> (PROPPR), reproducing whole blood. <strong>Minimise crystalloid</strong> — large-volume saline worsens dilutional coagulopathy, acidosis and the lethal triad. <span class="gr-s">DCR — EAST / ATLS 10th</span> Use a rapid infuser/blood warmer. See the <a href="topic-transfusion.html" style="color:var(--blue);font-weight:600;">Transfusion &amp; Coagulopathy</a> topic for MTP detail.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Permissive (Hypotensive) Resuscitation</div>
+        <div class="gr-text">
+          Before surgical/IR haemorrhage control, target a <strong>lower BP</strong> (palpable radial pulse / SBP ~80–90 mmHg, or maintained mentation in penetrating trauma) to avoid "popping the clot" and worsening dilutional coagulopathy. <span class="gr-c">EXCEPTION: traumatic brain injury</span> — in TBI maintain cerebral perfusion (SBP ≥110 mmHg, BTF 2023); do NOT run hypotensive.
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug / Product</th><th>Role</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Tranexamic acid (TXA)</strong></td><td>Antifibrinolytic — all bleeding trauma</td><td>1 g IV over 10 min, then 1 g over 8 h</td><td>Within 3 h of injury (CRASH-2); harm if given late. CRASH-3: also for TBI within 3 h</td></tr>
+            <tr><td><strong>Packed RBC : FFP : Platelets</strong></td><td>Haemorrhagic shock</td><td>1:1:1 ratio; activate MTP early</td><td>Warm products; reproduces whole blood</td></tr>
+            <tr><td><strong>Calcium (gluconate/chloride)</strong></td><td>Prevent hypocalcaemia in massive transfusion</td><td>Guided by ionised Ca²⁺; e.g. 1 g CaCl₂ per few units</td><td>Citrate chelates Ca²⁺; hypocalcaemia worsens clotting &amp; contractility</td></tr>
+            <tr><td><strong>Ketamine</strong></td><td>RSI induction in shock</td><td>1–2 mg/kg IV (or reduced in profound shock)</td><td>Haemodynamically favourable; good analgesia</td></tr>
+            <tr><td><strong>Rocuronium / Succinylcholine</strong></td><td>RSI paralysis</td><td>Roc 1.2 mg/kg / Sux 1.5 mg/kg</td><td>Roc preferred if hyperkalaemia/crush/burns risk</td></tr>
+            <tr><td><strong>Crystalloid (balanced)</strong></td><td>Bridge only until blood available</td><td>Small aliquots; avoid large volumes</td><td>Warmed; do not chase a normal BP with crystalloid</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Damage Control Surgery</div>
+        <p>For the exsanguinating, physiologically deranged patient (the lethal triad), the surgical strategy is <strong>damage control surgery</strong>: an abbreviated operation to <em>control haemorrhage and contamination only</em> (packing, temporary closure), then ICU resuscitation to correct coagulopathy/acidosis/hypothermia, with definitive repair 24–48 h later once physiology is restored. Operating for hours to do definitive repair in a cold, coagulopathic, acidotic patient kills them on the table.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗂 5 · Resuscitation Flowchart</span>
+      <h2>Step-by-Step Trauma Resuscitation</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Prepare &amp; receive — control catastrophic bleeding</h4>
+          <ul>
+            <li>Team roles, PPE, warmed room, blood/MTP on standby, equipment checked.</li>
+            <li>On arrival: tourniquet/pressure for catastrophic external haemorrhage; high-flow O₂.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Primary survey C-ABCDE — treat as you go</h4>
+          <ul>
+            <li>A: airway + manual in-line C-spine; RSI if GCS ≤8/airway threat.</li>
+            <li>B: decompress tension pneumothorax clinically; treat open chest/haemothorax.</li>
+            <li>C: 2 large IVs, FAST + chest/pelvis XR, pelvic binder, splint femurs; start blood 1:1:1; TXA.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Identify the bleeding source &amp; decide destination</h4>
+          <ul>
+            <li>Positive FAST + unstable → <strong>theatre (laparotomy)</strong> now.</li>
+            <li>Pelvic source → binder + <strong>angioembolisation</strong> / pelvic packing.</li>
+            <li>Stable → CT "pan-scan" for definitive injury mapping.</li>
+            <li>Permissive hypotension until haemorrhage controlled (except TBI).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-purple">4</div>
+        <div class="fc-content">
+          <h4>Damage control &amp; correct the triad</h4>
+          <ul>
+            <li>Damage control surgery for the deranged patient; ICU resuscitation to fix hypothermia/acidosis/coagulopathy.</li>
+            <li>Replace calcium; guide products with ROTEM/TEG where available.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">5</div>
+        <div class="fc-content">
+          <h4>Secondary survey</h4>
+          <ul>
+            <li>Only once primary survey complete and patient stabilising: head-to-toe exam, AMPLE history, log-roll, all injuries documented.</li>
+            <li>Tetanus, analgesia, antibiotics for open fractures, splinting; re-image/re-examine for missed injuries (tertiary survey).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-x">🔬 6 · Immediate Life-Threats &amp; Adjuncts</span>
+      <h2>The Injuries You Must Treat in the Primary Survey</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Tension Pneumothorax — Clinical Diagnosis</div>
+        <div class="gr-text">
+          Respiratory distress, hypotension, distended neck veins, tracheal deviation (late), absent breath sounds + hyper-resonance on one side. <strong>Decompress immediately — do NOT wait for a chest X-ray.</strong> Needle decompression (large cannula, 2nd ICS mid-clavicular OR 5th ICS anterior axillary — the latter more reliable in adults) followed by a <strong>finger thoracostomy / chest drain</strong> (definitive).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Other Immediate Chest Life-Threats</div>
+        <div class="gr-text">
+          <strong>Open pneumothorax:</strong> 3-sided occlusive dressing, then chest drain. <strong>Massive haemothorax:</strong> chest drain; &gt;1500 mL immediately or &gt;200 mL/h → theatre. <strong>Cardiac tamponade:</strong> Beck's triad, FAST shows effusion → resuscitative measures / thoracotomy. <strong>Flail chest:</strong> analgesia + ventilatory support for the underlying pulmonary contusion.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Pelvic Fracture &amp; FAST</div>
+        <div class="gr-text">
+          Suspect pelvic ring injury in any high-energy mechanism with shock — apply a <strong>pelvic binder at the level of the greater trochanters</strong> early (tamponades venous bleeding, reduces volume). Do not "spring" the pelvis repeatedly. <strong>FAST</strong> (focused assessment with sonography in trauma) rapidly detects free intraperitoneal fluid and pericardial effusion at the bedside — a positive FAST in an unstable patient mandates theatre; a negative FAST does not exclude injury (poor for retroperitoneal/hollow viscus).
+        </div>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 TXA &amp; TBI (CRASH-3)</div>
+        <p>CRASH-3 (2019) showed TXA given within 3 h reduces head-injury-related death in patients with mild–moderate TBI (not in severe/GCS 3 with bilateral fixed pupils). Combined with CRASH-2 for bleeding trauma, the message is consistent: <strong>give TXA early (within 3 hours), and never late.</strong></p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Trauma Resuscitation</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Large-Volume Crystalloid Resuscitation</div>
+        <p>Pouring in litres of saline dilutes clotting factors, worsens acidosis and hypothermia, raises BP enough to dislodge clots, and increases mortality. Use balanced blood products (1:1:1), minimise crystalloid, and accept permissive hypotension until bleeding is controlled (except in TBI).</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Waiting for Imaging to Treat Tension Pneumothorax</div>
+        <p>Tension pneumothorax is a clinical diagnosis and a peri-arrest emergency — decompress immediately. Sending an unstable patient for a chest X-ray first, or waiting for CT, can be fatal.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Being Reassured by a Normal Blood Pressure</div>
+        <p>Young, fit patients (and those on β-blockers) compensate well and maintain BP until sudden decompensation; tachycardia may be absent. Trend mentation, skin, lactate/base deficit and urine output — a normal snapshot BP does not exclude major haemorrhage.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Forgetting to Keep the Patient Warm</div>
+        <p>Hypothermia is part of the lethal triad and directly impairs clotting, yet trauma patients are routinely left exposed and cold. Remove wet clothing, use warmed fluids/blood and active warming, and keep the resus room warm — exposure should be brief and purposeful.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Giving TXA Late</div>
+        <p>TXA reduces bleeding death only when given within 3 hours of injury; after that it provides no benefit and may increase mortality. Give it early — ideally pre-hospital or on arrival — to any bleeding trauma patient.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Definitive Surgery in the Crashing Patient</div>
+        <p>Attempting a long definitive operation in a cold, acidotic, coagulopathic patient kills them. Choose damage control surgery — control haemorrhage and contamination, then resuscitate in ICU and return for definitive repair once physiology is restored.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Tintinalli JE, Ma OJ, Yealy DM et al.</strong> Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Ed. Section: Trauma. McGraw-Hill; 2020.</li>
+          <li><strong>Walls RM, Hockberger RS, Gausche-Hill M et al.</strong> Rosen's Emergency Medicine: Concepts and Clinical Practice, 10th Ed. Chapters: Shock; Multiple Trauma. Elsevier; 2023.</li>
+          <li><strong>American College of Surgeons Committee on Trauma.</strong> Advanced Trauma Life Support (ATLS), 10th Ed. Chicago: ACS; 2018.</li>
+          <li><strong>CRASH-2 Collaborators.</strong> Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients. Lancet 2010;376:23–32.</li>
+          <li><strong>CRASH-3 Collaborators.</strong> Effects of tranexamic acid on death, disability, vascular occlusive events in traumatic brain injury. Lancet 2019;394:1713–1723.</li>
+          <li><strong>Holcomb JB, Tilley BC, Baraniuk S et al. (PROPPR).</strong> Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs 1:1:2 ratio. JAMA 2015;313:471–482.</li>
+          <li><strong>Cameron P, Little M, Mitra B, Deasy C.</strong> Textbook of Adult Emergency Medicine, 5th Ed. Trauma. Elsevier; 2019.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="drug-reference.html">Drug Reference</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

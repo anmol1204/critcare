@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Environmental Emergencies — Heat Stroke, Hypothermia, Drowning — CritCare.in</title>
+  <meta name="description" content="Emergency management of environmental injuries: heat stroke (cool first, target 39°C), accidental hypothermia rewarming, drowning, electrical injury. Tintinalli's, Rosen's, Wilderness Medical Society with drug doses and Indian context." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .em-box{background:linear-gradient(135deg,#fff1f2,#ffe4e6);border:1px solid #fda4af;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .em-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#9f1239;margin-bottom:.6rem;}
+    .em-box p,.em-box ul{font-size:.9rem;color:#881337;line-height:1.75;margin:0;}
+    .em-box ul{padding-left:1.2rem;}
+    .em-box strong{color:#9f1239;}
+    html.dark .em-box{background:linear-gradient(135deg,#2a0a12,#3a0f1a);border-color:#9f1239;}
+    html.dark .em-box p,html.dark .em-box ul{color:#fda4af;}
+    html.dark .em-box strong{color:#fecdd3;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    html.dark .mc{background:#2a0a0a;border-color:#7f1d1d;}
+    html.dark .mc p{color:#fca5a5;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .crit-box{background:#fee2e2;border:2px solid #ef4444;border-radius:12px;padding:1.2rem;margin:1rem 0;}
+    .crit-box h4{color:#b91c1c;font-size:.95rem;margin-bottom:.6rem;}
+    .crit-box .big{font-size:1.35rem;font-weight:800;color:#b91c1c;}
+    .crit-box p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:.3rem 0 0;}
+    html.dark .crit-box{background:#2a0a0a;border-color:#ef4444;} html.dark .crit-box p{color:#fca5a5;}
+    .cold-box{background:#eff6ff;border:2px solid #3b82f6;border-radius:12px;padding:1.2rem;margin:1rem 0;}
+    .cold-box h4{color:#1d4ed8;font-size:.95rem;margin-bottom:.6rem;}
+    .cold-box p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:.3rem 0 0;}
+    html.dark .cold-box{background:#0a1a2f;border-color:#3b82f6;} html.dark .cold-box p{color:#93c5fd;}
+    .stage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.8rem;margin:1rem 0;}
+    .stage-card{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:.9rem;}
+    .stage-card h5{font-size:.78rem;font-weight:800;color:var(--ink);margin:0 0 .3rem;}
+    .stage-card p{font-size:.76rem;color:var(--slate);line-height:1.55;margin:0;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Environmental Emergencies</div>
+    <h1>🌡️ Environmental Emergencies</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">WMS</span>
+      <span class="gbadge esicm">ERC 2021</span>
+      <span class="gbadge isccm">NDMA India</span>
+      <span class="gbadge who">Tintinalli's</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Heat Stroke · Hypothermia</span>
+      <span class="topic-tag">Drowning · Electrical</span>
+      <span class="topic-tag">Cool First / Rewarm</span>
+      <span class="topic-updated">Tintinalli's 9th Ed · Rosen's 10th Ed · Wilderness Medical Society · ERC 2021 (special circumstances)</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Tintinalli's Summary</a></li>
+        <li><a href="#s2">2. Rosen's — Thermoregulation</a></li>
+        <li><a href="#s3">3. Heat Stroke</a></li>
+        <li><a href="#s4">4. Accidental Hypothermia</a></li>
+        <li><a href="#s5">5. Drowning &amp; Electrical Injury</a></li>
+        <li><a href="#s6">6. Drugs &amp; Flowchart</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📕 1 · Tintinalli's Emergency Medicine, 9th Ed</span>
+      <h2>Tintinalli's Summary — Temperature Is the Treatment Target</h2>
+      <div class="book-quote">
+        <p>"In both heat stroke and accidental hypothermia, the defining derangement is core temperature, and the central principle is the same: correct the temperature while supporting the failing organ systems. In heat stroke, every minute the core remains above 40°C causes ongoing cellular injury — so cooling is the resuscitation, and it must be rapid. In hypothermia, the dictum 'no one is dead until warm and dead' governs prolonged resuscitation, because profound hypothermia is neuroprotective."</p>
+        <cite>Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Ed. McGraw-Hill 2020. Section: Environmental Injuries.</cite>
+      </div>
+
+      <h3>The Core Message (Tintinalli's)</h3>
+      <ul>
+        <li><strong>Heat stroke = hyperthermia (core &gt;40°C) + CNS dysfunction</strong> (altered mentation, seizures, coma). It is a clinical diagnosis and a true emergency — <strong>cool first, cool fast.</strong></li>
+        <li><strong>Antipyretics do NOT work in heat stroke</strong> — the hypothalamic set-point is normal; the problem is failed heat dissipation, not a raised set-point.</li>
+        <li><strong>Accidental hypothermia:</strong> handle gently (irritable myocardium → VF), rewarm by severity, and continue resuscitation until rewarmed — <strong>"not dead until warm and dead."</strong></li>
+        <li><strong>Drowning:</strong> the priority is reversing hypoxia — start with airway and rescue breaths/ventilation; the lung injury, not the water "type", drives the course.</li>
+      </ul>
+
+      <div class="crit-box">
+        <h4>🔥 Heat Stroke — The One Rule</h4>
+        <p><span class="big">Cool to ~39°C, then stop.</span> <strong>Cold-water immersion is the fastest, most effective method</strong> for exertional heat stroke. Begin cooling immediately — do not delay for transport or investigations. Stop active cooling at ~38.5–39°C to avoid overshoot hypothermia.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📘 2 · Rosen's Emergency Medicine, 10th Ed</span>
+      <h2>Rosen's — Thermoregulation &amp; Why Organs Fail</h2>
+      <div class="book-quote">
+        <p>"Heat stroke represents the failure of thermoregulatory compensation, with a transition from heat exhaustion to a systemic inflammatory response resembling sepsis. Direct cytotoxicity above 40°C, combined with an exaggerated inflammatory and coagulation cascade, produces a multi-organ syndrome: encephalopathy, rhabdomyolysis, acute kidney injury, hepatic injury, and disseminated intravascular coagulation. Mortality correlates with the duration and magnitude of hyperthermia."</p>
+        <cite>Rosen's Emergency Medicine: Concepts and Clinical Practice, 10th Ed. Elsevier 2023. Chapter: Heat Illness &amp; Cold Injuries.</cite>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Rosen's — Classic vs Exertional Heat Stroke</div>
+        <ul>
+          <li><strong>Classic (non-exertional):</strong> elderly, chronically ill, during heat waves; impaired thermoregulation/medications (anticholinergics, diuretics); often <strong>anhidrotic</strong> (dry skin); develops over days. The dominant pattern in Indian summer heat-wave deaths.</li>
+          <li><strong>Exertional:</strong> young, healthy (athletes, soldiers, labourers); intense exertion in heat; often still <strong>sweating</strong>; rapid onset; higher rates of rhabdomyolysis, AKI, DIC, and hepatic failure. Cold-water immersion is most clearly life-saving here.</li>
+        </ul>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Rosen's — The "Afterdrop" &amp; Rescue Collapse in Hypothermia</div>
+        <p>During rewarming, cold peripheral blood returns to the core, causing a paradoxical further <strong>fall in core temperature ("afterdrop")</strong> and a drop in BP as vasodilatation occurs. Rough handling or sudden movement of a severely hypothermic patient can precipitate <strong>ventricular fibrillation</strong> in an irritable myocardium ("rescue collapse"). This is why severe hypothermia mandates <strong>gentle handling, horizontal positioning, core rewarming, and continued CPR/resuscitation until the core is rewarmed.</strong></p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">🔥 3 · Heat Stroke</span>
+      <h2>Management of Heat Stroke (Cool First)</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Cooling — The Resuscitation</div>
+        <div class="gr-text">
+          <strong>Exertional heat stroke: cold-water (ice-water) immersion is first-line</strong> — fastest cooling rate, best survival <span class="gr-s">WMS / sports medicine</span>. Where immersion is impractical (classic heat stroke, elderly, multi-line patients): <strong>evaporative cooling</strong> (spray tepid water + continuous fans) ± ice packs to neck/axillae/groin, cold IV fluids. <strong>Target core ~39°C, then stop active cooling.</strong> Use a continuous core (rectal/oesophageal) thermometer.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Control Shivering &amp; Support Organs</div>
+        <div class="gr-text">
+          Shivering generates heat and opposes cooling — control with <strong>benzodiazepines</strong> (also for seizures/agitation). Manage the multi-organ syndrome: IV fluids for hypotension (cautious — often vasodilated, not just dry), watch for <strong>rhabdomyolysis</strong> (CK, dark urine → fluids ± alkalinisation), <strong>AKI</strong>, <strong>DIC</strong>, hepatic injury, electrolyte derangements. <span class="gr-c">Antipyretics (paracetamol/aspirin) are ineffective and potentially harmful (hepatotoxicity, coagulopathy) — do not use.</span>
+        </div>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Heat Stroke Mimics — Don't Miss These</div>
+        <p>Hyperthermia + altered mentation is also produced by <strong>neuroleptic malignant syndrome</strong> (dopamine antagonists, lead-pipe rigidity), <strong>serotonin syndrome</strong> (serotonergic drugs, clonus/hyperreflexia — treat with cyproheptadine), <strong>malignant hyperthermia</strong> (volatile anaesthetics/suxamethonium — dantrolene), thyroid storm, anticholinergic toxidrome, and sepsis/CNS infection. The history and exam (rigidity vs clonus vs dry skin) distinguish them; all need cooling plus the specific antidote.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-x">❄️ 4 · Accidental Hypothermia</span>
+      <h2>Staging &amp; Rewarming</h2>
+
+      <div class="stage-grid">
+        <div class="stage-card"><h5>Mild (32–35°C)</h5><p>Shivering, tachycardia, confusion. Passive external rewarming.</p></div>
+        <div class="stage-card"><h5>Moderate (28–32°C)</h5><p>Shivering stops, bradycardia, ↓consciousness, J (Osborn) waves. Active external + minimally invasive.</p></div>
+        <div class="stage-card"><h5>Severe (&lt;28°C)</h5><p>Coma, hypotension, arrhythmia/VF risk. Active internal/ECLS rewarming.</p></div>
+      </div>
+
+      <div class="cold-box">
+        <h4>❄️ "Not Dead Until Warm and Dead"</h4>
+        <p>Hypothermia is neuroprotective — full neurological recovery has occurred after prolonged cardiac arrest with core temperatures in the low 20s°C. <strong>Continue CPR and do not pronounce death until the core is rewarmed (≥32–35°C)</strong>, especially in immersion/avalanche victims. A serum <strong>potassium &gt;~12 mmol/L</strong> (asphyxial death/cell lysis) is a recognised marker of non-survivability that may guide termination in the rewarmed-or-rewarming patient.</p>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Rewarming Methods by Severity</div>
+        <div class="gr-text">
+          <strong>Passive external:</strong> remove wet clothes, insulate, warm environment (mild).<br>
+          <strong>Active external:</strong> forced-air warming blankets, radiant heat, heat packs to trunk (avoid limbs first → afterdrop).<br>
+          <strong>Active internal/minimally invasive:</strong> warmed humidified O₂, warmed IV fluids (40–42°C), body-cavity lavage.<br>
+          <strong>Extracorporeal (ECLS/ECMO or cardiopulmonary bypass):</strong> the treatment of choice for <strong>hypothermic cardiac arrest / severe instability</strong> — fastest, controlled rewarming with circulatory support.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Arrest &amp; Drug Modifications in Severe Hypothermia (ERC 2021)</div>
+        <div class="gr-text">
+          The hypothermic heart may be unresponsive to drugs and defibrillation until rewarmed. <strong>If core &lt;30°C: withhold resuscitation drugs</strong>; limit defibrillation to 3 shocks until temperature rises. <strong>30–35°C: double the interval between drug doses.</strong> Handle gently, keep horizontal, rewarm — then resume standard ALS as the core normalises.
+        </div>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-x">🌊 5 · Drowning &amp; Electrical Injury</span>
+      <h2>Drowning</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">Drowning — Reverse Hypoxia First</div>
+        <div class="gr-text">
+          The pathophysiology is <strong>hypoxaemia from aspiration/laryngospasm</strong> — the historical "fresh vs salt water" distinction is clinically irrelevant. Resuscitation uniquely <strong>begins with airway and ventilation/rescue breaths</strong> (5 initial breaths), then chest compressions — because the arrest is hypoxic. Provide high-flow O₂/CPAP/ventilation; expect delayed <strong>ARDS/pulmonary oedema</strong> (observe symptomatic patients). Treat associated hypothermia and consider c-spine injury only if mechanism suggests (diving). Asymptomatic patients with normal SpO₂ and exam after 4–8 h observation can be discharged.
+        </div>
+      </div>
+
+      <h2>Electrical Injury</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">Electrical &amp; Lightning Injury</div>
+        <div class="gr-text">
+          <strong>Current path and type matter more than the visible burn.</strong> Cardiac: arrhythmia/arrest (VF with AC, asystole with high-voltage DC/lightning) — monitor ECG. <strong>High-voltage and lightning</strong> cause deep tissue/muscle necrosis with <strong>rhabdomyolysis</strong> → aggressive IV fluids, monitor for <strong>compartment syndrome</strong> and AKI (myoglobinuria). <strong>Lightning</strong> is unique: prioritise those who appear "dead" (reverse triage) — asystole is often transient and responds to prompt CPR; fixed dilated pupils are unreliable. Watch for tympanic rupture, cataracts, and neurological sequelae.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Heat waves</strong> cause large seasonal mortality (NDMA Heat Action Plans); classic heat stroke in the elderly, outdoor labourers, and during power cuts is common — prevention messaging and rapid evaporative cooling in EDs are key.</p>
+        <p><strong>Lightning</strong> is a leading cause of environmental/natural-disaster death in India (agricultural workers in open fields). <strong>Drowning</strong> is common (open water bodies, monsoon floods, lack of supervision).</p>
+        <p><strong>Hypothermia</strong> is underestimated — seen in northern winters, high-altitude exposure, the homeless, the elderly, and as a secondary complication of trauma/sepsis even in warm climates (don't only think of it in the cold).</p>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-d">💊 6 · Drugs &amp; Quick Flowchart</span>
+      <h2>Drug Reference — Environmental Emergencies</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Cold IV fluids (0.9% saline)</strong></td><td>Heat stroke cooling + volume</td><td>Cooled crystalloid boluses, titrate to BP</td><td>Adjunct to surface cooling; cautious — vasodilated</td></tr>
+            <tr><td><strong>Benzodiazepine (diazepam/lorazepam)</strong></td><td>Shivering, seizures, agitation</td><td>e.g. lorazepam 2–4 mg IV</td><td>Shivering opposes cooling; also for serotonin syndrome agitation</td></tr>
+            <tr><td><strong>Dantrolene</strong></td><td>Malignant hyperthermia (NOT heat stroke)</td><td>2.5 mg/kg IV, repeat to 10 mg/kg</td><td>No proven benefit in classic/exertional heat stroke</td></tr>
+            <tr><td><strong>Cyproheptadine</strong></td><td>Serotonin syndrome</td><td>12 mg PO/NG then 2 mg q2h</td><td>Antiserotonergic; + cooling + benzodiazepines</td></tr>
+            <tr><td><strong>Warmed IV fluids (40–42°C)</strong></td><td>Hypothermia rewarming</td><td>Boluses via fluid warmer</td><td>Part of active internal rewarming</td></tr>
+            <tr><td><strong>IV fluids ± bicarbonate</strong></td><td>Rhabdomyolysis (heat/electrical)</td><td>Aggressive crystalloid; target urine output</td><td>Monitor CK, K⁺, renal function</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>ABC + measure core temperature</h4>
+          <ul>
+            <li>Continuous core (rectal/oesophageal) thermometer — surface temps mislead.</li>
+            <li>Airway/breathing/circulation support; cardiac monitor; bloods (CK, renal, coagulation, K⁺, glucose).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Correct the temperature</h4>
+          <ul>
+            <li><strong>Heat stroke:</strong> cool immediately (immersion/evaporative) to ~39°C; control shivering.</li>
+            <li><strong>Hypothermia:</strong> handle gently; rewarm by severity; ECLS for arrest/severe instability.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">3</div>
+        <div class="fc-content">
+          <h4>Treat complications &amp; admit</h4>
+          <ul>
+            <li>Rhabdomyolysis/AKI, DIC, hepatic injury, electrolytes, arrhythmias.</li>
+            <li>Drowning → observe for delayed ARDS; electrical → ECG monitoring + compartment/rhabdo surveillance.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Environmental Emergencies</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Giving Antipyretics for Heat Stroke</div>
+        <p>Paracetamol and aspirin do not lower temperature in heat stroke (the set-point is normal) and add hepatotoxicity and coagulopathy risk in a patient already prone to liver injury and DIC. The treatment is physical cooling, not antipyretics.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Delaying Cooling for Transport/Tests</div>
+        <p>In heat stroke, time above 40°C is directly toxic. Begin aggressive cooling immediately at the point of care — do not wait for transfer, imaging or labs. "Cool first, cool fast", then continue investigations.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Overshooting Into Hypothermia</div>
+        <p>Failing to stop active cooling leads to rebound hypothermia. Stop active cooling at ~38.5–39°C and monitor core temperature continuously.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Rough Handling of the Hypothermic Patient</div>
+        <p>The severely hypothermic myocardium is highly irritable; rough movement can precipitate VF ("rescue collapse"). Handle gently, keep horizontal, and avoid unnecessary procedures until rewarming is underway.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Pronouncing Death Before Rewarming</div>
+        <p>Hypothermia is neuroprotective — "not dead until warm and dead". Continue resuscitation and defer pronouncement until the core is rewarmed (or a marker of non-survivability such as K⁺ &gt;12 is present). Apply drug/defibrillation modifications below 30°C.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Discharging the Drowning Patient Too Early</div>
+        <p>Drowning can cause delayed pulmonary oedema/ARDS hours after the event. Observe symptomatic patients; only discharge those who remain asymptomatic with normal oxygenation and examination after an adequate observation period (≈4–8 h).</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Tintinalli JE, Ma OJ, Yealy DM et al.</strong> Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Ed. Section: Environmental Injuries (Heat, Cold, Drowning, Electrical). McGraw-Hill; 2020.</li>
+          <li><strong>Walls RM, Hockberger RS, Gausche-Hill M et al.</strong> Rosen's Emergency Medicine: Concepts and Clinical Practice, 10th Ed. Chapters: Heat Illness; Hypothermia; Drowning; Electrical &amp; Lightning Injuries. Elsevier; 2023.</li>
+          <li><strong>Lipman GS, Gaudio FG, Eifling KP et al.</strong> Wilderness Medical Society Clinical Practice Guidelines for the Prevention and Treatment of Heat Illness: 2019 Update. Wilderness Environ Med 2019;30(4S):S33–S46.</li>
+          <li><strong>Dow J, Giesbrecht GG, Danzl DF et al.</strong> Wilderness Medical Society Clinical Practice Guidelines for the Out-of-Hospital Evaluation and Treatment of Accidental Hypothermia: 2019 Update. Wilderness Environ Med 2019;30(4S):S47–S69.</li>
+          <li><strong>Lott C, Truhlář A, Alfonzo A et al.</strong> European Resuscitation Council Guidelines 2021: Cardiac arrest in special circumstances. Resuscitation 2021;161:152–219.</li>
+          <li><strong>National Disaster Management Authority (NDMA), India.</strong> Guidelines for Preparation of Action Plan — Prevention and Management of Heat Wave.</li>
+          <li><strong>Cameron P, Little M, Mitra B, Deasy C.</strong> Textbook of Adult Emergency Medicine, 5th Ed. Environmental Emergencies. Elsevier; 2019.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="drug-reference.html">Drug Reference</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

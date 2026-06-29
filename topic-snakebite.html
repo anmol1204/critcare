@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Snakebite &amp; Envenomation — ASV, 20-WBCT, Neurotoxic vs Haemotoxic — CritCare.in</title>
+  <meta name="description" content="Emergency management of snakebite envenomation: India's Big Four, 20-minute whole blood clotting test, anti-snake venom dosing, neurotoxic vs haemotoxic syndromes, ASV reactions. Tintinalli's, Rosen's, National Snakebite Management Protocol & WHO SEARO." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .em-box{background:linear-gradient(135deg,#fff1f2,#ffe4e6);border:1px solid #fda4af;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .em-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#9f1239;margin-bottom:.6rem;}
+    .em-box p,.em-box ul{font-size:.9rem;color:#881337;line-height:1.75;margin:0;}
+    .em-box ul{padding-left:1.2rem;}
+    .em-box strong{color:#9f1239;}
+    html.dark .em-box{background:linear-gradient(135deg,#2a0a12,#3a0f1a);border-color:#9f1239;}
+    html.dark .em-box p,html.dark .em-box ul{color:#fda4af;}
+    html.dark .em-box strong{color:#fecdd3;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    html.dark .mc{background:#2a0a0a;border-color:#7f1d1d;}
+    html.dark .mc p{color:#fca5a5;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .crit-box{background:#fee2e2;border:2px solid #ef4444;border-radius:12px;padding:1.2rem;margin:1rem 0;}
+    .crit-box h4{color:#b91c1c;font-size:.95rem;margin-bottom:.6rem;}
+    .crit-box .big{font-size:1.35rem;font-weight:800;color:#b91c1c;}
+    .crit-box p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:.3rem 0 0;}
+    html.dark .crit-box{background:#2a0a0a;border-color:#ef4444;} html.dark .crit-box p{color:#fca5a5;}
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;}
+    .compare-card{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;}
+    .compare-card h4{font-size:.82rem;font-weight:800;margin-bottom:.6rem;}
+    .compare-card.neuro h4{color:#5b21b6;} .compare-card.haemo h4{color:#b91c1c;}
+    .compare-card ul{font-size:.82rem;color:var(--slate);padding-left:1.1rem;line-height:1.65;margin:0;}
+    .compare-card li strong{color:var(--ink);}
+    @media(max-width:600px){.compare-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Snakebite &amp; Envenomation</div>
+    <h1>🐍 Snakebite &amp; Envenomation</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">National Protocol</span>
+      <span class="gbadge esicm">WHO SEARO</span>
+      <span class="gbadge isccm">ICMR</span>
+      <span class="gbadge who">Tintinalli's</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">India's "Big Four"</span>
+      <span class="topic-tag">20-WBCT · ASV Dosing</span>
+      <span class="topic-tag">Neurotoxic vs Haemotoxic</span>
+      <span class="topic-updated">Tintinalli's 9th Ed · Rosen's 10th Ed · National Snakebite Management Protocol (India) 2009/2017 · WHO SEARO 2016</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Tintinalli's Summary</a></li>
+        <li><a href="#s2">2. Rosen's — Venom &amp; Syndromes</a></li>
+        <li><a href="#s3">3. National Protocol &amp; 20-WBCT</a></li>
+        <li><a href="#s4">4. ASV Dosing &amp; Drugs</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. ASV Reactions &amp; Pitfalls</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📕 1 · Tintinalli's Emergency Medicine, 9th Ed</span>
+      <h2>Tintinalli's Summary — Treat the Patient, Not the Snake</h2>
+      <div class="book-quote">
+        <p>"The management of venomous snakebite rests on a single principle: antivenom is indicated only when there is evidence of systemic or significant local envenomation, not for the bite itself. Many bites are 'dry' — no venom is injected. The clinician's task is to recognise the envenomation syndrome, support the airway and circulation, and administer adequate antivenom promptly when indicated, while discarding the harmful first-aid traditions of tourniquets, incision and suction."</p>
+        <cite>Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Ed. McGraw-Hill 2020. Chapter: Reptile Bites / Venomous Animal Injuries.</cite>
+      </div>
+
+      <h3>The Core Message (Tintinalli's)</h3>
+      <ul>
+        <li><strong>Antivenom is the only specific treatment</strong> — indicated for systemic envenomation (neurotoxicity, coagulopathy, haemodynamic instability) or severe progressive local envenomation.</li>
+        <li><strong>Not every bite needs antivenom</strong> — observe for the evolving syndrome; dry bites and bites by non-venomous snakes do not.</li>
+        <li><strong>Abandon harmful first aid</strong> — no tourniquets (cause ischaemia/gangrene, sudden venom bolus on release), no incision, no suction, no electric shock, no ice, no herbal poultices.</li>
+        <li><strong>Airway and ventilatory support</strong> can be life-saving and buys time in neurotoxic envenomation — patients fully recover with ventilation while antivenom and the body clear the toxin.</li>
+      </ul>
+
+      <div class="crit-box">
+        <h4>🚑 Correct First Aid — "Do It R.I.G.H.T."</h4>
+        <p><span class="big">R</span>eassure · <span class="big">I</span>mmobilise (splint the limb like a fracture, keep below/at heart level) · <span class="big">G</span>et to <span class="big">H</span>ospital immediately · <span class="big">T</span>ell the doctor of any systemic symptoms. <strong>No tourniquet, no cutting, no sucking.</strong></p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📘 2 · Rosen's Emergency Medicine, 10th Ed</span>
+      <h2>Rosen's — Venom Composition &amp; the Two Syndromes</h2>
+      <div class="book-quote">
+        <p>"Snake venoms are complex enzymatic cocktails. Elapid venoms (cobras, kraits) are predominantly neurotoxic, producing a descending flaccid paralysis through pre- and post-synaptic blockade at the neuromuscular junction. Viperid venoms (Russell's viper, saw-scaled viper) are predominantly haemotoxic and cytotoxic, activating the clotting cascade to consume fibrinogen — producing a venom-induced consumption coagulopathy — alongside local tissue necrosis and capillary leak."</p>
+        <cite>Rosen's Emergency Medicine: Concepts and Clinical Practice, 10th Ed. Elsevier 2023. Chapter: Reptile Envenomations.</cite>
+      </div>
+
+      <div class="compare-grid">
+        <div class="compare-card neuro">
+          <h4>🟣 Neurotoxic (Elapids — Cobra, Krait)</h4>
+          <ul>
+            <li><strong>Onset:</strong> cobra fast; <strong>krait often delayed</strong> (bite at night while asleep, symptoms in early morning)</li>
+            <li><strong>Ptosis</strong> is the earliest sign → ophthalmoplegia → bulbar weakness → descending paralysis → respiratory failure</li>
+            <li><strong>Krait:</strong> minimal/no local signs; abdominal pain; may have no visible bite mark</li>
+            <li><strong>Cobra:</strong> prominent local necrosis + neurotoxicity</li>
+            <li><strong>Treatment:</strong> ASV + neostigmine/atropine trial; <strong>ventilate</strong> — full recovery is the rule with airway support</li>
+          </ul>
+        </div>
+        <div class="compare-card haemo">
+          <h4>🔴 Haemotoxic (Vipers — Russell's, Saw-scaled)</h4>
+          <ul>
+            <li><strong>Venom-induced consumption coagulopathy (VICC):</strong> incoagulable blood, bleeding gums/haematuria</li>
+            <li><strong>Local:</strong> severe swelling, blistering, necrosis, compartment syndrome</li>
+            <li><strong>Russell's viper:</strong> AKI (common, may need dialysis), capillary leak, shock, occasionally neurotoxicity + pituitary infarction (Sheehan-like)</li>
+            <li><strong>Monitoring:</strong> the 20-minute whole blood clotting test (20-WBCT)</li>
+            <li><strong>Treatment:</strong> ASV until coagulation restored; AKI support</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 Rosen's — India's "Big Four" (and beyond)</div>
+        <p>The four species responsible for most life-threatening envenomation in India: <strong>Indian cobra (Naja naja), common krait (Bungarus caeruleus), Russell's viper (Daboia russelii), and saw-scaled viper (Echis carinatus).</strong> Indian polyvalent ASV is raised against these four. Note that <strong>other species (e.g. hump-nosed pit viper, some regional kraits) may not respond to standard polyvalent ASV</strong> — an important cause of "ASV failure". Venom yield and effect are independent of snake "aggression"; identification is helpful but treatment is syndrome-driven.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · National Snakebite Protocol &amp; the 20-WBCT</span>
+      <h2>India National Snakebite Management Protocol / WHO SEARO</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">When to Give Antivenom — Indications for ASV</div>
+        <div class="gr-text">
+          Give ASV only with evidence of <strong>systemic envenomation</strong> OR <strong>severe local envenomation</strong> <span class="gr-s">National Protocol</span>:<br>
+          <strong>Systemic:</strong> abnormal 20-WBCT or other coagulopathy/spontaneous bleeding · neurotoxicity (ptosis, ophthalmoplegia, bulbar/respiratory weakness) · cardiovascular (hypotension, shock) · AKI / dark urine (haemoglobinuria/myoglobinuria) · significant unexplained anaemia/thrombocytopenia.<br>
+          <strong>Local:</strong> swelling involving &gt;half the bitten limb, rapid extension, bites on digits, or extensive blistering/necrosis.
+        </div>
+      </div>
+
+      <div class="crit-box">
+        <h4>🩸 The 20-Minute Whole Blood Clotting Test (20-WBCT)</h4>
+        <p>The single most useful bedside test for haemotoxic envenomation. Place <strong>2–3 mL of fresh venous blood in a clean, dry glass test tube</strong>, leave undisturbed for <strong>20 minutes</strong>, then tip once. <strong>If the blood is still liquid (does not clot) → coagulopathy = systemic envenomation → give ASV.</strong> Repeat every 6 hours after ASV until clotting is restored. Must use a <em>glass</em> tube (plastic does not activate clotting); a new clean tube each time.</p>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Neostigmine Trial — Neurotoxic Envenomation</div>
+        <div class="gr-text">
+          After ASV, in neurotoxic envenomation give a trial of <strong>atropine 0.6 mg IV followed by neostigmine 1.5–2.0 mg IV</strong> (paediatric 0.04 mg/kg), then neostigmine 0.5 mg + atropine every 30 min. Improvement in ptosis/power (best seen with post-synaptic toxins, e.g. cobra) supports continuing; <strong>pre-synaptic toxins (krait, Russell's) respond poorly</strong> — do not rely on it, ventilate as needed.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian ED Context — The Realities</div>
+        <p><strong>Massive burden:</strong> India records the highest snakebite mortality globally (~58,000 deaths/year per the "Million Death Study"). Most are rural, agricultural, lower-limb bites; delays from traditional healers are common and deadly.</p>
+        <p><strong>ASV is polyvalent</strong> (covers the Big Four) and is the only ASV widely available — there is no monovalent product in routine use. Regional species not covered by it (hump-nosed pit viper in the southwest) are an important cause of apparent treatment failure.</p>
+        <p><strong>Krait bites are a classic trap:</strong> a villager "bitten while sleeping" who wakes with abdominal pain, ptosis and breathlessness, often with <em>no visible fang marks and no local swelling</em> — maintain high suspicion and check for ptosis.</p>
+        <p><strong>AKI from Russell's viper</strong> is a leading cause of dialysis need; monitor urine output and renal function closely.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · ASV Dosing &amp; Drug Reference</span>
+      <h2>Anti-Snake Venom &amp; Supportive Drugs</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">ASV Dose (Indian Polyvalent)</div>
+        <div class="gr-text">
+          <strong>Initial dose 8–10 vials</strong> IV for systemic envenomation (some protocols 10 vials for neurotoxic/severe viper). Each reconstituted/liquid vial diluted in <strong>~10 mL/kg isotonic fluid (or 100 mL NS)</strong> and infused over <strong>~1 hour</strong>. <span class="gr-s">National Protocol</span><br>
+          <strong>Children receive the SAME dose as adults</strong> — venom load is independent of body size (same bite, same venom).<br>
+          <strong>Repeat dose</strong>: for haemotoxic — repeat 5–10 vials after 6 h if 20-WBCT remains abnormal; for neurotoxic — repeat once after 1–2 h if worsening. <strong>Maximum effect is capped</strong> — beyond ~20–30 vials with no response, reconsider diagnosis/species coverage rather than escalating endlessly.
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Role</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Polyvalent ASV</strong></td><td>Specific antivenom</td><td>8–10 vials IV over 1h; repeat per syndrome</td><td>Same dose adults &amp; children; only for systemic/severe local envenomation</td></tr>
+            <tr><td><strong>Adrenaline (1:1000) IM</strong></td><td>ASV anaphylactic reaction</td><td>0.5 mg IM anterolateral thigh</td><td>Keep drawn up BEFORE starting ASV; first-line for the reaction</td></tr>
+            <tr><td><strong>Neostigmine</strong></td><td>Neurotoxic trial (post ASV)</td><td>1.5–2.0 mg IV load, then 0.5 mg q30 min</td><td>Best for cobra (post-synaptic); poor for krait/Russell's (pre-synaptic)</td></tr>
+            <tr><td><strong>Atropine</strong></td><td>With neostigmine</td><td>0.6 mg IV before each neostigmine</td><td>Blocks muscarinic effects of neostigmine</td></tr>
+            <tr><td><strong>Tetanus toxoid</strong></td><td>Wound prophylaxis</td><td>As per immunisation status</td><td>Give once coagulopathy corrected (avoid IM injections while coagulopathic)</td></tr>
+            <tr><td><strong>IV crystalloid</strong></td><td>Hypotension / capillary leak</td><td>20 mL/kg boluses, reassess</td><td>Russell's viper causes capillary leak &amp; shock</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Avoid in Coagulopathic Snakebite</div>
+        <p><strong>No IM injections, no arterial punctures, no central lines / chest drains</strong> while the blood is incoagulable — they cause uncontrollable bleeding. Give ASV first to correct the coagulopathy. <strong>Avoid heparin, aspirin, NSAIDs.</strong> Blood products (FFP/cryoprecipitate) are generally NOT first-line — adequate ASV allows the liver to regenerate clotting factors; reserve products for life-threatening bleeding after adequate ASV.</p>
+    </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗂 5 · Clinical Flowchart</span>
+      <h2>Step-by-Step Management Algorithm</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Resuscitate &amp; assess (ABC)</h4>
+          <ul>
+            <li>Airway/breathing — neurotoxic bites can cause respiratory failure; prepare to intubate &amp; ventilate.</li>
+            <li>Remove constricting items/any tourniquet slowly; immobilise the limb (splint), keep at heart level.</li>
+            <li>Two IV lines; bloods (CBC, coagulation, RFT, CK, urine for blood).</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Look for the envenomation syndrome</h4>
+          <ul>
+            <li><strong>20-WBCT</strong> now (and 6-hourly) → coagulopathy = haemotoxic.</li>
+            <li>Check for <strong>ptosis / ophthalmoplegia / bulbar &amp; respiratory weakness</strong> → neurotoxic.</li>
+            <li>BP, urine output, local swelling extent. Mark the leading edge of swelling with time.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Give ASV if indicated</h4>
+          <ul>
+            <li>Systemic or severe local envenomation → <strong>8–10 vials ASV over 1 h</strong> (have adrenaline drawn up).</li>
+            <li>Monitor closely for an ASV reaction during/after the infusion.</li>
+            <li>Neurotoxic → add atropine + neostigmine trial; ventilate as needed.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-purple">4</div>
+        <div class="fc-content">
+          <h4>Reassess &amp; repeat</h4>
+          <ul>
+            <li>Repeat 20-WBCT at 6 h → still incoagulable → repeat ASV 5–10 vials.</li>
+            <li>Neurotoxic worsening at 1–2 h → repeat ASV once; otherwise support ventilation (full recovery expected).</li>
+            <li>Russell's viper → watch renal function/urine output; arrange dialysis if AKI.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">5</div>
+        <div class="fc-content">
+          <h4>Supportive care &amp; observation</h4>
+          <ul>
+            <li>Tetanus prophylaxis once coagulation normal; wound care; watch for compartment syndrome (measure pressures — fasciotomy only with confirmed raised pressure AND corrected coagulopathy).</li>
+            <li>Observe asymptomatic/"dry bite" patients ≥24 h (krait/Russell's can be delayed) before discharge.</li>
+            <li>Counsel on delayed serum sickness (5–14 days) and when to return.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-x">🔬 6 · ASV Reactions &amp; Pitfalls</span>
+      <h2>Managing Antivenom Reactions</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Early Anaphylactic / Anaphylactoid Reaction</div>
+        <div class="gr-text">
+          Occurs in up to <strong>20–40%</strong> of ASV recipients (mostly anaphylactoid, complement-mediated — not true IgE). Signs: urticaria, itch, fever, cough, bronchospasm, hypotension during/shortly after infusion. <strong>Management: STOP/slow the ASV, give adrenaline 0.5 mg IM</strong>, IV fluids, oxygen; once settled, restart ASV at a slower rate. <span class="gr-c">Routine prophylactic adrenaline before ASV is supported by some evidence (SC adrenaline) but practice varies — at minimum keep it drawn up.</span> Antihistamines/steroids are adjuncts only.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Pyrogenic Reaction &amp; Late Serum Sickness</div>
+        <div class="gr-text">
+          <strong>Pyrogenic:</strong> fever, rigors, hypotension 1–2 h into infusion (endotoxin contamination) — cool, antipyretics, slow the infusion. <strong>Serum sickness</strong> (type III) at <strong>5–14 days</strong>: fever, urticaria, arthralgia, lymphadenopathy, proteinuria — treat with a short course of oral steroids ± antihistamines.
+        </div>
+      </div>
+
+      <div class="em-box">
+        <div class="mb-label">📘 "ASV Failure" — Think Before Escalating</div>
+        <p>If a patient is not responding to repeated ASV, consider: (1) <strong>species not covered</strong> by polyvalent ASV (e.g. hump-nosed pit viper); (2) the damage is <strong>already done</strong> (established AKI, necrosis — ASV neutralises circulating venom, it does not reverse fixed tissue injury); (3) <strong>pre-synaptic neurotoxin</strong> (krait/Russell's) where recovery depends on nerve-terminal regeneration and time on the ventilator, not more ASV; (4) wrong diagnosis. Endlessly escalating vials beyond the effective ceiling adds reaction risk without benefit.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Snakebite Management</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Applying a Tight Tourniquet</div>
+        <p>Tourniquets cause limb ischaemia and gangrene, and releasing them can deliver a sudden bolus of venom systemically. They are not recommended. Use pressure immobilisation/splinting and rapid transport instead. If a tourniquet is already on, release it slowly only after assessing for envenomation and readiness to treat.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Giving ASV for Every Bite</div>
+        <p>ASV carries a high reaction rate and is a scarce resource. It is indicated only for systemic or severe local envenomation. Many bites are dry or by non-venomous snakes — observe and use the 20-WBCT and neurological signs to decide, rather than treating the bite reflexively.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Reducing the ASV Dose for Children</div>
+        <p>Children receive the same number of vials as adults — the venom dose injected is the same regardless of the victim's size. Under-dosing a child is a serious and common error.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Missing the Delayed Krait Bite</div>
+        <p>Krait bites often occur during sleep, may leave no visible mark or local swelling, and present hours later with abdominal pain, ptosis and respiratory failure. Failing to suspect neurotoxic envenomation in such a presentation can be fatal — always check for ptosis and bulbar weakness.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — IM Injections / Procedures While Coagulopathic</div>
+        <p>Giving IM tetanus toxoid, doing arterial punctures, inserting central lines or performing early fasciotomy in a coagulopathic patient causes uncontrollable bleeding. Correct coagulopathy with ASV first; reserve fasciotomy for confirmed compartment syndrome after coagulation is restored.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Relying on Neostigmine in Pre-Synaptic Envenomation</div>
+        <p>Neostigmine helps post-synaptic (cobra) neurotoxicity but is largely ineffective against pre-synaptic toxins (krait, Russell's viper). Do not delay or substitute ventilatory support waiting for a neostigmine response — airway and ventilation are what save these patients while they recover.</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Tintinalli JE, Ma OJ, Yealy DM et al.</strong> Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Ed. Chapter: Reptile Bites. McGraw-Hill; 2020.</li>
+          <li><strong>Walls RM, Hockberger RS, Gausche-Hill M et al.</strong> Rosen's Emergency Medicine: Concepts and Clinical Practice, 10th Ed. Chapter: Reptile Envenomations. Elsevier; 2023.</li>
+          <li><strong>Government of India, Ministry of Health &amp; Family Welfare.</strong> National Snakebite Management Protocol (India), 2009; Standard Treatment Guidelines for Snakebite (updated 2017).</li>
+          <li><strong>World Health Organization, Regional Office for South-East Asia (SEARO).</strong> Guidelines for the Management of Snakebites, 2nd Ed. WHO-SEARO; 2016.</li>
+          <li><strong>Warrell DA.</strong> Snake bite. Lancet 2010;375:77–88.</li>
+          <li><strong>Mohapatra B, Warrell DA, Suraweera W et al.</strong> Snakebite mortality in India: a nationally representative mortality survey (Million Death Study). PLoS Negl Trop Dis 2011;5:e1018.</li>
+          <li><strong>Indian Council of Medical Research (ICMR).</strong> Snakebite management guidance &amp; antivenom research initiatives.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="drug-reference.html">Drug Reference</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
