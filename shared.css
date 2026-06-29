@@ -30,18 +30,18 @@
 html.dark {
   --blue:       #4d9ff5;
   --blue-dark:  #7bb8f7;
-  --blue-soft:  #1a2e48;
-  --ink:        #e8edf5;
-  --slate:      #94a3b8;
-  --line:       #2d3a4a;
-  --bg:         #0f1923;
-  --bg-alt:     #151f2e;
+  --blue-soft:  #0d1b2e;
+  --ink:        #f2f2f3;
+  --slate:      #9a9a9e;
+  --line:       #242427;
+  --bg:         #000000;
+  --bg-alt:     #0d0d0f;
   --accent:     #00c9b8;
-  --white:      #0f1923;
+  --white:      #0d0d0f;
 }
 html.dark body { background: var(--bg); color: var(--ink); }
-html.dark .nav { background: rgba(15,25,35,0.95); border-color: var(--line); }
-html.dark .nav-menu { background: #151f2e; }
+html.dark .nav { background: rgba(0,0,0,0.96); border-color: var(--line); }
+html.dark .nav-menu { background: #0d0d0f; }
 html.dark .hero-photo-card,
 html.dark .about-photo-card,
 html.dark .demo-card,
@@ -50,16 +50,16 @@ html.dark .tcard,
 html.dark .login-form-panel,
 html.dark .login-box { background: var(--bg-alt); border-color: var(--line); color: var(--ink); }
 html.dark .card:hover, html.dark .tcard:hover { border-color: var(--blue); }
-html.dark .login-brand-panel { background: #0a1420; }
+html.dark .login-brand-panel { background: #0a0a0c; }
 html.dark .toc,
 html.dark .stats,
 html.dark .stat { background: var(--bg-alt); border-color: var(--line); }
-html.dark .hero, html.dark .topic-hero, html.dark .page-head { background: linear-gradient(180deg, var(--blue-soft) 0%, var(--bg) 100%); }
-html.dark .ai-banner { background: linear-gradient(120deg, #0a1420 0%, #0d1d30 100%); }
-html.dark .drug-table th { background: #1e3550; }
-html.dark .drug-table tr:hover td { background: #1a2a3a; }
+html.dark .hero, html.dark .topic-hero, html.dark .page-head { background: linear-gradient(180deg, #111114 0%, #000000 100%); }
+html.dark .ai-banner { background: linear-gradient(120deg, #0a0a0c 0%, #101218 100%); }
+html.dark .drug-table th { background: #16171a; }
+html.dark .drug-table tr:hover td { background: #121214; }
 html.dark .drug-table td { border-color: var(--line); color: var(--slate); }
-html.dark .key-box { background: #1a2e48; border-color: var(--blue); }
+html.dark .key-box { background: #101620; border-color: var(--blue); }
 html.dark .key-box p, html.dark .key-box li { color: var(--ink); }
 html.dark .warn-box { background: #2a1e0a; border-color: #f59e0b; }
 html.dark .warn-box p, html.dark .warn-box li { color: #fcd34d; }
@@ -71,18 +71,18 @@ html.dark .pearl-card { background: #2a200a; border-color: #854d0e; }
 html.dark .pearl-card p { color: #fcd34d; }
 html.dark .mistake-card { background: #2a0a0a; border-color: #7f1d1d; }
 html.dark .mistake-card p { color: #fca5a5; }
-html.dark .exam-card { background: #0a1e3a; border-color: #1e3a8a; }
+html.dark .exam-card { background: #0a1420; border-color: #1e3a8a; }
 html.dark .exam-card p { color: #93c5fd; }
-html.dark .dose-calc { background: #1e3550; }
-html.dark .ampoule-card { background: #151f2e; border-color: var(--line); }
-html.dark .demo-top { background: #1e3550; }
+html.dark .dose-calc { background: #16171a; }
+html.dark .ampoule-card { background: #0d0d0f; border-color: var(--line); }
+html.dark .demo-top { background: #16171a; }
 html.dark .demo-input { background: var(--bg-alt); color: var(--ink); border-color: var(--line); }
 html.dark .demo-input:focus { border-color: var(--blue); }
 html.dark .demo-out { background: var(--blue-soft); }
 html.dark .disclaimer { background: #2a1e0a; border-color: #854d0e; color: #fcd34d; }
 html.dark .fg input, html.dark .fg select { background: var(--bg-alt); color: var(--ink); border-color: var(--line); }
-html.dark .lb-tabs { background: #151f2e; }
-html.dark .lb-tab.active { background: #1e3550; }
+html.dark .lb-tabs { background: #0d0d0f; }
+html.dark .lb-tab.active { background: #16171a; }
 html.dark .lb-note { background: var(--blue-soft); color: var(--blue); }
 html.dark .photo-meta, html.dark .about-photo-meta { background: var(--bg-alt); border-color: var(--line); }
 html.dark .photo-meta-name, html.dark .about-photo-meta .nm { color: var(--ink); }
@@ -95,13 +95,152 @@ html.dark .tl-item { border-color: var(--line); }
 html.dark h1.display, html.dark h2.display { color: var(--ink); }
 html.dark .topic-content h2 { border-color: var(--blue-soft); }
 html.dark .dim { opacity: 0.5; }
-html.dark .gbadge.sccm  { background: #1a2e48; color: #7bb8f7; }
-html.dark .gbadge.esicm { background: #2a1e48; color: #c4b5fd; }
+html.dark .gbadge.sccm  { background: #0d1b2e; color: #7bb8f7; }
+html.dark .gbadge.esicm { background: #1a1430; color: #c4b5fd; }
 html.dark .gbadge.isccm { background: #2a1e0a; color: #fcd34d; }
 html.dark .gbadge.kdigo { background: #0a2a1e; color: #86efac; }
 html.dark .change-new { background: #0a2a1e; border-color: #166534; color: #86efac; }
 html.dark .change-updated { background: #2a1e0a; border-color: #854d0e; color: #fcd34d; }
 html.dark .change-reversed { background: #2a0a1e; border-color: #9d174d; color: #f9a8d4; }
+
+/* ============================================================
+   DARK MODE — topic & drug-page callout components
+   (higher specificity than per-page .class rules, so these
+    win over the light definitions in each page's <style>)
+   ============================================================ */
+/* Marino (purple) box */
+html.dark .marino-box { background: #141019; border-color: #3b2a5a; }
+html.dark .marino-box .mb-label { color: #c4b5fd; }
+html.dark .marino-box p, html.dark .marino-box ul { color: #d8cef0; }
+html.dark .marino-box strong { color: #ddd6fe; }
+/* EM / Tintinalli pearl (rose) box */
+html.dark .em-box { background: #1a0e12; border-color: #5a2a39; }
+html.dark .em-box .mb-label { color: #fda4af; }
+html.dark .em-box p, html.dark .em-box ul { color: #f0c6cf; }
+html.dark .em-box strong { color: #fecdd3; }
+/* Mistake card */
+html.dark .mc { background: #1a0a0a; border-color: #7f1d1d; }
+html.dark .mc .ml { color: #fca5a5; }
+html.dark .mc p { color: #eeb4b4; }
+/* guideline-rec */
+html.dark .guideline-rec { background: var(--bg-alt); border-color: var(--line); }
+html.dark .guideline-rec .gr-text { color: var(--ink); }
+html.dark .gr-s { background: #0a2418; color: #86efac; }
+html.dark .gr-c { background: #241d06; color: #fde047; }
+/* book-quote */
+html.dark .book-quote { background: var(--bg-alt); border-color: var(--blue); }
+html.dark .book-quote p { color: var(--slate); }
+html.dark .book-quote cite { color: var(--blue); }
+/* info box .ec (some pages use inline styles → !important to override) */
+html.dark .ec { background: #0d1b2e !important; border-color: #1e3a5f !important; }
+html.dark .ec p { color: #bcd6f5 !important; }
+html.dark .ec strong { color: #dbeafe !important; }
+/* compare cards */
+html.dark .compare-card { background: var(--bg-alt); border-color: var(--line); }
+html.dark .compare-card ul { color: var(--slate); }
+html.dark .compare-card li strong, html.dark .compare-card h4 { color: var(--ink); }
+/* critical (red) box */
+html.dark .crit-box { background: #1a0a0a; border-color: #7f1d1d; }
+html.dark .crit-box h4, html.dark .crit-box .big { color: #fca5a5; }
+html.dark .crit-box p { color: #eeb4b4; }
+/* cold (blue) box */
+html.dark .cold-box { background: #0a1626; border-color: #3b82f6; }
+html.dark .cold-box h4 { color: #93c5fd; }
+html.dark .cold-box p { color: #bcd6f5; }
+/* example box (green) */
+html.dark .example-box { background: #0a1f15; border-color: #15803d; }
+html.dark .example-box .el { color: #86efac; }
+html.dark .example-box p { color: #bfe6cf; }
+html.dark .example-box strong { color: #86efac; }
+/* generic card grids in topics */
+html.dark .dose-card, html.dark .stage-card, html.dark .dis-card,
+html.dark .target-card, html.dark .thresh-card { background: var(--bg-alt); border-color: var(--line); }
+html.dark .dose-card .dv, html.dark .dis-card h4, html.dark .stage-card h5 { color: var(--ink); }
+html.dark .dis-card ul, html.dark .stage-card p, html.dark .dose-card .dn { color: var(--slate); }
+/* ABCDE rows (trauma) */
+html.dark .abcde .row { border-color: var(--line); }
+html.dark .abcde .ac h4, html.dark .abcde .ac strong { color: var(--ink); }
+html.dark .abcde .ac p { color: var(--slate); }
+/* step-flow (acid-base) */
+html.dark .step-flow .sf { border-color: var(--line); }
+html.dark .step-flow .sfc h4 { color: var(--ink); }
+html.dark .step-flow .sfc p { color: var(--slate); }
+html.dark .step-flow .sfc code { background: var(--bg-alt); color: var(--blue-dark); }
+/* section-header source badges (sb-*) — darken light pills */
+html.dark .sb-w { background: #0d1b2e; color: #93c5fd; }
+html.dark .sb-m { background: #141019; color: #c4b5fd; }
+html.dark .sb-g, html.dark .sb-f { background: #0a2418; color: #86efac; }
+html.dark .sb-d { background: #241606; color: #fdba74; }
+html.dark .sb-e { background: #1a0a0a; color: #fca5a5; }
+html.dark .sb-x { background: #241d06; color: #fde047; }
+html.dark .sb-r { background: var(--bg-alt); color: var(--slate); border-color: var(--line); }
+html.dark .sb-extra { background: #240a1a; color: #f9a8d4; }
+/* delta/severity badges that are light */
+html.dark .gbadge.who { background: #16171a; color: #cbd0d6; }
+html.dark .gbadge.apasl { background: #1a1430; color: #c4b5fd; }
+
+/* ============================================================
+   DARK MODE — drug reference page
+   ============================================================ */
+html.dark .drug-card { background: var(--bg-alt); border-color: var(--line); }
+html.dark .drug-card.open { border-color: var(--accent); }
+html.dark .dc-name, html.dark .dc-key { color: var(--ink); }
+html.dark .dc-brand { color: var(--slate); }
+html.dark .dc-body, html.dark .dsect { border-color: var(--line); }
+html.dark .ctab th { background: #16171a; color: var(--slate); border-color: var(--line); }
+html.dark .ctab td { border-color: var(--line); }
+html.dark .c-hi { color: var(--ink); }
+html.dark .corr-box, html.dark .dil-box { background: var(--bg-alt); }
+html.dark .corr-row, html.dark .dil-row, html.dark .prep-step { border-color: var(--line); }
+html.dark .corr-delta, html.dark .dil-r { color: var(--ink); }
+html.dark .calc-box { background: var(--bg-alt); border-color: var(--accent); }
+html.dark .ci-field input, html.dark .ci-field select { background: #000; color: var(--ink); border-color: var(--line); }
+html.dark .ci-out { background: #000; border-color: var(--line); }
+html.dark .ci-out strong { color: var(--ink); }
+html.dark .v-body { background: rgba(255,255,255,.04); }
+html.dark .cat-pill { background: var(--bg-alt); color: var(--slate); border-color: var(--line); }
+html.dark .dp-search { background: var(--bg-alt); color: var(--ink); border-color: var(--line); }
+/* drug-page side-effect chips & note boxes */
+html.dark .se-r { background: #2a0d0d; color: #fca5a5; }
+html.dark .se-a { background: #241606; color: #fdba74; }
+html.dark .se-b { background: #0d1b2e; color: #93c5fd; }
+html.dark .d-amber { background: #241d06; border-color: #854d0e; color: #fde047; }
+html.dark .d-red { background: #2a0d0d; border-color: #7f1d1d; color: #fca5a5; }
+html.dark .d-blue { background: #0d1b2e; border-color: #1e3a5f; color: #93c5fd; }
+html.dark .d-green { background: #0a2418; border-color: #15803d; color: #86efac; }
+/* spec chips on topics page */
+html.dark .spec-chip.ccm { background: #0d1b2e; color: #93c5fd; }
+html.dark .spec-chip.em { background: #2a0d0d; color: #fca5a5; }
+html.dark .spec-chip.both { background: #1a1430; color: #c4b5fd; }
+html.dark .spec-pill { background: var(--bg-alt); color: var(--ink); border-color: var(--line); }
+html.dark .sec-intro { background: var(--bg-alt); border-color: var(--blue); color: var(--slate); }
+
+/* ".mb" purple Marino box (older topic pages: acs, asthma, copd, aki, ards, mech-vent, sedation) */
+html.dark .mb { background: #141019; border-color: #3b2a5a; }
+html.dark .mb .ml { color: #c4b5fd; }
+html.dark .mb p, html.dark .mb ul { color: #d8cef0; }
+html.dark .mb strong { color: #ddd6fe; }
+/* severity cards (GI) */
+html.dark .sev-mild { background: #0a2418; border-color: #15803d; }
+html.dark .sev-mod  { background: #241d06; border-color: #854d0e; }
+html.dark .sev-sev  { background: #1a0a0a; border-color: #7f1d1d; }
+html.dark .sev-mild h4 { color: #86efac; }
+html.dark .sev-mod h4  { color: #fde047; }
+html.dark .sev-sev h4  { color: #fca5a5; }
+/* post-cardiac-arrest cards (ROSC) */
+html.dark .pcas-brain { background: #0d1b2e; border-color: #1e3a5f; }
+html.dark .pcas-heart { background: #1a0a0a; border-color: #7f1d1d; }
+html.dark .pcas-sys   { background: #241d06; border-color: #854d0e; }
+html.dark .pcas-cause { background: #0a2418; border-color: #15803d; }
+html.dark .pcas-brain h4 { color: #93c5fd; }
+html.dark .pcas-heart h4 { color: #fca5a5; }
+html.dark .pcas-sys h4   { color: #fde047; }
+html.dark .pcas-cause h4 { color: #86efac; }
+/* small inline tag chips — darken light pills */
+html.dark .cn { background: #0a2418; border-color: #15803d; color: #86efac; }
+html.dark .cu, html.dark .gc { background: #241d06; border-color: #854d0e; color: #fde047; }
+html.dark .cr { background: #240a1a; border-color: #9d174d; color: #f9a8d4; }
+html.dark .trial-badge { background: #241d06; color: #fde047; }
 
 /* Dark mode toggle button */
 .dm-toggle {

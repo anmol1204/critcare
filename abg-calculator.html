@@ -994,25 +994,25 @@ function analyseABG() {
   ].filter(Boolean);
 
   const sevMap = {
-    critical:{ label:'CRITICAL', c:'#7f1d1d', bg:'#fee2e2', br:'#dc2626' },
-    danger:  { label:'SEVERE',   c:'#7f1d1d', bg:'#fef2f2', br:'#ef4444' },
-    warning: { label:'MODERATE', c:'#7c2d12', bg:'#fff7ed', br:'#f97316' },
-    normal:  { label:'NORMAL',   c:'#14532d', bg:'#f0fdf4', br:'#22c55e' },
+    critical:{ label:'CRITICAL', c:'#7f1d1d', bg:'rgba(220,38,38,0.13)', br:'#dc2626' },
+    danger:  { label:'SEVERE',   c:'#7f1d1d', bg:'rgba(239,68,68,0.12)', br:'#ef4444' },
+    warning: { label:'MODERATE', c:'#7c2d12', bg:'rgba(249,115,22,0.12)', br:'#f97316' },
+    normal:  { label:'NORMAL',   c:'#14532d', bg:'rgba(34,197,94,0.13)', br:'#22c55e' },
   };
   const sev = sevMap[severity] || sevMap.warning;
 
   let html = `<div class="result-card" style="border:2px solid ${sev.br};">
     <div class="card-header" style="cursor:default;padding-bottom:.4rem;">
       <h3 style="font-size:.92rem;">🩺 ABG Snapshot</h3>
-      <span class="card-badge" style="background:${sev.bg};color:${sev.c};border:1px solid ${sev.br};">${sev.label}</span>
+      <span class="card-badge" style="background:${sev.br};color:#fff;border:1px solid ${sev.br};">${sev.label}</span>
     </div>
     <div class="card-body" style="padding-top:.2rem;">
       <div class="abg-snap-grid">${snaps.map(s=>`<div class="snap-cell ${sc(s.v,s.lo,s.hi)}"><div class="snap-name">${s.n}</div><div class="snap-val ${vc(s.v,s.lo,s.hi)}">${s.v!==null?s.v.toFixed(s.d):'—'}</div><div class="snap-unit">${s.u}</div></div>`).join('')}</div>
       <div style="border-radius:10px;padding:.85rem 1rem;background:${sev.bg};border:2px solid ${sev.br};">
-        <div style="font-size:1rem;font-weight:800;color:${sev.c};">${primary.toUpperCase()} — ${sev.label}</div>
+        <div style="font-size:1rem;font-weight:800;color:var(--ink);">${primary.toUpperCase()} — ${sev.label}</div>
         <div style="font-size:.8rem;color:var(--slate);margin-top:.25rem;line-height:1.65;">
           ${secondaryDx ? `<strong>Secondary:</strong> ${secondaryDx} · ` : ''}pH ${pH.toFixed(2)} · PaCO₂ ${pco2} · HCO₃ ${hco3}
-          ${compStatus ? `<br><span style="color:#0369a1;font-weight:600;">Compensation: ${compStatus}</span><span style="color:var(--slate);"> · ${compDetail}${compExp ? ' — Expected: ' + compExp : ''}</span>` : ''}
+          ${compStatus ? `<br><span style="color:var(--blue);font-weight:600;">Compensation: ${compStatus}</span><span style="color:var(--slate);"> · ${compDetail}${compExp ? ' — Expected: ' + compExp : ''}</span>` : ''}
           ${ag !== null ? `<br><span style="font-weight:600;">Anion gap: ${ag.toFixed(1)} (corrected: ${corrAG.toFixed(1)}) — ${agHigh ? '⬆ HIGH → MUDPILES' : agLow ? '⬇ LOW' : '✅ Normal'}</span>${deltaRatio !== null ? ` · Delta ratio: ${deltaLabel}` : ''}` : ''}
           ${pf !== null ? `<br>P/F ratio: ${pf.toFixed(0)} — ${oxyLabel} · A-a gradient: ${aaGrad.toFixed(1)} mmHg` : ''}
           ${clinCtx ? `<br><em style="color:var(--slate);">Context: ${clinCtx}</em>` : ''}
@@ -1024,7 +1024,7 @@ function analyseABG() {
   // ACUTE ISSUES
   if (issues.length > 0) {
     const pc = { 1:'#dc2626', 2:'#d97706', 3:'#2563eb' };
-    const pbg = { 1:'linear-gradient(to right,#fef2f2,var(--bg))', 2:'linear-gradient(to right,#fffbeb,var(--bg))', 3:'linear-gradient(to right,#eff6ff,var(--bg))' };
+    const pbg = { 1:'rgba(239,68,68,0.10)', 2:'rgba(249,115,22,0.10)', 3:'rgba(37,99,235,0.10)' };
     html += `<div class="result-card" style="border:2px solid #dc2626;">
       <div class="card-header" style="cursor:default;">
         <h3>⚡ Acute Issues — Priority Order</h3>
@@ -1036,7 +1036,7 @@ function analyseABG() {
           <div style="flex:1;min-width:0;">
             <div style="font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:.3rem;line-height:1.3;">${iss.title}</div>
             <div style="font-size:.79rem;color:var(--ink);line-height:1.85;">${iss.steps.map(s=>`<span style="display:block;"><span style="color:${pc[iss.p]};font-weight:700;">→</span> ${s}</span>`).join('')}</div>
-            ${iss.warns?.length?iss.warns.map(w=>`<div style="font-size:.76rem;color:#9a3412;margin-top:.35rem;font-weight:600;line-height:1.4;">⛔ ${w}</div>`).join(''):''}
+            ${iss.warns?.length?iss.warns.map(w=>`<div style="font-size:.76rem;color:#ea580c;margin-top:.35rem;font-weight:600;line-height:1.4;">⛔ ${w}</div>`).join(''):''}
           </div>
         </div>`).join('')}
       </div>
@@ -1120,7 +1120,7 @@ function analyseABG() {
   refs.add("Marino's ICU Book 5th Ed (2025) Ch.31");
   html += `<div style="padding:.6rem 1rem;background:var(--bg-alt);border-radius:8px;border:1px solid var(--line);">
     <div style="font-size:.72rem;color:var(--slate);line-height:1.8;"><strong style="color:var(--ink);">📗 References:</strong> ${[...refs].join(' · ')}</div>
-    <div style="font-size:.72rem;color:#b45309;margin-top:.2rem;">⚠️ Clinical decision support only — always apply clinical judgement. Verify doses against local protocols.</div>
+    <div style="font-size:.72rem;color:#f59e0b;margin-top:.2rem;">⚠️ Clinical decision support only — always apply clinical judgement. Verify doses against local protocols.</div>
   </div>`;
 
   res.innerHTML = html;
