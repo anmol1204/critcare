@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>ACLS &amp; BLS — Cardiac Arrest Algorithm, Drugs, 2020→2025 Changes — CritCare.in</title>
+  <meta name="description" content="Adult BLS &amp; ACLS: high-quality CPR, the cardiac arrest algorithm (shockable VF/pVT vs non-shockable PEA/asystole), drug doses &amp; timing, defibrillation energies, Hs &amp; Ts, peri-arrest brady/tachy algorithms, and what changed since AHA 2020." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .crit-box{background:#fee2e2;border:2px solid #ef4444;border-radius:12px;padding:1.2rem;margin:1rem 0;}
+    .crit-box h4{color:#b91c1c;font-size:.95rem;margin-bottom:.6rem;}
+    .crit-box .big{font-size:1.25rem;font-weight:800;color:#b91c1c;}
+    .crit-box p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:.3rem 0 0;}
+    .hs-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0;}
+    .hs-col{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;}
+    .hs-col h4{font-size:.85rem;font-weight:800;color:var(--ink);margin-bottom:.5rem;}
+    .hs-col ul{font-size:.83rem;color:var(--slate);padding-left:1.1rem;line-height:1.7;margin:0;}
+    .hs-col li strong{color:var(--ink);}
+    @media(max-width:600px){.hs-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › ACLS &amp; BLS</div>
+    <h1>❤️ ACLS &amp; BLS — Cardiac Arrest</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">AHA 2020</span>
+      <span class="gbadge esicm">Focused Updates 2023–24</span>
+      <span class="gbadge isccm">ILCOR</span>
+      <span class="gbadge who">ERC 2021</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">High-Quality CPR</span>
+      <span class="topic-tag">Shockable vs Non-shockable</span>
+      <span class="topic-tag">Hs &amp; Ts · Peri-arrest</span>
+      <span class="topic-updated">AHA Guidelines for CPR &amp; ECC 2020 + focused updates (2023–2024) · ILCOR CoSTR · ERC 2021. Verify the latest annual AHA focused update.</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. BLS — High-Quality CPR</a></li>
+        <li><a href="#s2">2. Adult Cardiac Arrest Algorithm</a></li>
+        <li><a href="#s3">3. Drugs &amp; Defibrillation</a></li>
+        <li><a href="#s4">4. Reversible Causes (Hs &amp; Ts)</a></li>
+        <li><a href="#s5">5. Peri-Arrest — Brady &amp; Tachy</a></li>
+        <li><a href="#s6">6. What Changed Since AHA 2020</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topic-rosc.html" class="toc-back" style="margin-bottom:.4rem;">→ Post-Arrest / ROSC care</a>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📕 1 · Basic Life Support</span>
+      <h2>BLS — The Foundation Is High-Quality CPR</h2>
+      <div class="book-quote">
+        <p>"Survival from cardiac arrest is determined less by any drug than by the quality and continuity of chest compressions and the speed of defibrillation. Every interruption in compressions costs coronary perfusion pressure that takes many compressions to rebuild. The entire ACLS edifice is built on, and must never compromise, the foundation of high-quality BLS."</p>
+        <cite>AHA Guidelines for CPR &amp; Emergency Cardiovascular Care, 2020 (Circulation 2020;142:S336–S604).</cite>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">High-Quality CPR — the Numbers (AHA 2020)</div>
+        <div class="gr-text">
+          <strong>Rate 100–120/min</strong> · <strong>depth ≥5 cm (2 in), not &gt;6 cm</strong> · <strong>full recoil</strong> each compression · <strong>minimise interruptions</strong> (chest-compression fraction &gt;60–80%; pauses &lt;10 s) · <strong>avoid over-ventilation</strong>. Compression-to-ventilation <strong>30:2</strong> until an advanced airway, then <strong>continuous compressions with 1 breath every 6 s (10/min)</strong>. Switch compressor every 2 min.
+        </div>
+      </div>
+      <div class="crit-box">
+        <h4>⚡ Adult BLS Sequence</h4>
+        <p><span class="big">C–A–B:</span> Check responsiveness &amp; breathing + pulse (≤10 s) → <strong>call for help / activate emergency response &amp; get the AED/defibrillator</strong> → start <strong>compressions</strong> → <strong>defibrillate</strong> the moment a shockable rhythm is found. For witnessed monitored arrest, immediate defibrillation takes priority.</p>
+      </div>
+      <div class="key-box">
+        <div class="kb-label">Chain of Survival</div>
+        <p>Out-of-hospital: early recognition/activation → early CPR → early defibrillation → advanced resuscitation → post-arrest care → recovery. In-hospital: surveillance/prevention → activation → CPR → defibrillation → post-arrest care. <strong>Recovery</strong> (survivorship, rehabilitation) is now an explicit link in the chain.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-g">📋 2 · Adult Cardiac Arrest Algorithm</span>
+      <h2>Shockable vs Non-Shockable</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">Shockable — VF / Pulseless VT</div>
+        <div class="gr-text">
+          CPR → <strong>defibrillate</strong> (biphasic 120–200 J per device; or 360 J monophasic) → immediately resume CPR ×2 min → rhythm/pulse check.<br>
+          <strong>Adrenaline 1 mg IV/IO after the 2nd shock</strong>, then every 3–5 min.<br>
+          <strong>Amiodarone 300 mg</strong> (then 150 mg) IV/IO <strong>after the 3rd shock</strong> (or lidocaine 1–1.5 mg/kg).<br>
+          Continue 2-min cycles: CPR → shock → drug/CPR; treat reversible causes throughout.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Non-Shockable — PEA / Asystole</div>
+        <div class="gr-text">
+          CPR → <strong>adrenaline 1 mg IV/IO as soon as possible</strong>, then every 3–5 min → 2-min CPR cycles with rhythm checks. <strong>No defibrillation</strong> (not shockable). The priority is excellent CPR + <strong>finding and treating the reversible cause</strong> (Hs &amp; Ts) — PEA/asystole rarely responds to drugs alone.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Throughout the Arrest</div>
+        <div class="gr-text">
+          Establish <strong>IV/IO access</strong> (IO if no rapid IV) · advanced airway (SGA or ETT) <strong>without interrupting compressions</strong>, then continuous compressions + 10 breaths/min · <strong>waveform capnography</strong> (confirms tube, monitors CPR quality — aim ETCO₂ &gt;10 mmHg; an abrupt rise often signals ROSC) · identify shockable vs non-shockable at each 2-min check.
+        </div>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-d">💊 3 · Drugs &amp; Defibrillation</span>
+      <h2>ACLS Drug &amp; Energy Reference</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Adrenaline (epinephrine)</strong></td><td>All arrests</td><td>1 mg IV/IO q3–5 min</td><td>Non-shockable: ASAP. Shockable: after 2nd shock</td></tr>
+            <tr><td><strong>Amiodarone</strong></td><td>Refractory VF/pVT</td><td>300 mg IV/IO → 150 mg</td><td>After 3rd shock; dilute in D5W</td></tr>
+            <tr><td><strong>Lidocaine</strong></td><td>Alternative to amiodarone</td><td>1–1.5 mg/kg → 0.5–0.75 mg/kg</td><td>Either agent acceptable (AHA)</td></tr>
+            <tr><td><strong>Magnesium sulphate</strong></td><td>Torsades / hypomagnesaemia</td><td>1–2 g IV/IO</td><td>NOT routine in cardiac arrest — only for torsades</td></tr>
+            <tr><td><strong>Calcium / Bicarbonate</strong></td><td>Specific causes only</td><td>Ca for ↑K⁺/↓Ca²⁺/CCB; HCO₃ for ↑K⁺/TCA/acidosis</td><td>Not routine — guided by the reversible cause</td></tr>
+            <tr><td><strong>Naloxone</strong></td><td>Suspected opioid arrest</td><td>2 mg IM/IN or 0.4–2 mg IV</td><td>Adjunct to CPR (does not replace it)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="key-box">
+        <div class="kb-label">Defibrillation</div>
+        <p><strong>Biphasic 120–200 J</strong> (use the manufacturer's recommended dose; if unknown, use the maximum) — escalate to maximum for refractory VF. <strong>Monophasic 360 J.</strong> Minimise the peri-shock pause: charge during compressions, clear, shock, and resume compressions <em>immediately</em> (no post-shock rhythm/pulse check — resume CPR for 2 min first). <strong>Refractory VF:</strong> ensure pad position/contact, consider changing pad position (antero-posterior) and <strong>double sequential external defibrillation (DSED)</strong> or a vector change (DOSE-VF trial).</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-x">🔍 4 · Reversible Causes — Hs &amp; Ts</span>
+      <h2>Find and Fix the Cause (especially in PEA/asystole)</h2>
+      <div class="hs-grid">
+        <div class="hs-col">
+          <h4>The H's</h4>
+          <ul>
+            <li><strong>Hypoxia</strong> — oxygenate, confirm tube (capnography)</li>
+            <li><strong>Hypovolaemia</strong> — fluids/blood; haemorrhage control</li>
+            <li><strong>Hydrogen ion (acidosis)</strong> — ventilation; HCO₃ for specific causes</li>
+            <li><strong>Hypo/Hyperkalaemia</strong> — Ca + insulin/dextrose (↑K); replace (↓K)</li>
+            <li><strong>Hypothermia</strong> — rewarm; "not dead until warm and dead"</li>
+            <li><strong>Hypoglycaemia</strong> — check &amp; treat</li>
+          </ul>
+        </div>
+        <div class="hs-col">
+          <h4>The T's</h4>
+          <ul>
+            <li><strong>Tension pneumothorax</strong> — needle/finger decompression</li>
+            <li><strong>Tamponade (cardiac)</strong> — pericardiocentesis / thoracotomy</li>
+            <li><strong>Toxins</strong> — antidotes (naloxone, bicarb for TCA, lipid emulsion, etc.)</li>
+            <li><strong>Thrombosis — coronary</strong> (MI) → PCI</li>
+            <li><strong>Thrombosis — pulmonary</strong> (massive PE) → thrombolysis</li>
+          </ul>
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Point-of-Care Ultrasound</div>
+        <div class="gr-text">
+          Echo during the rhythm-check pause (≤10 s) can identify tamponade, RV strain (massive PE), severe hypovolaemia, or cardiac standstill — but <strong>must not prolong compression pauses</strong>. Consider thrombolysis for confirmed/strongly-suspected PE arrest (prolong CPR 60–90 min after lysis). ECPR (extracorporeal CPR) in selected refractory arrests at capable centres.
+        </div>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-m">⚡ 5 · Peri-Arrest Algorithms</span>
+      <h2>Bradycardia &amp; Tachycardia (with a pulse)</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">Symptomatic Bradycardia</div>
+        <div class="gr-text">
+          If unstable (hypotension, altered mentation, ischaemic chest pain, acute heart failure): <strong>Atropine 1 mg IV, repeat q3–5 min to max 3 mg.</strong> If atropine ineffective → <strong>transcutaneous pacing</strong> and/or <strong>adrenaline 2–10 µg/min</strong> or <strong>dopamine 5–20 µg/kg/min</strong> infusion; prepare for transvenous pacing. Atropine is ineffective in high-grade (Mobitz II / complete) block — go to pacing.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Tachycardia with a Pulse</div>
+        <div class="gr-text">
+          <strong>Unstable → synchronised cardioversion.</strong> Stable: narrow regular → vagal + adenosine 6 mg → 12 mg; narrow irregular (AF) → rate control (β-blocker/diltiazem); wide regular → amiodarone (treat as VT if uncertain); wide irregular → expert help (AF + WPW / polymorphic). See the dedicated <a href="topic-arrhythmias.html" style="color:var(--blue);font-weight:600;">Arrhythmias</a> topic.
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-f">🔄 6 · What Changed Since AHA 2020</span>
+      <h2>Recent AHA / ILCOR Updates (2020 → recent focused updates)</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">Key Shifts You Should Know</div>
+        <div class="gr-text">
+          <strong>• Early adrenaline in non-shockable rhythms</strong> — give ASAP (PARAMEDIC-2 showed improved ROSC/survival; emphasised for PEA/asystole).<br>
+          <strong>• Double sequential external defibrillation (DSED) / vector change</strong> for refractory VF — supported by the DOSE-VF RCT (2022); now a reasonable option after standard shocks fail.<br>
+          <strong>• Opioid-associated arrest</strong> — naloxone (IM/IN) integrated alongside CPR for suspected opioid overdose (2023/2024 focused updates), reflecting the overdose epidemic.<br>
+          <strong>• Post-arrest temperature</strong> — shift from mandatory 32–34 °C hypothermia to <strong>active fever prevention / targeted temperature management ≤37.5 °C</strong> (TTM2 trial) — see the <a href="topic-rosc.html" style="color:var(--blue);font-weight:600;">ROSC</a> topic.<br>
+          <strong>• No routine immediate coronary angiography</strong> in post-arrest patients without ST-elevation (TOMAHAWK/COACT).<br>
+          <strong>• Recovery &amp; survivorship</strong> added as a formal link; structured neuroprognostication delayed to ≥72 h, multimodal.<br>
+          <strong>• Emphasis on CPR quality feedback, IO as a fast alternative to IV, and capnography</strong> for tube confirmation &amp; CPR quality.
+        </div>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">⚠️ Guideline currency</div>
+        <p>The AHA now publishes <strong>annual focused updates</strong> rather than one big revision; the comprehensive guidelines remain the 2020 edition with yearly amendments (2023, 2024, and ongoing). The principles above are stable, but always check the <strong>most recent AHA focused update</strong> for any year-specific change before quoting "the latest" in an exam or protocol.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Resuscitation</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Interrupting Compressions Too Much</div><p>Long pauses for intubation, pulse checks, or charging the defibrillator destroy coronary perfusion pressure. Keep the chest-compression fraction high, pauses &lt;10 s, charge during compressions, and resume CPR immediately after every shock.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Over-Ventilating</div><p>Excessive ventilation raises intrathoracic pressure, reduces venous return and worsens outcomes. After an advanced airway, give only ~10 breaths/min; avoid bagging fast and hard.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Defibrillating Asystole / Not Defibrillating VF Fast Enough</div><p>Asystole and PEA are NOT shockable — focus on CPR + reversible causes. Conversely, in shockable rhythms every minute of delayed defibrillation lowers survival ~10% — shock early and minimise the peri-shock pause.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Ignoring the Hs &amp; Ts in PEA</div><p>PEA/asystole rarely respond to adrenaline alone; survival depends on finding the reversible cause (tension pneumothorax, tamponade, PE, hyperkalaemia, hypovolaemia, toxins). Use POCUS and the history — but don't prolong compression pauses.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Stopping Too Early in Special Circumstances</div><p>Hypothermia ("not dead until warm and dead"), thrombolysed PE (continue CPR 60–90 min), and toxic/local-anaesthetic arrest may need prolonged resuscitation and specific therapies. Tailor the duration to the cause.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Neglecting Post-ROSC Care</div><p>Achieving ROSC is the beginning, not the end. Targeted temperature/fever control, oxygen &amp; CO₂ targets, haemodynamic support, treat the cause (PCI if indicated) and delayed multimodal neuroprognostication all determine neurological outcome — see the ROSC topic.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Panchal AR, Bartos JA, Cabañas JG et al.</strong> Part 3: Adult Basic and Advanced Life Support: 2020 AHA Guidelines for CPR and ECC. Circulation 2020;142(suppl 2):S366–S468.</li>
+          <li><strong>American Heart Association.</strong> 2023 &amp; 2024 Focused Updates on Advanced Cardiovascular Life Support / Resuscitation. Circulation (annual focused updates).</li>
+          <li><strong>Cheskes S, Verbeek PR, Drennan IR et al. (DOSE-VF).</strong> Defibrillation Strategies for Refractory Ventricular Fibrillation. N Engl J Med 2022;387:1947–1956.</li>
+          <li><strong>Perkins GD, Ji C, Deakin CD et al. (PARAMEDIC-2).</strong> A Randomized Trial of Epinephrine in Out-of-Hospital Cardiac Arrest. N Engl J Med 2018;379:711–721.</li>
+          <li><strong>Dankiewicz J, Cronberg T, Lilja G et al. (TTM2).</strong> Hypothermia versus Normothermia after Out-of-Hospital Cardiac Arrest. N Engl J Med 2021;384:2283–2294.</li>
+          <li><strong>Soar J, Böttiger BW, Carli P et al. (ERC).</strong> European Resuscitation Council Guidelines 2021: Adult advanced life support. Resuscitation 2021;161:115–151.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="drug-reference.html">Drug Reference</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

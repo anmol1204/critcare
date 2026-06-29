@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Difficult Airway — ASA 2022, DAS, AIDAA (India), CICO/eFONA — CritCare.in</title>
+  <meta name="description" content="Difficult airway management: prediction (LEMON/MACOCHA), the ASA 2022 & DAS difficult/failed intubation algorithms, AIDAA (All India Difficult Airway Association) guidelines, RSI drugs, and the CICO / front-of-neck access (scalpel-bougie-tube) emergency." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .crit-box{background:#fee2e2;border:2px solid #ef4444;border-radius:12px;padding:1.2rem;margin:1rem 0;}
+    .crit-box h4{color:#b91c1c;font-size:.95rem;margin-bottom:.6rem;}
+    .crit-box .big{font-size:1.3rem;font-weight:800;color:#b91c1c;}
+    .crit-box p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:.3rem 0 0;}
+    .crit-box ol{font-size:.9rem;color:#7f1d1d;line-height:1.8;margin:.4rem 0 0 1.1rem;}
+    .crit-box ol strong{color:#991b1b;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Difficult Airway</div>
+    <h1>🫁 Difficult Airway Management</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ASA 2022</span>
+      <span class="gbadge esicm">DAS 2015</span>
+      <span class="gbadge isccm">AIDAA (India)</span>
+      <span class="gbadge who">Vortex</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Plan A–B–C–D</span>
+      <span class="topic-tag">LEMON · MACOCHA</span>
+      <span class="topic-tag">CICO · Scalpel–Bougie–Tube</span>
+      <span class="topic-updated">ASA Practice Guidelines 2022 · DAS 2015 (unanticipated difficult intubation) · AIDAA (All India Difficult Airway Association) 2016 · Vortex Approach</span>
+    </div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Overview &amp; the Lethal Pattern</a></li>
+        <li><a href="#s2">2. Predicting the Difficult Airway</a></li>
+        <li><a href="#s3">3. The Algorithm (Plan A–D)</a></li>
+        <li><a href="#s4">4. Drugs &amp; Equipment</a></li>
+        <li><a href="#s5">5. CICO / Front-of-Neck Access</a></li>
+        <li><a href="#s6">6. AIDAA — Indian Guidelines</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📕 1 · Overview</span>
+      <h2>Why the Difficult Airway Kills — Oxygenation, Not Intubation</h2>
+      <div class="book-quote">
+        <p>"The central lesson of every airway-disaster analysis — from the ASA Closed Claims to the UK NAP4 project — is that patients do not die because the trachea cannot be intubated; they die because they cannot be oxygenated, and because repeated, forceful attempts at laryngoscopy convert a difficult airway into a 'cannot intubate, cannot oxygenate' catastrophe. The goal is oxygenation, not a tube. Declare failure early, limit attempts, and escalate the plan before hypoxia and trauma make rescue impossible."</p>
+        <cite>Synthesised from NAP4 (4th National Audit Project, RCoA/DAS 2011) &amp; the ASA Difficult Airway Practice Guidelines 2022.</cite>
+      </div>
+
+      <h3>Core Principles (NAP4 / ASA 2022 / DAS)</h3>
+      <ul>
+        <li><strong>Oxygenation is the priority</strong> — not tube placement. Maintain SpO₂ with bag-mask / supraglottic device / apnoeic oxygenation between attempts.</li>
+        <li><strong>Limit laryngoscopy attempts</strong> — a maximum of <strong>3 + 1</strong> (3 by the primary operator, 1 by a more experienced colleague). Each attempt should change something (operator, device, position, blade).</li>
+        <li><strong>Declare failure early and move down the plan</strong> — fixation on intubation ("just one more look") is the commonest fatal error.</li>
+        <li><strong>Plan and verbalise before induction</strong> — a shared, spoken airway plan (Plan A→B→C→D) with the team, and the failed-airway equipment open and ready.</li>
+        <li><strong>Have a CICO plan for every airway</strong> — know, and be ready to perform, front-of-neck access.</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">🔍 2 · Predicting the Difficult Airway</span>
+      <h2>Assessment — Difficult Mask, Laryngoscopy, SGA &amp; FONA</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">"LEMON" — Difficult Laryngoscopy/Intubation (ED/EM)</div>
+        <div class="gr-text">
+          <strong>L</strong>ook externally (beard, trauma, abnormal face) · <strong>E</strong>valuate 3-3-2 (mouth opening 3 fingers, hyoid–chin 3, thyroid–floor of mouth 2) · <strong>M</strong>allampati (III–IV) · <strong>O</strong>bstruction/Obesity · <strong>N</strong>eck mobility (immobilised C-spine, fixed flexion).
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">"MACOCHA" — Difficult Intubation in the ICU (validated for critically ill)</div>
+        <div class="gr-text">
+          <strong>M</strong>allampati III/IV · <strong>A</strong>pnoea syndrome (OSA) · <strong>C</strong>ervical spine limitation · <strong>O</strong>pening mouth &lt;3 cm · <strong>C</strong>oma · <strong>H</strong>ypoxaemia (SpO₂ &lt;80%) · <strong>A</strong>naesthetist non-trained. Higher score → higher risk of difficult intubation &amp; complications in the ICU.
+        </div>
+      </div>
+      <div class="key-box">
+        <div class="kb-label">Predictors of Difficult Mask Ventilation — "MOANS / BONES"</div>
+        <p><strong>M</strong>ask seal (beard) · <strong>O</strong>besity/Obstruction · <strong>A</strong>ge &gt;55 · <strong>N</strong>o teeth · <strong>S</strong>tiff lungs/Snores. Anticipating difficult <em>mask ventilation AND difficult intubation AND difficult FONA</em> together is what should trigger an <strong>awake technique</strong> rather than induction.</p>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">The Key Decision — Awake vs Asleep (ASA 2022)</div>
+        <div class="gr-text">
+          If difficulty is anticipated in <strong>more than one domain</strong> (e.g. difficult intubation + difficult mask/SGA, or difficult FONA), or there is significant aspiration/rapid-desaturation risk, strongly consider <strong>awake tracheal intubation</strong> (flexible scope/videolaryngoscopy under topical anaesthesia ± sedation) — the patient keeps breathing and protects their own airway. Awake intubation is the safest option for the truly anticipated difficult airway.
+        </div>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · The Difficult/Failed Intubation Algorithm (Plan A–D)</span>
+      <h2>DAS 2015 Unanticipated Difficult Intubation — Sequential Plans</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Plan A — Facemask &amp; Tracheal Intubation</div>
+        <div class="gr-text">
+          Optimal first attempt: position (ear-to-sternal-notch / ramped), pre-oxygenate to FiO₂ ~1.0 (+ apnoeic oxygenation via nasal cannula), <strong>videolaryngoscopy</strong> readily (ASA 2022 favours VL for anticipated difficulty), bougie, external laryngeal manipulation. <strong>Max 3 + 1 attempts.</strong> Maintain oxygenation between attempts. If failing → declare "failed intubation, Plan B".
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Plan B — Maintain Oxygenation: Supraglottic Airway (SGA)</div>
+        <div class="gr-text">
+          Insert a <strong>second-generation SGA</strong> (e.g. i-gel, LMA ProSeal — gastric port, better seal). Up to 3 attempts / change device. If oxygenation restored → <strong>stop and think</strong>: wake the patient, intubate via the SGA (with a scope), or proceed to surgery with the SGA — a considered decision, not a reflex re-attempt at laryngoscopy.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Plan C — Final Attempt at Facemask Ventilation</div>
+        <div class="gr-text">
+          If SGA fails: revert to <strong>two-person, two-handed mask ventilation</strong> with oral + nasal airways, full muscle relaxation (ensure paralysis is complete — inadequate relaxation is a common cause of "difficult" ventilation). If this restores oxygenation and you cannot intubate → wake the patient if feasible. If mask ventilation also fails → <strong>declare CICO</strong>.
+        </div>
+      </div>
+      <div class="crit-box">
+        <h4>⚠️ Plan D — CICO: "Cannot Intubate, Cannot Oxygenate"</h4>
+        <p><strong>Declare it out loud. Give 100% O₂, ensure full paralysis, and proceed IMMEDIATELY to emergency front-of-neck access (eFONA).</strong> Do not delay for further laryngoscopy. This is a surgical airway emergency — minutes matter.</p>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">The Vortex Approach — a Cognitive Tool</div>
+        <div class="gr-text">
+          A simple high-pressure model: three "lifelines" — <strong>face mask, SGA, tracheal tube</strong> — each given a best-effort optimisation (position, adjuncts, size/type, suction, muscle tone). If all three fail to achieve oxygenation, you have reached the centre of the vortex → <strong>CICO → FONA</strong>. Designed to prevent fixation and prompt the surgical airway without delay.
+        </div>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drugs &amp; Equipment</span>
+      <h2>RSI Drugs &amp; the Airway Trolley</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Role</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ketamine</strong></td><td>Induction (shock/bronchospasm)</td><td>1–2 mg/kg IV</td><td>Haemodynamically stable; preferred in shock</td></tr>
+            <tr><td><strong>Propofol</strong></td><td>Induction (stable)</td><td>1–2.5 mg/kg IV</td><td>Causes hypotension — reduce in shock/elderly</td></tr>
+            <tr><td><strong>Etomidate</strong></td><td>Induction (haemodynamically neutral)</td><td>0.3 mg/kg IV</td><td>Adrenal suppression after single dose (usually accepted in RSI)</td></tr>
+            <tr><td><strong>Rocuronium</strong></td><td>Paralysis (RSI)</td><td>1.2 mg/kg IV</td><td>Reversible with sugammadex 16 mg/kg; preferred when sux contraindicated</td></tr>
+            <tr><td><strong>Succinylcholine</strong></td><td>Paralysis (RSI)</td><td>1.5 mg/kg IV</td><td>Avoid in hyperK, burns &gt;24h, crush, denervation, myopathy</td></tr>
+            <tr><td><strong>Sugammadex</strong></td><td>Reverse rocuronium (CICO rescue)</td><td>16 mg/kg IV</td><td>Restores spontaneous ventilation IF rocuronium used — does NOT guarantee a patent airway</td></tr>
+            <tr><td><strong>Phenylephrine / Noradrenaline</strong></td><td>Peri-intubation hypotension</td><td>Push-dose / infusion</td><td>Resuscitate BEFORE you intubate (avoid peri-intubation arrest)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="key-box">
+        <div class="kb-label">The Failed-Airway Trolley (must be checked &amp; ready before induction)</div>
+        <p>Videolaryngoscope · range of blades/tubes · <strong>bougie</strong> · second-generation SGAs (i-gel sizes) · oral/nasal airways · <strong>scalpel (size 10), bougie &amp; size-6.0 cuffed tube</strong> for FONA · capnography (mandatory — confirms tube &amp; detects oesophageal placement) · suction. <strong>Resuscitate before you intubate</strong>: optimise pre-oxygenation, haemodynamics (fluids/pressors) and position first.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-x">🔪 5 · CICO / Front-of-Neck Access (eFONA)</span>
+      <h2>The Surgical Airway — Scalpel–Bougie–Tube</h2>
+      <div class="crit-box">
+        <h4>🔪 Scalpel Cricothyroidotomy (DAS-recommended technique)</h4>
+        <ol>
+          <li><strong>Identify</strong> the cricothyroid membrane (laryngeal handshake; in a "impalpable neck" make a vertical skin incision first and finger-dissect).</li>
+          <li><strong>Stab incision</strong> through the cricothyroid membrane with a size-10 scalpel; <strong>turn the blade 90°</strong> (sharp edge caudad).</li>
+          <li><strong>Bougie</strong> — slide a bougie alongside the scalpel into the trachea (railroad technique).</li>
+          <li><strong>Tube</strong> — railroad a <strong>cuffed size 6.0</strong> tracheal/tracheostomy tube over the bougie; inflate cuff, confirm with <strong>capnography</strong>, ventilate.</li>
+        </ol>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Key Points</div>
+        <div class="gr-text">
+          <strong>Commit early</strong> — once CICO is declared, the surgical airway is the patient's only chance; hesitation is lethal. The <strong>scalpel–bougie–tube</strong> technique is preferred over narrow-bore cannula techniques in adults (cannula/jet ventilation has high failure &amp; barotrauma rates). <strong>Capnography confirms</strong> correct placement. In children &lt;8–10 y, needle cricothyroidotomy with jet/low-flow oxygenation is used (the cricothyroid membrane is too small for a surgical airway) as a bridge to surgical tracheostomy.
+        </div>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Practical reality</div>
+        <p>FONA is rare and high-stakes — <strong>regular team simulation</strong> and a pre-stocked, standardised FONA kit (scalpel, bougie, 6.0 tube) on every airway trolley are the interventions that actually save lives, far more than the choice of technique. Human factors (declaring the emergency, role allocation, avoiding fixation) are the dominant determinant of outcome (NAP4).</p>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-f">🇮🇳 6 · AIDAA — Indian Guidelines</span>
+      <h2>All India Difficult Airway Association (AIDAA)</h2>
+      <div class="book-quote">
+        <p>"The AIDAA guidelines adapt international airway algorithms to Indian practice and resource settings, providing separate, practical algorithms for unanticipated difficult intubation in the unconscious patient, the anticipated difficult airway, and extubation of the at-risk airway — with emphasis on the equipment realistically available across Indian hospitals."</p>
+        <cite>All India Difficult Airway Association (AIDAA) 2016 Guidelines, published in the Indian Journal of Anaesthesia.</cite>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">AIDAA — Core Algorithms (2016)</div>
+        <div class="gr-text">
+          AIDAA publishes parallel algorithms aligned with DAS principles but adapted for India: <strong>(1) unanticipated difficult tracheal intubation</strong> (Plan A–D as above, max attempts, early SGA, CICO→FONA), <strong>(2) anticipated difficult airway</strong> (favouring awake techniques), and <strong>(3) the difficult/at-risk extubation</strong>. Emphasis on <strong>videolaryngoscopy, second-generation SGAs, capnography as mandatory, and a stocked FONA set</strong> wherever airways are managed.
+        </div>
+      </div>
+      <div class="key-box">
+        <div class="kb-label">Extubation of the At-Risk Airway (often forgotten)</div>
+        <p>Extubation is a planned, reversible, "low-risk vs at-risk" decision (DAS &amp; AIDAA both have extubation algorithms). For the at-risk airway: optimise the patient, have re-intubation equipment ready, consider an <strong>airway exchange catheter</strong>, extubate awake, and have the failed-airway plan available again. Many airway deaths occur at <em>extubation/recovery</em>, not intubation (NAP4).</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">❌ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in the Difficult Airway</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Fixating on Intubation ("Just One More Look")</div><p>Repeated laryngoscopy causes airway trauma, bleeding and oedema, converting a difficult airway into CICO. Limit to 3+1 attempts, change something each time, and move down the plan. The goal is oxygenation, not the tube.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Inducing the Anticipated Difficult Airway Asleep</div><p>When difficulty is predicted in multiple domains, inducing anaesthesia removes the patient's own breathing and protective reflexes. Choose an awake technique — it is the single most important decision in the anticipated difficult airway.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Delaying or Failing to Declare CICO</div><p>The commonest reason FONA fails is that it is started too late. Once you cannot intubate AND cannot oxygenate, declare it out loud and cut the neck — do not attempt more laryngoscopy. Sugammadex may restore breathing if rocuronium was used, but never delay FONA waiting for it.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Not Using / Not Trusting Capnography</div><p>A sustained capnograph trace is the definitive confirmation of tracheal placement; its absence means oesophageal intubation until proven otherwise. NAP4 repeatedly implicated unrecognised oesophageal intubation — capnography is mandatory for every intubation, including in the ICU and after FONA.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Intubating Before Resuscitating</div><p>Peri-intubation cardiac arrest is driven by pre-existing hypotension, hypoxaemia and acidosis. Optimise pre-oxygenation, give fluids/push-dose pressors, and correct severe acidosis/hyperkalaemia BEFORE induction — "resuscitate before you intubate".</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Forgetting the Extubation Plan</div><p>The at-risk airway is just as dangerous at extubation as at intubation. Plan extubation (awake, equipment ready, airway exchange catheter if needed) and keep the failed-airway plan available — many airway deaths occur in recovery.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-r">📑 8 · References</span>
+      <h2>References</h2>
+      <div class="references-section">
+        <ol class="ref-list">
+          <li><strong>Apfelbaum JL, Hagberg CA, Connis RT et al.</strong> 2022 American Society of Anesthesiologists Practice Guidelines for Management of the Difficult Airway. Anesthesiology 2022;136:31–81.</li>
+          <li><strong>Frerk C, Mitchell VS, McNarry AF et al. (Difficult Airway Society).</strong> DAS 2015 guidelines for management of unanticipated difficult intubation in adults. Br J Anaesth 2015;115:827–848.</li>
+          <li><strong>Myatra SN, Shah A, Kundra P et al.</strong> All India Difficult Airway Association (AIDAA) 2016 guidelines for the management of unanticipated difficult tracheal intubation in adults. Indian J Anaesth 2016;60:885–898.</li>
+          <li><strong>Cook TM, Woodall N, Frerk C (NAP4).</strong> Major complications of airway management in the UK: 4th National Audit Project of the RCoA and DAS. Br J Anaesth 2011;106:617–642.</li>
+          <li><strong>Chrimes N.</strong> The Vortex: a universal 'high-acuity implementation tool' for emergency airway management. Br J Anaesth 2016;117(S1):i20–i27.</li>
+          <li><strong>De Jong A, Molinari N, Terzi N et al.</strong> Early identification of patients at risk for difficult intubation in the ICU (MACOCHA score). Am J Respir Crit Care Med 2013;187:832–839.</li>
+        </ol>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="drug-reference.html">Drug Reference</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
