@@ -224,19 +224,27 @@
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
-  // Redirect target after an explicit login (respects ?next=)
+  // Redirect target after an explicit login (respects ?next=, else dashboard)
   function gotoNext() {
     var params = new URLSearchParams(location.search);
-    var next = params.get('next') || 'topics.html';
+    var next = params.get('next') || 'dashboard.html';
     // only allow same-site .html targets
-    if (!/^[a-z0-9._-]+\.html$/i.test(next)) next = 'topics.html';
+    if (!/^[a-z0-9._-]+\.html$/i.test(next)) next = 'dashboard.html';
     location.href = next;
+  }
+
+  function cacheUser(user) {
+    try {
+      localStorage.setItem('critcare-auth', '1');
+      localStorage.setItem('critcare-name', user.displayName || (user.email ? user.email.split('@')[0] : 'Doctor'));
+      localStorage.setItem('critcare-email', user.email || '');
+    } catch (e) {}
   }
 
   // Watch auth state — keep the cross-page access flag in sync with Firebase
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      try { localStorage.setItem('critcare-auth', '1'); } catch (e) {}
+      cacheUser(user);
       document.getElementById('authForm').style.display = 'none';
       document.getElementById('userPanel').style.display = 'block';
       document.getElementById('userName').textContent = user.displayName || 'Doctor';
@@ -252,8 +260,8 @@
 
   window.googleLogin = async () => {
     try {
-      await signInWithPopup(auth, provider);
-      try { localStorage.setItem('critcare-auth', '1'); } catch (e) {}
+      const cred = await signInWithPopup(auth, provider);
+      cacheUser(cred.user);
       gotoNext();
     } catch (err) {
       setNote('⚠️ ' + (err.message || 'Google sign-in failed. Check Firebase config.'), true);
@@ -266,12 +274,18 @@
     const isReg = document.getElementById('tabReg').classList.contains('active');
     if (!email || !password) return setNote('Please enter email and password.', true);
     try {
+      let cred;
       if (isReg) {
-        await createUserWithEmailAndPassword(auth, email, password);
+        cred = await createUserWithEmailAndPassword(auth, email, password);
+        const nm = document.getElementById('fullName') ? document.getElementById('fullName').value : '';
+        if (nm) { try { localStorage.setItem('critcare-name', nm); } catch (e) {} }
       } else {
-        await signInWithEmailAndPassword(auth, email, password);
+        cred = await signInWithEmailAndPassword(auth, email, password);
       }
-      try { localStorage.setItem('critcare-auth', '1'); } catch (e) {}
+      cacheUser(cred.user);
+      // keep a registered full name if the user typed one
+      const nm2 = document.getElementById('fullName') ? document.getElementById('fullName').value : '';
+      if (isReg && nm2) { try { localStorage.setItem('critcare-name', nm2); } catch (e) {} }
       gotoNext();
     } catch (err) {
       setNote('⚠️ ' + err.message, true);

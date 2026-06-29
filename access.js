@@ -14,7 +14,7 @@
   // Pages that are ALWAYS free (no login needed)
   var FREE = {
     '': 1, 'index.html': 1, 'topics.html': 1, 'login.html': 1, 'pro.html': 1,
-    'about.html': 1, 'search.html': 1,
+    'about.html': 1, 'search.html': 1, 'dashboard.html': 1,
     // free "taster" topic articles:
     'topic-sepsis.html': 1, 'topic-ards.html': 1, 'topic-shock.html': 1,
     'topic-anaphylaxis.html': 1, 'topic-stroke.html': 1, 'topic-acid-base.html': 1
@@ -85,11 +85,21 @@
     // Auth state
     if (cta) {
       if (loggedIn()) {
+        // Inject an account link (→ dashboard) showing the user's first name
+        if (!menu.querySelector('.nav-account')) {
+          var name = '';
+          try { name = localStorage.getItem('critcare-name') || ''; } catch (e) {}
+          var first = name.replace(/^dr\.?\s*/i, '').trim().split(/\s+/)[0];
+          var al = document.createElement('li');
+          al.innerHTML = '<a href="dashboard.html" class="nav-account">👤 ' + (first ? first : 'Dashboard') + '</a>';
+          if (cta.parentNode) menu.insertBefore(al, cta.parentNode);
+        }
         cta.textContent = 'Log out';
         cta.setAttribute('href', '#');
         cta.addEventListener('click', function (e) {
           e.preventDefault();
           window.CritCareAccess.logout();
+          try { localStorage.removeItem('critcare-name'); localStorage.removeItem('critcare-email'); } catch (er) {}
           location.href = 'index.html';
         });
       } else {

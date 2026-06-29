@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>My Dashboard — CritCare.in</title>
+  <meta name="description" content="Your CritCare.in dashboard — choose your specialty, jump into topics, tools and calculators. Integrated Medicine: critical care, emergency, pulmonary & anaesthesia in one place." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <style>
+    .dash-hero { background:linear-gradient(135deg,#0f1f3d,#1a3560); color:#fff; padding:2.5rem 5% 2rem; }
+    .dash-hero-inner { max-width:1100px; margin:0 auto; }
+    .dash-hi { display:flex; align-items:center; gap:1rem; }
+    .dash-avatar { width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#0891b2); display:grid; place-items:center; font-size:1.5rem; font-weight:800; color:#fff; flex-shrink:0; }
+    .dash-hi h1 { font-family:var(--font-disp); font-size:clamp(1.5rem,3vw,2.1rem); margin:0; }
+    .dash-hi .dash-sub { color:rgba(255,255,255,.7); font-size:.88rem; margin-top:.2rem; }
+    .dash-tagline { margin-top:1.2rem; display:inline-flex; align-items:center; gap:.5rem; background:rgba(0,179,164,.15); border:1px solid rgba(0,179,164,.4); border-radius:30px; padding:.4rem 1rem; font-size:.78rem; color:#a7f3d0; font-weight:600; }
+    .dash-wrap { max-width:1100px; margin:0 auto; padding:2rem 5% 4rem; }
+    .dash-section-label { font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--slate); margin:1.8rem 0 .9rem; }
+    .dash-section-label:first-child { margin-top:0; }
+
+    /* Specialty chooser */
+    .spec-choose { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:.8rem; }
+    .spec-opt { border:2px solid var(--line); border-radius:14px; padding:1.1rem; background:var(--bg); cursor:pointer; transition:all .18s; text-align:left; font-family:var(--font-body); }
+    .spec-opt:hover { border-color:var(--blue); transform:translateY(-2px); }
+    .spec-opt.sel { border-color:var(--blue); background:var(--blue-soft); }
+    .spec-opt .so-ic { font-size:1.6rem; }
+    .spec-opt .so-name { font-weight:800; font-size:.92rem; color:var(--ink); margin-top:.4rem; }
+    .spec-opt .so-desc { font-size:.74rem; color:var(--slate); margin-top:.2rem; line-height:1.4; }
+    .spec-opt .so-check { float:right; color:var(--blue); font-weight:800; opacity:0; }
+    .spec-opt.sel .so-check { opacity:1; }
+    .spec-confirm { margin-top:1rem; display:none; align-items:center; gap:.8rem; flex-wrap:wrap; background:var(--bg-alt); border:1px solid var(--line); border-radius:12px; padding:.9rem 1.2rem; }
+    .spec-confirm.show { display:flex; }
+    .spec-confirm p { margin:0; font-size:.88rem; color:var(--ink); flex:1; min-width:200px; }
+    .spec-confirm a { background:var(--blue); color:#fff; font-size:.82rem; font-weight:700; padding:.55rem 1.1rem; border-radius:8px; text-decoration:none; white-space:nowrap; }
+
+    /* Quick access */
+    .qa-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:.9rem; }
+    .qa-card { display:block; text-decoration:none; border:1px solid var(--line); border-radius:14px; padding:1.2rem 1rem; background:var(--bg); transition:all .18s; }
+    .qa-card:hover { border-color:var(--blue); box-shadow:0 8px 24px rgba(30,111,217,.1); transform:translateY(-3px); }
+    .qa-card .qa-ic { width:42px; height:42px; border-radius:10px; background:var(--blue-soft); display:grid; place-items:center; font-size:1.2rem; margin-bottom:.6rem; }
+    .qa-card .qa-name { font-weight:700; font-size:.88rem; color:var(--ink); }
+    .qa-card .qa-desc { font-size:.74rem; color:var(--slate); margin-top:.2rem; line-height:1.4; }
+
+    /* Account + Integrated grids */
+    .dash-2col { display:grid; grid-template-columns:1.2fr 1fr; gap:1.2rem; }
+    @media(max-width:760px){ .dash-2col{ grid-template-columns:1fr; } }
+    .acct-card { border:1px solid var(--line); border-radius:14px; padding:1.4rem; background:var(--bg); }
+    .acct-card h3 { font-size:.95rem; color:var(--ink); margin-bottom:1rem; }
+    .acct-row { display:flex; justify-content:space-between; gap:1rem; padding:.5rem 0; border-bottom:1px solid var(--line); font-size:.85rem; }
+    .acct-row:last-of-type { border-bottom:none; }
+    .acct-row .ar-k { color:var(--slate); } .acct-row .ar-v { color:var(--ink); font-weight:600; text-align:right; }
+    .badge-pro { background:linear-gradient(135deg,#1e6fd9,#1453a8); color:#fff; font-size:.66rem; font-weight:800; padding:.2rem .6rem; border-radius:20px; }
+    .badge-free { background:var(--bg-alt); color:var(--slate); border:1px solid var(--line); font-size:.66rem; font-weight:800; padding:.2rem .6rem; border-radius:20px; }
+    .acct-btns { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1.2rem; }
+    .acct-btns button, .acct-btns a { font-size:.82rem; font-weight:700; padding:.6rem 1rem; border-radius:9px; cursor:pointer; border:1px solid var(--line); background:var(--bg-alt); color:var(--ink); text-decoration:none; font-family:var(--font-body); }
+    .acct-btns .danger { color:#b91c1c; border-color:#fecaca; }
+    .integ-card { border:1px solid var(--blue); border-radius:14px; padding:1.4rem; background:linear-gradient(135deg,var(--blue-soft),var(--bg)); }
+    .integ-card h3 { font-size:.98rem; color:var(--ink); margin-bottom:.6rem; }
+    .integ-card p { font-size:.85rem; color:var(--slate); line-height:1.7; margin-bottom:.8rem; }
+    .integ-tags { display:flex; flex-wrap:wrap; gap:.4rem; }
+    .integ-tags span { font-size:.7rem; font-weight:700; background:var(--bg); border:1px solid var(--line); color:var(--ink); padding:.25rem .6rem; border-radius:20px; }
+
+    /* Not-logged-in state */
+    .dash-guest { max-width:480px; margin:4rem auto; text-align:center; padding:2.5rem 1.5rem; border:1px solid var(--line); border-radius:18px; background:var(--bg); }
+    .dash-guest .dg-ic { font-size:2.5rem; }
+    .dash-guest h2 { font-family:var(--font-disp); font-size:1.5rem; color:var(--ink); margin:.6rem 0; }
+    .dash-guest p { color:var(--slate); font-size:.9rem; line-height:1.6; margin-bottom:1.3rem; }
+    .dash-guest a { display:inline-block; background:linear-gradient(135deg,#1e6fd9,#1453a8); color:#fff; font-weight:700; padding:.8rem 1.6rem; border-radius:10px; text-decoration:none; }
+    #dashMain { display:none; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<!-- GUEST (not logged in) -->
+<div class="dash-guest" id="dashGuest" style="display:none;">
+  <div class="dg-ic">🔒</div>
+  <h2>Sign in to your dashboard</h2>
+  <p>Your CritCare.in dashboard gives you one-tap access to all topics, tools and calculators — and lets you set your specialty focus.</p>
+  <a href="login.html?next=dashboard.html">Log in / Create free account</a>
+</div>
+
+<!-- LOGGED-IN DASHBOARD -->
+<div id="dashMain">
+  <header class="dash-hero">
+    <div class="dash-hero-inner">
+      <div class="dash-hi">
+        <div class="dash-avatar" id="dashAvatar">A</div>
+        <div>
+          <h1 id="dashWelcome">Welcome back, Doctor 👋</h1>
+          <div class="dash-sub" id="dashSubline">You're signed in to CritCare.in</div>
+        </div>
+      </div>
+      <div class="dash-tagline">✦ Integrated Medicine — Critical Care · Emergency · Pulmonary · Anaesthesia, in one place</div>
+    </div>
+  </header>
+
+  <div class="dash-wrap">
+
+    <div class="dash-section-label">Choose your specialty focus</div>
+    <div class="spec-choose" id="specChoose">
+      <button class="spec-opt" data-spec="ccm" onclick="pickSpecialty('ccm','Critical Care','topics.html')">
+        <span class="so-check">✓</span><div class="so-ic">🫀</div>
+        <div class="so-name">Critical Care</div><div class="so-desc">ICU — sepsis, ventilation, AKI, shock</div>
+      </button>
+      <button class="spec-opt" data-spec="em" onclick="pickSpecialty('em','Emergency Medicine','topics.html')">
+        <span class="so-check">✓</span><div class="so-ic">🚑</div>
+        <div class="so-name">Emergency Medicine</div><div class="so-desc">Resus, trauma, toxicology, tropical</div>
+      </button>
+      <button class="spec-opt" data-spec="pulm" onclick="pickSpecialty('pulm','Pulmonary Medicine','topics.html')">
+        <span class="so-check">✓</span><div class="so-ic">🫁</div>
+        <div class="so-name">Pulmonary</div><div class="so-desc">ARDS, COPD, asthma, ventilation</div>
+      </button>
+      <button class="spec-opt" data-spec="anaes" onclick="pickSpecialty('anaes','Anaesthesia','topics.html')">
+        <span class="so-check">✓</span><div class="so-ic">💉</div>
+        <div class="so-name">Anaesthesia</div><div class="so-desc">Airway, sedation, peri-op</div>
+      </button>
+      <button class="spec-opt" data-spec="im" onclick="pickSpecialty('im','Internal Medicine','topics.html')">
+        <span class="so-check">✓</span><div class="so-ic">🩺</div>
+        <div class="so-name">Internal Medicine</div><div class="so-desc">Endocrine, GI, renal, electrolytes</div>
+      </button>
+    </div>
+    <div class="spec-confirm" id="specConfirm">
+      <p id="specConfirmText"></p>
+      <a id="specConfirmLink" href="topics.html">Explore topics →</a>
+    </div>
+
+    <div class="dash-section-label">Quick access</div>
+    <div class="qa-grid">
+      <a class="qa-card" href="topics.html"><div class="qa-ic">📚</div><div class="qa-name">Clinical Topics</div><div class="qa-desc">38+ referenced articles</div></a>
+      <a class="qa-card" href="abg-calculator.html"><div class="qa-ic">🩺</div><div class="qa-name">ABG Analyser</div><div class="qa-desc">Interpret + management</div></a>
+      <a class="qa-card" href="ai-tool.html"><div class="qa-ic">🤖</div><div class="qa-name">AI Tool</div><div class="qa-desc">Decision support</div></a>
+      <a class="qa-card" href="drug-reference.html"><div class="qa-ic">💊</div><div class="qa-name">Drug Reference</div><div class="qa-desc">Doses + calculators</div></a>
+      <a class="qa-card" href="scores.html"><div class="qa-ic">📊</div><div class="qa-name">Score Calculators</div><div class="qa-desc">eGFR, electrolytes, SOFA…</div></a>
+      <a class="qa-card" href="dnb.html"><div class="qa-ic">🎓</div><div class="qa-name">DNB / Exam Prep</div><div class="qa-desc">High-yield Q&amp;A</div></a>
+    </div>
+
+    <div class="dash-section-label">Your account</div>
+    <div class="dash-2col">
+      <div class="acct-card">
+        <h3>👤 Account details</h3>
+        <div class="acct-row"><span class="ar-k">Name</span><span class="ar-v" id="acctName">—</span></div>
+        <div class="acct-row"><span class="ar-k">Email</span><span class="ar-v" id="acctEmail">—</span></div>
+        <div class="acct-row"><span class="ar-k">Specialty focus</span><span class="ar-v" id="acctSpec">Not set</span></div>
+        <div class="acct-row"><span class="ar-k">Membership</span><span class="ar-v" id="acctPlan"></span></div>
+        <div class="acct-btns">
+          <a href="pro.html">✦ View CritCare Pro</a>
+          <button onclick="clearData()" class="">Clear local data</button>
+          <button onclick="doSignOut()" class="danger">Sign out</button>
+        </div>
+      </div>
+      <div class="integ-card">
+        <h3>✦ We're building Integrated Medicine</h3>
+        <p>CritCare.in unifies the specialties that overlap at the bedside — <strong>critical care, emergency medicine, pulmonary medicine and anaesthesia</strong> — into one cross-referenced knowledge base, so you never have to switch resources mid-resuscitation.</p>
+        <div class="integ-tags"><span>🫀 Critical Care</span><span>🚑 Emergency</span><span>🫁 Pulmonary</span><span>💉 Anaesthesia</span><span>🩺 Internal Med</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li>
+      <li><a href="pro.html">CritCare Pro</a></li><li><a href="about.html">About</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow · Building Integrated Medicine</p>
+  </div>
+</footer>
+
+<nav class="mobile-nav-bar">
+  <a href="dashboard.html"><span class="mn-icon">🏠</span>Dashboard</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+
+<script>
+  function lsGet(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
+  function lsSet(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
+
+  var SPEC_LABELS = { ccm:'Critical Care', em:'Emergency Medicine', pulm:'Pulmonary Medicine', anaes:'Anaesthesia', im:'Internal Medicine' };
+  // Map specialty → topics.html specialty filter where one exists
+  var SPEC_LINK = { ccm:'topics.html', em:'topics.html', pulm:'topics.html', anaes:'topics.html', im:'topics.html' };
+
+  function pickSpecialty(id, label, link) {
+    lsSet('critcare-specialty', id);
+    document.querySelectorAll('.spec-opt').forEach(function(b){ b.classList.toggle('sel', b.getAttribute('data-spec')===id); });
+    document.getElementById('acctSpec').textContent = label;
+    var c = document.getElementById('specConfirm');
+    document.getElementById('specConfirmText').innerHTML = '✓ Your focus is set to <strong>'+label+'</strong>. We’ll highlight this on your next visit.';
+    document.getElementById('specConfirmLink').setAttribute('href', link || 'topics.html');
+    c.classList.add('show');
+  }
+
+  function clearData() {
+    if (!confirm('Clear your saved preferences (specialty, theme) on this device? You will stay signed in.')) return;
+    try { localStorage.removeItem('critcare-specialty'); } catch(e){}
+    document.getElementById('acctSpec').textContent = 'Not set';
+    document.querySelectorAll('.spec-opt').forEach(function(b){ b.classList.remove('sel'); });
+    document.getElementById('specConfirm').classList.remove('show');
+  }
+
+  function doSignOut() {
+    if (window.CritCareAccess) window.CritCareAccess.logout();
+    try { localStorage.removeItem('critcare-name'); localStorage.removeItem('critcare-email'); } catch(e){}
+    location.href = 'index.html';
+  }
+
+  (function initDash() {
+    var loggedIn = window.CritCareAccess && window.CritCareAccess.loggedIn();
+    if (!loggedIn) { document.getElementById('dashGuest').style.display = 'block'; return; }
+    document.getElementById('dashMain').style.display = 'block';
+
+    var name = lsGet('critcare-name') || 'Doctor';
+    var email = lsGet('critcare-email') || '';
+    var first = name.replace(/^dr\.?\s*/i,'').trim().split(/\s+/)[0] || 'Doctor';
+    document.getElementById('dashWelcome').textContent = 'Welcome back, ' + name + ' 👋';
+    document.getElementById('dashSubline').textContent = name + ' has logged in — pick up where you left off.';
+    document.getElementById('dashAvatar').textContent = (first[0] || 'A').toUpperCase();
+    document.getElementById('acctName').textContent = name;
+    document.getElementById('acctEmail').textContent = email || '—';
+
+    var pro = window.CritCareAccess.isPro && window.CritCareAccess.isPro();
+    document.getElementById('acctPlan').innerHTML = pro
+      ? '<span class="badge-pro">✦ CritCare Pro</span>'
+      : '<span class="badge-free">Free (full access during launch)</span>';
+
+    var spec = lsGet('critcare-specialty');
+    if (spec && SPEC_LABELS[spec]) {
+      document.querySelectorAll('.spec-opt').forEach(function(b){ b.classList.toggle('sel', b.getAttribute('data-spec')===spec); });
+      document.getElementById('acctSpec').textContent = SPEC_LABELS[spec];
+    }
+  })();
+</script>
+</body>
+</html>
