@@ -121,9 +121,29 @@
     /* ── Alert badge ── */
     .high-alert{display:inline-block;background:#dc2626;color:#fff;font-size:.6rem;font-weight:800;padding:.1rem .4rem;border-radius:4px;margin-left:.4rem;vertical-align:middle;letter-spacing:.04em;}
 
+    /* ── Doses-by-indication table (variable-based → auto dark-aware) ── */
+    .dose-table{width:100%;border-collapse:collapse;font-size:.82rem;margin:.35rem 0 .7rem;}
+    .dose-table th{background:var(--bg-alt);padding:.42rem .55rem;text-align:left;font-size:.62rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);border-bottom:2px solid var(--line);}
+    .dose-table td{padding:.48rem .55rem;border-bottom:1px solid var(--line);vertical-align:top;}
+    .dose-table tr:last-child td{border-bottom:none;}
+    .di-ind{font-weight:800;color:var(--ink);}
+    .di-dose{font-weight:600;color:var(--ink);}
+    .di-route{display:inline-block;font-size:.6rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;padding:.08rem .4rem;border-radius:4px;background:var(--blue-soft);color:var(--blue-dark);margin-left:.35rem;vertical-align:middle;}
+    .di-note{font-size:.72rem;color:var(--slate);line-height:1.45;}
+
     @media(max-width:600px){
+      .dp-page{padding:1rem .7rem 4rem;}
       .drug-grid{grid-template-columns:1fr;}
       .ci-grid{grid-template-columns:1fr;}
+      .dc-head{gap:.65rem;padding:.8rem .8rem;}
+      /* Stack the 3-column tables into readable cards on phones */
+      .dose-table thead, .ctab thead{display:none;}
+      .dose-table tr, .ctab tr{display:block;border:1px solid var(--line);border-radius:9px;padding:.45rem .7rem;margin-bottom:.5rem;background:var(--bg-alt);}
+      .dose-table td, .ctab td{display:block;border:none;padding:.12rem 0;}
+      .dose-table .di-ind{font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;color:var(--accent);margin-bottom:.1rem;}
+      .dose-table .di-dose{font-size:.92rem;}
+      .ctab td.c-hi{font-weight:800;font-size:.86rem;}
+      .corr-row{flex-wrap:wrap;}
     }
   </style>
 </head>
@@ -408,6 +428,11 @@ const DRUGS = [
     {label:'1 mg/mL (noradrenaline base)',vols:'2 mL=2 mg · 4 mL=4 mg ampoules',note:'Protect from light. Standard dilution: 8 mg in 50 mL NS',warn:false},
   ],
   dose:'Start: 0.01–0.05 mcg/kg/min · Usual: 0.05–0.5 mcg/kg/min · CVC or IO ONLY',
+  doses:[
+    {ind:'Starting dose',route:'IV inf',dose:'0.01–0.05 mcg/kg/min',note:'Titrate q5–10 min to MAP ≥65'},
+    {ind:'Usual range',route:'IV inf',dose:'0.05–0.5 mcg/kg/min',note:'First-line in septic shock (SSC 2026)'},
+    {ind:'Refractory shock',route:'IV inf',dose:'>0.25 mcg/kg/min → add vasopressin 0.03 U/min',note:'Add steroids; CVC strongly preferred'},
+  ],
   corr:[],
   dilutions:[
     {label:'Standard (8 mg in 50 mL NS = 160 mcg/mL)'},
@@ -444,6 +469,13 @@ const DRUGS = [
     {label:'1:10,000 (0.1 mg/mL) — IV cardiac',vols:'10 mL=1 mg',note:'ACLS cardiac arrest IV · Make by diluting 1 mL (1:1000) into 10 mL',warn:false},
   ],
   dose:'Anaphylaxis: 0.5 mg (0.5 mL of 1:1000) IM lateral thigh, repeat q5–15 min · Cardiac arrest (ACLS): 1 mg IV q3–5 min · Infusion: 0.01–1 mcg/kg/min',
+  doses:[
+    {ind:'Anaphylaxis',route:'IM',dose:'0.5 mg (0.5 mL of 1:1000), repeat q5 min',note:'Anterolateral thigh; NEVER IV bolus of 1:1000'},
+    {ind:'Cardiac arrest (ACLS)',route:'IV/IO',dose:'1 mg (10 mL of 1:10,000) q3–5 min',note:'Non-shockable: ASAP; shockable: after 2nd shock'},
+    {ind:'Peri-arrest (push-dose)',route:'IV',dose:'10–20 mcg q2–5 min',note:'Dilute to 10 mcg/mL; experienced use only'},
+    {ind:'Infusion (shock)',route:'IV inf',dose:'0.01–0.5 mcg/kg/min',note:'Anaphylactic / cardiogenic shock'},
+    {ind:'Croup / post-extubation stridor',route:'Neb',dose:'5 mL of 1:1000 nebulised',note:'Observe ≥2–4 h for rebound'},
+  ],
   corr:[
     {dose:'Anaphylaxis: 0.5 mg IM (1:1000)',delta:'Onset 5–10 min',note:'Repeat after 5 min if needed'},
     {dose:'ACLS: 1 mg IV (1:10,000)',delta:'Repeat q3–5 min',note:'Via CVC or IO'},
@@ -497,6 +529,12 @@ const DRUGS = [
     {label:'2% Propofol (20 mg/mL)',vols:'50 mL=1g',note:'Fluid-restricted patients',warn:false},
   ],
   dose:'Induction: 1–2.5 mg/kg IV · Sedation: 0.3–4 mg/kg/hr (RASS −2 to 0 target) · Max 4 mg/kg/hr',
+  doses:[
+    {ind:'Induction (RSI)',route:'IV',dose:'1–2.5 mg/kg',note:'Reduce to 0.5–1 mg/kg in shock/elderly — causes hypotension'},
+    {ind:'Maintenance sedation',route:'IV inf',dose:'0.3–4 mg/kg/hr',note:'Titrate to RASS −2 to 0; daily sedation hold'},
+    {ind:'Refractory status epilepticus',route:'IV',dose:'1–2 mg/kg → 2–10 mg/kg/hr',note:'Burst-suppression; watch PRIS at high dose/>48h'},
+    {ind:'Procedural sedation',route:'IV',dose:'0.5–1 mg/kg, then 0.5 mg/kg PRN',note:'Airway-trained operator; apnoea risk'},
+  ],
   corr:[
     {dose:'0.5 mg/kg/hr (70 kg)',delta:'= 35 mg/hr = 3.5 mL/hr (1%)',note:'Light sedation'},
     {dose:'2 mg/kg/hr (70 kg)',delta:'= 140 mg/hr = 14 mL/hr (1%)',note:'Moderate sedation'},
@@ -523,6 +561,12 @@ const DRUGS = [
     {label:'5 mg/mL',vols:'3 mL=15 mg · 5 mL=25 mg · 10 mL=50 mg',note:'Dilute for infusion. Active metabolite accumulates in renal failure.',warn:false},
   ],
   dose:'Bolus: 0.02–0.05 mg/kg IV (0.01–0.02 in elderly) · Infusion: 0.02–0.1 mg/kg/hr · Status epilepticus: 0.1–0.2 mg/kg IV over 5 min',
+  doses:[
+    {ind:'Sedation bolus',route:'IV',dose:'0.02–0.05 mg/kg',note:'0.01–0.02 mg/kg in elderly; titrate'},
+    {ind:'Maintenance sedation',route:'IV inf',dose:'0.02–0.1 mg/kg/hr',note:'Accumulates >72h / renal failure — avoid prolonged'},
+    {ind:'Procedural sedation',route:'IV',dose:'1–2.5 mg, repeat q2–5 min',note:'Have flumazenil ready'},
+    {ind:'Status epilepticus',route:'IV/IM',dose:'0.1–0.2 mg/kg (max 10 mg)',note:'IM 10 mg if no IV (RAMPART); buccal/intranasal options'},
+  ],
   corr:[
     {dose:'0.04 mg/kg/hr (70 kg)',delta:'= 2.8 mg/hr = 2.8 mL/hr (1 mg/mL)',note:'Light sedation'},
     {dose:'0.1 mg/kg/hr (70 kg)',delta:'= 7 mg/hr = 7 mL/hr (1 mg/mL)',note:'Moderate sedation'},
@@ -551,6 +595,12 @@ const DRUGS = [
     {label:'50 mcg/mL (0.05 mg/mL)',vols:'2 mL=100 mcg · 5 mL=250 mcg · 10 mL=500 mcg',note:'Standard ICU. Some brands: 25 mcg/mL — verify before use.',warn:false},
   ],
   dose:'Bolus: 1–2 mcg/kg IV (0.5 in elderly) · Infusion: 25–200 mcg/hr · RSI adjunct: 2–3 mcg/kg IV over 1 min before induction',
+  doses:[
+    {ind:'Analgesia bolus',route:'IV',dose:'1–2 mcg/kg (0.5 in elderly)',note:'Onset 1–2 min; titrate to pain/RASS'},
+    {ind:'Analgosedation',route:'IV inf',dose:'25–200 mcg/hr',note:'Preferred opioid in renal failure (no active metabolite)'},
+    {ind:'RSI adjunct',route:'IV',dose:'2–3 mcg/kg over 1 min pre-induction',note:'Blunts laryngoscopy response; omit if shocked'},
+    {ind:'Procedural analgesia',route:'IV',dose:'0.5–1 mcg/kg',note:'Monitor RR/SpO₂; chest-wall rigidity if pushed fast'},
+  ],
   corr:[
     {dose:'25 mcg/hr infusion',delta:'= 0.5 mL/hr (50 mcg/mL)',note:'Starting dose, mild pain'},
     {dose:'50 mcg/hr infusion',delta:'= 1 mL/hr (50 mcg/mL)',note:'Standard analgosedation'},
@@ -582,6 +632,14 @@ const DRUGS = [
     {label:'100 mg/mL (high-conc)',vols:'10 mL=1g',note:'VERIFY concentration before use — 2× error risk',warn:true},
   ],
   dose:'RSI: 1.5 mg/kg IV push · Analgesia: 0.2–0.3 mg/kg IV over 5 min · Sedation infusion: 0.1–0.5 mg/kg/hr · Status asthmaticus: 1–2 mg/kg IV, then 1–2 mg/kg/hr',
+  doses:[
+    {ind:'Induction (RSI)',route:'IV',dose:'1–2 mg/kg (≈1.5 mg/kg)',note:'Onset 30–60 s; favourable in shock & bronchospasm'},
+    {ind:'Analgesia (sub-dissociative)',route:'IV',dose:'0.1–0.3 mg/kg over 10 min',note:'Dilute in 50–100 mL; opioid-sparing'},
+    {ind:'Procedural sedation',route:'IV',dose:'1 mg/kg (± 0.5 mg/kg PRN)',note:'Dissociative; pre-medicate to reduce emergence'},
+    {ind:'Maintenance / analgosedation',route:'IV inf',dose:'0.1–0.5 mg/kg/hr',note:'Reduces opioid & sedative requirement'},
+    {ind:'Status asthmaticus',route:'IV',dose:'1–2 mg/kg → 1–2 mg/kg/hr',note:'Bronchodilator effect'},
+    {ind:'No IV access',route:'IM',dose:'4–5 mg/kg',note:'Paediatric procedural sedation'},
+  ],
   corr:[
     {dose:'RSI: 1.5 mg/kg (70 kg)',delta:'= 105 mg = 2.1 mL (50 mg/mL)',note:'Onset 30s; duration 10–15 min'},
     {dose:'Analgesia: 0.3 mg/kg (70 kg)',delta:'= 21 mg = 0.4 mL (50 mg/mL) in 10 mL NS',note:'Sub-dissociative; onset 1 min'},
@@ -612,6 +670,12 @@ const DRUGS = [
     {label:'10 mg/mL',vols:'5 mL=50 mg · 10 mL=100 mg',note:'Refrigerate at 2–8°C. Stable 12 weeks at room temp.',warn:false},
   ],
   dose:'RSI: 1.2 mg/kg IV · Maintenance: 0.1–0.2 mg/kg boluses PRN · Infusion: 0.3–0.6 mg/kg/hr',
+  doses:[
+    {ind:'RSI (intubation)',route:'IV',dose:'1.2 mg/kg',note:'Onset 45–60 s; duration ~60 min'},
+    {ind:'Standard intubation',route:'IV',dose:'0.6 mg/kg',note:'Onset ~90 s; shorter duration'},
+    {ind:'Maintenance boluses',route:'IV',dose:'0.1–0.2 mg/kg PRN',note:'Guide by train-of-four (TOF) monitoring'},
+    {ind:'Infusion',route:'IV inf',dose:'0.3–0.6 mg/kg/hr',note:'Reversal: sugammadex 16 mg/kg (RSI) / 2–4 mg/kg'},
+  ],
   corr:[
     {dose:'1.2 mg/kg RSI (70 kg)',delta:'= 84 mg = 8.4 mL · Onset 60–90s, duration 60 min',note:'Full intubating dose'},
     {dose:'0.6 mg/kg (70 kg) modified RSI',delta:'= 42 mg = 4.2 mL · Onset ~90s',note:'Faster return of spontaneous breathing if failed'},
@@ -636,6 +700,11 @@ const DRUGS = [
     {label:'2 mg/mL',vols:'5 mL=10 mg · 10 mL=20 mg',note:'Refrigerate. Hofmann degradation at body temp — safe in organ failure.',warn:false},
   ],
   dose:'ARDS (P/F <150): 37.5 mg/hr × 48h (ACURASYS 2010) · Intubation: 0.15–0.2 mg/kg IV (onset 2–3 min)',
+  doses:[
+    {ind:'Intubation',route:'IV',dose:'0.15–0.2 mg/kg',note:'Onset 2–3 min — NOT suitable for RSI'},
+    {ind:'ARDS (P/F <150)',route:'IV inf',dose:'15 mg bolus → 37.5 mg/hr × 48h',note:'ACURASYS protocol; Hofmann elimination'},
+    {ind:'Maintenance NMB',route:'IV inf',dose:'1–3 mcg/kg/min',note:'Safe in renal/hepatic failure; TOF q4–6h'},
+  ],
   corr:[
     {dose:'37.5 mg/hr ARDS infusion',delta:'= 18.75 mL/hr (2 mg/mL)',note:'Fixed dose — no titration per ACURASYS'},
     {dose:'0.15 mg/kg intubation (70 kg)',delta:'= 10.5 mg = 5.25 mL',note:'Slower onset — NOT for RSI'},
@@ -664,6 +733,11 @@ const DRUGS = [
     {label:'50 mg/mL',vols:'3 mL=150 mg · 10 mL=500 mg',note:'Light-sensitive. Dilute in D5W ONLY — precipitates in NS.',warn:true},
   ],
   dose:'VF/VT arrest: 300 mg IV push in 20 mL D5W → 150 mg if recurs · AF rate/rhythm control: 150 mg over 10 min → 1 mg/min × 6h → 0.5 mg/min × 18h',
+  doses:[
+    {ind:'VF / pulseless VT',route:'IV',dose:'300 mg push (then 150 mg if recurs)',note:'After 3rd shock; in 20 mL D5W'},
+    {ind:'Stable VT / AF (load)',route:'IV',dose:'150 mg over 10 min',note:'May repeat; dilute in D5W only (precipitates in saline)'},
+    {ind:'Maintenance infusion',route:'IV inf',dose:'1 mg/min × 6h → 0.5 mg/min × 18h',note:'≈900 mg/24h; central line preferred'},
+  ],
   corr:[
     {dose:'VT/VF: 300 mg IV push',delta:'For shock-refractory VF (3rd shock)',note:'In 20 mL D5W over 5 min'},
     {dose:'AF load: 150 mg over 10 min',delta:'= 100 mL D5W drip × 10 min',note:'Then infusion'},
@@ -694,6 +768,11 @@ const DRUGS = [
     {label:'0.6 mg/mL',vols:'1 mL=0.6 mg',note:'Standard in India. Some: 1 mg/mL — check local.',warn:false},
   ],
   dose:'Symptomatic bradycardia: 0.6–1.2 mg IV q3–5 min (max 3 mg) · Pre-op: 0.01 mg/kg · Organophosphate poisoning: 2–4 mg IV q5–10 min titrated',
+  doses:[
+    {ind:'Symptomatic bradycardia',route:'IV',dose:'0.6–1 mg q3–5 min (max 3 mg)',note:'NOT <0.5 mg (paradoxical brady); ineffective in Mobitz II/CHB'},
+    {ind:'Organophosphate poisoning',route:'IV',dose:'2–4 mg, double q5 min to atropinisation',note:'Titrate to dry chest/secretions — huge cumulative doses may be needed'},
+    {ind:'Pre-RSI (paeds/bradycardia)',route:'IV',dose:'0.01–0.02 mg/kg (min 0.1 mg)',note:'Not routine in adults'},
+  ],
   corr:[
     {dose:'0.6 mg (1 mL) IV push',delta:'HR ↑ ~10–20 bpm',note:'Onset 1–2 min, repeat if inadequate'},
     {dose:'1.2 mg (2 mL) IV push',delta:'HR ↑ ~20–30 bpm',note:'If 0.6 mg insufficient'},
@@ -718,6 +797,11 @@ const DRUGS = [
     {label:'3 mg/mL',vols:'2 mL=6 mg',note:'Ultra-short half-life. MUST push rapidly and flush immediately',warn:false},
   ],
   dose:'SVT: 6 mg rapid IV push → if no response in 1–2 min: 12 mg → one more 12 mg if needed · Diagnostic (WPW?): same doses with continuous ECG/rhythm strip',
+  doses:[
+    {ind:'SVT — 1st dose',route:'Rapid IV',dose:'6 mg + 20 mL flush',note:'Most proximal vein; warn of brief chest tightness/asystole'},
+    {ind:'SVT — 2nd / 3rd dose',route:'Rapid IV',dose:'12 mg (may repeat 12 mg)',note:'Continuous ECG; may unmask atrial flutter'},
+    {ind:'Central line / on dipyridamole',route:'Rapid IV',dose:'Halve dose (start 3 mg)',note:'Higher dose if on caffeine/theophylline'},
+  ],
   corr:[
     {dose:'6 mg (2 mL) IV push',delta:'SVT → sinus: ~60% success',note:'First dose'},
     {dose:'12 mg (4 mL) IV push',delta:'SVT conversion: ~90% cumulative',note:'Second/third dose'},
@@ -909,8 +993,12 @@ function renderCard(d) {
       <div class="dsect first">📦 Available Concentrations</div>
       <table class="ctab"><thead><tr><th>Concentration</th><th>Volumes / Content</th><th>Notes</th></tr></thead><tbody>${concRows}</tbody></table>
 
-      <div class="dsect">💉 Standard Dose</div>
-      <div style="font-size:.8rem;line-height:1.7;padding:.3rem 0;">${d.dose}</div>
+      ${d.doses?.length
+        ? `<div class="dsect">💉 Doses by Indication</div>
+           <table class="dose-table"><thead><tr><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead><tbody>${
+             d.doses.map(x=>`<tr><td class="di-ind">${x.ind}${x.route?`<span class="di-route">${x.route}</span>`:''}</td><td class="di-dose">${x.dose}</td><td class="di-note">${x.note||''}</td></tr>`).join('')
+           }</tbody></table>`
+        : `<div class="dsect">💉 Standard Dose</div><div style="font-size:.8rem;line-height:1.7;padding:.3rem 0;">${d.dose||''}</div>`}
 
       ${d.corr?.length ? `<div class="dsect">📊 Expected Correction per Dose</div><div class="corr-box">${corrRows}</div>` : ''}
       ${dilHtml ? `<div class="dsect">⚡ Rate Table (Standard Dilution)</div><div class="dil-box">${dilHtml}</div>` : ''}
