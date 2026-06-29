@@ -242,6 +242,11 @@ html.dark .cu, html.dark .gc { background: #241d06; border-color: #854d0e; color
 html.dark .cr { background: #240a1a; border-color: #9d174d; color: #f9a8d4; }
 html.dark .trial-badge { background: #241d06; color: #fde047; }
 
+/* Site chrome that uses background:var(--ink) (which inverts in dark) — keep dark */
+html.dark .footer { background: #0a0a0c; border-top: 1px solid var(--line); }
+html.dark .guidelines-strip { background: #141518; }
+html.dark .footer-brand { color: #f2f2f3; }
+
 /* Dark mode toggle button */
 .dm-toggle {
   display: flex; align-items: center; gap: 0.4rem;
@@ -411,7 +416,11 @@ h2.display {
 .topic-updated { font-size: 0.78rem; color: var(--slate); }
 
 .topic-layout { max-width: 1160px; margin: 0 auto; padding: 2.5rem 5% 4rem; display: grid; grid-template-columns: 210px 1fr; gap: 3rem; align-items: start; }
-.topic-sidebar { position: sticky; top: 90px; }
+/* min-width:0 lets the content column shrink so wide tables scroll INSIDE it
+   instead of expanding the whole page off-screen (the mobile "zoom out" bug) */
+.topic-content { min-width: 0; overflow-wrap: break-word; }
+.topic-content table { max-width: 100%; }
+.topic-sidebar { position: sticky; top: 90px; min-width: 0; }
 .toc { background: var(--bg-alt); border: 1px solid var(--line); border-radius: 10px; padding: 1.2rem; }
 .toc-title { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--slate); margin-bottom: 0.8rem; }
 .toc-list { list-style: none; display: flex; flex-direction: column; gap: 0.3rem; }
@@ -579,6 +588,10 @@ body {
   .topic-content h2 { font-size: 1.15rem; }
   .topic-content h3 { font-size: .95rem; }
   .topic-content p, .topic-content ul, .topic-content li { font-size: .88rem; }
+  /* Any wide table scrolls horizontally within the column instead of
+     widening the page (prevents the whole article rendering zoomed-out) */
+  .topic-content table { display: block; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .topic-content { overflow-x: hidden; }
 
   /* Tables — horizontal scroll on mobile */
   .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
