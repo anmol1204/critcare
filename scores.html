@@ -110,6 +110,7 @@
     <button class="score-tab" onclick="showSection('cardiac', this)">❤️ Cardiac</button>
     <button class="score-tab" onclick="showSection('neuro', this)">🧠 Neurology</button>
     <button class="score-tab" onclick="showSection('renal', this)">🫘 Renal & Hepatic</button>
+    <button class="score-tab" onclick="showSection('lytes', this)">⚡ Electrolytes</button>
     <button class="score-tab" onclick="showSection('surgical', this)">🔪 Surgical</button>
   </div>
 </nav>
@@ -844,7 +845,120 @@
           <button class="score-calc-btn" onclick="calcCG()">Calculate CrCl (ml/min)</button>
           <div class="score-result" id="cg_result"></div>
         </div>
-        <div class="score-reference">📚 Cockcroft DW, Gault MH. Nephron 1976;16(1):31. | KDIGO 2026 Drug Dosing Guidelines</div>
+        <div class="score-reference">📚 Cockcroft DW, Gault MH. Nephron 1976;16(1):31. | Still preferred for drug dosing (KDIGO).</div>
+      </div>
+
+      <!-- eGFR CKD-EPI 2021 (race-free) -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>eGFR — CKD-EPI 2021 (race-free)</h3>
+          <div class="score-desc">The current internationally recommended estimate of GFR (NKF–ASN Task Force 2021, KDIGO 2024). Race-free creatinine equation. Reports ml/min/1.73m² and CKD (G) stage.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Age (years)</label>
+            <input type="number" id="ckd_age" placeholder="e.g. 65" min="18" max="110" /></div>
+          <div class="score-field"><label>Serum Creatinine (mg/dL)</label>
+            <input type="number" id="ckd_cr" placeholder="e.g. 1.2" min="0.1" max="20" step="0.01" /></div>
+          <div class="score-field"><label>Sex</label>
+            <select id="ckd_sex"><option value="M">Male</option><option value="F">Female</option></select></div>
+          <button class="score-calc-btn" onclick="calcCKDEPI()">Calculate eGFR</button>
+          <div class="score-result" id="ckd_result"></div>
+        </div>
+        <div class="score-reference">📚 Inker LA et al. New Creatinine & Cystatin C Equations without Race. N Engl J Med 2021;385:1737. | NKF–ASN Task Force 2021 · KDIGO 2024 CKD Guideline. Cystatin C–based (CKD-EPI 2021 cr-cys) is preferred when confirmation needed.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ELECTROLYTES -->
+  <div class="scores-section" id="sec-lytes">
+    <div class="scores-grid">
+
+      <!-- Corrected Calcium -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>Corrected Calcium (for albumin)</h3>
+          <div class="score-desc">Total calcium must be corrected for albumin (each 1 g/dL fall in albumin lowers total Ca ~0.8 mg/dL). Ionised Ca is the gold standard when available.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Measured total Calcium (mg/dL)</label>
+            <input type="number" id="ca_total" placeholder="e.g. 7.8" min="3" max="18" step="0.1" /></div>
+          <div class="score-field"><label>Serum Albumin (g/dL)</label>
+            <input type="number" id="ca_alb" placeholder="e.g. 2.5" min="1" max="6" step="0.1" /></div>
+          <button class="score-calc-btn" onclick="calcCorrCa()">Correct Calcium</button>
+          <div class="score-result" id="ca_result"></div>
+        </div>
+        <div class="score-reference">📚 Payne RB et al. Br Med J 1973. Corrected Ca = measured + 0.8 × (4.0 − albumin). Verify with ionised Ca in critical illness.</div>
+      </div>
+
+      <!-- Sodium correction (hyponatraemia) -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>Sodium Correction Rate (Hyponatraemia)</h3>
+          <div class="score-desc">Adrogué–Madias: predicts the rise in serum Na per litre of infusate, and the volume/rate to safely raise Na. ⛔ Max 8–10 mEq/L per 24 h (ODS risk).</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Current serum Na⁺ (mEq/L)</label>
+            <input type="number" id="na_cur" placeholder="e.g. 118" min="90" max="170" step="0.1" /></div>
+          <div class="score-field"><label>Weight (kg)</label>
+            <input type="number" id="na_wt" placeholder="e.g. 70" min="20" max="200" /></div>
+          <div class="score-field"><label>Sex / age (TBW factor)</label>
+            <select id="na_tbw">
+              <option value="0.6">Male, non-elderly (0.6)</option>
+              <option value="0.5">Female / elderly male (0.5)</option>
+              <option value="0.45">Elderly female (0.45)</option>
+            </select></div>
+          <div class="score-field"><label>Infusate</label>
+            <select id="na_inf">
+              <option value="513">3% NaCl (513 mEq/L)</option>
+              <option value="154">0.9% NaCl (154 mEq/L)</option>
+            </select></div>
+          <div class="score-field"><label>Target rise in 24 h (mEq/L)</label>
+            <input type="number" id="na_target" value="8" min="4" max="10" step="1" /></div>
+          <button class="score-calc-btn" onclick="calcNaCorr()">Calculate</button>
+          <div class="score-result" id="na_result"></div>
+        </div>
+        <div class="score-reference">📚 Adrogué HJ, Madias NE. N Engl J Med 2000;342:1581. | EJI Hyponatraemia Guideline 2014. ΔNa/L = (infusate Na − serum Na) ÷ (TBW + 1).</div>
+      </div>
+
+      <!-- Free water deficit (hypernatraemia) -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>Free Water Deficit (Hypernatraemia)</h3>
+          <div class="score-desc">Estimates the free-water deficit to correct hypernatraemia. ⛔ Lower Na no faster than 10 mEq/L per 24 h (cerebral oedema risk).</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Current serum Na⁺ (mEq/L)</label>
+            <input type="number" id="fwd_na" placeholder="e.g. 160" min="140" max="200" step="0.1" /></div>
+          <div class="score-field"><label>Weight (kg)</label>
+            <input type="number" id="fwd_wt" placeholder="e.g. 70" min="20" max="200" /></div>
+          <div class="score-field"><label>TBW factor</label>
+            <select id="fwd_tbw">
+              <option value="0.6">Male, non-elderly (0.6)</option>
+              <option value="0.5">Female / elderly male (0.5)</option>
+              <option value="0.45">Elderly female (0.45)</option>
+            </select></div>
+          <button class="score-calc-btn" onclick="calcFWD()">Calculate Deficit</button>
+          <div class="score-result" id="fwd_result"></div>
+        </div>
+        <div class="score-reference">📚 Adrogué HJ, Madias NE. N Engl J Med 2000;342:1493. FWD = TBW × (Na/140 − 1). Add ongoing/insensible losses.</div>
+      </div>
+
+      <!-- Potassium deficit -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>Potassium Deficit (estimate)</h3>
+          <div class="score-desc">Approximate total-body K⁺ deficit. Rule of thumb: serum K⁺ falls ~0.3 mEq/L per ~100 mEq total deficit (steeper below 3.0). Replace Mg²⁺ too — hypomagnesaemia causes refractory hypokalaemia.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Current serum K⁺ (mEq/L)</label>
+            <input type="number" id="k_cur" placeholder="e.g. 2.8" min="1.5" max="5" step="0.1" /></div>
+          <div class="score-field"><label>Target K⁺ (mEq/L)</label>
+            <input type="number" id="k_tgt" value="4.0" min="3.5" max="5" step="0.1" /></div>
+          <button class="score-calc-btn" onclick="calcKDef()">Estimate Deficit</button>
+          <div class="score-result" id="k_result"></div>
+        </div>
+        <div class="score-reference">📚 Marino's ICU Book 5th Ed, Ch.35. Estimate only — recheck serum K⁺ after each 40 mEq. Peripheral max 10 mEq/h; central 10–20 mEq/h with ECG.</div>
       </div>
 
     </div>
@@ -925,6 +1039,106 @@ function showResult(id, score, label, interp, cls) {
   const el = document.getElementById(id);
   el.className = 'score-result show ' + cls;
   el.innerHTML = `<div class="res-label">${label}</div><div class="res-num">${score}</div><div class="res-interp">${interp}</div>`;
+}
+
+// ── eGFR CKD-EPI 2021 (race-free creatinine equation) ──
+function calcCKDEPI() {
+  const age = parseFloat(document.getElementById('ckd_age').value);
+  const cr  = parseFloat(document.getElementById('ckd_cr').value);
+  const sex = document.getElementById('ckd_sex').value;
+  if (!age || !cr) { alert('Please enter age and creatinine'); return; }
+  const female = sex === 'F';
+  const kappa = female ? 0.7 : 0.9;
+  const alpha = female ? -0.241 : -0.302;
+  const ratio = cr / kappa;
+  const egfr = 142
+    * Math.pow(Math.min(ratio, 1), alpha)
+    * Math.pow(Math.max(ratio, 1), -1.200)
+    * Math.pow(0.9938, age)
+    * (female ? 1.012 : 1);
+  const v = Math.round(egfr);
+  let cl, stage;
+  if (v >= 90)      { cl='res-low';  stage='G1 — Normal/high (≥90). CKD only if other markers of kidney damage present.'; }
+  else if (v >= 60) { cl='res-low';  stage='G2 — Mildly decreased (60–89). CKD only with damage markers.'; }
+  else if (v >= 45) { cl='res-mod';  stage='G3a — Mild–moderate (45–59). Adjust renally-cleared drugs; monitor.'; }
+  else if (v >= 30) { cl='res-mod';  stage='G3b — Moderate–severe (30–44). Nephrology input; review nephrotoxins/metformin.'; }
+  else if (v >= 15) { cl='res-high'; stage='G4 — Severely decreased (15–29). Plan for RRT; major dose adjustments.'; }
+  else              { cl='res-high'; stage='G5 — Kidney failure (&lt;15). RRT/transplant territory.'; }
+  showResult('ckd_result', v + ' mL/min/1.73m²', 'eGFR (CKD-EPI 2021)', stage + '<br><span style="font-size:.8rem;opacity:.8;">Race-free equation. For drug dosing, Cockcroft–Gault CrCl is still often used.</span>', cl);
+}
+
+// ── Corrected Calcium ──
+function calcCorrCa() {
+  const ca = parseFloat(document.getElementById('ca_total').value);
+  const alb = parseFloat(document.getElementById('ca_alb').value);
+  if (!ca || !alb) { alert('Please enter calcium and albumin'); return; }
+  const corr = ca + 0.8 * (4.0 - alb);
+  let cl, interp;
+  if (corr < 7.0)       { cl='res-high'; interp='Severe hypocalcaemia. If symptomatic (tetany, seizures, QT prolongation): IV calcium gluconate 10 mL of 10% over 10 min, then infusion. Check Mg²⁺ &amp; ionised Ca.'; }
+  else if (corr < 8.5)  { cl='res-mod';  interp='Hypocalcaemia. Treat cause; oral/IV calcium ± vitamin D. Correct hypomagnesaemia first.'; }
+  else if (corr <= 10.5){ cl='res-low';  interp='Corrected calcium within normal range (8.5–10.5 mg/dL).'; }
+  else if (corr <= 12)  { cl='res-mod';  interp='Hypercalcaemia. IV 0.9% saline; treat cause; consider bisphosphonate/calcitonin.'; }
+  else                  { cl='res-high'; interp='Severe hypercalcaemia (&gt;12). Aggressive saline, calcitonin + zoledronate; ECG (short QT); consider dialysis if &gt;18 or renal failure.'; }
+  showResult('ca_result', corr.toFixed(1) + ' mg/dL', 'Corrected Calcium', interp, cl);
+}
+
+// ── Sodium correction (Adrogué–Madias) ──
+function calcNaCorr() {
+  const na = parseFloat(document.getElementById('na_cur').value);
+  const wt = parseFloat(document.getElementById('na_wt').value);
+  const f  = parseFloat(document.getElementById('na_tbw').value);
+  const inf = parseFloat(document.getElementById('na_inf').value);
+  const target = parseFloat(document.getElementById('na_target').value) || 8;
+  if (!na || !wt) { alert('Please enter serum Na and weight'); return; }
+  const tbw = f * wt;
+  const dPerL = (inf - na) / (tbw + 1);          // mEq/L rise per litre infusate
+  let cl = na < 120 ? 'res-high' : 'res-mod';
+  if (dPerL <= 0) { showResult('na_result', '—', 'Sodium Correction', 'This infusate will not raise serum Na (its Na ≤ patient\'s). Use 3% NaCl for active correction.', 'res-high'); return; }
+  const litres = target / dPerL;                 // litres to achieve target rise over 24h
+  const mlPerHr = Math.round(litres * 1000 / 24);
+  const infName = inf === 513 ? '3% NaCl' : '0.9% NaCl';
+  const interp =
+    `TBW ≈ ${tbw.toFixed(1)} L. Each <strong>1 L of ${infName}</strong> raises serum Na by <strong>${dPerL.toFixed(1)} mEq/L</strong>.<br>` +
+    `To raise Na by <strong>${target} mEq/L over 24 h</strong>: give <strong>${litres.toFixed(2)} L</strong> ≈ <strong>${mlPerHr} mL/h</strong>.<br>` +
+    `<span style="color:#b91c1c;font-weight:600;">⛔ Do not exceed 8–10 mEq/L per 24 h. Recheck Na q2–4 h. For acute severe symptoms (seizures): 3% NaCl 100–150 mL bolus.</span>`;
+  showResult('na_result', dPerL.toFixed(1) + ' mEq/L per L', 'Adrogué–Madias', interp, cl);
+}
+
+// ── Free water deficit (hypernatraemia) ──
+function calcFWD() {
+  const na = parseFloat(document.getElementById('fwd_na').value);
+  const wt = parseFloat(document.getElementById('fwd_wt').value);
+  const f  = parseFloat(document.getElementById('fwd_tbw').value);
+  if (!na || !wt) { alert('Please enter serum Na and weight'); return; }
+  const tbw = f * wt;
+  const fwd = tbw * (na / 140 - 1);
+  const litres24 = (fwd > 0 ? fwd : 0);
+  const interp =
+    `TBW ≈ ${tbw.toFixed(1)} L. Free-water deficit ≈ <strong>${fwd.toFixed(2)} L</strong> (to reach Na 140).<br>` +
+    `Replace with 5% dextrose / enteral water over <strong>48 h</strong> plus ongoing &amp; insensible losses.<br>` +
+    `<span style="color:#b91c1c;font-weight:600;">⛔ Lower Na ≤10 mEq/L per 24 h (cerebral oedema). Recheck Na q4–6 h.</span>`;
+  showResult('fwd_result', fwd.toFixed(2) + ' L', 'Free Water Deficit', interp, fwd > 4 ? 'res-high' : 'res-mod');
+}
+
+// ── Potassium deficit (estimate) ──
+function calcKDef() {
+  const k = parseFloat(document.getElementById('k_cur').value);
+  const tgt = parseFloat(document.getElementById('k_tgt').value) || 4.0;
+  if (!k) { alert('Please enter current K⁺'); return; }
+  if (k >= tgt) { showResult('k_result', '0 mEq', 'K⁺ Deficit', 'Serum K⁺ already at/above target. No replacement indicated; recheck and treat cause if trending down.', 'res-low'); return; }
+  const drop = tgt - k;
+  // ~100-200 mEq per 0.3 mEq/L when K 3-4; steeper (>200 per mEq/L) below 3.0
+  const low  = Math.round(drop / 0.3 * 100);
+  const high = Math.round(drop / 0.3 * 200);
+  let cl = k < 2.5 ? 'res-high' : k < 3.0 ? 'res-mod' : 'res-low';
+  const sev = k < 2.5 ? 'Severe — 12-lead ECG now (U waves, arrhythmia risk); central IV replacement.' :
+              k < 3.0 ? 'Moderate–severe — cardiac monitoring; IV replacement.' :
+              'Mild–moderate — oral preferred if tolerated and K >2.5.';
+  const interp =
+    `Estimated total deficit ≈ <strong>${low}–${high} mEq</strong> (rough; deficit rises steeply below K 3.0).<br>` +
+    `${sev}<br>` +
+    `<span style="font-size:.82rem;opacity:.85;">Peripheral max 10 mEq/h · central 10–20 mEq/h with ECG. Recheck after each 40 mEq. <strong>Replace Mg²⁺ simultaneously.</strong></span>`;
+  showResult('k_result', low + '–' + high + ' mEq', 'K⁺ Deficit (estimate)', interp, cl);
 }
 
 // SOFA
