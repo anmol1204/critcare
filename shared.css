@@ -147,6 +147,13 @@ html.dark .crit-box p { color: #eeb4b4; }
 html.dark .cold-box { background: #0a1626; border-color: #3b82f6; }
 html.dark .cold-box h4 { color: #93c5fd; }
 html.dark .cold-box p { color: #bcd6f5; }
+/* PE risk-stratification cards */
+html.dark .risk-high { background: #1a0a0a; border-color: #7f1d1d; }
+html.dark .risk-int  { background: #241d06; border-color: #854d0e; }
+html.dark .risk-low  { background: #0a2418; border-color: #15803d; }
+html.dark .risk-high h4, html.dark .risk-high p { color: #fca5a5; }
+html.dark .risk-int h4,  html.dark .risk-int p  { color: #fde047; }
+html.dark .risk-low h4,  html.dark .risk-low p  { color: #86efac; }
 /* example box (green) */
 html.dark .example-box { background: #0a1f15; border-color: #15803d; }
 html.dark .example-box .el { color: #86efac; }
