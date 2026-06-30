@@ -299,6 +299,25 @@ html.dark .cc-lock-badge { background: #241d06; color: #fde047; }
 .nav-pro a, a.nav-pro { color: var(--accent) !important; font-weight: 800; }
 .sr-lock { font-size: 0.8rem; }
 
+/* Pearl of the Day (MCQ widget) */
+.pearl-widget { max-width: 720px; margin: 0 auto; border: 1px solid var(--line); border-radius: 16px; padding: 1.5rem; background: var(--bg); box-shadow: 0 6px 24px rgba(0,0,0,0.06); }
+.pearl-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.pearl-badge { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; background: linear-gradient(135deg, #f59e0b, #d97706); padding: 0.3rem 0.8rem; border-radius: 20px; }
+.pearl-topic { font-size: 0.72rem; font-weight: 700; color: var(--slate); background: var(--bg-alt); border: 1px solid var(--line); padding: 0.25rem 0.7rem; border-radius: 20px; }
+.pearl-q { font-size: 1rem; font-weight: 700; color: var(--ink); line-height: 1.5; margin-bottom: 1rem; }
+.pearl-opts { display: flex; flex-direction: column; gap: 0.55rem; }
+.pearl-opt { display: flex; align-items: center; gap: 0.7rem; text-align: left; width: 100%; padding: 0.8rem 1rem; border: 1.5px solid var(--line); border-radius: 10px; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 0.9rem; cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+.pearl-opt:hover { border-color: var(--blue); }
+.pearl-letter { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--bg-alt); border: 1px solid var(--line); display: grid; place-items: center; font-size: 0.78rem; font-weight: 800; color: var(--slate); }
+.pearl-opt.locked { cursor: default; }
+.pearl-opt.correct { border-color: #22c55e; background: rgba(34,197,94,0.12); }
+.pearl-opt.correct .pearl-letter { background: #22c55e; color: #fff; border-color: #22c55e; }
+.pearl-opt.wrong { border-color: #ef4444; background: rgba(239,68,68,0.10); }
+.pearl-opt.wrong .pearl-letter { background: #ef4444; color: #fff; border-color: #ef4444; }
+.pearl-exp { display: none; margin-top: 1rem; padding: 0.9rem 1.1rem; background: var(--bg-alt); border: 1px solid var(--line); border-radius: 10px; font-size: 0.86rem; color: var(--ink); line-height: 1.65; }
+.pearl-exp.show { display: block; }
+.pearl-ok { color: #15803d; } .pearl-no { color: #b91c1c; }
+
 /* Reading progress bar + Save button (article pages, logged-in) */
 .cc-readbar { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--accent); z-index: 200; transition: width 0.1s linear; }
 .cc-save-btn { position: fixed; right: 1rem; bottom: 5.2rem; z-index: 120; background: var(--bg); border: 1.5px solid var(--blue); color: var(--blue); font-weight: 700; font-size: 0.82rem; padding: 0.55rem 0.95rem; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.18); font-family: var(--font-body); }

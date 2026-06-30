@@ -234,6 +234,15 @@
   </div>
 </section>
 
+<section class="section">
+  <div class="sec-head">
+    <span class="eyebrow">Test Yourself</span>
+    <h2 class="display">Clinical Pearl of the Day</h2>
+    <p>A new evidence-based MCQ every day — tap an answer to see the explanation.</p>
+  </div>
+  <div id="pearlOfDay" class="pearl-widget"></div>
+</section>
+
 <div class="guidelines-strip">
   <div class="gl-inner">
     <h2>Guidelines We Cover</h2>
@@ -319,5 +328,7 @@
     <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI Tool</a>
   </nav>
   <script src="/pwa.js"></script>
+  <script src="pearls.js"></script>
+  <script>document.addEventListener('DOMContentLoaded', function(){ if(window.renderPearl) renderPearl('pearlOfDay'); });</script>
 </body>
 </html>

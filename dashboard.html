@@ -166,6 +166,9 @@
       <a class="qa-card" href="dnb.html"><div class="qa-ic">🎓</div><div class="qa-name">DNB / Exam Prep</div><div class="qa-desc">High-yield Q&amp;A</div></a>
     </div>
 
+    <div class="dash-section-label">💡 Pearl of the day</div>
+    <div id="pearlOfDay" class="pearl-widget" style="margin:0 0 .5rem;"></div>
+
     <div class="resume-card" id="continueCard" style="display:none;">
       <div>
         <div class="resume-eyebrow">▶️ Continue reading</div>
@@ -310,5 +313,7 @@
     renderSaved();
   })();
 </script>
+<script src="pearls.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function(){ if(window.renderPearl) renderPearl('pearlOfDay'); });</script>
 </body>
 </html>
