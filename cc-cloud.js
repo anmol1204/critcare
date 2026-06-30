@@ -67,21 +67,32 @@ let currentUid = null;
 let isReady = false;
 
 async function pull(uid){
-  var snap  = await getDoc(doc(db, 'users', uid));
-  var cloud = snap.exists() ? (snap.data() || {}) : {};
+  var snap    = await getDoc(doc(db, 'users', uid));
+  var existed = snap.exists();
+  var cloud   = existed ? (snap.data() || {}) : {};
   // Profile scalars — cloud wins when present, otherwise keep whatever is local.
   if (cloud.name)      lset(LS.name, cloud.name);
   if (cloud.specialty) lset(LS.spec, cloud.specialty);
   if (cloud.institute) lset(LS.inst, cloud.institute);
   if (cloud.pro)       lset(LS.pro, '1');
   // Lists — merge local + cloud so nothing already on this device is lost.
-  jset(LS.saved,     mergeList(jget(LS.saved, []),     cloud.saved));
-  jset(LS.readlater, mergeList(jget(LS.readlater, []), cloud.readlater));
+  var mSaved = mergeList(jget(LS.saved, []),     cloud.saved);
+  var mLater = mergeList(jget(LS.readlater, []), cloud.readlater);
+  jset(LS.saved,     mSaved);
+  jset(LS.readlater, mLater);
   // Continue-reading — keep the most recent of the two.
   var ll = jget(LS.last, null), cl = cloud.last || null;
   var last = (!ll) ? cl : (!cl) ? ll : ((cl.ts || 0) > (ll.ts || 0) ? cl : ll);
   if (last) jset(LS.last, last);
-  return cloud;
+  // Did this device hold data the cloud was missing? If so, we owe it an upload.
+  var changed = !existed
+    || mSaved.length !== (cloud.saved || []).length
+    || mLater.length !== (cloud.readlater || []).length
+    || (!!lget(LS.name) && !cloud.name)
+    || (!!lget(LS.spec) && !cloud.specialty)
+    || (!!lget(LS.inst) && !cloud.institute)
+    || (lget(LS.pro) === '1' && !cloud.pro);
+  return changed;
 }
 
 async function push(){
@@ -137,8 +148,11 @@ onAuthStateChanged(auth, async function(user){
     currentUid = user.uid;
     if (user.email)       lset(LS.email, user.email);
     if (user.displayName && !lget(LS.name)) lset(LS.name, user.displayName);
-    try { await pull(user.uid); } catch (e) {}
-    try { await push(); } catch (e) {}   // upload any local-only items captured before this sync
+    var owesUpload = false;
+    try { owesUpload = await pull(user.uid); } catch (e) {}
+    // Only write back when this device actually had something new — keeps
+    // steady-state navigation to one read and zero writes per page.
+    if (owesUpload) { try { await push(); } catch (e) {} }
     isReady = true;
     document.dispatchEvent(new CustomEvent('cc-synced'));
   } else {
