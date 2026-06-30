@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Flashcards — Rapid Revision — CritCare.in</title>
+  <meta name="description" content="CritCare flashcards — concise, precise revision cards for sepsis, ARDS, ACLS, difficult airway, electrolytes, acid-base, shock, DKA and more. Flip to reveal." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <style>
+    .fc-hero { background:linear-gradient(135deg,#0f1f3d,#1a3560); color:#fff; padding:2.5rem 5% 2rem; text-align:center; }
+    .fc-hero h1 { font-family:var(--font-disp); font-size:clamp(1.6rem,3vw,2.2rem); margin-bottom:.4rem; }
+    .fc-hero p { color:rgba(255,255,255,.72); font-size:.9rem; max-width:560px; margin:0 auto; line-height:1.6; }
+    .fc-wrap { max-width:760px; margin:0 auto; padding:1.8rem 5% 4rem; }
+    .fc-decks { display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin-bottom:1.6rem; }
+    .fc-deck { padding:.5rem 1rem; border-radius:30px; border:2px solid var(--line); background:var(--bg); color:var(--ink); font-size:.82rem; font-weight:700; cursor:pointer; font-family:var(--font-body); transition:all .15s; }
+    .fc-deck:hover { border-color:var(--blue); }
+    .fc-deck.active { border-color:var(--blue); background:var(--blue); color:#fff; }
+
+    .fc-stage { perspective:1400px; }
+    .fc-card { width:100%; min-height:300px; cursor:pointer; position:relative; }
+    .fc-inner { position:relative; width:100%; min-height:300px; transition:transform .5s; transform-style:preserve-3d; }
+    .fc-card.flipped .fc-inner { transform:rotateY(180deg); }
+    .fc-face { position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; border:1px solid var(--line); border-radius:18px; padding:2rem 1.8rem; display:flex; flex-direction:column; justify-content:center; box-shadow:0 8px 30px rgba(0,0,0,.08); }
+    .fc-front { background:var(--bg); }
+    .fc-back { background:linear-gradient(135deg,var(--blue-soft),var(--bg)); transform:rotateY(180deg); }
+    .fc-tag { position:absolute; top:1rem; left:1.4rem; font-size:.64rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--slate); }
+    .fc-hint { position:absolute; bottom:1rem; right:1.4rem; font-size:.7rem; color:var(--slate); }
+    .fc-q { font-size:1.2rem; font-weight:700; color:var(--ink); line-height:1.5; text-align:center; }
+    .fc-a { font-size:.98rem; color:var(--ink); line-height:1.7; }
+    .fc-a strong { color:var(--blue-dark); }
+    .fc-controls { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:1.3rem; }
+    .fc-btn { padding:.7rem 1.2rem; border-radius:10px; border:1px solid var(--line); background:var(--bg-alt); color:var(--ink); font-weight:700; font-size:.85rem; cursor:pointer; font-family:var(--font-body); }
+    .fc-btn:hover { border-color:var(--blue); color:var(--blue); }
+    .fc-btn.primary { background:var(--blue); color:#fff; border-color:var(--blue); }
+    .fc-progress { font-size:.85rem; color:var(--slate); font-weight:600; }
+    .fc-tools { display:flex; gap:.6rem; justify-content:center; margin-top:1rem; }
+    .fc-tools button { background:none; border:none; color:var(--blue); font-size:.8rem; font-weight:700; cursor:pointer; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="fc-hero">
+  <h1>🃏 Flashcards</h1>
+  <p>Concise, high-yield revision cards. Pick a deck, tap a card to flip, and run through the key points fast.</p>
+</header>
+
+<div class="fc-wrap">
+  <div class="fc-decks" id="fcDecks"></div>
+  <div class="fc-stage">
+    <div class="fc-card" id="fcCard" onclick="flipCard()">
+      <div class="fc-inner">
+        <div class="fc-face fc-front">
+          <span class="fc-tag" id="fcTagF"></span>
+          <div class="fc-q" id="fcFront"></div>
+          <span class="fc-hint">tap to flip ↻</span>
+        </div>
+        <div class="fc-face fc-back">
+          <span class="fc-tag" id="fcTagB"></span>
+          <div class="fc-a" id="fcBack"></div>
+          <span class="fc-hint">tap to flip ↻</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="fc-controls">
+    <button class="fc-btn" onclick="prevCard()">← Prev</button>
+    <span class="fc-progress" id="fcProgress"></span>
+    <button class="fc-btn primary" onclick="nextCard()">Next →</button>
+  </div>
+  <div class="fc-tools">
+    <button onclick="shuffleDeck()">🔀 Shuffle</button>
+    <button onclick="flipCard()">↻ Flip</button>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li>
+      <li><a href="scores.html">Scores</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+
+<script>
+  var DECKS = {
+    "Sepsis": [
+      ["Sepsis-3 definition", "Life-threatening organ dysfunction (SOFA ↑≥2) from a <strong>dysregulated host response to infection</strong>. Septic shock = vasopressor need for MAP ≥65 + lactate >2 despite resuscitation."],
+      ["Hour-1 bundle", "Measure <strong>lactate</strong>, blood <strong>cultures</strong> before antibiotics, <strong>broad-spectrum antibiotics</strong>, <strong>30 mL/kg crystalloid</strong> for hypotension/lactate ≥4, <strong>vasopressors</strong> if hypotensive during/after fluids (MAP ≥65)."],
+      ["First-line vasopressor", "<strong>Noradrenaline.</strong> Add <strong>vasopressin 0.03 U/min</strong> when NA >0.25 µg/kg/min; add hydrocortisone 200 mg/day if refractory."],
+      ["Lactate target", "Guide resuscitation to <strong>lactate clearance</strong> (≥10%/2h, goal <2). Capillary refill–guided resuscitation is non-inferior (ANDROMEDA-SHOCK)."],
+      ["Fluid choice", "<strong>Balanced crystalloids</strong> preferred over saline; albumin if large volumes. Avoid starches."]
+    ],
+    "ARDS": [
+      ["Tidal volume", "<strong>6 mL/kg predicted body weight</strong>, plateau pressure <strong>&lt;30 cmH₂O</strong>, driving pressure <15."],
+      ["Proning", "Prone ≥16 h/day if <strong>P/F &lt;150</strong> (PROSEVA — NNT 6 for mortality)."],
+      ["PEEP strategy", "Higher PEEP in moderate–severe ARDS; titrate to oxygenation/compliance; allow permissive hypercapnia (pH >7.20)."],
+      ["NMB & ECMO", "Cisatracurium for early severe ARDS (selected); consider <strong>VV-ECMO</strong> if P/F <80 / refractory (EOLIA)."],
+      ["Berlin definition", "Acute (≤1 wk), bilateral infiltrates not fully explained by cardiac failure, P/F ≤300 on PEEP ≥5: mild ≤300, moderate ≤200, severe ≤100."]
+    ],
+    "ACLS": [
+      ["Shockable rhythms", "<strong>VF & pulseless VT.</strong> Defibrillate → 2 min CPR → adrenaline 1 mg after 2nd shock → amiodarone 300 mg after 3rd shock."],
+      ["Non-shockable", "<strong>PEA & asystole.</strong> CPR + adrenaline 1 mg ASAP (q3–5min) + find/treat reversible cause. No shock."],
+      ["High-quality CPR", "Rate <strong>100–120/min</strong>, depth ≥5 cm, full recoil, minimise interruptions, avoid over-ventilation (10/min with advanced airway)."],
+      ["Hs & Ts", "Hypoxia, Hypovolaemia, H⁺ (acidosis), Hypo/HyperK, Hypothermia, Hypoglycaemia · Tension pneumothorax, Tamponade, Toxins, Thrombosis (coronary/pulmonary)."],
+      ["Refractory VF", "Optimise pads/contact; consider <strong>double sequential defibrillation</strong> or vector change (DOSE-VF)."]
+    ],
+    "Difficult Airway": [
+      ["Plan A–D (DAS 2025)", "<strong>A</strong> tracheal intubation · <strong>B</strong> supraglottic airway · <strong>C</strong> face-mask ventilation · <strong>D</strong> emergency front-of-neck access (CICO)."],
+      ["AIDAA 2025 'Code D'", "Activate <strong>Code D</strong> when the primary plan fails; <strong>non-hierarchical</strong> rescue between tube/SGA/mask; up to 3 attempts if SpO₂ ≥95%."],
+      ["CICO rescue", "Scalpel–bougie–tube <strong>surgical cricothyroidotomy.</strong> Declare it, don't delay for more laryngoscopy."],
+      ["Attempts limit", "Max <strong>3 + 1</strong> laryngoscopy attempts; change something each time; oxygenation is the priority, not the tube."],
+      ["Key 2025 emphasis", "Peroxygenation / continuous O₂ (apnoeic O₂, HFNO), VL default, mandatory capnography, physiologically difficult airway."]
+    ],
+    "Electrolytes": [
+      ["Hyponatraemia limit", "Correct ≤<strong>8–10 mEq/L per 24 h</strong> (ODS risk). Acute symptomatic: 3% NaCl 100–150 mL bolus to raise Na ~4–6."],
+      ["Hyperkalaemia", "<strong>Calcium</strong> (membrane) → <strong>insulin+dextrose / salbutamol</strong> (shift) → <strong>dialysis/K-binders</strong> (remove). ECG first."],
+      ["Corrected calcium", "Corrected Ca = measured + <strong>0.8 × (4.0 − albumin)</strong>. Confirm with ionised Ca."],
+      ["Refractory hypokalaemia", "Replace <strong>magnesium</strong> too — hypomagnesaemia causes renal K⁺ wasting."],
+      ["Free water deficit", "FWD = TBW × (Na/140 − 1); correct hypernatraemia ≤10 mEq/L per 24 h."]
+    ],
+    "Acid–Base": [
+      ["6-step approach", "pH → primary disorder → compensation → anion gap → delta-delta → cause (± osmolar gap)."],
+      ["Winter's formula", "Expected PaCO₂ = <strong>1.5 × HCO₃ + 8 ± 2</strong> in metabolic acidosis."],
+      ["High AG causes", "<strong>GOLD MARK</strong> / MUDPILES — glycols, oxoproline, lactate, methanol, aspirin, renal, ketoacidosis."],
+      ["Delta-delta", "ΔAG ÷ ΔHCO₃: <1 coexisting NAGMA; 1–2 pure AGMA; >2 coexisting metabolic alkalosis."],
+      ["Anion gap", "Na − (Cl + HCO₃), normal 8–12; <strong>correct for albumin</strong> (+2.5 per 1 g/dL fall)."]
+    ],
+    "Shock": [
+      ["4 types", "Hypovolaemic · Cardiogenic · Obstructive · Distributive. Localise with RUSH (pump/tank/pipes)."],
+      ["Profiles", "Cold + low CO + high SVR: hypovolaemic/cardiogenic/obstructive. Warm + low SVR + high CO: distributive."],
+      ["Targets", "MAP ≥65, lactate clearance, urine ≥0.5 mL/kg/h, capillary refill, mentation."],
+      ["Match treatment", "Fluids help hypovolaemic/early distributive; <strong>harm</strong> cardiogenic/obstructive. Find the mechanism first."],
+      ["Obstructive", "Tension pneumothorax (decompress), tamponade (pericardiocentesis), massive PE (thrombolyse)."]
+    ],
+    "DKA": [
+      ["Diagnosis", "Glucose high (may be normal in SGLT2i euglycaemic DKA) + <strong>ketones</strong> + high-AG <strong>acidosis</strong> (pH <7.3, HCO₃ <18)."],
+      ["Potassium rule", "Hold insulin until <strong>K⁺ ≥3.5</strong> — insulin shifts K⁺ in; replace first if low."],
+      ["Fluids & insulin", "0.9% NaCl resuscitation; fixed-rate insulin <strong>0.1 U/kg/h</strong>; add dextrose when glucose <14 mmol/L (250)."],
+      ["Bicarbonate", "Not recommended unless pH <6.9 (ADA)."],
+      ["Resolution", "Glucose <11, βOHB <0.3 (or HCO₃ ≥15 + venous pH >7.3), patient eating → overlap SC insulin before stopping infusion."]
+    ]
+  };
+
+  var deckName = "Sepsis", idx = 0, cards = [];
+
+  function buildDecks() {
+    var c = document.getElementById('fcDecks');
+    c.innerHTML = Object.keys(DECKS).map(function(n){
+      return '<button class="fc-deck' + (n===deckName?' active':'') + '" data-deck="'+n+'">'+n+'</button>';
+    }).join('');
+    c.querySelectorAll('.fc-deck').forEach(function(b){
+      b.onclick = function(){ deckName = b.getAttribute('data-deck'); loadDeck();
+        c.querySelectorAll('.fc-deck').forEach(function(x){x.classList.remove('active');}); b.classList.add('active'); };
+    });
+  }
+  function loadDeck(){ cards = DECKS[deckName].slice(); idx = 0; render(); }
+  function render(){
+    var card = document.getElementById('fcCard');
+    card.classList.remove('flipped');
+    document.getElementById('fcTagF').textContent = deckName;
+    document.getElementById('fcTagB').textContent = deckName + ' — answer';
+    document.getElementById('fcFront').textContent = cards[idx][0];
+    document.getElementById('fcBack').innerHTML = cards[idx][1];
+    document.getElementById('fcProgress').textContent = 'Card ' + (idx+1) + ' / ' + cards.length;
+  }
+  window.flipCard = function(){ document.getElementById('fcCard').classList.toggle('flipped'); };
+  window.nextCard = function(){ idx = (idx+1) % cards.length; render(); };
+  window.prevCard = function(){ idx = (idx-1+cards.length) % cards.length; render(); };
+  window.shuffleDeck = function(){ for(var i=cards.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=cards[i];cards[i]=cards[j];cards[j]=t;} idx=0; render(); };
+
+  buildDecks(); loadDeck();
+  document.addEventListener('keydown', function(e){
+    if(e.key==='ArrowRight') nextCard(); else if(e.key==='ArrowLeft') prevCard(); else if(e.key===' '){ e.preventDefault(); flipCard(); }
+  });
+</script>
+</body>
+</html>
