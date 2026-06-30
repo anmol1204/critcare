@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="shared.css" />
   <script src="darkmode.js"></script>
   <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
   <style>
     .pro-hero { background: linear-gradient(135deg,#0f1f3d,#1a3560); color:#fff; padding: 3.5rem 5% 2.5rem; text-align:center; }
     .pro-hero .eyebrow { display:inline-flex; align-items:center; gap:.5rem; font-size:.72rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); margin-bottom:1rem; }
@@ -168,41 +169,73 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
   // ════════════════════════════════════════════════════════════════
-  // RAZORPAY SETUP — paste your Key ID below to go live.
-  // 1. Create a free account at razorpay.com (UPI/PhonePe/cards).
-  // 2. Dashboard → Settings → API Keys → generate; paste the Key ID here.
-  // 3. For REAL security, also create the order + verify the payment
-  //    signature on a backend (e.g. a Vercel serverless function).
-  //    Without that, this is a prototype checkout only.
+  // RAZORPAY — secure flow:
+  //   1. /api/razorpay-order creates an order server-side (price fixed
+  //      on the server, secret never exposed) and returns the order id
+  //      + the public key id.
+  //   2. Razorpay Checkout opens with that order id.
+  //   3. On success, /api/razorpay-verify checks the HMAC signature
+  //      before we unlock Pro.
+  // Keys live in Vercel env vars (RAZORPAY_KEY_ID / RAZORPAY_KEY_SECRET).
   // ════════════════════════════════════════════════════════════════
-  var RAZORPAY_KEY_ID = 'rzp_test_REPLACE_WITH_YOUR_KEY';
-
   function showProStatus(msg) {
     var el = document.getElementById('proStatus');
     el.innerHTML = msg; el.classList.add('show');
     el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
-  function payPro() {
-    if (RAZORPAY_KEY_ID.indexOf('REPLACE') !== -1) {
-      showProStatus('💡 <strong>Payments aren\'t switched on yet.</strong> CritCare Pro is currently <strong>free</strong> — just <a href="login.html?next=topics.html" style="color:var(--blue);font-weight:700;">create a free account</a> to unlock everything. (To enable paid checkout, add your Razorpay Key ID in pro.html.)');
+  async function payPro() {
+    if (typeof Razorpay === 'undefined') { showProStatus('Payment library failed to load. Check your connection and retry.'); return; }
+    showProStatus('Creating your secure order…');
+
+    var order;
+    try {
+      var r = await fetch('/api/razorpay-order', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan: 'pro-1yr' })
+      });
+      order = await r.json();
+      if (!r.ok || !order.orderId) throw new Error(order.error || 'Order failed');
+    } catch (e) {
+      showProStatus('⚠️ Couldn\'t start checkout: ' + (e.message || 'order error') + '. If this keeps happening, the Razorpay keys may not be set in Vercel yet.');
       return;
     }
-    if (typeof Razorpay === 'undefined') { showProStatus('Payment library failed to load. Check your connection and retry.'); return; }
+
+    var name = '', email = '';
+    try { name = localStorage.getItem('critcare-name') || ''; email = localStorage.getItem('critcare-email') || ''; } catch (e) {}
+
     var options = {
-      key: RAZORPAY_KEY_ID,
-      amount: 300000,          // ₹3,000 in paise
-      currency: 'INR',
+      key: order.keyId,
+      order_id: order.orderId,
+      amount: order.amount,
+      currency: order.currency,
       name: 'CritCare.in',
       description: 'CritCare Pro — 1 year membership',
       image: '/icon-apple.png',
-      handler: function (response) {
-        // ⚠️ In production, verify response.razorpay_payment_id on a backend before granting access.
-        if (window.CritCareAccess) window.CritCareAccess.setPro();
-        showProStatus('✅ <strong>Payment successful!</strong> CritCare Pro is now unlocked. Payment ID: ' + response.razorpay_payment_id + '. <a href="topics.html" style="color:var(--blue);font-weight:700;">Start reading →</a>');
+      prefill: { name: name, email: email },
+      handler: async function (response) {
+        showProStatus('Verifying your payment…');
+        try {
+          var vr = await fetch('/api/razorpay-verify', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(response)
+          });
+          var v = await vr.json();
+          if (v.verified) {
+            if (window.CritCareAccess) window.CritCareAccess.setPro();
+            try { localStorage.setItem('critcare-pro', '1'); } catch (e) {}
+            if (window.CCCloud) window.CCCloud.pushSoon();
+            showProStatus('✅ <strong>Payment verified — CritCare Pro unlocked!</strong> Payment ID: ' + response.razorpay_payment_id + '. <a href="topics.html" style="color:var(--blue);font-weight:700;">Start reading →</a>');
+          } else {
+            showProStatus('⚠️ We received your payment but could not verify it automatically. Please contact support with Payment ID ' + response.razorpay_payment_id + '.');
+          }
+        } catch (e) {
+          showProStatus('⚠️ Payment verification couldn\'t reach the server. Please contact support with Payment ID ' + response.razorpay_payment_id + '.');
+        }
       },
       theme: { color: '#1e6fd9' }
     };
+
     try {
       var rzp = new Razorpay(options);
       rzp.on('payment.failed', function () { showProStatus('Payment failed or was cancelled. You can try again any time.'); });
