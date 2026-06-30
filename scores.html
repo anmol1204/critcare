@@ -328,6 +328,49 @@
         <div class="score-reference">📚 Gélinas C, et al. AJCC 2006. | Devlin JW, et al. PADIS 2018 (Crit Care Med 2018)</div>
       </div>
 
+      <!-- APACHE II -->
+      <div class="score-card">
+        <div class="score-header">
+          <h3>APACHE II Score</h3>
+          <div class="score-desc">Acute Physiology And Chronic Health Evaluation II — the classic ICU severity-of-disease &amp; mortality-prediction score (0–71), from the <strong>worst values in the first 24 h</strong> of ICU admission. Used for risk stratification, benchmarking/audit and research — <em>not</em> for individual treatment decisions. Knaus et al., Crit Care Med 1985.</div>
+        </div>
+        <div class="score-body">
+          <div class="score-field"><label>Temperature (core, °C)</label>
+            <select id="ap_temp"><option value="0">36–38.4 (0)</option><option value="1">34–35.9 or 38.5–38.9 (1)</option><option value="2">32–33.9 (2)</option><option value="3">30–31.9 or 39–40.9 (3)</option><option value="4">≤29.9 or ≥41 (4)</option></select></div>
+          <div class="score-field"><label>Mean arterial pressure (mmHg)</label>
+            <select id="ap_map"><option value="0">70–109 (0)</option><option value="2">50–69 or 110–129 (2)</option><option value="3">130–159 (3)</option><option value="4">≤49 or ≥160 (4)</option></select></div>
+          <div class="score-field"><label>Heart rate (bpm)</label>
+            <select id="ap_hr"><option value="0">70–109 (0)</option><option value="2">55–69 or 110–139 (2)</option><option value="3">40–54 or 140–179 (3)</option><option value="4">≤39 or ≥180 (4)</option></select></div>
+          <div class="score-field"><label>Respiratory rate (/min)</label>
+            <select id="ap_rr"><option value="0">12–24 (0)</option><option value="1">10–11 or 25–34 (1)</option><option value="2">6–9 (2)</option><option value="3">35–49 (3)</option><option value="4">≤5 or ≥50 (4)</option></select></div>
+          <div class="score-field"><label>Oxygenation (A–aDO₂ if FiO₂≥0.5; else PaO₂)</label>
+            <select id="ap_oxy"><option value="0">PaO₂ &gt;70 or A–a &lt;200 (0)</option><option value="1">PaO₂ 61–70 (1)</option><option value="2">A–a 200–349 (2)</option><option value="3">PaO₂ 55–60 or A–a 350–499 (3)</option><option value="4">PaO₂ &lt;55 or A–a ≥500 (4)</option></select></div>
+          <div class="score-field"><label>Arterial pH</label>
+            <select id="ap_ph"><option value="0">7.33–7.49 (0)</option><option value="1">7.50–7.59 (1)</option><option value="2">7.25–7.32 (2)</option><option value="3">7.15–7.24 or 7.60–7.69 (3)</option><option value="4">&lt;7.15 or ≥7.70 (4)</option></select></div>
+          <div class="score-field"><label>Serum sodium (mEq/L)</label>
+            <select id="ap_na"><option value="0">130–149 (0)</option><option value="1">150–154 (1)</option><option value="2">120–129 or 155–159 (2)</option><option value="3">111–119 or 160–179 (3)</option><option value="4">≤110 or ≥180 (4)</option></select></div>
+          <div class="score-field"><label>Serum potassium (mEq/L)</label>
+            <select id="ap_k"><option value="0">3.5–5.4 (0)</option><option value="1">3.0–3.4 or 5.5–5.9 (1)</option><option value="2">2.5–2.9 (2)</option><option value="3">6.0–6.9 (3)</option><option value="4">&lt;2.5 or ≥7.0 (4)</option></select></div>
+          <div class="score-field"><label>Serum creatinine (mg/dL) — <em>double if acute renal failure</em></label>
+            <select id="ap_cr"><option value="0">0.6–1.4 (0)</option><option value="2">&lt;0.6 or 1.5–1.9 (2)</option><option value="3">2.0–3.4 (3)</option><option value="4">≥3.5 (4)</option></select></div>
+          <div class="score-field"><label>Acute renal failure?</label>
+            <select id="ap_arf"><option value="1">No (×1)</option><option value="2">Yes — doubles creatinine points (×2)</option></select></div>
+          <div class="score-field"><label>Haematocrit (%)</label>
+            <select id="ap_hct"><option value="0">30–45.9 (0)</option><option value="1">46–49.9 (1)</option><option value="2">20–29.9 or 50–59.9 (2)</option><option value="4">&lt;20 or ≥60 (4)</option></select></div>
+          <div class="score-field"><label>White cell count (×10³/µL)</label>
+            <select id="ap_wbc"><option value="0">3–14.9 (0)</option><option value="1">15–19.9 (1)</option><option value="2">1–2.9 or 20–39.9 (2)</option><option value="4">&lt;1 or ≥40 (4)</option></select></div>
+          <div class="score-field"><label>Glasgow Coma Scale (3–15)</label>
+            <input type="number" id="ap_gcs" placeholder="e.g. 15" min="3" max="15" /><span class="unit" style="font-size:.7rem;color:var(--slate);">points = 15 − GCS</span></div>
+          <div class="score-field"><label>Age (years)</label>
+            <select id="ap_age"><option value="0">≤44 (0)</option><option value="2">45–54 (2)</option><option value="3">55–64 (3)</option><option value="5">65–74 (5)</option><option value="6">≥75 (6)</option></select></div>
+          <div class="score-field"><label>Chronic health (severe organ insufficiency / immunocompromise)</label>
+            <select id="ap_chronic"><option value="0">None (0)</option><option value="2">Present + elective post-op (2)</option><option value="5">Present + non-operative or emergency post-op (5)</option></select></div>
+          <button class="score-calc-btn" onclick="calcAPACHE()">Calculate APACHE II</button>
+          <div class="score-result" id="apache_result"></div>
+        </div>
+        <div class="score-reference">📚 Knaus WA, Draper EA, Wagner DP, Zimmerman JE. APACHE II: a severity of disease classification system. Crit Care Med 1985;13:818–829. Mortality estimates are population-level and assume diagnosis weighting; use for stratification/audit, not individual prognosis.</div>
+      </div>
+
     </div>
   </div>
 
@@ -1065,6 +1108,32 @@ function calcCKDEPI() {
   else if (v >= 15) { cl='res-high'; stage='G4 — Severely decreased (15–29). Plan for RRT; major dose adjustments.'; }
   else              { cl='res-high'; stage='G5 — Kidney failure (&lt;15). RRT/transplant territory.'; }
   showResult('ckd_result', v + ' mL/min/1.73m²', 'eGFR (CKD-EPI 2021)', stage + '<br><span style="font-size:.8rem;opacity:.8;">Race-free equation. For drug dosing, Cockcroft–Gault CrCl is still often used.</span>', cl);
+}
+
+// ── APACHE II ──
+function calcAPACHE() {
+  var ids = ['ap_temp','ap_map','ap_hr','ap_rr','ap_oxy','ap_ph','ap_na','ap_k','ap_hct','ap_wbc','ap_age','ap_chronic'];
+  var aps = ids.reduce(function(a, id){ return a + parseInt(document.getElementById(id).value); }, 0);
+  var crPts = parseInt(document.getElementById('ap_cr').value) * parseInt(document.getElementById('ap_arf').value);
+  var gcs = parseInt(document.getElementById('ap_gcs').value);
+  if (isNaN(gcs) || gcs < 3 || gcs > 15) { alert('Enter a valid GCS (3–15)'); return; }
+  var gcsPts = 15 - gcs;
+  var total = aps + crPts + gcsPts;
+  // Approximate non-operative mortality bands (Knaus 1985)
+  var cl, mort;
+  if (total <= 4)       { cl='res-low';  mort='~4%'; }
+  else if (total <= 9)  { cl='res-low';  mort='~8%'; }
+  else if (total <= 14) { cl='res-mod';  mort='~15%'; }
+  else if (total <= 19) { cl='res-mod';  mort='~25%'; }
+  else if (total <= 24) { cl='res-high'; mort='~40%'; }
+  else if (total <= 29) { cl='res-high'; mort='~55%'; }
+  else if (total <= 34) { cl='res-high'; mort='~73%'; }
+  else                  { cl='res-high'; mort='~85%+'; }
+  var interp =
+    'APS ' + (aps + crPts + gcsPts) + ' (incl. creatinine ' + crPts + ' &amp; GCS ' + gcsPts + ' pts). ' +
+    'Estimated hospital mortality <strong>' + mort + '</strong> (population-level, non-operative).<br>' +
+    '<span style="font-size:.8rem;opacity:.85;">Score from worst values in first 24 h. For risk stratification, audit &amp; research — not individual treatment decisions.</span>';
+  showResult('apache_result', total + ' / 71', 'APACHE II', interp, cl);
 }
 
 // ── Corrected Calcium ──
