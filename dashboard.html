@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="shared.css" />
   <script src="darkmode.js"></script>
   <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
   <style>
     .dash-hero { background:linear-gradient(135deg,#0f1f3d,#1a3560); color:#fff; padding:2.5rem 5% 2rem; }
     .dash-hero-inner { max-width:1100px; margin:0 auto; }
@@ -87,6 +88,20 @@
     .saved-item button { background:none; border:none; color:var(--slate); cursor:pointer; font-size:1rem; padding:.2rem .4rem; }
     .saved-item button:hover { color:#b91c1c; }
     .saved-empty { font-size:.86rem; color:var(--slate); padding:1rem 0; }
+
+    /* Continue-reading pop-up */
+    .cc-modal-overlay { position:fixed; inset:0; background:rgba(8,16,32,.55); backdrop-filter:blur(3px); display:none; align-items:center; justify-content:center; z-index:9999; padding:1.2rem; }
+    .cc-modal-overlay.show { display:flex; animation:ccFade .2s ease; }
+    @keyframes ccFade { from{opacity:0} to{opacity:1} }
+    .cc-modal { background:var(--bg); border-radius:18px; max-width:420px; width:100%; padding:1.8rem; box-shadow:0 24px 60px rgba(0,0,0,.4); border:1px solid var(--line); animation:ccPop .25s cubic-bezier(.2,.9,.3,1.2); }
+    @keyframes ccPop { from{transform:translateY(14px) scale(.97);opacity:0} to{transform:none;opacity:1} }
+    .cc-modal-eyebrow { font-size:.7rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--blue); }
+    .cc-modal h3 { font-family:var(--font-disp); font-size:1.3rem; color:var(--ink); margin:.5rem 0 .3rem; line-height:1.25; }
+    .cc-modal p { font-size:.86rem; color:var(--slate); margin-bottom:1.4rem; }
+    .cc-modal-actions { display:flex; gap:.7rem; }
+    .cc-modal-actions a, .cc-modal-actions button { flex:1; text-align:center; font-size:.88rem; font-weight:700; padding:.75rem 1rem; border-radius:10px; cursor:pointer; text-decoration:none; font-family:var(--font-body); border:1px solid var(--line); }
+    .cc-modal-actions .primary { background:var(--blue); color:#fff; border-color:var(--blue); }
+    .cc-modal-actions .ghost { background:var(--bg-alt); color:var(--slate); }
   </style>
 </head>
 <body>
@@ -129,6 +144,9 @@
   <div class="dash-wrap">
 
     <div class="dash-section-label">Choose your specialty focus</div>
+    <div class="spec-confirm" id="specHint" style="display:none;background:#fff7ed;border-color:#fed7aa;margin:0 0 1rem;">
+      <p>👋 Finish setting up your profile — <strong>pick your specialty</strong> below so we can tailor your topics to you.</p>
+    </div>
     <div class="spec-choose" id="specChoose">
       <button class="spec-opt" data-spec="ccm" onclick="pickSpecialty('ccm','Critical Care','topics.html')">
         <span class="so-check">✓</span><div class="so-ic">🫀</div>
@@ -181,6 +199,9 @@
     <div class="dash-section-label">🔖 Saved articles <span id="savedCount" style="color:var(--slate);font-weight:600;"></span></div>
     <div id="savedList" class="saved-list"><p class="saved-empty">No saved articles yet. Open any topic and tap <strong>☆ Save</strong> (bottom-right) to add it here.</p></div>
 
+    <div class="dash-section-label">📑 Read later <span id="laterCount" style="color:var(--slate);font-weight:600;"></span></div>
+    <div id="laterList" class="saved-list"><p class="saved-empty">Your read-later queue is empty. On any article, tap <strong>📑 Read later</strong> (bottom-right) to line it up for your next break.</p></div>
+
     <div class="dash-section-label">Your account</div>
     <div class="dash-2col">
       <div class="acct-card">
@@ -188,6 +209,7 @@
         <div class="acct-row"><span class="ar-k">Name</span><span class="ar-v" id="acctName">—</span></div>
         <div class="acct-row"><span class="ar-k">Email</span><span class="ar-v" id="acctEmail">—</span></div>
         <div class="acct-row"><span class="ar-k">Specialty focus</span><span class="ar-v" id="acctSpec">Not set</span></div>
+        <div class="acct-row"><span class="ar-k">Institute</span><span class="ar-v" id="acctInst">—</span></div>
         <div class="acct-row"><span class="ar-k">Membership</span><span class="ar-v" id="acctPlan"></span></div>
         <div class="acct-row"><span class="ar-k">Time on CritCare</span><span class="ar-v" id="acctTime">—</span></div>
         <div class="acct-btns">
@@ -203,6 +225,19 @@
       </div>
     </div>
 
+  </div>
+</div>
+
+<!-- Continue-reading pop-up -->
+<div class="cc-modal-overlay" id="resumeModal">
+  <div class="cc-modal">
+    <div class="cc-modal-eyebrow">▶️ Pick up where you left off</div>
+    <h3 id="resumeModalTitle">Continue reading</h3>
+    <p>You were last reading this article. Jump back in, or browse something new.</p>
+    <div class="cc-modal-actions">
+      <button class="ghost" onclick="dismissResume()">Not now</button>
+      <a class="primary" id="resumeModalLink" href="#" onclick="dismissResume()">Resume reading →</a>
+    </div>
   </div>
 </div>
 
@@ -229,16 +264,19 @@
   function lsGet(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
   function lsSet(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
 
-  var SPEC_LABELS = { ccm:'Critical Care', em:'Emergency Medicine', pulm:'Pulmonary Medicine', anaes:'Anaesthesia', im:'Internal Medicine' };
-  // Map specialty → topics.html specialty filter where one exists
-  var SPEC_LINK = { ccm:'topics.html', em:'topics.html', pulm:'topics.html', anaes:'topics.html', im:'topics.html' };
+  var SPEC_LABELS = { ccm:'Critical Care', em:'Emergency Medicine', pulm:'Pulmonary Medicine', anaes:'Anaesthesia', im:'Internal Medicine', other:'Surgery / Trauma / Other' };
+
+  function jget(k,d){ try { var v=localStorage.getItem(k); return v?JSON.parse(v):d; } catch(e){ return d; } }
+  function jset(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
 
   function pickSpecialty(id, label, link) {
     lsSet('critcare-specialty', id);
+    if (window.CCCloud) window.CCCloud.saveProfile({ specialty:id });
     document.querySelectorAll('.spec-opt').forEach(function(b){ b.classList.toggle('sel', b.getAttribute('data-spec')===id); });
     document.getElementById('acctSpec').textContent = label;
+    var hint = document.getElementById('specHint'); if (hint) hint.style.display = 'none';
     var c = document.getElementById('specConfirm');
-    document.getElementById('specConfirmText').innerHTML = '✓ Your focus is set to <strong>'+label+'</strong>. We’ll highlight this on your next visit.';
+    document.getElementById('specConfirmText').innerHTML = '✓ Your focus is set to <strong>'+label+'</strong>. Synced to your account.';
     document.getElementById('specConfirmLink').setAttribute('href', link || 'topics.html');
     c.classList.add('show');
   }
@@ -253,65 +291,103 @@
 
   function doSignOut() {
     if (window.CritCareAccess) window.CritCareAccess.logout();
-    try { localStorage.removeItem('critcare-name'); localStorage.removeItem('critcare-email'); } catch(e){}
+    try { ['critcare-name','critcare-email','critcare-specialty','critcare-institute'].forEach(function(k){ localStorage.removeItem(k); }); } catch(e){}
     location.href = 'index.html';
+  }
+
+  function dismissResume(){ var m=document.getElementById('resumeModal'); if(m) m.classList.remove('show'); try{ sessionStorage.setItem('cc-resume-seen','1'); }catch(e){} }
+
+  function renderList(containerId, key, countId, emptyHtml) {
+    var arr = jget(key, []);
+    var list = document.getElementById(containerId); if (!list) return;
+    var cnt = document.getElementById(countId); if (cnt) cnt.textContent = arr.length ? '('+arr.length+')' : '';
+    if (!arr.length) { list.innerHTML = emptyHtml; return; }
+    list.innerHTML = arr.map(function(x,i){
+      return '<div class="saved-item"><a href="'+x.url+'">📄 '+(x.title||x.url)+'</a><button title="Remove" data-i="'+i+'">✕</button></div>';
+    }).join('');
+    list.querySelectorAll('button[data-i]').forEach(function(b){
+      b.onclick = function(){
+        var a = jget(key, []);
+        var removed = a.splice(parseInt(b.getAttribute('data-i'),10),1)[0];
+        jset(key, a);
+        if (window.CCCloud && removed) {
+          if (key === 'cc-saved') window.CCCloud.removeSaved(removed.url);
+          else if (key === 'cc-readlater') window.CCCloud.removeReadLater(removed.url);
+        }
+        renderList(containerId, key, countId, emptyHtml);
+      };
+    });
+  }
+
+  var SAVED_EMPTY = '<p class="saved-empty">No saved articles yet. Open any topic and tap <strong>☆ Save</strong> (bottom-right) to add it here.</p>';
+  var LATER_EMPTY = '<p class="saved-empty">Your read-later queue is empty. On any article, tap <strong>📑 Read later</strong> (bottom-right) to line it up for your next break.</p>';
+
+  function renderProfile() {
+    var name = lsGet('critcare-name') || 'Doctor';
+    var email = lsGet('critcare-email') || '';
+    var first = name.replace(/^dr\.?\s*/i,'').trim().split(/\s+/)[0] || 'Doctor';
+    document.getElementById('dashWelcome').textContent = 'Welcome back, ' + name + ' 👋';
+    document.getElementById('dashSubline').textContent = name + ' has logged in — pick up where you left off.';
+    document.getElementById('dashAvatar').textContent = (first[0]||'A').toUpperCase();
+    document.getElementById('acctName').textContent = name;
+    document.getElementById('acctEmail').textContent = email || '—';
+
+    var inst = lsGet('critcare-institute');
+    document.getElementById('acctInst').textContent = inst ? inst : '—';
+
+    var pro = window.CritCareAccess && window.CritCareAccess.isPro && window.CritCareAccess.isPro();
+    document.getElementById('acctPlan').innerHTML = pro
+      ? '<span class="badge-pro">✦ CritCare Pro</span>'
+      : '<span class="badge-free">Free (full access during launch)</span>';
+
+    var spec = lsGet('critcare-specialty');
+    var hint = document.getElementById('specHint');
+    if (spec && SPEC_LABELS[spec]) {
+      document.querySelectorAll('.spec-opt').forEach(function(b){ b.classList.toggle('sel', b.getAttribute('data-spec')===spec); });
+      document.getElementById('acctSpec').textContent = SPEC_LABELS[spec];
+      if (hint) hint.style.display = 'none';
+    } else {
+      document.getElementById('acctSpec').textContent = 'Not set';
+      if (hint) hint.style.display = 'flex';
+    }
+
+    var secs = parseInt(lsGet('cc-time')||'0',10)||0;
+    var h = Math.floor(secs/3600), m = Math.floor((secs%3600)/60);
+    document.getElementById('acctTime').textContent = h>0 ? (h+'h '+m+'m') : (m+' min');
+  }
+
+  function renderContinue() {
+    var last = jget('cc-last', null);
+    var card = document.getElementById('continueCard');
+    if (last && last.url && last.url !== 'dashboard.html') {
+      document.getElementById('continueTitle').textContent = last.title || 'Last article';
+      document.getElementById('continueLink').setAttribute('href', last.url);
+      card.style.display = 'flex';
+      var seen = false; try { seen = sessionStorage.getItem('cc-resume-seen')==='1'; } catch(e){}
+      if (!seen) {
+        document.getElementById('resumeModalTitle').textContent = last.title || 'Continue reading';
+        document.getElementById('resumeModalLink').setAttribute('href', last.url);
+        document.getElementById('resumeModal').classList.add('show');
+      }
+    } else {
+      card.style.display = 'none';
+    }
+  }
+
+  function renderAll() {
+    renderProfile();
+    renderContinue();
+    renderList('savedList', 'cc-saved', 'savedCount', SAVED_EMPTY);
+    renderList('laterList', 'cc-readlater', 'laterCount', LATER_EMPTY);
   }
 
   (function initDash() {
     var loggedIn = window.CritCareAccess && window.CritCareAccess.loggedIn();
     if (!loggedIn) { document.getElementById('dashGuest').style.display = 'block'; return; }
     document.getElementById('dashMain').style.display = 'block';
-
-    var name = lsGet('critcare-name') || 'Doctor';
-    var email = lsGet('critcare-email') || '';
-    var first = name.replace(/^dr\.?\s*/i,'').trim().split(/\s+/)[0] || 'Doctor';
-    document.getElementById('dashWelcome').textContent = 'Welcome back, ' + name + ' 👋';
-    document.getElementById('dashSubline').textContent = name + ' has logged in — pick up where you left off.';
-    document.getElementById('dashAvatar').textContent = (first[0] || 'A').toUpperCase();
-    document.getElementById('acctName').textContent = name;
-    document.getElementById('acctEmail').textContent = email || '—';
-
-    var pro = window.CritCareAccess.isPro && window.CritCareAccess.isPro();
-    document.getElementById('acctPlan').innerHTML = pro
-      ? '<span class="badge-pro">✦ CritCare Pro</span>'
-      : '<span class="badge-free">Free (full access during launch)</span>';
-
-    var spec = lsGet('critcare-specialty');
-    if (spec && SPEC_LABELS[spec]) {
-      document.querySelectorAll('.spec-opt').forEach(function(b){ b.classList.toggle('sel', b.getAttribute('data-spec')===spec); });
-      document.getElementById('acctSpec').textContent = SPEC_LABELS[spec];
-    }
-
-    // ── Time on site ──
-    var secs = parseInt(lsGet('cc-time') || '0', 10) || 0;
-    var h = Math.floor(secs/3600), m = Math.floor((secs%3600)/60);
-    document.getElementById('acctTime').textContent = h > 0 ? (h + 'h ' + m + 'm') : (m + ' min');
-
-    // ── Continue reading ──
-    function jget(k){ try { var v=localStorage.getItem(k); return v?JSON.parse(v):null; } catch(e){ return null; } }
-    function jset(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
-    var last = jget('cc-last');
-    if (last && last.url && last.url !== 'dashboard.html') {
-      document.getElementById('continueTitle').textContent = last.title || 'Last article';
-      document.getElementById('continueLink').setAttribute('href', last.url);
-      document.getElementById('continueCard').style.display = 'flex';
-    }
-
-    // ── Saved articles ──
-    function renderSaved() {
-      var arr = jget('cc-saved') || [];
-      var list = document.getElementById('savedList');
-      document.getElementById('savedCount').textContent = arr.length ? '(' + arr.length + ')' : '';
-      if (!arr.length) { list.innerHTML = '<p class="saved-empty">No saved articles yet. Open any topic and tap <strong>☆ Save</strong> (bottom-right) to add it here.</p>'; return; }
-      list.innerHTML = arr.map(function(x, i){
-        return '<div class="saved-item"><a href="'+x.url+'">📄 '+(x.title||x.url)+'</a>' +
-               '<button title="Remove" data-i="'+i+'">✕</button></div>';
-      }).join('');
-      list.querySelectorAll('button[data-i]').forEach(function(b){
-        b.onclick = function(){ var a=jget('cc-saved')||[]; a.splice(parseInt(b.getAttribute('data-i'),10),1); jset('cc-saved',a); renderSaved(); };
-      });
-    }
-    renderSaved();
+    renderAll();
+    // Re-render once Firestore has synced this device's profile + lists.
+    document.addEventListener('cc-synced', renderAll);
   })();
 </script>
 <script src="pearls.js"></script>

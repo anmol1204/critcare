@@ -159,16 +159,21 @@
           <label>Email address</label>
           <input type="email" id="emailInput" placeholder="doctor@hospital.com" />
         </div>
-        <div class="fg" id="roleField" style="display:none;">
-          <label>I am a...</label>
-          <select id="roleSelect">
-            <option>Intensivist / Critical Care Specialist</option>
-            <option>Emergency Physician</option>
-            <option>Anaesthesiologist</option>
-            <option>Senior Resident / Fellow</option>
-            <option>Junior Resident / Intern</option>
-            <option>Medical Student</option>
+        <div class="fg" id="specField" style="display:none;">
+          <label>Specialty</label>
+          <select id="specSelect">
+            <option value="">Select your specialty…</option>
+            <option value="ccm">Critical Care / Intensivist</option>
+            <option value="anaes">Anaesthesia</option>
+            <option value="em">Emergency Medicine</option>
+            <option value="im">Internal Medicine</option>
+            <option value="pulm">Pulmonary Medicine</option>
+            <option value="other">Surgery / Trauma / Other / Student</option>
           </select>
+        </div>
+        <div class="fg" id="instField" style="display:none;">
+          <label>Institute <span style="font-weight:500;text-transform:none;letter-spacing:0;color:var(--slate);">(optional)</span></label>
+          <input type="text" id="instInput" placeholder="e.g. SGPGIMS, Lucknow" />
         </div>
         <div class="fg">
           <label>Password</label>
@@ -196,8 +201,10 @@
   import {
     getAuth, signInWithPopup, GoogleAuthProvider,
     createUserWithEmailAndPassword, signInWithEmailAndPassword,
-    onAuthStateChanged, signOut as fbSignOut
+    updateProfile, onAuthStateChanged, signOut as fbSignOut
   } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js';
+  import { getFirestore, doc, setDoc, serverTimestamp }
+    from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js';
 
   // ============================================================
   // STEP 1: Replace the values below with YOUR Firebase config.
@@ -222,7 +229,19 @@
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
+  const db = getFirestore(app);
   const provider = new GoogleAuthProvider();
+
+  // Write/merge the user's profile document in Firestore so it follows
+  // them across devices. Silently no-ops if Firestore isn't enabled yet.
+  async function saveProfile(user, fields) {
+    fields = fields || {};
+    var profile = { email: user.email || '', updatedAt: serverTimestamp() };
+    if (fields.name)             { profile.name = fields.name;            try { localStorage.setItem('critcare-name', fields.name); } catch(e){} }
+    if (fields.specialty)        { profile.specialty = fields.specialty;  try { localStorage.setItem('critcare-specialty', fields.specialty); } catch(e){} }
+    if (fields.institute != null){ profile.institute = fields.institute;  try { localStorage.setItem('critcare-institute', fields.institute); } catch(e){} }
+    try { await setDoc(doc(db, 'users', user.uid), profile, { merge: true }); } catch (e) {}
+  }
 
   // Redirect target after an explicit login (respects ?next=, else dashboard)
   function gotoNext() {
@@ -236,7 +255,8 @@
   function cacheUser(user) {
     try {
       localStorage.setItem('critcare-auth', '1');
-      localStorage.setItem('critcare-name', user.displayName || (user.email ? user.email.split('@')[0] : 'Doctor'));
+      var existing = localStorage.getItem('critcare-name');
+      localStorage.setItem('critcare-name', user.displayName || existing || (user.email ? user.email.split('@')[0] : 'Doctor'));
       localStorage.setItem('critcare-email', user.email || '');
     } catch (e) {}
   }
@@ -262,6 +282,8 @@
     try {
       const cred = await signInWithPopup(auth, provider);
       cacheUser(cred.user);
+      // record/update the profile; specialty stays blank → dashboard will prompt
+      await saveProfile(cred.user, { name: cred.user.displayName || '' });
       gotoNext();
     } catch (err) {
       setNote('⚠️ ' + (err.message || 'Google sign-in failed. Check Firebase config.'), true);
@@ -273,19 +295,20 @@
     const password = document.getElementById('passwordInput').value;
     const isReg = document.getElementById('tabReg').classList.contains('active');
     if (!email || !password) return setNote('Please enter email and password.', true);
+    const name = document.getElementById('fullName') ? document.getElementById('fullName').value.trim() : '';
+    const specialty = document.getElementById('specSelect') ? document.getElementById('specSelect').value : '';
+    const institute = document.getElementById('instInput') ? document.getElementById('instInput').value.trim() : '';
+    if (isReg && !specialty) return setNote('Please select your specialty.', true);
     try {
       let cred;
       if (isReg) {
         cred = await createUserWithEmailAndPassword(auth, email, password);
-        const nm = document.getElementById('fullName') ? document.getElementById('fullName').value : '';
-        if (nm) { try { localStorage.setItem('critcare-name', nm); } catch (e) {} }
+        if (name) { try { await updateProfile(cred.user, { displayName: name }); } catch (e) {} }
+        await saveProfile(cred.user, { name: name, specialty: specialty, institute: institute });
       } else {
         cred = await signInWithEmailAndPassword(auth, email, password);
       }
       cacheUser(cred.user);
-      // keep a registered full name if the user typed one
-      const nm2 = document.getElementById('fullName') ? document.getElementById('fullName').value : '';
-      if (isReg && nm2) { try { localStorage.setItem('critcare-name', nm2); } catch (e) {} }
       gotoNext();
     } catch (err) {
       setNote('⚠️ ' + err.message, true);
@@ -308,7 +331,8 @@
     document.getElementById('tabLogin').classList.toggle('active', !isReg);
     document.getElementById('tabReg').classList.toggle('active', isReg);
     document.getElementById('nameField').style.display = isReg ? 'block' : 'none';
-    document.getElementById('roleField').style.display = isReg ? 'block' : 'none';
+    document.getElementById('specField').style.display = isReg ? 'block' : 'none';
+    document.getElementById('instField').style.display = isReg ? 'block' : 'none';
     document.getElementById('formTitle').textContent = isReg ? 'Create your account' : 'Welcome back';
     document.getElementById('formSub').textContent = isReg ? 'Join CritCare.in as a registered clinician' : 'Sign in to access your account';
     document.getElementById('submitBtn').textContent = isReg ? 'Create Account →' : 'Sign In →';

@@ -161,22 +161,34 @@
       bar.style.width = (max > 0 ? (h.scrollTop / max * 100) : 0) + '%';
     }, { passive: true });
 
+    function cloudPush() { try { if (window.CCCloud && window.CCCloud.pushSoon) window.CCCloud.pushSoon(); } catch (e) {} }
+    function toggleIn(key, btn, onCls, onHtml, offCls, offHtml) {
+      var arr = engGet(key, []);
+      var i = -1;
+      for (var k = 0; k < arr.length; k++) { if (arr[k].url === url) { i = k; break; } }
+      if (i >= 0) { arr.splice(i, 1); btn.className = offCls; btn.innerHTML = offHtml; }
+      else { arr.unshift({ url: url, title: title, ts: Date.now() }); btn.className = onCls; btn.innerHTML = onHtml; }
+      engSet(key, arr);
+      cloudPush();
+    }
+
     // save / bookmark toggle
-    var saved = engGet('cc-saved', []);
-    var isSaved = saved.some(function (x) { return x.url === url; });
+    var isSaved = engGet('cc-saved', []).some(function (x) { return x.url === url; });
     var btn = document.createElement('button');
     btn.className = 'cc-save-btn' + (isSaved ? ' saved' : '');
     btn.innerHTML = isSaved ? '★ Saved' : '☆ Save';
     btn.setAttribute('aria-label', 'Save this article');
-    btn.onclick = function () {
-      var arr = engGet('cc-saved', []);
-      var i = -1;
-      for (var k = 0; k < arr.length; k++) { if (arr[k].url === url) { i = k; break; } }
-      if (i >= 0) { arr.splice(i, 1); btn.className = 'cc-save-btn'; btn.innerHTML = '☆ Save'; }
-      else { arr.unshift({ url: url, title: title, ts: Date.now() }); btn.className = 'cc-save-btn saved'; btn.innerHTML = '★ Saved'; }
-      engSet('cc-saved', arr);
-    };
+    btn.onclick = function () { toggleIn('cc-saved', btn, 'cc-save-btn saved', '★ Saved', 'cc-save-btn', '☆ Save'); };
     document.body.appendChild(btn);
+
+    // read-later queue toggle
+    var isLater = engGet('cc-readlater', []).some(function (x) { return x.url === url; });
+    var lbtn = document.createElement('button');
+    lbtn.className = 'cc-later-btn' + (isLater ? ' queued' : '');
+    lbtn.innerHTML = isLater ? '✓ Read later' : '📑 Read later';
+    lbtn.setAttribute('aria-label', 'Add to read-later queue');
+    lbtn.onclick = function () { toggleIn('cc-readlater', lbtn, 'cc-later-btn queued', '✓ Read later', 'cc-later-btn', '📑 Read later'); };
+    document.body.appendChild(lbtn);
   }
 
   document.addEventListener('DOMContentLoaded', function () {
