@@ -126,9 +126,63 @@
     });
   }
 
+  // ── Engagement: reading time, last-read, bookmarks (logged-in only) ──
+  function engGet(k, def) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch (e) { return def; } }
+  function engSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+  function trackTime() {
+    var t = parseInt(localStorage.getItem('cc-time') || '0', 10) || 0;
+    setInterval(function () {
+      if (document.visibilityState === 'visible') { t += 15; try { localStorage.setItem('cc-time', String(t)); } catch (e) {} }
+    }, 15000);
+  }
+
+  function articleTitle() {
+    var h1 = document.querySelector('.topic-hero h1');
+    var txt = h1 ? h1.textContent : document.title;
+    return txt.replace(/^[^A-Za-z0-9]*\s*/, '').replace(/\s*[—|].*$/, '').trim();
+  }
+
+  function initEngagement() {
+    if (!loggedIn()) return;
+    trackTime();
+    var content = document.querySelector('.topic-content');
+    if (!content) return; // article pages only
+    var url = thisFile, title = articleTitle();
+    engSet('cc-last', { url: url, title: title, ts: Date.now() });
+
+    // reading progress bar
+    var bar = document.createElement('div');
+    bar.className = 'cc-readbar';
+    document.body.appendChild(bar);
+    window.addEventListener('scroll', function () {
+      var h = document.documentElement;
+      var max = h.scrollHeight - h.clientHeight;
+      bar.style.width = (max > 0 ? (h.scrollTop / max * 100) : 0) + '%';
+    }, { passive: true });
+
+    // save / bookmark toggle
+    var saved = engGet('cc-saved', []);
+    var isSaved = saved.some(function (x) { return x.url === url; });
+    var btn = document.createElement('button');
+    btn.className = 'cc-save-btn' + (isSaved ? ' saved' : '');
+    btn.innerHTML = isSaved ? '★ Saved' : '☆ Save';
+    btn.setAttribute('aria-label', 'Save this article');
+    btn.onclick = function () {
+      var arr = engGet('cc-saved', []);
+      var i = -1;
+      for (var k = 0; k < arr.length; k++) { if (arr[k].url === url) { i = k; break; } }
+      if (i >= 0) { arr.splice(i, 1); btn.className = 'cc-save-btn'; btn.innerHTML = '☆ Save'; }
+      else { arr.unshift({ url: url, title: title, ts: Date.now() }); btn.className = 'cc-save-btn saved'; btn.innerHTML = '★ Saved'; }
+      engSet('cc-saved', arr);
+    };
+    document.body.appendChild(btn);
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     decorateNav();
     markLockedCards();
     if (gateThisPage) buildGate();
+    initEngagement();
   });
 })();

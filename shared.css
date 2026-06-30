@@ -299,6 +299,13 @@ html.dark .cc-lock-badge { background: #241d06; color: #fde047; }
 .nav-pro a, a.nav-pro { color: var(--accent) !important; font-weight: 800; }
 .sr-lock { font-size: 0.8rem; }
 
+/* Reading progress bar + Save button (article pages, logged-in) */
+.cc-readbar { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--accent); z-index: 200; transition: width 0.1s linear; }
+.cc-save-btn { position: fixed; right: 1rem; bottom: 5.2rem; z-index: 120; background: var(--bg); border: 1.5px solid var(--blue); color: var(--blue); font-weight: 700; font-size: 0.82rem; padding: 0.55rem 0.95rem; border-radius: 30px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.18); font-family: var(--font-body); }
+.cc-save-btn.saved { background: var(--blue); color: #fff; }
+.cc-save-btn:hover { opacity: 0.92; }
+@media (min-width: 821px) { .cc-save-btn { bottom: 1.5rem; } }
+
 /* Login banner (shown only to logged-out visitors) */
 .cc-login-banner {
   max-width: 1160px; margin: 1.2rem auto 0; padding: 0.9rem 1.2rem;

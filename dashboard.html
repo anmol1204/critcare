@@ -75,6 +75,18 @@
     .dash-guest p { color:var(--slate); font-size:.9rem; line-height:1.6; margin-bottom:1.3rem; }
     .dash-guest a { display:inline-block; background:linear-gradient(135deg,#1e6fd9,#1453a8); color:#fff; font-weight:700; padding:.8rem 1.6rem; border-radius:10px; text-decoration:none; }
     #dashMain { display:none; }
+    /* Continue reading + saved */
+    .resume-card { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; background:linear-gradient(135deg,var(--blue-soft),var(--bg)); border:1px solid var(--blue); border-radius:14px; padding:1.1rem 1.4rem; margin-bottom:.5rem; }
+    .resume-eyebrow { font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:var(--slate); }
+    .resume-title { font-size:1.05rem; font-weight:700; color:var(--ink); margin-top:.25rem; }
+    .resume-btn { background:var(--blue); color:#fff; font-size:.85rem; font-weight:700; padding:.6rem 1.2rem; border-radius:9px; text-decoration:none; white-space:nowrap; }
+    .saved-list { display:flex; flex-direction:column; gap:.5rem; }
+    .saved-item { display:flex; align-items:center; justify-content:space-between; gap:1rem; border:1px solid var(--line); border-radius:10px; padding:.75rem 1rem; background:var(--bg); }
+    .saved-item a { color:var(--ink); text-decoration:none; font-weight:600; font-size:.9rem; }
+    .saved-item a:hover { color:var(--blue); }
+    .saved-item button { background:none; border:none; color:var(--slate); cursor:pointer; font-size:1rem; padding:.2rem .4rem; }
+    .saved-item button:hover { color:#b91c1c; }
+    .saved-empty { font-size:.86rem; color:var(--slate); padding:1rem 0; }
   </style>
 </head>
 <body>
@@ -154,6 +166,17 @@
       <a class="qa-card" href="dnb.html"><div class="qa-ic">🎓</div><div class="qa-name">DNB / Exam Prep</div><div class="qa-desc">High-yield Q&amp;A</div></a>
     </div>
 
+    <div class="resume-card" id="continueCard" style="display:none;">
+      <div>
+        <div class="resume-eyebrow">▶️ Continue reading</div>
+        <div class="resume-title" id="continueTitle"></div>
+      </div>
+      <a id="continueLink" href="#" class="resume-btn">Resume →</a>
+    </div>
+
+    <div class="dash-section-label">🔖 Saved articles <span id="savedCount" style="color:var(--slate);font-weight:600;"></span></div>
+    <div id="savedList" class="saved-list"><p class="saved-empty">No saved articles yet. Open any topic and tap <strong>☆ Save</strong> (bottom-right) to add it here.</p></div>
+
     <div class="dash-section-label">Your account</div>
     <div class="dash-2col">
       <div class="acct-card">
@@ -162,6 +185,7 @@
         <div class="acct-row"><span class="ar-k">Email</span><span class="ar-v" id="acctEmail">—</span></div>
         <div class="acct-row"><span class="ar-k">Specialty focus</span><span class="ar-v" id="acctSpec">Not set</span></div>
         <div class="acct-row"><span class="ar-k">Membership</span><span class="ar-v" id="acctPlan"></span></div>
+        <div class="acct-row"><span class="ar-k">Time on CritCare</span><span class="ar-v" id="acctTime">—</span></div>
         <div class="acct-btns">
           <a href="pro.html">✦ View CritCare Pro</a>
           <button onclick="clearData()" class="">Clear local data</button>
@@ -253,6 +277,37 @@
       document.querySelectorAll('.spec-opt').forEach(function(b){ b.classList.toggle('sel', b.getAttribute('data-spec')===spec); });
       document.getElementById('acctSpec').textContent = SPEC_LABELS[spec];
     }
+
+    // ── Time on site ──
+    var secs = parseInt(lsGet('cc-time') || '0', 10) || 0;
+    var h = Math.floor(secs/3600), m = Math.floor((secs%3600)/60);
+    document.getElementById('acctTime').textContent = h > 0 ? (h + 'h ' + m + 'm') : (m + ' min');
+
+    // ── Continue reading ──
+    function jget(k){ try { var v=localStorage.getItem(k); return v?JSON.parse(v):null; } catch(e){ return null; } }
+    function jset(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+    var last = jget('cc-last');
+    if (last && last.url && last.url !== 'dashboard.html') {
+      document.getElementById('continueTitle').textContent = last.title || 'Last article';
+      document.getElementById('continueLink').setAttribute('href', last.url);
+      document.getElementById('continueCard').style.display = 'flex';
+    }
+
+    // ── Saved articles ──
+    function renderSaved() {
+      var arr = jget('cc-saved') || [];
+      var list = document.getElementById('savedList');
+      document.getElementById('savedCount').textContent = arr.length ? '(' + arr.length + ')' : '';
+      if (!arr.length) { list.innerHTML = '<p class="saved-empty">No saved articles yet. Open any topic and tap <strong>☆ Save</strong> (bottom-right) to add it here.</p>'; return; }
+      list.innerHTML = arr.map(function(x, i){
+        return '<div class="saved-item"><a href="'+x.url+'">📄 '+(x.title||x.url)+'</a>' +
+               '<button title="Remove" data-i="'+i+'">✕</button></div>';
+      }).join('');
+      list.querySelectorAll('button[data-i]').forEach(function(b){
+        b.onclick = function(){ var a=jget('cc-saved')||[]; a.splice(parseInt(b.getAttribute('data-i'),10),1); jset('cc-saved',a); renderSaved(); };
+      });
+    }
+    renderSaved();
   })();
 </script>
 </body>
