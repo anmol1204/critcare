@@ -14,3 +14,8 @@ android/.idea/
 # Large PDFs (source files, not needed in git)
 DNB/DEC\ PAPER\ 4\ 2025\ ANSWERS.pdf
 DNB/DNB\ Anaesthesiology\ Paper4.pdf
+
+# Large source material (kept locally, not deployed)
+ACLS 2025/
+Difficult Airway/
+untitled folder/

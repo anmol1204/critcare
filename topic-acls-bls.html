@@ -39,6 +39,12 @@
     .hs-col ul{font-size:.83rem;color:var(--slate);padding-left:1.1rem;line-height:1.7;margin:0;}
     .hs-col li strong{color:var(--ink);}
     @media(max-width:600px){.hs-grid{grid-template-columns:1fr;}}
+    /* Official algorithm figures */
+    .algo-fig{margin:1.3rem 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff;}
+    .algo-fig img{width:100%;height:auto;display:block;background:#fff;}
+    .algo-fig figcaption{font-size:.78rem;color:var(--slate);padding:.6rem .9rem;border-top:1px solid var(--line);background:var(--bg);}
+    .algo-fig figcaption strong{color:var(--ink);}
+    .algo-fig figcaption a{color:var(--blue);text-decoration:none;font-weight:600;}
   </style>
   <script src="app-native.js" defer></script>
 </head>
@@ -61,8 +67,8 @@
     <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › ACLS &amp; BLS</div>
     <h1>❤️ ACLS &amp; BLS — Cardiac Arrest</h1>
     <div class="guideline-row">
-      <span class="gbadge sccm">AHA 2020</span>
-      <span class="gbadge esicm">Focused Updates 2023–24</span>
+      <span class="gbadge sccm">AHA 2025</span>
+      <span class="gbadge esicm">Official Algorithms</span>
       <span class="gbadge isccm">ILCOR</span>
       <span class="gbadge who">ERC 2021</span>
     </div>
@@ -70,7 +76,7 @@
       <span class="topic-tag red">High-Quality CPR</span>
       <span class="topic-tag">Shockable vs Non-shockable</span>
       <span class="topic-tag">Hs &amp; Ts · Peri-arrest</span>
-      <span class="topic-updated">AHA Guidelines for CPR &amp; ECC 2020 + focused updates (2023–2024) · ILCOR CoSTR · ERC 2021. Verify the latest annual AHA focused update.</span>
+      <span class="topic-updated">AHA 2025 Guidelines for CPR &amp; ECC — official algorithm set · ILCOR CoSTR · ERC 2021</span>
     </div>
   </div>
 </header>
@@ -122,6 +128,15 @@
     <section id="s2">
       <span class="sb sb-g">📋 2 · Adult Cardiac Arrest Algorithm</span>
       <h2>Shockable vs Non-Shockable</h2>
+
+      <figure class="algo-fig">
+        <a href="assets/algorithms/acls-cardiac-arrest.png" target="_blank" rel="noopener"><img src="assets/algorithms/acls-cardiac-arrest.png" alt="AHA 2025 Adult Cardiac Arrest Algorithm" loading="lazy"></a>
+        <figcaption><strong>AHA 2025 — Adult Cardiac Arrest Algorithm.</strong> <a href="assets/algorithms/acls-cardiac-arrest.png" target="_blank" rel="noopener">Tap to enlarge ↗</a></figcaption>
+      </figure>
+      <figure class="algo-fig">
+        <a href="assets/algorithms/acls-arrest-circular.png" target="_blank" rel="noopener"><img src="assets/algorithms/acls-arrest-circular.png" alt="AHA 2025 Cardiac Arrest Circular Algorithm" loading="lazy"></a>
+        <figcaption><strong>AHA 2025 — Cardiac Arrest Circular Algorithm</strong> (the 2-minute CPR cycle view). <a href="assets/algorithms/acls-arrest-circular.png" target="_blank" rel="noopener">Tap to enlarge ↗</a></figcaption>
+      </figure>
       <div class="guideline-rec">
         <div class="gr-label">Shockable — VF / Pulseless VT</div>
         <div class="gr-text">
@@ -199,11 +214,38 @@
           Echo during the rhythm-check pause (≤10 s) can identify tamponade, RV strain (massive PE), severe hypovolaemia, or cardiac standstill — but <strong>must not prolong compression pauses</strong>. Consider thrombolysis for confirmed/strongly-suspected PE arrest (prolong CPR 60–90 min after lysis). ECPR (extracorporeal CPR) in selected refractory arrests at capable centres.
         </div>
       </div>
+
+      <h3>Post-Cardiac-Arrest Care &amp; Special Circumstances (AHA 2025)</h3>
+      <figure class="algo-fig">
+        <a href="assets/algorithms/acls-pcac.png" target="_blank" rel="noopener"><img src="assets/algorithms/acls-pcac.png" alt="AHA 2025 Post-Cardiac Arrest Care Algorithm" loading="lazy"></a>
+        <figcaption><strong>AHA 2025 — Adult Post-Cardiac-Arrest Care.</strong> See the <a href="topic-rosc.html">ROSC topic</a> for detail. <a href="assets/algorithms/acls-pcac.png" target="_blank" rel="noopener">Tap to enlarge ↗</a></figcaption>
+      </figure>
+      <figure class="algo-fig">
+        <a href="assets/algorithms/acls-pregnancy.png" target="_blank" rel="noopener"><img src="assets/algorithms/acls-pregnancy.png" alt="AHA 2025 Cardiac Arrest in Pregnancy Algorithm" loading="lazy"></a>
+        <figcaption><strong>AHA 2025 — Cardiac Arrest in Pregnancy</strong> (left-uterine displacement; resuscitative hysterotomy by ~4–5 min if no ROSC). <a href="assets/algorithms/acls-pregnancy.png" target="_blank" rel="noopener">Tap to enlarge ↗</a></figcaption>
+      </figure>
+      <figure class="algo-fig">
+        <a href="assets/algorithms/acls-lvad.png" target="_blank" rel="noopener"><img src="assets/algorithms/acls-lvad.png" alt="AHA 2025 Cardiac Arrest with an LVAD Algorithm" loading="lazy"></a>
+        <figcaption><strong>AHA 2025 — Cardiac Arrest in the patient with an LVAD.</strong> <a href="assets/algorithms/acls-lvad.png" target="_blank" rel="noopener">Tap to enlarge ↗</a></figcaption>
+      </figure>
     </section>
 
     <section id="s5">
       <span class="sb sb-m">⚡ 5 · Peri-Arrest Algorithms</span>
       <h2>Bradycardia &amp; Tachycardia (with a pulse)</h2>
+
+      <figure class="algo-fig">
+        <a href="assets/algorithms/acls-bradycardia.png" target="_blank" rel="noopener"><img src="assets/algorithms/acls-bradycardia.png" alt="AHA 2025 Adult Bradycardia Algorithm" loading="lazy"></a>
+        <figcaption><strong>AHA 2025 — Adult Bradycardia (with pulse) Algorithm.</strong> <a href="assets/algorithms/acls-bradycardia.png" target="_blank" rel="noopener">Tap to enlarge ↗</a></figcaption>
+      </figure>
+      <figure class="algo-fig">
+        <a href="assets/algorithms/acls-tachycardia.png" target="_blank" rel="noopener"><img src="assets/algorithms/acls-tachycardia.png" alt="AHA 2025 Adult Tachycardia Algorithm" loading="lazy"></a>
+        <figcaption><strong>AHA 2025 — Adult Tachycardia (with pulse) Algorithm.</strong> <a href="assets/algorithms/acls-tachycardia.png" target="_blank" rel="noopener">Tap to enlarge ↗</a></figcaption>
+      </figure>
+      <figure class="algo-fig">
+        <a href="assets/algorithms/acls-cardioversion.png" target="_blank" rel="noopener"><img src="assets/algorithms/acls-cardioversion.png" alt="AHA 2025 Electrical Cardioversion Algorithm" loading="lazy"></a>
+        <figcaption><strong>AHA 2025 — Electrical Cardioversion energies &amp; steps.</strong> <a href="assets/algorithms/acls-cardioversion.png" target="_blank" rel="noopener">Tap to enlarge ↗</a></figcaption>
+      </figure>
       <div class="guideline-rec">
         <div class="gr-label">Symptomatic Bradycardia</div>
         <div class="gr-text">
