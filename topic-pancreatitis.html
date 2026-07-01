@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Severe Acute Pancreatitis — ICU Management — CritCare.in</title>
+  <meta name="description" content="ICU management of severe acute pancreatitis: Revised Atlanta severity, BISAP & CTSI scoring, moderate fluid resuscitation (WATERFALL), early enteral nutrition, when NOT to give antibiotics, infected necrosis and the step-up approach. ACG 2013, IAP-APA, ESPEN, Marino 5th Ed." />
+  <link rel="canonical" href="https://critcare.in/topic-pancreatitis.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .severity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1rem 0;}
+    .sev-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .sev-mild{background:#f0fdf4;border-color:#86efac;}
+    .sev-mod{background:#fefce8;border-color:#fde68a;}
+    .sev-sev{background:#fef2f2;border-color:#fecaca;}
+    .sev-card h4{font-size:.8rem;font-weight:800;margin-bottom:.5rem;}
+    .sev-mild h4{color:#166534;} .sev-mod h4{color:#854d0e;} .sev-sev h4{color:#991b1b;}
+    .sev-card ul{font-size:.8rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    .score-grid{display:grid;grid-template-columns:1fr auto;gap:.3rem .8rem;font-size:.86rem;margin:.6rem 0;}
+    .score-grid span:nth-child(odd){color:var(--ink);padding:.25rem 0;border-bottom:1px solid var(--line);}
+    .score-grid span:nth-child(even){color:var(--blue);font-weight:800;text-align:right;padding:.25rem 0;border-bottom:1px solid var(--line);}
+    @media(max-width:600px){.severity-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Severe Acute Pancreatitis</div>
+    <h1>🔥 Severe Acute Pancreatitis</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ACG 2013</span>
+      <span class="gbadge kdigo">Revised Atlanta 2012</span>
+      <span class="gbadge isccm">WATERFALL 2022</span>
+      <span class="gbadge esicm">IAP–APA</span>
+      <span class="gbadge apasl">ESPEN 2020</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Severity · Necrosis · Organ Failure</span>
+      <span class="topic-tag">BISAP · CTSI</span>
+      <span class="topic-tag">Moderate Fluids · Early EN</span>
+      <span class="topic-updated">ACG 2013 · Revised Atlanta 2012 · WATERFALL Trial (NEJM 2022) · IAP–APA 2013 · ESPEN 2020 · Marino 5th Ed (2025)</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Reviewed by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Emergency &amp; Critical Care Medicine, SGPGIMS</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino Physiology</a></li>
+        <li><a href="#s3">3. Guidelines (ACG / IAP–APA)</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
+      <h2>Definition, Diagnosis &amp; Aetiology</h2>
+      <div class="book-quote">
+        <p>"Acute pancreatitis is diagnosed when two of three criteria are met: characteristic abdominal pain, serum lipase or amylase ≥3× the upper limit of normal, or characteristic findings on cross-sectional imaging. The great majority of episodes are mild and self-limiting; it is the 15–20% that progress to persistent organ failure and necrosis that consume ICU resources and account for almost all of the mortality. The clinician's task in the first 24 hours is not to confirm the obvious diagnosis, but to identify the patient who is going to deteriorate."</p>
+        <cite>Washington Manual of Critical Care, 4th Ed. Wolters Kluwer 2023. Chapter: Acute Pancreatitis.</cite>
+      </div>
+
+      <h3>Diagnostic Criteria (2 of 3 required)</h3>
+      <ul>
+        <li><strong>Characteristic pain</strong> — acute, severe, epigastric, radiating to the back</li>
+        <li><strong>Lipase or amylase ≥3× ULN</strong> — lipase is more sensitive and specific and stays elevated longer; the degree of elevation does <strong>not</strong> correlate with severity</li>
+        <li><strong>Characteristic imaging</strong> — contrast CT, MRI or ultrasound (imaging is <strong>not</strong> needed to diagnose if the first two are present)</li>
+      </ul>
+
+      <h3>Aetiology (mnemonic: "I GET SMASHED" — the big ones)</h3>
+      <ul>
+        <li><strong>Gallstones (~40%)</strong> — commonest; always request an ultrasound to look for stones/CBD dilatation on every first presentation</li>
+        <li><strong>Ethanol (~30%)</strong> — usually a background of chronic use</li>
+        <li><strong>Hypertriglyceridaemia (~2–5%, higher in India)</strong> — triglycerides &gt;11.3 mmol/L (1000 mg/dL); often lipase is only mildly raised</li>
+        <li><strong>ERCP</strong> — post-procedure; rectal NSAID (diclofenac/indometacin) reduces the risk</li>
+        <li><strong>Drugs</strong> — azathioprine, valproate, thiazides, GLP-1 agonists, some antiretrovirals</li>
+        <li><strong>Hypercalcaemia, autoimmune, trauma, scorpion sting, idiopathic (~10–15%)</strong></li>
+      </ul>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Why severe pancreatitis behaves like septic shock</div>
+        <p>In severe acute pancreatitis there is a massive <strong>sterile</strong> inflammatory response with capillary leak, third-space fluid loss and vasodilatation. The patient is tachycardic, hypotensive, oliguric and has a raised lactate and white cell count — <em>without any infection in the first week</em>. Treating this SIRS phase with antibiotics is a classic error: the resuscitation is supportive (fluids, organ support), not antimicrobial.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Pathophysiology &amp; the Two-Phase Timeline</h2>
+      <div class="book-quote">
+        <p>"Acute pancreatitis is an inflammatory condition that can range from mild self-limited disease to a life-threatening multi-organ failure syndrome. The inciting event triggers premature intrapancreatic activation of digestive enzymes, leading to autodigestion of pancreatic and peripancreatic tissue. The subsequent inflammatory cascade, particularly in severe disease, extends far beyond the pancreas and drives a SIRS-like systemic response indistinguishable from septic shock."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. GI Failure. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the autodigestion cascade</div>
+        <p>Digestive enzymes are normally synthesised as inactive zymogens and activated only in the duodenum. In pancreatitis this control fails:</p>
+        <ul>
+          <li><strong>Trigger</strong> (stone, alcohol, hypertriglyceridaemia, ERCP) → premature <strong>trypsinogen activation inside the acinar cell</strong></li>
+          <li>Active trypsin activates every other zymogen → autodigestion of pancreatic parenchyma and peripancreatic fat</li>
+          <li>Phospholipase A₂ → membrane disruption → <strong>local necrosis</strong>; released fatty acids bind calcium → <strong>hypocalcaemia</strong></li>
+          <li>Macrophage/neutrophil activation → <strong>cytokine storm</strong> (TNF-α, IL-1, IL-6) → SIRS → distant organ injury (ARDS, AKI, cardiovascular collapse, DIC, gut-barrier failure)</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the two phases (this drives every management decision)</div>
+        <p><strong>Early phase (week 1):</strong> the clinical picture is dominated by the <strong>systemic inflammatory response and organ failure</strong>. Severity is defined by the presence and persistence of organ failure — <em>not</em> by imaging. Deaths in this phase are from multi-organ failure.</p>
+        <p><strong>Late phase (after week 1, weeks–months):</strong> dominated by <strong>local complications and infected necrosis</strong>. This is when CT findings matter and when infection (and the need for intervention) appears. Deaths in this phase are from infected necrosis and its complications.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — feed the gut, don't "rest" the pancreas</div>
+        <p>The old doctrine of prolonged "pancreatic rest" (nil-by-mouth until amylase normalises) is <strong>wrong and harmful</strong>. Early enteral nutrition maintains gut mucosal integrity, prevents bacterial translocation from the gut (the source of later pancreatic infection) and reduces infectious complications. TPN alone increases line sepsis and infectious morbidity. The pancreas tolerates enteral feed — it is the systemic response, not the pancreas, that needs support.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · ACG 2013 · IAP–APA · Revised Atlanta 2012</span>
+      <h2>Evidence-Based Guidelines</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Severity — Revised Atlanta Classification (2012)</div>
+        <div class="gr-text">
+          Organ failure is defined by a <strong>modified Marshall score ≥2</strong> in any of three systems (respiratory PaO₂/FiO₂, renal creatinine, cardiovascular systolic BP).<br>
+          • <strong>Mild:</strong> no organ failure, no local complications — ~80%, mortality &lt;1%<br>
+          • <strong>Moderately severe:</strong> transient organ failure (&lt;48h) <em>or</em> local complications — mortality ~5%<br>
+          • <strong>Severe:</strong> <strong>persistent organ failure (&gt;48h)</strong>, single or multiple — mortality 20–40% (higher with infected necrosis) <span class="gr-s">Revised Atlanta 2012</span>
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Predicting severity — bedside scores</div>
+        <div class="gr-text">
+          No score beats serial clinical assessment, but useful triage tools:<br>
+          <strong>BISAP (≥3 = high risk)</strong> — 1 point each: <strong>B</strong>UN &gt;25 mg/dL, <strong>I</strong>mpaired mental status, <strong>S</strong>IRS, <strong>A</strong>ge &gt;60, <strong>P</strong>leural effusion.<br>
+          <strong>CTSI</strong> = Balthazar grade + necrosis score (≥7 = severe).<br>
+          <strong>Persistent SIRS at 48h</strong> and a <strong>rising BUN/haematocrit</strong> are among the best single predictors of severe disease. Ranson's score requires 48h to complete and is largely of historical interest.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Fluid resuscitation — moderate, not aggressive <span class="gr-s">WATERFALL 2022 · ACG 2013</span></div>
+        <div class="gr-text">
+          <strong>Lactated Ringer's is preferred over normal saline</strong> — less hyperchloraemic acidosis and lower SIRS at 24h.<br>
+          <strong>Moderate resuscitation (WATERFALL 2022):</strong> if hypovolaemic, 10 mL/kg bolus, then <strong>1.5 mL/kg/h</strong>, reassessed at 12h. The trial's <em>aggressive</em> arm (20 mL/kg bolus → 3 mL/kg/h) was stopped early for <strong>fluid overload (20.5% vs 6.3%)</strong> with <strong>no reduction in progression to severe disease</strong>.<br>
+          <strong>Titrate to targets, not a fixed rate:</strong> HR &lt;120, MAP 65–85, urine output &gt;0.5 mL/kg/h, falling BUN/haematocrit. Reassess frequently and stop escalating once perfusion is restored.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Nutrition — early enteral <span class="gr-s">STRONG — ACG 2013 / ESPEN 2020</span></div>
+        <div class="gr-text">
+          <strong>Mild disease:</strong> start a low-fat oral diet as soon as pain and nausea allow — do not wait for enzymes to normalise.<br>
+          <strong>Predicted severe disease:</strong> enteral nutrition within <strong>24–72h</strong> via nasogastric tube. <strong>NG feeding is equivalent to nasojejunal (NJ)</strong> for tolerance and outcome, and is simpler.<br>
+          <strong>TPN only</strong> if the enteral route fails or is contraindicated (e.g. abdominal compartment syndrome, high-output fistula). Target ~25 kcal/kg/day, protein 1.2–1.5 g/kg/day.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Antibiotics — NOT prophylactically <span class="gr-s">STRONG 1A — ACG 2013</span></div>
+        <div class="gr-text">
+          <strong>No prophylactic antibiotics</strong>, even in severe or necrotising pancreatitis (Isenmann 2004, Dellinger 2007 — no benefit; increases MDR and fungal infection).<br>
+          <strong>Antibiotics only for:</strong> confirmed infected necrosis (gas in a collection on CT, or clinical deterioration in the late phase), concurrent cholangitis, or a proven extrapancreatic infection.<br>
+          <strong>Choice for infected necrosis:</strong> a carbapenem (e.g. meropenem — good pancreatic penetration). Routine FNA to prove infection is no longer recommended; treat on the clinical + CT picture.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">ERCP &amp; cholecystectomy in gallstone pancreatitis</div>
+        <div class="gr-text">
+          <strong>Urgent ERCP (&lt;24h):</strong> only if there is concurrent <strong>acute cholangitis</strong> or persistent biliary obstruction — <em>not</em> for severe gallstone pancreatitis by itself (APEC trial: no benefit without cholangitis).<br>
+          <strong>Cholecystectomy:</strong> same-admission for <strong>mild</strong> gallstone pancreatitis (PONCHO trial — fewer recurrences); delay until fluid collections resolve or stabilise (~≥6 weeks) in severe disease.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Managing necrosis — the step-up approach <span class="gr-s">STRONG — PANTER / IAP–APA</span></div>
+        <div class="gr-text">
+          <strong>Delay intervention</strong> for infected necrosis until the collection is <strong>walled-off (≥4 weeks)</strong> whenever the patient can be supported — mortality is far lower.<br>
+          <strong>Step-up, not open surgery:</strong> percutaneous or endoscopic (transluminal) drainage first, escalating to minimally invasive necrosectomy only if needed. The PANTER trial showed the step-up approach reduces major complications and new-onset organ failure versus primary open necrosectomy. Sterile necrosis, however extensive, does <strong>not</strong> need intervention if the patient is stable.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Hypertriglyceridaemia-induced pancreatitis</strong> is common in Indian diabetics and metabolic syndrome. Triglycerides &gt;1000 mg/dL (11.3 mmol/L); lipase may be only modestly raised. Treat with an <strong>insulin infusion</strong> (activates lipoprotein lipase) ± plasmapheresis if severe/organ failure, alongside standard pancreatitis care.</p>
+        <p><strong>Tropical (calcific) pancreatitis</strong> — recurrent acute-on-chronic episodes in young patients, historically linked to cassava; present in parts of Kerala and eastern India.</p>
+        <p><strong>Access:</strong> endoscopic step-up necrosectomy and interventional radiology are concentrated in tertiary centres — recognise infected necrosis early and refer, rather than starting open surgery locally.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Drug Reference — Severe Acute Pancreatitis</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug / Fluid</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Lactated Ringer's</strong></td><td>Resuscitation (all)</td><td>10 mL/kg bolus if hypovolaemic → 1.5 mL/kg/h; titrate to targets</td><td>Preferred over NS; moderate regimen (WATERFALL); reassess at 12h, avoid overload</td></tr>
+            <tr><td><strong>Fentanyl</strong></td><td>Analgesia (first-line IV)</td><td>25–50 μg IV boluses titrated, or infusion</td><td>Opioids are safe — the old "morphine causes sphincter of Oddi spasm" concern is not clinically significant</td></tr>
+            <tr><td><strong>Paracetamol</strong></td><td>Analgesia (adjunct)</td><td>1 g IV/PO QDS (max 4 g/day)</td><td>Opioid-sparing; reduce dose if low body weight or liver dysfunction</td></tr>
+            <tr><td><strong>Ondansetron</strong></td><td>Nausea / vomiting</td><td>4–8 mg IV TDS PRN</td><td>Enables early enteral feeding</td></tr>
+            <tr><td><strong>Insulin (regular) infusion</strong></td><td>Hypertriglyceridaemia pancreatitis</td><td>0.1–0.3 U/kg/h with 5% dextrose cover; target TG &lt;5.6 mmol/L (500 mg/dL)</td><td>Activates lipoprotein lipase; monitor glucose &amp; K⁺; add plasmapheresis if severe</td></tr>
+            <tr><td><strong>Meropenem</strong></td><td>Infected necrosis / cholangitis</td><td>1 g IV every 8h (renal-adjusted)</td><td>Good pancreatic penetration; only when infection confirmed/strongly suspected</td></tr>
+            <tr><td><strong>Enoxaparin</strong></td><td>VTE prophylaxis</td><td>40 mg SC OD (renal-adjusted)</td><td>Pancreatitis is prothrombotic — splanchnic (splenic/portal) vein thrombosis risk</td></tr>
+            <tr><td><strong>Calcium gluconate</strong></td><td>Symptomatic hypocalcaemia</td><td>10 mL of 10% IV slowly</td><td>Treat symptomatic/ionised hypocalcaemia only; correct magnesium too</td></tr>
+            <tr><td><strong>Rectal indometacin/diclofenac</strong></td><td>Post-ERCP prophylaxis</td><td>100 mg PR at time of ERCP</td><td>Prevention only — reduces post-ERCP pancreatitis in high-risk cases</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Management Algorithm</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Diagnose &amp; find the cause</h4>
+          <ul>
+            <li>2 of 3: pain, lipase ≥3× ULN, imaging</li>
+            <li>Bloods: FBC, U&amp;E, LFTs, calcium, <strong>triglycerides</strong>, glucose, lactate, CRP; ABG if unwell</li>
+            <li><strong>Ultrasound abdomen</strong> for gallstones/CBD on every first episode</li>
+            <li>Do <strong>not</strong> CT at presentation — it under-stages necrosis in the first 72h</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Stratify severity &amp; decide disposition</h4>
+          <ul>
+            <li>BISAP, SIRS, BUN/haematocrit trend; modified Marshall for organ failure</li>
+            <li>Persistent organ failure &gt;48h, or high BISAP/SIRS → <strong>HDU/ICU</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Resuscitate (moderate) &amp; support organs</h4>
+          <ul>
+            <li>Lactated Ringer's — moderate regimen, titrate to HR/MAP/UO/BUN</li>
+            <li>Analgesia (fentanyl + paracetamol), antiemetics, VTE prophylaxis</li>
+            <li>Organ support: O₂/ventilation for ARDS, RRT for AKI as needed</li>
+            <li><strong>No antibiotics</strong> unless cholangitis or proven infection</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>Feed early</h4>
+          <ul>
+            <li>Mild: low-fat oral diet when tolerated</li>
+            <li>Severe: NG enteral feed within 24–72h (NG = NJ); TPN only if EN fails</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content">
+          <h4>Watch for complications (late phase)</h4>
+          <ul>
+            <li>Contrast CT at <strong>72–96h+</strong> if not improving — defines necrosis/collections</li>
+            <li>Deterioration in week 2–4 = <strong>suspect infected necrosis</strong> → carbapenem + plan drainage</li>
+            <li>Monitor for <strong>abdominal compartment syndrome</strong> (bladder pressure), splanchnic vein thrombosis</li>
+            <li>Infected necrosis: <strong>delay ≥4 weeks</strong> (walled-off) then <strong>step-up</strong> drainage → minimally invasive necrosectomy</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Acute Pancreatitis</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Prolonged nil-by-mouth "pancreatic rest"</div>
+        <p>Amylase/lipase normalisation is irrelevant to feeding — enzymes stay up for days after clinical recovery. Early enteral nutrition (oral in mild disease; NG within 24–72h in severe) reduces infected necrosis and mortality. Prolonged fasting and TPN worsen outcomes.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Prophylactic antibiotics for severe/necrotising disease</div>
+        <p>The early-phase SIRS looks like sepsis but is sterile. RCTs show no benefit of prophylactic carbapenems/quinolones in sterile necrosis, and routine use breeds MDR organisms and fungal infection. Give antibiotics only for cholangitis or confirmed infected necrosis.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Aggressive "front-loaded" fluid resuscitation</div>
+        <p>The WATERFALL trial (NEJM 2022) stopped its aggressive arm early for fluid overload with no reduction in progression to severe disease. Use moderate resuscitation with Lactated Ringer's, titrated to perfusion targets and a falling BUN/haematocrit — and stop escalating once perfused.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Normal saline instead of Lactated Ringer's</div>
+        <p>Large-volume NS causes hyperchloraemic metabolic acidosis and more SIRS at 24h. LR is the preferred resuscitation fluid (avoid LR only in the rare patient with significant hypercalcaemia as the cause).</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — CT scanning too early</div>
+        <p>Contrast CT in the first 72h under-estimates necrosis and rarely changes early management. Reserve CT for diagnostic doubt or for patients not improving at 72–96h, when it defines necrosis and collections.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Operating on necrosis too early</div>
+        <p>Early open necrosectomy carries very high mortality. Where the patient can be supported, delay intervention until the collection is walled-off (≥4 weeks) and use a step-up (percutaneous/endoscopic drainage first) approach. Sterile necrosis in a stable patient needs no intervention.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 7 — Missing the treatable cause</div>
+        <p>Always send <strong>triglycerides and calcium</strong> and image for gallstones. Hypertriglyceridaemic pancreatitis needs an insulin infusion (± plasmapheresis); gallstone pancreatitis with cholangitis needs urgent ERCP; and mild gallstone pancreatitis needs a same-admission cholecystectomy to prevent recurrence.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+
+      <div class="ec"><p><strong>Q: How is the severity of acute pancreatitis defined (Revised Atlanta 2012)?</strong><br>By organ failure, not imaging. Mild = no organ failure/no local complications; moderately severe = transient organ failure (&lt;48h) or local complications; severe = <strong>persistent organ failure &gt;48h</strong>. Organ failure = modified Marshall score ≥2 (respiratory/renal/cardiovascular).</p></div>
+      <div class="ec"><p><strong>Q: What did the WATERFALL trial (NEJM 2022) change?</strong><br>Moderate fluid resuscitation (10 mL/kg bolus → 1.5 mL/kg/h) is preferred over aggressive (20 mL/kg → 3 mL/kg/h). The aggressive arm was stopped early for fluid overload (20.5% vs 6.3%) with no reduction in progression to severe disease.</p></div>
+      <div class="ec"><p><strong>Q: Why Lactated Ringer's over normal saline?</strong><br>LR reduces SIRS at 24h and avoids the hyperchloraemic acidosis of large-volume NS. (Avoid LR only if hypercalcaemia is the precipitant.)</p></div>
+      <div class="ec"><p><strong>Q: Components of the BISAP score?</strong><br>BUN &gt;25 mg/dL, Impaired mental status, SIRS, Age &gt;60, Pleural effusion — 1 point each; ≥3 predicts high mortality. Simple and available within 24h (unlike Ranson, which needs 48h).</p></div>
+      <div class="ec"><p><strong>Q: Do you give prophylactic antibiotics in necrotising pancreatitis?</strong><br>No. No benefit in sterile necrosis (Isenmann, Dellinger). Antibiotics (a carbapenem) only for confirmed/strongly suspected infected necrosis, cholangitis, or extrapancreatic infection.</p></div>
+      <div class="ec"><p><strong>Q: How do you diagnose infected necrosis, and when do you intervene?</strong><br>Gas within a collection on CT, or clinical deterioration in the late phase — routine FNA is no longer recommended. Intervene by the <strong>step-up approach</strong> and, where possible, delay until walled-off necrosis (≥4 weeks). PANTER trial: step-up reduces major complications vs open necrosectomy.</p></div>
+      <div class="ec"><p><strong>Q: When is urgent ERCP indicated in gallstone pancreatitis?</strong><br>Only with concurrent <strong>cholangitis</strong> or persistent biliary obstruction — not for severe gallstone pancreatitis alone (APEC trial). Mild gallstone pancreatitis needs same-admission cholecystectomy (PONCHO trial).</p></div>
+      <div class="ec"><p><strong>Q: How is hypertriglyceridaemia-induced pancreatitis managed?</strong><br>Insulin infusion (activates lipoprotein lipase) with dextrose cover, targeting TG &lt;500 mg/dL; add plasmapheresis for severe disease/organ failure; then standard pancreatitis care and long-term fibrate/lifestyle management.</p></div>
+      <div class="ec"><p><strong>Q: Why does hypocalcaemia occur, and should you correct it?</strong><br>Released free fatty acids chelate calcium (saponification). Correct only symptomatic or significant ionised hypocalcaemia, and replace magnesium — routine correction of an asymptomatic number is unnecessary.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Tenner S, Baillie J, DeWitt J, Vege SS (ACG).</strong> American College of Gastroenterology Guideline: Management of Acute Pancreatitis. <em>Am J Gastroenterol.</em> 2013;108:1400–1415.</li>
+        <li><strong>Banks PA, Bollen TL, Dervenis C, et al.</strong> Classification of Acute Pancreatitis — 2012: Revision of the Atlanta Classification and Definitions. <em>Gut.</em> 2013;62:102–111.</li>
+        <li><strong>de-Madaria E, Buxbaum JL, Maisonneuve P, et al. (WATERFALL).</strong> Aggressive or Moderate Fluid Resuscitation in Acute Pancreatitis. <em>N Engl J Med.</em> 2022;387:989–1000.</li>
+        <li><strong>Working Group IAP/APA Acute Pancreatitis Guidelines.</strong> IAP/APA evidence-based guidelines for the management of acute pancreatitis. <em>Pancreatology.</em> 2013;13(4 Suppl 2):e1–e15.</li>
+        <li><strong>van Santvoort HC, Besselink MG, Bakker OJ, et al. (PANTER).</strong> A Step-up Approach or Open Necrosectomy for Necrotizing Pancreatitis. <em>N Engl J Med.</em> 2010;362:1491–1502.</li>
+        <li><strong>Schepers NJ, Hallensleben NDL, Besselink MG, et al. (APEC).</strong> Urgent endoscopic retrograde cholangiopancreatography with sphincterotomy versus conservative treatment in predicted severe acute gallstone pancreatitis. <em>Lancet.</em> 2020;396:167–176.</li>
+        <li><strong>da Costa DW, Bouwense SA, Schepers NJ, et al. (PONCHO).</strong> Same-admission versus interval cholecystectomy for mild gallstone pancreatitis. <em>Lancet.</em> 2015;386:1261–1268.</li>
+        <li><strong>Arvanitakis M, Ockenga J, Bezmarevic M, et al. (ESPEN).</strong> ESPEN guideline on clinical nutrition in acute and chronic pancreatitis. <em>Clin Nutr.</em> 2020;39:612–631.</li>
+        <li><strong>Crockett SD, Wani S, Gardner TB, et al. (AGA).</strong> American Gastroenterological Association Institute Guideline on Initial Management of Acute Pancreatitis. <em>Gastroenterology.</em> 2018;154:1096–1101.</li>
+        <li><strong>Marino PL.</strong> Marino's The ICU Book, 5th Edition. GI Failure; Nutrition in Critical Illness. Philadelphia, PA: Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Acute Pancreatitis. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
