@@ -29,7 +29,8 @@
   }
   function loggedIn() { try { return localStorage.getItem(AUTH_KEY) === '1'; } catch (e) { return false; } }
   function isPro()    { try { return localStorage.getItem(PRO_KEY)  === '1'; } catch (e) { return false; } }
-  function isFree(file) { return !!FREE[fileOf(file)]; }
+  // DNB papers (hub + pre-rendered solved-paper pages) are always free & crawlable.
+  function isFree(file) { var f = fileOf(file); return !!FREE[f] || /^dnb/.test(f); }
   function isGated(file) { return !isFree(file); }
 
   // expose for other scripts (topics page, search, pro page)
