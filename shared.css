@@ -616,6 +616,33 @@ html.dark .topic-reviewed { background: rgba(255,255,255,0.05); }
 .fc-teal   { background: #14b8a6; }
 .fc-gray   { background: #6b7280; }
 
+/* ---- PATHOPHYSIOLOGY CASCADE FLOWCHART ---- */
+/* Reusable top-to-bottom "how the disease progresses" flow: trigger → mechanism
+   steps → pathological end-state. Pure CSS, prints and stacks on mobile. */
+.patho-flow { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 1.4rem 0; }
+.patho-flow-title { font-size: .7rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; color: var(--slate); margin-bottom: .8rem; text-align: center; }
+.pf-node { width: 100%; max-width: 580px; background: var(--bg); border: 1.5px solid var(--line); border-radius: 10px; padding: .75rem 1.05rem; text-align: center; font-size: .87rem; line-height: 1.55; color: var(--ink); }
+.pf-node strong { color: var(--blue-dark); }
+.pf-node .pf-sub { display: block; font-size: .76rem; color: var(--slate); margin-top: .2rem; line-height: 1.5; }
+.pf-tag { display: inline-block; font-size: .58rem; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; padding: .12rem .5rem; border-radius: 20px; margin-bottom: .35rem; background: var(--blue-soft); color: var(--blue-dark); }
+.pf-trigger { background: #fffbeb; border-color: #fcd34d; }
+.pf-trigger .pf-tag { background: #f59e0b; color: #fff; }
+.pf-end { background: #fef2f2; border-color: #fca5a5; }
+.pf-end .pf-tag { background: #dc2626; color: #fff; }
+.pf-end strong { color: #991b1b; }
+/* connector arrow between nodes */
+.pf-arrow { width: 2px; height: 24px; background: var(--line); position: relative; flex-shrink: 0; }
+.pf-arrow::after { content: ''; position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%); border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid var(--slate); }
+.pf-arrow.pf-lbl { display: flex; align-items: center; }
+.pf-arrow.pf-lbl span { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); white-space: nowrap; font-size: .68rem; font-style: italic; color: var(--slate); }
+/* parallel branch: two/three consequences side by side */
+.pf-split { display: flex; gap: .8rem; width: 100%; max-width: 580px; }
+.pf-split .pf-node { max-width: none; }
+html.dark .pf-trigger { background: #2a1e05; border-color: #a16207; }
+html.dark .pf-end { background: #2a0a0a; border-color: #b91c1c; }
+html.dark .pf-end strong { color: #fca5a5; }
+@media (max-width: 560px) { .pf-split { flex-direction: column; gap: 0; } .pf-split .pf-node + .pf-node { margin-top: 0; } }
+
 /* ---- GUIDELINE BADGES ---- */
 .guideline-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.8rem 0 1.4rem; }
 .gbadge { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.28rem 0.65rem; border-radius: 5px; }
