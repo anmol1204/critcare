@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="/icon-apple.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
   <title>My Dashboard — CritCare.in</title>
-  <meta name="description" content="Your CritCare.in dashboard — choose your specialty, jump into topics, tools and calculators. Integrated Medicine: critical care, emergency, pulmonary & anaesthesia in one place." />
+  <meta name="description" content="Your CritCare.in dashboard — choose your specialty, jump into topics, tools and calculators. Integrated Medicine: critical care medicine, emergency medicine & anaesthesiology in one place." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
   <script src="darkmode.js"></script>
@@ -137,7 +137,7 @@
           <div class="dash-sub" id="dashSubline">You're signed in to CritCare.in</div>
         </div>
       </div>
-      <div class="dash-tagline">✦ Integrated Medicine — Critical Care · Emergency · Pulmonary · Anaesthesia, in one place</div>
+      <div class="dash-tagline">✦ Integrated Medicine — Critical Care Medicine · Emergency Medicine · Anaesthesiology, in one place</div>
     </div>
   </header>
 
@@ -148,25 +148,17 @@
       <p>👋 Finish setting up your profile — <strong>pick your specialty</strong> below so we can tailor your topics to you.</p>
     </div>
     <div class="spec-choose" id="specChoose">
-      <button class="spec-opt" data-spec="ccm" onclick="pickSpecialty('ccm','Critical Care','topics.html')">
+      <button class="spec-opt" data-spec="ccm" onclick="pickSpecialty('ccm','Critical Care Medicine','topics.html')">
         <span class="so-check">✓</span><div class="so-ic">🫀</div>
-        <div class="so-name">Critical Care</div><div class="so-desc">ICU — sepsis, ventilation, AKI, shock</div>
+        <div class="so-name">Critical Care Medicine</div><div class="so-desc">ICU — sepsis, ventilation, AKI, shock</div>
       </button>
       <button class="spec-opt" data-spec="em" onclick="pickSpecialty('em','Emergency Medicine','topics.html')">
         <span class="so-check">✓</span><div class="so-ic">🚑</div>
         <div class="so-name">Emergency Medicine</div><div class="so-desc">Resus, trauma, toxicology, tropical</div>
       </button>
-      <button class="spec-opt" data-spec="pulm" onclick="pickSpecialty('pulm','Pulmonary Medicine','topics.html')">
-        <span class="so-check">✓</span><div class="so-ic">🫁</div>
-        <div class="so-name">Pulmonary</div><div class="so-desc">ARDS, COPD, asthma, ventilation</div>
-      </button>
-      <button class="spec-opt" data-spec="anaes" onclick="pickSpecialty('anaes','Anaesthesia','topics.html')">
+      <button class="spec-opt" data-spec="anaes" onclick="pickSpecialty('anaes','Anaesthesiology','dnb.html')">
         <span class="so-check">✓</span><div class="so-ic">💉</div>
-        <div class="so-name">Anaesthesia</div><div class="so-desc">Airway, sedation, peri-op</div>
-      </button>
-      <button class="spec-opt" data-spec="im" onclick="pickSpecialty('im','Internal Medicine','topics.html')">
-        <span class="so-check">✓</span><div class="so-ic">🩺</div>
-        <div class="so-name">Internal Medicine</div><div class="so-desc">Endocrine, GI, renal, electrolytes</div>
+        <div class="so-name">Anaesthesiology</div><div class="so-desc">Airway, sedation, DNB exam prep</div>
       </button>
     </div>
     <div class="spec-confirm" id="specConfirm">
@@ -176,7 +168,7 @@
 
     <div class="dash-section-label">Quick access</div>
     <div class="qa-grid">
-      <a class="qa-card" href="topics.html"><div class="qa-ic">📚</div><div class="qa-name">Clinical Topics</div><div class="qa-desc">38+ referenced articles</div></a>
+      <a class="qa-card" href="topics.html"><div class="qa-ic">📚</div><div class="qa-name">Clinical Topics</div><div class="qa-desc">38 referenced articles</div></a>
       <a class="qa-card" href="abg-calculator.html"><div class="qa-ic">🩺</div><div class="qa-name">ABG Analyser</div><div class="qa-desc">Interpret + management</div></a>
       <a class="qa-card" href="ai-tool.html"><div class="qa-ic">🤖</div><div class="qa-name">AI Tool</div><div class="qa-desc">Decision support</div></a>
       <a class="qa-card" href="drug-reference.html"><div class="qa-ic">💊</div><div class="qa-name">Drug Reference</div><div class="qa-desc">Doses + calculators</div></a>
@@ -220,8 +212,8 @@
       </div>
       <div class="integ-card">
         <h3>✦ We're building Integrated Medicine</h3>
-        <p>CritCare.in unifies the specialties that overlap at the bedside — <strong>critical care, emergency medicine, pulmonary medicine and anaesthesia</strong> — into one cross-referenced knowledge base, so you never have to switch resources mid-resuscitation.</p>
-        <div class="integ-tags"><span>🫀 Critical Care</span><span>🚑 Emergency</span><span>🫁 Pulmonary</span><span>💉 Anaesthesia</span><span>🩺 Internal Med</span></div>
+        <p>CritCare.in unifies the specialties that overlap at the bedside — <strong>critical care medicine, emergency medicine and anaesthesiology</strong> — into one cross-referenced knowledge base, so you never have to switch resources mid-resuscitation.</p>
+        <div class="integ-tags"><span>🫀 Critical Care Medicine</span><span>🚑 Emergency Medicine</span><span>💉 Anaesthesiology</span></div>
       </div>
     </div>
 
@@ -248,7 +240,7 @@
       <li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li>
       <li><a href="pro.html">CritCare Pro</a></li><li><a href="about.html">About</a></li>
     </ul>
-    <p>© 2025 Dr. Anmol Srivastava · SGPGIMS Lucknow · Building Integrated Medicine</p>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow · Building Integrated Medicine</p>
   </div>
 </footer>
 
@@ -264,7 +256,7 @@
   function lsGet(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
   function lsSet(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
 
-  var SPEC_LABELS = { ccm:'Critical Care', em:'Emergency Medicine', pulm:'Pulmonary Medicine', anaes:'Anaesthesia', im:'Internal Medicine', other:'Surgery / Trauma / Other' };
+  var SPEC_LABELS = { ccm:'Critical Care Medicine', em:'Emergency Medicine', anaes:'Anaesthesiology', other:'Surgery / Trauma / Other' };
 
   function jget(k,d){ try { var v=localStorage.getItem(k); return v?JSON.parse(v):d; } catch(e){ return d; } }
   function jset(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
