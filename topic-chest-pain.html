@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Acute Chest Pain — ED Approach & Life-Threats — CritCare.in</title>
+  <meta name="description" content="Emergency approach to undifferentiated chest pain: the six life-threatening causes (ACS, aortic dissection, pulmonary embolism, tension pneumothorax, cardiac tamponade, oesophageal rupture), ECG and troponin, HEART score risk stratification and safe disposition. Tintinalli, Rosen, ESC 2023." />
+  <link rel="canonical" href="https://critcare.in/topic-chest-pain.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .killer-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:1rem 0;}
+    .killer-card{background:#fff1f2;border:1px solid #fecdd3;border-radius:10px;padding:.9rem 1rem;}
+    .killer-card h4{font-size:.82rem;font-weight:800;color:#9f1239;margin-bottom:.35rem;}
+    .killer-card p{font-size:.8rem;color:#881337;line-height:1.6;margin:0;}
+    .pf-node.pf-danger{background:#fef2f2;border-color:#fca5a5;color:#991b1b;}
+    @media(max-width:600px){.killer-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Acute Chest Pain</div>
+    <h1>💔 Acute Chest Pain — The ED Approach</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Tintinalli 9e</span>
+      <span class="gbadge kdigo">Rosen's 10e</span>
+      <span class="gbadge isccm">ESC 2023 ACS</span>
+      <span class="gbadge esicm">HEART Score</span>
+      <span class="gbadge apasl">ACC/AHA 2021</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">6 Life-Threats</span>
+      <span class="topic-tag">ECG · hs-Troponin</span>
+      <span class="topic-tag">HEART · Disposition</span>
+      <span class="topic-updated">Tintinalli's Emergency Medicine 9th Ed · Rosen's 10th Ed · ESC 2023 ACS · ACC/AHA 2021 Chest Pain Guideline · HEART Pathway</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Reviewed by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Emergency &amp; Critical Care Medicine, SGPGIMS</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. The Six Killers</a></li>
+        <li><a href="#s2">2. Risk-Stratification Logic</a></li>
+        <li><a href="#s3">3. Work-up &amp; Guidelines</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Tintinalli's Emergency Medicine, 9th Ed</span>
+      <h2>Rule Out the Killers First, Diagnose Later</h2>
+      <div class="book-quote">
+        <p>"The emergency approach to chest pain inverts the usual diagnostic order. You do not start with the most likely cause and work down; you start with the most lethal and work to exclude it. The goal in the first ten minutes is not a diagnosis — it is the confident exclusion of the six conditions that will kill this patient today. Most chest pain is benign, but the cost of missing the dangerous minority is measured in lives and lawsuits."</p>
+        <cite>Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Ed. Chest Pain. McGraw-Hill; 2020.</cite>
+      </div>
+
+      <h3>The six immediately life-threatening causes</h3>
+      <div class="killer-grid">
+        <div class="killer-card"><h4>1 · Acute coronary syndrome</h4><p>STEMI/NSTEMI/unstable angina. ECG within 10 min; serial hs-troponin. Commonest lethal cause.</p></div>
+        <div class="killer-card"><h4>2 · Aortic dissection</h4><p>Tearing pain to the back, pulse/BP differential, wide mediastinum. CT aortogram. <em>Do not anticoagulate.</em></p></div>
+        <div class="killer-card"><h4>3 · Pulmonary embolism</h4><p>Pleuritic pain, dyspnoea, hypoxia, tachycardia; risk factors. Wells/PERC → D-dimer or CTPA.</p></div>
+        <div class="killer-card"><h4>4 · Tension pneumothorax</h4><p>Sudden pleuritic pain, dyspnoea, absent breath sounds, deviated trachea, shock. <em>Clinical Dx → decompress.</em></p></div>
+        <div class="killer-card"><h4>5 · Cardiac tamponade</h4><p>Beck's triad, pulsus paradoxus, low-voltage ECG. Echo → pericardiocentesis.</p></div>
+        <div class="killer-card"><h4>6 · Oesophageal rupture (Boerhaave)</h4><p>Vomiting then severe pain, subcutaneous emphysema, mediastinitis. CT with oral contrast; high mortality.</p></div>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Atypical is typical — the traps</div>
+        <p><strong>Women, the elderly, and people with diabetes</strong> frequently present with ACS <em>without</em> classic crushing pain — dyspnoea, fatigue, epigastric discomfort, nausea, syncope. A normal initial ECG and a single normal troponin do <strong>not</strong> exclude ACS. "Indigestion" relieved by antacids, or pain reproduced partly on palpation, still allows a myocardial infarction — never let a benign-sounding feature close the case prematurely.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Risk-Stratification Physiology (Rosen's)</span>
+      <h2>Pre-test Probability &amp; the Troponin</h2>
+      <div class="book-quote">
+        <p>"Chest-pain decision-making is applied Bayesian reasoning. The history sets the pre-test probability; the ECG and troponin move it up or down. A high-sensitivity troponin is exquisitely sensitive but not specific — it detects myocardial injury, not its cause. Interpreting a single value without the trajectory, the timing and the clinical context is how both missed infarcts and needless admissions are made."</p>
+        <cite>Rosen's Emergency Medicine, 10th Ed. Chest Pain &amp; Acute Coronary Syndromes. Elsevier; 2023.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 How the ED sorts chest pain to a disposition</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Presentation</span>Undifferentiated chest pain</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><strong>ECG within 10 min</strong> + focused history/exam + vitals in both arms</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split">
+          <div class="pf-node pf-danger">STEMI / unstable / abnormal vitals<span class="pf-sub">→ activate cath lab / resuscitate / immediate imaging</span></div>
+          <div class="pf-node">Stable, non-diagnostic ECG<span class="pf-sub">→ risk score + serial hs-troponin</span></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><strong>hs-troponin protocol (0/1h or 0/2h)</strong> + HEART/EDACS score</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Decision</span><strong>Rule-out &amp; discharge · observe/test · admit &amp; treat</strong></div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 The high-sensitivity troponin — how to use it</div>
+        <ul>
+          <li><strong>hs-troponin detects myocardial injury, not aetiology.</strong> It rises in PE, sepsis, heart failure, myocarditis, renal failure and tachyarrhythmia — a raised value is not automatically an MI.</li>
+          <li><strong>The change (delta) over time and the clinical context distinguish acute MI</strong> from chronic elevation. Validated <strong>0/1h and 0/2h algorithms</strong> (ESC) rule-in and rule-out rapidly.</li>
+          <li>A very low presentation value with a low-risk score and non-ischaemic ECG has a high negative predictive value — the basis of accelerated discharge pathways.</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 The HEART score — pragmatic ED risk stratification</div>
+        <p>Scores 0–2 each for <strong>H</strong>istory, <strong>E</strong>CG, <strong>A</strong>ge, <strong>R</strong>isk factors, <strong>T</strong>roponin:</p>
+        <ul>
+          <li><strong>0–3 (low):</strong> ~1–2% 6-week major adverse cardiac event — candidate for early discharge with a rule-out troponin pathway.</li>
+          <li><strong>4–6 (moderate):</strong> admit/observe for serial troponin and further testing.</li>
+          <li><strong>≥7 (high):</strong> high MACE risk — early invasive/aggressive management.</li>
+        </ul>
+        <p>The <strong>HEART Pathway</strong> (HEART score + 0/3h troponin) safely discharges low-risk patients and outperforms TIMI/GRACE for undifferentiated ED chest pain.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · ESC 2023 · ACC/AHA 2021</span>
+      <h2>Work-up &amp; Evidence-Based Approach</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">First 10 minutes — the non-negotiables</div>
+        <div class="gr-text">
+          <strong>12-lead ECG within 10 minutes</strong> of arrival, repeated if pain persists/changes. Continuous monitoring, IV access, vitals <strong>in both arms</strong>, and SpO₂. Consider <strong>posterior leads (V7–V9)</strong> for suspected posterior MI and <strong>right-sided leads (V4R)</strong> for inferior STEMI with hypotension (RV infarct — preload dependent).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">STEMI — reperfusion is time-critical <span class="gr-s">ESC 2023</span></div>
+        <div class="gr-text">
+          <strong>Primary PCI</strong> if achievable within 120 min of diagnosis; otherwise <strong>fibrinolysis</strong> within 10 min of STEMI diagnosis (if no contraindication), then transfer for PCI. Give aspirin + a P2Y₁₂ inhibitor and anticoagulation per pathway. "Time is muscle."
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">NSTE-ACS — risk-based timing <span class="gr-s">ESC 2023</span></div>
+        <div class="gr-text">
+          Diagnosis rests on <strong>serial hs-troponin (0/1h or 0/2h)</strong> + ECG. Antithrombotic therapy and <strong>invasive angiography timing by risk</strong>: immediate (&lt;2h) for very-high-risk (haemodynamic/electrical instability, refractory pain), early (&lt;24h) for high-risk (rising troponin, dynamic ECG, GRACE &gt;140).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Excluding the aortic catastrophe &amp; PE</div>
+        <div class="gr-text">
+          <strong>Aortic dissection:</strong> tearing/migrating pain, pulse/BP differential, new AR murmur, wide mediastinum → <strong>CT aortogram</strong> (or TOE). Control HR then BP (esmolol/labetalol before vasodilators). <strong>Never anticoagulate/thrombolyse until dissection is excluded</strong> in the right patient.<br>
+          <strong>PE:</strong> apply <strong>Wells/PERC</strong>; if PE cannot be excluded → age-adjusted D-dimer or CTPA. A raised troponin in PE reflects RV strain, not ACS.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Ischaemic heart disease presents a decade earlier</strong> in South Asians and often atypically; maintain a low threshold in younger patients with risk factors. Access to timely primary PCI is uneven — <strong>pharmaco-invasive strategy</strong> (fibrinolysis at the first hospital, then transfer for PCI) is a mainstay where a cath lab is not immediately reachable.</p>
+        <p>High-sensitivity troponin is not universally available; where only conventional troponin exists, <strong>serial sampling over longer intervals</strong> and clinical scores carry more weight. Consider regional causes of chest pain (e.g. rheumatic valve disease, TB pericarditis, scorpion-sting myocarditis) alongside the classic six.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Drug Reference — Acute Chest Pain / ACS</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Aspirin</strong></td><td>Suspected ACS</td><td>300 mg PO/chewed loading, then 75 mg OD</td><td>Give early unless dissection strongly suspected/allergy</td></tr>
+            <tr><td><strong>Ticagrelor / clopidogrel</strong></td><td>ACS (dual antiplatelet)</td><td>Ticagrelor 180 mg → 90 mg BD; clopidogrel 300–600 mg → 75 mg</td><td>Per pathway; avoid ticagrelor if high bleeding risk / recent thrombolysis considerations</td></tr>
+            <tr><td><strong>GTN (nitroglycerin)</strong></td><td>Ischaemic pain / pulmonary oedema</td><td>Sublingual 0.3–0.6 mg; IV infusion titrated</td><td><strong>Avoid</strong> in RV infarct, severe AS, and recent PDE5 inhibitor use (hypotension)</td></tr>
+            <tr><td><strong>Morphine</strong></td><td>Refractory ischaemic pain</td><td>2–4 mg IV titrated</td><td>Use sparingly — may blunt P2Y₁₂ absorption; masks symptoms</td></tr>
+            <tr><td><strong>Heparin (UFH/LMWH)</strong></td><td>ACS anticoagulation</td><td>Per ACS protocol</td><td><strong>Withhold if aortic dissection not excluded</strong></td></tr>
+            <tr><td><strong>Esmolol / labetalol</strong></td><td>Aortic dissection (rate then BP)</td><td>Titrate to HR &lt;60, then SBP 100–120</td><td>Beta-block <em>before</em> vasodilator to avoid reflex tachycardia/shear</td></tr>
+            <tr><td><strong>Tenecteplase / alteplase</strong></td><td>STEMI when timely PCI unavailable</td><td>Weight-based bolus (TNK)</td><td>Pharmaco-invasive; screen contraindications; not if dissection possible</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Undifferentiated Chest Pain Pathway</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Immediate — is this patient crashing?</h4>
+          <ul>
+            <li>Vitals (both arms), monitor, IV, O₂ if hypoxic, <strong>ECG within 10 min</strong></li>
+            <li>Unstable? → treat the killer: tension pneumothorax (decompress), tamponade (echo → drain), STEMI (cath lab), dissection (CT + rate/BP control)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Read the ECG</h4>
+          <ul>
+            <li><strong>STEMI / STEMI-equivalent</strong> → reperfusion (PCI ≤120 min, else fibrinolysis)</li>
+            <li>Ischaemic changes / arrhythmia → treat as ACS, admit</li>
+            <li>Add posterior (V7–9) and right-sided (V4R) leads when indicated</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Stable, non-diagnostic ECG → risk-stratify</h4>
+          <ul>
+            <li>Focused history; consider PE (Wells/PERC), dissection features, Boerhaave history</li>
+            <li>Serial <strong>hs-troponin (0/1h or 0/2h)</strong> + <strong>HEART score</strong></li>
+            <li>Bedside echo/lung US, CXR as indicated</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>Disposition</h4>
+          <ul>
+            <li><strong>Low risk (HEART 0–3, negative troponin protocol, non-ischaemic ECG):</strong> safe discharge with follow-up</li>
+            <li><strong>Moderate:</strong> observe, complete serial troponin, provocative/anatomical testing</li>
+            <li><strong>High:</strong> admit; early invasive management</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content">
+          <h4>Safety-net &amp; document</h4>
+          <ul>
+            <li>Give clear return advice; document the reasoning that excluded each killer</li>
+            <li>Re-ECG and re-examine if pain recurs or evolves</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Chest Pain</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Trusting one normal ECG and one normal troponin</div>
+        <p>A single normal ECG misses evolving ACS and a single early troponin can be falsely reassuring. Repeat the ECG with symptoms and complete a serial troponin protocol before ruling out.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Anchoring on "atypical" or "musculoskeletal"</div>
+        <p>Reproducible tenderness, relief with antacids, or atypical features do not exclude MI — especially in women, the elderly and diabetics. Let objective testing, not the story alone, close a dangerous diagnosis.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Anticoagulating/thrombolysing an aortic dissection</div>
+        <p>Treating presumed ACS in an unrecognised dissection is catastrophic. Look for pulse/BP differentials, tearing/migrating pain and a wide mediastinum, and image before committing to antithrombotics in the at-risk patient.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Giving nitrates in RV infarction</div>
+        <p>Inferior STEMI with hypotension may be a preload-dependent RV infarct — nitrates and morphine can cause profound hypotension. Get a V4R, give fluids, and avoid vasodilators.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Interpreting a raised troponin as automatic MI</div>
+        <p>Troponin marks myocardial injury of any cause (PE, sepsis, heart failure, myocarditis, renal failure). Use the delta and context; a type 2 MI or non-ACS elevation needs different management.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Missing tension pneumothorax while waiting for a film</div>
+        <p>Tension pneumothorax is a clinical diagnosis (unilateral absent breath sounds, tracheal deviation, distended neck veins, shock). Decompress immediately — do not wait for the CXR.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 7 — Overlooking Boerhaave after forceful vomiting</div>
+        <p>Severe chest/epigastric pain after vomiting with subcutaneous emphysema or effusion suggests oesophageal rupture — a rapidly fatal, easily missed cause needing CT and urgent surgical involvement.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / MEM / EDIC</span>
+      <h2>Exam Pearls</h2>
+
+      <div class="ec"><p><strong>Q: Name the six immediately life-threatening causes of chest pain.</strong><br>ACS, aortic dissection, pulmonary embolism, tension pneumothorax, cardiac tamponade, and oesophageal rupture (Boerhaave).</p></div>
+      <div class="ec"><p><strong>Q: What is the target time for the first ECG, and for STEMI reperfusion?</strong><br>ECG within <strong>10 minutes</strong> of arrival. Primary PCI within 120 min of diagnosis; otherwise fibrinolysis within 10 min of STEMI diagnosis, then transfer.</p></div>
+      <div class="ec"><p><strong>Q: What are the components of the HEART score and its low-risk cut-off?</strong><br>History, ECG, Age, Risk factors, Troponin (0–2 each). <strong>0–3 = low risk</strong> (~1–2% MACE) — candidate for early discharge with a troponin rule-out pathway.</p></div>
+      <div class="ec"><p><strong>Q: Why avoid nitrates in inferior STEMI with hypotension?</strong><br>Possible RV infarction, which is preload-dependent; nitrates/morphine drop preload → severe hypotension. Confirm with V4R, give fluids.</p></div>
+      <div class="ec"><p><strong>Q: How do you differentiate an acute MI from chronic troponin elevation?</strong><br>By the <strong>dynamic change (delta)</strong> over serial samples plus ECG and clinical context, using 0/1h or 0/2h hs-troponin algorithms — a stable elevation suggests chronic injury.</p></div>
+      <div class="ec"><p><strong>Q: What features suggest aortic dissection, and how does management differ?</strong><br>Tearing/migrating pain, pulse/BP differential, new AR, wide mediastinum → CT aortogram. Control <strong>heart rate before blood pressure</strong> (esmolol/labetalol), and <strong>avoid antithrombotics</strong>.</p></div>
+      <div class="ec"><p><strong>Q: What is the pharmaco-invasive strategy?</strong><br>Fibrinolysis at the first medical contact when timely primary PCI is unavailable, followed by transfer for early angiography/PCI — important in Indian settings with variable cath-lab access.</p></div>
+      <div class="ec"><p><strong>Q: How does a raised troponin fit PE?</strong><br>It reflects RV strain and marks higher-risk PE (prognostic), not coronary occlusion — don't misroute a PE patient into an ACS pathway.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Tintinalli JE, et al.</strong> Tintinalli's Emergency Medicine: A Comprehensive Study Guide, 9th Edition. Chest Pain. McGraw-Hill; 2020.</li>
+        <li><strong>Walls RM, Hockberger RS, Gausche-Hill M, et al.</strong> Rosen's Emergency Medicine: Concepts and Clinical Practice, 10th Edition. Elsevier; 2023.</li>
+        <li><strong>Byrne RA, Rossello X, Coughlan JJ, et al. (ESC).</strong> 2023 ESC Guidelines for the management of acute coronary syndromes. <em>Eur Heart J.</em> 2023;44:3720–3826.</li>
+        <li><strong>Gulati M, Levy PD, Mukherjee D, et al. (ACC/AHA).</strong> 2021 Guideline for the Evaluation and Diagnosis of Chest Pain. <em>Circulation.</em> 2021;144:e368–e454.</li>
+        <li><strong>Six AJ, Backus BE, Kelder JC.</strong> Chest pain in the emergency room: value of the HEART score. <em>Neth Heart J.</em> 2008;16:191–196.</li>
+        <li><strong>Mahler SA, Riley RF, Hiestand BC, et al.</strong> The HEART Pathway randomized trial. <em>Circ Cardiovasc Qual Outcomes.</em> 2015;8:195–203.</li>
+        <li><strong>Collet JP, Thiele H, et al. (ESC).</strong> 0/1h and 0/2h high-sensitivity troponin algorithms for NSTE-ACS. <em>Eur Heart J.</em> (NSTE-ACS guidance).</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

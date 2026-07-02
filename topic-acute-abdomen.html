@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Acute Abdomen — ED & ICU Approach — CritCare.in</title>
+  <meta name="description" content="Emergency approach to the acute abdomen: the surgical catastrophes (perforation, mesenteric ischaemia, ruptured AAA, obstruction with strangulation, ectopic), pain out of proportion, lactate, imaging choice, resuscitation and early source control in intra-abdominal sepsis. Tintinalli, Sabiston, Surviving Sepsis." />
+  <link rel="canonical" href="https://critcare.in/topic-acute-abdomen.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .region-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin:1rem 0;}
+    .region-card{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:.85rem 1rem;}
+    .region-card h4{font-size:.8rem;font-weight:800;color:var(--blue);margin-bottom:.3rem;}
+    .region-card p{font-size:.8rem;color:var(--slate);line-height:1.55;margin:0;}
+    .pf-node.pf-danger{background:#fef2f2;border-color:#fca5a5;color:#991b1b;}
+    @media(max-width:600px){.region-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Acute Abdomen</div>
+    <h1>🩻 The Acute Abdomen</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Tintinalli 9e</span>
+      <span class="gbadge kdigo">Sabiston</span>
+      <span class="gbadge isccm">SSC 2021</span>
+      <span class="gbadge esicm">WSES</span>
+      <span class="gbadge apasl">Rosen's 10e</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Perforation · Ischaemia · AAA</span>
+      <span class="topic-tag">Lactate · CT</span>
+      <span class="topic-tag">Resuscitate + Source Control</span>
+      <span class="topic-updated">Tintinalli 9th Ed · Rosen's 10th Ed · Sabiston Textbook of Surgery · Surviving Sepsis 2021 · WSES intra-abdominal infection guidelines</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Reviewed by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Emergency &amp; Critical Care Medicine, SGPGIMS</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. The Surgical Catastrophes</a></li>
+        <li><a href="#s2">2. Pathophysiology</a></li>
+        <li><a href="#s3">3. Work-up &amp; Guidelines</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Tintinalli's Emergency Medicine, 9th Ed</span>
+      <h2>Find the Surgical Abdomen, Fast</h2>
+      <div class="book-quote">
+        <p>"The evaluation of abdominal pain is one of medicine's great humblers: the physical examination is unreliable, the elderly and immunosuppressed hide catastrophe behind an unimpressive belly, and the most dangerous diagnoses — mesenteric ischaemia, ruptured aneurysm, perforation — are precisely those in which delay is lethal. The emergency question is not 'what is the exact diagnosis?' but 'does this patient need a surgeon and an operating theatre now?'"</p>
+        <cite>Tintinalli's Emergency Medicine, 9th Ed. Acute Abdominal Pain. McGraw-Hill; 2020.</cite>
+      </div>
+
+      <h3>The time-critical surgical/vascular catastrophes</h3>
+      <ul>
+        <li><strong>Ruptured abdominal aortic aneurysm</strong> — abdominal/back pain + hypotension + pulsatile mass (may mimic renal colic in the elderly)</li>
+        <li><strong>Mesenteric ischaemia</strong> — pain <strong>out of proportion</strong> to exam, AF/vascular disease, rising lactate</li>
+        <li><strong>Perforated viscus</strong> — sudden severe pain, rigidity, free gas</li>
+        <li><strong>Bowel obstruction with strangulation</strong> — colicky pain, vomiting, distension, no flatus; localised tenderness = strangulation</li>
+        <li><strong>Ruptured ectopic pregnancy</strong> — any woman of childbearing age with pain/shock → <strong>β-hCG</strong></li>
+        <li><strong>Acute pancreatitis, cholangitis, ischaemic/perforated appendicitis/diverticulitis</strong></li>
+      </ul>
+
+      <div class="region-grid">
+        <div class="region-card"><h4>RUQ</h4><p>Cholecystitis, cholangitis, hepatitis, biliary colic; also lower-lobe pneumonia</p></div>
+        <div class="region-card"><h4>Epigastric</h4><p>Pancreatitis, perforated ulcer, gastritis; <strong>MI/inferior ischaemia</strong></p></div>
+        <div class="region-card"><h4>RIF</h4><p>Appendicitis, ileocaecal/Crohn's, ovarian, ectopic</p></div>
+        <div class="region-card"><h4>LIF</h4><p>Diverticulitis, colitis, ovarian, ectopic</p></div>
+        <div class="region-card"><h4>Loin / flank</h4><p>Renal colic, pyelonephritis — but beware <strong>AAA mimicking colic</strong> in the elderly</p></div>
+        <div class="region-card"><h4>Diffuse / poorly localised</h4><p>Mesenteric ischaemia, obstruction, peritonitis, DKA, early appendicitis</p></div>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ The bellies that lie</div>
+        <p><strong>The elderly, diabetics, the immunosuppressed, and patients on steroids</strong> can have catastrophic intra-abdominal pathology (perforation, ischaemia) with a soft, minimally tender abdomen and near-normal observations — until they collapse. And do not forget the <strong>extra-abdominal causes</strong>: inferior MI, lower-lobe pneumonia, DKA, and testicular torsion all masquerade as an acute abdomen.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Pathophysiology (Sabiston / Marino)</span>
+      <h2>Why the Acute Abdomen Becomes a Critical-Care Problem</h2>
+      <div class="book-quote">
+        <p>"Peritoneal contamination — by gastrointestinal contents, blood, bile or pus — triggers a systemic inflammatory response that is functionally identical to sepsis from any other source. Fluid sequesters into the gut lumen, the peritoneum and the third space; the patient becomes profoundly hypovolaemic before a drop of blood is lost externally. Definitive treatment is not a drug — it is source control."</p>
+        <cite>Adapted from Sabiston Textbook of Surgery &amp; Marino's The ICU Book, 5th Ed. Intra-abdominal Sepsis.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 How intra-abdominal catastrophe drives shock</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Insult</span>Perforation · ischaemia · obstruction · haemorrhage</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Peritoneal contamination / bowel-wall injury → <strong>local &amp; systemic inflammation</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node">Massive <strong>third-space &amp; luminal fluid loss</strong> → hypovolaemia<span class="pf-sub">tachycardia, oliguria, then hypotension</span></div>
+          <div class="pf-node pf-danger">Bacterial translocation / gut necrosis → <strong>sepsis</strong> + <strong>rising lactate</strong><span class="pf-sub">metabolic acidosis, organ dysfunction</span></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><strong>Distributive + hypovolaemic shock</strong>, ± abdominal compartment syndrome</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Cure</span><strong>Resuscitation + timely surgical/radiological SOURCE CONTROL</strong></div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Mesenteric ischaemia — the great missed diagnosis</div>
+        <p>The hallmark is <strong>severe pain out of proportion to a soft, unremarkable abdomen</strong>, classically in a patient with atrial fibrillation (embolic), atherosclerosis (thrombotic) or a low-flow state (non-occlusive). A <strong>normal early lactate does not exclude it</strong>; lactate rises as bowel becomes frankly necrotic — by which point mortality soars. CT angiography and early surgical/vascular involvement are the only way to catch it in time.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Why these patients need aggressive resuscitation</div>
+        <ul>
+          <li><strong>Hypovolaemia is hidden:</strong> litres sequester into the gut lumen, oedematous bowel wall and peritoneal cavity — "third spacing" — before any external loss. Tachycardia and oliguria precede hypotension.</li>
+          <li><strong>Sepsis physiology:</strong> vasodilatation, capillary leak and myocardial depression compound the hypovolaemia.</li>
+          <li><strong>Abdominal compartment syndrome</strong> may develop from oedema/fluids — a rising bladder pressure with organ dysfunction that can require decompression.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · WSES · Surviving Sepsis 2021</span>
+      <h2>Work-up &amp; the Two Non-negotiables</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Bedside &amp; laboratory work-up</div>
+        <div class="gr-text">
+          <strong>Every woman of childbearing age gets a β-hCG.</strong> Send FBC, U&amp;E, LFTs, amylase/lipase, glucose, <strong>lactate</strong>, VBG, coagulation and group-and-save/crossmatch; urinalysis. An <strong>ECG</strong> for epigastric pain (inferior MI). Serial examination by the same clinician is more informative than any single exam.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Imaging — choose by the question</div>
+        <div class="gr-text">
+          <strong>Contrast CT abdomen/pelvis</strong> is the workhorse for the undifferentiated or high-risk acute abdomen (perforation, ischaemia, obstruction, collections) — and <strong>CT angiography</strong> if mesenteric ischaemia or AAA is suspected.<br>
+          <strong>Ultrasound / POCUS</strong> first for suspected biliary disease, in pregnancy, in the unstable patient (free fluid/AAA at the bedside), and in gynaecological presentations.<br>
+          <strong>Erect CXR</strong> can show free air but a normal film does <em>not</em> exclude perforation. <strong>Do not delay the theatre</strong> for imaging in a peritonitic, unstable patient.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Resuscitate &amp; treat sepsis <span class="gr-s">Surviving Sepsis 2021</span></div>
+        <div class="gr-text">
+          Restore perfusion with balanced crystalloid, obtain cultures, and give <strong>broad-spectrum antibiotics early</strong> for suspected intra-abdominal sepsis (cover Gram-negatives and anaerobes — e.g. piperacillin-tazobactam, or a carbapenem in severe/resistant cases). Analgesia — <strong>opioids do not mask peritonism enough to harm and should not be withheld</strong>. Nasogastric decompression and urinary catheter as indicated.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Source control — the definitive treatment <span class="gr-s">WSES · SSC 2021</span></div>
+        <div class="gr-text">
+          Antibiotics buy time; they do not cure a perforation, an abscess or dead bowel. <strong>Achieve source control as early as feasible</strong> (SSC: ideally within 6–12 h) — surgery (repair/resection/washout), percutaneous drainage of a collection, or endoscopic/interventional measures. In the unstable patient, <strong>damage-control surgery</strong> (control contamination, leave definitive reconstruction for later) is preferred over a prolonged first operation.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>Common and characteristic causes to keep in mind: <strong>perforated peptic ulcer</strong> (still frequent), <strong>enteric (typhoid) ileal perforation</strong>, <strong>abdominal (ileocaecal) tuberculosis</strong> presenting with obstruction/perforation, <strong>amoebic liver abscess</strong>, obstructed hernias, and <strong>hollow-viscus injury in trauma</strong>. In the febrile acute abdomen, remember <strong>enteric fever, complicated malaria and dengue</strong> as medical mimics.</p>
+        <p>Late presentation is common — patients often arrive septic and volume-depleted. Prioritise rapid resuscitation, early antibiotics, and prompt referral for source control, recognising that CT and interventional radiology may be less immediately available.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Drug Reference — Acute Abdomen / Intra-abdominal Sepsis</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug / Measure</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Balanced crystalloid</strong></td><td>Resuscitation (third-space loss/sepsis)</td><td>Titrated boluses to perfusion targets</td><td>Reassess frequently; avoid both under- and over-resuscitation</td></tr>
+            <tr><td><strong>Piperacillin-tazobactam</strong></td><td>Community intra-abdominal sepsis</td><td>4.5 g IV every 6–8 h (renal-adjusted)</td><td>Covers Gram-negatives + anaerobes; give early</td></tr>
+            <tr><td><strong>Meropenem</strong></td><td>Severe / healthcare-associated / resistant</td><td>1 g IV every 8 h (renal-adjusted)</td><td>Reserve for severe sepsis or MDR risk</td></tr>
+            <tr><td><strong>Metronidazole</strong></td><td>Anaerobic cover (with a cephalosporin)</td><td>500 mg IV every 8 h</td><td>Add to ceftriaxone where piptaz/carbapenem not used</td></tr>
+            <tr><td><strong>Morphine / fentanyl</strong></td><td>Analgesia</td><td>Titrated IV</td><td>Do <strong>not</strong> withhold — does not dangerously mask peritonism</td></tr>
+            <tr><td><strong>Ondansetron</strong></td><td>Nausea / vomiting</td><td>4–8 mg IV</td><td>With NG decompression in obstruction</td></tr>
+            <tr><td><strong>Noradrenaline</strong></td><td>Septic shock after fluids</td><td>Titrate to MAP ≥65</td><td>Do not delay source control while chasing MAP</td></tr>
+            <tr><td><strong>Tranexamic acid</strong></td><td>Haemorrhagic cause (e.g. ruptured AAA, trauma)</td><td>1 g IV</td><td>Adjunct; definitive control is surgical/endovascular</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Acute Abdomen Pathway</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Resuscitate &amp; screen for the crashing abdomen</h4>
+          <ul>
+            <li>A–B–C, IV access, fluids; if shocked + pulsatile mass/known AAA → <strong>immediate vascular/theatre</strong></li>
+            <li><strong>β-hCG</strong> in every woman of childbearing age; bedside glucose; lactate; ECG for epigastric pain</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Is this a surgical abdomen now?</h4>
+          <ul>
+            <li>Peritonism/rigidity, free air, pain out of proportion, strangulated obstruction → <strong>call the surgeon</strong></li>
+            <li>Unstable + peritonitic → theatre without waiting for CT</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Targeted work-up</h4>
+          <ul>
+            <li>Bloods (FBC, U&amp;E, LFTs, lipase, lactate, coag, G&amp;S), urinalysis</li>
+            <li>Imaging by question: <strong>CT (± CTA)</strong> for undifferentiated/ischaemia/AAA; <strong>US/POCUS</strong> for biliary, pregnancy, unstable, gynae</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>Treat sepsis + achieve source control</h4>
+          <ul>
+            <li>Early broad-spectrum antibiotics, cultures, analgesia (don't withhold opioids), NG/catheter as needed</li>
+            <li><strong>Source control early (ideally 6–12 h):</strong> surgery, percutaneous drainage, or interventional/endoscopic — damage-control if unstable</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content">
+          <h4>Ongoing critical care</h4>
+          <ul>
+            <li>Organ support; monitor for <strong>abdominal compartment syndrome</strong> (bladder pressure)</li>
+            <li>Serial re-examination; re-image/relook if not improving; de-escalate antibiotics on cultures</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in the Acute Abdomen</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Being reassured by a soft belly in a high-risk patient</div>
+        <p>The elderly, diabetic and immunosuppressed can perforate or infarct bowel with an unimpressive abdomen. Weight the risk factors, lactate and trajectory, not just the palpation findings.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Missing mesenteric ischaemia</div>
+        <p>Pain out of proportion to exam, especially with AF or vascular disease, is mesenteric ischaemia until excluded. A normal early lactate does not rule it out — image with CTA and involve surgery early.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Mistaking a ruptured AAA for renal colic</div>
+        <p>An older patient with "first-ever renal colic" and hypotension may have a leaking aneurysm. Examine for a pulsatile mass and use bedside ultrasound before anchoring on colic.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Forgetting the pregnancy test</div>
+        <p>Ruptured ectopic pregnancy is a classic lethal miss. Every woman of childbearing age with abdominal pain or shock needs a β-hCG, early.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Withholding analgesia "to preserve the exam"</div>
+        <p>The old dogma is wrong: adequate opioid analgesia does not mask peritonism enough to cause harm and improves the reliability of examination. Treat the pain.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Antibiotics without source control</div>
+        <p>Antibiotics do not cure a perforation, dead bowel or an undrained abscess. Delayed source control is a leading driver of mortality in intra-abdominal sepsis — escalate for early definitive intervention.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 7 — Delaying theatre for a scan in the unstable, peritonitic patient</div>
+        <p>A rigid, shocked abdomen needs a surgeon, not a queue for CT. Imaging should not delay life-saving laparotomy in the clearly surgical, unstable patient.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / MEM / EDIC</span>
+      <h2>Exam Pearls</h2>
+
+      <div class="ec"><p><strong>Q: What is the classic presentation of mesenteric ischaemia?</strong><br><strong>Pain out of proportion</strong> to a soft, unremarkable abdomen, often with AF (embolic) or vascular disease; lactate rises late once bowel necroses. Diagnose with CT angiography and act early.</p></div>
+      <div class="ec"><p><strong>Q: What are the two non-negotiable treatments in intra-abdominal sepsis?</strong><br>Early <strong>resuscitation + broad-spectrum antibiotics</strong>, and <strong>timely source control</strong> (surgery/drainage) — ideally within 6–12 hours.</p></div>
+      <div class="ec"><p><strong>Q: Which single test must every woman of childbearing age get?</strong><br>A <strong>β-hCG</strong> — to catch ruptured ectopic pregnancy.</p></div>
+      <div class="ec"><p><strong>Q: Should opioids be withheld to protect the abdominal exam?</strong><br>No. Adequate analgesia does not dangerously mask peritonism and improves examination — an outdated dogma to abandon.</p></div>
+      <div class="ec"><p><strong>Q: How do you choose CT vs ultrasound?</strong><br><strong>CT (± CTA)</strong> for the undifferentiated/high-risk abdomen, ischaemia and AAA; <strong>ultrasound/POCUS</strong> for biliary disease, pregnancy, the unstable patient (FAST/AAA) and gynaecological presentations.</p></div>
+      <div class="ec"><p><strong>Q: What extra-abdominal conditions mimic an acute abdomen?</strong><br>Inferior MI, lower-lobe pneumonia, DKA, and testicular torsion — always check an ECG for epigastric pain and glucose for the unwell.</p></div>
+      <div class="ec"><p><strong>Q: What is damage-control surgery?</strong><br>An abbreviated first operation to control contamination/haemorrhage in the physiologically unstable patient, deferring definitive reconstruction until after resuscitation in ICU.</p></div>
+      <div class="ec"><p><strong>Q: Name characteristic Indian causes of the acute abdomen.</strong><br>Perforated peptic ulcer, enteric (typhoid) ileal perforation, abdominal (ileocaecal) TB, amoebic liver abscess, and obstructed hernias.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Tintinalli JE, et al.</strong> Tintinalli's Emergency Medicine, 9th Edition. Acute Abdominal Pain. McGraw-Hill; 2020.</li>
+        <li><strong>Walls RM, et al.</strong> Rosen's Emergency Medicine, 10th Edition. Abdominal Pain. Elsevier; 2023.</li>
+        <li><strong>Evans L, Rhodes A, Alhazzani W, et al. (Surviving Sepsis Campaign).</strong> International Guidelines for Management of Sepsis and Septic Shock 2021. <em>Crit Care Med.</em> 2021;49:e1063–e1143.</li>
+        <li><strong>Sartelli M, Coccolini F, Kluger Y, et al. (WSES).</strong> WSES guidelines for the management of intra-abdominal infections. <em>World J Emerg Surg.</em> (current edition).</li>
+        <li><strong>Townsend CM, Beauchamp RD, Evers BM, Mattox KL.</strong> Sabiston Textbook of Surgery, 21st Edition. The Acute Abdomen. Elsevier; 2022.</li>
+        <li><strong>Bala M, Kashuk J, Moore EE, et al. (WSES).</strong> Acute mesenteric ischemia: guidelines of the World Society of Emergency Surgery. <em>World J Emerg Surg.</em> 2017;12:38.</li>
+        <li><strong>Marino PL.</strong> Marino's The ICU Book, 5th Edition. Abdominal Sepsis. Philadelphia, PA: Wolters Kluwer; 2025.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Syncope — ED Approach & Risk Stratification — CritCare.in</title>
+  <meta name="description" content="Emergency approach to syncope: reflex vs orthostatic vs cardiac, red flags, the dangerous ECG patterns (long QT, Brugada, HCM, WPW, AV block, ARVC), Canadian Syncope Risk Score, distinguishing syncope from seizure, and safe disposition. ESC 2018, Tintinalli, Rosen." />
+  <link rel="canonical" href="https://critcare.in/topic-syncope.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0;}
+    .cmp-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .cmp-benign{background:#f0fdf4;border-color:#86efac;}
+    .cmp-danger{background:#fef2f2;border-color:#fca5a5;}
+    .cmp-card h4{font-size:.82rem;font-weight:800;margin-bottom:.4rem;}
+    .cmp-benign h4{color:#166534;} .cmp-danger h4{color:#991b1b;}
+    .cmp-card ul{font-size:.8rem;color:var(--slate);padding-left:1.1rem;line-height:1.55;margin:0;}
+    @media(max-width:600px){.cmp-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Syncope</div>
+    <h1>😵 Syncope — The ED Approach</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ESC 2018</span>
+      <span class="gbadge kdigo">Tintinalli 9e</span>
+      <span class="gbadge isccm">Canadian Syncope Rule</span>
+      <span class="gbadge esicm">ACC/AHA 2017</span>
+      <span class="gbadge apasl">Rosen's 10e</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Reflex · Orthostatic · Cardiac</span>
+      <span class="topic-tag">Dangerous ECGs</span>
+      <span class="topic-tag">Risk Score · Disposition</span>
+      <span class="topic-updated">ESC 2018 Syncope Guidelines · ACC/AHA/HRS 2017 · Canadian Syncope Risk Score · Tintinalli 9th Ed · Rosen's 10th Ed</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Reviewed by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Emergency &amp; Critical Care Medicine, SGPGIMS</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Definition &amp; Causes</a></li>
+        <li><a href="#s2">2. Mechanism &amp; Red Flags</a></li>
+        <li><a href="#s3">3. Work-up &amp; Guidelines</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Tintinalli's Emergency Medicine, 9th Ed</span>
+      <h2>What Syncope Is — and What It Is Not</h2>
+      <div class="book-quote">
+        <p>"Syncope is a transient loss of consciousness due to global cerebral hypoperfusion, characterised by rapid onset, short duration and spontaneous complete recovery. The emergency task is not to explain every faint — most are benign and never fully explained — but to separate the reflex faint that needs reassurance from the cardiac syncope that is a warning shot before sudden death."</p>
+        <cite>Tintinalli's Emergency Medicine, 9th Ed. Syncope. McGraw-Hill; 2020.</cite>
+      </div>
+
+      <h3>Three mechanistic categories</h3>
+      <ul>
+        <li><strong>Reflex (neurally mediated) — commonest &amp; benign:</strong> vasovagal (emotional/orthostatic triggers, prodrome of nausea/warmth/greying vision), situational (cough, micturition, defecation), carotid sinus.</li>
+        <li><strong>Orthostatic hypotension:</strong> drugs (antihypertensives, diuretics), volume depletion/bleeding, autonomic failure. Symptoms on standing.</li>
+        <li><strong>Cardiac — the dangerous group:</strong> arrhythmia (brady/tachy), structural (aortic stenosis, HCM), or cardiopulmonary (massive PE, tamponade, dissection, ACS). Carries the highest short-term mortality.</li>
+      </ul>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Syncope vs seizure vs "not syncope"</div>
+        <p>Brief myoclonic jerks and even a few seconds of incontinence can occur in <strong>convulsive syncope</strong> and do not prove epilepsy. Features favouring <strong>seizure</strong>: aura, lateral tongue-biting, prolonged post-ictal confusion, sustained rhythmic movements. And exclude the mimics that are <em>not</em> true syncope: hypoglycaemia, intoxication, head trauma, psychogenic pseudosyncope and vertebrobasilar TIA. True syncope has near-immediate return to full orientation.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Risk Physiology (Rosen's / ESC)</span>
+      <h2>Why Cardiac Syncope Is the One to Catch</h2>
+      <div class="book-quote">
+        <p>"The prognosis of syncope is the prognosis of its cause. Reflex syncope has an excellent outcome; syncope from structural heart disease or arrhythmia may be the only warning before sudden cardiac death. Risk stratification, therefore, is really the search for cardiac syncope — and the single most useful test in that search is the 12-lead ECG."</p>
+        <cite>Rosen's Emergency Medicine, 10th Ed. Syncope. Elsevier; 2023.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 Every syncope is a moment of global cerebral hypoperfusion — the question is why</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Event</span>Transient global cerebral hypoperfusion → collapse → rapid recovery</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node">Reflex: vagal surge → brady + vasodilatation<span class="pf-sub">prodrome, trigger, young, recurrent — benign</span></div>
+          <div class="pf-node">Orthostatic: preload/autonomic failure<span class="pf-sub">on standing, drugs, bleeding, dehydration</span></div>
+          <div class="pf-node">Cardiac: pump/rhythm failure<span class="pf-sub">exertional, supine, palpitations, structural disease</span></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><strong>12-lead ECG + focused history/exam</strong> — the pivotal test</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Aim</span><strong>Identify or exclude cardiac syncope</strong> → drives risk &amp; disposition</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Red flags that point to cardiac syncope</div>
+        <ul>
+          <li><strong>Syncope on exertion or when supine</strong> (as opposed to on standing)</li>
+          <li><strong>No prodrome</strong> ("sudden, like a switch") — especially with injury</li>
+          <li><strong>Palpitations</strong> immediately before, or chest pain / dyspnoea</li>
+          <li><strong>Structural heart disease or reduced LVEF</strong>; known CAD/heart failure</li>
+          <li><strong>Family history of sudden cardiac death</strong> or inherited channelopathy</li>
+          <li>Age &gt;60, abnormal vital signs, or an <strong>abnormal ECG</strong></li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 The dangerous ECG patterns — do not miss these</div>
+        <ul>
+          <li><strong>Bradyarrhythmia:</strong> high-grade/complete AV block, sinus pauses, bifascicular block</li>
+          <li><strong>Pre-excitation (WPW):</strong> short PR + delta wave</li>
+          <li><strong>Long QT / short QT</strong> → torsades risk</li>
+          <li><strong>Brugada</strong> — coved ST elevation in V1–V2</li>
+          <li><strong>HCM</strong> — LVH with deep narrow Q waves; <strong>ARVC</strong> — epsilon wave, T-inversion V1–V3</li>
+          <li><strong>Ischaemia</strong>, or a dominant/rapid tachyarrhythmia</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · ESC 2018 · ACC/AHA 2017</span>
+      <h2>Work-up, Risk Scores &amp; Disposition</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">The core evaluation (everyone) <span class="gr-s">ESC 2018</span></div>
+        <div class="gr-text">
+          <strong>History</strong> (circumstances, prodrome, position, exertion, palpitations, family history, drugs), <strong>examination with lying/standing BP</strong>, and a <strong>12-lead ECG</strong>. This triad identifies a cause or a high-risk feature in the majority. Bedside glucose and a pregnancy test where relevant.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Targeted testing — driven by the red flags</div>
+        <div class="gr-text">
+          <strong>Suspected cardiac:</strong> troponin/ECG for ACS, echocardiography (structural disease/LVEF), telemetry/monitoring, and prolonged rhythm monitoring (Holter/loop recorder) for intermittent arrhythmia.<br>
+          <strong>Suspected bleed/PE/dissection:</strong> targeted imaging and bloods.<br>
+          <strong>Reflex/orthostatic:</strong> usually clinical; carotid sinus massage or tilt testing in selected recurrent cases. <strong>Routine head CT and EEG are low-yield</strong> without focal signs or features of seizure.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Risk stratification — Canadian Syncope Risk Score</div>
+        <div class="gr-text">
+          A validated ED tool combining clinical, ECG and troponin variables (plus the ED's provisional diagnosis of vasovagal vs cardiac) to predict <strong>30-day serious adverse events</strong>. It supports — but does not replace — clinical judgement in deciding who can go home. Older ESC/ED tools (San Francisco Syncope Rule — <strong>CHESS</strong>) are less discriminating but widely taught.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Disposition <span class="gr-s">ESC 2018</span></div>
+        <div class="gr-text">
+          <strong>Low risk</strong> (clear reflex/orthostatic features, normal ECG, no cardiac history): reassure and discharge with advice.<br>
+          <strong>High risk</strong> (any red flag, abnormal ECG, structural disease, exertional/supine syncope, persistent abnormal vitals): admit or arrange rapid, monitored evaluation.<br>
+          <strong>Intermediate:</strong> ED observation unit / syncope pathway with monitoring and echo.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>In younger patients, consider <strong>volume depletion from heat, dehydration and febrile illness</strong> (dengue, malaria, gastroenteritis) as common orthostatic/reflex triggers. <strong>Anaemia and postural hypotension</strong> are frequent contributors.</p>
+        <p>Do not overlook <strong>rheumatic aortic/mitral valve disease</strong> and <strong>peripartum or dilated cardiomyopathy</strong> as structural causes of exertional syncope. Prolonged rhythm monitoring (loop recorders) may be less accessible — use inpatient telemetry and repeated ECGs where indicated, and have a low threshold to admit high-risk patients.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Drug Reference — Syncope (cause-directed)</h2>
+      <p style="font-size:.85rem;color:var(--slate);margin:.2rem 0 1rem;">Most reflex syncope needs no drugs. Treatment is directed at the underlying cause.</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug / Measure</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Atropine</strong></td><td>Symptomatic bradycardia</td><td>0.5 mg IV, repeat to 3 mg</td><td>Bridge to pacing; ineffective in infranodal block</td></tr>
+            <tr><td><strong>Adrenaline / transcutaneous pacing</strong></td><td>Bradycardia refractory to atropine</td><td>Adrenaline 2–10 µg/min; TCP as bridge</td><td>Arrange transvenous pacing / permanent pacemaker</td></tr>
+            <tr><td><strong>Magnesium sulfate</strong></td><td>Torsades de pointes (long QT)</td><td>2 g IV over 1–2 min</td><td>Correct K⁺/Mg²⁺; stop QT-prolonging drugs</td></tr>
+            <tr><td><strong>IV crystalloid</strong></td><td>Orthostatic / hypovolaemic</td><td>Bolus titrated</td><td>Find and treat the source (bleeding, sepsis, dehydration)</td></tr>
+            <tr><td><strong>Fludrocortisone / midodrine</strong></td><td>Recurrent reflex/orthostatic (specialist)</td><td>Per specialist</td><td>Second-line for refractory reflex syncope after lifestyle measures</td></tr>
+            <tr><td><strong>Stop/adjust culprit drugs</strong></td><td>Drug-induced orthostasis / QT</td><td>—</td><td>Antihypertensives, diuretics, QT-prolonging agents</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Syncope Pathway</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Confirm it was syncope — and is the patient safe now?</h4>
+          <ul>
+            <li>True transient LOC with rapid full recovery? Exclude mimics (hypoglycaemia, seizure, intoxication, trauma, psychogenic)</li>
+            <li>Assess vitals; treat any ongoing arrhythmia, bleeding or shock immediately</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Core evaluation</h4>
+          <ul>
+            <li>History (trigger, prodrome, position, exertion, palpitations, FHx SCD, drugs)</li>
+            <li>Exam + <strong>lying/standing BP</strong>; <strong>12-lead ECG</strong>; bedside glucose</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Screen for red flags / dangerous ECG</h4>
+          <ul>
+            <li>Exertional/supine syncope, no prodrome, palpitations, chest pain, structural disease, FHx SCD, age &gt;60, abnormal vitals</li>
+            <li>ECG: AV block, pauses, WPW, long/short QT, Brugada, HCM/ARVC, ischaemia, tachyarrhythmia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>Risk-stratify &amp; test</h4>
+          <ul>
+            <li>Apply the <strong>Canadian Syncope Risk Score</strong>; if cardiac suspected → troponin, echo, monitoring</li>
+            <li>Avoid routine head CT/EEG unless focal signs or seizure features</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content">
+          <h4>Disposition</h4>
+          <ul>
+            <li><strong>Low risk:</strong> reassure, discharge, safety-net + outpatient follow-up</li>
+            <li><strong>Intermediate:</strong> observation unit / syncope pathway with monitoring &amp; echo</li>
+            <li><strong>High risk:</strong> admit with telemetry; treat the cause (pacemaker, ICD, valve, PE, bleed)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Syncope</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Calling exertional syncope "vasovagal"</div>
+        <p>Syncope during exertion or while supine is cardiac until proven otherwise (aortic stenosis, HCM, arrhythmia) — the opposite of the benign standing-triggered faint. Never discharge exertional syncope without cardiac evaluation.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Skipping or under-reading the ECG</div>
+        <p>The 12-lead ECG is the single highest-yield test. Long QT, Brugada, WPW, high-grade AV block and ischaemia are all missable and all lethal. Read it systematically every time.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Mislabelling convulsive syncope as a seizure</div>
+        <p>Brief myoclonic jerks and even transient incontinence occur in syncope. Loading an anticonvulsant and missing the underlying arrhythmia or aortic stenosis is dangerous — use the features that truly distinguish seizure.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Ordering head CT and EEG reflexively</div>
+        <p>Both are low-yield in uncomplicated syncope without focal neurology or seizure features, and they distract from the cardiac work-up that actually changes outcome.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Forgetting lying/standing blood pressure</div>
+        <p>Orthostatic hypotension is common, easily confirmed at the bedside, and frequently drug-related — yet the postural BP is often not measured.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Missing a catastrophic cause behind the "faint"</div>
+        <p>Syncope can be the presenting feature of massive PE, ruptured AAA/dissection, ectopic pregnancy or GI bleed. Reassess vitals and consider these where the story or exam hints at them.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 7 — Over-admitting low-risk reflex syncope</div>
+        <p>A young patient with a clear vasovagal trigger, prodrome, normal ECG and exam does not need admission or a battery of tests. Validated risk scores help avoid both under- and over-triage.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / MEM / EDIC</span>
+      <h2>Exam Pearls</h2>
+
+      <div class="ec"><p><strong>Q: Define syncope.</strong><br>Transient loss of consciousness due to <strong>global cerebral hypoperfusion</strong>, with rapid onset, short duration and spontaneous, complete recovery.</p></div>
+      <div class="ec"><p><strong>Q: What are the three mechanistic categories?</strong><br>Reflex (neurally mediated — commonest, benign), orthostatic hypotension, and cardiac (arrhythmic/structural — highest mortality).</p></div>
+      <div class="ec"><p><strong>Q: Which single test is most useful, and what dangerous patterns must you spot?</strong><br>The <strong>12-lead ECG</strong>. Watch for high-grade AV block/pauses, WPW, long/short QT, Brugada, HCM, ARVC and ischaemia.</p></div>
+      <div class="ec"><p><strong>Q: List the red flags for cardiac syncope.</strong><br>Exertional or supine syncope, absent prodrome, preceding palpitations, chest pain/dyspnoea, structural heart disease/low LVEF, family history of sudden cardiac death, age &gt;60, abnormal vitals or ECG.</p></div>
+      <div class="ec"><p><strong>Q: How do you distinguish syncope from seizure?</strong><br>Seizure favours aura, lateral tongue-biting, prolonged post-ictal confusion and sustained rhythmic activity; syncope has rapid full recovery and brief myoclonus. Also exclude non-syncope mimics (hypoglycaemia, intoxication, psychogenic).</p></div>
+      <div class="ec"><p><strong>Q: What is the Canadian Syncope Risk Score used for?</strong><br>To predict 30-day serious adverse events after ED syncope and guide disposition — supplementing, not replacing, clinical judgement.</p></div>
+      <div class="ec"><p><strong>Q: Is routine head CT/EEG indicated?</strong><br>No — low-yield in uncomplicated syncope without focal neurology or seizure features; prioritise the cardiac evaluation.</p></div>
+      <div class="ec"><p><strong>Q: How is torsades in long-QT syncope treated?</strong><br>IV magnesium sulfate, correct electrolytes, stop QT-prolonging drugs, and treat the underlying cause (pacing/overdrive if recurrent).</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Brignole M, Moya A, de Lange FJ, et al. (ESC).</strong> 2018 ESC Guidelines for the diagnosis and management of syncope. <em>Eur Heart J.</em> 2018;39:1883–1948.</li>
+        <li><strong>Shen WK, Sheldon RS, Benditt DG, et al. (ACC/AHA/HRS).</strong> 2017 Guideline for the Evaluation and Management of Patients With Syncope. <em>Circulation.</em> 2017;136:e60–e122.</li>
+        <li><strong>Thiruganasambandamoorthy V, Kwong K, Wells GA, et al.</strong> Development of the Canadian Syncope Risk Score. <em>CMAJ.</em> 2016;188:E289–E298.</li>
+        <li><strong>Tintinalli JE, et al.</strong> Tintinalli's Emergency Medicine, 9th Edition. Syncope. McGraw-Hill; 2020.</li>
+        <li><strong>Walls RM, et al.</strong> Rosen's Emergency Medicine, 10th Edition. Syncope. Elsevier; 2023.</li>
+        <li><strong>Quinn J, McDermott D, Stiell I, et al.</strong> San Francisco Syncope Rule (CHESS). <em>Ann Emerg Med.</em> 2004/2006.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
