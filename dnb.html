@@ -135,7 +135,7 @@ var sessionMeta = {
     label: 'December 2025',
     badge: '📄 DNB Anaesthesiology · December 2025',
     path: function(num){ return 'dnb/dec2025-paper' + num + '.json'; },
-    availablePapers: [4]
+    availablePapers: [1,4]
   }
 };
 
@@ -350,8 +350,8 @@ function switchSession(sess, btn) {
   document.querySelectorAll('.dnb-sess-btn').forEach(function(b){ b.classList.remove('active'); });
   if (btn) btn.classList.add('active');
 
-  // Reset to Paper I (or Paper IV for dec2025 which only has P4)
-  var defaultPaper = (sess === 'dec2025') ? 4 : 1;
+  // Reset to the first available paper for the session
+  var defaultPaper = sessionMeta[sess].availablePapers[0] || 1;
   var paperBtns = document.querySelectorAll('.dnb-paper-btn');
   paperBtns.forEach(function(b){ b.classList.remove('active'); });
   if (paperBtns[defaultPaper - 1]) paperBtns[defaultPaper - 1].classList.add('active');

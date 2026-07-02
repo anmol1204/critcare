@@ -1,0 +1,734 @@
+[
+  {
+    "qNo": 1,
+    "question": "a) Draw a well labelled diagram of brachial plexus. [5]  b) Enumerate the different routes of brachial plexus block. What are the possible complications of interscalene block? [1+4]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Brachial Plexus — labelled structure",
+        "intro": "The brachial plexus supplies the entire cutaneous and muscular innervation of the upper limb (except trapezius and a strip of medial arm skin). It is formed from the ventral rami of C5–T1. Mnemonic for the levels: Randy Travis Drinks Cold Beer = Roots, Trunks, Divisions, Cords, Branches.",
+        "organisation": {
+          "title": "Organisation (Roots → Trunks → Divisions → Cords → Branches)",
+          "content": [
+            "Roots (C5–T1): lie between anterior and middle scalene muscles (interscalene groove).",
+            "Trunks: Upper (C5+C6), Middle (C7), Lower (C8+T1) — cross the first rib.",
+            "Divisions: each trunk splits into an anterior and a posterior division behind the clavicle.",
+            "Cords (named by relation to the axillary artery): Lateral (C5–7), Posterior (C5–T1), Medial (C8–T1).",
+            "Terminal branches: musculocutaneous, axillary, radial, median, ulnar."
+          ]
+        },
+        "branches": {
+          "title": "Branches at each level",
+          "content": [
+            "From roots: dorsal scapular nerve (C5), long thoracic nerve (C5–7), branches to scalenes and longus colli, contribution to the phrenic nerve.",
+            "From upper trunk: suprascapular nerve and nerve to subclavius.",
+            "Lateral cord: lateral pectoral nerve, musculocutaneous nerve, lateral root of median nerve.",
+            "Medial cord: medial pectoral nerve, medial root of median nerve, medial cutaneous nerve of arm, medial cutaneous nerve of forearm, ulnar nerve.",
+            "Posterior cord (ULTRA): Upper subscapular, Lower subscapular, Thoracodorsal (nerve to latissimus dorsi), Radial, Axillary."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Routes of brachial plexus block & complications of interscalene block",
+        "approaches": {
+          "title": "Approaches (the level of block determines coverage)",
+          "content": [
+            "Interscalene (roots/trunks) — shoulder and proximal humerus surgery; spares the ulnar (C8–T1) — 'ulnar sparing'.",
+            "Supraclavicular (trunks/divisions) — the 'spinal of the arm'; densest, most complete block of the whole limb below the shoulder.",
+            "Infraclavicular (cords) — elbow, forearm and hand; good for catheters.",
+            "Axillary (terminal branches) — forearm and hand; safest (no pneumothorax) but misses the musculocutaneous nerve."
+          ]
+        },
+        "techniques": {
+          "title": "Techniques",
+          "content": "Landmark/paraesthesia (Winnie), peripheral nerve stimulator, and ultrasound guidance — the roots/trunks appear as the hypoechoic 'bunch of grapes / traffic-light sign' in the interscalene groove between the scalene muscles."
+        },
+        "complications": {
+          "title": "Complications of interscalene block",
+          "content": [
+            "Phrenic nerve palsy → ipsilateral hemidiaphragmatic paresis — virtually 100%; avoid in significant respiratory compromise.",
+            "Horner's syndrome (ptosis, miosis, anhidrosis) from stellate ganglion spread.",
+            "Recurrent laryngeal nerve block → hoarseness.",
+            "Vertebral artery injection → immediate seizures / local anaesthetic systemic toxicity (LAST).",
+            "Inadvertent neuraxial spread — epidural or subarachnoid (total spinal).",
+            "Pneumothorax, nerve injury, haematoma, infection."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "C5–T1; 5 roots, 3 trunks, 6 divisions, 3 cords, 5 terminal branches.",
+      "Interscalene = shoulder surgery, spares ulnar (C8–T1); supraclavicular = most complete; axillary spares musculocutaneous.",
+      "Interscalene block causes near-100% phrenic (hemidiaphragm) palsy — contraindicated in severe respiratory disease or contralateral phrenic palsy.",
+      "Vertebral artery injection causes instant seizures — aspirate and inject in small increments under ultrasound."
+    ],
+    "commonMistakes": [
+      "Choosing interscalene for hand surgery — it commonly spares the ulnar territory.",
+      "Performing interscalene block in a patient who cannot tolerate a ~25% fall in FVC (phrenic palsy).",
+      "Forgetting to block the musculocutaneous nerve separately with an axillary approach."
+    ],
+    "examTip": "Draw the plexus as five neat vertical columns (Roots–Trunks–Divisions–Cords–Branches) labelled C5–T1 for the full 5 marks. For Part B, lead with the near-100% phrenic palsy as the headline complication of interscalene block.",
+    "sources": [
+      "Dr. Tanya Chawla — DNB December 2025 Paper I notes (brachial plexus & BPB).",
+      "Miller's Anesthesia, 9th Ed — Peripheral Nerve Blocks (upper extremity).",
+      "Barash, Clinical Anesthesia, 8th Ed — Peripheral Nerve Blockade.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Peripheral Nerve Blocks."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Ultrasound landmark: at the cricoid (C6) the C5, C6, C7 roots line up vertically between anterior and middle scalene — the 'traffic-light/stoplight' sign; the plexus is superficial and lateral to the carotid and internal jugular vein.",
+        "Diaphragm-sparing options for shoulder surgery in respiratory-compromised patients: superior trunk block, low-volume interscalene, or combined suprascapular + axillary nerve block.",
+        "LAST readiness: keep 20% lipid emulsion (Intralipid) available — the vertebral artery makes intravascular injection and seizures a real risk."
+      ]
+    }
+  },
+  {
+    "qNo": 2,
+    "question": "a) How is carbon dioxide transported in the blood? [5]  b) What is Haldane effect? How is it related to the Bohr effect? [3+2]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Transport of CO₂ in blood",
+        "intro": "CO₂ produced by tissue metabolism (~200 mL/min) is carried to the lungs in three forms.",
+        "bicarbonate": {
+          "title": "As bicarbonate — ~70% (major form)",
+          "content": [
+            "CO₂ + H₂O ⇌ H₂CO₃ ⇌ H⁺ + HCO₃⁻; accelerated ~13,000× by carbonic anhydrase inside the red cell.",
+            "HCO₃⁻ leaves the RBC in exchange for Cl⁻ — the chloride shift (Hamburger phenomenon); H⁺ is buffered by haemoglobin."
+          ]
+        },
+        "carbamino": {
+          "title": "As carbamino compounds — ~23%",
+          "content": [
+            "CO₂ binds the terminal amine groups of the globin chains (carbaminohaemoglobin) and plasma proteins.",
+            "Deoxygenated Hb carries CO₂ far better than oxygenated Hb — the basis of the Haldane effect."
+          ]
+        },
+        "dissolved": {
+          "title": "Dissolved in plasma — ~7%",
+          "content": "Governed by Henry's law (CO₂ is ~20× more soluble than O₂); this fraction sets the PaCO₂. The CO₂ dissociation curve is steeper and more linear than the O₂ curve."
+        }
+      },
+      "partB": {
+        "title": "Haldane effect and its relation to the Bohr effect",
+        "haldane": {
+          "title": "Haldane effect",
+          "content": [
+            "The effect of oxygenation on the affinity of Hb for CO₂.",
+            "In the lungs: O₂ loading lowers Hb affinity for CO₂ → CO₂ is unloaded and expired.",
+            "In the tissues: deoxygenation increases CO₂-carrying capacity, so deoxy-Hb picks up more CO₂."
+          ]
+        },
+        "bohr": {
+          "title": "Bohr effect",
+          "content": [
+            "The effect of CO₂ and H⁺ (pH) on the affinity of Hb for O₂.",
+            "In the tissues: ↑CO₂ and ↑H⁺ lower Hb affinity for O₂ → the ODC shifts right → O₂ unloading. Factors: ↑CO₂, ↑temperature, ↓pH, ↑2,3-DPG."
+          ]
+        },
+        "relation": {
+          "title": "How they are related",
+          "content": "They are reciprocal, complementary aspects of the same O₂–CO₂–haemoglobin interaction. The Bohr effect promotes O₂ release in the tissues (CO₂/H⁺ drive O₂ off Hb); the Haldane effect simultaneously lets that same deoxygenated Hb pick up more CO₂. In the lungs the process reverses — together they maximise gas exchange at both ends of the circulation."
+        }
+      }
+    },
+    "keyPoints": [
+      "CO₂ transport: bicarbonate ~70%, carbamino ~23%, dissolved ~7%.",
+      "Carbonic anhydrase (in RBC) + chloride (Hamburger) shift drive bicarbonate transport.",
+      "Bohr = CO₂/H⁺ affect Hb–O₂ affinity (O₂ unloading in tissue). Haldane = O₂ affects Hb–CO₂ affinity (CO₂ loading in tissue / unloading in lung)."
+    ],
+    "commonMistakes": [
+      "Swapping the two effects — Bohr acts on O₂ binding; Haldane acts on CO₂ binding.",
+      "Forgetting carbonic anhydrase and the chloride shift in the bicarbonate mechanism."
+    ],
+    "examTip": "Give the three percentages (70/23/7) and name carbonic anhydrase + the chloride (Hamburger) shift. For part B, a one-line 'they are reciprocal aspects of the same O₂–CO₂–Hb interaction' clinches the 'how related' mark.",
+    "sources": [
+      "Dr. Tanya Chawla — DNB December 2025 Paper I notes (CO₂ transport; Haldane & Bohr).",
+      "Miller's Anesthesia, 9th Ed — Respiratory Physiology.",
+      "West's Respiratory Physiology, 11th Ed — Gas transport by the blood.",
+      "Barash, Clinical Anesthesia, 8th Ed — Respiratory Physiology."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "The Haldane effect accounts for roughly half of the CO₂ exchanged between tissues and lungs — it effectively doubles CO₂ uptake for a given change in PCO₂.",
+        "Double Haldane effect in the placenta: fetal Hb loses CO₂ as it takes up O₂ while maternal Hb takes up CO₂ as it releases O₂.",
+        "P50 (PO₂ at 50% saturation) = 26.7 mmHg for adult HbA; right shift (Bohr, ↑temp, ↑2,3-DPG) raises P50, left shift (HbF, CO, alkalosis, hypothermia) lowers it."
+      ]
+    }
+  },
+  {
+    "qNo": 3,
+    "question": "a) What is diffusion capacity of lung? What are the factors which affect the diffusing capacity? [2+3]  b) What are the factors which influence respiratory function during anaesthesia? [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Diffusing capacity (DLCO)",
+        "definition": "The diffusing capacity of the lung (DLCO) is the ability of a gas to transfer from the alveoli to the pulmonary capillary blood per unit driving pressure; it reflects alveolar–capillary membrane function. Carbon monoxide is used to measure it (it is diffusion-limited and avidly bound by Hb).",
+        "fick": {
+          "title": "Fick's law of diffusion",
+          "content": "V̇gas = [A × D × (P₁ − P₂)] / T, where A = surface area, T = membrane thickness, (P₁ − P₂) = partial-pressure gradient, D = diffusion coefficient (∝ solubility ÷ √molecular weight — Graham's law)."
+        },
+        "factors": {
+          "title": "Factors affecting diffusing capacity",
+          "content": [
+            "Surface area — ↓ in emphysema and lung resection; ↑ with exercise.",
+            "Membrane thickness — ↑ thickness ↓ DLCO: pulmonary fibrosis, pulmonary oedema, ARDS.",
+            "Partial-pressure gradient (P₁ − P₂) — a larger alveolar–capillary gradient increases diffusion (affected by alveolar O₂ tension/FiO₂).",
+            "Haemoglobin — ↑ in polycythaemia; ↓ in anaemia (DLCO is corrected for Hb).",
+            "Pulmonary blood flow — ↑ with exercise; ↓ in pulmonary embolism.",
+            "V/Q matching, age and smoking — poor matching, ageing and smoking reduce DLCO.",
+            "↓ DLCO: emphysema, fibrosis, anaemia, pulmonary embolism. ↑ DLCO: polycythaemia, exercise, left-to-right shunt, alveolar haemorrhage."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Factors influencing respiratory function during anaesthesia",
+        "patient": {
+          "title": "Patient factors",
+          "content": [
+            "Extremes of age; obesity (↓ FRC, ↑ atelectasis).",
+            "Pre-existing lung disease (V/Q mismatch); smoking (↑ secretions, ↓ ciliary clearance).",
+            "Cardiac disease (pulmonary oedema); neuromuscular disease (weak respiratory muscles)."
+          ]
+        },
+        "surgical": {
+          "title": "Surgical factors",
+          "content": [
+            "Site — upper abdominal and thoracic surgery reduce FRC most.",
+            "Position — supine ↓ FRC; Trendelenburg ↓↓; lateral → V/Q mismatch.",
+            "Duration (prolonged → atelectasis), pain (splinting), laparoscopy/pneumoperitoneum (↑ IAP, ↓ compliance)."
+          ]
+        },
+        "anaesthesia": {
+          "title": "Anaesthesia factors (general anaesthesia)",
+          "content": [
+            "CNS depression of respiratory drive; loss of upper-airway tone.",
+            "Muscle relaxants and volatile agents (blunt drive, cause atelectasis).",
+            "High FiO₂ → absorption atelectasis; mechanical ventilation → barotrauma/volutrauma.",
+            "Fall in FRC (~15–20%) on induction is the central mechanism of intra-operative hypoxaemia."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "DLCO = alveolar–capillary membrane function; measured with CO; governed by Fick's law.",
+      "DLCO ↓ with ↓surface area, ↑thickness, ↓Hb, ↓pulmonary blood flow.",
+      "Anaesthesia reduces FRC → atelectasis; upper abdominal/thoracic surgery + supine/Trendelenburg worsen it; high FiO₂ causes absorption atelectasis."
+    ],
+    "commonMistakes": [
+      "Confusing DLCO (a membrane/diffusion measure) with spirometric volumes.",
+      "Forgetting to correct DLCO for haemoglobin — anaemia falsely lowers it.",
+      "Omitting position and FRC as the key intra-operative respiratory factors."
+    ],
+    "examTip": "Write Fick's law with all four variables for Part A. For Part B, classify as Patient / Surgical / Anaesthetic factors and always mention the fall in FRC.",
+    "sources": [
+      "Dr. Tanya Chawla — DNB December 2025 Paper I notes (DLCO; respiratory function under anaesthesia).",
+      "West's Respiratory Physiology, 11th Ed — Diffusion.",
+      "Miller's Anesthesia, 9th Ed — Respiratory Physiology.",
+      "Nunn's Applied Respiratory Physiology, 8th Ed."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Diffusion- vs perfusion-limited gases: CO is diffusion-limited (never equilibrates); O₂ and N₂O are normally perfusion-limited. O₂ becomes diffusion-limited in exercise at altitude or with a thickened membrane.",
+        "Atelectasis forms within minutes in dependent lung on induction; countered with PEEP, recruitment, avoiding 100% O₂ at induction/emergence, and CPAP.",
+        "1/DLCO = 1/DM + 1/(θ·Vc): DLCO has a membrane component (DM) and a blood/Hb component (θ·Vc), explaining why anaemia and pulmonary vascular disease alter it."
+      ]
+    }
+  },
+  {
+    "qNo": 4,
+    "question": "a) What are the anaesthetic techniques using opioids? List the different routes of applications of opioids. [3+3]  b) What are the factors which affect the pharmacokinetics and pharmacodynamics of opioids? [4]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Techniques & routes",
+        "intro": "Opioids are widely used for analgesia and to blunt the surgical stress response.",
+        "techniques": {
+          "title": "Anaesthetic techniques",
+          "content": [
+            "Opioid-based general anaesthesia — high-dose opioid (fentanyl/sufentanil) for cardiac and major surgery to preserve haemodynamic stability.",
+            "Balanced anaesthesia (most common) — opioid + inhalational/IV agent + muscle relaxant.",
+            "Total intravenous anaesthesia (TIVA/TCI) — e.g. propofol + remifentanil.",
+            "Regional analgesia with opioid adjuncts — peripheral nerve blocks and neuraxial opioids.",
+            "Post-operative analgesia — PCA, neuraxial opioid, multimodal regimens."
+          ]
+        },
+        "routes": {
+          "title": "Routes of application",
+          "content": [
+            "Intravenous — most rapid, titratable (PCA, infusion).",
+            "Intramuscular / subcutaneous — variable, unpredictable absorption.",
+            "Oral — significant first-pass metabolism.",
+            "Transdermal (fentanyl, buprenorphine) and transmucosal / intranasal (fentanyl).",
+            "Neuraxial — epidural and intrathecal."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Factors affecting PK & PD",
+        "pk": {
+          "title": "Pharmacokinetic factors",
+          "content": [
+            "Absorption — route-dependent (IV fastest; IM/SC variable; oral limited by first-pass).",
+            "Distribution — lipid solubility (more lipophilic → faster CNS penetration/onset); protein binding (only free drug active); volume of distribution (large Vd → prolonged effect).",
+            "Metabolism — mostly hepatic; morphine glucuronidation, fentanyl via CYP3A4.",
+            "Elimination — renal excretion; morphine-6-glucuronide accumulates in renal failure → toxicity."
+          ]
+        },
+        "pd": {
+          "title": "Pharmacodynamic factors",
+          "content": [
+            "Age — elderly: ↑ sensitivity, ↓ clearance; neonates: immature metabolism/BBB.",
+            "Comorbidities — hepatic/renal disease (accumulation); CNS disease (↑ sensitivity); respiratory disease (↑ risk of respiratory depression).",
+            "Tolerance — chronic opioid use ↓ response, needs higher doses.",
+            "Drug interactions — additive respiratory depression with sedatives/benzodiazepines.",
+            "Acid–base status — acidosis increases CNS penetration."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Techniques: opioid-based GA, balanced anaesthesia, TIVA/TCI, regional adjunct, post-op analgesia.",
+      "Routes: IV, IM/SC, oral, transdermal, transmucosal/intranasal, neuraxial.",
+      "Renal failure → M6G accumulation → morphine toxicity; use fentanyl-type opioids instead.",
+      "Context-sensitive half-time (not elimination t½) predicts recovery after infusion — remifentanil's is ~3–4 min."
+    ],
+    "commonMistakes": [
+      "Giving morphine in renal failure — accumulation of active M6G causes delayed respiratory depression.",
+      "Quoting elimination half-life to predict recovery after an infusion instead of context-sensitive half-time.",
+      "Ignoring additive respiratory depression with benzodiazepines."
+    ],
+    "examTip": "Classify Part A cleanly (techniques vs routes). In Part B, structure as PK (ADME) then PD, and name the M6G/renal-failure interaction and context-sensitive half-time.",
+    "sources": [
+      "Dr. Tanya Chawla — DNB December 2025 Paper I notes (opioid techniques, routes, PK/PD).",
+      "Miller's Anesthesia, 9th Ed — Opioids.",
+      "Stoelting's Pharmacology & Physiology in Anesthetic Practice, 5th Ed — Opioid agonists.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Analgesic agents."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Context-sensitive half-time distinguishes remifentanil (esterase metabolism, ~3–4 min, organ-independent) from fentanyl (rises steeply with infusion duration).",
+        "CYP2D6 poor metabolisers get little analgesia from codeine/tramadol (prodrugs); ultra-rapid metabolisers risk toxicity.",
+        "Neuraxial opioids: lipophilic (fentanyl) act segmentally; hydrophilic (morphine) spread cephalad in CSF → risk of delayed respiratory depression at 6–12 h."
+      ]
+    }
+  },
+  {
+    "qNo": 5,
+    "question": "a) Define cardiac output. What are the factors affecting cardiac output? [1+4]  b) Write briefly about the non-invasive methods of cardiac output measurement. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Cardiac output & its determinants",
+        "definition": "Cardiac output (CO) is the volume of blood pumped by the heart per minute. CO = Heart Rate × Stroke Volume; normal ≈ 5 L/min (cardiac index 2.5–4 L/min/m²).",
+        "factors": {
+          "title": "Factors affecting CO",
+          "content": [
+            "Heart rate — ↑HR ↑CO up to a point, but excessive tachycardia ↓ diastolic filling → ↓CO.",
+            "Preload (Frank–Starling) — hypovolaemia/blood loss ↓ preload → ↓CO.",
+            "Contractility — ↑ by sympathetic stimulation/inotropes; ↓ in ischaemia, cardiomyopathy, volatile agents.",
+            "Afterload — ↑ afterload (↑SVR, aortic stenosis) → ↓CO.",
+            "Rhythm — loss of atrial kick (AF) ↓CO.",
+            "Perioperative modifiers — PPV/PEEP (↓ venous return), pneumoperitoneum (↑IAP → ↓VR, ↑afterload), position, anaesthetic depth/drugs (propofol & volatiles depress CO), surgical stress (catecholamines ↑CO)."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Non-invasive methods of CO measurement",
+        "intro": "Non-invasive monitors trade some accuracy/precision for fewer complications; useful to guide fluids, inotropes and vasoactive drugs.",
+        "methods": {
+          "title": "Techniques",
+          "content": [
+            "Partial CO₂ rebreathing (NICO) — indirect (modified) Fick principle using CO₂ elimination; a disposable rebreathing loop with an infrared CO₂ sensor and pneumotachometer; needs an intubated, ventilated patient.",
+            "Thoracic electrical bioimpedance (TEB) — a low-amplitude high-frequency current across the thorax; beat-to-beat impedance change tracks aortic flow → SV/CO.",
+            "Bioreactance — measures the phase shift of the applied current caused by pulsatile aortic flow; less noise-susceptible than bioimpedance; gives SV, CO, CI.",
+            "Suprasternal / ultrasonic Doppler (USCOM) — aortic velocity–time integral × aortic cross-sectional area; portable but operator/position dependent.",
+            "Photoplethysmography / Modelflow (finger-cuff, ClearSight/Nexfin) — completely non-invasive continuous pulse-contour analysis.",
+            "Transthoracic echocardiography — LVOT VTI × LVOT area × HR = CO."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "CO = HR × SV; SV depends on preload, afterload, contractility (+ rhythm).",
+      "NICO uses the indirect Fick (CO₂) principle; bioreactance uses phase shift; USCOM uses Doppler velocity × area.",
+      "Non-invasive = fewer complications but lower precision than thermodilution (the gold standard remains the PAC/thermodilution)."
+    ],
+    "commonMistakes": [
+      "Defining CO as stroke volume alone — it is HR × SV per minute.",
+      "Calling oesophageal Doppler or pulse-contour arterial systems 'non-invasive' — they are minimally invasive.",
+      "Forgetting that excessive tachycardia lowers CO by reducing diastolic filling."
+    ],
+    "examTip": "Anchor Part A on CO = HR × SV and the four SV determinants. In Part B, state the physical principle behind each device (Fick / impedance / bioreactance / Doppler / pulse contour), not just the name.",
+    "sources": [
+      "Dr. Tanya Chawla — DNB December 2025 Paper I notes (cardiac output & non-invasive monitoring).",
+      "Miller's Anesthesia, 9th Ed — Cardiovascular Monitoring.",
+      "Barash, Clinical Anesthesia, 8th Ed — Hemodynamic Monitoring.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Cardiovascular monitoring."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Gold standard: intermittent/continuous thermodilution via the pulmonary artery catheter; the Stewart–Hamilton equation (indicator-dilution AUC) gives CO.",
+        "Fick's original method: CO = VO₂ / (CaO₂ − CvO₂) — the true reference; NICO applies this indirectly using CO₂.",
+        "Dynamic variables (SVV, PPV) from these monitors predict fluid responsiveness better than static CVP in ventilated patients."
+      ]
+    }
+  },
+  {
+    "qNo": 6,
+    "question": "a) What are the unique physical properties of desflurane which require a special type of vaporiser? What are the factors which influence desflurane vaporiser output? [3+2]  b) What are volatile anaesthetic reflectors? Where are they used? [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Desflurane, the Tec 6 vaporiser & output factors",
+        "properties": {
+          "title": "Physical properties that demand a special vaporiser",
+          "content": [
+            "Boiling point 22.8 °C — close to room temperature; it would boil intermittently in a conventional vaporiser, causing wild output fluctuations.",
+            "High saturated vapour pressure ≈ 669 mmHg (88.5 kPa) at 20 °C — near atmospheric; a variable-bypass vaporiser would need impossibly high fresh-gas flow to dilute it and could deliver dangerously high concentrations.",
+            "Low potency (MAC ≈ 6%) — large volumes of vapour must be delivered."
+          ]
+        },
+        "tec6": {
+          "title": "The Datex-Ohmeda Tec 6",
+          "content": "Electrically heated to 39 °C and pressurised (~2 atm) to create a stable vapour phase. It is a dual-circuit gas–vapour blender — fresh gas passes one circuit while pure desflurane vapour is injected via the other through a pressure-regulating valve, electronically matched by a differential pressure transducer so the dialled % is delivered. It is concentration-calibrated, agent-specific, heated and pressurised (not a variable-bypass vaporiser)."
+        },
+        "outputFactors": {
+          "title": "Factors influencing vaporiser output",
+          "content": [
+            "Fresh gas flow rate — at very low flows output rises, at very high flows it falls.",
+            "Temperature — ↓ temperature ↓ SVP ↓ output (Tec 6 negates this by heating).",
+            "Ambient/barometric pressure (altitude) — the Tec 6 delivers a constant % v/v, so at altitude the delivered partial pressure falls and the dial must be increased.",
+            "Carrier gas composition — N₂O transiently alters output.",
+            "Back pressure / pumping effect (intermittent PPV) and tilting affect conventional vaporisers."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Volatile anaesthetic reflectors",
+        "mechanism": {
+          "title": "Definition & mechanism",
+          "content": "Devices that conserve and recycle exhaled volatile agent, allowing inhalational agents to be delivered through a standard ICU ventilator without a circle system. A reflector containing an activated-carbon / zeolite matrix sits between the Y-piece and the endotracheal tube: on expiration it adsorbs the agent and on inspiration it releases it back to the patient — reducing consumption by ~90%. Marketed as AnaConDa (MIRUS is similar)."
+        },
+        "uses": {
+          "title": "Where they are used",
+          "content": [
+            "ICU sedation — inhalational (isoflurane/sevoflurane) sedation as an alternative to propofol/dexmedetomidine.",
+            "Difficult-to-sedate patients and status asthmaticus/refractory bronchospasm.",
+            "Where rapid, titratable sedation and fast wake-up are wanted.",
+            "Advantages: stable, rapidly titratable sedation, reduced drug consumption/cost. Disadvantages: added dead space (↑ CO₂ retention), scavenging/special equipment. Avoid in small children and hypercapnia."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Desflurane: BP 22.8 °C, SVP ~669 mmHg, low potency → needs the heated, pressurised, dual-circuit Tec 6.",
+      "Tec 6 delivers constant % v/v → at altitude increase the dial to maintain partial pressure/depth.",
+      "Reflectors (AnaConDa) adsorb volatile on expiration, release on inspiration → ICU inhalational sedation; add dead space (CO₂ retention)."
+    ],
+    "commonMistakes": [
+      "Saying the Tec 6 works by variable bypass — it is a dual-circuit gas–vapour blender.",
+      "Forgetting the altitude effect: the Tec 6 maintains % v/v, not partial pressure.",
+      "Overlooking the added dead space / CO₂ retention of a reflector, especially in children."
+    ],
+    "examTip": "The three magic numbers for desflurane — BP 22.8 °C, SVP ~669 mmHg, MAC ~6% — plus 'heated to 39 °C, pressurised' secure Part A. For reflectors, name AnaConDa and the adsorb-on-expiration/release-on-inspiration mechanism.",
+    "sources": [
+      "Dr. Tanya Chawla — DNB December 2025 Paper I notes (desflurane/Tec 6; volatile reflectors).",
+      "Miller's Anesthesia, 9th Ed — Inhaled Anesthetic Delivery Systems.",
+      "Barash, Clinical Anesthesia, 8th Ed — Anesthesia Delivery System (vaporizers).",
+      "Dorsch & Dorsch, Understanding Anesthesia Equipment, 5th Ed — Vaporizers."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Why not a variable-bypass vaporiser: with SVP near atmospheric, splitting ratios become extreme and unstable and a small temperature change swings output enormously — hence the heated, pressurised, electronic measured-flow design.",
+        "Desflurane + dry CO₂ absorbent (especially baralyme) can generate carbon monoxide; use fresh, hydrated absorbent.",
+        "AnaConDa reflectors come in 100 mL and 50 mL (ACD-S, less dead space); agent is delivered by a syringe pump and monitored with a gas analyser."
+      ]
+    }
+  },
+  {
+    "qNo": 7,
+    "question": "a) Define cerebral perfusion pressure. Write briefly about Cushing's triad of ICP. [2+3]  b) Describe the blood supply of spinal cord. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Cerebral perfusion pressure & Cushing's triad",
+        "cpp": {
+          "title": "Cerebral perfusion pressure (CPP)",
+          "content": [
+            "CPP is the pressure gradient driving cerebral blood flow: CPP = MAP − ICP (use CVP if it exceeds ICP).",
+            "Normal CPP ≈ 60–100 mmHg; normal ICP 10–15 mmHg.",
+            "CPP < 50 mmHg → cerebral ischaemia. Because ↑ICP or ↓MAP each lower CPP, neuroprotection = maintain MAP and lower ICP.",
+            "Autoregulation keeps CBF constant over MAP ~50–150 mmHg; it is lost in injured brain, making CBF pressure-passive."
+          ]
+        },
+        "cushing": {
+          "title": "Cushing's triad (Cushing reflex)",
+          "content": [
+            "A late sign of raised ICP, indicating impending/actual brain herniation.",
+            "Triad: hypertension (widened pulse pressure), bradycardia, irregular respiration.",
+            "Mechanism: ↑ICP → ↓CPP → brainstem ischaemia → sympathetic surge (hypertension) → baroreceptor-mediated reflex vagal bradycardia; brainstem compression disrupts respiration. It mandates urgent intervention to lower ICP."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Blood supply of the spinal cord",
+        "arterial": {
+          "title": "Arterial supply",
+          "content": [
+            "Single anterior spinal artery — from both vertebral arteries; runs in the anterior median fissure; supplies the anterior two-thirds (motor tracts, spinothalamic tracts).",
+            "Paired posterior spinal arteries — supply the posterior one-third (dorsal columns).",
+            "Radicular (segmental) arteries reinforce these. The largest is the artery of Adamkiewicz (arteria radicularis magna), usually arising on the left between T9–L2; it supplies the lower two-thirds / lumbar enlargement — critical in thoraco-abdominal aortic surgery.",
+            "Anterior spinal artery syndrome (watershed T4–T8 most vulnerable): motor paralysis + loss of pain & temperature below the lesion, with preserved proprioception/vibration (dorsal columns spared)."
+          ]
+        },
+        "venous": {
+          "title": "Venous drainage",
+          "content": [
+            "Anterior and posterior spinal veins drain into the internal vertebral venous plexus (Batson's plexus), which is valveless → bidirectional flow.",
+            "It communicates with azygos, caval and pelvic systems — a route for spread of infection and tumour (e.g. prostate) to the vertebrae/CNS."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "CPP = MAP − ICP; normal 60–100 mmHg; <50 → ischaemia. Maintain MAP, lower ICP.",
+      "Cushing's triad = hypertension + bradycardia + irregular respiration = late sign of ↑ICP / herniation.",
+      "1 anterior spinal artery (anterior ⅔) + 2 posterior spinal arteries (posterior ⅓); artery of Adamkiewicz T9–L2.",
+      "Batson's plexus is valveless → bidirectional spread."
+    ],
+    "commonMistakes": [
+      "Writing CPP = MAP + ICP, or forgetting to use CVP when it exceeds ICP.",
+      "Reversing the triad — it is HYPERtension with BRADYcardia (not tachycardia).",
+      "Forgetting that ASA syndrome spares the dorsal columns (proprioception/vibration intact)."
+    ],
+    "examTip": "Write the CPP formula and the <50 mmHg ischaemia threshold. Draw Cushing's triad as a triangle (HTN–bradycardia–irregular respiration) labelled a 'late sign'. For Part B, the artery of Adamkiewicz (T9–L2) is the high-yield clinical point.",
+    "sources": [
+      "Dr. Tanya Chawla — DNB December 2025 Paper I notes (CPP, Cushing's triad, spinal cord blood supply).",
+      "Miller's Anesthesia, 9th Ed — Neuroanaesthesia; Cerebral physiology.",
+      "Barash, Clinical Anesthesia, 8th Ed — Anesthesia for Neurosurgery.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Neurophysiology & Anesthesia."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Monro–Kellie doctrine: the cranium holds a fixed volume of brain + blood + CSF; a rise in one must be offset by a fall in another, or ICP rises steeply once compensation is exhausted.",
+        "Spinal cord perfusion pressure = MAP − CSF (spinal) pressure — relevant to cord protection (MAP augmentation + CSF drainage) during thoraco-abdominal aortic aneurysm repair.",
+        "Target CPP in traumatic brain injury is generally 60–70 mmHg (BTF); avoid aggressive CPP >70 with fluids/pressors (ARDS risk)."
+      ]
+    }
+  },
+  {
+    "qNo": 8,
+    "question": "a) What is p-value? How do you interpret it? [2+3]  b) What do you understand by odds ratio? When is it used? [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "p-value",
+        "definition": "The p-value is the probability of obtaining a result at least as extreme as the observed one, purely by chance, assuming the null hypothesis (H₀) is true.",
+        "interpretation": {
+          "title": "Interpretation",
+          "content": [
+            "p ≤ 0.05 → statistically significant — reject H₀; the difference is unlikely to be due to chance alone (α = 0.05).",
+            "p > 0.05 → not statistically significant — insufficient evidence to reject H₀ (we do not 'prove' H₀).",
+            "0.05 is the significance level (α) = accepted probability of a Type I error; in a two-tailed test each tail carries α/2 = 0.025.",
+            "A p-value indicates statistical, not clinical, significance or effect size, and depends heavily on sample size.",
+            "Type I error (α) = rejecting a true null (false positive); Type II error (β) = accepting a false null (false negative); power = 1 − β."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Odds ratio (OR)",
+        "definition": "The odds ratio is a measure of association comparing the odds of an event (disease) in an exposed group with the odds in an unexposed group. For a 2×2 table with cells a, b, c, d: OR = (a/b) ÷ (c/d) = ad / bc.",
+        "use": {
+          "title": "When it is used",
+          "content": [
+            "Primarily in case-control studies (where incidence/risk cannot be calculated directly).",
+            "In logistic regression and cross-sectional studies.",
+            "In cohort studies, although relative risk (RR) is generally preferred there."
+          ]
+        },
+        "interpretation": {
+          "title": "Interpretation & example",
+          "content": [
+            "OR = 1 → no association; OR > 1 → higher odds of disease; OR < 1 → protective association.",
+            "Example: smokers 80 lung-cancer / 20 not; non-smokers 40 / 60. OR = (80×60)/(20×40) = 6 → smokers have six times the odds of lung cancer."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "p-value = probability the observed difference is due to chance if H₀ is true; <0.05 = significant.",
+      "α = Type I error (false positive); β = Type II error (false negative); power = 1 − β.",
+      "OR = ad/bc; case-control → OR, cohort/RCT → RR; when disease is rare (<10%), OR ≈ RR."
+    ],
+    "commonMistakes": [
+      "Saying the p-value is the probability that H₀ is true — it is the probability of the data given H₀.",
+      "Equating statistical significance with clinical importance (large samples make trivial differences 'significant').",
+      "Using OR when RR can be calculated (cohort/RCT) — quote RR there."
+    ],
+    "examTip": "Define the p-value precisely ('assuming the null hypothesis is true'), link 0.05 to the Type I error rate, and give OR = ad/bc with a worked example. Add 'rare disease → OR ≈ RR' for the extra mark.",
+    "sources": [
+      "Dr. Tanya Chawla — DNB December 2025 Paper I notes (p-value, odds ratio).",
+      "Miller's Anesthesia, 9th Ed — Interpreting the Anesthesia Literature / Statistics.",
+      "Park's Textbook of Preventive & Social Medicine — Epidemiological methods.",
+      "Petrie & Sabin, Medical Statistics at a Glance."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "A confidence interval is more informative than a bare p-value: a 95% CI for an OR/RR that crosses 1 means the result is not statistically significant.",
+        "Number needed to treat (NNT) = 1 / absolute risk reduction — translates statistics into clinical usefulness.",
+        "Multiple comparisons inflate the Type I error; correct with Bonferroni or similar adjustments."
+      ]
+    }
+  },
+  {
+    "qNo": 9,
+    "question": "a) What issues are involved in informed consent? What is informed refusal? [3+2]  b) What are the ethical issues involved in end of life decision making? [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Informed consent & informed refusal",
+        "consent": {
+          "title": "Informed consent — components/issues",
+          "content": [
+            "Communication of the anaesthetic plan (pre-operative, intra-operative, post-operative) in terms the patient understands, with risks, benefits and complications discussed and questions answered.",
+            "Decision-making capacity — ability to comprehend, reason rationally and consistently, and express a preference.",
+            "Voluntariness — free from coercion or undue influence.",
+            "Disclosure — adequate information; standards: professional practice, reasonable person, or subjective (this patient's wishes).",
+            "Comprehension of risks vs benefits and the basis of the recommendation.",
+            "Special situations: emergency (act in best interest), minors (parental consent), pregnancy (a competent woman's refusal is respected)."
+          ]
+        },
+        "refusal": {
+          "title": "Informed refusal",
+          "content": "The right of a competent, fully-informed patient to decline a recommended treatment or procedure — even if that refusal may be harmful or fatal. It requires the same elements as consent (capacity, disclosure of consequences + alternatives, voluntariness) and must be documented. Process: explain the situation → explain the risks of refusal → offer alternatives → confirm understanding → document."
+        }
+      },
+      "partB": {
+        "title": "Ethical issues in end-of-life decision making",
+        "principles": {
+          "title": "Four ethical principles",
+          "content": [
+            "Autonomy — the patient's right to decide (advance directives).",
+            "Beneficence — act in the patient's best interest.",
+            "Non-maleficence — do no harm / avoid futile burdensome treatment.",
+            "Justice — fair allocation of limited resources."
+          ]
+        },
+        "issues": {
+          "title": "Specific ethical issues",
+          "content": [
+            "Withholding vs withdrawing treatment — not starting vs stopping ongoing therapy; ethically and legally equivalent.",
+            "Medical futility — treatment unlikely to benefit the patient.",
+            "DNAR / DNR orders (withholding CPR).",
+            "Advance directives / living wills and surrogate decision-making.",
+            "Palliative (terminal) sedation — relieving refractory suffering (doctrine of double effect).",
+            "Euthanasia vs assisted dying — active euthanasia is illegal in India; the Supreme Court has legalised passive euthanasia and advance directives (Aruna Shanbaug 2011; Common Cause 2018)."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Consent needs capacity, voluntariness, disclosure and comprehension; informed refusal = the mirror right to decline, competently and documented.",
+      "Four principles: autonomy, beneficence, non-maleficence, justice.",
+      "Withholding = withdrawing (ethically equivalent); passive euthanasia & living wills are legal in India (Common Cause 2018)."
+    ],
+    "commonMistakes": [
+      "Treating a competent refusal as invalid because it seems unwise — capacity, not the 'wisdom' of the choice, is what matters.",
+      "Believing withdrawing treatment is ethically worse than withholding it — they are equivalent.",
+      "Confusing legal passive euthanasia with active euthanasia (the latter remains illegal in India)."
+    ],
+    "examTip": "Frame everything around the four principles. Name the three disclosure standards for consent, and for end-of-life mention the withholding = withdrawing equivalence, the doctrine of double effect, and the Indian legal position (Common Cause 2018).",
+    "sources": [
+      "Dr. Tanya Chawla — DNB December 2025 Paper I notes (informed consent/refusal; end-of-life ethics).",
+      "Miller's Anesthesia, 9th Ed — Ethical Aspects of Anesthesia Care.",
+      "Beauchamp & Childress, Principles of Biomedical Ethics.",
+      "Supreme Court of India — Common Cause v Union of India (2018); Aruna Shanbaug (2011)."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Doctrine of double effect: giving opioids/sedatives to relieve suffering is ethical even if it may hasten death, provided the intent is symptom relief, not to kill.",
+        "Jehovah's Witness & blood: a competent adult may refuse transfusion; document, explore alternatives (cell salvage, tranexamic acid), and respect the decision.",
+        "Capacity is decision-specific and can fluctuate — assess it for the specific decision at the specific time, not as a global label."
+      ]
+    }
+  },
+  {
+    "qNo": 10,
+    "question": "a) Describe the events that result in nerve action potential. [5]  b) Discuss about the mechanism of action of local anaesthetic agents. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Events of the nerve action potential",
+        "resting": {
+          "title": "Resting membrane potential",
+          "content": "≈ −70 mV, maintained by the Na⁺/K⁺-ATPase (3 Na⁺ out : 2 K⁺ in) and high resting K⁺ permeability (K⁺ leak channels). Na⁺ is high outside, K⁺ high inside."
+        },
+        "sequence": {
+          "title": "Sequence of the action potential",
+          "content": [
+            "Depolarisation to threshold (~ −55 mV): a stimulus opens some Na⁺ channels; once threshold is reached the response is all-or-none.",
+            "Rapid depolarisation: voltage-gated Na⁺ channels open → rapid Na⁺ influx → overshoot to about +30 mV.",
+            "Repolarisation: Na⁺ channels inactivate and voltage-gated K⁺ channels open → K⁺ efflux returns the potential toward resting.",
+            "Hyperpolarisation (after-potential): K⁺ channels close slowly → transient undershoot.",
+            "Restoration: the Na⁺/K⁺-ATPase re-establishes the ionic gradients.",
+            "Refractory periods: absolute (Na⁺ channels inactivated) then relative. Conduction is continuous in unmyelinated fibres and saltatory (node-to-node) in myelinated fibres."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Mechanism of action of local anaesthetics",
+        "structure": {
+          "title": "Structure & principle",
+          "content": "LAs have a lipophilic aromatic ring — an intermediate ester/amide chain — and a hydrophilic tertiary amine. They act by disrupting ion-channel function in the neuronal membrane, blocking voltage-gated Na⁺ channels and preventing transmission of the action potential."
+        },
+        "block": {
+          "title": "How they block the channel",
+          "content": [
+            "LAs are weak bases. The unionised (lipid-soluble) base crosses the nerve membrane; inside the axoplasm it re-ionises to the cationic (BH⁺) form, which is the active form and binds the inner pore of the voltage-gated Na⁺ channel from the cytoplasmic side.",
+            "This blocks Na⁺ influx → prevents/reduces depolarisation → ↓ amplitude and conduction of the action potential.",
+            "LAs preferentially bind open/inactivated channels; rapidly firing fibres have more channels open → more block — the basis of use- (frequency-) dependent block."
+          ]
+        },
+        "differential": {
+          "title": "Differential block",
+          "content": "Smaller and myelinated fibres are blocked more readily than large and unmyelinated ones. Typical order of blockade: autonomic (B) → pain & temperature (C, Aδ) → touch/pressure → proprioception → motor (Aα) last. Recovery occurs in reverse."
+        }
+      }
+    },
+    "keyPoints": [
+      "AP: resting −70 mV → threshold −55 mV → Na⁺ influx (depolarise, +30 mV) → K⁺ efflux (repolarise) → hyperpolarise → Na⁺/K⁺-ATPase restores gradients.",
+      "LA = weak base; unionised form crosses the membrane, ionised (BH⁺) form blocks the Na⁺ channel from inside.",
+      "Use-dependent block (prefers open/inactivated channels); differential block — autonomic/pain first, motor last."
+    ],
+    "commonMistakes": [
+      "Saying the ionised form crosses the membrane — the unionised base crosses; the ionised cation blocks the channel.",
+      "Forgetting that in infected/acidic tissue more drug is ionised → poor penetration → the LA 'doesn't work'.",
+      "Reversing the differential block order (motor is blocked last, recovers first)."
+    ],
+    "examTip": "For Part A, quote the voltages (−70/−55/+30 mV) and name the channels. For Part B, the 'unionised crosses, ionised blocks from inside' concept plus use-dependent and differential block earn the marks — and add the acidic-tissue pearl.",
+    "sources": [
+      "Dr. Tanya Chawla — DNB December 2025 Paper I notes (nerve action potential; LA mechanism).",
+      "Miller's Anesthesia, 9th Ed — Local Anesthetics.",
+      "Stoelting's Pharmacology & Physiology in Anesthetic Practice, 5th Ed — Local Anesthetics.",
+      "Guyton & Hall, Textbook of Medical Physiology — Membrane Potentials and Action Potentials."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "pKa determines onset: agents with pKa closer to physiological pH have a greater unionised fraction and faster onset (lidocaine pKa 7.9 > bupivacaine 8.1). Lipid solubility → potency; protein binding → duration.",
+        "Why LA fails in an abscess: the low tissue pH shifts drug to the ionised form, reducing membrane penetration — use a regional block proximal to the infected area instead.",
+        "LA systemic toxicity (LAST): CNS (perioral tingling, seizures) then cardiovascular collapse; bupivacaine is the most cardiotoxic — treat with 20% lipid emulsion."
+      ]
+    }
+  }
+]
