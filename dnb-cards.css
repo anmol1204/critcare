@@ -162,3 +162,52 @@
 .dnb-static-index ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:.5rem; }
 .dnb-static-index li a { display:block; padding:.75rem 1rem; border:1px solid var(--line); border-radius:9px; text-decoration:none; color:var(--ink); font-size:.88rem; font-weight:600; background:var(--bg); transition:border-color .2s,color .2s; }
 .dnb-static-index li a:hover { border-color:#7c3aed; color:#7c3aed; }
+
+/* ── INTERACTIVE BROWSER UPGRADES (chooser, toolbar, chips, back-to-top) ─── */
+.dnb-paper-btn.soon { opacity:.6; }
+.dnb-paper-btn .tab-soon { font-size:.54rem; font-weight:900; text-transform:uppercase; letter-spacing:.06em; background:var(--bg-alt); color:var(--slate); border:1px solid var(--line); padding:.08rem .3rem; border-radius:3px; margin-left:.35rem; vertical-align:middle; }
+
+/* Paper-selection cards */
+.dnb-chooser-head { max-width:900px; margin:0 auto; padding:0 0 .4rem; }
+.dnb-chooser-head h2 { font-family:var(--font-disp); font-size:1.3rem; color:var(--ink); margin-bottom:.3rem; }
+.dnb-chooser-head p { font-size:.88rem; color:var(--slate); }
+.dnb-pick-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:1.2rem; }
+.dnb-pick-card { text-align:left; display:flex; flex-direction:column; gap:.3rem; padding:1.3rem 1.4rem; border:1.5px solid var(--line); border-radius:14px; background:var(--bg); cursor:pointer; font-family:var(--font-body); transition:border-color .2s, box-shadow .2s, transform .12s; position:relative; }
+.dnb-pick-card:not(.soon):hover { border-color:#7c3aed; box-shadow:0 8px 26px rgba(124,58,237,.12); transform:translateY(-2px); }
+.dnb-pick-card .pick-num { font-family:var(--font-disp); font-size:1.25rem; font-weight:700; color:var(--ink); }
+.dnb-pick-card .pick-meta { font-size:.82rem; color:var(--slate); }
+.dnb-pick-card .pick-sess { font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#7c3aed; }
+.dnb-pick-card .pick-go { margin-top:.5rem; font-size:.82rem; font-weight:700; color:#7c3aed; }
+.dnb-pick-card.soon { cursor:default; opacity:.75; }
+.dnb-pick-card .pick-badge { position:absolute; top:1rem; right:1rem; font-size:.58rem; font-weight:900; text-transform:uppercase; letter-spacing:.06em; background:var(--bg-alt); color:var(--slate); border:1px solid var(--line); padding:.15rem .45rem; border-radius:20px; }
+
+/* Back link */
+.dnb-back-link { display:inline-flex; align-items:center; gap:.35rem; background:none; border:none; color:#7c3aed; font-weight:700; font-size:.85rem; cursor:pointer; padding:0; margin-bottom:1rem; font-family:var(--font-body); }
+.dnb-back-link:hover { text-decoration:underline; }
+
+/* Toolbar: search + expand/collapse */
+.dnb-toolbar { display:flex; align-items:center; gap:.7rem; flex-wrap:wrap; margin:.4rem 0 1rem; }
+.dnb-search { flex:1; min-width:180px; padding:.6rem .9rem; border:1.5px solid var(--line); border-radius:10px; background:var(--bg); color:var(--ink); font-size:.86rem; font-family:var(--font-body); }
+.dnb-search:focus { outline:none; border-color:#7c3aed; }
+.dnb-tb-btns { display:flex; gap:.5rem; }
+.dnb-tb-btns button { padding:.55rem .9rem; border:1.5px solid var(--line); border-radius:10px; background:var(--bg); color:var(--slate); font-size:.78rem; font-weight:700; cursor:pointer; font-family:var(--font-body); transition:.18s; }
+.dnb-tb-btns button:hover { border-color:#7c3aed; color:#7c3aed; }
+
+/* Question quick-jump chips */
+.dnb-chips { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:1.3rem; }
+.dnb-chip { padding:.35rem .7rem; border:1.5px solid var(--line); border-radius:20px; background:var(--bg); color:var(--slate); font-size:.76rem; font-weight:800; cursor:pointer; font-family:var(--font-body); transition:.15s; }
+.dnb-chip:hover { border-color:#7c3aed; color:#fff; background:#7c3aed; }
+.dnb-nomatch { text-align:center; color:var(--slate); font-size:.9rem; padding:2rem 1rem; }
+.dnb-error { text-align:center; color:var(--slate); padding:3rem 1rem; }
+
+/* Back to top */
+.dnb-top { position:fixed; right:1.1rem; bottom:5.2rem; width:44px; height:44px; border-radius:50%; background:#7c3aed; color:#fff; border:none; font-size:1.2rem; cursor:pointer; display:none; align-items:center; justify-content:center; box-shadow:0 6px 20px rgba(124,58,237,.35); z-index:40; }
+.dnb-top:hover { background:#6d28d9; }
+
+html.dark .dnb-pick-card { background:var(--bg-alt); }
+html.dark .dnb-search, html.dark .dnb-tb-btns button, html.dark .dnb-chip { background:var(--bg-alt); }
+
+@media (max-width:600px) {
+  .dnb-pick-grid { grid-template-columns:1fr; }
+  .dnb-top { bottom:5rem; }
+}

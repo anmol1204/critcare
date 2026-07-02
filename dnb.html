@@ -46,8 +46,8 @@
     <p>DNB Anaesthesiology — fully solved previous-year papers with model answers, cited sources, key points, common mistakes, exam tips, and extra-marks content. Available for June 2026 and December 2025.</p>
     <div class="dnb-hero-stats">
       <div class="dnb-stat"><div class="n">2</div><div class="l">Exam Sessions</div></div>
-      <div class="dnb-stat"><div class="n">50</div><div class="l">Questions Solved</div></div>
-      <div class="dnb-stat"><div class="n">500</div><div class="l">Marks</div></div>
+      <div class="dnb-stat"><div class="n">60</div><div class="l">Questions Solved</div></div>
+      <div class="dnb-stat"><div class="n">600</div><div class="l">Marks</div></div>
       <div class="dnb-stat"><div class="n">Jun 2026 + Dec 2025</div><div class="l">Examinations</div></div>
     </div>
   </div>
@@ -66,21 +66,19 @@
   </div>
 </nav>
 
-<!-- PAPER TABS -->
+<!-- PAPER TABS (populated per session by JS) -->
 <nav class="dnb-selector-bar" id="paperTabs">
-  <div class="dnb-selector-inner">
+  <div class="dnb-selector-inner" id="paperTabsInner">
     <span class="dnb-sel-label">Select Paper</span>
-    <button class="dnb-paper-btn active" onclick="loadPaper(1, this)">📄 Paper I</button>
-    <button class="dnb-paper-btn" onclick="loadPaper(2, this)">📄 Paper II</button>
-    <button class="dnb-paper-btn" onclick="loadPaper(3, this)">📄 Paper III</button>
-    <button class="dnb-paper-btn" onclick="loadPaper(4, this)">📄 Paper IV</button>
   </div>
 </nav>
 
 <!-- MAIN -->
 <div class="dnb-main" id="dnbMain">
-  <div class="dnb-loading"><div class="spin"></div><p>Loading Paper I…</p></div>
+  <div class="dnb-loading"><div class="spin"></div><p>Loading…</p></div>
 </div>
+
+<button class="dnb-top" id="dnbTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
 
 <!-- Crawlable index of the pre-rendered, full-page solved papers (SEO + no-JS fallback) -->
 <section class="dnb-static-index">
@@ -123,6 +121,8 @@
 var paperCache = {};
 var currentPaper = 0;
 var currentSession = 'june2026';
+var ROMAN = ['I','II','III','IV'];
+var SESSION_ORDER = ['june2026','dec2025'];
 
 var sessionMeta = {
   june2026: {
@@ -340,91 +340,177 @@ function toggleQ(id) {
   if (toggle) toggle.textContent = isOpen ? '+' : '×';
 }
 
-// ── Switch session ────────────────────────────────────────────────────────────
-function switchSession(sess, btn) {
-  if (currentSession === sess) return;
-  currentSession = sess;
+// ── Dynamic paper tabs (per session, with availability) ───────────────────────
+function renderPaperTabs() {
+  var sess = sessionMeta[currentSession];
+  var html = '<span class="dnb-sel-label">Select Paper</span>';
+  [1,2,3,4].forEach(function(n){
+    var avail = sess.availablePapers.indexOf(n) !== -1;
+    var cls = 'dnb-paper-btn' + (n === currentPaper ? ' active' : '') + (avail ? '' : ' soon');
+    var badge = avail ? '' : '<span class="tab-soon">soon</span>';
+    html += '<button class="' + cls + '" onclick="navPaper(' + n + ')">📄 Paper ' + ROMAN[n-1] + badge + '</button>';
+  });
+  document.getElementById('paperTabsInner').innerHTML = html;
+}
+
+function setActiveSessionBtn() {
+  var btns = document.querySelectorAll('.dnb-sess-btn');
+  btns.forEach(function(b){ b.classList.remove('active'); });
+  var idx = SESSION_ORDER.indexOf(currentSession);
+  if (btns[idx]) btns[idx].classList.add('active');
+}
+
+// ── Hash routing (shareable links + working back button) ──────────────────────
+function parseHash() {
+  var h = location.hash.replace(/^#/, '');
+  if (!h) return null;
+  var parts = h.split('/');
+  if (!sessionMeta[parts[0]]) return null;
+  var num = 0, qNo = 0;
+  if (parts[1]) { var m = parts[1].match(/^paper(\d)$/); if (m) num = parseInt(m[1], 10); }
+  if (parts[2]) { var mq = parts[2].match(/^q(\d+)$/); if (mq) qNo = parseInt(mq[1], 10); }
+  return { sess: parts[0], num: num, qNo: qNo };
+}
+function goHash(sess, num, qNo) {
+  var h = '#' + sess + (num ? '/paper' + num : '') + (qNo ? '/q' + qNo : '');
+  if (location.hash === h) { route(); } else { location.hash = h; }
+}
+function navPaper(num) { goHash(currentSession, num, 0); }
+function switchSession(sess) { goHash(sess, 0, 0); }
+
+// ── Paper-selection chooser (click a card → the paper opens) ──────────────────
+function showChooser() {
   currentPaper = 0;
-
-  // Update session buttons
-  document.querySelectorAll('.dnb-sess-btn').forEach(function(b){ b.classList.remove('active'); });
-  if (btn) btn.classList.add('active');
-
-  // Reset to the first available paper for the session
-  var defaultPaper = sessionMeta[sess].availablePapers[0] || 1;
-  var paperBtns = document.querySelectorAll('.dnb-paper-btn');
-  paperBtns.forEach(function(b){ b.classList.remove('active'); });
-  if (paperBtns[defaultPaper - 1]) paperBtns[defaultPaper - 1].classList.add('active');
-
-  loadPaper(defaultPaper, null);
+  renderPaperTabs();
+  var sess = sessionMeta[currentSession];
+  var cards = '';
+  [1,2,3,4].forEach(function(n){
+    var avail = sess.availablePapers.indexOf(n) !== -1;
+    if (avail) {
+      cards += '<button class="dnb-pick-card" onclick="navPaper(' + n + ')">' +
+        '<div class="pick-num">Paper ' + ROMAN[n-1] + '</div>' +
+        '<div class="pick-meta">10 solved questions · 100 marks</div>' +
+        '<div class="pick-sess">' + sess.label + '</div>' +
+        '<div class="pick-go">Open paper →</div>' +
+      '</button>';
+    } else {
+      cards += '<div class="dnb-pick-card soon">' +
+        '<div class="pick-num">Paper ' + ROMAN[n-1] + '</div>' +
+        '<div class="pick-meta">Solved answers coming soon</div>' +
+        '<div class="pick-sess">' + sess.label + '</div>' +
+        '<span class="pick-badge">Coming soon</span>' +
+      '</div>';
+    }
+  });
+  document.getElementById('dnbMain').innerHTML =
+    '<div class="dnb-chooser-head"><h2>Select a paper — ' + sess.label + '</h2>' +
+    '<p>Click a paper to open its fully solved model answers.</p></div>' +
+    '<div class="dnb-pick-grid">' + cards + '</div>';
 }
 
 // ── Load a paper ──────────────────────────────────────────────────────────────
-function loadPaper(num, btn) {
+function loadPaper(num, qNo) {
   currentPaper = num;
-
-  // Update tabs
-  if (btn) {
-    document.querySelectorAll('.dnb-paper-btn').forEach(function(b){ b.classList.remove('active'); });
-    btn.classList.add('active');
-  }
-
+  renderPaperTabs();
   var sess = sessionMeta[currentSession];
   var main = document.getElementById('dnbMain');
+  try { localStorage.setItem('dnb-last', currentSession + '/paper' + num); } catch (e) {}
 
-  // Coming Soon for unavailable papers
   if (sess.availablePapers.indexOf(num) === -1) {
-    main.innerHTML = '<div class="dnb-coming-soon">' +
-      '<div class="cs-icon">🔜</div>' +
-      '<h3>Paper ' + ['I','II','III','IV'][num-1] + ' — Coming Soon</h3>' +
-      '<p>Solved answers for ' + sess.label + ' Paper ' + ['I','II','III','IV'][num-1] + ' are being prepared. Check back soon — Paper IV is already available.</p>' +
-      '</div>';
+    main.innerHTML = '<div class="dnb-coming-soon"><div class="cs-icon">🔜</div>' +
+      '<h3>Paper ' + ROMAN[num-1] + ' — Coming Soon</h3>' +
+      '<p>Solved answers for ' + sess.label + ' Paper ' + ROMAN[num-1] + ' are being prepared.</p>' +
+      '<button class="dnb-back-link" onclick="switchSession(\'' + currentSession + '\')">← All papers</button></div>';
     return;
   }
 
   var cacheKey = currentSession + '-' + num;
-  main.innerHTML = '<div class="dnb-loading"><div class="spin"></div><p>Loading Paper ' + ['I','II','III','IV'][num-1] + '…</p></div>';
-
-  if (paperCache[cacheKey]) {
-    renderPaper(num, paperCache[cacheKey]);
-    return;
-  }
+  main.innerHTML = '<div class="dnb-loading"><div class="spin"></div><p>Loading Paper ' + ROMAN[num-1] + '…</p></div>';
+  if (paperCache[cacheKey]) { renderPaper(num, paperCache[cacheKey], qNo); return; }
 
   fetch(sess.path(num))
-    .then(function(r){
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      return r.json();
-    })
-    .then(function(data){
-      paperCache[cacheKey] = data;
-      renderPaper(num, data);
-    })
-    .catch(function(err){
-      main.innerHTML = '<div class="dnb-error"><p>Could not load Paper ' + num + '.</p><small>' + err.message + '</small></div>';
-    });
+    .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function(data){ paperCache[cacheKey] = data; renderPaper(num, data, qNo); })
+    .catch(function(err){ main.innerHTML = '<div class="dnb-error"><p>Could not load Paper ' + num + '.</p><small>' + err.message + '</small></div>'; });
 }
 
-function renderPaper(num, questions) {
-  var romanNums = ['I','II','III','IV'];
+// ── Render a paper (with toolbar, search & quick-jump chips) ───────────────────
+function renderPaper(num, questions, qNo) {
   var sess = sessionMeta[currentSession];
   var totalMarks = questions.reduce(function(s,q){ return s + (q.marks || 10); }, 0);
-  var main = document.getElementById('dnbMain');
-  var html = '<div class="dnb-paper-head">' +
-    '<div class="dnb-paper-badge">' + sess.badge + '</div>' +
-    '<h2>Paper ' + romanNums[num-1] + '</h2>' +
-    '<p>' + questions.length + ' questions · ' + totalMarks + ' marks · Model answers with cited sources, key points, exam tips &amp; extra marks content</p>' +
-  '</div>' +
-  '<div class="dnb-q-list">' +
-  questions.map(renderQuestion).join('') +
-  '</div>';
-  main.innerHTML = html;
-  window.scrollTo({ top: document.getElementById('sessionBar').offsetTop - 70, behavior: 'smooth' });
+  var chips = questions.map(function(q){ return '<button class="dnb-chip" onclick="jumpToQ(' + q.qNo + ')">Q' + q.qNo + '</button>'; }).join('');
+  document.getElementById('dnbMain').innerHTML =
+    '<button class="dnb-back-link" onclick="switchSession(\'' + currentSession + '\')">← All papers</button>' +
+    '<div class="dnb-paper-head">' +
+      '<div class="dnb-paper-badge">' + sess.badge + '</div>' +
+      '<h2>Paper ' + ROMAN[num-1] + '</h2>' +
+      '<p>' + questions.length + ' questions · ' + totalMarks + ' marks · Model answers with sources, key points, exam tips &amp; extra marks</p>' +
+    '</div>' +
+    '<div class="dnb-toolbar">' +
+      '<input type="search" id="dnbSearch" class="dnb-search" placeholder="🔍 Search this paper…" oninput="filterQuestions(this.value)" />' +
+      '<div class="dnb-tb-btns"><button onclick="setAllOpen(true)">Expand all</button><button onclick="setAllOpen(false)">Collapse all</button></div>' +
+    '</div>' +
+    '<div class="dnb-chips">' + chips + '</div>' +
+    '<div class="dnb-q-list" id="dnbQList">' + questions.map(renderQuestion).join('') + '</div>' +
+    '<div class="dnb-nomatch" id="dnbNoMatch" style="display:none">No questions match your search.</div>';
+  if (qNo) { jumpToQ(qNo); }
+  else { window.scrollTo({ top: document.getElementById('sessionBar').offsetTop - 70, behavior: 'smooth' }); }
 }
 
-// ── Init ──────────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', function() {
-  loadPaper(1, document.querySelector('.dnb-paper-btn'));
+// ── Search / expand / collapse / quick-jump ───────────────────────────────────
+function filterQuestions(term) {
+  term = (term || '').trim().toLowerCase();
+  var cards = document.querySelectorAll('#dnbQList .dnb-q-card');
+  var shown = 0;
+  cards.forEach(function(c){
+    var match = !term || c.textContent.toLowerCase().indexOf(term) !== -1;
+    c.style.display = match ? '' : 'none';
+    if (match) {
+      shown++;
+      c.classList.toggle('open', !!term);
+      var t = c.querySelector('.dnb-q-toggle'); if (t) t.textContent = term ? '×' : '+';
+    }
+  });
+  var nm = document.getElementById('dnbNoMatch'); if (nm) nm.style.display = shown ? 'none' : 'block';
+}
+function setAllOpen(open) {
+  document.querySelectorAll('#dnbQList .dnb-q-card').forEach(function(c){
+    c.classList.toggle('open', open);
+    var t = c.querySelector('.dnb-q-toggle'); if (t) t.textContent = open ? '×' : '+';
+  });
+}
+function jumpToQ(qNo) {
+  var card = document.getElementById('q-' + qNo);
+  if (!card) return;
+  card.classList.add('open');
+  var t = card.querySelector('.dnb-q-toggle'); if (t) t.textContent = '×';
+  card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (history.replaceState) history.replaceState(null, '', '#' + currentSession + '/paper' + currentPaper + '/q' + qNo);
+}
+
+// ── Back to top ───────────────────────────────────────────────────────────────
+window.addEventListener('scroll', function(){
+  var b = document.getElementById('dnbTop'); if (b) b.style.display = window.scrollY > 600 ? 'flex' : 'none';
 });
+
+// ── Router / init (resume last-read when there is no link) ────────────────────
+function route() {
+  var st = parseHash();
+  if (!st) {
+    var last = null; try { last = localStorage.getItem('dnb-last'); } catch (e) {}
+    if (last && sessionMeta[(last.split('/')[0])]) {
+      st = { sess: last.split('/')[0], num: parseInt((last.split('/')[1] || '').replace('paper',''), 10) || 0, qNo: 0 };
+    } else {
+      st = { sess: 'june2026', num: 0, qNo: 0 };
+    }
+  }
+  currentSession = st.sess;
+  setActiveSessionBtn();
+  if (st.num) { loadPaper(st.num, st.qNo); }
+  else { showChooser(); }
+}
+window.addEventListener('hashchange', route);
+document.addEventListener('DOMContentLoaded', route);
 </script>
 </body>
 </html>
