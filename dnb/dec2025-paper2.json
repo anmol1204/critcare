@@ -1,0 +1,786 @@
+[
+ {
+  "qNo": 1,
+  "question": "Describe the physiology and mechanism of action of trans-nasal humidified rapid insufflation ventilatory exchange (THRIVE). Enumerate its uses. [(4+3)+3]",
+  "marks": 10,
+  "answer": {
+   "partA": {
+    "title": "Physiology, mechanism & uses of THRIVE",
+    "definition": {
+     "title": "Definition",
+     "content": "THRIVE (Trans-nasal Humidified Rapid-Insufflation Ventilatory Exchange) is the use of high-flow (30–70 L/min) heated and humidified oxygen delivered via nasal cannulae to prolong the safe apnoea time during airway management. It combines the benefits of high-flow nasal oxygen (apnoeic oxygenation) with a degree of CO₂ clearance."
+    },
+    "physiologyMechanismThreePrinciples": {
+     "title": "Physiology & mechanism (three principles)",
+     "content": [
+      "Apnoeic oxygenation — high FiO₂ maintains a continuous alveolar-to-pharyngeal O₂ gradient; as O₂ is absorbed faster than CO₂ is produced, a mass flow of oxygen is drawn down into the alveoli (\"aventilatory mass flow\"), sustaining oxygenation without tidal breathing.",
+      "CO₂ clearance / dead-space flushing — the high flow flushes the nasopharyngeal anatomical dead space and generates turbulent gas mixing, slowing the rise of CO₂ (≈ 2–3 mmHg/min vs ~4–6 with classical apnoeic oxygenation).",
+      "Positive airway pressure & humidification — the flow creates a low-level CPAP/PEEP effect (≈ 3–7 cmH₂O) that splints alveoli open (↓ atelectasis, ↑ FRC); heating and humidification prevent mucosal drying, improve comfort/tolerance and preserve mucociliary function."
+     ]
+    },
+    "physiologicalEffects": {
+     "title": "Physiological effects",
+     "content": [
+      "↑ Oxygenation and prolonged safe apnoea time; ↓ atelectasis; ↓ work of breathing; some CO₂ washout."
+     ]
+    },
+    "uses": {
+     "title": "Uses",
+     "content": [
+      "Difficult airway management — extends the safe apnoeic window for intubation attempts.",
+      "Pre-oxygenation and apnoeic oxygenation during rapid sequence induction (RSI).",
+      "Shared-airway / airway procedures — awake fibreoptic intubation, microlaryngeal/laryngeal (\"tubeless\") surgery, ENT and airway endoscopy.",
+      "Hypoxaemic respiratory failure (as HFNO) and post-extubation oxygen therapy.",
+      "Obese, obstetric and paediatric patients, and other rapid-desaturators."
+     ]
+    }
+   }
+  },
+  "keyPoints": [
+   "High-flow (30–70 L/min) heated, humidified O₂ via nasal cannulae.",
+   "Three mechanisms: apnoeic oxygenation (aventilatory mass flow), dead-space CO₂ washout, and PEEP/humidification.",
+   "CO₂ still rises (~2–3 mmHg/min) — THRIVE buys time, it is not true ventilation."
+  ],
+  "commonMistakes": [
+   "Calling THRIVE a form of ventilation — it does not reliably eliminate CO₂; hypercapnia limits its duration.",
+   "Using it as the sole plan in complete upper-airway obstruction — flow cannot reach the alveoli.",
+   "Forgetting it needs a patent airway (jaw thrust/airway opening) for the aventilatory mass flow to work."
+  ],
+  "examTip": "",
+  "sources": [
+   "Dr. Tanya Chawla — DNB December 2025 Paper II notes (THRIVE).",
+   "Patel A, Nouraei SAR. Transnasal Humidified Rapid-Insufflation Ventilatory Exchange (THRIVE). Anaesthesia 2015;70:323–329.",
+   "Miller's Anesthesia, 9th Ed — Airway Management & apnoeic oxygenation.",
+   "Barash, Clinical Anesthesia, 8th Ed — Airway Management."
+  ],
+  "extraMarks": {
+   "heading": "⭐ Extra Theory Edge",
+   "content": [
+    "Patel & Nouraei's original series achieved a median apnoea time of ~14 min in difficult-airway patients — the study that popularised THRIVE.",
+    "Contraindications/cautions: complete airway obstruction, base-of-skull fracture (nasal high flow), and situations needing definitive ventilation. Watch for gastric insufflation and rare barotrauma.",
+    "Distinguish from classical apnoeic oxygenation (low-flow nasal O₂): THRIVE adds humidification, higher flows, dead-space washout and a PEEP effect — hence slower CO₂ rise."
+   ]
+  }
+ },
+ {
+  "qNo": 2,
+  "question": "a) What is the pathophysiology of haemorrhagic shock? [4] b) What are the risks of aggressive volume replacement during early resuscitation? [3] c) What are the advantages of regional anaesthesia for trauma? [3]",
+  "marks": 10,
+  "answer": {
+   "partA": {
+    "title": "Pathophysiology of haemorrhagic shock",
+    "definitionCascade": {
+     "title": "Definition & cascade",
+     "content": [
+      "↓ Blood volume → ↓ venous return → ↓ stroke volume and cardiac output → ↓ tissue perfusion.",
+      "Compensation: baroreceptor-mediated sympathetic activation → tachycardia, vasoconstriction (redistributes flow to heart/brain); RAAS and ADH release → fluid/sodium retention.",
+      "Decompensation: sustained hypoperfusion → anaerobic metabolism → lactic acidosis, cellular injury, capillary leak, and ultimately multi-organ dysfunction.",
+      "ATLS classes: I (<15% loss, normal vitals) → II (15–30%, tachycardia, narrowed pulse pressure) → III (30–40%, hypotension, ↓ urine output) → IV (>40%, marked hypotension, anuria, obtunded).",
+      "Haemorrhagic shock is a form of hypovolaemic shock due to acute blood loss (trauma, surgical, obstetric or GI haemorrhage) leading to inadequate tissue perfusion and oxygen delivery."
+     ]
+    }
+   },
+   "partB": {
+    "title": "Risks of aggressive volume replacement",
+    "intro": "Over-resuscitation with crystalloid harms through haemodilution and endothelial injury: Hence the shift to damage-control resuscitation: permissive hypotension, minimal crystalloid, early balanced blood products (1:1:1), TXA and rapid surgical control.",
+    "points": [
+     "Dilutional coagulopathy and ↓ oxygen-carrying capacity (dilution of clotting factors and haemoglobin).",
+     "\"Popping the clot\" — a rise in BP dislodges early soft clot and re-starts bleeding (basis of permissive hypotension).",
+     "Endothelial glycocalyx damage → capillary leak → tissue oedema (cerebral, pulmonary, gut → ileus) and ↓ lung compliance.",
+     "Worsening of the lethal triad — hypothermia (cold fluids), acidosis (hyperchloraemia) and coagulopathy.",
+     "Abdominal compartment syndrome (↑ intra-abdominal pressure) and ↑ inflammation."
+    ]
+   },
+   "partC": {
+    "title": "Advantages of regional anaesthesia for trauma",
+    "intro": "RA provides targeted analgesia without the systemic effects of general anaesthesia: Limitations: technical difficulty/positioning, coagulopathy, patient refusal, and haemodynamic instability/shock (relative contraindication to sympathectomy-producing blocks).",
+    "points": [
+     "Superior analgesia and attenuation of the surgical stress response.",
+     "Opioid-sparing → less nausea/vomiting, respiratory depression and sedation.",
+     "Respiratory benefits (↓ atelectasis, better cough — e.g. rib-fracture blocks) and haemodynamic stability.",
+     "Early mobilisation, ↓ ICU/hospital stay and morbidity; ↓ VTE events.",
+     "Avoids airway manipulation (useful in the difficult/soiled airway or unstable C-spine)."
+    ]
+   }
+  },
+  "keyPoints": [
+   "Haemorrhagic shock = hypovolaemic shock from blood loss → sympathetic + RAAS/ADH compensation → lactic acidosis when decompensated.",
+   "Aggressive crystalloid → dilutional coagulopathy, clot dislodgement, glycocalyx damage, oedema, lethal triad → use damage-control resuscitation.",
+   "Regional anaesthesia in trauma: superior opioid-sparing analgesia, respiratory benefit, avoids airway manipulation; caution with coagulopathy and shock."
+  ],
+  "commonMistakes": [
+   "Chasing a normal blood pressure with crystalloid before surgical control — permissive hypotension is preferred until bleeding is stopped.",
+   "Delaying blood products and TXA while giving large-volume crystalloid.",
+   "Performing a sympathectomy-producing neuraxial block in a hypovolaemic, uncorrected patient."
+  ],
+  "examTip": "",
+  "sources": [
+   "Dr. Tanya Chawla — DNB December 2025 Paper II notes (haemorrhagic shock; resuscitation; regional for trauma).",
+   "ATLS 10th Edition — Shock & haemorrhage classification.",
+   "CRASH-2 Collaborators. Tranexamic acid in trauma. Lancet 2010;376:23–32.",
+   "Miller's Anesthesia, 9th Ed — Trauma & Massive Transfusion; Barash, Clinical Anesthesia, 8th Ed — Trauma."
+  ],
+  "extraMarks": {
+   "heading": "⭐ Extra Theory Edge",
+   "content": [
+    "Damage-control resuscitation bundle: permissive hypotension (target SBP ~80–90 mmHg, or MAP ~50, until surgical control — not in TBI), haemostatic resuscitation (1:1:1 RBC:FFP:platelets), TXA within 3 h, and damage-control surgery.",
+    "Trauma-induced coagulopathy (TIC) is present early (independent of dilution) — driven by tissue injury, shock, acidosis and hypothermia; guide product use with viscoelastic testing (TEG/ROTEM).",
+    "Specific trauma regional blocks: fascia iliaca / femoral (femoral shaft/neck fractures), serratus anterior / erector spinae (rib fractures) — reduce opioid need and respiratory complications."
+   ]
+  }
+ },
+ {
+  "qNo": 3,
+  "question": "a) What is anaesthetic triggering in malignant hyperthermia? What are the syndromes associated with malignant hyperthermia? [2+3] b) Summarise the acute management for malignant hyperthermia. [5]",
+  "marks": 10,
+  "answer": {
+   "partA": {
+    "title": "Triggering & associated syndromes",
+    "anaestheticTriggering": {
+     "title": "Anaesthetic triggering",
+     "content": [
+      "Triggers: all volatile anaesthetic agents (halothane, iso/sevo/desflurane) and the depolarising relaxant suxamethonium (the most common trigger, often with masseter spasm).",
+      "Safe drugs (non-triggering): nitrous oxide, propofol, etomidate, ketamine, benzodiazepines, opioids, barbiturates, non-depolarising relaxants and all local anaesthetics.",
+      "Cascade: ↑ CO₂ and O₂ consumption, tachycardia/tachypnoea, mixed (respiratory + metabolic) acidosis, rising temperature, sweating, and — later — rhabdomyolysis → ↑CK, hyperkalaemia, myoglobinuria → AKI, arrhythmias, DIC.",
+      "Earliest and most sensitive sign: a rising end-tidal CO₂ (EtCO₂) unresponsive to increased ventilation. (Fever is a late sign.)",
+      "Malignant hyperthermia (MH) is a potentially fatal, autosomal-dominant pharmacogenetic disorder of skeletal muscle. The commonest defect is in the ryanodine receptor (RYR1) gene on chromosome 19q (also CACNA1S). On exposure to a trigger, there is uncontrolled release of Ca²⁺ from the sarcoplasmic reticulum → sustained muscle contraction and a hypermetabolic state with massive ATP consumption."
+     ]
+    },
+    "associatedSyndromesMnemonicCk": {
+     "title": "Associated syndromes (mnemonic \"CK-MEN\")",
+     "content": [
+      "C — Central Core Disease — the strongest association (allelic RYR1 disorder).",
+      "K — King–Denborough syndrome — dysmorphic facies, skeletal abnormalities, myopathy, high MH risk.",
+      "M — Multiminicore disease (often RYR1-related; variable susceptibility).",
+      "E — Evans myopathy; and N — Native American myopathy (STAC3-related; weakness, cleft palate, scoliosis).",
+      "Not true MH (need precautions but not classic MH): Duchenne/Becker & myotonic dystrophy (sux → rhabdomyolysis/hyperkalaemia), Noonan syndrome, osteogenesis imperfecta."
+     ]
+    }
+   },
+   "partB": {
+    "title": "Acute management",
+    "immediate": {
+     "title": "Immediate",
+     "content": [
+      "Stop all triggering agents and the surgery (or finish rapidly); call for help and the MH kit.",
+      "Hyperventilate with 100% O₂ at high fresh-gas flow (>10 L/min); use a clean circuit / activated-charcoal filters.",
+      "Dantrolene — the mainstay: 2.5 mg/kg IV bolus, repeated every 5 min until control, up to ~10 mg/kg. Reconstitute in sterile water, not saline (poor solubility); newer formulation (Ryanodex) dissolves faster."
+     ]
+    },
+    "supportiveMonitoring": {
+     "title": "Supportive & monitoring",
+     "content": [
+      "Active cooling to ~38 °C then stop (cold IV fluids, surface cooling, lavage) — avoid over-cooling.",
+      "Treat hyperkalaemia (calcium, insulin-dextrose, bicarbonate) and acidosis (sodium bicarbonate 1–2 mEq/kg); treat arrhythmias (avoid calcium-channel blockers with dantrolene).",
+      "Maintain urine output >2 mL/kg/h (fluids ± diuretics, urine alkalinisation) to prevent myoglobinuric renal failure.",
+      "Monitor EtCO₂, core temperature, ABG, electrolytes, CK, coagulation (DIC) and urine myoglobin; continue in ICU ≥24 h (recrudescence risk) and refer for MH testing/counselling."
+     ]
+    }
+   }
+  },
+  "keyPoints": [
+   "MH = autosomal-dominant RYR1 defect → uncontrolled SR Ca²⁺ release → hypermetabolism; triggers = volatile agents + suxamethonium.",
+   "Earliest sign = rising EtCO₂; fever is late.",
+   "Mainstay = dantrolene 2.5 mg/kg IV, repeat to ~10 mg/kg, in sterile water; plus 100% O₂/high flow, cooling, treat hyperkalaemia/acidosis, protect kidneys, ICU.",
+   "Associated: Central Core Disease, Multiminicore, King–Denborough."
+  ],
+  "commonMistakes": [
+   "Waiting for hyperthermia to diagnose MH — act on the rising EtCO₂/tachycardia/rigidity.",
+   "Reconstituting dantrolene in saline (poor solubility) or delaying it while arranging cooling.",
+   "Giving calcium-channel blockers with dantrolene (hyperkalaemia/cardiovascular collapse)."
+  ],
+  "examTip": "",
+  "sources": [
+   "Dr. Tanya Chawla — DNB December 2025 Paper II notes (malignant hyperthermia).",
+   "MHAUS & Association of Anaesthetists — Malignant Hyperthermia crisis guideline.",
+   "Miller's Anesthesia, 9th Ed — Malignant Hyperthermia.",
+   "Barash, Clinical Anesthesia, 8th Ed — Malignant Hyperthermia."
+  ],
+  "extraMarks": {
+   "heading": "⭐ Extra Theory Edge",
+   "content": [
+    "Gold-standard diagnosis: the in-vitro (caffeine–halothane) contracture test on a fresh muscle biopsy; genetic testing for RYR1/CACNA1S supports but does not exclude susceptibility.",
+    "Preparing the machine for a susceptible patient: remove/disable vaporisers, change the CO₂ absorbent and circuit, flush with high-flow O₂ (or use activated-charcoal filters), and run a total intravenous (trigger-free) anaesthetic.",
+    "Dantrolene acts by blocking RYR1-mediated Ca²⁺ release; side effects include muscle weakness and phlebitis — each 20 mg vial also contains mannitol."
+   ]
+  }
+ },
+ {
+  "qNo": 4,
+  "question": "a) Post extubation respiratory distress. [5] b) Bronchial blockers. [5]",
+  "marks": 10,
+  "answer": {
+   "partA": {
+    "title": "Post-extubation respiratory distress",
+    "definition": {
+     "title": "Definition",
+     "content": "The appearance of signs and symptoms of respiratory distress within the first 48 hours after extubation. It requires immediate attention to prevent reintubation and its consequences."
+    },
+    "causesClassifyAnatomicalPhysiological": {
+     "title": "Causes (classify: anatomical & physiological)",
+     "content": [
+      "Upper-airway obstruction — laryngospasm, laryngeal/glottic oedema, vocal-cord palsy, residual neuromuscular paralysis, extrinsic compression (neck haematoma, oedema). Signs: stridor, see-saw respiration.",
+      "Lower-airway / pulmonary — bronchospasm, aspiration, pneumothorax, atelectasis, pulmonary oedema (cardiogenic — LV failure/MI; or non-cardiogenic — negative-pressure pulmonary oedema).",
+      "Physiological failure — failure of oxygenation, of ventilation, to protect the airway, or to clear secretions (secretion obstruction is a leading cause of post-extubation respiratory failure)."
+     ]
+    },
+    "highRiskPatients": {
+     "title": "High-risk patients",
+     "content": [
+      "Age >70, anaemia (Hb <10 g/dL), severe illness, prolonged ventilation, continuous IV sedation, unplanned extubation, positive fluid balance."
+     ]
+    },
+    "management": {
+     "title": "Management",
+     "content": [
+      "General: 100% O₂ by non-rebreather mask, monitor SpO₂/EtCO₂/TOF; ABG; sit up; treat residual paralysis (reverse, correct electrolytes); clear secretions.",
+      "Cause-directed: laryngospasm → CPAP/Larson's manoeuvre/deepen ± suxamethonium; oedema → nebulised adrenaline, steroids, head-up; bronchospasm → bronchodilators/steroids; pulmonary oedema → diuretics + vasodilators/NIV; haematoma → open sutures & evacuate.",
+      "NIV (early) for established distress in selected patients; reintubate if failing — treat the underlying factor before the next extubation attempt."
+     ]
+    }
+   },
+   "partB": {
+    "title": "Bronchial blockers",
+    "definition": {
+     "title": "Definition",
+     "content": "A bronchial blocker is a device passed through (or alongside) a single-lumen tube to occlude a main bronchus (or lobar bronchus) and achieve lung isolation / one-lung ventilation, with the operative lung collapsing distal to the inflated balloon."
+    },
+    "advantages": {
+     "title": "Advantages",
+     "content": [
+      "Useful when a double-lumen tube is difficult/impossible — paediatric patients, difficult airway, tracheostomy, in-situ single-lumen tube.",
+      "No tube exchange needed if post-operative ventilation is planned (leave the SLT in situ) — convenient in ICU.",
+      "Allows selective lobar isolation."
+     ]
+    },
+    "disadvantages": {
+     "title": "Disadvantages",
+     "content": [
+      "Slower lung collapse (takes time to inflate/deflate); poor/limited suctioning and CPAP to the operative lung.",
+      "Can be dislodged into the trachea → loss of isolation (potentially disastrous); needs repositioning.",
+      "Requires a fibreoptic bronchoscope for placement and confirmation."
+     ]
+    },
+    "types": {
+     "title": "Types",
+     "content": [
+      "Arndt — nylon wire guide-loop (railroaded over the bronchoscope).",
+      "Cohen — tip-deflecting wheel.",
+      "Fuji Uniblocker — pre-shaped/pre-angled (\"hockey-stick\") tip.",
+      "EZ-Blocker — distal Y-shape with two balloons that straddle the carina.",
+      "Univent tube — a single-lumen tube with an enclosed, retractable bronchial blocker in a separate channel.",
+      "Insertion: coaxial (through the tube) or parallel (alongside it), positioned under fibreoptic guidance."
+     ]
+    }
+   }
+  },
+  "keyPoints": [
+   "Post-extubation distress = distress within 48 h; classify by upper airway / pulmonary / physiological failure; 100% O₂, find and treat the cause, NIV/reintubation as needed.",
+   "Laryngospasm → CPAP/Larson's/deepen ± sux; negative-pressure pulmonary oedema is a classic post-laryngospasm cause.",
+   "Bronchial blocker = lung isolation through a single-lumen tube; good for difficult airway/paediatrics/planned post-op ventilation; needs FOB, slower collapse, dislodgement risk.",
+   "Types: Arndt, Cohen, Fuji Uniblocker, EZ-Blocker."
+  ],
+  "commonMistakes": [
+   "Attributing all post-extubation stridor to laryngospasm — exclude residual paralysis, oedema and haematoma.",
+   "Extubating a high-risk patient without a plan (leak test, reintubation kit, NIV) for distress.",
+   "Placing a bronchial blocker without bronchoscopic confirmation, or forgetting it isolates poorly for suction/CPAP."
+  ],
+  "examTip": "",
+  "sources": [
+   "Dr. Tanya Chawla — DNB December 2025 Paper II notes (post-extubation distress; bronchial blockers).",
+   "Miller's Anesthesia, 9th Ed — Anesthesia for Thoracic Surgery (lung isolation) & airway complications.",
+   "Barash, Clinical Anesthesia, 8th Ed — Anesthesia for Thoracic Surgery.",
+   "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Thoracic Anesthesia."
+  ],
+  "extraMarks": {
+   "heading": "⭐ Extra Theory Edge",
+   "content": [
+    "Cuff-leak test before extubation predicts post-extubation stridor from laryngeal oedema; a small/absent leak → consider steroids and delayed extubation.",
+    "Negative-pressure pulmonary oedema (NPPE): forceful inspiration against a closed glottis (laryngospasm) → highly negative intrathoracic pressure → transudation; treat with oxygen/CPAP, usually self-limiting.",
+    "Bronchial blocker vs DLT: the DLT gives faster, more reliable collapse and better suction/CPAP; the blocker wins for the difficult airway, children, tracheostomy, and when post-operative ventilation is planned."
+   ]
+  }
+ },
+ {
+  "qNo": 5,
+  "question": "a) Supine hypotension syndrome. [5] b) Haematological changes during pregnancy and its anaesthetic implications. [5]",
+  "marks": 10,
+  "answer": {
+   "partA": {
+    "title": "Supine hypotension syndrome (aortocaval compression)",
+    "definitionMechanism": {
+     "title": "Definition & mechanism",
+     "content": "Aortocaval compression syndrome occurs when, from about 20 weeks' gestation, the gravid uterus compresses the inferior vena cava and aorta in the supine position. IVC compression ↓ venous return from the lower body → ↓ cardiac output → maternal hypotension; aortic compression additionally ↓ utero-placental blood flow → fetal compromise."
+    },
+    "featuresDiagnosis": {
+     "title": "Features & diagnosis",
+     "content": [
+      "Supine hypotension, tachycardia (or paradoxical bradycardia), pallor, sweating, nausea, dizziness — and fetal heart-rate changes.",
+      "Marked when sympathetic tone is abolished — e.g. after spinal/epidural anaesthesia the compensatory vasoconstriction is lost, producing profound hypotension."
+     ]
+    },
+    "preventionManagement": {
+     "title": "Prevention & management",
+     "content": [
+      "Left uterine displacement — 15° left lateral tilt or a wedge under the right hip (the single most important measure); full left-lateral if needed.",
+      "Fluid co-loading, and a phenylephrine infusion (first-line vasopressor for spinal hypotension in caesarean section) to maintain baseline BP.",
+      "During resuscitation/CPR: continuous manual left uterine displacement and prompt delivery if no response."
+     ]
+    }
+   },
+   "partB": {
+    "title": "Haematological changes in pregnancy & anaesthetic implications",
+    "changes": {
+     "title": "Changes",
+     "content": [
+      "Plasma volume ↑ ~40–50% and red-cell mass ↑ ~20–30% → the plasma rises more → dilutional (\"physiological\") anaemia of pregnancy.",
+      "Physiological gestational thrombocytopenia (mild fall in platelets) and a physiological leukocytosis.",
+      "Hypercoagulable state — ↑ fibrinogen and factors VII, VIII, X, XII and von Willebrand factor; ↓ protein S and ↓ fibrinolysis; antithrombin ~unchanged. TEG/ROTEM show hypercoagulability."
+     ]
+    },
+    "anaestheticImplications": {
+     "title": "Anaesthetic implications",
+     "content": [
+      "Dilutional anaemia — interpret Hb in context; ensure iron/folate; the increased blood volume gives some reserve against peripartum blood loss (but PPH risk remains).",
+      "Thrombocytopenia — usually safe for neuraxial block if platelets are adequate (commonly ≥70–80 ×10⁹/L and stable); distinguish benign gestational thrombocytopenia from pre-eclampsia/HELLP and ITP.",
+      "Hypercoagulability → high VTE risk — thromboprophylaxis; carefully time neuraxial blocks around LMWH dosing (bleeding vs epidural haematoma).",
+      "Be ready for rapid, major obstetric haemorrhage — group-and-save/crossmatch, TXA, and a massive-transfusion pathway."
+     ]
+    }
+   }
+  },
+  "keyPoints": [
+   "Aortocaval compression from ~20 weeks; supine position → ↓ VR/CO and ↓ utero-placental flow; worst after neuraxial block.",
+   "Manage with left uterine displacement (15° tilt/wedge), fluids and phenylephrine.",
+   "Pregnancy = dilutional anaemia + gestational thrombocytopenia + hypercoagulability (↑VTE); neuraxial needs adequate platelets and correct LMWH timing."
+  ],
+  "commonMistakes": [
+   "Nursing/anaesthetising a term parturient flat supine — always apply left uterine displacement.",
+   "Treating physiological anaemia of pregnancy as pathological, or transfusing on the number alone.",
+   "Assuming any thrombocytopenia is benign — exclude pre-eclampsia/HELLP before neuraxial block."
+  ],
+  "examTip": "",
+  "sources": [
+   "Dr. Tanya Chawla — DNB December 2025 Paper II notes (supine hypotension; pregnancy haematology).",
+   "Chestnut's Obstetric Anesthesia, 6th Ed — Physiologic changes of pregnancy.",
+   "Miller's Anesthesia, 9th Ed — Obstetric Anesthesia.",
+   "Barash, Clinical Anesthesia, 8th Ed — Obstetric Anesthesia."
+  ],
+  "extraMarks": {
+   "heading": "⭐ Extra Theory Edge",
+   "content": [
+    "Phenylephrine over ephedrine for spinal hypotension at caesarean — better fetal acid–base status (ephedrine crosses the placenta and increases fetal metabolic acidosis).",
+    "Cardiac output rises ~40% and is highest immediately postpartum (autotransfusion from the contracting uterus) — a high-risk moment in cardiac disease.",
+    "Gestational thrombocytopenia is a diagnosis of exclusion (mild, late, resolves postpartum, no fetal effect) — versus pre-eclampsia/HELLP, ITP and TTP/HUS."
+   ]
+  }
+ },
+ {
+  "qNo": 6,
+  "question": "a) Neurophysiologic monitoring in scoliosis. [5] b) Diastolic dysfunction and its anesthetic implications. [5]",
+  "marks": 10,
+  "answer": {
+   "partA": {
+    "title": "Intraoperative neurophysiologic monitoring (IONM) in scoliosis",
+    "intro": "The aim is early detection of spinal-cord injury during correction so the surgeon can act before injury becomes permanent.",
+    "modalities": {
+     "title": "Modalities",
+     "content": [
+      "Somatosensory evoked potentials (SSEP) — stimulate a peripheral nerve (e.g. posterior tibial); record cortical (scalp) and spinal (epidural) responses. Monitors the dorsal columns / sensory pathway. Alarm: >50% amplitude drop or >10% latency increase.",
+      "Motor evoked potentials (MEP) — transcranial electrical stimulation of the motor cortex; record the spinal D-wave or muscle CMAP. Monitors the corticospinal (motor) tract — the more critical pathway (anterior cord).",
+      "EMG (spontaneous/triggered) for nerve-root/pedicle-screw monitoring.",
+      "Wake-up (Stagnara) test — largely obsolete: intra-operative emergence to test lower-limb motor function; risks accidental extubation, line/implant displacement, recall."
+     ]
+    },
+    "anaestheticImplicationsCriticalFor": {
+     "title": "Anaesthetic implications (critical for signal quality)",
+     "content": [
+      "Use TIVA (propofol + an opioid/low-dose ketamine) — the technique of choice.",
+      "Volatile agents and nitrous oxide depress evoked potentials (dose-dependently, MEP most sensitive) — keep volatiles <0.5–1 MAC or avoid; avoid N₂O.",
+      "No neuromuscular blockade during MEP recording (only for intubation).",
+      "Ketamine and etomidate augment amplitudes; maintain steady anaesthetic depth and stable physiology (BP, temperature, PaCO₂) — changes alter signals."
+     ]
+    }
+   },
+   "partB": {
+    "title": "Diastolic dysfunction & anaesthetic implications",
+    "definitionPathophysiology": {
+     "title": "Definition & pathophysiology",
+     "content": "Impaired ventricular relaxation and filling. Normal diastole has active early relaxation and passive late filling; in diastolic dysfunction, ↓ LV compliance → ↑ LV filling (end-diastolic) pressure, an increased dependence on the atrial \"kick\" for filling, pulmonary congestion, and a fall in stroke volume/CO. Causes: LVH/hypertension, ischaemia, aortic stenosis, hypertrophic/restrictive cardiomyopathy, constrictive pericarditis; and age, diabetes, amyloidosis/infiltrative disease."
+    },
+    "gradingEchoEA": {
+     "title": "Grading (echo — E/A ratio & E/e′)",
+     "content": [
+      "Grade I — impaired relaxation (E/A <0.8); Grade II — pseudonormal (E/A 0.8–2, E/e′ >14 — the HFpEF pattern); Grade III–IV — restrictive (E/A ≥2), reversible then fixed."
+     ]
+    },
+    "anaestheticGoals": {
+     "title": "Anaesthetic goals",
+     "content": [
+      "Rate: avoid tachycardia (it shortens diastolic filling) — control with β-blockers; treat pain/light anaesthesia.",
+      "Rhythm: maintain sinus rhythm — the atrial kick is essential; new AF can precipitate acute decompensation → cardiovert if unstable.",
+      "Preload: a narrow window — avoid both hypovolaemia and fluid overload (stiff ventricle → easily flips to pulmonary oedema).",
+      "Afterload: avoid sudden falls in SVR; maintain coronary perfusion pressure (especially with LVH/AS).",
+      "Practical: arterial line ± TOE; titrated induction avoiding hypotension; postoperative fluid balance and monitoring for pulmonary oedema."
+     ]
+    }
+   }
+  },
+  "keyPoints": [
+   "SSEP = dorsal columns/sensory; MEP = corticospinal/motor (more important); alarm SSEP = ↓amplitude >50% or ↑latency >10%.",
+   "Use TIVA; volatiles/N₂O depress evoked potentials (MEP most); no NMB during MEP.",
+   "Diastolic dysfunction: keep sinus rhythm + atrial kick, avoid tachycardia, avoid preload extremes, maintain afterload/coronary perfusion."
+  ],
+  "commonMistakes": [
+   "Running a high volatile concentration or N₂O when MEPs are being monitored — signals are lost.",
+   "Using muscle relaxant during MEP recording.",
+   "Aggressive fluids or losing sinus rhythm in diastolic dysfunction → flash pulmonary oedema/decompensation."
+  ],
+  "examTip": "",
+  "sources": [
+   "Dr. Tanya Chawla — DNB December 2025 Paper II notes (IONM in scoliosis; diastolic dysfunction).",
+   "Miller's Anesthesia, 9th Ed — Neurophysiologic Monitoring; Cardiac physiology.",
+   "Barash, Clinical Anesthesia, 8th Ed — Anesthesia for Spine / Neuromonitoring; Cardiac disease.",
+   "ASE/EACVI recommendations for the evaluation of LV diastolic function by echocardiography."
+  ],
+  "extraMarks": {
+   "heading": "⭐ Extra Theory Edge",
+   "content": [
+    "Anterior spinal artery syndrome is the feared injury in scoliosis correction — MEPs (anterior cord) detect it when SSEPs (posterior cord) may still look normal, which is why both are monitored.",
+    "HFpEF (heart failure with preserved ejection fraction) is largely diastolic dysfunction; EF is normal but filling pressures are high — manage volume and rate/rhythm carefully.",
+    "Non-anaesthetic causes of signal change to exclude before blaming surgery: hypotension, hypothermia, hypocapnia, anaemia and limb malposition."
+   ]
+  }
+ },
+ {
+  "qNo": 7,
+  "question": "Describe perioperative anaesthetic considerations and perioperative management for a three day old child scheduled for congenital diaphragmatic repair. [5+5]",
+  "marks": 10,
+  "answer": {
+   "partA": {
+    "title": "Perioperative anaesthetic considerations",
+    "theCoreProblem": {
+     "title": "The core problem",
+     "content": "Congenital diaphragmatic hernia (CDH — usually a left posterolateral Bochdalek defect) allows abdominal viscera into the thorax, producing pulmonary hypoplasia and persistent pulmonary hypertension of the newborn (↑PVR → right-to-left shunting). The key concept: CDH is a physiological emergency, not a surgical one — surgery is deferred until the neonate is stabilised."
+    },
+    "considerations": {
+     "title": "Considerations",
+     "content": [
+      "Respiratory: hypoplastic lungs, poor compliance, risk of pneumothorax/barotrauma; scaphoid abdomen, bowel sounds in chest, mediastinal shift.",
+      "Pulmonary hypertension: labile PVR — worsened by hypoxia, hypercarbia, acidosis, hypothermia and pain → pulmonary hypertensive crises with right-to-left shunt.",
+      "Associated anomalies (cardiac defects, malrotation, trisomy 13/18/21) — screen with echocardiography.",
+      "Neonatal factors — hypothermia, hypoglycaemia, immature organs, small margins for error."
+     ]
+    },
+    "preOperativeStabilisationGoals": {
+     "title": "Pre-operative stabilisation (goals)",
+     "content": [
+      "Awake endotracheal intubation; avoid bag-mask ventilation (gas distends herniated bowel and worsens lung compression). Nasogastric tube to decompress the stomach.",
+      "Gentle (\"lung-protective\") ventilation — PIP <25 cmH₂O, permissive hypercapnia, preductal SpO₂ ≥ ~85–90%.",
+      "Minimise PVR (avoid hypoxia/hypercarbia/acidosis/cold/pain); correct metabolic acidosis; maintain volume/perfusion.",
+      "For refractory pulmonary hypertension: inhaled nitric oxide, HFOV, and ECMO as rescue. Operate only once stable."
+     ]
+    }
+   },
+   "partB": {
+    "title": "Perioperative management",
+    "inductionMaintenance": {
+     "title": "Induction & maintenance",
+     "content": [
+      "Continue the ET tube; avoid positive-pressure mask ventilation and avoid N₂O (bowel distension).",
+      "Balanced technique — high-dose opioid (fentanyl) + non-depolarising relaxant ± low-dose volatile/air-oxygen; titrate to haemodynamic stability (obtund the pulmonary-hypertensive stress response).",
+      "Continue gentle ventilation (low PIP, permissive hypercapnia); maintain oxygenation without hyperoxia/barotrauma."
+     ]
+    },
+    "monitoringSupportiveCare": {
+     "title": "Monitoring & supportive care",
+     "content": [
+      "Pre-ductal (right hand) and post-ductal SpO₂ — the difference indicates the degree of right-to-left ductal shunting.",
+      "ECG, invasive/non-invasive BP (right radial arterial line = preductal for ABG), temperature (prevent hypothermia), glucose, capnography.",
+      "Treat pulmonary-hypertensive crises: 100% O₂, hyperventilate transiently, deepen anaesthesia/analgesia, inhaled NO, optimise pH."
+     ]
+    },
+    "surgicalPostoperative": {
+     "title": "Surgical & postoperative",
+     "content": [
+      "Avoid tight abdominal closure after reduction (↑ intra-abdominal pressure → IVC compression/↓ venous return, splinted diaphragm, compromised ventilation) — a staged/silo or ventral-hernia closure may be needed.",
+      "Beware sudden fall in compliance / contralateral pneumothorax after reduction.",
+      "Postoperative ICU ventilation and analgesia; continue pulmonary-hypertension management; do not aggressively re-expand the ipsilateral hypoplastic lung."
+     ]
+    }
+   }
+  },
+  "keyPoints": [
+   "CDH = pulmonary hypoplasia + persistent pulmonary hypertension; it is a physiological, not surgical, emergency — stabilise first, delay surgery.",
+   "Awake intubation + NG decompression; avoid bag-mask ventilation and N₂O.",
+   "Gentle ventilation (PIP <25, permissive hypercapnia); minimise PVR; pre- & post-ductal SpO₂; iNO/HFOV/ECMO for refractory PHT.",
+   "Avoid tight abdominal closure; post-op ICU ventilation/analgesia."
+  ],
+  "commonMistakes": [
+   "Bag-mask ventilating a CDH neonate (distends intrathoracic bowel) or using N₂O.",
+   "Aggressive high-pressure ventilation to \"recruit\" the hypoplastic lung → barotrauma/contralateral pneumothorax.",
+   "Rushing to surgery before pulmonary hypertension is controlled, or forcing a tight abdominal closure."
+  ],
+  "examTip": "",
+  "sources": [
+   "Dr. Tanya Chawla — DNB December 2025 Paper II notes (congenital diaphragmatic hernia).",
+   "Gregory's Pediatric Anesthesia — Neonatal surgical emergencies.",
+   "Miller's Anesthesia, 9th Ed — Neonatal & Pediatric Anesthesia.",
+   "Coté & Lerman, A Practice of Anesthesia for Infants and Children."
+  ],
+  "extraMarks": {
+   "heading": "⭐ Extra Theory Edge",
+   "content": [
+    "Prognostic indices: the lung-to-head ratio (LHR/O-E LHR) and liver position on antenatal imaging predict severity; \"liver up\" and low LHR are poor prognostic signs.",
+    "Gentle ventilation / permissive hypercapnia strategies (accepting preductal SpO₂ ≥85%, PaCO₂ up to ~60–65) reduced ventilator-induced lung injury and improved survival compared with historical hyperventilation to alkalosis.",
+    "Ductal shunting: a large pre- vs post-ductal saturation gap signals suprasystemic PVR with right-to-left flow across the PDA — target is to lower PVR, not simply raise FiO₂."
+   ]
+  }
+ },
+ {
+  "qNo": 8,
+  "question": "a) Spinal additives. [5] b) List the neurological complications of spinal anaesthesia. What are the factors which affect post dural puncture headache? [3+2]",
+  "marks": 10,
+  "answer": {
+   "partA": {
+    "title": "Spinal (intrathecal) additives",
+    "definitionAdvantages": {
+     "title": "Definition & advantages",
+     "content": "Drugs added to the intrathecal local anaesthetic to enhance, prolong or modify the block. Advantages: ↑ duration and quality of block, a local-anaesthetic-sparing effect (↓ dose → ↓ toxicity), and prolonged post-operative analgesia."
+    },
+    "agents": {
+     "title": "Agents",
+     "content": [
+      "Opioids (act on dorsal-horn opioid receptors): fentanyl — lipophilic, rapid onset, short duration, minimal respiratory depression; morphine — hydrophilic, long duration but risk of delayed respiratory depression (6–12 h) plus pruritus, nausea, urinary retention.",
+      "α₂-agonists — clonidine, dexmedetomidine: prolong block/analgesia; side-effects bradycardia and hypotension (dexmedetomidine > clonidine).",
+      "Vasoconstrictors — adrenaline (phenylephrine): ↓ systemic absorption, prolong block; caution in cardiac patients (tachycardia).",
+      "NMDA antagonists — ketamine, magnesium sulfate.",
+      "Neostigmine — analgesia via spinal cholinergic mechanism but limited by severe nausea and vomiting."
+     ]
+    }
+   },
+   "partB": {
+    "title": "Neurological complications & PDPH factors",
+    "neurologicalComplicationsOfSpinal": {
+     "title": "Neurological complications of spinal anaesthesia",
+     "content": [
+      "Early: direct nerve/root injury, spinal (epidural) haematoma (the most feared — needs emergency decompression), spinal/epidural abscess, and total spinal anaesthesia.",
+      "Delayed: post-dural-puncture headache (the most common), transient neurological symptoms (TNS), adhesive arachnoiditis, meningitis, cauda equina syndrome, and persistent neurological deficit."
+     ]
+    },
+    "factorsAffectingPdph": {
+     "title": "Factors affecting PDPH",
+     "content": [
+      "Patient: young age, female sex, pregnancy, low BMI, and previous PDPH/chronic headache (more common).",
+      "Needle: larger gauge → more PDPH; cutting (Quincke) tips cause more than pencil-point (Whitacre/Sprotte) needles; orienting a cutting bevel parallel to the longitudinal dural fibres reduces it; multiple dural punctures increase it.",
+      "Mechanism: CSF leak through the dural puncture > production → ↓ CSF pressure → traction on pain-sensitive intracranial structures and compensatory cerebral vasodilatation → a postural (upright-worsened) fronto-occipital headache, ± neck stiffness, photophobia, tinnitus and CN VI palsy."
+     ]
+    }
+   }
+  },
+  "keyPoints": [
+   "Additives (opioids, α₂-agonists, vasoconstrictors, NMDA antagonists, neostigmine) prolong/improve the block and spare local anaesthetic.",
+   "Intrathecal morphine → delayed respiratory depression; monitor.",
+   "Spinal haematoma = most feared neuro complication; PDPH = most common.",
+   "PDPH ↑ with larger, cutting needles and in young pregnant women; use small pencil-point needles."
+  ],
+  "commonMistakes": [
+   "Forgetting delayed respiratory depression after intrathecal morphine.",
+   "Using large cutting (Quincke) needles in young women — high PDPH risk; prefer 25–27G pencil-point.",
+   "Missing an evolving spinal haematoma (progressive weakness/back pain, especially with anticoagulants) — an MRI-and-decompress emergency."
+  ],
+  "examTip": "",
+  "sources": [
+   "Dr. Tanya Chawla — DNB December 2025 Paper II notes (spinal additives; neuro complications; PDPH).",
+   "Miller's Anesthesia, 9th Ed — Spinal, Epidural, and Caudal Anesthesia.",
+   "Barash, Clinical Anesthesia, 8th Ed — Spinal & Epidural Anesthesia.",
+   "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Spinal Anesthesia."
+  ],
+  "extraMarks": {
+   "heading": "⭐ Extra Theory Edge",
+   "content": [
+    "PDPH management: conservative (bed rest, hydration, analgesia, caffeine) first; the definitive treatment for severe/persistent PDPH is an epidural blood patch (~15–20 mL autologous blood).",
+    "Transient neurological symptoms (TNS): back/buttock/leg pain after spinal (classically hyperbaric lidocaine, lithotomy position) that resolves in a few days — not a structural injury.",
+    "Neuraxial and anticoagulation: follow ASRA timing intervals to minimise the risk of spinal haematoma (e.g. hold LMWH prophylaxis ~12 h before neuraxial puncture/catheter removal)."
+   ]
+  }
+ },
+ {
+  "qNo": 9,
+  "question": "Discuss the preoperative optimisation, intraoperative and postoperative management for a morbidly obese patient scheduled for bariatric (gastric bypass) surgery. [3+4+3]",
+  "marks": 10,
+  "answer": {
+   "partA": {
+    "title": "Preoperative assessment & optimisation [3]",
+    "focusedAssessment": {
+     "title": "Focused assessment",
+     "content": [
+      "Morbid obesity with multiple comorbidities — screen for IHD/CAD, assess functional capacity in METs, restrictive/obstructive lung disease and nutritional deficiencies.",
+      "OSA — apply the STOP-BANG score; ask about sleeping habits (able to lie supine or not) and CPAP use.",
+      "Airway — anticipate difficult mask ventilation and difficult intubation; assess for difficult IV access.",
+      "Investigations: baseline CBC, KFT, LFT, TFT, coagulation; ABG (pulmonary); ECG and echocardiography (cardiac); and where indicated PFT and a sleep study."
+     ]
+    },
+    "optimisation": {
+     "title": "Optimisation",
+     "content": "Weight reduction, CPAP use, an optimised diet, physical exercise, chest physiotherapy with incentive spirometry, and a plan for multimodal analgesia. Optimise cardiac and respiratory status before an elective list."
+    }
+   },
+   "partB": {
+    "title": "Intraoperative management [4]",
+    "anticipatedProblems": {
+     "title": "Anticipated problems",
+     "content": [
+      "Difficult mask ventilation and difficult airway (anatomical & physiological); difficult IV cannulation.",
+      "Logistical: need a large BP cuff, a table rated for the weight, and drug doses adjusted to lean/ideal body weight; difficult positioning; ↑ risk of peripheral nerve injury.",
+      "↑ blood loss, longer duration, and attention to fluid, electrolyte and acid–base balance."
+     ]
+    },
+    "anaesthesiaGoalsTechnique": {
+     "title": "Anaesthesia goals & technique",
+     "content": [
+      "Technique: general anaesthesia with a controlled ventilation via ETT ± thoracic epidural.",
+      "Pre-oxygenation: 3 min tidal breathing / vital-capacity breaths, in head-up (ramped) position, ± CPAP with FiO₂ 100% (NIV may also be used).",
+      "Induction: modified rapid sequence induction — titrated propofol (dosed to lean body weight ~2 mg/kg) + opioid (1–1.5 µg/kg) + a relaxant (e.g. atracurium 0.5 mg/kg); confirm ETT position and place a Ryle's tube.",
+      "Maintenance: volatile in air/O₂ — desflurane is ideal (low blood solubility → rapid emergence); lung-protective ventilation with permissive hypercapnia, plateau pressure <30 cmH₂O and peak <35 cmH₂O.",
+      "Fluids: avoid overload — use goal-directed fluid therapy; maintain haemodynamic stability with appropriate monitoring (IBP, CVP, airway pressures)."
+     ]
+    }
+   },
+   "partC": {
+    "title": "Postoperative management [3]",
+    "extubationRecovery": {
+     "title": "Extubation & recovery",
+     "content": [
+      "Awake extubation after return of reflexes, in the head-up position with O₂ supplementation ± CPAP.",
+      "Multimodal analgesia — paracetamol, NSAIDs (if not contraindicated), thoracic epidural, TAP or quadratus lumborum block; minimise systemic opioids.",
+      "Respiratory: chest physiotherapy, incentive spirometry, bronchodilators and steroids as needed.",
+      "DVT prophylaxis (mechanical + pharmacological) and early mobilisation."
+     ]
+    }
+   }
+  },
+  "keyPoints": [
+   "Screen aggressively for OSA (STOP-BANG), cardiac and respiratory disease; optimise with weight loss, CPAP and prehabilitation.",
+   "Anticipate difficult airway; pre-oxygenate ramped/head-up and perform a modified RSI with drugs dosed to lean body weight.",
+   "Desflurane + lung-protective ventilation + goal-directed fluids; awake head-up extubation.",
+   "Postoperatively: opioid-sparing multimodal analgesia, respiratory physiotherapy, DVT prophylaxis, early mobilisation."
+  ],
+  "commonMistakes": [
+   "Dosing all drugs to total body weight — lipophilic induction agents/opioids should use lean or ideal body weight.",
+   "Supine pre-oxygenation and induction — the obese patient desaturates fast; use the head-up ramped position.",
+   "Heavy systemic opioids and liberal fluids — worsen respiratory depression and pulmonary complications.",
+   "Forgetting VTE prophylaxis — bariatric patients are high-risk for thromboembolism."
+  ],
+  "examTip": "",
+  "sources": [
+   "Dr. Tanya Chawla — DNB December 2025 Paper II notes (bariatric surgery: preoperative, intraoperative & postoperative management).",
+   "Miller's Anesthesia, 9th Ed — Anesthesia for Bariatric Surgery / The Obese Patient.",
+   "Barash, Clinical Anesthesia, 8th Ed — Obesity, Bariatric Surgery.",
+   "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Anesthesia for Patients with Obesity."
+  ],
+  "extraMarks": {
+   "heading": "⭐ Extra Theory Edge",
+   "content": [
+    "Body-weight scalars: use lean body weight for propofol induction, opioids and non-depolarising relaxants; total body weight for suxamethonium and (loading) some antibiotics; ideal body weight for maintenance volatile and tidal-volume setting.",
+    "Discharge advice after the analgesia/epidural component: continue analgesia and stool softeners, avoid heavy lifting/straining/air travel for the specified interval, and give a contact number for red-flag symptoms.",
+    "Regional adjuncts (thoracic epidural, TAP/QL blocks) reduce opioid load and improve respiratory recovery — a key theme in obese patients."
+   ]
+  }
+ },
+ {
+  "qNo": 10,
+  "question": "a) Autonomic changes in spinal cord transection. [5] b) Perioperative and anaesthesia neurotoxicity in children. [5]",
+  "marks": 10,
+  "answer": {
+   "partA": {
+    "title": "Autonomic changes in spinal cord transection [5]",
+    "basis": {
+     "title": "Basis",
+     "content": "Spinal cord transection causes loss of supraspinal control over autonomic pathways, leading to acute and chronic cardiovascular, thermoregulatory and visceral dysfunction. The sympathetic outflow is thoracolumbar (T1–L2) and the parasympathetic is craniosacral; loss of descending sympathetic control leaves unopposed parasympathetic activity below the lesion."
+    },
+    "acutePhaseSpinalShock": {
+     "title": "Acute phase — spinal shock (hours to weeks)",
+     "content": [
+      "Cardiovascular: hypotension and bradycardia from loss of sympathetic tone; peripheral vasodilatation → warm, dry skin.",
+      "Reflexes: areflexia below the lesion.",
+      "Temperature: poikilothermia — cannot regulate temperature."
+     ]
+    },
+    "chronicPhaseAfterSpinal": {
+     "title": "Chronic phase — after spinal shock resolves",
+     "content": [
+      "Autonomic dysreflexia (lesions above T6): a stimulus below the lesion (bladder/bowel distension, pain) triggers a massive sympathetic discharge → hypertension, reflex bradycardia, and sweating/flushing above the lesion. Treatment: remove the stimulus and give antihypertensives.",
+      "Cardiovascular: persistent bradycardia and orthostatic hypotension.",
+      "Thermoregulation: loss of sweating below the lesion; cannot regulate temperature.",
+      "Bladder & bowel: neurogenic bladder, constipation, sexual dysfunction; reflexes return."
+     ]
+    },
+    "anaestheticImplications": {
+     "title": "Anaesthetic implications",
+     "content": [
+      "Hypotension → fluids + vasopressors; bradycardia → atropine.",
+      "Prevent autonomic dysreflexia — avoid triggers, ensure bladder/bowel decompression, and provide deep anaesthesia; regional (spinal/epidural) anaesthesia is preferred as it blocks the afferent limb of the reflex.",
+      "Avoid suxamethonium after the acute phase (hyperkalaemia risk from receptor upregulation)."
+     ]
+    }
+   },
+   "partB": {
+    "title": "Perioperative & anaesthesia neurotoxicity in children [5]",
+    "conceptVulnerableWindow": {
+     "title": "Concept & vulnerable window",
+     "content": "Sedatives and anaesthetic agents may have harmful effects on the developing brain. Brain development begins in the 3rd trimester, is not complete at birth, and continues over the first years of life. The period of maximal synaptogenesis — roughly 34 weeks of gestational age to ~24 months post-partum (the first 2–3 years) — is the most vulnerable. A single brief exposure appears to have no adverse effect; repeated/prolonged exposure has been linked to neuronal apoptosis and neurodegeneration in animal models."
+    },
+    "mechanisms": {
+     "title": "Mechanisms",
+     "content": [
+      "Dose- and concentration-dependent damage to neuronal and glial architecture; neuroinflammation; inhibition of neurotrophic factors.",
+      "Generation of reactive oxygen species; activation of apoptosis via NMDA antagonism and GABA agonism.",
+      "Suppression of neurogenesis, altered neuronal differentiation, loss of neural stem cells, and impaired synaptogenesis; variation in neuronal excitability and receptor expression."
+     ]
+    },
+    "clinicalEvidence": {
+     "title": "Clinical evidence",
+     "content": [
+      "Association with later learning, behavioural and memory problems; note that uncontrolled pain itself can promote neuronal apoptosis (ketamine may be neuroprotective in this context).",
+      "Prospective human studies: the PANDA study (single exposure <36 months for inguinal hernia; tested at 8–15 y vs siblings) showed no difference in IQ; the GAS trial (infants <6 months, GA vs awake spinal, tested at 2 and 5 y) showed no neurodevelopmental deficit; the MASK study compared exposed vs unexposed children <3 years."
+     ]
+    },
+    "practicalApproach": {
+     "title": "Practical approach",
+     "content": [
+      "For an elective procedure, if delay adds no risk, postpone until after the brain growth spurt; minimise dose and duration of exposure.",
+      "Reassure parents that there is no evidence that a single, well-conducted anaesthetic harms the brain."
+     ]
+    }
+   }
+  },
+  "keyPoints": [
+   "Cord transection → loss of supraspinal autonomic control; acute spinal shock (hypotension, bradycardia, areflexia, poikilothermia).",
+   "Chronic phase → autonomic dysreflexia in lesions above T6 (hypertension + reflex bradycardia from a stimulus below the lesion).",
+   "Anaesthesia: treat hypotension/bradycardia, prevent dysreflexia (regional preferred), avoid suxamethonium.",
+   "Neurotoxicity risk is greatest during peak synaptogenesis (34 wk GA–~2 y); animal data show apoptosis, but PANDA/GAS show no harm from a single exposure."
+  ],
+  "commonMistakes": [
+   "Confusing spinal shock (flaccid, areflexic, hypotensive) with autonomic dysreflexia (hypertensive crisis) — they are different phases.",
+   "Forgetting the T6 threshold for autonomic dysreflexia and that the stimulus arises below the lesion.",
+   "Overstating human evidence — animal studies show neurotoxicity; the major prospective human trials (PANDA, GAS) found no deficit after single exposure.",
+   "Delaying genuinely urgent/emergency paediatric surgery out of neurotoxicity fear."
+  ],
+  "examTip": "",
+  "sources": [
+   "Dr. Tanya Chawla — DNB December 2025 Paper II notes (autonomic changes in spinal cord transection; anaesthesia neurotoxicity in children).",
+   "Miller's Anesthesia, 9th Ed — Spinal Cord Injury; Anesthetic Neurotoxicity in the Developing Brain.",
+   "Barash, Clinical Anesthesia, 8th Ed — Autonomic dysreflexia; Pediatric anaesthesia neurotoxicity.",
+   "SmartTots / FDA guidance; PANDA, GAS and MASK studies."
+  ],
+  "extraMarks": {
+   "heading": "⭐ Extra Theory Edge",
+   "content": [
+    "Autonomic dysreflexia is an emergency: sit the patient up, remove the stimulus (kink-free catheter, treat impaction), and give a rapid-onset short-acting antihypertensive (GTN, nifedipine, labetalol); untreated it can cause intracranial haemorrhage, seizures and death.",
+    "Preclinical mitigation: late-3rd-trimester exposure is lower risk; strategies include dose reduction and interfering with the apoptotic cascade downstream of NMDA antagonism/GABA agonism.",
+    "The EU SAFE TOTS initiative and ongoing studies emphasise that current human evidence does not justify avoiding necessary surgery, while research continues."
+   ]
+  }
+ }
+]
