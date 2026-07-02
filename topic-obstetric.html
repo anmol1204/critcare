@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Obstetric Critical Care — Eclampsia, PPH, AFE — CritCare.in</title>
+  <meta name="description" content="ICU care of the critically ill pregnant patient: physiological changes, pre-eclampsia/eclampsia and magnesium, HELLP, major postpartum haemorrhage and TXA (WOMAN trial), amniotic fluid embolism, peripartum cardiomyopathy, and maternal cardiac arrest with perimortem caesarean. NICE, ACOG, FOGSI." />
+  <link rel="canonical" href="https://critcare.in/topic-obstetric.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Obstetric Critical Care</div>
+    <h1>🤰 Obstetric Critical Care</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">NICE NG133</span>
+      <span class="gbadge kdigo">ACOG</span>
+      <span class="gbadge isccm">FOGSI</span>
+      <span class="gbadge esicm">WOMAN Trial</span>
+      <span class="gbadge apasl">Marino 5th Ed</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Eclampsia · PPH · AFE</span>
+      <span class="topic-tag">MgSO₄ · TXA</span>
+      <span class="topic-tag">Perimortem C-section</span>
+      <span class="topic-updated">NICE NG133 · ACOG PB 222/183 · Collaborative Eclampsia Trial · MAGPIE · WOMAN Trial (Lancet 2017) · AHA Maternal Arrest 2015 · FOGSI</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Reviewed by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Emergency &amp; Critical Care Medicine, SGPGIMS</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. The Pregnant Patient in the ICU</a></li>
+        <li><a href="#s2">2. Physiology of Pregnancy</a></li>
+        <li><a href="#s3">3. The Big Four — Guidelines</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Obstetric Intensive Care · Washington Manual</span>
+      <h2>Two Patients, Altered Physiology, a Time Limit</h2>
+      <div class="book-quote">
+        <p>"The critically ill obstetric patient defies the usual rules: she is young and previously well, so her compensatory reserve masks deterioration until it is sudden and catastrophic; her physiology is remodelled by pregnancy, so 'normal' numbers may be abnormal and abnormal numbers ominous; and there are two patients, whose interests usually align but occasionally diverge. Above all, the single intervention that most often saves the mother — and sometimes the fetus — is delivery."</p>
+        <cite>Adapted from Obstetric Intensive Care Manual, 5th Ed &amp; the Washington Manual of Critical Care, 4th Ed.</cite>
+      </div>
+
+      <h3>Why she deteriorates late and fast</h3>
+      <ul>
+        <li>Increased blood volume and cardiac output mean a young mother can <strong>lose 1200–1500 mL before her BP falls</strong> — tachycardia and narrowing pulse pressure precede hypotension.</li>
+        <li>The <strong>gravid uterus compresses the IVC</strong> from ~20 weeks (or a fundus at/above the umbilicus), reducing venous return when supine — <strong>tilt her left</strong>.</li>
+        <li>The leading direct causes of maternal death worldwide and in India are <strong>haemorrhage, hypertensive disorders (eclampsia), and sepsis</strong> — with venous thromboembolism and amniotic fluid embolism close behind.</li>
+      </ul>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ "Treat the mother first" — the counter-intuitive truth</div>
+        <p>The best resuscitation for the fetus is a well-resuscitated mother. Give oxygen, fluids, blood, vasopressors, imaging with abdominal shielding and needed drugs to the mother without hesitation. Withholding maternal treatment out of misplaced fetal concern kills both. The exception during arrest: <strong>delivery of the fetus helps resuscitate the mother</strong> (relieves aortocaval compression).</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>How Pregnancy Remodels Physiology</h2>
+      <div class="book-quote">
+        <p>"Pregnancy is a state of high-flow, low-resistance circulation, chronic respiratory alkalosis, dilutional anaemia and hypercoagulability. Every one of these adaptations changes the interpretation of a blood gas, a haemoglobin, a blood pressure and a D-dimer at the bedside. The intensivist who applies non-pregnant reference ranges will both over-treat the normal and under-treat the dangerous."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. The Pregnant Patient. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 How pre-eclampsia progresses to eclampsia &amp; HELLP</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span>Abnormal placentation — failed spiral-artery remodelling</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Placental ischaemia → release of <strong>anti-angiogenic factors</strong> (sFlt-1 ↑, PlGF ↓)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Systemic <strong>endothelial dysfunction</strong> &amp; vasospasm</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node">Hypertension + proteinuria; cerebral vasospasm/oedema → <strong>seizure (eclampsia)</strong></div>
+          <div class="pf-node">Microangiopathy → <strong>HELLP</strong> (haemolysis, ↑LFTs, low platelets), DIC, AKI</div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Cure</span><strong>Delivery of the placenta</strong> — the only definitive treatment</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — normal pregnancy values you must recalibrate to</div>
+        <ul>
+          <li><strong>Cardiovascular:</strong> CO ↑40–50%, HR ↑10–20 bpm, SVR ↓, BP falls mid-trimester. A "normal" BP may be relatively high; tachycardia is expected — so new hypotension is late and ominous.</li>
+          <li><strong>Respiratory:</strong> minute ventilation ↑ → chronic <strong>respiratory alkalosis</strong> (PaCO₂ ~28–32 mmHg, HCO₃⁻ ~18–21). A "normal" PaCO₂ of 40 in a labouring woman signals <strong>impending respiratory failure</strong>. FRC falls and O₂ consumption rises → <strong>rapid desaturation on induction</strong>.</li>
+          <li><strong>Haematological:</strong> plasma volume ↑ &gt; red-cell mass → <strong>dilutional anaemia</strong>; physiological leucocytosis; <strong>hypercoagulable</strong> (↑ clotting factors, ↓ protein S) → VTE risk; D-dimer is unhelpful.</li>
+          <li><strong>Renal:</strong> GFR ↑ → creatinine and urea run <strong>low</strong> (creatinine ~45–60 µmol/L); a "normal" creatinine may mean renal impairment.</li>
+          <li><strong>Airway/GI:</strong> oedematous airway (use a smaller tube), delayed gastric emptying → <strong>high aspiration risk</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — aortocaval compression &amp; arrest physiology</div>
+        <p>From the mid-second trimester the gravid uterus compresses the IVC and aorta when supine, dropping venous return and cardiac output. During CPR this means chest compressions are far less effective supine. <strong>Manual left uterine displacement</strong> (or left tilt) must be continuous, and if there is no ROSC, <strong>emptying the uterus by perimortem caesarean relieves the obstruction</strong> and can restore the mother's circulation.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · NICE · ACOG · FOGSI · WOMAN Trial</span>
+      <h2>The Big Four Obstetric Emergencies</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Pre-eclampsia &amp; eclampsia — magnesium is the drug <span class="gr-s">Collaborative Eclampsia Trial · MAGPIE</span></div>
+        <div class="gr-text">
+          <strong>Severe features:</strong> BP ≥160/110, symptoms (headache, visual disturbance, epigastric pain), thrombocytopenia, renal/hepatic impairment, pulmonary oedema.<br>
+          <strong>Magnesium sulfate</strong> prevents (MAGPIE) and treats (Collaborative Eclampsia Trial — superior to diazepam/phenytoin) eclamptic seizures. Loading 4 g IV over 5–10 min, then 1 g/h infusion, continued 24 h after delivery or last seizure.<br>
+          <strong>Control severe hypertension</strong> with IV labetalol, hydralazine, or oral nifedipine (target &lt;160/110, avoid precipitous drops).<br>
+          <strong>Definitive treatment is delivery</strong> — timing balances gestation against maternal risk. Magnesium is <em>seizure prophylaxis/treatment, not an antihypertensive.</em>
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Postpartum haemorrhage (PPH) — the "4 Ts" + early TXA <span class="gr-s">WOMAN Trial 2017</span></div>
+        <div class="gr-text">
+          Causes: <strong>Tone</strong> (atony — commonest), <strong>Trauma</strong>, <strong>Tissue</strong> (retained products), <strong>Thrombin</strong> (coagulopathy).<br>
+          <strong>Tranexamic acid 1 g IV within 3 hours</strong> of birth reduces death from bleeding (<strong>WOMAN trial</strong>) — give early.<br>
+          Escalate: uterine massage + uterotonics (oxytocin → ergometrine → carboprost → misoprostol), balloon tamponade, examine for tears/retained tissue, activate <strong>massive transfusion</strong> (early fibrinogen/cryoprecipitate — aim fibrinogen &gt;2 g/L in PPH), and surgical measures (B-Lynch, artery ligation, embolisation, hysterectomy).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Amniotic fluid embolism (AFE) — supportive &amp; anticipate DIC</div>
+        <div class="gr-text">
+          A rare, catastrophic anaphylactoid response to amniotic material: sudden <strong>hypoxia, cardiovascular collapse and coagulopathy</strong> around labour/delivery. It is a <strong>clinical diagnosis of exclusion</strong>. Management is supportive — high-quality resuscitation, oxygenation/ventilation, vasopressors and inotropes (RV support), and <strong>early, aggressive treatment of DIC</strong> with blood products (including fibrinogen). Consider ECMO in refractory cases. Perimortem caesarean if arrest.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Peripartum cardiomyopathy &amp; the failing heart</div>
+        <div class="gr-text">
+          New systolic heart failure (LVEF &lt;45%) in late pregnancy to 5 months postpartum, without another cause. Treat as heart failure (careful diuresis, afterload reduction — <strong>avoid ACE inhibitors/ARBs antenatally</strong>, use hydralazine/nitrates), anticoagulate if LVEF very low, and consider <strong>bromocriptine</strong> in selected cases. Severe cases may need mechanical support/ECMO. Differentiate from pre-existing cardiac disease and pre-eclampsia-related pulmonary oedema.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Haemorrhage and hypertensive disorders remain the leading direct causes of maternal death in India</strong>, alongside sepsis. Anaemia in pregnancy is highly prevalent, so women tolerate blood loss poorly and reach shock sooner — a low booking haemoglobin should heighten your PPH preparedness.</p>
+        <p><strong>MgSO₄ regimens:</strong> both the Pritchard (IM) and Zuspan (IV) regimens are used where infusion pumps are limited; FOGSI endorses low-dose regimens in resource-limited settings. Monitor clinically (reflexes, respiratory rate, urine output) rather than relying on routine levels.</p>
+        <p><strong>Sepsis:</strong> consider genital-tract sepsis, septic abortion, and (regionally) malaria, dengue and viral hepatitis (E) in the febrile or jaundiced pregnant patient.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Drug Reference — Obstetric Emergencies</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Magnesium sulfate</strong></td><td>Eclampsia — treat/prevent seizures</td><td>4 g IV over 5–10 min → 1 g/h infusion; recurrent seizure: 2–4 g IV. Continue 24 h after delivery/last fit</td><td>Monitor reflexes, RR, urine output. Toxicity → <strong>calcium gluconate 1 g IV</strong>. Not an antihypertensive</td></tr>
+            <tr><td><strong>Labetalol</strong></td><td>Severe hypertension</td><td>20 mg IV → 40–80 mg every 10 min (max 300 mg) or infusion</td><td>Avoid in asthma/heart block; first-line IV</td></tr>
+            <tr><td><strong>Hydralazine</strong></td><td>Severe hypertension</td><td>5–10 mg IV every 20 min</td><td>Can cause reflex tachycardia/maternal hypotension → fetal distress</td></tr>
+            <tr><td><strong>Nifedipine (oral)</strong></td><td>Severe hypertension</td><td>10 mg PO, repeat per protocol</td><td>Do not use sublingual; oral immediate-release only</td></tr>
+            <tr><td><strong>Tranexamic acid</strong></td><td>PPH</td><td>1 g IV over 10 min <strong>within 3 h</strong>; repeat 1 g if bleeding continues</td><td>WOMAN trial — reduces death from bleeding; earlier is better</td></tr>
+            <tr><td><strong>Oxytocin</strong></td><td>Uterine atony (1st line)</td><td>Bolus (slow) + infusion per protocol</td><td>Rapid bolus → hypotension; titrate</td></tr>
+            <tr><td><strong>Carboprost (15-methyl PGF₂α)</strong></td><td>Atony refractory to oxytocin/ergometrine</td><td>250 µg IM, repeat every 15 min (max 8)</td><td><strong>Contraindicated in asthma</strong>; causes bronchospasm</td></tr>
+            <tr><td><strong>Ergometrine / carbetocin / misoprostol</strong></td><td>Atony</td><td>Ergometrine 0.2–0.5 mg IM; misoprostol 800 µg PR/SL</td><td>Ergometrine avoided in hypertension/pre-eclampsia</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>The Collapsing Obstetric Patient</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Resuscitate the mother — with left uterine displacement</h4>
+          <ul>
+            <li>A–B–C; high-flow O₂ (desaturates fast); large-bore access above the diaphragm</li>
+            <li><strong>Left lateral tilt / manual left uterine displacement</strong> if &gt;20 weeks (relieve IVC compression)</li>
+            <li>Anticipate difficult airway + aspiration; RSI with cricoid, smaller tube</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Identify the syndrome</h4>
+          <ul>
+            <li><strong>Seizure + hypertension</strong> → eclampsia → magnesium</li>
+            <li><strong>Bleeding</strong> → PPH → 4 Ts + TXA + uterotonics + MTP</li>
+            <li><strong>Sudden hypoxia + collapse + DIC peripartum</strong> → AFE (supportive)</li>
+            <li><strong>Breathlessness + failure signs</strong> → peripartum cardiomyopathy / pulmonary oedema</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Deliver targeted treatment</h4>
+          <ul>
+            <li>Eclampsia: MgSO₄ load + infusion; control BP (labetalol/hydralazine/nifedipine); plan delivery</li>
+            <li>PPH: TXA within 3 h, uterotonics, balloon/surgery, early fibrinogen &amp; MTP</li>
+            <li>AFE/PPCM: organ support, treat DIC, RV/LV support, consider ECMO</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>If cardiac arrest — the 4-minute rule</h4>
+          <ul>
+            <li>Standard ACLS <strong>plus continuous manual left uterine displacement</strong> and hands slightly higher on the sternum</li>
+            <li>If no ROSC and uterus at/above umbilicus: <strong>perimortem caesarean — aim to deliver within ~5 minutes</strong> of arrest (decision by ~4 min)</li>
+            <li>Give calcium if magnesium toxicity; treat reversible causes (H's &amp; T's, plus AFE, eclampsia, haemorrhage, embolism)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content">
+          <h4>Post-resuscitation &amp; multidisciplinary care</h4>
+          <ul>
+            <li>Obstetrics, anaesthesia/intensive care, haematology, neonatology together</li>
+            <li>VTE prophylaxis once bleeding controlled (pregnancy is prothrombotic)</li>
+            <li>Continue MgSO₄ 24 h; monitor for HELLP progression, AKI, pulmonary oedema</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Obstetric Critical Care</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Under-resuscitating "to protect the fetus"</div>
+        <p>Oxygen, fluids, blood, vasopressors and necessary imaging/drugs go to the mother. A well-resuscitated mother is the best therapy for the fetus; withholding maternal treatment endangers both.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Being reassured by a "normal" blood pressure or blood gas</div>
+        <p>A young mother maintains BP until she has lost a huge volume; a PaCO₂ of 40 in a labouring woman (whose normal is ~30) signals impending respiratory failure. Recalibrate to pregnancy reference ranges.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Forgetting left uterine displacement</div>
+        <p>Resuscitating a &gt;20-week patient supine leaves the IVC compressed and CPR ineffective. Tilt left or manually displace the uterus continuously.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Treating eclampsia hypertension with magnesium (or seizures with lorazepam)</div>
+        <p>Magnesium is the anticonvulsant of choice (superior to diazepam/phenytoin) but does <strong>not</strong> control blood pressure — use labetalol/hydralazine/nifedipine for that. Don't confuse the two roles.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Giving TXA and fibrinogen too late in PPH</div>
+        <p>TXA works best within 3 hours; fibrinogen falls early and predicts severity. Give TXA early and replace fibrinogen (cryoprecipitate/concentrate) aggressively — don't wait for it to bottom out.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Delaying perimortem caesarean</div>
+        <p>In maternal arrest &gt;20 weeks with no ROSC, delivery is part of maternal resuscitation. The decision should be made by ~4 minutes and delivery achieved by ~5 — waiting to "transfer to theatre" costs both lives.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 7 — Missing magnesium toxicity</div>
+        <p>Loss of deep tendon reflexes → respiratory depression → cardiac arrest as levels rise, especially with renal impairment/oliguria. Monitor reflexes and urine output; treat toxicity with IV calcium gluconate.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+
+      <div class="ec"><p><strong>Q: What is the drug of choice for eclamptic seizures, and its dose?</strong><br>Magnesium sulfate — 4 g IV load then 1 g/h, continued 24 h after delivery/last seizure. Superior to diazepam and phenytoin (Collaborative Eclampsia Trial); MAGPIE showed prevention benefit.</p></div>
+      <div class="ec"><p><strong>Q: How is magnesium toxicity recognised and treated?</strong><br>Progressive loss of deep tendon reflexes → respiratory depression → cardiac arrest. Monitor reflexes, RR, urine output. Treat with <strong>calcium gluconate 1 g IV</strong> and stop the infusion.</p></div>
+      <div class="ec"><p><strong>Q: What are the 4 Ts of PPH?</strong><br>Tone (atony — commonest), Trauma, Tissue (retained products), Thrombin (coagulopathy).</p></div>
+      <div class="ec"><p><strong>Q: What did the WOMAN trial show?</strong><br>Tranexamic acid 1 g IV given <strong>within 3 hours</strong> of birth reduces death due to bleeding in PPH, with no increase in thrombosis. Give it early.</p></div>
+      <div class="ec"><p><strong>Q: How does maternal CPR differ from standard ACLS?</strong><br>Continuous <strong>manual left uterine displacement</strong>, access above the diaphragm, anticipate difficult airway/aspiration, and <strong>perimortem caesarean within ~5 minutes</strong> if no ROSC and uterus at/above the umbilicus.</p></div>
+      <div class="ec"><p><strong>Q: Why is a normal PaCO₂ concerning in a pregnant patient?</strong><br>Pregnancy causes chronic respiratory alkalosis (PaCO₂ ~28–32). A "normal" 40 mmHg indicates CO₂ retention and impending respiratory failure.</p></div>
+      <div class="ec"><p><strong>Q: What is the triad of amniotic fluid embolism?</strong><br>Sudden hypoxia, cardiovascular collapse, and coagulopathy (DIC) around labour/delivery — a clinical diagnosis of exclusion; management is supportive with aggressive DIC correction.</p></div>
+      <div class="ec"><p><strong>Q: Define peripartum cardiomyopathy.</strong><br>New systolic heart failure (LVEF &lt;45%) from the last month of pregnancy to 5 months postpartum, without another identifiable cause. Avoid ACE-I/ARB antenatally; consider bromocriptine in selected cases.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>NICE.</strong> Hypertension in pregnancy: diagnosis and management. NICE Guideline NG133; 2019 (updated).</li>
+        <li><strong>The Eclampsia Trial Collaborative Group.</strong> Which anticonvulsant for women with eclampsia? Evidence from the Collaborative Eclampsia Trial. <em>Lancet.</em> 1995;345:1455–1463.</li>
+        <li><strong>Altman D, Carroli G, Duley L, et al. (MAGPIE).</strong> Do women with pre-eclampsia, and their babies, benefit from magnesium sulphate? <em>Lancet.</em> 2002;359:1877–1890.</li>
+        <li><strong>WOMAN Trial Collaborators.</strong> Effect of early tranexamic acid administration on mortality in postpartum haemorrhage. <em>Lancet.</em> 2017;389:2105–2116.</li>
+        <li><strong>ACOG.</strong> Practice Bulletin 222: Gestational Hypertension and Preeclampsia; Practice Bulletin 183: Postpartum Hemorrhage.</li>
+        <li><strong>Jeejeebhoy FM, Zelop CM, Lipman S, et al. (AHA).</strong> Cardiac Arrest in Pregnancy: A Scientific Statement from the American Heart Association. <em>Circulation.</em> 2015;132:1747–1773.</li>
+        <li><strong>FOGSI.</strong> Good Clinical Practice Recommendations on Eclampsia and Postpartum Haemorrhage. Federation of Obstetric and Gynaecological Societies of India.</li>
+        <li><strong>Marino PL.</strong> Marino's The ICU Book, 5th Edition. The Pregnant Patient. Philadelphia, PA: Wolters Kluwer; 2025.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

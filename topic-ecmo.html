@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>ECMO — VA & VV Extracorporeal Support — CritCare.in</title>
+  <meta name="description" content="ICU guide to ECMO: VV vs VA, indications and contraindications (EOLIA, CESAR), cannulation, gas exchange & haemodynamic physiology, sweep vs flow, anticoagulation, differential hypoxia (Harlequin), complications and weaning. ELSO 2021, Marino 5th Ed." />
+  <link rel="canonical" href="https://critcare.in/topic-ecmo.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .mode-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0;}
+    .mode-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .mode-vv{background:#eff6ff;border-color:#93c5fd;}
+    .mode-va{background:#fef2f2;border-color:#fca5a5;}
+    .mode-card h4{font-size:.85rem;font-weight:800;margin-bottom:.5rem;}
+    .mode-vv h4{color:#1e40af;} .mode-va h4{color:#991b1b;}
+    .mode-card ul{font-size:.82rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    @media(max-width:600px){.mode-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › ECMO</div>
+    <h1>🔄 ECMO — Extracorporeal Membrane Oxygenation</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ELSO 2021</span>
+      <span class="gbadge kdigo">EOLIA 2018</span>
+      <span class="gbadge isccm">CESAR 2009</span>
+      <span class="gbadge esicm">ESICM</span>
+      <span class="gbadge apasl">Marino 5th Ed</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">VA · VV · Cannulation</span>
+      <span class="topic-tag">Sweep vs Flow</span>
+      <span class="topic-tag">Anticoagulation · Weaning</span>
+      <span class="topic-updated">ELSO General Guidelines v1.4 · EOLIA (NEJM 2018) · CESAR (Lancet 2009) · ECMO-CS 2023 · Marino 5th Ed (2025)</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Reviewed by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Emergency &amp; Critical Care Medicine, SGPGIMS</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. What ECMO Is &amp; Modes</a></li>
+        <li><a href="#s2">2. Physiology</a></li>
+        <li><a href="#s3">3. Indications &amp; Evidence</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · ELSO Red Book / Extracorporeal Life Support</span>
+      <h2>What ECMO Is, and the Two Modes</h2>
+      <div class="book-quote">
+        <p>"Extracorporeal membrane oxygenation is not a treatment; it is a bridge. It buys time — time for the lung to recover, time for the heart to recover, time to reach a decision or a durable device. It does nothing to the underlying disease. A patient placed on ECMO without a credible answer to 'a bridge to what?' has merely had their dying prolonged and made more complicated."</p>
+        <cite>Extracorporeal Life Support: The ELSO Red Book, 6th Edition. Extracorporeal Life Support Organization; 2022.</cite>
+      </div>
+
+      <h3>The circuit (common to every mode)</h3>
+      <ul>
+        <li><strong>Drainage cannula</strong> pulls deoxygenated blood from a large vein → <strong>pump</strong> (centrifugal) → <strong>membrane oxygenator</strong> (gas exchange) → <strong>return cannula</strong> delivers oxygenated blood back.</li>
+        <li><strong>Sweep gas</strong> flows across the membrane and controls <strong>CO₂ removal</strong>; <strong>blood flow (pump speed) + FiO₂ of the sweep</strong> control <strong>oxygenation</strong>. These are two independent dials — this is the single most important concept at the bedside.</li>
+      </ul>
+
+      <div class="mode-grid">
+        <div class="mode-card mode-vv">
+          <h4>VV ECMO — respiratory support</h4>
+          <ul>
+            <li>Drains and returns to the <strong>venous</strong> system (e.g. femoral drain → IJ return, or dual-lumen single cannula)</li>
+            <li>Supports <strong>gas exchange only</strong>; the patient's own heart provides the circulation</li>
+            <li>Requires an <strong>adequate native cardiac output</strong> and blood pressure</li>
+            <li>Blood is oxygenated <em>before</em> the right heart → lungs → systemic circulation</li>
+          </ul>
+        </div>
+        <div class="mode-card mode-va">
+          <h4>VA ECMO — cardiac ± respiratory support</h4>
+          <ul>
+            <li>Drains from a <strong>vein</strong>, returns to an <strong>artery</strong> (e.g. femoral vein → femoral artery)</li>
+            <li>Supports <strong>both circulation and gas exchange</strong> — a temporary heart-lung bypass</li>
+            <li>Creates <strong>retrograde aortic flow</strong> that competes with native LV output</li>
+            <li>Risk of <strong>differential hypoxia</strong> (Harlequin) and LV distension</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Pick the mode from the problem, not the number</div>
+        <p>A hypoxaemic patient with a <strong>good heart</strong> needs <strong>VV</strong>. A patient in <strong>cardiogenic shock or arrest</strong> needs <strong>VA</strong>. Putting a patient in isolated respiratory failure on VA "to be safe" exposes them to arterial cannulation, limb ischaemia, LV distension and differential hypoxia for no benefit. Conversely, VV will not rescue a failing circulation, however perfect the SpO₂ on the circuit.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Physiology of Extracorporeal Support</span>
+      <h2>How ECMO Actually Delivers Oxygen &amp; Removes CO₂</h2>
+      <div class="book-quote">
+        <p>"Oxygen delivery on ECMO is a flow problem, and carbon dioxide removal is a ventilation problem — of the sweep gas, not the lung. Once you separate these two in your mind, the machine stops being a black box: a desaturating VV patient needs more flow (or a bigger drainage cannula), while a rising CO₂ needs more sweep."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Extracorporeal Support. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 Why a VV patient desaturates (and what to turn)</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Goal</span>Adequate systemic O₂ delivery (DO₂) despite failed lungs</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">ECMO <strong>blood flow</strong> determines how much venous blood is fully oxygenated per minute</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node">If ECMO flow is a large fraction of cardiac output → high arterial saturation<span class="pf-sub">turn up pump speed / upsize drainage cannula</span></div>
+          <div class="pf-node"><strong>Recirculation</strong>: oxygenated return blood re-drained without reaching the body<span class="pf-sub">reposition cannulae; too-high flow worsens it</span></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">High <strong>native cardiac output</strong> (sepsis, fever) dilutes ECMO-oxygenated blood → relative hypoxaemia<span class="pf-sub">treat fever, sedate, reduce O₂ demand</span></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Rule</span><strong>Oxygenation ← blood flow &amp; sweep FiO₂ · CO₂ ← sweep gas rate</strong></div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 The three levers you control on VV ECMO</div>
+        <ul>
+          <li><strong>Pump speed (RPM) → blood flow (L/min):</strong> the master control for <strong>oxygenation</strong>. Higher flow = more oxygenated blood delivered. Limited by drainage ("chugging"/suck-down = under-filled or cannula against vessel wall).</li>
+          <li><strong>Sweep gas flow (L/min):</strong> controls <strong>CO₂ clearance</strong>. Doubling sweep roughly doubles CO₂ removal; it has little effect on oxygenation. Drop CO₂ <em>slowly</em> to avoid cerebral vasoconstriction.</li>
+          <li><strong>Sweep FiO₂:</strong> the O₂ concentration of the gas across the membrane (usually 100%). A fine-tune for oxygenation.</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 VA physiology — the retrograde-flow problem</div>
+        <p>In peripheral (femoro-femoral) VA ECMO, the oxygenated return runs <strong>up the aorta, against</strong> the native LV ejection. Two consequences dominate care:</p>
+        <ul>
+          <li><strong>Differential hypoxia (Harlequin / North–South syndrome):</strong> if the native lungs are poor <em>and</em> the LV recovers enough to eject, poorly oxygenated blood from the LV perfuses the <strong>coronaries and brain (upper body)</strong>, while well-oxygenated ECMO blood perfuses the <strong>lower body</strong>. The right arm/right ear SpO₂ can be dangerously low while the legs look pink. <strong>Always monitor the right radial artery / right-hand SpO₂.</strong></li>
+          <li><strong>LV distension &amp; pulmonary oedema:</strong> retrograde aortic flow raises LV afterload. If the LV cannot open the aortic valve, it distends, pressure backs up into the lungs, and the LV may not recover. Watch for absent arterial pulsatility and a rising PA/wedge — may need <strong>LV venting</strong> (IABP, Impella, atrial septostomy, surgical vent).</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 "Rest the lung" — the whole point of VV ECMO</div>
+        <p>Once the oxygenator is doing the gas exchange, the ventilator can be dialled to <strong>ultra-protective, "lung-rest" settings</strong> (low plateau pressure, low driving pressure, low FiO₂, low rate). The injured lung is spared ventilator-induced injury while it heals. Ventilating a VV patient aggressively "to help the numbers" defeats the reason they were cannulated.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · ELSO · EOLIA · CESAR · ECMO-CS</span>
+      <h2>Indications, Evidence &amp; Contraindications</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">VV ECMO for severe ARDS <span class="gr-s">EOLIA 2018 · CESAR 2009</span></div>
+        <div class="gr-text">
+          Consider VV ECMO in reversible severe ARDS when optimal lung-protective ventilation + proning fails:<br>
+          • <strong>PaO₂/FiO₂ &lt;50 mmHg for &gt;3h</strong>, or <strong>&lt;80 for &gt;6h</strong>, or<br>
+          • <strong>pH &lt;7.25 with PaCO₂ ≥60 mmHg for &gt;6h</strong> despite RR up to 35 and plateau ≤32.<br>
+          <strong>EOLIA (NEJM 2018)</strong> was stopped for futility, but 28% of the control arm crossed over to ECMO, and a Bayesian post-hoc analysis plus the <strong>EOLIA/CESAR</strong> meta-analysis support a <strong>mortality benefit</strong>. Early referral to an ECMO centre (as in CESAR) is the practical message.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">VA ECMO for cardiogenic shock &amp; arrest</div>
+        <div class="gr-text">
+          <strong>Cardiogenic shock</strong> refractory to inotropes/vasopressors from a potentially reversible cause (fulminant myocarditis, massive PE, post-cardiotomy, drug overdose, refractory arrhythmia), or as a bridge to durable LVAD/transplant.<br>
+          <strong>ECMO-CS (2023)</strong> found no benefit of <em>immediate</em> VA ECMO over an early-conservative strategy in rapidly deteriorating AMI cardiogenic shock — <strong>ECMO is not automatic in every shock</strong>.<br>
+          <strong>ECPR</strong> (ECMO during CPR) for refractory VF/VT arrest with a shockable rhythm and short low-flow time: <strong>ARREST</strong> and the Prague study support benefit in <em>highly selected</em> witnessed arrests with good CPR; <strong>INCEPTION</strong> was neutral — selection and speed are everything.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Contraindications — "a bridge to nowhere" <span class="gr-c">ELSO</span></div>
+        <div class="gr-text">
+          Few are absolute; most are relative and reflect futility:<br>
+          • <strong>Irreversible</strong> underlying disease with no transplant/device option<br>
+          • Severe irreversible brain injury; unwitnessed arrest / prolonged low-flow<br>
+          • Advanced age with frailty; disseminated malignancy<br>
+          • Uncontrolled bleeding or absolute contraindication to any anticoagulation<br>
+          • Prolonged high-pressure ventilation (&gt;7 days) is a <em>relative</em> marker of poorer lung recovery.<br>
+          <strong>Decide the exit before the entrance:</strong> recovery, transplant, durable device, or planned withdrawal.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Anticoagulation &amp; blood management <span class="gr-s">ELSO</span></div>
+        <div class="gr-text">
+          <strong>Unfractionated heparin</strong> is standard; <strong>bivalirudin</strong> is increasingly used (esp. in HIT or heparin resistance). Titrate to <strong>anti-Xa 0.3–0.7</strong> or a target aPTT/ACT per unit protocol — anti-Xa is more reliable than ACT.<br>
+          <strong>Transfuse restrictively</strong> — a haemoglobin near-normal is not required; target platelets typically &gt;50–100 ×10⁹/L if bleeding. Modern circuits run at <strong>lower anticoagulation intensity</strong> than historically taught. Bleeding, not clotting, is the commoner and more lethal complication.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>ECMO is concentrated in tertiary and private centres</strong> and is resource- and cost-intensive (circuits, oxygenators, 1:1 nursing, perfusion support). Patient selection and honest family counselling about cost and prognosis are critical before initiation.</p>
+        <p><strong>H1N1 and severe viral pneumonia</strong> (and the COVID-19 surges) drove much of India's VV ECMO experience; national ECMO networks and referral pathways have grown around this. <strong>Fulminant myocarditis</strong> and <strong>poisoning-related cardiotoxicity</strong> (e.g. aluminium/yellow phosphide, oleander) are recognised VA ECMO indications where a reversible insult justifies support.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Drug Reference — ECMO</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Unfractionated heparin</strong></td><td>Circuit anticoagulation (standard)</td><td>Bolus ~50–100 U/kg at cannulation → infusion titrated to anti-Xa 0.3–0.7 (or unit ACT/aPTT target)</td><td>Anti-Xa preferred; monitor AT-III if heparin resistant</td></tr>
+            <tr><td><strong>Bivalirudin</strong></td><td>Anticoagulation (HIT / heparin resistance)</td><td>~0.03–0.05 mg/kg/h, titrate to aPTT; no bolus</td><td>Direct thrombin inhibitor; watch for clot in stagnant circuit areas if flow low</td></tr>
+            <tr><td><strong>Fentanyl / midazolam</strong></td><td>Analgesia &amp; sedation</td><td>Infusions titrated (higher requirements — circuit sequestration)</td><td>Lipophilic drugs adsorb to the circuit → doses often higher; reassess as circuit ages</td></tr>
+            <tr><td><strong>Noradrenaline</strong></td><td>Vasoplegia / low SVR on VV</td><td>0.05–0.5+ µg/kg/min titrated to MAP ≥65</td><td>VV ECMO does not support BP — treat distributive shock conventionally</td></tr>
+            <tr><td><strong>Dobutamine / adrenaline</strong></td><td>Native cardiac support on VA (aid LV ejection)</td><td>Titrated low-dose</td><td>Maintaining pulsatility helps prevent LV distension &amp; stasis</td></tr>
+            <tr><td><strong>Platelets / fibrinogen / FFP</strong></td><td>Bleeding, consumption</td><td>Platelets to &gt;50–100 ×10⁹/L; fibrinogen &gt;1.5 g/L if bleeding</td><td>Acquired von Willebrand &amp; thrombocytopenia are near-universal on ECMO</td></tr>
+            <tr><td><strong>Antibiotics</strong></td><td>Proven infection only</td><td>Dose-adjust for altered Vd &amp; circuit sequestration</td><td>No routine prophylaxis; ECMO alters PK of many drugs (larger Vd)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>From Candidacy to Weaning</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Candidate assessment — "a bridge to what?"</h4>
+          <ul>
+            <li>Confirm the insult is <strong>potentially reversible</strong> or there is a transplant/device pathway</li>
+            <li>Exclude futility (irreversible brain injury, disseminated malignancy, uncontrolled bleeding)</li>
+            <li>Choose mode: hypoxaemia + good heart → <strong>VV</strong>; shock/arrest → <strong>VA</strong></li>
+            <li>Refer <strong>early</strong> to an ECMO centre — outcomes are better before multi-organ failure sets in</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Cannulate &amp; initiate</h4>
+          <ul>
+            <li>Ultrasound-guided cannulation; confirm cannula position (echo / X-ray)</li>
+            <li>VA femoral arterial line: place a <strong>distal perfusion cannula</strong> to prevent limb ischaemia</li>
+            <li>Start heparin; establish flow; wean toxic vent/vasopressor settings to <strong>rest</strong> the failing organ</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Daily management &amp; troubleshooting</h4>
+          <ul>
+            <li><strong>Desaturation (VV):</strong> ↑ flow, check recirculation, treat fever/high output, upsize/reposition cannula</li>
+            <li><strong>Rising CO₂:</strong> ↑ sweep gas</li>
+            <li><strong>VA — monitor right radial ABG / right-hand SpO₂</strong> for differential hypoxia; watch pulsatility &amp; LV distension</li>
+            <li>Lung-rest ventilation; daily anticoagulation, haemolysis (LDH, plasma free Hb) &amp; circuit inspection</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>Assess for weaning</h4>
+          <ul>
+            <li><strong>VV:</strong> as lungs recover, reduce <strong>sweep gas to zero</strong> (trial off) while keeping blood flow; observe gas exchange on ventilator settings for hours</li>
+            <li><strong>VA:</strong> reduce ECMO flow stepwise with echo assessment of LV/RV function ("turn-down/flow-reduction trial"); ensure native output &amp; pulsatility recover</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content">
+          <h4>Decannulate or transition</h4>
+          <ul>
+            <li>Decannulate when native organ function sustains the patient; arterial site often needs surgical repair</li>
+            <li>If no recovery: transition to <strong>durable device / transplant</strong>, or hold a goals-of-care discussion for <strong>planned withdrawal</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in ECMO</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Cannulating without an exit strategy</div>
+        <p>ECMO does not treat disease; it buys time. Starting it in irreversible illness with no path to recovery, transplant or a device simply prolongs dying and consumes vast resources. Define the destination before you cannulate.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Confusing the oxygenation and CO₂ dials</div>
+        <p>Turning up the <em>sweep gas</em> for a low SpO₂ (a flow problem) or cranking <em>flow</em> for a high CO₂ (a sweep problem) wastes time. Oxygenation follows blood flow (and sweep FiO₂); CO₂ follows sweep gas rate.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Missing differential hypoxia on peripheral VA</div>
+        <p>If you monitor only the left arm or a leg, you can miss dangerously hypoxic blood reaching the brain and coronaries as the LV recovers. Sample and pulse-oximeter the <strong>right upper limb</strong>. Manage with better native lung oxygenation or by converting to V-A-V.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Ignoring LV distension on VA ECMO</div>
+        <p>Retrograde flow raises LV afterload; a non-ejecting, distending LV floods the lungs and cannot recover. Watch arterial pulsatility and PA pressures, and vent the LV (IABP/Impella/septostomy) when needed.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Over-anticoagulating and over-transfusing</div>
+        <p>Bleeding kills more ECMO patients than clotting. Modern low-intensity anticoagulation and restrictive transfusion are safer than the old "keep them thin and topped up" approach. Anti-Xa guidance beats ACT alone.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Aggressive ("injurious") ventilation on VV ECMO</div>
+        <p>The purpose of VV ECMO is to rest the lung. Reverting to high plateau/driving pressures because a number looks off perpetuates ventilator-induced lung injury and defeats the therapy.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 7 — Forgetting the distal limb perfusion cannula</div>
+        <p>Femoral arterial cannulation for VA ECMO can cause a threatened, then dead, lower limb. Place a distal perfusion cannula and monitor the limb (colour, Doppler, NIRS) relentlessly.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+
+      <div class="ec"><p><strong>Q: What controls oxygenation vs CO₂ removal on ECMO?</strong><br><strong>Oxygenation</strong> ← blood flow (pump speed) and sweep FiO₂. <strong>CO₂ removal</strong> ← sweep gas flow rate. They are independent controls.</p></div>
+      <div class="ec"><p><strong>Q: VV vs VA — how do you choose?</strong><br>VV supports <strong>gas exchange only</strong> and needs an adequate native circulation → isolated respiratory failure. VA supports <strong>circulation and gas exchange</strong> → cardiogenic shock or arrest.</p></div>
+      <div class="ec"><p><strong>Q: What is differential hypoxia (Harlequin / North–South syndrome)?</strong><br>On peripheral VA ECMO, if native lungs are poor and the LV ejects, deoxygenated blood perfuses the <strong>upper body (coronaries, brain)</strong> while ECMO oxygenates the lower body. Monitor the <strong>right radial</strong> artery / right-hand SpO₂.</p></div>
+      <div class="ec"><p><strong>Q: What did EOLIA and CESAR show?</strong><br><strong>CESAR (2009):</strong> referral to an ECMO centre improved 6-month survival without severe disability. <strong>EOLIA (2018):</strong> stopped for futility but with high crossover; Bayesian/meta-analysis supports a mortality benefit. Early ECMO referral in severe ARDS is reasonable.</p></div>
+      <div class="ec"><p><strong>Q: What is recirculation on VV ECMO?</strong><br>Freshly oxygenated return blood is drained straight back into the circuit without passing through the body, so systemic saturation falls despite high circuit flow. Caused by cannula proximity; increasing flow can worsen it. Reposition the cannula.</p></div>
+      <div class="ec"><p><strong>Q: Why does LV distension occur on VA ECMO and how is it managed?</strong><br>Retrograde aortic flow ↑ LV afterload; if the LV can't eject it distends → pulmonary oedema and no recovery. Manage by maintaining pulsatility/inotropy and <strong>venting</strong> (IABP, Impella, atrial septostomy, surgical vent).</p></div>
+      <div class="ec"><p><strong>Q: Bleeding or clotting — which is the bigger problem?</strong><br><strong>Bleeding.</strong> Acquired von Willebrand syndrome, thrombocytopenia and anticoagulation make haemorrhage the commonest serious complication. Modern practice uses lower-intensity anticoagulation and restrictive transfusion.</p></div>
+      <div class="ec"><p><strong>Q: How do you wean VV vs VA ECMO?</strong><br><strong>VV:</strong> reduce <strong>sweep gas to zero</strong> (keep blood flow) and watch gas exchange on ventilator settings. <strong>VA:</strong> stepwise <strong>flow reduction</strong> with echo assessment of native cardiac recovery and pulsatility.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Combes A, Hajage D, Capellier G, et al. (EOLIA).</strong> Extracorporeal Membrane Oxygenation for Severe Acute Respiratory Distress Syndrome. <em>N Engl J Med.</em> 2018;378:1965–1975.</li>
+        <li><strong>Peek GJ, Mugford M, Tiruvoipati R, et al. (CESAR).</strong> Efficacy and economic assessment of conventional ventilatory support versus extracorporeal membrane oxygenation for severe adult respiratory failure. <em>Lancet.</em> 2009;374:1351–1363.</li>
+        <li><strong>Goligher EC, Tomlinson G, Hajage D, et al.</strong> Extracorporeal Membrane Oxygenation for Severe ARDS: A Bayesian post-hoc analysis of EOLIA. <em>JAMA.</em> 2018;320:2251–2259.</li>
+        <li><strong>Ostadal P, Rokyta R, Karasek J, et al. (ECMO-CS).</strong> Extracorporeal Membrane Oxygenation in the Therapy of Cardiogenic Shock. <em>Circulation.</em> 2023;147:454–464.</li>
+        <li><strong>Yannopoulos D, Bartos J, Raveendran G, et al. (ARREST).</strong> Advanced reperfusion strategies for refractory ventricular fibrillation out-of-hospital cardiac arrest. <em>Lancet.</em> 2020;396:1807–1816.</li>
+        <li><strong>Suverein MM, Delnoij TSR, Lorusso R, et al. (INCEPTION).</strong> Early Extracorporeal CPR for Refractory Out-of-Hospital Cardiac Arrest. <em>N Engl J Med.</em> 2023;388:299–309.</li>
+        <li><strong>Extracorporeal Life Support Organization (ELSO).</strong> General Guidelines for All ECLS Cases, v1.4. Ann Arbor, MI; 2017 (with subsequent ELSO guideline updates).</li>
+        <li><strong>Tonna JE, Abrams D, Brodie D, et al.</strong> Management of Adult Patients Supported with VV ECMO: ELSO Guideline. <em>ASAIO J.</em> 2021;67:601–610.</li>
+        <li><strong>Marino PL.</strong> Marino's The ICU Book, 5th Edition. Extracorporeal Support. Philadelphia, PA: Wolters Kluwer; 2025.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

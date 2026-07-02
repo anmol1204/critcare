@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Brain Death / Brainstem Death — Determination — CritCare.in</title>
+  <meta name="description" content="Determination of brain (brainstem) death: prerequisites and confounders, brainstem reflex testing, the apnoea test, ancillary tests, the Indian THOTA legal framework and donor board, donor optimisation and organ donation. AAN 2023, World Brain Death Project." />
+  <link rel="canonical" href="https://critcare.in/topic-brain-death.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .reflex-grid{display:grid;grid-template-columns:1fr auto;gap:.3rem .8rem;font-size:.86rem;margin:.6rem 0;}
+    .reflex-grid span:nth-child(odd){color:var(--ink);padding:.3rem 0;border-bottom:1px solid var(--line);}
+    .reflex-grid span:nth-child(even){color:var(--slate);text-align:right;padding:.3rem 0;border-bottom:1px solid var(--line);}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Brain Death</div>
+    <h1>🧠 Brain (Brainstem) Death Determination</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">AAN 2023</span>
+      <span class="gbadge kdigo">World Brain Death Project</span>
+      <span class="gbadge isccm">THOTA (India)</span>
+      <span class="gbadge esicm">ISCCM 2023</span>
+      <span class="gbadge apasl">Marino 5th Ed</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Prerequisites · Confounders</span>
+      <span class="topic-tag">Apnoea Test</span>
+      <span class="topic-tag">THOTA · Donation</span>
+      <span class="topic-updated">AAN/AAP/CNS/SCCM 2023 · World Brain Death Project 2020 · THOTA 1994 (amended 2011) · ISCCM 2023 · Marino 5th Ed (2025)</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Reviewed by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Emergency &amp; Critical Care Medicine, SGPGIMS</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Concept &amp; Prerequisites</a></li>
+        <li><a href="#s2">2. Pathophysiology</a></li>
+        <li><a href="#s3">3. How to Determine It</a></li>
+        <li><a href="#s4">4. Donor Drug Reference</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · AAN 2023 · World Brain Death Project</span>
+      <h2>What Brain Death Is, and the Prerequisites</h2>
+      <div class="book-quote">
+        <p>"Brain death is death. It is the irreversible loss of all functions of the entire brain, including the brainstem — a clinical diagnosis of a dead person whose circulation is being maintained by machines. The determination is not a prognosis and not a withdrawal decision; it is the certification that death has already occurred. It must therefore be made with the same rigour as any other pronouncement of death, and never begun until every confounder has been excluded."</p>
+        <cite>Greer DM, et al. Determination of Brain Death/Death by Neurologic Criteria: The World Brain Death Project. JAMA 2020; and AAN 2023 Consensus Practice Guideline.</cite>
+      </div>
+
+      <h3>The three clinical findings that define it</h3>
+      <ul>
+        <li><strong>Coma</strong> — complete unresponsiveness, with a known, adequate, irreversible cause</li>
+        <li><strong>Absence of all brainstem reflexes</strong></li>
+        <li><strong>Apnoea</strong> — no respiratory drive despite a sufficient CO₂ (or acidaemic) stimulus</li>
+      </ul>
+
+      <h3>Prerequisites — satisfy ALL before you begin</h3>
+      <ul>
+        <li><strong>Established, irreversible cause</strong> of catastrophic brain injury (imaging/clinical), consistent with brain death</li>
+        <li><strong>Exclude confounders that mimic it:</strong>
+          <ul>
+            <li>Core temperature <strong>≥35 °C</strong> (rewarm hypothermia)</li>
+            <li>Systolic BP/MAP adequate for perfusion (<strong>SBP ≥100 / MAP ≥60</strong> mmHg — resuscitate first)</li>
+            <li>No <strong>CNS depressants / sedatives / neuromuscular blockers</strong> (allow ≥5 half-lives; check levels; confirm no paralysis with a nerve stimulator / train-of-four)</li>
+            <li>No severe <strong>electrolyte, acid–base or endocrine</strong> derangement (Na⁺, glucose, calcium, hepatic/renal encephalopathy, myxoedema)</li>
+            <li>No severe drug/alcohol intoxication</li>
+          </ul>
+        </li>
+      </ul>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ Two conditions that catastrophically mimic brain death</div>
+        <p><strong>Locked-in syndrome</strong> (ventral pontine lesion): the patient is conscious and aware but quadriplegic and anarthric, with only vertical eye movement/blinking preserved — they are <em>not</em> comatose. <strong>Barbiturate coma / severe sedative overdose</strong> can abolish all brainstem reflexes and the EEG yet be fully reversible. Both are why drug screens, levels and a mandatory waiting period exist before testing.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>The Pathophysiology — Why the Whole Brain Dies</h2>
+      <div class="book-quote">
+        <p>"The final common pathway of catastrophic brain injury is intracranial hypertension. When intracranial pressure rises to meet the mean arterial pressure, cerebral perfusion pressure falls to zero, cerebral blood flow ceases, and the brain — the one organ that cannot tolerate even minutes of no-flow — infarcts globally. What follows is not coma; it is the death of the brain as an organ."</p>
+        <cite>Marino PL. The ICU Book, 5th Ed. Brain Death &amp; Organ Donation. Wolters Kluwer; 2025.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 How catastrophic brain injury becomes brain death</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span>Massive injury — trauma · large ICH/SAH · anoxia · malignant infarct</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Cytotoxic + vasogenic <strong>cerebral oedema</strong> in a fixed cranial vault</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Rising <strong>intracranial pressure</strong> → falling cerebral perfusion pressure (CPP = MAP − ICP)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">ICP approaches MAP → <strong>CPP → 0</strong> → cerebral circulatory arrest</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node">Global brain infarction, including the <strong>brainstem</strong><span class="pf-sub">loss of all reflexes + respiratory drive</span></div>
+          <div class="pf-node">Autonomic "storm" then collapse<span class="pf-sub">catecholamine surge → vasoplegia, diabetes insipidus</span></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">State</span><strong>Brain (brainstem) death</strong> — irreversible; circulation machine-dependent</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — why the apnoea test works</div>
+        <p>The respiratory centres in the medulla are driven by CO₂. In a dead brainstem, no rise in PaCO₂ — however extreme — will trigger a breath. The apnoea test deliberately lets CO₂ climb to a threshold (<strong>PaCO₂ ≥60 mmHg, or ≥20 mmHg above baseline</strong>) while oxygenation is maintained by apnoeic diffusion oxygenation. Any respiratory effort means the brainstem is alive and the test is negative — the patient is <em>not</em> brain dead.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the physiology of the brain-dead donor</div>
+        <p>Brain death is followed by predictable systemic collapse that the intensivist must actively manage to preserve organs for donation:</p>
+        <ul>
+          <li><strong>Catecholamine storm then vasoplegia</strong> → hypotension (loss of central vasomotor tone)</li>
+          <li><strong>Central diabetes insipidus</strong> → massive dilute polyuria, hypernatraemia, hypovolaemia</li>
+          <li><strong>Loss of thermoregulation</strong> → poikilothermia (hypothermia)</li>
+          <li><strong>Loss of pituitary/thyroid axis</strong>, hyperglycaemia, coagulopathy, neurogenic pulmonary oedema</li>
+        </ul>
+        <p>The "<strong>rule of 100s</strong>" (SBP ≥100, urine output ~100 mL/h, PaO₂ ≥100, Hb ~100 g/L) is a practical donor-management target.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Determination Protocol · THOTA (India)</span>
+      <h2>How to Determine Brain Death</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Step 1 — Test every brainstem reflex (all must be ABSENT)</div>
+        <div class="gr-text">
+          <div class="reflex-grid">
+            <span><strong>Pupillary</strong> — fixed, no response to bright light</span><span>Midbrain (CN II/III)</span>
+            <span><strong>Corneal</strong> — no blink to corneal touch</span><span>Pons (CN V/VII)</span>
+            <span><strong>Oculocephalic</strong> ("doll's eyes") — eyes move <em>with</em> the head</span><span>Pons/midbrain (only if C-spine cleared)</span>
+            <span><strong>Oculovestibular</strong> (cold caloric) — no eye deviation to 50 mL ice water</span><span>Pons (CN VIII/III/VI)</span>
+            <span><strong>Gag &amp; cough</strong> — none to posterior pharynx / deep suction</span><span>Medulla (CN IX/X)</span>
+            <span><strong>Facial motor</strong> — no grimace to supraorbital/nailbed pressure</span><span>Pons/midbrain (CN V/VII)</span>
+          </div>
+          Beware <strong>spinal reflexes</strong> (e.g. Lazarus sign, triple flexion) — these are spinally mediated and are <em>compatible</em> with brain death.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Step 2 — The apnoea test (the definitive test)</div>
+        <div class="gr-text">
+          <strong>Pre-oxygenate</strong> (FiO₂ 1.0) and correct to a normal baseline PaCO₂. Disconnect the ventilator, deliver O₂ (catheter/CPAP) for apnoeic oxygenation, and <strong>observe the chest/abdomen for any respiratory effort for ~8–10 minutes</strong>.<br>
+          <strong>Positive (confirms apnoea):</strong> no respiratory effort <em>and</em> PaCO₂ rises to <strong>≥60 mmHg (or ≥20 mmHg above baseline)</strong> on ABG.<br>
+          <strong>Abort</strong> if SpO₂ drops &lt;85–90%, significant hypotension, or arrhythmia — reconnect and consider an ancillary test.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Step 3 — Ancillary tests <span class="gr-c">only when clinical testing is impossible/incomplete</span></div>
+        <div class="gr-text">
+          Ancillary tests are <strong>not</strong> a substitute for the clinical exam; they are used when a confounder cannot be cleared or the apnoea test cannot be safely completed (e.g. high cervical injury, severe facial trauma, inability to raise CO₂ safely).<br>
+          Options demonstrating <strong>absent cerebral blood flow or electrical activity</strong>: <strong>4-vessel cerebral angiography</strong> (gold standard), radionuclide perfusion scan, transcranial Doppler, or EEG (isoelectric). Each has pitfalls; angiography and nuclear flow studies are most robust.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Legal Framework — THOTA</div>
+        <p>Brain death in India is certified as <strong>"brainstem death"</strong> under the <strong>Transplantation of Human Organs and Tissues Act (THOTA) 1994, amended 2011</strong>, and its Rules (2014). Key legal requirements:</p>
+        <ul>
+          <li>A <strong>board of four registered medical practitioners</strong> must certify: (1) the <strong>Registered Medical Practitioner in charge of the hospital</strong>, (2) an <strong>authorised specialist</strong> (from a panel), (3) a <strong>neurologist/neurosurgeon/intensivist</strong> (or an authorised specialist where a neurologist is unavailable), and (4) the <strong>treating doctor</strong>. The transplant surgeon/team must <em>not</em> be on the certifying board.</li>
+          <li><strong>Two examinations, at least 6 hours apart</strong>, are documented on the prescribed <strong>Form 10</strong>, each with a full reflex set and apnoea test.</li>
+          <li>Certification of brainstem death is a legal prerequisite for <strong>deceased organ donation</strong>; consent from the near relative (or documented pledge) is separately required.</li>
+        </ul>
+        <p>Deceased donation is coordinated via <strong>NOTTO / ROTTO / SOTTO</strong> networks. Always follow your hospital's transplant-coordination pathway and current Form 10 wording.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Donor Management Drug Reference</span>
+      <h2>Drug Reference — Brain-Dead Donor Optimisation</h2>
+      <p style="font-size:.85rem;color:var(--slate);margin:.2rem 0 1rem;">These are used <strong>after</strong> certification, to preserve organ function for donation — never to "treat" brain death.</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Vasopressin</strong></td><td>Vasoplegic hypotension + diabetes insipidus</td><td>0.5–2.4 U/h infusion</td><td>First-line pressor in the donor; also treats DI</td></tr>
+            <tr><td><strong>Noradrenaline</strong></td><td>Hypotension (adjunct)</td><td>Titrate to MAP ≥60–65</td><td>Minimise high doses — may harm the donor heart</td></tr>
+            <tr><td><strong>Desmopressin (DDAVP)</strong></td><td>Central diabetes insipidus</td><td>1–4 µg IV, repeat to control urine output/Na⁺</td><td>Titrate to urine output ~0.5–3 mL/kg/h; watch Na⁺</td></tr>
+            <tr><td><strong>Methylprednisolone</strong></td><td>Hormonal resuscitation / lung protection</td><td>~15 mg/kg IV (or 1 g)</td><td>Reduces inflammatory injury; improves lung/graft yield</td></tr>
+            <tr><td><strong>Levothyroxine / T3</strong></td><td>Hormonal resuscitation (haemodynamically unstable donor)</td><td>Per protocol (T3 bolus + infusion)</td><td>Considered in the unstable donor needing rising pressors</td></tr>
+            <tr><td><strong>Insulin</strong></td><td>Hyperglycaemia</td><td>Infusion, target glucose ~6–10 mmol/L</td><td>Common due to stress + steroids + dextrose</td></tr>
+            <tr><td><strong>Warmed fluids / warming</strong></td><td>Poikilothermia</td><td>Maintain core temp ≥35 °C</td><td>Loss of hypothalamic thermoregulation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Determination &amp; Donation Pathway</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>Confirm prerequisites</h4>
+          <ul>
+            <li>Known irreversible catastrophic cause (imaging/clinical)</li>
+            <li>Temp ≥35 °C, MAP ≥60, no sedatives/paralytics (≥5 half-lives; TOF), no severe metabolic/endocrine derangement or intoxication</li>
+            <li><strong>Do not begin testing until every confounder is excluded</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Clinical examination — coma + absent brainstem reflexes</h4>
+          <ul>
+            <li>Pupillary, corneal, oculocephalic, oculovestibular (cold caloric), gag/cough, facial motor — all absent</li>
+            <li>Distinguish spinal reflexes (Lazarus/triple flexion) — compatible with brain death</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Apnoea test</h4>
+          <ul>
+            <li>Pre-oxygenate, disconnect, apnoeic oxygenation; observe 8–10 min</li>
+            <li>Positive if <strong>no effort</strong> and PaCO₂ ≥60 mmHg (or ≥20 above baseline)</li>
+            <li>Abort for hypoxia/instability → use an ancillary test instead</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>Certify (repeat per law) &amp; document</h4>
+          <ul>
+            <li><strong>India:</strong> board of 4 doctors; <strong>two exams ≥6 h apart</strong> on Form 10</li>
+            <li>Ancillary test only if clinical/apnoea testing is incomplete</li>
+            <li>Time of death = time of the second confirmatory examination</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content">
+          <h4>Family communication &amp; donation</h4>
+          <ul>
+            <li>Explain clearly that the patient <strong>has died</strong>; brain death is death</li>
+            <li>Involve the <strong>transplant coordinator (NOTTO/SOTTO)</strong> — decouple death disclosure from the donation request</li>
+            <li>If donation proceeds: optimise the donor ("rule of 100s", vasopressin, DDAVP, steroids)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Brain Death Determination</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Testing before confounders are cleared</div>
+        <p>Hypothermia, sedative/paralytic effect, shock, and severe metabolic derangement can each abolish reflexes and mimic brain death. Rewarm, wait ≥5 half-lives (check levels/TOF), restore MAP and correct metabolism <em>before</em> any examination.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Mistaking spinal reflexes for brainstem activity</div>
+        <p>Lazarus sign, triple flexion, deep tendon reflexes and even a plantar response are spinally mediated and are fully compatible with brain death. Only <em>brainstem-mediated</em> responses and respiratory effort exclude it.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — An invalid apnoea test</div>
+        <p>Failing to reach PaCO₂ ≥60 mmHg (documented on ABG), starting from a hypocapnic baseline, or aborting early without an ancillary test invalidates the determination. Pre-oxygenate well and confirm the CO₂ threshold with a gas.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Missing locked-in syndrome</div>
+        <p>A ventral pontine lesion leaves the patient conscious with only vertical gaze/blink. Always assess for purposeful eye movement to command before concluding coma.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Using an ancillary test to overrule a live brainstem</div>
+        <p>Ancillary tests supplement, not replace, the clinical exam, and only when clinical testing is impossible. A preserved reflex or any respiratory effort means the patient is <strong>not</strong> brain dead, whatever the EEG or flow study suggests.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Not following the legal process (India)</div>
+        <p>Omitting a required board member, using the transplant surgeon on the board, doing a single examination, or not completing Form 10 twice ≥6 h apart makes the certification legally invalid.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 7 — Coupling the death disclosure with the donation request</div>
+        <p>Announce the death and request donation as <em>separate</em> conversations, ideally with a trained transplant coordinator. Rushing consent alongside the news of death harms families and reduces consent.</p>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+
+      <div class="ec"><p><strong>Q: What are the three cardinal clinical findings of brain death?</strong><br>Coma of known irreversible cause, absence of all brainstem reflexes, and apnoea (no drive at PaCO₂ ≥60 mmHg).</p></div>
+      <div class="ec"><p><strong>Q: List the prerequisites before testing.</strong><br>Established irreversible cause; core temp ≥35 °C; adequate MAP; no CNS depressants/neuromuscular blockade (≥5 half-lives, TOF); no severe electrolyte/acid–base/endocrine derangement or intoxication.</p></div>
+      <div class="ec"><p><strong>Q: How is the apnoea test performed and interpreted?</strong><br>Pre-oxygenate, correct baseline PaCO₂, disconnect with apnoeic oxygenation, observe ~8–10 min. Positive if <strong>no respiratory effort</strong> and PaCO₂ rises to ≥60 mmHg (or ≥20 mmHg above baseline).</p></div>
+      <div class="ec"><p><strong>Q: Which reflexes are tested and what levels do they map to?</strong><br>Pupillary (midbrain), corneal (pons), oculocephalic &amp; oculovestibular (pons), gag/cough (medulla), facial motor to pain (pons/midbrain). All must be absent.</p></div>
+      <div class="ec"><p><strong>Q: Under what law is brain death certified in India, and by whom?</strong><br>THOTA 1994 (amended 2011) certifies <strong>brainstem death</strong>; a board of <strong>four</strong> doctors (including a neurologist/neurosurgeon/intensivist and the RMP in charge), <strong>two exams ≥6 h apart</strong> on <strong>Form 10</strong>; the transplant team is excluded from the board.</p></div>
+      <div class="ec"><p><strong>Q: Name two conditions that mimic brain death.</strong><br>Locked-in syndrome (conscious, ventral pontine lesion) and severe sedative/barbiturate intoxication or hypothermia (reversible loss of reflexes).</p></div>
+      <div class="ec"><p><strong>Q: When are ancillary tests used, and which is the gold standard?</strong><br>Only when clinical exam or apnoea testing cannot be completed. <strong>4-vessel cerebral angiography</strong> (absent intracranial flow) is the most definitive; nuclear perfusion, TCD and isoelectric EEG are alternatives.</p></div>
+      <div class="ec"><p><strong>Q: What is the "rule of 100s" in donor management?</strong><br>SBP ≥100 mmHg, urine output ~100 mL/h, PaO₂ ≥100 mmHg, Hb ~100 g/L — with vasopressin, DDAVP for DI, steroids, warming and glucose control.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Greer DM, Kirschen MP, Lewis A, et al.</strong> Pediatric and Adult Brain Death/Death by Neurologic Criteria Consensus Guideline (AAN/AAP/CNS/SCCM). <em>Neurology.</em> 2023;101:1112–1132.</li>
+        <li><strong>Greer DM, Shemie SD, Lewis A, et al.</strong> Determination of Brain Death/Death by Neurologic Criteria: The World Brain Death Project. <em>JAMA.</em> 2020;324:1078–1097.</li>
+        <li><strong>Government of India.</strong> Transplantation of Human Organs and Tissues Act, 1994 (amended 2011) and Rules 2014 (Form 10 — certification of brainstem death).</li>
+        <li><strong>Indian Society of Critical Care Medicine (ISCCM).</strong> Position Statement / Guidelines on Brain Death Certification and Donor Management. 2023.</li>
+        <li><strong>Wijdicks EFM, Varelas PN, Gronseth GS, Greer DM.</strong> Evidence-based guideline update: Determining brain death in adults (AAN). <em>Neurology.</em> 2010;74:1911–1918.</li>
+        <li><strong>Kotloff RM, Blosser S, Fulda GJ, et al.</strong> Management of the Potential Organ Donor in the ICU: SCCM/ACCP/AOPO Consensus Statement. <em>Crit Care Med.</em> 2015;43:1291–1325.</li>
+        <li><strong>Marino PL.</strong> Marino's The ICU Book, 5th Edition. Brain Death &amp; Organ Donation. Philadelphia, PA: Wolters Kluwer; 2025.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
