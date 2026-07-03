@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Rhabdomyolysis &amp; Crush Syndrome — CritCare.in</title>
+  <meta name="description" content="ICU management of rhabdomyolysis and crush syndrome: CK thresholds, mechanism of pigment (myoglobin) AKI, aggressive fluid resuscitation, urine output targets, the hyperkalaemia and hypocalcaemia traps, role (and limits) of bicarbonate/mannitol, compartment syndrome and crush injury. Marino 5th Ed." />
+  <link rel="canonical" href="https://critcare.in/topic-rhabdomyolysis.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .severity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1rem 0;}
+    .sev-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .sev-mild{background:#f0fdf4;border-color:#86efac;}
+    .sev-mod{background:#fefce8;border-color:#fde68a;}
+    .sev-sev{background:#fef2f2;border-color:#fecaca;}
+    .sev-card h4{font-size:.8rem;font-weight:800;margin-bottom:.5rem;}
+    .sev-mild h4{color:#166534;} .sev-mod h4{color:#854d0e;} .sev-sev h4{color:#991b1b;}
+    .sev-card ul{font-size:.8rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    @media(max-width:600px){.severity-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Rhabdomyolysis</div>
+    <h1>💪 Rhabdomyolysis &amp; Crush Syndrome</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">CK &gt;5× ULN</span>
+      <span class="gbadge kdigo">Pigment AKI</span>
+      <span class="gbadge isccm">Fluid First</span>
+      <span class="gbadge esicm">Crush Syndrome</span>
+      <span class="gbadge apasl">Compartment</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Muscle Breakdown · Myoglobin · AKI</span>
+      <span class="topic-tag">Fluids · Urine Output</span>
+      <span class="topic-tag">K⁺ · Ca²⁺ · Compartment</span>
+      <span class="topic-updated">Pigment nephropathy physiology · Crush-injury disaster guidance · KDIGO AKI · Marino 5th Ed (2025)</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Pigment Nephropathy</a></li>
+        <li><a href="#s3">3. Guidelines &amp; Fluids</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>Definition, Causes &amp; the Classic Triad</h2>
+      <div class="book-quote">
+        <p>Rhabdomyolysis is the breakdown of skeletal muscle with release of its intracellular contents — creatine kinase, myoglobin, potassium and phosphate — into the circulation. The classic triad of muscle pain, weakness and dark "tea-coloured" urine is present in a minority; most cases are picked up on a raised creatine kinase in the right clinical setting. The threat to life comes not from the muscle injury itself but from what leaks out of it: potassium, and the myoglobin that poisons the kidney.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Rhabdomyolysis.</cite>
+      </div>
+
+      <h3>Diagnosis</h3>
+      <ul>
+        <li><strong>Creatine kinase (CK) &gt; ~5× the upper limit of normal</strong> (usually &gt;1000 U/L); the risk of AKI rises as CK climbs, particularly above <strong>~5000 U/L</strong>.</li>
+        <li><strong>Myoglobinuria</strong> — urine dipstick <strong>positive for "blood" but few/no red cells on microscopy</strong> (the dipstick detects myoglobin as well as haemoglobin) — a useful bedside clue.</li>
+        <li>Supportive: raised potassium, phosphate, urate; <strong>low calcium</strong> early; raised AST/LDH.</li>
+      </ul>
+
+      <h3>Causes — "trauma and everything else"</h3>
+      <div class="severity-grid">
+        <div class="sev-card sev-sev"><h4>Traumatic / compression</h4><ul><li>Crush injury, prolonged immobility ("long lie", collapse, surgery)</li><li>Compartment syndrome, tourniquet, burns, electrocution</li></ul></div>
+        <div class="sev-card sev-mod"><h4>Exertional / thermal</h4><ul><li>Extreme exertion, seizures, agitation, dystonia</li><li>Heat stroke, neuroleptic malignant syndrome, malignant hyperthermia</li></ul></div>
+        <div class="sev-card sev-mild"><h4>Toxic / metabolic / other</h4><ul><li>Alcohol, statins/fibrates, cocaine, opioids (immobile)</li><li>Hypokalaemia/-phosphataemia, myopathies, infections, snakebite</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Why Myoglobin Injures the Kidney</h2>
+      <div class="book-quote">
+        <p>Filtered myoglobin damages the kidney through three overlapping mechanisms: it causes renal vasoconstriction, it precipitates with Tamm–Horsfall protein to form obstructing casts in the tubule, and its heme moiety generates oxidative injury to tubular cells. All three are made dramatically worse by hypovolaemia and by acidic urine. This is why the single most effective treatment is early, generous fluid — restoring renal blood flow and flushing the pigment through before it can precipitate.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Myoglobinuric Acute Kidney Injury.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 From muscle injury to pigment AKI</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span>Muscle necrosis (crush, exertion, toxin, ischaemia)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Release of <strong>myoglobin, K⁺, PO₄³⁻, CK, urate</strong> + fluid sequestration into muscle</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><strong>Hypovolaemia</strong> → renal hypoperfusion &amp; concentrated, acidic urine</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node">Renal <strong>vasoconstriction</strong></div>
+          <div class="pf-node">Tubular <strong>cast obstruction</strong> (Tamm–Horsfall)</div>
+          <div class="pf-node">Heme <strong>oxidative injury</strong></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Pathological state</span><strong>Pigment (myoglobinuric) AKI</strong> + life-threatening hyperkalaemia</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the electrolyte rollercoaster</div>
+        <ul>
+          <li><strong>Hyperkalaemia</strong> — released from dying muscle, worsened by AKI: the <strong>immediate killer</strong>. Compounded by <strong>hyperphosphataemia</strong>.</li>
+          <li><strong>Early hypocalcaemia</strong> — calcium is deposited in damaged muscle; do <strong>not</strong> correct it unless symptomatic or needed for hyperkalaemia, because…</li>
+          <li>…<strong>rebound hypercalcaemia</strong> occurs in the recovery phase as that calcium is released — over-replacing early makes it worse.</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — crush syndrome &amp; the reperfusion trap</div>
+        <p>In <strong>crush syndrome</strong>, the systemic illness often begins <em>when the compressing force is released</em>: reperfusion floods the circulation with potassium and acid and shifts litres of fluid into the injured limb, precipitating hyperkalaemic arrest and shock. In entrapment/disaster settings, <strong>start aggressive IV fluids before or at the moment of extrication</strong> — resuscitation cannot wait for the patient to reach hospital.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Guidelines — Fluids, Urine &amp; the Controversies</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Early aggressive fluid resuscitation — the cornerstone <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          Start <strong>IV isotonic fluid early and generously</strong> — often <strong>1–2 L/h initially</strong>, then titrated (commonly aiming for the order of <strong>~200–300 mL/h urine output</strong>, i.e. a target diuresis rather than a fixed volume). Total requirements can reach <strong>several litres to &gt;10 L/day</strong> in crush injury. <strong>Balanced crystalloid or 0.9% saline</strong> are both used — avoid potassium-containing fluids while hyperkalaemic; monitor closely for fluid overload once oliguric AKI is established.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Urinary alkalinisation &amp; mannitol — optional, not proven <span class="gr-c">WEAK / individualise</span></div>
+        <div class="gr-text">
+          <strong>Sodium bicarbonate</strong> (to alkalinise urine to pH &gt;6.5) and <strong>mannitol</strong> are traditional adjuncts intended to reduce cast formation and act as an osmotic diuretic — but <strong>no trial has shown they add benefit over adequate saline volume alone</strong>, and both carry risks (bicarbonate worsens hypocalcaemia and causes alkalosis; mannitol can precipitate AKI if the patient is volume-depleted or already oliguric). If used, only <em>after</em> volume repletion and an established urine output, and stop if there is no response.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Manage the electrolytes &amp; know when to dialyse <span class="gr-s">KDIGO</span></div>
+        <div class="gr-text">
+          <strong>Treat hyperkalaemia aggressively</strong> (see <a href="topic-electrolytes.html">Electrolyte Emergencies</a>) — it is the acute cause of death. <strong>Do not routinely correct hypocalcaemia</strong> (deposition now, rebound later) unless symptomatic or treating hyperkalaemia. <strong>Renal replacement therapy</strong> for the usual indications — refractory hyperkalaemia, severe acidosis, fluid overload, uraemia (see <a href="topic-aki.html">AKI &amp; RRT</a>). Note that most CK/myoglobin is <strong>not</strong> effectively cleared by conventional dialysis — RRT is for the complications, not to "remove myoglobin".
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Look for &amp; treat compartment syndrome</div>
+        <div class="gr-text">
+          Rhabdomyolysis and compartment syndrome drive each other. Suspect it with a tense, painful limb, <strong>pain out of proportion</strong> and pain on passive stretch (pulses and sensation are <em>late</em> signs). Measure compartment pressures if unsure; <strong>urgent fasciotomy</strong> for established acute compartment syndrome — but avoid unnecessary fasciotomy of a non-viable crush limb (infection risk). Involve surgery early.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>Rhabdomyolysis is common from <strong>trauma and road-traffic crush injuries, building collapses, prolonged "found-down" states, heat stroke, seizures, strenuous unaccustomed exertion, and snakebite</strong> (several Indian snake venoms are directly myotoxic — see <a href="topic-snakebite.html">Snakebite</a>). In mass-casualty <strong>crush disasters (earthquakes/building collapse)</strong>, begin high-volume IV fluids <strong>at the scene, before extrication</strong>, to pre-empt reperfusion hyperkalaemia. Where dialysis access is limited, <strong>early aggressive fluids to prevent AKI</strong> is the highest-value, lowest-cost intervention — and the reason to start volume the moment rhabdomyolysis is suspected.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Fluids, Electrolyte &amp; Adjunct Therapy</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug / Fluid</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>0.9% saline / balanced crystalloid</strong></td><td>Resuscitation (cornerstone)</td><td>1–2 L/h initially, then titrate to urine ~200–300 mL/h</td><td>Start early/at extrication; avoid K⁺-containing fluids while hyperkalaemic; watch overload if oliguric</td></tr>
+            <tr><td><strong>Calcium gluconate 10%</strong></td><td>Hyperkalaemic ECG changes / symptomatic ↓Ca²⁺</td><td>10 mL IV (repeat as needed)</td><td>Cardiac membrane stabilisation; don't routinely correct asymptomatic hypocalcaemia</td></tr>
+            <tr><td><strong>Insulin + dextrose</strong></td><td>Hyperkalaemia (shift)</td><td>10 U soluble insulin + 25 g glucose IV</td><td>Monitor glucose; see Electrolyte Emergencies</td></tr>
+            <tr><td><strong>Salbutamol neb</strong></td><td>Hyperkalaemia (shift)</td><td>10–20 mg nebulised</td><td>Adjunct to insulin-dextrose</td></tr>
+            <tr><td><strong>Sodium bicarbonate</strong></td><td>Optional urinary alkalinisation / severe acidosis</td><td>Titrate to urine pH &gt;6.5 (only after volume repletion)</td><td>Unproven benefit over saline; worsens hypocalcaemia; stop if no response</td></tr>
+            <tr><td><strong>Mannitol</strong></td><td>Optional osmotic diuretic</td><td>Only after euvolaemia &amp; established urine output</td><td>Unproven; avoid if oliguric/hypovolaemic (can worsen AKI)</td></tr>
+            <tr><td><strong>Renal replacement therapy</strong></td><td>Refractory K⁺ / acidosis / overload / uraemia</td><td>Standard indications (KDIGO)</td><td>For complications — does not effectively clear myoglobin</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Management Algorithm</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Recognise &amp; check the killers first</h4>
+          <ul><li>CK &gt;5× ULN in context; dip "blood" positive with no RBCs; myalgia/weakness/dark urine</li><li><strong>ECG + potassium immediately</strong> — hyperkalaemia is the acute threat</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Fluids early &amp; generously</h4>
+          <ul><li>Isotonic crystalloid 1–2 L/h, then titrate to urine output ~200–300 mL/h</li><li>In crush/entrapment: <strong>start fluids before extrication</strong></li><li>Insert a urinary catheter; monitor U&amp;E, CK, Ca²⁺, PO₄³⁻, ABG, fluid balance closely</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Treat electrolytes &amp; the cause</h4>
+          <ul><li>Aggressive hyperkalaemia treatment; don't over-correct calcium</li><li>Stop the offending drug/toxin; cool heat stroke; control seizures/agitation; treat sepsis</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Consider adjuncts &amp; complications</h4>
+          <ul><li>Bicarbonate/mannitol only after volume repletion &amp; urine output — and only if they help</li><li><strong>Assess for compartment syndrome</strong> → urgent fasciotomy if established; involve surgery</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Support the kidney &amp; watch the rebound</h4>
+          <ul><li>RRT for refractory hyperkalaemia/acidosis/overload/uraemia</li><li>Anticipate <strong>rebound hypercalcaemia</strong> in recovery; most non-oliguric AKI recovers with time</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Rhabdomyolysis</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Under-resuscitating with fluid</div><p>Timid fluids are the commonest error. Early, high-volume isotonic fluid — titrated to a brisk urine output — is the single intervention that prevents pigment AKI. Start before extrication in crush injury.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Missing hyperkalaemia</div><p>Potassium pours out of dying muscle and rises further with AKI; it, not the CK, is what causes arrest. Get an early ECG and potassium and treat aggressively.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Over-correcting early hypocalcaemia</div><p>Calcium is deposited in injured muscle early and released later. Replacing it routinely worsens the rebound hypercalcaemia of the recovery phase — treat only if symptomatic or for hyperkalaemia.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Relying on bicarbonate/mannitol instead of volume</div><p>Neither is proven superior to adequate saline, and both harm if the patient is under-filled or oliguric. Volume comes first; adjuncts are optional and stopped if they don't work.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Interpreting dip "blood" as haematuria</div><p>A urine dipstick positive for blood with no red cells on microscopy is myoglobinuria, not bleeding — a valuable clue that is often misread.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Forgetting compartment syndrome</div><p>Pain out of proportion and pain on passive stretch precede the loss of pulses. Missing acute compartment syndrome causes limb loss and perpetuates the rhabdomyolysis — assess actively and get surgery involved.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 7 — Expecting dialysis to "clear the myoglobin"</div><p>Conventional RRT does not remove myoglobin effectively. Dialysis is for the metabolic complications (K⁺, acidosis, overload, uraemia), not as a treatment for the pigment itself.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: How is rhabdomyolysis diagnosed?</strong><br>CK &gt;5× ULN (usually &gt;1000 U/L) in the right setting; AKI risk climbs above ~5000 U/L. Urine dip positive for "blood" with no red cells = myoglobinuria.</p></div>
+      <div class="ec"><p><strong>Q: How does myoglobin cause AKI?</strong><br>Three mechanisms — renal vasoconstriction, tubular cast obstruction (with Tamm–Horsfall protein), and heme-mediated oxidative tubular injury — all amplified by hypovolaemia and acidic urine.</p></div>
+      <div class="ec"><p><strong>Q: What is the cornerstone of treatment?</strong><br>Early, aggressive isotonic IV fluids (1–2 L/h initially) titrated to a high urine output (~200–300 mL/h) — started as early as possible, before extrication in crush injury.</p></div>
+      <div class="ec"><p><strong>Q: Do bicarbonate and mannitol help?</strong><br>Not proven superior to adequate saline volume; both carry risks. Use only after volume repletion and an established urine output, and stop if there is no benefit.</p></div>
+      <div class="ec"><p><strong>Q: Explain the calcium changes.</strong><br>Early hypocalcaemia (calcium deposits in damaged muscle) then rebound hypercalcaemia in recovery. Do not routinely correct the early hypocalcaemia unless symptomatic or treating hyperkalaemia.</p></div>
+      <div class="ec"><p><strong>Q: What is crush syndrome, and why is extrication dangerous?</strong><br>The systemic effects (hyperkalaemia, acidosis, hypovolaemic shock) of reperfusing a crushed limb on release of compression — hence start IV fluids before/at extrication to pre-empt hyperkalaemic arrest.</p></div>
+      <div class="ec"><p><strong>Q: Which electrolyte disturbance is the acute killer?</strong><br>Hyperkalaemia (with hyperphosphataemia) — treat aggressively with calcium, insulin-dextrose, salbutamol and RRT if refractory.</p></div>
+      <div class="ec"><p><strong>Q: Does dialysis remove myoglobin?</strong><br>No — conventional RRT does not clear it effectively; dialyse for the complications (refractory K⁺, acidosis, fluid overload, uraemia).</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Bosch X, Poch E, Grau JM.</strong> Rhabdomyolysis and Acute Kidney Injury. <em>N Engl J Med.</em> 2009;361:62–72.</li>
+        <li><strong>Chavez LO, Leon M, Einav S, Varon J.</strong> Beyond muscle destruction: a systematic review of rhabdomyolysis for clinical practice. <em>Crit Care.</em> 2016;20:135.</li>
+        <li><strong>Sever MS, Vanholder R (RDRTF of ISN Work Group).</strong> Recommendations for the management of crush victims in mass disasters. <em>Nephrol Dial Transplant.</em> 2012;27(Suppl 1):i1–i67.</li>
+        <li><strong>Scharman EJ, Troutman WG.</strong> Prevention of kidney injury following rhabdomyolysis: a systematic review. <em>Ann Pharmacother.</em> 2013;47:90–105.</li>
+        <li><strong>KDIGO AKI Work Group.</strong> KDIGO Clinical Practice Guideline for Acute Kidney Injury. <em>Kidney Int Suppl.</em> 2012;2:1–138.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Acute Kidney Injury / Myoglobinuria. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Rhabdomyolysis. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

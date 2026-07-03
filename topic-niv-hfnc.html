@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>NIV, HFNC &amp; Ventilator Liberation — CritCare.in</title>
+  <meta name="description" content="Non-invasive respiratory support and weaning: acute hypoxaemic vs hypercapnic failure, when NIV works (COPD, cardiogenic oedema) and when it fails, high-flow nasal cannula (FLORALI, HOT), the ROX index, spontaneous breathing trials, extubation readiness and post-extubation support. ERS/ATS, Marino 5th Ed." />
+  <link rel="canonical" href="https://critcare.in/topic-niv-hfnc.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .severity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1rem 0;}
+    .sev-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .sev-mild{background:#f0fdf4;border-color:#86efac;}
+    .sev-mod{background:#fefce8;border-color:#fde68a;}
+    .sev-sev{background:#fef2f2;border-color:#fecaca;}
+    .sev-card h4{font-size:.8rem;font-weight:800;margin-bottom:.5rem;}
+    .sev-mild h4{color:#166534;} .sev-mod h4{color:#854d0e;} .sev-sev h4{color:#991b1b;}
+    .sev-card ul{font-size:.8rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    @media(max-width:600px){.severity-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › NIV, HFNC &amp; Weaning</div>
+    <h1>💨 NIV, HFNC &amp; Ventilator Liberation</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ERS/ATS 2017</span>
+      <span class="gbadge kdigo">FLORALI</span>
+      <span class="gbadge isccm">ROX Index</span>
+      <span class="gbadge esicm">SBT / WIND</span>
+      <span class="gbadge apasl">Extubation</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Support · Rescue · Liberate</span>
+      <span class="topic-tag">Hypoxaemic vs Hypercapnic</span>
+      <span class="topic-tag">SBT · ROX · Post-extubation</span>
+      <span class="topic-updated">ERS/ATS NIV 2017 · FLORALI (NEJM 2015) · HOT/HIGH trials · WIND / liberation guidance · Marino 5th Ed (2025)</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — How It Works</a></li>
+        <li><a href="#s3">3. Guidelines &amp; Evidence</a></li>
+        <li><a href="#s4">4. Settings &amp; Drugs</a></li>
+        <li><a href="#s5">5. Support &amp; Weaning Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>Non-Invasive Support — Who, and Why</h2>
+      <div class="book-quote">
+        <p>Non-invasive support succeeds or fails on patient selection. Used for the right indication — a COPD exacerbation with respiratory acidosis, or acute cardiogenic pulmonary oedema — non-invasive ventilation prevents intubation and saves lives. Used to postpone an inevitable intubation in the wrong patient, it simply delays a definitive airway and worsens the outcome. The skill is knowing which patient is in front of you, and recognising failure early.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Non-Invasive Ventilation &amp; Respiratory Failure.</cite>
+      </div>
+
+      <div class="severity-grid">
+        <div class="sev-card sev-sev"><h4>Type 1 — Hypoxaemic</h4><ul><li>PaO₂ &lt;8 kPa (60 mmHg), normal/low CO₂</li><li>Pneumonia, ARDS, oedema</li><li>Support: O₂ → <strong>HFNC</strong> → CPAP/NIV → intubate</li></ul></div>
+        <div class="sev-card sev-mod"><h4>Type 2 — Hypercapnic</h4><ul><li>PaCO₂ &gt;6 kPa (45 mmHg) + acidosis (pH &lt;7.35)</li><li>COPD, obesity-hypoventilation, neuromuscular</li><li>Support: <strong>NIV (BiPAP)</strong> is first-line</li></ul></div>
+        <div class="sev-card sev-mild"><h4>Cardiogenic oedema</h4><ul><li>"Flash" pulmonary oedema</li><li><strong>CPAP or NIV</strong> + nitrates/diuretics</li><li>Reduces intubation &amp; mortality</li></ul></div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">🔧 The three tools, in plain terms</div>
+        <ul>
+          <li><strong>HFNC (high-flow nasal cannula)</strong> — heated humidified O₂ at 30–60 L/min: gives a reliable high FiO₂, washes out CO₂ dead space, provides a little PEEP and is comfortable. Best in <strong>type 1 (hypoxaemic)</strong> failure.</li>
+          <li><strong>CPAP</strong> — continuous pressure (one level): recruits alveoli, raises functional residual capacity, offloads the failing heart. Best in <strong>hypoxaemia &amp; cardiogenic oedema</strong>.</li>
+          <li><strong>NIV / BiPAP</strong> — two pressures (IPAP + EPAP): the difference (pressure support) does the ventilating work and clears CO₂. Best in <strong>type 2 (hypercapnic)</strong> failure.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Physiology of Support &amp; of Weaning</h2>
+      <div class="book-quote">
+        <p>Positive pressure applied to the airway does three useful things: it recruits collapsed lung and improves oxygenation, it unloads the fatiguing respiratory muscles, and — in the failing left ventricle — it lowers both preload and afterload. The mirror image explains why weaning fails: the moment support is withdrawn, the work of breathing and the cardiac load both return, and the patient who cannot meet that demand decompensates. Weaning is therefore a cardiorespiratory stress test.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Mechanical Ventilation &amp; Discontinuing Ventilation.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 Why a spontaneous breathing trial can fail</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span>Support withdrawn → return to unsupported breathing</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">↑ <strong>Work of breathing</strong> (load) vs <strong>respiratory muscle capacity</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><strong>Load &gt; capacity</strong><span class="pf-sub">rapid shallow breathing, ↑ CO₂, fatigue</span></div>
+          <div class="pf-node"><strong>Loss of intrathoracic pressure</strong><span class="pf-sub">↑ LV preload/afterload → weaning-induced pulmonary oedema</span></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Hypoxaemia, hypercapnia, distress, tachycardia</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Outcome</span><strong>Failed SBT / re-intubation</strong> — find &amp; fix the cause before retrying</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the rapid shallow breathing index (RSBI)</div>
+        <p>The <strong>RSBI = respiratory rate ÷ tidal volume (in litres)</strong>, measured during a brief spontaneous trial. A value <strong>&lt;105</strong> predicts weaning success reasonably well; a high RSBI (fast, small breaths) signals load exceeding capacity. It is a guide, not a gate — a good SBT plus an assessment of airway, cough and secretions matters more than any single number.</p>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — separate the ability to breathe from the ability to protect the airway</div>
+        <p>Passing an SBT means the lungs and pump can cope; it does <strong>not</strong> guarantee a safe extubation. Before pulling the tube, confirm an <strong>adequate cough, manageable secretions, and airway patency</strong> (consider a cuff-leak test in those at risk of laryngeal oedema). Weaning failure and extubation failure are different problems with different fixes.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Guidelines &amp; Landmark Trials</span>
+      <h2>Evidence-Based Practice</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">NIV — strong indications <span class="gr-s">STRONG — ERS/ATS 2017</span></div>
+        <div class="gr-text">
+          NIV is <strong>recommended</strong> for: <strong>acute hypercapnic COPD exacerbation with respiratory acidosis (pH &lt;7.35)</strong> and <strong>acute cardiogenic pulmonary oedema</strong>. It is also used to facilitate weaning in COPD and for palliation. It is <strong>not</strong> a substitute for intubation in a patient who needs a definitive airway, and evidence in <em>de novo</em> hypoxaemic failure/pneumonia is weaker — watch such patients extremely closely.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">HFNC in hypoxaemic failure <span class="gr-s">FLORALI · HOT trials</span></div>
+        <div class="gr-text">
+          In <em>de novo</em> acute hypoxaemic respiratory failure, <strong>FLORALI (NEJM 2015)</strong> found high-flow nasal cannula improved outcomes (including 90-day mortality) versus standard oxygen or NIV, and reduced intubation in the most hypoxaemic. HFNC is comfortable, allows eating/speaking and is a reasonable first step — but, like NIV, its danger is <strong>masking</strong> deterioration. Reassess frequently and do not let it delay a needed intubation.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Predicting HFNC failure — the ROX index</div>
+        <div class="gr-text">
+          <strong>ROX = (SpO₂/FiO₂) ÷ respiratory rate.</strong> Measured at ~2, 6 and 12 h, a <strong>ROX ≥4.88</strong> predicts HFNC success; a low or falling ROX flags likely failure and the need to intubate. Use it as a structured re-check, not a reason to persist with a failing trial.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Liberation from the ventilator <span class="gr-s">Daily SAT + SBT</span></div>
+        <div class="gr-text">
+          <strong>Screen daily</strong> for readiness: cause improving, adequate oxygenation on low support (e.g. FiO₂ ≤0.4, PEEP ≤5–8, PaO₂/FiO₂ acceptable), haemodynamic stability off/low vasopressors, awake and able to cough. Pair a <strong>spontaneous awakening trial (sedation hold)</strong> with a <strong>spontaneous breathing trial</strong> (30–120 min on low pressure support or T-piece). <strong>Extubate a patient who passes</strong> — and give <strong>prophylactic NIV or HFNC after extubation</strong> to high-risk patients (COPD, hypercapnia, heart failure) to prevent re-intubation.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>NIV and HFNC are workhorses that <strong>conserve scarce ICU ventilators and beds</strong> — invaluable in COPD exacerbations and cardiogenic oedema, and heavily used during respiratory surges. Where oxygen supply and blender capacity are limited, remember HFNC and NIV can consume <strong>large volumes of oxygen</strong>; plan supply. The greatest local pitfall is <strong>over-reliance on non-invasive support in hypoxaemic pneumonia</strong> without close monitoring — set explicit time-limited trials with clear failure criteria (worsening gas exchange, low/falling ROX, exhaustion, altered sensorium) and a pre-agreed plan to intubate, so a delayed intubation does not become a crash intubation.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Typical Settings &amp; Adjuncts</span>
+      <h2>Starting Points &amp; Supporting Drugs</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Modality / Drug</th><th>Use</th><th>Typical start</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>HFNC</strong></td><td>Type 1 hypoxaemia</td><td>Flow 40–60 L/min, FiO₂ to target SpO₂; temp 37°C</td><td>Check ROX at 2/6/12h; escalate if ROX &lt;4.88 or falling</td></tr>
+            <tr><td><strong>NIV — BiPAP</strong></td><td>Type 2 / COPD acidosis</td><td>IPAP 12–15 → titrate to ↓CO₂; EPAP 4–5; back-up rate</td><td>Recheck ABG at 1h — if pH not improving, escalate</td></tr>
+            <tr><td><strong>CPAP</strong></td><td>Cardiogenic oedema / hypoxaemia</td><td>5–10 cmH₂O; FiO₂ to target SpO₂</td><td>Offloads LV; combine with nitrates/diuretics</td></tr>
+            <tr><td><strong>Pressure-support SBT</strong></td><td>Weaning trial</td><td>PS 5–8, PEEP 5, 30–120 min</td><td>Pass = stable RR/SpO₂/HR, no distress; RSBI &lt;105</td></tr>
+            <tr><td><strong>GTN (nitrate)</strong></td><td>Cardiogenic oedema adjunct</td><td>10–200 µg/min IV</td><td>Preload/afterload reduction with CPAP/NIV</td></tr>
+            <tr><td><strong>Bronchodilators + steroid</strong></td><td>COPD/asthma driving failure</td><td>Nebulised salbutamol/ipratropium; steroid</td><td>Treat the reversible cause alongside NIV (see <a href="topic-copd.html">COPD</a>)</td></tr>
+            <tr><td><strong>Dexmedetomidine (light)</strong></td><td>NIV intolerance/agitation</td><td>Low-dose infusion</td><td>Improves tolerance without abolishing respiratory drive; avoid deep sedation on NIV</td></tr>
+            <tr><td><strong>Prophylactic post-extubation NIV/HFNC</strong></td><td>High-risk extubation</td><td>Apply immediately after extubation</td><td>Prevents re-intubation in COPD/hypercapnic/cardiac patients</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Support &amp; Weaning Flowchart</span>
+      <h2>From Failure to Liberation</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Classify the failure</h4>
+          <ul><li>ABG: type 1 (hypoxaemic) vs type 2 (hypercapnic + acidotic)</li><li>Identify &amp; treat the cause (COPD, oedema, pneumonia, neuromuscular)</li><li>Exclude an immediate need for intubation (exhaustion, ↓GCS, unstable, can't protect airway)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Choose the tool</h4>
+          <ul><li>COPD acidosis / hypercapnia → <strong>NIV (BiPAP)</strong>; cardiogenic oedema → <strong>CPAP/NIV</strong> + nitrates/diuretics</li><li>De novo hypoxaemia → <strong>HFNC</strong> (± CPAP); treat the pneumonia/ARDS</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Set a time-limited trial with failure criteria</h4>
+          <ul><li>Recheck at 1–2h: ABG (NIV), <strong>ROX</strong> (HFNC), work of breathing, sensorium</li><li><strong>Not improving → intubate</strong> — do not persist; a delayed intubation is dangerous</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Once ventilated — screen daily to liberate</h4>
+          <ul><li>Cause improving, oxygenating on low support, stable, awake, coughing</li><li>Pair <strong>sedation hold (SAT)</strong> + <strong>spontaneous breathing trial (SBT)</strong></li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Extubate &amp; support</h4>
+          <ul><li>Confirm cough, secretions, airway (cuff-leak if at risk) before extubation</li><li><strong>Prophylactic NIV/HFNC</strong> for high-risk patients; watch for post-extubation stridor/failure</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes with Non-Invasive Support &amp; Weaning</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Using NIV to delay an inevitable intubation</div><p>In a patient who is exhausted, obtunded, unstable or cannot protect the airway, non-invasive support postpones a definitive airway and worsens outcome. Set explicit failure criteria and intubate when they are met.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Wrong tool for the failure type</div><p>HFNC/CPAP don't ventilate — they won't clear CO₂ in a hypercapnic COPD patient, who needs the pressure-support (IPAP–EPAP difference) of BiPAP. Conversely, BiPAP isn't first-line for de novo hypoxaemia.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Not rechecking an ABG on NIV</div><p>Recheck gases at ~1 hour: if the pH/CO₂ isn't improving, the trial is failing. "It looks better" is not enough in respiratory acidosis.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Ignoring the ROX index on HFNC</div><p>A low or falling ROX (&lt;4.88) predicts HFNC failure. Use it as a scheduled checkpoint at 2/6/12h rather than watching comfort alone.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — No daily weaning screen / deep sedation</div><p>Patients stay ventilated too long when readiness isn't screened daily and sedation isn't held. Pair a spontaneous awakening trial with an SBT to shorten ventilation.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Confusing weaning failure with extubation failure</div><p>Passing an SBT proves the pump works, not that the airway is safe. Assess cough, secretions and cuff-leak before extubation — otherwise you re-intubate for stridor or sputum retention.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 7 — Not using prophylactic post-extubation support</div><p>High-risk patients (COPD, hypercapnia, heart failure) benefit from NIV/HFNC applied immediately after extubation to prevent re-intubation — reactive rescue NIV after failure works less well.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: Strongest indications for NIV?</strong><br>Acute hypercapnic COPD exacerbation with respiratory acidosis (pH &lt;7.35) and acute cardiogenic pulmonary oedema — both reduce intubation and mortality (ERS/ATS 2017).</p></div>
+      <div class="ec"><p><strong>Q: Difference between CPAP and BiPAP?</strong><br>CPAP delivers one continuous pressure (recruits lung, offloads the heart) and oxygenates; BiPAP delivers two pressures — the IPAP–EPAP difference is pressure support that ventilates and clears CO₂ (for hypercapnic failure).</p></div>
+      <div class="ec"><p><strong>Q: What did FLORALI show?</strong><br>In de novo hypoxaemic respiratory failure, HFNC improved outcomes (including 90-day mortality) versus standard O₂ or NIV, and reduced intubation in the most hypoxaemic.</p></div>
+      <div class="ec"><p><strong>Q: Define the ROX index and its threshold.</strong><br>ROX = (SpO₂/FiO₂)/respiratory rate; a value ≥4.88 (at 2/6/12h) predicts HFNC success — a low/falling ROX predicts failure.</p></div>
+      <div class="ec"><p><strong>Q: What is the RSBI and its cut-off?</strong><br>Rapid shallow breathing index = RR ÷ tidal volume (L); &lt;105 predicts successful weaning. High values mean load exceeds capacity.</p></div>
+      <div class="ec"><p><strong>Q: How do you perform a spontaneous breathing trial?</strong><br>30–120 min on low pressure support (5–8) with PEEP 5, or T-piece. Pass = stable RR, SpO₂, HR and BP with no distress; then reassess airway/cough before extubation.</p></div>
+      <div class="ec"><p><strong>Q: Why can weaning cause pulmonary oedema?</strong><br>Removing positive intrathoracic pressure raises LV preload and afterload; a patient with cardiac dysfunction develops weaning-induced pulmonary oedema — diurese/optimise and re-trial.</p></div>
+      <div class="ec"><p><strong>Q: Who gets prophylactic post-extubation NIV/HFNC?</strong><br>High-risk patients — COPD/hypercapnia, heart failure, older patients — to prevent re-intubation; a cuff-leak test screens those at risk of post-extubation stridor.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Rochwerg B, Brochard L, Elliott MW, et al. (ERS/ATS).</strong> Official ERS/ATS clinical practice guidelines: noninvasive ventilation for acute respiratory failure. <em>Eur Respir J.</em> 2017;50:1602426.</li>
+        <li><strong>Frat JP, Thille AW, Mercat A, et al. (FLORALI).</strong> High-Flow Oxygen through Nasal Cannula in Acute Hypoxemic Respiratory Failure. <em>N Engl J Med.</em> 2015;372:2185–2196.</li>
+        <li><strong>Roca O, Caralt B, Messika J, et al.</strong> An Index Combining Respiratory Rate and Oxygenation to Predict Outcome of Nasal High-Flow Therapy (ROX index). <em>Am J Respir Crit Care Med.</em> 2019;199:1368–1376.</li>
+        <li><strong>Yang KL, Tobin MJ.</strong> A prospective study of indexes predicting the outcome of trials of weaning from mechanical ventilation (RSBI). <em>N Engl J Med.</em> 1991;324:1445–1450.</li>
+        <li><strong>Girard TD, Kress JP, Fuchs BD, et al. (ABC trial).</strong> Efficacy and safety of a paired sedation and ventilator weaning protocol. <em>Lancet.</em> 2008;371:126–134.</li>
+        <li><strong>Béduneau G, Pham T, Schortgen F, et al. (WIND).</strong> Epidemiology of Weaning Outcome according to a New Definition. <em>Am J Respir Crit Care Med.</em> 2017;195:772–783.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Mechanical Ventilation; Discontinuing Mechanical Ventilation. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Noninvasive Ventilation. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

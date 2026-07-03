@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>CNS Infections — Bacterial Meningitis &amp; Encephalitis — CritCare.in</title>
+  <meta name="description" content="ICU approach to acute CNS infection: bacterial meningitis vs viral/HSV encephalitis, when to CT before LP, CSF interpretation, empirical antibiotics + aciclovir, timing of dexamethasone (before/with first antibiotic dose), and complications. ESCMID/IDSA guidelines, Marino 5th Ed." />
+  <link rel="canonical" href="https://critcare.in/topic-cns-infections.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .severity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1rem 0;}
+    .sev-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .sev-mild{background:#f0fdf4;border-color:#86efac;}
+    .sev-mod{background:#fefce8;border-color:#fde68a;}
+    .sev-sev{background:#fef2f2;border-color:#fecaca;}
+    .sev-card h4{font-size:.8rem;font-weight:800;margin-bottom:.5rem;}
+    .sev-mild h4{color:#166534;} .sev-mod h4{color:#854d0e;} .sev-sev h4{color:#991b1b;}
+    .sev-card ul{font-size:.8rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    @media(max-width:600px){.severity-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › CNS Infections</div>
+    <h1>🧠 CNS Infections — Meningitis &amp; Encephalitis</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ESCMID 2016</span>
+      <span class="gbadge kdigo">IDSA</span>
+      <span class="gbadge isccm">Dexamethasone</span>
+      <span class="gbadge esicm">HSV / Aciclovir</span>
+      <span class="gbadge apasl">CT-before-LP</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Time-critical · Don't Delay Antibiotics</span>
+      <span class="topic-tag">CSF Interpretation</span>
+      <span class="topic-tag">Empirical Rx + Aciclovir</span>
+      <span class="topic-updated">ESCMID 2016 (bacterial meningitis) · IDSA · UK Joint Specialist Societies encephalitis · Marino 5th Ed (2025)</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Pathophysiology</a></li>
+        <li><a href="#s3">3. Guidelines &amp; CSF</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>Recognition &amp; the Two Syndromes</h2>
+      <div class="book-quote">
+        <p>Acute bacterial meningitis is one of the few infections in which an hour's delay measurably changes the outcome. The classic triad of fever, neck stiffness and altered mental status is present in a minority — but nearly every patient has at least one of fever, headache, neck stiffness or altered consciousness. When the picture is dominated by altered behaviour, seizures or focal deficits rather than meningism, think encephalitis, and cover herpes simplex.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — CNS Infections.</cite>
+      </div>
+
+      <div class="severity-grid">
+        <div class="sev-card sev-sev"><h4>Meningitis (meninges)</h4><ul><li>Fever, headache, <strong>neck stiffness/photophobia</strong>, altered consciousness</li><li>Kernig / Brudzinski signs (insensitive)</li><li>± petechial/purpuric rash (meningococcus)</li><li>Bacterial = emergency; viral usually self-limiting</li></ul></div>
+        <div class="sev-card sev-mod"><h4>Encephalitis (brain parenchyma)</h4><ul><li><strong>Altered behaviour/personality, confusion</strong>, ↓GCS</li><li><strong>Seizures &amp; focal deficits</strong> (esp. temporal → HSV)</li><li>Meningism may be mild/absent</li><li>HSV is the treatable must-not-miss cause</li></ul></div>
+      </div>
+
+      <h3>Commonest pathogens</h3>
+      <ul>
+        <li><strong>Bacterial meningitis (adults):</strong> <em>Streptococcus pneumoniae</em> (commonest), <em>Neisseria meningitidis</em>; <strong>add <em>Listeria monocytogenes</em></strong> in the elderly, pregnant, neonates and immunocompromised.</li>
+        <li><strong>Encephalitis:</strong> <strong>Herpes simplex virus (HSV-1)</strong> is the key treatable cause; also VZV, enteroviruses, and (regionally) arboviruses.</li>
+        <li>Consider <strong>tuberculous</strong> and <strong>cryptococcal</strong> meningitis (subacute, immunocompromised/HIV).</li>
+      </ul>
+
+      <div class="warn-box">
+        <div class="kb-label">⏱️ The one rule that saves lives</div>
+        <p><strong>Do not let investigations delay antibiotics.</strong> If bacterial meningitis is suspected, give dexamethasone + empirical antibiotics <em>now</em> — ideally within the first hour and, if a CT is needed before LP, <strong>before</strong> going to the scanner. Blood cultures and (increasingly) CSF/blood PCR remain useful even after the first dose.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Pathophysiology &amp; Why It Kills</h2>
+      <div class="book-quote">
+        <p>Bacteria reaching the subarachnoid space meet almost no local immune defence, so they multiply freely until the host response arrives. It is that inflammatory response — cytokine release, a breached blood–brain barrier, vasculitis and cerebral oedema — that raises intracranial pressure, chokes cerebral perfusion and drives the neuronal injury. This is why suppressing inflammation with dexamethasone, given with or just before the first antibiotic, improves outcome.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Infections of the Central Nervous System.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 How bacterial meningitis injures the brain</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span>Nasopharyngeal colonisation → bacteraemia → CSF invasion</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Rapid bacterial replication in the subarachnoid space (immune-privileged)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Host <strong>inflammatory cascade</strong> — cytokines, neutrophils, complement</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><strong>Blood–brain barrier breakdown</strong><span class="pf-sub">vasogenic + cytotoxic cerebral oedema</span></div>
+          <div class="pf-node"><strong>Vasculitis &amp; thrombosis</strong><span class="pf-sub">infarction, cranial nerve palsies</span></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">↑ <strong>Intracranial pressure</strong> → ↓ cerebral perfusion pressure</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Pathological state</span>Ischaemia, seizures, herniation, <strong>death or neurological sequelae</strong></div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the two things that determine outcome</div>
+        <ul>
+          <li><strong>Time to effective antibiotic</strong> — every hour of delay increases death and disability. Give the first dose empirically, before culture results.</li>
+          <li><strong>Control of the inflammatory response &amp; raised ICP</strong> — dexamethasone (pneumococcal disease especially), plus general neuroprotection: treat seizures, manage ICP, maintain cerebral perfusion, and support the airway in the obtunded patient.</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — encephalitis: cover HSV empirically</div>
+        <p>Untreated herpes simplex encephalitis has a mortality above 70% and leaves survivors devastated; treated early with aciclovir it is far better. Because you cannot exclude HSV clinically or on early imaging, <strong>start IV aciclovir empirically in anyone with suspected encephalitis</strong> (fever + altered behaviour/seizures/focal signs) and continue until HSV is excluded by CSF PCR — remembering that a very early PCR can be falsely negative and may need repeating.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Guidelines — CT, LP &amp; CSF</span>
+      <h2>Diagnosis &amp; Evidence-Based Care</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">CT before LP — only when indicated <span class="gr-s">IDSA / ESCMID</span></div>
+        <div class="gr-text">
+          Most patients do <strong>not</strong> need a CT before LP. Image first only if a red flag suggests a mass lesion/raised ICP risk: <strong>new focal neurological deficit, GCS reduced/altered consciousness, new-onset seizures, immunocompromise, papilloedema,</strong> or history of CNS disease. <strong>Crucially, CT first must not delay antibiotics</strong> — take blood cultures and give dexamethasone + antibiotics before the scan.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">CSF interpretation</div>
+        <div class="gr-text">
+          <strong>Bacterial:</strong> cloudy; <strong>neutrophil</strong> pleocytosis (often &gt;1000), <strong>high protein</strong>, <strong>low CSF:serum glucose (&lt;0.4)</strong>, high opening pressure; Gram stain/culture/PCR positive.<br>
+          <strong>Viral:</strong> clear; <strong>lymphocytic</strong>, mildly raised protein, <strong>normal glucose</strong>; HSV/enterovirus PCR.<br>
+          <strong>TB / fungal:</strong> lymphocytic, <strong>very high protein</strong>, <strong>low glucose</strong> (subacute); India ink/CrAg for cryptococcus, TB PCR/culture.<br>
+          Always send paired <strong>serum glucose</strong>, and a CSF sample for <strong>PCR</strong> (meningococcal/pneumococcal/HSV/enterovirus).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Dexamethasone — timing is everything <span class="gr-s">STRONG — ESCMID / de Gans 2002</span></div>
+        <div class="gr-text">
+          Give <strong>dexamethasone 10 mg IV QDS for 4 days</strong>, starting <strong>with or just before the first antibiotic dose</strong>, in suspected/confirmed bacterial meningitis. It reduces mortality and hearing loss, with the clearest benefit in <strong>pneumococcal</strong> disease. If it was not started before antibiotics, the window has largely passed — do not start it late. Stop it if a non-bacterial cause is confirmed.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Public-health &amp; source control</div>
+        <div class="gr-text">
+          Notify the case; give <strong>chemoprophylaxis</strong> (e.g. ciprofloxacin/rifampicin) to close contacts of meningococcal disease. Look for and treat a <strong>parameningeal source</strong> (otitis, sinusitis, mastoiditis, CSF leak, endocarditis).
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Tuberculous meningitis is common and easily missed</strong> — a subacute lymphocytic CSF with very high protein and low glucose, often with basal meningeal enhancement/hydrocephalus on imaging. Start <strong>ATT plus adjunctive corticosteroids</strong> early when TBM is suspected; do not wait for culture. <strong>Cryptococcal meningitis</strong> (test CrAg/India ink) and <strong>HIV</strong> should be considered in the immunocompromised. Regionally, <strong>Japanese encephalitis and other arboviral encephalitides</strong> are important causes of encephalitis — but still <strong>cover HSV with aciclovir</strong> until excluded. Meningococcal and pneumococcal vaccination and prompt contact prophylaxis matter for outbreak control.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Empirical &amp; Targeted Therapy</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose (normal renal function)</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ceftriaxone</strong></td><td>Empirical bacterial meningitis</td><td>2 g IV every 12h</td><td>Covers pneumococcus &amp; meningococcus; backbone of empirical therapy</td></tr>
+            <tr><td><strong>Amoxicillin / Ampicillin</strong></td><td>Add for <em>Listeria</em> cover</td><td>2 g IV every 4h</td><td>Add if &gt;50y, pregnant, neonate, or immunocompromised</td></tr>
+            <tr><td><strong>Vancomycin</strong></td><td>Add where resistant pneumococcus likely</td><td>Loading + level-guided</td><td>For high local penicillin/cephalosporin-resistant <em>S. pneumoniae</em></td></tr>
+            <tr><td><strong>Dexamethasone</strong></td><td>Adjunct (bacterial)</td><td>10 mg IV QDS × 4 days</td><td><strong>With/just before</strong> first antibiotic; best benefit in pneumococcal disease</td></tr>
+            <tr><td><strong>Aciclovir</strong></td><td>Suspected HSV encephalitis</td><td>10 mg/kg IV every 8h (IBW)</td><td>Start empirically; ensure hydration (nephrotoxic); continue until HSV excluded</td></tr>
+            <tr><td><strong>Ceftriaxone (contacts)</strong> / Ciprofloxacin</td><td>Meningococcal prophylaxis</td><td>Ciprofloxacin 500 mg PO single dose</td><td>Close contacts; alternatives rifampicin/ceftriaxone</td></tr>
+            <tr><td><strong>Anti-tubercular therapy + steroid</strong></td><td>Suspected TB meningitis</td><td>Standard 4-drug ATT + tapering steroid</td><td>Start early on clinical/CSF suspicion in endemic settings</td></tr>
+            <tr><td><strong>Liposomal amphotericin B + flucytosine</strong></td><td>Cryptococcal meningitis</td><td>Induction per guideline</td><td>Immunocompromised/HIV; manage raised ICP with repeated LPs</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Management Algorithm</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Suspect &amp; resuscitate</h4>
+          <ul><li>Fever + headache/neck stiffness/↓consciousness → meningitis; altered behaviour/seizures/focal signs → encephalitis</li><li>ABC, treat shock/seizures; <strong>take blood cultures immediately</strong></li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Give first-hour therapy — do not wait</h4>
+          <ul><li><strong>Dexamethasone + empirical antibiotics</strong> (ceftriaxone ± amoxicillin ± vancomycin) within the first hour</li><li><strong>Add IV aciclovir</strong> if encephalitis is possible</li><li>If CT is indicated before LP, give the drugs <strong>first</strong></li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Decide on CT, then LP</h4>
+          <ul><li>CT first only for red flags (focal deficit, ↓GCS, seizures, immunocompromise, papilloedema)</li><li><strong>LP</strong>: cell count/differential, protein, glucose (+ paired serum), Gram/culture, <strong>PCR</strong>, opening pressure</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Refine therapy on results</h4>
+          <ul><li>Narrow/adjust antibiotics to organism &amp; sensitivities; stop steroid/aciclovir if cause excluded</li><li>Consider TB/cryptococcal/arboviral if lymphocytic CSF or subacute course</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>ICU support &amp; complications</h4>
+          <ul><li>Airway/ventilation for ↓GCS; manage <strong>raised ICP &amp; seizures</strong>; watch for SIADH/hyponatraemia</li><li>Look for complications: hydrocephalus, infarction, abscess, deafness; treat the source (ENT/CSF leak)</li><li>Notify public health; give <strong>contact prophylaxis</strong></li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in CNS Infection</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Delaying antibiotics for the LP or CT</div><p>The commonest fatal error. Give dexamethasone + antibiotics within the hour, before imaging/LP if needed. The CSF and blood PCR still help after the first dose.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Forgetting <em>Listeria</em> cover</div><p>Ceftriaxone does not cover <em>Listeria</em>. Add amoxicillin/ampicillin in those &gt;50, pregnant, neonatal or immunocompromised.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Not covering HSV in encephalitis</div><p>Any patient with fever plus altered behaviour, seizures or focal signs should get empirical IV aciclovir until HSV PCR is negative — untreated HSV encephalitis is devastating.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Giving dexamethasone late</div><p>The benefit depends on giving it with or just before the first antibiotic. Starting it hours later adds little; the window is at presentation, not the ward round.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Trusting an early negative HSV PCR</div><p>CSF HSV PCR can be falsely negative in the first 24–72h. If clinical suspicion is high, continue aciclovir and repeat the PCR.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Missing tuberculous meningitis</div><p>A subacute lymphocytic CSF with very high protein and low glucose is TBM until proven otherwise in endemic areas — start ATT + steroid early rather than waiting for culture.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 7 — Ignoring the source and the contacts</div><p>Hunt for a parameningeal focus (otitis, sinusitis, CSF leak, endocarditis) and give meningococcal chemoprophylaxis to close contacts — the case is a public-health event.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: When must you CT before LP?</strong><br>Focal neurological deficit, reduced/altered consciousness, new seizures, immunocompromise, papilloedema, or known CNS disease. Otherwise LP without prior CT — and never delay antibiotics for imaging.</p></div>
+      <div class="ec"><p><strong>Q: Classic bacterial CSF?</strong><br>Cloudy, neutrophilic pleocytosis, high protein, low CSF:serum glucose (&lt;0.4), high opening pressure, positive Gram/culture/PCR.</p></div>
+      <div class="ec"><p><strong>Q: Empirical antibiotics for adult bacterial meningitis?</strong><br>Ceftriaxone 2 g BD; add amoxicillin for <em>Listeria</em> (&gt;50/pregnant/immunocompromised); add vancomycin where resistant pneumococcus is likely.</p></div>
+      <div class="ec"><p><strong>Q: Dexamethasone — dose, timing and who benefits most?</strong><br>10 mg IV QDS for 4 days, given with or just before the first antibiotic; greatest benefit (mortality, hearing) in pneumococcal meningitis.</p></div>
+      <div class="ec"><p><strong>Q: Which encephalitis must you never miss, and how do you treat it?</strong><br>HSV encephalitis — empirical IV aciclovir 10 mg/kg every 8h; temporal-lobe changes on MRI/EEG support it; confirm with CSF HSV PCR (may need repeating).</p></div>
+      <div class="ec"><p><strong>Q: CSF pattern of tuberculous meningitis?</strong><br>Lymphocytic, very high protein, low glucose, subacute onset, often basal enhancement/hydrocephalus — treat with ATT + adjunctive steroid early.</p></div>
+      <div class="ec"><p><strong>Q: Meningococcal contact prophylaxis?</strong><br>Ciprofloxacin single dose (or rifampicin/ceftriaxone) to close contacts, plus notification to public health.</p></div>
+      <div class="ec"><p><strong>Q: Which electrolyte problem complicates meningitis?</strong><br>Hyponatraemia (SIADH, or cerebral salt wasting) — monitor sodium and manage the cause; avoid rapid correction.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>van de Beek D, Cabellos C, Dzupova O, et al. (ESCMID).</strong> ESCMID guideline: diagnosis and treatment of acute bacterial meningitis. <em>Clin Microbiol Infect.</em> 2016;22(Suppl 3):S37–S62.</li>
+        <li><strong>Tunkel AR, Hartman BJ, Kaplan SL, et al. (IDSA).</strong> Practice Guidelines for the Management of Bacterial Meningitis. <em>Clin Infect Dis.</em> 2004;39:1267–1284.</li>
+        <li><strong>de Gans J, van de Beek D (European Dexamethasone Study).</strong> Dexamethasone in adults with bacterial meningitis. <em>N Engl J Med.</em> 2002;347:1549–1556.</li>
+        <li><strong>Brouwer MC, McIntyre P, Prasad K, van de Beek D.</strong> Corticosteroids for acute bacterial meningitis. <em>Cochrane Database Syst Rev.</em> 2015;(9):CD004405.</li>
+        <li><strong>Tunkel AR, Glaser CA, Bloch KC, et al. (IDSA).</strong> The Management of Encephalitis. <em>Clin Infect Dis.</em> 2008;47:303–327.</li>
+        <li><strong>Solomon T, Michael BD, Smith PE, et al.</strong> Management of suspected viral encephalitis in adults — Joint Specialist Societies guideline. <em>J Infect.</em> 2012;64:347–373.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Infections of the Central Nervous System. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). CNS Infections. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

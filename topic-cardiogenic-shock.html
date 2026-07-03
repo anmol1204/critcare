@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Cardiogenic Shock &amp; Acute Heart Failure — CritCare.in</title>
+  <meta name="description" content="ICU management of cardiogenic shock: SCAI SHOCK stages, the death spiral, congestion/perfusion phenotypes, noradrenaline-first vasoactive strategy, dobutamine vs milrinone, mechanical circulatory support (IABP, Impella, VA-ECMO), and the DanGer Shock, IABP-SHOCK II &amp; ECLS-SHOCK trials. ESC 2021/2023, Marino 5th Ed." />
+  <link rel="canonical" href="https://critcare.in/topic-cardiogenic-shock.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .severity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1rem 0;}
+    .sev-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .sev-mild{background:#f0fdf4;border-color:#86efac;}
+    .sev-mod{background:#fefce8;border-color:#fde68a;}
+    .sev-sev{background:#fef2f2;border-color:#fecaca;}
+    .sev-card h4{font-size:.8rem;font-weight:800;margin-bottom:.5rem;}
+    .sev-mild h4{color:#166534;} .sev-mod h4{color:#854d0e;} .sev-sev h4{color:#991b1b;}
+    .sev-card ul{font-size:.8rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    @media(max-width:600px){.severity-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Cardiogenic Shock</div>
+    <h1>🫀 Cardiogenic Shock &amp; Acute Heart Failure</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">SCAI SHOCK 2022</span>
+      <span class="gbadge kdigo">ESC 2021/2023</span>
+      <span class="gbadge isccm">DanGer Shock 2024</span>
+      <span class="gbadge esicm">IABP-SHOCK II</span>
+      <span class="gbadge apasl">ECLS-SHOCK 2023</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Pump Failure · Hypoperfusion</span>
+      <span class="topic-tag">SCAI A–E · Phenotypes</span>
+      <span class="topic-tag">Inotropes · MCS · ECMO</span>
+      <span class="topic-updated">SCAI SHOCK Stages 2022 · ESC HF 2021 / 2023 update · DanGer Shock (NEJM 2024) · IABP-SHOCK II · ECLS-SHOCK (2023) · Marino 5th Ed (2025)</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — The Shock Spiral</a></li>
+        <li><a href="#s3">3. Guidelines &amp; SCAI Stages</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>Definition, Causes &amp; Recognition</h2>
+      <div class="book-quote">
+        <p>Cardiogenic shock is end-organ hypoperfusion caused by the heart's failure to generate an adequate cardiac output despite an adequate — or raised — intracardiac filling pressure. The clinical bind is that the failing pump cannot be simply "filled"; the problem is forward output, and the same congestion that floods the lungs is a marker of, not the cure for, the low output. Acute myocardial infarction remains the commonest cause, but the differential is wide.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Cardiogenic Shock.</cite>
+      </div>
+
+      <h3>Haemodynamic definition (typical thresholds)</h3>
+      <ul>
+        <li><strong>SBP &lt;90 mmHg for &gt;30 min</strong> (or vasopressors needed to maintain it) <strong>plus</strong> signs of hypoperfusion (oliguria, cool peripheries, altered mentation, lactate &gt;2 mmol/L).</li>
+        <li>When measured: <strong>cardiac index &lt;1.8 L/min/m²</strong> without support (or &lt;2.2 with support) and <strong>PCWP &gt;15 mmHg</strong>.</li>
+      </ul>
+
+      <h3>Aetiology — not just infarction</h3>
+      <ul>
+        <li><strong>Acute MI with LV failure (commonest)</strong> — and its mechanical complications: <strong>papillary muscle/chordal rupture (acute MR), VSD, free-wall rupture/tamponade</strong> — always get an early echo.</li>
+        <li><strong>RV infarction</strong> — hypotension with clear lungs and raised JVP; preload-dependent.</li>
+        <li><strong>Decompensated chronic heart failure</strong>, <strong>fulminant myocarditis</strong>, <strong>stress (Takotsubo) cardiomyopathy</strong>, <strong>arrhythmia</strong>, valvular catastrophe, and post-cardiotomy shock.</li>
+        <li><strong>Obstructive mimics to exclude fast:</strong> massive PE, tamponade, tension pneumothorax (see <a href="topic-shock.html">Shock</a>).</li>
+      </ul>
+
+      <div class="warn-box">
+        <div class="kb-label">⚠️ The "cold and wet" patient</div>
+        <p>Classic cardiogenic shock is <strong>cold</strong> (hypoperfused — low output/high SVR) and <strong>wet</strong> (congested — high filling pressures). But up to a fifth are "warm and wet" with a SIRS-like vasodilated picture, and the danger is mistaking them for sepsis and pouring in fluid. Anchor on the echo and the lactate, not the skin alone.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Pathophysiology — the Downward Spiral</h2>
+      <div class="book-quote">
+        <p>The hallmark of cardiogenic shock is a self-reinforcing spiral: a fall in cardiac output lowers coronary perfusion, which worsens myocardial ischaemia, which further reduces output. Compensatory vasoconstriction and tachycardia defend blood pressure at the cost of raising afterload and myocardial oxygen demand, accelerating the decline. Interrupting this spiral early — restoring coronary flow and unloading the ventricle — is the whole of treatment.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Acute Heart Failure Syndromes.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 The cardiogenic shock spiral</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span>Acute MI · Myocarditis · Arrhythmia · Valve failure</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">↓ <strong>Stroke volume &amp; cardiac output</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node">↓ Coronary &amp; systemic perfusion<span class="pf-sub">worsening ischaemia, ↑ lactate, organ failure</span></div>
+          <div class="pf-node">↑ LV filling pressure<span class="pf-sub">pulmonary congestion → hypoxaemia</span></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><strong>Compensatory</strong> tachycardia &amp; vasoconstriction → ↑ afterload &amp; O₂ demand</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Hypoxaemia + ischaemia → further ↓ contractility <span class="pf-sub">± SIRS / vasoplegia in late shock</span></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Pathological state</span><strong>Multi-organ failure &amp; death</strong> unless the spiral is broken</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — perfusion &amp; congestion are two separate axes</div>
+        <p>Bedside phenotyping (the Stevenson/Forrester quadrants) drives therapy: assess <strong>perfusion</strong> ("cold" vs "warm") and <strong>congestion</strong> ("wet" vs "dry") independently.</p>
+        <ul>
+          <li><strong>Warm &amp; dry</strong> — compensated; optimise oral therapy.</li>
+          <li><strong>Warm &amp; wet</strong> — congested but perfusing → vasodilators + diuretics.</li>
+          <li><strong>Cold &amp; wet</strong> — the classic shock quadrant → inotrope ± vasopressor, then diurese/unload once perfusion returns.</li>
+          <li><strong>Cold &amp; dry</strong> — hypoperfused &amp; underfilled → cautious fluid, then inotrope.</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — treat the cause, unload the ventricle</div>
+        <p>Vasoactive drugs buy time but every inotrope raises myocardial oxygen demand and is arrhythmogenic — they are a bridge, not a destination. Definitive care is <strong>reversing the cause</strong> (revascularise the infarct, cardiovert the arrhythmia, drain the tamponade, fix the valve) and, where the heart cannot recover on drugs alone, <strong>mechanically unloading</strong> it with circulatory support as a bridge to recovery, decision, or transplant/LVAD.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · SCAI Stages &amp; ESC Guidelines</span>
+      <h2>Classification &amp; Evidence</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">SCAI SHOCK stages — a common language <span class="gr-s">SCAI 2019/2022</span></div>
+        <div class="gr-text">
+          <strong>A — At risk</strong> (e.g. large MI, no shock yet).<br>
+          <strong>B — Beginning</strong> (compensated: tachycardia/hypotension, no hypoperfusion).<br>
+          <strong>C — Classic</strong> (hypoperfusion needing an intervention — inotrope/pressor/mechanical support).<br>
+          <strong>D — Deteriorating</strong> (failing to respond, escalation needed).<br>
+          <strong>E — Extremis</strong> (circulatory collapse, often on CPR/ECMO).<br>
+          Stage rises with a <strong>rising lactate</strong> and mounting support — restage frequently.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Early revascularisation — culprit-only <span class="gr-s">ESC · CULPRIT-SHOCK</span></div>
+        <div class="gr-text">
+          In AMI–cardiogenic shock, <strong>emergency revascularisation of the culprit lesion</strong> is the single intervention that saves lives (SHOCK trial). <strong>CULPRIT-SHOCK</strong> showed <strong>culprit-lesion-only PCI is preferred</strong> over immediate multivessel PCI (lower death/renal-replacement at 30 days). Staged treatment of other lesions later.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Vasoactives — noradrenaline first <span class="gr-s">ESC · SOAP II · OptimaCS</span></div>
+        <div class="gr-text">
+          <strong>Noradrenaline is the preferred first vasopressor</strong> in cardiogenic shock — compared with dopamine (SOAP II) it caused fewer arrhythmias and lower mortality in the shock subgroup, and compared with adrenaline (OptimaCS) it achieved similar pressure with less refractory shock and lactic acidosis. Add an <strong>inotrope (dobutamine)</strong> for low output once a perfusing pressure is restored. Use the <strong>lowest dose for the shortest time</strong>.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Mechanical circulatory support — selective, not routine <span class="gr-s">IABP-SHOCK II · DanGer · ECLS-SHOCK</span></div>
+        <div class="gr-text">
+          <strong>IABP does not improve survival</strong> in AMI–cardiogenic shock (IABP-SHOCK II) — no longer routinely recommended.<br>
+          <strong>DanGer Shock (NEJM 2024):</strong> a microaxial flow pump (Impella CP) in selected <strong>STEMI</strong> cardiogenic shock <strong>reduced 180-day mortality</strong> — but at the cost of more bleeding, limb ischaemia and renal-replacement; patient selection is everything.<br>
+          <strong>ECLS-SHOCK (2023):</strong> routine early <strong>VA-ECMO</strong> in AMI–cardiogenic shock <strong>did not reduce mortality</strong> and increased complications — reserve for selected/refractory cases in expert centres (see <a href="topic-ecmo.html">ECMO</a>).
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Rheumatic valvular disease and late-presenting STEMI</strong> mean mechanical complications and large infarcts are common, often reaching hospital late. Access to primary PCI and mechanical support is concentrated in tertiary centres — <strong>recognise cardiogenic shock early, thrombolyse where timely PCI is unavailable, and transfer</strong> rather than persist on escalating inotropes locally. A bedside <strong>echo</strong> (to catch acute MR, VSD, RV infarct, tamponade) is the highest-value early investigation and is widely available. Levosimendan and dobutamine are accessible; Impella is not, so <strong>VA-ECMO in a capable centre</strong> is the realistic escalation for refractory shock.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Vasoactive &amp; Adjunct Drugs</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Role</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Noradrenaline</strong></td><td>First-line vasopressor</td><td>0.05–0.5 µg/kg/min IV</td><td>Restores MAP with fewer arrhythmias than dopamine/adrenaline (SOAP II, OptimaCS)</td></tr>
+            <tr><td><strong>Dobutamine</strong></td><td>Inotrope (low output)</td><td>2.5–10 µg/kg/min</td><td>β1 inotropy + vasodilation; add once MAP restored; tachyarrhythmia</td></tr>
+            <tr><td><strong>Adrenaline</strong></td><td>Refractory low output</td><td>0.01–0.5 µg/kg/min</td><td>Potent but ↑ lactate &amp; arrhythmia; reserve/peri-arrest</td></tr>
+            <tr><td><strong>Milrinone</strong></td><td>Inotrope (PDE-3 inhibitor)</td><td>0.125–0.75 µg/kg/min</td><td>Inodilator; good for RV failure/pulmonary HTN &amp; chronic β-blockade; causes hypotension; renally cleared</td></tr>
+            <tr><td><strong>Levosimendan</strong></td><td>Ca²⁺-sensitiser inotrope</td><td>0.05–0.2 µg/kg/min (12.5 mg vial); usually no bolus in shock</td><td>Inotropy without ↑ O₂ demand; long-acting metabolite; hypotension</td></tr>
+            <tr><td><strong>Furosemide</strong></td><td>Decongestion (once perfusing)</td><td>Bolus or infusion; IV dose ≈ oral</td><td>Treat congestion after perfusion restored; not a fix for low output</td></tr>
+            <tr><td><strong>GTN</strong></td><td>Afterload/preload reduction</td><td>10–200 µg/min IV</td><td>Warm-&amp;-wet / hypertensive pulmonary oedema; avoid if hypotensive/RV infarct</td></tr>
+            <tr><td><strong>Noradrenaline + dobutamine</strong></td><td>Typical combination</td><td>Titrate to MAP ≥65 &amp; perfusion</td><td>Vasopressor for pressure + inotrope for output</td></tr>
+            <tr><td><strong>Heparin</strong></td><td>Anticoagulation (ACS/MCS)</td><td>Per ACS / device protocol</td><td>For infarct + any mechanical support circuit</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Management Algorithm</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Recognise &amp; find the cause</h4>
+          <ul><li>Hypotension + hypoperfusion (lactate, oliguria, cool/altered) with adequate/high filling pressure</li><li><strong>Immediate ECG + bedside echo</strong> — infarct? mechanical complication? RV? tamponade? valve?</li><li>Exclude obstructive mimics (PE, tamponade, tension pneumothorax)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Treat the cause urgently</h4>
+          <ul><li><strong>AMI → emergency culprit-lesion PCI</strong> (or thrombolysis if PCI unavailable, then transfer)</li><li>Arrhythmia → cardiovert/rate control; tamponade → drain; acute valve/VSD → surgery</li><li>RV infarct → cautious preload, avoid nitrates/over-diuresis</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Support the circulation</h4>
+          <ul><li>Phenotype (cold/warm × wet/dry); <strong>noradrenaline</strong> to MAP ≥65, add <strong>dobutamine</strong> for low output</li><li>Oxygen/ventilation for pulmonary oedema (NIV/intubate); cautious fluids only if underfilled/RV</li><li>Decongest with diuretics once perfusion restored</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Escalate if refractory (SCAI D–E)</h4>
+          <ul><li>Rising lactate/failing on 2 agents → discuss <strong>mechanical circulatory support</strong> early with a shock team</li><li>Selected STEMI shock → microaxial pump (Impella); refractory/arrest → VA-ECMO in an expert centre</li><li>IABP is <strong>not</strong> routine</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Define the destination</h4>
+          <ul><li>Bridge to <strong>recovery, decision, transplant or durable LVAD</strong></li><li>Restage (SCAI) &amp; reassess perfusion/lactate frequently; wean support as the heart recovers</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Cardiogenic Shock</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Fluid-loading the congested heart</div><p>Reflex boluses in a "cold and wet" patient worsen pulmonary oedema without improving output. Only give fluid if the echo/clinical picture shows underfilling (e.g. RV infarct) — otherwise support with inotropes and decongest.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Choosing dopamine as the pressor</div><p>Dopamine caused more arrhythmias and higher mortality than noradrenaline in the cardiogenic-shock subgroup of SOAP II. Noradrenaline is first-line.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Delaying the echo</div><p>Missing an acute mechanical complication (papillary muscle rupture, VSD, tamponade) or an RV infarct changes everything. An early bedside echo is the highest-yield test.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Immediate multivessel PCI</div><p>CULPRIT-SHOCK showed culprit-lesion-only PCI is better than routine immediate complete revascularisation. Fix the culprit, stage the rest.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Routine IABP or routine ECMO</div><p>IABP-SHOCK II (IABP) and ECLS-SHOCK (routine early VA-ECMO) were both negative for survival. Mechanical support is for selected patients and expert centres, decided by a shock team — not a reflex.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Nitrates/over-diuresis in RV infarction</div><p>The RV-infarct patient is preload-dependent; nitrates and aggressive diuresis cause profound hypotension. Give cautious fluid and inotropic support instead.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 7 — Escalating inotropes indefinitely</div><p>Every added inotrope raises myocardial oxygen demand and arrhythmia risk. If two agents are failing and lactate is rising, escalate to mechanical support / transfer rather than climbing the infusion.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: Define cardiogenic shock haemodynamically.</strong><br>Sustained hypotension (SBP &lt;90 for &gt;30 min or pressors needed) with hypoperfusion, plus (when measured) cardiac index &lt;1.8 L/min/m² unsupported and PCWP &gt;15 mmHg — i.e. low output despite adequate filling.</p></div>
+      <div class="ec"><p><strong>Q: What are the SCAI SHOCK stages?</strong><br>A At risk, B Beginning (compensated), C Classic (hypoperfusion needing intervention), D Deteriorating, E Extremis. Restage with lactate and escalating support.</p></div>
+      <div class="ec"><p><strong>Q: First-line vasopressor and why?</strong><br>Noradrenaline — fewer arrhythmias and lower mortality than dopamine (SOAP II) and less refractory shock/lactic acidosis than adrenaline (OptimaCS). Add dobutamine for low output.</p></div>
+      <div class="ec"><p><strong>Q: Culprit-only or multivessel PCI in AMI shock?</strong><br>Culprit-lesion-only (CULPRIT-SHOCK) — routine immediate multivessel PCI increased death/renal-replacement at 30 days.</p></div>
+      <div class="ec"><p><strong>Q: Does IABP improve survival in AMI cardiogenic shock?</strong><br>No — IABP-SHOCK II was neutral; it is no longer routinely recommended.</p></div>
+      <div class="ec"><p><strong>Q: What did DanGer Shock and ECLS-SHOCK show?</strong><br>DanGer Shock (2024): a microaxial pump reduced mortality in selected STEMI shock but with more complications. ECLS-SHOCK (2023): routine early VA-ECMO did not reduce mortality — reserve for selected refractory cases.</p></div>
+      <div class="ec"><p><strong>Q: How do you spot and treat RV infarction shock?</strong><br>Hypotension with clear lungs + raised JVP, inferior STEMI, ST-elevation in V4R. It is preload-dependent — give fluid, avoid nitrates/over-diuresis, support with inotrope, and revascularise.</p></div>
+      <div class="ec"><p><strong>Q: Milrinone vs dobutamine?</strong><br>Milrinone (PDE-3 inhibitor) is an inodilator useful in RV failure/pulmonary hypertension and chronic β-blockade, but is renally cleared and more hypotensive; dobutamine is quicker to titrate but more tachycardia-prone.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Naidu SS, Baran DA, Jentzer JC, et al. (SCAI).</strong> SCAI SHOCK Stage Classification Expert Consensus Update. <em>J Am Coll Cardiol.</em> 2022;79:933–946.</li>
+        <li><strong>McDonagh TA, Metra M, Adamo M, et al. (ESC).</strong> 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure (and 2023 focused update). <em>Eur Heart J.</em> 2021;42:3599–3726.</li>
+        <li><strong>Thiele H, Zeymer U, Neumann FJ, et al. (IABP-SHOCK II).</strong> Intra-aortic balloon support for myocardial infarction with cardiogenic shock. <em>N Engl J Med.</em> 2012;367:1287–1296.</li>
+        <li><strong>Thiele H, Akin I, Sandri M, et al. (CULPRIT-SHOCK).</strong> PCI Strategies in Patients with AMI and Cardiogenic Shock. <em>N Engl J Med.</em> 2017;377:2419–2432.</li>
+        <li><strong>Møller JE, Engstrøm T, Jensen LO, et al. (DanGer Shock).</strong> Microaxial Flow Pump in Infarct-Related Cardiogenic Shock. <em>N Engl J Med.</em> 2024;390:1382–1393.</li>
+        <li><strong>Thiele H, Zeymer U, Akin I, et al. (ECLS-SHOCK).</strong> Extracorporeal Life Support in Infarct-Related Cardiogenic Shock. <em>N Engl J Med.</em> 2023;389:1286–1297.</li>
+        <li><strong>De Backer D, Biston P, Devriendt J, et al. (SOAP II).</strong> Comparison of dopamine and norepinephrine in the treatment of shock. <em>N Engl J Med.</em> 2010;362:779–789.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Acute Heart Failure Syndromes. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Cardiogenic Shock. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
