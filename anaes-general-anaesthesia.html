@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>General Anaesthesia — Principles &amp; Conduct — CritCare.in</title>
+  <meta name="description" content="General anaesthesia made clear: the anaesthetic triad, IV &amp; inhalational agents, MAC, the anaesthetic machine &amp; breathing systems, stages of anaesthesia, balanced anaesthesia, emergence and common intra-operative problems. From Miller, Barash and Morgan &amp; Mikhail." />
+  <link rel="canonical" href="https://critcare.in/anaes-general-anaesthesia.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);} .sb-s{background:#e0f2fe;color:#075985;}
+    .triad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1rem 0;}
+    .triad-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid var(--line);background:var(--bg-alt);}
+    .triad-card h4{font-size:.82rem;font-weight:800;margin-bottom:.4rem;color:var(--blue);}
+    .triad-card p{font-size:.8rem;color:var(--slate);line-height:1.55;margin:0;}
+    @media(max-width:600px){.triad-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › General Anaesthesia</div>
+    <h1>😴 General Anaesthesia — Principles &amp; Conduct</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Anaesthetic Triad</span>
+      <span class="gbadge kdigo">MAC</span>
+      <span class="gbadge isccm">Balanced Anaesthesia</span>
+      <span class="gbadge esicm">AAGBI Monitoring</span>
+      <span class="gbadge apasl">Guedel Stages</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Hypnosis · Analgesia · Relaxation</span>
+      <span class="topic-tag">IV &amp; Inhalational · MAC</span>
+      <span class="topic-tag">Induction → Maintenance → Emergence</span>
+      <span class="topic-updated">Miller / Barash / Morgan &amp; Mikhail · AAGBI Standards of Monitoring 2021</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Miller — The Triad &amp; Components</a></li>
+        <li><a href="#s2">2. Barash/Morgan — Agents &amp; MAC</a></li>
+        <li><a href="#s3">3. Machine &amp; Breathing Systems</a></li>
+        <li><a href="#s4">4. Stages &amp; Depth of Anaesthesia</a></li>
+        <li><a href="#s5">5. Drug &amp; MAC Reference</a></li>
+        <li><a href="#s6">6. Conduct of GA — Flowchart</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. Exam Pearls</a></li>
+        <li><a href="#s9">9. References</a></li>
+      </ul>
+      <a href="anaesthesia.html" class="toc-back">← All anaesthesia topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Miller's Anesthesia — What General Anaesthesia Is</span>
+      <h2>The Anaesthetic Triad &amp; Balanced Anaesthesia</h2>
+      <div class="book-quote">
+        <p>"General anaesthesia is a drug-induced, reversible state comprising unconsciousness, amnesia, analgesia and immobility, with control of the autonomic and reflex responses to surgical stimulation. No single drug provides all of these ideally, so modern practice uses a 'balanced' technique — small doses of several agents combined to achieve each component while minimising the side-effects of any one."</p>
+        <cite>Synthesised from Miller's Anesthesia, 9th Ed — Basic Principles of Anaesthesia.</cite>
+      </div>
+
+      <div class="triad-grid">
+        <div class="triad-card"><h4>💤 Hypnosis</h4><p>Unconsciousness &amp; amnesia — IV induction agents and volatile agents.</p></div>
+        <div class="triad-card"><h4>🩹 Analgesia</h4><p>Blunting the response to pain — opioids, regional blocks, ketamine, α2-agonists.</p></div>
+        <div class="triad-card"><h4>💪 Relaxation</h4><p>Immobility &amp; muscle relaxation for surgery &amp; intubation — neuromuscular blockers.</p></div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">🧩 Why "balanced" anaesthesia</div>
+        <ul>
+          <li>A pure inhalational technique deep enough to prevent movement would cause profound cardiovascular depression. Adding <strong>opioids</strong> (analgesia) and <strong>muscle relaxants</strong> (immobility) lets you run a lighter, safer plane of hypnosis.</li>
+          <li><strong>TIVA (total intravenous anaesthesia)</strong> — usually propofol ± remifentanil by target-controlled infusion — is an alternative to volatile-based maintenance (useful in PONV-prone patients, malignant-hyperthermia risk, neuromonitoring, shared/difficult airways).</li>
+          <li>The four questions during maintenance: <strong>Is the patient asleep? Pain-free? Still enough? Physiologically stable?</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Barash &amp; Morgan/Mikhail — Agents &amp; MAC</span>
+      <h2>Induction, Maintenance &amp; the Concept of MAC</h2>
+      <div class="book-quote">
+        <p>"The potency of an inhaled anaesthetic is expressed as the Minimum Alveolar Concentration — the alveolar concentration, at one atmosphere, that prevents movement in response to a standard surgical incision in 50% of subjects. MAC is additive between agents, is reduced by age, opioids, hypothermia, pregnancy and other sedatives, and is increased in the young, in chronic alcohol use and in hyperthermia."</p>
+        <cite>Synthesised from Barash — Clinical Anesthesia; Morgan &amp; Mikhail's Clinical Anesthesiology.</cite>
+      </div>
+
+      <h3>Induction agents (intravenous)</h3>
+      <ul>
+        <li><strong>Propofol</strong> — smooth, antiemetic, rapid recovery; causes hypotension and pain on injection; agent of choice for TIVA.</li>
+        <li><strong>Ketamine</strong> — dissociative; maintains blood pressure &amp; airway reflexes; bronchodilator and analgesic; emergence phenomena.</li>
+        <li><strong>Etomidate</strong> — cardiovascularly stable; transient adrenal suppression; myoclonus.</li>
+        <li><strong>Thiopentone</strong> — rapid barbiturate; anticonvulsant, cerebroprotective; avoid in porphyria; contraindicated intra-arterially.</li>
+      </ul>
+
+      <h3>Maintenance — inhalational agents</h3>
+      <ul>
+        <li><strong>Sevoflurane</strong> — sweet, non-irritant → the agent of choice for <strong>inhalational (gas) induction</strong>, especially in children; low blood-gas solubility = fast on/off.</li>
+        <li><strong>Isoflurane</strong> — cheap, stable; pungent (not for gas induction).</li>
+        <li><strong>Desflurane</strong> — lowest solubility → fastest emergence; airway-irritant, needs a heated vaporiser.</li>
+        <li><strong>Nitrous oxide</strong> — analgesic adjunct, "second-gas effect"; avoid in closed air spaces (pneumothorax, bowel obstruction, middle ear) and with prolonged use (B₁₂/megaloblastic effects).</li>
+      </ul>
+
+      <div class="marino-box">
+        <div class="mb-label">📊 MAC — the numbers &amp; the modifiers</div>
+        <p><strong>Approx. MAC (in 100% O₂):</strong> sevoflurane ~2.0%, isoflurane ~1.15%, desflurane ~6.0%, nitrous oxide ~104%. <strong>MAC-awake</strong> ≈ 0.3–0.4 MAC; <strong>MAC-BAR</strong> (blocks autonomic response) ≈ 1.5 MAC.</p>
+        <p><strong>MAC decreases with:</strong> increasing age (~6% per decade after 40), opioids/sedatives, hypothermia, pregnancy, hyponatraemia, acute alcohol. <strong>MAC increases with:</strong> infancy (peak ~6 months), hyperthermia, chronic alcohol, chronic stimulant use, hypernatraemia.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-s">📙 3 · Morgan/Mikhail — Equipment</span>
+      <h2>The Anaesthetic Machine &amp; Breathing Systems</h2>
+      <div class="marino-box">
+        <div class="mb-label">🛠 The machine — safety by design</div>
+        <ul>
+          <li><strong>Gas supply → flowmeters → vaporisers → common gas outlet → breathing system → scavenging.</strong> Multiple safety features prevent a hypoxic mixture: <strong>oxygen failure alarm</strong>, <strong>hypoxic guard</strong> (links N₂O to O₂ so FiO₂ can't fall below ~25%), <strong>pin-index &amp; colour coding</strong>, and non-return valves.</li>
+          <li><strong>Always perform the machine check</strong> (AAGBI checklist) and confirm a self-inflating bag is immediately available in case of machine failure.</li>
+        </ul>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">🔄 Breathing systems &amp; CO₂</div>
+        <ul>
+          <li><strong>Circle system</strong> — the workhorse: soda-lime absorbs CO₂, allowing low fresh-gas flows (economy, warmth, humidity). Watch for exhausted absorbent (rising inspired CO₂, colour change).</li>
+          <li><strong>Mapleson systems</strong> — classified A–F; <strong>Mapleson A</strong> is most efficient for spontaneous ventilation, <strong>Mapleson D/Bain</strong> for controlled ventilation, and the <strong>Jackson–Rees (F)</strong> for paediatrics.</li>
+          <li><strong>Capnography</strong> is the single most important monitor on the breathing system — it confirms ventilation and detects disconnection, obstruction, rebreathing and (as a sudden fall) cardiac output loss or embolism. See the <a href="anaes-monitoring.html">Monitoring</a> page.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-g">📋 4 · Stages, Depth &amp; Awareness</span>
+      <h2>Depth of Anaesthesia</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">Guedel's stages (classical, ether-era — still examined)</div>
+        <div class="gr-text">
+          <strong>I — Analgesia:</strong> induction to loss of consciousness.<br>
+          <strong>II — Excitement/delirium:</strong> loss of consciousness to onset of automatic breathing — disconjugate gaze, hyperreactivity, risk of laryngospasm/vomiting; move through it <strong>quickly</strong> and avoid stimulation.<br>
+          <strong>III — Surgical anaesthesia:</strong> regular breathing to respiratory paralysis (four planes; pupils central, reflexes progressively lost).<br>
+          <strong>IV — Overdose:</strong> apnoea, cardiovascular collapse — <strong>too deep</strong>.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Accidental awareness under GA (AAGA) <span class="gr-s">NAP5</span></div>
+        <div class="gr-text">
+          Awareness is rare (~1 in 19,000, NAP5) but distressing and medico-legally important. <strong>Highest-risk situations:</strong> use of neuromuscular blockade (paralysis masks the movement that would warn you), RSI, obstetric &amp; cardiac anaesthesia, TIVA with pump/cannula problems, and the transfer/emergence periods. <strong>Prevent it</strong> by giving adequate hypnotic doses, monitoring end-tidal agent (or using processed EEG/depth monitoring with TIVA + paralysis), checking TIVA delivery, and being vigilant at induction and emergence.
+        </div>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>Volatile-based anaesthesia with <strong>end-tidal agent monitoring</strong> remains the most widely available and economical way to guard against awareness where processed-EEG monitors are limited. Where TIVA is used with muscle relaxants, prioritise a <strong>depth-of-anaesthesia monitor</strong> and meticulous checking of the infusion line/cannula. Draw-over/older machines are still in service in some settings — a disciplined <strong>machine check</strong> and a self-inflating bag on standby are essential.</p>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-d">💊 5 · Drug &amp; MAC Reference</span>
+      <h2>Core General-Anaesthesia Drugs</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Class / role</th><th>Typical adult dose</th><th>Key points</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Propofol</strong></td><td>IV induction / TIVA</td><td>Induction 1.5–2.5 mg/kg; TIVA by TCI</td><td>Hypotension, pain on injection, antiemetic; propofol-infusion syndrome with prolonged high-dose</td></tr>
+            <tr><td><strong>Ketamine</strong></td><td>IV induction / analgesia</td><td>1–2 mg/kg IV (0.25–0.5 mg/kg analgesia)</td><td>Preserves BP &amp; airway drive; bronchodilator; emergence phenomena; ↑ secretions</td></tr>
+            <tr><td><strong>Etomidate</strong></td><td>IV induction</td><td>0.3 mg/kg</td><td>Cardiostable; adrenal suppression, myoclonus</td></tr>
+            <tr><td><strong>Thiopentone</strong></td><td>IV induction (barbiturate)</td><td>3–5 mg/kg</td><td>Anticonvulsant; avoid in porphyria; never intra-arterial</td></tr>
+            <tr><td><strong>Sevoflurane</strong></td><td>Volatile (induction &amp; maintenance)</td><td>MAC ~2.0%</td><td>Non-irritant → gas induction; fast on/off</td></tr>
+            <tr><td><strong>Isoflurane / Desflurane</strong></td><td>Volatile (maintenance)</td><td>MAC ~1.15% / ~6.0%</td><td>Des = fastest emergence but airway-irritant; not for gas induction</td></tr>
+            <tr><td><strong>Nitrous oxide</strong></td><td>Adjunct gas</td><td>50–70% (with O₂)</td><td>Analgesic; avoid in closed air spaces &amp; prolonged use (B₁₂)</td></tr>
+            <tr><td><strong>Fentanyl</strong></td><td>Opioid (analgesia)</td><td>1–3 µg/kg</td><td>Blunts stimulation; respiratory depression</td></tr>
+            <tr><td><strong>Rocuronium / Vecuronium</strong></td><td>Non-depolarising relaxant</td><td>Roc 0.6 mg/kg (1.2 for RSI)</td><td>Reversed by sugammadex (roc/vec) or neostigmine + glycopyrrolate</td></tr>
+            <tr><td><strong>Atracurium / Cisatracurium</strong></td><td>Non-depolarising relaxant</td><td>Atr 0.5 mg/kg</td><td>Hofmann elimination — good in renal/hepatic failure; atracurium histamine release</td></tr>
+            <tr><td><strong>Neostigmine + glycopyrrolate</strong></td><td>Reversal</td><td>Neostigmine 50 µg/kg + glyco 10 µg/kg</td><td>Only reverses partial block; confirm TOF ratio &gt;0.9</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-f">🗺 6 · Conduct of General Anaesthesia</span>
+      <h2>From Sign-In to Recovery</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Prepare &amp; check (before induction)</h4>
+          <ul><li>Confirm PAC, consent, fasting, allergies; WHO checklist "sign-in"</li><li><strong>Machine check</strong>, suction, drugs drawn &amp; labelled, monitoring attached, difficult-airway kit available</li><li><strong>Preoxygenate</strong>; IV access; baseline observations</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Induction</h4>
+          <ul><li>IV (propofol etc.) or inhalational (sevoflurane) induction; opioid to obtund the pressor response</li><li>Secure the airway (SGA or tracheal tube ± relaxant); confirm with capnography</li><li>RSI if aspiration risk (see <a href="anaes-airway.html">Airway</a> page)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Maintenance</h4>
+          <ul><li>Volatile (end-tidal MAC guided) or TIVA; analgesia; relaxation as needed</li><li>Ventilate to normocapnia; titrate to surgical stimulus; maintain physiology (BP, temperature, fluids, glucose)</li><li>Continuous monitoring (see <a href="anaes-monitoring.html">Monitoring</a>)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Emergence</h4>
+          <ul><li>Stop agents; ensure <strong>full reversal</strong> of neuromuscular block (TOF &gt;0.9); analgesia &amp; antiemesis on board</li><li>Restore spontaneous ventilation; extubate awake (or deep per plan) with a strategy for the at-risk airway</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Recovery / PACU</h4>
+          <ul><li>Hand over to trained recovery staff with monitoring; oxygen, analgesia, PONV control</li><li>Watch for airway obstruction, residual block, hypoventilation, hypothermia, delirium; discharge by criteria</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">⚠️ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in General Anaesthesia</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Stimulating the patient in stage II</div><p>Inserting an airway or moving the patient during the excitement phase provokes laryngospasm, coughing and vomiting. Move through stage II quickly and only instrument the airway at an adequate depth.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Paralysis without adequate hypnosis (awareness)</div><p>A muscle relaxant hides the movement that would warn you a patient is light. Always ensure sufficient hypnotic (end-tidal agent or checked TIVA ± depth monitoring), especially during RSI, transfer and emergence.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Skipping the machine check</div><p>Undetected circuit leaks, an empty vaporiser or exhausted soda-lime cause awareness, hypercapnia or hypoxia. The pre-use machine check and an available self-inflating bag are non-negotiable.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Nitrous oxide in a closed air space</div><p>N₂O diffuses into air-filled cavities faster than nitrogen leaves — expanding a pneumothorax, obstructed bowel, or middle-ear/eye gas. Avoid it in these situations.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Incomplete reversal of neuromuscular block</div><p>Residual block causes airway obstruction, hypoventilation and aspiration in recovery. Confirm a TOF ratio &gt;0.9 (quantitatively) before extubation; use sugammadex for deep rocuronium block.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Ignoring temperature</div><p>Inadvertent perioperative hypothermia increases wound infection, bleeding, cardiac events and drug duration. Warm actively and monitor core temperature for any case beyond the briefest.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 7 — Under-treating the volatile-free MAC gap</div><p>During transfers or a vaporiser running dry, patients can become light. Bridge with an IV agent and keep an eye on end-tidal agent concentration continuously.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-x">🎓 8 · Exam Pearls — DrNB / MD / EDAIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: What is the anaesthetic triad?</strong><br>Hypnosis (unconsciousness/amnesia), analgesia, and muscle relaxation — with control of autonomic/reflex responses. Balanced anaesthesia combines agents to achieve each while limiting side-effects.</p></div>
+      <div class="ec"><p><strong>Q: Define MAC and list what changes it.</strong><br>The alveolar concentration preventing movement to a standard incision in 50% of subjects. ↓ by age, opioids, hypothermia, pregnancy, sedatives, acute alcohol; ↑ by infancy, hyperthermia, chronic alcohol/stimulants. MAC-awake ≈ 0.3–0.4 MAC; MAC-BAR ≈ 1.5 MAC.</p></div>
+      <div class="ec"><p><strong>Q: Which volatile for inhalational induction, and why?</strong><br>Sevoflurane — sweet-smelling and non-irritant with low blood-gas solubility, giving a smooth, rapid gas induction (especially paediatrics).</p></div>
+      <div class="ec"><p><strong>Q: Describe Guedel's stages.</strong><br>I analgesia; II excitement (risk of laryngospasm/vomiting — pass through quickly); III surgical anaesthesia (four planes); IV overdose (apnoea, cardiovascular collapse).</p></div>
+      <div class="ec"><p><strong>Q: What safety features prevent a hypoxic gas mixture?</strong><br>Oxygen failure alarm, hypoxic guard (N₂O–O₂ ratio link keeping FiO₂ ≥25%), pin-index system, colour coding, non-return valves, and oxygen analyser/capnography monitoring.</p></div>
+      <div class="ec"><p><strong>Q: When is TIVA preferred over volatile maintenance?</strong><br>PONV-prone patients, malignant-hyperthermia susceptibility, neurophysiological monitoring, shared/difficult airway or tubeless surgery, and to reduce environmental pollution.</p></div>
+      <div class="ec"><p><strong>Q: Which Mapleson system is most efficient for spontaneous vs controlled ventilation?</strong><br>Mapleson A for spontaneous ventilation; Mapleson D (Bain) for controlled ventilation; Jackson–Rees (F) for paediatrics.</p></div>
+      <div class="ec"><p><strong>Q: What did NAP5 teach about awareness?</strong><br>Incidence ~1:19,000; strongly associated with neuromuscular blockade, RSI, obstetric/cardiac cases, TIVA delivery failure, and the induction/emergence/transfer periods. Prevent with adequate dosing, end-tidal agent or depth monitoring, and vigilant TIVA checks.</p></div>
+    </section>
+
+    <section id="s9" class="references-section">
+      <span class="sb sb-r">📚 9 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Gropper MA, et al. (eds).</strong> Miller's Anesthesia, 9th Edition. Inhaled &amp; Intravenous Anaesthetics; Basic Principles. Elsevier; 2020.</li>
+        <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology, 6th Edition. Inhalation &amp; Intravenous Anaesthetics; Breathing Systems; The Anaesthesia Machine. McGraw-Hill; 2018.</li>
+        <li><strong>Barash PG, et al. (eds).</strong> Clinical Anesthesia, 9th Edition. Wolters Kluwer; 2023.</li>
+        <li><strong>Pandit JJ, Andrade J, Bogod DG, et al. (NAP5).</strong> 5th National Audit Project on accidental awareness during general anaesthesia. <em>Br J Anaesth.</em> 2014;113:549–559.</li>
+        <li><strong>Klein AA, Meek T, Allcock E, et al. (AAGBI).</strong> Recommendations for standards of monitoring during anaesthesia and recovery 2021. <em>Anaesthesia.</em> 2021;76:1212–1223.</li>
+        <li><strong>Stoelting RK, Hillier SC.</strong> Pharmacology &amp; Physiology in Anesthetic Practice, 6th Edition. Wolters Kluwer; 2021.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

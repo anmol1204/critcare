@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Monitoring in Anaesthesia — CritCare.in</title>
+  <meta name="description" content="Intra-operative monitoring: AAGBI 2021 minimum standards, capnography, pulse oximetry, NIBP &amp; invasive arterial/central pressures, ECG, temperature, neuromuscular (TOF) and depth-of-anaesthesia monitoring — and how to read them when things go wrong. From Miller, Barash and Morgan &amp; Mikhail." />
+  <link rel="canonical" href="https://critcare.in/anaes-monitoring.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);} .sb-s{background:#e0f2fe;color:#075985;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › Monitoring</div>
+    <h1>📟 Monitoring in Anaesthesia</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">AAGBI 2021</span>
+      <span class="gbadge kdigo">Capnography</span>
+      <span class="gbadge isccm">Pulse Oximetry</span>
+      <span class="gbadge esicm">TOF</span>
+      <span class="gbadge apasl">Depth / BIS</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Oxygenation · Ventilation · Circulation</span>
+      <span class="topic-tag">EtCO₂ · SpO₂ · ECG · BP</span>
+      <span class="topic-tag">Temp · TOF · Depth</span>
+      <span class="topic-updated">AAGBI Standards of Monitoring 2021 · Miller / Barash / Morgan &amp; Mikhail</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Miller — Why We Monitor</a></li>
+        <li><a href="#s2">2. Oxygenation &amp; Ventilation</a></li>
+        <li><a href="#s3">3. Circulation, Temp &amp; the Rest</a></li>
+        <li><a href="#s4">4. AAGBI Minimum Standards</a></li>
+        <li><a href="#s5">5. Reading Monitors When It Goes Wrong</a></li>
+        <li><a href="#s6">6. Set-up Flowchart</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. Exam Pearls</a></li>
+        <li><a href="#s9">9. References</a></li>
+      </ul>
+      <a href="anaesthesia.html" class="toc-back">← All anaesthesia topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Miller's Anesthesia — Monitoring</span>
+      <h2>The Purpose of Monitoring</h2>
+      <div class="book-quote">
+        <p>"A monitor does not treat the patient; the anaesthetist does. Monitoring buys time — it converts a slowly evolving catastrophe into an early warning that a trained clinician can act on. The most important monitor in the room remains the vigilant anaesthetist watching the patient and the surgical field; the electronic monitors extend, but do not replace, that vigilance."</p>
+        <cite>Synthesised from Miller's Anesthesia, 9th Ed — Monitoring.</cite>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">🎯 What we are actually monitoring</div>
+        <ul>
+          <li><strong>Oxygenation</strong> — inspired O₂ (analyser) and arterial saturation (pulse oximetry).</li>
+          <li><strong>Ventilation</strong> — capnography (the gold standard), airway pressures, chest movement.</li>
+          <li><strong>Circulation</strong> — ECG, blood pressure (non-invasive or invasive), perfusion.</li>
+          <li><strong>Temperature, neuromuscular function, and depth of anaesthesia</strong> — for the relevant cases.</li>
+          <li>Monitoring must be <strong>continuous</strong> and begin <em>before</em> induction and continue into recovery, including during transfer.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Oxygenation &amp; Ventilation</span>
+      <h2>Pulse Oximetry &amp; Capnography</h2>
+      <div class="book-quote">
+        <p>"Capnography is the single most useful monitor in anaesthesia. A normal, continuous end-tidal CO₂ waveform confirms that the lungs are being ventilated, that the tracheal tube is in the trachea, and — by its very presence — that there is a cardiac output delivering CO₂ to the lungs. Its sudden loss is one of the earliest signs of disconnection, obstruction, or circulatory arrest."</p>
+        <cite>Synthesised from Barash — Clinical Anesthesia; Morgan &amp; Mikhail's Clinical Anesthesiology.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">🩸 Pulse oximetry (SpO₂)</div>
+        <ul>
+          <li>Measures arterial oxygen saturation from the different absorption of red (660 nm) and infrared (940 nm) light by oxy- vs deoxy-haemoglobin, gated to the pulsatile (arterial) signal.</li>
+          <li><strong>It is a late warning</strong> of hypoventilation in a preoxygenated patient (the SpO₂ stays high while apnoeic) — capnography detects the problem sooner.</li>
+          <li><strong>Pitfalls:</strong> poor perfusion/cold/vasoconstriction, motion, nail polish, ambient light; <strong>falsely normal in carbon-monoxide poisoning</strong> (COHb read as O₂Hb); methaemoglobinaemia pulls the reading toward ~85%.</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📈 Capnography — the golden signal</div>
+        <ul>
+          <li>The normal waveform has a flat baseline (I), rapid upstroke (II), alveolar plateau (III, end of which = EtCO₂ ~4.5–6.0 kPa / 35–45 mmHg) and inspiratory downstroke.</li>
+          <li><strong>Sudden loss of trace</strong> → disconnection, oesophageal intubation, total obstruction, or cardiac arrest — <em>"no trace, wrong place."</em></li>
+          <li><strong>Sudden fall (not to zero)</strong> → pulmonary embolism (air/thrombus), fall in cardiac output, hypotension, hyperventilation.</li>
+          <li><strong>Rising EtCO₂</strong> → hypoventilation, exhausted soda-lime (raised baseline = rebreathing), rising CO₂ production (sepsis, laparoscopy insufflation, malignant hyperthermia).</li>
+          <li><strong>Sloped/"shark-fin" plateau</strong> → bronchospasm or airway obstruction (COPD/asthma, kinked tube).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-s">📙 3 · Circulation, Temperature &amp; Special Monitors</span>
+      <h2>ECG, Blood Pressure, Temperature, TOF &amp; Depth</h2>
+      <div class="marino-box">
+        <div class="mb-label">❤️ Circulation</div>
+        <ul>
+          <li><strong>ECG</strong> — rhythm, rate, ischaemia (lead II for rhythm/inferior; V5 for anterolateral ischaemia; "II + V5" catches most).</li>
+          <li><strong>Non-invasive BP (NIBP)</strong> — oscillometric; the correct cuff width is ~40% of arm circumference (too small over-reads, too large under-reads).</li>
+          <li><strong>Invasive arterial line</strong> — beat-to-beat pressure, waveform (and dynamic indices), repeated ABGs; for major surgery, haemodynamic instability, or when tight BP control matters. Zero at the level of the right atrium (mid-axillary line).</li>
+          <li><strong>Central venous / cardiac output monitors</strong> — CVP is a poor guide to fluid responsiveness; prefer dynamic measures and, for major cases, oesophageal Doppler or arterial-waveform cardiac-output monitoring (see the critical-care <a href="topic-haemodynamic-monitoring.html">haemodynamic monitoring</a> page).</li>
+        </ul>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">🌡 Temperature · 💪 Neuromuscular · 🧠 Depth</div>
+        <ul>
+          <li><strong>Temperature</strong> — monitor core temperature for any anaesthetic &gt;30 min; warm actively (avoid inadvertent hypothermia, and detect the rare malignant hyperthermia early).</li>
+          <li><strong>Neuromuscular monitoring (TOF)</strong> — <strong>mandatory whenever a non-depolarising relaxant is used.</strong> Train-of-four ratio should be <strong>&gt;0.9 before extubation</strong> to exclude residual block; post-tetanic count guides deep block.</li>
+          <li><strong>Depth of anaesthesia (processed EEG — BIS etc.)</strong> — target ~40–60 for general anaesthesia; particularly useful with <strong>TIVA + neuromuscular blockade</strong>, where end-tidal agent cannot be used to guard against awareness.</li>
+        </ul>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>Pulse oximetry and capnography are the two monitors that save the most lives and are now expected in every anaesthetising location — the <strong>ISA</strong> and global "<strong>Lifebox</strong>" initiatives have driven capnograph and oximeter availability into district and rural theatres. Where invasive or depth monitors are scarce, disciplined use of <strong>end-tidal agent monitoring, TOF and vigilant clinical observation</strong> covers most needs. Always confirm monitors are working <em>before</em> induction, and carry battery-backed monitoring for transfers where wall power is unreliable.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-g">📋 4 · AAGBI Minimum Monitoring Standards</span>
+      <h2>The Minimum Standards (AAGBI 2021)</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">Continuous, from before induction until recovery <span class="gr-s">AAGBI 2021</span></div>
+        <div class="gr-text">
+          <strong>The anaesthetist must be present throughout,</strong> and these monitors are used for <em>every</em> general/regional anaesthetic and sedation:<br>
+          • <strong>Pulse oximetry (SpO₂)</strong><br>
+          • <strong>Capnography (EtCO₂)</strong> — for <em>all</em> anaesthetics, including sedation and during transfer of intubated patients<br>
+          • <strong>Electrocardiography (ECG)</strong><br>
+          • <strong>Non-invasive blood pressure</strong><br>
+          • <strong>Inspired oxygen concentration (O₂ analyser)</strong> and, for GA, <strong>inspired/expired volatile agent and airway pressures</strong><br>
+          • <strong>Temperature</strong> (for anaesthetics &gt;30 min) and a means of <strong>neuromuscular monitoring</strong> whenever relaxants are used.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Additional monitoring — when indicated</div>
+        <div class="gr-text">
+          Invasive arterial &amp; central venous pressure, cardiac-output monitoring, processed-EEG depth monitoring (esp. TIVA + paralysis, or high awareness risk), and urine output — added according to the patient and the surgery. Alarms must be set to sensible limits and audible; never silence them permanently.
+        </div>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Reading the Monitors When It Goes Wrong</span>
+      <h2>Pattern Recognition</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">A</div>
+        <div class="fc-content"><h4>Capnograph trace disappears</h4>
+          <ul><li>Check the patient/airway first: disconnection, oesophageal tube, total obstruction, or <strong>cardiac arrest</strong> → confirm a pulse, call for help, follow ALS</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">B</div>
+        <div class="fc-content"><h4>Sudden fall in EtCO₂ (not to zero)</h4>
+          <ul><li>Think fall in cardiac output / hypotension, pulmonary or air/venous gas embolism, hyperventilation — look at BP, rhythm, surgical field</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">C</div>
+        <div class="fc-content"><h4>Rising EtCO₂ + rising temperature + tachycardia</h4>
+          <ul><li>Consider <strong>malignant hyperthermia</strong> — stop trigger agents, call for help &amp; dantrolene, hyperventilate with 100% O₂</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">D</div>
+        <div class="fc-content"><h4>Falling SpO₂</h4>
+          <ul><li>Increase FiO₂, confirm ventilation/capnograph, check the airway &amp; circuit, auscultate (bronchospasm, intubation of a bronchus, pneumothorax); is it a true fall or a probe artefact?</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">E</div>
+        <div class="fc-content"><h4>"Shark-fin" capnograph</h4>
+          <ul><li>Sloping upstroke = expiratory obstruction — bronchospasm, kinked/obstructed tube, or severe COPD; treat the cause</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-d">⚙️ 6 · Set-up Flowchart</span>
+      <h2>Attaching &amp; Checking Monitors</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Before induction</h4><ul><li>Attach SpO₂, ECG, NIBP and connect capnography <strong>before</strong> giving any drug; record a baseline</li><li>Confirm alarms on and set to sensible limits; O₂ analyser calibrated</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>At induction/airway</h4><ul><li>Confirm tracheal placement with sustained EtCO₂; check bilateral ventilation &amp; airway pressures</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Maintenance</h4><ul><li>Add temperature &amp; TOF (if relaxant used); depth monitor if TIVA + paralysis; invasive lines as indicated</li><li>Scan the monitors in a regular sequence; watch the surgical field and the patient</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Emergence &amp; transfer</h4><ul><li>Confirm TOF &gt;0.9 before extubation; continue monitoring during transfer (portable capnography for intubated patients)</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">⚠️ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Monitoring</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Relying on SpO₂ to detect hypoventilation</div><p>In a preoxygenated patient, saturation stays high for minutes after ventilation stops. Capnography detects apnoea/obstruction immediately — it is the earlier, better warning.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Silencing alarms</div><p>Permanently silenced or badly-set alarms defeat the purpose of monitoring. Set sensible limits and keep them audible — many critical incidents began with a muted alarm.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Extubating on clinical signs alone</div><p>Head-lift and grip are unreliable for residual block. Use quantitative TOF and confirm a ratio &gt;0.9 before extubation to prevent post-operative respiratory failure.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Wrong-size NIBP cuff</div><p>A cuff too small over-reads (spurious hypertension); too large under-reads. Use a cuff ~40% of arm circumference and cross-check a suspicious reading.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Trusting a normal SpO₂ in CO poisoning</div><p>Standard pulse oximeters cannot distinguish carboxyhaemoglobin from oxyhaemoglobin and read falsely high. Use co-oximetry/ABG when CO exposure is possible (burns, smoke).</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — No monitoring during transfer</div><p>Deaths occur moving patients between theatre, recovery and ICU. Continue full monitoring — including capnography for intubated patients — throughout transfer.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 7 — Not zeroing/levelling an arterial line</div><p>An un-zeroed or wrongly-levelled transducer gives false pressures and bad decisions. Zero to atmosphere and level at the right atrium (mid-axillary line).</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-x">🎓 8 · Exam Pearls — DrNB / MD / EDAIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: List the AAGBI minimum monitoring standards.</strong><br>Pulse oximetry, capnography, ECG, non-invasive BP, inspired O₂ (and inspired/expired agent + airway pressure for GA), temperature (&gt;30 min), and neuromuscular monitoring when relaxants are used — continuously, from before induction to recovery, with the anaesthetist present throughout.</p></div>
+      <div class="ec"><p><strong>Q: Why is capnography the most important monitor?</strong><br>A sustained EtCO₂ waveform confirms ventilation, tracheal tube position and the presence of a cardiac output. Its loss is the earliest sign of disconnection, oesophageal intubation, obstruction or arrest.</p></div>
+      <div class="ec"><p><strong>Q: What causes a sudden fall in EtCO₂?</strong><br>A drop in cardiac output/hypotension, pulmonary or venous air embolism, circuit disconnection or a sampling problem — a sudden fall to zero implies disconnection/oesophageal tube/arrest.</p></div>
+      <div class="ec"><p><strong>Q: How does a pulse oximeter work, and when does it lie?</strong><br>It compares absorption of red (660 nm) and infrared (940 nm) light gated to the pulsatile signal. It is unreliable with poor perfusion, motion, nail polish and dyes, reads falsely high in CO poisoning, and trends to ~85% in methaemoglobinaemia.</p></div>
+      <div class="ec"><p><strong>Q: What TOF ratio confirms adequate reversal?</strong><br>A train-of-four ratio &gt;0.9, measured quantitatively — clinical signs (head-lift, grip) are insufficient to exclude residual block.</p></div>
+      <div class="ec"><p><strong>Q: Target processed-EEG (BIS) value for GA, and when is it most useful?</strong><br>~40–60. Most valuable with TIVA plus neuromuscular blockade, where end-tidal agent cannot be used to guard against awareness.</p></div>
+      <div class="ec"><p><strong>Q: Which capnograph pattern suggests bronchospasm?</strong><br>A sloping, "shark-fin" upstroke with loss of the normal square plateau, indicating expiratory airflow obstruction.</p></div>
+      <div class="ec"><p><strong>Q: How do you set up an invasive arterial line correctly?</strong><br>Zero the transducer to atmosphere and level it at the right atrium (mid-axillary line); an un-levelled or un-zeroed line gives false pressures.</p></div>
+    </section>
+
+    <section id="s9" class="references-section">
+      <span class="sb sb-r">📚 9 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Klein AA, Meek T, Allcock E, et al. (AAGBI).</strong> Recommendations for standards of monitoring during anaesthesia and recovery 2021. <em>Anaesthesia.</em> 2021;76:1212–1223.</li>
+        <li><strong>Gropper MA, et al. (eds).</strong> Miller's Anesthesia, 9th Edition. Monitoring; Neuromuscular Monitoring. Elsevier; 2020.</li>
+        <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology, 6th Edition. Patient Monitors. McGraw-Hill; 2018.</li>
+        <li><strong>Barash PG, et al. (eds).</strong> Clinical Anesthesia, 9th Edition. Commonly Used Monitoring Techniques. Wolters Kluwer; 2023.</li>
+        <li><strong>Checketts MR, Alladi R, Ferguson K, et al. (AAGBI).</strong> Recommendations for standards of monitoring during anaesthesia and recovery 2015. <em>Anaesthesia.</em> 2016;71:85–93.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

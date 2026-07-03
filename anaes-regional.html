@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Regional &amp; Neuraxial Anaesthesia — CritCare.in</title>
+  <meta name="description" content="Regional &amp; neuraxial anaesthesia: spinal, epidural &amp; CSE technique, local-anaesthetic pharmacology, local anaesthetic systemic toxicity (LAST) &amp; lipid emulsion rescue, neuraxial anticoagulation timing (ASRA/AAGBI), and complications — PDPH, high/total spinal, hypotension. From Miller, Barash and Morgan &amp; Mikhail." />
+  <link rel="canonical" href="https://critcare.in/anaes-regional.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);} .sb-s{background:#e0f2fe;color:#075985;}
+    .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0;}
+    .cmp-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid var(--line);background:var(--bg-alt);}
+    .cmp-card h4{font-size:.82rem;font-weight:800;margin-bottom:.5rem;color:var(--blue);}
+    .cmp-card ul{font-size:.8rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    .last-box{background:#fef2f2;border:1.5px solid #fca5a5;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .last-box .lb-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#991b1b;margin-bottom:.6rem;}
+    .last-box p,.last-box ul{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .last-box ul{padding-left:1.2rem;} .last-box strong{color:#7f1d1d;}
+    @media(max-width:600px){.compare-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › Regional &amp; Neuraxial</div>
+    <h1>💉 Regional &amp; Neuraxial Anaesthesia</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ASRA</span>
+      <span class="gbadge kdigo">AAGBI Anticoagulation</span>
+      <span class="gbadge isccm">LAST / Lipid Rescue</span>
+      <span class="gbadge esicm">Spinal · Epidural · CSE</span>
+      <span class="gbadge apasl">PDPH</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Block · Dose · Complications</span>
+      <span class="topic-tag">LA Pharmacology</span>
+      <span class="topic-tag">LAST · Lipid 20%</span>
+      <span class="topic-updated">ASRA Anticoagulation 4th Ed · ASRA LAST 2020 · AAGBI · Miller / Barash / Morgan &amp; Mikhail</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Miller — Neuraxial Principles</a></li>
+        <li><a href="#s2">2. LA Pharmacology</a></li>
+        <li><a href="#s3">3. Spinal vs Epidural vs CSE</a></li>
+        <li><a href="#s4">4. Guidelines (Anticoagulation)</a></li>
+        <li><a href="#s5">5. LAST &amp; Lipid Rescue</a></li>
+        <li><a href="#s6">6. Complications Flowchart</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. Exam Pearls</a></li>
+        <li><a href="#s9">9. References</a></li>
+      </ul>
+      <a href="anaesthesia.html" class="toc-back">← All anaesthesia topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Miller's Anesthesia — Neuraxial Anaesthesia</span>
+      <h2>Principles, Anatomy &amp; Physiology</h2>
+      <div class="book-quote">
+        <p>"Neuraxial blockade produces surgical anaesthesia by depositing local anaesthetic around the spinal nerve roots. Its physiological signature is a sympathetic block that extends two or more dermatomes above the sensory level, producing vasodilatation and hypotension; the higher the block, the greater the cardiovascular and respiratory consequences. Understanding this sympathectomy — and treating it promptly — is the core skill of safe neuraxial practice."</p>
+        <cite>Synthesised from Miller's Anesthesia, 9th Ed — Spinal, Epidural &amp; Caudal Anaesthesia.</cite>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">🧬 Anatomy &amp; the three block types</div>
+        <ul>
+          <li><strong>Landmarks:</strong> Tuffier's line (top of iliac crests) ≈ <strong>L4</strong>; the spinal cord ends at <strong>L1–L2</strong> in adults, so spinals are placed at <strong>L3/4 or below</strong> to avoid cord injury.</li>
+          <li><strong>Layers</strong> (midline): skin → supraspinous → interspinous → ligamentum flavum → (epidural space) → dura → arachnoid → CSF.</li>
+          <li><strong>Differential block:</strong> sympathetic (highest) &gt; sensory &gt; motor (lowest) — the sympathetic level sits ~2 segments above sensory.</li>
+        </ul>
+      </div>
+      <div class="warn-box">
+        <div class="kb-label">⚖️ Benefits vs the trade-off</div>
+        <p>Neuraxial and regional techniques provide excellent analgesia, reduce opioid use, blunt the surgical stress response, allow an awake patient (e.g. Caesarean section) and lower the risk of respiratory complications and (for some operations) VTE. The trade-off is <strong>sympathectomy-driven hypotension</strong>, the risk of a <strong>high/total spinal</strong>, and — rarely but seriously — <strong>vertebral canal haematoma or abscess</strong> and <strong>LAST</strong>. Every regional technique demands full monitoring, IV access, and resuscitation drugs/lipid emulsion immediately available.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Barash / Stoelting Pharmacology — Local Anaesthetics</span>
+      <h2>Local-Anaesthetic Pharmacology</h2>
+      <div class="book-quote">
+        <p>"Local anaesthetics block the voltage-gated sodium channel from within the axon, preventing propagation of the action potential. Potency tracks lipid solubility, duration tracks protein binding, and speed of onset tracks the pKa relative to tissue pH — which is why local anaesthetics work poorly in the acidic environment of infected tissue. Toxicity, like potency, rises with lipid solubility: bupivacaine is the most cardiotoxic of the common agents."</p>
+        <cite>Synthesised from Stoelting's Pharmacology &amp; Physiology in Anesthetic Practice; Barash — Clinical Anesthesia.</cite>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">🔑 Structure–activity in one glance</div>
+        <ul>
+          <li><strong>Amides</strong> (lidocaine, bupivacaine, ropivacaine, prilocaine — "two i's" in the name) — hepatic metabolism; <strong>esters</strong> (procaine, chloroprocaine, tetracaine, cocaine) — plasma cholinesterase, allergy risk via PABA.</li>
+          <li><strong>Potency ↑ with lipid solubility; duration ↑ with protein binding; onset faster with lower pKa</strong> (more un-ionised drug at tissue pH).</li>
+          <li><strong>Adrenaline</strong> added to prolong duration, reduce systemic absorption/peak levels and mark intravascular injection — <strong>never</strong> with adrenaline in end-artery territories (digits, penis).</li>
+        </ul>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Agent</th><th>Max dose (approx.)</th><th>Onset / duration</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Lidocaine</strong></td><td>3 mg/kg (7 mg/kg with adrenaline)</td><td>Fast / short–intermediate</td><td>Versatile; topical/infiltration/nerve block</td></tr>
+            <tr><td><strong>Bupivacaine</strong></td><td>2 mg/kg</td><td>Slow / long</td><td>Most cardiotoxic — avoid IV; workhorse for spinal (heavy 0.5%)</td></tr>
+            <tr><td><strong>Ropivacaine</strong></td><td>3 mg/kg</td><td>Slow / long</td><td>Less cardiotoxic than bupivacaine; more motor-sparing</td></tr>
+            <tr><td><strong>Prilocaine</strong></td><td>6 mg/kg</td><td>Fast / intermediate</td><td>Least toxic amide; methaemoglobinaemia at high dose</td></tr>
+            <tr><td><strong>2-Chloroprocaine</strong></td><td>~11 mg/kg</td><td>Very fast / very short</td><td>Ester; rapid plasma hydrolysis; short day-case spinals</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-s">📙 3 · Morgan/Mikhail — Techniques Compared</span>
+      <h2>Spinal vs Epidural vs CSE</h2>
+      <div class="compare-grid">
+        <div class="cmp-card"><h4>Spinal (subarachnoid)</h4><ul><li>Small dose into CSF below L2; single shot</li><li><strong>Fast, dense, reliable</strong> block</li><li>Low LA dose → minimal LAST risk</li><li>Hypotension can be rapid; fixed duration; PDPH risk (use pencil-point needle)</li></ul></div>
+        <div class="cmp-card"><h4>Epidural</h4><ul><li>Larger LA volume into epidural space; catheter → titratable &amp; prolongable</li><li>Slower onset, segmental block; good for labour &amp; post-op analgesia</li><li>Higher LA dose → real LAST risk; risk of accidental dural puncture</li></ul></div>
+        <div class="cmp-card"><h4>Combined spinal–epidural (CSE)</h4><ul><li>Rapid spinal + catheter flexibility</li><li>Useful for labour, prolonged/lower-limb surgery</li></ul></div>
+        <div class="cmp-card"><h4>Peripheral nerve / plane blocks</h4><ul><li>Ultrasound-guided; brachial plexus, femoral/adductor canal, TAP, ESP, PECS</li><li>Excellent opioid-sparing analgesia; watch cumulative LA dose (LAST)</li></ul></div>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">💧 Managing neuraxial hypotension</div>
+        <p>Caused by the sympathetic block (venodilation → ↓ preload; arterial dilation → ↓ SVR). <strong>Treat:</strong> left-lateral tilt/uterine displacement in pregnancy, a vasopressor (<strong>phenylephrine</strong> first-line in obstetrics; ephedrine if bradycardic), fluid co-loading, and atropine for bradycardia. Prophylactic phenylephrine infusion is standard for spinal Caesarean section.</p>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Subarachnoid (spinal) block with heavy bupivacaine is the workhorse</strong> for Caesarean section and lower-limb/urological/lower-abdominal surgery across India — cheap, reliable and avoiding a general anaesthetic in an often un-fasted, higher-aspiration-risk population. Ensure <strong>20% lipid emulsion (Intralipid)</strong> is stocked wherever regional anaesthesia is performed, along with a displayed LAST protocol. Use <strong>pencil-point (Whitacre/Sprotte) needles</strong> to reduce PDPH, which matters greatly for young obstetric patients.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-g">📋 4 · Guidelines — Neuraxial Blocks &amp; Anticoagulation</span>
+      <h2>Anticoagulation &amp; Contraindications</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">Absolute &amp; relative contraindications</div>
+        <div class="gr-text">
+          <strong>Absolute:</strong> patient refusal, local infection at the site, raised intracranial pressure, true LA allergy, uncorrected coagulopathy/therapeutic anticoagulation, uncorrected hypovolaemia/shock.<br>
+          <strong>Relative:</strong> systemic sepsis, fixed cardiac output states (severe aortic/mitral stenosis — a fall in SVR is dangerous), certain neurological disease, anatomical/spinal abnormality.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Timing around anticoagulants — neuraxial &amp; catheter removal <span class="gr-s">ASRA / AAGBI</span></div>
+        <div class="gr-text">
+          Selected intervals <strong>before</strong> a neuraxial block (and before removing an epidural catheter):<br>
+          • <strong>Prophylactic LMWH</strong> — <strong>12 h</strong>; <strong>therapeutic LMWH</strong> — <strong>24 h</strong>.<br>
+          • <strong>Unfractionated heparin</strong> (prophylactic SC) — 4–6 h &amp; normal coagulation.<br>
+          • <strong>Warfarin</strong> — stopped with <strong>INR ≤1.4</strong>.<br>
+          • <strong>Clopidogrel</strong> — 7 days; <strong>ticagrelor</strong> — 5 days; <strong>prasugrel</strong> — 7–10 days.<br>
+          • <strong>DOACs</strong> (e.g. rivaroxaban/apixaban) — ~72 h (drug- and renal-dependent).<br>
+          <strong>Restart</strong> anticoagulants only after an appropriate delay following block/catheter removal. Aspirin alone is <strong>not</strong> a contraindication. When in doubt, follow the current ASRA/AAGBI tables exactly — timing prevents vertebral canal haematoma.
+        </div>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-d">🚨 5 · Local Anaesthetic Systemic Toxicity (LAST)</span>
+      <h2>LAST &amp; Lipid Emulsion Rescue</h2>
+      <div class="last-box">
+        <div class="lb-label">🚨 Recognise LAST</div>
+        <p><strong>Early/CNS:</strong> peri-oral tingling, tinnitus, metallic taste, agitation, confusion → <strong>seizures</strong> → coma. <strong>Cardiovascular (later, or first with bupivacaine):</strong> hypertension/tachycardia then <strong>bradycardia, conduction block, ventricular arrhythmias and cardiac arrest.</strong> Suspect it with any collapse or neurology soon after an LA injection — onset may be delayed up to ~30–60 min.</p>
+      </div>
+      <div class="last-box">
+        <div class="lb-label">🧯 Immediate management (ASRA 2020 / AAGBI)</div>
+        <ul>
+          <li><strong>Stop injecting</strong> LA; call for help; ABC — <strong>secure airway, 100% O₂</strong>, prevent hypoxia/acidosis (they worsen toxicity).</li>
+          <li><strong>Control seizures</strong> — benzodiazepine (avoid large doses of propofol in the unstable patient).</li>
+          <li><strong>Give 20% lipid emulsion (Intralipid):</strong> bolus <strong>1.5 mL/kg over 1 min</strong>, then infusion <strong>15 mL/kg/h</strong>; repeat bolus (×1–2) and double the infusion rate for persistent instability; <strong>maximum ~12 mL/kg</strong>.</li>
+          <li><strong>If cardiac arrest:</strong> standard ALS <em>with modifications</em> — expect a <strong>prolonged resuscitation</strong>, use <strong>small adrenaline doses (≤1 µg/kg)</strong>, <strong>avoid</strong> vasopressin, calcium-channel/β-blockers and lidocaine; consider cardiopulmonary bypass/ECMO if available.</li>
+          <li>Monitor for ≥4–6 h (or longer after arrest); report to the LipidRescue registry.</li>
+        </ul>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">🛡 Prevention beats rescue</div>
+        <p>Use the <strong>lowest effective dose</strong> and calculate the maximum by weight; <strong>aspirate before injecting</strong> and inject in fractionated aliquots; use <strong>ultrasound guidance</strong>; consider an adrenaline-containing test dose to detect intravascular placement; and be most cautious with <strong>bupivacaine</strong> and in the elderly, small, or cardiac patient.</p>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-f">🗺 6 · Complications Flowchart</span>
+      <h2>Recognising &amp; Treating Complications</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">A</div>
+        <div class="fc-content"><h4>High / total spinal</h4>
+          <ul><li>Rapidly rising block: arm weakness, difficulty breathing, hypotension, bradycardia → apnoea &amp; unconsciousness</li><li><strong>Treat:</strong> ABC, intubate &amp; ventilate, vasopressors, fluids, atropine; support until the block recedes</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">B</div>
+        <div class="fc-content"><h4>Hypotension &amp; bradycardia</h4>
+          <ul><li>Sympathectomy → vasopressor (phenylephrine/ephedrine), fluid, tilt; atropine for bradycardia; adrenaline if severe</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">C</div>
+        <div class="fc-content"><h4>Post-dural-puncture headache (PDPH)</h4>
+          <ul><li>Postural (worse sitting/standing), fronto-occipital, ± neck stiffness/photophobia, days after dural puncture</li><li><strong>Treat:</strong> conservative (analgesia, fluids, caffeine); <strong>epidural blood patch</strong> if severe/persistent. Prevent with pencil-point needles</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">D</div>
+        <div class="fc-content"><h4>Vertebral canal haematoma / abscess</h4>
+          <ul><li>Red flags: <strong>severe back pain, a block that is dense/prolonged or progressing, new weakness, bladder/bowel dysfunction</strong></li><li><strong>Urgent MRI + neurosurgery</strong> — decompression within ~8 h preserves cord function. A neurological emergency</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">E</div>
+        <div class="fc-content"><h4>LAST</h4>
+          <ul><li>Peri-oral tingling/seizures/arrhythmia after LA → stop, ABC, 100% O₂, <strong>20% lipid emulsion</strong>, modified ALS (see §5)</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">⚠️ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Regional Anaesthesia</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — No lipid emulsion / no LAST plan in the room</div><p>Regional anaesthesia without immediate access to 20% lipid emulsion, resuscitation drugs and a displayed protocol is unsafe. Every location performing blocks must stock them and rehearse the drill.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Exceeding the maximum LA dose</div><p>Always calculate the weight-based maximum, especially for infiltration and multiple/large-volume blocks where doses accumulate. Bupivacaine's low threshold and cardiotoxicity are unforgiving.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Ignoring anticoagulation timing</div><p>Placing or removing a neuraxial catheter outside the ASRA/AAGBI intervals risks a devastating vertebral canal haematoma. Check the timing tables every time, for both insertion and removal.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Missing spinal haematoma/abscess red flags</div><p>Attributing new leg weakness, severe back pain or bladder dysfunction to "residual block" delays MRI and decompression. An unexpectedly dense, prolonged or progressing block after neuraxial anaesthesia is a red flag until proven otherwise.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Adrenaline-containing LA in an end-artery</div><p>Never use adrenaline-containing solutions for digital, penile or other end-artery blocks — ischaemic necrosis can follow.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Treating spinal hypotension too slowly</div><p>Sympathectomy-driven hypotension in the pregnant or fixed-output patient can crash quickly. Anticipate it, co-load, and have vasopressors drawn up before performing the block.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 7 — Sedating to hide a failing block instead of converting</div><p>Deep sedation to cover an inadequate regional block risks airway loss in an un-fasted patient. Recognise block failure and convert to general anaesthesia with a secured airway when needed.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-x">🎓 8 · Exam Pearls — DrNB / MD / EDAIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: How do local anaesthetics work, and what determines potency/onset/duration?</strong><br>They block the intracellular voltage-gated Na⁺ channel. Potency ∝ lipid solubility; onset ∝ pKa (lower pKa → faster); duration ∝ protein binding.</p></div>
+      <div class="ec"><p><strong>Q: Why is bupivacaine dangerous IV?</strong><br>High lipid solubility and avid, slowly-reversible Na⁺-channel binding make it the most cardiotoxic common LA — refractory ventricular arrhythmias and arrest. Ropivacaine is less cardiotoxic.</p></div>
+      <div class="ec"><p><strong>Q: Maximum doses of lidocaine and bupivacaine?</strong><br>Lidocaine 3 mg/kg (7 with adrenaline); bupivacaine 2 mg/kg. Always weight-based, and lower in the frail/cardiac patient.</p></div>
+      <div class="ec"><p><strong>Q: Outline lipid rescue for LAST.</strong><br>20% lipid emulsion 1.5 mL/kg bolus over 1 min, then 15 mL/kg/h; repeat bolus and double the rate if unstable (max ~12 mL/kg). Secure airway/100% O₂, control seizures, and give modified ALS with small adrenaline doses, avoiding vasopressin/lidocaine/Ca-blockers.</p></div>
+      <div class="ec"><p><strong>Q: Where does the cord end, and where do you place a spinal?</strong><br>Conus at L1–L2 in adults; place spinals at L3/4 or below (Tuffier's line ≈ L4) to avoid cord injury.</p></div>
+      <div class="ec"><p><strong>Q: Why is neuraxial block associated with hypotension?</strong><br>Sympathetic block (2+ segments above sensory) causes venodilation (↓ preload) and arterial dilation (↓ SVR); a high block also blocks the cardiac accelerators (T1–T4) → bradycardia.</p></div>
+      <div class="ec"><p><strong>Q: PDPH — features and definitive treatment?</strong><br>Postural fronto-occipital headache after dural puncture, ± neck stiffness/photophobia/diplopia. Conservative measures first; epidural blood patch for severe/persistent cases. Pencil-point needles reduce incidence.</p></div>
+      <div class="ec"><p><strong>Q: LMWH timing before neuraxial block?</strong><br>Prophylactic LMWH 12 h; therapeutic LMWH 24 h before the block/catheter removal — per ASRA/AAGBI. Aspirin alone is not a contraindication.</p></div>
+    </section>
+
+    <section id="s9" class="references-section">
+      <span class="sb sb-r">📚 9 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Neal JM, Barrington MJ, Fettiplace MR, et al. (ASRA).</strong> The Third ASRA Practice Advisory on Local Anesthetic Systemic Toxicity — 2020. <em>Reg Anesth Pain Med.</em> 2021;46:81–82 (and 2020 checklist).</li>
+        <li><strong>Horlocker TT, Vandermeulen E, Kopp SL, et al. (ASRA).</strong> Regional Anesthesia in the Patient Receiving Antithrombotic or Thrombolytic Therapy (4th Ed). <em>Reg Anesth Pain Med.</em> 2018;43:263–309.</li>
+        <li><strong>Association of Anaesthetists (AAGBI).</strong> Regional anaesthesia and patients with abnormalities of coagulation. <em>Anaesthesia.</em> 2013;68:966–972; and AAGBI LAST management guideline.</li>
+        <li><strong>Gropper MA, et al. (eds).</strong> Miller's Anesthesia, 9th Edition. Spinal, Epidural &amp; Caudal Anaesthesia; Local Anaesthetics. Elsevier; 2020.</li>
+        <li><strong>Stoelting RK, Hillier SC.</strong> Pharmacology &amp; Physiology in Anesthetic Practice, 6th Edition. Local Anaesthetics. Wolters Kluwer; 2021.</li>
+        <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology, 6th Edition. Spinal, Epidural &amp; Caudal Blocks. McGraw-Hill; 2018.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

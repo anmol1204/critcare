@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Pre-Anaesthetic Check-up (PAC) — Assessment &amp; Optimisation — CritCare.in</title>
+  <meta name="description" content="Pre-anaesthetic check-up made simple: ASA physical status, focused history &amp; airway assessment (Mallampati, LEMON, STOP-BANG), targeted investigations (NICE NG45), ASA 2023 fasting including GLP-1 agonists, RCRI &amp; ACC/AHA 2024 cardiac risk, and perioperative medication management. From Miller, Barash, Morgan &amp; Mikhail and Stoelting's Co-Existing Disease." />
+  <link rel="canonical" href="https://critcare.in/anaes-pac.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);} .sb-s{background:#e0f2fe;color:#075985;}
+    .severity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1rem 0;}
+    .sev-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .sev-mild{background:#f0fdf4;border-color:#86efac;}
+    .sev-mod{background:#fefce8;border-color:#fde68a;}
+    .sev-sev{background:#fef2f2;border-color:#fecaca;}
+    .sev-card h4{font-size:.8rem;font-weight:800;margin-bottom:.5rem;}
+    .sev-mild h4{color:#166534;} .sev-mod h4{color:#854d0e;} .sev-sev h4{color:#991b1b;}
+    .sev-card ul{font-size:.8rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    .asa-grid{display:grid;grid-template-columns:auto 1fr;gap:.3rem .9rem;font-size:.86rem;margin:.6rem 0;}
+    .asa-grid span:nth-child(odd){color:var(--blue);font-weight:800;padding:.3rem 0;border-bottom:1px solid var(--line);white-space:nowrap;}
+    .asa-grid span:nth-child(even){color:var(--ink);padding:.3rem 0;border-bottom:1px solid var(--line);line-height:1.5;}
+    @media(max-width:600px){.severity-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › Pre-Anaesthetic Check-up</div>
+    <h1>🩺 Pre-Anaesthetic Check-up (PAC)</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ASA Physical Status</span>
+      <span class="gbadge kdigo">ASA Fasting 2023</span>
+      <span class="gbadge isccm">ACC/AHA 2024</span>
+      <span class="gbadge esicm">RCRI</span>
+      <span class="gbadge apasl">NICE NG45</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Assess · Optimise · Plan</span>
+      <span class="topic-tag">ASA-PS · Airway · METs</span>
+      <span class="topic-tag">Fasting · Meds · Consent</span>
+      <span class="topic-updated">ASA Physical Status 2020 · ASA Fasting Guidelines 2023 (incl. GLP-1) · ACC/AHA Perioperative Guideline 2024 · NICE NG45 · Miller / Barash / Morgan &amp; Mikhail / Stoelting 2022</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Miller — Purpose &amp; ASA Status</a></li>
+        <li><a href="#s2">2. Barash / Morgan — History &amp; Airway</a></li>
+        <li><a href="#s3">3. Stoelting — Optimising Disease</a></li>
+        <li><a href="#s4">4. Guidelines (Fasting / Cardiac / Tests)</a></li>
+        <li><a href="#s5">5. Medication Management</a></li>
+        <li><a href="#s6">6. Clinical Flowchart</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. Exam Pearls</a></li>
+        <li><a href="#s9">9. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Miller's Anesthesia, 9th Ed — Preoperative Evaluation</span>
+      <h2>Why We Do It &amp; the ASA Physical Status</h2>
+      <div class="book-quote">
+        <p>"The purpose of the preoperative evaluation is not simply to 'clear' a patient for surgery. It is to characterise the patient's medical condition, estimate perioperative risk, optimise that condition where time allows, formulate an anaesthetic plan, and — through information and rapport — reduce the patient's anxiety. A good preoperative visit is the single most cost-effective intervention the anaesthetist makes: it prevents cancellations, avoids unnecessary tests, and turns surprises in theatre into decisions made in the clinic."</p>
+        <cite>Miller's Anesthesia, 9th Ed. Preoperative Evaluation. Elsevier; 2020.</cite>
+      </div>
+
+      <h3>The PAC answers three questions</h3>
+      <ul>
+        <li><strong>Is the patient in the best achievable condition for <em>this</em> surgery?</strong></li>
+        <li><strong>Is there anything that can be optimised in the time available?</strong> (and is the risk of delay worth the gain)</li>
+        <li><strong>What is the safest anaesthetic plan</strong> — technique, airway, monitoring, post-op disposition (ward / HDU / ICU)?</li>
+      </ul>
+
+      <div class="marino-box">
+        <div class="mb-label">📘 ASA Physical Status Classification (ASA-PS)</div>
+        <div class="asa-grid">
+          <span>ASA I</span><span>A normal healthy patient (non-smoker, minimal alcohol).</span>
+          <span>ASA II</span><span>Mild systemic disease, no functional limitation — controlled HTN/DM, current smoker, pregnancy, obesity (BMI 30–40).</span>
+          <span>ASA III</span><span>Severe systemic disease, functional limitation — poorly controlled DM/HTN, COPD, morbid obesity (BMI ≥40), stable angina, ESRD on dialysis, MI/CVA/stent &gt;3 months ago.</span>
+          <span>ASA IV</span><span>Severe systemic disease that is a <strong>constant threat to life</strong> — recent (&lt;3 months) MI/CVA/stent, ongoing ischaemia, severe valve disease, sepsis, EF &lt;30%.</span>
+          <span>ASA V</span><span>Moribund; not expected to survive without the operation (ruptured AAA, massive trauma, ICH with mass effect).</span>
+          <span>ASA VI</span><span>Brain-dead; organs being removed for donation.</span>
+        </div>
+        <p style="margin-top:.7rem;"><strong>Add "E"</strong> for emergency surgery (e.g. ASA III E). ASA-PS predicts perioperative morbidity/mortality but is <strong>subjective</strong> and does <strong>not</strong> account for surgery type, age or airway — it is a communication shorthand, not a full risk score.</p>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">💪 Functional capacity is the cheapest risk test you have</div>
+        <p>Ask what the patient can actually <strong>do</strong>. Climbing two flights of stairs or brisk walking uphill ≈ <strong>≥4 METs</strong> and predicts they will tolerate most surgery. Poor (&lt;4 METs) or indeterminate capacity in a patient facing intermediate/high-risk surgery is what should trigger further cardiac thought — not a resting ECG in an asymptomatic person.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Barash &amp; Morgan/Mikhail — History, Examination &amp; the Airway</span>
+      <h2>The Focused History, Examination &amp; Airway Assessment</h2>
+      <div class="book-quote">
+        <p>"No investigation replaces a careful history and a look at the airway. The airway examination in particular is the one part of the preoperative assessment that only the anaesthetist can do and that no consultant referral will provide. A history of a previous difficult intubation is the strongest single predictor of a difficult airway — ask for it, and read the old anaesthetic chart."</p>
+        <cite>Barash — Clinical Anesthesia, 9th Ed; Morgan &amp; Mikhail's Clinical Anesthesiology, 6th Ed.</cite>
+      </div>
+
+      <h3>Focused history — what actually changes the plan</h3>
+      <ul>
+        <li><strong>Presenting surgical problem</strong> + urgency (elective / urgent / emergency, and full-stomach status).</li>
+        <li><strong>Comorbidities</strong> — cardiac (angina, MI, failure, valves, CIED), respiratory (asthma/COPD, OSA), diabetes, renal, hepatic, neuro (epilepsy, stroke, raised ICP), thyroid.</li>
+        <li><strong>Previous anaesthesia</strong> — difficult airway, PONV, awareness, prolonged block; <strong>family history</strong> of malignant hyperthermia or suxamethonium apnoea (pseudocholinesterase deficiency).</li>
+        <li><strong>Drugs &amp; allergies</strong> — anticoagulants/antiplatelets, insulin, steroids, GLP-1 agonists, SGLT2 inhibitors; latex/antibiotic/anaesthetic allergy (and what actually happened).</li>
+        <li><strong>Social</strong> — smoking, alcohol/recreational drugs, exercise tolerance (METs), pregnancy/LMP.</li>
+        <li><strong>Fasting status</strong> and whether an interpreter or attendant is needed.</li>
+      </ul>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🫁 Airway assessment — the bedside bundle</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Look</span>Facial trauma, beard, receding chin, buck teeth, short/thick neck, goitre, scars</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><strong>Mallampati (I–IV)</strong> — mouth open, tongue out, no phonation; III–IV predicts difficulty</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><strong>Mouth opening</strong> ≥3 cm (2–3 fingers) · <strong>Thyromental distance</strong> &gt;6.5 cm · <strong>Upper-lip-bite test</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><strong>Neck movement</strong> — atlanto-occipital extension; <strong>dentition</strong> — loose/capped/crowns, edentulous</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Synthesise</span>Difficult intubation (<strong>LEMON</strong>) · Difficult mask ventilation (<strong>MOANS</strong>) · Difficult SGA / front-of-neck access</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">🧠 The airway mnemonics worth remembering</div>
+        <ul>
+          <li><strong>LEMON (difficult laryngoscopy/intubation):</strong> <strong>L</strong>ook externally · <strong>E</strong>valuate 3-3-2 (3 fingers mouth opening, 3 fingers hyoid–chin, 2 fingers floor-of-mouth–thyroid) · <strong>M</strong>allampati · <strong>O</strong>bstruction/Obesity · <strong>N</strong>eck mobility.</li>
+          <li><strong>MOANS (difficult mask ventilation):</strong> <strong>M</strong>ask seal (beard) · <strong>O</strong>besity/Obstruction · <strong>A</strong>ge &gt;55 · <strong>N</strong>o teeth · <strong>S</strong>tiff lungs/Snoring (OSA).</li>
+          <li><strong>Predictors of difficult SGA — RODS;</strong> difficult cricothyrotomy — <strong>SHORT</strong> (Surgery/Scar, Haematoma, Obesity, Radiation, Tumour).</li>
+        </ul>
+      </div>
+
+      <h3>Systemic examination</h3>
+      <ul>
+        <li><strong>Vitals &amp; general</strong> — BP both arms if relevant, SpO₂, weight/BMI, pallor, cyanosis, oedema, hydration.</li>
+        <li><strong>CVS</strong> — heart sounds, murmurs, JVP, peripheral pulses, signs of failure.</li>
+        <li><strong>RS</strong> — air entry, added sounds, wheeze; SpO₂ on air.</li>
+        <li><strong>Spine &amp; back</strong> — landmarks, deformity, local sepsis <em>if regional/neuraxial planned</em>; peripheral neurology if a block is planned.</li>
+        <li><strong>IV access</strong> — anticipate difficulty; site for lines.</li>
+      </ul>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-s">📙 3 · Stoelting's Anesthesia &amp; Co-Existing Disease, 8th Ed</span>
+      <h2>Optimising the Common Comorbidities</h2>
+      <div class="book-quote">
+        <p>"The goal of the preoperative visit in the patient with co-existing disease is to ensure the disease is treated as well as it reasonably can be before an elective operation, and to decide which chronic therapies are continued, modified, or stopped. Cancelling a case rarely improves outcome unless the delay is used to make a specific, achievable change — a controlled blood sugar, a treated infection, a rate-controlled AF, an optimised inhaler regimen."</p>
+        <cite>Stoelting's Anesthesia and Co-Existing Disease, 8th Ed. Elsevier; 2022.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">❤️ Cardiovascular</div>
+        <ul>
+          <li><strong>IHD / stents:</strong> defer elective surgery — <strong>≥6 months</strong> after a drug-eluting stent (≥1 month if surgery cannot wait), ≥14 days after balloon angioplasty; do not stop dual antiplatelet therapy without cardiology input.</li>
+          <li><strong>Hypertension:</strong> proceed if BP &lt;180/110; very high pressures on the day are usually anxiety/white-coat — continue most agents (see §5).</li>
+          <li><strong>Heart failure / valves:</strong> decompensated failure and <strong>severe aortic stenosis</strong> are high-risk — echo and optimise first. Know the CIED (pacemaker/ICD) type and reprogramming/magnet plan for diathermy.</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">🫁 Respiratory · 🩸 Endocrine · 🧪 Renal / Hepatic</div>
+        <ul>
+          <li><strong>Asthma/COPD:</strong> operate when optimised and infection-free; continue inhalers; a course of steroids/nebs for an exacerbation is worth the delay. <strong>Smoking cessation</strong> helps most if &gt;4–8 weeks (even 24–48h lowers carboxyhaemoglobin).</li>
+          <li><strong>OSA — screen with STOP-BANG</strong> (Snoring, Tiredness, Observed apnoea, Pressure/BP, BMI &gt;35, Age &gt;50, Neck &gt;40 cm, male Gender): ≥3 = intermediate–high risk → plan opioid-sparing analgesia and post-op monitoring.</li>
+          <li><strong>Diabetes:</strong> assess control (HbA1c), aim CBG ~6–10 mmol/L on the day, first-on-list; manage agents per §5.</li>
+          <li><strong>Renal/Hepatic:</strong> know eGFR/dialysis schedule and Child–Pugh/coagulation; adjust drug choice and dosing, correct electrolytes.</li>
+          <li><strong>Anaemia:</strong> investigate and treat (iron) before elective surgery — a modifiable, independent risk factor; avoids transfusion.</li>
+        </ul>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Rheumatic valvular heart disease</strong> remains common in young adults — auscultate carefully and get an echo for any significant murmur before elective surgery. <strong>Iron-deficiency anaemia</strong> is highly prevalent (particularly in women and antenatal patients) — screen and optimise rather than transfusing on the table.</p>
+        <p><strong>Resource-aware testing:</strong> follow the ISA/NICE principle of investigations directed by comorbidity and surgical grade, not a blanket "routine" battery — it saves cost and avoids chasing incidental abnormalities. Document a clear plan when investigations or specialist opinion are not immediately available, and use tele-PAC where possible for remote patients.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-g">📋 4 · Guidelines — Fasting · Cardiac Risk · Investigations</span>
+      <h2>Evidence-Based Guidelines</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Pre-operative fasting <span class="gr-s">ASA 2023</span></div>
+        <div class="gr-text">
+          Minimum fasting for elective procedures under sedation/GA/regional:<br>
+          • <strong>Clear fluids — 2 hours</strong> (water, black tea/coffee, pulp-free juice, carbohydrate drinks; encourage clears up to 2h)<br>
+          • <strong>Breast milk — 4 hours</strong><br>
+          • <strong>Infant formula / light meal (toast) — 6 hours</strong><br>
+          • <strong>Fatty/fried food, meat, full meal — 8 hours</strong><br>
+          <strong>GLP-1 receptor agonists (semaglutide etc.):</strong> delay gastric emptying — the ASA 2023 consensus advises <strong>holding the dose on the day of surgery (daily preparations)</strong> or <strong>the week of surgery (weekly preparations)</strong>; if not held or GI symptoms are present, treat as a <strong>full stomach</strong> (consider gastric ultrasound / RSI).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Cardiac risk — stepwise, not reflex testing <span class="gr-s">ACC/AHA 2024 · RCRI</span></div>
+        <div class="gr-text">
+          <strong>Revised Cardiac Risk Index (RCRI)</strong> — 1 point each: high-risk surgery, ischaemic heart disease, heart failure, cerebrovascular disease, insulin-treated diabetes, creatinine &gt;177 µmol/L (2 mg/dL). ≥2 points = elevated risk.<br>
+          <strong>ACC/AHA 2024 pathway:</strong> for elevated-risk patients with <strong>poor/unknown functional capacity (&lt;4 METs)</strong> facing intermediate/high-risk surgery, consider biomarkers (BNP/NT-proBNP) and only pursue further testing (stress imaging) <strong>if it will change management</strong>. Do <strong>not</strong> order routine resting ECG/echo in asymptomatic patients for low-risk surgery. Continue statins and (established) beta-blockers; do not start beta-blockers on the day of surgery.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Investigations — directed, not routine <span class="gr-s">NICE NG45</span></div>
+        <div class="gr-text">
+          Order tests by <strong>ASA grade × surgical grade</strong>, not by protocol:<br>
+          • <strong>Healthy (ASA I), minor surgery:</strong> usually <strong>no</strong> routine tests.<br>
+          • <strong>FBC</strong> — if ASA III/IV, or major surgery, or symptoms of anaemia.<br>
+          • <strong>U&amp;E / renal</strong> — if at risk of AKI, on relevant drugs (ACEi/diuretic), ASA III/IV, or major surgery.<br>
+          • <strong>ECG</strong> — cardiovascular/renal disease, ASA III+, or major surgery (not routine by age alone).<br>
+          • <strong>HbA1c</strong> — known/suspected diabetes; <strong>β-hCG</strong> — where pregnancy is possible (ask &amp; document); <strong>sickle test</strong> where relevant; <strong>group &amp; save/crossmatch</strong> per expected blood loss.<br>
+          Coagulation only for liver disease, anticoagulants or bleeding history — not "routine".
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Consent &amp; the plan</div>
+        <div class="gr-text">
+          Take <strong>informed consent</strong> for the anaesthetic technique and its material risks (Montgomery standard — what <em>this</em> patient would want to know), including common events (sore throat, PONV, shivering) and serious ones relevant to the case (dental damage, awareness, nerve injury, aspiration). Agree the plan: technique, airway device, lines/monitoring, analgesia, antiemetic and VTE prophylaxis, and <strong>post-op destination</strong>. Premedication and anxiolysis where indicated.
+        </div>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-d">💊 5 · Perioperative Medication Management</span>
+      <h2>What to Continue, Modify or Stop</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug / Class</th><th>Peri-op instruction</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Beta-blockers</strong></td><td><strong>Continue</strong> (incl. morning of surgery)</td><td>Abrupt withdrawal → rebound ischaemia/tachycardia; don't start de novo on the day (POISE — stroke/hypotension)</td></tr>
+            <tr><td><strong>Statins</strong></td><td><strong>Continue</strong></td><td>Plaque stabilisation; continued through the perioperative period</td></tr>
+            <tr><td><strong>ACE inhibitors / ARBs</strong></td><td><strong>Consider omitting</strong> morning dose (esp. if taken for HTN)</td><td>Refractory intra-op hypotension; continue if for heart failure — individualise</td></tr>
+            <tr><td><strong>Aspirin</strong></td><td>Continue for secondary prevention/stents (surgeon-dependent); stop 5–7 d only if bleeding risk &gt; thrombotic</td><td>Balance stent thrombosis vs surgical bleeding</td></tr>
+            <tr><td><strong>Clopidogrel / P2Y12</strong></td><td>Stop <strong>5–7 days</strong> pre-op — <em>only</em> after cardiology input for stents</td><td>Bleeding vs stent thrombosis; timing driven by stent age</td></tr>
+            <tr><td><strong>Warfarin</strong></td><td>Stop <strong>5 days</strong> pre-op, check INR &lt;1.5; <strong>bridge</strong> with LMWH only if high thrombotic risk</td><td>Most patients (incl. AF) do not need bridging (BRIDGE trial)</td></tr>
+            <tr><td><strong>DOACs</strong></td><td>Stop <strong>24–48 h</strong> (up to 72 h if high bleed risk / renal impairment); no routine bridging</td><td>Predictable pharmacokinetics; timing by drug + eGFR + bleeding risk</td></tr>
+            <tr><td><strong>Metformin</strong></td><td>Continue up to day of surgery in most; omit on the day for major surgery / contrast / renal impairment</td><td>Small lactic-acidosis risk only with AKI/hypoperfusion</td></tr>
+            <tr><td><strong>SGLT2 inhibitors</strong> (—gliflozins)</td><td><strong>Stop 3–4 days</strong> before surgery</td><td>Euglycaemic diabetic ketoacidosis risk</td></tr>
+            <tr><td><strong>GLP-1 agonists</strong> (—glutides)</td><td><strong>Hold</strong> day-of (daily) / week-of (weekly); full-stomach precautions</td><td>Delayed gastric emptying → aspiration (ASA 2023)</td></tr>
+            <tr><td><strong>Insulin</strong></td><td>Long-acting: 60–80% of usual dose the night before/morning; withhold short-acting while fasting; VRIII for major/poorly controlled</td><td>Avoid hypoglycaemia while starved; maintain control</td></tr>
+            <tr><td><strong>Corticosteroids</strong> (chronic)</td><td>Continue + <strong>peri-op stress dose</strong> for significant surgery</td><td>Suppressed HPA axis → adrenal crisis</td></tr>
+            <tr><td><strong>OCP / HRT</strong></td><td>Consider stopping 4 weeks before major/lower-limb surgery (VTE risk) — balance vs pregnancy risk</td><td>Oestrogen is prothrombotic</td></tr>
+            <tr><td><strong>Herbal / OTC</strong></td><td>Stop the "G"s ~1–2 weeks before (Garlic, Ginkgo, Ginseng, etc.)</td><td>Bleeding, drug interactions, sedation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="warn-box">
+        <div class="kb-label">✅ Continue on the morning: the "don't stop" list</div>
+        <p><strong>Beta-blockers, statins, most antihypertensives (except ACEi/ARB — individualise), inhalers, antiepileptics, anti-parkinsonian, thyroid, immunosuppressants, most psychiatric drugs, and chronic steroids.</strong> Give with a sip of water. When in doubt, the harm is usually in <em>stopping</em> chronic therapy, not continuing it.</p>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-f">🗺 6 · Clinical Flowchart</span>
+      <h2>The PAC Workflow</h2>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content">
+          <h4>History &amp; records</h4>
+          <ul>
+            <li>Surgical problem + urgency + fasting/full-stomach status</li>
+            <li>Comorbidities, previous anaesthesia, family h/o (MH, scoline apnoea), drugs, allergies</li>
+            <li>Functional capacity (METs), smoking/alcohol, pregnancy; <strong>read the old anaesthetic chart</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content">
+          <h4>Examination — airway first</h4>
+          <ul>
+            <li>Mallampati, mouth opening, TMD, 3-3-2, neck movement, dentition (LEMON/MOANS)</li>
+            <li>CVS, RS, spine/back if regional planned, IV access</li>
+            <li>Assign <strong>ASA physical status (± E)</strong></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content">
+          <h4>Targeted investigations</h4>
+          <ul>
+            <li>Order by ASA grade × surgical grade (NICE NG45) — not a routine battery</li>
+            <li>Cardiac work-up only if it will change management (poor METs + higher-risk surgery)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content">
+          <h4>Optimise &amp; instruct</h4>
+          <ul>
+            <li>Optimise comorbidities where time allows (glucose, inhalers, rate control, anaemia)</li>
+            <li>Medication plan (continue/stop/bridge — §5); fasting instructions (ASA 2023)</li>
+            <li>Only cancel if delay buys a specific, achievable improvement</li>
+          </ul>
+        </div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content">
+          <h4>Plan, consent &amp; premedicate</h4>
+          <ul>
+            <li>Technique, airway device, lines/monitoring, analgesia, PONV &amp; VTE prophylaxis</li>
+            <li>Post-op destination (ward / HDU / ICU); informed consent (Montgomery)</li>
+            <li>Anxiolysis/premedication and aspiration prophylaxis where indicated</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">⚠️ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in the PAC</h2>
+
+      <div class="mc">
+        <div class="ml">❌ Mistake 1 — Ordering a "routine" panel of tests</div>
+        <p>Age-based or blanket investigations in a well ASA I patient for minor surgery add cost, delay and false-positive chases without improving outcome. Test by comorbidity and surgical grade (NICE NG45).</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 2 — Skipping or under-documenting the airway exam</div>
+        <p>The airway assessment is the one thing only the anaesthetist can do. A previous difficult intubation is the strongest predictor — always ask and read the old chart. Document Mallampati, mouth opening, TMD, neck movement and dentition.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 3 — Stopping chronic drugs that should continue</div>
+        <p>Beta-blockers, statins, inhalers, antiepileptics and steroids should continue. Rebound ischaemia (beta-blocker withdrawal) and adrenal crisis (steroid omission) are avoidable harms.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 4 — Missing the new high-risk drugs: GLP-1 agonists &amp; SGLT2 inhibitors</div>
+        <p>GLP-1 agonists delay gastric emptying (aspiration risk — hold and treat as full stomach if not held). SGLT2 inhibitors cause euglycaemic DKA — stop 3–4 days before. Both are now very common and easy to overlook.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 5 — Reflex "NPO after midnight"</div>
+        <p>Prolonged starvation causes dehydration, hypoglycaemia and misery with no benefit. Encourage <strong>clear fluids up to 2 hours</strong> before surgery (ASA 2023).</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 6 — Cancelling for a high clinic BP or an incidental abnormality</div>
+        <p>Isolated white-coat hypertension &lt;180/110 is not a reason to cancel. Cancel only when the delay will be used to achieve a specific, worthwhile optimisation.</p>
+      </div>
+      <div class="mc">
+        <div class="ml">❌ Mistake 7 — Bridging every anticoagulated patient</div>
+        <p>Most patients on warfarin (including AF) do <strong>not</strong> need LMWH bridging (BRIDGE trial — more bleeding, no thrombotic benefit). Reserve bridging for genuinely high thrombotic risk (mechanical mitral valve, recent VTE/stroke).</p>
+      </div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-x">🎓 8 · Exam Pearls — DrNB / MD / FCPS / EDAIC</span>
+      <h2>Exam Pearls</h2>
+
+      <div class="ec"><p><strong>Q: What are the objectives of the pre-anaesthetic check-up?</strong><br>Assess and characterise the patient's condition, estimate perioperative risk, optimise co-existing disease, formulate the anaesthetic plan, obtain informed consent, and reduce anxiety — while avoiding unnecessary tests and cancellations.</p></div>
+      <div class="ec"><p><strong>Q: Define the ASA physical status classes.</strong><br>I normal healthy; II mild systemic disease; III severe systemic disease (functional limitation); IV severe disease that is a constant threat to life; V moribund, not expected to survive without surgery; VI brain-dead organ donor. Add "E" for emergency. It is subjective and ignores surgery type, age and airway.</p></div>
+      <div class="ec"><p><strong>Q: State the ASA 2023 fasting times.</strong><br>Clear fluids 2 h, breast milk 4 h, formula/light meal 6 h, fatty/fried/full meal 8 h. GLP-1 agonists: hold on the day (daily) or the week (weekly) and treat as full stomach if not held.</p></div>
+      <div class="ec"><p><strong>Q: What is the Revised Cardiac Risk Index?</strong><br>Six equally-weighted predictors: high-risk surgery, ischaemic heart disease, heart failure, cerebrovascular disease, insulin-treated diabetes, creatinine &gt;2 mg/dL. Increasing points → increasing risk of major cardiac events.</p></div>
+      <div class="ec"><p><strong>Q: How do you assess the airway pre-operatively?</strong><br>History of difficulty + LEMON: Look externally, Evaluate 3-3-2, Mallampati, Obstruction/Obesity, Neck mobility; plus mouth opening, thyromental distance, dentition and upper-lip-bite test. MOANS predicts difficult mask ventilation.</p></div>
+      <div class="ec"><p><strong>Q: How much does functional capacity matter, and how is it measured?</strong><br>Greatly — <strong>≥4 METs</strong> (two flights of stairs, brisk uphill walk) predicts tolerance of most surgery. Poor/unknown capacity before higher-risk surgery is what triggers further cardiac assessment (ACC/AHA 2024), not routine testing.</p></div>
+      <div class="ec"><p><strong>Q: Which drugs do you stop, and when, before surgery?</strong><br>SGLT2 inhibitors 3–4 days; clopidogrel 5–7 days; warfarin 5 days (INR &lt;1.5); DOACs 24–72 h by drug/eGFR/bleed risk; GLP-1 agonists on the day/week; the herbal "G"s 1–2 weeks. Continue beta-blockers, statins, inhalers, antiepileptics and steroids.</p></div>
+      <div class="ec"><p><strong>Q: STOP-BANG — what is it?</strong><br>An OSA screen: Snoring, Tiredness, Observed apnoea, high Pressure (BP), BMI &gt;35, Age &gt;50, Neck &gt;40 cm, male Gender. ≥3 = intermediate–high risk → opioid-sparing plan and enhanced post-op monitoring.</p></div>
+      <div class="ec"><p><strong>Q: How long after a coronary stent can elective surgery proceed?</strong><br>Balloon angioplasty ≥14 days; bare-metal stent ≥30 days; drug-eluting stent ideally ≥6 months (≥3 months if surgery cannot wait) — always with cardiology input on antiplatelet therapy.</p></div>
+    </section>
+
+    <section id="s9" class="references-section">
+      <span class="sb sb-r">📚 9 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Gropper MA, et al. (eds).</strong> Miller's Anesthesia, 9th Edition. Preoperative Evaluation. Philadelphia, PA: Elsevier; 2020.</li>
+        <li><strong>Barash PG, Cullen BF, Stoelting RK, et al. (eds).</strong> Clinical Anesthesia, 9th Edition. Preoperative Assessment &amp; the Airway. Wolters Kluwer; 2023.</li>
+        <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology, 6th Edition. Preoperative Evaluation &amp; Airway Management. McGraw-Hill; 2018.</li>
+        <li><strong>Hines RL, Marschall KE (eds).</strong> Stoelting's Anesthesia and Co-Existing Disease, 8th Edition. Elsevier; 2022.</li>
+        <li><strong>American Society of Anesthesiologists.</strong> ASA Physical Status Classification System (last approved/amended 2020).</li>
+        <li><strong>ASA Task Force on Preoperative Fasting.</strong> Practice Guidelines for Preoperative Fasting — 2023 update, and 2023 consensus on GLP-1 receptor agonists. <em>Anesthesiology.</em></li>
+        <li><strong>Thompson A, et al. (ACC/AHA).</strong> 2024 Guideline for Perioperative Cardiovascular Management for Noncardiac Surgery. <em>Circulation / J Am Coll Cardiol.</em> 2024.</li>
+        <li><strong>Lee TH, Marcantonio ER, Mangione CM, et al.</strong> Derivation and prospective validation of the Revised Cardiac Risk Index (RCRI). <em>Circulation.</em> 1999;100:1043–1049.</li>
+        <li><strong>National Institute for Health and Care Excellence.</strong> Routine preoperative tests for elective surgery (NG45). NICE; 2016.</li>
+        <li><strong>Douketis JD, Spyropoulos AC, Kaatz S, et al. (BRIDGE).</strong> Perioperative Bridging Anticoagulation in Patients with Atrial Fibrillation. <em>N Engl J Med.</em> 2015;373:823–833.</li>
+        <li><strong>POISE Study Group.</strong> Effects of extended-release metoprolol succinate in patients undergoing non-cardiac surgery (POISE trial). <em>Lancet.</em> 2008;371:1839–1847.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

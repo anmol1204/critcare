@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Airway Management &amp; the Difficult Airway — CritCare.in</title>
+  <meta name="description" content="Airway management made clear: assessment &amp; prediction, facemask/SGA/tracheal intubation, videolaryngoscopy, DAS 2015 &amp; ASA 2022 difficult airway algorithms, rapid sequence induction, can't intubate can't oxygenate (CICO) &amp; front-of-neck access, and safe extubation. From Miller, Barash and Morgan &amp; Mikhail." />
+  <link rel="canonical" href="https://critcare.in/anaes-airway.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);} .sb-s{background:#e0f2fe;color:#075985;}
+    .plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1rem 0;}
+    .plan-card{border-radius:10px;padding:.9rem 1rem;border:1px solid;}
+    .plan-a{background:#f0fdf4;border-color:#86efac;} .plan-b{background:#fefce8;border-color:#fde68a;} .plan-c{background:#ffedd5;border-color:#fdba74;} .plan-d{background:#fef2f2;border-color:#fecaca;}
+    .plan-card h4{font-size:.78rem;font-weight:800;margin-bottom:.4rem;}
+    .plan-a h4{color:#166534;} .plan-b h4{color:#854d0e;} .plan-c h4{color:#9a3412;} .plan-d h4{color:#991b1b;}
+    .plan-card p{font-size:.78rem;color:var(--slate);line-height:1.55;margin:0;}
+    @media(max-width:700px){.plan-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:420px){.plan-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › Airway Management</div>
+    <h1>🫁 Airway Management &amp; the Difficult Airway</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">DAS 2015</span>
+      <span class="gbadge kdigo">ASA 2022</span>
+      <span class="gbadge isccm">DAS Extubation 2012</span>
+      <span class="gbadge esicm">NAP4</span>
+      <span class="gbadge apasl">Vortex</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Assess · Oxygenate · Plan</span>
+      <span class="topic-tag">Facemask · SGA · ETT · VL</span>
+      <span class="topic-tag">RSI · CICO · FONA</span>
+      <span class="topic-updated">DAS Unanticipated Difficult Intubation 2015 · ASA Difficult Airway 2022 · DAS Extubation 2012 · NAP4 (2011) · Miller / Barash / Morgan &amp; Mikhail</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Miller — Assessment &amp; Prediction</a></li>
+        <li><a href="#s2">2. Barash/Morgan — Techniques</a></li>
+        <li><a href="#s3">3. Special Situations</a></li>
+        <li><a href="#s4">4. Guidelines (DAS / ASA)</a></li>
+        <li><a href="#s5">5. RSI &amp; Airway Drugs</a></li>
+        <li><a href="#s6">6. Difficult Airway Algorithm</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. Exam Pearls</a></li>
+        <li><a href="#s9">9. References</a></li>
+      </ul>
+      <a href="anaesthesia.html" class="toc-back">← All anaesthesia topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Miller's Anesthesia — Airway Management</span>
+      <h2>Assessment, Prediction &amp; the "Difficult Airway"</h2>
+      <div class="book-quote">
+        <p>"Loss of the airway is the commonest route to anaesthetic catastrophe. The lesson of NAP4 was not that difficult airways are unpredictable, but that harm follows failure to plan for failure — persisting with repeated laryngoscopy, not calling for help, and delaying the surgical airway until hypoxia is irreversible. The safe anaesthetist assesses every airway, always has a Plan B and C, and treats oxygenation, not intubation, as the goal."</p>
+        <cite>Synthesised from Miller's Anesthesia, 9th Ed — Airway Management; NAP4 (2011).</cite>
+      </div>
+
+      <h3>Definitions</h3>
+      <ul>
+        <li><strong>Difficult facemask ventilation</strong> — inability to maintain SpO₂ &gt;90% / provide adequate ventilation with a mask (predictors <strong>MOANS</strong>).</li>
+        <li><strong>Difficult laryngoscopy</strong> — Cormack–Lehane grade 3–4 (only epiglottis, or neither epiglottis nor glottis, visible).</li>
+        <li><strong>Difficult / failed intubation</strong> — multiple attempts, or failure to place a tracheal tube.</li>
+        <li><strong>CICO — "can't intubate, can't oxygenate"</strong> — the emergency that mandates immediate front-of-neck access (FONA).</li>
+      </ul>
+
+      <div class="marino-box">
+        <div class="mb-label">🔍 Bedside prediction — the bundle (see also the PAC page)</div>
+        <ul>
+          <li><strong>Mallampati I–IV</strong>, <strong>mouth opening</strong> ≥3 cm, <strong>thyromental distance</strong> &gt;6.5 cm, <strong>3-3-2 rule</strong>, <strong>neck extension</strong>, <strong>upper-lip-bite test</strong>, dentition.</li>
+          <li><strong>LEMON</strong> for difficult intubation; <strong>MOANS</strong> for difficult mask; <strong>RODS</strong> for difficult SGA; <strong>SHORT</strong> for difficult FONA.</li>
+          <li>A documented <strong>previous difficult intubation</strong> is the single strongest predictor — always ask and read the old chart.</li>
+          <li>No single test is reliable alone; combine them, and always <strong>prepare for the airway you cannot predict</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">💨 Preoxygenation &amp; apnoeic oxygenation buy you time</div>
+        <p>3 minutes of tidal breathing (or 8 vital-capacity breaths) of 100% O₂ to an end-tidal O₂ &gt;0.85–0.9 fills the functional residual capacity with oxygen and extends safe apnoea time. <strong>Nasal apnoeic oxygenation</strong> (15 L/min, or high-flow nasal oxygen) during laryngoscopy prolongs the safe window further — especially valuable in obesity, pregnancy and critical illness where desaturation is rapid.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Barash &amp; Morgan/Mikhail — Techniques &amp; Equipment</span>
+      <h2>The Tools: Facemask → SGA → Tracheal Tube</h2>
+      <div class="book-quote">
+        <p>"Airway management is a graded set of skills, not a single manoeuvre. Master basic facemask ventilation with airway adjuncts and correct positioning first — it is the rescue technique on which all the algorithms depend. The supraglottic airway is both a primary device and a lifeboat; the tracheal tube is the definitive airway; and videolaryngoscopy has become a first-line tool, not merely a rescue one."</p>
+        <cite>Synthesised from Barash — Clinical Anesthesia; Morgan &amp; Mikhail's Clinical Anesthesiology.</cite>
+      </div>
+
+      <h3>The ladder of airway devices</h3>
+      <ul>
+        <li><strong>Facemask + adjuncts</strong> — head tilt/chin lift, jaw thrust, oro-/nasopharyngeal airway; two-person, two-handed technique for a difficult seal. "<strong>Optimal ear-to-sternal-notch positioning</strong>" (ramping in the obese) improves both mask ventilation and laryngoscopy.</li>
+        <li><strong>Supraglottic airway (SGA)</strong> — LMA and second-generation devices (i-gel, LMA ProSeal/Supreme) with a gastric drain port; suitable for many elective cases and a key rescue device in the difficult airway.</li>
+        <li><strong>Direct laryngoscopy (DL)</strong> — Macintosh/Miller blades; grade by Cormack–Lehane; optimise with external laryngeal manipulation (BURP), a bougie and correct positioning.</li>
+        <li><strong>Videolaryngoscopy (VL)</strong> — improves glottic view and first-pass success, especially in predicted/unexpected difficulty and C-spine immobilisation; increasingly a first-line choice.</li>
+        <li><strong>Flexible bronchoscopic intubation</strong> — the technique of choice for the <strong>anticipated</strong> difficult airway via awake tracheal intubation.</li>
+      </ul>
+
+      <div class="marino-box">
+        <div class="mb-label">✅ Confirming tracheal placement</div>
+        <p><strong>Sustained end-tidal CO₂ over several breaths is the single most reliable confirmation</strong> of tracheal (not oesophageal) intubation — "<em>no trace, wrong place</em>". Back it up with direct/video visualisation of the tube passing the cords, bilateral chest rise, auscultation and misting. Capnography also detects later displacement, disconnection and obstruction.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-s">📙 3 · Stoelting / Benumof — Special Situations</span>
+      <h2>Airways That Are Difficult by Context</h2>
+      <div class="marino-box">
+        <div class="mb-label">⚠️ High-risk scenarios &amp; how they change the plan</div>
+        <ul>
+          <li><strong>Full stomach / aspiration risk</strong> (emergency, obstetric, bowel obstruction, GORD, GLP-1 agonists) → <strong>rapid sequence induction</strong>, suction ready.</li>
+          <li><strong>Obesity / OSA</strong> → ramp the patient, preoxygenate well, apnoeic oxygenation, anticipate difficult mask <em>and</em> desaturation; extubate awake, sitting up.</li>
+          <li><strong>Obstetric</strong> → reduced FRC + increased O₂ demand (fast desaturation), airway oedema (use a smaller tube), higher aspiration risk — a leading cause of anaesthetic maternal morbidity historically.</li>
+          <li><strong>Cervical-spine injury</strong> → manual in-line stabilisation, videolaryngoscopy; avoid excessive neck movement.</li>
+          <li><strong>Head &amp; neck / airway tumour, radiotherapy, infection (Ludwig's, epiglottitis), trauma/burns</strong> → consider <strong>awake tracheal intubation</strong> or a primary surgical airway; do not remove a partial airway with an anaesthetic you cannot reverse.</li>
+        </ul>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>A high burden of <strong>oral submucous fibrosis and oral cancers</strong> (tobacco/areca-nut chewing) produces restricted mouth opening and fixed, difficult airways — awake fibreoptic or awake video intubation skills are essential. <strong>Post-burn contractures</strong> of the face and neck and <strong>advanced airway tumours presenting late</strong> are common; plan for awake techniques and have surgical-airway backup and an ENT surgeon available. Ensure a <strong>difficult-airway trolley</strong> (bougie, SGAs, VL, cricothyroidotomy set) is checked and available in every location, including remote sites.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-g">📋 4 · Guidelines — DAS 2015 &amp; ASA 2022</span>
+      <h2>The Difficult Airway Algorithms</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">DAS 2015 — unanticipated difficult intubation in adults <span class="gr-s">DAS 2015</span></div>
+        <div class="gr-text">
+          A stepwise, four-plan framework with a hard emphasis on <strong>maintaining oxygenation</strong> and <strong>declaring failure early</strong>:<br>
+          <strong>Plan A</strong> — facemask ventilation &amp; tracheal intubation: optimise position, preoxygenate, <strong>maximum 3 (+1 by a more senior colleague) attempts</strong>; use VL, bougie, external laryngeal manipulation. If it fails → <strong>declare failed intubation</strong>.<br>
+          <strong>Plan B</strong> — maintain oxygenation via a <strong>second-generation SGA</strong> (max 3 attempts). Stop and think: wake the patient, or proceed via the SGA / intubate through it.<br>
+          <strong>Plan C</strong> — if SGA fails, revert to <strong>final attempt at facemask ventilation</strong> (adjuncts, two-person). If adequate → wake the patient.<br>
+          <strong>Plan D — CICO</strong> → declare, give 100% O₂, and perform <strong>emergency front-of-neck access (scalpel–bougie–tube cricothyroidotomy)</strong>.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">ASA 2022 Difficult Airway Guideline — key updates <span class="gr-s">ASA 2022</span></div>
+        <div class="gr-text">
+          Emphasises a <strong>pre-formed strategy</strong>, early consideration of <strong>awake intubation</strong> when difficulty is anticipated and the patient is at risk, <strong>combination techniques</strong> and <strong>videolaryngoscopy</strong>, limiting attempts to avoid trauma, ensuring <strong>supplemental/apnoeic oxygenation</strong> throughout, and having a clear <strong>extubation strategy</strong>. Human factors — call for help early, and use cognitive aids — are explicit.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Awake tracheal intubation (ATI) <span class="gr-s">DAS ATI 2020</span></div>
+        <div class="gr-text">
+          The gold standard for the <strong>anticipated</strong> difficult airway. Sedation (target a rousable patient, often remifentanil ± low-dose midazolam/dexmedetomidine), effective <strong>topical local anaesthetic</strong> (keep within safe lidocaine limits), supplemental oxygen, and ideally success on the first attempt. Verify tube position with capnography <strong>before</strong> inducing anaesthesia.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Extubation is a planned event — DAS 2012 <span class="gr-s">DAS Extubation 2012</span></div>
+        <div class="gr-text">
+          Stratify into <strong>"low-risk"</strong> (routine) and <strong>"at-risk"</strong> (difficult airway, surgical oedema, obesity/OSA, restricted access). For at-risk cases: fully reverse neuromuscular block (confirm TOF ratio &gt;0.9), extubate <strong>awake</strong> and sitting up, consider an <strong>airway exchange catheter</strong> or awake fibreoptic-guided extubation, and have re-intubation equipment and a plan ready. Most airway complications in the peri-operative period occur at or after extubation.
+        </div>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-d">💊 5 · Rapid Sequence Induction &amp; Airway Drugs</span>
+      <h2>RSI &amp; Drug Reference</h2>
+      <div class="marino-box">
+        <div class="mb-label">⚡ Rapid sequence induction (RSI) — the essentials</div>
+        <p>Preoxygenate → give a predetermined induction agent immediately followed by a rapid-onset muscle relaxant → intubate without intervening manual ventilation (to minimise gastric insufflation). <strong>Cricoid pressure</strong> is traditional but increasingly individualised — release it if it impairs the view or ventilation. Have suction on and to hand, and a failed-intubation plan pre-agreed before you start.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Role</th><th>Dose (IV)</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Propofol</strong></td><td>Induction</td><td>1.5–2.5 mg/kg</td><td>Smooth; causes hypotension — reduce dose in the elderly/shocked</td></tr>
+            <tr><td><strong>Ketamine</strong></td><td>Induction (haemodynamically unstable)</td><td>1–2 mg/kg</td><td>Maintains BP; bronchodilator; useful in shock/asthma/trauma</td></tr>
+            <tr><td><strong>Etomidate</strong></td><td>Induction (cardiac-stable)</td><td>0.3 mg/kg</td><td>Haemodynamically stable; transient adrenal suppression</td></tr>
+            <tr><td><strong>Suxamethonium</strong></td><td>RSI relaxant</td><td>1–1.5 mg/kg</td><td>Fastest onset/offset; avoid in hyperkalaemia, burns &gt;24–48h, denervation, MH</td></tr>
+            <tr><td><strong>Rocuronium</strong></td><td>RSI relaxant (alternative)</td><td>1.2 mg/kg</td><td>Rapid onset at high dose; fully reversible with sugammadex</td></tr>
+            <tr><td><strong>Sugammadex</strong></td><td>Reversal (roc/vec)</td><td>16 mg/kg (immediate rescue)</td><td>Reverses profound rocuronium block — a "can't intubate" rescue if roc was used</td></tr>
+            <tr><td><strong>Fentanyl</strong></td><td>Obtund pressor response</td><td>1–3 µg/kg</td><td>Blunts laryngoscopy response; caution — apnoea/hypotension</td></tr>
+            <tr><td><strong>Lidocaine (topical)</strong></td><td>Awake intubation</td><td>Max ~9 mg/kg (mucosal, incl. nebulised/spray)</td><td>Respect total dose to avoid LAST</td></tr>
+            <tr><td><strong>Atropine / glycopyrrolate</strong></td><td>Antisialagogue / bradycardia</td><td>Glyco 200 µg; atropine 0.5 mg</td><td>Dries secretions for awake intubation; treats vagal bradycardia</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-f">🗺 6 · Difficult Airway Algorithm</span>
+      <h2>DAS Plans A–D at a Glance</h2>
+      <div class="plan-grid">
+        <div class="plan-card plan-a"><h4>Plan A — Intubate</h4><p>Optimise position &amp; preoxygenation. VL/DL + bougie, ELM. <strong>Max 3+1 attempts.</strong> Fail → declare.</p></div>
+        <div class="plan-card plan-b"><h4>Plan B — SGA</h4><p>Insert 2nd-gen SGA to oxygenate (max 3). Stop &amp; think: wake, or fibreoptic-via-SGA.</p></div>
+        <div class="plan-card plan-c"><h4>Plan C — Facemask</h4><p>Final facemask attempt: adjuncts, 2-person, full relaxation. If oxygenating → <strong>wake up</strong>.</p></div>
+        <div class="plan-card plan-d"><h4>Plan D — CICO / FONA</h4><p>Can't intubate, can't oxygenate → <strong>scalpel–bougie–tube</strong> cricothyroidotomy now.</p></div>
+      </div>
+
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Optimise the first attempt</h4>
+          <ul><li>Position (ear-to-sternal-notch/ramp), preoxygenate to EtO₂ &gt;0.85, apnoeic O₂</li><li>Best device first (VL), best operator, bougie ready, ELM</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Limit attempts, call for help</h4>
+          <ul><li>≤3 (+1) laryngoscopy attempts — repeated attempts cause trauma &amp; "can't ventilate"</li><li>Call for senior help &amp; the difficult-airway trolley <strong>early</strong></li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Rescue oxygenation</h4>
+          <ul><li>2nd-generation SGA → then facemask with adjuncts</li><li>The question is "am I oxygenating?", not "am I intubating?"</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Wake or proceed — a conscious decision</h4>
+          <ul><li>If oxygenating via SGA/mask: default to <strong>waking the patient</strong> unless surgery is immediately life-saving</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>CICO → front-of-neck access without delay</h4>
+          <ul><li>Declare CICO out loud; scalpel–bougie–tube cricothyroidotomy; do not wait for irreversible hypoxia</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">⚠️ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Airway Management</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Repeated laryngoscopy attempts</div><p>Each extra attempt causes bleeding and oedema, converting a "can't intubate" into a "can't ventilate". Limit to 3 (+1 senior), and change something each time (operator, device, position, adjunct) — don't just repeat the same failing attempt.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Fixating on the tube instead of oxygenation</div><p>The patient dies of hypoxia, not of an unplaced tube. Stop, oxygenate with SGA/facemask, and step back to think. Task-fixation is the classic human-factors failure documented in NAP4.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Not confirming with capnography</div><p>"No trace, wrong place." A sustained EtCO₂ waveform is the only reliable confirmation of tracheal placement — auscultation and misting mislead. Undetected oesophageal intubation is fatal.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Inadequate preoxygenation</div><p>Skipping preoxygenation (or a leaky mask seal) removes your safety margin. In the obese, pregnant and critically ill, desaturation is precipitous — preoxygenate to EtO₂ &gt;0.85 and use apnoeic oxygenation.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Delaying front-of-neck access</div><p>In CICO, waiting "one more attempt" until SpO₂ is in the 40s makes FONA a resuscitation, not a rescue. Declare CICO and cut early — the scalpel–bougie–tube technique is quick and reliable.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Inducing an anticipated difficult airway asleep</div><p>Where difficulty and risk are predicted (airway tumour, fixed neck, severe OSA), an awake technique keeps the patient breathing. Don't take away a marginal airway with a drug you cannot immediately reverse.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 7 — Treating extubation as an afterthought</div><p>Most peri-operative airway complications happen at/after extubation. Stratify risk, fully reverse block (TOF &gt;0.9), extubate awake and upright in at-risk patients, and have a re-intubation plan.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-x">🎓 8 · Exam Pearls — DrNB / MD / EDAIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: Describe the DAS 2015 plans.</strong><br>A = intubation (max 3+1 attempts); B = second-generation SGA oxygenation; C = final facemask attempt then wake; D = CICO → emergency front-of-neck access (scalpel–bougie–tube). Throughout: maintain oxygenation, limit attempts, call for help.</p></div>
+      <div class="ec"><p><strong>Q: What is the Cormack–Lehane grading?</strong><br>Grade 1 full glottis; 2 partial glottis/arytenoids; 3 epiglottis only; 4 neither epiglottis nor glottis. Grades 3–4 = difficult laryngoscopy.</p></div>
+      <div class="ec"><p><strong>Q: How do you confirm tracheal intubation?</strong><br>Sustained end-tidal CO₂ over several breaths ("no trace, wrong place"), plus visualising the tube through the cords, bilateral chest rise, auscultation and misting.</p></div>
+      <div class="ec"><p><strong>Q: What were the key lessons of NAP4?</strong><br>Poor airway assessment/planning, failure to plan for failure, task-fixation with repeated attempts, delayed FONA, and events clustering at extubation and in ICU. Human factors matter as much as technical skill.</p></div>
+      <div class="ec"><p><strong>Q: Suxamethonium vs high-dose rocuronium for RSI?</strong><br>Sux 1–1.5 mg/kg: fastest onset/offset but contraindicated in hyperkalaemia, burns/denervation and MH. Rocuronium 1.2 mg/kg: comparable intubating conditions and fully reversible with sugammadex 16 mg/kg (a "can't intubate" rescue).</p></div>
+      <div class="ec"><p><strong>Q: When is awake tracheal intubation indicated?</strong><br>The anticipated difficult airway at risk of failed asleep intubation/ventilation — e.g. airway tumour, oral submucous fibrosis, fixed cervical spine, severe restricted mouth opening. Confirm placement with capnography before inducing.</p></div>
+      <div class="ec"><p><strong>Q: What is the scalpel–bougie–tube technique?</strong><br>The DAS-recommended emergency FONA for CICO: transverse stab through the cricothyroid membrane, turn the blade, rail a bougie into the trachea, and pass a size-6.0 tube over it.</p></div>
+      <div class="ec"><p><strong>Q: How do you extubate a high-risk airway?</strong><br>Optimise the patient, confirm full reversal (TOF ratio &gt;0.9), extubate awake and sitting up, consider an airway-exchange catheter, and keep re-intubation equipment and a plan ready (DAS Extubation 2012).</p></div>
+    </section>
+
+    <section id="s9" class="references-section">
+      <span class="sb sb-r">📚 9 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Frerk C, Mitchell VS, McNarry AF, et al. (Difficult Airway Society).</strong> DAS guidelines for management of unanticipated difficult intubation in adults 2015. <em>Br J Anaesth.</em> 2015;115:827–848.</li>
+        <li><strong>Apfelbaum JL, Hagberg CA, Connis RT, et al.</strong> 2022 ASA Practice Guidelines for Management of the Difficult Airway. <em>Anesthesiology.</em> 2022;136:31–81.</li>
+        <li><strong>Ahmad I, El-Boghdadly K, Bhagrath R, et al. (DAS).</strong> Guidelines for awake tracheal intubation in adults. <em>Anaesthesia.</em> 2020;75:509–528.</li>
+        <li><strong>Popat M, Mitchell V, Dravid R, et al. (DAS).</strong> DAS guidelines for the management of tracheal extubation. <em>Anaesthesia.</em> 2012;67:318–340.</li>
+        <li><strong>Cook TM, Woodall N, Frerk C (4th National Audit Project, RCoA &amp; DAS).</strong> Major complications of airway management in the UK (NAP4). <em>Br J Anaesth.</em> 2011;106:617–642.</li>
+        <li><strong>Gropper MA, et al. (eds).</strong> Miller's Anesthesia, 9th Edition. Airway Management in the Adult. Elsevier; 2020.</li>
+        <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology, 6th Edition. Airway Management. McGraw-Hill; 2018.</li>
+        <li><strong>Barash PG, et al. (eds).</strong> Clinical Anesthesia, 9th Edition. Airway Management. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

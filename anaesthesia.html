@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Anaesthesia — Clinical Topics Library — CritCare.in</title>
+  <meta name="description" content="Anaesthesiology topic library: pre-anaesthetic check-up, airway management &amp; the difficult airway, general anaesthesia, regional &amp; neuraxial anaesthesia, perioperative fluids &amp; transfusion, and intra-operative monitoring. Based on Miller, Barash, Morgan &amp; Mikhail and Stoelting, with the latest guidelines. For DrNB / MD / EDAIC." />
+  <link rel="canonical" href="https://critcare.in/anaesthesia.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .topics-hero { background:linear-gradient(135deg,#1a0f3d,#3a1a60); padding:3.5rem 5% 2.5rem; color:#fff; }
+    .topics-hero h1 { font-family:var(--font-disp); font-size:clamp(1.8rem,3.5vw,2.6rem); margin-bottom:.6rem; }
+    .topics-hero p { color:rgba(255,255,255,.75); max-width:620px; line-height:1.7; }
+    .topics-hero .hero-stats { display:flex; gap:2rem; margin-top:1.5rem; }
+    .topics-hero .hs-num { font-family:var(--font-disp); font-size:1.6rem; font-weight:600; color:#fff; }
+    .topics-hero .hs-lbl { font-size:.75rem; color:rgba(255,255,255,.6); }
+    .topics-area { max-width:1160px; margin:0 auto; padding:2.5rem 5%; }
+    .sec-intro { font-size:.88rem; color:var(--slate); line-height:1.7; margin-bottom:1.6rem; padding:.9rem 1.2rem; background:#f3e8ff; border-radius:8px; border-left:3px solid #7c3aed; }
+    .grp-title { font-family:var(--font-disp); font-size:1.15rem; font-weight:600; color:var(--ink); margin:2rem 0 1rem; padding-bottom:.5rem; border-bottom:2px solid var(--line); }
+    .grp-title:first-of-type { margin-top:0; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.1rem; }
+    .card { background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:1.5rem; text-decoration:none; color:inherit; display:block; transition:border-color .2s,box-shadow .2s,transform .2s; position:relative; }
+    .card:hover { border-color:#7c3aed; box-shadow:0 8px 24px rgba(124,58,237,.12); transform:translateY(-3px); }
+    .card-ic { width:48px; height:48px; border-radius:10px; background:#f3e8ff; display:grid; place-items:center; font-size:1.4rem; margin-bottom:.9rem; }
+    .card-title { font-weight:700; font-size:.96rem; margin-bottom:.4rem; }
+    .card-desc { font-size:.83rem; color:var(--slate); line-height:1.6; margin-bottom:.8rem; }
+    .tags { display:flex; flex-wrap:wrap; gap:.35rem; }
+    .tag { font-size:.66rem; font-weight:600; letter-spacing:.04em; text-transform:uppercase; background:#f3e8ff; color:#6b21a8; padding:.22rem .5rem; border-radius:4px; }
+    .tag.new { background:#dcfce7; color:#166534; }
+    .card-arrow { margin-top:.9rem; font-size:.8rem; font-weight:700; color:#7c3aed; }
+    .card.soon { opacity:.6; cursor:default; pointer-events:none; }
+    .card.soon:hover { transform:none; box-shadow:none; border-color:var(--line); }
+    .soon-badge { position:absolute; top:1rem; right:1rem; font-size:.58rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; padding:.2rem .45rem; border-radius:4px; background:var(--bg-alt); color:var(--slate); }
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li>
+    <li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topics-hero">
+  <div class="wrap">
+    <h1>💉 Anaesthesiology Library</h1>
+    <p>Crisp, exam-oriented anaesthesia topics — based on <strong>Miller</strong>, <strong>Barash</strong>, <strong>Morgan &amp; Mikhail</strong> and <strong>Stoelting's Co-Existing Disease</strong>, with the latest ASA, DAS, ACC/AHA and AAGBI/ISA guidelines. Written for DrNB · MD · DA · EDAIC.</p>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-num">6</div><div class="hs-lbl">Topics</div></div>
+      <div class="hs"><div class="hs-num">2026</div><div class="hs-lbl">Guidelines</div></div>
+      <div class="hs"><div class="hs-num">4</div><div class="hs-lbl">Standard texts</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="topics-area">
+  <p class="sec-intro">📖 Each topic follows the same layout as the critical-care library: standard-textbook summaries → assessment/physiology flowcharts → latest guidelines → drug &amp; dose tables → clinical algorithms → common mistakes → exam pearls → references. British spelling throughout.</p>
+
+  <div class="grp-title">Foundations</div>
+  <div class="grid">
+    <a href="anaes-pac.html" class="card">
+      <div class="card-ic">🩺</div>
+      <div class="card-title">Pre-Anaesthetic Check-up (PAC)</div>
+      <div class="card-desc">ASA physical status, focused history &amp; airway assessment, targeted investigations (NICE NG45), ASA 2023 fasting incl. GLP-1, RCRI &amp; ACC/AHA 2024 cardiac risk, and perioperative medication management.</div>
+      <div class="tags"><span class="tag new">ASA-PS ✦</span><span class="tag">Fasting 2023</span><span class="tag">Meds</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="anaes-general-anaesthesia.html" class="card">
+      <div class="card-ic">😴</div>
+      <div class="card-title">General Anaesthesia — Principles &amp; Conduct</div>
+      <div class="card-desc">The triad, induction &amp; maintenance agents, MAC, the anaesthetic machine &amp; breathing systems, stages of anaesthesia, emergence, and the common intra-operative problems.</div>
+      <div class="tags"><span class="tag new">Triad · MAC ✦</span><span class="tag">Induction</span><span class="tag">Emergence</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="anaes-monitoring.html" class="card">
+      <div class="card-ic">📟</div>
+      <div class="card-title">Monitoring in Anaesthesia</div>
+      <div class="card-desc">AAGBI minimum standards, capnography (the golden signal), pulse oximetry, NIBP/IBP, temperature, neuromuscular &amp; depth-of-anaesthesia monitoring — and how to read them when things go wrong.</div>
+      <div class="tags"><span class="tag new">Capnography ✦</span><span class="tag">AAGBI</span><span class="tag">TOF · BIS</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+  </div>
+
+  <div class="grp-title">Airway</div>
+  <div class="grid">
+    <a href="anaes-airway.html" class="card">
+      <div class="card-ic">🫁</div>
+      <div class="card-title">Airway Management &amp; the Difficult Airway</div>
+      <div class="card-desc">Assessment &amp; prediction, the DAS 2015 &amp; ASA algorithms, rapid sequence induction, supraglottic airways, videolaryngoscopy, CICO &amp; front-of-neck access, and safe extubation.</div>
+      <div class="tags"><span class="tag new">DAS 2015 ✦</span><span class="tag">RSI</span><span class="tag">CICO / FONA</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+  </div>
+
+  <div class="grp-title">Regional &amp; Perioperative</div>
+  <div class="grid">
+    <a href="anaes-regional.html" class="card">
+      <div class="card-ic">💉</div>
+      <div class="card-title">Regional &amp; Neuraxial Anaesthesia</div>
+      <div class="card-desc">Spinal, epidural &amp; CSE, local-anaesthetic pharmacology, LAST recognition &amp; lipid rescue, neuraxial anticoagulation timing, and common complications (PDPH, high block, hypotension).</div>
+      <div class="tags"><span class="tag new">LAST ✦</span><span class="tag">Neuraxial</span><span class="tag">PDPH</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+    <a href="anaes-fluids-transfusion.html" class="card">
+      <div class="card-ic">🩸</div>
+      <div class="card-title">Perioperative Fluids &amp; Transfusion</div>
+      <div class="card-desc">Crystalloids vs colloids, balanced solutions, goal-directed therapy, blood component therapy, transfusion triggers, massive transfusion &amp; patient blood management.</div>
+      <div class="tags"><span class="tag new">Balanced fluids ✦</span><span class="tag">GDT</span><span class="tag">Massive transfusion</span></div>
+      <div class="card-arrow">Read article →</div>
+    </a>
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

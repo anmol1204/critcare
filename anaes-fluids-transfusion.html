@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Perioperative Fluids &amp; Transfusion — CritCare.in</title>
+  <meta name="description" content="Perioperative fluid &amp; blood management: crystalloids vs colloids, balanced solutions, maintenance vs replacement, goal-directed therapy, blood components, transfusion triggers, massive transfusion protocols &amp; patient blood management, and transfusion reactions. From Miller, Barash and Morgan &amp; Mikhail with AAGBI/NICE guidance." />
+  <link rel="canonical" href="https://critcare.in/anaes-fluids-transfusion.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);} .sb-s{background:#e0f2fe;color:#075985;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › Fluids &amp; Transfusion</div>
+    <h1>🩸 Perioperative Fluids &amp; Transfusion</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Balanced Crystalloids</span>
+      <span class="gbadge kdigo">Goal-Directed Therapy</span>
+      <span class="gbadge isccm">Patient Blood Management</span>
+      <span class="gbadge esicm">Massive Transfusion 1:1:1</span>
+      <span class="gbadge apasl">NICE / AAGBI</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Maintenance · Replacement · Resuscitation</span>
+      <span class="topic-tag">Crystalloid vs Colloid</span>
+      <span class="topic-tag">Components · Triggers · MTP</span>
+      <span class="topic-updated">NICE CG174 · AAGBI · Patient Blood Management · Miller / Barash / Morgan &amp; Mikhail</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Miller — Fluid Physiology</a></li>
+        <li><a href="#s2">2. Crystalloids vs Colloids</a></li>
+        <li><a href="#s3">3. Blood Components &amp; Triggers</a></li>
+        <li><a href="#s4">4. Guidelines (GDT / PBM)</a></li>
+        <li><a href="#s5">5. Massive Transfusion &amp; Reactions</a></li>
+        <li><a href="#s6">6. Fluid Plan Flowchart</a></li>
+        <li><a href="#s7">7. Common Mistakes</a></li>
+        <li><a href="#s8">8. Exam Pearls</a></li>
+        <li><a href="#s9">9. References</a></li>
+      </ul>
+      <a href="anaesthesia.html" class="toc-back">← All anaesthesia topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Miller's Anesthesia — Fluid Management</span>
+      <h2>Fluid Physiology &amp; the Three Questions</h2>
+      <div class="book-quote">
+        <p>"Fluid is a drug, with a dose, a therapeutic window and toxicity. Too little leaves the patient hypovolaemic and hypoperfused; too much causes tissue oedema, impaired wound and anastomotic healing, ileus and respiratory failure. The evidence has moved away from both the old 'liberal' regimens and extreme restriction, toward a zero-balance, individualised approach guided by the patient's actual physiology."</p>
+        <cite>Synthesised from Miller's Anesthesia, 9th Ed — Perioperative Fluid &amp; Electrolyte Therapy.</cite>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">💧 Ask three questions about every fluid</div>
+        <ul>
+          <li><strong>Maintenance</strong> — replacing normal ongoing losses in a fasting patient (water, Na⁺, K⁺, glucose). The "4-2-1 rule" gives an hourly rate (4 mL/kg for first 10 kg + 2 for next 10 + 1 for each kg thereafter).</li>
+          <li><strong>Replacement</strong> — correcting existing deficits (fasting, vomiting, bleeding, third-space/evaporative surgical losses).</li>
+          <li><strong>Resuscitation</strong> — restoring circulating volume in shock: small, repeated boluses guided by response, not a fixed large volume.</li>
+        </ul>
+      </div>
+      <div class="warn-box">
+        <div class="kb-label">⚖️ The distribution rule</div>
+        <p>Isotonic crystalloid distributes across the whole extracellular space, so only ~⅓ (or less) stays intravascular — you need roughly <strong>3–4 mL of crystalloid per 1 mL of blood loss</strong> if using crystalloid alone. 5% dextrose distributes across <em>total body water</em> and is useless for resuscitation. Match the fluid to the compartment you are trying to fill.</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Barash / Morgan-Mikhail — Choosing the Fluid</span>
+      <h2>Crystalloids vs Colloids &amp; "Balanced" Solutions</h2>
+      <div class="book-quote">
+        <p>"For most surgical patients a balanced crystalloid is the resuscitation fluid of choice. Large volumes of 0.9% saline produce a hyperchloraemic metabolic acidosis and are associated with more renal dysfunction than balanced solutions. Synthetic colloids — the hydroxyethyl starches in particular — have fallen out of favour after trials linked them to renal injury and increased mortality in the critically ill; albumin retains a limited role."</p>
+        <cite>Synthesised from Barash — Clinical Anesthesia; Morgan &amp; Mikhail's Clinical Anesthesiology.</cite>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Fluid</th><th>Type</th><th>Key features</th><th>Caveats</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Balanced crystalloid</strong> (Ringer's lactate / Plasma-Lyte / Hartmann's)</td><td>Crystalloid</td><td>Physiological Cl⁻, buffer (lactate/acetate) — first choice for resuscitation &amp; replacement</td><td>Lactate/K⁺ content — caution in severe hyperkalaemia; avoid Hartmann's in the same line as blood (calcium)</td></tr>
+            <tr><td><strong>0.9% saline</strong></td><td>Crystalloid</td><td>Cl⁻ 154 — useful in hypochloraemic alkalosis, TBI (Na⁺), hyponatraemia</td><td>Hyperchloraemic metabolic acidosis &amp; AKI in large volumes</td></tr>
+            <tr><td><strong>5% dextrose</strong></td><td>Crystalloid (free water)</td><td>Provides water &amp; some glucose</td><td>Distributes to total body water — <strong>not</strong> a resuscitation fluid</td></tr>
+            <tr><td><strong>Human albumin (4–5% / 20%)</strong></td><td>Colloid</td><td>Role in some settings (e.g. large-volume paracentesis, selected sepsis)</td><td>Cost; avoid as routine; harmful in traumatic brain injury (SAFE)</td></tr>
+            <tr><td><strong>Hydroxyethyl starch (HES)</strong></td><td>Synthetic colloid</td><td>Volume expansion</td><td><strong>Avoid</strong> in critically ill/sepsis — AKI &amp; mortality (6S, CHEST); restricted by regulators</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">🧪 The crystalloid-vs-colloid verdict</div>
+        <p>Colloids do <strong>not</strong> improve survival over crystalloids and cost more (SAFE trial: albumin ≈ saline overall, and <em>worse</em> in TBI). <strong>Balanced crystalloids</strong> are the default; reserve albumin for specific indications; <strong>avoid starches</strong>. In major surgery the aim is <strong>euvolaemia (zero fluid balance)</strong>, not supranormal loading.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-s">📙 3 · Blood Components &amp; Transfusion Triggers</span>
+      <h2>Component Therapy &amp; When to Transfuse</h2>
+      <div class="marino-box">
+        <div class="mb-label">🩸 The components</div>
+        <ul>
+          <li><strong>Packed red cells</strong> — raise oxygen-carrying capacity; ~1 unit raises Hb by ~10 g/L in an adult.</li>
+          <li><strong>Fresh frozen plasma (FFP)</strong> — clotting factors; ~12–15 mL/kg for coagulopathic bleeding.</li>
+          <li><strong>Platelets</strong> — for thrombocytopenia/dysfunction with bleeding; keep &gt;50 ×10⁹/L for surgery, &gt;100 for neuro/eye/major.</li>
+          <li><strong>Cryoprecipitate / fibrinogen concentrate</strong> — for hypofibrinogenaemia (keep fibrinogen &gt;1.5–2 g/L in obstetric/major haemorrhage).</li>
+        </ul>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Restrictive transfusion triggers <span class="gr-s">NICE / TRICC / PBM</span></div>
+        <div class="gr-text">
+          A <strong>restrictive</strong> strategy is at least as safe as a liberal one for most patients:<br>
+          • <strong>Transfuse at Hb &lt;70 g/L</strong>, target <strong>70–90 g/L</strong>, for most patients.<br>
+          • <strong>Hb &lt;80 g/L</strong> threshold for <strong>symptomatic patients / acute coronary syndrome / chronic cardiovascular disease.</strong><br>
+          • Transfuse a single unit and reassess (don't transfuse by a "two-unit" reflex).<br>
+          Treat the cause of anaemia, and remember the trigger is a guide, not a substitute for assessing bleeding, symptoms and physiology.
+        </div>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Balanced crystalloids (Ringer's lactate) are the ubiquitous, economical default</strong> for perioperative fluid therapy. Pre-operative <strong>iron-deficiency anaemia is very common</strong> — optimise with iron (oral/IV) in the PAC clinic rather than transfusing on the table (a core Patient Blood Management principle). Blood-component availability varies by centre, so <strong>plan cross-match/group-and-save early</strong>, activate the local <strong>massive transfusion protocol</strong> promptly in haemorrhage, and use <strong>tranexamic acid</strong> (cheap, effective) early in trauma and obstetric bleeding.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-g">📋 4 · Guidelines — Goal-Directed Therapy &amp; PBM</span>
+      <h2>How Much, and Guided by What</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">Goal-directed fluid therapy (GDT)</div>
+        <div class="gr-text">
+          In major surgery, titrate fluid (± inotrope) to <strong>dynamic measures of fluid responsiveness</strong> — stroke-volume optimisation by oesophageal Doppler or arterial-waveform analysis, or pulse-pressure/stroke-volume variation — rather than to fixed formulae or static CVP. The goal is to give fluid only while it increases stroke volume, avoiding both hypovolaemia and overload. See the critical-care <a href="topic-haemodynamic-monitoring.html">haemodynamic monitoring</a> page for the physiology.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Patient Blood Management — the three pillars</div>
+        <div class="gr-text">
+          <strong>1. Optimise red-cell mass</strong> — detect &amp; treat anaemia and iron deficiency before elective surgery.<br>
+          <strong>2. Minimise blood loss</strong> — surgical haemostasis, <strong>tranexamic acid</strong>, cell salvage, point-of-care coagulation testing (TEG/ROTEM), maintain normothermia &amp; normal calcium/pH.<br>
+          <strong>3. Optimise tolerance of anaemia</strong> — restrictive triggers, single-unit transfusions, physiological support. The best transfusion is often the one you prevent.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Tranexamic acid <span class="gr-s">CRASH-2 / WOMAN</span></div>
+        <div class="gr-text">
+          Give <strong>early</strong> (within 3 h) in traumatic haemorrhage (CRASH-2) and postpartum haemorrhage (WOMAN) — it reduces death from bleeding and is cheap and widely available. Typical dose 1 g IV over 10 min, then 1 g over 8 h (trauma), or 1 g IV in PPH (repeat once if needed).
+        </div>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-d">🚨 5 · Massive Transfusion &amp; Transfusion Reactions</span>
+      <h2>Major Haemorrhage &amp; Its Hazards</h2>
+      <div class="marino-box">
+        <div class="mb-label">🩹 Massive transfusion protocol (MTP)</div>
+        <ul>
+          <li><strong>Definition:</strong> ~10 units RBC in 24 h, or replacement of one blood volume, or major ongoing haemorrhage.</li>
+          <li><strong>Empirical ratio ~1:1:1</strong> (RBC : FFP : platelets) until laboratory/viscoelastic results guide targeted therapy; give <strong>tranexamic acid</strong> early.</li>
+          <li><strong>Maintain the "lethal triad" defences:</strong> prevent <strong>hypothermia</strong> (warm fluids/patient), <strong>acidosis</strong>, and <strong>coagulopathy</strong>; give <strong>calcium</strong> (citrate in stored blood chelates it → ionised hypocalcaemia).</li>
+          <li><strong>Targets:</strong> fibrinogen &gt;1.5–2 g/L, platelets &gt;50 (&gt;100 if CNS injury), normal ionised calcium, temperature &gt;36 °C.</li>
+        </ul>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">⚠️ Transfusion reactions — recognise fast</div>
+        <ul>
+          <li><strong>Acute haemolytic (ABO incompatibility)</strong> — fever, loin/chest pain, hypotension, haemoglobinuria, DIC; <strong>stop immediately</strong>, resuscitate, check the unit/identity. Usually a clerical/identification error.</li>
+          <li><strong>Febrile non-haemolytic</strong> — common, benign; slow/stop, antipyretic, exclude haemolysis.</li>
+          <li><strong>Allergic / anaphylaxis</strong> — urticaria → airway/circulatory collapse (esp. IgA deficiency); stop, treat as anaphylaxis.</li>
+          <li><strong>TACO</strong> (circulatory overload) — hypertension, raised JVP, pulmonary oedema → diuretics, slow rate. <strong>TRALI</strong> — non-cardiogenic pulmonary oedema within 6 h, normal filling pressures → supportive/ventilatory care.</li>
+          <li><strong>Delayed:</strong> delayed haemolysis, infection, iron overload, TA-GvHD (irradiated components for at-risk patients).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-f">🗺 6 · Perioperative Fluid Plan</span>
+      <h2>A Practical Flowchart</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Assess the starting point</h4><ul><li>Fasting deficit, ongoing losses, comorbidity (cardiac/renal), expected blood loss</li><li>Optimise anaemia pre-operatively; group &amp; save / cross-match appropriately</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Maintenance &amp; replacement</h4><ul><li>Balanced crystalloid for maintenance (4-2-1) and to replace evaporative/third-space losses</li><li>Avoid large-volume 0.9% saline; 5% dextrose is not for volume</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Resuscitate to physiology</h4><ul><li>Small boluses guided by <strong>fluid responsiveness</strong> (SVV/PPV, stroke-volume optimisation), not fixed volumes</li><li>Aim for euvolaemia / zero balance in major surgery</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Bleeding → components + TXA</h4><ul><li>Restrictive RBC trigger (Hb &lt;70, or &lt;80 if cardiac/symptomatic); single-unit &amp; reassess</li><li>Major haemorrhage → activate MTP (~1:1:1), give TXA early, correct Ca²⁺/temperature/pH</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Reassess &amp; de-escalate</h4><ul><li>Guide ongoing therapy with lab/viscoelastic tests; stop fluids once perfused</li><li>Watch for overload (TACO), electrolyte &amp; acid–base disturbance</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-e">⚠️ 7 · Common Mistakes</span>
+      <h2>Common Mistakes in Fluids &amp; Transfusion</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Large-volume 0.9% saline</div><p>It causes hyperchloraemic metabolic acidosis and more renal dysfunction than balanced solutions. Use a balanced crystalloid (Ringer's/Plasma-Lyte) as the default for resuscitation and replacement.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Using synthetic starch colloids</div><p>Hydroxyethyl starches increase AKI and mortality in the critically ill (6S, CHEST) and are regulator-restricted. Colloids don't improve survival over crystalloids — avoid HES.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Over-resuscitation ("more is better")</div><p>Fluid overload causes oedema, anastomotic breakdown, ileus and respiratory failure. Target euvolaemia/zero balance and stop fluids once the patient is perfused.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Reflex two-unit transfusion / liberal triggers</div><p>Restrictive triggers (Hb &lt;70, or &lt;80 with cardiac disease) are as safe or safer. Transfuse a single unit and reassess; treat the cause of anaemia.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Forgetting the lethal triad in massive haemorrhage</div><p>Hypothermia, acidosis and coagulopathy (plus ionised hypocalcaemia from citrate) perpetuate bleeding. Warm everything, give calcium, and correct pH — not just more red cells.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Delaying or omitting tranexamic acid</div><p>TXA saves lives in trauma and PPH but only when given early (&lt;3 h). Give it promptly — it is cheap and widely available.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 7 — Identity/clerical errors in transfusion</div><p>Acute haemolytic reactions are almost always ABO mismatches from mis-identification. Rigorous patient/sample/unit checking at the bedside prevents the most lethal transfusion hazard.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sb-x">🎓 8 · Exam Pearls — DrNB / MD / EDAIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: State the 4-2-1 maintenance rule.</strong><br>4 mL/kg/h for the first 10 kg + 2 mL/kg/h for the next 10 kg + 1 mL/kg/h for each kg above 20 (e.g. 70 kg → 110 mL/h).</p></div>
+      <div class="ec"><p><strong>Q: How much crystalloid replaces 1 mL of blood loss?</strong><br>~3–4 mL of isotonic crystalloid (it distributes across the extracellular space, so only ~⅓ stays intravascular). Blood or colloid replaces roughly 1:1.</p></div>
+      <div class="ec"><p><strong>Q: Balanced crystalloid vs 0.9% saline — why prefer balanced?</strong><br>Large-volume saline causes hyperchloraemic metabolic acidosis and more AKI; balanced solutions (Ringer's/Plasma-Lyte) are more physiological and are the default.</p></div>
+      <div class="ec"><p><strong>Q: What did SAFE and the starch trials show?</strong><br>SAFE: albumin ≈ saline overall but worse in TBI. 6S/CHEST: hydroxyethyl starch causes more AKI and death in the critically ill — avoid synthetic colloids.</p></div>
+      <div class="ec"><p><strong>Q: Restrictive transfusion trigger?</strong><br>Transfuse at Hb &lt;70 g/L (target 70–90); use &lt;80 g/L for symptomatic patients or cardiovascular disease/ACS. Single-unit transfusions with reassessment.</p></div>
+      <div class="ec"><p><strong>Q: Outline a massive transfusion protocol.</strong><br>Empirical ~1:1:1 RBC:FFP:platelets, early tranexamic acid, correct hypothermia/acidosis/hypocalcaemia (citrate), targets: fibrinogen &gt;1.5–2 g/L, platelets &gt;50 (&gt;100 CNS), then switch to lab/viscoelastic-guided therapy.</p></div>
+      <div class="ec"><p><strong>Q: TACO vs TRALI?</strong><br>TACO = circulatory overload — hypertension, raised JVP, cardiogenic pulmonary oedema → diuresis/slow rate. TRALI = immune non-cardiogenic pulmonary oedema within 6 h with normal filling pressures → supportive/ventilatory care.</p></div>
+      <div class="ec"><p><strong>Q: Most lethal transfusion reaction and its cause?</strong><br>Acute haemolytic reaction from ABO incompatibility — almost always a bedside identification/clerical error. Stop immediately, resuscitate, and recheck identity and the unit.</p></div>
+    </section>
+
+    <section id="s9" class="references-section">
+      <span class="sb sb-r">📚 9 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Gropper MA, et al. (eds).</strong> Miller's Anesthesia, 9th Edition. Perioperative Fluid &amp; Electrolyte Therapy; Patient Blood Management. Elsevier; 2020.</li>
+        <li><strong>National Institute for Health and Care Excellence.</strong> Intravenous fluid therapy in adults in hospital (CG174); Blood transfusion (NG24). NICE.</li>
+        <li><strong>Finfer S, Bellomo R, Boyce N, et al. (SAFE Study).</strong> A comparison of albumin and saline for fluid resuscitation in the ICU. <em>N Engl J Med.</em> 2004;350:2247–2256.</li>
+        <li><strong>Myburgh JA, Finfer S, Bellomo R, et al. (CHEST).</strong> Hydroxyethyl starch or saline for fluid resuscitation in intensive care. <em>N Engl J Med.</em> 2012;367:1901–1911.</li>
+        <li><strong>Hébert PC, Wells G, Blajchman MA, et al. (TRICC).</strong> A multicentre, randomised, controlled clinical trial of transfusion requirements in critical care. <em>N Engl J Med.</em> 1999;340:409–417.</li>
+        <li><strong>CRASH-2 Collaborators.</strong> Effects of tranexamic acid on death, vascular events and transfusion in trauma patients. <em>Lancet.</em> 2010;376:23–32.</li>
+        <li><strong>WOMAN Trial Collaborators.</strong> Effect of early tranexamic acid in women with post-partum haemorrhage. <em>Lancet.</em> 2017;389:2105–2116.</li>
+        <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology, 6th Edition. Fluid Management &amp; Transfusion. McGraw-Hill; 2018.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>
