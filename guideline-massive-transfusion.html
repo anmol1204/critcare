@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Massive Transfusion Protocol — Do's &amp; Don'ts (International + Indian) — CritCare.in</title>
+  <meta name="description" content="Massive transfusion protocol summarised into do's and don'ts: activation triggers, fixed 1:1:1 component ratios, early tranexamic acid, fibrinogen and platelet targets, the ionised calcium and hypothermia traps, and viscoelastic-guided de-escalation. International (ISBT, PROPPR, CRASH-2, WOMAN) with the Indian context (AIIMS New Delhi, NBTC)." />
+  <link rel="canonical" href="https://critcare.in/guideline-massive-transfusion.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f0fdfa,#ccfbf1);border:1px solid #5eead4;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#115e59;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#134e4a;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#0f766e;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#0f766e;margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .do-box{background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .do-box .db-l{font-size:.68rem;font-weight:800;color:#166534;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem;}
+    .do-box p{font-size:.88rem;color:#14532d;line-height:1.65;margin:0;}
+    .dont-box{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .dont-box .db-l{font-size:.68rem;font-weight:800;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.35rem;}
+    .dont-box p{font-size:.88rem;color:#7f1d1d;line-height:1.65;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ccfbf1;color:#115e59;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .pack-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1rem 0;}
+    .pack-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid var(--line);background:var(--bg-alt);}
+    .pack-card h4{font-size:.82rem;font-weight:800;margin-bottom:.5rem;color:#0f766e;}
+    .pack-card ul{font-size:.82rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    @media(max-width:600px){.pack-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html">Anaesthesia</a></li>
+    <li><a href="guidelines.html" class="active">Guidelines</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="guidelines.html">Guidelines</a> › Massive Transfusion Protocol</div>
+    <h1>🩸 Massive Transfusion Protocol</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ISBT / NBTC</span>
+      <span class="gbadge kdigo">PROPPR</span>
+      <span class="gbadge isccm">CRASH-2</span>
+      <span class="gbadge esicm">WOMAN</span>
+      <span class="gbadge apasl">AIIMS New Delhi</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Activate Early · Fixed Ratio · TXA</span>
+      <span class="topic-tag">1:1:1 · Fibrinogen · Platelets</span>
+      <span class="topic-tag">Calcium · Temperature · VHA</span>
+      <span class="topic-updated">Cross-listed: Anaesthesia · Emergency Medicine · Critical Care · ISBT Clinical Transfusion · PROPPR (JAMA 2015) · CRASH-2 · WOMAN · AIIMS/NBTC India</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. At a Glance &amp; Activation</a></li>
+        <li><a href="#s2">2. The Protocol (Packs &amp; Targets)</a></li>
+        <li><a href="#s3">3. Adjuncts — TXA, Ca²⁺, Temp, VHA</a></li>
+        <li><a href="#s4">4. ✅ Do's</a></li>
+        <li><a href="#s5">5. ❌ Don'ts</a></li>
+        <li><a href="#s6">6. Doses &amp; Targets Table</a></li>
+        <li><a href="#s7">7. Indian Context (AIIMS/NBTC)</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="guidelines.html" class="toc-back">← All guidelines</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-m">🎯 1 · At a Glance</span>
+      <h2>What a Massive Transfusion Protocol Is For</h2>
+      <div class="book-quote">
+        <p>A massive transfusion protocol is a pre-agreed, rehearsed pathway that lets a team deliver balanced blood components rapidly and without repeated ordering decisions during exsanguinating haemorrhage. Its value lies less in any single ratio than in removing delay and indecision: one phone call releases pre-defined "packs", the laboratory and porters know their roles, and the resuscitation team can concentrate on stopping the bleeding.</p>
+        <cite>Summary of principles from the ISBT Clinical Transfusion Working Party (massive bleeding protocols) and national guidance.</cite>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">🚨 When to activate</div>
+        <ul>
+          <li><strong>Actual or anticipated massive haemorrhage</strong> — e.g. <strong>≥4 RBC units in 1 hour</strong> with ongoing bleeding, or bleeding likely to need replacement of <strong>one blood volume</strong> (≈10 units) in 24 h.</li>
+          <li>Use a <strong>physiological trigger</strong>, not just a unit count — persistent haemorrhagic shock (e.g. SBP &lt;90, HR &gt;120, a positive <strong>ABC score</strong> in trauma, or a raised shock index) with an uncontrolled source.</li>
+          <li>Common settings: <strong>trauma, major obstetric haemorrhage (PPH), upper-GI bleeding, ruptured aneurysm, and intra-operative surgical bleeding.</strong></li>
+          <li><strong>Activate early</strong> — one clear call to the blood bank; nominate a "team leader" and a "communicator" who liaises with the lab.</li>
+        </ul>
+      </div>
+
+      <div class="warn-box">
+        <div class="kb-label">🩸 The goal: stop bleeding + prevent the "lethal triad"</div>
+        <p>Definitive haemorrhage control (surgery, interventional radiology, endoscopy, uterotonics/balloon in PPH) is the treatment; blood components buy time. Throughout, defend against the self-reinforcing <strong>lethal triad of hypothermia, acidosis and coagulopathy</strong> — plus <strong>ionised hypocalcaemia</strong>, sometimes called the "diamond of death".</p>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-g">📋 2 · The Protocol</span>
+      <h2>Fixed-Ratio Packs &amp; Component Targets</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Empirical balanced ratio first <span class="gr-s">PROPPR</span></div>
+        <div class="gr-text">
+          Until laboratory results guide you, transfuse in a <strong>balanced ratio approaching 1:1:1</strong> (RBC : FFP : platelets). The <strong>PROPPR</strong> trial found 1:1:1 versus 1:1:2 gave no significant 30-day mortality difference, but 1:1:1 achieved <strong>more early haemostasis and fewer deaths from exsanguination at 24 h</strong>. Include <strong>plasma from the first pack</strong> — rapid bleeding does not wait for coagulation results.
+        </div>
+      </div>
+
+      <div class="pack-grid">
+        <div class="pack-card"><h4>📦 Pack 1 (empirical)</h4><ul><li>~4–6 units RBC</li><li>~4 units FFP</li><li>1 adult dose platelets (≈ pooled/apheresis)</li><li>Give tranexamic acid if within window</li></ul></div>
+        <div class="pack-card"><h4>📦 Pack 2 onward</h4><ul><li>Continue 1:1:1 components</li><li>Add <strong>cryoprecipitate/fibrinogen</strong> if fibrinogen low</li><li><strong>Switch to lab/VHA-guided</strong> targeted therapy as results arrive</li></ul></div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Component targets to aim for</div>
+        <div class="gr-text">
+          • <strong>Platelets &gt; 50 ×10⁹/L</strong> (aim <strong>&gt;100</strong> in CNS/eye injury or multiple/ongoing bleeding).<br>
+          • <strong>Fibrinogen &gt; 1.5 g/L</strong> (aim <strong>&gt; 2 g/L in obstetric haemorrhage</strong>) — replace with cryoprecipitate or fibrinogen concentrate when it falls below ~1.5 g/L.<br>
+          • <strong>PT/APTT &lt; 1.5× normal</strong> — give FFP to correct.<br>
+          • <strong>Haemoglobin</strong> ~70–90 g/L during active bleeding (don't over-transfuse red cells once bleeding is controlled).<br>
+          • <strong>Ionised calcium &gt; 1.1–1.15 mmol/L</strong> and <strong>temperature &gt; 36 °C</strong> (see §3).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Whole blood &amp; group selection</div>
+        <div class="gr-text">
+          Start with <strong>emergency group O red cells</strong> (O-negative for women of child-bearing potential; O-positive is acceptable for males/older women to conserve O-negative stock) and switch to group-specific/cross-matched blood as soon as available. <strong>Low-titre O whole blood (LTOWB)</strong>, where available, is increasingly used as a single-product initial resuscitation.
+        </div>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-d">🧪 3 · Adjuncts</span>
+      <h2>Tranexamic Acid, Calcium, Temperature &amp; Viscoelastic Testing</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Tranexamic acid — early or not at all <span class="gr-s">CRASH-2 · WOMAN</span></div>
+        <div class="gr-text">
+          Give <strong>tranexamic acid as early as possible, within 3 hours</strong> of injury (trauma — CRASH-2) or of onset of postpartum haemorrhage (WOMAN). Both trials showed reduced death from bleeding, and <strong>benefit falls with delay — after ~3 h it may increase harm in trauma</strong>. Dose: <strong>1 g IV over 10 min, then 1 g over 8 h</strong> (trauma); <strong>1 g IV in PPH, repeated once</strong> if bleeding continues. It is cheap and widely available — do not omit it.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Calcium — the forgotten step</div>
+        <div class="gr-text">
+          <strong>Citrate</strong> in stored blood chelates calcium, and rapid transfusion causes <strong>ionised hypocalcaemia</strong> that impairs both clotting and cardiac contractility. <strong>Monitor ionised calcium and replace</strong> (e.g. calcium chloride or gluconate) to keep it <strong>&gt; 1.1–1.15 mmol/L</strong> during massive transfusion.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Temperature &amp; acidosis</div>
+        <div class="gr-text">
+          <strong>Keep the patient &gt; 36 °C</strong> — use <strong>fluid/blood warmers and forced-air warming</strong>; hypothermia and acidosis each cripple the clotting cascade and platelet function. Correcting perfusion (haemorrhage control + balanced resuscitation) treats the acidosis better than bicarbonate.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Viscoelastic haemostatic assays (TEG/ROTEM)</div>
+        <div class="gr-text">
+          Where available, use <strong>TEG/ROTEM to guide targeted component therapy</strong> after the initial fixed-ratio phase — directing fibrinogen, plasma or platelets to the specific deficit and reducing unnecessary transfusion. If VHA is not available, fall back on <strong>formulaic 1:1:1 plus standard coagulation tests</strong> and clinical judgement.
+        </div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">🛑 Deactivate &amp; audit</div>
+        <p>Once bleeding is controlled, <strong>stand the protocol down</strong> promptly to avoid over-transfusion and its harms (TACO, TRALI, thrombosis, wastage). Return unused components, document what was given, and <strong>audit every activation</strong> — protocols work only if they are rehearsed and reviewed. Consider VTE prophylaxis once haemostasis is secure.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-f">✅ 4 · Do's</span>
+      <h2>What To Do</h2>
+      <div class="do-box"><div class="db-l">✅ Do — activate early on a physiological trigger</div><p>One clear call to the blood bank the moment massive haemorrhage is actual or anticipated — don't wait for the 10th unit. Nominate a team leader and a dedicated communicator with the lab.</p></div>
+      <div class="do-box"><div class="db-l">✅ Do — give balanced 1:1:1 packs with plasma from the start</div><p>Empirical 1:1:1 (RBC:FFP:platelets) until lab/VHA results guide you — include FFP in the first pack (PROPPR: more early haemostasis, fewer exsanguination deaths).</p></div>
+      <div class="do-box"><div class="db-l">✅ Do — give tranexamic acid early (&lt;3 h)</div><p>1 g IV over 10 min then 1 g over 8 h (trauma); 1 g IV in PPH, repeat once. Earlier is better; it is cheap, safe within the window, and reduces death from bleeding.</p></div>
+      <div class="do-box"><div class="db-l">✅ Do — monitor and replace ionised calcium</div><p>Keep ionised Ca²⁺ &gt; 1.1–1.15 mmol/L — citrate load causes hypocalcaemia that worsens both coagulopathy and cardiac function.</p></div>
+      <div class="do-box"><div class="db-l">✅ Do — keep the patient warm (&gt;36 °C)</div><p>Use blood/fluid warmers and forced-air warming; hypothermia is a potent, reversible cause of coagulopathy.</p></div>
+      <div class="do-box"><div class="db-l">✅ Do — chase definitive haemorrhage control</div><p>Surgery, interventional radiology, endoscopy, or uterotonics/tamponade in PPH — components only buy time. Use VHA (TEG/ROTEM) to target therapy once past the initial phase, and stand the protocol down when bleeding stops.</p></div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-e">❌ 5 · Don'ts</span>
+      <h2>What Not To Do</h2>
+      <div class="dont-box"><div class="db-l">❌ Don't — resuscitate with crystalloid</div><p>Large-volume clear fluid dilutes clotting factors, worsens acidosis and hypothermia, and displaces clot. Give blood components, not litres of saline, in massive haemorrhage.</p></div>
+      <div class="dont-box"><div class="db-l">❌ Don't — delay tranexamic acid past 3 hours</div><p>The benefit is time-critical; given late in trauma it may increase mortality. If &gt;3 h have elapsed since injury, weigh carefully rather than giving reflexively.</p></div>
+      <div class="dont-box"><div class="db-l">❌ Don't — wait for coagulation results before giving plasma/platelets</div><p>In the early phase, transfuse empirically in a fixed ratio; formal PT/APTT/fibrinogen take too long to guide the first packs.</p></div>
+      <div class="dont-box"><div class="db-l">❌ Don't — forget calcium and temperature</div><p>These are the most commonly neglected steps. Ignoring ionised hypocalcaemia and hypothermia perpetuates the bleeding you are transfusing for.</p></div>
+      <div class="dont-box"><div class="db-l">❌ Don't — aim for a "normal" blood pressure before control (in trauma)</div><p>In uncontrolled haemorrhagic trauma, practise <strong>permissive hypotension</strong> (e.g. target a palpable radial pulse / SBP ~80–90) until surgical control — over-resuscitation pops clots. (This does not apply to traumatic brain injury, where perfusion must be maintained.)</p></div>
+      <div class="dont-box"><div class="db-l">❌ Don't — leave the protocol running after bleeding stops</div><p>Continuing to transfuse causes over-transfusion, TACO/TRALI, thrombosis and wastage of a scarce resource. Deactivate promptly, return unused units, and audit the event.</p></div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-x">💊 6 · Doses &amp; Targets</span>
+      <h2>Quick Reference</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Item</th><th>What / dose</th><th>Target</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Empirical ratio</strong></td><td>RBC : FFP : platelets ≈ <strong>1:1:1</strong></td><td>Balanced resuscitation until lab/VHA-guided</td></tr>
+            <tr><td><strong>Tranexamic acid</strong></td><td>1 g IV over 10 min → 1 g over 8 h (trauma); 1 g IV ± repeat (PPH)</td><td>Give &lt;3 h from injury/onset</td></tr>
+            <tr><td><strong>Platelets</strong></td><td>1 adult dose (pooled/apheresis)</td><td>&gt;50 ×10⁹/L (&gt;100 if CNS/eye/ongoing)</td></tr>
+            <tr><td><strong>Fibrinogen</strong></td><td>Cryoprecipitate (≈2 pools) or fibrinogen concentrate 2–4 g</td><td>&gt;1.5 g/L (&gt;2 g/L in obstetrics)</td></tr>
+            <tr><td><strong>FFP</strong></td><td>~15 mL/kg; from first pack</td><td>PT/APTT &lt;1.5× normal</td></tr>
+            <tr><td><strong>Red cells</strong></td><td>Emergency group O first, then group-specific/cross-matched</td><td>Hb ~70–90 g/L during bleeding</td></tr>
+            <tr><td><strong>Calcium</strong></td><td>Calcium chloride/gluconate IV, repeat to effect</td><td>Ionised Ca²⁺ &gt;1.1–1.15 mmol/L</td></tr>
+            <tr><td><strong>Temperature</strong></td><td>Warm all fluids/blood + forced-air warming</td><td>&gt;36 °C</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-g">🇮🇳 7 · Indian Context</span>
+      <h2>AIIMS New Delhi &amp; NBTC — Applying This in India</h2>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Component availability varies widely.</strong> Many centres — especially district hospitals — may not stock apheresis platelets or fibrinogen concentrate, and rely on <strong>whole blood, random-donor platelets and cryoprecipitate</strong>. Adapt the protocol to what your blood bank actually holds and <strong>agree the local "pack" contents in advance</strong> with the transfusion medicine department. National guidance from the <strong>National Blood Transfusion Council (NBTC)</strong> and institutional protocols (e.g. <strong>AIIMS New Delhi</strong>) frame most Indian MTPs.</p>
+        <p><strong>Tranexamic acid is a high-value, low-cost intervention</strong> that every Indian labour room, casualty and theatre can and should use early — the WOMAN trial was substantially conducted in low- and middle-income settings, including India. In <strong>obstetric haemorrhage</strong> (a leading cause of maternal death in India), combine early TXA with uterotonics, uterine tamponade/balloon and a fibrinogen target &gt;2 g/L.</p>
+        <p><strong>Practical priorities where resources are limited:</strong> activate early with a single call; use a fixed-ratio approach when VHA/lab turnaround is slow; <strong>never neglect calcium and warming</strong> (both essentially free); pre-arrange O-negative reservation for women of child-bearing potential; and build a <strong>rehearsed local protocol with regular drills and audit</strong>, since the biggest gains come from coordination, not exotic products.</p>
+      </div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References &amp; Source</h2>
+      <ol class="ref-list">
+        <li><strong>International Society of Blood Transfusion (ISBT), Clinical Transfusion Working Party.</strong> Patient Blood Management resources — Massive Bleeding Protocols. isbtweb.org (accessed July 2026).</li>
+        <li><strong>Holcomb JB, Tilley BC, Baraniuk S, et al. (PROPPR).</strong> Transfusion of Plasma, Platelets, and Red Blood Cells in a 1:1:1 vs 1:1:2 Ratio and Mortality in Patients With Severe Trauma. <em>JAMA.</em> 2015;313:471–482.</li>
+        <li><strong>CRASH-2 Collaborators.</strong> Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients. <em>Lancet.</em> 2010;376:23–32.</li>
+        <li><strong>WOMAN Trial Collaborators.</strong> Effect of early tranexamic acid administration on mortality in post-partum haemorrhage. <em>Lancet.</em> 2017;389:2105–2116.</li>
+        <li><strong>Spahn DR, Bouillon B, Cerny V, et al.</strong> The European guideline on management of major bleeding and coagulopathy following trauma (6th edition). <em>Crit Care.</em> 2023;27:80.</li>
+        <li><strong>Hunt BJ, Allard S, Keeling D, et al. (BSH).</strong> A practical guideline for the haematological management of major haemorrhage. <em>Br J Haematol.</em> 2015;170:788–803.</li>
+        <li><strong>National Blood Transfusion Council (NBTC), India</strong> &amp; institutional massive transfusion protocols (e.g. AIIMS New Delhi).</li>
+      </ol>
+      <p style="font-size:.8rem;color:var(--slate);margin-top:1rem;">This page is an educational summary of published guidance, written in the compiler's own words; always follow your own institution's approved massive transfusion protocol and blood-bank policies.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="guidelines.html">Guidelines</a></li>
+      <li><a href="topics.html">Topics</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="guidelines.html"><span class="mn-icon">📋</span>Guides</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>
