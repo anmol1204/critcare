@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Abdominal Compartment Syndrome — CritCare.in</title>
+  <meta name="description" content="Intra-abdominal hypertension and abdominal compartment syndrome (ACS): how to measure intra-abdominal pressure via the bladder, the WSACS grades and definitions, abdominal perfusion pressure, the multi-organ consequences, the medical measures to lower IAP, and when decompressive laparotomy is needed. Marino 5th Ed + Washington Manual + WSACS." />
+  <link rel="canonical" href="https://critcare.in/topic-abdominal-compartment.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .severity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin:1rem 0;}
+    .sev-card{border-radius:10px;padding:.9rem 1rem;border:1px solid;}
+    .sev-1{background:#f0fdf4;border-color:#86efac;} .sev-2{background:#fefce8;border-color:#fde68a;} .sev-3{background:#ffedd5;border-color:#fdba74;} .sev-4{background:#fef2f2;border-color:#fecaca;}
+    .sev-card h4{font-size:.78rem;font-weight:800;margin-bottom:.35rem;}
+    .sev-1 h4{color:#166534;} .sev-2 h4{color:#854d0e;} .sev-3 h4{color:#9a3412;} .sev-4 h4{color:#991b1b;}
+    .sev-card p{font-size:.78rem;color:var(--slate);line-height:1.5;margin:0;}
+    @media(max-width:600px){.severity-grid{grid-template-columns:1fr 1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Abdominal Compartment Syndrome</div>
+    <h1>🩻 Abdominal Compartment Syndrome</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Bladder IAP</span>
+      <span class="gbadge kdigo">IAH Grades I–IV</span>
+      <span class="gbadge isccm">APP = MAP − IAP</span>
+      <span class="gbadge esicm">WSACS</span>
+      <span class="gbadge apasl">Decompress</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Measure It · Multi-organ Killer</span>
+      <span class="topic-tag">Medical First</span>
+      <span class="topic-tag">Laparotomy</span>
+      <span class="topic-updated">WSACS 2013 definitions · Bladder-pressure technique · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Multi-organ Effects</a></li>
+        <li><a href="#s3">3. Measuring &amp; Managing IAP</a></li>
+        <li><a href="#s4">4. Measures &amp; Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>A Pressure You Have to Measure to Find</h2>
+      <div class="book-quote">
+        <p>The abdomen is a closed compartment, and like any compartment its pressure can rise until it strangles the organs within it and beyond it. Intra-abdominal hypertension (IAH) is a sustained intra-abdominal pressure ≥12 mmHg; abdominal compartment syndrome (ACS) is a sustained pressure &gt;20 mmHg accompanied by new organ dysfunction. The diagnosis is easy to miss because the clinical examination — a tense, distended abdomen — is unreliable; the only way to find it is to measure the pressure, almost always via the bladder. In the deteriorating patient with a swollen abdomen after resuscitation, surgery or pancreatitis, measuring the intra-abdominal pressure should be routine.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Abdominal Compartment Syndrome.</cite>
+      </div>
+
+      <div class="severity-grid">
+        <div class="sev-card sev-1"><h4>Grade I</h4><p>IAP 12–15 mmHg</p></div>
+        <div class="sev-card sev-2"><h4>Grade II</h4><p>IAP 16–20 mmHg</p></div>
+        <div class="sev-card sev-3"><h4>Grade III</h4><p>IAP 21–25 mmHg</p></div>
+        <div class="sev-card sev-4"><h4>Grade IV</h4><p>IAP &gt;25 mmHg</p></div>
+      </div>
+      <p style="font-size:.85rem;color:var(--slate);line-height:1.6;"><strong>ACS = sustained IAP &gt;20 mmHg + new organ dysfunction/failure.</strong> Normal IAP in the critically ill is ~5–7 mmHg. <strong>Abdominal perfusion pressure (APP) = MAP − IAP</strong>; a target APP ≥60 mmHg is often used.</p>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>One Pressure, Every Organ System</h2>
+      <div class="book-quote">
+        <p>Raised intra-abdominal pressure does not confine its damage to the abdomen. It pushes the diaphragm up, splinting the lungs and driving up airway pressures; it compresses the inferior vena cava and reduces venous return and cardiac output; it throttles renal blood flow to produce oliguric acute kidney injury; it reduces gut and hepatic perfusion; and, transmitted to the chest, it raises intracranial pressure. A patient with abdominal compartment syndrome therefore presents as a puzzle of simultaneous failing systems — high ventilator pressures, falling urine output and hypotension — that resolves the moment the abdomen is decompressed.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Intra-abdominal Hypertension.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 How raised IAP fails the organs</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">↑ IAP</span>Fluid, oedema, ileus, haemorrhage, packing, ascites → tense abdomen</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><strong>Lungs</strong> ↑ diaphragm → ↑ airway pressure, hypoxia, hypercapnia</div>
+          <div class="pf-node"><strong>Cardiac</strong> IVC compression → ↓ venous return → ↓ output, hypotension</div>
+          <div class="pf-node"><strong>Renal</strong> ↓ renal perfusion → oliguric AKI</div>
+        </div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><strong>Splanchnic</strong> gut/hepatic ischaemia, ↑ lactate</div>
+          <div class="pf-node"><strong>CNS</strong> ↑ intrathoracic pressure → ↑ ICP</div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">ACS</span>Multi-organ dysfunction that reverses on decompression</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — measure it right, at end-expiration, supine</div>
+        <ul>
+          <li><strong>Bladder pressure</strong> is the standard: instil ~25 mL saline into the bladder via the urinary catheter, transduce, and read at <strong>end-expiration, fully supine, with the transducer zeroed at the iliac crest/mid-axillary line</strong>, and the abdominal muscles relaxed.</li>
+          <li>It is a <strong>sustained</strong> pressure that matters — measure serially and trend, don't act on a single spuriously high reading (coughing, straining, an unrelaxed patient).</li>
+          <li>Beware the <strong>"secondary" ACS</strong> — it occurs without an abdominal injury, from massive fluid resuscitation (burns, sepsis, pancreatitis) causing bowel-wall and mesenteric oedema; capping the crystalloid load is prevention.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Measuring &amp; Managing IAP</span>
+      <h2>Evidence-Based Management (WSACS)</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Measure IAP in at-risk patients <span class="gr-s">WSACS</span></div>
+        <div class="gr-text">
+          Have a low threshold to measure bladder pressure in patients with risk factors: <strong>massive fluid resuscitation, abdominal surgery/trauma, severe acute pancreatitis, burns, bowel obstruction/ileus, intra-abdominal sepsis, tense ascites, liver failure, or prone positioning</strong>. Measure serially (e.g. 4–6 hourly) if IAH is present, and calculate <strong>APP (MAP − IAP)</strong>. Physical examination is unreliable — <em>the number, not the belly, makes the diagnosis</em>.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Medical management first — five levers to lower IAP <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          Try the non-surgical measures before laparotomy: <strong>(1) evacuate intraluminal contents</strong> — nasogastric/rectal decompression, prokinetics, stop enteral feed; <strong>(2) evacuate space-occupying lesions</strong> — percutaneous drainage of ascites/collections/blood; <strong>(3) improve abdominal wall compliance</strong> — adequate sedation/analgesia, remove constricting dressings, consider neuromuscular blockade, avoid head-up &gt;20–30°; <strong>(4) optimise fluids</strong> — avoid over-resuscitation, use balanced fluids, consider diuresis/ultrafiltration to achieve neutral-to-negative balance; <strong>(5) optimise perfusion</strong> — support MAP to keep APP ≥60 mmHg.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Decompressive laparotomy for refractory ACS <span class="gr-s">definitive</span></div>
+        <div class="gr-text">
+          <strong>Surgical decompression (decompressive laparotomy with a temporary/open abdomen)</strong> is the definitive treatment for <strong>overt ACS with organ dysfunction refractory to medical measures</strong> — it produces an immediate fall in IAP and reversal of the organ failure. The abdomen is left open with a temporary closure (e.g. negative-pressure dressing) and managed toward staged/delayed closure. Do not delay decompression in a patient failing from established ACS while persisting with medical measures.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Prevent it — the resuscitation you give matters</div>
+        <div class="gr-text">
+          Much ACS is iatrogenic "secondary" ACS from over-resuscitation. Use <strong>balanced, goal-directed fluid resuscitation, avoid crystalloid excess</strong> (especially in burns, pancreatitis and septic shock), consider damage-control surgery leaving the abdomen open when massive visceral oedema is anticipated, and <strong>measure IAP early</strong> so rising pressures are caught before organ failure.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>The common Indian settings for ACS are <strong>severe acute pancreatitis, major abdominal trauma and surgery, intra-abdominal sepsis (perforation peritonitis, which is very common), major burns, and massive fluid resuscitation</strong> — often in units where IAP is not routinely measured, so ACS is under-recognised. The single most useful practice change is cheap and universal: <strong>measure bladder pressure with the existing urinary catheter and a simple manometer/transducer</strong> in any at-risk deteriorating patient. Emphasise <strong>avoiding crystalloid over-resuscitation</strong> (a preventable cause), aggressive medical measures (NG decompression, prokinetics, drainage of ascites/collections), and <strong>not delaying decompressive laparotomy</strong> when organ failure is established — the surgery is definitive and widely available.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">🩺 4 · Measures &amp; Doses</span>
+      <h2>The Toolkit for Lowering IAP</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Measure</th><th>Lever</th><th>How</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Bladder pressure measurement</strong></td><td>Diagnosis</td><td>Instil ~25 mL saline via catheter, transduce, read end-expiration supine (zero at iliac crest)</td><td>Serial &amp; sustained; calculate APP = MAP − IAP</td></tr>
+            <tr><td><strong>Nasogastric / rectal decompression + prokinetics</strong></td><td>Evacuate intraluminal contents</td><td>NG tube, flatus tube; metoclopramide/erythromycin; stop feed</td><td>First-line, low-risk</td></tr>
+            <tr><td><strong>Percutaneous drainage</strong></td><td>Evacuate space-occupying fluid</td><td>Drain ascites, collections, blood (image-guided)</td><td>Can avert laparotomy if fluid-dominant</td></tr>
+            <tr><td><strong>Sedation / analgesia ± neuromuscular blockade</strong></td><td>Improve abdominal wall compliance</td><td>Deepen sedation; short NMB trial</td><td>Relaxing the wall lowers IAP; avoid prolonged NMB</td></tr>
+            <tr><td><strong>Fluid optimisation</strong></td><td>Reduce volume overload</td><td>Avoid over-resuscitation; diuresis/ultrafiltration for neutral-negative balance</td><td>Prevention is better than cure</td></tr>
+            <tr><td><strong>Vasopressor to defend APP</strong></td><td>Optimise perfusion</td><td>Support MAP for APP ≥60 mmHg</td><td>Perfusion target while lowering IAP</td></tr>
+            <tr><td><strong>Decompressive laparotomy</strong></td><td>Definitive</td><td>Open abdomen + temporary closure (NPWT)</td><td>For refractory ACS with organ failure — don't delay</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>IAH / ACS — Measure, Medicalise, Decompress</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Suspect &amp; measure</h4>
+          <ul><li>At-risk + deteriorating (rising airway pressures, falling urine, hypotension, high lactate)</li><li><strong>Measure bladder pressure</strong> — don't rely on the examination; calculate APP</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Grade it &amp; define ACS</h4>
+          <ul><li>IAH grade I–IV; <strong>ACS = sustained IAP &gt;20 mmHg + new organ dysfunction</strong></li><li>Start serial monitoring (4–6 hourly) and target APP ≥60 mmHg</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Apply the five medical levers</h4>
+          <ul><li>Evacuate luminal contents · drain fluid collections · improve wall compliance (sedation ± NMB)</li><li>Optimise fluids (avoid overload) · defend perfusion pressure</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Reassess — is organ dysfunction reversing?</h4>
+          <ul><li>Falling IAP + improving urine/ventilation/haemodynamics → continue medical management</li><li>Refractory ACS with organ failure → <strong>decompressive laparotomy</strong> (open abdomen)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Manage the open abdomen &amp; prevent recurrence</h4>
+          <ul><li>Temporary closure (NPWT), staged/delayed closure; nutrition; fluid stewardship</li><li>Continue IAP monitoring — recurrence can occur even after decompression</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in ACS</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Diagnosing ACS by feeling the abdomen</div><p>Physical examination is unreliable for intra-abdominal pressure. If you don't measure the bladder pressure, you will miss it — measurement should be routine in at-risk patients.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Missing multi-organ ACS as separate problems</div><p>High airway pressures, oliguria and hypotension occurring together in a distended patient are one problem — raised IAP — and they reverse together on decompression.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Over-resuscitating with crystalloid</div><p>Excess fluid causes bowel-wall and mesenteric oedema and secondary ACS. Use balanced, goal-directed resuscitation and cap the crystalloid load in burns, pancreatitis and sepsis.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Measuring pressure incorrectly</div><p>A reading taken sitting up, mid-inspiration, or in a straining patient is falsely high or low. Measure supine, at end-expiration, with the transducer zeroed at the iliac crest and the patient relaxed.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Persisting with medical measures in established ACS</div><p>Once organ failure from ACS is refractory to medical management, delaying decompressive laparotomy costs organs and lives. The surgery is definitive.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Forgetting recurrence after decompression</div><p>ACS can recur even with an open abdomen. Continue IAP monitoring and fluid stewardship after decompression.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: Define IAH and ACS.</strong><br>IAH = sustained IAP ≥12 mmHg; ACS = sustained IAP &gt;20 mmHg with new organ dysfunction/failure. Normal IAP in the critically ill is ~5–7 mmHg.</p></div>
+      <div class="ec"><p><strong>Q: How is IAP measured?</strong><br>Bladder (intravesical) pressure — instil ~25 mL saline via the urinary catheter, transduce, read at end-expiration, supine, zeroed at the iliac crest/mid-axillary line with the abdomen relaxed.</p></div>
+      <div class="ec"><p><strong>Q: What is abdominal perfusion pressure?</strong><br>APP = MAP − IAP; a target of ≥60 mmHg is commonly used.</p></div>
+      <div class="ec"><p><strong>Q: Name the organ effects of raised IAP.</strong><br>↑ airway pressures/hypoxia (lungs), ↓ venous return/output (cardiac), oliguric AKI (renal), gut/hepatic ischaemia (splanchnic), ↑ ICP (CNS).</p></div>
+      <div class="ec"><p><strong>Q: What are the medical measures to lower IAP?</strong><br>Evacuate luminal contents, drain fluid collections, improve abdominal-wall compliance (sedation ± NMB), optimise fluids (avoid overload), and defend perfusion pressure.</p></div>
+      <div class="ec"><p><strong>Q: What is the definitive treatment of refractory ACS?</strong><br>Decompressive laparotomy with an open abdomen and temporary closure.</p></div>
+      <div class="ec"><p><strong>Q: What is secondary ACS?</strong><br>ACS without an intra-abdominal injury — from massive fluid resuscitation (burns, sepsis, pancreatitis) causing visceral oedema; prevented by avoiding over-resuscitation.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Kirkpatrick AW, Roberts DJ, De Waele J, et al. (WSACS).</strong> Intra-abdominal hypertension and the abdominal compartment syndrome: updated consensus definitions and clinical practice guidelines. <em>Intensive Care Med.</em> 2013;39:1190–1206.</li>
+        <li><strong>De Waele JJ, Malbrain MLNG, Kirkpatrick AW.</strong> The abdominal compartment syndrome: evolving concepts and future directions. <em>Crit Care.</em> 2015;19:211.</li>
+        <li><strong>Malbrain MLNG, Cheatham ML, Kirkpatrick A, et al.</strong> Results from the International Conference of Experts on Intra-abdominal Hypertension and ACS: Definitions. <em>Intensive Care Med.</em> 2006;32:1722–1732.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Intra-abdominal Hypertension. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Abdominal Compartment Syndrome. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

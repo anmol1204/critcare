@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>ICU-Acquired Weakness &amp; Neuromuscular Emergencies — CritCare.in</title>
+  <meta name="description" content="Weakness in the ICU: distinguishing ICU-acquired weakness (critical illness polyneuropathy/myopathy) from the neuromuscular emergencies that bring patients IN and threaten the airway — Guillain-Barré syndrome and myasthenic crisis. Prevention, the MRC score, when to intubate on trend not blood gas, and IVIg/plasma exchange. Marino 5th Ed + Washington Manual." />
+  <link rel="canonical" href="https://critcare.in/topic-icu-weakness.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .cmp2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0;}
+    .cmp-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid var(--line);}
+    .cmp-g{background:#eff6ff;border-color:#bfdbfe;} .cmp-my{background:#f5f3ff;border-color:#c4b5fd;}
+    .cmp-card h4{font-size:.82rem;font-weight:800;margin-bottom:.5rem;}
+    .cmp-g h4{color:#1e40af;} .cmp-my h4{color:#5b21b6;}
+    .cmp-card ul{font-size:.82rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    @media(max-width:600px){.cmp2{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › ICU Weakness &amp; Neuromuscular</div>
+    <h1>💪 ICU-Acquired Weakness &amp; Neuromuscular Emergencies</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">CIP / CIM</span>
+      <span class="gbadge kdigo">MRC Sum Score</span>
+      <span class="gbadge isccm">GBS</span>
+      <span class="gbadge esicm">Myasthenic Crisis</span>
+      <span class="gbadge apasl">Intubate on Trend</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Weak in ICU vs Weak into ICU</span>
+      <span class="topic-tag">Prevent · Mobilise</span>
+      <span class="topic-tag">IVIg · Plasma Exchange</span>
+      <span class="topic-updated">Critical illness neuromyopathy · GBS &amp; myasthenia · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — CIP/CIM</a></li>
+        <li><a href="#s3">3. GBS &amp; Myasthenic Crisis</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>Two Very Different Questions About a Weak Patient</h2>
+      <div class="book-quote">
+        <p>Weakness in the ICU comes in two forms that must not be confused. The first is <em>acquired</em> in the unit — critical illness polyneuropathy and myopathy (ICU-acquired weakness), a symmetrical limb and respiratory weakness that develops during a prolonged critical illness and impedes weaning. The second is the weakness that <em>brings the patient into</em> the unit — Guillain-Barré syndrome and myasthenic crisis — where the threat is acute neuromuscular respiratory failure. The first is managed by prevention and rehabilitation; the second is a neurological emergency where the airway can be lost while the blood gas still looks reassuring.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Neuromuscular Disorders in the ICU.</cite>
+      </div>
+
+      <h3>The bedside approach</h3>
+      <ul>
+        <li><strong>Pattern &amp; time-course</strong> — did the weakness develop <em>during</em> the ICU stay (think CIP/CIM) or <em>precede/precipitate</em> admission (think GBS, myasthenia, others)?</li>
+        <li><strong>Localise</strong> — nerve (GBS, CIP), neuromuscular junction (myasthenia, botulism, organophosphate), or muscle (CIM). Reflexes and sensory signs help.</li>
+        <li><strong>Screen for mimics</strong> — high spinal cord lesion, electrolyte disturbance (↓K⁺, ↓PO₄, ↓Mg²⁺, ↑/↓Ca²⁺), prolonged neuromuscular blockade, hypothyroid/steroid myopathy, periodic paralysis.</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>ICU-Acquired Weakness — Prevent It, Because You Can't Treat It</h2>
+      <div class="book-quote">
+        <p>Critical illness polyneuropathy and myopathy develop in a large proportion of patients ventilated for more than a week, especially in the setting of sepsis, multi-organ failure and prolonged immobility. There is no specific drug cure once it is established; the entire therapeutic strategy is preventive — aggressive treatment of sepsis, avoidance of the drugs and states that damage nerve and muscle, minimisation of sedation, and getting the patient moving. The single most important reversible contributor is the combination that we control: deep sedation, immobility, and hyperglycaemia.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Critical Illness Neuromyopathy.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 Risk factors → ICU-acquired weakness</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Driver</span>Sepsis · SIRS · multi-organ failure</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node">Prolonged <strong>immobility &amp; deep sedation</strong></div>
+          <div class="pf-node"><strong>Hyperglycaemia</strong></div>
+          <div class="pf-node">Corticosteroids · aminoglycosides · <strong>prolonged NMB</strong></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Axonal <strong>polyneuropathy (CIP)</strong> and/or <strong>myopathy (CIM)</strong> — symmetrical, flaccid, diaphragm involved</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Consequence</span>Failure to wean · prolonged ventilation · long-term disability</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the prevention bundle that works</div>
+        <ul>
+          <li><strong>Treat sepsis aggressively</strong> and reverse organ failure — the primary driver.</li>
+          <li><strong>Minimise sedation</strong> (daily interruption / light targets), avoid unnecessary neuromuscular blockade, and <strong>mobilise early</strong> — the strongest evidence-based intervention.</li>
+          <li><strong>Avoid hyperglycaemia</strong>, and limit aminoglycosides/steroids where possible. Diagnosis is largely clinical (MRC sum score &lt;48/60); nerve-conduction studies confirm and exclude mimics like GBS.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · GBS &amp; Myasthenic Crisis — the Emergencies</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="cmp2">
+        <div class="cmp-card cmp-g">
+          <h4>🔵 Guillain-Barré syndrome (GBS)</h4>
+          <ul>
+            <li><strong>Ascending, symmetrical flaccid weakness + areflexia</strong>, often post-infective (Campylobacter, viral)</li>
+            <li>Autonomic instability (arrhythmia, BP swings), bulbar &amp; respiratory failure</li>
+            <li>CSF: albumino-cytological dissociation; NCS confirm</li>
+            <li>Treat: <strong>IVIg OR plasma exchange</strong> (equally effective; do NOT combine); <strong>steroids do NOT work</strong></li>
+          </ul>
+        </div>
+        <div class="cmp-card cmp-my">
+          <h4>🟣 Myasthenic crisis</h4>
+          <ul>
+            <li><strong>Fatigable</strong> weakness, ptosis, diplopia, bulbar &amp; respiratory failure</li>
+            <li>Precipitants: infection, surgery, certain drugs (aminoglycosides, fluoroquinolones, β-blockers, magnesium)</li>
+            <li>Treat: <strong>IVIg OR plasma exchange</strong> + corticosteroids (watch initial worsening) + continue/optimise immunotherapy</li>
+            <li>Distinguish from cholinergic crisis (excess anticholinesterase)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Watch the breathing — intubate on the trend, not the ABG <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          In GBS and myasthenic crisis, respiratory failure is <strong>neuromuscular</strong>: the patient tires and the vital capacity falls <em>before</em> the CO₂ rises. <strong>Monitor forced vital capacity (FVC) and negative inspiratory force serially</strong> — the classic <strong>"20/30/40 rule"</strong> (FVC &lt;20 mL/kg, NIF weaker than −30 cmH₂O, maximal expiratory pressure &lt;40) signals impending failure and the need for <strong>elective, controlled intubation</strong>. A normal or only mildly abnormal blood gas is falsely reassuring — <strong>do not wait for hypercapnia</strong>. Watch bulbar failure (secretions, aspiration) too.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Immunotherapy — IVIg or plasma exchange <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          <strong>IVIg (0.4 g/kg/day for 5 days) or plasma exchange</strong> are the disease-modifying treatments for both GBS and myasthenic crisis and are <strong>equally effective</strong>; choose by availability, access and comorbidity — <strong>do not combine them in GBS</strong> (no added benefit). In myasthenic crisis, add/continue <strong>corticosteroids</strong> (warn of transient early worsening) and optimise chronic immunotherapy; treat the precipitant and review the drug chart for agents that worsen neuromuscular transmission.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Supportive care determines outcome</div>
+        <div class="gr-text">
+          Meticulous ICU support: airway/ventilation, aspiration prevention, <strong>autonomic monitoring</strong> (GBS — labile BP/arrhythmia; avoid over-treating transient swings), <strong>VTE prophylaxis</strong>, pain and pressure-area care, nutrition, and early rehabilitation/physiotherapy. Avoid <strong>succinylcholine</strong> in established neuromuscular disease/immobility (hyperkalaemia risk); use non-depolarising agents cautiously and expect altered sensitivity.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>Neuromuscular emergencies with a distinctly Indian flavour include <strong>organophosphate/carbamate poisoning</strong> (cholinergic crisis → the intermediate syndrome with proximal and respiratory weakness — see <a href="topic-toxicology.html">Toxicology in the ICU</a>), <strong>neuroparalytic snakebite</strong> (cobra/krait — descending paralysis and ptosis; antivenom ± neostigmine, and a low threshold to ventilate — see <a href="topic-snakebite.html">Snakebite</a>), and <strong>hypokalaemic periodic paralysis</strong>. GBS is common and IVIg, though effective, is <strong>expensive</strong> — <strong>plasma exchange is an equally effective and often more accessible alternative</strong> in Indian units and should be used where IVIg is unaffordable or unavailable. For ICU-acquired weakness, the highest-value, lowest-cost interventions — <strong>sepsis control, sedation minimisation, glucose control and early mobilisation</strong> — are available everywhere.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Immunotherapy &amp; Supportive Agents</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug / Measure</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>IVIg</strong></td><td>GBS or myasthenic crisis</td><td>0.4 g/kg/day IV for 5 days (total 2 g/kg)</td><td>Equal to PLEX; check IgA (anaphylaxis), thrombosis/renal caution; do not combine with PLEX in GBS</td></tr>
+            <tr><td><strong>Plasma exchange (PLEX)</strong></td><td>GBS or myasthenic crisis</td><td>~5 exchanges over 1–2 weeks</td><td>Equally effective; often more accessible/affordable than IVIg</td></tr>
+            <tr><td><strong>Corticosteroids</strong></td><td>Myasthenic crisis (NOT GBS)</td><td>Prednisolone/methylprednisolone per protocol</td><td>Transient early worsening in MG; ineffective/harmful in GBS</td></tr>
+            <tr><td><strong>Pyridostigmine</strong></td><td>Myasthenia — symptomatic</td><td>Oral, titrated</td><td>Often held in crisis (secretions); watch cholinergic crisis</td></tr>
+            <tr><td><strong>FVC / NIF monitoring</strong></td><td>Predict respiratory failure</td><td>Serial bedside spirometry</td><td>"20/30/40 rule" → elective intubation; don't wait for hypercapnia</td></tr>
+            <tr><td><strong>Avoid succinylcholine</strong></td><td>Established NM disease / immobility</td><td>—</td><td>Hyperkalaemic arrest risk; use non-depolarisers cautiously</td></tr>
+            <tr><td><strong>Early mobilisation / physiotherapy</strong></td><td>Prevent &amp; recover ICU-AW</td><td>Structured daily programme</td><td>Strongest intervention for ICU-acquired weakness</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Approach to Weakness in the ICU</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>When did the weakness start?</h4>
+          <ul><li><strong>Developed in ICU</strong> (prolonged vent, sepsis) → think CIP/CIM (ICU-acquired weakness)</li><li><strong>Brought the patient in</strong> / precipitated admission → think GBS, myasthenic crisis, toxin, snakebite</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Protect the airway — monitor mechanics</h4>
+          <ul><li>Serial <strong>FVC/NIF</strong>; bulbar function; "20/30/40 rule" → <strong>elective intubation</strong></li><li><strong>Do not wait for a rising CO₂</strong> — neuromuscular failure tires first</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Diagnose &amp; exclude mimics</h4>
+          <ul><li>Reflexes/sensory exam, CSF (albumino-cytological dissociation in GBS), NCS/EMG, anti-AChR/MuSK</li><li>Correct electrolytes; review drugs (NMB, aminoglycosides); consider spinal cord, toxin, periodic paralysis</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Treat the specific cause</h4>
+          <ul><li>GBS / myasthenic crisis → <strong>IVIg OR plasma exchange</strong> (steroids for MG, not GBS)</li><li>ICU-acquired weakness → <strong>prevention bundle</strong>: sepsis control, sedation minimisation, glucose control, early mobilisation</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Support &amp; rehabilitate</h4>
+          <ul><li>Autonomic monitoring (GBS), VTE prophylaxis, nutrition, pressure care, physiotherapy</li><li>Anticipate prolonged weaning; structured rehabilitation determines long-term function</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in ICU Weakness</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Waiting for a rising CO₂ to intubate in GBS/myasthenia</div><p>Neuromuscular respiratory failure tires the patient and drops the vital capacity before the blood gas deteriorates. Monitor FVC/NIF and intubate electively on the trend (20/30/40 rule).</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Giving steroids for GBS</div><p>Corticosteroids are ineffective (and potentially harmful) in GBS. Treat with IVIg or plasma exchange — not both.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Combining IVIg and plasma exchange in GBS</div><p>There is no added benefit to combining them; choose one based on access and comorbidity.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Missing the myasthenia drug precipitants</div><p>Aminoglycosides, fluoroquinolones, β-blockers and magnesium can precipitate or worsen a myasthenic crisis. Review the chart and stop the offenders.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Using succinylcholine in established weakness/immobility</div><p>Up-regulated receptors risk hyperkalaemic cardiac arrest. Avoid succinylcholine; use non-depolarisers cautiously with altered sensitivity.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Treating ICU-acquired weakness as something you can drug away</div><p>There is no specific cure once established. The whole strategy is prevention — treat sepsis, minimise sedation and NMB, control glucose, and mobilise early.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: What is ICU-acquired weakness and how is it managed?</strong><br>Critical illness polyneuropathy/myopathy from sepsis, immobility, hyperglycaemia and prolonged sedation/NMB — no specific cure; managed by prevention and early mobilisation (MRC sum score &lt;48/60).</p></div>
+      <div class="ec"><p><strong>Q: When do you intubate in GBS or myasthenic crisis?</strong><br>Electively on serial mechanics — FVC &lt;20 mL/kg, NIF weaker than −30, MEP &lt;40 ("20/30/40 rule") — not on the blood gas, which lags.</p></div>
+      <div class="ec"><p><strong>Q: What is the treatment of GBS?</strong><br>IVIg or plasma exchange (equally effective, do not combine); steroids do not work in GBS.</p></div>
+      <div class="ec"><p><strong>Q: How does myasthenic crisis treatment differ from GBS?</strong><br>Same first-line (IVIg or PLEX) but corticosteroids ARE used in MG (watch initial worsening), plus optimise chronic immunotherapy and remove precipitant drugs.</p></div>
+      <div class="ec"><p><strong>Q: CSF finding in GBS?</strong><br>Albumino-cytological dissociation (raised protein, normal cell count).</p></div>
+      <div class="ec"><p><strong>Q: Which relaxant is dangerous in these patients?</strong><br>Succinylcholine — risk of hyperkalaemic arrest from up-regulated acetylcholine receptors.</p></div>
+      <div class="ec"><p><strong>Q: Indian neuromuscular emergencies to consider?</strong><br>Organophosphate poisoning (intermediate syndrome), neuroparalytic snakebite, and hypokalaemic periodic paralysis; PLEX is a cost-effective alternative to IVIg.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Stevens RD, Marshall SA, Cornblath DR, et al.</strong> A framework for diagnosing and classifying intensive care unit-acquired weakness. <em>Crit Care Med.</em> 2009;37(Suppl):S299–S308.</li>
+        <li><strong>Hermans G, Van den Berghe G.</strong> Clinical review: intensive care unit acquired weakness. <em>Crit Care.</em> 2015;19:274.</li>
+        <li><strong>Leonhard SE, Mandarakas MR, Gondim FAA, et al.</strong> Diagnosis and management of Guillain-Barré syndrome in ten steps. <em>Nat Rev Neurol.</em> 2019;15:671–683.</li>
+        <li><strong>Wendell LC, Levine JM.</strong> Myasthenic Crisis. <em>Neurohospitalist.</em> 2011;1:16–22.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Neuromuscular Disorders / Critical Illness Neuromyopathy. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Neuromuscular Disorders. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Hyperthermia Syndromes — NMS, Serotonin Syndrome &amp; MH — CritCare.in</title>
+  <meta name="description" content="The drug-induced hyperthermia syndromes: neuroleptic malignant syndrome, serotonin syndrome and malignant hyperthermia — how to tell them apart at the bedside (onset, rigidity, reflexes, causative drug), and the specific antidotes (dantrolene, bromocriptine, cyproheptadine) plus aggressive cooling. Marino 5th Ed + Washington Manual." />
+  <link rel="canonical" href="https://critcare.in/topic-hyperthermia-syndromes.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    @media(max-width:600px){}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Hyperthermia Syndromes</div>
+    <h1>🌡️ Hyperthermia Syndromes — NMS, Serotonin &amp; MH</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Not "Just a Fever"</span>
+      <span class="gbadge kdigo">Rigidity Patterns</span>
+      <span class="gbadge isccm">Dantrolene</span>
+      <span class="gbadge esicm">Cyproheptadine</span>
+      <span class="gbadge apasl">Cool Aggressively</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Drug-Induced Hyperthermia</span>
+      <span class="topic-tag">Tell Them Apart</span>
+      <span class="topic-tag">Specific Antidotes</span>
+      <span class="topic-updated">Hunter serotonin criteria · MHAUS · NMS diagnostics · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Telling Them Apart</a></li>
+        <li><a href="#s3">3. Antidotes &amp; Cooling</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>Hyperthermia Is Not Fever</h2>
+      <div class="book-quote">
+        <p>It is worth being precise: fever is a regulated rise in the hypothalamic set-point and responds to antipyretics; hyperthermia is uncontrolled heat production overwhelming heat loss, with a normal set-point, and antipyretics do nothing. The drug-induced hyperthermia syndromes — neuroleptic malignant syndrome, serotonin syndrome and malignant hyperthermia — share a lethal final common pathway of extreme temperature, muscle rigidity, rhabdomyolysis and multi-organ failure, but they have different triggers, different tempos, and, crucially, different specific antidotes. Sorting out which one you are facing — from the drug history and the pattern of rigidity and reflexes — directs the right treatment.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Hyperthermia Syndromes.</cite>
+      </div>
+
+      <h3>The shared emergency</h3>
+      <ul>
+        <li><strong>Core temperature often &gt;40 °C</strong> with rigidity, autonomic instability and altered mental status.</li>
+        <li><strong>Complications</strong> — rhabdomyolysis (see <a href="topic-rhabdomyolysis.html">Rhabdomyolysis</a>), hyperkalaemia, AKI, DIC, seizures, arrhythmia.</li>
+        <li><strong>Immediate priorities in all</strong> — stop the trigger, aggressive cooling, and supportive care — <em>then</em> the syndrome-specific antidote.</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Three Syndromes, Three Fingerprints</h2>
+      <div class="book-quote">
+        <p>The clinical fingerprints separate these syndromes reliably. Neuroleptic malignant syndrome comes on over days after a dopamine blocker, with "lead-pipe" rigidity, hyporeflexia and bradykinesia — it is a hypodopaminergic, sluggish state. Serotonin syndrome comes on within hours of a serotonergic drug, with hyperreflexia, clonus (especially lower-limb, inducible and ocular) and agitation — it is a hyperexcitable state. Malignant hyperthermia appears within minutes to hours of a volatile anaesthetic or succinylcholine, with masseter and generalised rigidity and a soaring end-tidal CO₂ on the ventilator. Read the history and the reflexes and the diagnosis usually declares itself.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Malignant Hyperthermia &amp; Drug-Induced Hyperthermia.</cite>
+      </div>
+
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>NMS</th><th>Serotonin syndrome</th><th>Malignant hyperthermia</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Trigger</strong></td><td>Dopamine antagonists (antipsychotics, metoclopramide); or withdrawal of dopaminergic drug</td><td>Serotonergic drugs (SSRIs, SNRIs, MAOIs, tramadol, linezolid, triptans, ondansetron, illicit) — often ≥2 in combination</td><td>Volatile anaesthetics &amp; succinylcholine (genetic RYR1)</td></tr>
+            <tr><td><strong>Onset</strong></td><td>Days (slow)</td><td>Hours (fast)</td><td>Minutes–hours (intra/post-op)</td></tr>
+            <tr><td><strong>Neuromuscular</strong></td><td>"Lead-pipe" rigidity, <strong>hyporeflexia</strong>, bradykinesia</td><td><strong>Hyperreflexia, clonus</strong> (lower-limb, ocular), tremor, agitation</td><td>Masseter + generalised rigidity, <strong>rising EtCO₂</strong></td></tr>
+            <tr><td><strong>Antidote</strong></td><td><strong>Dantrolene ± bromocriptine</strong> (± amantadine)</td><td><strong>Cyproheptadine</strong> + benzodiazepines</td><td><strong>Dantrolene</strong> (+ stop trigger)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the diagnostic short-cuts</div>
+        <ul>
+          <li><strong>Reflexes are the quickest discriminator</strong>: hyper-reflexia + clonus points to serotonin syndrome; "lead-pipe" rigidity with hypo-reflexia points to NMS.</li>
+          <li><strong>Tempo:</strong> serotonin syndrome evolves in hours, NMS over days.</li>
+          <li><strong>Context:</strong> a soaring end-tidal CO₂ and rigidity in the anaesthetised patient is malignant hyperthermia until proven otherwise — call for dantrolene and the MH box immediately.</li>
+          <li>Consider look-alikes: sympathomimetic/anticholinergic toxidromes, sepsis/meningitis, thyroid storm, heat stroke, status epilepticus.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Antidotes &amp; Cooling</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">All three — stop the trigger, cool, support <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          <strong>Withdraw the offending drug (or restart the withdrawn dopaminergic drug in NMS)</strong>, and begin <strong>aggressive active cooling</strong> (evaporative + cold IV fluids; cooling devices; target normothermia). Give <strong>generous benzodiazepines</strong> for agitation/rigidity (first-line sedative in serotonin syndrome and useful in all), aggressive <strong>IV fluids to protect the kidney from rhabdomyolysis</strong>, and treat hyperkalaemia, seizures and arrhythmia. Secure the airway if obtunded; <strong>avoid antipyretics</strong> (ineffective — the set-point is normal) and avoid physical restraints in serotonin syndrome (isometric muscle activity worsens hyperthermia).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Malignant hyperthermia — dantrolene, now <span class="gr-s">MHAUS</span></div>
+        <div class="gr-text">
+          <strong>Stop the volatile agent and succinylcholine, hyperventilate with 100% oxygen, and give dantrolene 2.5 mg/kg IV, repeated to effect (up to ~10 mg/kg)</strong> — dantrolene uncouples excitation-contraction by blocking RYR1 calcium release and is the specific, life-saving antidote. Change to a non-triggering technique, treat hyperkalaemia, acidosis and arrhythmia, cool aggressively, and monitor for DIC and recrudescence. Refer the patient/family for MH testing and document the anaesthetic alert.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">NMS — supportive care, dantrolene &amp; bromocriptine <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          Stop the dopamine antagonist; the backbone is <strong>cooling, fluids and supportive care</strong> plus <strong>benzodiazepines</strong>. For moderate–severe NMS add <strong>dantrolene</strong> (for the rigidity/hyperthermia/rhabdomyolysis) and/or <strong>bromocriptine</strong> (a dopamine agonist that reverses the hypodopaminergic state); amantadine is an alternative. Reintroduce the withdrawn dopaminergic drug in NMS caused by <em>withdrawal</em> (e.g. Parkinson's medication). Recovery is slower than serotonin syndrome (days–weeks); watch for recurrence on antipsychotic rechallenge (use a lower-potency agent later, cautiously).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Serotonin syndrome — benzodiazepines &amp; cyproheptadine <span class="gr-s">Hunter criteria</span></div>
+        <div class="gr-text">
+          Diagnose with the <strong>Hunter criteria</strong> (a serotonergic agent plus spontaneous clonus, or inducible/ocular clonus with agitation/diaphoresis, or tremor + hyperreflexia, or hypertonia + temperature &gt;38 °C with clonus). Treat by <strong>stopping all serotonergic drugs</strong>, generous <strong>benzodiazepines</strong>, aggressive cooling and supportive care; for moderate–severe cases give <strong>cyproheptadine</strong> (an oral/NG 5-HT antagonist). It typically <strong>resolves within 24 hours</strong> of stopping the drug. Avoid physical restraints and avoid serotonergic antiemetics.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>Two practical realities in India: <strong>antipsychotics and metoclopramide are very widely used</strong>, so NMS is not rare — keep it in mind in any rigid, hyperthermic, obtunded patient on these drugs; and <strong>serotonin syndrome is increasingly seen with the combination of SSRIs/SNRIs, tramadol (heavily prescribed), and linezolid</strong> (a common antibiotic that is also an MAO inhibitor — a frequently missed interaction). <strong>Dantrolene is expensive and often not stocked</strong> outside major anaesthetic units — every theatre giving volatile anaesthesia should know where its nearest dantrolene supply is, because MH is a minutes-count emergency. Aggressive cooling, benzodiazepines and fluid resuscitation for rhabdomyolysis are available everywhere and are the highest-yield first steps. Distinguish these from <strong>heat stroke</strong> (see <a href="topic-environmental.html">Environmental Emergencies</a>) in the Indian summer.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Antidotes &amp; Supportive Agents</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Dantrolene</strong></td><td>Malignant hyperthermia; moderate–severe NMS</td><td>MH: 2.5 mg/kg IV, repeat to effect (up to ~10 mg/kg)</td><td>Blocks RYR1 Ca²⁺ release; reconstitute rapidly; watch weakness/phlebitis</td></tr>
+            <tr><td><strong>Bromocriptine</strong></td><td>NMS (restore dopaminergic tone)</td><td>2.5 mg PO/NG 6–8 hourly, titrate</td><td>Dopamine agonist; may worsen psychosis; taper slowly</td></tr>
+            <tr><td><strong>Cyproheptadine</strong></td><td>Serotonin syndrome (moderate–severe)</td><td>12 mg PO/NG then 2 mg q2h (up to ~32 mg/day)</td><td>5-HT₂A antagonist; oral/NG only</td></tr>
+            <tr><td><strong>Benzodiazepines</strong></td><td>All — agitation, rigidity, seizures</td><td>e.g. diazepam/lorazepam/midazolam titrated</td><td>First-line sedation; reduce heat generation</td></tr>
+            <tr><td><strong>Active cooling</strong></td><td>All — hyperthermia</td><td>Evaporative + cold IV fluids; cooling devices</td><td>Target normothermia; antipyretics ineffective</td></tr>
+            <tr><td><strong>IV isotonic fluids</strong></td><td>Rhabdomyolysis / AKI prevention</td><td>Aggressive, titrate to urine output</td><td>See <a href="topic-rhabdomyolysis.html">Rhabdomyolysis</a></td></tr>
+            <tr><td><strong>Non-depolarising NMB</strong></td><td>Refractory rigidity/hyperthermia (intubated)</td><td>e.g. rocuronium/vecuronium</td><td>Abolishes muscle heat production; NOT succinylcholine (esp. MH-risk)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Hyperthermia + Rigidity — Identify &amp; Treat</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Recognise hyperthermia (not fever)</h4>
+          <ul><li>Core temp often &gt;40 °C + rigidity + autonomic instability + altered mental status</li><li>Immediately: <strong>stop the trigger, cool aggressively, benzodiazepines, IV fluids, ABC</strong></li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Read the drug history + reflexes to identify the syndrome</h4>
+          <ul><li><strong>Volatile/sux + rising EtCO₂</strong> → malignant hyperthermia</li><li><strong>Serotonergic drug + hyperreflexia/clonus (hours)</strong> → serotonin syndrome</li><li><strong>Dopamine blocker + lead-pipe rigidity/hyporeflexia (days)</strong> → NMS</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Give the specific antidote</h4>
+          <ul><li>MH → <strong>dantrolene</strong> (+ 100% O₂, hyperventilate, stop trigger)</li><li>Serotonin → <strong>cyproheptadine</strong> + benzodiazepines</li><li>NMS → <strong>dantrolene ± bromocriptine</strong> (restart dopaminergic drug if withdrawal)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Treat the complications</h4>
+          <ul><li>Rhabdomyolysis (fluids), hyperkalaemia, AKI, DIC, seizures, arrhythmia</li><li>Intubate + non-depolarising NMB for refractory rigidity/hyperthermia</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Monitor recovery &amp; prevent recurrence</h4>
+          <ul><li>Serotonin syndrome resolves in ~24 h; NMS over days–weeks; MH — watch recrudescence</li><li>Document drug alerts; MH testing &amp; family counselling; cautious future drug choices</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Hyperthermia Syndromes</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Treating it as a fever with antipyretics</div><p>These are hyperthermia (normal set-point), not fever. Antipyretics don't work — active cooling, stopping the trigger and the specific antidote are the treatment.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Not distinguishing the syndromes</div><p>Reflexes and tempo separate them: hyperreflexia/clonus + hours = serotonin syndrome; lead-pipe rigidity/hyporeflexia + days = NMS; rising EtCO₂ intra-op = MH. Each has a different antidote.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Delaying dantrolene in malignant hyperthermia</div><p>MH is a minutes-count emergency. Give dantrolene immediately alongside stopping the volatile/succinylcholine and hyperventilating on 100% oxygen — know where your dantrolene is kept.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Missing the linezolid + serotonergic drug interaction</div><p>Linezolid is an MAO inhibitor; combined with SSRIs/SNRIs/tramadol it precipitates serotonin syndrome — a frequently overlooked cause.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Using physical restraints in serotonin syndrome</div><p>Isometric muscle contraction against restraints generates heat and worsens hyperthermia and acidosis. Sedate with benzodiazepines instead.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Forgetting rhabdomyolysis and its complications</div><p>Extreme rigidity causes rhabdomyolysis, hyperkalaemia and AKI. Give aggressive fluids and monitor CK, potassium and renal function.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: How do NMS and serotonin syndrome differ clinically?</strong><br>NMS: dopamine blocker, onset over days, lead-pipe rigidity with hyporeflexia. Serotonin syndrome: serotonergic drug, onset hours, hyperreflexia and clonus.</p></div>
+      <div class="ec"><p><strong>Q: What triggers malignant hyperthermia and how is it treated?</strong><br>Volatile anaesthetics and succinylcholine (RYR1 mutation); treat with dantrolene, stopping the trigger, 100% O₂ and hyperventilation.</p></div>
+      <div class="ec"><p><strong>Q: What is the antidote for serotonin syndrome?</strong><br>Cyproheptadine (a 5-HT₂A antagonist), with benzodiazepines and cooling; it usually resolves within 24 hours of stopping the drug.</p></div>
+      <div class="ec"><p><strong>Q: Which drugs are used in NMS?</strong><br>Dantrolene and/or bromocriptine (dopamine agonist), plus benzodiazepines, cooling and supportive care.</p></div>
+      <div class="ec"><p><strong>Q: Why are antipyretics ineffective?</strong><br>These are hyperthermia with a normal hypothalamic set-point — heat production exceeds loss, so antipyretics have no target; active cooling is required.</p></div>
+      <div class="ec"><p><strong>Q: How does dantrolene work?</strong><br>It blocks calcium release from the sarcoplasmic reticulum (RYR1), uncoupling excitation-contraction and reducing muscle heat/rigidity.</p></div>
+      <div class="ec"><p><strong>Q: A commonly missed cause of serotonin syndrome?</strong><br>Linezolid (an MAO inhibitor) combined with an SSRI/SNRI or tramadol.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Boyer EW, Shannon M.</strong> The Serotonin Syndrome. <em>N Engl J Med.</em> 2005;352:1112–1120.</li>
+        <li><strong>Dunkley EJC, Isbister GK, Sibbritt D, et al.</strong> The Hunter Serotonin Toxicity Criteria. <em>QJM.</em> 2003;96:635–642.</li>
+        <li><strong>Strawn JR, Keck PE, Caroff SN.</strong> Neuroleptic Malignant Syndrome. <em>Am J Psychiatry.</em> 2007;164:870–876.</li>
+        <li><strong>Rosenberg H, Pollock N, Schiemann A, et al.</strong> Malignant hyperthermia: a review. <em>Orphanet J Rare Dis.</em> 2015;10:93.</li>
+        <li><strong>Glahn KPE, Ellis FR, Halsall PJ, et al. (EMHG).</strong> Recognizing and managing a malignant hyperthermia crisis: guidelines from the European Malignant Hyperthermia Group. <em>Br J Anaesth.</em> 2010;105:417–420.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Malignant Hyperthermia &amp; Drug-Induced Hyperthermia. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Hyperthermia Syndromes. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
