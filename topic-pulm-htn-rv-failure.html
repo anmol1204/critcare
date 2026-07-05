@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Pulmonary Hypertension &amp; Acute RV Failure — CritCare.in</title>
+  <meta name="description" content="The ICU death spiral of acute right ventricular failure in pulmonary hypertension: RV pressure/volume overload, the septal-shift and coronary-hypoperfusion vicious cycle, and how to break it — optimise preload, keep the RV perfused (noradrenaline/vasopressin), reduce afterload (avoid hypoxia/hypercapnia/acidosis, inhaled pulmonary vasodilators), and when to escalate. Marino 5th Ed + Washington Manual." />
+  <link rel="canonical" href="https://critcare.in/topic-pulm-htn-rv-failure.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    @media(max-width:600px){}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Pulmonary HTN &amp; RV Failure</div>
+    <h1>🫁 Pulmonary Hypertension &amp; Acute RV Failure</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">RV Death Spiral</span>
+      <span class="gbadge kdigo">Perfuse the RV</span>
+      <span class="gbadge isccm">Reduce Afterload</span>
+      <span class="gbadge esicm">Inhaled Vasodilators</span>
+      <span class="gbadge apasl">Intubation = Danger</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Preload · Perfusion · Afterload</span>
+      <span class="topic-tag">Noradrenaline + Inodilator</span>
+      <span class="topic-tag">Avoid Hypoxia/Acidosis</span>
+      <span class="topic-updated">ESC/ERS 2022 PH guideline · RV-protective strategy · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — The RV Death Spiral</a></li>
+        <li><a href="#s3">3. Breaking the Spiral</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>The Ventricle the ICU Forgets</h2>
+      <div class="book-quote">
+        <p>The right ventricle is a thin-walled, volume-pump built for a low-pressure circuit; it tolerates volume well but copes poorly with an acute rise in afterload. When pulmonary vascular resistance climbs suddenly — a massive pulmonary embolism, ARDS, decompensated pulmonary hypertension, or the wrong ventilator settings — the RV dilates, fails, and drags the whole circulation down with it. Managing acute RV failure is the art of respecting three levers at once: right-sided preload, right coronary perfusion, and pulmonary afterload. Get any one badly wrong and the patient arrests.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Right Ventricular Failure &amp; Pulmonary Hypertension.</cite>
+      </div>
+
+      <h3>Recognise decompensation</h3>
+      <ul>
+        <li><strong>Raised JVP, hepatomegaly, peripheral oedema, low-output state</strong> (cool, hypotensive, oliguric, rising lactate).</li>
+        <li><strong>Echo</strong> — dilated, hypokinetic RV, <strong>D-shaped septum</strong> (flattening in systole = pressure overload), a plethoric IVC, reduced TAPSE, tricuspid regurgitation.</li>
+        <li><strong>ECG</strong> — right axis, RBBB, S1Q3T3, right-heart strain; <strong>raised troponin/BNP</strong> mark strain and prognosis.</li>
+        <li><strong>Precipitants</strong> — PE, sepsis, ARDS, arrhythmia (loss of atrial kick is poorly tolerated), fluid overload, missed PH therapy, surgery.</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>The Vicious Cycle You Have to Break</h2>
+      <div class="book-quote">
+        <p>Once the right ventricle starts to fail, it enters a self-amplifying spiral. Rising RV pressure and volume bow the interventricular septum into the left ventricle, impairing LV filling and dropping cardiac output and systemic blood pressure. But the right coronary artery perfuses the RV largely in systole and depends on the aortic (systemic) pressure — so as systemic pressure falls, RV coronary perfusion falls, the ischaemic RV fails further, and the cycle tightens. The therapeutic key is to keep the systemic pressure <em>above</em> the RV pressure so the right coronary keeps flowing.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Acute Right Heart Failure.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 The RV death spiral</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span>Acute ↑ RV afterload (PE, ARDS, hypoxia/acidosis, PH crisis)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">RV <strong>dilates &amp; fails</strong> → interventricular <strong>septal shift</strong> into LV</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">↓ LV filling → ↓ cardiac output → <strong>↓ systemic BP</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">↓ Aortic pressure → <strong>↓ right coronary perfusion</strong> → RV ischaemia</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Spiral</span>Worse RV function → more septal shift → <strong>shock &amp; PEA arrest</strong></div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the three levers, and the fluid trap</div>
+        <ul>
+          <li><strong>Preload</strong> — the failing RV is usually <em>over</em>filled; a fluid bolus often worsens septal shift. Give fluid <strong>only</strong> if clearly preload-responsive (small/underfilled RV) — otherwise <strong>diurese</strong>.</li>
+          <li><strong>Perfusion</strong> — restore systemic pressure early with <strong>noradrenaline</strong> (or vasopressin, which raises systemic without much pulmonary vasoconstriction) to keep the right coronary flowing.</li>
+          <li><strong>Afterload</strong> — aggressively correct the pulmonary vasoconstrictors: <strong>hypoxia, hypercapnia, acidosis, atelectasis, pain, high PEEP/overdistension</strong>; add an <strong>inhaled pulmonary vasodilator</strong> (nitric oxide, prostacyclin) which dilates the pulmonary bed without dropping systemic pressure.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Breaking the Spiral</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Optimise volume — often diuresis, rarely a bolus <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          Assess volume with echo/CVP/response. The congested, dilated RV needs <strong>decongestion (diuretics or ultrafiltration)</strong>, not fluid. Reserve a <strong>cautious 250 mL bolus</strong> for the clearly underfilled RV, and stop if it does not help or worsens the septal shift. Restore <strong>sinus rhythm/atrial kick</strong> promptly — the RV depends heavily on it (cardiovert unstable arrhythmias).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Keep the RV perfused — vasopressor first <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          <strong>Noradrenaline</strong> is first-line to maintain a systemic pressure that exceeds RV pressure and preserve right-coronary flow; <strong>vasopressin</strong> is a useful adjunct (raises systemic vascular resistance with relatively little pulmonary vasoconstriction). Add an <strong>inodilator</strong> — <strong>dobutamine (low dose) or milrinone</strong> — to augment RV contractility and lower PVR, watching for systemic hypotension (pair with the vasopressor). <strong>Avoid pure vasodilators/systemic hypotension.</strong>
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Reduce pulmonary afterload — physiology &amp; inhaled vasodilators <span class="gr-s">ESC/ERS 2022</span></div>
+        <div class="gr-text">
+          Correct every reversible pulmonary vasoconstrictor: <strong>treat hypoxia, avoid hypercapnia and acidosis, recruit atelectasis, control pain/agitation.</strong> Use <strong>inhaled nitric oxide or inhaled prostacyclin (iloprost/epoprostenol)</strong> — selective pulmonary vasodilators that do not drop systemic pressure. In established PAH, <strong>do not stop the patient's chronic PAH therapy</strong> (endothelin antagonists, PDE5 inhibitors, prostacyclins) and escalate with the PH team; IV epoprostenol for a PH crisis. Manage the underlying cause (thrombolysis/embolectomy for high-risk PE — see <a href="topic-pe.html">Pulmonary Embolism</a>).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Ventilate the RV gently — intubation is high-risk <span class="gr-c">CAUTION</span></div>
+        <div class="gr-text">
+          <strong>Intubation and positive-pressure ventilation are dangerous</strong> in RV failure: induction vasodilates and drops coronary perfusion, and high intrathoracic pressure/overdistension raises PVR — arrest on induction is common. If unavoidable, optimise haemodynamics first, have vasopressors running, use a <strong>haemodynamically stable induction (e.g. ketamine/etomidate)</strong>, and ventilate with <strong>low tidal volumes, modest PEEP, and strict avoidance of hypercapnia/hypoxia/acidosis.</strong> Escalate to <strong>VA-ECMO</strong> as a bridge in refractory RV failure/PH crisis where reversible or transplantable.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>The commonest RV-failure substrates in Indian ICUs are <strong>massive pulmonary embolism, ARDS, cor pulmonale from COPD/ILD, and rheumatic mitral valve disease</strong> (chronic pulmonary hypertension from long-standing mitral stenosis remains common). <strong>Untreated obstructive sleep apnoea and high-altitude exposure</strong> also contribute. Advanced options — inhaled nitric oxide, ECMO, and expensive PAH-specific drugs — are limited to tertiary centres, so the <strong>physiological RV-protective strategy is the highest-yield care available everywhere</strong>: keep SpO₂ up, avoid hypercapnia and acidosis, restore rhythm, use noradrenaline early to protect coronary perfusion, and <strong>be very cautious about fluids and intubation</strong>. Inhaled prostacyclin (iloprost) via nebuliser is a practical selective pulmonary vasodilator where NO is unavailable.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Vasopressors, Inodilators &amp; Pulmonary Vasodilators</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Role</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Noradrenaline</strong></td><td>Maintain systemic &gt; RV pressure (coronary perfusion)</td><td>Titrate to MAP goal</td><td>First-line vasopressor in RV failure</td></tr>
+            <tr><td><strong>Vasopressin</strong></td><td>Adjunct systemic vasoconstrictor</td><td>0.01–0.04 U/min</td><td>Raises SVR with little pulmonary vasoconstriction</td></tr>
+            <tr><td><strong>Dobutamine</strong></td><td>RV inotropy + mild pulmonary vasodilation</td><td>2.5–5 µg/kg/min (low dose)</td><td>Higher doses → tachycardia/systemic hypotension — pair with noradrenaline</td></tr>
+            <tr><td><strong>Milrinone</strong></td><td>Inodilator (↑ contractility, ↓ PVR)</td><td>Infusion (± reduced/no bolus)</td><td>Systemic hypotension — usually with a vasopressor; renal clearance</td></tr>
+            <tr><td><strong>Inhaled nitric oxide</strong></td><td>Selective pulmonary vasodilator</td><td>10–40 ppm</td><td>No systemic hypotension; avoid abrupt withdrawal (rebound)</td></tr>
+            <tr><td><strong>Inhaled iloprost / epoprostenol</strong></td><td>Selective pulmonary vasodilator</td><td>Nebulised/continuous per protocol</td><td>Practical alternative to NO</td></tr>
+            <tr><td><strong>IV epoprostenol</strong></td><td>PAH crisis (specialist)</td><td>Titrated infusion</td><td>Systemic hypotension; never stop abruptly</td></tr>
+            <tr><td><strong>Diuretic / ultrafiltration</strong></td><td>Decongest the overloaded RV</td><td>Furosemide bolus/infusion; UF if refractory</td><td>Most RV failure is over-filled, not under-filled</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Acute RV Failure — The Three Levers</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Recognise &amp; find the trigger</h4>
+          <ul><li>Low-output shock + raised JVP + dilated hypokinetic RV / D-shaped septum on echo</li><li>Identify &amp; treat the precipitant — PE, sepsis, ARDS, arrhythmia, missed PAH therapy</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Lever 1 — optimise preload (usually diurese)</h4>
+          <ul><li>Congested RV → diuresis/ultrafiltration; cautious 250 mL bolus only if clearly underfilled</li><li>Restore sinus rhythm / atrial kick — cardiovert unstable arrhythmia</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Lever 2 — perfuse the RV</h4>
+          <ul><li><strong>Noradrenaline</strong> (± vasopressin) to keep systemic pressure above RV pressure</li><li>Add <strong>dobutamine/milrinone</strong> for contractility (with a vasopressor to protect BP)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Lever 3 — reduce afterload</h4>
+          <ul><li>Fix hypoxia, hypercapnia, acidosis, atelectasis, pain; <strong>inhaled NO/prostacyclin</strong></li><li>Continue chronic PAH drugs; treat high-risk PE (thrombolysis/embolectomy)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Ventilate gently / escalate</h4>
+          <ul><li>Avoid intubation if possible; if needed, stable induction, low Vt, modest PEEP, pressors ready</li><li><strong>VA-ECMO</strong> as a bridge in refractory but reversible/transplantable disease</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in RV Failure</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Reflexively fluid-loading the RV</div><p>The failing RV is usually over-filled; a bolus worsens septal shift and drops LV output. Most patients need decongestion, not fluid — give a bolus only for a clearly underfilled RV.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Letting systemic pressure fall</div><p>Right-coronary perfusion depends on systemic pressure exceeding RV pressure. Allowing hypotension starves the RV and tightens the death spiral — start noradrenaline early.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Tolerating hypoxia, hypercapnia or acidosis</div><p>All three are potent pulmonary vasoconstrictors that raise RV afterload. Aggressively correct them; they are often the reversible tipping point.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Casual intubation</div><p>Induction and positive-pressure ventilation frequently precipitate arrest in RV failure. Optimise first, use a haemodynamically stable induction, run pressors, and ventilate gently — or avoid intubation.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Stopping chronic PAH therapy</div><p>Abruptly withdrawing prostacyclin or other PAH drugs can cause rebound crisis. Continue them and involve the PH team.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Using a systemic vasodilator to "offload" the RV</div><p>Systemic vasodilators drop coronary perfusion pressure and cause collapse. Reduce pulmonary afterload selectively with inhaled agents instead.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: Describe the RV death spiral.</strong><br>↑RV afterload → RV dilatation → septal shift → ↓LV filling → ↓systemic BP → ↓right-coronary perfusion → RV ischaemia → worse failure.</p></div>
+      <div class="ec"><p><strong>Q: What are the three therapeutic levers?</strong><br>Preload (usually decongest), perfusion (noradrenaline to keep systemic &gt; RV pressure), and afterload (correct hypoxia/hypercapnia/acidosis + inhaled pulmonary vasodilators).</p></div>
+      <div class="ec"><p><strong>Q: Why is a fluid bolus often harmful?</strong><br>The failing RV is usually over-filled; more volume worsens septal shift and reduces LV output. Give fluid only if clearly preload-responsive.</p></div>
+      <div class="ec"><p><strong>Q: Which vasopressors are preferred?</strong><br>Noradrenaline first-line; vasopressin as an adjunct (raises systemic vascular resistance with little pulmonary vasoconstriction).</p></div>
+      <div class="ec"><p><strong>Q: Which pulmonary vasodilators avoid systemic hypotension?</strong><br>Inhaled nitric oxide and inhaled prostacyclin (iloprost/epoprostenol) — selective for the pulmonary bed.</p></div>
+      <div class="ec"><p><strong>Q: Why is intubation dangerous?</strong><br>Induction vasodilates and drops coronary perfusion, and positive-pressure ventilation/overdistension raises PVR — arrest on induction is common.</p></div>
+      <div class="ec"><p><strong>Q: Echo hallmark of RV pressure overload?</strong><br>A dilated, hypokinetic RV with a D-shaped (flattened) interventricular septum and reduced TAPSE.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Humbert M, Kovacs G, Hoeper MM, et al. (ESC/ERS).</strong> 2022 ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension. <em>Eur Heart J.</em> 2022;43:3618–3731.</li>
+        <li><strong>Ventetuolo CE, Klinger JR.</strong> Management of Acute Right Ventricular Failure in the Intensive Care Unit. <em>Ann Am Thorac Soc.</em> 2014;11:811–822.</li>
+        <li><strong>Hoeper MM, Granton J.</strong> Intensive Care Unit Management of Patients with Severe Pulmonary Hypertension and Right Heart Failure. <em>Am J Respir Crit Care Med.</em> 2011;184:1114–1124.</li>
+        <li><strong>Konstam MA, Kiernan MS, Bernstein D, et al. (AHA).</strong> Evaluation and Management of Right-Sided Heart Failure: A Scientific Statement. <em>Circulation.</em> 2018;137:e578–e622.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Acute Right Heart Failure. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Pulmonary Hypertension &amp; RV Failure. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

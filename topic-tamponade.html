@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Cardiac Tamponade &amp; Pericardial Disease — CritCare.in</title>
+  <meta name="description" content="Cardiac tamponade in the ICU: the pathophysiology of a pressure-limited pericardium, the clinical clues (Beck's triad, pulsus paradoxus), the echo diagnosis (diastolic RV collapse, IVC plethora), why volume buys time and vasodilators/PEEP harm, and pericardiocentesis. Plus constrictive pericarditis. Marino 5th Ed + Washington Manual." />
+  <link rel="canonical" href="https://critcare.in/topic-tamponade.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    @media(max-width:600px){}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Cardiac Tamponade</div>
+    <h1>🫀 Cardiac Tamponade &amp; Pericardial Disease</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Beck's Triad</span>
+      <span class="gbadge kdigo">Pulsus Paradoxus</span>
+      <span class="gbadge isccm">Echo: RV Collapse</span>
+      <span class="gbadge esicm">Pericardiocentesis</span>
+      <span class="gbadge apasl">Volume Buys Time</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Obstructive Shock · Clinical Diagnosis</span>
+      <span class="topic-tag">Echo Signs</span>
+      <span class="topic-tag">Drain, Don't Delay</span>
+      <span class="topic-updated">ESC 2015 pericardial disease · Echo tamponade physiology · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Pressure Physiology</a></li>
+        <li><a href="#s3">3. Diagnosis &amp; Drainage</a></li>
+        <li><a href="#s4">4. Drug &amp; Procedure Notes</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>Obstructive Shock From Outside the Heart</h2>
+      <div class="book-quote">
+        <p>Cardiac tamponade is a form of obstructive shock in which fluid under pressure in the pericardium prevents the heart from filling. It is a clinical diagnosis supported — not made — by echocardiography: hypotension, distended neck veins and muffled heart sounds (Beck's triad) with a pulsus paradoxus in a patient with a pericardial effusion. What matters is not the <em>size</em> of the effusion but the <em>rate</em> at which it accumulated: a small effusion that forms in minutes (a stab wound, a wire perforation) tamponades, while a litre that collects over months may not. The treatment is to remove the fluid.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Pericardial Tamponade.</cite>
+      </div>
+
+      <h3>Recognise it clinically</h3>
+      <ul>
+        <li><strong>Beck's triad</strong> — hypotension, raised JVP, muffled heart sounds (often incomplete).</li>
+        <li><strong>Pulsus paradoxus &gt;10 mmHg</strong> — an exaggerated inspiratory fall in systolic BP; the bedside hallmark.</li>
+        <li><strong>Tachycardia, raised JVP with a prominent x-descent</strong>, sinus tachycardia and low-voltage/electrical alternans on ECG.</li>
+        <li><strong>Context</strong> — recent cardiac procedure/PCI/pacing wire, chest trauma, malignancy, uraemia, TB, post-MI free-wall rupture, aortic dissection.</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Why Volume Helps and Vasodilators Kill</h2>
+      <div class="book-quote">
+        <p>As pericardial pressure rises it is transmitted to every chamber, equalising the diastolic pressures and throttling venous return. The tamponaded heart is preload-dependent and rate-dependent: it survives on a full tank and a fast rate. Anything that drops preload — venodilators, aggressive diuresis, or the positive intrathoracic pressure of mechanical ventilation — can precipitate arrest. This is why the holding measures are intravenous fluid to raise filling pressure above the pericardial pressure, and why intubating a tamponade before drainage is so dangerous.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Cardiac Tamponade.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 The tamponade spiral</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span>Fluid accumulates in the pericardium faster than it can stretch</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">↑ Intrapericardial pressure → transmitted to all chambers → <strong>equalisation of diastolic pressures</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Impaired diastolic filling → ↓ stroke volume → compensatory <strong>tachycardia &amp; vasoconstriction</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><strong>Pulsus paradoxus</strong> (interventricular dependence)</div>
+          <div class="pf-node">Diastolic <strong>RA/RV collapse</strong> on echo</div>
+          <div class="pf-node"><strong>Plethoric IVC</strong> (raised venous pressure)</div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Result</span><strong>Obstructive shock → PEA arrest</strong> if not drained</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — echo is the key, but don't be fooled by a small effusion</div>
+        <ul>
+          <li><strong>Diastolic collapse of the right atrium and right ventricle</strong> is the echo signature (RA collapse is sensitive, RV collapse is specific).</li>
+          <li>A <strong>plethoric IVC that does not collapse</strong> with inspiration confirms high venous pressure; its absence makes significant tamponade unlikely.</li>
+          <li><strong>Post-cardiac-surgery tamponade</strong> may be from a <em>localised clot</em> compressing one chamber — the effusion can look small or loculated; keep a high index of suspicion.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Diagnosis &amp; Drainage</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Confirm with echo, but treat the patient <span class="gr-s">ESC 2015</span></div>
+        <div class="gr-text">
+          Urgent <strong>echocardiography</strong> confirms the effusion and tamponade physiology (RA/RV diastolic collapse, IVC plethora, respiratory variation in mitral/tricuspid inflow). But <strong>haemodynamic tamponade is a clinical diagnosis</strong> — in peri-arrest or trauma, do not delay drainage for perfect imaging. The ESC triage score weighs aetiology, clinical and imaging features to decide urgency.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Temporise: fluids &amp; a chronotrope — never vasodilate <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          While arranging drainage: give <strong>IV fluid</strong> to raise filling pressure (most useful if hypovolaemic — less so if already high-pressure), keep the patient <strong>preload- and rate-dependent</strong>, and use an inotrope/chronotrope if needed. <strong>Avoid vasodilators, aggressive diuresis, and — where possible — positive-pressure ventilation until the pericardium is drained</strong> (intubation can precipitate arrest). If ventilation is unavoidable, use the lowest effective intrathoracic pressures and have drainage ready.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Drain it — pericardiocentesis or surgery <span class="gr-s">definitive</span></div>
+        <div class="gr-text">
+          <strong>Echo-guided pericardiocentesis</strong> (subxiphoid or apical) is first-line for medical tamponade — even removing a small volume produces a dramatic haemodynamic improvement. <strong>Surgical drainage (pericardial window/sternotomy)</strong> is preferred for <strong>traumatic haemopericardium, post-surgical clot, type A aortic dissection, and purulent pericarditis</strong>. In <strong>tamponade complicating type A dissection, do NOT do a routine full pericardiocentesis</strong> — relieving the tamponade can restore blood pressure and worsen the rupture; go to theatre (cautious controlled drainage only if peri-arrest).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Constrictive pericarditis — the chronic cousin</div>
+        <div class="gr-text">
+          A rigid, scarred pericardium restricts diastolic filling without an effusion — right heart failure signs, raised JVP with prominent x/y descents, Kussmaul's sign and a pericardial knock. Echo/CT/MRI and haemodynamics differentiate it from restrictive cardiomyopathy (respiratory ventricular <strong>interdependence</strong> favours constriction). Definitive treatment is <strong>pericardiectomy</strong>; treat TB if that is the cause (a leading aetiology in India — see the Indian-context box below).
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Tuberculosis is a leading cause of large pericardial effusion, tamponade and constrictive pericarditis in India</strong> — suspect it in a subacute effusion with fever, weight loss and a lymphocytic/exudative tap; send fluid for ADA, AFB/GeneXpert and cytology, start ATT, and there is a role for adjunctive corticosteroids in some. Other common causes are <strong>uraemia (dialysis populations), malignancy, and post-viral pericarditis</strong>; trauma and post-procedural effusions are rising with expanding cath-lab access. <strong>Echo-guided pericardiocentesis</strong> should be available wherever there is echocardiography — the intervention is high-yield and life-saving. For suspected <strong>purulent (pyogenic) pericarditis</strong>, drainage plus antibiotics is essential.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug &amp; Procedure Notes</span>
+      <h2>Temporising &amp; Definitive Measures</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Measure</th><th>Role</th><th>How</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>IV crystalloid bolus</strong></td><td>Temporise — raise filling pressure</td><td>250–500 mL boluses</td><td>Most useful if hypovolaemic; a bridge to drainage, not a treatment</td></tr>
+            <tr><td><strong>Inotrope / chronotrope</strong> (e.g. dobutamine/adrenaline)</td><td>Support output while preparing to drain</td><td>Titrated infusion</td><td>Maintain a fast rate; avoid bradycardia</td></tr>
+            <tr><td><strong>Avoid vasodilators / GTN / heavy diuresis</strong></td><td>—</td><td>—</td><td>Drop preload → collapse</td></tr>
+            <tr><td><strong>Echo-guided pericardiocentesis</strong></td><td>Definitive (medical tamponade)</td><td>Subxiphoid/apical needle → pigtail catheter, echo-guided</td><td>First-line; leave a drain; send fluid for cytology/micro/ADA</td></tr>
+            <tr><td><strong>Surgical drainage / pericardial window</strong></td><td>Definitive (trauma, clot, dissection, pus)</td><td>Subxiphoid window or sternotomy</td><td>Preferred where percutaneous is unsafe or fluid is clotted</td></tr>
+            <tr><td><strong>NSAID + colchicine</strong></td><td>Acute (viral/idiopathic) pericarditis without tamponade</td><td>e.g. ibuprofen + colchicine 0.5 mg od–bd</td><td>Colchicine reduces recurrence; not a treatment for tamponade itself</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Suspected Tamponade — Recognise, Temporise, Drain</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Recognise obstructive shock</h4>
+          <ul><li>Hypotension + raised JVP + tachycardia + <strong>pulsus paradoxus</strong> in the right context</li><li>ECG: low voltage / electrical alternans; consider it in any peri-arrest PEA</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Confirm with bedside echo</h4>
+          <ul><li>Effusion + <strong>diastolic RA/RV collapse + plethoric IVC</strong></li><li>Don't delay drainage for imaging in peri-arrest/trauma</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Temporise safely</h4>
+          <ul><li>IV fluids, keep preload &amp; rate up; inotrope if needed</li><li><strong>Avoid vasodilators, diuresis, and PPV/intubation before drainage</strong> if at all possible</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Choose the drainage route</h4>
+          <ul><li>Medical → <strong>echo-guided pericardiocentesis</strong> + pigtail drain</li><li>Trauma / clot / type A dissection / pus → <strong>surgery</strong> (in dissection, avoid full percutaneous drainage)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Find the cause &amp; prevent recurrence</h4>
+          <ul><li>Send fluid for micro/cytology/ADA/GeneXpert; treat TB, malignancy, uraemia, infection</li><li>Watch for re-accumulation; NSAID + colchicine for viral/idiopathic pericarditis</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Tamponade</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Judging tamponade by effusion size</div><p>Rate of accumulation, not volume, determines tamponade. A small, rapidly-forming effusion tamponades; a huge chronic one may not. Look for the physiology, not just the fluid.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Intubating a tamponade before drainage</div><p>Positive-pressure ventilation drops venous return in a preload-dependent heart and can cause arrest on induction. Drain first where possible; if you must ventilate, use minimal pressures with drainage ready.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Giving vasodilators or diuretics</div><p>The tamponaded heart lives on preload. Vasodilators, GTN and aggressive diuresis reduce filling and precipitate collapse.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Full pericardiocentesis in type A aortic dissection</div><p>Relieving the tamponade raises blood pressure and can worsen the aortic rupture. These patients need surgery; drain only cautiously if peri-arrest.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Missing post-cardiac-surgery loculated tamponade</div><p>A localised clot can compress one chamber with only a small or loculated effusion. Falling output after cardiac surgery warrants echo and a low threshold for re-exploration.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Forgetting to send the fluid</div><p>The tap is also a diagnostic opportunity — send for cytology, microbiology, AFB/GeneXpert and ADA to identify TB, malignancy or infection.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: What is Beck's triad?</strong><br>Hypotension, raised JVP and muffled heart sounds — the classic (often incomplete) clinical triad of tamponade.</p></div>
+      <div class="ec"><p><strong>Q: What is pulsus paradoxus?</strong><br>An inspiratory fall in systolic BP &gt;10 mmHg — the bedside hallmark of tamponade (also seen in severe asthma/COPD).</p></div>
+      <div class="ec"><p><strong>Q: What are the echo signs of tamponade?</strong><br>Diastolic collapse of the RA (sensitive) and RV (specific), a plethoric non-collapsing IVC, and marked respiratory variation in transvalvular inflow.</p></div>
+      <div class="ec"><p><strong>Q: Why do fluids help and vasodilators harm?</strong><br>The tamponaded heart is preload- and rate-dependent; fluids raise filling pressure above pericardial pressure, while vasodilators/diuresis/PPV drop preload and cause collapse.</p></div>
+      <div class="ec"><p><strong>Q: When is surgery preferred over pericardiocentesis?</strong><br>Traumatic haemopericardium, post-surgical clot, type A aortic dissection, and purulent pericarditis.</p></div>
+      <div class="ec"><p><strong>Q: Why avoid full pericardiocentesis in type A dissection?</strong><br>Relieving tamponade can restore BP and extend the rupture — definitive surgery is needed.</p></div>
+      <div class="ec"><p><strong>Q: Leading cause of constrictive pericarditis in India?</strong><br>Tuberculosis — treat with ATT; definitive treatment of established constriction is pericardiectomy.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Adler Y, Charron P, Imazio M, et al. (ESC).</strong> 2015 ESC Guidelines for the diagnosis and management of pericardial diseases. <em>Eur Heart J.</em> 2015;36:2921–2964.</li>
+        <li><strong>Spodick DH.</strong> Acute Cardiac Tamponade. <em>N Engl J Med.</em> 2003;349:684–690.</li>
+        <li><strong>Ristić AD, Imazio M, Adler Y, et al.</strong> Triage strategy for urgent management of cardiac tamponade: a position statement of the ESC Working Group. <em>Eur Heart J.</em> 2014;35:2279–2284.</li>
+        <li><strong>Imazio M, Gaita F, LeWinter M.</strong> Evaluation and Treatment of Pericarditis. <em>JAMA.</em> 2015;314:1498–1506.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Cardiac Tamponade. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Pericardial Disease &amp; Tamponade. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

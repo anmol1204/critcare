@@ -73,6 +73,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://critcare.in/topic-tamponade.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://critcare.in/topic-aortic-dissection.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://critcare.in/topic-pulm-htn-rv-failure.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://critcare.in/topic-massive-haemoptysis.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://critcare.in/topic-pneumothorax.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://critcare.in/anaesthesia.html</loc>
     <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>

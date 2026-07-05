@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Pneumothorax &amp; Chest Drain Management — CritCare.in</title>
+  <meta name="description" content="Pneumothorax in the ICU: recognising tension pneumothorax as a clinical (not radiological) diagnosis needing immediate decompression, the ventilated-patient risk, chest-drain insertion in the safe triangle, and troubleshooting the underwater seal (bubbling, swinging, persistent air leak). Marino 5th Ed + Washington Manual + BTS." />
+  <link rel="canonical" href="https://critcare.in/topic-pneumothorax.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    @media(max-width:600px){}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Pneumothorax &amp; Chest Drains</div>
+    <h1>🫁 Pneumothorax &amp; Chest Drain Management</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Tension = Clinical Dx</span>
+      <span class="gbadge kdigo">Decompress First</span>
+      <span class="gbadge isccm">Safe Triangle</span>
+      <span class="gbadge esicm">Underwater Seal</span>
+      <span class="gbadge apasl">Air Leak Troubleshoot</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Recognise · Decompress · Drain</span>
+      <span class="topic-tag">Ventilated Patient Risk</span>
+      <span class="topic-tag">Bubbling · Swinging</span>
+      <span class="topic-updated">BTS pleural disease 2023 · Chest-drain safety · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Tension &amp; the Ventilator</a></li>
+        <li><a href="#s3">3. Drainage &amp; Troubleshooting</a></li>
+        <li><a href="#s4">4. Procedure &amp; Drain Notes</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>From Benign to Instantly Fatal</h2>
+      <div class="book-quote">
+        <p>A pneumothorax is air in the pleural space. Its significance ranges from a trivial apical rim on a chest film to the immediately lethal tension pneumothorax, in which a one-way valve pumps air into the pleura under rising pressure, collapsing the lung, shifting the mediastinum, kinking the great veins and abolishing venous return. Tension pneumothorax is a clinical diagnosis — a shocked, hypoxic patient with a silent, hyper-resonant hemithorax and distended neck veins — and it must be decompressed <em>before</em> a chest X-ray, not after.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Pneumothorax.</cite>
+      </div>
+
+      <h3>Types &amp; causes</h3>
+      <ul>
+        <li><strong>Primary spontaneous</strong> — tall, thin, young smokers (apical bleb rupture).</li>
+        <li><strong>Secondary spontaneous</strong> — underlying lung disease (COPD, TB, cystic/interstitial lung disease, PJP) — behaves worse; lower threshold to drain.</li>
+        <li><strong>Traumatic</strong> — rib fractures, penetrating injury (± haemothorax).</li>
+        <li><strong>Iatrogenic</strong> — central-line insertion, lung biopsy/aspiration, barotrauma from positive-pressure ventilation.</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Why the Ventilated Patient Is at Special Risk</h2>
+      <div class="book-quote">
+        <p>In the spontaneously breathing patient a small pneumothorax may resolve on its own; in the mechanically ventilated patient it is a different animal. Positive pressure delivered breath after breath can convert any pneumothorax into a tension pneumothorax, and it does so most readily in the very lungs that are already sick — ARDS, asthma with auto-PEEP, necrotising pneumonia. A sudden fall in compliance, a rise in airway pressures, worsening hypoxia and hypotension in a ventilated patient should trigger the thought "tension pneumothorax" and a look for it, because on the ventilator it evolves in minutes.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Pneumothorax in the Ventilated Patient.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 Tension pneumothorax physiology</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span>One-way air leak into pleura (spontaneous, trauma, barotrauma, line)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Progressive ↑ intrapleural pressure → <strong>lung collapse + mediastinal shift</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Kinking of SVC/IVC → <strong>↓ venous return</strong> → obstructive shock</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Clinical</span>Hypotension · hypoxia · absent breath sounds · hyper-resonance · tracheal deviation · distended neck veins → <strong>arrest</strong></div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — decompress now, then drain properly</div>
+        <ul>
+          <li><strong>Immediate needle/finger decompression</strong> for tension — a large cannula in the <strong>2nd intercostal space mid-clavicular line</strong>, or the <strong>4th/5th ICS anterior-to-mid-axillary line</strong> (often more reliable, especially in adults with a thick chest wall). <strong>Finger thoracostomy</strong> in the ventilated/arresting patient is more certain than a needle.</li>
+          <li>Needle decompression is a <em>temporising</em> measure — it converts a tension to a simple pneumothorax; every tension needs a <strong>definitive intercostal chest drain</strong> afterwards.</li>
+          <li>On the ventilator, a tension can recur — do not remove the drain or relax ventilation vigilance until the leak has resolved.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Drainage &amp; Troubleshooting</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Tension pneumothorax — decompress before imaging <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          <strong>Do not wait for a chest X-ray.</strong> In a shocked patient with the clinical picture, perform <strong>immediate decompression</strong> (finger thoracostomy preferred in the ventilated/peri-arrest patient), then insert a definitive chest drain. In cardiac arrest with possible tension (especially bilateral in trauma), decompress <strong>both</strong> sides.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Who needs a drain vs conservative care <span class="gr-s">BTS 2023</span></div>
+        <div class="gr-text">
+          Management now weighs <strong>symptoms as much as size</strong>. A <strong>small, minimally symptomatic primary spontaneous pneumothorax</strong> can often be observed (conservative management is non-inferior in selected patients). <strong>Symptomatic or large</strong> pneumothoraces need intervention (needle aspiration or a drain). <strong>Secondary spontaneous, traumatic, and any pneumothorax in a ventilated or unstable patient</strong> have a <strong>low threshold for chest-drain insertion</strong>. Ambulatory devices are an option for selected primary cases.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Insert safely — the "safe triangle" <span class="gr-s">safety</span></div>
+        <div class="gr-text">
+          Insert the drain in the <strong>"safe triangle"</strong> — bordered by the <strong>lateral edge of pectoralis major, the anterior border of latissimus dorsi, a line at the level of the nipple (5th ICS), and the apex below the axilla</strong> — passing <strong>just above the rib</strong> to avoid the neurovascular bundle. Use ultrasound where available, aseptic technique, and confirm position (bubbling/swinging + imaging). Avoid the trocar-force technique; use blunt dissection.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Reading the underwater seal — bubbling, swinging, leaks</div>
+        <div class="gr-text">
+          <strong>Swinging</strong> (fluid level moving with respiration) = the drain is patent and in the pleural space. <strong>Bubbling</strong> = an active air leak; bubbling only on cough/expiration is a small leak, <strong>continuous bubbling</strong> is a large/persistent air leak (bronchopleural fistula) — or a leak in the circuit. <strong>A drain that has stopped swinging and bubbling with a re-expanded lung</strong> is ready to consider removal; a drain that suddenly stops swinging may be <strong>blocked, kinked or displaced</strong> (do not simply clamp a bubbling drain — you can recreate a tension). <strong>Persistent air leak &gt;3–5 days</strong> → seek a bronchopleural fistula and involve thoracics (suction, endobronchial valves, surgery). Suction is added for non-resolving pneumothorax/large leak per protocol.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Secondary spontaneous pneumothorax from tuberculosis and post-TB destroyed lung is common</strong> in India, as is pneumothorax complicating <strong>necrotising pneumonia and (in the immunocompromised) PJP</strong> — these behave badly, often with prolonged air leaks and a low threshold for drainage. <strong>Iatrogenic pneumothorax from central-line insertion</strong> is an ever-present ICU risk — use ultrasound guidance and get a post-procedure check. Chest drains and underwater-seal systems are widely available and cheap; the key safety messages are <strong>insert in the safe triangle above the rib, never force a trocar, never clamp a bubbling drain, and always decompress a clinically-diagnosed tension before the X-ray</strong>. In trauma, remember the possibility of an associated haemothorax needing a larger-bore drain.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💉 4 · Procedure &amp; Drain Notes</span>
+      <h2>Decompression, Drains &amp; the Seal</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Step / Item</th><th>Role</th><th>How</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Needle decompression</strong></td><td>Temporise tension</td><td>Large cannula: 2nd ICS MCL or 4th/5th ICS AAL</td><td>Converts tension→simple; always follow with a drain</td></tr>
+            <tr><td><strong>Finger thoracostomy</strong></td><td>Tension in ventilated/arrest patient</td><td>Incision + blunt dissection into pleura (safe triangle)</td><td>More reliable than a needle in adults</td></tr>
+            <tr><td><strong>Intercostal chest drain</strong></td><td>Definitive drainage</td><td>Safe triangle, above the rib, blunt dissection, underwater seal</td><td>Larger bore for haemothorax/viscous fluid; US-guided if possible</td></tr>
+            <tr><td><strong>Needle aspiration</strong></td><td>Selected primary spontaneous PTX</td><td>Aspirate via cannula/catheter</td><td>Alternative to a drain in stable primary PTX</td></tr>
+            <tr><td><strong>Underwater seal — swinging</strong></td><td>Confirms patent pleural drain</td><td>Fluid moves with respiration</td><td>Loss of swing → blocked/kinked/displaced</td></tr>
+            <tr><td><strong>Underwater seal — bubbling</strong></td><td>Marks an air leak</td><td>On cough = small; continuous = large/BPF</td><td>Never clamp a bubbling drain (recreates tension)</td></tr>
+            <tr><td><strong>Suction</strong></td><td>Non-resolving PTX / large leak</td><td>Low-pressure per protocol</td><td>Persistent leak &gt;3–5 days → thoracic referral</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Pneumothorax — Recognise, Decompress, Drain, Troubleshoot</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Is it a tension pneumothorax?</h4>
+          <ul><li>Shock + hypoxia + absent breath sounds + hyper-resonance ± tracheal deviation/distended neck veins</li><li><strong>Decompress immediately (finger thoracostomy if ventilated/arrest) — do not wait for X-ray</strong></li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Stable pneumothorax — decide intervention</h4>
+          <ul><li>Small &amp; minimally symptomatic primary → observe/ambulatory (BTS)</li><li>Large/symptomatic, secondary, traumatic, or ventilated/unstable → <strong>chest drain</strong></li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Insert the drain safely</h4>
+          <ul><li><strong>Safe triangle</strong>, above the rib, blunt dissection, aseptic, US where available</li><li>Connect to underwater seal; confirm position (swing/bubble + imaging)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Troubleshoot the seal</h4>
+          <ul><li>No swing → blocked/kinked/displaced; continuous bubbling → large leak/BPF (check circuit too)</li><li><strong>Never clamp a bubbling drain</strong>; add suction for non-resolving PTX per protocol</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Resolve &amp; remove</h4>
+          <ul><li>Lung re-expanded + no bubbling/swinging → consider removal (per unit protocol)</li><li>Persistent air leak &gt;3–5 days → thoracic referral (valves/pleurodesis/surgery); treat the cause</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Pneumothorax &amp; Drains</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Ordering an X-ray before decompressing a tension</div><p>Tension pneumothorax is a clinical diagnosis. Waiting for imaging to confirm it costs lives — decompress first, image after.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Trusting needle decompression as definitive</div><p>A needle only temporises (and can fail with a short cannula in a thick chest wall). Every tension needs a definitive chest drain; finger thoracostomy is more reliable in ventilated/arresting patients.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Clamping a bubbling drain</div><p>Clamping a drain with an active air leak can recreate a tension pneumothorax. Never clamp a bubbling drain; investigate loss of swing instead.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Inserting outside the safe triangle / using a trocar</div><p>Low or posterior insertion and trocar force risk injury to the liver/spleen/heart/vessels. Use the safe triangle, above the rib, with blunt dissection.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Underestimating a pneumothorax in a ventilated patient</div><p>Positive pressure can rapidly convert any pneumothorax to tension. A sudden rise in airway pressures with hypoxia/hypotension is tension until proven otherwise.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Forgetting the cause of a persistent air leak</div><p>A leak beyond 3–5 days suggests a bronchopleural fistula or ongoing lung pathology (TB, necrotising pneumonia). Escalate to thoracics rather than waiting indefinitely.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: How is tension pneumothorax diagnosed and treated?</strong><br>Clinically (shock, hypoxia, absent breath sounds, hyper-resonance, ± tracheal deviation/distended neck veins) → immediate decompression before imaging, then a chest drain.</p></div>
+      <div class="ec"><p><strong>Q: Where do you decompress?</strong><br>2nd ICS mid-clavicular line or 4th/5th ICS anterior-to-mid-axillary line; finger thoracostomy is preferred in ventilated/arresting adults.</p></div>
+      <div class="ec"><p><strong>Q: Where is the "safe triangle"?</strong><br>Bordered by pec major (anterior), lat dorsi (posterior), the 5th ICS/nipple line (inferior), with the apex below the axilla — insert just above the rib.</p></div>
+      <div class="ec"><p><strong>Q: What does swinging vs bubbling mean?</strong><br>Swinging = patent intrapleural drain; bubbling = active air leak (continuous = large leak/bronchopleural fistula or a circuit leak).</p></div>
+      <div class="ec"><p><strong>Q: Why never clamp a bubbling drain?</strong><br>It can recreate a tension pneumothorax by trapping air with an ongoing leak.</p></div>
+      <div class="ec"><p><strong>Q: Which pneumothoraces have a low threshold for drainage?</strong><br>Secondary spontaneous, traumatic, and any in a ventilated or unstable patient.</p></div>
+      <div class="ec"><p><strong>Q: Common Indian causes of secondary/persistent pneumothorax?</strong><br>Tuberculosis/post-TB destroyed lung, necrotising pneumonia, and PJP in the immunocompromised — often with prolonged air leaks.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Roberts ME, Rahman NM, Maskell NA, et al. (BTS).</strong> British Thoracic Society Guideline for pleural disease. <em>Thorax.</em> 2023;78(Suppl 3):s1–s42.</li>
+        <li><strong>Brown SGA, Ball EL, Perrin K, et al. (PSP Trial).</strong> Conservative versus Interventional Treatment for Spontaneous Pneumothorax. <em>N Engl J Med.</em> 2020;382:405–415.</li>
+        <li><strong>Leigh-Smith S, Harris T.</strong> Tension pneumothorax — time for a re-think? <em>Emerg Med J.</em> 2005;22:8–16.</li>
+        <li><strong>Havelock T, Teoh R, Laws D, Gleeson F (BTS).</strong> Pleural procedures and thoracic ultrasound. <em>Thorax.</em> 2010;65(Suppl 2):ii61–ii76.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Pneumothorax. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Pneumothorax. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

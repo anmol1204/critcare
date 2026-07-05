@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Acute Aortic Syndromes — Dissection — CritCare.in</title>
+  <meta name="description" content="Acute aortic dissection in the ICU/ED: the Stanford A vs B split that decides surgery vs medical therapy, why impulse control (anti-impulse: rate first with a beta-blocker, then blood pressure) matters, CT-angiography diagnosis, and the malperfusion and rupture complications. Marino 5th Ed + Washington Manual." />
+  <link rel="canonical" href="https://critcare.in/topic-aortic-dissection.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .cmp2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0;}
+    .cmp-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid var(--line);}
+    .cmp-a{background:#fef2f2;border-color:#fecaca;} .cmp-b{background:#eff6ff;border-color:#bfdbfe;}
+    .cmp-card h4{font-size:.82rem;font-weight:800;margin-bottom:.5rem;}
+    .cmp-a h4{color:#991b1b;} .cmp-b h4{color:#1e40af;}
+    .cmp-card ul{font-size:.82rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    @media(max-width:600px){.cmp2{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Acute Aortic Dissection</div>
+    <h1>🩻 Acute Aortic Syndromes — Dissection</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Stanford A vs B</span>
+      <span class="gbadge kdigo">Impulse Control</span>
+      <span class="gbadge isccm">CT Angiography</span>
+      <span class="gbadge esicm">A → Surgery</span>
+      <span class="gbadge apasl">Malperfusion</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Tearing Pain · Time-Critical</span>
+      <span class="topic-tag">Rate Then Pressure</span>
+      <span class="topic-tag">Type A = Theatre</span>
+      <span class="topic-updated">ESC/AHA aortic guidelines · IRAD data · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Impulse Control</a></li>
+        <li><a href="#s3">3. Diagnosis &amp; Treatment</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>The Great Masquerader — Think of It to Diagnose It</h2>
+      <div class="book-quote">
+        <p>Acute aortic dissection begins with an intimal tear that lets blood track into the media, creating a false lumen that can propagate, rupture, or shear off branch vessels. The classic presentation — sudden, severe, tearing or ripping chest or interscapular pain, maximal at onset — is often incomplete, and the dissection masquerades as a myocardial infarction, a stroke, an acute abdomen or a painful limb depending on which branch is compromised. The single anatomical fact that governs everything is <em>where</em> the dissection involves the aorta: if the ascending aorta is involved, it is a surgical emergency.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Aortic Dissection.</cite>
+      </div>
+
+      <div class="cmp2">
+        <div class="cmp-card cmp-a">
+          <h4>🔴 Stanford A (ascending)</h4>
+          <ul>
+            <li>Involves ascending aorta (± arch/descending)</li>
+            <li><strong>Surgical emergency</strong> — risk of tamponade, aortic regurgitation, coronary/cerebral malperfusion, rupture</li>
+            <li>Untreated mortality ~1–2% per hour early</li>
+          </ul>
+        </div>
+        <div class="cmp-card cmp-b">
+          <h4>🔵 Stanford B (descending)</h4>
+          <ul>
+            <li>Begins distal to the left subclavian (no ascending involvement)</li>
+            <li><strong>Medical therapy first</strong> (impulse control)</li>
+            <li>Intervention (TEVAR/surgery) for complications: malperfusion, rupture, refractory pain/hypertension, rapid expansion</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:.85rem;color:var(--slate);line-height:1.6;">(DeBakey: I = ascending + arch + descending; II = ascending only; III = descending only. Stanford A = DeBakey I/II; Stanford B = DeBakey III.)</p>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Impulse Control — Slow the Rate Before You Drop the Pressure</h2>
+      <div class="book-quote">
+        <p>Medical management of dissection is aimed at reducing the force with which each cardiac ejection strikes the aortic wall — the "impulse", proportional to both the rate of rise of pressure (dP/dt) and the heart rate. The cardinal rule is to give a beta-blocker <em>first</em> to slow the heart, and only then add a vasodilator to lower the blood pressure. Reversing that order — dropping the pressure with a vasodilator alone — triggers a reflex tachycardia that <em>increases</em> dP/dt and can extend the dissection.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Aortic Dissection.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🗺 Anti-impulse therapy — the order is the point</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Goal</span>Reduce aortic wall stress: lower dP/dt <strong>and</strong> heart rate</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><span class="pf-tag">Step 1</span><strong>IV β-blocker</strong> (esmolol/labetalol) → target <strong>HR ≤ 60/min</strong> FIRST</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><span class="pf-tag">Step 2</span>Then add a <strong>vasodilator</strong> (GTN, nicardipine, nitroprusside) → target <strong>SBP 100–120 mmHg</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split">
+          <div class="pf-node pf-end" style="background:#f0fdf4;border-color:#86efac;"><span class="pf-tag">Do</span>β-block → then vasodilate; adequate analgesia (pain drives BP)</div>
+          <div class="pf-node pf-end" style="background:#fef2f2;border-color:#fecaca;"><span class="pf-tag">Don't</span>Vasodilator alone → reflex tachycardia → ↑ dP/dt → extends dissection</div>
+        </div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the pressure target is not always "low"</div>
+        <ul>
+          <li>Aim <strong>SBP 100–120 mmHg</strong> (lowest tolerated maintaining organ perfusion) once rate-controlled — but be guided by <strong>malperfusion</strong>: if a limb, kidney, gut or brain is under-perfused, over-lowering pressure worsens ischaemia.</li>
+          <li><strong>Hypotension in dissection is ominous</strong> — think tamponade (type A), aortic rupture, or severe aortic regurgitation. It is not a signal to relax; it usually means a catastrophe and the need for the operating theatre.</li>
+          <li><strong>Measure BP in both arms</strong> — a pseudo-hypotension from subclavian involvement can mislead; treat to the higher, true central pressure.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Diagnosis &amp; Treatment</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Diagnose with CT angiography (in the stable patient) <span class="gr-s">ESC/AHA</span></div>
+        <div class="gr-text">
+          <strong>CT angiography of the whole aorta</strong> is the first-line test — fast, available, and it defines the entry tear, extent, branch involvement and complications. <strong>Transoesophageal echo (TOE)</strong> is the test of choice in the unstable patient who cannot leave the resus room/theatre (also assesses AR and tamponade). MRI is accurate but usually too slow for the acute setting. A <strong>D-dimer</strong> that is negative makes acute dissection unlikely in low-risk patients (with the aortic dissection detection risk score), but a positive D-dimer is non-specific — imaging decides.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Type A → emergency surgery <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          <strong>Any ascending-aorta involvement is a surgical emergency</strong> (open repair) — mortality rises ~1–2% per hour untreated. While arranging theatre: impulse control (β-block then vasodilator), analgesia, and manage complications (AR, tamponade — remember <strong>do not do a routine full pericardiocentesis</strong>, see <a href="topic-tamponade.html">Tamponade</a>). Cross-match blood and involve cardiac surgery immediately.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Type B → medical first, intervene for complications <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          Uncomplicated Stanford B is managed <strong>medically</strong> with strict impulse control and pain relief in a monitored/ICU setting. <strong>Complicated type B</strong> — malperfusion (limb/renal/mesenteric/spinal), rupture or impending rupture, refractory pain or refractory hypertension, or rapid aortic expansion — needs intervention, usually <strong>thoracic endovascular aortic repair (TEVAR)</strong>. Ongoing surveillance imaging is required as false lumens can expand over time.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Watch for the branch-vessel catastrophes (malperfusion)</div>
+        <div class="gr-text">
+          The false lumen can occlude any branch: <strong>coronary</strong> (inferior MI — do not thrombolyse chest pain until dissection excluded), <strong>carotid</strong> (stroke), <strong>spinal</strong> (paraplegia), <strong>renal</strong> (AKI, renovascular hypertension), <strong>mesenteric</strong> (gut ischaemia — high lactate, pain out of proportion), and <strong>iliac/limb</strong> (pulse deficit, acute limb ischaemia). A pulse deficit or new neurology dramatically raises the pre-test probability of dissection.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Uncontrolled chronic hypertension</strong> is the dominant risk factor and is highly prevalent and frequently untreated in India — the commonest substrate for dissection. Also consider <strong>younger patients with connective-tissue disease (Marfan, Loeys-Dietz), bicuspid aortic valve, pregnancy (third trimester/peripartum), and Takayasu arteritis</strong>, which is comparatively common in South Asia. The critical pitfalls where imaging access is limited: <strong>do not thrombolyse an "inferior MI" or treat a "stroke" with tPA without considering dissection</strong>, and always <strong>examine all four limb pulses and check BP in both arms</strong>. Type A dissection needs urgent transfer to a centre with cardiac surgery — start impulse control and analgesia and move fast. Esmolol/labetalol, GTN and nitroprusside are all available.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Impulse-Control Pharmacology</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Role</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Esmolol</strong></td><td>Rate control (Step 1) — titratable</td><td>Load 0.5 mg/kg, infusion 50–200 µg/kg/min</td><td>Ultra-short acting; ideal first agent, target HR ≤60</td></tr>
+            <tr><td><strong>Labetalol</strong></td><td>Combined α/β — rate + some BP</td><td>20 mg IV, repeat/boluses, or infusion</td><td>Convenient single agent; still β-block first</td></tr>
+            <tr><td><strong>GTN (nitroglycerin)</strong></td><td>Vasodilator (Step 2)</td><td>IV infusion, titrate to SBP 100–120</td><td>Add only AFTER β-blockade</td></tr>
+            <tr><td><strong>Nicardipine / clevidipine</strong></td><td>Vasodilator (Step 2)</td><td>IV infusion, titrated</td><td>Smooth arterial BP control</td></tr>
+            <tr><td><strong>Sodium nitroprusside</strong></td><td>Vasodilator (Step 2)</td><td>0.3–2 µg/kg/min, titrate</td><td>Never without β-blocker (reflex tachycardia ↑ dP/dt); cyanide risk on prolonged use</td></tr>
+            <tr><td><strong>Opioid analgesia</strong></td><td>Pain control (reduces sympathetic drive)</td><td>e.g. morphine/fentanyl titrated</td><td>Pain drives tachycardia &amp; hypertension — treat it well</td></tr>
+            <tr><td><strong>Verapamil/diltiazem</strong></td><td>Rate control if β-blocker contraindicated</td><td>IV, titrated</td><td>Alternative for asthma/β-blocker intolerance</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Suspected Dissection — Stabilise &amp; Stratify</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Suspect &amp; resuscitate</h4>
+          <ul><li>Sudden tearing chest/back pain, pulse deficit, BP differential, new AR murmur, neurology</li><li>Two large IVs, cross-match, analgesia; <strong>BP in both arms</strong>; ECG (don't reflexively thrombolyse)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Impulse control — β-block first, then vasodilate</h4>
+          <ul><li>Esmolol/labetalol to <strong>HR ≤60</strong>, then GTN/nicardipine to <strong>SBP 100–120</strong></li><li>Guided by malperfusion — don't over-lower if organs are ischaemic</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Image to classify</h4>
+          <ul><li>Stable → <strong>CT angiography of whole aorta</strong>; unstable → <strong>TOE</strong> in resus/theatre</li><li>Define Stanford A vs B, entry tear, branch involvement, complications</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Direct definitive therapy</h4>
+          <ul><li><strong>Type A → emergency cardiac surgery</strong></li><li><strong>Type B → medical</strong>; TEVAR/surgery if complicated (malperfusion, rupture, refractory pain/HTN, expansion)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Monitor complications &amp; follow up</h4>
+          <ul><li>Watch for tamponade, AR, malperfusion, rupture; ICU monitoring of pain/BP/organ perfusion</li><li>Lifelong BP control &amp; surveillance imaging; screen for connective-tissue disease in the young</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Aortic Dissection</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Vasodilator before beta-blocker</div><p>Dropping BP with a vasodilator alone provokes reflex tachycardia, raising dP/dt and extending the dissection. Always β-block to slow the rate first, then vasodilate.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Thrombolysing a dissection-related "MI" or "stroke"</div><p>Dissection can occlude a coronary (inferior MI) or carotid (stroke). Thrombolysis is catastrophic. Consider dissection before giving tPA in the right context.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Missing it because the pain is atypical</div><p>Dissection masquerades as MI, acute abdomen, limb or spinal ischaemia. Pulse deficits, BP differentials and migrating pain should trigger imaging.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Ignoring hypotension as "not severe"</div><p>Hypotension in dissection usually means tamponade, rupture or severe AR — a catastrophe requiring theatre, not reassurance.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Over-lowering BP with malperfusion</div><p>If a limb, kidney, gut or brain is ischaemic, excessive BP reduction worsens end-organ injury. Titrate to the lowest pressure that preserves perfusion.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Delaying surgical referral in type A</div><p>Type A mortality is ~1–2% per hour. Impulse control is a bridge — the definitive treatment is immediate surgery; call cardiac surgery at once.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: Stanford A vs B — what decides management?</strong><br>A involves the ascending aorta → emergency surgery; B is distal to the left subclavian → medical first, intervene (TEVAR) for complications.</p></div>
+      <div class="ec"><p><strong>Q: Why beta-blocker before vasodilator?</strong><br>Impulse control needs both a lower dP/dt and a slower rate; a vasodilator alone causes reflex tachycardia that increases wall stress and extends the dissection.</p></div>
+      <div class="ec"><p><strong>Q: What are the haemodynamic targets?</strong><br>HR ≤60/min, then SBP 100–120 mmHg (lowest tolerated preserving organ perfusion), with good analgesia.</p></div>
+      <div class="ec"><p><strong>Q: Investigation of choice?</strong><br>CT angiography of the whole aorta in the stable patient; TOE for the unstable patient who cannot be moved.</p></div>
+      <div class="ec"><p><strong>Q: What does hypotension in dissection signify?</strong><br>Tamponade (type A), aortic rupture, or severe acute aortic regurgitation — an ominous sign needing theatre.</p></div>
+      <div class="ec"><p><strong>Q: Why check BP in both arms?</strong><br>Subclavian/innominate involvement can cause a falsely low reading in one arm — treat to the true central (higher) pressure.</p></div>
+      <div class="ec"><p><strong>Q: Common Indian risk factors?</strong><br>Uncontrolled hypertension (dominant), connective-tissue disease/bicuspid valve in the young, pregnancy, and Takayasu arteritis.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Isselbacher EM, Preventza O, Hamilton Black J, et al. (ACC/AHA).</strong> 2022 Guideline for the Diagnosis and Management of Aortic Disease. <em>Circulation.</em> 2022;146:e334–e482.</li>
+        <li><strong>Erbel R, Aboyans V, Boileau C, et al. (ESC).</strong> 2014 ESC Guidelines on the diagnosis and treatment of aortic diseases. <em>Eur Heart J.</em> 2014;35:2873–2926.</li>
+        <li><strong>Hagan PG, Nienaber CA, Isselbacher EM, et al. (IRAD).</strong> The International Registry of Acute Aortic Dissection. <em>JAMA.</em> 2000;283:897–903.</li>
+        <li><strong>Nienaber CA, Clough RE.</strong> Management of acute aortic dissection. <em>Lancet.</em> 2015;385:800–811.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Aortic Dissection. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Aortic Dissection. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

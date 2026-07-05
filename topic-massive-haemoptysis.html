@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Massive Haemoptysis — CritCare.in</title>
+  <meta name="description" content="Massive (life-threatening) haemoptysis: why patients drown rather than exsanguinate, the bronchial-artery source, the airway-first priorities (bleeding lung down, protect the good lung, selective intubation), CT then bronchial artery embolisation, and the tuberculosis-heavy Indian aetiology. Marino 5th Ed + Washington Manual." />
+  <link rel="canonical" href="https://critcare.in/topic-massive-haemoptysis.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    @media(max-width:600px){}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Massive Haemoptysis</div>
+    <h1>🩸 Massive Haemoptysis</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Asphyxia, not Exsanguination</span>
+      <span class="gbadge kdigo">Bleeding Lung Down</span>
+      <span class="gbadge isccm">CT → BAE</span>
+      <span class="gbadge esicm">Bronchial Artery</span>
+      <span class="gbadge apasl">TB-heavy in India</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Airway First · They Drown</span>
+      <span class="topic-tag">Isolate the Good Lung</span>
+      <span class="topic-tag">Embolisation</span>
+      <span class="topic-updated">Bronchial artery embolisation · Airway-protection strategy · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Airway First</a></li>
+        <li><a href="#s3">3. Localise, Isolate, Embolise</a></li>
+        <li><a href="#s4">4. Drug &amp; Procedure Notes</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>They Drown, They Don't Bleed Out</h2>
+      <div class="book-quote">
+        <p>Massive haemoptysis is usually defined by its threat rather than a precise volume — expectoration of blood (variously &gt;100–600 mL/24 h, or any rate causing airway compromise or haemodynamic instability) that endangers life. The crucial insight is the mechanism of death: patients with massive haemoptysis <em>asphyxiate</em> — they drown in their own blood filling the alveoli — far more often than they exsanguinate. That single fact reorders the priorities: the airway and gas exchange come first, before the source, before the bleeding itself.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Massive Hemoptysis.</cite>
+      </div>
+
+      <h3>Where does the blood come from?</h3>
+      <ul>
+        <li><strong>~90% is from the bronchial arteries</strong> — a high-pressure <em>systemic</em> circulation. This is why bleeding is brisk and why <strong>bronchial artery embolisation</strong> works.</li>
+        <li>The rest is from the low-pressure pulmonary circulation (e.g. PE with infarction, AV malformation, catheter-induced PA rupture) or the airway.</li>
+        <li><strong>First confirm it is true haemoptysis</strong> — not haematemesis or a nasopharyngeal source (which change the whole approach).</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Position the Bleeding Lung Down</h2>
+      <div class="book-quote">
+        <p>The immediate danger in massive haemoptysis is spillage of blood from the bleeding lung into the healthy lung, drowning the one functioning unit the patient has left. The management therefore begins with gravity and isolation: put the patient <em>bleeding-side down</em> so blood pools in the already-compromised lung and spares the good one, give high-flow oxygen, and be prepared to protect the airway. When intubation is needed, the goal shifts from simply securing the airway to <em>isolating</em> the bleeding lung — by advancing the tube into the non-bleeding main bronchus, or with a bronchial blocker or double-lumen tube.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Massive Hemoptysis.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🗺 Airway-first priorities</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Threat</span>Blood floods alveoli → asphyxia (patients drown, not exsanguinate)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><span class="pf-tag">Position</span><strong>Bleeding lung DOWN</strong> (lateral decubitus) → protect the good lung</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><span class="pf-tag">Oxygenate</span>High-flow O₂; suction; large-bore IV; correct coagulopathy; cross-match</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><span class="pf-tag">Protect / isolate</span>If failing: intubate (large ETT for bronchoscopy) → <strong>isolate</strong> the bleeding lung (mainstem intubation of the good side, bronchial blocker, or DLT)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Then</span>Localise (CT + bronchoscopy) → <strong>bronchial artery embolisation</strong> ± surgery</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the value of knowing the side</div>
+        <ul>
+          <li><strong>Everything downstream depends on lateralising the bleed</strong> — position, lung isolation, embolisation and surgery all need to know which side (and ideally which lobe).</li>
+          <li><strong>CT angiography of the chest</strong> is the best single first test in the stabilised patient: it localises the source, shows the culprit (often hypertrophied bronchial) arteries, and reveals the underlying disease — <em>and it maps the road for the interventional radiologist</em>.</li>
+          <li><strong>Bronchoscopy</strong> both localises and can temporise (iced saline lavage, topical adrenaline/tranexamic acid, tamponade balloon), but a rigid scope in theatre is best for truly massive, brisk bleeding.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Localise, Isolate, Embolise</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Airway &amp; resuscitation come first <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          <strong>Position bleeding-side down, high-flow oxygen, wide-bore suction, two large IVs, cross-match, correct any coagulopathy/anticoagulation and thrombocytopenia.</strong> Give <strong>tranexamic acid</strong> (IV and/or nebulised) as an adjunct. If the airway is threatened, <strong>intubate early with a large-bore ETT (≥8.0)</strong> so a bronchoscope will pass, then <strong>isolate the bleeding lung</strong>. Do not wait for the patient to tire — lost airway in haemoptysis is rapidly fatal.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Localise: CT angiography ± bronchoscopy <span class="gr-s">first test = CTA</span></div>
+        <div class="gr-text">
+          In the stabilised patient, <strong>CT angiography</strong> is the preferred first investigation — it lateralises the bleed, identifies the culprit vessels and the underlying pathology, and guides embolisation. <strong>Flexible bronchoscopy</strong> is used when the side is unclear or to apply local haemostatic measures; <strong>rigid bronchoscopy</strong> in theatre for massive, brisk bleeding (better suction and control).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Definitive control: bronchial artery embolisation <span class="gr-s">first-line definitive</span></div>
+        <div class="gr-text">
+          <strong>Bronchial artery embolisation (BAE)</strong> is the <strong>first-line definitive treatment</strong> for massive haemoptysis from the bronchial (systemic) circulation — it controls bleeding in the great majority. <strong>Rebleeding is common</strong> (recanalisation, new collaterals, untreated disease), so BAE can be repeated and the underlying cause must be treated. Watch for the rare but feared complication of <strong>spinal cord ischaemia</strong> (anterior spinal artery arising from a bronchial/intercostal vessel). <strong>Surgery (lobectomy)</strong> is reserved for failed embolisation, or specific lesions (aspergilloma, AVM, trauma, localised resectable disease) in a fit patient — emergency surgery in active bleeding carries high mortality.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Treat the underlying cause</div>
+        <div class="gr-text">
+          Common causes: <strong>tuberculosis and post-TB bronchiectasis, bronchiectasis of any cause, aspergilloma (mycetoma), lung cancer, necrotising pneumonia/lung abscess</strong>, and — less commonly — <strong>pulmonary vasculitis (e.g. GPA), mitral stenosis, PE, and iatrogenic PA rupture</strong>. Antitubercular therapy, antifungals for aspergillus, antibiotics for infection, and treatment of vasculitis are all part of definitive care once the acute bleed is controlled.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p><strong>Tuberculosis — active disease, and the sequelae of healed TB (bronchiectasis, aspergilloma in old cavities, Rasmussen's aneurysm) — is by far the commonest cause of massive haemoptysis in India.</strong> Always send sputum for AFB/GeneXpert and start/continue ATT; look for a fungal ball (aspergilloma) in an old TB cavity. <strong>Bronchial artery embolisation is widely available at tertiary centres and is the mainstay of control</strong> — arrange urgent transfer to an interventional-radiology-capable centre while keeping the bleeding lung down, oxygenating, and giving tranexamic acid. Where lung isolation expertise is limited, remember that <strong>advancing a single-lumen tube into the non-bleeding main bronchus</strong> is a life-saving, low-tech way to protect the good lung. Correct coagulopathy and stop anticoagulants.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug &amp; Procedure Notes</span>
+      <h2>Temporising &amp; Definitive Measures</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Measure</th><th>Role</th><th>How</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Position bleeding-side down</strong></td><td>Protect the good lung</td><td>Lateral decubitus, affected side dependent</td><td>Simple, immediate, life-saving</td></tr>
+            <tr><td><strong>Tranexamic acid</strong></td><td>Antifibrinolytic adjunct</td><td>1 g IV; and/or 500 mg–1 g nebulised</td><td>Reduces bleeding/duration; not a substitute for source control</td></tr>
+            <tr><td><strong>Reverse anticoagulation / correct coagulopathy</strong></td><td>Stop ongoing bleeding driver</td><td>Vitamin K/PCC, platelets, FFP as indicated</td><td>See <a href="topic-transfusion.html">Transfusion &amp; Coagulopathy</a></td></tr>
+            <tr><td><strong>Large-bore ETT (≥8.0) + lung isolation</strong></td><td>Airway protection &amp; isolation</td><td>Mainstem intubation of good side / bronchial blocker / DLT</td><td>Large tube allows bronchoscopy</td></tr>
+            <tr><td><strong>Bronchoscopy (flexible/rigid)</strong></td><td>Localise + temporise</td><td>Iced saline lavage, topical adrenaline/TXA, tamponade balloon</td><td>Rigid in theatre for brisk bleeding</td></tr>
+            <tr><td><strong>Bronchial artery embolisation</strong></td><td>Definitive control (first-line)</td><td>Interventional radiology</td><td>Repeatable; watch spinal cord ischaemia; treat underlying cause</td></tr>
+            <tr><td><strong>Surgery (lobectomy)</strong></td><td>Failed BAE / specific lesions</td><td>Elective &gt; emergency</td><td>Emergency resection in active bleed = high mortality</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Massive Haemoptysis — Airway, Localise, Embolise</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Airway &amp; oxygenation first</h4>
+          <ul><li>Confirm true haemoptysis; <strong>bleeding lung DOWN</strong>; high-flow O₂; suction; two large IVs; cross-match</li><li>Correct coagulopathy/anticoagulation; give tranexamic acid</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Protect &amp; isolate if failing</h4>
+          <ul><li>Threatened airway → intubate with large ETT (≥8.0)</li><li>Isolate the bleeding lung (mainstem intubation of good side / bronchial blocker / DLT)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Localise the source</h4>
+          <ul><li><strong>CT angiography</strong> of the chest (stabilised) — lateralises, shows culprit vessels &amp; disease</li><li>Bronchoscopy where side unclear / to temporise (rigid for brisk bleeding)</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Definitive control</h4>
+          <ul><li><strong>Bronchial artery embolisation</strong> — first-line; repeat if rebleeding</li><li>Surgery for failed BAE or specific lesions (aspergilloma, AVM, trauma) in a fit patient</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Treat the cause &amp; prevent recurrence</h4>
+          <ul><li>ATT for TB, antifungal for aspergilloma, antibiotics, treat vasculitis</li><li>Rebleeding is common — plan surveillance and definitive treatment of the disease</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Massive Haemoptysis</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Focusing on blood loss instead of the airway</div><p>Patients asphyxiate on blood far more often than they exsanguinate. The airway and oxygenation, and protecting the good lung, come before everything else.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Nursing the patient bleeding-side up</div><p>That lets blood drain into the healthy lung. Position the bleeding lung dependent (down) to spare the functioning one.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Intubating with a small tube</div><p>A narrow ETT prevents bronchoscopy and lung toilet. Use a large-bore tube (≥8.0) and think isolation, not just intubation.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Rushing to emergency surgery</div><p>Bronchial artery embolisation is first-line definitive therapy and controls most bleeds. Emergency resection during active bleeding carries high mortality; reserve surgery for failed BAE or specific lesions.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Forgetting it is usually systemic (bronchial) blood</div><p>~90% arises from the high-pressure bronchial arteries — which is why bleeding is brisk and why embolisation, not "PEEP to tamponade", is the answer.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Not treating the underlying disease</div><p>Rebleeding is common after embolisation. TB, aspergilloma, bronchiectasis, cancer or vasculitis must be treated to prevent recurrence.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: How do patients with massive haemoptysis die?</strong><br>By asphyxiation (drowning in blood), not exsanguination — so airway and oxygenation take priority over the bleeding itself.</p></div>
+      <div class="ec"><p><strong>Q: What is the source of most massive haemoptysis?</strong><br>~90% is from the bronchial arteries (systemic, high-pressure) — the rationale for bronchial artery embolisation.</p></div>
+      <div class="ec"><p><strong>Q: How do you position the patient?</strong><br>Bleeding lung down (lateral decubitus) to protect the healthy lung from spillage.</p></div>
+      <div class="ec"><p><strong>Q: First investigation in the stabilised patient?</strong><br>CT angiography of the chest — lateralises the bleed, identifies culprit vessels and disease, and maps embolisation.</p></div>
+      <div class="ec"><p><strong>Q: First-line definitive treatment?</strong><br>Bronchial artery embolisation; surgery is reserved for failed BAE or specific lesions in a fit patient.</p></div>
+      <div class="ec"><p><strong>Q: A feared complication of BAE?</strong><br>Spinal cord ischaemia from inadvertent embolisation of a spinal artery arising from a bronchial/intercostal vessel.</p></div>
+      <div class="ec"><p><strong>Q: Commonest cause in India?</strong><br>Tuberculosis and its sequelae (bronchiectasis, aspergilloma, Rasmussen's aneurysm).</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Sakr L, Dutau H.</strong> Massive Hemoptysis: An Update on the Role of Bronchoscopy in Diagnosis and Management. <em>Respiration.</em> 2010;80:38–58.</li>
+        <li><strong>Ittrich H, Bockhorn M, Klose H, Simon M.</strong> The Diagnosis and Treatment of Hemoptysis. <em>Dtsch Arztebl Int.</em> 2017;114:371–381.</li>
+        <li><strong>Panda A, Bhalla AS, Goyal A.</strong> Bronchial artery embolization in hemoptysis: a systematic review. <em>Diagn Interv Radiol.</em> 2017;23:307–317.</li>
+        <li><strong>Radchenko C, Alraiyes AH, Shojaee S.</strong> A systematic approach to the management of massive hemoptysis. <em>J Thorac Dis.</em> 2017;9(Suppl 10):S1069–S1086.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Hemoptysis. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Massive Hemoptysis. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
