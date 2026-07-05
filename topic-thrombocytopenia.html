@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Thrombocytopenia in the ICU &amp; HIT — CritCare.in</title>
+  <meta name="description" content="A structured ICU approach to thrombocytopenia: the four mechanisms (decreased production, increased destruction/consumption, sequestration, dilution), when to worry about HIT (the 4Ts score), TTP/DIC red flags, platelet transfusion thresholds, and the non-heparin anticoagulants. Marino 5th Ed + Washington Manual." />
+  <link rel="canonical" href="https://critcare.in/topic-thrombocytopenia.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .severity-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1rem 0;}
+    .sev-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .sev-mild{background:#f0fdf4;border-color:#86efac;}
+    .sev-mod{background:#fefce8;border-color:#fde68a;}
+    .sev-sev{background:#fef2f2;border-color:#fecaca;}
+    .sev-blue{background:#eff6ff;border-color:#bfdbfe;}
+    .sev-card h4{font-size:.8rem;font-weight:800;margin-bottom:.5rem;}
+    .sev-mild h4{color:#166534;} .sev-mod h4{color:#854d0e;} .sev-sev h4{color:#991b1b;} .sev-blue h4{color:#1e40af;}
+    .sev-card ul{font-size:.8rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    @media(max-width:600px){.severity-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Thrombocytopenia &amp; HIT</div>
+    <h1>🩸 Thrombocytopenia in the ICU &amp; HIT</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">4 Mechanisms</span>
+      <span class="gbadge kdigo">4Ts Score</span>
+      <span class="gbadge isccm">HIT</span>
+      <span class="gbadge esicm">TTP red flags</span>
+      <span class="gbadge apasl">Transfusion thresholds</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Low Platelets · Bleeding vs Clotting</span>
+      <span class="topic-tag">HIT · Argatroban</span>
+      <span class="topic-tag">TTP · DIC · Thresholds</span>
+      <span class="topic-updated">Mechanistic approach · ASH 2018 HIT guideline · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Four Mechanisms</a></li>
+        <li><a href="#s3">3. HIT, TTP &amp; Transfusion</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>Thrombocytopenia — Common, and a Marker of Illness</h2>
+      <div class="book-quote">
+        <p>Thrombocytopenia (platelet count &lt;150 ×10⁹/L) develops in up to a third or more of ICU patients and is an independent marker of severity and mortality — usually reflecting <em>how sick the patient is</em> rather than a primary platelet disease. The key questions are not "how low?" alone but "why?", "is the patient bleeding or clotting?", and "is this one of the few diagnoses that will kill or maim if missed — HIT, TTP, DIC or drug-induced immune thrombocytopenia?" The count itself rarely causes spontaneous bleeding until it is very low (&lt;10–20 ×10⁹/L).</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Thrombocytopenia.</cite>
+      </div>
+
+      <h3>First, define the pattern</h3>
+      <ul>
+        <li><strong>Timing</strong> — thrombocytopenia present on admission vs developing after day 4–5 (the classic window for <strong>HIT</strong>).</li>
+        <li><strong>Severity</strong> — mild (100–150), moderate (50–100), severe (&lt;50), or critical (&lt;20 ×10⁹/L, spontaneous-bleeding risk).</li>
+        <li><strong>Bleeding vs thrombosis</strong> — most consumptive states (DIC) bleed; <strong>HIT and TTP paradoxically clot</strong> despite a low count.</li>
+        <li><strong>Rule out artefact first</strong> — <strong>EDTA-induced pseudothrombocytopenia</strong> (platelet clumping in the purple tube): repeat in a citrate tube and look at the film before acting on a surprise low count.</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>The Four Mechanisms — a Framework That Fits Every Case</h2>
+      <div class="book-quote">
+        <p>Every thrombocytopenia in the ICU can be assigned to one (often more than one) of four mechanisms: reduced production, increased destruction or consumption, sequestration in an enlarged spleen, and dilution from massive fluid or blood resuscitation. Sorting the case into these bins — rather than reaching straight for a platelet transfusion — is what points to the specific, treatable diagnosis.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Platelet Disorders in Critical Illness.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 Why is the platelet count low?</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Low platelets</span>Confirmed on film (not clumping / pseudothrombocytopenia)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split">
+          <div class="pf-node"><span class="pf-tag">↓ Production</span>Sepsis, marrow suppression, drugs, alcohol, B12/folate, malignancy</div>
+          <div class="pf-node"><span class="pf-tag">↑ Destruction</span>DIC, sepsis, HIT, TTP/HUS, ITP, drug-immune, mechanical (ECMO/IABP/valve)</div>
+        </div>
+        <div class="pf-split">
+          <div class="pf-node"><span class="pf-tag">Sequestration</span>Splenomegaly (portal hypertension, liver disease)</div>
+          <div class="pf-node"><span class="pf-tag">Dilution</span>Massive transfusion / large-volume resuscitation</div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Act on the cause</span>Sepsis &amp; DIC are commonest; but always screen for the "can't-miss" trio — <strong>HIT · TTP · drug-induced</strong></div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the diagnoses that clot, not bleed</div>
+        <ul>
+          <li><strong>HIT</strong> — an IgG antibody to the platelet-factor-4/heparin complex <em>activates</em> platelets → arterial &amp; venous thrombosis with a falling count. Bleeding is rare; the danger is limb- and life-threatening clot.</li>
+          <li><strong>TTP</strong> — deficiency of ADAMTS13 → ultralarge vWF multimers → microvascular platelet thrombi. A haematological emergency; <strong>plasma exchange</strong> is life-saving.</li>
+          <li><strong>Never transfuse platelets reflexively in HIT or TTP</strong> — in TTP it can precipitate thrombosis; reserve for serious bleeding only.</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — timing is the single best clue to HIT</div>
+        <p>HIT classically causes a platelet fall of <strong>&gt;50% beginning day 5–10 after starting heparin</strong> (or within a day if there was heparin exposure in the last 100 days). A count that was low from admission, or that falls in the first 4 days without prior exposure, is <em>not</em> HIT. Use the <strong>4Ts score</strong> to gate testing — do not send a HIT assay on every low count.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · HIT, TTP &amp; When to Transfuse</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">HIT — the 4Ts score gates testing <span class="gr-s">ASH 2018</span></div>
+        <div class="gr-text">
+          Score 0–2 points each for <strong>T</strong>hrombocytopenia (fall &gt;50% &amp; nadir ≥20 = 2), <strong>T</strong>iming (fall day 5–10 = 2), <strong>T</strong>hrombosis (new confirmed clot = 2), and no o<strong>T</strong>her cause (2). <strong>Low (0–3):</strong> HIT effectively excluded — do not test, continue heparin. <strong>Intermediate (4–5) / High (6–8):</strong> <strong>stop ALL heparin (including flushes &amp; heparin-bonded lines), start a non-heparin anticoagulant, and send an anti-PF4 ELISA</strong> (confirm a positive with a functional serotonin-release assay).
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">HIT — anticoagulate; never just "stop heparin" <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          HIT is a <strong>prothrombotic</strong> state — stopping heparin alone leaves a ~50% thrombosis risk. Start a <strong>non-heparin anticoagulant</strong> (argatroban, danaparoid, fondaparinux, or bivalirudin) immediately when HIT is likely. <strong>Do not start warfarin until platelets recover &gt;150</strong> (early warfarin can cause venous limb gangrene); <strong>avoid prophylactic platelet transfusion.</strong>
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">TTP — recognise the pentad, act on the triad <span class="gr-c">EMERGENCY</span></div>
+        <div class="gr-text">
+          Suspect TTP with <strong>microangiopathic haemolytic anaemia (MAHA — schistocytes, ↑LDH, ↓haptoglobin) + thrombocytopenia</strong>, with or without neurological signs, AKI and fever (the classic pentad is rarely complete). The combination of <strong>MAHA + thrombocytopenia with a normal coagulation screen (normal PT/APTT/fibrinogen)</strong> is TTP until proven otherwise → <strong>urgent plasma exchange</strong> (+ steroids, caplacizumab, rituximab); send ADAMTS13 but do not wait for it. This distinguishes TTP from DIC, where the coagulation screen is deranged.</div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Platelet transfusion — restrictive, threshold-based</div>
+        <div class="gr-text">
+          Transfuse for <strong>&lt;10 ×10⁹/L</strong> (prophylaxis against spontaneous bleed), <strong>&lt;20</strong> with sepsis/fever or planned minor procedure, <strong>&lt;50</strong> for active bleeding, major surgery or invasive procedure, and <strong>&lt;100</strong> for CNS/ocular bleeding or neurosurgery. <strong>Withhold platelets in HIT and TTP</strong> unless there is life-threatening bleeding. Treat the cause — a transfusion is a bridge, not a treatment.</div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>ICU thrombocytopenia in India is dominated by <strong>sepsis and tropical infections</strong> — <strong>dengue, malaria, scrub typhus, leptospirosis and enteric fever</strong> — where the count can fall dramatically but usually recovers with treatment of the infection, and <strong>prophylactic platelet transfusion in stable dengue is discouraged</strong> (transfuse for bleeding, not for a number). <strong>Single-donor apheresis platelets (SDP)</strong> are costly and not always available; pooled <strong>random-donor platelets (RDP)</strong> are the workhorse. For HIT, <strong>argatroban and fondaparinux</strong> are the practical non-heparin options; the anti-PF4 ELISA and functional assays may need to be sent to a reference lab, so <strong>act on a high 4Ts score without waiting</strong>. For TTP, arrange <strong>plasma exchange</strong> early — refer to a centre with apheresis if not available locally.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Non-Heparin Anticoagulants &amp; Adjuncts</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Argatroban</strong></td><td>HIT (esp. hepatic OK, renal impairment)</td><td>0.5–2 µg/kg/min IV infusion, titrate to APTT 1.5–3×</td><td>Hepatically cleared — reduce in liver failure; prolongs INR (complicates warfarin bridging)</td></tr>
+            <tr><td><strong>Fondaparinux</strong></td><td>HIT (off-label but widely used)</td><td>Weight-based SC once daily (e.g. 7.5 mg for 50–100 kg)</td><td>Renally cleared — avoid if CrCl &lt;30; convenient in stable patients</td></tr>
+            <tr><td><strong>Bivalirudin</strong></td><td>HIT with cardiac surgery / PCI / ECMO</td><td>IV infusion titrated to APTT</td><td>Short half-life; part renal, part enzymatic clearance</td></tr>
+            <tr><td><strong>Danaparoid</strong></td><td>HIT (where available)</td><td>IV bolus then infusion, anti-Xa monitored</td><td>Limited availability</td></tr>
+            <tr><td><strong>Platelets</strong> (RDP pool / SDP)</td><td>Threshold-based (see §3)</td><td>1 adult dose ≈ ↑ 20–40 ×10⁹/L</td><td>Withhold in HIT/TTP unless life-threatening bleeding</td></tr>
+            <tr><td><strong>Plasma exchange</strong></td><td>TTP (definitive)</td><td>1–1.5 plasma volumes daily until remission</td><td>Life-saving; start on clinical suspicion — do not wait for ADAMTS13</td></tr>
+            <tr><td><strong>Methylprednisolone</strong></td><td>TTP / immune thrombocytopenia adjunct</td><td>1 mg/kg/day (higher in TTP)</td><td>With PEX in TTP; IVIg/steroids for ITP</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Approach to the Low Platelet Count in the ICU</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Confirm it is real &amp; check for bleeding</h4>
+          <ul><li>Exclude clumping/<strong>pseudothrombocytopenia</strong> — repeat in citrate, review the blood film</li><li>Assess bleeding vs new thrombosis; is the patient haemodynamically stable?</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Assign the mechanism</h4>
+          <ul><li>↓ production · ↑ destruction/consumption · sequestration · dilution</li><li>Send coagulation screen, fibrinogen, D-dimer, film, LDH, haptoglobin, bilirubin, and review drug/heparin chart &amp; timing</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Screen for the "can't-miss" diagnoses</h4>
+          <ul><li><strong>DIC?</strong> — deranged PT/APTT, ↓fibrinogen, ↑D-dimer, schistocytes → treat the trigger</li><li><strong>HIT?</strong> — score the <strong>4Ts</strong>; if ≥4, stop all heparin &amp; start a non-heparin anticoagulant</li><li><strong>TTP?</strong> — MAHA + low platelets with a <em>normal</em> coagulation screen → urgent plasma exchange</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Treat the cause; transfuse by threshold</h4>
+          <ul><li>Source-control sepsis, stop the offending drug, replace deficiencies</li><li>Platelets only by threshold (&lt;10 prophylaxis; &lt;50 bleeding/procedure; &lt;100 CNS) — <strong>not</strong> in HIT/TTP unless life-threatening</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Reassess the trend</h4>
+          <ul><li>Recovery follows treatment of the cause; failure to recover → re-examine the mechanism</li><li>In confirmed HIT, continue non-heparin anticoagulation and <strong>delay warfarin until platelets &gt;150</strong></li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in ICU Thrombocytopenia</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Transfusing platelets reflexively for a number</div><p>Most ICU thrombocytopenia does not bleed and needs no transfusion. Worse, platelets can be harmful in HIT and TTP. Transfuse for bleeding or by threshold, and always ask "why is it low?" first.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Just stopping heparin in suspected HIT</div><p>HIT is a clotting disease. Stopping heparin without starting a non-heparin anticoagulant leaves a ~50% thrombosis risk. Stop ALL heparin (including flushes and bonded lines) and anticoagulate.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Sending a HIT assay on every low count</div><p>The anti-PF4 ELISA is sensitive but not specific; testing low-probability patients generates false positives and needless harm. Gate with the 4Ts score.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Missing TTP by lumping it with DIC</div><p>TTP has a <em>normal</em> coagulation screen; DIC does not. MAHA + thrombocytopenia + normal PT/APTT/fibrinogen = TTP → plasma exchange, an emergency that must not wait for ADAMTS13.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Starting warfarin early in HIT</div><p>Early warfarin, while still prothrombotic and thrombocytopenic, can cause venous limb gangrene and skin necrosis. Bridge with a parenteral non-heparin agent and delay warfarin until platelets recover &gt;150.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Forgetting pseudothrombocytopenia</div><p>EDTA-induced platelet clumping produces a spuriously low count and triggers unnecessary work-up and transfusion. Look at the film and repeat in a citrate tube.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: What are the four mechanisms of thrombocytopenia?</strong><br>Decreased production, increased destruction/consumption, sequestration (splenomegaly) and dilution — assign every case to one or more before transfusing.</p></div>
+      <div class="ec"><p><strong>Q: What are the 4Ts of HIT?</strong><br>Thrombocytopenia (magnitude), Timing (fall day 5–10), Thrombosis, and no oTher cause — each 0–2 points. Score ≥4 → stop heparin, anticoagulate, test.</p></div>
+      <div class="ec"><p><strong>Q: How is HIT managed?</strong><br>Stop ALL heparin, start a non-heparin anticoagulant (argatroban/fondaparinux/bivalirudin/danaparoid), avoid platelet transfusion, and delay warfarin until platelets &gt;150.</p></div>
+      <div class="ec"><p><strong>Q: How do you distinguish TTP from DIC at the bedside?</strong><br>TTP has a normal coagulation screen (normal PT/APTT/fibrinogen) with MAHA + thrombocytopenia; DIC has a deranged screen with low fibrinogen and high D-dimer.</p></div>
+      <div class="ec"><p><strong>Q: What is the definitive treatment of TTP?</strong><br>Urgent plasma exchange (plus steroids, caplacizumab, rituximab) — started on clinical suspicion, before ADAMTS13 results return.</p></div>
+      <div class="ec"><p><strong>Q: What platelet count triggers prophylactic transfusion?</strong><br>&lt;10 ×10⁹/L (or &lt;20 with sepsis/fever); &lt;50 for bleeding/procedures; &lt;100 for CNS bleeding or neurosurgery.</p></div>
+      <div class="ec"><p><strong>Q: Which infections cause marked thrombocytopenia in India?</strong><br>Dengue, malaria, scrub typhus, leptospirosis, enteric fever and sepsis — treat the infection; avoid prophylactic platelets in stable dengue.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Cuker A, Arepally GM, Chong BH, et al.</strong> American Society of Hematology 2018 guidelines for management of venous thromboembolism: heparin-induced thrombocytopenia. <em>Blood Adv.</em> 2018;2:3360–3392.</li>
+        <li><strong>Greinacher A.</strong> Heparin-Induced Thrombocytopenia. <em>N Engl J Med.</em> 2015;373:252–261.</li>
+        <li><strong>Zheng XL, Vesely SK, Cataland SR, et al. (ISTH).</strong> ISTH guidelines for the diagnosis and treatment of thrombotic thrombocytopenic purpura. <em>J Thromb Haemost.</em> 2020;18:2486–2521.</li>
+        <li><strong>Thachil J, Warkentin TE.</strong> How do we approach thrombocytopenia in critically ill patients? <em>Br J Haematol.</em> 2017;177:27–38.</li>
+        <li><strong>Kaufman RM, Djulbegovic B, Gernsheimer T, et al. (AABB).</strong> Platelet transfusion: a clinical practice guideline. <em>Ann Intern Med.</em> 2015;162:205–213.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Platelet Disorders in Critical Illness. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Thrombocytopenia. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

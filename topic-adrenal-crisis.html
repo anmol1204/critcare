@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Adrenal Crisis &amp; CIRCI — CritCare.in</title>
+  <meta name="description" content="Adrenal (Addisonian) crisis and critical-illness-related corticosteroid insufficiency (CIRCI): when to suspect it, the fluid-refractory shock clue, giving hydrocortisone before the diagnosis is confirmed, the random cortisol / ACTH-stimulation caveats, and the role of steroids in septic shock. Marino 5th Ed + Washington Manual." />
+  <link rel="canonical" href="https://critcare.in/topic-adrenal-crisis.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    @media(max-width:600px){}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Adrenal Crisis &amp; CIRCI</div>
+    <h1>🧪 Adrenal Crisis &amp; CIRCI</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Fluid-refractory Shock</span>
+      <span class="gbadge kdigo">Hydrocortisone First</span>
+      <span class="gbadge isccm">CIRCI</span>
+      <span class="gbadge esicm">Random Cortisol</span>
+      <span class="gbadge apasl">Steroids in Sepsis</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Treat Before You Confirm</span>
+      <span class="topic-tag">Hydrocortisone 100 mg</span>
+      <span class="topic-tag">CIRCI · Septic Shock</span>
+      <span class="topic-updated">SCCM/ESICM CIRCI 2017 · Endocrine Society addisonian crisis · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — CIRCI &amp; the HPA Axis</a></li>
+        <li><a href="#s3">3. Diagnosis &amp; Steroid Therapy</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>The Diagnosis You Treat Before You Prove</h2>
+      <div class="book-quote">
+        <p>Adrenal crisis is acute glucocorticoid insufficiency presenting as shock — classically hypotension that responds poorly to fluids and vasopressors, with hyponatraemia, hyperkalaemia, hypoglycaemia and eosinophilia as supporting clues. It is a diagnosis that must be treated on suspicion: a dose of hydrocortisone is safe and may be life-saving, whereas waiting for a cortisol result can be fatal. Draw a random cortisol if you can, but never let the sample delay the steroid.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Adrenal Insufficiency.</cite>
+      </div>
+
+      <h3>Who develops adrenal crisis?</h3>
+      <ul>
+        <li><strong>Known adrenal insufficiency</strong> (Addison's, hypopituitarism) under the stress of illness, surgery or missed steroid doses.</li>
+        <li><strong>Abrupt withdrawal of long-term steroids</strong> — the commonest cause; the suppressed HPA axis cannot mount a stress response.</li>
+        <li><strong>New destruction</strong> — bilateral adrenal haemorrhage (sepsis/anticoagulation/antiphospholipid — Waterhouse-Friderichsen with meningococcaemia), infiltration, or metastasis; pituitary apoplexy.</li>
+        <li><strong>Drugs</strong> — etomidate (transient 11β-hydroxylase inhibition), ketoconazole, checkpoint inhibitors (hypophysitis).</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>CIRCI — Relative Insufficiency in Critical Illness</h2>
+      <div class="book-quote">
+        <p>In critical illness the adrenal glands may produce cortisol that is normal or even high in absolute terms, yet inadequate for the degree of stress — compounded by tissue resistance to glucocorticoid at the receptor. This state, critical-illness-related corticosteroid insufficiency (CIRCI), is best recognised not by a single cortisol number but clinically: the patient in septic shock who remains dependent on escalating vasopressors despite adequate resuscitation. The question in the ICU is less "does this patient have Addison's disease?" and more "will a stress dose of hydrocortisone help this shocked patient come off pressors?"</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Adrenal Dysfunction in Critical Illness.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 Why cortisol fails when it is needed most</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Stress</span>Sepsis / surgery / trauma → HPA axis should surge cortisol</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split">
+          <div class="pf-node"><span class="pf-tag">Absolute</span>Gland/pituitary can't produce (Addison's, haemorrhage, withdrawal, apoplexy)</div>
+          <div class="pf-node"><span class="pf-tag">Relative (CIRCI)</span>Output inadequate for stress + peripheral <strong>glucocorticoid resistance</strong></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Loss of cortisol's <strong>permissive effect on catecholamines</strong> + vascular tone</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Result</span><strong>Vasopressor-dependent, fluid-refractory shock</strong> ± hyponatraemia, hyperkalaemia, hypoglycaemia</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — hydrocortisone is the right steroid here</div>
+        <ul>
+          <li><strong>Hydrocortisone 200 mg/day</strong> (50 mg 6-hourly or infusion) provides both glucocorticoid <em>and</em> mineralocorticoid activity — the sensible choice in shock.</li>
+          <li>Give <strong>fludrocortisone</strong> as well for established <em>primary</em> adrenal insufficiency once oral (hydrocortisone at stress dose already covers mineralocorticoid needs).</li>
+          <li><strong>Dexamethasone</strong> does not cross-react in the cortisol assay — the one steroid you can give before a short Synacthen test if you must, though in practice you rarely delay treatment to test.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Diagnosis &amp; Steroid Therapy</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Treat first — hydrocortisone + fluids + glucose <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          In suspected adrenal crisis: <strong>hydrocortisone 100 mg IV bolus, then 200 mg/24 h</strong> (50 mg 6-hourly or continuous infusion), <strong>aggressive isotonic saline</strong> (corrects volume and hyponatraemia), and <strong>correct hypoglycaemia</strong>. Search for and treat the <strong>precipitant</strong> (usually infection). Do <strong>not</strong> wait for biochemical confirmation — a single hydrocortisone dose is safe and reversing shock takes priority.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Confirm when you can — random cortisol, then short Synacthen <span class="gr-c">interpret with care</span></div>
+        <div class="gr-text">
+          Draw a <strong>random serum cortisol before the first steroid if it does not delay treatment</strong>. A very low value strongly supports insufficiency; a clearly high value argues against it. The <strong>250 µg ACTH (Synacthen) stimulation test</strong> can be done later, but its interpretation is <strong>unreliable in critical illness</strong> (altered binding globulin, free vs total cortisol). If steroid is already running, use <strong>dexamethasone</strong> (does not interfere with the cortisol assay) until testing is complete. For CIRCI, the SCCM/ESICM task force explicitly <strong>does not require a stimulation test</strong> — the decision is clinical.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Steroids in septic shock — for the vasopressor-dependent patient <span class="gr-s">SSC 2021</span></div>
+        <div class="gr-text">
+          Add <strong>IV hydrocortisone 200 mg/day</strong> in adults with septic shock and an ongoing requirement for vasopressors (guidelines suggest at ≥ ~0.25 µg/kg/min noradrenaline for ≥ several hours). Trials (APROCCHSS positive; ADRENAL neutral for mortality) consistently show <strong>faster shock reversal and earlier vasopressor weaning</strong>. Wean the steroid as pressors come off. See <a href="topic-sepsis.html">Sepsis</a>.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Sick-day rules &amp; stress-dose cover</div>
+        <div class="gr-text">
+          Any patient on long-term steroids (or with known adrenal insufficiency) needs <strong>increased ("stress-dose") glucocorticoid during acute illness, surgery or trauma</strong> — the failure to do this is a leading cause of iatrogenic crisis. For major surgery/critical illness, hydrocortisone 100 mg then 200 mg/day. Educate patients on <strong>sick-day dose doubling</strong> and emergency IM hydrocortisone.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>Two causes deserve special emphasis in India: <strong>tuberculosis is a leading cause of primary adrenal insufficiency (Addison's)</strong> — think of it in a patient with pigmentation, weight loss and unexplained shock or hyponatraemia; and <strong>widespread over-the-counter and traditional-remedy steroid use</strong> (for arthritis, skin, asthma) creates a large population with a <strong>suppressed HPA axis</strong> at risk of crisis when the steroid is stopped or they become ill. Hydrocortisone is cheap and available — <strong>give it early</strong>. Also remember <strong>etomidate</strong> for RSI can transiently impair cortisol synthesis, and <strong>meningococcal/other sepsis can cause bilateral adrenal haemorrhage</strong> (Waterhouse-Friderichsen).</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Steroids &amp; Supportive Therapy</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug / Fluid</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Hydrocortisone</strong></td><td>Adrenal crisis / CIRCI / septic shock</td><td>100 mg IV bolus, then 200 mg/24 h (50 mg q6h or infusion)</td><td>First-line — glucocorticoid + mineralocorticoid activity; give before confirmation</td></tr>
+            <tr><td><strong>Dexamethasone</strong></td><td>When you need to steroid-cover but still test cortisol</td><td>~4 mg IV (equiv. cover)</td><td>Does not interfere with the cortisol assay; no mineralocorticoid activity</td></tr>
+            <tr><td><strong>0.9% saline</strong></td><td>Volume + hyponatraemia</td><td>Aggressive isotonic resuscitation</td><td>Corrects the dominant volume/Na deficit</td></tr>
+            <tr><td><strong>Dextrose (25–50%)</strong></td><td>Hypoglycaemia</td><td>Bolus + infusion as needed</td><td>Common and easily missed in crisis</td></tr>
+            <tr><td><strong>Fludrocortisone</strong></td><td>Primary AI — mineralocorticoid, once on oral/lower-dose HC</td><td>50–200 µg PO daily</td><td>Not needed while on stress-dose hydrocortisone (already MC-active)</td></tr>
+            <tr><td><strong>ACTH (Synacthen) 250 µg</strong></td><td>Confirmatory stimulation test (later)</td><td>Cortisol at 0 &amp; 30–60 min</td><td>Unreliable in acute critical illness; do not delay treatment for it</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Suspected Adrenal Crisis — Act, Then Investigate</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Suspect it in the right patient</h4>
+          <ul><li>Fluid-/pressor-refractory shock + hyponatraemia, hyperkalaemia, hypoglycaemia, eosinophilia</li><li>History: known AI, steroid use/withdrawal, TB, sepsis, anticoagulation, etomidate</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Draw cortisol (if no delay), then treat immediately</h4>
+          <ul><li>Random serum cortisol ± ACTH before first steroid — <strong>only if it does not delay</strong></li><li><strong>Hydrocortisone 100 mg IV now</strong> + aggressive saline + correct glucose</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Find &amp; treat the precipitant</h4>
+          <ul><li>Usually infection — screen and treat sepsis; review medications and steroid history</li><li>Consider adrenal haemorrhage (imaging) if sudden, with anticoagulation/sepsis</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Continue steroid &amp; support</h4>
+          <ul><li>Hydrocortisone 200 mg/24 h; in septic shock, continue while vasopressor-dependent</li><li>Monitor Na⁺, K⁺, glucose; correct hyponatraemia at a safe rate</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Wean, confirm &amp; educate</h4>
+          <ul><li>Taper steroid as shock resolves; arrange definitive endocrine testing (Synacthen when recovered)</li><li>For established AI: fludrocortisone, sick-day rules, emergency IM hydrocortisone &amp; a steroid card</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Adrenal Crisis &amp; CIRCI</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Withholding steroid until cortisol is back</div><p>A single dose of hydrocortisone is safe and may be life-saving. Never let the sample delay treatment in a shocked patient — treat on suspicion.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Forgetting stress-dose cover</div><p>Patients on long-term steroids who become ill or go to theatre without increased glucocorticoid can crash into crisis. Give stress-dose hydrocortisone for acute illness, surgery and trauma.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Over-relying on the Synacthen test in critical illness</div><p>Stimulation-test interpretation is unreliable in the ICU (binding globulin changes, free vs total cortisol). CIRCI is a clinical decision — do not withhold steroid because a test was "normal".</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Missing hypoglycaemia and hyponatraemia</div><p>These are core features and easily overlooked. Check glucose and sodium early and correct them alongside the steroid.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Using dexamethasone as definitive therapy</div><p>Dexamethasone is useful only to cover while you test cortisol; it lacks mineralocorticoid activity. Hydrocortisone is the treatment of the crisis.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Not looking for the precipitant</div><p>Crisis is usually triggered — most often by infection. Treating the steroid deficiency without finding the trigger leaves the patient shocked.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: What is the biochemical picture of adrenal crisis?</strong><br>Hyponatraemia, hyperkalaemia, hypoglycaemia and eosinophilia, with fluid-/pressor-refractory hypotension.</p></div>
+      <div class="ec"><p><strong>Q: What is CIRCI?</strong><br>Critical-illness-related corticosteroid insufficiency — inadequate cortisol activity for the degree of stress plus tissue glucocorticoid resistance; a clinical (not test-based) diagnosis.</p></div>
+      <div class="ec"><p><strong>Q: What is the treatment and why hydrocortisone?</strong><br>Hydrocortisone 100 mg then 200 mg/day (glucocorticoid + mineralocorticoid), aggressive saline and glucose — given before biochemical confirmation.</p></div>
+      <div class="ec"><p><strong>Q: When are steroids indicated in septic shock?</strong><br>For ongoing vasopressor requirement despite resuscitation — hydrocortisone 200 mg/day speeds shock reversal (APROCCHSS/ADRENAL).</p></div>
+      <div class="ec"><p><strong>Q: Which steroid can you give while still testing cortisol?</strong><br>Dexamethasone — it does not cross-react in the cortisol assay.</p></div>
+      <div class="ec"><p><strong>Q: Why is the Synacthen test unreliable in the ICU?</strong><br>Cortisol-binding globulin falls in critical illness, so total cortisol underestimates free cortisol; interpretation is confounded.</p></div>
+      <div class="ec"><p><strong>Q: Common Indian causes?</strong><br>Tuberculous Addison's disease and HPA suppression from widespread OTC/traditional steroid use; also etomidate and sepsis-related adrenal haemorrhage.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Annane D, Pastores SM, Rochwerg B, et al. (SCCM/ESICM).</strong> Guidelines for the Diagnosis and Management of CIRCI in Critically Ill Patients (Part I). <em>Crit Care Med.</em> 2017;45:2078–2088.</li>
+        <li><strong>Bornstein SR, Allolio B, Arlt W, et al. (Endocrine Society).</strong> Diagnosis and Treatment of Primary Adrenal Insufficiency: Clinical Practice Guideline. <em>J Clin Endocrinol Metab.</em> 2016;101:364–389.</li>
+        <li><strong>Annane D, Renault A, Brun-Buisson C, et al. (APROCCHSS).</strong> Hydrocortisone plus Fludrocortisone for Adults with Septic Shock. <em>N Engl J Med.</em> 2018;378:809–818.</li>
+        <li><strong>Venkatesh B, Finfer S, Cohen J, et al. (ADRENAL).</strong> Adjunctive Glucocorticoid Therapy in Patients with Septic Shock. <em>N Engl J Med.</em> 2018;378:797–808.</li>
+        <li><strong>Evans L, Rhodes A, Alhazzani W, et al.</strong> Surviving Sepsis Campaign: International Guidelines 2021. <em>Crit Care Med.</em> 2021;49:e1063–e1143.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Adrenal Dysfunction in Critical Illness. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Adrenal Insufficiency. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

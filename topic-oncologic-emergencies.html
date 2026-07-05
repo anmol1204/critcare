@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Oncologic Emergencies in the ICU — CritCare.in</title>
+  <meta name="description" content="ICU management of the oncologic emergencies: tumour lysis syndrome (Cairo-Bishop, rasburicase, when to dialyse), hypercalcaemia of malignancy (fluids + bisphosphonate), and febrile neutropenia / neutropenic sepsis (the 1-hour antibiotic rule, MASCC). Plus SVC obstruction and malignant cord compression. Marino 5th Ed + Washington Manual." />
+  <link rel="canonical" href="https://critcare.in/topic-oncologic-emergencies.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .severity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1rem 0;}
+    .sev-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid;}
+    .sev-mild{background:#f0fdf4;border-color:#86efac;}
+    .sev-mod{background:#fefce8;border-color:#fde68a;}
+    .sev-sev{background:#fef2f2;border-color:#fecaca;}
+    .sev-card h4{font-size:.8rem;font-weight:800;margin-bottom:.5rem;}
+    .sev-mild h4{color:#166534;} .sev-mod h4{color:#854d0e;} .sev-sev h4{color:#991b1b;}
+    .sev-card ul{font-size:.8rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    @media(max-width:600px){.severity-grid{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Oncologic Emergencies</div>
+    <h1>🎗️ Oncologic Emergencies in the ICU</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Tumour Lysis</span>
+      <span class="gbadge kdigo">Rasburicase</span>
+      <span class="gbadge isccm">Neutropenic Sepsis</span>
+      <span class="gbadge esicm">Hypercalcaemia</span>
+      <span class="gbadge apasl">SVCO · Cord Compression</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">TLS · Neutropenic Sepsis</span>
+      <span class="topic-tag">Rasburicase · 1-hour Abx</span>
+      <span class="topic-tag">Hypercalcaemia · SVCO</span>
+      <span class="topic-updated">Cairo-Bishop TLS · MASCC/NICE neutropenic sepsis · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Tumour Lysis</a></li>
+        <li><a href="#s3">3. TLS · Neutropenic Sepsis · Ca²⁺</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>Five Emergencies That Reach the ICU</h2>
+      <div class="book-quote">
+        <p>Cancer patients arrive in the ICU with time-critical, largely reversible emergencies: <strong>tumour lysis syndrome</strong> (metabolic chaos from dying tumour), <strong>febrile neutropenia</strong> (sepsis without a normal immune response), <strong>hypercalcaemia of malignancy</strong> (the commonest metabolic complication of cancer), <strong>superior vena cava obstruction</strong>, and <strong>malignant spinal cord compression</strong>. Two rules dominate: give antibiotics within the hour for the febrile neutropenic patient, and give fluids first for hypercalcaemia and TLS. Prognosis of a reversible complication should not be pre-judged by the cancer.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Oncologic Emergencies.</cite>
+      </div>
+
+      <div class="severity-grid">
+        <div class="sev-card sev-sev"><h4>Metabolic</h4><ul><li>Tumour lysis syndrome (K⁺, PO₄, urate ↑; Ca²⁺ ↓)</li><li>Hypercalcaemia of malignancy</li></ul></div>
+        <div class="sev-card sev-mod"><h4>Infective</h4><ul><li>Febrile neutropenia / neutropenic sepsis</li><li>The "1-hour" antibiotic emergency</li></ul></div>
+        <div class="sev-card sev-mild"><h4>Structural</h4><ul><li>SVC obstruction</li><li>Malignant spinal cord compression</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Tumour Lysis — When the Tumour Kills the Kidney</h2>
+      <div class="book-quote">
+        <p>Tumour lysis syndrome is the metabolic price of successful cytotoxic therapy: bulky, rapidly dividing tumours (high-grade lymphoma, acute leukaemia) disintegrate and dump their intracellular contents into the blood faster than the kidney can excrete them. Potassium threatens the heart, phosphate binds calcium and precipitates in the tubules, and uric acid crystallises in an acidic tubule — together producing hyperkalaemia, symptomatic hypocalcaemia and acute kidney injury. The battle is won by anticipation: identify the high-risk patient, hydrate hard, and lower the urate <em>before</em> chemotherapy.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Tumour Lysis Syndrome.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 Tumour lysis syndrome</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span>Rapid tumour cell death (chemo, steroids, or spontaneous in bulky disease)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Release of intracellular <strong>K⁺, phosphate, and nucleic acids → urate</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><strong>Hyperkalaemia</strong> → arrhythmia</div>
+          <div class="pf-node"><strong>Hyperphosphataemia</strong> → Ca-PO₄ precipitation → <strong>hypocalcaemia</strong></div>
+          <div class="pf-node"><strong>Hyperuricaemia</strong> → urate crystals in tubule</div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Result</span><strong>Acute kidney injury</strong> + life-threatening hyperkalaemia + tetany/seizures from hypocalcaemia</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the two things that changed TLS management</div>
+        <ul>
+          <li><strong>Rasburicase</strong> (recombinant urate oxidase) converts uric acid to soluble allantoin — it drops urate within hours and has largely <strong>replaced allopurinol for established/high-risk TLS</strong> (allopurinol only prevents new urate, it does not remove what is already there).</li>
+          <li><strong>Urine alkalinisation is no longer recommended</strong> — it promotes calcium-phosphate precipitation and is unnecessary once rasburicase is used. Aggressive isotonic hydration is the backbone.</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — the neutropenic patient has no fever "buffer"</div>
+        <p>In neutropenia (ANC &lt;0.5 ×10⁹/L, or &lt;1.0 and falling), the usual signs of infection are blunted — there may be little more than a fever. Yet an untreated neutropenic infection can progress to septic shock within hours. <strong>A single fever ≥38.3 °C (or ≥38 °C sustained) in a neutropenic patient is a medical emergency</strong> demanding broad-spectrum antibiotics within the hour, before cultures return.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · TLS · Neutropenic Sepsis · Hypercalcaemia</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Tumour lysis syndrome — hydrate, lower urate, treat electrolytes <span class="gr-s">Cairo-Bishop</span></div>
+        <div class="gr-text">
+          Diagnose <strong>laboratory TLS</strong> by ≥2 of: urate, K⁺, phosphate high or calcium low (within 3 days before to 7 days after therapy); <strong>clinical TLS</strong> adds AKI, arrhythmia, seizure or death. <strong>Aggressive isotonic IV fluids</strong> to maintain a high urine output are the cornerstone. <strong>Rasburicase</strong> for high-risk/established TLS (avoid in G6PD deficiency — risk of haemolysis); <strong>allopurinol</strong> for prophylaxis in lower risk. Treat hyperkalaemia aggressively (see <a href="topic-electrolytes.html">Electrolyte Emergencies</a>); <strong>do not give calcium for asymptomatic hypocalcaemia</strong> (worsens Ca-PO₄ precipitation). <strong>Early renal replacement</strong> for refractory hyperkalaemia, hyperphosphataemia, fluid overload or oliguric AKI.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Neutropenic sepsis — antibiotics within 1 hour <span class="gr-s">NICE / MASCC</span></div>
+        <div class="gr-text">
+          Treat fever + neutropenia as sepsis until proven otherwise: <strong>take cultures and give an empirical anti-pseudomonal β-lactam (piperacillin-tazobactam, cefepime or meropenem) within 60 minutes</strong> — do not wait for the neutrophil count to be confirmed if the picture fits. Add a glycopeptide (vancomycin) only for specific indications (line infection, skin/soft-tissue, severe mucositis, MRSA risk, haemodynamic instability). Use the <strong>MASCC score</strong> to identify low-risk patients who may be suitable for oral/outpatient therapy — but the unstable or high-risk patient belongs in the ICU with the full <a href="topic-sepsis.html">sepsis</a> bundle.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Hypercalcaemia of malignancy — fluids then a bisphosphonate <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          <strong>Volume repletion with isotonic saline</strong> is the immediate treatment (corrects the dehydration driving the calcium up and promotes calciuresis). Then give an <strong>IV bisphosphonate (zoledronic acid, or pamidronate)</strong> — the definitive agent, but it takes 2–4 days to work. <strong>Calcitonin</strong> gives a rapid but short-lived (and tachyphylactic) fall for the first 48 h. <strong>Denosumab</strong> for bisphosphonate-refractory or renal impairment. <strong>Loop diuretics only after the patient is volume-replete</strong> (and mainly for fluid overload) — routine forced diuresis is outdated. Steroids help in myeloma/lymphoma.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Don't forget the structural emergencies</div>
+        <div class="gr-text">
+          <strong>Malignant spinal cord compression</strong> — back pain + neurology; give <strong>dexamethasone immediately</strong> and arrange urgent MRI of the whole spine and radiotherapy/surgery (time to treatment determines whether the patient walks again). <strong>SVC obstruction</strong> — facial/arm swelling, distended veins; rarely a true airway emergency; secure a tissue diagnosis where possible before treatment, with steroids/stenting/radiotherapy as indicated.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>India sees a high burden of <strong>haematological malignancy presenting late with bulky disease</strong>, so <strong>spontaneous and treatment-induced TLS</strong> is common — anticipate it in Burkitt lymphoma and high-count acute leukaemia and start hydration + urate-lowering early. <strong>G6PD deficiency is prevalent</strong>, so screen (or at least consider it) before rasburicase, which causes severe haemolysis in G6PD-deficient patients. <strong>Rasburicase is expensive</strong> and may be reserved for high-risk cases, with allopurinol + aggressive fluids for the rest. For neutropenic sepsis, the <strong>1-hour antibiotic rule still applies</strong> — keep an empirical anti-pseudomonal β-lactam immediately available; be alert to <strong>local resistance patterns and to tuberculosis/fungal infection</strong> in the prolonged-neutropenic patient.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Key Drugs Across the Oncologic Emergencies</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Isotonic saline</strong></td><td>TLS &amp; hypercalcaemia (cornerstone)</td><td>Aggressive rehydration; titrate to brisk urine output</td><td>No routine urine alkalinisation; watch overload in oliguric AKI</td></tr>
+            <tr><td><strong>Rasburicase</strong></td><td>High-risk / established TLS</td><td>0.2 mg/kg IV daily (often a single dose suffices)</td><td><strong>Contraindicated in G6PD deficiency</strong> (haemolysis); rapidly lowers urate</td></tr>
+            <tr><td><strong>Allopurinol</strong></td><td>TLS prophylaxis (lower risk)</td><td>100–300 mg/day PO</td><td>Prevents new urate only; does not remove existing urate</td></tr>
+            <tr><td><strong>Zoledronic acid</strong></td><td>Hypercalcaemia of malignancy</td><td>4 mg IV over 15 min</td><td>Definitive; onset 2–4 days; adjust/caution in renal impairment</td></tr>
+            <tr><td><strong>Calcitonin</strong></td><td>Hypercalcaemia — rapid bridge</td><td>4 IU/kg SC/IM 12-hourly</td><td>Rapid but transient; tachyphylaxis after ~48 h</td></tr>
+            <tr><td><strong>Piperacillin-tazobactam / cefepime / meropenem</strong></td><td>Neutropenic sepsis — within 1 h</td><td>Standard high-dose anti-pseudomonal regimen</td><td>Add vancomycin only for specific indications</td></tr>
+            <tr><td><strong>Dexamethasone</strong></td><td>Cord compression; SVCO; myeloma/lymphoma hyperCa</td><td>e.g. 8–16 mg/day (higher bolus in cord compression)</td><td>Give immediately in suspected cord compression, before imaging</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Recognising &amp; Triaging the Oncologic Emergency</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Fever + neutropenia? → antibiotics NOW</h4>
+          <ul><li>Cultures, then empirical anti-pseudomonal β-lactam <strong>within 60 minutes</strong> — resuscitate as sepsis</li><li>Do not wait for the confirmed neutrophil count if the picture fits</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Screen the metabolics</h4>
+          <ul><li>K⁺, phosphate, calcium, urate, creatinine, LDH — diagnose/anticipate <strong>TLS</strong></li><li>Corrected calcium — high (hypercalcaemia) or low (TLS)?</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Fluids first for TLS &amp; hypercalcaemia</h4>
+          <ul><li>Aggressive isotonic saline; rasburicase (check G6PD) for TLS urate; treat hyperkalaemia</li><li>Hypercalcaemia → saline then IV bisphosphonate ± calcitonin bridge</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Look for structural emergencies</h4>
+          <ul><li>Back pain + neurology → <strong>dexamethasone + urgent whole-spine MRI</strong> (cord compression)</li><li>Facial/arm swelling + distended veins → SVCO — tissue diagnosis then treat</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Support organs &amp; involve oncology early</h4>
+          <ul><li>Early RRT for refractory TLS metabolics/AKI; ICU-level support as needed</li><li>Discuss goals of care with oncology — but treat reversible emergencies fully</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Oncologic Emergencies</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Delaying antibiotics in neutropenic fever</div><p>Every hour of delay increases mortality. Take cultures and give the empirical anti-pseudomonal β-lactam within 60 minutes — do not wait for the neutrophil count or a source.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Giving rasburicase in G6PD deficiency</div><p>Rasburicase generates hydrogen peroxide and causes severe haemolysis (and methaemoglobinaemia) in G6PD-deficient patients. Screen or consider risk first, especially in Indian populations.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Alkalinising urine in TLS</div><p>Alkalinisation promotes calcium-phosphate precipitation in the tubule and is no longer recommended. Aggressive isotonic hydration (± rasburicase) is the strategy.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Correcting asymptomatic hypocalcaemia in TLS</div><p>Giving calcium while phosphate is high drives more calcium-phosphate deposition. Treat only symptomatic hypocalcaemia (tetany, seizures, arrhythmia).</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Relying on allopurinol to "treat" established TLS</div><p>Allopurinol blocks new urate formation but cannot remove urate already present. Established or high-risk TLS needs rasburicase plus hydration.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Loop diuretics before volume repletion in hypercalcaemia</div><p>Furosemide in a dehydrated hypercalcaemic patient worsens the volume deficit. Rehydrate first; use loops mainly for established fluid overload.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 7 — Waiting for imaging before steroids in cord compression</div><p>Give dexamethasone the moment cord compression is suspected; then arrange urgent whole-spine MRI and definitive treatment. Delay costs the ability to walk.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: What are the metabolic derangements of TLS?</strong><br>Hyperkalaemia, hyperphosphataemia, hyperuricaemia and (secondary) hypocalcaemia — with AKI. Cairo-Bishop defines laboratory and clinical TLS.</p></div>
+      <div class="ec"><p><strong>Q: How does rasburicase differ from allopurinol?</strong><br>Rasburicase (urate oxidase) destroys existing uric acid → allantoin within hours; allopurinol only prevents new urate. Rasburicase is contraindicated in G6PD deficiency.</p></div>
+      <div class="ec"><p><strong>Q: What is the antibiotic rule in neutropenic sepsis?</strong><br>Empirical anti-pseudomonal β-lactam within 60 minutes of presentation, after cultures — before the count is confirmed.</p></div>
+      <div class="ec"><p><strong>Q: How is hypercalcaemia of malignancy treated?</strong><br>Isotonic saline rehydration first, then an IV bisphosphonate (zoledronic acid); calcitonin as a rapid short-term bridge; denosumab if refractory/renal impairment.</p></div>
+      <div class="ec"><p><strong>Q: Why avoid urine alkalinisation in TLS?</strong><br>It promotes calcium-phosphate precipitation in the tubules; with rasburicase it is also unnecessary.</p></div>
+      <div class="ec"><p><strong>Q: First step in suspected malignant cord compression?</strong><br>Immediate dexamethasone, then urgent whole-spine MRI and radiotherapy/surgery — do not delay steroids for imaging.</p></div>
+      <div class="ec"><p><strong>Q: What does the MASCC score do?</strong><br>Risk-stratifies febrile neutropenia; high scores identify low-risk patients potentially suitable for oral/outpatient therapy.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Coiffier B, Altman A, Pui CH, et al.</strong> Guidelines for the Management of Pediatric and Adult Tumor Lysis Syndrome. <em>J Clin Oncol.</em> 2008;26:2767–2778.</li>
+        <li><strong>Cairo MS, Bishop M.</strong> Tumour lysis syndrome: new therapeutic strategies and classification. <em>Br J Haematol.</em> 2004;127:3–11.</li>
+        <li><strong>Freifeld AG, Bow EJ, Sepkowitz KA, et al. (IDSA).</strong> Clinical Practice Guideline for the Use of Antimicrobial Agents in Neutropenic Patients with Cancer. <em>Clin Infect Dis.</em> 2011;52:e56–e93.</li>
+        <li><strong>NICE.</strong> Neutropenic sepsis: prevention and management in people with cancer (CG151). 2012.</li>
+        <li><strong>Goldner W.</strong> Cancer-Related Hypercalcemia. <em>J Oncol Pract.</em> 2016;12:426–432.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Oncologic Emergencies / Tumour Lysis Syndrome. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Oncologic Emergencies. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

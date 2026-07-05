@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>DIC &amp; Thrombotic Microangiopathies (TTP/HUS) — CritCare.in</title>
+  <meta name="description" content="Disseminated intravascular coagulation and the thrombotic microangiopathies: the pathophysiology of consumptive coagulopathy, the ISTH DIC score, treat-the-trigger management, and how to tell DIC apart from TTP, HUS/aHUS and HELLP by the coagulation screen. Marino 5th Ed + Washington Manual." />
+  <link rel="canonical" href="https://critcare.in/topic-dic-tma.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    @media(max-width:600px){}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › DIC &amp; Microangiopathies</div>
+    <h1>🩸 DIC &amp; Thrombotic Microangiopathies</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ISTH Score</span>
+      <span class="gbadge kdigo">Treat the Trigger</span>
+      <span class="gbadge isccm">TTP · ADAMTS13</span>
+      <span class="gbadge esicm">HUS / aHUS</span>
+      <span class="gbadge apasl">Schistocytes</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Consumptive Coagulopathy · MAHA</span>
+      <span class="topic-tag">ISTH DIC Score</span>
+      <span class="topic-tag">TTP · HUS · HELLP</span>
+      <span class="topic-updated">ISTH/BSH DIC guidance · TTP &amp; complement TMA · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Pathophysiology</a></li>
+        <li><a href="#s3">3. DIC Score &amp; TMA Work-up</a></li>
+        <li><a href="#s4">4. Drug &amp; Product Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>Two Families of Microvascular Clotting</h2>
+      <div class="book-quote">
+        <p>The critically ill patient with a falling platelet count, red-cell fragments on the film and either bleeding or organ ischaemia has a microvascular clotting disorder until proven otherwise. These fall into two families: <strong>disseminated intravascular coagulation (DIC)</strong>, a consumptive coagulopathy driven by an underlying illness that activates coagulation system-wide; and the <strong>thrombotic microangiopathies (TMAs)</strong> — TTP, the haemolytic uraemic syndromes and their relatives — driven by a defect in vWF handling or complement regulation. The single most useful test to tell them apart is the humble coagulation screen: it is deranged in DIC and normal in the TMAs.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — DIC &amp; Thrombotic Microangiopathies.</cite>
+      </div>
+
+      <h3>The shared signature — MAHA + thrombocytopenia</h3>
+      <ul>
+        <li><strong>Microangiopathic haemolytic anaemia (MAHA)</strong> — <strong>schistocytes</strong> on the film, ↑ LDH, ↓ haptoglobin, ↑ indirect bilirubin, negative direct Coombs.</li>
+        <li><strong>Thrombocytopenia</strong> from platelet consumption in microthrombi.</li>
+        <li><strong>Organ injury</strong> from microvascular occlusion — brain (TTP), kidney (HUS), or multi-organ (DIC).</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>DIC — Simultaneous Clotting and Bleeding</h2>
+      <div class="book-quote">
+        <p>DIC is not a disease but a response: a trigger — sepsis, trauma, obstetric catastrophe, malignancy — unleashes systemic thrombin generation. Microthrombi form throughout the circulation and consume platelets and clotting factors faster than the marrow and liver can replace them. The patient therefore clots <em>and</em> bleeds at the same time, and the only treatment that reverses the process is elimination of the trigger. Products and anticoagulants are supportive; they do not cure DIC.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Disseminated Intravascular Coagulation.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 The DIC cascade</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span>Sepsis · trauma/burns · obstetric (abruption, AFE, retained products) · malignancy (esp. APML) · snakebite</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Massive <strong>tissue factor / thrombin</strong> generation → systemic microvascular <strong>fibrin thrombi</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><strong>Consumption</strong> of platelets &amp; factors → bleeding</div>
+          <div class="pf-node"><strong>Microthrombi</strong> → ischaemic organ injury</div>
+          <div class="pf-node"><strong>Secondary fibrinolysis</strong> → ↑ D-dimer, ↓ fibrinogen</div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Result</span>↓ platelets · ↑ PT/APTT · ↓ fibrinogen · ↑↑ D-dimer · schistocytes — simultaneous bleeding &amp; clotting</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — TMA is a different mechanism entirely</div>
+        <ul>
+          <li><strong>TTP</strong> — severe <strong>ADAMTS13 deficiency</strong> (usually autoantibody) → ultralarge vWF multimers → platelet-rich microthrombi; predominantly <strong>neurological</strong>. Coagulation screen is <em>normal</em>.</li>
+          <li><strong>Typical HUS</strong> — Shiga-toxin (<em>E. coli</em> O157, <em>Shigella</em>) after bloody diarrhoea; predominantly <strong>renal</strong>, mostly children — supportive care, no routine antibiotics.</li>
+          <li><strong>Atypical HUS</strong> — dysregulated <strong>alternative complement</strong> pathway → treat with <strong>eculizumab</strong>.</li>
+          <li><strong>Secondary / obstetric TMA</strong> — HELLP, pre-eclampsia, drug-induced, transplant — overlap; delivery is definitive for HELLP.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Scoring DIC &amp; Working Up the TMA</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Diagnose DIC with the ISTH score, trended <span class="gr-s">ISTH</span></div>
+        <div class="gr-text">
+          In a patient with a disorder known to cause DIC, score: <strong>platelets</strong> (&lt;100 = 1, &lt;50 = 2), <strong>D-dimer/FDP</strong> (moderate ↑ = 2, strong ↑ = 3), <strong>PT prolongation</strong> (3–6 s = 1, &gt;6 s = 2), <strong>fibrinogen</strong> (&lt;1 g/L = 1). <strong>≥5 = overt DIC</strong>; &lt;5 = repeat and trend. No single test makes the diagnosis — it is the <strong>pattern and its trajectory</strong> that matter.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Treat the trigger — everything else is supportive <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          <strong>The cornerstone is prompt, aggressive treatment of the underlying cause</strong> (source control + antibiotics for sepsis; deliver/evacuate the uterus in obstetric DIC; ATRA for APML). Give blood products <strong>only if bleeding or before a procedure</strong>, not to "correct numbers": <strong>platelets</strong> for &lt;50 with bleeding (&lt;20 without), <strong>FFP</strong> for prolonged PT/APTT with bleeding, <strong>cryoprecipitate/fibrinogen</strong> if fibrinogen &lt;1.5 g/L. See <a href="topic-transfusion.html">Transfusion &amp; Coagulopathy</a>.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Anticoagulation in DIC — selective, not routine <span class="gr-c">individualise</span></div>
+        <div class="gr-text">
+          In the <strong>thrombotic-predominant</strong> phenotype (e.g. purpura fulminans, arterial/venous thrombosis, or as VTE prophylaxis once not actively bleeding), <strong>therapeutic or prophylactic heparin</strong> may be used. It is contraindicated when bleeding dominates. Antifibrinolytics (TXA) are generally <strong>avoided</strong> in DIC except in the hyperfibrinolytic states (APML, some obstetric/trauma DIC) where they are used with caution.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">TMA — plasma exchange first, ask questions later <span class="gr-c">EMERGENCY</span></div>
+        <div class="gr-text">
+          If MAHA + thrombocytopenia with a <strong>normal coagulation screen</strong>, treat as <strong>TTP</strong>: start <strong>urgent plasma exchange</strong> + corticosteroids (add <strong>caplacizumab</strong> and rituximab per local protocol), and send ADAMTS13 <em>before</em> the first plasma — but do not wait for it. Consider <strong>atypical HUS → eculizumab</strong> if renal-predominant and ADAMTS13 not severely low; consider <strong>HELLP</strong> in pregnancy → deliver. Withhold platelet transfusion in TTP unless life-threatening bleeding.
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>The commonest DIC triggers in Indian ICUs are <strong>sepsis, obstetric emergencies (abruption, amniotic fluid embolism, sepsis, retained products), severe falciparum malaria, and viper snakebite</strong> — <strong>Russell's viper venom is a potent procoagulant</strong> and causes a venom-induced consumption coagulopathy where the priority is <strong>adequate antivenom</strong>, not FFP (see <a href="topic-snakebite.html">Snakebite</a>). In obstetric DIC, <strong>source control (delivery/evacuation) plus balanced products and fibrinogen replacement</strong> is life-saving. Access to <strong>plasma exchange and eculizumab</strong> is limited to larger centres — recognise TTP early and refer for apheresis; eculizumab for atypical HUS is expensive and may require special access.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug &amp; Product Doses</span>
+      <h2>Products, Anticoagulants &amp; TMA Therapy</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Agent</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Platelets</strong></td><td>DIC with bleeding (&lt;50) or &lt;20</td><td>1 adult dose ≈ ↑ 20–40 ×10⁹/L</td><td>Withhold in TTP unless life-threatening bleeding</td></tr>
+            <tr><td><strong>Fresh frozen plasma</strong></td><td>Bleeding with prolonged PT/APTT</td><td>~15 mL/kg</td><td>Replaces all factors; not to "normalise numbers" without bleeding</td></tr>
+            <tr><td><strong>Cryoprecipitate / fibrinogen concentrate</strong></td><td>Fibrinogen &lt;1.5 g/L (bleeding/obstetric)</td><td>Cryo ~2 pools, or fibrinogen 2–4 g</td><td>Obstetric target fibrinogen &gt;2 g/L</td></tr>
+            <tr><td><strong>Heparin (prophylactic/therapeutic)</strong></td><td>Thrombotic-predominant DIC / VTE prophylaxis</td><td>Standard dosing</td><td>Contraindicated when bleeding dominates</td></tr>
+            <tr><td><strong>Plasma exchange</strong></td><td>TTP (definitive)</td><td>1–1.5 plasma volumes daily until remission</td><td>Start on suspicion; send ADAMTS13 first</td></tr>
+            <tr><td><strong>Corticosteroids</strong></td><td>TTP (immune)</td><td>Methylprednisolone 1 mg/kg/day (higher in severe)</td><td>Adjunct to PEX</td></tr>
+            <tr><td><strong>Caplacizumab</strong></td><td>Acquired TTP (anti-vWF nanobody)</td><td>Per protocol with PEX</td><td>Faster platelet recovery; monitor bleeding</td></tr>
+            <tr><td><strong>Eculizumab</strong></td><td>Atypical (complement-mediated) HUS</td><td>Per protocol</td><td>Meningococcal vaccination/prophylaxis needed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Approach to MAHA + Thrombocytopenia</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Recognise the pattern</h4>
+          <ul><li>Falling platelets + <strong>schistocytes</strong> + ↑LDH/↓haptoglobin (MAHA) ± bleeding or organ ischaemia</li><li>Send coagulation screen, fibrinogen, D-dimer, film, LDH, haptoglobin, bilirubin, creatinine, ADAMTS13, pregnancy test</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Read the coagulation screen — the fork in the road</h4>
+          <ul><li><strong>Deranged</strong> (↑PT/APTT, ↓fibrinogen, ↑↑D-dimer) → <strong>DIC</strong> — apply the ISTH score</li><li><strong>Normal</strong> screen → <strong>thrombotic microangiopathy</strong> (TTP/HUS) — treat as TTP until excluded</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3a</div>
+        <div class="fc-content"><h4>If DIC → treat the trigger</h4>
+          <ul><li>Source control + antibiotics; deliver/evacuate uterus; ATRA for APML; antivenom for snakebite</li><li>Products only if bleeding/pre-procedure; heparin only if thrombotic-predominant &amp; not bleeding</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3b</div>
+        <div class="fc-content"><h4>If TMA → plasma exchange</h4>
+          <ul><li>Urgent PEX + steroids (+ caplacizumab/rituximab) for TTP; ADAMTS13 sent before first plasma</li><li>Consider aHUS → eculizumab (renal-predominant); HELLP in pregnancy → deliver</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Support &amp; monitor organs</h4>
+          <ul><li>Renal replacement for AKI; neuro-obs in TTP; serial platelets, LDH, fibrinogen, D-dimer</li><li>Avoid unnecessary platelet transfusion in the TMAs</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Reassess trajectory</h4>
+          <ul><li>DIC resolves as the trigger is controlled; persistent DIC = uncontrolled source</li><li>TTP relapses — continue PEX until platelet &amp; LDH normalise, then taper immunosuppression</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in DIC &amp; TMA</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Treating DIC with products instead of the trigger</div><p>Transfusing to normalise the coagulation screen without controlling the source (sepsis, retained products, snakebite) fuels ongoing consumption. Eliminating the trigger is the only cure; products are supportive and reserved for bleeding.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Missing TTP because the screen is normal</div><p>A normal PT/APTT/fibrinogen with MAHA + thrombocytopenia is TTP, not "mild coagulopathy". Missing it forfeits the window for plasma exchange, which is life-saving.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Transfusing platelets in TTP</div><p>Adding platelets to a platelet-consuming microthrombotic process can worsen organ ischaemia. Withhold unless there is life-threatening bleeding.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Giving FFP instead of antivenom in viper-bite coagulopathy</div><p>Russell's viper venom keeps consuming factors until neutralised. Adequate antivenom is the priority; FFP alone is poured into a leaking bucket.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Antibiotics for Shiga-toxin (typical) HUS</div><p>Antibiotics in <em>E. coli</em> O157 gastroenteritis may increase toxin release and HUS risk. Typical HUS is largely supportive.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Forgetting pregnancy</div><p>In a pregnant/peripartum woman, HELLP and obstetric DIC are common and delivery is often the definitive treatment — always send a pregnancy test and involve obstetrics.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: How do you score DIC?</strong><br>ISTH score: platelets, D-dimer/FDP, PT prolongation, fibrinogen — ≥5 in a patient with a known trigger = overt DIC. Trend it.</p></div>
+      <div class="ec"><p><strong>Q: What is the single best treatment of DIC?</strong><br>Prompt treatment of the underlying cause. Products are supportive and given only for bleeding or pre-procedure.</p></div>
+      <div class="ec"><p><strong>Q: How do you separate DIC from TTP?</strong><br>DIC has a deranged coagulation screen (↑PT/APTT, ↓fibrinogen, ↑↑D-dimer); TTP has a normal screen with MAHA + thrombocytopenia.</p></div>
+      <div class="ec"><p><strong>Q: What causes TTP and how is it treated?</strong><br>Severe ADAMTS13 deficiency (usually autoantibody) → urgent plasma exchange + steroids ± caplacizumab/rituximab.</p></div>
+      <div class="ec"><p><strong>Q: Typical vs atypical HUS?</strong><br>Typical = Shiga-toxin after bloody diarrhoea, renal, supportive care. Atypical = complement dysregulation → eculizumab.</p></div>
+      <div class="ec"><p><strong>Q: Which snake causes DIC in India, and how is it managed?</strong><br>Russell's viper (procoagulant venom) → venom-induced consumption coagulopathy; adequate antivenom, not FFP alone, is the treatment.</p></div>
+      <div class="ec"><p><strong>Q: When is heparin used in DIC?</strong><br>In the thrombotic-predominant phenotype (e.g. purpura fulminans) or for VTE prophylaxis once not actively bleeding — not routinely.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Wada H, Thachil J, Di Nisio M, et al. (ISTH SSC).</strong> Guidance for diagnosis and treatment of DIC. <em>J Thromb Haemost.</em> 2013;11:761–767.</li>
+        <li><strong>Levi M, Toh CH, Thachil J, Watson HG (BSH).</strong> Guidelines for the diagnosis and management of disseminated intravascular coagulation. <em>Br J Haematol.</em> 2009;145:24–33.</li>
+        <li><strong>Zheng XL, Vesely SK, Cataland SR, et al. (ISTH).</strong> ISTH guidelines for diagnosis &amp; treatment of thrombotic thrombocytopenic purpura. <em>J Thromb Haemost.</em> 2020;18:2486–2521.</li>
+        <li><strong>George JN, Nester CM.</strong> Syndromes of Thrombotic Microangiopathy. <em>N Engl J Med.</em> 2014;371:654–666.</li>
+        <li><strong>Scully M, Cataland SR, Peyvandi F, et al. (HERCULES).</strong> Caplacizumab Treatment for Acquired TTP. <em>N Engl J Med.</em> 2019;380:335–346.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Disseminated Intravascular Coagulation. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). DIC &amp; Thrombotic Microangiopathies. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Thyroid Emergencies — Storm &amp; Myxoedema Coma — CritCare.in</title>
+  <meta name="description" content="The two thyroid emergencies of the ICU: thyroid storm (Burch-Wartofsky score, the beta-blocker → thionamide → iodine sequence, and why order matters) and myxoedema coma (hypothermia, hypoventilation, hyponatraemia — T4/T3 plus stress-dose steroid). Marino 5th Ed + Washington Manual." />
+  <link rel="canonical" href="https://critcare.in/topic-thyroid-emergencies.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box strong{color:#4c1d95;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .cmp2{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:1rem 0;}
+    .cmp-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid var(--line);}
+    .cmp-hot{background:#fef2f2;border-color:#fecaca;} .cmp-cold{background:#eff6ff;border-color:#bfdbfe;}
+    .cmp-card h4{font-size:.82rem;font-weight:800;margin-bottom:.5rem;}
+    .cmp-hot h4{color:#991b1b;} .cmp-cold h4{color:#1e40af;}
+    .cmp-card ul{font-size:.82rem;color:var(--slate);padding-left:1.1rem;line-height:1.6;margin:0;}
+    @media(max-width:600px){.cmp2{grid-template-columns:1fr;}}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Thyroid Emergencies</div>
+    <h1>🦋 Thyroid Emergencies — Storm &amp; Myxoedema Coma</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Burch-Wartofsky</span>
+      <span class="gbadge kdigo">β-block → PTU → Iodine</span>
+      <span class="gbadge isccm">Myxoedema Coma</span>
+      <span class="gbadge esicm">Steroid Cover</span>
+      <span class="gbadge apasl">Clinical Diagnosis</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Two Extremes · One Gland</span>
+      <span class="topic-tag">Storm · Order Matters</span>
+      <span class="topic-tag">Myxoedema · T4/T3 + Steroid</span>
+      <span class="topic-updated">ATA thyrotoxicosis guideline · Burch-Wartofsky score · Marino 5th Ed (2025) · Washington Manual</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Washington Manual Summary</a></li>
+        <li><a href="#s2">2. Marino — Why Order Matters</a></li>
+        <li><a href="#s3">3. Storm &amp; Myxoedema Therapy</a></li>
+        <li><a href="#s4">4. Drug Doses</a></li>
+        <li><a href="#s5">5. Clinical Flowchart</a></li>
+        <li><a href="#s6">6. Common Mistakes</a></li>
+        <li><a href="#s7">7. Exam Pearls</a></li>
+        <li><a href="#s8">8. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
+      <h2>Two Emergencies at Opposite Ends of the Gland</h2>
+      <div class="book-quote">
+        <p>Thyroid emergencies are clinical diagnoses — the hormone levels in thyroid storm are no higher than in uncomplicated thyrotoxicosis, so the diagnosis rests on the picture of decompensation, not on a number. Thyroid storm is thyrotoxicosis with organ failure — hyperpyrexia, tachyarrhythmia, heart failure, agitation or coma, and GI/hepatic dysfunction — almost always tipped over by a precipitant. Myxoedema coma is its mirror image: profound hypothyroidism with hypothermia, hypoventilation, hyponatraemia and depressed consciousness. Both kill if treatment waits for confirmatory tests.</p>
+        <cite>Summarised from the Washington Manual of Critical Care — Thyroid Emergencies.</cite>
+      </div>
+
+      <div class="cmp2">
+        <div class="cmp-card cmp-hot">
+          <h4>🔥 Thyroid storm (too much)</h4>
+          <ul>
+            <li>Hyperpyrexia (often &gt;40 °C), sweating</li>
+            <li>AF / tachyarrhythmia, high-output heart failure</li>
+            <li>Agitation, delirium, seizures, coma</li>
+            <li>Vomiting, diarrhoea, jaundice</li>
+            <li>Precipitant: infection, surgery, iodine/contrast, DKA, childbirth, antithyroid-drug withdrawal</li>
+          </ul>
+        </div>
+        <div class="cmp-card cmp-cold">
+          <h4>❄️ Myxoedema coma (too little)</h4>
+          <ul>
+            <li>Hypothermia, bradycardia</li>
+            <li>Hypoventilation → CO₂ retention</li>
+            <li>Hyponatraemia, hypoglycaemia</li>
+            <li>Depressed consciousness, non-pitting oedema</li>
+            <li>Precipitant: infection, cold, sedatives, stopping levothyroxine</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
+      <h2>Thyroid Storm — the Sequence Is the Point</h2>
+      <div class="book-quote">
+        <p>The treatment of thyroid storm attacks the disease at every level — release, synthesis, peripheral conversion and end-organ effect — but the <em>order</em> of the drugs matters. A thionamide is given first to stop new hormone synthesis; iodine, which blocks the release of preformed hormone, must be given <em>at least an hour after</em> the thionamide, because giving iodine first supplies fresh substrate to an unblocked gland and can worsen the storm. Beta-blockade controls the catastrophic adrenergic response, and steroid blocks peripheral T4-to-T3 conversion while covering the relative adrenal insufficiency that accompanies the storm.</p>
+        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Thyroid Storm.</cite>
+      </div>
+
+      <div class="patho-flow">
+        <div class="patho-flow-title">🔬 Thyroid storm — four points of attack, in order</div>
+        <div class="pf-node pf-trigger"><span class="pf-tag">Step 1</span><strong>β-blocker</strong> (propranolol) → control adrenergic storm, rate, tremor, and T4→T3 conversion</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><span class="pf-tag">Step 2</span><strong>Thionamide</strong> (propylthiouracil / carbimazole) → block new hormone synthesis</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><span class="pf-tag">Step 3 — ≥1 h later</span><strong>Iodine</strong> (Lugol's / SSKI) → block release of preformed hormone (Wolff-Chaikoff)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><span class="pf-tag">Step 4</span><strong>Hydrocortisone</strong> → block peripheral T4→T3 conversion + cover adrenal insufficiency</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">Plus</span>Treat the <strong>precipitant</strong> (infection), cool actively, and support the failing organs</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — why PTU over carbimazole in the storm itself</div>
+        <ul>
+          <li><strong>Propylthiouracil (PTU)</strong> is preferred acutely because — unlike carbimazole/methimazole — it also <strong>blocks peripheral T4→T3 conversion</strong>, giving a faster effect on active hormone.</li>
+          <li>Once the storm settles, switch to <strong>carbimazole/methimazole</strong> for ongoing control (PTU carries a higher risk of hepatotoxicity long-term).</li>
+          <li><strong>Avoid aspirin</strong> for the fever — it displaces thyroid hormone from binding proteins and raises free hormone. Use paracetamol and active cooling.</li>
+        </ul>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📗 Marino — myxoedema coma is hormone + steroid + support</div>
+        <p>Give <strong>IV levothyroxine (T4)</strong> as a loading dose, with <strong>liothyronine (T3)</strong> added in the sickest patients for a faster onset (balanced against arrhythmia risk). Crucially, give <strong>stress-dose hydrocortisone first or alongside</strong> — because coexisting adrenal insufficiency is common and thyroid hormone replacement alone can precipitate an adrenal crisis. Then support: passive rewarming, ventilation for CO₂ retention, cautious correction of hyponatraemia and hypoglycaemia, and treat the precipitant.</p>
+      </div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sb-g">📋 3 · Storm &amp; Myxoedema — Management</span>
+      <h2>Evidence-Based Management</h2>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Diagnose storm clinically — Burch-Wartofsky score <span class="gr-s">ATA</span></div>
+        <div class="gr-text">
+          Use the <strong>Burch-Wartofsky Point Scale</strong> (temperature, CNS effects, GI/hepatic dysfunction, tachycardia, heart failure, atrial fibrillation, precipitant): <strong>≥45 highly suggestive</strong>, 25–44 impending, &lt;25 unlikely. It is a clinical scale — <strong>do not wait for thyroid function tests</strong> to start treatment; send TSH, free T4/T3 but treat on the picture.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Thyroid storm — the ordered regimen <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          <strong>1. β-blocker</strong> — propranolol IV/PO (also blunts T4→T3); use with care in high-output heart failure (short-acting esmolol if unsure). <strong>2. Thionamide</strong> — PTU (preferred acutely) or carbimazole. <strong>3. Iodine</strong> — Lugol's/SSKI, given <strong>≥1 h after the thionamide</strong>. <strong>4. Hydrocortisone</strong> 100 mg then 200 mg/day. <strong>Plus</strong>: active cooling with paracetamol (never aspirin), treat the precipitant, and full supportive care. <strong>Cholestyramine</strong> can be added to bind enterohepatic hormone in refractory cases; <strong>plasma exchange</strong> for the truly refractory.
+        </div>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Myxoedema coma — thyroid hormone + steroid + support <span class="gr-s">STRONG</span></div>
+        <div class="gr-text">
+          <strong>IV levothyroxine (T4) load ~200–400 µg then 50–100 µg/day</strong>, ± <strong>liothyronine (T3)</strong> in the most severe (small doses, arrhythmia risk). <strong>Give hydrocortisone 100 mg first/concurrently</strong> until adrenal insufficiency is excluded. Support: <strong>passive external rewarming</strong> (avoid aggressive active rewarming — vasodilatation → shock), ventilate for hypoventilation/CO₂ retention, correct <strong>hyponatraemia and hypoglycaemia cautiously</strong>, and <strong>treat the precipitant</strong> (screen hard for infection — the febrile response is blunted).
+        </div>
+      </div>
+
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>India has a large burden of thyroid disease, and <strong>thyroid storm is often precipitated by infection, by iodinated contrast, or by non-adherence to antithyroid drugs</strong> — a real problem where follow-up and drug supply are inconsistent. <strong>Untreated or poorly-controlled Graves' disease and toxic nodular goitre</strong> (endemic in some regions) present late. <strong>PTU, carbimazole, propranolol, Lugol's iodine and hydrocortisone are all cheap and available</strong> — the key is recognising the syndrome and getting the <strong>sequence right (thionamide before iodine)</strong>. For myxoedema coma, IV levothyroxine may be scarce in smaller centres; <strong>an oral/NG loading dose of levothyroxine plus IV hydrocortisone and supportive care</strong> is a reasonable substitute while arranging transfer.</p>
+      </div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sb-d">💊 4 · Drug Doses</span>
+      <h2>Storm &amp; Myxoedema Drug Reference</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug</th><th>Indication</th><th>Dose</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Propranolol</strong></td><td>Storm — adrenergic control (Step 1)</td><td>60–80 mg PO q4–6h, or 0.5–1 mg IV slowly</td><td>Also blocks T4→T3; esmolol if heart-failure concern</td></tr>
+            <tr><td><strong>Propylthiouracil (PTU)</strong></td><td>Storm — synthesis block (Step 2, preferred)</td><td>500–1000 mg load then 250 mg q4h</td><td>Blocks peripheral conversion; hepatotoxicity long-term</td></tr>
+            <tr><td><strong>Carbimazole / methimazole</strong></td><td>Storm (alternative) &amp; maintenance</td><td>Carbimazole 20 mg q4–6h acutely</td><td>Preferred for maintenance once storm settles</td></tr>
+            <tr><td><strong>Lugol's iodine / SSKI</strong></td><td>Storm — release block (Step 3)</td><td>Lugol's ~8 drops q6h / SSKI 5 drops q6h</td><td><strong>Give ≥1 h AFTER the thionamide</strong></td></tr>
+            <tr><td><strong>Hydrocortisone</strong></td><td>Storm &amp; myxoedema (Step 4 / first)</td><td>100 mg IV then 200 mg/24 h</td><td>Blocks T4→T3 in storm; covers adrenal insufficiency</td></tr>
+            <tr><td><strong>Levothyroxine (T4) IV</strong></td><td>Myxoedema coma</td><td>Load ~200–400 µg then 50–100 µg/day</td><td>Give hydrocortisone first/with it</td></tr>
+            <tr><td><strong>Liothyronine (T3) IV</strong></td><td>Severe myxoedema coma</td><td>Small doses (e.g. 5–20 µg) per protocol</td><td>Faster onset; arrhythmia risk — cautious</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
+      <h2>Recognising &amp; Treating the Thyroid Emergency</h2>
+      <div class="flowchart-step">
+        <div class="fc-node fc-red">1</div>
+        <div class="fc-content"><h4>Recognise the syndrome (clinically)</h4>
+          <ul><li>Storm: fever + tachyarrhythmia + CNS/GI failure in a thyrotoxic patient (Burch-Wartofsky ≥45)</li><li>Myxoedema: hypothermia + hypoventilation + hyponatraemia + ↓consciousness</li><li>Send TSH/fT4/fT3 &amp; cortisol — but <strong>treat on the picture, not the number</strong></li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-orange">2</div>
+        <div class="fc-content"><h4>Storm → the ordered regimen</h4>
+          <ul><li>β-blocker → thionamide (PTU) → <strong>iodine ≥1 h later</strong> → hydrocortisone</li><li>Cool with paracetamol (never aspirin); treat precipitant; support organs</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-yellow">3</div>
+        <div class="fc-content"><h4>Myxoedema → hormone + steroid + support</h4>
+          <ul><li><strong>Hydrocortisone first</strong>, then IV levothyroxine (± T3 in the sickest)</li><li>Passive rewarming, ventilate for CO₂ retention, cautious Na⁺/glucose correction</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-green">4</div>
+        <div class="fc-content"><h4>Hunt &amp; treat the precipitant</h4>
+          <ul><li>Screen hard for infection (blunted febrile response in myxoedema)</li><li>Review recent surgery, contrast, DKA, drug non-adherence, sedatives</li></ul></div>
+      </div>
+      <div class="flowchart-step">
+        <div class="fc-node fc-blue">5</div>
+        <div class="fc-content"><h4>Monitor &amp; transition to definitive care</h4>
+          <ul><li>Storm: switch PTU→carbimazole once settled; plan definitive therapy (RAI/surgery)</li><li>Myxoedema: titrate levothyroxine; endocrinology follow-up; watch for cardiac ischaemia on replacement</li></ul></div>
+      </div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
+      <h2>Common Mistakes in Thyroid Emergencies</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — Giving iodine before the thionamide</div><p>Iodine supplied to an unblocked gland provides fresh substrate and can worsen the storm. Always give the thionamide first and iodine at least an hour later.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Waiting for thyroid function tests</div><p>Hormone levels in storm are no higher than in ordinary thyrotoxicosis. Diagnose and treat on the clinical picture (Burch-Wartofsky), not the lab value.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Using aspirin to control the fever</div><p>Salicylates displace thyroid hormone from binding proteins and raise free hormone. Use paracetamol and active cooling.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Giving thyroid hormone before steroid in myxoedema</div><p>Coexisting adrenal insufficiency is common; replacing thyroid hormone first can precipitate an adrenal crisis. Give hydrocortisone first or concurrently.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Aggressive active rewarming in myxoedema coma</div><p>Rapid rewarming causes peripheral vasodilatation and cardiovascular collapse. Rewarm passively and gradually.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Forgetting the precipitant</div><p>Both emergencies are usually triggered — most often by infection, which may be occult in myxoedema. Treating the thyroid without the trigger leaves the patient decompensated.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: What is the drug sequence in thyroid storm?</strong><br>β-blocker → thionamide (PTU) → iodine (≥1 h after the thionamide) → hydrocortisone, plus treat the precipitant and cool.</p></div>
+      <div class="ec"><p><strong>Q: Why must iodine follow the thionamide?</strong><br>Iodine given first supplies substrate to an unblocked gland and can worsen hormone production; the thionamide must block synthesis first.</p></div>
+      <div class="ec"><p><strong>Q: Why PTU rather than carbimazole in the storm?</strong><br>PTU additionally blocks peripheral T4→T3 conversion; switch to carbimazole for maintenance once settled.</p></div>
+      <div class="ec"><p><strong>Q: How is thyroid storm diagnosed?</strong><br>Clinically, with the Burch-Wartofsky score (≥45 highly suggestive) — hormone levels don't distinguish it from simple thyrotoxicosis.</p></div>
+      <div class="ec"><p><strong>Q: What is the treatment of myxoedema coma?</strong><br>IV levothyroxine (± T3), with hydrocortisone given first/concurrently, passive rewarming, ventilatory support, and cautious Na⁺/glucose correction.</p></div>
+      <div class="ec"><p><strong>Q: Why give steroid before thyroxine in myxoedema coma?</strong><br>Coexisting adrenal insufficiency is common; thyroid hormone alone can precipitate adrenal crisis.</p></div>
+      <div class="ec"><p><strong>Q: Which antipyretic is contraindicated in storm?</strong><br>Aspirin — it displaces thyroid hormone from binding proteins and increases the free fraction.</p></div>
+    </section>
+
+    <section id="s8" class="references-section">
+      <span class="sb sb-r">📚 8 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Ross DS, Burch HB, Cooper DS, et al. (ATA).</strong> 2016 American Thyroid Association Guidelines for Diagnosis and Management of Hyperthyroidism and Thyrotoxicosis. <em>Thyroid.</em> 2016;26:1343–1421.</li>
+        <li><strong>Burch HB, Wartofsky L.</strong> Life-threatening thyrotoxicosis: thyroid storm. <em>Endocrinol Metab Clin North Am.</em> 1993;22:263–277.</li>
+        <li><strong>Wartofsky L.</strong> Myxedema Coma. <em>Endocrinol Metab Clin North Am.</em> 2006;35:687–698.</li>
+        <li><strong>Klubo-Gwiezdzinska J, Wartofsky L.</strong> Thyroid emergencies. <em>Med Clin North Am.</em> 2012;96:385–403.</li>
+        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Thyroid Dysfunction in Critical Illness. Wolters Kluwer; 2025.</li>
+        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Thyroid Emergencies. Wolters Kluwer; 2023.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
+      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
+</nav>
+</body>
+</html>
