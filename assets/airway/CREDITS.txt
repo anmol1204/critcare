@@ -1,0 +1,13 @@
+Airway topic image credits & licences
+=====================================
+ANATOMY (public domain — Henry Gray, Anatomy of the Human Body, 1918; and US NIH/SEER):
+- upper-airway-sagittal.png   Gray's Anatomy Fig. (sagittal nose/mouth/pharynx/larynx). Public domain.
+- larynx-cartilages.png       Gray's Anatomy (laryngeal cartilages). Public domain.
+- larynx-posterior.png        Gray's Anatomy (posterior larynx/intrinsic muscles). Public domain.
+- tracheobronchial-tree.jpg   US NIH / SEER training (bronchi & bronchial tree). Public domain.
+
+ASSESSMENT / SCORES (Creative Commons, Wikimedia Commons):
+- mallampati.svg      Modified Mallampati classes. Author: Jmarchn. CC BY-SA 3.0.
+- cormack-lehane.jpg  Cormack–Lehane laryngoscopic grades. Author: User:Tubus. CC BY-SA 3.0. (title band cropped)
+
+ULTRASOUND: no openly-licensed real airway-USG image located on Commons — slot left for a user-supplied image.
