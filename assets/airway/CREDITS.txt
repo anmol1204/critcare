@@ -1,13 +1,17 @@
 Airway topic image credits & licences
 =====================================
-ANATOMY (public domain — Henry Gray, Anatomy of the Human Body, 1918; and US NIH/SEER):
-- upper-airway-sagittal.png   Gray's Anatomy Fig. (sagittal nose/mouth/pharynx/larynx). Public domain.
-- larynx-cartilages.png       Gray's Anatomy (laryngeal cartilages). Public domain.
-- larynx-posterior.png        Gray's Anatomy (posterior larynx/intrinsic muscles). Public domain.
-- tracheobronchial-tree.jpg   US NIH / SEER training (bronchi & bronchial tree). Public domain.
+ANATOMY (modern clinical, Creative Commons / public domain — Wikimedia Commons):
+- respiratory-system.svg     Full airway overview (nose→pharynx→larynx→trachea→bronchi→lungs). Public domain.
+- larynx-external.svg        External larynx (thyroid/cricoid cartilage, cricothyroid muscle, SLN). CC BY-SA 2.5.
+- vocal-cords-rest.png       Glottis at rest (cords abducted) — Servier Medical Art. CC BY-SA 3.0.
+- vocal-cords-phonation.png  Glottis in phonation (cords adducted) — Servier Medical Art. CC BY-SA 3.0.
+- trachea-openstax.jpg       Trachea, bronchi & bronchial tree — OpenStax Anatomy & Physiology. CC BY 3.0.
 
-ASSESSMENT / SCORES (Creative Commons, Wikimedia Commons):
-- mallampati.svg      Modified Mallampati classes. Author: Jmarchn. CC BY-SA 3.0.
-- cormack-lehane.jpg  Cormack–Lehane laryngoscopic grades. Author: User:Tubus. CC BY-SA 3.0. (title band cropped)
+ASSESSMENT / SCORES (Creative Commons — Wikimedia Commons):
+- mallampati.svg      Modified Mallampati classes. Jmarchn. CC BY-SA 3.0.
+- cormack-lehane.jpg  Cormack–Lehane laryngoscopic grades. User:Tubus. CC BY-SA 3.0. (title band cropped)
 
-ULTRASOUND: no openly-licensed real airway-USG image located on Commons — slot left for a user-supplied image.
+ULTRASOUND: no openly-licensed real airway-USG image located — slot left for a user-supplied image.
+
+NOTE: figures are NOT taken from copyrighted anaesthesia textbooks (Miller/Barash/etc.) —
+those cannot be republished on a paywalled site. All above are PD or CC with attribution.
