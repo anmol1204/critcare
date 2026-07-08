@@ -15,3 +15,13 @@ ULTRASOUND: no openly-licensed real airway-USG image located — slot left for a
 
 NOTE: figures are NOT taken from copyrighted anaesthesia textbooks (Miller/Barash/etc.) —
 those cannot be republished on a paywalled site. All above are PD or CC with attribution.
+
+AIRWAY ULTRASOUND (added — real annotated clinical images):
+- usg-cricothyroid-membrane.jpg        Osman A, Sum KM. Role of upper airway ultrasound in airway
+- usg-tracheal-rings-longitudinal.jpg  management. J Intensive Care. 2016;4:52. CC BY 4.0 (via PMC4983796).
+- usg-trachea-transverse.jpg           Used with attribution — CC BY 4.0 permits commercial reuse.
+- usg-vocal-cords.jpg
+- usg-oesophagus.jpg
+- usg-ett-double-tract.jpg
+NOTE: ASRA POCUS newsletter images are © ASRA (all rights reserved) and are NOT reproduced —
+the page links out to the ASRA article instead.
