@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>MCQ Bank — NEET-SS Practice — CritCare.in</title>
+  <meta name="description" content="CritCare MCQ Bank — NEET-SS oriented critical-care questions with easy, moderate and severe difficulty, direct and extensive case-based formats, detailed explanations and clickable clinical pearls." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .mcq-hero { background:linear-gradient(135deg,#0f1f3d,#1a3560); color:#fff; padding:2.6rem 5% 2rem; text-align:center; }
+    .mcq-hero h1 { font-family:var(--font-disp); font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:.4rem; }
+    .mcq-hero p { color:rgba(255,255,255,.74); font-size:.92rem; max-width:600px; margin:0 auto; line-height:1.6; }
+    .mcq-hero .mcq-stat { display:inline-flex; gap:1.6rem; margin-top:1.2rem; }
+    .mcq-hero .mcq-stat b { font-family:var(--font-disp); font-size:1.3rem; display:block; }
+    .mcq-hero .mcq-stat span { font-size:.7rem; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:.05em; }
+
+    .mcq-wrap { max-width:780px; margin:0 auto; padding:1.6rem 5% 4rem; }
+
+    /* filter panel */
+    .mcq-filters { border:1px solid var(--line); border-radius:16px; background:var(--bg); padding:1.2rem 1.3rem; margin-bottom:1.4rem; box-shadow:0 6px 24px rgba(0,0,0,.05); }
+    .mcq-frow { margin-bottom:.9rem; }
+    .mcq-frow:last-child { margin-bottom:0; }
+    .mcq-flabel { font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--slate); margin-bottom:.45rem; }
+    .mcq-chips { display:flex; flex-wrap:wrap; gap:.4rem; }
+    .mcq-chip { padding:.42rem .85rem; border-radius:24px; border:1.5px solid var(--line); background:var(--bg); color:var(--ink); font-size:.78rem; font-weight:700; cursor:pointer; font-family:var(--font-body); transition:all .14s; }
+    .mcq-chip:hover { border-color:var(--blue); }
+    .mcq-chip.active { border-color:var(--blue); background:var(--blue); color:#fff; }
+    .mcq-chip.active.d-easy { border-color:#15803d; background:linear-gradient(135deg,#22c55e,#15803d); }
+    .mcq-chip.active.d-moderate { border-color:#b45309; background:linear-gradient(135deg,#f59e0b,#b45309); }
+    .mcq-chip.active.d-severe { border-color:#b91c1c; background:linear-gradient(135deg,#ef4444,#b91c1c); }
+
+    .mcq-start { display:flex; align-items:center; justify-content:space-between; gap:1rem; margin-top:1.1rem; flex-wrap:wrap; }
+    .mcq-count-note { font-size:.8rem; color:var(--slate); font-weight:600; }
+    .mcq-btn { padding:.7rem 1.35rem; border-radius:10px; border:1px solid var(--line); background:var(--bg-alt); color:var(--ink); font-weight:700; font-size:.86rem; cursor:pointer; font-family:var(--font-body); }
+    .mcq-btn:hover { border-color:var(--blue); color:var(--blue); }
+    .mcq-btn.primary { background:var(--blue); color:#fff; border-color:var(--blue); }
+    .mcq-btn.primary:hover { background:var(--blue-dark); color:#fff; }
+    .mcq-btn:disabled { opacity:.45; cursor:not-allowed; }
+
+    /* quiz card */
+    .mcq-card { border:1px solid var(--line); border-radius:18px; background:var(--bg); padding:1.5rem 1.5rem 1.3rem; box-shadow:0 8px 30px rgba(0,0,0,.07); }
+    .mcq-meta { display:flex; flex-wrap:wrap; align-items:center; gap:.45rem; margin-bottom:1rem; }
+    .mcq-badge { font-size:.66rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; padding:.26rem .7rem; border-radius:20px; }
+    .mcq-badge.topic { background:var(--blue-soft); color:var(--blue-dark); }
+    .mcq-badge.type { background:var(--bg-alt); color:var(--slate); border:1px solid var(--line); }
+    .mcq-badge.d-easy { background:rgba(34,197,94,.15); color:#15803d; }
+    .mcq-badge.d-moderate { background:rgba(245,158,11,.16); color:#b45309; }
+    .mcq-badge.d-severe { background:rgba(239,68,68,.14); color:#b91c1c; }
+    .mcq-progress { margin-left:auto; font-size:.74rem; font-weight:700; color:var(--slate); }
+
+    .mcq-stem { background:var(--bg-alt); border-left:3px solid var(--blue); border-radius:0 10px 10px 0; padding:.85rem 1rem; font-size:.9rem; line-height:1.65; color:var(--ink); margin-bottom:1rem; }
+    .mcq-stem .stem-tag { display:block; font-size:.62rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em; color:var(--slate); margin-bottom:.3rem; }
+    .mcq-q { font-size:1.05rem; font-weight:700; color:var(--ink); line-height:1.55; margin-bottom:1.1rem; }
+
+    /* reuse .pearl-opt styles from shared.css for options */
+    .mcq-opts { display:flex; flex-direction:column; gap:.55rem; }
+
+    .mcq-actions { display:flex; align-items:center; justify-content:space-between; gap:.8rem; margin-top:1.2rem; }
+
+    /* pearl toggle */
+    .mcq-pearl-btn { margin-top:1rem; width:100%; text-align:left; background:linear-gradient(135deg,#fff7e6,#fffdf5); border:1px dashed #d97706; color:#92400e; border-radius:12px; padding:.7rem 1rem; font-weight:800; font-size:.82rem; cursor:pointer; font-family:var(--font-body); display:flex; align-items:center; gap:.5rem; }
+    html.dark .mcq-pearl-btn { background:#241806; border-color:#854d0e; color:#fcd34d; }
+    .mcq-pearl-btn .chev { margin-left:auto; transition:transform .2s; }
+    .mcq-pearl-btn.open .chev { transform:rotate(90deg); }
+    .mcq-pearl-box { display:none; margin-top:.5rem; border:1px solid #fde68a; background:#fffbeb; border-radius:12px; padding:.9rem 1.1rem; font-size:.86rem; line-height:1.65; color:#78350f; }
+    .mcq-pearl-box.show { display:block; }
+    html.dark .mcq-pearl-box { background:#1e1707; border-color:#854d0e; color:#fcd34d; }
+    .mcq-pearl-box .mcq-mini { width:100%; border-collapse:collapse; margin:.5rem 0; font-size:.8rem; }
+    .mcq-pearl-box .mcq-mini td { border:1px solid #fcd34d; padding:.28rem .5rem; text-align:left; }
+    html.dark .mcq-pearl-box .mcq-mini td { border-color:#854d0e; }
+
+    .mcq-source { margin-top:.9rem; font-size:.72rem; color:var(--slate); font-style:italic; }
+
+    /* results */
+    .mcq-result { border:1px solid var(--line); border-radius:18px; background:var(--bg); padding:2rem 1.6rem; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,.07); }
+    .mcq-result h2 { font-family:var(--font-disp); font-size:1.6rem; margin-bottom:.4rem; }
+    .mcq-score-big { font-family:var(--font-disp); font-size:2.8rem; font-weight:600; color:var(--blue); }
+    .mcq-result p { color:var(--slate); margin:.4rem 0 1.3rem; }
+    .mcq-result .rbreak { display:flex; justify-content:center; gap:1.5rem; margin-bottom:1.4rem; flex-wrap:wrap; }
+    .mcq-result .rbreak div b { font-family:var(--font-disp); font-size:1.3rem; display:block; color:var(--ink); }
+    .mcq-result .rbreak div span { font-size:.72rem; color:var(--slate); text-transform:uppercase; letter-spacing:.04em; }
+
+    .mcq-empty { text-align:center; color:var(--slate); padding:2.5rem 1rem; font-size:.9rem; }
+
+    .mcq-byline { text-align:center; font-size:.72rem; color:var(--slate); margin-top:1.6rem; line-height:1.6; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="mcqs.html" class="active">MCQs</a></li>
+    <li><a href="quick-revision.html">Quick Revision</a></li>
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="mcq-hero">
+  <h1>🧠 MCQ Bank</h1>
+  <p>NEET-SS–oriented critical-care practice. Choose your difficulty and format, work through direct and extensive case-based questions, and reveal a clinical pearl on every question.</p>
+  <div class="mcq-stat">
+    <div><b id="stTotal">0</b><span>Questions</span></div>
+    <div><b id="stTopics">0</b><span>Topics</span></div>
+    <div><b>3</b><span>Difficulty tiers</span></div>
+  </div>
+</header>
+
+<div class="mcq-wrap">
+
+  <!-- FILTER PANEL -->
+  <div class="mcq-filters" id="filterPanel">
+    <div class="mcq-frow">
+      <div class="mcq-flabel">Difficulty</div>
+      <div class="mcq-chips" id="chipsDiff"></div>
+    </div>
+    <div class="mcq-frow">
+      <div class="mcq-flabel">Question type</div>
+      <div class="mcq-chips" id="chipsType"></div>
+    </div>
+    <div class="mcq-frow">
+      <div class="mcq-flabel">Topic</div>
+      <div class="mcq-chips" id="chipsTopic"></div>
+    </div>
+    <div class="mcq-start">
+      <span class="mcq-count-note" id="countNote">— questions match</span>
+      <button class="mcq-btn primary" id="startBtn" onclick="startQuiz()">Start practice →</button>
+    </div>
+  </div>
+
+  <!-- QUIZ AREA -->
+  <div id="quizArea" style="display:none;">
+    <div class="mcq-card" id="quizCard"></div>
+    <div class="mcq-actions">
+      <button class="mcq-btn" onclick="quitQuiz()">← Filters</button>
+      <button class="mcq-btn primary" id="nextBtn" onclick="nextQuestion()" disabled>Next →</button>
+    </div>
+    <p class="mcq-byline">Compiled by Dr. Anmol Srivastava (Anaesthesia, Emergency Medicine &amp; Critical Care Medicine) · Reviewed by Dr. Tanya Chawla (Anaesthesia &amp; Critical Care)</p>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="resultArea" style="display:none;"></div>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li>
+      <li><a href="mcqs.html">MCQs</a></li><li><a href="quick-revision.html">Quick Revision</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="mcqs.html"><span class="mn-icon">🧠</span>MCQs</a>
+  <a href="quick-revision.html"><span class="mn-icon">⚡</span>Revise</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+</nav>
+
+<script src="mcq-bank.js"></script>
+<script>
+(function () {
+  var BANK = (window.MCQ_BANK || []).filter(function (x) { return x.spec === 'ccm'; });
+
+  var DIFFS = ['easy', 'moderate', 'severe'];
+  var DIFF_LABEL = { easy: 'Easy', moderate: 'Moderate', severe: 'Severe' };
+  var TYPES = ['direct', 'case'];
+  var TYPE_LABEL = { direct: 'Direct', case: 'Case-based' };
+
+  // state
+  var fDiff = 'all', fType = 'all', fTopic = 'all';
+  var queue = [], qi = 0, correct = 0, answered = 0, byDiff = { easy: [0, 0], moderate: [0, 0], severe: [0, 0] };
+
+  var topics = [];
+  (function () {
+    var seen = {};
+    BANK.forEach(function (x) { if (!seen[x.topic]) { seen[x.topic] = 1; topics.push(x.topic); } });
+  })();
+
+  // ---- build filter chips ----
+  function chip(label, value, cur, cls) {
+    return '<button class="mcq-chip ' + (cls || '') + (value === cur ? ' active' : '') +
+      '" data-v="' + value + '">' + label + '</button>';
+  }
+  function buildChips() {
+    document.getElementById('chipsDiff').innerHTML =
+      chip('All', 'all', fDiff, '') + DIFFS.map(function (d) { return chip(DIFF_LABEL[d], d, fDiff, 'd-' + d); }).join('');
+    document.getElementById('chipsType').innerHTML =
+      chip('All', 'all', fType, '') + TYPES.map(function (t) { return chip(TYPE_LABEL[t], t, fType, ''); }).join('');
+    document.getElementById('chipsTopic').innerHTML =
+      chip('All topics', 'all', fTopic, '') + topics.map(function (t) { return chip(t, t, fTopic, ''); }).join('');
+
+    wire('chipsDiff', function (v) { fDiff = v; });
+    wire('chipsType', function (v) { fType = v; });
+    wire('chipsTopic', function (v) { fTopic = v; });
+  }
+  function wire(id, setter) {
+    var box = document.getElementById(id);
+    box.querySelectorAll('.mcq-chip').forEach(function (b) {
+      b.onclick = function () {
+        setter(b.getAttribute('data-v'));
+        box.querySelectorAll('.mcq-chip').forEach(function (x) { x.classList.remove('active'); });
+        b.classList.add('active');
+        updateCount();
+      };
+    });
+  }
+
+  function pool() {
+    return BANK.filter(function (x) {
+      return (fDiff === 'all' || x.difficulty === fDiff) &&
+             (fType === 'all' || x.type === fType) &&
+             (fTopic === 'all' || x.topic === fTopic);
+    });
+  }
+  function updateCount() {
+    var n = pool().length;
+    document.getElementById('countNote').textContent = n + ' question' + (n === 1 ? '' : 's') + ' match';
+    document.getElementById('startBtn').disabled = n === 0;
+  }
+
+  function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+
+  // ---- quiz flow ----
+  window.startQuiz = function () {
+    queue = shuffle(pool().slice());
+    if (!queue.length) return;
+    qi = 0; correct = 0; answered = 0;
+    byDiff = { easy: [0, 0], moderate: [0, 0], severe: [0, 0] };
+    document.getElementById('filterPanel').style.display = 'none';
+    document.getElementById('resultArea').style.display = 'none';
+    document.getElementById('quizArea').style.display = 'block';
+    renderQuestion();
+  };
+  window.quitQuiz = function () {
+    document.getElementById('quizArea').style.display = 'none';
+    document.getElementById('resultArea').style.display = 'none';
+    document.getElementById('filterPanel').style.display = 'block';
+  };
+
+  function renderQuestion() {
+    var q = queue[qi];
+    var card = document.getElementById('quizCard');
+    var stem = q.stem ? '<div class="mcq-stem"><span class="stem-tag">Clinical scenario</span>' + q.stem + '</div>' : '';
+    var opts = q.o.map(function (txt, i) {
+      return '<button class="pearl-opt" data-i="' + i + '"><span class="pearl-letter">' +
+        String.fromCharCode(65 + i) + '</span>' + txt + '</button>';
+    }).join('');
+    card.innerHTML =
+      '<div class="mcq-meta">' +
+        '<span class="mcq-badge topic">' + q.topic + '</span>' +
+        '<span class="mcq-badge d-' + q.difficulty + '">' + DIFF_LABEL[q.difficulty] + '</span>' +
+        '<span class="mcq-badge type">' + TYPE_LABEL[q.type] + '</span>' +
+        '<span class="mcq-progress">Q ' + (qi + 1) + ' / ' + queue.length + ' · ' + correct + ' correct</span>' +
+      '</div>' +
+      stem +
+      '<div class="mcq-q">' + q.q + '</div>' +
+      '<div class="mcq-opts pearl-opts" id="mcqOpts">' + opts + '</div>' +
+      '<div class="pearl-exp" id="mcqExp"></div>';
+
+    var locked = false;
+    card.querySelectorAll('.pearl-opt').forEach(function (b) {
+      b.onclick = function () {
+        if (locked) return; locked = true;
+        var chosen = parseInt(b.getAttribute('data-i'), 10);
+        var right = chosen === q.a;
+        answered++;
+        byDiff[q.difficulty][1]++;
+        if (right) { correct++; byDiff[q.difficulty][0]++; }
+        card.querySelectorAll('.pearl-opt').forEach(function (x, i) {
+          x.classList.add('locked');
+          if (i === q.a) x.classList.add('correct');
+          else if (i === chosen) x.classList.add('wrong');
+        });
+        var exp = document.getElementById('mcqExp');
+        exp.innerHTML =
+          (right ? '<strong class="pearl-ok">✓ Correct.</strong> ' : '<strong class="pearl-no">✗ Not quite.</strong> ') + q.e +
+          (q.pearl ? pearlBlock(q.pearl) : '') +
+          (q.src ? '<div class="mcq-source">Source: ' + q.src + '</div>' : '');
+        exp.classList.add('show');
+        wirePearl();
+        document.getElementById('nextBtn').disabled = false;
+        document.querySelector('.mcq-progress').textContent = 'Q ' + (qi + 1) + ' / ' + queue.length + ' · ' + correct + ' correct';
+      };
+    });
+    document.getElementById('nextBtn').disabled = true;
+    document.getElementById('nextBtn').textContent = (qi === queue.length - 1) ? 'See results →' : 'Next →';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function pearlBlock(pearl) {
+    return '<button class="mcq-pearl-btn" id="pearlBtn" type="button">💡 Clinical pearl<span class="chev">›</span></button>' +
+      '<div class="mcq-pearl-box" id="pearlBox">' + pearl + '</div>';
+  }
+  function wirePearl() {
+    var btn = document.getElementById('pearlBtn');
+    if (!btn) return;
+    btn.onclick = function () {
+      btn.classList.toggle('open');
+      document.getElementById('pearlBox').classList.toggle('show');
+    };
+  }
+
+  window.nextQuestion = function () {
+    if (qi < queue.length - 1) { qi++; renderQuestion(); }
+    else showResults();
+  };
+
+  function showResults() {
+    document.getElementById('quizArea').style.display = 'none';
+    var pct = answered ? Math.round(correct / answered * 100) : 0;
+    var msg = pct >= 80 ? 'Excellent — exam-ready on this set.' :
+              pct >= 60 ? 'Solid. Review the ones you missed and go again.' :
+              pct >= 40 ? 'Getting there — revisit the Quick Revision gist for these topics.' :
+                          'Keep going — read the explanations, then retry.';
+    function row(d) {
+      return '<div><b>' + byDiff[d][0] + '/' + byDiff[d][1] + '</b><span>' + DIFF_LABEL[d] + '</span></div>';
+    }
+    var r = document.getElementById('resultArea');
+    r.innerHTML =
+      '<div class="mcq-result">' +
+        '<h2>Practice complete</h2>' +
+        '<div class="mcq-score-big">' + correct + ' / ' + answered + '</div>' +
+        '<p>' + pct + '% correct · ' + msg + '</p>' +
+        '<div class="rbreak">' + row('easy') + row('moderate') + row('severe') + '</div>' +
+        '<button class="mcq-btn primary" onclick="startQuiz()">🔁 Retry this set</button> ' +
+        '<button class="mcq-btn" onclick="quitQuiz()">Change filters</button>' +
+        '<p class="mcq-byline" style="margin-top:1.4rem;">Want the one-screen gist? Try <a href="quick-revision.html" style="color:var(--blue);font-weight:700;">Quick Revision →</a></p>' +
+      '</div>';
+    r.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ---- init ----
+  // deep-link support (?topic=Sepsis&difficulty=easy&type=case)
+  try {
+    var qs = new URLSearchParams(location.search);
+    var qt = qs.get('topic'); if (qt && topics.indexOf(qt) >= 0) fTopic = qt;
+    var qd = qs.get('difficulty'); if (qd && DIFFS.indexOf(qd) >= 0) fDiff = qd;
+    var qy = qs.get('type'); if (qy && TYPES.indexOf(qy) >= 0) fType = qy;
+  } catch (e) {}
+
+  document.getElementById('stTotal').textContent = BANK.length;
+  document.getElementById('stTopics').textContent = topics.length;
+  buildChips();
+  updateCount();
+})();
+</script>
+</body>
+</html>

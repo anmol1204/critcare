@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Quick Revision — Last-Minute Gist — CritCare.in</title>
+  <meta name="description" content="CritCare Quick Revision — high-yield, one-screen last-minute gist for critical-care topics, with clickable clinical pearls (tables and key facts). Revise sepsis, ARDS, shock and acid-base fast." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .qr-hero { background:linear-gradient(135deg,#0f1f3d,#1a3560); color:#fff; padding:2.6rem 5% 2rem; text-align:center; }
+    .qr-hero h1 { font-family:var(--font-disp); font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:.4rem; }
+    .qr-hero p { color:rgba(255,255,255,.74); font-size:.92rem; max-width:600px; margin:0 auto; line-height:1.6; }
+
+    .qr-wrap { max-width:820px; margin:0 auto; padding:1.5rem 5% 4rem; }
+
+    .qr-pills { display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin-bottom:1.6rem; }
+    .qr-pill { padding:.5rem 1.1rem; border-radius:28px; border:2px solid var(--line); background:var(--bg); color:var(--ink); font-size:.82rem; font-weight:700; cursor:pointer; font-family:var(--font-body); transition:all .15s; }
+    .qr-pill:hover { border-color:var(--blue); }
+    .qr-pill.active { border-color:var(--blue); background:var(--blue); color:#fff; }
+
+    .qr-topic-head { display:flex; align-items:baseline; gap:.7rem; flex-wrap:wrap; margin-bottom:.3rem; }
+    .qr-topic-head h2 { font-family:var(--font-disp); font-size:1.5rem; color:var(--ink); }
+    .qr-topic-head .qr-read { font-size:.76rem; color:var(--slate); }
+    .qr-tagline { font-size:.9rem; color:var(--slate); line-height:1.6; margin-bottom:1.3rem; }
+
+    .qr-section { border:1px solid var(--line); border-radius:14px; background:var(--bg); margin-bottom:1rem; overflow:hidden; box-shadow:0 4px 18px rgba(0,0,0,.04); }
+    .qr-sec-head { padding:.75rem 1.1rem; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em; color:#fff; background:linear-gradient(135deg,var(--blue),var(--blue-dark)); }
+    .qr-sec-head.g { background:linear-gradient(135deg,#16a34a,#15803d); }
+    .qr-sec-head.a { background:linear-gradient(135deg,#f59e0b,#b45309); }
+    .qr-sec-head.r { background:linear-gradient(135deg,#ef4444,#b91c1c); }
+    .qr-list { list-style:none; padding:.6rem .3rem .7rem; }
+    .qr-list li { position:relative; padding:.42rem 1rem .42rem 2rem; font-size:.9rem; line-height:1.6; color:var(--ink); }
+    .qr-list li::before { content:'▸'; position:absolute; left:.7rem; color:var(--blue); font-weight:700; }
+    .qr-list li strong { color:var(--blue-dark); }
+    html.dark .qr-list li strong { color:#7bb8f7; }
+
+    /* clickable clinical pearls */
+    .qr-pearls-wrap { border:1px solid #fcd34d; border-radius:14px; background:#fffbeb; padding:1rem 1.1rem; margin:1.3rem 0; }
+    html.dark .qr-pearls-wrap { background:#1e1707; border-color:#854d0e; }
+    .qr-pearls-title { font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:#b45309; margin-bottom:.7rem; }
+    html.dark .qr-pearls-title { color:#fcd34d; }
+    .qr-pearl-chips { display:flex; flex-wrap:wrap; gap:.45rem; }
+    .qr-chip { padding:.45rem .85rem; border-radius:22px; border:1px solid #f59e0b; background:#fff; color:#92400e; font-size:.78rem; font-weight:700; cursor:pointer; font-family:var(--font-body); display:inline-flex; align-items:center; gap:.35rem; transition:all .14s; }
+    .qr-chip:hover { background:#fef3c7; }
+    .qr-chip.active { background:#f59e0b; color:#fff; border-color:#f59e0b; }
+    html.dark .qr-chip { background:#241806; color:#fcd34d; border-color:#854d0e; }
+    html.dark .qr-chip.active { background:#854d0e; color:#fff; }
+    .qr-pearl-body { display:none; margin-top:.9rem; background:#fff; border:1px solid #fde68a; border-radius:10px; padding:.9rem 1.1rem; font-size:.88rem; line-height:1.65; color:#78350f; }
+    .qr-pearl-body.show { display:block; }
+    html.dark .qr-pearl-body { background:#12100a; border-color:#854d0e; color:#fcd34d; }
+    .qr-pearl-body h4 { font-size:.9rem; margin-bottom:.4rem; color:#b45309; }
+    html.dark .qr-pearl-body h4 { color:#fcd34d; }
+    .qr-pearl-body table { width:100%; border-collapse:collapse; margin:.5rem 0; font-size:.82rem; }
+    .qr-pearl-body td, .qr-pearl-body th { border:1px solid #fcd34d; padding:.32rem .55rem; text-align:left; }
+    html.dark .qr-pearl-body td, html.dark .qr-pearl-body th { border-color:#854d0e; }
+    .qr-pearl-body th { background:#fef3c7; font-weight:800; }
+    html.dark .qr-pearl-body th { background:#241806; }
+
+    .qr-more { text-align:center; margin-top:1.8rem; font-size:.85rem; color:var(--slate); }
+    .qr-more a { color:var(--blue); font-weight:700; }
+    .qr-byline { text-align:center; font-size:.72rem; color:var(--slate); margin-top:1.4rem; line-height:1.6; }
+  </style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="mcqs.html">MCQs</a></li>
+    <li><a href="quick-revision.html" class="active">Quick Revision</a></li>
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li>
+    <li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="qr-hero">
+  <h1>⚡ Quick Revision</h1>
+  <p>The one-screen gist for the night before. Everything high-yield on a topic, distilled — then tap a clinical pearl for the key table or fact.</p>
+</header>
+
+<div class="qr-wrap">
+  <div class="qr-pills" id="qrPills"></div>
+  <div id="qrContent"></div>
+  <p class="qr-byline">Compiled by Dr. Anmol Srivastava (Anaesthesia, Emergency Medicine &amp; Critical Care Medicine) · Reviewed by Dr. Tanya Chawla (Anaesthesia &amp; Critical Care) · Summarised from Marino, The Washington Manual of Critical Care and Irwin &amp; Rippe.</p>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li>
+      <li><a href="mcqs.html">MCQs</a></li><li><a href="quick-revision.html">Quick Revision</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+  <a href="mcqs.html"><span class="mn-icon">🧠</span>MCQs</a>
+  <a href="quick-revision.html"><span class="mn-icon">⚡</span>Revise</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+</nav>
+
+<script>
+var QR = {
+  "Sepsis": {
+    tagline: "Infection + organ dysfunction. Recognise fast, resuscitate by the bundle, hunt the source.",
+    read: "~2 min",
+    sections: [
+      { h: "Definitions", cls: "", items: [
+        "<strong>Sepsis-3:</strong> life-threatening organ dysfunction from a <strong>dysregulated host response</strong> to infection = infection + acute <strong>SOFA ≥2</strong>.",
+        "<strong>Septic shock:</strong> vasopressor need for MAP ≥65 <strong>and</strong> lactate >2 mmol/L despite adequate fluids. Mortality >40%.",
+        "<strong>qSOFA</strong> (bedside): RR ≥22, altered mentation, SBP ≤100 — a prompt to escalate, not a diagnosis."
+      ]},
+      { h: "Hour-1 bundle", cls: "g", items: [
+        "Measure <strong>lactate</strong> (repeat if >2).",
+        "<strong>Blood cultures</strong> before antibiotics.",
+        "<strong>Broad-spectrum antibiotics</strong> — within 1 h for shock/definite sepsis.",
+        "<strong>30 mL/kg balanced crystalloid</strong> for hypotension or lactate ≥4.",
+        "<strong>Vasopressors</strong> during/after fluids to keep MAP ≥65."
+      ]},
+      { h: "Haemodynamics & adjuncts", cls: "a", items: [
+        "1st pressor <strong>noradrenaline</strong> → add <strong>vasopressin</strong> 0.03 U/min → add <strong>hydrocortisone</strong> 200 mg/day if refractory.",
+        "Resuscitate to <strong>lactate clearance</strong> / capillary refill (ANDROMEDA-SHOCK), not CVP.",
+        "Balanced crystalloids > saline; <strong>avoid starches (HES)</strong>."
+      ]},
+      { h: "Don't miss", cls: "r", items: [
+        "<strong>Source control</strong> — drain/debride/remove the focus ASAP; antibiotics can't rescue an undrained source.",
+        "De-escalate antibiotics on culture; review daily.",
+        "Peripheral noradrenaline via a large proximal line is OK short-term — don't delay pressors for a central line."
+      ]}
+    ],
+    pearls: [
+      { t: "SOFA at a glance", body: "<h4>Six SOFA organ systems</h4><table><tr><th>System</th><th>Marker</th></tr><tr><td>Respiration</td><td>PaO₂/FiO₂</td></tr><tr><td>Coagulation</td><td>Platelets</td></tr><tr><td>Liver</td><td>Bilirubin</td></tr><tr><td>Cardiovascular</td><td>MAP / vasopressors</td></tr><tr><td>CNS</td><td>Glasgow Coma Scale</td></tr><tr><td>Renal</td><td>Creatinine / urine output</td></tr></table>An acute rise of ≥2 total points = organ dysfunction." },
+      { t: "Vasopressor ladder", body: "<h4>Escalation in septic shock</h4><table><tr><td>1</td><td>Noradrenaline</td></tr><tr><td>2</td><td>+ Vasopressin 0.03 U/min (at NA ~0.25–0.5 µg/kg/min)</td></tr><tr><td>3</td><td>+ Hydrocortisone 200 mg/day</td></tr><tr><td>4</td><td>Consider adrenaline / angiotensin II</td></tr></table>" },
+      { t: "Steroid evidence", body: "<h4>Hydrocortisone in septic shock</h4><strong>APROCCHSS</strong> (hydrocortisone + fludrocortisone) → mortality benefit. <strong>ADRENAL</strong> (hydrocortisone infusion) → faster shock reversal, no clear mortality change. No ACTH test needed before starting." }
+    ]
+  },
+
+  "ARDS": {
+    tagline: "Diffuse alveolar injury. Protect the lung, prone the sick, escalate early.",
+    read: "~2 min",
+    sections: [
+      { h: "Berlin definition", cls: "", items: [
+        "Acute (≤1 week), <strong>bilateral opacities</strong>, not fully explained by cardiac failure/overload.",
+        "Severity by <strong>P/F on PEEP ≥5</strong>: mild 200–300, moderate 100–200, <strong>severe ≤100</strong>."
+      ]},
+      { h: "Lung-protective ventilation", cls: "g", items: [
+        "<strong>V<sub>T</sub> 6 mL/kg predicted body weight</strong> (height-based, not actual weight).",
+        "<strong>Plateau pressure <30</strong> cmH₂O; <strong>driving pressure (Pplat − PEEP) <15</strong>.",
+        "Permissive hypercapnia (pH >7.20); titrate PEEP to oxygenation/compliance."
+      ]},
+      { h: "Escalation for severe ARDS", cls: "a", items: [
+        "<strong>Prone ≥16 h/day if P/F <150</strong> (PROSEVA — mortality benefit).",
+        "<strong>NMB</strong> not routine (ROSE) — reserve for dyssynchrony/high ΔP.",
+        "<strong>VV-ECMO</strong> as rescue for refractory hypoxaemia in experienced centres (EOLIA)."
+      ]},
+      { h: "Don't do", cls: "r", items: [
+        "Don't set V<sub>T</sub> on actual weight (over-distends obese patients).",
+        "Don't use HFOV (harmful — OSCILLATE/OSCAR).",
+        "Inhaled NO improves oxygenation only — no survival benefit, possible renal harm."
+      ]}
+    ],
+    pearls: [
+      { t: "Berlin severity", body: "<h4>P/F bands (PEEP ≥5)</h4><table><tr><th>Grade</th><th>P/F</th></tr><tr><td>Mild</td><td>200–300</td></tr><tr><td>Moderate</td><td>100–200</td></tr><tr><td>Severe</td><td>≤100</td></tr></table>" },
+      { t: "Predicted body weight", body: "<h4>PBW formula (uses height)</h4><table><tr><td>Male</td><td>50 + 0.91 × (ht cm − 152.4)</td></tr><tr><td>Female</td><td>45.5 + 0.91 × (ht cm − 152.4)</td></tr></table>Then V<sub>T</sub> = 6 mL/kg × PBW." },
+      { t: "Rescue ladder", body: "<h4>Refractory hypoxaemia in ARDS</h4>Optimise low-V<sub>T</sub> + ΔP → PEEP titration → <strong>proning</strong> → <strong>NMB</strong> → inhaled pulmonary vasodilator (temporiser) → <strong>VV-ECMO</strong>. Escalate early, not late." }
+    ]
+  },
+
+  "Shock": {
+    tagline: "Four mechanisms, one job — match the treatment to the mechanism.",
+    read: "~2 min",
+    sections: [
+      { h: "The four types", cls: "", items: [
+        "<strong>Hypovolaemic</strong> (haemorrhage, GI/renal loss) · <strong>Cardiogenic</strong> (pump failure) · <strong>Obstructive</strong> (tamponade, tension pneumothorax, massive PE) · <strong>Distributive</strong> (sepsis, anaphylaxis, neurogenic).",
+        "Localise with focused echo/RUSH: pump, tank, pipes."
+      ]},
+      { h: "Read the pattern", cls: "g", items: [
+        "<strong>Cold</strong> + low CO + high SVR → hypovolaemic / cardiogenic / obstructive.",
+        "<strong>Warm</strong> + high CO + low SVR → distributive.",
+        "Flat neck veins → hypovolaemia; distended veins → obstructive/cardiogenic."
+      ]},
+      { h: "Assess & target", cls: "a", items: [
+        "Fluid responsiveness: <strong>passive leg raise + CO</strong> or PPV/SVV — <strong>not CVP</strong>.",
+        "PPV/SVV invalid in spontaneous breathing, arrhythmia, low V<sub>T</sub>.",
+        "Targets: MAP ≥65, <strong>lactate clearance</strong>, urine ≥0.5 mL/kg/h, mentation."
+      ]},
+      { h: "Match the treatment", cls: "r", items: [
+        "Fluids help hypovolaemic/early distributive; <strong>harm</strong> cardiogenic/obstructive.",
+        "Cardiogenic MI: noradrenaline ± dobutamine + <strong>culprit-lesion PCI</strong> (CULPRIT-SHOCK); routine IABP no benefit.",
+        "Obstructive: decompress / drain / thrombolyse — find the mechanical fix."
+      ]}
+    ],
+    pearls: [
+      { t: "Haemodynamic profiles", body: "<h4>CO / SVR / CVP by type</h4><table><tr><th></th><th>CO</th><th>SVR</th><th>CVP</th></tr><tr><td>Hypovolaemic</td><td>↓</td><td>↑</td><td>↓</td></tr><tr><td>Cardiogenic</td><td>↓</td><td>↑</td><td>↑</td></tr><tr><td>Obstructive</td><td>↓</td><td>↑</td><td>↑</td></tr><tr><td>Distributive</td><td>↑/↔</td><td>↓</td><td>↓/↔</td></tr></table>" },
+      { t: "When PPV/SVV fail", body: "<h4>Dynamic indices are unreliable when…</h4>Spontaneous breathing effort · arrhythmia (AF) · tidal volume <8 mL/kg · open chest · severe RV failure · very high PEEP. Use <strong>passive leg raise + real CO</strong> instead." },
+      { t: "Obstructive fixes", body: "<h4>Immediate mechanical treatment</h4><table><tr><td>Tamponade</td><td>Pericardiocentesis</td></tr><tr><td>Tension pneumothorax</td><td>Needle/finger decompression</td></tr><tr><td>Massive PE</td><td>Thrombolysis / embolectomy</td></tr></table>" }
+    ]
+  },
+
+  "Acid–Base": {
+    tagline: "A system, not a guess: pH → primary → compensation → anion gap → delta-delta → cause.",
+    read: "~2 min",
+    sections: [
+      { h: "The 6-step approach", cls: "", items: [
+        "1) Look at <strong>pH</strong> (acidaemia/alkalaemia). 2) Identify the <strong>primary disorder</strong>.",
+        "3) Check <strong>compensation</strong> (Winter's for metabolic acidosis). 4) Calculate the <strong>anion gap</strong>.",
+        "5) <strong>Delta-delta</strong> for mixed disorders. 6) Find the <strong>cause</strong> (± osmolar gap)."
+      ]},
+      { h: "Key formulae", cls: "g", items: [
+        "<strong>Anion gap</strong> = Na − (Cl + HCO₃); normal 8–12; correct +2.5 per 1 g/dL fall in albumin.",
+        "<strong>Winter's:</strong> expected PaCO₂ = 1.5 × HCO₃ + 8 ± 2.",
+        "<strong>Osmolar gap</strong> = measured − (2×Na + glucose + urea); normal <10."
+      ]},
+      { h: "Causes", cls: "a", items: [
+        "High-AG acidosis: <strong>GOLD MARK</strong> (glycols, oxoproline, lactate, D-lactate, methanol, aspirin, renal, ketoacidosis).",
+        "Normal-AG acidosis: <strong>USED CARP</strong> (diarrhoea, RTA, saline, acetazolamide…).",
+        "High osmolar gap + high-AG acidosis → <strong>toxic alcohol</strong> until proven otherwise."
+      ]},
+      { h: "Traps", cls: "r", items: [
+        "A <strong>normal pH</strong> can hide a mixed/triple disorder — always compute AG + delta ratio.",
+        "Hypoalbuminaemia masks a high-AG acidosis — always albumin-correct.",
+        "In DKA, hold insulin until <strong>K⁺ ≥3.5</strong>."
+      ]}
+    ],
+    pearls: [
+      { t: "Delta ratio", body: "<h4>ΔAG ÷ ΔHCO₃</h4><table><tr><td>&lt;1</td><td>+ normal-AG (hyperchloraemic) acidosis</td></tr><tr><td>1–2</td><td>pure high-AG acidosis</td></tr><tr><td>&gt;2</td><td>+ metabolic alkalosis / pre-existing high HCO₃</td></tr></table>" },
+      { t: "GOLD MARK", body: "<h4>High-anion-gap acidosis</h4><strong>G</strong>lycols · <strong>O</strong>xoproline (paracetamol) · <strong>L</strong>-lactate · <strong>D</strong>-lactate · <strong>M</strong>ethanol · <strong>A</strong>spirin · <strong>R</strong>enal failure · <strong>K</strong>etoacidosis." },
+      { t: "Toxic alcohols", body: "<h4>Methanol vs ethylene glycol</h4><table><tr><th></th><th>Clue</th></tr><tr><td>Methanol</td><td>Visual loss, optic disc</td></tr><tr><td>Ethylene glycol</td><td>Oxalate crystals, AKI</td></tr></table>Both: high osmolar + anion gap. Treat with <strong>fomepizole</strong> (± ethanol) ± <strong>haemodialysis</strong>." }
+    ]
+  }
+};
+
+(function () {
+  var keys = Object.keys(QR);
+  var cur = keys[0];
+
+  function buildPills() {
+    var c = document.getElementById('qrPills');
+    c.innerHTML = keys.map(function (k) {
+      return '<button class="qr-pill' + (k === cur ? ' active' : '') + '" data-k="' + k + '">' + k + '</button>';
+    }).join('');
+    c.querySelectorAll('.qr-pill').forEach(function (b) {
+      b.onclick = function () {
+        cur = b.getAttribute('data-k');
+        c.querySelectorAll('.qr-pill').forEach(function (x) { x.classList.remove('active'); });
+        b.classList.add('active');
+        render();
+      };
+    });
+  }
+
+  function render() {
+    var d = QR[cur];
+    var secs = d.sections.map(function (s) {
+      return '<div class="qr-section"><div class="qr-sec-head ' + (s.cls || '') + '">' + s.h + '</div>' +
+        '<ul class="qr-list">' + s.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul></div>';
+    }).join('');
+
+    var chips = d.pearls.map(function (p, i) {
+      return '<button class="qr-chip" data-i="' + i + '">💡 ' + p.t + '</button>';
+    }).join('');
+    var bodies = d.pearls.map(function (p, i) {
+      return '<div class="qr-pearl-body" id="qrp-' + i + '">' + p.body + '</div>';
+    }).join('');
+
+    document.getElementById('qrContent').innerHTML =
+      '<div class="qr-topic-head"><h2>' + cur + '</h2><span class="qr-read">⏱ ' + d.read + ' read</span></div>' +
+      '<p class="qr-tagline">' + d.tagline + '</p>' +
+      secs +
+      '<div class="qr-pearls-wrap"><div class="qr-pearls-title">💡 Clinical pearls — tap to open</div>' +
+        '<div class="qr-pearl-chips">' + chips + '</div>' + bodies + '</div>' +
+      '<div class="qr-more">Ready to test yourself? <a href="mcqs.html?topic=' + encodeURIComponent(cur) + '">Practise ' + cur + ' MCQs →</a></div>';
+
+    var wrap = document.getElementById('qrContent');
+    wrap.querySelectorAll('.qr-chip').forEach(function (b) {
+      b.onclick = function () {
+        var i = b.getAttribute('data-i');
+        var box = document.getElementById('qrp-' + i);
+        var isOpen = box.classList.contains('show');
+        // close all
+        wrap.querySelectorAll('.qr-pearl-body').forEach(function (x) { x.classList.remove('show'); });
+        wrap.querySelectorAll('.qr-chip').forEach(function (x) { x.classList.remove('active'); });
+        if (!isOpen) { box.classList.add('show'); b.classList.add('active'); }
+      };
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // deep-link support (?topic=Sepsis)
+  try {
+    var t = new URLSearchParams(location.search).get('topic');
+    if (t && QR[t]) cur = t;
+  } catch (e) {}
+
+  buildPills();
+  render();
+})();
+</script>
+</body>
+</html>
