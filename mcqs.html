@@ -161,6 +161,10 @@
   <!-- SETUP -->
   <div class="mcq-setup" id="setupPanel">
     <div class="mcq-frow">
+      <div class="mcq-flabel">🩺 Specialty</div>
+      <div class="mcq-chips" id="chipsSpec"></div>
+    </div>
+    <div class="mcq-frow">
       <div class="mcq-flabel">🎚 Choose difficulty</div>
       <div class="mcq-levels" id="levelSel"></div>
     </div>
@@ -220,7 +224,11 @@
 <script src="/pwa.js"></script>
 <script>
 (function () {
-  var BANK = (window.MCQ_BANK || []).filter(function (x) { return x.spec === 'ccm'; });
+  var BANK = (window.MCQ_BANK || []);
+
+  var SPEC_LABEL = { ccm: 'Critical Care', em: 'Emergency Medicine', anaes: 'Anaesthesia' };
+  var specsPresent = [];
+  (function () { var seen = {}; BANK.forEach(function (x) { if (!seen[x.spec]) { seen[x.spec] = 1; specsPresent.push(x.spec); } }); })();
 
   var LEVELS = [
     { v: 'all', name: 'All levels', desc: 'A mix of everything' },
@@ -232,15 +240,23 @@
   var TYPES = ['direct', 'case'];
   var TYPE_LABEL = { direct: 'Direct', case: 'Case-based' };
 
-  var fDiff = 'all', fType = 'all', fTopic = 'all';
+  var fSpec = 'all', fDiff = 'all', fType = 'all', fTopic = 'all';
   var queue = [], qi = 0, correct = 0, answered = 0, byDiff = { easy: [0, 0], moderate: [0, 0], severe: [0, 0] };
 
   var topics = [];
-  (function () { var seen = {}; BANK.forEach(function (x) { if (!seen[x.topic]) { seen[x.topic] = 1; topics.push(x.topic); } }); })();
+  function computeTopics() {
+    topics = []; var seen = {};
+    BANK.forEach(function (x) {
+      if (fSpec !== 'all' && x.spec !== fSpec) return;
+      if (!seen[x.topic]) { seen[x.topic] = 1; topics.push(x.topic); }
+    });
+  }
+  computeTopics();
 
   function countFor(diff) {
     return BANK.filter(function (x) {
-      return (diff === 'all' || x.difficulty === diff) &&
+      return (fSpec === 'all' || x.spec === fSpec) &&
+             (diff === 'all' || x.difficulty === diff) &&
              (fType === 'all' || x.type === fType) &&
              (fTopic === 'all' || x.topic === fTopic);
     }).length;
@@ -267,13 +283,33 @@
   function chip(label, value, cur) {
     return '<button class="mcq-chip' + (value === cur ? ' active' : '') + '" data-v="' + value + '">' + label + '</button>';
   }
+  function buildSpecChips() {
+    if (specsPresent.length < 2) { document.getElementById('chipsSpec').parentNode.style.display = 'none'; return; }
+    document.getElementById('chipsSpec').innerHTML =
+      chip('All specialties', 'all', fSpec) +
+      specsPresent.map(function (s) { return chip(SPEC_LABEL[s] || s, s, fSpec); }).join('');
+    var box = document.getElementById('chipsSpec');
+    box.querySelectorAll('.mcq-chip').forEach(function (b) {
+      b.onclick = function () {
+        fSpec = b.getAttribute('data-v');
+        box.querySelectorAll('.mcq-chip').forEach(function (x) { x.classList.remove('active'); });
+        b.classList.add('active');
+        fTopic = 'all'; computeTopics(); buildTopicChips();
+        updateCount();
+      };
+    });
+  }
+  function buildTopicChips() {
+    document.getElementById('chipsTopic').innerHTML =
+      chip('All topics', 'all', fTopic) + topics.map(function (t) { return chip(t, t, fTopic); }).join('');
+    wire('chipsTopic', function (v) { fTopic = v; });
+  }
   function buildChips() {
     document.getElementById('chipsType').innerHTML =
       chip('All formats', 'all', fType) + TYPES.map(function (t) { return chip(TYPE_LABEL[t], t, fType); }).join('');
-    document.getElementById('chipsTopic').innerHTML =
-      chip('All topics', 'all', fTopic) + topics.map(function (t) { return chip(t, t, fTopic); }).join('');
     wire('chipsType', function (v) { fType = v; });
-    wire('chipsTopic', function (v) { fTopic = v; });
+    buildSpecChips();
+    buildTopicChips();
   }
   function wire(id, setter) {
     var box = document.getElementById(id);
@@ -289,7 +325,8 @@
 
   function pool() {
     return BANK.filter(function (x) {
-      return (fDiff === 'all' || x.difficulty === fDiff) &&
+      return (fSpec === 'all' || x.spec === fSpec) &&
+             (fDiff === 'all' || x.difficulty === fDiff) &&
              (fType === 'all' || x.type === fType) &&
              (fTopic === 'all' || x.topic === fTopic);
     });
@@ -428,13 +465,20 @@
   // ---- init ----
   try {
     var qs = new URLSearchParams(location.search);
-    var qt = qs.get('topic'); if (qt && topics.indexOf(qt) >= 0) fTopic = qt;
+    var qsp = qs.get('spec'); if (qsp && specsPresent.indexOf(qsp) >= 0) fSpec = qsp;
+    var qt = qs.get('topic');
+    if (qt) {
+      // deep-linked topic may belong to any specialty (e.g. from Quick Revision)
+      var match = BANK.filter(function (x) { return x.topic === qt; })[0];
+      if (match) { fSpec = match.spec; computeTopics(); fTopic = qt; }
+    }
     var qd = qs.get('difficulty'); if (qd && ['easy','moderate','severe'].indexOf(qd) >= 0) fDiff = qd;
     var qy = qs.get('type'); if (qy && TYPES.indexOf(qy) >= 0) fType = qy;
   } catch (e) {}
 
+  computeTopics();
   document.getElementById('stTotal').textContent = BANK.length;
-  document.getElementById('stTopics').textContent = topics.length;
+  document.getElementById('stTopics').textContent = (function () { var s = {}; BANK.forEach(function (x) { s[x.topic] = 1; }); return Object.keys(s).length; })();
   buildLevels();
   buildChips();
   updateCount();

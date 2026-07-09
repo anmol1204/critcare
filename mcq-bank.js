@@ -524,6 +524,370 @@ window.MCQ_BANK = [
   e: 'Envelope-shaped (calcium oxalate) crystals + AKI + high osmolar/anion gap = <strong>ethylene glycol</strong> (antifreeze) poisoning. Specific therapy is <strong>fomepizole</strong> (blocks alcohol dehydrogenase, preventing formation of toxic metabolites) — ethanol is the alternative. <strong>Haemodialysis</strong> is indicated for severe acidosis, high levels, or renal failure. Bicarbonate and charcoal are adjuncts only.',
   pearl: 'Fomepizole/ethanol stop <em>further</em> toxic metabolite formation; dialysis <em>removes</em> the parent alcohol and metabolites and corrects acidosis. Start the ADH blocker on suspicion — do not wait for confirmatory levels.',
   src: 'Washington Manual'
+},
+
+/* ==========================================================
+   ACUTE KIDNEY INJURY
+   ========================================================== */
+{
+  id: 'ccm-aki-001', spec: 'ccm', topic: 'Acute Kidney Injury', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'By KDIGO criteria, Stage 1 AKI is defined by a rise in serum creatinine of:',
+  o: ['≥0.3 mg/dL within 48 h, or 1.5–1.9× baseline within 7 days', '≥1.0 mg/dL within 24 h', '≥3× baseline', 'Any rise with anuria'],
+  a: 0,
+  e: 'KDIGO Stage 1 = creatinine rise of <strong>≥0.3 mg/dL (26.5 µmol/L) within 48 h</strong>, or <strong>1.5–1.9× baseline</strong> within 7 days, or urine output &lt;0.5 mL/kg/h for 6–12 h. Staging drives monitoring and nephrotoxin review.',
+  key: 'AKI staging is by the WORST of either creatinine or urine-output criteria.',
+  pearl: 'KDIGO stages: <table class="mcq-mini"><tr><th>Stage</th><th>Creatinine</th><th>Urine</th></tr><tr><td>1</td><td>1.5–1.9× or +0.3</td><td>&lt;0.5 mL/kg/h ×6–12h</td></tr><tr><td>2</td><td>2.0–2.9×</td><td>&lt;0.5 ×≥12h</td></tr><tr><td>3</td><td>≥3× or RRT</td><td>&lt;0.3 ×≥24h / anuria ×12h</td></tr></table>',
+  src: 'KDIGO AKI'
+},
+{
+  id: 'ccm-aki-002', spec: 'ccm', topic: 'Acute Kidney Injury', difficulty: 'severe', type: 'direct',
+  stem: '',
+  q: 'Large trials (STARRT-AKI, AKIKI, IDEAL-ICU) on the timing of renal replacement therapy in AKI concluded that:',
+  o: [
+    'Earlier (pre-emptive) RRT improves survival',
+    'A watchful-waiting strategy — starting RRT only for urgent indications — is as good and avoids unnecessary dialysis',
+    'RRT should never be delayed beyond 12 h',
+    'Continuous RRT is superior to intermittent for survival'
+  ],
+  a: 1,
+  e: 'Across STARRT-AKI, AKIKI and IDEAL-ICU, <strong>accelerated/early RRT did not improve survival</strong> and exposed many patients to dialysis they never needed. The evidence-based approach is to <strong>start RRT for a definite indication</strong> and otherwise watch. CRRT vs IHD does not change mortality (choose by haemodynamics).',
+  pearl: 'Urgent RRT indications — <strong>AEIOU</strong>: <strong>A</strong>cidosis (refractory), <strong>E</strong>lectrolytes (refractory hyperkalaemia), <strong>I</strong>ntoxications (dialysable), <strong>O</strong>verload (refractory pulmonary oedema), <strong>U</strong>raemia (encephalopathy, pericarditis).',
+  src: 'STARRT-AKI / AKIKI'
+},
+{
+  id: 'ccm-aki-003', spec: 'ccm', topic: 'Acute Kidney Injury', difficulty: 'moderate', type: 'case',
+  stem: 'A 68-year-old man is 2 days post emergency laparotomy for perforation. Urine output has fallen to 0.2 mL/kg/h, creatinine has doubled, and he is on noradrenaline for septic shock. Urine microscopy shows muddy-brown granular casts.',
+  q: 'The most likely mechanism of his AKI is:',
+  o: ['Pre-renal azotaemia', 'Acute tubular necrosis (ischaemic/septic)', 'Post-renal obstruction', 'Acute interstitial nephritis'],
+  a: 1,
+  e: '<strong>Muddy-brown granular casts</strong> with established oliguria in the setting of sepsis and hypotension point to <strong>acute tubular necrosis</strong>. Pre-renal azotaemia would typically respond to perfusion and show bland sediment with low FeNa; ATN represents the progression when hypoperfusion becomes injury.',
+  pearl: 'Urine sediment quick guide: <table class="mcq-mini"><tr><td>Bland / hyaline</td><td>Pre-renal</td></tr><tr><td>Muddy-brown granular casts</td><td>ATN</td></tr><tr><td>WBC / eosinophil casts</td><td>AIN</td></tr><tr><td>RBC casts, dysmorphic RBC</td><td>Glomerulonephritis</td></tr></table>',
+  src: 'Marino / Irwin & Rippe'
+},
+
+/* ==========================================================
+   ELECTROLYTE EMERGENCIES
+   ========================================================== */
+{
+  id: 'ccm-elec-001', spec: 'ccm', topic: 'Electrolytes', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'In severe hyperkalaemia with ECG changes, the FIRST drug to give is:',
+  o: ['Insulin with dextrose', 'IV calcium gluconate/chloride', 'Salbutamol nebuliser', 'Sodium bicarbonate'],
+  a: 1,
+  e: '<strong>IV calcium</strong> is given first — it <strong>stabilises the myocardial membrane</strong> within minutes and protects against arrhythmia. It does not lower potassium; that is the next step (insulin–dextrose, salbutamol to shift; dialysis/binders to remove).',
+  key: 'Calcium protects the heart; it does NOT lower the potassium.',
+  pearl: 'Hyperkalaemia — 3 steps: <table class="mcq-mini"><tr><td>Stabilise</td><td>IV calcium</td></tr><tr><td>Shift</td><td>Insulin + dextrose, salbutamol (± bicarb if acidotic)</td></tr><tr><td>Remove</td><td>Dialysis, K-binders, (loop diuretic)</td></tr></table>',
+  src: 'Washington Manual'
+},
+{
+  id: 'ccm-elec-002', spec: 'ccm', topic: 'Electrolytes', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'To avoid osmotic demyelination syndrome, chronic hyponatraemia should be corrected by no more than:',
+  o: ['4 mmol/L in 24 h', '8 mmol/L in 24 h', '15 mmol/L in 24 h', '20 mmol/L in 24 h'],
+  a: 1,
+  e: 'Correct chronic hyponatraemia by <strong>≤8 mmol/L per 24 h</strong> (some use ≤6 in high-risk patients — alcoholism, malnutrition, hypokalaemia, liver disease). Overrapid correction causes <strong>osmotic demyelination</strong>. For acute symptomatic hyponatraemia (seizures), give <strong>3% saline 100–150 mL boluses</strong> to raise Na ~4–6 mmol/L acutely, then stop.',
+  pearl: 'If you overshoot the correction, it can be actively re-lowered with dextrose 5% ± desmopressin ("relowering therapy") to prevent demyelination. Check Na frequently (2-hourly) during active correction.',
+  src: 'Marino / Washington Manual'
+},
+{
+  id: 'ccm-elec-003', spec: 'ccm', topic: 'Electrolytes', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'A patient has persistent hypokalaemia despite generous potassium replacement. The most likely reason is:',
+  o: ['Coexisting hypomagnesaemia', 'Too little sodium', 'Metabolic alkalosis alone', 'Excess calcium'],
+  a: 0,
+  e: '<strong>Hypomagnesaemia</strong> causes renal potassium wasting and makes hypokalaemia refractory to replacement — magnesium is a cofactor that maintains intracellular K⁺ and inhibits renal K⁺ loss. <strong>Replace magnesium</strong> and the potassium will follow.',
+  key: 'Refractory hypokalaemia? Check and replace the magnesium.',
+  pearl: 'The same coupling matters in torsades and refractory arrhythmia — give magnesium even if the serum level looks borderline, because serum Mg poorly reflects total-body stores.',
+  src: 'Irwin & Rippe'
+},
+{
+  id: 'ccm-elec-004', spec: 'ccm', topic: 'Electrolytes', difficulty: 'severe', type: 'case',
+  stem: 'A 30-year-old woman with anorexia nervosa is admitted and started on enteral feeding. On day 2 she becomes weak and confused with a low phosphate, low potassium and low magnesium; ECG shows a long QT.',
+  q: 'The most likely diagnosis is:',
+  o: ['Refeeding syndrome', 'Central pontine myelinolysis', 'Wernicke encephalopathy', 'Diabetic ketoacidosis'],
+  a: 0,
+  e: '<strong>Refeeding syndrome</strong> — reintroducing carbohydrate drives an insulin surge that shifts <strong>phosphate, potassium and magnesium intracellularly</strong>, plus thiamine consumption. The hallmark is <strong>hypophosphataemia</strong> with cardiac and neuromuscular dysfunction. Prevent by starting feed low and slow, replacing electrolytes, and giving thiamine before/with feeding.',
+  pearl: 'High-risk features: BMI &lt;16, &gt;10 days minimal intake, low baseline K/PO₄/Mg, alcohol/chemotherapy. Give <strong>thiamine</strong> first, start ~10 kcal/kg/day, monitor phosphate closely for the first week.',
+  src: 'NICE / Marino'
+},
+
+/* ==========================================================
+   MECHANICAL VENTILATION
+   ========================================================== */
+{
+  id: 'ccm-mv-001', spec: 'ccm', topic: 'Mechanical Ventilation', difficulty: 'moderate', type: 'case',
+  stem: 'A ventilated COPD patient becomes hypotensive. The ventilator shows the expiratory flow does not return to zero before the next breath. Plateau pressure is hard to interpret.',
+  q: 'The most likely cause of the hypotension is:',
+  o: ['Tension pneumothorax', 'Dynamic hyperinflation (auto-PEEP / breath stacking)', 'Sepsis', 'Pulmonary embolism'],
+  a: 1,
+  e: 'Expiratory flow not reaching zero = incomplete emptying = <strong>dynamic hyperinflation with auto-PEEP</strong>. The rising intrathoracic pressure impedes venous return and drops cardiac output. Management: <strong>disconnect briefly to let the chest deflate</strong>, then reduce respiratory rate / tidal volume and increase expiratory time (lower I:E), treat bronchospasm.',
+  key: 'Sudden hypotension in an obstructed ventilated patient → think auto-PEEP; try a disconnection test.',
+  pearl: 'To reduce auto-PEEP: ↓ respiratory rate, ↓ tidal volume, ↑ inspiratory flow (shorter inspiration → longer expiration), treat the obstruction. Applied PEEP just below the auto-PEEP level can reduce the trigger workload in spontaneously breathing patients.',
+  src: 'Marino'
+},
+{
+  id: 'ccm-mv-002', spec: 'ccm', topic: 'Mechanical Ventilation', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'The best-validated daily test of readiness to wean from mechanical ventilation is:',
+  o: ['A low rapid shallow breathing index during a spontaneous breathing trial', 'A negative fluid balance', 'Normal chest X-ray', 'Minute ventilation <5 L/min'],
+  a: 0,
+  e: 'A <strong>spontaneous breathing trial</strong> (T-piece or low pressure support/CPAP for 30–120 min) is the key test; a <strong>rapid shallow breathing index (RR/V<sub>T</sub>) &lt;105</strong> predicts successful extubation. Combine with a daily <strong>spontaneous awakening trial</strong> (sedation hold) — paired SAT+SBT shortens ventilation (ABC trial).',
+  pearl: 'Before extubation also confirm: adequate cough, manageable secretions, airway patency (cuff-leak test if laryngeal oedema is a concern), and a resolving underlying cause — not just SBT tolerance.',
+  src: 'Washington Manual / Irwin & Rippe'
+},
+{
+  id: 'ccm-mv-003', spec: 'ccm', topic: 'Mechanical Ventilation', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'A sudden rise in PEAK airway pressure with an UNCHANGED plateau pressure indicates a problem with:',
+  o: ['Lung/chest wall compliance', 'Airway resistance (e.g. secretions, bronchospasm, kinked tube)', 'PEEP setting', 'The ventilator circuit only'],
+  a: 1,
+  e: 'Peak pressure reflects <strong>resistance + compliance</strong>; plateau reflects <strong>compliance</strong> alone. A high peak with a <strong>normal plateau</strong> localises the problem to <strong>airway resistance</strong> — secretions, bronchospasm, biting, or a kinked/blocked tube. If <strong>both</strong> peak and plateau rise, it is a compliance problem (pneumothorax, oedema, atelectasis, right mainstem intubation, abdominal distension).',
+  pearl: 'Peak↑ / Plateau normal = resistance. Peak↑ / Plateau↑ = compliance. This one split diagnoses most acute ventilator alarms at the bedside.',
+  src: 'Marino'
+},
+
+/* ==========================================================
+   CARDIAC ARREST / ACLS
+   ========================================================== */
+{
+  id: 'ccm-acls-001', spec: 'ccm', topic: 'Cardiac Arrest', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'During a shockable cardiac arrest (VF/pVT), adrenaline 1 mg is first given:',
+  o: ['Before the first shock', 'After the second shock', 'After the fifth shock', 'Only if asystole develops'],
+  a: 1,
+  e: 'In shockable rhythms, <strong>adrenaline 1 mg is given after the second shock</strong> (then every 3–5 min), and <strong>amiodarone 300 mg after the third shock</strong> (further 150 mg after the fifth). In non-shockable rhythms (PEA/asystole), give adrenaline <strong>as soon as possible</strong>.',
+  key: 'Shockable: adrenaline after 2nd shock, amiodarone after 3rd. Non-shockable: adrenaline immediately.',
+  pearl: 'High-quality CPR is the priority: rate 100–120/min, depth 5–6 cm, full recoil, minimise interruptions, change compressor every 2 min, avoid hyperventilation (~10/min with an advanced airway).',
+  src: 'ACLS / Resuscitation guidelines'
+},
+{
+  id: 'ccm-acls-002', spec: 'ccm', topic: 'Cardiac Arrest', difficulty: 'moderate', type: 'case',
+  stem: 'A 55-year-old man arrests in PEA. CPR is ongoing. He was dialysis-dependent and missed his last two sessions; his last potassium was 7.2 mmol/L.',
+  q: 'The most important reversible cause to treat immediately is:',
+  o: ['Hypovolaemia', 'Hyperkalaemia', 'Hypothermia', 'Tension pneumothorax'],
+  a: 1,
+  e: 'A missed-dialysis PEA arrest screams <strong>hyperkalaemia</strong>. Give <strong>IV calcium</strong> immediately (membrane stabilisation) plus insulin–dextrose and salbutamol, consider bicarbonate, and arrange emergency dialysis. Reversible causes are the <strong>4 Hs and 4 Ts</strong>.',
+  pearl: 'The Hs & Ts: <table class="mcq-mini"><tr><td>Hypoxia</td><td>Thrombosis (coronary/PE)</td></tr><tr><td>Hypovolaemia</td><td>Tamponade</td></tr><tr><td>Hypo/Hyperkalaemia (&amp; metabolic)</td><td>Tension pneumothorax</td></tr><tr><td>Hypothermia</td><td>Toxins</td></tr></table>',
+  src: 'ACLS / Resuscitation guidelines'
+},
+{
+  id: 'ccm-acls-003', spec: 'ccm', topic: 'Cardiac Arrest', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Current post-cardiac-arrest temperature management (TTM2, 2021) recommends:',
+  o: [
+    'Mandatory cooling to 33 °C for all comatose survivors',
+    'Actively preventing fever (target ≤37.5 °C), with targeted hypothermia no longer mandatory',
+    'No temperature control',
+    'Warming to 38.5 °C to improve perfusion'
+  ],
+  a: 1,
+  e: 'The <strong>TTM2</strong> trial found no benefit of hypothermia (33 °C) over normothermia; guidelines now emphasise <strong>actively preventing fever</strong> (keeping temperature ≤37.5–37.7 °C) rather than routine deep cooling. Avoiding hyperthermia remains important for the injured brain.',
+  pearl: 'Post-ROSC bundle: treat the cause (urgent PCI if STEMI), targeted oxygenation (SpO₂ 94–98%, avoid hyperoxia) and normocapnia, MAP to maintain perfusion, glucose control, and delayed multimodal neuroprognostication (≥72 h, off sedation).',
+  src: 'TTM2 / post-arrest guidelines'
+},
+
+/* ==========================================================
+   STATUS EPILEPTICUS
+   ========================================================== */
+{
+  id: 'ccm-se-001', spec: 'ccm', topic: 'Status Epilepticus', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'The first-line drug for convulsive status epilepticus is:',
+  o: ['IV phenytoin', 'A benzodiazepine (IV lorazepam / IM midazolam)', 'IV levetiracetam', 'IV valproate'],
+  a: 1,
+  e: 'First-line is a <strong>benzodiazepine</strong> — IV lorazepam 4 mg (or IM midazolam 10 mg if no IV access; diazepam PR in children). If seizures continue after adequate benzodiazepine dosing, move to a <strong>second-line</strong> agent.',
+  key: 'Benzodiazepine first — and give an ADEQUATE dose; under-dosing is the commonest error.',
+  pearl: 'ESETT showed <strong>levetiracetam, fosphenytoin and valproate are equivalent</strong> as second-line agents (~50% each terminate seizures). Choose by contraindications/availability. Refractory SE → intubate and use anaesthetic infusions (midazolam/propofol/ketamine).',
+  src: 'ESETT / Neurocritical Care'
+},
+{
+  id: 'ccm-se-002', spec: 'ccm', topic: 'Status Epilepticus', difficulty: 'moderate', type: 'case',
+  stem: 'A patient with convulsive status has received two adequate doses of lorazepam and a full loading dose of levetiracetam but continues to seize at 40 minutes.',
+  q: 'The next appropriate step is:',
+  o: [
+    'A third dose of benzodiazepine',
+    'Intubation and a continuous anaesthetic infusion (e.g. midazolam or propofol) for refractory status',
+    'Oral carbamazepine',
+    'Wait and observe'
+  ],
+  a: 1,
+  e: 'This is <strong>refractory status epilepticus</strong> (failure of a benzodiazepine + one second-line agent). The next step is <strong>intubation and a continuous IV anaesthetic infusion</strong> — midazolam, propofol, or ketamine — with continuous EEG monitoring, titrated to seizure suppression or burst-suppression. Repeated benzodiazepines just add respiratory depression without controlling refractory SE.',
+  pearl: 'Definitions: <table class="mcq-mini"><tr><td>Status epilepticus</td><td>≥5 min continuous / recurrent without recovery</td></tr><tr><td>Refractory</td><td>Fails benzo + 1 second-line</td></tr><tr><td>Super-refractory</td><td>Continues ≥24 h on/after anaesthetics</td></tr></table>',
+  src: 'Neurocritical Care Society'
+},
+
+/* ==========================================================
+   EMERGENCY MEDICINE — ANAPHYLAXIS
+   ========================================================== */
+{
+  id: 'em-ana-001', spec: 'em', topic: 'Anaphylaxis', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'The first-line, life-saving treatment in anaphylaxis is:',
+  o: ['IV hydrocortisone', 'IM adrenaline 0.5 mg into the anterolateral thigh', 'IV chlorphenamine', 'Nebulised salbutamol'],
+  a: 1,
+  e: '<strong>IM adrenaline 0.5 mg</strong> (0.5 mL of 1:1000) into the anterolateral thigh, repeated every 5 minutes as needed, is the single life-saving intervention. Antihistamines and steroids are <strong>adjuncts</strong> and must never delay or replace adrenaline. IV adrenaline is reserved for refractory cases in a monitored setting.',
+  key: 'Adrenaline is IM into the thigh — not subcutaneous, not IV first-line.',
+  pearl: 'IM adrenaline by age (1:1000): <table class="mcq-mini"><tr><td>Adult / &gt;12 y</td><td>500 µg</td></tr><tr><td>6–12 y</td><td>300 µg</td></tr><tr><td>6 mo–6 y</td><td>150 µg</td></tr></table>Lie the patient flat; sitting a hypotensive patient up can be fatal.',
+  src: 'Resuscitation Council'
+},
+{
+  id: 'em-ana-002', spec: 'em', topic: 'Anaphylaxis', difficulty: 'moderate', type: 'case',
+  stem: 'A 40-year-old woman with anaphylaxis after an antibiotic remains hypotensive despite three doses of IM adrenaline and fluids. She takes a beta-blocker for hypertension.',
+  q: 'Which additional drug is most likely to help?',
+  o: ['Glucagon', 'More chlorphenamine', 'Oral prednisolone', 'Adenosine'],
+  a: 0,
+  e: 'In a patient on a <strong>beta-blocker</strong> who is refractory to adrenaline, <strong>glucagon</strong> (1–2 mg IV) bypasses the β-receptor to increase cardiac inotropy/chronotropy via cyclic AMP. She also needs a monitored <strong>adrenaline infusion</strong>. Antihistamines/steroids do not treat the shock.',
+  pearl: 'Refractory anaphylaxis = persisting after ≥2 appropriate IM adrenaline doses. Escalate to an adrenaline infusion, aggressive fluids, and consider glucagon (β-blocked), vasopressin, or methylene blue for vasoplegia.',
+  src: 'Resuscitation Council'
+},
+
+/* ==========================================================
+   EMERGENCY MEDICINE — ACUTE STROKE
+   ========================================================== */
+{
+  id: 'em-cva-001', spec: 'em', topic: 'Stroke', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'IV thrombolysis for acute ischaemic stroke is generally given within what window of last-known-well?',
+  o: ['3 hours only', '4.5 hours', '9 hours for all', '24 hours'],
+  a: 1,
+  e: 'IV thrombolysis (alteplase or tenecteplase) is standard within <strong>4.5 hours</strong> of last-known-well, after excluding haemorrhage on CT and checking contraindications. Selected patients with favourable perfusion imaging (e.g. wake-up strokes) may be treated later, but 4.5 h is the core answer.',
+  key: 'Thrombolysis window = 4.5 h; thrombectomy window extends to 24 h in selected LVO.',
+  pearl: 'Mechanical <strong>thrombectomy</strong> for large-vessel occlusion is beneficial up to <strong>24 h</strong> in selected patients (DAWN, DEFUSE-3) using perfusion mismatch. Time is brain — door-to-needle should be &lt;60 min.',
+  src: 'AHA/ASA stroke guideline'
+},
+{
+  id: 'em-cva-002', spec: 'em', topic: 'Stroke', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Before IV thrombolysis in acute ischaemic stroke, blood pressure must be lowered to below:',
+  o: ['185/110 mmHg', '220/120 mmHg', '160/90 mmHg', '140/90 mmHg'],
+  a: 0,
+  e: 'For <strong>thrombolysis</strong> candidates, BP must be <strong>&lt;185/110 mmHg</strong> before treatment and kept &lt;180/105 for 24 h afterwards. In patients <strong>not</strong> receiving thrombolysis, permissive hypertension is allowed and BP is only treated if &gt;220/120 (or end-organ threat) — lowering it too aggressively worsens the ischaemic penumbra.',
+  pearl: 'The two BP thresholds catch people out: <strong>&lt;185/110</strong> if you are going to lyse; otherwise leave it unless <strong>&gt;220/120</strong>. Use labetalol or nicardipine for controlled reduction.',
+  src: 'AHA/ASA stroke guideline'
+},
+{
+  id: 'em-cva-003', spec: 'em', topic: 'Stroke', difficulty: 'severe', type: 'case',
+  stem: 'A 72-year-old presents 2 h after sudden dense right hemiplegia and aphasia (NIHSS 18). CT shows no haemorrhage and no established infarct; CT angiography shows a left MCA (M1) occlusion. He is not on anticoagulants and has no contraindications.',
+  q: 'The optimal management is:',
+  o: [
+    'IV thrombolysis alone',
+    'IV thrombolysis plus referral for mechanical thrombectomy',
+    'Aspirin alone',
+    'Immediate decompressive craniectomy'
+  ],
+  a: 1,
+  e: 'A large-vessel (M1) occlusion within the window with a salvageable brain warrants <strong>IV thrombolysis PLUS mechanical thrombectomy</strong> — thrombectomy dramatically improves outcomes in proximal LVO (HERMES meta-analysis), and thrombolysis is given if eligible without delaying transfer. Aspirin alone under-treats an LVO; craniectomy is for later malignant oedema.',
+  pearl: 'Thrombectomy benefits proximal anterior-circulation LVO (ICA, M1) with a small core and good collaterals. Don\'t withhold or delay thrombolysis while arranging thrombectomy in eligible patients ("drip and ship").',
+  src: 'HERMES / AHA-ASA'
+},
+
+/* ==========================================================
+   EMERGENCY MEDICINE — ACUTE CORONARY SYNDROME
+   ========================================================== */
+{
+  id: 'em-acs-001', spec: 'em', topic: 'Acute Coronary Syndrome', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'For STEMI, the preferred reperfusion strategy if it can be delivered within 120 minutes of first medical contact is:',
+  o: ['Fibrinolysis', 'Primary percutaneous coronary intervention (PCI)', 'CABG', 'Medical therapy alone'],
+  a: 1,
+  e: '<strong>Primary PCI</strong> is preferred when achievable within <strong>120 min</strong> of first medical contact (ideally &lt;90 min door-to-balloon). If PCI cannot be delivered in time, give <strong>fibrinolysis within 30 min</strong> (door-to-needle) and transfer for angiography (pharmaco-invasive strategy).',
+  key: 'PCI if ≤120 min available; otherwise lyse now and transfer.',
+  pearl: 'STEMI diagnosis: ST-elevation ≥1 mm in ≥2 contiguous limb leads or ≥2 mm in chest leads (≥1.5 mm women in V2–V3), or new LBBB with ischaemia. New posterior MI (tall R + ST-depression V1–V3) also needs reperfusion.',
+  src: 'ESC / ACC-AHA ACS'
+},
+{
+  id: 'em-acs-002', spec: 'em', topic: 'Acute Coronary Syndrome', difficulty: 'moderate', type: 'case',
+  stem: 'A 60-year-old man has 40 minutes of chest pain. ECG shows 2 mm ST-elevation in II, III and aVF. BP is 88/54, and he becomes profoundly hypotensive after a dose of sublingual GTN.',
+  q: 'The hypotension after GTN suggests which associated problem?',
+  o: ['Anterior STEMI', 'Right ventricular infarction', 'Aortic dissection', 'Pulmonary embolism'],
+  a: 1,
+  e: 'An <strong>inferior STEMI</strong> (II, III, aVF) with GTN-sensitive hypotension indicates <strong>right ventricular infarction</strong> — the RV is preload-dependent, so nitrates (venodilators) cause dramatic hypotension. Confirm with <strong>right-sided leads (V4R)</strong>. Treat with <strong>fluids</strong> and avoid nitrates/opioids that drop preload; reperfuse.',
+  key: 'Inferior STEMI + hypotension on GTN = RV infarct → give fluids, avoid nitrates.',
+  pearl: 'Always do right-sided leads (V4R) in inferior STEMI. RV infarct is preload-dependent: support with fluids and reperfusion; if still shocked, add an inotrope — but fix the preload first.',
+  src: 'ESC / ACC-AHA ACS'
+},
+
+/* ==========================================================
+   EMERGENCY MEDICINE — TOXICOLOGY
+   ========================================================== */
+{
+  id: 'em-tox-001', spec: 'em', topic: 'Poisoning', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'The specific antidote for paracetamol (acetaminophen) poisoning is:',
+  o: ['Naloxone', 'N-acetylcysteine', 'Flumazenil', 'Fomepizole'],
+  a: 1,
+  e: '<strong>N-acetylcysteine</strong> replenishes glutathione and detoxifies the reactive metabolite NAPQI. It is most effective within <strong>8 hours</strong> of ingestion but is still given late in established toxicity. Dose against the <strong>paracetamol nomogram</strong> (timed level ≥4 h post-ingestion) or empirically in staggered/unknown-time or high-risk ingestions.',
+  pearl: 'Give NAC without waiting for a level if: presentation &gt;8 h after a significant overdose, staggered ingestion, or unknown time. King\'s College criteria (pH &lt;7.3, or the triad of INR &gt;6.5 + creatinine &gt;300 + grade III–IV encephalopathy) flag the need for transplant referral.',
+  src: 'Toxicology / Washington Manual'
+},
+{
+  id: 'em-tox-002', spec: 'em', topic: 'Poisoning', difficulty: 'moderate', type: 'case',
+  stem: 'A farmer is brought in drowsy with pinpoint pupils, profuse salivation, bronchorrhoea, wheeze, bradycardia and muscle fasciculations. He smells of solvent.',
+  q: 'The antidote of primary importance is:',
+  o: ['Atropine', 'Naloxone', 'Physostigmine', 'Glucagon'],
+  a: 0,
+  e: 'This is a <strong>cholinergic toxidrome</strong> from <strong>organophosphate</strong> (anticholinesterase) poisoning. <strong>Atropine</strong> (doubling doses until secretions/bronchorrhoea dry — the key endpoint) is life-saving. Add <strong>pralidoxime</strong> to reactivate acetylcholinesterase for nicotinic features, and provide airway/ventilatory support.',
+  key: 'Titrate atropine to drying of secretions (chest), not to pupils or heart rate.',
+  pearl: 'Cholinergic features — <strong>DUMBELS</strong>: Defecation, Urination, Miosis, Bradycardia/Bronchorrhoea, Emesis, Lacrimation, Salivation. Bronchorrhoea is the killer — that\'s your atropine endpoint.',
+  src: 'Toxicology'
+},
+{
+  id: 'em-tox-003', spec: 'em', topic: 'Poisoning', difficulty: 'severe', type: 'case',
+  stem: 'A 22-year-old presents 90 minutes after a tricyclic antidepressant overdose. She is drowsy and hypotensive; ECG shows a wide QRS of 140 ms with a tall R wave in aVR.',
+  q: 'The most appropriate immediate treatment is:',
+  o: ['IV sodium bicarbonate', 'IV calcium', 'Flumazenil', 'IV amiodarone'],
+  a: 0,
+  e: 'TCA cardiotoxicity is sodium-channel blockade → <strong>QRS widening</strong> (and the tall terminal R in aVR), arrhythmia and hypotension. <strong>IV sodium bicarbonate</strong> is the treatment — it provides a sodium load and alkalinisation that overcome the channel block. <strong>Avoid class Ia/Ic/III antiarrhythmics</strong> (e.g. amiodarone) which worsen conduction; flumazenil can precipitate seizures.',
+  key: 'Wide QRS in TCA overdose → sodium bicarbonate. Target QRS narrowing.',
+  pearl: 'QRS &gt;100 ms predicts seizures; &gt;160 ms predicts ventricular arrhythmia. Give bicarbonate boluses titrated to QRS narrowing and a blood pH ~7.45–7.55. Hypertonic saline is an alternative sodium source.',
+  src: 'Toxicology / Washington Manual'
+},
+{
+  id: 'em-tox-004', spec: 'em', topic: 'Poisoning', difficulty: 'severe', type: 'case',
+  stem: 'A 50-year-old presents after an overdose of his heart medication with refractory bradycardia and hypotension unresponsive to atropine and fluids. He takes verapamil and metoprolol.',
+  q: 'Which therapy is specifically indicated for calcium-channel-blocker / beta-blocker toxicity?',
+  o: [
+    'High-dose insulin euglycaemic therapy (± calcium, glucagon, vasopressors)',
+    'Sodium bicarbonate',
+    'N-acetylcysteine',
+    'Activated charcoal alone'
+  ],
+  a: 0,
+  e: 'In severe CCB/BB toxicity, <strong>high-dose insulin euglycaemic therapy (HIET)</strong> improves myocardial contractility and is a cornerstone, alongside <strong>IV calcium</strong>, <strong>glucagon</strong>, and vasopressors; refractory cases may need pacing or VA-ECMO. Insulin supports the poisoned myocardium\'s shift to carbohydrate metabolism.',
+  pearl: 'HIET: bolus 1 U/kg regular insulin then 0.5–1 U/kg/h (titrated up), with dextrose to maintain euglycaemia and close potassium monitoring. Don\'t be timid with the insulin dose — under-dosing is the usual error.',
+  src: 'Toxicology'
+},
+
+/* ==========================================================
+   EMERGENCY MEDICINE — TRAUMA
+   ========================================================== */
+{
+  id: 'em-trauma-001', spec: 'em', topic: 'Trauma', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'In major trauma haemorrhage, tranexamic acid reduces mortality only when given within:',
+  o: ['1 hour', '3 hours', '6 hours', '12 hours'],
+  a: 1,
+  e: '<strong>CRASH-2</strong> showed tranexamic acid reduces death from bleeding when given <strong>within 3 hours</strong> of injury (1 g over 10 min, then 1 g over 8 h). Given <strong>later than 3 h it may increase</strong> mortality from bleeding. The same early-treatment principle holds for post-partum haemorrhage (WOMAN trial).',
+  key: 'TXA within 3 hours of injury — earlier is better; late TXA can harm.',
+  pearl: 'Damage-control resuscitation: permissive hypotension until surgical control (except in TBI), balanced product ratios (~1:1:1 RBC:FFP:platelets), early TXA, avoid the lethal triad (hypothermia, acidosis, coagulopathy).',
+  src: 'CRASH-2 / ATLS'
+},
+{
+  id: 'em-trauma-002', spec: 'em', topic: 'Trauma', difficulty: 'severe', type: 'case',
+  stem: 'A 25-year-old with a stab wound to the chest is hypotensive with distended neck veins, muffled heart sounds and a narrow pulse pressure. The trachea is central and breath sounds are equal bilaterally.',
+  q: 'The most likely diagnosis and immediate intervention are:',
+  o: [
+    'Tension pneumothorax — needle decompression',
+    'Cardiac tamponade — pericardiocentesis / resuscitative thoracotomy',
+    'Massive haemothorax — chest drain',
+    'Hypovolaemia — fluids alone'
+  ],
+  a: 1,
+  e: '<strong>Beck\'s triad</strong> — hypotension, distended neck veins, muffled heart sounds — with a <strong>central trachea and equal breath sounds</strong> (arguing against tension pneumothorax) after penetrating chest trauma indicates <strong>cardiac tamponade</strong>. Immediate treatment is <strong>pericardial decompression</strong> — pericardiocentesis or, in the arresting/peri-arrest patient, resuscitative thoracotomy. Confirm rapidly with FAST.',
+  key: 'Beck\'s triad + central trachea = tamponade (not tension pneumothorax).',
+  pearl: 'Tension pneumothorax vs tamponade both cause obstructive shock with distended neck veins. The discriminators: tension pneumothorax → tracheal deviation, absent breath sounds, hyper-resonance; tamponade → equal breath sounds, muffled heart sounds, FAST-positive pericardial fluid.',
+  src: 'ATLS'
 }
 
 ];
