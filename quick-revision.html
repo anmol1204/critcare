@@ -9,7 +9,7 @@
   <link rel="apple-touch-icon" href="/icon-apple.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
   <title>Quick Revision — Last-Minute Gist — CritCare.in</title>
-  <meta name="description" content="CritCare Quick Revision — high-yield, one-screen last-minute gist for critical-care topics, with clickable clinical pearls (tables and key facts). Revise sepsis, ARDS, shock and acid-base fast." />
+  <meta name="description" content="CritCare Quick Revision — a high-yield, plain-English gist of each critical-care topic, written the way a senior would talk you through it the night before the exam. With clickable clinical pearls." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
   <script src="darkmode.js"></script>
@@ -18,19 +18,25 @@
   <style>
     .qr-hero { background:linear-gradient(135deg,#0f1f3d,#1a3560); color:#fff; padding:2.6rem 5% 2rem; text-align:center; }
     .qr-hero h1 { font-family:var(--font-disp); font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:.4rem; }
-    .qr-hero p { color:rgba(255,255,255,.74); font-size:.92rem; max-width:600px; margin:0 auto; line-height:1.6; }
+    .qr-hero p { color:rgba(255,255,255,.74); font-size:.92rem; max-width:620px; margin:0 auto; line-height:1.6; }
 
     .qr-wrap { max-width:820px; margin:0 auto; padding:1.5rem 5% 4rem; }
 
     .qr-pills { display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin-bottom:1.6rem; }
-    .qr-pill { padding:.5rem 1.1rem; border-radius:28px; border:2px solid var(--line); background:var(--bg); color:var(--ink); font-size:.82rem; font-weight:700; cursor:pointer; font-family:var(--font-body); transition:all .15s; }
+    .qr-pill { padding:.5rem 1.05rem; border-radius:28px; border:2px solid var(--line); background:var(--bg); color:var(--ink); font-size:.82rem; font-weight:700; cursor:pointer; font-family:var(--font-body); transition:all .15s; }
     .qr-pill:hover { border-color:var(--blue); }
     .qr-pill.active { border-color:var(--blue); background:var(--blue); color:#fff; }
+    .qr-pill .qr-spec { font-size:.62rem; opacity:.7; margin-left:.3rem; }
 
-    .qr-topic-head { display:flex; align-items:baseline; gap:.7rem; flex-wrap:wrap; margin-bottom:.3rem; }
-    .qr-topic-head h2 { font-family:var(--font-disp); font-size:1.5rem; color:var(--ink); }
+    .qr-topic-head { display:flex; align-items:baseline; gap:.7rem; flex-wrap:wrap; margin-bottom:.5rem; }
+    .qr-topic-head h2 { font-family:var(--font-disp); font-size:1.55rem; color:var(--ink); }
     .qr-topic-head .qr-read { font-size:.76rem; color:var(--slate); }
-    .qr-tagline { font-size:.9rem; color:var(--slate); line-height:1.6; margin-bottom:1.3rem; }
+
+    .qr-oneliner { font-size:1.02rem; line-height:1.6; color:var(--ink); font-weight:600; border-left:4px solid var(--blue); padding:.2rem 0 .2rem 1rem; margin-bottom:1rem; }
+    .qr-oneliner em { color:var(--blue-dark); font-style:normal; } html.dark .qr-oneliner em { color:#7bb8f7; }
+    .qr-think { font-size:.94rem; line-height:1.75; color:var(--ink); margin-bottom:1.3rem; }
+    .qr-think strong { color:var(--blue-dark); } html.dark .qr-think strong { color:#7bb8f7; }
+    .qr-think p { margin-bottom:.7rem; }
 
     .qr-section { border:1px solid var(--line); border-radius:14px; background:var(--bg); margin-bottom:1rem; overflow:hidden; box-shadow:0 4px 18px rgba(0,0,0,.04); }
     .qr-sec-head { padding:.75rem 1.1rem; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em; color:#fff; background:linear-gradient(135deg,var(--blue),var(--blue-dark)); }
@@ -38,10 +44,16 @@
     .qr-sec-head.a { background:linear-gradient(135deg,#f59e0b,#b45309); }
     .qr-sec-head.r { background:linear-gradient(135deg,#ef4444,#b91c1c); }
     .qr-list { list-style:none; padding:.6rem .3rem .7rem; }
-    .qr-list li { position:relative; padding:.42rem 1rem .42rem 2rem; font-size:.9rem; line-height:1.6; color:var(--ink); }
+    .qr-list li { position:relative; padding:.42rem 1rem .42rem 2rem; font-size:.9rem; line-height:1.62; color:var(--ink); }
     .qr-list li::before { content:'▸'; position:absolute; left:.7rem; color:var(--blue); font-weight:700; }
     .qr-list li strong { color:var(--blue-dark); }
     html.dark .qr-list li strong { color:#7bb8f7; }
+
+    .qr-nothing { margin:1.3rem 0; background:linear-gradient(135deg,var(--blue-soft),var(--bg)); border:1px solid var(--blue); border-radius:14px; padding:1rem 1.2rem; }
+    html.dark .qr-nothing { background:#0d1b2e; }
+    .qr-nothing .qr-n-tag { font-size:.66rem; font-weight:800; text-transform:uppercase; letter-spacing:.07em; color:var(--blue-dark); margin-bottom:.35rem; }
+    html.dark .qr-nothing .qr-n-tag { color:#7bb8f7; }
+    .qr-nothing p { font-size:.95rem; line-height:1.6; color:var(--ink); font-weight:600; }
 
     /* clickable clinical pearls */
     .qr-pearls-wrap { border:1px solid #fcd34d; border-radius:14px; background:#fffbeb; padding:1rem 1.1rem; margin:1.3rem 0; }
@@ -89,13 +101,13 @@
 
 <header class="qr-hero">
   <h1>⚡ Quick Revision</h1>
-  <p>The one-screen gist for the night before. Everything high-yield on a topic, distilled — then tap a clinical pearl for the key table or fact.</p>
+  <p>The night-before gist — each topic written the way a senior registrar would actually talk you through it on a quiet night shift. Read it in two minutes, then tap a pearl for the table you always forget.</p>
 </header>
 
 <div class="qr-wrap">
   <div class="qr-pills" id="qrPills"></div>
   <div id="qrContent"></div>
-  <p class="qr-byline">Compiled by Dr. Anmol Srivastava (Anaesthesia, Emergency Medicine &amp; Critical Care Medicine) · Reviewed by Dr. Tanya Chawla (Anaesthesia &amp; Critical Care) · Summarised from Marino, The Washington Manual of Critical Care and Irwin &amp; Rippe.</p>
+  <p class="qr-byline">Compiled by Dr. Anmol Srivastava (Anaesthesia, Emergency Medicine &amp; Critical Care Medicine) · Reviewed by Dr. Tanya Chawla (Anaesthesia &amp; Critical Care) · Distilled from Marino, The Washington Manual of Critical Care and Irwin &amp; Rippe, with current society guidelines.</p>
 </div>
 
 <footer class="footer">
@@ -117,133 +129,202 @@
   <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
 </nav>
 
+<script src="/pwa.js"></script>
 <script>
 var QR = {
   "Sepsis": {
-    tagline: "Infection + organ dysfunction. Recognise fast, resuscitate by the bundle, hunt the source.",
-    read: "~2 min",
+    spec: "CCM", read: "~2 min",
+    oneliner: "Sepsis is not the bug — it's the body's <em>overreaction</em> to the bug. Your job is to catch it early, refill the tank, hit the source, and not drown the patient doing it.",
+    think:
+      "<p>Forget SIRS. Since Sepsis-3, the question that matters is simple: <strong>is there an infection, and is it damaging organs?</strong> If yes, that's sepsis. Add a vasopressor requirement plus a lactate above 2 that won't come down with fluids, and now you've got septic shock — and a mortality north of 40%.</p>" +
+      "<p>At the bedside I don't overthink it. Someone who is confused, breathing fast and running a low pressure has just failed qSOFA — that's my cue to stop admiring the problem and start the bundle. The first hour is where outcomes are won: cultures before antibiotics, antibiotics fast, fluids for the tank, pressors if the pressure won't hold.</p>",
     sections: [
-      { h: "Definitions", cls: "", items: [
-        "<strong>Sepsis-3:</strong> life-threatening organ dysfunction from a <strong>dysregulated host response</strong> to infection = infection + acute <strong>SOFA ≥2</strong>.",
-        "<strong>Septic shock:</strong> vasopressor need for MAP ≥65 <strong>and</strong> lactate >2 mmol/L despite adequate fluids. Mortality >40%.",
-        "<strong>qSOFA</strong> (bedside): RR ≥22, altered mentation, SBP ≤100 — a prompt to escalate, not a diagnosis."
+      { h: "The first hour (do these)", cls: "g", items: [
+        "Send a <strong>lactate</strong> — and recheck it; a falling lactate is your scoreboard.",
+        "<strong>Blood cultures before antibiotics</strong>, but never let culture logistics delay the drug.",
+        "<strong>Broad-spectrum antibiotics</strong> — within the hour for shock or clear sepsis.",
+        "<strong>30 mL/kg balanced crystalloid</strong> for hypotension or lactate ≥4, then reassess with a dynamic measure.",
+        "<strong>Noradrenaline</strong> if the pressure won't hold — target MAP ≥65."
       ]},
-      { h: "Hour-1 bundle", cls: "g", items: [
-        "Measure <strong>lactate</strong> (repeat if >2).",
-        "<strong>Blood cultures</strong> before antibiotics.",
-        "<strong>Broad-spectrum antibiotics</strong> — within 1 h for shock/definite sepsis.",
-        "<strong>30 mL/kg balanced crystalloid</strong> for hypotension or lactate ≥4.",
-        "<strong>Vasopressors</strong> during/after fluids to keep MAP ≥65."
+      { h: "When the pressure keeps dropping", cls: "a", items: [
+        "Noradrenaline is your workhorse. When you're climbing past ~0.25–0.5 µg/kg/min, <strong>add vasopressin</strong> before you chase the dose higher.",
+        "Still shocked? <strong>Add hydrocortisone 200 mg/day</strong> — and no, you don't need a Synacthen test first.",
+        "Chase <strong>lactate clearance and capillary refill</strong>, not a CVP number. CVP tells you almost nothing about who needs fluid."
       ]},
-      { h: "Haemodynamics & adjuncts", cls: "a", items: [
-        "1st pressor <strong>noradrenaline</strong> → add <strong>vasopressin</strong> 0.03 U/min → add <strong>hydrocortisone</strong> 200 mg/day if refractory.",
-        "Resuscitate to <strong>lactate clearance</strong> / capillary refill (ANDROMEDA-SHOCK), not CVP.",
-        "Balanced crystalloids > saline; <strong>avoid starches (HES)</strong>."
-      ]},
-      { h: "Don't miss", cls: "r", items: [
-        "<strong>Source control</strong> — drain/debride/remove the focus ASAP; antibiotics can't rescue an undrained source.",
-        "De-escalate antibiotics on culture; review daily.",
-        "Peripheral noradrenaline via a large proximal line is OK short-term — don't delay pressors for a central line."
+      { h: "The bit people forget", cls: "r", items: [
+        "<strong>Source control.</strong> An undrained abscess, an infected line, an obstructed pus-filled kidney — no antibiotic fixes that. Find it and drain/remove it.",
+        "<strong>Don't keep chasing fluids.</strong> After the first 30 mL/kg, more litres into a vasoplegic patient just floods the lungs. Switch to a pressor.",
+        "<strong>De-escalate.</strong> Once you know the bug, narrow the spectrum and stop what you don't need."
       ]}
     ],
+    nothing: "If you remember nothing else: <strong>cultures → antibiotics → fluids → pressor</strong>, all inside the first hour, and never forget to ask <em>“where is the source?”</em>",
     pearls: [
-      { t: "SOFA at a glance", body: "<h4>Six SOFA organ systems</h4><table><tr><th>System</th><th>Marker</th></tr><tr><td>Respiration</td><td>PaO₂/FiO₂</td></tr><tr><td>Coagulation</td><td>Platelets</td></tr><tr><td>Liver</td><td>Bilirubin</td></tr><tr><td>Cardiovascular</td><td>MAP / vasopressors</td></tr><tr><td>CNS</td><td>Glasgow Coma Scale</td></tr><tr><td>Renal</td><td>Creatinine / urine output</td></tr></table>An acute rise of ≥2 total points = organ dysfunction." },
-      { t: "Vasopressor ladder", body: "<h4>Escalation in septic shock</h4><table><tr><td>1</td><td>Noradrenaline</td></tr><tr><td>2</td><td>+ Vasopressin 0.03 U/min (at NA ~0.25–0.5 µg/kg/min)</td></tr><tr><td>3</td><td>+ Hydrocortisone 200 mg/day</td></tr><tr><td>4</td><td>Consider adrenaline / angiotensin II</td></tr></table>" },
-      { t: "Steroid evidence", body: "<h4>Hydrocortisone in septic shock</h4><strong>APROCCHSS</strong> (hydrocortisone + fludrocortisone) → mortality benefit. <strong>ADRENAL</strong> (hydrocortisone infusion) → faster shock reversal, no clear mortality change. No ACTH test needed before starting." }
+      { t: "The six SOFA systems", body: "<h4>What SOFA actually scores</h4><table><tr><th>System</th><th>Marker</th></tr><tr><td>Lungs</td><td>PaO₂/FiO₂</td></tr><tr><td>Clotting</td><td>Platelets</td></tr><tr><td>Liver</td><td>Bilirubin</td></tr><tr><td>Circulation</td><td>MAP / pressors</td></tr><tr><td>Brain</td><td>GCS</td></tr><tr><td>Kidney</td><td>Creatinine / urine</td></tr></table>A jump of ≥2 points off baseline = organ dysfunction = sepsis." },
+      { t: "Vasopressor order", body: "<h4>The escalation I use</h4><table><tr><td>1</td><td>Noradrenaline</td></tr><tr><td>2</td><td>Add vasopressin 0.03 U/min</td></tr><tr><td>3</td><td>Add hydrocortisone 200 mg/day</td></tr><tr><td>4</td><td>Adrenaline / angiotensin II</td></tr></table>Vasopressin goes on <em>early</em>, not as a last resort." },
+      { t: "Why the steroid debate settled", body: "<h4>APROCCHSS vs ADRENAL</h4>APROCCHSS (hydrocortisone <em>+ fludrocortisone</em>) showed a mortality benefit; ADRENAL showed faster shock reversal without a clear mortality change. Bottom line — if they're vasopressor-dependent, give the steroid." }
     ]
   },
 
   "ARDS": {
-    tagline: "Diffuse alveolar injury. Protect the lung, prone the sick, escalate early.",
-    read: "~2 min",
+    spec: "CCM", read: "~2 min",
+    oneliner: "ARDS is a <em>stiff, wet, leaky</em> lung. You can't make it better fast — but you can absolutely make it worse. Ventilate gently, prone the sick ones, and buy time.",
+    think:
+      "<p>Picture a lung where the working part has shrunk to the size of a child's — Gattinoni's “baby lung.” If you push adult-sized breaths into it, you tear it. That single idea drives everything: <strong>small tidal volumes, low pressures, and patience</strong>.</p>" +
+      "<p>The Berlin definition is just a way of grading how bad the leak is, using the P/F ratio on a bit of PEEP. Mild, moderate, severe — and the sicker they are, the more aggressively you reach for proning and, occasionally, ECMO. Everything else (nitric oxide, fancy modes) is window dressing that hasn't moved mortality.</p>",
     sections: [
-      { h: "Berlin definition", cls: "", items: [
-        "Acute (≤1 week), <strong>bilateral opacities</strong>, not fully explained by cardiac failure/overload.",
-        "Severity by <strong>P/F on PEEP ≥5</strong>: mild 200–300, moderate 100–200, <strong>severe ≤100</strong>."
+      { h: "Ventilate to protect, not to normalise", cls: "g", items: [
+        "<strong>6 mL/kg of predicted</strong> body weight — worked out from height, never actual weight.",
+        "Keep <strong>plateau pressure under 30</strong> and <strong>driving pressure under 15</strong> — driving pressure is the number that tracks survival.",
+        "Let the CO₂ ride and the pH sit around 7.2 (<strong>permissive hypercapnia</strong>). Chasing a normal gas is how you injure the lung.",
+        "Titrate PEEP to oxygenation and compliance — enough to keep alveoli open, not so much you overdistend."
       ]},
-      { h: "Lung-protective ventilation", cls: "g", items: [
-        "<strong>V<sub>T</sub> 6 mL/kg predicted body weight</strong> (height-based, not actual weight).",
-        "<strong>Plateau pressure <30</strong> cmH₂O; <strong>driving pressure (Pplat − PEEP) <15</strong>.",
-        "Permissive hypercapnia (pH >7.20); titrate PEEP to oxygenation/compliance."
+      { h: "When oxygen won't come up", cls: "a", items: [
+        "<strong>Prone them ≥16 h/day if P/F &lt;150</strong> — PROSEVA showed a real mortality benefit, and it's a manoeuvre, not a drug.",
+        "Consider <strong>neuromuscular blockade</strong> for the fighting, dyssynchronous patient — but it's no longer routine (ROSE).",
+        "Refractory despite all that? <strong>Refer for VV-ECMO early</strong>, not as a deathbed gesture."
       ]},
-      { h: "Escalation for severe ARDS", cls: "a", items: [
-        "<strong>Prone ≥16 h/day if P/F <150</strong> (PROSEVA — mortality benefit).",
-        "<strong>NMB</strong> not routine (ROSE) — reserve for dyssynchrony/high ΔP.",
-        "<strong>VV-ECMO</strong> as rescue for refractory hypoxaemia in experienced centres (EOLIA)."
-      ]},
-      { h: "Don't do", cls: "r", items: [
-        "Don't set V<sub>T</sub> on actual weight (over-distends obese patients).",
-        "Don't use HFOV (harmful — OSCILLATE/OSCAR).",
-        "Inhaled NO improves oxygenation only — no survival benefit, possible renal harm."
+      { h: "Traps", cls: "r", items: [
+        "Setting tidal volume on <strong>actual weight</strong> — you'll overdistend every heavy patient.",
+        "Reaching for <strong>HFOV</strong> — it's harmful.",
+        "Treating <strong>inhaled nitric oxide</strong> as therapy — it prettifies the saturation for a while, then does nothing for survival."
       ]}
     ],
+    nothing: "If you remember nothing else: <strong>6 mL/kg predicted, Pplat &lt;30, driving pressure &lt;15, prone if P/F &lt;150.</strong> Gentle lungs live.",
     pearls: [
-      { t: "Berlin severity", body: "<h4>P/F bands (PEEP ≥5)</h4><table><tr><th>Grade</th><th>P/F</th></tr><tr><td>Mild</td><td>200–300</td></tr><tr><td>Moderate</td><td>100–200</td></tr><tr><td>Severe</td><td>≤100</td></tr></table>" },
-      { t: "Predicted body weight", body: "<h4>PBW formula (uses height)</h4><table><tr><td>Male</td><td>50 + 0.91 × (ht cm − 152.4)</td></tr><tr><td>Female</td><td>45.5 + 0.91 × (ht cm − 152.4)</td></tr></table>Then V<sub>T</sub> = 6 mL/kg × PBW." },
-      { t: "Rescue ladder", body: "<h4>Refractory hypoxaemia in ARDS</h4>Optimise low-V<sub>T</sub> + ΔP → PEEP titration → <strong>proning</strong> → <strong>NMB</strong> → inhaled pulmonary vasodilator (temporiser) → <strong>VV-ECMO</strong>. Escalate early, not late." }
+      { t: "Berlin severity", body: "<h4>Grading the leak (PEEP ≥5)</h4><table><tr><th>Grade</th><th>P/F</th></tr><tr><td>Mild</td><td>200–300</td></tr><tr><td>Moderate</td><td>100–200</td></tr><tr><td>Severe</td><td>≤100</td></tr></table>" },
+      { t: "Predicted body weight", body: "<h4>Do it off height</h4><table><tr><td>Male</td><td>50 + 0.91 × (ht cm − 152.4)</td></tr><tr><td>Female</td><td>45.5 + 0.91 × (ht cm − 152.4)</td></tr></table>Then tidal volume = 6 mL/kg of <em>that</em>." },
+      { t: "The rescue ladder", body: "<h4>Refractory hypoxaemia, in order</h4>Optimise low-V<sub>T</sub> &amp; driving pressure → titrate PEEP → <strong>prone</strong> → <strong>paralyse</strong> → inhaled pulmonary vasodilator to buy minutes → <strong>VV-ECMO</strong>. Climb it early." }
     ]
   },
 
   "Shock": {
-    tagline: "Four mechanisms, one job — match the treatment to the mechanism.",
-    read: "~2 min",
+    spec: "CCM", read: "~2 min",
+    oneliner: "Shock is oxygen not reaching cells. There are only four ways that happens — and the whole game is working out <em>which one</em> before you reach for a treatment.",
+    think:
+      "<p>Every shocked patient is one of four stories: an empty tank (hypovolaemic), a failing pump (cardiogenic), a blocked pipe (obstructive), or leaky, dilated pipes (distributive). Get the category right and the treatment almost picks itself; get it wrong and you'll flood a failing heart or squeeze an empty tank.</p>" +
+      "<p>The bedside shortcut is temperature and neck veins. <strong>Cold and shut-down</strong> with flat veins? Think empty. Cold with <em>full</em> veins? Think pump or obstruction. <strong>Warm and bounding</strong> with low pressure? That's distributive until proven otherwise. A two-minute echo settles most arguments.</p>",
     sections: [
-      { h: "The four types", cls: "", items: [
-        "<strong>Hypovolaemic</strong> (haemorrhage, GI/renal loss) · <strong>Cardiogenic</strong> (pump failure) · <strong>Obstructive</strong> (tamponade, tension pneumothorax, massive PE) · <strong>Distributive</strong> (sepsis, anaphylaxis, neurogenic).",
-        "Localise with focused echo/RUSH: pump, tank, pipes."
+      { h: "Read the pattern", cls: "", items: [
+        "<strong>Cold + flat neck veins</strong> → hypovolaemic (bleeding, GI/renal losses). Fill the tank.",
+        "<strong>Cold + full neck veins</strong> → cardiogenic (pump) or obstructive (tamponade, tension pneumo, big PE).",
+        "<strong>Warm + low pressure</strong> → distributive (sepsis, anaphylaxis, neurogenic). Squeeze the pipes.",
+        "A focused echo (RUSH: pump, tank, pipes) tells you most of this in minutes."
       ]},
-      { h: "Read the pattern", cls: "g", items: [
-        "<strong>Cold</strong> + low CO + high SVR → hypovolaemic / cardiogenic / obstructive.",
-        "<strong>Warm</strong> + high CO + low SVR → distributive.",
-        "Flat neck veins → hypovolaemia; distended veins → obstructive/cardiogenic."
+      { h: "Before you give more fluid, ask if they'll respond", cls: "a", items: [
+        "<strong>Passive leg raise + a real stroke-volume measure</strong> is the honest test — and it still works in AF or a spontaneously breathing patient.",
+        "PPV/SVV are neat but <strong>lie</strong> the moment there's arrhythmia, spontaneous effort, or small tidal volumes.",
+        "<strong>CVP does not predict who needs fluid.</strong> Stop using a single number to justify litres."
       ]},
-      { h: "Assess & target", cls: "a", items: [
-        "Fluid responsiveness: <strong>passive leg raise + CO</strong> or PPV/SVV — <strong>not CVP</strong>.",
-        "PPV/SVV invalid in spontaneous breathing, arrhythmia, low V<sub>T</sub>.",
-        "Targets: MAP ≥65, <strong>lactate clearance</strong>, urine ≥0.5 mL/kg/h, mentation."
-      ]},
-      { h: "Match the treatment", cls: "r", items: [
-        "Fluids help hypovolaemic/early distributive; <strong>harm</strong> cardiogenic/obstructive.",
-        "Cardiogenic MI: noradrenaline ± dobutamine + <strong>culprit-lesion PCI</strong> (CULPRIT-SHOCK); routine IABP no benefit.",
-        "Obstructive: decompress / drain / thrombolyse — find the mechanical fix."
+      { h: "Match the treatment to the mechanism", cls: "r", items: [
+        "Fluids rescue the <strong>empty tank</strong> and early distributive — they <strong>drown</strong> the failing pump and obstructed heart.",
+        "Cardiogenic post-MI: noradrenaline ± dobutamine and <strong>open the culprit artery</strong> (routine IABP doesn't help).",
+        "Obstructive shock has a mechanical fix every time — <strong>decompress, drain, or thrombolyse</strong>. Don't just infuse."
       ]}
     ],
+    nothing: "If you remember nothing else: <strong>name the mechanism first.</strong> Temperature + neck veins + a quick echo will get you there, and the treatment follows.",
     pearls: [
-      { t: "Haemodynamic profiles", body: "<h4>CO / SVR / CVP by type</h4><table><tr><th></th><th>CO</th><th>SVR</th><th>CVP</th></tr><tr><td>Hypovolaemic</td><td>↓</td><td>↑</td><td>↓</td></tr><tr><td>Cardiogenic</td><td>↓</td><td>↑</td><td>↑</td></tr><tr><td>Obstructive</td><td>↓</td><td>↑</td><td>↑</td></tr><tr><td>Distributive</td><td>↑/↔</td><td>↓</td><td>↓/↔</td></tr></table>" },
-      { t: "When PPV/SVV fail", body: "<h4>Dynamic indices are unreliable when…</h4>Spontaneous breathing effort · arrhythmia (AF) · tidal volume <8 mL/kg · open chest · severe RV failure · very high PEEP. Use <strong>passive leg raise + real CO</strong> instead." },
-      { t: "Obstructive fixes", body: "<h4>Immediate mechanical treatment</h4><table><tr><td>Tamponade</td><td>Pericardiocentesis</td></tr><tr><td>Tension pneumothorax</td><td>Needle/finger decompression</td></tr><tr><td>Massive PE</td><td>Thrombolysis / embolectomy</td></tr></table>" }
+      { t: "The four fingerprints", body: "<h4>CO / SVR / CVP by type</h4><table><tr><th></th><th>CO</th><th>SVR</th><th>CVP</th></tr><tr><td>Hypovolaemic</td><td>↓</td><td>↑</td><td>↓</td></tr><tr><td>Cardiogenic</td><td>↓</td><td>↑</td><td>↑</td></tr><tr><td>Obstructive</td><td>↓</td><td>↑</td><td>↑</td></tr><tr><td>Distributive</td><td>↑/↔</td><td>↓</td><td>↓/↔</td></tr></table>" },
+      { t: "When your fluid indices are lying", body: "<h4>PPV/SVV are unreliable if…</h4>Spontaneous breathing · any arrhythmia · tidal volume &lt;8 mL/kg · open chest · bad RV · very high PEEP. In all of these, trust a <strong>passive leg raise with real cardiac output</strong> instead." },
+      { t: "Obstructive = a fixable block", body: "<h4>Match block to move</h4><table><tr><td>Tamponade</td><td>Pericardiocentesis</td></tr><tr><td>Tension pneumothorax</td><td>Decompress now</td></tr><tr><td>Massive PE</td><td>Thrombolyse / embolectomy</td></tr></table>" }
     ]
   },
 
   "Acid–Base": {
-    tagline: "A system, not a guess: pH → primary → compensation → anion gap → delta-delta → cause.",
-    read: "~2 min",
+    spec: "CCM", read: "~3 min",
+    oneliner: "A blood gas is a short story with a hidden twist. Read it the same way every time and the twist — the mixed disorder — stops catching you out.",
+    think:
+      "<p>The commonest exam trap isn't a wild gas — it's a <strong>normal-looking pH hiding two or three disorders</strong> that happen to cancel out. The only defence is a fixed routine you run every single time, even when the pH looks boring.</p>" +
+      "<p>My order never changes: look at the pH, name the primary problem, check the compensation is what it <em>should</em> be, then <strong>always calculate the anion gap</strong>. If there's a gap, do the delta-delta to see if a second disorder is lurking underneath. Two extra sums, and you'll never miss the hidden alkalosis again.</p>",
     sections: [
-      { h: "The 6-step approach", cls: "", items: [
-        "1) Look at <strong>pH</strong> (acidaemia/alkalaemia). 2) Identify the <strong>primary disorder</strong>.",
-        "3) Check <strong>compensation</strong> (Winter's for metabolic acidosis). 4) Calculate the <strong>anion gap</strong>.",
-        "5) <strong>Delta-delta</strong> for mixed disorders. 6) Find the <strong>cause</strong> (± osmolar gap)."
+      { h: "The routine (run it every time)", cls: "", items: [
+        "<strong>pH</strong> — acidaemic or alkalaemic?",
+        "Name the <strong>primary disorder</strong>.",
+        "Is <strong>compensation</strong> appropriate? (Winter's for a metabolic acidosis.)",
+        "<strong>Anion gap</strong> — always, and always albumin-corrected.",
+        "<strong>Delta-delta</strong> if the gap is up — that's how you unmask disorder number two.",
+        "Then, and only then, go looking for the cause."
       ]},
-      { h: "Key formulae", cls: "g", items: [
-        "<strong>Anion gap</strong> = Na − (Cl + HCO₃); normal 8–12; correct +2.5 per 1 g/dL fall in albumin.",
-        "<strong>Winter's:</strong> expected PaCO₂ = 1.5 × HCO₃ + 8 ± 2.",
-        "<strong>Osmolar gap</strong> = measured − (2×Na + glucose + urea); normal <10."
+      { h: "The numbers to have by heart", cls: "g", items: [
+        "<strong>Anion gap</strong> = Na − (Cl + HCO₃); normal 8–12; add 2.5 per 1 g/dL the albumin has fallen.",
+        "<strong>Winter's</strong>: expected PaCO₂ = 1.5 × HCO₃ + 8 ± 2.",
+        "<strong>Osmolar gap</strong> = measured − (2Na + glucose + urea); over 10 is suspicious.",
+        "High gap → <strong>GOLD MARK</strong>; normal gap → <strong>USED CARP</strong>."
       ]},
-      { h: "Causes", cls: "a", items: [
-        "High-AG acidosis: <strong>GOLD MARK</strong> (glycols, oxoproline, lactate, D-lactate, methanol, aspirin, renal, ketoacidosis).",
-        "Normal-AG acidosis: <strong>USED CARP</strong> (diarrhoea, RTA, saline, acetazolamide…).",
-        "High osmolar gap + high-AG acidosis → <strong>toxic alcohol</strong> until proven otherwise."
-      ]},
-      { h: "Traps", cls: "r", items: [
-        "A <strong>normal pH</strong> can hide a mixed/triple disorder — always compute AG + delta ratio.",
-        "Hypoalbuminaemia masks a high-AG acidosis — always albumin-correct.",
-        "In DKA, hold insulin until <strong>K⁺ ≥3.5</strong>."
+      { h: "Traps that cost marks", cls: "r", items: [
+        "A <strong>normal pH</strong> is exactly when a triple disorder is hiding — do the gap anyway.",
+        "Forgetting to <strong>albumin-correct</strong> — a sick, hypoalbuminaemic patient can have a big hidden gap.",
+        "A high gap acidosis <strong>with a high osmolar gap</strong> is a toxic alcohol until proven otherwise — reach for fomepizole, don't wait for levels."
       ]}
     ],
+    nothing: "If you remember nothing else: <strong>always calculate the anion gap, even when the pH is normal</strong> — that single habit catches the mixed disorders that everyone else misses.",
     pearls: [
-      { t: "Delta ratio", body: "<h4>ΔAG ÷ ΔHCO₃</h4><table><tr><td>&lt;1</td><td>+ normal-AG (hyperchloraemic) acidosis</td></tr><tr><td>1–2</td><td>pure high-AG acidosis</td></tr><tr><td>&gt;2</td><td>+ metabolic alkalosis / pre-existing high HCO₃</td></tr></table>" },
-      { t: "GOLD MARK", body: "<h4>High-anion-gap acidosis</h4><strong>G</strong>lycols · <strong>O</strong>xoproline (paracetamol) · <strong>L</strong>-lactate · <strong>D</strong>-lactate · <strong>M</strong>ethanol · <strong>A</strong>spirin · <strong>R</strong>enal failure · <strong>K</strong>etoacidosis." },
-      { t: "Toxic alcohols", body: "<h4>Methanol vs ethylene glycol</h4><table><tr><th></th><th>Clue</th></tr><tr><td>Methanol</td><td>Visual loss, optic disc</td></tr><tr><td>Ethylene glycol</td><td>Oxalate crystals, AKI</td></tr></table>Both: high osmolar + anion gap. Treat with <strong>fomepizole</strong> (± ethanol) ± <strong>haemodialysis</strong>." }
+      { t: "Delta ratio", body: "<h4>ΔAG ÷ ΔHCO₃</h4><table><tr><td>&lt;1</td><td>+ a normal-gap (hyperchloraemic) acidosis</td></tr><tr><td>1–2</td><td>a pure high-gap acidosis</td></tr><tr><td>&gt;2</td><td>+ a metabolic alkalosis hiding underneath</td></tr></table>" },
+      { t: "GOLD MARK", body: "<h4>High anion gap acidosis</h4><strong>G</strong>lycols · <strong>O</strong>xoproline (chronic paracetamol) · <strong>L</strong>-lactate · <strong>D</strong>-lactate · <strong>M</strong>ethanol · <strong>A</strong>spirin · <strong>R</strong>enal failure · <strong>K</strong>etoacidosis." },
+      { t: "Spotting a toxic alcohol", body: "<h4>Methanol vs ethylene glycol</h4><table><tr><th></th><th>Tell-tale</th></tr><tr><td>Methanol</td><td>Visual loss, optic disc changes</td></tr><tr><td>Ethylene glycol</td><td>Oxalate crystals, sudden AKI</td></tr></table>Both give a high osmolar <em>and</em> anion gap. Treat with fomepizole ± dialysis." }
+    ]
+  },
+
+  "Anaphylaxis": {
+    spec: "EM", read: "~2 min",
+    oneliner: "Anaphylaxis kills through the airway and the circulation, and the only drug that reliably saves the patient is <em>adrenaline, into the thigh, now</em>. Everything else is an afterthought.",
+    think:
+      "<p>The single biggest killer in anaphylaxis isn't the reaction — it's <strong>hesitation over the adrenaline</strong>. Antihistamines and steroids feel satisfying to give and do almost nothing acutely. If there's an airway, breathing or circulation problem after an exposure, that's adrenaline IM, and you repeat it every five minutes if needed.</p>" +
+      "<p>Two things people get wrong: they give it <em>subcutaneously</em> or IV as a first move (it's <strong>intramuscular, anterolateral thigh</strong>), and they sit the hypotensive patient up — which can empty the heart and cause a fatal arrest. Keep them flat.</p>",
+    sections: [
+      { h: "The moment you recognise it", cls: "g", items: [
+        "<strong>IM adrenaline 0.5 mg</strong> (0.5 mL of 1:1000) into the anterolateral thigh — repeat every 5 min as needed.",
+        "<strong>Lie the patient flat</strong> (or left lateral if pregnant/vomiting); sitting a hypotensive patient up can kill.",
+        "High-flow <strong>oxygen</strong> and a large-bore <strong>IV fluid bolus</strong> for hypotension.",
+        "Remove the trigger if you can (stop the drug/infusion)."
+      ]},
+      { h: "If it won't settle", cls: "a", items: [
+        "<strong>Refractory</strong> after repeated IM doses → an <strong>adrenaline infusion</strong> in a monitored setting.",
+        "On a <strong>beta-blocker</strong> and not responding? Add <strong>glucagon</strong>.",
+        "Antihistamines and steroids are <strong>adjuncts</strong> — they treat the itch and may reduce biphasic reactions, but they never replace adrenaline."
+      ]},
+      { h: "Before they go home", cls: "r", items: [
+        "Warn about a <strong>biphasic reaction</strong> and observe accordingly.",
+        "Discharge with <strong>two adrenaline auto-injectors</strong> and train them to use them.",
+        "Refer to <strong>allergy/immunology</strong> and document the trigger clearly."
+      ]}
+    ],
+    nothing: "If you remember nothing else: <strong>IM adrenaline into the thigh, and keep them flat.</strong> Don't reach for the antihistamine first, and don't sit them up.",
+    pearls: [
+      { t: "Adrenaline dose by age", body: "<h4>IM adrenaline (1:1000)</h4><table><tr><th>Age</th><th>Dose</th></tr><tr><td>Adult / &gt;12 y</td><td>500 µg (0.5 mL)</td></tr><tr><td>6–12 y</td><td>300 µg (0.3 mL)</td></tr><tr><td>6 mo–6 y</td><td>150 µg (0.15 mL)</td></tr></table>Repeat every 5 minutes as needed." },
+      { t: "Why flat, not sitting up", body: "<h4>The postural trap</h4>In vasodilated shock, sitting the patient upright can drop venous return so severely the heart empties — the “empty ventricle” arrest. Keep them <strong>supine</strong>, legs up; only sit them up if breathing is the dominant problem, and even then, cautiously." },
+      { t: "The beta-blocker patient", body: "<h4>When adrenaline underperforms</h4>Patients on beta-blockers can be resistant to adrenaline. Add <strong>glucagon 1–2 mg IV</strong> (it bypasses the beta-receptor), and be ready for vomiting." }
+    ]
+  },
+
+  "DKA": {
+    spec: "EM", read: "~2 min",
+    oneliner: "DKA is a fluid, potassium and insulin problem — usually in that order. The glucose is the least of your worries; the <em>potassium</em> is what can stop the heart.",
+    think:
+      "<p>The trainee reflex is to see a high sugar and reach for insulin. Slow down. These patients are litres down and profoundly potassium-depleted even when the serum number looks normal — because acidosis has pushed potassium <em>out</em> of cells. Give insulin too early and you drive that potassium back in and can drop the heart into an arrhythmia.</p>" +
+      "<p>So the order is <strong>fluids first, check the potassium, then insulin</strong>. Fixed-rate insulin, add glucose to the fluids once the sugar comes down so you can keep the insulin running to clear the ketones, and don't declare victory on the glucose — declare it on the <strong>ketones and the acidosis</strong>.</p>",
+    sections: [
+      { h: "Getting the order right", cls: "g", items: [
+        "<strong>Fluids first</strong> — 0.9% saline to refill the tank (balanced fluids are a reasonable alternative).",
+        "<strong>Check potassium before insulin</strong>: hold insulin until <strong>K⁺ ≥3.5</strong>, and replace K⁺ in the fluids once you start.",
+        "<strong>Fixed-rate insulin 0.1 U/kg/h.</strong> Add glucose to the fluids when the sugar drops below ~14 mmol/L so you can keep clearing ketones.",
+        "Look for the <strong>trigger</strong> — infection, missed insulin, MI, new diagnosis."
+      ]},
+      { h: "Knowing when it's over", cls: "a", items: [
+        "Resolution is <strong>ketones &lt;0.6, pH &gt;7.3 (or HCO₃ ≥15)</strong> — not just a normal glucose.",
+        "Only stop the infusion once they're <strong>eating and back on subcutaneous insulin</strong>, with an overlap.",
+        "Watch for <strong>euglycaemic DKA</strong> on SGLT2 inhibitors — normal sugar, full-blown ketoacidosis."
+      ]},
+      { h: "Traps", cls: "r", items: [
+        "Insulin before you've checked (and started replacing) <strong>potassium</strong>.",
+        "<strong>Bicarbonate</strong> — leave it alone unless pH &lt;6.9.",
+        "Missing the <strong>precipitant</strong> — the DKA is often the symptom, not the disease."
+      ]}
+    ],
+    nothing: "If you remember nothing else: <strong>fluids, then potassium, then insulin</strong> — and you're chasing the ketones, not the glucose.",
+    pearls: [
+      { t: "The potassium rule", body: "<h4>Insulin and K⁺</h4><table><tr><th>Serum K⁺</th><th>Action</th></tr><tr><td>&lt;3.5</td><td>Hold insulin, replace K⁺ first</td></tr><tr><td>3.5–5.5</td><td>Add K⁺ to fluids, run insulin</td></tr><tr><td>&gt;5.5</td><td>No added K⁺ yet; recheck</td></tr></table>Total-body potassium is always low, whatever the number says." },
+      { t: "Resolution criteria", body: "<h4>When to step down</h4>Ketones &lt;0.6 mmol/L · venous pH &gt;7.3 <em>or</em> HCO₃ ≥15 · patient eating. Overlap subcutaneous insulin <strong>before</strong> stopping the infusion, or they'll relapse." },
+      { t: "Euglycaemic DKA", body: "<h4>The normal-sugar trap</h4>On an <strong>SGLT2 inhibitor</strong>, patients can be in florid ketoacidosis with a near-normal glucose. If they're acidotic and ketotic, treat as DKA regardless of the sugar — and add dextrose early." }
     ]
   }
 };
@@ -255,7 +336,8 @@ var QR = {
   function buildPills() {
     var c = document.getElementById('qrPills');
     c.innerHTML = keys.map(function (k) {
-      return '<button class="qr-pill' + (k === cur ? ' active' : '') + '" data-k="' + k + '">' + k + '</button>';
+      return '<button class="qr-pill' + (k === cur ? ' active' : '') + '" data-k="' + k + '">' + k +
+        '<span class="qr-spec">' + QR[k].spec + '</span></button>';
     }).join('');
     c.querySelectorAll('.qr-pill').forEach(function (b) {
       b.onclick = function () {
@@ -274,17 +356,15 @@ var QR = {
         '<ul class="qr-list">' + s.items.map(function (i) { return '<li>' + i + '</li>'; }).join('') + '</ul></div>';
     }).join('');
 
-    var chips = d.pearls.map(function (p, i) {
-      return '<button class="qr-chip" data-i="' + i + '">💡 ' + p.t + '</button>';
-    }).join('');
-    var bodies = d.pearls.map(function (p, i) {
-      return '<div class="qr-pearl-body" id="qrp-' + i + '">' + p.body + '</div>';
-    }).join('');
+    var chips = d.pearls.map(function (p, i) { return '<button class="qr-chip" data-i="' + i + '">💡 ' + p.t + '</button>'; }).join('');
+    var bodies = d.pearls.map(function (p, i) { return '<div class="qr-pearl-body" id="qrp-' + i + '">' + p.body + '</div>'; }).join('');
 
     document.getElementById('qrContent').innerHTML =
-      '<div class="qr-topic-head"><h2>' + cur + '</h2><span class="qr-read">⏱ ' + d.read + ' read</span></div>' +
-      '<p class="qr-tagline">' + d.tagline + '</p>' +
+      '<div class="qr-topic-head"><h2>' + cur + '</h2><span class="qr-read">⏱ ' + d.read + ' read · ' + d.spec + '</span></div>' +
+      '<div class="qr-oneliner">' + d.oneliner + '</div>' +
+      '<div class="qr-think">' + d.think + '</div>' +
       secs +
+      (d.nothing ? '<div class="qr-nothing"><div class="qr-n-tag">🎯 If you remember nothing else</div><p>' + d.nothing + '</p></div>' : '') +
       '<div class="qr-pearls-wrap"><div class="qr-pearls-title">💡 Clinical pearls — tap to open</div>' +
         '<div class="qr-pearl-chips">' + chips + '</div>' + bodies + '</div>' +
       '<div class="qr-more">Ready to test yourself? <a href="mcqs.html?topic=' + encodeURIComponent(cur) + '">Practise ' + cur + ' MCQs →</a></div>';
@@ -295,7 +375,6 @@ var QR = {
         var i = b.getAttribute('data-i');
         var box = document.getElementById('qrp-' + i);
         var isOpen = box.classList.contains('show');
-        // close all
         wrap.querySelectorAll('.qr-pearl-body').forEach(function (x) { x.classList.remove('show'); });
         wrap.querySelectorAll('.qr-chip').forEach(function (x) { x.classList.remove('active'); });
         if (!isOpen) { box.classList.add('show'); b.classList.add('active'); }
@@ -304,11 +383,7 @@ var QR = {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  // deep-link support (?topic=Sepsis)
-  try {
-    var t = new URLSearchParams(location.search).get('topic');
-    if (t && QR[t]) cur = t;
-  } catch (e) {}
+  try { var t = new URLSearchParams(location.search).get('topic'); if (t && QR[t]) cur = t; } catch (e) {}
 
   buildPills();
   render();

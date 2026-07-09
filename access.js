@@ -88,6 +88,16 @@
     // Auth state
     if (cta) {
       if (loggedIn()) {
+        // Inject a Library opener (saved + read-later drawer)
+        if (!menu.querySelector('.nav-library')) {
+          var lib = document.createElement('li');
+          lib.innerHTML = '<a href="#" class="nav-library">🔖 Library</a>';
+          if (cta.parentNode) menu.insertBefore(lib, cta.parentNode);
+          lib.querySelector('a').addEventListener('click', function (e) {
+            e.preventDefault();
+            if (window.CCPanel) window.CCPanel.open();
+          });
+        }
         // Inject an account link (→ dashboard) showing the user's first name
         if (!menu.querySelector('.nav-account')) {
           var name = '';
@@ -194,10 +204,145 @@
     document.body.appendChild(lbtn);
   }
 
+  // ============================================================
+  //  Library drawer (Saved + Read-later) — site-wide
+  //  Continue-reading banner — site-wide
+  // ============================================================
+  function isArticle() { return !!document.querySelector('.topic-content'); }
+
+  function injectWidgetStyles() {
+    if (document.getElementById('cc-widget-css')) return;
+    var s = document.createElement('style');
+    s.id = 'cc-widget-css';
+    s.textContent =
+      '.cc-lib-btn{position:fixed;right:1rem;bottom:5.2rem;z-index:120;background:var(--bg);border:1.5px solid var(--blue);color:var(--blue);font-weight:700;font-size:.82rem;padding:.55rem .95rem;border-radius:30px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.18);font-family:var(--font-body);}' +
+      '.cc-lib-btn .cc-lib-n{display:inline-block;min-width:18px;margin-left:.35rem;background:var(--blue);color:#fff;border-radius:20px;font-size:.7rem;padding:.02rem .35rem;}' +
+      '@media(min-width:821px){.cc-lib-btn{bottom:1.5rem;}}' +
+      '.cc-drawer-ov{position:fixed;inset:0;background:rgba(8,15,30,.55);z-index:1400;opacity:0;pointer-events:none;transition:opacity .22s;}' +
+      '.cc-drawer-ov.show{opacity:1;pointer-events:auto;}' +
+      '.cc-drawer{position:fixed;top:0;right:0;height:100%;width:min(380px,88vw);background:var(--bg);z-index:1401;box-shadow:-8px 0 40px rgba(0,0,0,.3);transform:translateX(100%);transition:transform .26s ease;display:flex;flex-direction:column;}' +
+      '.cc-drawer.show{transform:translateX(0);}' +
+      '.cc-drawer-head{padding:1.1rem 1.2rem;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;}' +
+      '.cc-drawer-head h3{font-family:var(--font-disp);font-size:1.15rem;color:var(--ink);}' +
+      '.cc-drawer-x{background:none;border:none;font-size:1.3rem;color:var(--slate);cursor:pointer;line-height:1;}' +
+      '.cc-drawer-body{overflow-y:auto;padding:1rem 1.2rem 2rem;flex:1;}' +
+      '.cc-lib-sec{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);margin:1rem 0 .5rem;display:flex;align-items:center;gap:.4rem;}' +
+      '.cc-lib-sec:first-child{margin-top:0;}' +
+      '.cc-lib-item{display:flex;align-items:center;gap:.6rem;padding:.6rem .7rem;border:1px solid var(--line);border-radius:11px;margin-bottom:.5rem;background:var(--bg-alt);}' +
+      '.cc-lib-item a{flex:1;text-decoration:none;color:var(--ink);font-size:.86rem;font-weight:600;line-height:1.4;}' +
+      '.cc-lib-item a:hover{color:var(--blue);}' +
+      '.cc-lib-rm{background:none;border:none;color:var(--slate);cursor:pointer;font-size:1rem;flex-shrink:0;}' +
+      '.cc-lib-rm:hover{color:#ef4444;}' +
+      '.cc-lib-empty{font-size:.82rem;color:var(--slate);padding:.4rem .1rem 0;line-height:1.5;}' +
+      '.cc-resume-bar{background:linear-gradient(135deg,var(--blue-soft),var(--bg));border-bottom:1px solid var(--blue);padding:.6rem 5%;display:flex;align-items:center;gap:.7rem;font-size:.85rem;color:var(--ink);}' +
+      '.cc-resume-bar .cc-r-ic{font-size:1rem;}' +
+      '.cc-resume-bar .cc-r-txt{flex:1;line-height:1.35;}' +
+      '.cc-resume-bar .cc-r-txt b{color:var(--blue-dark);}' +
+      '.cc-resume-bar a.cc-r-go{background:var(--blue);color:#fff;text-decoration:none;font-weight:700;font-size:.8rem;padding:.4rem .9rem;border-radius:8px;white-space:nowrap;}' +
+      '.cc-resume-bar .cc-r-x{background:none;border:none;color:var(--slate);font-size:1.1rem;cursor:pointer;line-height:1;}' +
+      'html.dark .cc-resume-bar{background:#0d1b2e;}';
+    document.head.appendChild(s);
+  }
+
+  function libCount() { return engGet('cc-saved', []).length + engGet('cc-readlater', []).length; }
+
+  function renderLibrary() {
+    var body = document.getElementById('cc-drawer-body');
+    if (!body) return;
+    function section(icon, label, key, empty) {
+      var arr = engGet(key, []);
+      var items = arr.length ? arr.map(function (x) {
+        return '<div class="cc-lib-item" data-key="' + key + '" data-url="' + x.url + '">' +
+          '<a href="' + x.url + '">' + (x.title || x.url) + '</a>' +
+          '<button class="cc-lib-rm" title="Remove" aria-label="Remove">✕</button></div>';
+      }).join('') : '<div class="cc-lib-empty">' + empty + '</div>';
+      return '<div class="cc-lib-sec">' + icon + ' ' + label + ' <span style="margin-left:auto;color:var(--slate);">' + arr.length + '</span></div>' + items;
+    }
+    body.innerHTML =
+      section('★', 'Saved', 'cc-saved', 'Nothing saved yet. Tap ☆ Save on any article to keep it here.') +
+      section('📑', 'Read later', 'cc-readlater', 'Your read-later queue is empty. Tap 📑 Read later on an article to add it.');
+    body.querySelectorAll('.cc-lib-rm').forEach(function (btn) {
+      btn.onclick = function () {
+        var wrap = btn.closest('.cc-lib-item');
+        var key = wrap.getAttribute('data-key'), url = wrap.getAttribute('data-url');
+        var arr = engGet(key, []).filter(function (x) { return x.url !== url; });
+        engSet(key, arr);
+        try { if (window.CCCloud && window.CCCloud.pushSoon) window.CCCloud.pushSoon(); } catch (e) {}
+        renderLibrary(); updateLibBtn();
+      };
+    });
+  }
+
+  function updateLibBtn() {
+    var b = document.getElementById('cc-lib-btn');
+    if (!b) return;
+    var n = libCount();
+    b.querySelector('.cc-lib-n').textContent = n;
+  }
+
+  function buildLibrary() {
+    if (!loggedIn()) return;
+    if (document.getElementById('cc-drawer')) return;
+    injectWidgetStyles();
+    var ov = document.createElement('div'); ov.className = 'cc-drawer-ov'; ov.id = 'cc-drawer-ov';
+    var dr = document.createElement('div'); dr.className = 'cc-drawer'; dr.id = 'cc-drawer';
+    dr.innerHTML =
+      '<div class="cc-drawer-head"><h3>📚 Your library</h3><button class="cc-drawer-x" aria-label="Close">✕</button></div>' +
+      '<div class="cc-drawer-body" id="cc-drawer-body"></div>';
+    document.body.appendChild(ov); document.body.appendChild(dr);
+
+    window.CCPanel = {
+      open: function () { renderLibrary(); ov.classList.add('show'); dr.classList.add('show'); },
+      close: function () { ov.classList.remove('show'); dr.classList.remove('show'); }
+    };
+    ov.onclick = window.CCPanel.close;
+    dr.querySelector('.cc-drawer-x').onclick = window.CCPanel.close;
+
+    // floating launcher (skip on article pages — those already have Save/Read-later buttons)
+    if (!isArticle()) {
+      var btn = document.createElement('button');
+      btn.className = 'cc-lib-btn'; btn.id = 'cc-lib-btn';
+      btn.innerHTML = '🔖 Library<span class="cc-lib-n">0</span>';
+      btn.onclick = window.CCPanel.open;
+      document.body.appendChild(btn);
+      updateLibBtn();
+    }
+  }
+
+  function buildResumeBanner() {
+    if (!loggedIn() || isArticle()) return;
+    var last = engGet('cc-last', null);
+    if (!last || !last.url || last.url === fileOf(location.pathname)) return;
+    var seen = false; try { seen = sessionStorage.getItem('cc-resume-seen') === '1'; } catch (e) {}
+    if (seen) return;
+    injectWidgetStyles();
+    var nav = document.querySelector('nav.nav');
+    var bar = document.createElement('div');
+    bar.className = 'cc-resume-bar';
+    bar.innerHTML =
+      '<span class="cc-r-ic">▶️</span>' +
+      '<span class="cc-r-txt">Pick up where you left off — <b>' + (last.title || 'your last article') + '</b></span>' +
+      '<a class="cc-r-go" href="' + last.url + '">Resume</a>' +
+      '<button class="cc-r-x" aria-label="Dismiss">✕</button>';
+    if (nav && nav.parentNode) nav.parentNode.insertBefore(bar, nav.nextSibling);
+    else document.body.insertBefore(bar, document.body.firstChild);
+    bar.querySelector('.cc-r-x').onclick = function () {
+      bar.remove(); try { sessionStorage.setItem('cc-resume-seen', '1'); } catch (e) {}
+    };
+    bar.querySelector('.cc-r-go').addEventListener('click', function () {
+      try { sessionStorage.setItem('cc-resume-seen', '1'); } catch (e) {}
+    });
+  }
+
+  // Expose an opener so nav / other pages can trigger the drawer
+  window.CritCareLibrary = { open: function () { if (window.CCPanel) window.CCPanel.open(); } };
+
   document.addEventListener('DOMContentLoaded', function () {
     decorateNav();
     markLockedCards();
     if (gateThisPage) buildGate();
     initEngagement();
+    buildLibrary();
+    buildResumeBanner();
   });
 })();
