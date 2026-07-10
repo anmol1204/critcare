@@ -123,6 +123,37 @@
     }
   }
 
+  // ---- Declutter the nav: move secondary items into a "More ▾" dropdown ----
+  function groupNav() {
+    var menu = document.getElementById('menu');
+    if (!menu || menu.getAttribute('data-grouped')) return;
+    // items that always stay visible up front
+    var PRIMARY = { 'index.html': 1, 'topics.html': 1, 'mcqs.html': 1, 'quick-revision.html': 1, 'dnb.html': 1 };
+    var lis = [].slice.call(menu.children);
+    var secondary = [];
+    lis.forEach(function (li) {
+      var a = li.querySelector('a'); if (!a) return;
+      if (a.classList.contains('nav-cta') || a.classList.contains('nav-pro') ||
+          a.classList.contains('nav-library') || a.classList.contains('nav-account')) return;
+      var f = fileOf(a.getAttribute('href') || '');
+      if (!PRIMARY[f]) secondary.push(li);
+    });
+    if (secondary.length < 3) return; // not worth a dropdown
+    var more = document.createElement('li');
+    more.className = 'nav-more';
+    more.innerHTML = '<a href="#" class="nav-more-btn">More <span aria-hidden="true">▾</span></a><ul class="nav-more-menu"></ul>';
+    var sub = more.querySelector('.nav-more-menu');
+    // insert the dropdown just before the first "special" item (Pro/Library/account/Login)
+    var anchor = menu.querySelector('.nav-pro, .nav-library, .nav-account, .nav-cta');
+    var anchorLi = anchor ? anchor.closest('li') : null;
+    if (anchorLi) menu.insertBefore(more, anchorLi); else menu.appendChild(more);
+    secondary.forEach(function (li) { sub.appendChild(li); });
+    var btn = more.querySelector('.nav-more-btn');
+    btn.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); more.classList.toggle('open'); });
+    document.addEventListener('click', function (e) { if (!more.contains(e.target)) more.classList.remove('open'); });
+    menu.setAttribute('data-grouped', '1');
+  }
+
   // ---- Mark locked topic/feature cards with a badge ----
   function markLockedCards() {
     if (loggedIn()) return;
@@ -339,6 +370,7 @@
 
   document.addEventListener('DOMContentLoaded', function () {
     decorateNav();
+    groupNav();
     markLockedCards();
     if (gateThisPage) buildGate();
     initEngagement();
