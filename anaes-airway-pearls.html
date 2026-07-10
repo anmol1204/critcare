@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Airway — Recent Advances, Mistakes &amp; Exam Pearls — CritCare.in</title>
+  <meta name="description" content="Airway management recent advances (videolaryngoscopy, HFNO/THRIVE, standardised eFONA, human factors, sugammadex rescue), the common mistakes, viva-ready exam pearls for DrNB/MD/EDAIC, and references with image credits. Links out to the difficult-airway guideline algorithms." />
+  <link rel="canonical" href="https://critcare.in/anaes-airway-pearls.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-airway.html">Airway</a> › Pearls</div>
+    <h1>🎓 Advances, Mistakes &amp; Exam Pearls</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Recent advances</span>
+      <span class="topic-tag">Common mistakes</span>
+      <span class="topic-tag">Viva pearls · Refs</span>
+    </div>
+  </div>
+</header>
+
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Airway topic sections">
+    <a href="anaes-airway.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-airway-anatomy.html"><span class="t-ic">🫀</span>Anatomy</a>
+    <a href="anaes-airway-assessment.html"><span class="t-ic">🔎</span>Assessment</a>
+    <a href="anaes-airway-scores.html"><span class="t-ic">📊</span>Scores</a>
+    <a href="anaes-airway-devices.html"><span class="t-ic">🧰</span>Devices &amp; Definitions</a>
+    <a href="anaes-airway-trauma.html"><span class="t-ic">🩸</span>Trauma &amp; Pathology</a>
+    <a href="anaes-airway-rsi.html"><span class="t-ic">⚡</span>RSI</a>
+    <a href="anaes-airway-usg.html"><span class="t-ic">🔊</span>Ultrasound</a>
+    <a href="anaes-airway-pearls.html" class="active"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <!-- ===== difficult-airway → Guidelines link ===== -->
+  <div class="marino-box">
+    <div class="mb-label">📋 The difficult-airway algorithms live in the Guidelines library</div>
+    <p>The stepwise management of the unanticipated difficult airway — <strong>DAS</strong> plans A–D, the <strong>ASA 2022</strong> difficult-airway guideline, awake tracheal intubation, extubation, and the Indian <strong>AIDAA</strong> algorithm — is kept with the official guideline diagrams so there is one authoritative source.
+    <a href="guidelines.html" style="font-weight:700;color:#4c1d95;">Open the Guidelines library →</a></p>
+    <p style="margin-top:.6rem;">Algorithm diagrams (open in a new tab):
+      <a class="algo-link" href="assets/algorithms/das-2025-master.png" target="_blank" rel="noopener">🇬🇧 DAS master ↗</a>
+      <a class="algo-link" href="assets/algorithms/das-2025-plan-a.png" target="_blank" rel="noopener">Plan A ↗</a>
+      <a class="algo-link" href="assets/algorithms/das-2025-plan-b.png" target="_blank" rel="noopener">Plan B ↗</a>
+      <a class="algo-link" href="assets/algorithms/das-2025-plan-c.png" target="_blank" rel="noopener">Plan C ↗</a>
+      <a class="algo-link" href="assets/algorithms/das-2025-plan-d.png" target="_blank" rel="noopener">Plan D ↗</a>
+      <a class="algo-link" href="assets/algorithms/aidaa-2025-master.png" target="_blank" rel="noopener">🇮🇳 AIDAA master ↗</a>
+      <a class="algo-link" href="assets/algorithms/aidaa-2025-failed-airway.png" target="_blank" rel="noopener">AIDAA failed airway ↗</a>
+    </p>
+  </div>
+
+  <!-- ===== RECENT ADVANCES ===== -->
+  <span class="sb sb-adv">🚀 Recent Advances in Airway Management</span>
+  <h2>Recent advances</h2>
+  <div class="adv-grid">
+    <div class="adv-card"><h4>Videolaryngoscopy as default</h4><p>Growing evidence and guideline support for VL (Macintosh-style and hyperangulated blades) as a <strong>first-line</strong> device — higher first-pass success, better views, useful in C-spine immobilisation and unexpected difficulty.</p></div>
+    <div class="adv-card"><h4>HFNO / THRIVE</h4><p>High-flow nasal oxygen for preoxygenation and apnoeic oxygenation (<strong>trans-nasal humidified rapid-insufflation ventilatory exchange</strong>) markedly extends safe apnoea time in difficult airways and shared-airway surgery.</p></div>
+    <div class="adv-card"><h4>Video/optical stylets &amp; combined techniques</h4><p>Video stylets and VL-plus-flexible-scope combinations rescue the difficult intubation where a good view does not translate into tube passage.</p></div>
+    <div class="adv-card"><h4>Awake videolaryngoscopy</h4><p>An accepted alternative to flexible bronchoscopic ATI for selected anticipated difficult airways, with faster set-up.</p></div>
+    <div class="adv-card"><h4>Second-generation SGAs</h4><p>Devices with a gastric drain port (i-gel, ProSeal/Supreme) as conduits for intubation and as safer rescue and primary airways.</p></div>
+    <div class="adv-card"><h4>Airway ultrasound (POCUS)</h4><p>Bedside cricothyroid-membrane marking, tube-placement confirmation and gastric assessment — see the <a href="anaes-airway-usg.html">Ultrasound</a> tab.</p></div>
+    <div class="adv-card"><h4>Standardised eFONA</h4><p>The <strong>scalpel–bougie–tube</strong> cricothyroidotomy is now the single recommended emergency FONA technique, with widespread simulation training.</p></div>
+    <div class="adv-card"><h4>Human factors &amp; cognitive aids</h4><p>The <strong>Vortex</strong> approach, verbalising "declare CICO", checklists and team training — a direct response to the NAP4 lessons on task-fixation.</p></div>
+    <div class="adv-card"><h4>Sugammadex rescue</h4><p>Rapid reversal of profound rocuronium block (16 mg/kg) offers a pharmacological "wake-up" option in a can't-intubate situation where rocuronium was used.</p></div>
+  </div>
+
+  <!-- ===== MISTAKES ===== -->
+  <span class="sb sb-e">⚠️ Common Mistakes</span>
+  <h2>Common mistakes</h2>
+  <div class="mc"><div class="ml">❌ Mistake 1 — Repeated laryngoscopy attempts</div><p>Each extra attempt causes bleeding and oedema, converting a "can't intubate" into a "can't ventilate". Limit to 3 (+1 senior), and change something each time (operator, device, position, adjunct).</p></div>
+  <div class="mc"><div class="ml">❌ Mistake 2 — Fixating on the tube instead of oxygenation</div><p>The patient dies of hypoxia, not of an unplaced tube. Stop, oxygenate with SGA/facemask, step back and think. Task-fixation is the classic human-factors failure in NAP4.</p></div>
+  <div class="mc"><div class="ml">❌ Mistake 3 — Not confirming with capnography</div><p>"No trace, wrong place." A sustained EtCO₂ waveform is the only reliable confirmation of tracheal placement — auscultation and misting mislead. Undetected oesophageal intubation is fatal.</p></div>
+  <div class="mc"><div class="ml">❌ Mistake 4 — Inadequate preoxygenation</div><p>Skipping preoxygenation (or a leaky seal) removes your safety margin. In the obese, pregnant and critically ill, desaturation is precipitous — preoxygenate to EtO₂ &gt;0.85 and use apnoeic oxygenation.</p></div>
+  <div class="mc"><div class="ml">❌ Mistake 5 — Delaying front-of-neck access</div><p>In CICO, waiting "one more attempt" until SpO₂ is in the 40s makes FONA a resuscitation, not a rescue. Declare CICO and cut early.</p></div>
+  <div class="mc"><div class="ml">❌ Mistake 6 — Inducing an anticipated difficult airway asleep</div><p>Where difficulty and risk are predicted (airway tumour, fixed neck, OSMF, severe OSA), an awake technique keeps the patient breathing. Don't remove a marginal airway with a drug you cannot reverse.</p></div>
+  <div class="mc"><div class="ml">❌ Mistake 7 — Treating extubation as an afterthought</div><p>Most peri-operative airway complications happen at/after extubation. Stratify risk, fully reverse block (TOF &gt;0.9), extubate awake and upright in at-risk patients, and have a re-intubation plan.</p></div>
+
+  <!-- ===== PEARLS ===== -->
+  <span class="sb sb-x">🎓 Exam Pearls — DrNB / MD / EDAIC</span>
+  <h2>Exam pearls</h2>
+  <div class="ec"><p><strong>Q: What is the narrowest part of the airway?</strong><br>In adults, the <strong>glottis</strong> (rima glottidis / vocal cords); in children (classically &lt;8 years), the <strong>cricoid ring</strong> — hence the traditional use of uncuffed tubes, now largely superseded by low-pressure cuffed tubes.</p></div>
+  <div class="ec"><p><strong>Q: Original vs modified Mallampati?</strong><br>Mallampati 1985 = 3 classes; Samsoon &amp; Young 1987 added class IV (hard palate only) = the modified 4-class version used today. Classes III–IV predict difficulty.</p></div>
+  <div class="ec"><p><strong>Q: Describe the laryngeal innervation and the effect of injury.</strong><br>SLN external branch → cricothyroid (loss = weak voice/no high pitch); SLN internal branch → sensation above the cords (loss = aspiration); RLN → all other intrinsic muscles + sensation below the cords (unilateral = hoarseness; bilateral = stridor/obstruction).</p></div>
+  <div class="ec"><p><strong>Q: Describe the (upgraded) Cormack–Lehane grades.</strong><br>1 = most of glottis; 2a partial cords, 2b arytenoids only; 3a epiglottis liftable, 3b adherent; 4 = neither. Grades 2b–4 = difficult laryngoscopy. POGO is the continuous alternative for VL.</p></div>
+  <div class="ec"><p><strong>Q: Describe an RSI and Sellick's manoeuvre.</strong><br>Preoxygenate → predetermined induction agent + rapid-onset relaxant (sux 1–1.5 mg/kg or roc 1.2 mg/kg), classically no manual ventilation; cricoid pressure 10 N awake → 30 N asleep, released if it worsens the view/ventilation or the patient vomits; confirm with capnography.</p></div>
+  <div class="ec"><p><strong>Q: How do you confirm tracheal intubation?</strong><br>Sustained end-tidal CO₂ over several breaths ("no trace, wrong place"), plus visualising the tube through the cords, bilateral chest rise, auscultation and misting. Ultrasound shows a single air–mucosa interface with bilateral lung sliding.</p></div>
+  <div class="ec"><p><strong>Q: Suxamethonium vs high-dose rocuronium for RSI?</strong><br>Sux 1–1.5 mg/kg: fastest on/off but contraindicated in hyperkalaemia, burns/denervation and MH. Rocuronium 1.2 mg/kg: comparable conditions and fully reversible with sugammadex 16 mg/kg (a "can't intubate" rescue).</p></div>
+  <div class="ec"><p><strong>Q: When is awake tracheal intubation indicated?</strong><br>The anticipated difficult airway at risk of failed asleep intubation/ventilation — airway tumour, oral submucous fibrosis, fixed cervical spine, severely restricted mouth opening. Confirm placement with capnography before inducing.</p></div>
+
+  <!-- ===== REFERENCES ===== -->
+  <span class="sb sb-r">📚 References &amp; Image Credits</span>
+  <h2 id="refs">References &amp; image credits</h2>
+  <ol class="ref-list">
+    <li><strong>Frerk C, Mitchell VS, McNarry AF, et al. (Difficult Airway Society).</strong> DAS guidelines for management of unanticipated difficult intubation in adults 2015. <em>Br J Anaesth.</em> 2015;115:827–848.</li>
+    <li><strong>Apfelbaum JL, Hagberg CA, Connis RT, et al.</strong> 2022 ASA Practice Guidelines for Management of the Difficult Airway. <em>Anesthesiology.</em> 2022;136:31–81.</li>
+    <li><strong>Ahmad I, El-Boghdadly K, Bhagrath R, et al. (DAS).</strong> Guidelines for awake tracheal intubation in adults. <em>Anaesthesia.</em> 2020;75:509–528.</li>
+    <li><strong>Popat M, Mitchell V, Dravid R, et al. (DAS).</strong> DAS guidelines for the management of tracheal extubation. <em>Anaesthesia.</em> 2012;67:318–340.</li>
+    <li><strong>Cook TM, Woodall N, Frerk C (4th National Audit Project, RCoA &amp; DAS).</strong> Major complications of airway management in the UK (NAP4). <em>Br J Anaesth.</em> 2011;106:617–642.</li>
+    <li><strong>Sellick BA.</strong> Cricoid pressure to control regurgitation of stomach contents during induction of anaesthesia. <em>Lancet.</em> 1961;278:404–406.</li>
+    <li><strong>Birenbaum A, Hajage D, Roche S, et al. (IRIS investigators).</strong> Effect of cricoid pressure compared with a sham procedure in RSI (IRIS trial). <em>JAMA Surg.</em> 2019;154:9–17.</li>
+    <li><strong>Cook TM.</strong> A new practical classification of laryngeal view. <em>Anaesthesia.</em> 2000;55:274–279.</li>
+    <li><strong>Roth D, Pace NL, Lee A, et al.</strong> Bedside tests for predicting difficult airways: a Cochrane systematic review. <em>Cochrane Database Syst Rev.</em> 2018.</li>
+    <li><strong>Kristensen MS, Teoh WH, et al.</strong> Ultrasonography for clinical airway management. <em>Anaesthesia / Br J Anaesth.</em> (reviews).</li>
+    <li><strong>Gropper MA, et al. (eds).</strong> Miller's Anesthesia, 9th Edition. Airway Management in the Adult. Elsevier; 2020.</li>
+    <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology, 6th Edition. Airway Management. McGraw-Hill; 2018.</li>
+    <li><strong>Barash PG, et al. (eds).</strong> Clinical Anesthesia, 9th Edition. Airway Management. Wolters Kluwer; 2023.</li>
+  </ol>
+  <p style="font-size:.78rem;color:var(--slate);line-height:1.6;margin-top:1rem;">
+    <strong>Image credits.</strong> Airway overview — Wikimedia Commons, <strong>public domain</strong>. External larynx — Wikimedia Commons, <strong>CC BY-SA 2.5</strong>. Vocal-cord (glottis) views — <em>Servier Medical Art</em>, <strong>CC BY-SA 3.0</strong>. Trachea &amp; bronchi — <em>OpenStax Anatomy &amp; Physiology</em>, <strong>CC BY 3.0</strong>. Modified Mallampati diagram — Jmarchn, <strong>CC BY-SA 3.0</strong>. Cormack–Lehane figure — User:Tubus, <strong>CC BY-SA 3.0</strong> (title cropped). Oropharyngeal (Guedel) airways — Intersurgical Ltd, <strong>CC BY-SA 3.0</strong>. Nasopharyngeal airway — Wikimedia Commons, <strong>CC BY-SA 4.0</strong>. LMA &amp; i-gel — Wikimedia Commons, <strong>CC BY-SA 4.0</strong>. Airway ultrasound images — Osman A, Sum KM, <em>J Intensive Care</em> 2016;4:52, <strong>CC BY 4.0</strong> (via PubMed Central). All used with attribution. Difficult-airway algorithm diagrams are shown for educational reference from the respective DAS and AIDAA guidelines.
+  </p>
+
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-airway-usg.html"><span class="tp-dir">← Back</span><span class="tp-title">🔊 Ultrasound</span></a>
+    <a class="tp-next" href="anaes-airway.html"><span class="tp-dir">Back to →</span><span class="tp-title">🏠 Airway Overview</span></a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

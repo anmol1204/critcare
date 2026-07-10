@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Airway Anatomy — Larynx, Innervation &amp; Bronchial Tree — CritCare.in</title>
+  <meta name="description" content="Airway anatomy in depth: upper and lower airway, laryngeal cartilages, a detailed table of laryngeal innervation (superior and recurrent laryngeal nerves and the effects of injury), the bronchial tree and why the right main bronchus is more vertical, and paediatric-versus-adult airway differences." />
+  <link rel="canonical" href="https://critcare.in/anaes-airway-anatomy.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-airway.html">Airway</a> › Anatomy</div>
+    <h1>🫀 Anatomy of the Airway</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Upper &amp; lower airway</span>
+      <span class="topic-tag">Laryngeal innervation</span>
+      <span class="topic-tag">Paeds vs adult</span>
+    </div>
+  </div>
+</header>
+
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Airway topic sections">
+    <a href="anaes-airway.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-airway-anatomy.html" class="active"><span class="t-ic">🫀</span>Anatomy</a>
+    <a href="anaes-airway-assessment.html"><span class="t-ic">🔎</span>Assessment</a>
+    <a href="anaes-airway-scores.html"><span class="t-ic">📊</span>Scores</a>
+    <a href="anaes-airway-devices.html"><span class="t-ic">🧰</span>Devices &amp; Definitions</a>
+    <a href="anaes-airway-trauma.html"><span class="t-ic">🩸</span>Trauma &amp; Pathology</a>
+    <a href="anaes-airway-rsi.html"><span class="t-ic">⚡</span>RSI</a>
+    <a href="anaes-airway-usg.html"><span class="t-ic">🔊</span>Ultrasound</a>
+    <a href="anaes-airway-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <span class="sb sb-anat">🫀 Anatomy — Upper &amp; Lower Airway</span>
+  <div class="book-quote">
+    <p>"Every airway manoeuvre — mask seal, laryngoscopy, supraglottic placement, cricothyroidotomy — is applied anatomy. The airway is conventionally divided at the vocal cords into an upper (conducting) airway you can see and instrument, and a lower (tracheobronchial) airway you confirm and protect."</p>
+    <cite>Synthesised from Miller's Anesthesia — Airway Management; Morgan &amp; Mikhail's Clinical Anesthesiology.</cite>
+  </div>
+
+  <figure class="fig" style="max-width:430px;">
+    <span class="fig-media"><img src="assets/airway/respiratory-system.svg" alt="The airway from nose and pharynx through larynx, trachea and bronchial tree" loading="lazy"/></span>
+    <figcaption>The airway at a glance — nose, pharynx, larynx (epiglottis, thyroid/cricoid cartilage, vocal folds), trachea, carina and bronchial tree.<div class="fig-src">Wikimedia Commons — public domain.</div></figcaption>
+  </figure>
+
+  <h2>The upper airway</h2>
+  <ul>
+    <li><strong>Nose &amp; nasopharynx</strong> — warms, humidifies and filters gas; the route for nasal intubation and NPAs (beware the turbinates and the adenoids).</li>
+    <li><strong>Oral cavity &amp; oropharynx</strong> — the tongue is the commonest cause of obstruction in the unconscious patient; the palatine tonsils and soft palate frame the Mallampati view.</li>
+    <li><strong>Hypopharynx &amp; larynx</strong> — the epiglottis, aryepiglottic folds, and the <strong>glottis</strong> (the vocal cords and the space between them — the narrowest point in the <em>adult</em> airway). The larynx sits at C3–C6.</li>
+    <li><strong>Laryngeal cartilages</strong> — the unpaired <strong>thyroid, cricoid and epiglottis</strong> and the paired <strong>arytenoid, corniculate and cuneiform</strong> cartilages. The <strong>cricoid</strong> is the only complete ring — the landmark for cricoid pressure (Sellick's manoeuvre). The <strong>cricothyroid membrane</strong>, between the thyroid and cricoid cartilages, is the site for emergency front-of-neck access.</li>
+  </ul>
+
+  <div class="fig-grid">
+    <figure class="fig" style="max-width:360px;">
+      <span class="fig-media"><img src="assets/airway/larynx-external.svg" alt="External anatomy of the larynx — thyroid and cricoid cartilage, cricothyroid membrane" loading="lazy"/></span>
+      <figcaption>External larynx — hyoid, thyroid &amp; cricoid cartilage, the <strong>cricothyroid membrane/muscle</strong> (the FONA landmark) and the superior laryngeal nerve.<div class="fig-src">Wikimedia Commons — CC BY-SA 2.5.</div></figcaption>
+    </figure>
+    <figure class="fig" style="max-width:290px;">
+      <span class="fig-media"><img src="assets/airway/vocal-cords-rest.png" alt="Laryngeal view of the vocal cords abducted at rest" loading="lazy"/></span>
+      <figcaption>Glottis at rest — vocal cords <strong>abducted</strong> (the open triangular view at laryngoscopy).<div class="fig-src">Servier Medical Art — CC BY-SA 3.0.</div></figcaption>
+    </figure>
+    <figure class="fig" style="max-width:290px;">
+      <span class="fig-media"><img src="assets/airway/vocal-cords-phonation.png" alt="Laryngeal view of the vocal cords adducted in phonation" loading="lazy"/></span>
+      <figcaption>Glottis in phonation — vocal cords <strong>adducted</strong> (closed).<div class="fig-src">Servier Medical Art — CC BY-SA 3.0.</div></figcaption>
+    </figure>
+  </div>
+
+  <!-- ===== INNERVATION OF THE LARYNX — in-depth table ===== -->
+  <h2>Innervation of the larynx — in depth</h2>
+  <p>All laryngeal innervation comes from two branches of the <strong>vagus (CN X)</strong>: the <strong>superior laryngeal nerve (SLN)</strong> and the <strong>recurrent laryngeal nerve (RLN)</strong>. This is high-yield because it explains hoarseness, aspiration and post-thyroidectomy stridor — and it is exactly what you block for an awake intubation.</p>
+  <div class="table-wrap">
+    <table class="drug-table">
+      <thead><tr><th>Nerve</th><th>Motor supply</th><th>Sensory supply</th><th>Effect of injury</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>SLN — external branch</strong></td>
+          <td><strong>Cricothyroid</strong> muscle (the only tensor of the cords)</td>
+          <td>—</td>
+          <td>Weak, easily-tired voice; <strong>loss of high pitch</strong> (classically the "Amelita Galli-Curci" opera-singer lesion). At risk with the superior thyroid artery in thyroidectomy.</td>
+        </tr>
+        <tr>
+          <td><strong>SLN — internal branch</strong></td>
+          <td>—</td>
+          <td>Mucosa <strong>above the cords</strong> — supraglottis, epiglottis, vallecula, upper surface of the cords (pierces the thyrohyoid membrane)</td>
+          <td>Loss of sensation → <strong>impaired cough / aspiration risk</strong>. This is the nerve targeted by the SLN block for awake intubation.</td>
+        </tr>
+        <tr>
+          <td><strong>Recurrent laryngeal nerve (RLN)</strong></td>
+          <td><strong>All intrinsic laryngeal muscles except cricothyroid</strong> — importantly the <strong>posterior cricoarytenoid</strong>, the sole abductor ("the only muscle that opens the airway")</td>
+          <td>Mucosa <strong>below the cords</strong> — subglottis and upper trachea</td>
+          <td><strong>Unilateral:</strong> hoarseness, cord in the paramedian position. <strong>Bilateral acute (e.g. thyroidectomy):</strong> both cords adducted/paramedian with unopposed cricothyroid → <strong>stridor and airway obstruction</strong> — may need re-intubation.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="marino-box">
+    <div class="mb-label">🎯 Exam nuances you are expected to know</div>
+    <ul>
+      <li><strong>Left RLN</strong> has a long thoracic course (loops under the <strong>arch of the aorta</strong>) — hence hoarseness from a left hilar tumour, aortic aneurysm or mitral enlargement (Ortner's syndrome). The <strong>right RLN</strong> loops under the right subclavian artery.</li>
+      <li><strong>Semon's law</strong> — in a progressive RLN lesion the <em>abductors</em> (posterior cricoarytenoid) fail before the adductors, so the cord drifts towards the midline.</li>
+      <li><strong>Awake-intubation blocks</strong>: <strong>glossopharyngeal (CN IX)</strong> for the tongue base/oropharynx (gag), <strong>SLN block</strong> for supraglottis, and a <strong>transtracheal / recurrent laryngeal block</strong> (via the cricothyroid membrane) for the subglottis and trachea — plus topical local anaesthetic.</li>
+    </ul>
+  </div>
+
+  <!-- ===== LOWER AIRWAY + bronchial tree detail ===== -->
+  <h2>The lower airway &amp; the bronchial tree</h2>
+  <ul>
+    <li><strong>Trachea</strong> — ~10–12 cm long, 16–20 C-shaped cartilage rings anteriorly with a posterior membranous wall; runs from the cricoid (C6) to the <strong>carina</strong> at ~T4–T5 (the sternal angle of Louis).</li>
+    <li><strong>Why the right main bronchus matters</strong> — it is <strong>wider, shorter and more vertical</strong> (leaves the trachea at roughly <strong>25°</strong> from the midline versus about <strong>45°</strong> on the left). So a tube pushed too far, an aspirated foreign body, and inhaled fluid all preferentially enter the <strong>right</strong> lung — and typically the right lower lobe in the upright patient.</li>
+    <li><strong>Consequences at the bedside</strong> — endobronchial (usually right-main) intubation causes left-lung collapse, one-lung ventilation and desaturation; confirm the tube tip sits <strong>2–4 cm above the carina</strong> and listen for equal bilateral air entry.</li>
+    <li><strong>Distal tree</strong> — main → lobar → segmental bronchi → bronchioles → terminal &amp; respiratory bronchioles → alveolar ducts and alveoli (the conducting airways become respiratory at the respiratory bronchiole).</li>
+  </ul>
+
+  <figure class="fig" style="max-width:560px;">
+    <span class="fig-media"><img src="assets/airway/trachea-openstax.jpg" alt="Larynx, trachea, carina and the primary and secondary bronchi, with the more vertical right main bronchus" loading="lazy"/></span>
+    <figcaption>Lower airway — larynx, trachea with its C-shaped cartilages, the <strong>carina</strong>, and the primary/secondary bronchi. Note the <strong>right main bronchus is wider and more vertical</strong> than the left; inset shows the tracheal wall (pseudostratified ciliated epithelium over hyaline cartilage).<div class="fig-src">OpenStax Anatomy &amp; Physiology, Wikimedia Commons — CC BY 3.0.</div></figcaption>
+  </figure>
+
+  <!-- ===== PAEDS vs ADULT (replaces the old 'clinical corollaries') ===== -->
+  <h2>Paediatric vs adult airway</h2>
+  <p>The infant airway is not a small adult airway. These differences change how you position, which blade you choose and how quickly the child desaturates.</p>
+  <div class="vs-grid">
+    <div class="vs-card vs-adult">
+      <h4>Adult airway</h4>
+      <ul>
+        <li>Larynx at <strong>C5–C6</strong></li>
+        <li><strong>Glottis</strong> is the narrowest point — cylindrical subglottis</li>
+        <li>Flat, firm epiglottis → Macintosh (curved) blade</li>
+        <li>Proportionate tongue &amp; occiput; sniffing position needs a head-ring</li>
+        <li>Longer trachea → more margin before endobronchial intubation</li>
+        <li>Larger FRC relative to O₂ demand → slower desaturation</li>
+      </ul>
+    </div>
+    <div class="vs-card vs-paed">
+      <h4>Paediatric airway (infant)</h4>
+      <ul>
+        <li>Larynx <strong>higher &amp; more anterior</strong> (C3–C4)</li>
+        <li><strong>Cricoid ring</strong> the functionally narrowest point (classic teaching) → historically uncuffed tubes</li>
+        <li>Long, stiff, <strong>Ω-shaped epiglottis</strong> → straight (Miller) blade to lift it</li>
+        <li><strong>Large occiput</strong> (natural flexion — a shoulder roll helps) and <strong>large tongue</strong></li>
+        <li>Short trachea → easy endobronchial intubation &amp; accidental extubation</li>
+        <li>High O₂ consumption + small FRC → <strong>rapid desaturation</strong>; neonates are obligate nasal breathers</li>
+      </ul>
+    </div>
+  </div>
+  <div class="warn-box">
+    <div class="kb-label">💡 Cricoid vs glottis — the modern caveat</div>
+    <p>MRI/bronchoscopy studies suggest the paediatric airway may actually be narrowest at the <strong>glottis</strong>, and is elliptical rather than a perfect funnel — but <strong>"cricoid = narrowest in children"</strong> remains the standard exam answer. Low-pressure <strong>cuffed</strong> tubes (with cuff-pressure monitoring) are now widely used in children, superseding the old uncuffed rule.</p>
+  </div>
+
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-airway.html"><span class="tp-dir">← Back</span><span class="tp-title">🏠 Overview</span></a>
+    <a class="tp-next" href="anaes-airway-assessment.html"><span class="tp-dir">Next →</span><span class="tp-title">🔎 Airway Assessment</span></a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

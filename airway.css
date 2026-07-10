@@ -1,0 +1,116 @@
+/* ============================================================
+   airway.css — shared styles for the multi-page Airway topic
+   Loaded by anaes-airway.html (hub) + all anaes-airway-*.html tabs.
+   Depends on shared.css variables (--blue, --ink, --slate, --line,
+   --bg, --bg-alt). Anaesthesia-library components migrated out of the
+   old single-page inline <style>, plus the tab-bar + pager.
+   ============================================================ */
+
+/* ---- book / guideline / mistake / pearl components ---- */
+.book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+.book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+.book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+.marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+.marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+.marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+.marino-box ul{padding-left:1.2rem;}
+.marino-box strong{color:#4c1d95;}
+.guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+.gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+.gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+.gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+.mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+.mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+.mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+.ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+.ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+.ec strong{color:#92400e;}
+
+/* ---- section badges ---- */
+.sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+.sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);} .sb-s{background:#e0f2fe;color:#075985;} .sb-anat{background:#fce7f3;color:#9d174d;} .sb-usg{background:#cffafe;color:#155e75;} .sb-adv{background:#ecfccb;color:#3f6212;} .sb-dev{background:#e0e7ff;color:#3730a3;} .sb-tra{background:#fee2e2;color:#9f1239;}
+
+/* ---- DAS plan cards ---- */
+.plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1rem 0;}
+.plan-card{border-radius:10px;padding:.9rem 1rem;border:1px solid;}
+.plan-a{background:#f0fdf4;border-color:#86efac;} .plan-b{background:#fefce8;border-color:#fde68a;} .plan-c{background:#ffedd5;border-color:#fdba74;} .plan-d{background:#fef2f2;border-color:#fecaca;}
+.plan-card h4{font-size:.78rem;font-weight:800;margin-bottom:.4rem;}
+.plan-a h4{color:#166534;} .plan-b h4{color:#854d0e;} .plan-c h4{color:#9a3412;} .plan-d h4{color:#991b1b;}
+.plan-card p{font-size:.78rem;color:var(--slate);line-height:1.55;margin:0;}
+@media(max-width:700px){.plan-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:420px){.plan-grid{grid-template-columns:1fr;}}
+
+/* ---- responsive figures (phone / tablet / laptop) ---- */
+.fig{margin:1.2rem auto;text-align:center;max-width:100%;}
+.fig-media{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.9rem;display:inline-block;max-width:100%;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.fig-media img,.fig-media svg{display:block;width:100%;height:auto;margin:0 auto;border-radius:4px;}
+.fig figcaption{font-size:.82rem;color:var(--slate);margin-top:.55rem;line-height:1.55;max-width:560px;margin-left:auto;margin-right:auto;}
+.fig-src{font-size:.66rem;color:var(--slate);opacity:.75;margin-top:.3rem;}
+.fig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin:1.3rem 0;align-items:start;justify-items:center;}
+.fig-grid .fig{margin:0;}
+
+/* ---- labelled placeholder slot (user to supply a real clinical photo) ---- */
+.usg-slot,.photo-slot{background:repeating-linear-gradient(45deg,var(--bg-alt),var(--bg-alt) 12px,var(--bg) 12px,var(--bg) 24px);border:2px dashed var(--line);border-radius:12px;padding:2rem 1.2rem;text-align:center;color:var(--slate);font-size:.84rem;line-height:1.6;margin:1rem 0;}
+.usg-slot strong,.photo-slot strong{color:var(--ink);}
+.photo-slot .ps-ic{font-size:1.6rem;display:block;margin-bottom:.4rem;opacity:.7;}
+
+/* ---- advances grid ---- */
+.adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.9rem;margin:1.1rem 0;}
+.adv-card{border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;background:var(--bg-alt);}
+.adv-card h4{font-size:.86rem;font-weight:800;color:var(--blue);margin-bottom:.35rem;}
+.adv-card p{font-size:.82rem;color:var(--slate);line-height:1.6;margin:0;}
+
+/* ---- algorithm link chips ---- */
+.algo-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:700;color:var(--blue);text-decoration:none;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:.45rem .8rem;margin:.3rem .4rem .3rem 0;}
+.algo-link:hover{border-color:var(--blue);}
+
+/* ============================================================
+   TAB BAR — each tab is its own page (co-founder's model)
+   ============================================================ */
+.airway-tabs-wrap{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;box-shadow:0 2px 8px rgba(0,0,0,.04);}
+.airway-tabs{max-width:1180px;margin:0 auto;display:flex;gap:.25rem;overflow-x:auto;padding:.5rem .7rem;scrollbar-width:thin;-webkit-overflow-scrolling:touch;}
+.airway-tabs::-webkit-scrollbar{height:5px;}
+.airway-tabs::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px;}
+.airway-tabs a{flex:0 0 auto;font-size:.82rem;font-weight:600;color:var(--slate);text-decoration:none;padding:.5rem .85rem;border-radius:8px;white-space:nowrap;display:inline-flex;align-items:center;gap:.35rem;transition:background .15s,color .15s;}
+.airway-tabs a:hover{background:var(--bg-alt);color:var(--ink);}
+.airway-tabs a.active{background:var(--blue);color:#fff;box-shadow:0 2px 6px rgba(30,111,217,.28);}
+.airway-tabs a .t-ic{font-size:.95rem;}
+
+/* ---- bottom pager (prev / next tab) ---- */
+.tab-pager{display:flex;justify-content:space-between;gap:.8rem;margin:2rem 0 .5rem;flex-wrap:wrap;}
+.tab-pager a{flex:1 1 45%;min-width:200px;display:flex;flex-direction:column;gap:.15rem;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:.85rem 1.1rem;background:var(--bg-alt);transition:border-color .15s,transform .1s;}
+.tab-pager a:hover{border-color:var(--blue);transform:translateY(-1px);}
+.tab-pager .tp-dir{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--slate);}
+.tab-pager .tp-title{font-size:.95rem;font-weight:700;color:var(--ink);}
+.tab-pager a.tp-next{text-align:right;align-items:flex-end;}
+
+/* ============================================================
+   HUB (overview) — quick-nav cards to each tab-page
+   ============================================================ */
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin:1.4rem 0;}
+.hub-card{display:block;text-decoration:none;border:1px solid var(--line);border-radius:14px;padding:1.15rem 1.2rem;background:var(--bg);transition:border-color .15s,box-shadow .15s,transform .1s;}
+.hub-card:hover{border-color:var(--blue);box-shadow:0 6px 18px rgba(0,0,0,.07);transform:translateY(-2px);}
+.hub-card .hc-ic{font-size:1.5rem;display:block;margin-bottom:.5rem;}
+.hub-card .hc-n{font-size:.66rem;font-weight:800;color:var(--slate);letter-spacing:.06em;}
+.hub-card h3{font-size:1.02rem;font-weight:700;color:var(--ink);margin:.15rem 0 .4rem;}
+.hub-card p{font-size:.82rem;color:var(--slate);line-height:1.55;margin:0;}
+
+/* ============================================================
+   Devices & Definitions page
+   ============================================================ */
+.def-list{display:grid;gap:.7rem;margin:1rem 0;}
+.def{border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:0 10px 10px 0;padding:.85rem 1.1rem;background:var(--bg-alt);}
+.def dt,.def .dt{font-size:.92rem;font-weight:700;color:var(--ink);margin-bottom:.25rem;}
+.def dd,.def .dd{font-size:.86rem;color:var(--slate);line-height:1.65;margin:0;}
+.def .dd strong{color:var(--ink);}
+
+/* ---- paeds vs adult comparison strip (two-column highlight) ---- */
+.vs-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin:1.1rem 0;}
+.vs-card{border-radius:12px;padding:1rem 1.15rem;border:1px solid;}
+.vs-adult{background:#eff6ff;border-color:#bfdbfe;}
+.vs-paed{background:#fdf2f8;border-color:#fbcfe8;}
+.vs-card h4{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;}
+.vs-adult h4{color:#1e40af;} .vs-paed h4{color:#9d174d;}
+.vs-card ul{margin:0;padding-left:1.1rem;}
+.vs-card li{font-size:.82rem;color:var(--slate);line-height:1.6;margin-bottom:.3rem;}
+@media(max-width:560px){.vs-grid{grid-template-columns:1fr;}}

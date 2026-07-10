@@ -25,3 +25,10 @@ AIRWAY ULTRASOUND (added — real annotated clinical images):
 - usg-ett-double-tract.jpg
 NOTE: ASRA POCUS newsletter images are © ASRA (all rights reserved) and are NOT reproduced —
 the page links out to the ASRA article instead.
+
+AIRWAY DEVICES (added 2026-07-10 for the Devices & Definitions tab — Wikimedia Commons):
+- device-opa-guedel.jpg   Oropharyngeal (Guedel) airways, colour-coded sizes. Intersurgical Ltd. CC BY-SA 3.0.
+- device-npa.jpg          Nasopharyngeal (Wendl) airway. CC BY-SA 4.0.
+- device-lma-igel.jpg     LMA Unique (classic) beside an i-gel supraglottic airway. User:CYP3A42D6. CC BY-SA 4.0.
+- device-lma-proseal.jpg  ProSeal LMA, inflated (spare — not currently placed on a page). User:Ignis. CC BY-SA 3.0.
+  (originals downsized to 1400px max for web.)

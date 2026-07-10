@@ -9,60 +9,15 @@
   <meta name="apple-mobile-web-app-title" content="CritCare"/>
   <link rel="apple-touch-icon" href="/icon-apple.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-  <title>Airway Management — Anatomy, Assessment, Scores, Guidelines &amp; Ultrasound — CritCare.in</title>
-  <meta name="description" content="Comprehensive airway topic: upper &amp; lower airway anatomy with figures, detailed airway assessment (every parameter), airway scores in tables (Mallampati, Cormack–Lehane, Wilson, LEMON, El-Ganzouri), DAS &amp; ASA difficult-airway guidelines, airway ultrasound and recent advances. From Miller, Barash, Morgan &amp; Mikhail and the latest guidelines." />
+  <title>Airway Management — Overview &amp; Contents — CritCare.in</title>
+  <meta name="description" content="Airway Management, taught as short tabbed pages: anatomy, assessment, scores, airway devices &amp; definitions, airway trauma &amp; pathology, rapid sequence induction (RSI), airway ultrasound and exam pearls. From Miller, Barash and Morgan &amp; Mikhail." />
   <link rel="canonical" href="https://critcare.in/anaes-airway.html" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
   <script src="darkmode.js"></script>
   <script src="access.js"></script>
   <script type="module" src="cc-cloud.js"></script>
-  <style>
-    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
-    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
-    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
-    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
-    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
-    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
-    .marino-box ul{padding-left:1.2rem;}
-    .marino-box strong{color:#4c1d95;}
-    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
-    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
-    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
-    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
-    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
-    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
-    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
-    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
-    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
-    .ec strong{color:#92400e;}
-    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
-    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);} .sb-s{background:#e0f2fe;color:#075985;} .sb-anat{background:#fce7f3;color:#9d174d;} .sb-usg{background:#cffafe;color:#155e75;} .sb-adv{background:#ecfccb;color:#3f6212;}
-    .plan-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin:1rem 0;}
-    .plan-card{border-radius:10px;padding:.9rem 1rem;border:1px solid;}
-    .plan-a{background:#f0fdf4;border-color:#86efac;} .plan-b{background:#fefce8;border-color:#fde68a;} .plan-c{background:#ffedd5;border-color:#fdba74;} .plan-d{background:#fef2f2;border-color:#fecaca;}
-    .plan-card h4{font-size:.78rem;font-weight:800;margin-bottom:.4rem;}
-    .plan-a h4{color:#166534;} .plan-b h4{color:#854d0e;} .plan-c h4{color:#9a3412;} .plan-d h4{color:#991b1b;}
-    .plan-card p{font-size:.78rem;color:var(--slate);line-height:1.55;margin:0;}
-    @media(max-width:700px){.plan-grid{grid-template-columns:1fr 1fr;}}
-    @media(max-width:420px){.plan-grid{grid-template-columns:1fr;}}
-    /* ---- responsive figures (phone / tablet / laptop) ---- */
-    .fig{margin:1.2rem auto;text-align:center;max-width:100%;}
-    .fig-media{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.9rem;display:inline-block;max-width:100%;box-shadow:0 1px 4px rgba(0,0,0,.05);}
-    .fig-media img,.fig-media svg{display:block;width:100%;height:auto;margin:0 auto;border-radius:4px;}
-    .fig figcaption{font-size:.82rem;color:var(--slate);margin-top:.55rem;line-height:1.55;max-width:560px;margin-left:auto;margin-right:auto;}
-    .fig-src{font-size:.66rem;color:var(--slate);opacity:.75;margin-top:.3rem;}
-    .fig-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem;margin:1.3rem 0;align-items:start;justify-items:center;}
-    .fig-grid .fig{margin:0;}
-    .usg-slot{background:repeating-linear-gradient(45deg,var(--bg-alt),var(--bg-alt) 12px,var(--bg) 12px,var(--bg) 24px);border:2px dashed var(--line);border-radius:12px;padding:2.4rem 1.2rem;text-align:center;color:var(--slate);font-size:.86rem;line-height:1.6;margin:1.2rem 0;}
-    .usg-slot strong{color:var(--ink);}
-    .adv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.9rem;margin:1.1rem 0;}
-    .adv-card{border:1px solid var(--line);border-radius:10px;padding:1rem 1.1rem;background:var(--bg-alt);}
-    .adv-card h4{font-size:.86rem;font-weight:800;color:var(--blue);margin-bottom:.35rem;}
-    .adv-card p{font-size:.82rem;color:var(--slate);line-height:1.6;margin:0;}
-    .algo-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:700;color:var(--blue);text-decoration:none;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:.45rem .8rem;margin:.3rem .4rem .3rem 0;}
-    .algo-link:hover{border-color:var(--blue);}
-  </style>
   <script src="app-native.js" defer></script>
 </head>
 <body>
@@ -82,439 +37,96 @@
 <header class="topic-hero">
   <div class="wrap">
     <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › Airway Management</div>
-    <h1>🫁 Airway Management — Anatomy to Ultrasound</h1>
-    <div class="guideline-row">
-      <span class="gbadge sccm">Anatomy</span>
-      <span class="gbadge kdigo">Assessment &amp; Scores</span>
-      <span class="gbadge isccm">DAS / ASA</span>
-      <span class="gbadge esicm">Ultrasound</span>
-      <span class="gbadge apasl">Recent Advances</span>
-    </div>
+    <h1>🫁 Airway Management</h1>
     <div class="topic-hero-meta">
       <span class="topic-tag red">Anatomy · Assess · Score</span>
-      <span class="topic-tag">Guidelines · USG</span>
-      <span class="topic-tag">DAS · ASA · AIDAA</span>
-      <span class="topic-updated">DAS Unanticipated Difficult Intubation · ASA Difficult Airway 2022 · AIDAA · DAS ATI 2020 &amp; Extubation 2012 · NAP4 · Miller / Barash / Morgan &amp; Mikhail</span>
+      <span class="topic-tag">Devices · Trauma · RSI</span>
+      <span class="topic-tag">Ultrasound · Pearls</span>
+      <span class="topic-updated">Miller · Barash · Morgan &amp; Mikhail · DAS / ASA / AIDAA guidelines</span>
     </div>
     <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
   </div>
 </header>
 
-<div class="topic-layout">
-  <aside class="topic-sidebar">
-    <nav class="toc">
-      <div class="toc-title">On this page</div>
-      <ul class="toc-list">
-        <li><a href="#s1">1. Anatomy — Upper &amp; Lower Airway</a></li>
-        <li><a href="#s2">2. Airway Assessment in Detail</a></li>
-        <li><a href="#s3">3. Airway Scores (tables)</a></li>
-        <li><a href="#s4">4. Difficult Airway Guidelines &amp; Management</a></li>
-        <li><a href="#s5">5. Airway Ultrasound</a></li>
-        <li><a href="#s6">6. Recent Advances</a></li>
-        <li><a href="#s7">7. Common Mistakes</a></li>
-        <li><a href="#s8">8. Exam Pearls</a></li>
-        <li><a href="#s9">9. References &amp; Image Credits</a></li>
-      </ul>
-      <a href="anaesthesia.html" class="toc-back">← All anaesthesia topics</a>
-    </nav>
-  </aside>
-
-  <main class="topic-content">
-
-    <!-- ============ 1 · ANATOMY ============ -->
-    <section id="s1">
-      <span class="sb sb-anat">🫀 1 · Anatomy — Upper &amp; Lower Airway</span>
-      <h2>Anatomy of the Airway</h2>
-      <div class="book-quote">
-        <p>"You cannot manage what you cannot picture. Every airway manoeuvre — mask seal, laryngoscopy, supraglottic placement, cricothyroidotomy — is applied anatomy. The airway is conventionally divided at the vocal cords into an upper (conducting) airway you can see and instrument, and a lower (tracheobronchial) airway you confirm and protect."</p>
-        <cite>Synthesised from Miller's Anesthesia — Airway Management; Morgan &amp; Mikhail's Clinical Anesthesiology.</cite>
-      </div>
-
-      <figure class="fig" style="max-width:430px;">
-        <span class="fig-media"><img src="assets/airway/respiratory-system.svg" alt="The airway from nose and pharynx through larynx, trachea and bronchial tree" loading="lazy"/></span>
-        <figcaption>The airway at a glance — nose, pharynx, larynx (epiglottis, thyroid/cricoid cartilage, vocal folds), trachea, carina and bronchial tree.<div class="fig-src">Wikimedia Commons — public domain.</div></figcaption>
-      </figure>
-
-      <h3>The upper airway</h3>
-      <ul>
-        <li><strong>Nose &amp; nasopharynx</strong> — warms, humidifies and filters gas; the route for nasal intubation and NPAs (beware turbinates and the adenoids).</li>
-        <li><strong>Oral cavity &amp; oropharynx</strong> — tongue is the commonest cause of obstruction in the unconscious patient; the palatine tonsils and soft palate frame the Mallampati view.</li>
-        <li><strong>Hypopharynx &amp; larynx</strong> — the epiglottis, aryepiglottic folds, and the <strong>glottis</strong> (the vocal cords and the space between them — the narrowest point in the <em>adult</em> airway). The larynx sits at C3–C6.</li>
-        <li><strong>Laryngeal cartilages</strong> — the unpaired <strong>thyroid, cricoid and epiglottis</strong> and the paired <strong>arytenoid, corniculate and cuneiform</strong> cartilages. The <strong>cricoid</strong> is the only complete ring — the landmark for cricoid pressure. The <strong>cricothyroid membrane</strong>, between thyroid and cricoid cartilages, is the site for emergency front-of-neck access.</li>
-        <li><strong>Innervation</strong> — sensory above the cords by the <strong>internal branch of the superior laryngeal nerve</strong>; below the cords and motor to all intrinsic muscles (except cricothyroid) by the <strong>recurrent laryngeal nerve</strong>; the cricothyroid muscle by the external branch of the SLN. These are the nerves blocked for awake intubation.</li>
-      </ul>
-
-      <div class="fig-grid">
-        <figure class="fig" style="max-width:360px;">
-          <span class="fig-media"><img src="assets/airway/larynx-external.svg" alt="External anatomy of the larynx — thyroid and cricoid cartilage, cricothyroid membrane" loading="lazy"/></span>
-          <figcaption>External larynx — hyoid, thyroid &amp; cricoid cartilage, the <strong>cricothyroid membrane/muscle</strong> (the FONA landmark) and the superior laryngeal nerve.<div class="fig-src">Wikimedia Commons — CC BY-SA 2.5.</div></figcaption>
-        </figure>
-        <figure class="fig" style="max-width:290px;">
-          <span class="fig-media"><img src="assets/airway/vocal-cords-rest.png" alt="Laryngeal view of the vocal cords abducted at rest" loading="lazy"/></span>
-          <figcaption>Glottis at rest — vocal cords <strong>abducted</strong> (the open triangular view seen at laryngoscopy).<div class="fig-src">Servier Medical Art — CC BY-SA 3.0.</div></figcaption>
-        </figure>
-        <figure class="fig" style="max-width:290px;">
-          <span class="fig-media"><img src="assets/airway/vocal-cords-phonation.png" alt="Laryngeal view of the vocal cords adducted in phonation" loading="lazy"/></span>
-          <figcaption>Glottis in phonation — vocal cords <strong>adducted</strong> (closed).<div class="fig-src">Servier Medical Art — CC BY-SA 3.0.</div></figcaption>
-        </figure>
-      </div>
-
-      <h3>The lower airway</h3>
-      <ul>
-        <li><strong>Trachea</strong> — ~10–12 cm, 16–20 C-shaped cartilage rings anteriorly with a posterior membranous wall; extends from the cricoid (C6) to the <strong>carina</strong> (~T4–T5, the sternal angle).</li>
-        <li><strong>Bronchial tree</strong> — the right main bronchus is <strong>wider, shorter and more vertical</strong>, so a too-deep tube (and aspirated material) tends to enter the right side; then lobar → segmental bronchi → bronchioles → terminal &amp; respiratory bronchioles → alveolar ducts and alveoli.</li>
-        <li><strong>Clinical corollaries</strong> — confirm the tube tip is above the carina; endobronchial intubation causes one-lung ventilation and desaturation; the paediatric airway differs (larynx higher/more anterior, the <strong>cricoid</strong> is the narrowest point, large occiput and tongue).</li>
-      </ul>
-
-      <figure class="fig" style="max-width:560px;">
-        <span class="fig-media"><img src="assets/airway/trachea-openstax.jpg" alt="The larynx, trachea, carina and primary/secondary bronchi with tracheal wall histology" loading="lazy"/></span>
-        <figcaption>Lower airway — larynx, trachea with its C-shaped cartilages, carina, and the primary/secondary bronchi; inset shows the tracheal wall (pseudostratified ciliated epithelium over hyaline cartilage).<div class="fig-src">OpenStax Anatomy &amp; Physiology, Wikimedia Commons — CC BY 3.0.</div></figcaption>
-      </figure>
-    </section>
-
-    <!-- ============ 2 · ASSESSMENT ============ -->
-    <section id="s2">
-      <span class="sb sb-w">🔎 2 · Airway Assessment in Detail</span>
-      <h2>Airway Assessment — Every Parameter</h2>
-      <div class="book-quote">
-        <p>"No single bedside test predicts a difficult airway reliably; their power lies in combination and in the context of a good history. The one part of assessment that only the anaesthetist can perform — and that no consultant referral will provide — is the look at the airway. A documented previous difficult intubation is the strongest single predictor."</p>
-        <cite>Synthesised from Miller's Anesthesia; Barash — Clinical Anesthesia; Roth D et al., Cochrane review of bedside airway tests.</cite>
-      </div>
-
-      <h3>History &amp; definitions first</h3>
-      <ul>
-        <li><strong>Previous anaesthesia</strong> — difficult mask/intubation, prior awake technique, tracheostomy, a "difficult airway" alert; <strong>read the old chart</strong>.</li>
-        <li><strong>Airway symptoms &amp; pathology</strong> — hoarseness, stridor, dysphagia, snoring/OSA, head-and-neck cancer, radiotherapy, rheumatoid/ankylosing spine, acromegaly, burns, infection (Ludwig's, epiglottitis).</li>
-        <li><strong>Definitions:</strong> difficult <strong>mask ventilation</strong> (unable to maintain SpO₂ &gt;90%); difficult <strong>laryngoscopy</strong> (Cormack–Lehane 3–4); difficult/failed <strong>intubation</strong>; and <strong>CICO</strong> — can't intubate, can't oxygenate.</li>
-      </ul>
-
-      <h3>Examination — the parameters assessed</h3>
-      <p style="font-size:.86rem;color:var(--slate);margin-bottom:.6rem;">Assess each one and combine them — the individual thresholds are collected as a table in §3.</p>
-      <ul>
-        <li><strong>Modified Mallampati class</strong> — visibility of the faucial pillars, soft palate and uvula (patient sitting, mouth maximally open, tongue out, no phonation).</li>
-        <li><strong>Mouth opening / inter-incisor gap</strong> — space for laryngoscope and device insertion.</li>
-        <li><strong>Thyromental &amp; sternomental distance</strong> — the size of the anterior mandibular space into which the tongue is displaced.</li>
-        <li><strong>Hyomental distance</strong> and the <strong>3-3-2 rule</strong> (mouth opening / hyoid–chin / thyroid notch–floor of mouth).</li>
-        <li><strong>Upper-lip-bite test &amp; mandibular protrusion</strong> — mandibular movement and dental architecture.</li>
-        <li><strong>Neck movement / atlanto-occipital extension</strong> — chin-to-chest and looking at the ceiling; the "sniffing" position depends on it.</li>
-        <li><strong>Dentition</strong> — prominent incisors ("buck teeth"), loose/capped/crowned teeth, edentulism (easy laryngoscopy but difficult mask seal).</li>
-        <li><strong>Neck &amp; soft tissue</strong> — short/thick neck, large circumference, goitre, mass, scar, radiation change, beard (mask seal).</li>
-        <li><strong>Ultrasound anterior-neck measures</strong> — increasingly used (see §5).</li>
-      </ul>
-
-      <figure class="fig" style="max-width:320px;">
-        <span class="fig-media"><img src="assets/airway/mallampati.svg" alt="Modified Mallampati classification, classes I to IV" loading="lazy"/></span>
-        <figcaption>Modified Mallampati classification (I–IV) — decreasing view of the soft palate, fauces and uvula.<div class="fig-src">Jmarchn, Wikimedia Commons — CC BY-SA 3.0.</div></figcaption>
-      </figure>
-
-      <div class="marino-box">
-        <div class="mb-label">🧠 The prediction mnemonics</div>
-        <ul>
-          <li><strong>LEMON</strong> (difficult intubation): <strong>L</strong>ook externally · <strong>E</strong>valuate 3-3-2 · <strong>M</strong>allampati · <strong>O</strong>bstruction/Obesity · <strong>N</strong>eck mobility.</li>
-          <li><strong>MOANS</strong> (difficult mask): <strong>M</strong>ask seal/beard · <strong>O</strong>besity/Obstruction · <strong>A</strong>ge &gt;55 · <strong>N</strong>o teeth · <strong>S</strong>tiff lungs/Snoring.</li>
-          <li><strong>RODS</strong> (difficult SGA): <strong>R</strong>estricted mouth opening · <strong>O</strong>bstruction · <strong>D</strong>istorted anatomy · <strong>S</strong>tiff lungs.</li>
-          <li><strong>SHORT</strong> (difficult FONA): <strong>S</strong>urgery/Scar · <strong>H</strong>aematoma · <strong>O</strong>besity · <strong>R</strong>adiation · <strong>T</strong>umour.</li>
-          <li><strong>HEAVEN</strong> criteria describe difficulty in the emergency/critical-care setting.</li>
-        </ul>
-      </div>
-
-      <div class="warn-box">
-        <div class="kb-label">💨 Preoxygenation &amp; apnoeic oxygenation buy you time</div>
-        <p>Three minutes of tidal breathing (or 8 vital-capacity breaths) of 100% O₂ to an end-tidal O₂ &gt;0.85–0.9 fills the FRC with oxygen and extends safe apnoea time. <strong>Nasal apnoeic oxygenation</strong> (15 L/min, or high-flow nasal oxygen) during laryngoscopy prolongs the window further — especially in obesity, pregnancy and critical illness.</p>
-      </div>
-    </section>
-
-    <!-- ============ 3 · SCORES ============ -->
-    <section id="s3">
-      <span class="sb sb-g">📊 3 · Airway Scores</span>
-      <h2>Airway Scores — Values &amp; Difficulty</h2>
-      <p style="font-size:.88rem;color:var(--slate);margin-bottom:.8rem;">What each measurement means and the threshold that flags difficulty.</p>
-
-      <h3>Single bedside tests</h3>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Test</th><th>Grades / values</th><th>Predicts difficulty when…</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Modified Mallampati</strong></td><td>I: soft palate, fauces, uvula, pillars · II: uvula tip hidden · III: only soft palate · IV: only hard palate</td><td><strong>III–IV</strong></td></tr>
-            <tr><td><strong>Inter-incisor gap</strong></td><td>Normal &gt;5 cm / 3 fingers</td><td>&lt;3 cm (difficult DL); <strong>&lt;2 cm</strong> (difficult LMA)</td></tr>
-            <tr><td><strong>Thyromental distance</strong></td><td>&gt;6.5 cm reassuring</td><td>6–6.5 cm difficult but possible; <strong>&lt;6 cm</strong> may be impossible</td></tr>
-            <tr><td><strong>Sternomental distance</strong></td><td>Sternal notch → chin, neck extended</td><td><strong>&lt;12.5 cm</strong></td></tr>
-            <tr><td><strong>Hyomental distance</strong></td><td>Gr I &gt;6 cm · II 4–6 cm · III &lt;4 cm</td><td><strong>Grade III (&lt;4 cm)</strong></td></tr>
-            <tr><td><strong>Upper-lip-bite test</strong></td><td>I: bite above vermilion · II: below · III: cannot reach</td><td><strong>Class III</strong></td></tr>
-            <tr><td><strong>Mandibular protrusion</strong></td><td>A: lower teeth beyond upper · B: edge-to-edge · C: cannot</td><td><strong>Class B / C</strong></td></tr>
-            <tr><td><strong>Neck / atlanto-occipital extension</strong></td><td>Normal ≈35°</td><td>≥⅔ reduction of extension</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Cormack–Lehane laryngoscopic grade</h3>
-      <div class="fig-grid">
-        <figure class="fig" style="max-width:340px;">
-          <span class="fig-media"><img src="assets/airway/cormack-lehane.jpg" alt="Cormack–Lehane grades I to IV at laryngoscopy" loading="lazy"/></span>
-          <figcaption>Cormack–Lehane grades at laryngoscopy (I–IV).<div class="fig-src">User:Tubus, Wikimedia Commons — CC BY-SA 3.0.</div></figcaption>
-        </figure>
-        <div class="table-wrap" style="align-self:center;">
-          <table class="drug-table">
-            <thead><tr><th>Grade</th><th>Laryngoscopic view</th><th>Difficulty</th></tr></thead>
-            <tbody>
-              <tr><td><strong>1</strong></td><td>Most of the glottis / full cords</td><td>Easy</td></tr>
-              <tr><td><strong>2</strong></td><td>Posterior glottis / arytenoids only (2a partial cords, 2b arytenoids only)</td><td>Usually easy (2b harder)</td></tr>
-              <tr><td><strong>3</strong></td><td>Epiglottis only (3a liftable, 3b adherent)</td><td><strong>Difficult</strong></td></tr>
-              <tr><td><strong>4</strong></td><td>Neither epiglottis nor glottis</td><td><strong>Very difficult</strong></td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      <p style="font-size:.82rem;color:var(--slate);">Grades <strong>3–4</strong> define difficult laryngoscopy. The <strong>POGO</strong> (percentage of glottic opening) score is an alternative continuous measure often used with videolaryngoscopy.</p>
-
-      <h3>Composite / multivariable scores</h3>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Score</th><th>What it combines</th><th>Cut-off for difficulty</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Wilson risk score</strong></td><td>Weight, head-&amp;-neck movement, jaw movement, receding mandible, buck teeth (each 0–2)</td><td>Total <strong>≥2</strong> (of 10) predicts difficult intubation</td></tr>
-            <tr><td><strong>El-Ganzouri / Simplified Airway Risk Index (SARI)</strong></td><td>Mouth opening, thyromental distance, Mallampati, neck movement, jaw protrusion, weight, history of difficult intubation (0–12)</td><td><strong>≥4</strong> suggests difficulty</td></tr>
-            <tr><td><strong>LEMON score</strong></td><td>1 point each: Look, 3-3-2 abnormal, Mallampati ≥3, Obstruction, Neck immobility</td><td>Higher score → higher risk (used in ED)</td></tr>
-            <tr><td><strong>Arné score</strong></td><td>Pathology, prior difficulty, symptoms, Mallampati, TMD, mouth opening, neck movement</td><td><strong>≥11</strong> predicts difficulty</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p style="font-size:.82rem;color:var(--slate);">Bottom line: composites improve on any single test but none is perfect — always prepare for the airway you did <em>not</em> predict.</p>
-    </section>
-
-    <!-- ============ 4 · GUIDELINES & MANAGEMENT ============ -->
-    <section id="s4">
-      <span class="sb sb-m">📋 4 · Difficult Airway Guidelines &amp; Management</span>
-      <h2>The Difficult Airway — Guidelines &amp; Management</h2>
-
-      <div class="marino-box">
-        <div class="mb-label">🗺 Official algorithm diagrams</div>
-        <p>View the full guideline algorithms (open in a new tab):</p>
-        <p style="margin-top:.6rem;">
-          <a class="algo-link" href="assets/algorithms/das-2025-master.png" target="_blank" rel="noopener">🇬🇧 DAS master algorithm ↗</a>
-          <a class="algo-link" href="assets/algorithms/das-2025-plan-a.png" target="_blank" rel="noopener">Plan A ↗</a>
-          <a class="algo-link" href="assets/algorithms/das-2025-plan-b.png" target="_blank" rel="noopener">Plan B ↗</a>
-          <a class="algo-link" href="assets/algorithms/das-2025-plan-c.png" target="_blank" rel="noopener">Plan C ↗</a>
-          <a class="algo-link" href="assets/algorithms/das-2025-plan-d.png" target="_blank" rel="noopener">Plan D ↗</a>
-          <a class="algo-link" href="assets/algorithms/aidaa-2025-master.png" target="_blank" rel="noopener">🇮🇳 AIDAA master ↗</a>
-          <a class="algo-link" href="assets/algorithms/aidaa-2025-failed-airway.png" target="_blank" rel="noopener">AIDAA failed airway ↗</a>
-        </p>
-      </div>
-
-      <div class="guideline-rec">
-        <div class="gr-label">DAS — unanticipated difficult intubation in adults <span class="gr-s">DAS</span></div>
-        <div class="gr-text">
-          A stepwise, four-plan framework built on <strong>maintaining oxygenation</strong> and <strong>declaring failure early</strong>:<br>
-          <strong>Plan A</strong> — facemask ventilation &amp; tracheal intubation: optimise position, preoxygenate, <strong>maximum 3 (+1 senior) attempts</strong>; use VL, bougie, external laryngeal manipulation. Fail → <strong>declare failed intubation</strong>.<br>
-          <strong>Plan B</strong> — maintain oxygenation with a <strong>second-generation SGA</strong> (max 3 attempts). Stop and think: wake, or intubate via the SGA.<br>
-          <strong>Plan C</strong> — final <strong>facemask</strong> attempt (adjuncts, two-person). If adequate → wake the patient.<br>
-          <strong>Plan D — CICO</strong> → 100% O₂ and <strong>emergency front-of-neck access (scalpel–bougie–tube cricothyroidotomy)</strong> without delay.
-        </div>
-      </div>
-
-      <div class="plan-grid">
-        <div class="plan-card plan-a"><h4>Plan A — Intubate</h4><p>Optimise position &amp; preoxygenation. VL/DL + bougie, ELM. <strong>Max 3+1 attempts.</strong> Fail → declare.</p></div>
-        <div class="plan-card plan-b"><h4>Plan B — SGA</h4><p>Insert 2nd-gen SGA to oxygenate (max 3). Stop &amp; think: wake, or scope-via-SGA.</p></div>
-        <div class="plan-card plan-c"><h4>Plan C — Facemask</h4><p>Final facemask attempt: adjuncts, 2-person, full relaxation. If oxygenating → <strong>wake up</strong>.</p></div>
-        <div class="plan-card plan-d"><h4>Plan D — CICO / FONA</h4><p>Can't intubate, can't oxygenate → <strong>scalpel–bougie–tube</strong> cricothyroidotomy now.</p></div>
-      </div>
-
-      <div class="guideline-rec">
-        <div class="gr-label">ASA 2022 Difficult Airway Guideline — key points <span class="gr-s">ASA 2022</span></div>
-        <div class="gr-text">A <strong>pre-formed strategy</strong>; early <strong>awake intubation</strong> when difficulty is anticipated and the patient is at risk; <strong>combination techniques</strong> and <strong>videolaryngoscopy</strong>; limit attempts to avoid trauma; ensure <strong>supplemental/apnoeic oxygenation</strong> throughout; and a clear <strong>extubation strategy</strong>. Human factors — call for help early, use cognitive aids — are explicit.</div>
-      </div>
-
-      <div class="guideline-rec">
-        <div class="gr-label">Awake tracheal intubation (ATI) <span class="gr-s">DAS ATI 2020</span></div>
-        <div class="gr-text">The gold standard for the <strong>anticipated</strong> difficult airway. Sedation to a rousable patient (often remifentanil ± low-dose midazolam/dexmedetomidine), effective <strong>topical local anaesthetic</strong> (within safe lidocaine limits), supplemental oxygen, and ideally first-attempt success. Verify tube position with capnography <strong>before</strong> inducing anaesthesia.</div>
-      </div>
-
-      <div class="guideline-rec">
-        <div class="gr-label">Extubation is a planned event <span class="gr-s">DAS Extubation 2012</span></div>
-        <div class="gr-text">Stratify into <strong>low-risk</strong> and <strong>at-risk</strong> (difficult airway, surgical oedema, obesity/OSA, restricted access). For at-risk cases: fully reverse block (TOF ratio &gt;0.9), extubate <strong>awake</strong> and sitting up, consider an <strong>airway-exchange catheter</strong>, and keep re-intubation kit and a plan ready. Most peri-operative airway complications occur at or after extubation.</div>
-      </div>
-
-      <h3>Management essentials — the device ladder</h3>
-      <ul>
-        <li><strong>Facemask + adjuncts</strong> — head tilt/chin lift, jaw thrust, oro-/nasopharyngeal airway; two-person, two-handed technique; ear-to-sternal-notch positioning (ramp the obese).</li>
-        <li><strong>Supraglottic airway (SGA)</strong> — LMA and second-generation devices (i-gel, ProSeal/Supreme) with a gastric drain port; both a primary and a rescue device.</li>
-        <li><strong>Direct laryngoscopy</strong> — Macintosh/Miller; grade by Cormack–Lehane; optimise with BURP, bougie and positioning.</li>
-        <li><strong>Videolaryngoscopy</strong> — better view and first-pass success, especially in predicted difficulty and C-spine immobilisation; increasingly first-line.</li>
-        <li><strong>Flexible bronchoscopic intubation</strong> — the technique of choice for the anticipated difficult airway via ATI.</li>
-      </ul>
-
-      <div class="marino-box">
-        <div class="mb-label">✅ Confirming tracheal placement — "no trace, wrong place"</div>
-        <p><strong>Sustained end-tidal CO₂ over several breaths is the single most reliable confirmation</strong> of tracheal (not oesophageal) intubation. Back it up with direct/video visualisation through the cords, bilateral chest rise, auscultation and misting. Capnography also detects later displacement, disconnection and obstruction.</p>
-      </div>
-
-      <h3>Rapid sequence induction &amp; drug reference</h3>
-      <p style="font-size:.86rem;color:var(--slate);margin-bottom:.5rem;">Preoxygenate → induction agent immediately followed by a rapid-onset relaxant → intubate without intervening manual ventilation. Cricoid pressure is traditional but individualised — release if it worsens the view or ventilation.</p>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Drug</th><th>Role</th><th>Dose (IV)</th><th>Notes</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Propofol</strong></td><td>Induction</td><td>1.5–2.5 mg/kg</td><td>Smooth; hypotension — reduce in the elderly/shocked</td></tr>
-            <tr><td><strong>Ketamine</strong></td><td>Induction (unstable)</td><td>1–2 mg/kg</td><td>Maintains BP; bronchodilator; shock/asthma/trauma</td></tr>
-            <tr><td><strong>Etomidate</strong></td><td>Induction (cardiac-stable)</td><td>0.3 mg/kg</td><td>Haemodynamically stable; transient adrenal suppression</td></tr>
-            <tr><td><strong>Suxamethonium</strong></td><td>RSI relaxant</td><td>1–1.5 mg/kg</td><td>Fastest on/off; avoid in hyperkalaemia, burns &gt;24–48 h, denervation, MH</td></tr>
-            <tr><td><strong>Rocuronium</strong></td><td>RSI relaxant (alt.)</td><td>1.2 mg/kg</td><td>Rapid at high dose; reversible with sugammadex</td></tr>
-            <tr><td><strong>Sugammadex</strong></td><td>Reversal (roc/vec)</td><td>16 mg/kg (immediate rescue)</td><td>Reverses profound rocuronium block — a "can't intubate" rescue</td></tr>
-            <tr><td><strong>Fentanyl</strong></td><td>Obtund pressor response</td><td>1–3 µg/kg</td><td>Blunts laryngoscopy response; caution — apnoea/hypotension</td></tr>
-            <tr><td><strong>Lidocaine (topical)</strong></td><td>Awake intubation</td><td>Max ~9 mg/kg mucosal</td><td>Respect total dose to avoid LAST</td></tr>
-            <tr><td><strong>Glycopyrrolate</strong></td><td>Antisialagogue</td><td>200 µg</td><td>Dries secretions for awake intubation</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Airways that are difficult by context</h3>
-      <div class="marino-box">
-        <div class="mb-label">⚠️ High-risk scenarios &amp; how they change the plan</div>
-        <ul>
-          <li><strong>Full stomach / aspiration risk</strong> (emergency, obstetric, bowel obstruction, GORD, GLP-1 agonists) → <strong>RSI</strong>, suction ready.</li>
-          <li><strong>Obesity / OSA</strong> → ramp, preoxygenate well, apnoeic O₂, anticipate difficult mask <em>and</em> fast desaturation; extubate awake, sitting up.</li>
-          <li><strong>Obstetric</strong> → reduced FRC + high O₂ demand (fast desaturation), airway oedema (smaller tube), higher aspiration risk.</li>
-          <li><strong>Cervical-spine injury</strong> → manual in-line stabilisation, videolaryngoscopy; minimise neck movement.</li>
-          <li><strong>Head &amp; neck tumour, radiotherapy, infection (Ludwig's, epiglottitis), trauma/burns, oral submucous fibrosis</strong> → consider <strong>awake tracheal intubation</strong> or a primary surgical airway; do not remove a marginal airway with a drug you cannot reverse. Ensure ENT backup and a checked difficult-airway trolley in every location.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ============ 5 · ULTRASOUND ============ -->
-    <section id="s5">
-      <span class="sb sb-usg">🔊 5 · Airway Ultrasound</span>
-      <h2>Airway Ultrasound (POCUS)</h2>
-      <div class="book-quote">
-        <p>"Point-of-care ultrasound has moved airway assessment from the purely external to the sonographic. A high-frequency linear probe on the anterior neck identifies the cricothyroid membrane before it is needed, confirms tracheal versus oesophageal intubation in real time, and screens the gastric antrum for aspiration risk — all at the bedside, without radiation."</p>
-        <cite>Synthesised from Kristensen MS et al., ultrasound for airway management; Miller's Anesthesia.</cite>
-      </div>
-
-      <h3>Sonoanatomy of the anterior neck</h3>
-      <ul>
-        <li><strong>Probe</strong> — high-frequency (7–15 MHz) linear transducer, transverse then longitudinal, sweeping from mentum to sternal notch.</li>
-        <li><strong>Layers</strong> — skin, subcutaneous fat, strap muscles, then the cartilages: <strong>thyroid</strong> (inverted V), <strong>cricoid</strong> (rounded, hypoechoic), and the tracheal rings as a "<strong>string of pearls</strong>" longitudinally.</li>
-        <li><strong>Air–mucosa interface</strong> — a bright hyperechoic line with posterior <strong>reverberation / comet-tail</strong> artefact (air blocks the beam, so you see the near wall, not the lumen).</li>
-        <li><strong>Cricothyroid membrane</strong> — identified between thyroid and cricoid cartilages (longitudinal "string-of-pearls" method) and marked before an anticipated difficult airway/FONA.</li>
-        <li><strong>Oesophagus</strong> — usually postero-lateral (commonly to the left) of the trachea; seen to distend with an oesophageal intubation.</li>
-      </ul>
-
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Clinical use</th><th>What you look for</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Confirm tracheal intubation</strong></td><td>Single air–mucosa interface (tracheal); a second parallel interface = "<strong>double-tract sign</strong>" of oesophageal intubation. Bilateral <strong>lung sliding</strong> confirms ventilation and excludes endobronchial placement.</td></tr>
-            <tr><td><strong>Locate the cricothyroid membrane</strong></td><td>Mark before predicted difficult airway / obese / distorted necks — faster and more accurate than palpation for FONA.</td></tr>
-            <tr><td><strong>Predict difficult laryngoscopy</strong></td><td>Increased <strong>anterior neck soft tissue</strong> / distance from skin to hyoid, epiglottis or thyrohyoid membrane.</td></tr>
-            <tr><td><strong>Gastric antrum</strong></td><td>Antral cross-sectional area / content (empty, clear fluid, solid) to gauge aspiration risk in the fasted-uncertain patient.</td></tr>
-            <tr><td><strong>Others</strong></td><td>Predict paediatric tube size, confirm bougie/tube depth, screen for subglottic stenosis, guide percutaneous tracheostomy.</td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <h3>Real airway ultrasound — labelled images</h3>
-      <div class="fig-grid">
-        <figure class="fig" style="max-width:360px;">
-          <span class="fig-media"><img src="assets/airway/usg-cricothyroid-membrane.jpg" alt="Longitudinal airway ultrasound showing the cricothyroid membrane between thyroid and cricoid cartilage" loading="lazy"/></span>
-          <figcaption><strong>Cricothyroid membrane</strong> (longitudinal) — the hyperechoic band linking the hypoechoic thyroid and cricoid cartilages, above the air–mucosal interface. Mark it before FONA.</figcaption>
-        </figure>
-        <figure class="fig" style="max-width:360px;">
-          <span class="fig-media"><img src="assets/airway/usg-tracheal-rings-longitudinal.jpg" alt="Longitudinal airway ultrasound showing tracheal rings as a string of beads" loading="lazy"/></span>
-          <figcaption><strong>Tracheal rings</strong> (longitudinal) — the "<strong>string of beads</strong>": cricoid then rings T1–T4 sitting on the bright air–mucosal interface.</figcaption>
-        </figure>
-        <figure class="fig" style="max-width:360px;">
-          <span class="fig-media"><img src="assets/airway/usg-trachea-transverse.jpg" alt="Transverse airway ultrasound at the trachea with comet-tail artefact" loading="lazy"/></span>
-          <figcaption><strong>Trachea (transverse)</strong> — inverted-U tracheal cartilage over the air–mucosal interface with posterior <strong>comet-tail</strong> artefact; thyroid gland and strap muscles alongside.</figcaption>
-        </figure>
-        <figure class="fig" style="max-width:360px;">
-          <span class="fig-media"><img src="assets/airway/usg-vocal-cords.jpg" alt="Transverse airway ultrasound of the vocal cords in abduction and adduction" loading="lazy"/></span>
-          <figcaption><strong>Vocal cords</strong> (transverse, through the thyroid cartilage) — seen moving in <strong>abduction</strong> and <strong>adduction</strong>; a dynamic check of cord movement.</figcaption>
-        </figure>
-        <figure class="fig" style="max-width:300px;">
-          <span class="fig-media"><img src="assets/airway/usg-oesophagus.jpg" alt="Transverse airway ultrasound showing the oesophagus lateral to the trachea" loading="lazy"/></span>
-          <figcaption><strong>Oesophagus (E)</strong> — usually postero-lateral (often to the left) of the trachea, near the thyroid and carotid (CA); it distends with an oesophageal intubation.</figcaption>
-        </figure>
-        <figure class="fig" style="max-width:360px;">
-          <span class="fig-media"><img src="assets/airway/usg-ett-double-tract.jpg" alt="Airway ultrasound showing the endotracheal tube double-tract sign" loading="lazy"/></span>
-          <figcaption><strong>ETT confirmation</strong> — a tracheal tube produces the "<strong>double-tract / double-lumen sign</strong>"; a second parallel air column indicates oesophageal placement.</figcaption>
-        </figure>
-      </div>
-      <p class="fig-src" style="text-align:center;max-width:640px;margin:.2rem auto 1rem;">Ultrasound images: Osman A, Sum KM. <em>Role of upper airway ultrasound in airway management.</em> J Intensive Care. 2016;4:52 — <strong>CC BY 4.0</strong>, via PubMed Central. Used with attribution.</p>
-
-      <div class="guideline-rec">
-        <div class="gr-label">Further reading</div>
-        <div class="gr-text">A detailed, image-rich walk-through of anterior-neck sonoanatomy: <strong>ASRA POCUS Spotlight — Airway Ultrasound</strong> · <a href="https://asra.com/news-publications/asra-newsletter/newsletter-item/asra-news/2021/08/02/pocus-spotlight-airway" target="_blank" rel="noopener">read on asra.com ↗</a> (external; images © ASRA — viewed on their site, not reproduced here).</div>
-      </div>
-    </section>
-
-    <!-- ============ 6 · RECENT ADVANCES ============ -->
-    <section id="s6">
-      <span class="sb sb-adv">🚀 6 · Recent Advances</span>
-      <h2>Recent Advances in Airway Management</h2>
-      <div class="adv-grid">
-        <div class="adv-card"><h4>Videolaryngoscopy as default</h4><p>Growing evidence and guideline support for VL (Macintosh-style and hyperangulated blades) as a <strong>first-line</strong> device — higher first-pass success, better views, useful in C-spine immobilisation and unexpected difficulty.</p></div>
-        <div class="adv-card"><h4>HFNO / THRIVE</h4><p>High-flow nasal oxygen for preoxygenation and apnoeic oxygenation (<strong>trans-nasal humidified rapid-insufflation ventilatory exchange</strong>) markedly extends safe apnoea time in difficult airways and shared-airway surgery.</p></div>
-        <div class="adv-card"><h4>Video/optical stylets &amp; combined techniques</h4><p>Video stylets and VL-plus-flexible-scope combinations rescue the difficult intubation where a good view does not translate into tube passage.</p></div>
-        <div class="adv-card"><h4>Awake videolaryngoscopy</h4><p>An accepted alternative to flexible bronchoscopic ATI for selected anticipated difficult airways, with faster set-up.</p></div>
-        <div class="adv-card"><h4>Second-generation SGAs</h4><p>Devices with a gastric drain port (i-gel, ProSeal/Supreme) as conduits for intubation and as safer rescue and primary airways.</p></div>
-        <div class="adv-card"><h4>Airway ultrasound (POCUS)</h4><p>Bedside cricothyroid-membrane marking, tube-placement confirmation and gastric assessment — see §5.</p></div>
-        <div class="adv-card"><h4>Standardised eFONA</h4><p>The <strong>scalpel–bougie–tube</strong> cricothyroidotomy is now the single recommended emergency FONA technique, with widespread simulation training.</p></div>
-        <div class="adv-card"><h4>Human factors &amp; cognitive aids</h4><p>The <strong>Vortex</strong> approach, verbalising "declare CICO", checklists and team training — a direct response to the NAP4 lessons on task-fixation.</p></div>
-        <div class="adv-card"><h4>Sugammadex rescue</h4><p>Rapid reversal of profound rocuronium block (16 mg/kg) offers a pharmacological "wake-up" option in a can't-intubate situation where rocuronium was used.</p></div>
-        <div class="adv-card"><h4>Updated national algorithms</h4><p>Regularly revised DAS and <strong>AIDAA</strong> (All India Difficult Airway Association) algorithms — see the diagrams in §4 — with disposable equipment emphasised after NAP4/infection-control.</p></div>
-      </div>
-    </section>
-
-    <!-- ============ 7 · MISTAKES ============ -->
-    <section id="s7">
-      <span class="sb sb-e">⚠️ 7 · Common Mistakes</span>
-      <h2>Common Mistakes in Airway Management</h2>
-      <div class="mc"><div class="ml">❌ Mistake 1 — Repeated laryngoscopy attempts</div><p>Each extra attempt causes bleeding and oedema, converting a "can't intubate" into a "can't ventilate". Limit to 3 (+1 senior), and change something each time (operator, device, position, adjunct).</p></div>
-      <div class="mc"><div class="ml">❌ Mistake 2 — Fixating on the tube instead of oxygenation</div><p>The patient dies of hypoxia, not of an unplaced tube. Stop, oxygenate with SGA/facemask, step back and think. Task-fixation is the classic human-factors failure in NAP4.</p></div>
-      <div class="mc"><div class="ml">❌ Mistake 3 — Not confirming with capnography</div><p>"No trace, wrong place." A sustained EtCO₂ waveform is the only reliable confirmation of tracheal placement — auscultation and misting mislead. Undetected oesophageal intubation is fatal.</p></div>
-      <div class="mc"><div class="ml">❌ Mistake 4 — Inadequate preoxygenation</div><p>Skipping preoxygenation (or a leaky seal) removes your safety margin. In the obese, pregnant and critically ill, desaturation is precipitous — preoxygenate to EtO₂ &gt;0.85 and use apnoeic oxygenation.</p></div>
-      <div class="mc"><div class="ml">❌ Mistake 5 — Delaying front-of-neck access</div><p>In CICO, waiting "one more attempt" until SpO₂ is in the 40s makes FONA a resuscitation, not a rescue. Declare CICO and cut early.</p></div>
-      <div class="mc"><div class="ml">❌ Mistake 6 — Inducing an anticipated difficult airway asleep</div><p>Where difficulty and risk are predicted (airway tumour, fixed neck, OSMF, severe OSA), an awake technique keeps the patient breathing. Don't remove a marginal airway with a drug you cannot reverse.</p></div>
-      <div class="mc"><div class="ml">❌ Mistake 7 — Treating extubation as an afterthought</div><p>Most peri-operative airway complications happen at/after extubation. Stratify risk, fully reverse block (TOF &gt;0.9), extubate awake and upright in at-risk patients, and have a re-intubation plan.</p></div>
-    </section>
-
-    <!-- ============ 8 · PEARLS ============ -->
-    <section id="s8">
-      <span class="sb sb-x">🎓 8 · Exam Pearls — DrNB / MD / EDAIC</span>
-      <h2>Exam Pearls</h2>
-      <div class="ec"><p><strong>Q: What is the narrowest part of the airway?</strong><br>In adults, the <strong>glottis</strong> (rima glottidis / vocal cords); in children (classically &lt;8 years), the <strong>cricoid ring</strong> — hence the traditional use of uncuffed tubes, now largely superseded by low-pressure cuffed tubes.</p></div>
-      <div class="ec"><p><strong>Q: Where is the cricothyroid membrane and why does it matter?</strong><br>Between the thyroid and cricoid cartilages anteriorly — the site for emergency front-of-neck access (scalpel–bougie–tube). Mark it with ultrasound before an anticipated difficult airway.</p></div>
-      <div class="ec"><p><strong>Q: Describe the Cormack–Lehane grades.</strong><br>1 = most of glottis; 2 = posterior glottis/arytenoids (2a/2b); 3 = epiglottis only (3a/3b); 4 = neither epiglottis nor glottis. Grades 3–4 = difficult laryngoscopy.</p></div>
-      <div class="ec"><p><strong>Q: Which bedside tests predict a difficult airway, and their thresholds?</strong><br>Mallampati III–IV, mouth opening &lt;3 cm, thyromental &lt;6 cm, sternomental &lt;12.5 cm, upper-lip-bite class III, restricted neck extension; combined in Wilson (≥2) and El-Ganzouri/SARI (≥4). No single test is reliable alone.</p></div>
-      <div class="ec"><p><strong>Q: Describe the DAS plans.</strong><br>A = intubation (max 3+1); B = second-generation SGA oxygenation; C = final facemask then wake; D = CICO → emergency front-of-neck access. Throughout: maintain oxygenation, limit attempts, call for help.</p></div>
-      <div class="ec"><p><strong>Q: How do you confirm tracheal intubation?</strong><br>Sustained end-tidal CO₂ over several breaths ("no trace, wrong place"), plus visualising the tube through the cords, bilateral chest rise, auscultation and misting. Ultrasound shows a single air–mucosa interface with bilateral lung sliding.</p></div>
-      <div class="ec"><p><strong>Q: Suxamethonium vs high-dose rocuronium for RSI?</strong><br>Sux 1–1.5 mg/kg: fastest on/off but contraindicated in hyperkalaemia, burns/denervation and MH. Rocuronium 1.2 mg/kg: comparable conditions and fully reversible with sugammadex 16 mg/kg (a "can't intubate" rescue).</p></div>
-      <div class="ec"><p><strong>Q: When is awake tracheal intubation indicated?</strong><br>The anticipated difficult airway at risk of failed asleep intubation/ventilation — airway tumour, oral submucous fibrosis, fixed cervical spine, severely restricted mouth opening. Confirm placement with capnography before inducing.</p></div>
-      <div class="ec"><p><strong>Q: List some airway ultrasound uses.</strong><br>Confirm tracheal vs oesophageal intubation (double-tract sign), locate the cricothyroid membrane, predict difficult laryngoscopy (anterior neck soft tissue), assess gastric contents, and estimate paediatric tube size.</p></div>
-    </section>
-
-    <!-- ============ 9 · REFERENCES ============ -->
-    <section id="s9" class="references-section">
-      <span class="sb sb-r">📚 9 · References &amp; Image Credits</span>
-      <h2>References &amp; Image Credits</h2>
-      <ol class="ref-list">
-        <li><strong>Frerk C, Mitchell VS, McNarry AF, et al. (Difficult Airway Society).</strong> DAS guidelines for management of unanticipated difficult intubation in adults 2015. <em>Br J Anaesth.</em> 2015;115:827–848.</li>
-        <li><strong>Apfelbaum JL, Hagberg CA, Connis RT, et al.</strong> 2022 ASA Practice Guidelines for Management of the Difficult Airway. <em>Anesthesiology.</em> 2022;136:31–81.</li>
-        <li><strong>Ahmad I, El-Boghdadly K, Bhagrath R, et al. (DAS).</strong> Guidelines for awake tracheal intubation in adults. <em>Anaesthesia.</em> 2020;75:509–528.</li>
-        <li><strong>Popat M, Mitchell V, Dravid R, et al. (DAS).</strong> DAS guidelines for the management of tracheal extubation. <em>Anaesthesia.</em> 2012;67:318–340.</li>
-        <li><strong>Cook TM, Woodall N, Frerk C (4th National Audit Project, RCoA &amp; DAS).</strong> Major complications of airway management in the UK (NAP4). <em>Br J Anaesth.</em> 2011;106:617–642.</li>
-        <li><strong>Kristensen MS, Teoh WH, et al.</strong> Ultrasonography for clinical airway management. <em>Anaesthesia / Br J Anaesth.</em> (reviews).</li>
-        <li><strong>Roth D, Pace NL, Lee A, et al.</strong> Bedside tests for predicting difficult airways: a Cochrane systematic review. <em>Cochrane Database Syst Rev.</em> 2018.</li>
-        <li><strong>Gropper MA, et al. (eds).</strong> Miller's Anesthesia, 9th Edition. Airway Management in the Adult. Elsevier; 2020.</li>
-        <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology, 6th Edition. Airway Management. McGraw-Hill; 2018.</li>
-        <li><strong>Barash PG, et al. (eds).</strong> Clinical Anesthesia, 9th Edition. Airway Management. Wolters Kluwer; 2023.</li>
-      </ol>
-      <p style="font-size:.78rem;color:var(--slate);line-height:1.6;margin-top:1rem;">
-        <strong>Image credits.</strong> Airway overview — Wikimedia Commons, <strong>public domain</strong>. External larynx — Wikimedia Commons, <strong>CC BY-SA 2.5</strong>. Vocal-cord (glottis) views — <em>Servier Medical Art</em>, <strong>CC BY-SA 3.0</strong>. Trachea &amp; bronchi — <em>OpenStax Anatomy &amp; Physiology</em>, <strong>CC BY 3.0</strong>. Modified Mallampati diagram — Jmarchn, <strong>CC BY-SA 3.0</strong>. Cormack–Lehane figure — User:Tubus, <strong>CC BY-SA 3.0</strong> (title cropped). Airway ultrasound images — Osman A, Sum KM, <em>J Intensive Care</em> 2016;4:52, <strong>CC BY 4.0</strong> (via PubMed Central). All used with attribution. Difficult-airway algorithm diagrams are shown for educational reference from the respective DAS and AIDAA guidelines.
-      </p>
-    </section>
-
-  </main>
+<!-- ============ AIRWAY TAB BAR (each tab is its own page) ============ -->
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Airway topic sections">
+    <a href="anaes-airway.html" class="active"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-airway-anatomy.html"><span class="t-ic">🫀</span>Anatomy</a>
+    <a href="anaes-airway-assessment.html"><span class="t-ic">🔎</span>Assessment</a>
+    <a href="anaes-airway-scores.html"><span class="t-ic">📊</span>Scores</a>
+    <a href="anaes-airway-devices.html"><span class="t-ic">🧰</span>Devices &amp; Definitions</a>
+    <a href="anaes-airway-trauma.html"><span class="t-ic">🩸</span>Trauma &amp; Pathology</a>
+    <a href="anaes-airway-rsi.html"><span class="t-ic">⚡</span>RSI</a>
+    <a href="anaes-airway-usg.html"><span class="t-ic">🔊</span>Ultrasound</a>
+    <a href="anaes-airway-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
 </div>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <div class="book-quote">
+    <p>"You cannot manage what you cannot picture. This topic is deliberately split into short, focused pages — one idea per tab — so you can read the airway the way you actually meet it at the bedside: anatomy, then assessment and scores, then the devices, the difficult situations, and rapid sequence induction. Move through the tabs above, or jump straight to what you need."</p>
+    <cite>How to use this topic — CritCare.in Airway pilot.</cite>
+  </div>
+
+  <p style="font-size:.95rem;">Each card below opens as its own page (the same tabs sit at the top of every page, so you never lose your place). This keeps each read short instead of one very long scroll.</p>
+
+  <div class="hub-grid">
+    <a class="hub-card" href="anaes-airway-anatomy.html">
+      <span class="hc-ic">🫀</span><span class="hc-n">01 · ANATOMY</span>
+      <h3>Anatomy of the Airway</h3>
+      <p>Upper &amp; lower airway, laryngeal cartilages, an in-depth <strong>innervation table</strong>, the bronchial tree (why the right bronchus is more vertical) and a <strong>paediatric-vs-adult</strong> comparison.</p>
+    </a>
+    <a class="hub-card" href="anaes-airway-assessment.html">
+      <span class="hc-ic">🔎</span><span class="hc-n">02 · ASSESSMENT</span>
+      <h3>Airway Assessment</h3>
+      <p>History and every bedside examination test — Mallampati, 3-3-2, thyromental &amp; sternomental distance, upper-lip-bite, neck movement — with photos and prediction mnemonics.</p>
+    </a>
+    <a class="hub-card" href="anaes-airway-scores.html">
+      <span class="hc-ic">📊</span><span class="hc-n">03 · SCORES</span>
+      <h3>Airway Scores</h3>
+      <p><strong>Original</strong> and <strong>modified Mallampati</strong>, an upgraded <strong>Cormack–Lehane</strong> grade, and the composite scores (Wilson, El-Ganzouri/SARI, LEMON, Arné) with thresholds.</p>
+    </a>
+    <a class="hub-card" href="anaes-airway-devices.html">
+      <span class="hc-ic">🧰</span><span class="hc-n">04 · DEVICES</span>
+      <h3>Devices &amp; Definitions</h3>
+      <p>What each term means — face mask, oro-/nasopharyngeal airway, SGA/LMA, tracheal tube — and the definitions of difficult mask ventilation, laryngoscopy, intubation and CICO.</p>
+    </a>
+    <a class="hub-card" href="anaes-airway-trauma.html">
+      <span class="hc-ic">🩸</span><span class="hc-n">05 · TRAUMA</span>
+      <h3>Trauma &amp; Pathology</h3>
+      <p>The injured and the pathological airway — maxillofacial and laryngeal trauma, burns/inhalation, C-spine, and obstructing pathology (tumour, infection, OSMF, angioedema).</p>
+    </a>
+    <a class="hub-card" href="anaes-airway-rsi.html">
+      <span class="hc-ic">⚡</span><span class="hc-n">06 · RSI</span>
+      <h3>Rapid Sequence Induction</h3>
+      <p>RSI as its own topic — indications, the classic sequence, drugs and doses, and <strong>Sellick's cricoid-pressure manoeuvre</strong> with the modern evidence and controversy.</p>
+    </a>
+    <a class="hub-card" href="anaes-airway-usg.html">
+      <span class="hc-ic">🔊</span><span class="hc-n">07 · ULTRASOUND</span>
+      <h3>Airway Ultrasound</h3>
+      <p>Anterior-neck sonoanatomy, real labelled POCUS images, cricothyroid-membrane marking and tube-placement confirmation (double-tract sign).</p>
+    </a>
+    <a class="hub-card" href="anaes-airway-pearls.html">
+      <span class="hc-ic">🎓</span><span class="hc-n">08 · PEARLS</span>
+      <h3>Advances, Mistakes &amp; Pearls</h3>
+      <p>Recent advances (VL, HFNO, eFONA), the classic mistakes, viva-ready exam pearls, and references &amp; image credits.</p>
+    </a>
+  </div>
+
+  <div class="marino-box">
+    <div class="mb-label">📋 Looking for the difficult-airway algorithms?</div>
+    <p>The step-by-step management of the <strong>unanticipated difficult airway</strong> lives with the guideline algorithms (DAS, ASA 2022, AIDAA) so there is one authoritative place for them.
+    <a href="guidelines.html" style="font-weight:700;color:#4c1d95;">Open the Guidelines library →</a></p>
+  </div>
+
+  <div class="tab-pager">
+    <span></span>
+    <a class="tp-next" href="anaes-airway-anatomy.html"><span class="tp-dir">Start with →</span><span class="tp-title">🫀 Anatomy of the Airway</span></a>
+  </div>
+
+</main>
 
 <footer class="footer">
   <div class="footer-inner">

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Airway Scores — Mallampati, Cormack–Lehane &amp; Composites — CritCare.in</title>
+  <meta name="description" content="Airway scores with values and thresholds: the original (1985) versus modified Mallampati classification, an upgraded Cormack–Lehane grade (Cook subdivision 1/2a/2b/3a/3b/4) with POGO, the single bedside tests table, and the composite scores — Wilson, El-Ganzouri/SARI, LEMON and Arné." />
+  <link rel="canonical" href="https://critcare.in/anaes-airway-scores.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-airway.html">Airway</a> › Scores</div>
+    <h1>📊 Airway Scores</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Mallampati old &amp; modified</span>
+      <span class="topic-tag">Cormack–Lehane upgraded</span>
+      <span class="topic-tag">Composite scores</span>
+    </div>
+  </div>
+</header>
+
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Airway topic sections">
+    <a href="anaes-airway.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-airway-anatomy.html"><span class="t-ic">🫀</span>Anatomy</a>
+    <a href="anaes-airway-assessment.html"><span class="t-ic">🔎</span>Assessment</a>
+    <a href="anaes-airway-scores.html" class="active"><span class="t-ic">📊</span>Scores</a>
+    <a href="anaes-airway-devices.html"><span class="t-ic">🧰</span>Devices &amp; Definitions</a>
+    <a href="anaes-airway-trauma.html"><span class="t-ic">🩸</span>Trauma &amp; Pathology</a>
+    <a href="anaes-airway-rsi.html"><span class="t-ic">⚡</span>RSI</a>
+    <a href="anaes-airway-usg.html"><span class="t-ic">🔊</span>Ultrasound</a>
+    <a href="anaes-airway-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <span class="sb sb-g">📊 Airway Scores — Values &amp; Difficulty</span>
+  <p>What each measurement means, and the threshold that flags difficulty. Assess these at the bedside (see the <a href="anaes-airway-assessment.html">Assessment</a> tab).</p>
+
+  <!-- ===== MALLAMPATI old + modified ===== -->
+  <h2>Mallampati — original vs modified</h2>
+  <p>Mallampati's original 1985 description had <strong>three</strong> classes; <strong>Samsoon &amp; Young</strong> added a fourth in 1987, giving the <strong>modified Mallampati</strong> classification used today. Know both — the distinction is a classic viva question.</p>
+  <div class="fig-grid">
+    <figure class="fig" style="max-width:320px;">
+      <span class="fig-media"><img src="assets/airway/mallampati.svg" alt="Modified Mallampati classes I to IV" loading="lazy"/></span>
+      <figcaption>Modified Mallampati classes I–IV (Samsoon &amp; Young). Class IV — only the hard palate — was the addition to Mallampati's original three classes.<div class="fig-src">Jmarchn, Wikimedia Commons — CC BY-SA 3.0.</div></figcaption>
+    </figure>
+    <div class="table-wrap" style="align-self:center;">
+      <table class="drug-table">
+        <thead><tr><th>Class</th><th>Original Mallampati 1985 (3 classes)</th><th>Modified — Samsoon &amp; Young 1987 (4 classes)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>I</strong></td><td>Soft palate, fauces, uvula &amp; pillars</td><td>Soft palate, fauces, uvula &amp; pillars</td></tr>
+          <tr><td><strong>II</strong></td><td>Soft palate, fauces &amp; uvula</td><td>Soft palate, fauces &amp; uvula (tip may be masked)</td></tr>
+          <tr><td><strong>III</strong></td><td>Soft palate only (uvula base)</td><td>Soft palate &amp; base of uvula only</td></tr>
+          <tr><td><strong>IV</strong></td><td><em>— not described —</em></td><td><strong>Hard palate only</strong> (added class)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p style="font-size:.82rem;color:var(--slate);">Technique: patient <strong>sitting, mouth maximally open, tongue fully protruded, no phonation</strong>. Classes <strong>III–IV</strong> predict difficulty. Phonation or the supine position falsely improves the class.</p>
+
+  <!-- ===== single bedside tests ===== -->
+  <h2>Single bedside tests — thresholds</h2>
+  <div class="table-wrap">
+    <table class="drug-table">
+      <thead><tr><th>Test</th><th>Grades / values</th><th>Predicts difficulty when…</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Modified Mallampati</strong></td><td>I → IV (above)</td><td><strong>III–IV</strong></td></tr>
+        <tr><td><strong>Inter-incisor gap</strong></td><td>Normal &gt;5 cm / 3 fingers</td><td>&lt;3 cm (difficult DL); <strong>&lt;2 cm</strong> (difficult LMA)</td></tr>
+        <tr><td><strong>Thyromental distance</strong></td><td>&gt;6.5 cm reassuring</td><td>6–6.5 cm difficult but possible; <strong>&lt;6 cm</strong> may be impossible</td></tr>
+        <tr><td><strong>Sternomental distance</strong></td><td>Sternal notch → chin, neck extended</td><td><strong>&lt;12.5 cm</strong></td></tr>
+        <tr><td><strong>Hyomental distance</strong></td><td>Gr I &gt;6 cm · II 4–6 cm · III &lt;4 cm</td><td><strong>Grade III (&lt;4 cm)</strong></td></tr>
+        <tr><td><strong>Upper-lip-bite test</strong></td><td>I: bite above vermilion · II: below · III: cannot reach</td><td><strong>Class III</strong></td></tr>
+        <tr><td><strong>Mandibular protrusion (Prayer/ULBT)</strong></td><td>A: lower teeth beyond upper · B: edge-to-edge · C: cannot</td><td><strong>Class B / C</strong></td></tr>
+        <tr><td><strong>Neck / atlanto-occipital extension</strong></td><td>Normal ≈35°</td><td>≥⅓–⅔ reduction of extension</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ===== Cormack–Lehane upgraded ===== -->
+  <h2>Cormack–Lehane laryngoscopic grade — upgraded</h2>
+  <p>The original 1984 grade (I–IV) has been refined by the <strong>Cook (2000) modification</strong>, which splits the ambiguous middle grades and groups the view by how you should act — <strong>easy → restricted → difficult</strong>.</p>
+  <div class="fig-grid">
+    <figure class="fig" style="max-width:340px;">
+      <span class="fig-media"><img src="assets/airway/cormack-lehane.jpg" alt="Cormack–Lehane grades I to IV at laryngoscopy" loading="lazy"/></span>
+      <figcaption>Cormack–Lehane grades at laryngoscopy (I–IV).<div class="fig-src">User:Tubus, Wikimedia Commons — CC BY-SA 3.0.</div></figcaption>
+    </figure>
+    <div class="table-wrap" style="align-self:center;">
+      <table class="drug-table">
+        <thead><tr><th>Grade</th><th>Laryngoscopic view</th><th>Group / difficulty</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1</strong></td><td>Most of the glottis / full cords</td><td>Easy</td></tr>
+          <tr><td><strong>2a</strong></td><td>Partial view of the cords</td><td>Easy</td></tr>
+          <tr><td><strong>2b</strong></td><td>Arytenoids / posterior cords only</td><td><strong>Restricted</strong> (intubation harder)</td></tr>
+          <tr><td><strong>3a</strong></td><td>Epiglottis only — <strong>liftable</strong></td><td><strong>Difficult</strong> (bougie may succeed)</td></tr>
+          <tr><td><strong>3b</strong></td><td>Epiglottis only — <strong>adherent</strong> to pharynx</td><td><strong>Difficult</strong></td></tr>
+          <tr><td><strong>4</strong></td><td>Neither epiglottis nor glottis</td><td><strong>Very difficult</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="marino-box">
+    <div class="mb-label">📐 Reporting the view — the modern additions</div>
+    <ul>
+      <li><strong>Grades 2b–4</strong> define difficult laryngoscopy; <strong>2b</strong> was carved out because it carries a much higher intubation-failure rate than 2a.</li>
+      <li><strong>POGO</strong> (Percentage Of Glottic Opening) — a 0–100% continuous score of how much of the glottis you see; better than C–L for <strong>videolaryngoscopy</strong> and for describing improvement with a manoeuvre.</li>
+      <li>Always record the <strong>conditions</strong>: blade type/size, position, external laryngeal manipulation (BURP) and whether a bougie was used — a grade means little without them.</li>
+    </ul>
+  </div>
+
+  <!-- ===== Composite scores ===== -->
+  <h2>Composite / multivariable scores</h2>
+  <div class="table-wrap">
+    <table class="drug-table">
+      <thead><tr><th>Score</th><th>What it combines</th><th>Cut-off for difficulty</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Wilson risk score</strong></td><td>Weight, head-&amp;-neck movement, jaw movement, receding mandible, buck teeth (each 0–2)</td><td>Total <strong>≥2</strong> (of 10) predicts difficult intubation</td></tr>
+        <tr><td><strong>El-Ganzouri / Simplified Airway Risk Index (SARI)</strong></td><td>Mouth opening, thyromental distance, Mallampati, neck movement, jaw protrusion, weight, history of difficult intubation (0–12)</td><td><strong>≥4</strong> suggests difficulty</td></tr>
+        <tr><td><strong>LEMON score</strong></td><td>1 point each: Look, 3-3-2 abnormal, Mallampati ≥3, Obstruction, Neck immobility</td><td>Higher score → higher risk (used in the ED)</td></tr>
+        <tr><td><strong>Arné score</strong></td><td>Pathology, prior difficulty, symptoms, Mallampati, TMD, mouth opening, neck movement</td><td><strong>≥11</strong> predicts difficulty</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:.82rem;color:var(--slate);">Bottom line: composites improve on any single test but none is perfect — always prepare for the airway you did <em>not</em> predict.</p>
+
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-airway-assessment.html"><span class="tp-dir">← Back</span><span class="tp-title">🔎 Assessment</span></a>
+    <a class="tp-next" href="anaes-airway-devices.html"><span class="tp-dir">Next →</span><span class="tp-title">🧰 Devices &amp; Definitions</span></a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

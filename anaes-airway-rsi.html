@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Rapid Sequence Induction (RSI) &amp; Sellick's Manoeuvre — CritCare.in</title>
+  <meta name="description" content="Rapid sequence induction as its own topic: indications, the classic sequence, drugs and doses (induction agents and neuromuscular blockers), modified RSI, and Sellick's cricoid-pressure manoeuvre — technique, the correct force, and the modern evidence and controversy." />
+  <link rel="canonical" href="https://critcare.in/anaes-airway-rsi.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-airway.html">Airway</a> › RSI</div>
+    <h1>⚡ Rapid Sequence Induction (RSI)</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Indications &amp; sequence</span>
+      <span class="topic-tag">Drugs &amp; doses</span>
+      <span class="topic-tag">Sellick's manoeuvre</span>
+    </div>
+  </div>
+</header>
+
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Airway topic sections">
+    <a href="anaes-airway.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-airway-anatomy.html"><span class="t-ic">🫀</span>Anatomy</a>
+    <a href="anaes-airway-assessment.html"><span class="t-ic">🔎</span>Assessment</a>
+    <a href="anaes-airway-scores.html"><span class="t-ic">📊</span>Scores</a>
+    <a href="anaes-airway-devices.html"><span class="t-ic">🧰</span>Devices &amp; Definitions</a>
+    <a href="anaes-airway-trauma.html"><span class="t-ic">🩸</span>Trauma &amp; Pathology</a>
+    <a href="anaes-airway-rsi.html" class="active"><span class="t-ic">⚡</span>RSI</a>
+    <a href="anaes-airway-usg.html"><span class="t-ic">🔊</span>Ultrasound</a>
+    <a href="anaes-airway-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <span class="sb sb-s">⚡ Rapid Sequence Induction</span>
+  <div class="book-quote">
+    <p>"Rapid sequence induction exists to shorten the dangerous interval between loss of consciousness and a protected airway in the patient at risk of aspiration. Preoxygenate fully, give a predetermined dose of induction agent immediately followed by a rapid-onset muscle relaxant, and intubate — classically without intervening manual ventilation."</p>
+    <cite>Synthesised from Miller's Anesthesia; Morgan &amp; Mikhail's Clinical Anesthesiology; Barash — Clinical Anesthesia.</cite>
+  </div>
+
+  <h2>When is RSI indicated?</h2>
+  <ul>
+    <li><strong>Full stomach / inadequate fasting</strong>, emergency surgery, acute trauma/pain, recent opioids.</li>
+    <li><strong>Bowel obstruction, ileus, acute abdomen</strong>; symptomatic <strong>GORD</strong>, hiatus hernia.</li>
+    <li><strong>Pregnancy</strong> (≥ ~16–18 weeks or symptomatic reflux) — reduced tone + raised intra-abdominal pressure.</li>
+    <li><strong>Raised intra-abdominal pressure</strong> (obesity, ascites); <strong>GLP-1 agonists</strong> (delayed gastric emptying); diabetic gastroparesis; critical illness.</li>
+  </ul>
+
+  <h2>The RSI sequence</h2>
+  <div style="margin:1.2rem 0;">
+    <div class="flowchart-step"><div class="fc-node fc-blue">1</div><div class="fc-content"><h4>Prepare — the 7 Ps</h4><p>Plan, People, Position (ramp/head-up), Preparation of drugs &amp; kit (checked laryngoscope, sized tubes, working <strong>suction</strong>, bougie, backup SGA &amp; FONA kit), monitoring + capnography, IV access.</p></div></div>
+    <div class="flowchart-step"><div class="fc-node fc-teal">2</div><div class="fc-content"><h4>Preoxygenate</h4><p>3 min tidal breathing (or 8 vital-capacity breaths) of 100% O₂ to <strong>EtO₂ &gt;0.85–0.9</strong>. Add <strong>nasal apnoeic O₂ / HFNO</strong>, especially in obesity, pregnancy and critical illness. Head-up improves FRC.</p></div></div>
+    <div class="flowchart-step"><div class="fc-node fc-yellow">3</div><div class="fc-content"><h4>Pretreatment / optimise (optional)</h4><p>Fluids/vasopressor for the shocked patient; opioid (e.g. fentanyl) to blunt the pressor response where appropriate. In the ED, "resuscitate before you intubate".</p></div></div>
+    <div class="flowchart-step"><div class="fc-node fc-orange">4</div><div class="fc-content"><h4>Paralyse &amp; induce</h4><p>A predetermined <strong>induction agent</strong> immediately followed by a <strong>rapid-onset relaxant</strong> (suxamethonium 1–1.5 mg/kg or rocuronium 1.2 mg/kg). Classically <strong>no manual ventilation</strong> (gentle ventilation is acceptable in the modern/"controlled" RSI if desaturating).</p></div></div>
+    <div class="flowchart-step"><div class="fc-node fc-gray">5</div><div class="fc-content"><h4>Cricoid pressure (Sellick's)</h4><p>Applied as consciousness is lost — see below. <strong>Release</strong> it if it worsens the view or ventilation, or if the patient actively vomits.</p></div></div>
+    <div class="flowchart-step"><div class="fc-node fc-green">6</div><div class="fc-content"><h4>Placement &amp; proof</h4><p>Intubate, inflate the cuff, <strong>confirm with sustained capnography</strong> ("no trace, wrong place") + bilateral chest rise. Secure the tube, then release cricoid on the intubator's instruction.</p></div></div>
+    <div class="flowchart-step"><div class="fc-node fc-red">7</div><div class="fc-content"><h4>Post-intubation care</h4><p>Ventilator settings, sedation, orogastric tube to decompress the stomach, ongoing monitoring.</p></div></div>
+  </div>
+
+  <h2>Drugs for RSI</h2>
+  <div class="table-wrap">
+    <table class="drug-table">
+      <thead><tr><th>Drug</th><th>Role</th><th>Dose (IV)</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Propofol</strong></td><td>Induction</td><td>1.5–2.5 mg/kg</td><td>Smooth; hypotension — reduce in the elderly/shocked</td></tr>
+        <tr><td><strong>Ketamine</strong></td><td>Induction (unstable)</td><td>1–2 mg/kg</td><td>Maintains BP; bronchodilator; shock/asthma/trauma</td></tr>
+        <tr><td><strong>Etomidate</strong></td><td>Induction (cardiac-stable)</td><td>0.3 mg/kg</td><td>Haemodynamically stable; transient adrenal suppression</td></tr>
+        <tr><td><strong>Thiopentone</strong></td><td>Induction (classic RSI)</td><td>3–5 mg/kg</td><td>The traditional RSI agent; avoid extravasation/intra-arterial</td></tr>
+        <tr><td><strong>Suxamethonium</strong></td><td>RSI relaxant</td><td>1–1.5 mg/kg</td><td>Fastest on/off (~45 s / ~6–10 min); avoid in hyperkalaemia, burns &gt;24–48 h, denervation, MH</td></tr>
+        <tr><td><strong>Rocuronium</strong></td><td>RSI relaxant (alt.)</td><td>1.2 mg/kg</td><td>Comparable intubating conditions; fully reversible with sugammadex</td></tr>
+        <tr><td><strong>Sugammadex</strong></td><td>Reversal (roc/vec)</td><td>16 mg/kg (immediate rescue)</td><td>Reverses profound rocuronium block — the "can't intubate" pharmacological wake-up</td></tr>
+        <tr><td><strong>Fentanyl</strong></td><td>Obtund pressor response</td><td>1–3 µg/kg</td><td>Blunts the laryngoscopy response; caution — apnoea/hypotension</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="marino-box">
+    <div class="mb-label">🔁 Modified / "controlled" RSI</div>
+    <p>Real practice individualises the classic dogma: <strong>gentle mask ventilation</strong> (low pressures) is allowed to prevent hypoxia in the child, the obese and the critically ill; opioids are added to blunt the pressor response; and <strong>rocuronium + sugammadex</strong> increasingly replaces suxamethonium. The principles — full preoxygenation, minimal gastric insufflation, a checked plan and early capnographic confirmation — stay constant.</p>
+  </div>
+
+  <!-- ===== SELLICK'S MANOEUVRE ===== -->
+  <h2>Sellick's manoeuvre (cricoid pressure)</h2>
+  <p>Described by <strong>Brian Sellick in 1961</strong>: backward pressure on the <strong>cricoid cartilage</strong> compresses the <strong>upper oesophagus</strong> against the C6 vertebral body to reduce passive regurgitation of gastric contents during induction.</p>
+  <div class="def-list">
+    <div class="def"><div class="dt">Landmark</div><div class="dd">The <strong>cricoid cartilage</strong> — the only complete tracheal ring, just below the thyroid cartilage. (Cricoid, not thyroid — a common error.)</div></div>
+    <div class="def"><div class="dt">Force</div><div class="dd"><strong>10 N (≈1 kg) awake</strong>, increasing to <strong>30 N (≈3 kg) once consciousness is lost</strong> — too little is ineffective, too much distorts the airway and worsens the laryngoscopic view.</div></div>
+    <div class="def"><div class="dt">Technique</div><div class="dd">Single-handed, thumb and index finger; applied as the patient loses consciousness and maintained until the cuff is inflated and tracheal placement is <strong>confirmed by capnography</strong>.</div></div>
+    <div class="def"><div class="dt">Release it if…</div><div class="dd">the laryngoscopic view or ventilation worsens, SGA insertion is needed, or the patient <strong>actively vomits</strong> (continued pressure then risks oesophageal rupture).</div></div>
+  </div>
+
+  <div class="warn-box">
+    <div class="kb-label">⚖️ The modern controversy — know both sides</div>
+    <p>Cricoid pressure remains <strong>traditional in RSI</strong> but is <strong>debated</strong>: MRI shows the oesophagus is often lateral to the cricoid, correctly-applied force is rarely achieved, and it can worsen the view, impede mask/SGA ventilation and reduce lower-oesophageal-sphincter tone. The large <strong>IRIS trial (2019)</strong> did not prove non-inferiority of omitting it, so most guidelines still <strong>apply it but release early</strong> if it hinders airway management. It is an adjunct — <strong>never let it compromise oxygenation</strong>.</p>
+  </div>
+
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-airway-trauma.html"><span class="tp-dir">← Back</span><span class="tp-title">🩸 Trauma &amp; Pathology</span></a>
+    <a class="tp-next" href="anaes-airway-usg.html"><span class="tp-dir">Next →</span><span class="tp-title">🔊 Airway Ultrasound</span></a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

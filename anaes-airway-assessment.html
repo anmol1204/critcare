@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Airway Assessment — Every Bedside Test — CritCare.in</title>
+  <meta name="description" content="How to assess the airway: focused history and airway pathology, then every bedside examination test — modified Mallampati, mouth opening, thyromental and sternomental distance, the 3-3-2 rule, upper-lip-bite test, mandibular protrusion and neck movement — with photos and the LEMON/MOANS/RODS/SHORT prediction mnemonics." />
+  <link rel="canonical" href="https://critcare.in/anaes-airway-assessment.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-airway.html">Airway</a> › Assessment</div>
+    <h1>🔎 Airway Assessment</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">History &amp; pathology</span>
+      <span class="topic-tag">Bedside tests</span>
+      <span class="topic-tag">Prediction mnemonics</span>
+    </div>
+  </div>
+</header>
+
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Airway topic sections">
+    <a href="anaes-airway.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-airway-anatomy.html"><span class="t-ic">🫀</span>Anatomy</a>
+    <a href="anaes-airway-assessment.html" class="active"><span class="t-ic">🔎</span>Assessment</a>
+    <a href="anaes-airway-scores.html"><span class="t-ic">📊</span>Scores</a>
+    <a href="anaes-airway-devices.html"><span class="t-ic">🧰</span>Devices &amp; Definitions</a>
+    <a href="anaes-airway-trauma.html"><span class="t-ic">🩸</span>Trauma &amp; Pathology</a>
+    <a href="anaes-airway-rsi.html"><span class="t-ic">⚡</span>RSI</a>
+    <a href="anaes-airway-usg.html"><span class="t-ic">🔊</span>Ultrasound</a>
+    <a href="anaes-airway-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <span class="sb sb-w">🔎 Airway Assessment in Detail</span>
+  <div class="book-quote">
+    <p>"No single bedside test predicts a difficult airway reliably; their power lies in combination and in the context of a good history. The one part of assessment that only the anaesthetist can perform — and that no consultant referral will provide — is the look at the airway. A documented previous difficult intubation is the strongest single predictor."</p>
+    <cite>Synthesised from Miller's Anesthesia; Barash — Clinical Anesthesia; Roth D et al., Cochrane review of bedside airway tests.</cite>
+  </div>
+
+  <h2>History first — and airway pathology</h2>
+  <ul>
+    <li><strong>Previous anaesthesia</strong> — difficult mask/intubation, a prior awake technique, tracheostomy, a "difficult airway" alert; <strong>read the old chart and any alert card</strong>.</li>
+    <li><strong>Airway symptoms</strong> — hoarseness, stridor, dysphagia, snoring/OSA, positional dyspnoea, recent voice change.</li>
+    <li><strong>Airway pathology</strong> — head-and-neck cancer, radiotherapy, rheumatoid or ankylosing cervical spine, acromegaly, obesity/OSA, burns, infection (Ludwig's angina, epiglottitis), oral submucous fibrosis. (The injured and pathological airway is covered on the <a href="anaes-airway-trauma.html">Trauma &amp; Pathology</a> tab.)</li>
+  </ul>
+  <p style="font-size:.86rem;color:var(--slate);">The formal <strong>definitions</strong> — difficult mask ventilation, difficult laryngoscopy, difficult/failed intubation, CICO — sit on the <a href="anaes-airway-devices.html">Devices &amp; Definitions</a> tab.</p>
+
+  <h2>Examination — every bedside test</h2>
+  <p>Assess each one and <strong>combine them</strong> — the numeric thresholds are collected as tables on the <a href="anaes-airway-scores.html">Scores</a> tab. No single test is sensitive enough alone.</p>
+
+  <figure class="fig" style="max-width:320px;">
+    <span class="fig-media"><img src="assets/airway/mallampati.svg" alt="Modified Mallampati classification, classes I to IV" loading="lazy"/></span>
+    <figcaption>Modified Mallampati classification (I–IV) — decreasing view of the soft palate, fauces and uvula, with the patient sitting, mouth maximally open, tongue out and no phonation.<div class="fig-src">Jmarchn, Wikimedia Commons — CC BY-SA 3.0.</div></figcaption>
+  </figure>
+
+  <ul>
+    <li><strong>Modified Mallampati class</strong> — visibility of the faucial pillars, soft palate and uvula (see the <a href="anaes-airway-scores.html">Scores</a> tab for the original vs modified classes).</li>
+    <li><strong>Mouth opening / inter-incisor gap</strong> — space for the laryngoscope and device; normally &gt;5 cm (≈3 fingers).</li>
+    <li><strong>Thyromental &amp; sternomental distance</strong> — the size of the anterior mandibular space into which the tongue is displaced (neck fully extended).</li>
+    <li><strong>Hyomental distance</strong> and the <strong>3-3-2 rule</strong> — 3 fingers mouth opening, 3 fingers hyoid-to-chin, 2 fingers thyroid-notch-to-floor-of-mouth.</li>
+    <li><strong>Upper-lip-bite test (ULBT) &amp; mandibular protrusion</strong> — how far the lower incisors can be advanced onto the upper lip; tests mandibular movement and dental architecture.</li>
+    <li><strong>Neck movement / atlanto-occipital extension</strong> — chin-to-chest then looking at the ceiling; the "sniffing" position depends on it.</li>
+    <li><strong>Dentition</strong> — prominent incisors ("buck teeth"), loose/capped/crowned teeth, edentulism (easy laryngoscopy but a difficult mask seal).</li>
+    <li><strong>Neck &amp; soft tissue</strong> — short/thick neck, large circumference, goitre, mass, scar, radiation change, beard (mask seal).</li>
+    <li><strong>Ultrasound anterior-neck measures</strong> — increasingly used (see the <a href="anaes-airway-usg.html">Ultrasound</a> tab).</li>
+  </ul>
+
+  <h3>Airway examination — photos</h3>
+  <p style="font-size:.86rem;color:var(--slate);">Real bedside photographs demonstrating each manoeuvre. Open-licensed clinical photos of these specific tests are not freely available, so labelled slots are provided for real images from our own patients (with consent) — never AI-generated.</p>
+  <div class="fig-grid">
+    <div class="photo-slot" style="max-width:360px;"><span class="ps-ic">📷</span><strong>Thyromental distance</strong><br>Measuring thyroid-notch → chin with the neck extended (&gt;6.5 cm reassuring).</div>
+    <div class="photo-slot" style="max-width:360px;"><span class="ps-ic">📷</span><strong>Mouth opening / inter-incisor gap</strong><br>Maximal mouth opening measured between the incisors.</div>
+    <div class="photo-slot" style="max-width:360px;"><span class="ps-ic">📷</span><strong>Upper-lip-bite test</strong><br>Lower incisors advanced onto the upper lip — class I–III.</div>
+    <div class="photo-slot" style="max-width:360px;"><span class="ps-ic">📷</span><strong>Neck extension (atlanto-occipital)</strong><br>Sniffing position vs fixed/limited extension.</div>
+  </div>
+
+  <div class="marino-box">
+    <div class="mb-label">🧠 The prediction mnemonics</div>
+    <ul>
+      <li><strong>LEMON</strong> (difficult intubation): <strong>L</strong>ook externally · <strong>E</strong>valuate 3-3-2 · <strong>M</strong>allampati · <strong>O</strong>bstruction/Obesity · <strong>N</strong>eck mobility.</li>
+      <li><strong>MOANS</strong> (difficult mask): <strong>M</strong>ask seal/beard · <strong>O</strong>besity/Obstruction · <strong>A</strong>ge &gt;55 · <strong>N</strong>o teeth · <strong>S</strong>tiff lungs/Snoring.</li>
+      <li><strong>RODS</strong> (difficult SGA): <strong>R</strong>estricted mouth opening · <strong>O</strong>bstruction · <strong>D</strong>istorted anatomy · <strong>S</strong>tiff lungs.</li>
+      <li><strong>SHORT</strong> (difficult FONA): <strong>S</strong>urgery/Scar · <strong>H</strong>aematoma · <strong>O</strong>besity · <strong>R</strong>adiation · <strong>T</strong>umour.</li>
+      <li><strong>HEAVEN</strong> criteria describe difficulty in the emergency/critical-care setting.</li>
+    </ul>
+  </div>
+
+  <div class="warn-box">
+    <div class="kb-label">💨 Preoxygenation &amp; apnoeic oxygenation buy you time</div>
+    <p>Three minutes of tidal breathing (or 8 vital-capacity breaths) of 100% O₂ to an end-tidal O₂ &gt;0.85–0.9 fills the FRC with oxygen and extends safe apnoea time. <strong>Nasal apnoeic oxygenation</strong> (15 L/min, or high-flow nasal oxygen) during laryngoscopy prolongs the window further — especially in obesity, pregnancy and critical illness.</p>
+  </div>
+
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-airway-anatomy.html"><span class="tp-dir">← Back</span><span class="tp-title">🫀 Anatomy</span></a>
+    <a class="tp-next" href="anaes-airway-scores.html"><span class="tp-dir">Next →</span><span class="tp-title">📊 Airway Scores</span></a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>
