@@ -888,6 +888,270 @@ window.MCQ_BANK = [
   key: 'Beck\'s triad + central trachea = tamponade (not tension pneumothorax).',
   pearl: 'Tension pneumothorax vs tamponade both cause obstructive shock with distended neck veins. The discriminators: tension pneumothorax → tracheal deviation, absent breath sounds, hyper-resonance; tamponade → equal breath sounds, muffled heart sounds, FAST-positive pericardial fluid.',
   src: 'ATLS'
+},
+
+/* ==========================================================
+   HYPERGLYCAEMIC EMERGENCIES (DKA / HHS)
+   ========================================================== */
+{
+  id: 'ccm-dka-001', spec: 'ccm', topic: 'Hyperglycaemic Emergencies', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Which feature most reliably distinguishes hyperosmolar hyperglycaemic state (HHS) from diabetic ketoacidosis (DKA)?',
+  o: [
+    'HHS has marked hyperglycaemia and hyperosmolality with little/no ketoacidosis',
+    'HHS always has a lower glucose than DKA',
+    'DKA occurs only in type 2 diabetes',
+    'HHS has a high anion gap by definition'
+  ],
+  a: 0,
+  e: 'HHS is characterised by <strong>profound hyperglycaemia (often &gt;33 mmol/L), high osmolality (&gt;320 mOsm/kg) and minimal ketosis/acidosis</strong> (enough insulin to suppress ketogenesis but not hyperglycaemia). DKA has ketoacidosis with a high anion gap. HHS develops slowly, carries higher mortality, and needs cautious rehydration.',
+  key: 'HHS = hyperosmolar + minimal ketones; DKA = ketoacidotic. Overlap exists.',
+  pearl: 'Effective osmolality = 2 × Na + glucose (mmol/L). HHS fluid deficit is large (~8–10 L) — rehydrate gradually to avoid cerebral oedema; insulin needs are lower than DKA and given after fluids.',
+  src: 'JBDS / Washington Manual'
+},
+{
+  id: 'ccm-dka-002', spec: 'ccm', topic: 'Hyperglycaemic Emergencies', difficulty: 'severe', type: 'case',
+  stem: 'An 18-year-old with DKA is treated with fluids and insulin. Twelve hours in, after initial improvement, he develops headache, falling GCS and bradycardia with rising blood pressure.',
+  q: 'The most likely complication is:',
+  o: ['Cerebral oedema', 'Hypoglycaemia', 'Hypokalaemia', 'Aspiration pneumonia'],
+  a: 0,
+  e: 'A deteriorating conscious level with the <strong>Cushing response</strong> (bradycardia + hypertension) after initial DKA improvement, particularly in a young patient, is <strong>cerebral oedema</strong> — a rare but often fatal complication linked to overrapid osmotic shifts. Treat immediately with <strong>hypertonic saline or mannitol</strong>, reduce fluid rate, and get imaging/neuro input — do not delay treatment for the scan.',
+  key: 'New drowsiness/headache in a child or young adult with DKA = cerebral oedema until proven otherwise.',
+  pearl: 'Risk factors: younger age, new-onset diabetes, severe acidosis/hypocapnia, high urea, rapid fall in osmolality. Prevention: avoid excessive early fluid, correct glucose/osmolality gradually.',
+  src: 'ISPAD / Marino'
+},
+
+/* ==========================================================
+   ENDOCRINE EMERGENCIES
+   ========================================================== */
+{
+  id: 'ccm-endo-001', spec: 'ccm', topic: 'Endocrine Emergencies', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'In thyroid storm, the drug sequence for blocking thyroid hormone is important because:',
+  o: [
+    'Iodine (Lugol\'s) must be given at least 1 hour AFTER a thionamide, to avoid fuelling hormone synthesis',
+    'Iodine should always be given first',
+    'Beta-blockers are contraindicated',
+    'Steroids have no role'
+  ],
+  a: 0,
+  e: 'Give the <strong>thionamide (propylthiouracil or carbimazole) first</strong>, then <strong>iodine (Lugol\'s/potassium iodide) at least 1 hour later</strong> — giving iodine first could provide substrate and transiently increase hormone synthesis (Jod-Basedow). Add a <strong>beta-blocker</strong> (propranolol) for adrenergic symptoms and <strong>hydrocortisone</strong> (reduces T4→T3 conversion and treats relative adrenal insufficiency).',
+  key: 'Thyroid storm order: thionamide → (1 h later) iodine → β-blocker → steroid.',
+  pearl: 'PTU is preferred over carbimazole in storm because it also blocks peripheral T4→T3 conversion. Treat the precipitant (infection, surgery, DKA) and support (cooling, fluids).',
+  src: 'Washington Manual / Marino'
+},
+{
+  id: 'ccm-endo-002', spec: 'ccm', topic: 'Endocrine Emergencies', difficulty: 'moderate', type: 'case',
+  stem: 'A patient on long-term steroids presents with an intercurrent infection, hypotension unresponsive to fluids and vasopressors, hyponatraemia and hypoglycaemia.',
+  q: 'The most appropriate immediate treatment is:',
+  o: ['IV hydrocortisone', 'IV levothyroxine', 'IV insulin', 'Broad-spectrum antibiotics alone'],
+  a: 0,
+  e: 'This is <strong>adrenal (Addisonian) crisis</strong> — precipitated by stress in a steroid-dependent patient. Give <strong>IV hydrocortisone 100 mg immediately</strong> (then 200 mg/24 h), aggressive <strong>fluid resuscitation</strong> with glucose, and treat the precipitant. Do not wait for a random cortisol; treat on suspicion. Vasopressors are often ineffective until steroid is given.',
+  key: 'Refractory shock + hyponatraemia + hypoglycaemia in a steroid user = adrenal crisis → hydrocortisone now.',
+  pearl: 'Give hydrocortisone before levothyroxine if both adrenal and thyroid failure are suspected (e.g. hypopituitarism) — thyroxine first can precipitate crisis by raising metabolic demand for cortisol.',
+  src: 'Washington Manual'
+},
+
+/* ==========================================================
+   VENTILATOR-ASSOCIATED PNEUMONIA
+   ========================================================== */
+{
+  id: 'ccm-vap-001', spec: 'ccm', topic: 'Pneumonia / VAP', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Ventilator-associated pneumonia is defined as pneumonia developing after:',
+  o: ['≥48 hours of mechanical ventilation', 'Any period of intubation', '≥12 hours of ventilation', '≥7 days of ICU stay'],
+  a: 0,
+  e: 'VAP is pneumonia arising <strong>≥48 hours after endotracheal intubation</strong>. Diagnosis combines new/progressive infiltrate with clinical signs (fever, leucocytosis, purulent secretions, worsening oxygenation) and respiratory cultures. Empirical therapy is guided by local antibiograms and risk factors for multidrug-resistant organisms.',
+  pearl: 'Prevention bundle: head-up 30–45°, daily sedation holds + SBT, oral care (chlorhexidine debated), subglottic suction ETTs, DVT/stress-ulcer prophylaxis, avoid unnecessary ventilator circuit changes.',
+  src: 'ATS/IDSA / Washington Manual'
+},
+
+/* ==========================================================
+   SEDATION, ANALGESIA & DELIRIUM
+   ========================================================== */
+{
+  id: 'ccm-sed-001', spec: 'ccm', topic: 'Sedation & Delirium', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Per PADIS guidelines, the recommended approach to ICU sedation is:',
+  o: [
+    'Deep sedation for all ventilated patients',
+    'Light, goal-directed (analgesia-first) sedation with daily awakening, targeting RASS 0 to −2',
+    'Routine benzodiazepine infusions',
+    'Continuous neuromuscular blockade'
+  ],
+  a: 1,
+  e: 'PADIS recommends an <strong>analgesia-first, light sedation</strong> strategy — target a <strong>RASS of 0 to −2</strong>, use daily <strong>spontaneous awakening trials</strong>, and prefer <strong>propofol or dexmedetomidine over benzodiazepines</strong> (which increase delirium). Lighter sedation shortens ventilation and ICU stay.',
+  key: 'Analgesia first, light sedation, avoid benzodiazepines, screen for delirium.',
+  pearl: 'Assess delirium with <strong>CAM-ICU</strong> or ICDSC. Management is mostly non-pharmacological (reorientation, sleep, mobilisation, remove deliriogenic drugs); antipsychotics do not shorten delirium (MIND-USA) and are reserved for distressing agitation.',
+  src: 'PADIS / Marino'
+},
+{
+  id: 'ccm-sed-002', spec: 'ccm', topic: 'Sedation & Delirium', difficulty: 'severe', type: 'case',
+  stem: 'A ventilated patient on a high-dose propofol infusion for 3 days develops metabolic acidosis, rising lactate, hypertriglyceridaemia, rhabdomyolysis and new arrhythmia with bradycardia.',
+  q: 'The most likely diagnosis is:',
+  o: ['Propofol infusion syndrome', 'Serotonin syndrome', 'Malignant hyperthermia', 'Neuroleptic malignant syndrome'],
+  a: 0,
+  e: '<strong>Propofol-related infusion syndrome (PRIS)</strong> — associated with high-dose (&gt;4 mg/kg/h) or prolonged (&gt;48 h) propofol — presents with <strong>metabolic acidosis, lactataemia, rhabdomyolysis, hypertriglyceridaemia, arrhythmia and cardiac failure</strong>. Treatment is to <strong>stop propofol immediately</strong>, provide cardiovascular/renal support, and switch to an alternative sedative.',
+  key: 'High-dose/prolonged propofol + lactic acidosis + rhabdo + bradyarrhythmia = PRIS → stop propofol.',
+  pearl: 'Limit propofol to &lt;4 mg/kg/h where possible and reassess beyond 48 h; monitor triglycerides, CK, lactate and pH in prolonged infusions. Children are at higher risk.',
+  src: 'Marino / Irwin & Rippe'
+},
+
+/* ==========================================================
+   TRANSFUSION MEDICINE
+   ========================================================== */
+{
+  id: 'ccm-tx-001', spec: 'ccm', topic: 'Transfusion', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'For most stable, non-bleeding critically ill adults, the evidence-based haemoglobin transfusion threshold is:',
+  o: ['&lt;70 g/L', '&lt;100 g/L', '&lt;90 g/L', '&lt;120 g/L'],
+  a: 0,
+  e: 'A <strong>restrictive threshold of &lt;70 g/L</strong> (TRICC, TRISS) is at least as good as a liberal strategy for most stable patients, with a higher threshold (&lt;80 g/L) for active <strong>acute coronary syndrome</strong> or cardiac surgery. Transfuse single units and reassess between them.',
+  key: 'Restrictive Hb &lt;70 g/L for most; &lt;80 for ACS/cardiac surgery.',
+  pearl: 'Restrictive transfusion reduces exposure to transfusion reactions and TACO/TRALI without worsening outcomes. Reassess symptoms and Hb between single units rather than ordering two upfront.',
+  src: 'TRICC / TRISS'
+},
+{
+  id: 'ccm-tx-002', spec: 'ccm', topic: 'Transfusion', difficulty: 'moderate', type: 'case',
+  stem: 'One hour into a red-cell transfusion, a patient develops acute dyspnoea, hypoxaemia and bilateral pulmonary infiltrates. There is no fever, hypertension, or raised JVP, and it settles over 48–72 h.',
+  q: 'The most likely transfusion reaction is:',
+  o: ['Transfusion-related acute lung injury (TRALI)', 'Transfusion-associated circulatory overload (TACO)', 'Acute haemolytic reaction', 'Anaphylaxis'],
+  a: 0,
+  e: '<strong>TRALI</strong> — acute non-cardiogenic pulmonary oedema within 6 h of transfusion, with hypoxaemia and bilateral infiltrates but <strong>normal filling pressures</strong>, typically resolving in 48–96 h. Management is <strong>supportive/lung-protective ventilation</strong>. It contrasts with <strong>TACO</strong> (volume overload — hypertension, raised JVP, responds to diuresis).',
+  key: 'TRALI = non-cardiogenic (normal JVP/BP, transient); TACO = overload (raised JVP/BP, diuretic-responsive).',
+  pearl: 'TRALI vs TACO: <table class="mcq-mini"><tr><th></th><th>TRALI</th><th>TACO</th></tr><tr><td>BP</td><td>↓/normal</td><td>↑</td></tr><tr><td>JVP/filling</td><td>Normal</td><td>Raised</td></tr><tr><td>Diuretic</td><td>No help</td><td>Helps</td></tr><tr><td>Course</td><td>Resolves 48–96 h</td><td>Rapid with diuresis</td></tr></table>',
+  src: 'Washington Manual'
+},
+
+/* ==========================================================
+   BRAIN DEATH / NEUROCRITICAL CARE
+   ========================================================== */
+{
+  id: 'ccm-bd-001', spec: 'ccm', topic: 'Brain Death', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'A mandatory prerequisite BEFORE performing brain-death (brainstem death) testing is:',
+  o: [
+    'Exclusion of reversible confounders (drugs, hypothermia, severe metabolic/endocrine derangement) with a known, irreversible catastrophic brain injury',
+    'A positive EEG',
+    'Family consent to the diagnosis',
+    'Absence of any spinal reflexes'
+  ],
+  a: 0,
+  e: 'Before clinical brain-death testing you must confirm a <strong>known, irreversible cause of catastrophic brain injury</strong> and <strong>exclude confounders</strong>: sedatives/neuromuscular blockers, hypothermia (temperature must be adequate), and severe electrolyte/acid–base/endocrine disturbance. <strong>Spinal reflexes may persist</strong> and do not exclude brain death. EEG is not required where clinical criteria are met.',
+  pearl: 'Brainstem testing checks absent brainstem reflexes (pupillary, corneal, oculovestibular/caloric, gag, cough) and a formal <strong>apnoea test</strong> (PaCO₂ rise above threshold with no respiratory effort). Two appropriately qualified doctors, testing performed as per local statute.',
+  src: 'Brain-death codes of practice / Marino'
+},
+
+/* ==========================================================
+   SODIUM / SIADH
+   ========================================================== */
+{
+  id: 'ccm-na-001', spec: 'ccm', topic: 'Electrolytes', difficulty: 'severe', type: 'case',
+  stem: 'A patient with a subarachnoid haemorrhage develops hyponatraemia. She is clinically hypovolaemic with a high urine output and a rising haematocrit; urine sodium is high.',
+  q: 'The most likely diagnosis and treatment are:',
+  o: [
+    'Cerebral salt wasting — treat with salt and volume replacement',
+    'SIADH — treat with fluid restriction',
+    'Psychogenic polydipsia — restrict water',
+    'Diabetes insipidus — give desmopressin'
+  ],
+  a: 0,
+  e: 'The distinguishing feature is <strong>volume status</strong>. This patient is <strong>hypovolaemic</strong> (rising haematocrit, high urine output) with renal sodium loss — <strong>cerebral salt wasting</strong>, seen after brain injury/SAH. Treat with <strong>sodium and volume replacement</strong> (isotonic/hypertonic saline). <strong>SIADH</strong> looks similar biochemically but is <strong>euvolaemic</strong> and is treated with fluid restriction — so fluid-restricting a CSW patient would be harmful.',
+  key: 'CSW = hypovolaemic (replace salt/volume); SIADH = euvolaemic (restrict fluid). Assess volume status.',
+  pearl: 'In SAH, fluid-restricting a wrongly-diagnosed SIADH patient who actually has CSW worsens cerebral perfusion and vasospasm risk — when in doubt after brain injury, favour maintaining euvolaemia with saline.',
+  src: 'Neurocritical Care / Marino'
+},
+
+/* ==========================================================
+   EMERGENCY MEDICINE — UPPER GI BLEED
+   ========================================================== */
+{
+  id: 'em-gib-001', spec: 'em', topic: 'GI Bleeding', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'In suspected acute variceal upper GI bleeding, the recommended vasoactive drug to start early is:',
+  o: ['Terlipressin (or octreotide/somatostatin)', 'Adrenaline infusion', 'Dobutamine', 'Noradrenaline only'],
+  a: 0,
+  e: 'For suspected <strong>variceal</strong> bleeding, start a <strong>splanchnic vasoconstrictor — terlipressin</strong> (or octreotide/somatostatin) early, plus <strong>prophylactic antibiotics</strong> (reduce infection and mortality in cirrhosis), and arrange <strong>endoscopy within 24 h</strong> for band ligation. Restrictive transfusion (Hb target ~70 g/L) improves outcomes in variceal bleeding.',
+  key: 'Variceal bleed: terlipressin + antibiotics + early endoscopy; restrictive transfusion.',
+  pearl: 'The Glasgow-Blatchford score triages non-variceal UGIB: a score of 0–1 identifies very-low-risk patients who may avoid admission/urgent endoscopy. For peptic ulcer bleeding, use IV PPI and endoscopic haemostasis.',
+  src: 'Baveno / NICE UGIB'
+},
+{
+  id: 'em-gib-002', spec: 'em', topic: 'GI Bleeding', difficulty: 'moderate', type: 'case',
+  stem: 'A 60-year-old with known cirrhosis presents with large-volume haematemesis, HR 120 and BP 86/50. Haemoglobin is 68 g/L.',
+  q: 'Which transfusion strategy is best supported by evidence in this setting?',
+  o: [
+    'Restrictive transfusion targeting Hb ~70–80 g/L',
+    'Liberal transfusion to Hb ≥100 g/L',
+    'No transfusion regardless of Hb',
+    'Transfuse to Hb ≥120 g/L'
+  ],
+  a: 0,
+  e: 'In acute UGIB — including variceal bleeding in cirrhosis — a <strong>restrictive strategy (target Hb ~70–80 g/L)</strong> improves survival and reduces rebleeding compared with liberal transfusion (Villanueva 2013), because over-transfusion raises portal pressure. Resuscitate to perfusion, not to a high Hb.',
+  key: 'Even in active variceal bleeding, over-transfusion worsens outcomes — target ~70–80 g/L.',
+  pearl: 'Over-transfusion increases portal venous pressure and rebleeding in varices. Combine restrictive red cells with terlipressin, antibiotics, correction of coagulopathy as needed, and timely endoscopy.',
+  src: 'Villanueva NEJM / Baveno'
+},
+
+/* ==========================================================
+   EMERGENCY MEDICINE — HYPERTENSIVE EMERGENCY
+   ========================================================== */
+{
+  id: 'em-htn-001', spec: 'em', topic: 'Hypertensive Emergency', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'In most hypertensive emergencies (except a few specific scenarios), the initial blood-pressure goal is to reduce mean arterial pressure by no more than:',
+  o: ['~10–20% in the first hour, then further over 24 h', '50% within 30 minutes', 'To normal (120/80) immediately', 'By 5 mmHg per day'],
+  a: 0,
+  e: 'Reduce MAP by <strong>~10–20% in the first hour</strong>, then a further ~5–15% over the next 23 h. Dropping pressure too fast risks <strong>watershed ischaemia</strong> (cerebral, coronary, renal) because autoregulation is shifted. <strong>Exceptions requiring rapid, larger reduction</strong>: aortic dissection (SBP &lt;120 quickly), severe pre-eclampsia/eclampsia, and some acute pulmonary oedema.',
+  key: 'Gradual reduction (~10–20% first hour) — except aortic dissection, eclampsia, flash pulmonary oedema.',
+  pearl: 'Aortic dissection needs rapid control of <strong>both</strong> BP and heart rate — a <strong>beta-blocker first</strong> (target HR &lt;60) before a vasodilator, to reduce aortic wall shear stress (dP/dt); giving a vasodilator alone causes reflex tachycardia and worsens the tear.',
+  src: 'ACC/AHA / Washington Manual'
+},
+
+/* ==========================================================
+   EMERGENCY MEDICINE — ENVIRONMENTAL / TROPICAL
+   ========================================================== */
+{
+  id: 'em-env-001', spec: 'em', topic: 'Environmental Emergencies', difficulty: 'moderate', type: 'case',
+  stem: 'A labourer collapses during a heatwave. Core temperature is 41.5 °C, he is confused, hot and dry, with tachycardia and hypotension.',
+  q: 'The single most important immediate treatment is:',
+  o: ['Rapid active cooling to below 39 °C', 'IV paracetamol', 'IV dantrolene', 'Broad-spectrum antibiotics'],
+  a: 0,
+  e: 'This is <strong>exertional heat stroke</strong> (core &gt;40 °C + CNS dysfunction). The priority is <strong>rapid active cooling</strong> — cold-water immersion is most effective — aiming to bring the core below ~39 °C quickly, alongside airway/circulation support. <strong>Antipyretics do not work</strong> (the set-point is normal) and dantrolene is not effective for heat stroke.',
+  key: 'Heat stroke: cool first and fast (cold-water immersion); antipyretics and dantrolene do not help.',
+  pearl: 'Watch for complications: rhabdomyolysis, AKI, DIC, hepatic injury, ARDS. "Cool first, transport second" — minutes of hyperthermia drive multi-organ injury. Stop cooling around 38.5–39 °C to avoid overshoot.',
+  src: 'Wilderness/EM guidelines'
+},
+{
+  id: 'em-env-002', spec: 'em', topic: 'Environmental Emergencies', difficulty: 'severe', type: 'case',
+  stem: 'A farmer in India is bitten by a snake and develops ptosis, difficulty swallowing and progressive weakness, with a 20-minute whole-blood clotting test showing non-clotting blood.',
+  q: 'The definitive treatment is:',
+  o: ['Polyvalent anti-snake venom', 'Prophylactic fasciotomy', 'A tight arterial tourniquet', 'Incision and suction of the bite'],
+  a: 0,
+  e: 'Neurotoxic features (ptosis, bulbar weakness) plus <strong>incoagulable blood (positive 20-minute WBCT)</strong> indicate significant systemic envenomation. The definitive treatment is <strong>polyvalent anti-snake venom</strong>, titrated to reversal of coagulopathy/neurotoxicity, with airway support and neostigmine/atropine for neurotoxic (e.g. cobra) bites. <strong>Tourniquets, incision and suction are harmful</strong> and outdated; use pressure immobilisation and rapid transfer.',
+  key: 'Systemic envenomation (neurotoxicity or non-clotting blood) → anti-snake venom; avoid tourniquet/incision.',
+  pearl: 'The <strong>20-minute whole-blood clotting test</strong> is a simple bedside marker of viper (haemotoxic) envenomation in resource-limited settings — non-clotting blood at 20 min indicates coagulopathy and the need for antivenom.',
+  src: 'WHO / Indian NSV guidelines'
+},
+
+/* ==========================================================
+   EMERGENCY MEDICINE — CNS INFECTION
+   ========================================================== */
+{
+  id: 'em-cns-001', spec: 'em', topic: 'CNS Infections', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'In suspected acute bacterial meningitis, when should antibiotics be given relative to lumbar puncture and CT?',
+  o: [
+    'Give antibiotics immediately; do not delay for CT/LP if there is any hold-up',
+    'Always complete CT and LP before any antibiotics',
+    'Only after CSF culture results',
+    'Antibiotics are not needed if the patient is alert'
+  ],
+  a: 0,
+  e: 'Antibiotics (± dexamethasone) must be given <strong>as early as possible and should not be delayed</strong> for imaging or LP when there is any hold-up — every hour matters. Perform LP promptly when safe; obtain <strong>CT first only if</strong> there are features suggesting raised ICP/mass (focal deficit, papilloedema, reduced GCS, seizures, immunocompromise). Give <strong>dexamethasone with or just before</strong> the first antibiotic dose.',
+  key: 'Never delay antibiotics for the scan or LP in suspected bacterial meningitis.',
+  pearl: 'Empirical therapy: a third-generation cephalosporin (ceftriaxone) ± amoxicillin for Listeria cover in &gt;50 y/immunocompromised/pregnant; add vancomycin where resistant pneumococcus is a concern. Dexamethasone reduces neurological sequelae in pneumococcal meningitis.',
+  src: 'IDSA / Washington Manual'
 }
 
 ];

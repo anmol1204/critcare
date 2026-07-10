@@ -91,6 +91,7 @@
     <li><a href="topics.html">Topics</a></li>
     <li><a href="mcqs.html">MCQs</a></li>
     <li><a href="quick-revision.html" class="active">Quick Revision</a></li>
+    <li><a href="flashcards.html">Flashcards</a></li>
     <li><a href="scores.html">Scores</a></li>
     <li><a href="dnb.html">DNB Papers</a></li>
     <li><a href="login.html" class="nav-cta">Login</a></li>
@@ -325,6 +326,126 @@ var QR = {
       { t: "The potassium rule", body: "<h4>Insulin and K⁺</h4><table><tr><th>Serum K⁺</th><th>Action</th></tr><tr><td>&lt;3.5</td><td>Hold insulin, replace K⁺ first</td></tr><tr><td>3.5–5.5</td><td>Add K⁺ to fluids, run insulin</td></tr><tr><td>&gt;5.5</td><td>No added K⁺ yet; recheck</td></tr></table>Total-body potassium is always low, whatever the number says." },
       { t: "Resolution criteria", body: "<h4>When to step down</h4>Ketones &lt;0.6 mmol/L · venous pH &gt;7.3 <em>or</em> HCO₃ ≥15 · patient eating. Overlap subcutaneous insulin <strong>before</strong> stopping the infusion, or they'll relapse." },
       { t: "Euglycaemic DKA", body: "<h4>The normal-sugar trap</h4>On an <strong>SGLT2 inhibitor</strong>, patients can be in florid ketoacidosis with a near-normal glucose. If they're acidotic and ketotic, treat as DKA regardless of the sugar — and add dextrose early." }
+    ]
+  },
+
+  "Acute Kidney Injury": {
+    spec: "CCM", read: "~2 min",
+    oneliner: "AKI is rarely a primary disease — it's the kidney telling you something else is wrong. Find the insult, protect the nephron, and don't reach for dialysis reflexively.",
+    think:
+      "<p>When the creatinine climbs, resist the urge to label it and move on. Ask the old three-part question — is this <strong>pre-renal</strong> (the kidney isn't being perfused), <strong>renal</strong> (the tubules or glomeruli are injured), or <strong>post-renal</strong> (something's obstructing the outflow)? A bladder scan and a good history answer most of it.</p>" +
+      "<p>The two things that actually change outcomes are unglamorous: <strong>restore perfusion</strong> and <strong>stop the nephrotoxins</strong> (the NSAID, the aminoglycoside, the contrast you didn't need). Dialysis doesn't fix the kidney — it buys time — so start it for a reason, not for a number.</p>",
+    sections: [
+      { h: "Work out the mechanism", cls: "", items: [
+        "<strong>Pre-renal</strong> — hypovolaemia, sepsis, low output. Bland urine, responds to perfusion.",
+        "<strong>Renal (intrinsic)</strong> — ATN (muddy-brown casts), AIN (drugs), glomerular (RBC casts).",
+        "<strong>Post-renal</strong> — obstruction; never forget the <strong>bladder scan</strong>, it's a two-minute fix."
+      ]},
+      { h: "Protect what's left", cls: "g", items: [
+        "<strong>Restore perfusion</strong> — fluids if truly hypovolaemic, pressors for MAP; but don't drown the euvolaemic.",
+        "<strong>Stop the nephrotoxins</strong> — NSAIDs, aminoglycosides, unnecessary contrast; dose-adjust drugs.",
+        "Treat the cause — relieve obstruction, treat sepsis, stop the bleeding."
+      ]},
+      { h: "When to dialyse (AEIOU)", cls: "r", items: [
+        "<strong>A</strong>cidosis (refractory) · <strong>E</strong>lectrolytes (refractory hyperkalaemia) · <strong>I</strong>ntoxication (dialysable) · <strong>O</strong>verload (refractory) · <strong>U</strong>raemia (encephalopathy, pericarditis).",
+        "Otherwise <strong>watch and wait</strong> — earlier isn't better (STARRT-AKI, AKIKI).",
+        "CRRT vs intermittent changes nothing for survival — pick by <strong>haemodynamics</strong>."
+      ]}
+    ],
+    nothing: "If you remember nothing else: <strong>perfuse the kidney, stop the nephrotoxins</strong>, exclude obstruction with a bladder scan — and dialyse for an indication, not a creatinine.",
+    pearls: [
+      { t: "Urine sediment", body: "<h4>What the microscope tells you</h4><table><tr><td>Bland / hyaline</td><td>Pre-renal</td></tr><tr><td>Muddy-brown casts</td><td>ATN</td></tr><tr><td>WBC / eosinophils</td><td>AIN</td></tr><tr><td>RBC casts</td><td>Glomerulonephritis</td></tr></table>" },
+      { t: "KDIGO stages", body: "<h4>Stage by the worst of creatinine OR urine</h4><table><tr><th>Stage</th><th>Creatinine</th></tr><tr><td>1</td><td>1.5–1.9× or +0.3 mg/dL</td></tr><tr><td>2</td><td>2.0–2.9×</td></tr><tr><td>3</td><td>≥3× or on RRT</td></tr></table>" }
+    ]
+  },
+
+  "Cardiac Arrest": {
+    spec: "CCM", read: "~2 min",
+    oneliner: "In an arrest, two things save lives — <em>hard, uninterrupted compressions</em> and <em>early defibrillation of a shockable rhythm</em>. Everything else is a footnote.",
+    think:
+      "<p>It's easy to get lost in drug timings, but the evidence is blunt: <strong>quality CPR and prompt defibrillation</strong> are what move survival. Push hard, push fast, let the chest recoil, and get the pads on early. The drugs help at the margins.</p>" +
+      "<p>The other half of the job is asking <strong>why did this heart stop?</strong> — because a shock won't fix a tension pneumothorax, a massive PE, or a potassium of 7. Run the <strong>Hs and Ts</strong> in your head on every arrest, especially in PEA.</p>",
+    sections: [
+      { h: "The two things that matter", cls: "g", items: [
+        "<strong>High-quality CPR</strong>: 100–120/min, depth 5–6 cm, full recoil, minimise pauses, swap compressor every 2 min.",
+        "<strong>Defibrillate shockable rhythms early</strong> (VF/pulseless VT) — minimal peri-shock pause.",
+        "Avoid over-ventilation — ~10 breaths/min with an advanced airway."
+      ]},
+      { h: "Drugs (don't let them distract from CPR)", cls: "a", items: [
+        "<strong>Shockable:</strong> adrenaline 1 mg after the 2nd shock (then q3–5min); amiodarone 300 mg after the 3rd.",
+        "<strong>Non-shockable</strong> (PEA/asystole): adrenaline 1 mg <strong>immediately</strong>, then q3–5min.",
+        "Refractory VF → consider double-sequential defibrillation / vector change."
+      ]},
+      { h: "Why did they arrest? (Hs & Ts)", cls: "r", items: [
+        "<strong>Hs:</strong> Hypoxia, Hypovolaemia, H⁺/K⁺ (acidosis, hyper/hypokalaemia), Hypothermia.",
+        "<strong>Ts:</strong> Thrombosis (coronary/PE), Tamponade, Tension pneumothorax, Toxins.",
+        "Post-ROSC: treat the cause (PCI if STEMI), <strong>prevent fever</strong> (TTM2), avoid hyperoxia, delayed neuroprognostication."
+      ]}
+    ],
+    nothing: "If you remember nothing else: <strong>great compressions + early defibrillation</strong>, and always ask why the heart stopped — the Hs and Ts.",
+    pearls: [
+      { t: "Drug timing", body: "<h4>By rhythm</h4><table><tr><th>Rhythm</th><th>Adrenaline</th></tr><tr><td>Shockable</td><td>After 2nd shock, then q3–5min</td></tr><tr><td>Non-shockable</td><td>Immediately, then q3–5min</td></tr></table>Amiodarone 300 mg after the 3rd shock (150 mg after the 5th)." },
+      { t: "Post-ROSC bundle", body: "<h4>After you get them back</h4>Urgent <strong>PCI</strong> if STEMI · SpO₂ 94–98% (no hyperoxia) · normocapnia · MAP for perfusion · glucose control · <strong>prevent fever</strong> (≤37.5 °C) · neuroprognostication delayed ≥72 h off sedation." }
+    ]
+  },
+
+  "Stroke": {
+    spec: "EM", read: "~2 min",
+    oneliner: "Acute stroke is a race against the clock — <em>time is brain</em>. Get the scan, exclude bleed, and reperfuse the salvageable brain as fast as the pathway allows.",
+    think:
+      "<p>The whole game is speed and one binary question: <strong>bleed or clot?</strong> A non-contrast CT answers it. If it's ischaemic and within the window, you're heading for reperfusion — thrombolysis, and thrombectomy if there's a big-vessel clot.</p>" +
+      "<p>The classic trap is the <strong>blood pressure</strong>. If you're going to thrombolyse, it must be under 185/110 first. If you're <em>not</em>, leave a high pressure alone unless it's over 220/120 — because dropping it starves the penumbra, the brain you're trying to save.</p>",
+    sections: [
+      { h: "The first 30 minutes", cls: "g", items: [
+        "<strong>Non-contrast CT</strong> immediately — bleed or clot?",
+        "Ischaemic + within <strong>4.5 h</strong> and no contraindication → <strong>thrombolysis</strong> (door-to-needle &lt;60 min).",
+        "Large-vessel occlusion → <strong>thrombectomy</strong>, beneficial up to <strong>24 h</strong> in selected patients."
+      ]},
+      { h: "Mind the blood pressure", cls: "a", items: [
+        "Thrombolysing? BP must be <strong>&lt;185/110</strong> before, &lt;180/105 for 24 h after.",
+        "Not thrombolysing? Permissive hypertension — only treat if <strong>&gt;220/120</strong> or end-organ threat.",
+        "Use titratable agents (labetalol, nicardipine); avoid steep drops."
+      ]},
+      { h: "Don't forget", cls: "r", items: [
+        "Check <strong>glucose</strong> — hypoglycaemia is a great mimic.",
+        "Confirm <strong>last-known-well</strong>, not time found — it defines the window.",
+        "Antiplatelets after 24 h (post-lysis); don't anticoagulate acutely for a large infarct."
+      ]}
+    ],
+    nothing: "If you remember nothing else: <strong>scan fast, reperfuse fast</strong>, and get the pressure below 185/110 before you thrombolyse.",
+    pearls: [
+      { t: "The two BP thresholds", body: "<h4>The exam favourite</h4><table><tr><th>Plan</th><th>BP goal</th></tr><tr><td>Thrombolysis</td><td>&lt;185/110 before, &lt;180/105 after</td></tr><tr><td>No thrombolysis</td><td>Treat only if &gt;220/120</td></tr></table>" },
+      { t: "Windows", body: "<h4>Time limits</h4><table><tr><td>IV thrombolysis</td><td>≤4.5 h</td></tr><tr><td>Thrombectomy (LVO)</td><td>up to 24 h (selected)</td></tr></table>Both measured from <strong>last-known-well</strong>." }
+    ]
+  },
+
+  "GI Bleeding": {
+    spec: "EM", read: "~2 min",
+    oneliner: "Resuscitate to perfusion, not to a haemoglobin. In upper GI bleeding — especially varices — <em>over-transfusing makes it worse</em>.",
+    think:
+      "<p>The instinct with a bleeding patient is to pour in blood until the haemoglobin looks respectable. In variceal bleeding that's actively harmful — every unit raises portal pressure and feeds the rebleed. The evidence says aim for a <strong>restrictive target of around 70–80</strong> and stop.</p>" +
+      "<p>Split your thinking into <strong>variceal vs non-variceal</strong> early, because the drugs differ. A known cirrhotic with a big haematemesis gets a <strong>vasoconstrictor and antibiotics</strong> before the endoscope; a probable ulcer gets a <strong>PPI</strong> and endoscopic haemostasis. Everyone gets resuscitated and scoped in good time.</p>",
+    sections: [
+      { h: "Resuscitate sensibly", cls: "g", items: [
+        "Two large IVs, cross-match, correct coagulopathy as needed.",
+        "<strong>Restrictive transfusion, Hb ~70–80 g/L</strong> — over-transfusion worsens variceal bleeding.",
+        "Risk-stratify: <strong>Glasgow-Blatchford 0–1</strong> = very low risk, may avoid urgent endoscopy."
+      ]},
+      { h: "Variceal until proven otherwise (in cirrhosis)", cls: "a", items: [
+        "<strong>Terlipressin</strong> (or octreotide/somatostatin) early.",
+        "<strong>Prophylactic antibiotics</strong> — they reduce mortality in cirrhotic bleeds.",
+        "<strong>Endoscopy within 24 h</strong> for band ligation; balloon tamponade as a bridge if exsanguinating."
+      ]},
+      { h: "Non-variceal (peptic ulcer)", cls: "r", items: [
+        "<strong>IV PPI</strong> and endoscopic haemostasis (clips/adrenaline/thermal).",
+        "Test and treat <strong>H. pylori</strong>; review NSAIDs/antiplatelets.",
+        "Rebleeding → repeat endoscopy, then interventional radiology/surgery."
+      ]}
+    ],
+    nothing: "If you remember nothing else: <strong>restrictive transfusion (~70–80)</strong>, and in a cirrhotic — <strong>terlipressin + antibiotics + early scope</strong>.",
+    pearls: [
+      { t: "Why not transfuse liberally?", body: "<h4>The portal-pressure trap</h4>In varices, pushing the haemoglobin up raises <strong>portal venous pressure</strong> and drives rebleeding — Villanueva (NEJM) showed a restrictive strategy improved survival. Resuscitate to <em>perfusion</em>, not to a number." },
+      { t: "Variceal bundle", body: "<h4>Cirrhotic + haematemesis</h4><table><tr><td>Drug</td><td>Terlipressin / octreotide</td></tr><tr><td>Infection</td><td>Prophylactic antibiotics</td></tr><tr><td>Definitive</td><td>Endoscopic band ligation &lt;24 h</td></tr><tr><td>Bridge</td><td>Balloon tamponade / TIPS</td></tr></table>" }
     ]
   }
 };

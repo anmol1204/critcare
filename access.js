@@ -16,7 +16,7 @@
     '': 1, 'index.html': 1, 'topics.html': 1, 'login.html': 1, 'pro.html': 1,
     'about.html': 1, 'search.html': 1, 'dashboard.html': 1,
     // engagement hubs (pilot — free to explore):
-    'mcqs.html': 1, 'quick-revision.html': 1,
+    'mcqs.html': 1, 'quick-revision.html': 1, 'flashcards.html': 1,
     // free "taster" topic articles:
     'topic-sepsis.html': 1, 'topic-ards.html': 1, 'topic-shock.html': 1,
     'topic-anaphylaxis.html': 1, 'topic-stroke.html': 1, 'topic-acid-base.html': 1
