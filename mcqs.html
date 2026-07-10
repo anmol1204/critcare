@@ -66,6 +66,29 @@
     .mcq-btn.primary:hover { background:var(--blue-dark); color:#fff; }
     .mcq-btn:disabled { opacity:.45; cursor:not-allowed; }
 
+    /* ---------- mode tabs ---------- */
+    .mcq-modes { display:flex; gap:.5rem; margin-bottom:1.2rem; background:var(--bg-alt); border:1px solid var(--line); border-radius:14px; padding:.35rem; }
+    .mcq-mode-tab { flex:1; padding:.7rem .6rem; border:none; background:transparent; color:var(--slate); font-weight:800; font-size:.86rem; border-radius:10px; cursor:pointer; font-family:var(--font-body); transition:all .15s; }
+    .mcq-mode-tab.active { background:var(--bg); color:var(--blue); box-shadow:0 2px 8px rgba(0,0,0,.08); }
+    html.dark .mcq-mode-tab.active { background:#16171a; }
+
+    /* ---------- topic grid ---------- */
+    .mcq-topic-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:.7rem; margin-top:1rem; }
+    .mcq-topic-card { text-align:left; border:1.5px solid var(--line); border-radius:14px; background:var(--bg); padding:1rem 1.1rem; cursor:pointer; font-family:var(--font-body); transition:all .15s; display:flex; flex-direction:column; gap:.35rem; }
+    .mcq-topic-card:hover { border-color:var(--blue); transform:translateY(-2px); box-shadow:0 8px 24px rgba(30,111,217,.12); }
+    .mcq-topic-card .tc-name { font-size:.95rem; font-weight:800; color:var(--ink); line-height:1.3; }
+    .mcq-topic-card .tc-meta { display:flex; align-items:center; gap:.5rem; }
+    .mcq-topic-card .tc-count { font-size:.72rem; font-weight:700; color:var(--blue-dark); background:var(--blue-soft); padding:.1rem .5rem; border-radius:20px; }
+    html.dark .mcq-topic-card .tc-count { background:#0d1b2e; color:#7bb8f7; }
+    .mcq-topic-card .tc-spec { font-size:.64rem; font-weight:800; text-transform:uppercase; letter-spacing:.05em; color:var(--slate); }
+    .mcq-topic-card .tc-go { margin-top:.2rem; font-size:.76rem; font-weight:700; color:var(--blue); }
+
+    /* ---------- number-of-questions selector ---------- */
+    .mcq-nums { display:flex; flex-wrap:wrap; gap:.4rem; }
+    .mcq-num { padding:.44rem 1rem; border-radius:24px; border:1.5px solid var(--line); background:var(--bg); color:var(--ink); font-size:.82rem; font-weight:800; cursor:pointer; font-family:var(--font-body); transition:all .14s; }
+    .mcq-num:hover { border-color:var(--blue); }
+    .mcq-num.active { border-color:var(--blue); background:var(--blue); color:#fff; }
+
     /* ---------- quiz card ---------- */
     .mcq-topbar { display:flex; align-items:center; gap:.6rem; margin-bottom:.8rem; }
     .mcq-pbar { flex:1; height:6px; border-radius:6px; background:var(--bg-alt); border:1px solid var(--line); overflow:hidden; }
@@ -158,27 +181,57 @@
 
 <div class="mcq-wrap">
 
-  <!-- SETUP -->
-  <div class="mcq-setup" id="setupPanel">
-    <div class="mcq-frow">
-      <div class="mcq-flabel">🩺 Specialty</div>
-      <div class="mcq-chips" id="chipsSpec"></div>
+  <!-- MODE TABS -->
+  <div id="setupPanel">
+    <div class="mcq-modes">
+      <button class="mcq-mode-tab active" id="tab-topic" onclick="setMode('topic')">📚 Practice by Topic</button>
+      <button class="mcq-mode-tab" id="tab-custom" onclick="setMode('custom')">⚙️ Custom Practice</button>
     </div>
-    <div class="mcq-frow">
-      <div class="mcq-flabel">🎚 Choose difficulty</div>
-      <div class="mcq-levels" id="levelSel"></div>
+
+    <!-- TOPIC MODE -->
+    <div id="topicMode">
+      <div class="mcq-setup">
+        <div class="mcq-frow">
+          <div class="mcq-flabel">🩺 Specialty</div>
+          <div class="mcq-chips" id="tChipsSpec"></div>
+        </div>
+        <div class="mcq-frow" style="margin-bottom:.4rem;">
+          <div class="mcq-flabel">🔢 How many questions per topic</div>
+          <div class="mcq-nums" id="tNums"></div>
+        </div>
+        <div class="mcq-flabel" style="margin-top:1.1rem;">Pick a topic to practise</div>
+        <div class="mcq-topic-grid" id="topicGrid"></div>
+      </div>
     </div>
-    <div class="mcq-frow">
-      <div class="mcq-flabel">📝 Question format</div>
-      <div class="mcq-chips" id="chipsType"></div>
-    </div>
-    <div class="mcq-frow">
-      <div class="mcq-flabel">📚 Topic</div>
-      <div class="mcq-chips" id="chipsTopic"></div>
-    </div>
-    <div class="mcq-start">
-      <span class="mcq-count-note"><b id="countN">0</b> question<span id="countS">s</span> ready</span>
-      <button class="mcq-btn primary" id="startBtn" onclick="startQuiz()">Start practice →</button>
+
+    <!-- CUSTOM MODE -->
+    <div id="customMode" style="display:none;">
+      <div class="mcq-setup">
+        <div class="mcq-frow">
+          <div class="mcq-flabel">🩺 Specialty</div>
+          <div class="mcq-chips" id="chipsSpec"></div>
+        </div>
+        <div class="mcq-frow">
+          <div class="mcq-flabel">🎚 Choose difficulty</div>
+          <div class="mcq-levels" id="levelSel"></div>
+        </div>
+        <div class="mcq-frow">
+          <div class="mcq-flabel">📝 Question format</div>
+          <div class="mcq-chips" id="chipsType"></div>
+        </div>
+        <div class="mcq-frow">
+          <div class="mcq-flabel">📚 Topic</div>
+          <div class="mcq-chips" id="chipsTopic"></div>
+        </div>
+        <div class="mcq-frow">
+          <div class="mcq-flabel">🔢 Number of questions</div>
+          <div class="mcq-nums" id="cNums"></div>
+        </div>
+        <div class="mcq-start">
+          <span class="mcq-count-note"><b id="countN">0</b> question<span id="countS">s</span> available</span>
+          <button class="mcq-btn primary" id="startBtn" onclick="startQuiz()">Start practice →</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -240,7 +293,8 @@
   var TYPES = ['direct', 'case'];
   var TYPE_LABEL = { direct: 'Direct', case: 'Case-based' };
 
-  var fSpec = 'all', fDiff = 'all', fType = 'all', fTopic = 'all';
+  var fSpec = 'all', fDiff = 'all', fType = 'all', fTopic = 'all', fTSpec = 'all', fCount = 'all', mode = 'topic';
+  var NUMS = [10, 20, 50, 'all'];
   var queue = [], qi = 0, correct = 0, answered = 0, byDiff = { easy: [0, 0], moderate: [0, 0], severe: [0, 0] };
 
   var topics = [];
@@ -345,7 +399,9 @@
   function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
 
   window.startQuiz = function () {
-    queue = shuffle(pool().slice());
+    var p = shuffle(pool().slice());
+    var n = (fCount === 'all') ? p.length : Math.min(parseInt(fCount, 10), p.length);
+    queue = p.slice(0, n);
     if (!queue.length) return;
     qi = 0; correct = 0; answered = 0;
     byDiff = { easy: [0, 0], moderate: [0, 0], severe: [0, 0] };
@@ -462,7 +518,74 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // ---- mode tabs ----
+  window.setMode = function (m) {
+    mode = m;
+    document.getElementById('tab-topic').classList.toggle('active', m === 'topic');
+    document.getElementById('tab-custom').classList.toggle('active', m === 'custom');
+    document.getElementById('topicMode').style.display = m === 'topic' ? 'block' : 'none';
+    document.getElementById('customMode').style.display = m === 'custom' ? 'block' : 'none';
+    if (m === 'custom') { buildLevels(); buildChips(); updateCount(); }
+    if (m === 'topic') { buildTopicSpecChips(); buildTopicGrid(); }
+  };
+
+  // ---- number-of-questions selectors (shared value) ----
+  function buildNums(id) {
+    var box = document.getElementById(id); if (!box) return;
+    box.innerHTML = NUMS.map(function (n) {
+      return '<button class="mcq-num' + (String(n) === String(fCount) ? ' active' : '') + '" data-n="' + n + '">' + (n === 'all' ? 'All' : n) + '</button>';
+    }).join('');
+    box.querySelectorAll('.mcq-num').forEach(function (b) {
+      b.onclick = function () { fCount = b.getAttribute('data-n'); syncNums(); };
+    });
+  }
+  function syncNums() {
+    ['cNums', 'tNums'].forEach(function (id) {
+      var box = document.getElementById(id); if (!box) return;
+      box.querySelectorAll('.mcq-num').forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-n') === String(fCount)); });
+    });
+  }
+
+  // ---- topic mode ----
+  function buildTopicSpecChips() {
+    var box = document.getElementById('tChipsSpec');
+    if (specsPresent.length < 2) { box.parentNode.style.display = 'none'; return; }
+    box.innerHTML = chip('All specialties', 'all', fTSpec) + specsPresent.map(function (s) { return chip(SPEC_LABEL[s] || s, s, fTSpec); }).join('');
+    box.querySelectorAll('.mcq-chip').forEach(function (b) {
+      b.onclick = function () {
+        fTSpec = b.getAttribute('data-v');
+        box.querySelectorAll('.mcq-chip').forEach(function (x) { x.classList.remove('active'); });
+        b.classList.add('active');
+        buildTopicGrid();
+      };
+    });
+  }
+  function buildTopicGrid() {
+    var grid = document.getElementById('topicGrid');
+    var map = {}, order = [];
+    BANK.forEach(function (x) {
+      if (fTSpec !== 'all' && x.spec !== fTSpec) return;
+      if (!map[x.topic]) { map[x.topic] = { count: 0, spec: x.spec }; order.push(x.topic); }
+      map[x.topic].count++;
+    });
+    grid.innerHTML = order.map(function (t) {
+      return '<button class="mcq-topic-card" data-topic="' + encodeURIComponent(t) + '" data-spec="' + map[t].spec + '">' +
+        '<span class="tc-name">' + t + '</span>' +
+        '<span class="tc-meta"><span class="tc-count">' + map[t].count + ' Qs</span><span class="tc-spec">' + (SPEC_LABEL[map[t].spec] || map[t].spec) + '</span></span>' +
+        '<span class="tc-go">Practise →</span></button>';
+    }).join('');
+    grid.querySelectorAll('.mcq-topic-card').forEach(function (c) {
+      c.onclick = function () {
+        fSpec = c.getAttribute('data-spec');
+        fTopic = decodeURIComponent(c.getAttribute('data-topic'));
+        fDiff = 'all'; fType = 'all';
+        startQuiz();
+      };
+    });
+  }
+
   // ---- init ----
+  var deepLinked = false;
   try {
     var qs = new URLSearchParams(location.search);
     var qsp = qs.get('spec'); if (qsp && specsPresent.indexOf(qsp) >= 0) fSpec = qsp;
@@ -474,14 +597,20 @@
     }
     var qd = qs.get('difficulty'); if (qd && ['easy','moderate','severe'].indexOf(qd) >= 0) fDiff = qd;
     var qy = qs.get('type'); if (qy && TYPES.indexOf(qy) >= 0) fType = qy;
+    if (qs.get('topic') || qsp || qd || qy) deepLinked = true;
   } catch (e) {}
 
   computeTopics();
   document.getElementById('stTotal').textContent = BANK.length;
   document.getElementById('stTopics').textContent = (function () { var s = {}; BANK.forEach(function (x) { s[x.topic] = 1; }); return Object.keys(s).length; })();
+  buildNums('cNums');
+  buildNums('tNums');
   buildLevels();
   buildChips();
+  buildTopicSpecChips();
+  buildTopicGrid();
   updateCount();
+  setMode(deepLinked ? 'custom' : 'topic');
 })();
 </script>
 </body>
