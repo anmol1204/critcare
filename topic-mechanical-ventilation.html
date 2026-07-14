@@ -9,8 +9,8 @@
   <meta name="apple-mobile-web-app-title" content="CritCare"/>
   <link rel="apple-touch-icon" href="/icon-apple.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-  <title>Mechanical Ventilation — CritCare.in</title>
-  <meta name="description" content="Mechanical ventilation modes, settings, and management. Ventilator setup, monitoring, and weaning protocols for ICU patients." />
+  <title>Mechanical Ventilation in the ICU — Complete Structured Guide — CritCare.in</title>
+  <meta name="description" content="A structured, tabular ICU guide to mechanical ventilation: goals, indications, respiratory mechanics and pressures, modes, initial settings, lung-protective ventilation and ARDS, auto-PEEP in obstructive disease, monitoring and waveforms, complications, weaning and extubation, and NIV/HFNO — with all head-to-head comparisons collected at the end. Synthesised from Marino, Irwin & Rippe and Oh's Intensive Care Manual with the latest guidelines." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="shared.css"/>
   <script src="darkmode.js"></script>
@@ -43,6 +43,7 @@
     .sbf{background:#f0fdf4;color:#14532d;border:1px solid #86efac;}
     .sbe{background:#fee2e2;color:#991b1b;}
     .sbx{background:#fef9c3;color:#854d0e;}
+    .sbc{background:#cffafe;color:#155e75;}
     .sbr{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
     .fs{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;}
     .fn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;flex-shrink:0;margin-top:.2rem;}
@@ -51,6 +52,10 @@
     .fb p,.fb ul{font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;}
     .fb ul{padding-left:1.1rem;}
     .fb strong{color:var(--ink);}
+    .diff-intro{background:linear-gradient(135deg,#ecfeff,#cffafe);border:1px solid #67e8f9;border-radius:12px;padding:1.1rem 1.3rem;margin:1rem 0 1.4rem;}
+    .diff-intro p{font-size:.9rem;color:#155e75;line-height:1.7;margin:0;}
+    .diff-intro strong{color:#0e7490;}
+    h3.difftitle{margin-top:1.6rem;}
   </style>
   <script src="app-native.js" defer></script>
 </head>
@@ -72,13 +77,14 @@
     <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Mechanical Ventilation</div>
     <h1>⚙️ Mechanical Ventilation — Complete ICU Guide</h1>
     <div class="guideline-row">
-      <span class="gbadge sccm">ARDSNet 2000</span>
-      <span class="gbadge esicm">ATS/ESICM 2017</span>
-      <span class="gbadge isccm">ISCCM</span>
+      <span class="gbadge sccm">ARDSNet</span>
+      <span class="gbadge esicm">PROSEVA · Prone</span>
+      <span class="gbadge isccm">ATS / ESICM / SCCM</span>
+      <span class="gbadge apasl">ERS/ATS NIV</span>
     </div>
     <div class="topic-hero-meta">
-      <span class="topic-tag">Modes</span><span class="topic-tag">Weaning</span><span class="topic-tag">SBT</span>
-      <span class="topic-updated">Marino 5th Ed (Ch.27–28, 2025) · ARDSNet 2000 · ATS/CHEST Guidelines</span>
+      <span class="topic-tag">Mechanics</span><span class="topic-tag">Modes</span><span class="topic-tag">ARDS</span><span class="topic-tag">Weaning</span><span class="topic-tag">NIV</span>
+      <span class="topic-updated">Synthesised from Marino's ICU Book · Irwin &amp; Rippe · Oh's Intensive Care Manual · ARDSNet · PROSEVA · ATS/ESICM/SCCM · ERS/ATS</span>
     </div>
     <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
   </div>
@@ -88,208 +94,537 @@
     <nav class="toc">
       <div class="toc-title">On this page</div>
       <ul class="toc-list">
-        <li><a href="#s1">1. Washington Manual Summary</a></li>
-        <li><a href="#s2">2. Marino Physiology</a></li>
-        <li><a href="#s3">3. Guidelines &amp; Evidence</a></li>
-        <li><a href="#s4">4. Settings &amp; Calculations</a></li>
-        <li><a href="#s5">5. Clinical Flowchart</a></li>
-        <li><a href="#s6">6. Common Mistakes</a></li>
-        <li><a href="#s7">7. Exam Pearls</a></li>
-        <li><a href="#s8">8. References</a></li>
+        <li><a href="#s1">1. Overview &amp; goals</a></li>
+        <li><a href="#s2">2. Indications</a></li>
+        <li><a href="#s3">3. Mechanics &amp; the pressures</a></li>
+        <li><a href="#s4">4. Modes of ventilation</a></li>
+        <li><a href="#s5">5. Initial settings &amp; targets</a></li>
+        <li><a href="#s6">6. Lung-protective ventilation &amp; ARDS</a></li>
+        <li><a href="#s7">7. Obstructive disease &amp; auto-PEEP</a></li>
+        <li><a href="#s8">8. Monitoring, waveforms &amp; DOPE</a></li>
+        <li><a href="#s9">9. Complications</a></li>
+        <li><a href="#s10">10. Weaning &amp; extubation</a></li>
+        <li><a href="#s11">11. NIV &amp; HFNO</a></li>
+        <li><a href="#s12">12. Common mistakes</a></li>
+        <li><a href="#s13">13. Exam pearls</a></li>
+        <li><a href="#s14">⭐ 14. Key differences (comparisons)</a></li>
+        <li><a href="#s15">15. References</a></li>
       </ul>
       <a href="topics.html" class="toc-back">← All topics</a>
     </nav>
   </aside>
   <main class="topic-content">
+
+    <!-- ============ 1 · OVERVIEW ============ -->
     <section id="s1">
-      <span class="sb sbw">📘 1 · Washington Manual of Critical Care, 4th Ed</span>
-      <h2>Washington Manual Summary</h2>
+      <span class="sb sbw">🫁 1 · Overview &amp; Goals</span>
+      <h2>What mechanical ventilation is — and is not</h2>
       <div class="bq">
-        <p>"Mechanical ventilation is a life-sustaining intervention, not a therapeutic modality. The goal is to support gas exchange while the underlying cause of respiratory failure is treated. The ventilator should be set to minimize harm — not to normalize blood gases."</p>
-        <cite>Washington Manual of Critical Care, 4th Ed. (Kollef &amp; Witt, eds.) Wolters Kluwer 2023.</cite>
+        <p>"Mechanical ventilation supports gas exchange while the cause of respiratory failure is treated — it is a form of life support, not a cure. Because positive pressure can itself injure the lung, the modern goal is not to normalise the blood gases but to keep the patient alive with the least possible harm: 'less is better'."</p>
+        <cite>Summarised from Marino's The ICU Book; Irwin &amp; Rippe's Intensive Care Medicine; Oh's Intensive Care Manual.</cite>
       </div>
-      <h3>Indications for Mechanical Ventilation</h3>
+      <h3>The four things a ventilator is asked to do</h3>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Category</th><th>Criteria</th><th>Examples</th></tr></thead>
+          <thead><tr><th>Goal</th><th>What it means</th><th>Set mainly by</th></tr></thead>
           <tbody>
-            <tr><td><strong>Airway Protection</strong></td><td>GCS ≤8; loss of gag/cough reflex; secretion clearance failure</td><td>Coma, TBI, stroke, seizures, massive overdose</td></tr>
-            <tr><td><strong>Hypoxaemic RF</strong></td><td>PaO₂ &lt;60 mmHg on FiO₂ ≥0.5; P/F &lt;150 despite HFNO</td><td>ARDS, severe pneumonia, cardiogenic oedema</td></tr>
-            <tr><td><strong>Hypercapnic RF</strong></td><td>PaCO₂ &gt;50 + pH &lt;7.25; fatigue; ↑ WOB</td><td>COPD, asthma, neuromuscular disease</td></tr>
-            <tr><td><strong>Haemodynamic</strong></td><td>↓ WOB to reduce myocardial O₂ demand; post-arrest</td><td>Cardiogenic shock, cardiac arrest</td></tr>
+            <tr><td><strong>Oxygenation</strong></td><td>Raise/maintain arterial O₂</td><td><strong>FiO₂</strong> and <strong>mean airway pressure</strong> (PEEP, I:E)</td></tr>
+            <tr><td><strong>Ventilation (CO₂)</strong></td><td>Clear CO₂, control pH</td><td><strong>Minute ventilation</strong> = tidal volume × respiratory rate</td></tr>
+            <tr><td><strong>Reduce work of breathing</strong></td><td>Rest fatigued muscles, cut myocardial O₂ demand</td><td>Level of support (control vs assist)</td></tr>
+            <tr><td><strong>Buy time / protect the airway</strong></td><td>Bridge while the disease is treated; secure the airway</td><td>The decision to intubate itself</td></tr>
           </tbody>
         </table>
       </div>
+      <div class="ec"><p><strong>Golden rule:</strong> oxygenation and ventilation are controlled by <strong>different</strong> knobs. Hypoxaemia → think FiO₂ and PEEP. Hypercapnia/acidosis → think tidal volume and rate. Confusing the two is the commonest bedside error.</p></div>
     </section>
 
+    <!-- ============ 2 · INDICATIONS ============ -->
     <section id="s2">
-      <span class="sb sbm">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
-      <h2>Marino Physiology — How Ventilators Work</h2>
-      <div class="bq">
-        <p>"Only one of the 174 different modes of ventilation has shown evidence of improved clinical outcomes, and only because it limits the lung damage produced by positive pressure ventilation. What this means is that mechanical ventilation is much more complicated than it needs to be, and that 'less is better' with this form of support."</p>
-        <cite>Marino PL. The ICU Book, 5th Ed. Chapter 27: Conventional Mechanical Ventilation, p.481. Wolters Kluwer; 2025.</cite>
+      <span class="sb sbd">📋 2 · Indications</span>
+      <h2>When to start invasive ventilation</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Category</th><th>Trigger</th><th>Typical causes</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Airway protection</strong></td><td>GCS ≤8, lost gag/cough, cannot clear secretions</td><td>Coma, TBI, stroke, seizures, poisoning</td></tr>
+            <tr><td><strong>Hypoxaemic failure (Type 1)</strong></td><td>PaO₂ &lt;60 mmHg or SpO₂ &lt;90% despite high-flow O₂; P/F falling on HFNO/NIV</td><td>ARDS, pneumonia, cardiogenic oedema</td></tr>
+            <tr><td><strong>Hypercapnic failure (Type 2)</strong></td><td>Rising PaCO₂ with pH &lt;7.25, fatigue, rising work of breathing</td><td>COPD, asthma, neuromuscular weakness, sedative overdose</td></tr>
+            <tr><td><strong>Haemodynamic / metabolic</strong></td><td>Offload the work of breathing; secure ventilation for shock or high CO₂ production</td><td>Cardiogenic shock, post-arrest, severe sepsis, DKA with exhaustion</td></tr>
+            <tr><td><strong>Peri-procedural</strong></td><td>Controlled ventilation for surgery/transport/imaging</td><td>Theatre, agitated transfers, status epilepticus</td></tr>
+          </tbody>
+        </table>
       </div>
-      <h3>Step 1 — Volume Control vs Pressure Control (Marino, p.481–484)</h3>
-      <div class="mb">
-        <div class="ml">📗 Marino Ch.27, p.481–484</div>
-        <p><strong>Volume Control (VCV):</strong> Delivers a PRESELECTED tidal volume at constant flow rate. Airway pressure varies with lung mechanics. Peak pressure = pressure to overcome airway resistance (Pres) + elastic recoil (Pel). Plateau pressure = Palv = Pel ONLY (no flow during inspiratory hold). <strong>Major advantage:</strong> Guarantees Vt regardless of lung mechanics — essential for lung-protective ventilation.</p>
-        <p><strong>Pressure Control (PCV):</strong> Delivers a preselected inspiratory pressure with decelerating flow. Vt varies with compliance. <strong>Major advantage:</strong> Better patient comfort, less dyssynchrony. <strong>Major disadvantage:</strong> Vt changes with compliance — risk of overdistension if compliance improves suddenly.</p>
-        <p>Marino (p.484): "The risk of alveolar rupture is negligible if the alveolar pressure (plateau pressure) is ≤30 cm H₂O" — this is the basis of lung-protective ventilation.</p>
-      </div>
-
-      <h3>Step 2 — The Plateau Pressure (Marino Fig.27.2)</h3>
-      <div class="mb">
-        <div class="ml">📗 Marino Ch.27, p.483 — Inflation Hold Manoeuvre</div>
-        <p>During a 0.5-second inspiratory hold (no flow): pressure drops from Peak (Ppeak) to Plateau (Pplat). This is the key measurement:</p>
-        <ul>
-          <li><strong>Ppeak − Pplat = Pres</strong> (airway resistance pressure) — elevated in bronchospasm, ETT secretions, kinked tube</li>
-          <li><strong>Pplat = alveolar pressure (Palv)</strong> — elevated in ↓ compliance (ARDS, pulmonary oedema, pneumothorax, abdominal hypertension)</li>
-          <li><strong>High Ppeak + normal Pplat</strong> = airway resistance problem (suction, bronchodilators)</li>
-          <li><strong>High Ppeak + high Pplat</strong> = lung compliance problem (reduce Vt, treat cause)</li>
-        </ul>
-      </div>
-
-      <h3>Step 3 — Dynamic Hyperinflation and Auto-PEEP</h3>
-      <div class="mb">
-        <div class="ml">📗 Marino Ch.23, p.416–418 (applies to all obstructive disease on MV)</div>
-        <p>In patients with severe airflow obstruction (asthma, COPD), exhalation is prolonged and may not complete before the next breath. Trapped gas creates <strong>intrinsic PEEP (auto-PEEP)</strong>. This increases intrathoracic pressure → impedes venous return → hypotension; AND makes patient work harder to trigger each breath.</p>
-        <p>Marino: "If you want to feel what it is like to breathe in a hyperinflated state, take a deep breath, and try breathing from there."</p>
-        <p><strong>Detection:</strong> Expiratory flow waveform not reaching zero before next breath. <strong>Measurement:</strong> Expiratory hold manoeuvre. <strong>Treatment:</strong> Increase expiratory time (↓ RR, ↑ inspiratory flow rate, ↓ I:E ratio to 1:3 or 1:4).</p>
-      </div>
+      <div class="ec"><p><strong>Ventilation is a clinical decision, not a number.</strong> A tiring patient with a "reassuring" gas still needs support — trajectory and work of breathing matter more than a single value.</p></div>
     </section>
 
+    <!-- ============ 3 · MECHANICS ============ -->
     <section id="s3">
-      <span class="sb sbg">📋 3 · Guidelines &amp; Evidence</span>
-      <h2>Guideline Recommendations</h2>
-      <div class="gr">
-        <div class="grl">ARDSNet (2000) — Lung-Protective Ventilation <span class="gs">Strong · High certainty</span></div>
-        <div class="grt">Tidal Volume 6 ml/kg PBW vs 12 ml/kg: absolute mortality reduction 8.8% (31% vs 39.8%). Pplat ≤30 cmH₂O. This remains the most impactful ventilation trial ever. All patients on MV should be considered for lung-protective settings.</div>
+      <span class="sb sbm">📐 3 · Respiratory Mechanics &amp; the Pressures</span>
+      <h2>The one equation that explains the ventilator</h2>
+      <div class="mb">
+        <div class="ml">The equation of motion</div>
+        <p><strong>P<sub>applied</sub> = (Flow × Resistance) + (Volume ÷ Compliance) + PEEP</strong></p>
+        <p>Every pressure the ventilator shows is a mix of a <strong>resistive</strong> part (moving gas through the tube and airways) and an <strong>elastic</strong> part (stretching the lung and chest wall). Separating the two is the whole art of reading a ventilated patient — and you separate them with a <strong>hold</strong>.</p>
       </div>
-      <div class="gr">
-        <div class="grl">Amato (NEJM 2015) — Driving Pressure <span class="gs">Strong</span></div>
-        <div class="grt">Driving Pressure (ΔP = Pplat − PEEP) is the single best predictor of ARDS mortality. ΔP &gt;15 cmH₂O independently associated with death. Optimise PEEP and Vt to minimise ΔP below 14 cmH₂O.</div>
+      <h3>Peak, plateau and the inspiratory hold</h3>
+      <p>A brief (~0.5 s) <strong>inspiratory hold</strong> stops flow. With no flow, the resistive component vanishes and the pressure falls from peak to the <strong>plateau</strong> — which equals alveolar pressure.</p>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Pressure / measure</th><th>What it is</th><th>How to get it</th><th>Target / normal</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Peak pressure (Ppeak)</strong></td><td>Resistive + elastic pressure at end-inspiration</td><td>Read off the ventilator</td><td>Context-dependent</td></tr>
+            <tr><td><strong>Plateau pressure (Pplat)</strong></td><td><strong>Alveolar pressure</strong> = elastic recoil only</td><td>Inspiratory hold ~0.5 s, passive patient</td><td><strong>≤30 cmH₂O</strong></td></tr>
+            <tr><td><strong>Ppeak − Pplat</strong></td><td>Airway <strong>resistance</strong> pressure</td><td>Subtract</td><td>Small; ↑ = obstruction/secretions/kink</td></tr>
+            <tr><td><strong>PEEP (applied)</strong></td><td>Pressure held in alveoli at end-expiration</td><td>Set on ventilator</td><td>≥5 cmH₂O usual</td></tr>
+            <tr><td><strong>Auto-PEEP (occult/intrinsic)</strong></td><td>Trapped end-expiratory pressure from incomplete emptying</td><td><strong>Expiratory hold</strong>, passive patient</td><td>Ideally 0; treat if &gt;5</td></tr>
+            <tr><td><strong>Driving pressure (ΔP)</strong></td><td>Tidal stretch of the lung = <strong>Pplat − total PEEP</strong></td><td>Calculate</td><td><strong>&lt;14–15 cmH₂O</strong></td></tr>
+            <tr><td><strong>Mean airway pressure</strong></td><td>Average airway pressure per cycle — drives oxygenation &amp; haemodynamics</td><td>Displayed</td><td>↑ improves oxygenation, ↓ preload</td></tr>
+            <tr><td><strong>Static compliance</strong></td><td>Vt ÷ (Pplat − total PEEP)</td><td>Calculate</td><td>Normal 50–80; ARDS &lt;25 mL/cmH₂O</td></tr>
+            <tr><td><strong>Mechanical power</strong></td><td>Total energy delivered/min (Vt, ΔP, rate, flow, PEEP)</td><td>Ventilator/derived</td><td>Lower is safer (emerging)</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="gr">
-        <div class="grl">Yang &amp; Tobin (NEJM 1991) — Weaning/SBT Prediction <span class="gs">Strong</span></div>
-        <div class="grt">RSBI (Rapid Shallow Breathing Index) = RR ÷ Vt (litres). RSBI &lt;105 predicts successful SBT/extubation. RSBI &gt;105 = high risk of failure. Measure at start of SBT on minimal support (PS 5 + PEEP 5).</div>
-      </div>
-      <div class="gr">
-        <div class="grl">ACCP/ERS/ESICM — Spontaneous Breathing Trial (SBT) <span class="gs">Strong</span></div>
-        <div class="grt">Daily SBT (paired with SAT): PS 5–7 + PEEP 5 cmH₂O × 30–120 min. Success: SpO₂ ≥92%, RR &lt;35, HR stable, no respiratory distress. Failure: extubate → NIV or HFNO post-extubation. SBT superior to SIMV weaning (Brochard 1994).</div>
-      </div>
+      <div class="ec"><p><strong>Read Pplat and ΔP with every big change.</strong> Peak pressure alone misleads — a high peak with a normal plateau is a <em>resistance</em> problem (suction, bronchodilate), while a high plateau is a <em>lung/chest-wall</em> problem (reduce Vt, treat the cause).</p></div>
     </section>
 
+    <!-- ============ 4 · MODES ============ -->
     <section id="s4">
-      <span class="sb sbd">💊 4 · Initial Settings &amp; Key Calculations</span>
-      <h2>Ventilator Settings &amp; Calculations</h2>
-      <div class="key-box">
-        <div class="kb-label">Initial Settings — Volume Control AC (VCV-AC) — Standard Approach</div>
-        <ul>
-          <li><strong>Mode:</strong> Volume Control AC (guarantees Vt regardless of compliance)</li>
-          <li><strong>Tidal Volume:</strong> 6–8 ml/kg PBW (start 8, reduce to 6 in ARDS)</li>
-          <li><strong>Respiratory Rate:</strong> 12–16/min; adjust to pH 7.35–7.45</li>
-          <li><strong>FiO₂:</strong> Start 1.0; titrate down to SpO₂ target</li>
-          <li><strong>PEEP:</strong> 5 cmH₂O initial (higher in ARDS per PEEP/FiO₂ table)</li>
-          <li><strong>Flow Rate:</strong> 60 L/min (increase to 80–100 in obstructive disease)</li>
-          <li><strong>I:E ratio:</strong> 1:2 standard; 1:3 to 1:4 in COPD/Asthma</li>
-          <li><strong>Trigger:</strong> Pressure −1 to −2 cmH₂O OR flow 1–2 L/min</li>
-        </ul>
+      <span class="sb sbg">🎛 4 · Modes of Ventilation</span>
+      <h2>Modes without the jargon</h2>
+      <div class="bq">
+        <p>"There are said to be well over a hundred named modes, yet only a handful are needed to ventilate almost every patient safely. A mode is just two choices: what the ventilator controls during the breath, and who decides when breaths happen."</p>
+        <cite>Summarised from Marino's The ICU Book; Oh's Intensive Care Manual.</cite>
       </div>
-
-      <h3>IBW and Tidal Volume — Must Know</h3>
-      <p><strong>Predicted Body Weight (Devine Formula):</strong><br>
-      Male: PBW = 50 + 2.3 × (Height inches − 60) | Quick: Ht(cm) − 100<br>
-      Female: PBW = 45.5 + 2.3 × (Height inches − 60) | Quick: Ht(cm) − 105</p>
-
+      <h3>Choice 1 — what the ventilator controls</h3>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Height (cm)</th><th>PBW — Male (kg)</th><th>PBW — Female (kg)</th><th>Vt at 6 ml/kg</th><th>Vt at 8 ml/kg</th></tr></thead>
+          <thead><tr><th>Control variable</th><th>You set</th><th>What varies</th><th>Where it shines</th></tr></thead>
           <tbody>
-            <tr><td>155</td><td>55.5</td><td>51.0</td><td>333 / 306 ml</td><td>444 / 408 ml</td></tr>
-            <tr><td>160</td><td>57.0</td><td>52.5</td><td>342 / 315 ml</td><td>456 / 420 ml</td></tr>
-            <tr><td>165</td><td>66.1</td><td>61.6</td><td>397 / 370 ml</td><td>529 / 493 ml</td></tr>
-            <tr><td>170</td><td>71.6</td><td>67.1</td><td>430 / 403 ml</td><td>573 / 537 ml</td></tr>
-            <tr><td>175</td><td>77.1</td><td>72.6</td><td>463 / 436 ml</td><td>617 / 581 ml</td></tr>
+            <tr><td><strong>Volume control (VC)</strong></td><td>Tidal volume + flow</td><td><em>Pressure</em> varies with mechanics</td><td>Guarantees lung-protective Vt — the ICU default</td></tr>
+            <tr><td><strong>Pressure control (PC)</strong></td><td>Inspiratory pressure + time</td><td><em>Volume</em> varies with compliance</td><td>Comfort, decelerating flow, leaks; poor lungs</td></tr>
+            <tr><td><strong>Dual / adaptive (PRVC, VC⁺, AutoFlow)</strong></td><td>Target Vt, capped pressure</td><td>Ventilator adjusts pressure breath-to-breath</td><td>Volume guarantee + pressure limit combined</td></tr>
           </tbody>
         </table>
       </div>
-
-      <h3>Key Parameter Targets &amp; Troubleshooting</h3>
+      <h3>Choice 2 — who triggers the breaths</h3>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Parameter</th><th>Target</th><th>How to Measure</th><th>If Abnormal</th></tr></thead>
+          <thead><tr><th>Breath sequence</th><th>How it behaves</th><th>Best used for</th></tr></thead>
           <tbody>
-            <tr><td><strong>Plateau Pressure</strong></td><td>≤30 cmH₂O</td><td>0.5s inspiratory hold; no active breathing</td><td>&gt;30: Reduce Vt by 1 ml/kg q2h; increase RR to compensate</td></tr>
-            <tr><td><strong>Driving Pressure (ΔP)</strong></td><td>&lt;14–15 cmH₂O</td><td>ΔP = Pplat − PEEP</td><td>&gt;15: Reduce Vt OR optimise PEEP to find lowest ΔP</td></tr>
-            <tr><td><strong>Auto-PEEP</strong></td><td>0 (or &lt;2 cmH₂O)</td><td>Expiratory hold (3–5 sec); note pressure at end</td><td>&gt;5: ↑ expiratory time (↓ RR, ↑ flow rate, ↓ I:E)</td></tr>
-            <tr><td><strong>SpO₂</strong></td><td>88–95% (ARDS); 92–96% others</td><td>Continuous pulse oximetry</td><td>Low: ↑ FiO₂ OR ↑ PEEP; High: ↓ FiO₂ (O₂ toxicity risk)</td></tr>
-            <tr><td><strong>pH</strong></td><td>7.35–7.45 (7.25–7.35 permissive)</td><td>ABG</td><td>Acidaemia: ↑ RR (if Pplat allows); Alkalaemia: ↓ RR</td></tr>
+            <tr><td><strong>Assist–Control (AC / CMV)</strong></td><td>Every breath (patient- or timer-triggered) gets the full set breath</td><td>Full support; the standard starting mode</td></tr>
+            <tr><td><strong>SIMV</strong></td><td>Set mandatory breaths synchronised with the patient; extra breaths are spontaneous (± pressure support)</td><td>Largely historical for weaning; mixed breaths</td></tr>
+            <tr><td><strong>Pressure Support (PSV) / spontaneous</strong></td><td>Patient triggers every breath; ventilator adds a set pressure boost. No backup rate</td><td>Spontaneous breathing &amp; weaning trials</td></tr>
+            <tr><td><strong>APRV</strong></td><td>Prolonged high CPAP with brief releases; spontaneous breathing throughout</td><td>Rescue oxygenation in selected ARDS</td></tr>
+            <tr><td><strong>CPAP</strong></td><td>Constant pressure, all breaths spontaneous, no inspiratory boost</td><td>Oxygenation support, SBTs, NIV</td></tr>
           </tbody>
         </table>
       </div>
-
-      <h3>DOPE Mnemonic — Sudden Deterioration on Ventilator</h3>
-      <div class="key-box">
-        <div class="kb-label">Emergency — If Patient Suddenly Deteriorates on MV: DOPE</div>
-        <ul>
-          <li><strong>D</strong>isplacement — ETT displaced (main-stem intubation or accidental extubation) → auscultate, confirm position</li>
-          <li><strong>O</strong>bstruction — secretions blocking ETT → suction; bronchospasm → bronchodilators</li>
-          <li><strong>P</strong>neumothorax — tension (tracheal deviation, unilateral absent breath sounds, haemodynamic collapse) → NEEDLE DECOMPRESSION 2nd ICS MCL</li>
-          <li><strong>E</strong>quipment failure — circuit disconnection, ventilator malfunction → DISCONNECT &amp; MANUALLY BAG VENTILATE (bag-valve-mask)</li>
-        </ul>
+      <div class="mb">
+        <div class="ml">The pragmatic takeaway</div>
+        <p><strong>Volume-Control Assist–Control (VC-AC)</strong> is the safe default for almost every newly-intubated ICU patient because it guarantees a lung-protective tidal volume. Switch to <strong>Pressure Support</strong> when the patient is waking and you are weaning. The head-to-head differences are tabulated in <a href="#s14">§14</a>.</p>
       </div>
     </section>
 
+    <!-- ============ 5 · SETTINGS ============ -->
     <section id="s5">
-      <span class="sb sbf">🗺 5 · Clinical Flowchart</span>
-      <h2>Mechanical Ventilation — Step by Step</h2>
-      <div style="display:flex;flex-direction:column;gap:.8rem;">
-        <div class="fs"><div class="fn" style="background:#ef4444">1</div><div class="fb"><h4>Intubation Decision &amp; RSI</h4><p>GCS ≤8 OR P/F &lt;150 on HFNO after 1h OR haemodynamic collapse. RSI: Ketamine 1.5–2 mg/kg IV (preferred in haemodynamic instability; bronchodilator) + Rocuronium 1.2 mg/kg IV (reverse with sugammadex). Confirm ETT with ETCO₂ + CXR.</p></div></div>
-        <div class="fs"><div class="fn" style="background:#f97316">2</div><div class="fb"><h4>Set Initial VCV-AC Settings</h4><p>Calculate PBW. Set Vt 8 ml/kg PBW (reduce to 6 in ARDS). RR 12–16/min. FiO₂ 1.0 (reduce ASAP). PEEP 5 cmH₂O. Flow 60 L/min. I:E 1:2 standard (1:3–1:4 in obstructive disease). Trigger −1 cmH₂O or 1–2 L/min flow.</p></div></div>
-        <div class="fs"><div class="fn" style="background:#eab308">3</div><div class="fb"><h4>First ABG at 30–60 min — Check Pplat</h4><p>Inspiratory hold 0.5s → Pplat. If Pplat &gt;30: reduce Vt by 1 ml/kg q2h (min 4 ml/kg). Increase RR to compensate. Calculate ΔP = Pplat − PEEP. Target ΔP &lt;14. Adjust FiO₂ to SpO₂ 88–95%. If auto-PEEP: increase expiratory time.</p></div></div>
-        <div class="fs"><div class="fn" style="background:#22c55e">4</div><div class="fb"><h4>ARDS: Lung-Protective Protocol (ARDSNet)</h4><ul><li>6 ml/kg PBW (reduce from 8 over 2–4h)</li><li>Pplat ≤30, ΔP &lt;14</li><li>PEEP per FiO₂/PEEP table</li><li>If P/F &lt;150 → PRONE ≥16h</li><li>SpO₂ 88–95%; permissive hypercapnia pH ≥7.25</li></ul></div></div>
-        <div class="fs"><div class="fn" style="background:#3b82f6">5</div><div class="fb"><h4>Weaning Assessment (Daily)</h4><p>Screen: P/F ≥150, PEEP ≤8, FiO₂ ≤0.5, haemodynamically stable, awake + follows commands, adequate cough. Pass SAT first. Then SBT: PS 5 + PEEP 5 × 30–120 min. RSBI &lt;105 = likely extubation success.</p></div></div>
-        <div class="fs"><div class="fn" style="background:#8b5cf6">6</div><div class="fb"><h4>Extubation &amp; Post-Extubation Care</h4><p>Cuff leak test if intubated &gt;72h. Extubate: have dexamethasone 0.1 mg/kg q6h × 24h ready for stridor. HFNO post-extubation reduces re-intubation in high-risk patients (Hernandez 2016). NIV for COPD post-extubation (ERS/ATS).</p></div></div>
+      <span class="sb sbd">💊 5 · Initial Settings &amp; Targets</span>
+      <h2>Setting up the ventilator</h2>
+      <div class="key-box">
+        <div class="kb-label">Default starting point — Volume-Control Assist–Control</div>
+        <ul>
+          <li><strong>Mode:</strong> VC-AC (guarantees tidal volume)</li>
+          <li><strong>Tidal volume:</strong> 6–8 mL/kg <strong>predicted body weight</strong> (start 8, fall to 6)</li>
+          <li><strong>Rate:</strong> 12–16/min, titrated to pH 7.35–7.45</li>
+          <li><strong>FiO₂:</strong> start 1.0, wean fast to the SpO₂ target</li>
+          <li><strong>PEEP:</strong> 5 cmH₂O (higher in ARDS by table)</li>
+          <li><strong>Flow:</strong> 60 L/min (80–100 in obstruction)</li>
+          <li><strong>I:E:</strong> 1:2 (1:3–1:4 in COPD/asthma)</li>
+          <li><strong>Trigger:</strong> flow 1–2 L/min or −1 to −2 cmH₂O</li>
+        </ul>
+      </div>
+      <h3>Predicted body weight (PBW) — always dose Vt on this, never actual weight</h3>
+      <div class="mb">
+        <div class="ml">The formula</div>
+        <p><strong>Male:</strong> PBW = 50 + 2.3 × (height in inches − 60)<br><strong>Female:</strong> PBW = 45.5 + 2.3 × (height in inches − 60)<br>PBW depends on <strong>height only</strong> — the lungs of a tall thin person and an obese person of the same height are the same size.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Height (cm)</th><th>PBW male (kg)</th><th>PBW female (kg)</th><th>Vt 6 mL/kg (M/F)</th><th>Vt 8 mL/kg (M/F)</th></tr></thead>
+          <tbody>
+            <tr><td>155</td><td>55.5</td><td>51.0</td><td>333 / 306 mL</td><td>444 / 408 mL</td></tr>
+            <tr><td>160</td><td>57.7</td><td>53.2</td><td>346 / 319 mL</td><td>462 / 426 mL</td></tr>
+            <tr><td>165</td><td>62.2</td><td>57.7</td><td>373 / 346 mL</td><td>498 / 462 mL</td></tr>
+            <tr><td>170</td><td>66.8</td><td>62.3</td><td>401 / 374 mL</td><td>534 / 498 mL</td></tr>
+            <tr><td>175</td><td>71.3</td><td>66.8</td><td>428 / 401 mL</td><td>570 / 534 mL</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Targets to defend at the bedside</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>Target</th><th>If out of range</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Plateau pressure</strong></td><td>≤30 cmH₂O</td><td>Reduce Vt by 1 mL/kg (down to 4); raise rate to hold minute ventilation</td></tr>
+            <tr><td><strong>Driving pressure (ΔP)</strong></td><td>&lt;14–15 cmH₂O</td><td>Lower Vt or re-titrate PEEP to the lowest ΔP</td></tr>
+            <tr><td><strong>Auto-PEEP</strong></td><td>≈0</td><td>Lengthen expiration: ↓ rate, ↑ flow, ↓ I:E; treat obstruction</td></tr>
+            <tr><td><strong>SpO₂</strong></td><td>88–95% (ARDS); 92–96% others</td><td>Low → ↑ PEEP/FiO₂; high → wean FiO₂ (toxicity)</td></tr>
+            <tr><td><strong>pH</strong></td><td>7.35–7.45 (accept 7.25–7.30 permissive)</td><td>Acidaemia → ↑ rate if Pplat allows; alkalaemia → ↓ rate</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
+    <!-- ============ 6 · ARDS / LUNG PROTECTIVE ============ -->
     <section id="s6">
-      <span class="sb sbe">⚠️ 6 · Common Mistakes</span>
-      <h2>Common Mistakes</h2>
-      <div class="mc"><div class="ml2">❌ Mistake 1 — Using Actual Body Weight for Vt in Obese Patients</div><p>A 100 kg woman at 163 cm has PBW ~58 kg. Vt at actual weight (100 kg): 600 ml. Vt at PBW (58 kg): 348 ml. Using actual weight = 72% overdistension = volutrauma = worsens respiratory failure. ALWAYS calculate PBW before connecting patient to ventilator.</p></div>
-      <div class="mc"><div class="ml2">❌ Mistake 2 — Not Checking Pplat — Only Watching Peak Pressure</div><p>Peak pressure ≠ alveolar pressure. In bronchospasm: Ppeak can be 50 with Pplat 20 (safe alveoli). In ARDS: Ppeak 30 with Pplat 28 (dangerous alveoli). Marino (p.484): "The risk of alveolar rupture is a function of the alveolar pressure (plateau pressure)." Check Pplat with every Vt change.</p></div>
-      <div class="mc"><div class="ml2">❌ Mistake 3 — High RR in COPD/Asthma (Causes Auto-PEEP)</div><p>Fast RR = shorter expiratory time = incomplete exhalation = auto-PEEP = dynamic hyperinflation = haemodynamic collapse. In obstructive disease: use RR 10–14/min, I:E 1:3–1:4, high flow rates (60–100 L/min) to maximise expiratory time. If sudden hypotension: disconnect from ventilator, allow passive decompression.</p></div>
-      <div class="mc"><div class="ml2">❌ Mistake 4 — Setting FiO₂ 1.0 Indefinitely</div><p>O₂ toxicity from sustained high FiO₂: lung injury identical to ARDS. Marino (Ch.24, p.431): critically ill patients are deficient in protective antioxidants. Titrate FiO₂ down to achieve SpO₂ 88–95% as fast as possible. FiO₂ &gt;0.60 for &gt;24–48h = toxicity risk.</p></div>
-      <div class="mc"><div class="ml2">❌ Mistake 5 — Not Doing Daily SAT + SBT</div><p>Kress (NEJM 2000): daily sedation vacation reduced ICU stay and mechanical ventilation duration. The combined SAT+SBT protocol (Girard, NEJM 2008): reduced 1-year mortality. Every ventilated patient deserves a daily extubation readiness assessment. Document why if not done.</p></div>
+      <span class="sb sbe">🫁 6 · Lung-Protective Ventilation &amp; ARDS</span>
+      <h2>Why the ventilator can injure the lung</h2>
+      <div class="bq">
+        <p>"The discovery that the ventilator can produce a lung injury indistinguishable from ARDS changed everything. Every setting is now chosen to limit stretch, cyclic collapse and the energy delivered to the lung. The only ventilator strategy that has ever improved survival in ARDS is the one that limits this injury."</p>
+        <cite>Summarised from Marino's The ICU Book; Irwin &amp; Rippe's Intensive Care Medicine; Oh's Intensive Care Manual.</cite>
+      </div>
+      <h3>Ventilator-induced lung injury (VILI) — the four mechanisms</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Mechanism</th><th>Cause</th><th>Prevented by</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Volutrauma</strong></td><td>Over-distension from large tidal volumes into small ARDS lungs ("baby lung")</td><td>Low Vt (6 mL/kg PBW), Pplat ≤30, low ΔP</td></tr>
+            <tr><td><strong>Atelectrauma</strong></td><td>Repeated opening/closing (shear) of unstable alveoli</td><td>Adequate <strong>PEEP</strong> to keep alveoli open</td></tr>
+            <tr><td><strong>Barotrauma</strong></td><td>Air leak — pneumothorax, pneumomediastinum — from high alveolar pressure</td><td>Limit Pplat, low Vt</td></tr>
+            <tr><td><strong>Biotrauma</strong></td><td>Mechanical stress → cytokine release → systemic inflammation &amp; multi-organ failure</td><td>All of the above (limit stress/strain &amp; power)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>The ARDSNet lung-protective protocol</h3>
+      <div style="display:flex;flex-direction:column;gap:.8rem;">
+        <div class="fs"><div class="fn" style="background:#ef4444">1</div><div class="fb"><h4>Set volume &amp; oxygenation</h4><p>PBW → Vt <strong>8 mL/kg</strong>, PEEP 5, lowest FiO₂ for SpO₂ 88–95%. Then reduce Vt by 1 mL/kg every ~2 h to <strong>6 mL/kg</strong>.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#f97316">2</div><div class="fb"><h4>Protect the alveoli</h4><p>Measure Pplat. If &gt;30 → drop Vt in 1 mL/kg steps (to a floor of 4 mL/kg). Keep <strong>ΔP &lt;14–15</strong>.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#eab308">3</div><div class="fb"><h4>Titrate PEEP to FiO₂</h4><p>Use a <strong>PEEP/FiO₂ table</strong>; higher PEEP for moderate–severe ARDS. Optimise for lowest ΔP and best oxygenation without over-distension.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#22c55e">4</div><div class="fb"><h4>Accept permissive hypercapnia</h4><p>Low Vt raises CO₂ — tolerate pH down to ~7.25–7.30 provided no contraindication (raised ICP, severe pulmonary hypertension).</p></div></div>
+        <div class="fs"><div class="fn" style="background:#3b82f6">5</div><div class="fb"><h4>Rescue for refractory hypoxaemia (P/F &lt;150)</h4><p><strong>Prone ≥16 h/day</strong> (PROSEVA); <strong>neuromuscular blockade</strong> in early severe ARDS; consider recruitment cautiously; <strong>ECMO</strong> (EOLIA/veno-venous) if still failing.</p></div></div>
+      </div>
+      <h3>ARDS adjuncts — evidence at a glance</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Intervention</th><th>When</th><th>Evidence</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Low Vt (6 mL/kg)</strong></td><td>All ARDS</td><td>ARDSNet — absolute mortality ↓ ~9%; the foundation</td></tr>
+            <tr><td><strong>Low driving pressure</strong></td><td>All ARDS</td><td>ΔP is the variable most strongly linked to survival (Amato)</td></tr>
+            <tr><td><strong>Prone positioning</strong></td><td>P/F &lt;150, moderate–severe</td><td>PROSEVA — significant mortality reduction with ≥16 h/day</td></tr>
+            <tr><td><strong>Neuromuscular blockade</strong></td><td>Early severe ARDS, dyssynchrony</td><td>Improves oxygenation; use short course (ACURASYS/ROSE)</td></tr>
+            <tr><td><strong>Higher PEEP</strong></td><td>Moderate–severe, PEEP-responsive</td><td>Benefit in more severe disease; individualise</td></tr>
+            <tr><td><strong>Veno-venous ECMO</strong></td><td>Refractory despite the above</td><td>Rescue in expert centres (EOLIA + meta-analysis)</td></tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
+    <!-- ============ 7 · OBSTRUCTIVE / AUTO-PEEP ============ -->
     <section id="s7">
-      <span class="sb sbx">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM</span>
-      <h2>Exam Pearls</h2>
-      <div class="ec"><p><strong>Q: Marino 5th Ed — what did he say about 174 modes of ventilation?</strong><br>"Only one of the 174 different modes of ventilation has shown evidence of improved clinical outcomes, and only because it limits the lung damage produced by positive pressure ventilation." (Ch.27, p.481). The one mode: Volume Control at 6 ml/kg PBW (ARDSNet). Less is better.</p></div>
-      <div class="ec"><p><strong>Q: How do you measure Pplat and what does it represent?</strong><br>0.5-second inspiratory hold with NO active breathing by patient. Pressure settles to Pplat = alveolar pressure (Palv) = elastic recoil pressure. Target ≤30 cmH₂O. Ppeak − Pplat = airway resistance pressure (Pres) per Marino Equation 27.3.</p></div>
-      <div class="ec"><p><strong>Q: IBW calculation for a 170 cm male?</strong><br>Height = 170 cm ÷ 2.54 = 66.9 inches. PBW = 50 + 2.3 × (66.9 − 60) = 50 + 15.9 = 65.9 kg. Vt at 6 ml/kg = 395 ml. Quick bedside: 170 − 100 = 70 kg (overestimates slightly but useful).</p></div>
-      <div class="ec"><p><strong>Q: RSBI — what is it, how to calculate, threshold?</strong><br>Rapid Shallow Breathing Index = RR ÷ Vt (in litres). Measured at start of SBT on PS 5 + PEEP 5. RSBI &lt;105 = likely successful extubation (Yang &amp; Tobin, NEJM 1991). RSBI &gt;105 = high failure risk. Most accurate predictor of SBT outcome.</p></div>
-      <div class="ec"><p><strong>Q: What happens haemodynamically with auto-PEEP?</strong><br>Auto-PEEP (intrinsic PEEP) in obstructive disease: ↑ intrathoracic pressure → ↓ venous return → ↓ cardiac output → hypotension. Can mimic tension pneumothorax. Diagnosis: disconnect from ventilator briefly → if BP recovers, auto-PEEP was the cause. Fix: ↓ RR, ↑ expiratory time.</p></div>
-      <div class="ec"><p><strong>Q: DOPE mnemonic — sudden deterioration on ventilator?</strong><br>D = Displacement (ETT wrong position) | O = Obstruction (secretions, bronchospasm) | P = Pneumothorax (tension) | E = Equipment failure (disconnection, malfunction). First action: disconnect and manually bag ventilate. This simultaneously diagnoses equipment failure AND provides immediate rescue breathing.</p></div>
+      <span class="sb sbx">🌀 7 · Obstructive Disease &amp; Auto-PEEP</span>
+      <h2>The opposite problem — the lung that won't empty</h2>
+      <div class="bq">
+        <p>"In severe airflow obstruction, exhalation is not finished before the next breath begins. Gas is trapped, the lung hyperinflates, and end-expiratory pressure builds up unseen. It raises the trigger threshold, impedes venous return, and can collapse the circulation."</p>
+        <cite>Summarised from Marino's The ICU Book; Oh's Intensive Care Manual.</cite>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Aspect</th><th>Detail</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Where</strong></td><td>Asthma, COPD — high airway resistance, slow emptying</td></tr>
+            <tr><td><strong>Consequences</strong></td><td>Dynamic hyperinflation → ↑ intrathoracic pressure → ↓ venous return → <strong>hypotension</strong>; missed triggers &amp; extra work; barotrauma risk</td></tr>
+            <tr><td><strong>Detect</strong></td><td>Expiratory flow does <strong>not return to zero</strong> before the next breath (flow waveform)</td></tr>
+            <tr><td><strong>Measure</strong></td><td><strong>Expiratory-hold</strong> manoeuvre (passive patient) reveals the trapped pressure</td></tr>
+            <tr><td><strong>Treat</strong></td><td>Lengthen expiration: <strong>↓ rate</strong>, <strong>↑ inspiratory flow</strong>, <strong>↓ I:E (1:3–1:4)</strong>, smaller Vt; treat bronchospasm; suction. Match a modest applied PEEP to reduce trigger work</td></tr>
+            <tr><td><strong>Emergency</strong></td><td>Sudden hypotension on the ventilator in an asthmatic → <strong>disconnect and let the chest deflate</strong> (and exclude pneumothorax)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ec"><p><strong>Permissive hypercapnia is deliberate here too.</strong> In severe asthma, accept a high CO₂ and low-ish pH to avoid the lethal spiral of fast rates and gas-trapping.</p></div>
     </section>
 
-    <section id="s8" class="references-section">
-      <span class="sb sbr">📚 8 · References</span>
+    <!-- ============ 8 · MONITORING ============ -->
+    <section id="s8">
+      <span class="sb sbw">📈 8 · Monitoring, Waveforms &amp; DOPE</span>
+      <h2>Reading the ventilated patient</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Clue</th><th>Interpretation</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td><strong>↑ Peak, normal Plateau</strong></td><td>Airway <em>resistance</em> problem</td><td>Suction, bronchodilators, check tube/kink</td></tr>
+            <tr><td><strong>↑ Peak, ↑ Plateau</strong></td><td>Lung/chest-wall <em>compliance</em> problem</td><td>↓ Vt; treat oedema/ARDS/pneumothorax/abdomen</td></tr>
+            <tr><td><strong>Expiratory flow not to zero</strong></td><td>Auto-PEEP / gas trapping</td><td>Lengthen expiration (§7)</td></tr>
+            <tr><td><strong>Pressure–time "scooping"</strong></td><td>Flow starvation (air hunger)</td><td>↑ flow, switch to decelerating flow/PC</td></tr>
+            <tr><td><strong>Double-triggering / missed triggers</strong></td><td>Patient–ventilator dyssynchrony</td><td>Adjust trigger, Ti, flow, sedation; treat auto-PEEP</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="key-box">
+        <div class="kb-label">🚨 Sudden deterioration on the ventilator — DOPE</div>
+        <ul>
+          <li><strong>D — Displacement:</strong> tube in the oesophagus, right main bronchus, or out — check ETCO₂, position, air entry</li>
+          <li><strong>O — Obstruction:</strong> secretions/mucus plug, biting, kink → suction, pass a catheter</li>
+          <li><strong>P — Pneumothorax:</strong> tension — unilateral silent chest, tracheal shift, collapse → <strong>decompress</strong></li>
+          <li><strong>E — Equipment:</strong> circuit/O₂/ventilator failure → <strong>disconnect and hand-bag with 100% O₂</strong> — this both rescues and diagnoses</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 9 · COMPLICATIONS ============ -->
+    <section id="s9">
+      <span class="sb sbe">⚠️ 9 · Complications of Mechanical Ventilation</span>
+      <h2>What positive pressure costs</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Complication</th><th>Mechanism</th><th>Prevention / management</th></tr></thead>
+          <tbody>
+            <tr><td><strong>VILI</strong> (volu-/atelec-/baro-/biotrauma)</td><td>Excess stretch, cyclic collapse, air leak, inflammation</td><td>Lung-protective settings; limit Pplat, ΔP, power</td></tr>
+            <tr><td><strong>Haemodynamic compromise</strong></td><td>↑ intrathoracic pressure → ↓ venous return &amp; RV afterload</td><td>Volume, lower mean airway pressure, treat auto-PEEP</td></tr>
+            <tr><td><strong>Ventilator-associated pneumonia</strong></td><td>Micro-aspiration past the cuff</td><td>Ventilator bundle: head-up 30–45°, oral care, sedation holds, subglottic suction</td></tr>
+            <tr><td><strong>Oxygen toxicity</strong></td><td>Sustained high FiO₂ → free-radical lung injury</td><td>Wean FiO₂ to the lowest that meets the SpO₂ target</td></tr>
+            <tr><td><strong>Auto-PEEP / dynamic hyperinflation</strong></td><td>Incomplete emptying</td><td>Prolong expiration (§7)</td></tr>
+            <tr><td><strong>Diaphragm dysfunction (VIDD)</strong></td><td>Disuse atrophy from over-assist/over-sedation</td><td>Allow spontaneous effort, avoid deep sedation, wean early</td></tr>
+            <tr><td><strong>Patient–ventilator dyssynchrony</strong></td><td>Mistimed support</td><td>Tune trigger/flow/Ti; analgo-sedation; treat cause</td></tr>
+            <tr><td><strong>ICU-acquired weakness &amp; delirium</strong></td><td>Immobility, sedation</td><td>ABCDEF bundle: daily SAT/SBT, early mobilisation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ 10 · WEANING ============ -->
+    <section id="s10">
+      <span class="sb sbf">🎯 10 · Weaning &amp; Extubation</span>
+      <h2>Getting the patient off the ventilator</h2>
+      <div class="bq">
+        <p>"Weaning should begin the day intubation begins. The evidence is consistent: a daily paired sedation-and-breathing trial liberates patients sooner than any gradual 'wind-down' of support. Most patients do not need to be weaned — they need to be recognised as ready."</p>
+        <cite>Summarised from Marino's The ICU Book; Irwin &amp; Rippe's Intensive Care Medicine; Oh's Intensive Care Manual.</cite>
+      </div>
+      <h3>Step 1 — daily readiness screen</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Domain</th><th>Ready when…</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Cause</strong></td><td>Reason for ventilation improving/resolved</td></tr>
+            <tr><td><strong>Oxygenation</strong></td><td>P/F ≥150; PEEP ≤8; FiO₂ ≤0.5</td></tr>
+            <tr><td><strong>Haemodynamics</strong></td><td>No/low vasopressor, stable</td></tr>
+            <tr><td><strong>Neurology &amp; airway</strong></td><td>Awake, following commands, good cough, manageable secretions</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.8rem;margin-top:1rem;">
+        <div class="fs"><div class="fn" style="background:#22c55e">2</div><div class="fb"><h4>SAT then SBT (paired)</h4><p>Pass a <strong>spontaneous awakening trial</strong> (sedation off), then a <strong>spontaneous breathing trial</strong>: PS 5–8 + PEEP 5 (or T-piece) for 30–120 min.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#3b82f6">3</div><div class="fb"><h4>Judge the SBT</h4><p><strong>Pass:</strong> SpO₂ ≥90%, RR &lt;35, HR/BP stable, comfortable. <strong>RSBI = RR ÷ Vt(L); &lt;105</strong> predicts success. <strong>Fail:</strong> distress, tachypnoea, desaturation → rest 24 h, find why.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#8b5cf6">4</div><div class="fb"><h4>Extubate</h4><p>Do a <strong>cuff-leak test</strong> if prolonged/traumatic intubation or high stridor risk; treat a low leak with steroids before extubation. Have re-intubation kit ready.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#ef4444">5</div><div class="fb"><h4>Support after extubation</h4><p><strong>HFNO</strong> and/or <strong>prophylactic NIV</strong> reduce re-intubation in high-risk patients (hypercapnia, obesity, cardiac, COPD). Consider <strong>tracheostomy</strong> if weaning is prolonged.</p></div></div>
+      </div>
+    </section>
+
+    <!-- ============ 11 · NIV / HFNO ============ -->
+    <section id="s11">
+      <span class="sb sbg">😮‍💨 11 · NIV &amp; High-Flow Nasal Oxygen</span>
+      <h2>Support without a tube</h2>
+      <h3>Where the evidence is strongest for NIV</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Indication</th><th>Strength</th><th>Note</th></tr></thead>
+          <tbody>
+            <tr><td><strong>COPD exacerbation with respiratory acidosis</strong> (pH &lt;7.35)</td><td>Strong — first line</td><td>Reduces intubation and mortality</td></tr>
+            <tr><td><strong>Cardiogenic pulmonary oedema</strong></td><td>Strong</td><td>CPAP or NIV; rapid improvement</td></tr>
+            <tr><td><strong>Immunocompromised hypoxaemia</strong></td><td>Reasonable (early)</td><td>Avoid intubation-related infection</td></tr>
+            <tr><td><strong>Post-extubation (high-risk / COPD)</strong></td><td>Preventive</td><td>Prophylactic NIV/HFNO cut re-intubation</td></tr>
+            <tr><td><strong>De novo hypoxaemic failure / ARDS</strong></td><td>Cautious</td><td>Watch closely; late failure is dangerous — don't delay intubation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>HFNO — how it helps &amp; when to worry</h3>
+      <div class="mb">
+        <div class="ml">High-flow nasal oxygen</div>
+        <p>Warmed, humidified O₂ up to 60 L/min delivering a stable high FiO₂, some <strong>PEEP effect</strong>, dead-space washout and comfort. Track the <strong>ROX index = (SpO₂/FiO₂) ÷ RR</strong> — a low or falling ROX (roughly &lt;4.88 at 2–12 h) flags likely failure and the need to escalate.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Contraindications / cautions to NIV</th></tr></thead>
+          <tbody>
+            <tr><td>Cardiac/respiratory arrest · unprotected airway, coma, high aspiration risk · facial trauma/surgery · haemodynamic instability or arrhythmia · undrained pneumothorax · copious secretions · agitation/non-cooperation · rapidly deteriorating gas exchange (needs intubation)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ec"><p><strong>The cardinal NIV error is persisting with a failing trial.</strong> Reassess within 1–2 h — if pH, CO₂, work of breathing or consciousness are not improving, intubate rather than "give it longer".</p></div>
+    </section>
+
+    <!-- ============ 12 · MISTAKES ============ -->
+    <section id="s12">
+      <span class="sb sbe">🚫 12 · Common Mistakes</span>
+      <h2>Common mistakes</h2>
+      <div class="mc"><div class="ml2">❌ 1 — Dosing tidal volume on actual (not predicted) body weight</div><p>An obese patient's lungs are sized to <em>height</em>, not weight. Using actual weight delivers huge volumes into small lungs = volutrauma. Always calculate PBW before connecting the ventilator.</p></div>
+      <div class="mc"><div class="ml2">❌ 2 — Watching peak pressure and ignoring plateau</div><p>Peak pressure is not alveolar pressure. In bronchospasm the peak may be high while the plateau is safe; in ARDS a "modest" peak can hide a dangerous plateau. Measure Pplat and ΔP.</p></div>
+      <div class="mc"><div class="ml2">❌ 3 — Fast rates in asthma/COPD</div><p>Short expiration → gas trapping → auto-PEEP → hypotension. Use low rates, high flow and long expiratory time; tolerate the CO₂.</p></div>
+      <div class="mc"><div class="ml2">❌ 4 — Leaving FiO₂ at 1.0</div><p>Sustained hyperoxia injures the lung. Wean FiO₂ quickly to the lowest that meets the SpO₂ target (88–95% in ARDS).</p></div>
+      <div class="mc"><div class="ml2">❌ 5 — No daily SAT + SBT</div><p>Gradual "weaning modes" prolong ventilation. A daily paired awakening + breathing trial liberates patients sooner and improves outcomes — document why if skipped.</p></div>
+      <div class="mc"><div class="ml2">❌ 6 — Flogging a failing NIV trial</div><p>Delayed intubation after NIV failure worsens outcomes. Set a clear 1–2 h reassessment and escalate decisively.</p></div>
+    </section>
+
+    <!-- ============ 13 · PEARLS ============ -->
+    <section id="s13">
+      <span class="sb sbx">🎓 13 · Exam Pearls — DrNB / PDCC / IDCCM / IFCCM</span>
+      <h2>Exam pearls</h2>
+      <div class="ec"><p><strong>Q: Why 6 mL/kg and why predicted body weight?</strong><br>Low tidal volume limits volutrauma/biotrauma; PBW (height-based) matches lung size — the ARDSNet strategy is the only ventilator setting shown to improve ARDS survival.</p></div>
+      <div class="ec"><p><strong>Q: How do you measure the plateau pressure and what is it?</strong><br>A ~0.5 s inspiratory hold in a passive patient; with no flow the pressure equals alveolar pressure (elastic recoil). Target ≤30. Ppeak − Pplat = airway resistance pressure.</p></div>
+      <div class="ec"><p><strong>Q: What is driving pressure and its target?</strong><br>ΔP = Pplat − total PEEP = the tidal strain on the lung. It is the parameter most strongly associated with mortality; keep &lt;14–15 cmH₂O.</p></div>
+      <div class="ec"><p><strong>Q: How do you detect and treat auto-PEEP?</strong><br>Detect: expiratory flow not returning to zero. Measure: expiratory-hold manoeuvre. Treat: prolong expiration (↓ rate, ↑ flow, ↓ I:E) and relieve obstruction; disconnect if it causes shock.</p></div>
+      <div class="ec"><p><strong>Q: RSBI — definition and cut-off?</strong><br>Rapid Shallow Breathing Index = respiratory rate ÷ tidal volume in litres, measured on minimal support. &lt;105 predicts a successful breathing trial/extubation.</p></div>
+      <div class="ec"><p><strong>Q: Rescue options for refractory ARDS (P/F &lt;150)?</strong><br>Prone ≥16 h/day, neuromuscular blockade in early severe disease, individualised higher PEEP, and veno-venous ECMO when these fail.</p></div>
+      <div class="ec"><p><strong>Q: DOPE?</strong><br>Displacement, Obstruction, Pneumothorax, Equipment — and the first move for sudden deterioration is to disconnect and hand-bag with 100% O₂.</p></div>
+    </section>
+
+    <!-- ============ 14 · DIFFERENCES (AT THE END, as requested) ============ -->
+    <section id="s14">
+      <span class="sb sbc">⭐ 14 · Key Differences — Comparison Tables</span>
+      <h2>All the head-to-head comparisons in one place</h2>
+      <div class="diff-intro"><p>The distinctions people confuse most, collected at the end for quick revision. <strong>Learn these as pairs</strong> — most viva questions and bedside decisions are a choice between two of them.</p></div>
+
+      <h3 class="difftitle">Volume Control vs Pressure Control</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>Volume Control (VC)</th><th>Pressure Control (PC)</th></tr></thead>
+          <tbody>
+            <tr><td>You set</td><td>Tidal volume + flow</td><td>Inspiratory pressure + time</td></tr>
+            <tr><td>Guaranteed</td><td><strong>Tidal volume</strong></td><td><strong>Airway pressure</strong></td></tr>
+            <tr><td>What varies</td><td>Airway pressure (with mechanics)</td><td>Tidal volume (with compliance)</td></tr>
+            <tr><td>Flow pattern</td><td>Constant (square)</td><td>Decelerating</td></tr>
+            <tr><td>Main strength</td><td>Lung-protective Vt guaranteed</td><td>Comfort, leak tolerance, less dyssynchrony</td></tr>
+            <tr><td>Main risk</td><td>High pressures if lungs stiffen</td><td>Volutrauma if compliance suddenly improves</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">Assist–Control vs SIMV vs Pressure Support</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>AC / CMV</th><th>SIMV</th><th>PSV (spontaneous)</th></tr></thead>
+          <tbody>
+            <tr><td>Every breath supported?</td><td>Yes — full set breath</td><td>Only the mandatory ones</td><td>Yes, but patient-triggered</td></tr>
+            <tr><td>Backup rate</td><td>Yes</td><td>Yes</td><td><strong>No</strong></td></tr>
+            <tr><td>Work of breathing</td><td>Lowest</td><td>Intermediate/variable</td><td>Patient does most</td></tr>
+            <tr><td>Best use</td><td>Full support, sick lungs</td><td>Largely historical</td><td>Weaning / SBT</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">Peak vs Plateau pressure</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Pattern</th><th>Meaning</th><th>Do</th></tr></thead>
+          <tbody>
+            <tr><td>↑ Peak, <strong>normal</strong> Plateau</td><td>Resistance problem (secretions, bronchospasm, kink)</td><td>Suction, bronchodilate, check tube</td></tr>
+            <tr><td>↑ Peak, <strong>↑</strong> Plateau</td><td>Compliance problem (ARDS, oedema, pneumothorax, tight abdomen)</td><td>↓ Vt, treat the cause</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">The VILI mechanisms</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Term</th><th>Injury from</th><th>Fixed by</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Volutrauma</strong></td><td>Over-distension (big volumes)</td><td>Low Vt</td></tr>
+            <tr><td><strong>Barotrauma</strong></td><td>High pressure → air leak</td><td>Limit Pplat</td></tr>
+            <tr><td><strong>Atelectrauma</strong></td><td>Cyclic open/close (shear)</td><td>Adequate PEEP</td></tr>
+            <tr><td><strong>Biotrauma</strong></td><td>Inflammatory cascade</td><td>Limit stress/strain &amp; power</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">Applied PEEP vs Auto-PEEP</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>Applied (extrinsic) PEEP</th><th>Auto (intrinsic/occult) PEEP</th></tr></thead>
+          <tbody>
+            <tr><td>Origin</td><td>Set by you on the ventilator</td><td>Trapped gas, incomplete emptying</td></tr>
+            <tr><td>Visible?</td><td>Yes, on the display</td><td>Hidden — needs an expiratory hold</td></tr>
+            <tr><td>Purpose/effect</td><td>Keeps alveoli open (good)</td><td>Hyperinflation, hypotension, extra work (bad)</td></tr>
+            <tr><td>Management</td><td>Titrate to oxygenation/ΔP</td><td>Prolong expiration, treat obstruction</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">Restrictive (ARDS) vs Obstructive (COPD/asthma) ventilator strategy</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Setting</th><th>ARDS (stiff lungs)</th><th>COPD / Asthma (obstructed)</th></tr></thead>
+          <tbody>
+            <tr><td>Core danger</td><td>Over-distension of small lung</td><td>Gas trapping / auto-PEEP</td></tr>
+            <tr><td>Tidal volume</td><td>Low (6 mL/kg)</td><td>Low–normal</td></tr>
+            <tr><td>Rate</td><td>Higher (compensate low Vt)</td><td><strong>Low</strong> (allow full exhalation)</td></tr>
+            <tr><td>I:E</td><td>1:1–1:2</td><td><strong>1:3–1:4</strong></td></tr>
+            <tr><td>Flow</td><td>Moderate</td><td><strong>High</strong> (shorten inspiration)</td></tr>
+            <tr><td>PEEP</td><td>Higher (recruit)</td><td>Low/matched to auto-PEEP</td></tr>
+            <tr><td>Key rescue</td><td>Prone, NMBA, ECMO</td><td>Bronchodilators; disconnect if shocked</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">CPAP vs BiPAP (NIV) vs HFNO</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>CPAP</th><th>BiPAP / NIV</th><th>HFNO</th></tr></thead>
+          <tbody>
+            <tr><td>Pressures</td><td>One constant pressure</td><td>Two levels (IPAP + EPAP)</td><td>Flow-based, small PEEP effect</td></tr>
+            <tr><td>Helps mainly</td><td>Oxygenation</td><td><strong>Ventilation</strong> (IPAP−EPAP boosts Vt) + oxygenation</td><td>Oxygenation + comfort/washout</td></tr>
+            <tr><td>Best for</td><td>Cardiogenic oedema, OSA</td><td>COPD with hypercapnic acidosis</td><td>Hypoxaemic failure, post-extubation</td></tr>
+            <tr><td>Interface</td><td>Mask</td><td>Mask</td><td>Nasal cannula (well tolerated)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">NIV vs Invasive ventilation</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>Non-invasive (NIV)</th><th>Invasive (via ETT/tracheostomy)</th></tr></thead>
+          <tbody>
+            <tr><td>Airway protection</td><td>None</td><td>Yes (cuffed tube)</td></tr>
+            <tr><td>Best candidates</td><td>Awake, cooperative, reversible cause (COPD, oedema)</td><td>Coma, shock, secretions, failed/failing NIV</td></tr>
+            <tr><td>Key risks</td><td>Aspiration, delay to intubation, mask injury</td><td>VILI, VAP, sedation, weaning, tube trauma</td></tr>
+            <tr><td>Escalation</td><td>Reassess in 1–2 h — intubate if not improving</td><td>De-escalate via weaning &amp; SBT</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">SBT pass vs fail</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Sign</th><th>Pass (extubate)</th><th>Fail (rest &amp; reassess)</th></tr></thead>
+          <tbody>
+            <tr><td>RSBI</td><td>&lt;105</td><td>&gt;105</td></tr>
+            <tr><td>Respiratory rate</td><td>&lt;35</td><td>&gt;35, accessory muscles</td></tr>
+            <tr><td>SpO₂</td><td>≥90% on low FiO₂</td><td>Desaturation</td></tr>
+            <tr><td>Haemodynamics</td><td>Stable</td><td>Tachycardia, hypertension, agitation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ 15 · REFERENCES ============ -->
+    <section id="s15" class="references-section">
+      <span class="sb sbr">📚 15 · References</span>
       <h2>References</h2>
       <ol class="ref-list">
-        <li><strong>Marino PL.</strong> Marino's The ICU Book, 5th edition. Chapter 27: Conventional Mechanical Ventilation (pp.481–503). Philadelphia, PA: Wolters Kluwer; 2025. ISBN: 978-1-975176-71-6.</li>
-        <li><strong>Marino PL.</strong> Marino's The ICU Book, 5th edition. Chapter 28: The Ventilator-Dependent Patient (pp.504–522). Philadelphia, PA: Wolters Kluwer; 2025.</li>
-        <li><strong>Acute Respiratory Distress Syndrome Network (ARDSNet).</strong> Ventilation with Lower Tidal Volumes for Acute Lung Injury and ARDS (ARMA). <em>N Engl J Med.</em> 2000;342(18):1301–1308.</li>
-        <li><strong>Amato MB, Meade MO, Slutsky AS, et al.</strong> Driving Pressure and Survival in the Acute Respiratory Distress Syndrome. <em>N Engl J Med.</em> 2015;372(8):747–755.</li>
-        <li><strong>Yang KL, Tobin MJ.</strong> A Prospective Study of Indexes Predicting the Outcome of Trials of Weaning from Mechanical Ventilation. <em>N Engl J Med.</em> 1991;324(21):1445–1450.</li>
-        <li><strong>Kress JP, Pohlman AS, O'Connor MF, Hall JB.</strong> Daily Interruption of Sedative Infusions in Critically Ill Patients Undergoing Mechanical Ventilation. <em>N Engl J Med.</em> 2000;342(20):1471–1477.</li>
-        <li><strong>Brochard L, Rauss A, Benito S, et al.</strong> Comparison of Three Methods of Gradual Withdrawal from Ventilatory Support. <em>Am J Respir Crit Care Med.</em> 1994;150(4):896–903.</li>
-        <li><strong>Hernandez G, Vaquero C, Colinas L, et al.</strong> Effect of Postextubation High-Flow Nasal Cannula vs NIV on Reintubation and Postextubation Respiratory Failure. <em>JAMA.</em> 2016;316(15):1565–1574.</li>
-        <li><strong>Fan E, Del Sorbo L, Goligher EC, et al.</strong> An Official ATS/ESICM/SCCM Clinical Practice Guideline: Mechanical Ventilation in Adult Patients with ARDS. <em>Am J Respir Crit Care Med.</em> 2017;195(9):1253–1263.</li>
-        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Wolters Kluwer; 2023.</li>
+        <li><strong>Marino PL.</strong> Marino's The ICU Book. 5th ed. Philadelphia: Wolters Kluwer; 2025.</li>
+        <li><strong>Irwin RS, Lilly CM, Mayo PH, Rippe JM (eds).</strong> Irwin &amp; Rippe's Intensive Care Medicine. 9th ed. Philadelphia: Wolters Kluwer; 2023.</li>
+        <li><strong>Bersten AD, Handy JM (eds).</strong> Oh's Intensive Care Manual. Elsevier; 2026.</li>
+        <li><strong>Acute Respiratory Distress Syndrome Network (ARDSNet).</strong> Ventilation with lower tidal volumes for acute lung injury and ARDS. <em>N Engl J Med.</em> 2000;342:1301–1308.</li>
+        <li><strong>Amato MBP, Meade MO, Slutsky AS, et al.</strong> Driving pressure and survival in the acute respiratory distress syndrome. <em>N Engl J Med.</em> 2015;372:747–755.</li>
+        <li><strong>Guérin C, Reignier J, Richard JC, et al. (PROSEVA).</strong> Prone positioning in severe acute respiratory distress syndrome. <em>N Engl J Med.</em> 2013;368:2159–2168.</li>
+        <li><strong>Papazian L, Forel JM, Gacouin A, et al. (ACURASYS).</strong> Neuromuscular blockers in early acute respiratory distress syndrome. <em>N Engl J Med.</em> 2010;363:1107–1116.</li>
+        <li><strong>Fan E, Del Sorbo L, Goligher EC, et al.</strong> An official ATS/ESICM/SCCM clinical practice guideline: mechanical ventilation in adult patients with ARDS. <em>Am J Respir Crit Care Med.</em> 2017;195:1253–1263.</li>
+        <li><strong>Grasselli G, Calfee CS, Camporota L, et al.</strong> ESICM guidelines on ARDS: definition, phenotyping and respiratory support. <em>Intensive Care Med.</em> 2023;49:727–759.</li>
+        <li><strong>Rochwerg B, Brochard L, Elliott MW, et al.</strong> Official ERS/ATS clinical practice guidelines: non-invasive ventilation for acute respiratory failure. <em>Eur Respir J.</em> 2017;50:1602426.</li>
+        <li><strong>Yang KL, Tobin MJ.</strong> Indexes predicting the outcome of a trial of weaning from mechanical ventilation. <em>N Engl J Med.</em> 1991;324:1445–1450.</li>
+        <li><strong>Girard TD, Kress JP, Fuchs BD, et al. (ABC trial).</strong> Paired sedation and ventilator weaning protocol. <em>Lancet.</em> 2008;371:126–134.</li>
+        <li><strong>Hernández G, Vaquero C, Colinas L, et al.</strong> Postextubation high-flow nasal cannula vs noninvasive ventilation on reintubation. <em>JAMA.</em> 2016;316:1565–1574.</li>
+        <li><strong>Roca O, Caralt B, Messika J, et al.</strong> The ROX index to predict outcome of high-flow nasal oxygen. <em>Am J Respir Crit Care Med.</em> 2019;199:1368–1376.</li>
       </ol>
     </section>
+
   </main>
 </div>
 <footer class="footer">
