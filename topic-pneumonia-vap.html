@@ -9,24 +9,41 @@
   <meta name="apple-mobile-web-app-title" content="CritCare"/>
   <link rel="apple-touch-icon" href="/icon-apple.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-  <title>Pneumonia, HAP & VAP — CritCare.in</title>
-  <meta name="description" content="Hospital-acquired pneumonia and ventilator-associated pneumonia: diagnosis, prevention, and treatment in critical care." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="shared.css" />
+  <title>Pneumonia, HAP &amp; VAP in the ICU — Structured Guide — CritCare.in</title>
+  <meta name="description" content="A structured, tabular ICU guide to pneumonia: CAP/HAP/VAP definitions, severe CAP ICU criteria, pathogens and MDR risk, diagnosis and VAP sampling, empirical antibiotics, the VAP prevention bundle, de-escalation and duration — with all comparisons at the end. Led by Irwin & Rippe with Marino, Oh's and ATS/IDSA." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
   <script src="darkmode.js"></script>
   <script src="access.js"></script>
   <script type="module" src="cc-cloud.js"></script>
   <style>
-    .pearl-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1rem; margin:1.2rem 0; }
-    .pearl-card { background:#fffbeb; border:1px solid #fde68a; border-radius:10px; padding:1rem 1.2rem; }
-    .pearl-card .pearl-label { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.1em; color:#92400e; margin-bottom:.5rem; }
-    .pearl-card p { font-size:.88rem; color:#78350f; line-height:1.7; margin:0; }
-    .mistake-card { background:#fef2f2; border:1px solid #fecaca; border-radius:10px; padding:1rem 1.2rem; margin:.5rem 0; }
-    .mistake-card .m-label { font-size:.68rem; font-weight:700; color:#991b1b; text-transform:uppercase; letter-spacing:.08em; margin-bottom:.4rem; }
-    .mistake-card p { font-size:.88rem; color:#7f1d1d; line-height:1.7; margin:0; }
-    .exam-card { background:#eff6ff; border:1px solid #bfdbfe; border-radius:10px; padding:.9rem 1.1rem; margin:.4rem 0; }
-    .exam-card p { font-size:.88rem; color:#1e40af; line-height:1.7; margin:0; }
-    .exam-card strong { color:#1e3a8a; }
+    .bq{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .bq p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .bq cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .mb{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .mb .ml{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .mb p,.mb ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .mb ul{padding-left:1.2rem;}
+    .mb strong{color:#4c1d95;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml2{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;}
+    .ec strong{color:#1e3a8a;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sbw{background:#dbeafe;color:#1e40af;}.sbm{background:#ede9fe;color:#5b21b6;}.sbg{background:#dcfce7;color:#166534;}.sbd{background:#ffedd5;color:#9a3412;}.sbf{background:#f0fdf4;color:#14532d;border:1px solid #86efac;}.sbe{background:#fee2e2;color:#991b1b;}.sbx{background:#fef9c3;color:#854d0e;}.sbc{background:#cffafe;color:#155e75;}.sbr{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .fs{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;}
+    .fn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;flex-shrink:0;margin-top:.2rem;}
+    .fb{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;}
+    .fb h4{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;}
+    .fb p,.fb ul{font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;}
+    .fb ul{padding-left:1.1rem;}
+    .fb strong{color:var(--ink);}
+    .diff-intro{background:linear-gradient(135deg,#ecfeff,#cffafe);border:1px solid #67e8f9;border-radius:12px;padding:1.1rem 1.3rem;margin:1rem 0 1.4rem;}
+    .diff-intro p{font-size:.9rem;color:#155e75;line-height:1.7;margin:0;}
+    .diff-intro strong{color:#0e7490;}
+    h3.difftitle{margin-top:1.6rem;}
   </style>
   <script src="app-native.js" defer></script>
 </head>
@@ -35,8 +52,10 @@
   <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
   <ul class="nav-menu" id="menu">
     <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
-    <li><a href="topics.html" class="active">ICU Topics</a></li>
-    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li><li><a href="ai-tool.html">AI Tool</a></li><li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
   </ul>
   <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
   <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
@@ -44,17 +63,18 @@
 
 <header class="topic-hero">
   <div class="wrap">
-    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">ICU Topics</a> › Pneumonia & VAP</div>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Pneumonia · HAP · VAP</div>
     <h1>🫁 Pneumonia, HAP &amp; VAP in the ICU</h1>
     <div class="guideline-row">
-      <span class="gbadge sccm">IDSA/ATS 2016</span>
-      <span class="gbadge esicm">ERS/ESICM 2017</span>
-      <span class="gbadge isccm">ISCCM 2020</span>
+      <span class="gbadge sccm">ATS/IDSA CAP 2019</span>
+      <span class="gbadge esicm">HAP/VAP 2016</span>
+      <span class="gbadge isccm">ISCCM</span>
     </div>
     <div class="topic-hero-meta">
-      <span class="topic-tag red">Common ICU Problem</span>
-      <span class="topic-tag">Antibiotic Stewardship</span>
-      <span class="topic-updated">IDSA/ATS HAP/VAP Guidelines 2016 + ISCCM 2020</span>
+      <span class="topic-tag red">Sepsis source</span>
+      <span class="topic-tag">MDR risk</span>
+      <span class="topic-tag">VAP bundle</span>
+      <span class="topic-updated">Led by Irwin &amp; Rippe · with Marino &amp; Oh's · ATS/IDSA CAP 2019 · HAP/VAP 2016</span>
     </div>
     <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
   </div>
@@ -65,304 +85,229 @@
     <nav class="toc">
       <div class="toc-title">On this page</div>
       <ul class="toc-list">
-        <li><a href="#definitions">Definitions</a></li>
-        <li><a href="#physiology">How Pneumonia Works</a></li>
-        <li><a href="#cap">CAP — Community Acquired</a></li>
-        <li><a href="#hap-vap">HAP &amp; VAP</a></li>
-        <li><a href="#diagnosis">Diagnosis</a></li>
-        <li><a href="#empirical">Empirical Antibiotics</a></li>
-        <li><a href="#vap-prevention">VAP Prevention</a></li>
-        <li><a href="#duration">Duration &amp; De-escalation</a></li>
-        <li><a href="#india">Indian MDR Context</a></li>
-        <li><a href="#pearls">Clinical Pearls</a></li>
-        <li><a href="#mistakes">Common Mistakes</a></li>
-        <li><a href="#exam">Exam Pearls</a></li>
-        <li><a href="#references">References</a></li>
+        <li><a href="#s1">1. Overview &amp; definitions</a></li>
+        <li><a href="#s2">2. Severe CAP — ICU criteria</a></li>
+        <li><a href="#s3">3. Pathogens &amp; MDR risk</a></li>
+        <li><a href="#s4">4. Diagnosis &amp; work-up</a></li>
+        <li><a href="#s5">5. Empirical antibiotics</a></li>
+        <li><a href="#s6">6. VAP prevention bundle</a></li>
+        <li><a href="#s7">7. Management principles</a></li>
+        <li><a href="#s8">8. Common mistakes</a></li>
+        <li><a href="#s9">9. Exam pearls</a></li>
+        <li><a href="#s10">⭐ 10. Key differences</a></li>
+        <li><a href="#s11">11. References</a></li>
       </ul>
       <a href="topics.html" class="toc-back">← All topics</a>
     </nav>
   </aside>
-
   <main class="topic-content">
 
-    <section id="definitions">
-      <h2>Definitions</h2>
+    <section id="s1">
+      <span class="sb sbw">🫁 1 · Overview &amp; Definitions</span>
+      <h2>Pneumonia in the ICU</h2>
+      <div class="bq">
+        <p>"Pneumonia reaches the ICU when it causes respiratory failure or septic shock. Two things drive outcome: <em>timely, appropriate</em> antibiotics, and matching the spectrum to the setting and the patient's resistance risk — then de-escalating. Delayed ICU admission or intubation in severe CAP costs lives."</p>
+        <cite>Summarised from Irwin &amp; Rippe's Intensive Care Medicine; with Marino's The ICU Book, Oh's Intensive Care Manual and ATS/IDSA.</cite>
+      </div>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Type</th><th>Definition</th><th>Usual Organisms</th></tr></thead>
+          <thead><tr><th>Type</th><th>Definition</th></tr></thead>
           <tbody>
-            <tr><td><strong>CAP</strong> (Community-Acquired Pneumonia)</td><td>Pneumonia in a patient who was NOT hospitalised in the prior 90 days and has not resided in a long-term care facility</td><td>S. pneumoniae, H. influenzae, Atypicals (Mycoplasma, Chlamydophila, Legionella), viral (influenza)</td></tr>
-            <tr><td><strong>HAP</strong> (Hospital-Acquired Pneumonia)</td><td>Pneumonia developing ≥48h after admission; NOT intubated at the time of diagnosis</td><td>GNBs (Klebsiella, E. coli, Pseudomonas), MRSA, Acinetobacter</td></tr>
-            <tr><td><strong>VAP</strong> (Ventilator-Associated Pneumonia)</td><td>Pneumonia developing ≥48–72h after endotracheal intubation</td><td>Pseudomonas aeruginosa, MRSA, Acinetobacter baumannii, Klebsiella (in Indian ICUs — often XDR)</td></tr>
-            <tr><td><strong>HCAP</strong></td><td>HCAP category ABOLISHED in IDSA/ATS 2016 — do NOT use this classification</td><td>—</td></tr>
+            <tr><td><strong>CAP</strong> — community-acquired</td><td>Onset in the community or &lt;48 h after admission</td></tr>
+            <tr><td><strong>HAP</strong> — hospital-acquired</td><td>≥48 h after admission, not incubating at admission</td></tr>
+            <tr><td><strong>VAP</strong> — ventilator-associated</td><td>A subset of HAP developing ≥48 h after intubation</td></tr>
+            <tr><td><strong>HCAP</strong> — healthcare-associated</td><td><strong>Abandoned</strong> — use local epidemiology + individual MDR risk instead</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section id="physiology">
-      <h2>How Pneumonia Works — Pathophysiology</h2>
-      <div class="patho-flow">
-        <div class="patho-flow-title">🔬 How pneumonia / VAP develops</div>
-        <div class="pf-node pf-trigger"><span class="pf-tag">Trigger</span><strong>Micro-aspiration</strong> of colonised oropharyngeal secretions<span class="pf-sub">in VAP the ETT bypasses upper-airway defences</span></div>
-        <div class="pf-arrow"></div>
-        <div class="pf-node">Pathogen overwhelms lower-airway host defences</div>
-        <div class="pf-arrow"></div>
-        <div class="pf-node">Alveolar infection → neutrophil-rich inflammatory exudate → <strong>consolidation</strong></div>
-        <div class="pf-arrow"></div>
-        <div class="pf-split pf-converge">
-          <div class="pf-node">Local: V/Q mismatch + shunt<span class="pf-sub">hypoxaemia</span></div>
-          <div class="pf-node">Systemic: inflammatory response<span class="pf-sub">sepsis</span></div>
-        </div>
-        <div class="pf-arrow"></div>
-        <div class="pf-node pf-end"><span class="pf-tag">Pathological state</span>Respiratory failure ± <strong>septic shock</strong> (ARDS if severe)</div>
+    <section id="s2">
+      <span class="sb sbe">🚦 2 · Severe CAP — ICU Criteria</span>
+      <h2>Who needs the ICU (ATS/IDSA)</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Major criteria (either = ICU)</th><th>Minor criteria (≥3 = ICU)</th></tr></thead>
+          <tbody>
+            <tr><td rowspan="2">• Septic shock needing vasopressors<br>• Respiratory failure needing mechanical ventilation</td><td>RR ≥30; P/F ≤250; multilobar infiltrates; confusion</td></tr>
+            <tr><td>Uraemia (urea ≥20 mg/dL); leukopenia; thrombocytopenia; hypothermia; hypotension needing aggressive fluids</td></tr>
+          </tbody>
+        </table>
       </div>
-      <h3>Route of Infection</h3>
-      <ul>
-        <li><strong>Micro-aspiration:</strong> Dominant mechanism in both CAP and VAP. Colonised oropharyngeal secretions bypass lower airway defences → alveolar infection</li>
-        <li><strong>Macro-aspiration:</strong> Reduced consciousness (stroke, sedation, seizures, anaesthesia), dysphagia, GORD → large volume aspiration → aspiration pneumonitis/pneumonia</li>
-        <li><strong>Haematogenous:</strong> Bacteraemia → seeding of lungs (less common; suggests source elsewhere)</li>
-        <li><strong>Inhalation:</strong> Legionella (aerosolised water), TB, viruses, Aspergillus (immunocompromised)</li>
-      </ul>
-      <h3>VAP — Specific Mechanism</h3>
-      <p>ETT bypasses all upper airway defences (cough, mucociliary clearance, IgA, lysozyme). Subglottic secretions pool above the ETT cuff → leak past the cuff → micro-aspiration into lungs → infection. The ETT also provides a biofilm surface for bacteria to colonise. Every day of intubation = 1–3% cumulative VAP risk.</p>
-      <h3>Host Defence Failure in ICU</h3>
-      <ul>
-        <li>Sedation → ↓ cough, ↓ mucociliary clearance</li>
-        <li>Malnutrition → ↓ immune function</li>
-        <li>Prior antibiotics → colonisation with MDR organisms</li>
-        <li>Hyperglycaemia → impaired neutrophil function</li>
-      </ul>
+      <div class="ec"><p><strong>CURB-65</strong> (Confusion, Urea &gt;7, RR ≥30, BP &lt;90/60, age ≥65) is a quick severity/triage aid, but the ATS/IDSA major/minor criteria decide ICU admission.</p></div>
     </section>
 
-    <section id="cap">
-      <h2>Severe CAP — ICU Admission Criteria &amp; Management</h2>
-      <h3>IDSA/ATS Major &amp; Minor Criteria for ICU Admission</h3>
+    <section id="s3">
+      <span class="sb sbd">🦠 3 · Pathogens &amp; MDR Risk</span>
+      <h2>Who causes it — and the resistance flags</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Minor Criteria (≥3 = ICU admission)</th><th>Major Criteria (Any 1 = ICU)</th></tr></thead>
+          <thead><tr><th>Setting</th><th>Typical pathogens</th></tr></thead>
           <tbody>
-            <tr><td>RR ≥30/min | PaO₂/FiO₂ &lt;250 | Multi-lobar infiltrates | Confusion | Urea &gt;20 mg/dL | WBC &lt;4000/mm³ | Platelets &lt;100,000 | Temp &lt;36°C | SBP &lt;90 (requiring aggressive fluids)</td><td>Septic shock (vasopressors) | Respiratory failure (intubation / mechanical ventilation)</td></tr>
+            <tr><td><strong>Severe CAP</strong></td><td><em>S. pneumoniae</em>, <em>Legionella</em>, <em>S. aureus</em>, <em>H. influenzae</em>, Gram-negatives, respiratory viruses (influenza, SARS-CoV-2)</td></tr>
+            <tr><td><strong>HAP / VAP</strong></td><td><em>Pseudomonas aeruginosa</em>, <em>S. aureus</em> (incl. MRSA), Enterobacterales (incl. ESBL), <em>Acinetobacter</em></td></tr>
           </tbody>
         </table>
       </div>
-      <h3>PSI / CURB-65 Risk Stratification</h3>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>CURB-65 Score</th><th>Mortality</th><th>Management</th></tr></thead>
-          <tbody>
-            <tr><td>0–1</td><td>&lt;3%</td><td>Outpatient treatment</td></tr>
-            <tr><td>2</td><td>9%</td><td>Short inpatient or supervised outpatient</td></tr>
-            <tr><td>3–5</td><td>17–57%</td><td>Hospital admission; 4–5 consider ICU</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p><strong>CURB-65:</strong> Confusion | Urea &gt;7 mmol/L (BUN &gt;19 mg/dL) | RR ≥30 | SBP &lt;90 or DBP &lt;60 | Age ≥65. Score 1 point each.</p>
-      <h3>Severe CAP Antibiotics</h3>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Scenario</th><th>Regimen</th></tr></thead>
-          <tbody>
-            <tr><td>ICU-admitted CAP (no Pseudomonas risk)</td><td>Beta-lactam (Ceftriaxone 2g IV OD OR Ampicillin-sulbactam 3g IV q6h) + Macrolide (Azithromycin 500 mg IV OD) OR Beta-lactam + Respiratory fluoroquinolone (Levofloxacin 750 mg IV OD)</td></tr>
-            <tr><td>Pseudomonas risk (structural lung disease, recent hospitalisation, prior Pseudomonas)</td><td>Antipseudomonal beta-lactam (Pip-Taz 4.5g IV q6h OR Cefepime 2g IV q8h) + Ciprofloxacin 400 mg IV q8h (or Aminoglycoside) ± Macrolide</td></tr>
-            <tr><td>MRSA risk (prior MRSA, recent antibiotic use, skin/soft tissue infection)</td><td>Add Vancomycin 25 mg/kg IV or Linezolid 600 mg IV BD to above regimen</td></tr>
-            <tr><td>Aspiration pneumonia</td><td>Ampicillin-sulbactam OR Piperacillin-tazobactam (anaerobic coverage included); avoid routine metronidazole unless lung abscess/empyema</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="hap-vap">
-      <h2>HAP &amp; VAP Management (IDSA/ATS 2016)</h2>
-      <h3>Clinical Pulmonary Infection Score (CPIS) for VAP Diagnosis</h3>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Parameter</th><th>0 Points</th><th>1 Point</th><th>2 Points</th></tr></thead>
-          <tbody>
-            <tr><td>Temp (°C)</td><td>36.5–38.4</td><td>38.5–38.9</td><td>≤36 or ≥39</td></tr>
-            <tr><td>WBC (×10³/mm³)</td><td>4–11</td><td>—</td><td>&lt;4 or &gt;11</td></tr>
-            <tr><td>Tracheal secretions</td><td>Absent</td><td>Non-purulent</td><td>Purulent</td></tr>
-            <tr><td>Oxygenation PaO₂/FiO₂</td><td>&gt;240 or ARDS</td><td>—</td><td>≤240 without ARDS</td></tr>
-            <tr><td>CXR</td><td>No infiltrate</td><td>Diffuse infiltrate</td><td>Localised infiltrate</td></tr>
-            <tr><td>Microbiology (culture)</td><td>Negative</td><td>—</td><td>Positive</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p>CPIS ≥6 = VAP probable. But IDSA 2016: do NOT rely on CPIS alone — use clinical + radiological + microbiological criteria together.</p>
-      <h3>VAP Diagnosis — IDSA/ATS 2016</h3>
-      <ul>
-        <li>New/progressive pulmonary infiltrate on CXR (in a ventilated patient ≥48h)</li>
-        <li>PLUS at least TWO of: Fever (&gt;38°C) | Leukocytosis/leukopenia | Purulent tracheal secretions</li>
-        <li>Microbiological confirmation: BAL (≥10⁴ CFU/ml) or protected specimen brush (≥10³ CFU/ml) or endotracheal aspirate (≥10⁵ or ≥10⁶ CFU/ml)</li>
-        <li>Blood cultures (positive in only 15% of VAP)</li>
-        <li>Procalcitonin: useful for de-escalation (rising PCT = not responding to treatment)</li>
-      </ul>
-    </section>
-
-    <section id="diagnosis">
-      <h2>Microbiological Diagnosis Strategy</h2>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Method</th><th>Sensitivity</th><th>Specificity</th><th>Threshold</th><th>IDSA Recommendation</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Endotracheal Aspirate (ETA)</strong></td><td>High (~76%)</td><td>Low (~75%)</td><td>≥10⁵ or ≥10⁶ CFU/ml</td><td>Acceptable — non-invasive, widely available</td></tr>
-            <tr><td><strong>Bronchoalveolar Lavage (BAL)</strong></td><td>Moderate (~73%)</td><td>Higher (~82%)</td><td>≥10⁴ CFU/ml</td><td>IDSA: clinical outcomes similar to invasive vs non-invasive; use either</td></tr>
-            <tr><td><strong>Protected Specimen Brush (PSB)</strong></td><td>Lower (~66%)</td><td>Highest (~90%)</td><td>≥10³ CFU/ml</td><td>IDSA 2016: NOT superior to BAL; reserve for cases where BAL culture result disputed</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="empirical">
-      <h2>Empirical Antibiotic Regimens for HAP/VAP</h2>
-      <div class="key-box">
-        <div class="kb-label">IDSA/ATS 2016 — Key Principle: Cover MDR Risk Factors</div>
-        <p>The choice of empirical antibiotic depends on MDR risk factors: prior IV antibiotics in last 90 days | hospitalisation ≥5 days | high unit MDR prevalence | septic shock | ARDS | acute renal replacement therapy | shock before VAP onset.</p>
-      </div>
-      <div class="table-wrap">
-        <table class="drug-table">
-          <thead><tr><th>Scenario</th><th>Coverage Needed</th><th>Regimen</th></tr></thead>
-          <tbody>
-            <tr><td>HAP/VAP — NO MDR risk factors</td><td>Core GNBs + MSSA</td><td>Piperacillin-Tazobactam 4.5g IV q6h<br>OR Cefepime 2g IV q8h<br>OR Meropenem 1g IV q8h (if prior high-risk)</td></tr>
-            <tr><td>HAP/VAP — WITH MDR risk factors</td><td>Pseudomonas + MRSA coverage</td><td>Antipseudomonal beta-lactam (Pip-Taz or Cefepime or Meropenem)<br>PLUS Antipseudomonal fluoroquinolone (Ciprofloxacin 400 mg q8h) OR Aminoglycoside (Amikacin 15 mg/kg OD)<br>PLUS Vancomycin 25 mg/kg IV q12h (MRSA coverage)</td></tr>
-            <tr><td>XDR Acinetobacter or Pseudomonas</td><td>XDR GNBs</td><td>Colistin 9 MIU IV loading → 4.5 MIU q12h + Meropenem 2g IV q8h (extended infusion) + Inhaled Colistin 2 MIU BD for VAP</td></tr>
-            <tr><td>MRSA risk high (prior MRSA, unit prevalence &gt;20%)</td><td>MRSA</td><td>Vancomycin 25 mg/kg IV q12h (target AUC 400–600) OR Linezolid 600 mg IV q12h (preferred for VAP — better lung penetration per some data)</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="vap-prevention">
-      <h2>VAP Prevention Bundle (ISCCM / CDC / IHI)</h2>
-      <div class="key-box">
-        <div class="kb-label">VAP Bundle — All 5 Elements Together Reduce VAP by 60–70%</div>
+      <div class="mb">
+        <div class="ml">MDR risk factors — the reason to broaden</div>
         <ul>
-          <li><strong>1. Head-of-Bed Elevation:</strong> 30–45° at all times (unless contraindicated — spinal injury, haemodynamic instability) — prevents aspiration of gastric contents</li>
-          <li><strong>2. Daily Sedation Vacation + Spontaneous Breathing Trial (SAT + SBT):</strong> Reduces ventilator days → reduces VAP risk</li>
-          <li><strong>3. Oral Decontamination:</strong> Chlorhexidine 0.12% oral rinse BD — reduces oropharyngeal colonisation → reduces VAP rate</li>
-          <li><strong>4. Subglottic Suction:</strong> Continuous aspiration of subglottic secretions (CASS) — ETT with subglottic suction port reduces early-onset VAP (NNT = 7)</li>
-          <li><strong>5. DVT &amp; Stress Ulcer Prophylaxis:</strong> Reduces complication burden; H₂ blockers preferred over PPI (PPIs raise gastric pH → increased colonisation; however difference in VAP rates disputed)</li>
-        </ul>
-      </div>
-      <h3>Additional Prevention Strategies</h3>
-      <ul>
-        <li>Avoid unnecessary reintubation — failed extubation ↑ VAP risk 8-fold</li>
-        <li>Ventilator circuit changes: Only change when visibly soiled (NOT on a schedule)</li>
-        <li>Avoid routine tracheal suction — suction only when clinically indicated</li>
-        <li>Avoid gastric overdistension: Keep tube feed residuals &lt;500 ml; prokinetics (metoclopramide 10 mg IV TDS) if high residuals</li>
-        <li>Hand hygiene: Most important infection control measure</li>
-        <li>Minimize PPIs: Consider ranitidine instead (less gastric pH elevation)</li>
-      </ul>
-    </section>
-
-    <section id="duration">
-      <h2>Duration &amp; De-escalation</h2>
-      <div class="update-box">
-        <div class="kb-label">IDSA/ATS 2016 — 7 Days is Adequate for Most HAP/VAP</div>
-        <p>A fixed 7-day course is adequate for most patients with HAP/VAP who are clinically responding (Strong recommendation). Do NOT extend automatically to 14 days. Longer courses increase C. difficile, AMR selection, and adverse effects without benefit (CONSORT-VAP trial).</p>
-      </div>
-      <h3>De-escalation Protocol</h3>
-      <ul>
-        <li>Review cultures at 48–72h — narrow to organism-directed therapy</li>
-        <li>Procalcitonin-guided de-escalation: PCT &lt;0.5 ng/ml OR &gt;80% decrease from peak → safe to stop (PRORATA trial)</li>
-        <li>Clinical response parameters: Fever resolution, ↓ WBC trend, improving oxygenation (↓ FiO₂ requirement), reducing secretions</li>
-        <li>ASSESS on day 3 and day 7 — do NOT continue antibiotics automatically without reassessment</li>
-      </ul>
-    </section>
-
-    <section id="india">
-      <h2>Indian Context — MDR Nightmare</h2>
-      <div class="india-box">
-        <div class="kb-label">🇮🇳 Indian ICU — MDR Reality</div>
-        <ul>
-          <li>India has among world's highest rates of CRAB (Carbapenem-Resistant A. baumannii), CRPA (Carbapenem-Resistant Pseudomonas), CRKP (Carbapenem-Resistant Klebsiella), and MRSA in ICUs</li>
-          <li>CRAB (XDR Acinetobacter) is near-universally resistant to all agents except colistin, tigecycline, and newer agents (cefiderocol, sulbactam-durlobactam)</li>
-          <li>Colistin is a last resort — nephrotoxic; use with meropenem synergistically. Inhaled colistin for VAP in addition to systemic</li>
-          <li>Ceftazidime-avibactam (CAZ-AVI): available in India; effective against KPC-producing Klebsiella and some CRPA; very expensive</li>
-          <li>Know YOUR ICU's antibiogram — empirical choices should be guided by local resistance data, not international guidelines</li>
+          <li><strong>IV antibiotics in the last 90 days</strong> (strongest single risk for both MRSA &amp; Pseudomonas)</li>
+          <li>Septic shock / need for ventilation at VAP onset</li>
+          <li>≥5 days of hospitalisation before VAP; high local resistance rates</li>
+          <li>ARDS or acute renal replacement before VAP onset</li>
         </ul>
       </div>
     </section>
 
-    <section id="pearls">
-      <h2>Clinical Pearls</h2>
-      <div class="pearl-grid">
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 1 — HCAP is Dead</div>
-          <p>IDSA/ATS 2016 abolished the HCAP (Healthcare-Associated Pneumonia) category. It led to overuse of broad-spectrum antibiotics without improving outcomes. Now use only CAP, HAP, or VAP. Risk-stratify within HAP/VAP by MDR risk factors.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 2 — 7 Days, Not 14</div>
-          <p>IDSA/ATS 2016 Strong recommendation: 7 days for HAP/VAP who are clinically responding. 14-day courses = more AMR selection, more C. difficile, more adverse effects, no better outcomes. Stop at day 7 in responders.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 3 — Subglottic Suction ETT</div>
-          <p>Use ETTs with subglottic suction ports (Hi-Lo Evac, Mallinckrodt) in patients expected to be ventilated &gt;48h. Continuous aspiration of subglottic secretions reduces VAP rate by ~50% (NNT=7). Should be standard of care.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 4 — Linezolid for MRSA-VAP?</div>
-          <p>IDSA 2016: Either vancomycin OR linezolid for MRSA-VAP. ATTAIN trial showed linezolid superior for clinical cure in MRSA-VAP (likely due to better lung penetration). Linezolid 600 mg BD is a reasonable choice for MRSA-VAP, especially when vancomycin is nephrotoxic.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 5 — Blood Culture in HAP/VAP</div>
-          <p>Blood cultures are positive in only 15% of VAP. But they're important — bacteraemia from a different source (e.g., PICC line, abdominal) may mimic VAP. Always draw 2 blood culture sets BEFORE antibiotics in HAP/VAP.</p>
-        </div>
-        <div class="pearl-card">
-          <div class="pearl-label">💡 Pearl 6 — India: Know Your Antibiogram</div>
-          <p>International guidelines assume a certain resistance landscape. Indian ICUs have MUCH higher XDR prevalence. Your unit's antibiogram (sensitivity patterns of isolates over last 3–6 months) should guide empirical choices more than IDSA guidelines.</p>
-        </div>
+    <section id="s4">
+      <span class="sb sbg">🩺 4 · Diagnosis &amp; Work-up</span>
+      <h2>Confirm it, and get microbiology before antibiotics (without delaying them)</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Test</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Imaging</strong></td><td>New/progressive infiltrate on CXR/CT (ultrasound at bedside)</td></tr>
+            <tr><td><strong>Clinical VAP signs</strong></td><td>New infiltrate + fever/leukocytosis + purulent secretions + worsening oxygenation</td></tr>
+            <tr><td><strong>Respiratory sampling</strong></td><td>VAP: non-invasive (endotracheal aspirate) with <strong>semi-quantitative culture</strong> is adequate; BAL/PSB optional</td></tr>
+            <tr><td><strong>Blood cultures + urinary antigens</strong></td><td>In severe CAP: pneumococcal &amp; <em>Legionella</em> antigens, blood cultures, viral PCR</td></tr>
+            <tr><td><strong>Procalcitonin</strong></td><td><strong>Do not use to start</strong> antibiotics; may help guide <strong>duration</strong></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ec"><p><strong>CPIS (Clinical Pulmonary Infection Score)</strong> is not recommended as the sole basis to start or stop antibiotics — combine clinical, imaging and microbiological data.</p></div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sbd">💊 5 · Empirical Antibiotics</span>
+      <h2>Start early, match the setting, then de-escalate</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Scenario</th><th>Empirical regimen</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Severe CAP</strong></td><td><strong>β-lactam (ceftriaxone/cefotaxime/amoxicillin-clavulanate) + macrolide</strong> (azithromycin) — or β-lactam + respiratory fluoroquinolone. Add oseltamivir if influenza.</td></tr>
+            <tr><td><strong>Severe CAP + MRSA risk</strong></td><td>Add <strong>vancomycin or linezolid</strong> (post-influenza necrotising pneumonia, known colonisation)</td></tr>
+            <tr><td><strong>Severe CAP + Pseudomonas risk</strong></td><td>Use an anti-pseudomonal β-lactam (pip-tazobactam, cefepime, meropenem) in place of ceftriaxone</td></tr>
+            <tr><td><strong>HAP/VAP — low MDR risk</strong></td><td><strong>One</strong> agent covering <em>Pseudomonas</em> &amp; MSSA (e.g. pip-tazobactam or cefepime)</td></tr>
+            <tr><td><strong>HAP/VAP — high MDR risk / shock</strong></td><td><strong>Two</strong> anti-pseudomonals from different classes <strong>+ MRSA cover</strong> (vancomycin/linezolid)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mb">
+        <div class="ml">Steroids in severe CAP</div>
+        <p>Recent evidence (e.g. hydrocortisone in severe CAP) supports <strong>adjunctive corticosteroids in severe CAP</strong> — reasonable in the sickest, especially with high inflammatory markers; not for routine mild disease.</p>
       </div>
     </section>
 
-    <section id="mistakes">
-      <h2>Common Mistakes</h2>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 1 — Using HCAP Classification</div>
-        <p>HCAP was abolished in IDSA/ATS 2016. It led to unnecessary broad-spectrum antibiotic use in patients who had CAP. A nursing home patient with CAP should be treated as CAP, with risk stratification for MDR only if risk factors are present.</p>
-      </div>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 2 — Extending Antibiotics to 14 Days Routinely</div>
-        <p>IDSA/ATS 2016 Strong: 7 days is adequate. Longer courses increase C. difficile infection, AMR selection, adverse effects (nephrotoxicity, hearing loss with aminoglycosides). Stop at day 7 if clinically improving.</p>
-      </div>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 3 — Not Changing ETT Position for CXR Evaluation</div>
-        <p>Supine AP CXR in ICU is notoriously unreliable for HAP/VAP infiltrates — atelectasis, effusion, and cardiomegaly can mask or mimic infiltrates. Always correlate CXR with clinical findings and ideally get an upright or at least semi-upright film.</p>
-      </div>
-      <div class="mistake-card">
-        <div class="m-label">❌ Mistake 4 — Treating Tracheal Colonisation as VAP</div>
-        <p>A positive tracheal culture ALONE is NOT VAP. All intubated patients have tracheal colonisation within 48h. Treat VAP only when: new infiltrate on CXR + clinical signs (fever, WBC change, purulent secretions, worsening oxygenation) + positive culture at diagnostic threshold.</p>
+    <section id="s6">
+      <span class="sb sbf">🛡 6 · VAP Prevention Bundle</span>
+      <h2>Stop it before it starts</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Element</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td>Head-up <strong>30–45°</strong></td><td>Reduces aspiration</td></tr>
+            <tr><td>Daily <strong>SAT + SBT</strong>, minimise sedation</td><td>Shorter ventilation = less VAP</td></tr>
+            <tr><td>Subglottic-suction ETT; maintain <strong>cuff pressure</strong></td><td>Reduces micro-aspiration past the cuff</td></tr>
+            <tr><td>Oral care (chlorhexidine — increasingly debated)</td><td>Reduces oropharyngeal colonisation</td></tr>
+            <tr><td>Avoid unnecessary re-intubation; prefer NIV/HFNO where suitable</td><td>Each intubation adds risk</td></tr>
+            <tr><td>VTE &amp; stress-ulcer prophylaxis, early mobilisation</td><td>General ventilator bundle</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section id="exam">
-      <h2>Exam Pearls (DrNB / PDCC / IFCCM)</h2>
-      <div class="exam-card"><p><strong>Q: IDSA/ATS 2016 duration of antibiotics for VAP?</strong> → 7 days (Strong recommendation) for clinically responding patients. NOT 14 days routinely.</p></div>
-      <div class="exam-card"><p><strong>Q: VAP diagnosis criteria?</strong> → New/progressive infiltrate on CXR + ≥2 of: Fever &gt;38°C, Leukocytosis/leukopenia, Purulent secretions + Microbiological confirmation (BAL ≥10⁴ or ETA ≥10⁵–10⁶ CFU/ml)</p></div>
-      <div class="exam-card"><p><strong>Q: Which antibiotic for MRSA-VAP?</strong> → Vancomycin 25 mg/kg IV (AUC-guided) OR Linezolid 600 mg BD IV. Both are IDSA-recommended. Linezolid may have better lung penetration.</p></div>
-      <div class="exam-card"><p><strong>Q: VAP bundle — 5 elements?</strong> → (1) HOB 30–45° (2) Daily SAT+SBT (3) Chlorhexidine oral decontamination (4) Subglottic suction (5) DVT+SUP prophylaxis</p></div>
-      <div class="exam-card"><p><strong>Q: CURB-65 score — components?</strong> → Confusion | Urea &gt;7 mmol/L | RR ≥30 | SBP &lt;90 or DBP &lt;60 | Age ≥65. Score ≥3: hospital admission ± ICU.</p></div>
+    <section id="s7">
+      <span class="sb sbm">🎯 7 · Management Principles</span>
+      <h2>After the first dose</h2>
+      <ul>
+        <li><strong>Appropriate &amp; early</strong> beats broad-and-late: inadequate initial cover increases mortality.</li>
+        <li><strong>De-escalate at 48–72 h</strong> on culture results and clinical response; stop MRSA/Pseudomonas cover if not grown.</li>
+        <li><strong>Duration ~7 days</strong> for most CAP and VAP/HAP if responding (longer only for non-fermenters/complications, guided by response ± procalcitonin).</li>
+        <li><strong>Support &amp; source control:</strong> oxygen/ventilation, fluids/vasopressors for sepsis, drain empyema, treat the complication.</li>
+        <li><strong>Prevent recurrence:</strong> pneumococcal &amp; influenza vaccination.</li>
+      </ul>
     </section>
 
-    <section id="references" class="references-section">
+    <section id="s8">
+      <span class="sb sbe">🚫 8 · Common Mistakes</span>
+      <h2>Common mistakes</h2>
+      <div class="mc"><div class="ml2">❌ 1 — Delaying antibiotics for tests</div><p>Take cultures, but don't wait — early appropriate therapy saves lives in severe CAP and VAP.</p></div>
+      <div class="mc"><div class="ml2">❌ 2 — Broad-spectrum forever</div><p>Failure to de-escalate at 48–72 h breeds resistance and toxicity. Narrow to the organism.</p></div>
+      <div class="mc"><div class="ml2">❌ 3 — Missing MDR risk (or over-calling it)</div><p>Recent IV antibiotics and shock justify broadening; their absence justifies a single agent. Tailor, don't guess.</p></div>
+      <div class="mc"><div class="ml2">❌ 4 — Treating colonisation as VAP</div><p>A positive tracheal aspirate without new clinical/radiological change is often colonisation — don't reflexively treat.</p></div>
+      <div class="mc"><div class="ml2">❌ 5 — Long courses by default</div><p>Most respond to ~7 days; prolonged courses add harm without benefit.</p></div>
+    </section>
+
+    <section id="s9">
+      <span class="sb sbx">🎓 9 · Exam Pearls — DrNB / IDCCM / IFCCM</span>
+      <h2>Exam pearls</h2>
+      <div class="ec"><p><strong>Q: Define CAP, HAP, VAP.</strong><br>CAP &lt;48 h / community; HAP ≥48 h after admission; VAP ≥48 h after intubation (a subset of HAP). HCAP is abandoned.</p></div>
+      <div class="ec"><p><strong>Q: ICU admission criteria for CAP?</strong><br>ATS/IDSA: 1 major (shock needing pressors, or ventilation) or ≥3 minor criteria.</p></div>
+      <div class="ec"><p><strong>Q: Strongest MDR risk factor?</strong><br>IV antibiotics within the previous 90 days (for both MRSA and Pseudomonas).</p></div>
+      <div class="ec"><p><strong>Q: Role of procalcitonin?</strong><br>Not to start antibiotics; useful to help decide when to stop.</p></div>
+      <div class="ec"><p><strong>Q: Typical treatment duration?</strong><br>About 7 days for most CAP and VAP/HAP that are responding.</p></div>
+    </section>
+
+    <section id="s10">
+      <span class="sb sbc">⭐ 10 · Key Differences</span>
+      <h2>All the comparisons in one place</h2>
+      <div class="diff-intro"><p>The distinctions that steer antibiotics and answers — gathered at the end.</p></div>
+
+      <h3 class="difftitle">CAP vs HAP vs VAP</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>CAP</th><th>HAP</th><th>VAP</th></tr></thead>
+          <tbody>
+            <tr><td>Onset</td><td>Community / &lt;48 h</td><td>≥48 h after admission</td><td>≥48 h after intubation</td></tr>
+            <tr><td>Typical bugs</td><td>Pneumococcus, atypicals, viruses</td><td>GNB, S. aureus</td><td>Pseudomonas, MRSA, resistant GNB</td></tr>
+            <tr><td>Empirical spectrum</td><td>β-lactam + macrolide</td><td>Anti-pseudomonal ± MRSA by risk</td><td>Broadest; two-drug if high MDR risk</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">Severe CAP — major vs minor criteria</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Major (either)</th><th>Minor (need ≥3)</th></tr></thead>
+          <tbody>
+            <tr><td>Septic shock on vasopressors; mechanical ventilation</td><td>RR ≥30; P/F ≤250; multilobar infiltrates; confusion; uraemia; leukopenia; thrombocytopenia; hypothermia; hypotension needing aggressive fluids</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">Early-onset vs Late-onset VAP</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>Early (&lt;5 days)</th><th>Late (≥5 days)</th></tr></thead>
+          <tbody>
+            <tr><td>Organisms</td><td>More sensitive (pneumococcus, MSSA, sensitive GNB)</td><td>More MDR (Pseudomonas, MRSA, Acinetobacter)</td></tr>
+            <tr><td>Empirical breadth</td><td>Narrower possible if no MDR risk</td><td>Broader, often two-drug + MRSA cover</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s11" class="references-section">
+      <span class="sb sbr">📚 11 · References</span>
       <h2>References</h2>
       <ol class="ref-list">
-        <li><strong>Kalil AC, Metersky ML, Klompas M, et al.</strong> Management of Adults with Hospital-Acquired and Ventilator-Associated Pneumonia: 2016 Clinical Practice Guidelines by the Infectious Diseases Society of America and the American Thoracic Society. <em>Clin Infect Dis.</em> 2016;63(5):e61–e111.</li>
-        <li><strong>Torres A, Niederman MS, Chastre J, et al.</strong> International ERS/ESICM/ESCMID/ALAT guidelines for the Management of Hospital-Acquired Pneumonia and Ventilator-Associated Pneumonia. <em>Eur Respir J.</em> 2017;50(3):1700582.</li>
-        <li><strong>Mandell LA, Wunderink RG, Anzueto A, et al.</strong> Infectious Diseases Society of America/American Thoracic Society Consensus Guidelines on the Management of Community-Acquired Pneumonia in Adults. <em>Clin Infect Dis.</em> 2007;44(Suppl 2):S27–S72.</li>
-        <li><strong>Wunderink RG, Niederman MS, Kollef MH, et al. (ATTAIN).</strong> Linezolid in Methicillin-Resistant Staphylococcus aureus Nosocomial Pneumonia: A Randomized, Controlled Study. <em>Clin Infect Dis.</em> 2012;54(5):621–629.</li>
-        <li><strong>Shorr AF, Zilberberg MD, Micek ST, Kollef MH.</strong> Prediction of Infection due to Antibiotic-Resistant Bacteria by Select Risk Factors for Health Care–Associated Pneumonia. <em>Arch Intern Med.</em> 2008;168(20):2205–2210.</li>
-        <li><strong>Oh TE (ed).</strong> Oh's Intensive Care Manual, 8th edition. Chapter 33: Pneumonia in the ICU. Elsevier; 2018.</li>
+        <li><strong>Irwin RS, Lilly CM, Mayo PH, Rippe JM (eds).</strong> Irwin &amp; Rippe's Intensive Care Medicine. 9th ed. Wolters Kluwer; 2023.</li>
+        <li><strong>Marino PL.</strong> Marino's The ICU Book. 5th ed. Wolters Kluwer; 2025.</li>
+        <li><strong>Bersten AD, Handy JM (eds).</strong> Oh's Intensive Care Manual. Elsevier; 2026.</li>
+        <li><strong>Metlay JP, Waterer GW, Long AC, et al.</strong> Diagnosis and treatment of adults with community-acquired pneumonia (ATS/IDSA). <em>Am J Respir Crit Care Med.</em> 2019;200:e45–e67.</li>
+        <li><strong>Kalil AC, Metersky ML, Klompas M, et al.</strong> Management of adults with HAP and VAP (IDSA/ATS). <em>Clin Infect Dis.</em> 2016;63:e61–e111.</li>
+        <li><strong>Dequin PF, Meziani F, Quenot JP, et al. (CAPE COD).</strong> Hydrocortisone in severe community-acquired pneumonia. <em>N Engl J Med.</em> 2023;388:1931–1941.</li>
       </ol>
     </section>
 
   </main>
 </div>
-
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-brand">Crit<span>Care</span>.in</span>
-    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
-    <p>© 2026 Dr. Anmol Srivastava · Lucknow</p>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
   </div>
 </footer>
   <nav class="mobile-nav-bar">
