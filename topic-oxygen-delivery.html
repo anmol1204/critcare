@@ -9,40 +9,43 @@
   <meta name="apple-mobile-web-app-title" content="CritCare"/>
   <link rel="apple-touch-icon" href="/icon-apple.png"/>
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
-  <title>Oxygen Delivery &amp; Tissue Oxygenation — CritCare.in</title>
-  <meta name="description" content="The physiology that underpins all of critical care: oxygen delivery (DO2 = CO × CaO2), the DO2/VO2 relationship and critical oxygen delivery, why haemoglobin carries almost all the oxygen, and the bedside markers of the oxygen debt — lactate, central venous oxygen saturation (ScvO2) and the veno-arterial CO2 gap. Marino 5th Ed + Washington Manual." />
-  <link rel="canonical" href="https://critcare.in/topic-oxygen-delivery.html" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="shared.css" />
+  <title>Oxygen Delivery &amp; Tissue Oxygenation (DO₂/VO₂) — Structured Guide — CritCare.in</title>
+  <meta name="description" content="A structured, tabular ICU guide to oxygen delivery and tissue oxygenation: the oxygen cascade, arterial O2 content, DO2 and VO2, the Fick principle, oxygen extraction, the supply-dependent/independent relationship and critical DO2, markers of adequacy (SvO2/ScvO2/lactate), the four types of tissue hypoxia and how to optimise delivery in shock — with all comparisons at the end. Led by Irwin & Rippe with Marino and Oh's." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
   <script src="darkmode.js"></script>
   <script src="access.js"></script>
   <script type="module" src="cc-cloud.js"></script>
   <style>
-    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
-    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
-    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
-    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
-    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
-    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
-    .marino-box ul{padding-left:1.2rem;}
-    .marino-box strong{color:#4c1d95;}
-    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
-    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
-    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
-    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
-    .gr-c{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#fef9c3;color:#854d0e;}
+    .bq{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .bq p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .bq cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .mb{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .mb .ml{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .mb p,.mb ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .mb ul{padding-left:1.2rem;}
+    .mb strong{color:#4c1d95;}
+    .eq{background:var(--bg-alt);border:1px dashed var(--blue);border-radius:10px;padding:.9rem 1.1rem;margin:.8rem 0;font-size:.95rem;color:var(--ink);text-align:center;line-height:1.9;}
+    .eq strong{color:var(--blue);}
     .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
-    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc .ml2{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
     .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
-    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
-    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
-    .ec strong{color:#92400e;}
+    .ec{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;}
+    .ec strong{color:#1e3a8a;}
     .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
-    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
-    .eqbox{background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;padding:1.2rem 1.3rem;margin:1.1rem 0;}
-    .eqbox .eq{font-size:1.05rem;font-weight:700;color:#1e3a8a;line-height:1.9;text-align:center;font-family:var(--font-body);}
-    .eqbox .eq small{display:block;font-size:.78rem;font-weight:500;color:#3b5ba5;margin-top:.5rem;}
-    @media(max-width:600px){.eqbox .eq{font-size:.92rem;}}
+    .sbw{background:#dbeafe;color:#1e40af;}.sbm{background:#ede9fe;color:#5b21b6;}.sbg{background:#dcfce7;color:#166534;}.sbd{background:#ffedd5;color:#9a3412;}.sbf{background:#f0fdf4;color:#14532d;border:1px solid #86efac;}.sbe{background:#fee2e2;color:#991b1b;}.sbx{background:#fef9c3;color:#854d0e;}.sbc{background:#cffafe;color:#155e75;}.sbr{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .fs{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;}
+    .fn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;flex-shrink:0;margin-top:.2rem;}
+    .fb{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;}
+    .fb h4{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;}
+    .fb p,.fb ul{font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;}
+    .fb ul{padding-left:1.1rem;}
+    .fb strong{color:var(--ink);}
+    .diff-intro{background:linear-gradient(135deg,#ecfeff,#cffafe);border:1px solid #67e8f9;border-radius:12px;padding:1.1rem 1.3rem;margin:1rem 0 1.4rem;}
+    .diff-intro p{font-size:.9rem;color:#155e75;line-height:1.7;margin:0;}
+    .diff-intro strong{color:#0e7490;}
+    h3.difftitle{margin-top:1.6rem;}
   </style>
   <script src="app-native.js" defer></script>
 </head>
@@ -65,17 +68,15 @@
     <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Oxygen Delivery</div>
     <h1>🫁 Oxygen Delivery &amp; Tissue Oxygenation</h1>
     <div class="guideline-row">
-      <span class="gbadge sccm">DO₂ = CO × CaO₂</span>
-      <span class="gbadge kdigo">DO₂/VO₂</span>
-      <span class="gbadge isccm">Lactate</span>
-      <span class="gbadge esicm">ScvO₂</span>
-      <span class="gbadge apasl">CO₂ Gap</span>
+      <span class="gbadge sccm">DO₂ / VO₂</span>
+      <span class="gbadge esicm">Fick Principle</span>
+      <span class="gbadge isccm">ISCCM</span>
     </div>
     <div class="topic-hero-meta">
-      <span class="topic-tag red">The Physiology Behind All Shock</span>
-      <span class="topic-tag">Haemoglobin Carries It</span>
-      <span class="topic-tag">Markers of Oxygen Debt</span>
-      <span class="topic-updated">Oxygen transport physiology · ScvO₂ &amp; lactate-guided resuscitation · Marino 5th Ed (2025) · Washington Manual</span>
+      <span class="topic-tag red">Core physiology</span>
+      <span class="topic-tag">Extraction</span>
+      <span class="topic-tag">SvO₂ / lactate</span>
+      <span class="topic-updated">Led by Irwin &amp; Rippe · with Marino &amp; Oh's · oxygen-cascade &amp; Fick physiology</span>
     </div>
     <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
   </div>
@@ -86,210 +87,229 @@
     <nav class="toc">
       <div class="toc-title">On this page</div>
       <ul class="toc-list">
-        <li><a href="#s1">1. Washington Manual Summary</a></li>
-        <li><a href="#s2">2. Marino — DO₂/VO₂</a></li>
-        <li><a href="#s3">3. Bedside Markers &amp; Targets</a></li>
-        <li><a href="#s4">4. Numbers &amp; Formulae</a></li>
-        <li><a href="#s5">5. Clinical Flowchart</a></li>
-        <li><a href="#s6">6. Common Mistakes</a></li>
-        <li><a href="#s7">7. Exam Pearls</a></li>
-        <li><a href="#s8">8. References</a></li>
+        <li><a href="#s1">1. The oxygen cascade</a></li>
+        <li><a href="#s2">2. Oxygen content (CaO₂)</a></li>
+        <li><a href="#s3">3. Delivery (DO₂)</a></li>
+        <li><a href="#s4">4. Consumption (VO₂) &amp; Fick</a></li>
+        <li><a href="#s5">5. DO₂/VO₂ relationship</a></li>
+        <li><a href="#s6">6. Markers of adequacy</a></li>
+        <li><a href="#s7">7. Types of tissue hypoxia</a></li>
+        <li><a href="#s8">8. Optimising DO₂ in shock</a></li>
+        <li><a href="#s9">9. Common mistakes</a></li>
+        <li><a href="#s10">10. Exam pearls</a></li>
+        <li><a href="#s11">⭐ 11. Key differences</a></li>
+        <li><a href="#s12">12. References</a></li>
       </ul>
       <a href="topics.html" class="toc-back">← All topics</a>
     </nav>
   </aside>
-
   <main class="topic-content">
 
     <section id="s1">
-      <span class="sb sb-w">📘 1 · Washington Manual of Critical Care</span>
-      <h2>The Currency of Critical Care</h2>
-      <div class="book-quote">
-        <p>Almost everything the intensivist does — giving fluids, transfusing, starting inotropes, adjusting the ventilator — is ultimately aimed at one goal: keeping enough oxygen flowing to the tissues to meet their demand. Shock, however caused, is fundamentally a failure of tissue oxygenation. Understanding the determinants of oxygen delivery, and being able to read the bedside markers of an oxygen debt, is therefore the physiological foundation on which every resuscitation decision rests.</p>
-        <cite>Summarised from the Washington Manual of Critical Care — Oxygen Transport &amp; Tissue Oxygenation.</cite>
+      <span class="sb sbw">🫁 1 · The Oxygen Cascade</span>
+      <h2>From air to mitochondria</h2>
+      <div class="bq">
+        <p>"Resuscitation is, at its core, the restoration of oxygen delivery to the tissues. Every shock state is a failure somewhere along the chain from inspired air to the mitochondrion — and each link (content, flow, extraction) is separately measurable and separately fixable."</p>
+        <cite>Summarised from Irwin &amp; Rippe's Intensive Care Medicine; with Marino's The ICU Book and Oh's Intensive Care Manual.</cite>
       </div>
-
-      <div class="eqbox">
-        <div class="eq">DO₂ = CO × CaO₂<br>
-          <small>CaO₂ = (1.34 × Hb × SaO₂) + (0.003 × PaO₂)</small>
-          <small>Oxygen delivery (~1000 mL/min) = cardiac output × arterial oxygen content</small>
-        </div>
-      </div>
-      <p style="font-size:.9rem;color:var(--slate);line-height:1.7;">Three levers set oxygen delivery — <strong>cardiac output, haemoglobin, and arterial oxygen saturation</strong>. Note how small the dissolved term (0.003 × PaO₂) is: <strong>haemoglobin carries essentially all the oxygen</strong>, which is why anaemia and low output threaten delivery far more than a modest fall in PaO₂.</p>
+      <p>Oxygen moves down a <strong>pressure cascade</strong>: inspired air (~150 mmHg) → alveolus (~100) → arterial blood (~90) → capillary/tissue → mitochondrion (~4–20 mmHg). At each step PO₂ falls; critical illness widens the drops.</p>
     </section>
 
     <section id="s2">
-      <span class="sb sb-m">📗 2 · Marino's The ICU Book, 5th Edition (2025)</span>
-      <h2>The DO₂/VO₂ Relationship &amp; the Oxygen Debt</h2>
-      <div class="book-quote">
-        <p>Normally the tissues extract only about a quarter of the oxygen delivered to them, so oxygen consumption is independent of delivery across a wide range — if delivery falls, extraction simply rises to compensate. But there is a floor. Below a <em>critical</em> oxygen delivery, extraction is maximal and can compensate no further; consumption then becomes "supply-dependent" and falls with delivery, the tissues switch to anaerobic metabolism, and lactate rises. This point — the onset of anaerobic metabolism and the accumulating oxygen debt — is what the intensivist is really chasing when resuscitating shock.</p>
-        <cite>Summarised from Marino PL. The ICU Book, 5th Ed — Oxygen Transport &amp; the DO₂/VO₂ Relationship.</cite>
-      </div>
+      <span class="sb sbm">🧮 2 · Oxygen Content of Blood (CaO₂)</span>
+      <h2>How much oxygen the blood carries</h2>
+      <div class="eq"><strong>CaO₂</strong> = (1.34 × Hb × SaO₂) + (0.003 × PaO₂) &nbsp;≈&nbsp; <strong>20 mL/dL</strong></div>
+      <p>Almost all oxygen is <strong>bound to haemoglobin</strong>; the dissolved part (0.003 × PaO₂) is trivial (~1.5%). Two consequences follow:</p>
+      <ul>
+        <li><strong>Anaemia hits content harder than hypoxaemia.</strong> Halving Hb halves CaO₂; halving PaO₂ (90→45) drops CaO₂ by only ~20%.</li>
+        <li>The <strong>oxyhaemoglobin dissociation curve</strong> links SaO₂ to PaO₂ (P50 ≈ 27 mmHg). A right shift (↑ temp, ↑ CO₂/H⁺ — Bohr, ↑ 2,3-DPG) unloads O₂ to tissues; a left shift holds onto it.</li>
+      </ul>
+    </section>
 
-      <div class="patho-flow">
-        <div class="patho-flow-title">🔬 DO₂ falls → the compensation → the cliff-edge</div>
-        <div class="pf-node pf-trigger"><span class="pf-tag">DO₂ ↓</span>Falling delivery (low output, anaemia, hypoxaemia)</div>
-        <div class="pf-arrow"></div>
-        <div class="pf-node"><span class="pf-tag">Compensate</span>O₂ <strong>extraction rises</strong> → VO₂ maintained (supply-<em>independent</em>) → ScvO₂/SvO₂ falls</div>
-        <div class="pf-arrow"></div>
-        <div class="pf-node" style="background:#fef2f2;border-color:#fecaca;"><span class="pf-tag">Critical DO₂</span>Extraction maximal (~60–70%) → no further compensation</div>
-        <div class="pf-arrow"></div>
-        <div class="pf-node pf-end"><span class="pf-tag">Supply-dependent</span>VO₂ falls with DO₂ → <strong>anaerobic metabolism → lactate ↑ → oxygen debt</strong></div>
-      </div>
-
-      <div class="marino-box">
-        <div class="mb-label">📗 Marino — the three levers and which one to pull</div>
+    <section id="s3">
+      <span class="sb sbg">🚚 3 · Oxygen Delivery (DO₂)</span>
+      <h2>The oxygen supplied to the body per minute</h2>
+      <div class="eq"><strong>DO₂</strong> = Cardiac output × CaO₂ × 10 &nbsp;≈&nbsp; <strong>1000 mL/min</strong> (≈ 500–600 mL/min/m²)</div>
+      <p>Three — and only three — levers set delivery: <strong>cardiac output, haemoglobin, and arterial saturation.</strong> Every resuscitation manipulates one of these.</p>
+      <div class="mb">
+        <div class="ml">The three levers of DO₂</div>
         <ul>
-          <li><strong>Cardiac output</strong> — usually the most manipulable (preload with fluids if responsive, then inotropes) and the biggest driver of delivery in shock.</li>
-          <li><strong>Haemoglobin</strong> — carries ~98% of the oxygen; but transfusion has costs and a <strong>restrictive threshold (Hb ~70 g/L)</strong> is right for most (see <a href="topic-transfusion.html">Transfusion</a>) — more Hb is not automatically more useful oxygen.</li>
-          <li><strong>SaO₂</strong> — beyond full saturation, raising PaO₂ adds almost nothing (the dissolved term is tiny); chasing a high PaO₂ is not a way to boost delivery and risks hyperoxia.</li>
-          <li>And remember the fourth problem: in <strong>distributive/cytopathic states (sepsis)</strong>, delivery may be normal or high yet the tissues cannot <em>use</em> the oxygen — a normal ScvO₂ with a high lactate.</li>
+          <li><strong>Cardiac output</strong> — preload (fluids), contractility (inotropes), rate/rhythm, afterload.</li>
+          <li><strong>Haemoglobin</strong> — transfusion (usually threshold Hb 7 g/dL; higher in active ischaemia).</li>
+          <li><strong>SaO₂</strong> — oxygen, PEEP/recruitment, treat the lung.</li>
         </ul>
       </div>
     </section>
 
-    <section id="s3">
-      <span class="sb sb-g">📋 3 · Bedside Markers &amp; Targets</span>
-      <h2>Reading the Oxygen Debt</h2>
-
-      <div class="guideline-rec">
-        <div class="gr-label">Lactate — the marker of anaerobic metabolism <span class="gr-s">SSC</span></div>
-        <div class="gr-text">
-          A raised lactate (&gt;2 mmol/L, and especially &gt;4) in shock signals tissue hypoperfusion and an oxygen debt, and <strong>lactate clearance is a validated resuscitation target</strong> (aim for a falling trend). Caveats: lactate also rises from non-hypoxic causes (adrenaline/β-agonists, liver dysfunction impairing clearance, seizures, thiamine deficiency, malignancy) — interpret the <em>trend in context</em>, not a single value. Persistently rising lactate despite resuscitation is an ominous sign.
-        </div>
-      </div>
-
-      <div class="guideline-rec">
-        <div class="gr-label">ScvO₂ / SvO₂ — the balance of supply and demand <span class="gr-s">useful, not a mandate</span></div>
-        <div class="gr-text">
-          <strong>Central venous oxygen saturation (ScvO₂, normal ~65–75%)</strong> reflects the balance between delivery and consumption: a <strong>low ScvO₂</strong> means extraction is high — inadequate delivery (low output/anaemia/hypoxaemia) or high demand. A <strong>high or normal ScvO₂ with a high lactate</strong> suggests the tissues cannot extract/use oxygen (sepsis, cytopathic hypoxia, microcirculatory shunting) or a left shift. It is a helpful pointer to <em>which lever</em> to pull, though protocolised ScvO₂-targeted therapy did not improve outcomes over usual care in the large sepsis trials (ProCESS/ARISE/ProMISe).
-        </div>
-      </div>
-
-      <div class="guideline-rec">
-        <div class="gr-label">The veno-arterial CO₂ gap — a flow marker <span class="gr-c">adjunct</span></div>
-        <div class="gr-text">
-          The <strong>Pv-aCO₂ gap (central venous minus arterial CO₂, normal &lt;6 mmHg)</strong> widens when cardiac output is too low to wash out CO₂ — a <strong>high gap suggests inadequate flow</strong> even when ScvO₂ looks acceptable, pointing toward the need for more cardiac output. It is a useful adjunct alongside lactate and ScvO₂ in the shocked patient with an indwelling central line.
-        </div>
-      </div>
-
-      <div class="guideline-rec">
-        <div class="gr-label">Put it together — resuscitate the whole picture</div>
-        <div class="gr-text">
-          No single number resuscitates a patient. Combine the <strong>clinical signs of perfusion</strong> (mentation, urine output, capillary refill, skin), <strong>lactate trend</strong>, <strong>ScvO₂</strong> and the <strong>CO₂ gap</strong> with a measure of <strong>fluid responsiveness</strong> (see <a href="topic-haemodynamic-monitoring.html">Haemodynamic Monitoring</a>) to decide whether the patient needs volume, an inotrope, a vasopressor, or blood — matching the intervention to the deranged lever rather than chasing a target in isolation.
-        </div>
-      </div>
-
-      <div class="india-box">
-        <div class="kb-label">🇮🇳 Indian Context</div>
-        <p>These physiological markers are <strong>high-value precisely because they are cheap and available even where advanced monitoring is not</strong>. <strong>Lactate</strong> (point-of-care or blood-gas) and <strong>ScvO₂/CO₂-gap</strong> (from a central line on a blood-gas analyser) let a resource-limited ICU run sophisticated, physiology-guided resuscitation without a cardiac-output monitor. Two practical cautions common in Indian practice: interpret lactate carefully when <strong>adrenaline infusions, liver disease, or thiamine deficiency</strong> are in play (the last is worth empirically treating in the malnourished/alcohol-dependent), and remember that in <strong>severe anaemia</strong> (very common) oxygen delivery can be critically low at a "normal" SaO₂ and blood pressure — the Hb lever matters. Above all, <strong>use capillary refill and lactate clearance</strong> as resuscitation targets (as validated in the ANDROMEDA-SHOCK trial) where invasive monitoring is unavailable.</p>
-      </div>
+    <section id="s4">
+      <span class="sb sbd">🔥 4 · Oxygen Consumption (VO₂) &amp; the Fick Principle</span>
+      <h2>What the tissues actually use</h2>
+      <div class="eq"><strong>VO₂</strong> = CO × (CaO₂ − CvO₂) × 10 &nbsp;≈&nbsp; <strong>250 mL/min</strong></div>
+      <p>This is the <strong>Fick principle</strong>: consumption equals blood flow times the arterio-venous oxygen difference. Normally the body extracts about a quarter of what is delivered:</p>
+      <div class="eq"><strong>O₂ extraction ratio (O₂ER)</strong> = VO₂ / DO₂ &nbsp;≈&nbsp; <strong>0.25 (25%)</strong></div>
+      <p>Because DO₂ (~1000) far exceeds VO₂ (~250), there is a large <strong>reserve</strong>: when delivery falls, the tissues simply extract more (SvO₂ falls) and consumption is preserved — up to a point.</p>
     </section>
 
-    <section id="s4">
-      <span class="sb sb-d">🧮 4 · Numbers &amp; Formulae</span>
-      <h2>The Oxygen-Transport Reference</h2>
+    <section id="s5">
+      <span class="sb sbe">📉 5 · The DO₂/VO₂ Relationship</span>
+      <h2>Supply-independent until it isn't</h2>
+      <div style="display:flex;flex-direction:column;gap:.8rem;">
+        <div class="fs"><div class="fn" style="background:#22c55e">1</div><div class="fb"><h4>Supply-independent zone</h4><p>As DO₂ falls, <strong>extraction rises</strong> to keep VO₂ constant. Consumption is independent of delivery — the normal, safe state.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#eab308">2</div><div class="fb"><h4>Critical DO₂</h4><p>At a threshold delivery, extraction is maximal and can rise no further.</p></div></div>
+        <div class="fs"><div class="fn" style="background:#ef4444">3</div><div class="fb"><h4>Supply-dependent zone</h4><p>Below critical DO₂, <strong>VO₂ falls with DO₂</strong> — the tissues can't get enough O₂ → anaerobic metabolism, <strong>rising lactate</strong>, oxygen debt and organ failure.</p></div></div>
+      </div>
+      <div class="ec"><p><strong>The goal of resuscitation</strong> is to keep DO₂ above the critical threshold — but <strong>supranormal, protocolised "boosting" of DO₂ to fixed targets did not improve outcomes</strong> and can harm. Resuscitate to perfusion (lactate clearance, MAP, organ function), not to a magic number.</p></div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sbc">📊 6 · Markers of Adequacy</span>
+      <h2>Is delivery meeting demand?</h2>
       <div class="table-wrap">
         <table class="drug-table">
-          <thead><tr><th>Variable</th><th>Formula / definition</th><th>Normal</th><th>Meaning</th></tr></thead>
+          <thead><tr><th>Marker</th><th>Meaning</th><th>Concern when…</th></tr></thead>
           <tbody>
-            <tr><td><strong>CaO₂</strong> (arterial O₂ content)</td><td>(1.34 × Hb × SaO₂) + (0.003 × PaO₂)</td><td>~20 mL/dL</td><td>Hb term dominates; dissolved term negligible</td></tr>
-            <tr><td><strong>DO₂</strong> (oxygen delivery)</td><td>CO × CaO₂ × 10</td><td>~1000 mL/min (500 mL/min/m²)</td><td>Set by CO, Hb, SaO₂</td></tr>
-            <tr><td><strong>VO₂</strong> (oxygen consumption)</td><td>CO × (CaO₂ − CvO₂) × 10</td><td>~250 mL/min</td><td>Tissue oxygen use</td></tr>
-            <tr><td><strong>O₂ extraction ratio</strong></td><td>VO₂ / DO₂</td><td>~0.25 (25%)</td><td>Rises as delivery falls; maximal ~0.6–0.7 at critical DO₂</td></tr>
-            <tr><td><strong>ScvO₂ / SvO₂</strong></td><td>Central venous / mixed venous O₂ sat</td><td>ScvO₂ ~65–75%</td><td>Low = high extraction; high with ↑lactate = poor utilisation</td></tr>
-            <tr><td><strong>Lactate</strong></td><td>Anaerobic metabolism marker</td><td>&lt;2 mmol/L</td><td>Trend/clearance is the resuscitation target</td></tr>
-            <tr><td><strong>Pv-aCO₂ gap</strong></td><td>Central venous − arterial PCO₂</td><td>&lt;6 mmHg</td><td>Widened = inadequate cardiac output (flow)</td></tr>
+            <tr><td><strong>Lactate</strong></td><td>Anaerobic metabolism / hypoperfusion (also adrenergic)</td><td>Elevated or failing to clear</td></tr>
+            <tr><td><strong>SvO₂</strong> (mixed venous, PA catheter)</td><td>Global balance of delivery vs consumption (normal ~65–75%)</td><td>Low = extraction maxed (↓ DO₂ or ↑ VO₂)</td></tr>
+            <tr><td><strong>ScvO₂</strong> (central venous)</td><td>Surrogate for SvO₂ (runs a few % higher)</td><td>Low = inadequate delivery</td></tr>
+            <tr><td><strong>Veno-arterial CO₂ gap</strong></td><td>Adequacy of flow to clear CO₂</td><td>&gt;6 mmHg suggests low flow</td></tr>
+            <tr><td><strong>Clinical perfusion</strong></td><td>Mentation, urine output, capillary refill, mottling</td><td>Any hypoperfusion sign</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mc"><div class="ml2">⚠️ A "high" SvO₂ can be bad</div><p>In sepsis and cyanide/mitochondrial poisoning, tissues cannot extract O₂ — SvO₂ is <strong>high</strong> despite tissue hypoxia (impaired extraction). Interpret SvO₂ with lactate and context.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sbx">🧪 7 · Types of Tissue Hypoxia</span>
+      <h2>Four ways tissues go short of oxygen</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Type</th><th>Problem</th><th>Example</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Hypoxaemic</strong></td><td>Low SaO₂/PaO₂ → low content</td><td>Respiratory failure, high altitude</td></tr>
+            <tr><td><strong>Anaemic</strong></td><td>Low Hb (or dysfunctional Hb) → low content</td><td>Haemorrhage; CO &amp; methaemoglobinaemia</td></tr>
+            <tr><td><strong>Stagnant / circulatory</strong></td><td>Low flow → low delivery</td><td>Shock, cardiac arrest, local ischaemia</td></tr>
+            <tr><td><strong>Histotoxic</strong></td><td>Cells can't use O₂ (impaired extraction)</td><td>Cyanide, mitochondrial poisons, sepsis</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <section id="s5">
-      <span class="sb sb-f">🗺 5 · Clinical Flowchart</span>
-      <h2>Using Oxygen-Transport Physiology at the Bedside</h2>
-      <div class="flowchart-step">
-        <div class="fc-node fc-red">1</div>
-        <div class="fc-content"><h4>Suspect an oxygen debt</h4>
-          <ul><li>Shock signs + <strong>raised/rising lactate</strong> → tissue hypoperfusion until proven otherwise</li><li>Check the three delivery levers: cardiac output, Hb, SaO₂</li></ul></div>
+    <section id="s8">
+      <span class="sb sbf">🎯 8 · Optimising DO₂ in Shock</span>
+      <h2>Pull the right lever</h2>
+      <ul>
+        <li><strong>Flow:</strong> restore preload with fluids (only if fluid-responsive), add inotropes for pump failure, control tachy-/brady-arrhythmia, reduce excess afterload.</li>
+        <li><strong>Haemoglobin:</strong> transfuse to a threshold ~7 g/dL (restrictive); higher only for active bleeding/ischaemia.</li>
+        <li><strong>SaO₂:</strong> oxygen and lung support to full saturation — but avoid needless hyperoxia.</li>
+        <li><strong>Reduce demand (VO₂):</strong> treat fever/agitation/shivering, provide analgo-sedation, and ventilate the exhausted patient to offload respiratory muscle work.</li>
+        <li><strong>Endpoint:</strong> improving lactate/ScvO₂ and organ perfusion — not a fixed supranormal DO₂.</li>
+      </ul>
+    </section>
+
+    <section id="s9">
+      <span class="sb sbe">🚫 9 · Common Mistakes</span>
+      <h2>Common mistakes</h2>
+      <div class="mc"><div class="ml2">❌ 1 — Fixing PaO₂ while ignoring Hb and flow</div><p>Content is mostly haemoglobin — a high PaO₂ won't rescue an anaemic, low-output patient.</p></div>
+      <div class="mc"><div class="ml2">❌ 2 — Targeting supranormal DO₂</div><p>Protocolised delivery "boosting" to fixed high targets does not improve outcomes and can harm. Resuscitate to perfusion.</p></div>
+      <div class="mc"><div class="ml2">❌ 3 — Misreading a high SvO₂</div><p>In sepsis/histotoxic hypoxia, a high SvO₂ with high lactate signals impaired extraction, not adequacy.</p></div>
+      <div class="mc"><div class="ml2">❌ 4 — Ignoring oxygen demand</div><p>Fever, shivering and agitation raise VO₂ — treating them is as valid as raising DO₂.</p></div>
+      <div class="mc"><div class="ml2">❌ 5 — Over-transfusing</div><p>A restrictive threshold (~7 g/dL) is as safe or safer than liberal transfusion in most ICU patients.</p></div>
+    </section>
+
+    <section id="s10">
+      <span class="sb sbx">🎓 10 · Exam Pearls — DrNB / IDCCM / IFCCM</span>
+      <h2>Exam pearls</h2>
+      <div class="ec"><p><strong>Q: Write the CaO₂, DO₂ and VO₂ equations.</strong><br>CaO₂ = (1.34 × Hb × SaO₂) + (0.003 × PaO₂); DO₂ = CO × CaO₂ × 10 (~1000 mL/min); VO₂ = CO × (CaO₂ − CvO₂) × 10 (~250 mL/min).</p></div>
+      <div class="ec"><p><strong>Q: Normal oxygen extraction ratio?</strong><br>≈25% (VO₂/DO₂) — leaving a large reserve; SvO₂ ~65–75%.</p></div>
+      <div class="ec"><p><strong>Q: Anaemia vs hypoxaemia — which hurts content more?</strong><br>Anaemia. Halving Hb halves CaO₂; halving PaO₂ drops it only ~20% (most O₂ is Hb-bound).</p></div>
+      <div class="ec"><p><strong>Q: What is critical DO₂?</strong><br>The delivery below which extraction is maximal and VO₂ becomes supply-dependent → lactate rises (oxygen debt).</p></div>
+      <div class="ec"><p><strong>Q: Name the four types of tissue hypoxia.</strong><br>Hypoxaemic, anaemic, stagnant (circulatory) and histotoxic.</p></div>
+    </section>
+
+    <section id="s11">
+      <span class="sb sbc">⭐ 11 · Key Differences</span>
+      <h2>All the comparisons in one place</h2>
+      <div class="diff-intro"><p>The distinctions that anchor the physiology and the viva — gathered at the end.</p></div>
+
+      <h3 class="difftitle">DO₂ vs VO₂</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>DO₂ (delivery)</th><th>VO₂ (consumption)</th></tr></thead>
+          <tbody>
+            <tr><td>Definition</td><td>O₂ supplied per minute</td><td>O₂ used per minute</td></tr>
+            <tr><td>Formula</td><td>CO × CaO₂ × 10</td><td>CO × (CaO₂ − CvO₂) × 10</td></tr>
+            <tr><td>Normal</td><td>~1000 mL/min</td><td>~250 mL/min</td></tr>
+            <tr><td>Set by</td><td>CO, Hb, SaO₂</td><td>Metabolic demand + extraction</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="flowchart-step">
-        <div class="fc-node fc-orange">2</div>
-        <div class="fc-content"><h4>Read ScvO₂ &amp; the CO₂ gap</h4>
-          <ul><li><strong>Low ScvO₂</strong> → delivery inadequate (fix output/Hb/SaO₂) or demand high</li><li><strong>High/normal ScvO₂ + high lactate</strong> → poor extraction/utilisation (sepsis) — and check a <strong>wide CO₂ gap</strong> (flow problem)</li></ul></div>
+
+      <h3 class="difftitle">Hypoxaemia vs Anaemia (effect on CaO₂)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>Hypoxaemia</th><th>Anaemia</th></tr></thead>
+          <tbody>
+            <tr><td>Defect</td><td>Low SaO₂/PaO₂</td><td>Low Hb</td></tr>
+            <tr><td>Impact on content</td><td>Modest (curve is flat up high)</td><td><strong>Large</strong> (linear with Hb)</td></tr>
+            <tr><td>Fix</td><td>O₂, ventilation</td><td>Transfusion</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="flowchart-step">
-        <div class="fc-node fc-yellow">3</div>
-        <div class="fc-content"><h4>Pull the right lever</h4>
-          <ul><li><strong>Fluid</strong> if responsive → then <strong>inotrope</strong> for low output; <strong>vasopressor</strong> for vasodilation; <strong>blood</strong> if critically anaemic (restrictive threshold)</li><li>Don't chase a high PaO₂ — it adds almost no useful oxygen and risks hyperoxia</li></ul></div>
+
+      <h3 class="difftitle">Supply-independent vs Supply-dependent VO₂</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>Supply-independent</th><th>Supply-dependent</th></tr></thead>
+          <tbody>
+            <tr><td>DO₂</td><td>Above critical threshold</td><td>Below critical threshold</td></tr>
+            <tr><td>Extraction</td><td>Rises to compensate</td><td>Already maximal</td></tr>
+            <tr><td>Lactate</td><td>Normal</td><td>Rises (anaerobic)</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="flowchart-step">
-        <div class="fc-node fc-green">4</div>
-        <div class="fc-content"><h4>Reassess the trend, not a single number</h4>
-          <ul><li>Target <strong>lactate clearance</strong> and improving perfusion (mentation, urine, capillary refill)</li><li>Combine markers with fluid-responsiveness testing — avoid over-resuscitation</li></ul></div>
-      </div>
-      <div class="flowchart-step">
-        <div class="fc-node fc-blue">5</div>
-        <div class="fc-content"><h4>Address demand &amp; utilisation too</h4>
-          <ul><li>Reduce excess VO₂ (fever, agitation, work of breathing, shivering) where it outstrips delivery</li><li>Treat the cause of impaired utilisation (source control in sepsis; thiamine if deficient)</li></ul></div>
+
+      <h3 class="difftitle">SvO₂ vs ScvO₂</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>SvO₂ (mixed venous)</th><th>ScvO₂ (central venous)</th></tr></thead>
+          <tbody>
+            <tr><td>Site</td><td>Pulmonary artery</td><td>SVC / right atrium</td></tr>
+            <tr><td>Access</td><td>PA catheter</td><td>Central line (easier)</td></tr>
+            <tr><td>Value</td><td>~65–75%</td><td>Runs a few % higher; tracks trends</td></tr>
+          </tbody>
+        </table>
       </div>
     </section>
 
-    <section id="s6">
-      <span class="sb sb-e">⚠️ 6 · Common Mistakes</span>
-      <h2>Common Mistakes in Oxygen-Transport Management</h2>
-      <div class="mc"><div class="ml">❌ Mistake 1 — Chasing PaO₂ to improve delivery</div><p>Once haemoglobin is fully saturated, raising PaO₂ adds only the tiny dissolved fraction. Delivery is driven by cardiac output, Hb and SaO₂ — and hyperoxia carries its own harms.</p></div>
-      <div class="mc"><div class="ml">❌ Mistake 2 — Treating a lactate value instead of the trend and context</div><p>Lactate rises from adrenaline, liver dysfunction, seizures and thiamine deficiency too. Use the trend (clearance) in clinical context, not a single number.</p></div>
-      <div class="mc"><div class="ml">❌ Mistake 3 — Reassuring on a normal ScvO₂ in sepsis</div><p>A normal or high ScvO₂ with a high lactate can mean the tissues cannot extract/use oxygen (microcirculatory shunting/cytopathic hypoxia) — not that resuscitation is complete.</p></div>
-      <div class="mc"><div class="ml">❌ Mistake 4 — Ignoring anaemia as a delivery problem</div><p>Haemoglobin carries ~98% of the oxygen; critical anaemia can produce a severe oxygen debt at a normal SaO₂ and blood pressure. Balance this against the restrictive transfusion threshold.</p></div>
-      <div class="mc"><div class="ml">❌ Mistake 5 — Driving oxygen delivery to supranormal targets</div><p>Pushing DO₂ to supranormal goals with aggressive fluids/inotropes in all-comers does not improve (and can worsen) outcomes. Resuscitate to adequate perfusion, not to arbitrary maxima.</p></div>
-      <div class="mc"><div class="ml">❌ Mistake 6 — Forgetting the demand side</div><p>Fever, shivering, agitation and high work of breathing raise VO₂ and can outstrip delivery. Controlling demand is part of correcting the oxygen debt.</p></div>
-    </section>
-
-    <section id="s7">
-      <span class="sb sb-x">🎓 7 · Exam Pearls — DrNB / PDCC / IFCCM / EDIC</span>
-      <h2>Exam Pearls</h2>
-      <div class="ec"><p><strong>Q: Write the oxygen delivery equation.</strong><br>DO₂ = CO × CaO₂, where CaO₂ = (1.34 × Hb × SaO₂) + (0.003 × PaO₂); normal DO₂ ~1000 mL/min.</p></div>
-      <div class="ec"><p><strong>Q: What is critical oxygen delivery?</strong><br>The DO₂ below which extraction is maximal and can compensate no further, so VO₂ becomes supply-dependent and anaerobic metabolism (lactate) begins.</p></div>
-      <div class="ec"><p><strong>Q: Why does raising PaO₂ do little for delivery?</strong><br>Haemoglobin (fully saturated) carries ~98% of oxygen; the dissolved term (0.003 × PaO₂) is negligible.</p></div>
-      <div class="ec"><p><strong>Q: What does a low ScvO₂ tell you?</strong><br>Oxygen extraction is high — delivery is inadequate (low output, anaemia, hypoxaemia) or demand is high.</p></div>
-      <div class="ec"><p><strong>Q: What does a high ScvO₂ with high lactate suggest?</strong><br>Impaired oxygen extraction/utilisation — sepsis, microcirculatory shunting, cytopathic hypoxia.</p></div>
-      <div class="ec"><p><strong>Q: What does a widened veno-arterial CO₂ gap indicate?</strong><br>Inadequate cardiac output (flow) to wash out CO₂ — points to needing more output even if ScvO₂ looks acceptable.</p></div>
-      <div class="ec"><p><strong>Q: Which resuscitation targets are validated?</strong><br>Lactate clearance and capillary-refill-time-guided resuscitation (ANDROMEDA-SHOCK); protocolised ScvO₂-targeted EGDT was not superior to usual care (ProCESS/ARISE/ProMISe).</p></div>
-    </section>
-
-    <section id="s8" class="references-section">
-      <span class="sb sb-r">📚 8 · References</span>
+    <section id="s12" class="references-section">
+      <span class="sb sbr">📚 12 · References</span>
       <h2>References</h2>
       <ol class="ref-list">
-        <li><strong>Vincent JL, De Backer D.</strong> Circulatory Shock. <em>N Engl J Med.</em> 2013;369:1726–1734.</li>
-        <li><strong>Leach RM, Treacher DF.</strong> The pulmonary physician in critical care: oxygen delivery and consumption in the critically ill. <em>Thorax.</em> 2002;57:170–177.</li>
-        <li><strong>Hernández G, Ospina-Tascón GA, Damiani LP, et al. (ANDROMEDA-SHOCK).</strong> Effect of a Resuscitation Strategy Targeting Peripheral Perfusion Status vs Serum Lactate Levels on 28-Day Mortality. <em>JAMA.</em> 2019;321:654–664.</li>
-        <li><strong>The PRISM Investigators.</strong> Early, Goal-Directed Therapy for Septic Shock — A Patient-Level Meta-Analysis (ProCESS/ARISE/ProMISe). <em>N Engl J Med.</em> 2017;376:2223–2234.</li>
-        <li><strong>Marino PL.</strong> The ICU Book, 5th Edition. Oxygen Transport &amp; Tissue Oxygenation. Wolters Kluwer; 2025.</li>
-        <li><strong>Washington Manual of Critical Care, 4th Edition.</strong> Kollef MH, Witt CA (eds). Oxygen Transport. Wolters Kluwer; 2023.</li>
+        <li><strong>Irwin RS, Lilly CM, Mayo PH, Rippe JM (eds).</strong> Irwin &amp; Rippe's Intensive Care Medicine. 9th ed. Wolters Kluwer; 2023.</li>
+        <li><strong>Marino PL.</strong> Marino's The ICU Book. 5th ed. Wolters Kluwer; 2025.</li>
+        <li><strong>Bersten AD, Handy JM (eds).</strong> Oh's Intensive Care Manual. Elsevier; 2026.</li>
+        <li><strong>Vincent JL, De Backer D.</strong> Circulatory shock. <em>N Engl J Med.</em> 2013;369:1726–1734.</li>
+        <li><strong>Hébert PC, Wells G, Blajchman MA, et al. (TRICC).</strong> A multicenter, randomized, controlled clinical trial of transfusion requirements in critical care. <em>N Engl J Med.</em> 1999;340:409–417.</li>
       </ol>
     </section>
 
   </main>
 </div>
-
 <footer class="footer">
   <div class="footer-inner">
     <span class="footer-brand">Crit<span>Care</span>.in</span>
-    <ul class="footer-links">
-      <li><a href="index.html">Home</a></li><li><a href="scores.html">Score Calculators</a></li>
-      <li><a href="ai-tool.html">AI Tool</a></li><li><a href="login.html">Login</a></li>
-    </ul>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
     <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
   </div>
 </footer>
-<nav class="mobile-nav-bar">
-  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
-  <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
-  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
-  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
-  <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
-</nav>
+  <nav class="mobile-nav-bar">
+    <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+    <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+    <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+    <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+    <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI Tool</a>
+  </nav>
+  <script src="/pwa.js"></script>
 </body>
 </html>
