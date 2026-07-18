@@ -11,24 +11,25 @@ ASSESSMENT / SCORES (Creative Commons — Wikimedia Commons):
 - mallampati.svg      Modified Mallampati classes. Jmarchn. CC BY-SA 3.0.
 - cormack-lehane.jpg  Cormack–Lehane laryngoscopic grades. User:Tubus. CC BY-SA 3.0. (title band cropped)
 
-ASSESSMENT (ORIGINAL CritCare.in artwork — own work, released CC0, no third-party copyright):
-- thyromental-sternomental.svg       Thyromental & sternomental distance on a head-neck profile.
-- mandibular-protrusion-calder.svg   Mandibular protrusion (Calder) test, classes A/B/C.
-  Drawn from scratch to convey the (uncopyrightable) clinical facts — NOT traced/derived
-  from any textbook figure, so free to publish on the paywalled site.
-
-LARYNX & VOCAL-CORD PALSY (ORIGINAL CritCare.in artwork — own work, released CC0):
-- vc-positions.svg               Five VC positions (median → full abduction), superior view.
-- laryngeal-nerve-course.svg     Schematic RLN/SLN course (R loops under subclavian, L under arch).
-- vc-palsy-rln.svg               U/L & B/L recurrent laryngeal palsy at respiration vs phonation.
-- vc-palsy-sln.svg               U/L superior laryngeal palsy — bowed/askewed cord.
-  All redrawn from scratch for anaes-larynx-vc-palsy.html — concepts only, no copied expression.
-- laryngoscopic-view.svg         Labelled laryngoscopic view of the glottis (Anatomy tab) — own work, CC0.
+ASSESSMENT / LARYNX & VC PALSY — OWNER-SUPPLIED REFERENCE IMAGES (added 2026-07-18):
+  The site owner (Dr Anmol) supplied these figures and asked for them to be used
+  verbatim in place of the original SVGs that were previously drawn for these slots.
+  They appear to originate from ENT/anaesthesia teaching material and are NOT
+  confirmed public-domain or CC-licensed. Use / licensing / copyright clearance is the
+  OWNER'S RESPONSIBILITY — this was flagged and the owner chose to proceed.
+- thyromental-distance.jpeg          Thyromental distance palpation photo (Assessment tab).
+- calder-test.jpeg                   Mandibular protrusion (Calder) test A/B/C (Assessment tab).
+- laryngoscopic-view.jpeg            Labelled laryngoscopic view of the glottis (Anatomy tab).
+- vc-positions.jpeg                  Five VC positions, superior view (Larynx page).
+- laryngeal-nerve-course.jpeg        RLN/SLN course, Fig 38.1 style (Larynx page).
+- vc-palsy-rln-unilateral.jpeg       U/L RLN palsy at respiration vs phonation (Larynx page).
+- vc-palsy-rln-bilateral.jpeg        B/L RLN palsy at respiration vs phonation (Larynx page).
+- vc-palsy-sln.jpeg                  U/L SLN palsy — bowed / askewed cord (Larynx page).
 
 ULTRASOUND: no openly-licensed real airway-USG image located — slot left for a user-supplied image.
 
-NOTE: figures are NOT taken from copyrighted anaesthesia textbooks (Miller/Barash/etc.) —
-those cannot be republished on a paywalled site. All above are PD or CC with attribution.
+NOTE: the Wikimedia/PD/CC figures listed above are safe to republish. The owner-supplied
+reference images in the block immediately above are NOT verified-licensed — owner's call.
 
 AIRWAY ULTRASOUND (added — real annotated clinical images):
 - usg-cricothyroid-membrane.jpg        Osman A, Sum KM. Role of upper airway ultrasound in airway
