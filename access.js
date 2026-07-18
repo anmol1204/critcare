@@ -368,6 +368,75 @@
   // Expose an opener so nav / other pages can trigger the drawer
   window.CritCareLibrary = { open: function () { if (window.CCPanel) window.CCPanel.open(); } };
 
+  // ============================================================
+  // Screenshot deterrents (web).
+  // NOTE: a browser CANNOT truly block OS screenshots. This is a
+  // DETERRENT layer: a per-user traceable watermark (so any leaked
+  // screenshot points to the account), print/save-to-PDF blocking,
+  // and a best-effort PrintScreen guard. Real prevention lives in
+  // the Android app via FLAG_SECURE.
+  // ============================================================
+  function userTag() {
+    var email = '', name = '';
+    try { email = localStorage.getItem('critcare-email') || ''; } catch (e) {}
+    try { name  = localStorage.getItem('critcare-name')  || ''; } catch (e) {}
+    return email || name || '';
+  }
+
+  function buildWatermark() {
+    // Only stamp gated pages for a signed-in user — keep free/public
+    // pages (and SEO) clean.
+    if (isFree(thisFile)) return;
+    var tag = userTag();
+    if (!tag) return;
+
+    var stamp = tag + '  ·  CritCare.in  ·  ' + new Date().toISOString().slice(0, 10);
+    // Diagonal repeating text baked into an SVG tile — appears in any
+    // screenshot but never blocks interaction (pointer-events:none).
+    var svg =
+      "<svg xmlns='http://www.w3.org/2000/svg' width='340' height='200'>" +
+      "<text x='20' y='120' transform='rotate(-30 170 100)' " +
+      "fill='rgba(128,128,128,0.14)' font-family='sans-serif' font-size='13' " +
+      "font-weight='600'>" + stamp.replace(/&/g, '&amp;').replace(/</g, '&lt;') + "</text></svg>";
+    var url = 'data:image/svg+xml;utf8,' + encodeURIComponent(svg);
+
+    var wm = document.createElement('div');
+    wm.id = 'cc-watermark';
+    wm.setAttribute('aria-hidden', 'true');
+    wm.style.cssText =
+      'position:fixed;inset:0;z-index:2147483000;pointer-events:none;' +
+      'background-image:url("' + url + '");background-repeat:repeat;' +
+      'mix-blend-mode:multiply;';
+    document.body.appendChild(wm);
+
+    // Re-attach if something (or the user via devtools) removes it.
+    try {
+      new MutationObserver(function () {
+        if (!document.getElementById('cc-watermark')) document.body.appendChild(wm);
+      }).observe(document.body, { childList: true });
+    } catch (e) {}
+  }
+
+  function buildScreenshotGuards() {
+    if (isFree(thisFile)) return;
+
+    // 1) Block print / save-to-PDF of gated content.
+    var st = document.createElement('style');
+    st.textContent =
+      '@media print { body * { visibility:hidden !important; } ' +
+      'body::before { content:"CritCare.in — printing is disabled for this content."; ' +
+      'visibility:visible; display:block; padding:40px; font:16px sans-serif; } }';
+    document.head.appendChild(st);
+
+    // 2) Best-effort PrintScreen deterrent: blank the clipboard + flash
+    //    the watermark. (Cannot stop the OS capture itself.)
+    document.addEventListener('keyup', function (e) {
+      if (e.key === 'PrintScreen') {
+        try { navigator.clipboard && navigator.clipboard.writeText(''); } catch (er) {}
+      }
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     decorateNav();
     groupNav();
@@ -376,5 +445,7 @@
     initEngagement();
     buildLibrary();
     buildResumeBanner();
+    buildWatermark();
+    buildScreenshotGuards();
   });
 })();

@@ -11,6 +11,20 @@ ASSESSMENT / SCORES (Creative Commons — Wikimedia Commons):
 - mallampati.svg      Modified Mallampati classes. Jmarchn. CC BY-SA 3.0.
 - cormack-lehane.jpg  Cormack–Lehane laryngoscopic grades. User:Tubus. CC BY-SA 3.0. (title band cropped)
 
+ASSESSMENT (ORIGINAL CritCare.in artwork — own work, released CC0, no third-party copyright):
+- thyromental-sternomental.svg       Thyromental & sternomental distance on a head-neck profile.
+- mandibular-protrusion-calder.svg   Mandibular protrusion (Calder) test, classes A/B/C.
+  Drawn from scratch to convey the (uncopyrightable) clinical facts — NOT traced/derived
+  from any textbook figure, so free to publish on the paywalled site.
+
+LARYNX & VOCAL-CORD PALSY (ORIGINAL CritCare.in artwork — own work, released CC0):
+- vc-positions.svg               Five VC positions (median → full abduction), superior view.
+- laryngeal-nerve-course.svg     Schematic RLN/SLN course (R loops under subclavian, L under arch).
+- vc-palsy-rln.svg               U/L & B/L recurrent laryngeal palsy at respiration vs phonation.
+- vc-palsy-sln.svg               U/L superior laryngeal palsy — bowed/askewed cord.
+  All redrawn from scratch for anaes-larynx-vc-palsy.html — concepts only, no copied expression.
+- laryngoscopic-view.svg         Labelled laryngoscopic view of the glottis (Anatomy tab) — own work, CC0.
+
 ULTRASOUND: no openly-licensed real airway-USG image located — slot left for a user-supplied image.
 
 NOTE: figures are NOT taken from copyrighted anaesthesia textbooks (Miller/Barash/etc.) —

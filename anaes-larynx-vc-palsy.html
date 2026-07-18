@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Larynx &amp; Vocal-Cord Palsy — RLN &amp; SLN — CritCare.in</title>
+  <meta name="description" content="The larynx and vocal-cord palsy for anaesthetists: the five vocal-cord positions (median to full abduction), the course of the recurrent and superior laryngeal nerves, unilateral vs bilateral RLN and SLN palsy at respiration and phonation, and a full palsy comparison table (position, voice, aspiration, respiration, management) — with original diagrams." />
+  <link rel="canonical" href="https://critcare.in/anaes-larynx-vc-palsy.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-airway.html">Airway</a> › Larynx &amp; VC palsy</div>
+    <h1>🗣️ Larynx &amp; Vocal-Cord Palsy</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">RLN &amp; SLN</span>
+      <span class="topic-tag">Cord positions</span>
+      <span class="topic-tag">Palsy at respiration vs phonation</span>
+    </div>
+  </div>
+</header>
+
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Airway topic sections">
+    <a href="anaes-airway.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-airway-anatomy.html"><span class="t-ic">🫀</span>Anatomy</a>
+    <a href="anaes-larynx-vc-palsy.html" class="active"><span class="t-ic">🗣️</span>Larynx &amp; VC palsy</a>
+    <a href="anaes-airway-assessment.html"><span class="t-ic">🔎</span>Assessment</a>
+    <a href="anaes-airway-scores.html"><span class="t-ic">📊</span>Scores</a>
+    <a href="anaes-airway-devices.html"><span class="t-ic">🧰</span>Devices &amp; Definitions</a>
+    <a href="anaes-airway-trauma.html"><span class="t-ic">🩸</span>Trauma &amp; Pathology</a>
+    <a href="anaes-airway-rsi.html"><span class="t-ic">⚡</span>RSI</a>
+    <a href="anaes-airway-usg.html"><span class="t-ic">🔊</span>Ultrasound</a>
+    <a href="anaes-airway-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <span class="sb sb-anat">🗣️ Larynx &amp; vocal-cord palsy</span>
+  <div class="book-quote">
+    <p>"Why the anaesthetist cares: the recurrent laryngeal nerve runs in the tracheo-oesophageal groove and is at risk in thyroid, parathyroid, oesophageal, carotid and anterior cervical-spine surgery. Bilateral recurrent laryngeal palsy is the airway emergency — the cords sit near the midline and cannot abduct, so extubation can be followed by stridor and complete obstruction."</p>
+    <cite>Synthesised from Dhingra — Diseases of Ear, Nose &amp; Throat; Scott-Brown's Otorhinolaryngology; Miller's Anesthesia. Diagrams are original CritCare.in artwork.</cite>
+  </div>
+
+  <!-- ============ CORD POSITIONS ============ -->
+  <h2>The five vocal-cord positions</h2>
+  <p>Cord position is described by the distance of the free (medial) edge from the midline. Both branches of the vagus control it: the <strong>recurrent laryngeal nerve (RLN)</strong> works every intrinsic muscle except one, and the <strong>external branch of the superior laryngeal nerve (SLN)</strong> works the cricothyroid (the cord <em>tensor</em>).</p>
+
+  <figure class="fig" style="max-width:520px;">
+    <span class="fig-media"><img src="assets/airway/vc-positions.svg" alt="Superior view of the glottis with the vocal cord shown at five positions: median, paramedian, intermediate or cadaveric, slight abduction and full abduction" loading="lazy"/></span>
+    <figcaption>The vocal cord swings out (abducts) from the midline through five described positions.<div class="fig-src">Original diagram, CritCare.in — CC0.</div></figcaption>
+  </figure>
+
+  <div class="table-wrap">
+    <table class="drug-table">
+      <thead><tr><th>Position</th><th>Distance from midline</th><th>Occurs normally during</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Median</strong></td><td>Midline (0)</td><td>Speech / phonation</td></tr>
+        <tr><td><strong>Paramedian</strong></td><td>1.5 mm</td><td>Whisper</td></tr>
+        <tr><td><strong>Intermediate (cadaveric)</strong></td><td>3.5 mm</td><td>— (no muscle tone)</td></tr>
+        <tr><td><strong>Gentle / slight abduction</strong></td><td>7 mm</td><td>Normal quiet respiration</td></tr>
+        <tr><td><strong>Full abduction</strong></td><td>9.5 mm</td><td>Deep inspiration</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:.86rem;color:var(--slate);">The <strong>cadaveric (intermediate)</strong> position is the neutral position the cord adopts when it has <em>no</em> nerve supply at all (complete vagal / combined RLN + SLN palsy) — neither adducted nor abducted.</p>
+
+  <!-- ============ NERVE SUPPLY ============ -->
+  <h2>Nerve supply — and why the left RLN is longer</h2>
+  <figure class="fig" style="max-width:440px;">
+    <span class="fig-media"><img src="assets/airway/laryngeal-nerve-course.svg" alt="Schematic course of the superior and recurrent laryngeal nerves; the right recurrent nerve loops under the right subclavian artery and the left under the aortic arch" loading="lazy"/></span>
+    <figcaption>Both recurrent nerves ascend in the tracheo-oesophageal groove, but the <strong>right</strong> hooks under the right subclavian artery while the <strong>left</strong> takes the long path under the aortic arch — so the left RLN is longer and more often injured (e.g. by a mediastinal or aortic lesion — <em>Ortner's syndrome</em>).<div class="fig-src">Original schematic, CritCare.in — CC0.</div></figcaption>
+  </figure>
+  <ul>
+    <li><strong>SLN — internal branch:</strong> sensory to the larynx above the cords (afferent limb of the cough/laryngospasm reflex).</li>
+    <li><strong>SLN — external branch:</strong> motor to <strong>cricothyroid</strong> (tenses/lengthens the cord → raises pitch).</li>
+    <li><strong>RLN:</strong> motor to <strong>all other intrinsic muscles</strong>, including the only abductor — <strong>posterior cricoarytenoid</strong> ("the muscle of respiration"; PCA opens the cords). Sensory below the cords.</li>
+  </ul>
+
+  <!-- ============ RLN PALSY ============ -->
+  <h2>Recurrent laryngeal nerve (RLN) palsy</h2>
+  <figure class="fig" style="max-width:640px;">
+    <span class="fig-media"><img src="assets/airway/vc-palsy-rln.svg" alt="RLN palsy: unilateral palsy leaves the affected cord paramedian while the normal cord still moves; bilateral palsy fixes both cords near the midline" loading="lazy"/></span>
+    <figcaption><strong>Unilateral</strong> — the affected cord sits paramedian; the intact cord crosses to meet it at phonation, so the voice is often near-normal. <strong>Bilateral</strong> — both cords are stuck near the midline: voice is preserved but the airway is dangerously narrow (stridor, the most life-threatening palsy).<div class="fig-src">Original diagram, CritCare.in — CC0.</div></figcaption>
+  </figure>
+
+  <div class="warn-box">
+    <div class="kb-label">⚠️ Bilateral RLN palsy after thyroid surgery = airway emergency</div>
+    <p>Suspect it if the patient develops <strong>stridor after extubation</strong>. Both cords cannot abduct, so the glottic chink is tiny. Be ready to <strong>re-intubate</strong> and involve ENT — definitive options include cordotomy, arytenoidectomy or vocal-cord lateralisation (type II thyroplasty).</p>
+  </div>
+
+  <!-- ============ SLN PALSY ============ -->
+  <h2>Superior laryngeal nerve (SLN) palsy</h2>
+  <figure class="fig" style="max-width:600px;">
+    <span class="fig-media"><img src="assets/airway/vc-palsy-sln.svg" alt="Unilateral SLN palsy: the affected cord is bowed and lax and the glottis is askewed at phonation" loading="lazy"/></span>
+    <figcaption>Losing the cricothyroid (cord tensor) leaves the cord <strong>bowed and lax</strong>; it sits at a slightly different level and the glottis looks <strong>askewed</strong>, rotating toward the normal side on phonation. The classic complaint is a <strong>weak voice that tires and cannot reach high notes</strong>.<div class="fig-src">Original diagram, CritCare.in — CC0.</div></figcaption>
+  </figure>
+
+  <!-- ============ COMPARISON TABLE ============ -->
+  <h2>Palsy comparison — position, voice, airway &amp; management</h2>
+  <div class="table-wrap">
+    <table class="drug-table">
+      <thead><tr><th>Type of palsy</th><th>Position of VC</th><th>Speech</th><th>Aspiration</th><th>Respiration</th><th>Management</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>U/L RLN</strong></td>
+          <td>Mostly median, sometimes paramedian</td>
+          <td>Normal; sometimes mild hoarseness initially</td>
+          <td>None</td>
+          <td>Normal</td>
+          <td>Conservative <em>(the palsy with the least consequences)</em></td>
+        </tr>
+        <tr>
+          <td><strong>B/L RLN</strong></td>
+          <td>Mostly median</td>
+          <td>Largely normal; sometimes mild hoarseness</td>
+          <td>None</td>
+          <td><strong>Stridor &amp; dyspnoea on exertion</strong> — the most life-threatening palsy</td>
+          <td>Usually one-sided VC lateralisation (cordectomy or type II thyroplasty)</td>
+        </tr>
+        <tr>
+          <td><strong>U/L SLN</strong></td>
+          <td>Normally moving, curved (bowed) VC</td>
+          <td>Weak voice, voice fatigue, loss of timbre, cannot raise pitch</td>
+          <td>Occasional</td>
+          <td>Normal</td>
+          <td>Conservative</td>
+        </tr>
+        <tr>
+          <td><strong>B/L SLN</strong></td>
+          <td>Normally moving VC, but both curved</td>
+          <td>Husky voice</td>
+          <td>Present</td>
+          <td>Normal</td>
+          <td>Tracheostomy and epiglottopexy (to prevent aspiration)</td>
+        </tr>
+        <tr>
+          <td><strong>U/L complete</strong></td>
+          <td>Cadaveric</td>
+          <td>Initial dysphonia/aphonia, subsequently hoarseness</td>
+          <td>Sometimes</td>
+          <td>Normal</td>
+          <td>Teflon/fat injection or medialisation of VC (type I thyroplasty)</td>
+        </tr>
+        <tr>
+          <td><strong>B/L complete</strong></td>
+          <td>Both VC cadaveric</td>
+          <td>Aphonia</td>
+          <td>Severe aspiration episodes</td>
+          <td>Normal</td>
+          <td>Tracheo-oesophageal diversion (gold standard) / epiglottopexy or VC plication with tracheostomy</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="marino-box">
+    <div class="mb-label">🎓 Exam pearls</div>
+    <ul>
+      <li><strong>Posterior cricoarytenoid</strong> is the only abductor — "the muscle of respiration". Lose it bilaterally and you lose the airway.</li>
+      <li><strong>Semon's law</strong> — in a progressive nerve lesion the abductor fibres fail before the adductors, so the cord drifts from paramedian toward the midline.</li>
+      <li><strong>Cadaveric = intermediate</strong> position = <em>no</em> nerve supply (complete/combined palsy), not isolated RLN palsy.</li>
+      <li><strong>Unilateral RLN</strong> = best voice/least danger. <strong>Bilateral RLN</strong> = good voice but worst airway. <strong>Bilateral complete</strong> = aphonia + severe aspiration.</li>
+      <li>The <strong>left RLN</strong> is longer (loops under the aortic arch) → more often involved by mediastinal disease; hoarseness from a left-sided intrathoracic cause is <em>Ortner's syndrome</em>.</li>
+    </ul>
+  </div>
+
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-airway-anatomy.html"><span class="tp-dir">← Back</span><span class="tp-title">🫀 Anatomy</span></a>
+    <a class="tp-next" href="anaes-airway-assessment.html"><span class="tp-dir">Next →</span><span class="tp-title">🔎 Assessment</span></a>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

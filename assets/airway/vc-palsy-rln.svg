@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 540" role="img" aria-label="Recurrent laryngeal nerve palsy: unilateral and bilateral vocal-cord positions at respiration and phonation">
+  <!-- Original diagram for CritCare.in — own work, released CC0. -->
+  <title>Recurrent laryngeal nerve (RLN) palsy — cord positions</title>
+  <text x="310" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#0f172a">Recurrent laryngeal nerve (RLN) palsy</text>
+
+  <!-- legend -->
+  <g font-family="Inter, sans-serif" font-size="12" fill="#334155">
+    <line x1="196" y1="46" x2="224" y2="46" stroke="#eab308" stroke-width="7" stroke-linecap="round"/>
+    <text x="230" y="50">Normal cord</text>
+    <line x1="330" y1="46" x2="358" y2="46" stroke="#dc2626" stroke-width="9" stroke-linecap="round"/>
+    <line x1="330" y1="46" x2="358" y2="46" stroke="#eab308" stroke-width="5" stroke-linecap="round"/>
+    <text x="364" y="50">Paralysed cord</text>
+  </g>
+
+  <!-- ============ Reusable glottis is hand-drawn per panel ============ -->
+  <!-- local frame: anterior commissure (90,30), posterior baseline y=150 -->
+
+  <!-- ROW 1 : UNILATERAL (left) RLN palsy -->
+  <text x="310" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="13.5" font-weight="700" fill="#1e6fd9">Unilateral RLN palsy — left cord fixed in paramedian; the normal right cord still moves</text>
+
+  <!-- TL: U/L respiration -->
+  <g transform="translate(40,96)">
+    <path d="M90 30 C66 40 40 66 34 118 C31 145 58 158 90 158 C122 158 149 145 146 118 C140 66 114 40 90 30 Z" fill="#d7e6f4" stroke="#5b4636" stroke-width="2"/>
+    <ellipse cx="80" cy="150" rx="11" ry="7" fill="#c2d6ea" stroke="#5b4636" stroke-width="1.1"/>
+    <ellipse cx="100" cy="150" rx="11" ry="7" fill="#c2d6ea" stroke="#5b4636" stroke-width="1.1"/>
+    <line x1="90" y1="28" x2="90" y2="160" stroke="#334155" stroke-width=".9" stroke-dasharray="4 4"/>
+    <!-- right normal cord ABDUCTED -->
+    <line x1="90" y1="34" x2="124" y2="150" stroke="#eab308" stroke-width="7" stroke-linecap="round"/>
+    <!-- left paralysed cord PARAMEDIAN -->
+    <line x1="90" y1="34" x2="78" y2="150" stroke="#dc2626" stroke-width="9" stroke-linecap="round"/>
+    <line x1="90" y1="34" x2="78" y2="150" stroke="#eab308" stroke-width="5" stroke-linecap="round"/>
+    <text x="90" y="182" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">At respiration</text>
+    <text x="90" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#64748b">right cord abducts, left stays paramedian</text>
+  </g>
+
+  <!-- TR: U/L phonation -->
+  <g transform="translate(340,96)">
+    <path d="M90 30 C66 40 40 66 34 118 C31 145 58 158 90 158 C122 158 149 145 146 118 C140 66 114 40 90 30 Z" fill="#d7e6f4" stroke="#5b4636" stroke-width="2"/>
+    <ellipse cx="80" cy="150" rx="11" ry="7" fill="#c2d6ea" stroke="#5b4636" stroke-width="1.1"/>
+    <ellipse cx="100" cy="150" rx="11" ry="7" fill="#c2d6ea" stroke="#5b4636" stroke-width="1.1"/>
+    <line x1="90" y1="28" x2="90" y2="160" stroke="#334155" stroke-width=".9" stroke-dasharray="4 4"/>
+    <!-- right normal cord ADDUCTS to meet the paralysed left -->
+    <line x1="90" y1="34" x2="82" y2="150" stroke="#eab308" stroke-width="7" stroke-linecap="round"/>
+    <!-- left paralysed cord PARAMEDIAN -->
+    <line x1="90" y1="34" x2="78" y2="150" stroke="#dc2626" stroke-width="9" stroke-linecap="round"/>
+    <line x1="90" y1="34" x2="78" y2="150" stroke="#eab308" stroke-width="5" stroke-linecap="round"/>
+    <text x="90" y="182" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">At phonation</text>
+    <text x="90" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#64748b">normal cord crosses to meet it → voice ~preserved</text>
+  </g>
+
+  <!-- ROW 2 : BILATERAL RLN palsy -->
+  <text x="310" y="320" text-anchor="middle" font-family="Inter, sans-serif" font-size="13.5" font-weight="700" fill="#b91c1c">Bilateral RLN palsy — both cords fixed near the midline → narrow airway, stridor</text>
+
+  <!-- BL: B/L respiration -->
+  <g transform="translate(40,334)">
+    <path d="M90 30 C66 40 40 66 34 118 C31 145 58 158 90 158 C122 158 149 145 146 118 C140 66 114 40 90 30 Z" fill="#d7e6f4" stroke="#5b4636" stroke-width="2"/>
+    <ellipse cx="80" cy="150" rx="11" ry="7" fill="#c2d6ea" stroke="#5b4636" stroke-width="1.1"/>
+    <ellipse cx="100" cy="150" rx="11" ry="7" fill="#c2d6ea" stroke="#5b4636" stroke-width="1.1"/>
+    <line x1="90" y1="28" x2="90" y2="160" stroke="#334155" stroke-width=".9" stroke-dasharray="4 4"/>
+    <!-- both paralysed, paramedian (small gap) -->
+    <line x1="90" y1="34" x2="80" y2="150" stroke="#dc2626" stroke-width="9" stroke-linecap="round"/>
+    <line x1="90" y1="34" x2="80" y2="150" stroke="#eab308" stroke-width="5" stroke-linecap="round"/>
+    <line x1="90" y1="34" x2="100" y2="150" stroke="#dc2626" stroke-width="9" stroke-linecap="round"/>
+    <line x1="90" y1="34" x2="100" y2="150" stroke="#eab308" stroke-width="5" stroke-linecap="round"/>
+    <text x="90" y="182" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">At respiration</text>
+    <text x="90" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#64748b">cannot abduct → residual chink only</text>
+  </g>
+
+  <!-- BR: B/L phonation -->
+  <g transform="translate(340,334)">
+    <path d="M90 30 C66 40 40 66 34 118 C31 145 58 158 90 158 C122 158 149 145 146 118 C140 66 114 40 90 30 Z" fill="#d7e6f4" stroke="#5b4636" stroke-width="2"/>
+    <ellipse cx="80" cy="150" rx="11" ry="7" fill="#c2d6ea" stroke="#5b4636" stroke-width="1.1"/>
+    <ellipse cx="100" cy="150" rx="11" ry="7" fill="#c2d6ea" stroke="#5b4636" stroke-width="1.1"/>
+    <line x1="90" y1="28" x2="90" y2="160" stroke="#334155" stroke-width=".9" stroke-dasharray="4 4"/>
+    <!-- both median (touching) -->
+    <line x1="90" y1="34" x2="86" y2="150" stroke="#dc2626" stroke-width="9" stroke-linecap="round"/>
+    <line x1="90" y1="34" x2="86" y2="150" stroke="#eab308" stroke-width="5" stroke-linecap="round"/>
+    <line x1="90" y1="34" x2="94" y2="150" stroke="#dc2626" stroke-width="9" stroke-linecap="round"/>
+    <line x1="90" y1="34" x2="94" y2="150" stroke="#eab308" stroke-width="5" stroke-linecap="round"/>
+    <text x="90" y="182" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="700" fill="#0f172a">At phonation</text>
+    <text x="90" y="198" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#64748b">cords meet at midline → voice largely normal</text>
+  </g>
+</svg>

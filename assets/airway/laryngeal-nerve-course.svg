@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 460" role="img" aria-label="Schematic course of the superior and recurrent laryngeal nerves, with the right recurrent nerve looping under the subclavian artery and the left under the aortic arch">
+  <!-- Original schematic for CritCare.in — own work, released CC0. -->
+  <title>Course of the recurrent &amp; superior laryngeal nerves</title>
+  <text x="250" y="24" text-anchor="middle" font-family="Inter, sans-serif" font-size="15.5" font-weight="800" fill="#0f172a">Laryngeal nerve supply — the recurrent loops</text>
+  <text x="250" y="42" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#64748b">viewer's left = patient's right</text>
+
+  <defs>
+    <marker id="nv" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0 0 L9 4.5 L0 9 Z" fill="#ca8a04"/></marker>
+  </defs>
+
+  <!-- ===== airway skeleton ===== -->
+  <!-- larynx (thyroid cartilage) -->
+  <path d="M205 78 h90 a10 10 0 0 1 10 10 v46 a10 10 0 0 1 -10 10 h-90 a10 10 0 0 1 -10 -10 v-46 a10 10 0 0 1 10 -10 Z" fill="#dcedc8" stroke="#7cb342" stroke-width="1.6"/>
+  <text x="250" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#33691e">Thyroid</text>
+  <text x="250" y="123" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#33691e">cartilage</text>
+  <!-- cricoid -->
+  <rect x="212" y="146" width="76" height="20" rx="6" fill="#e8f0d5" stroke="#7cb342" stroke-width="1.4"/>
+  <text x="250" y="160" text-anchor="middle" font-family="Inter, sans-serif" font-size="9.5" fill="#33691e">Cricoid</text>
+  <!-- trachea -->
+  <rect x="224" y="166" width="52" height="150" rx="8" fill="#e3ecf5" stroke="#7c93a8" stroke-width="1.4"/>
+  <g stroke="#b5c4d3" stroke-width="1.4"><line x1="226" y1="188" x2="274" y2="188"/><line x1="226" y1="208" x2="274" y2="208"/><line x1="226" y1="228" x2="274" y2="228"/><line x1="226" y1="248" x2="274" y2="248"/><line x1="226" y1="268" x2="274" y2="268"/><line x1="226" y1="288" x2="274" y2="288"/></g>
+  <text x="250" y="246" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#5b7085" transform="rotate(90 250 246)">Trachea</text>
+
+  <!-- ===== arteries (red) ===== -->
+  <!-- right subclavian artery (patient's right = viewer's left), higher -->
+  <path d="M120 250 q40 -6 70 6" fill="none" stroke="#d1495b" stroke-width="12" stroke-linecap="round"/>
+  <text x="72" y="240" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#b0324a">R subclavian a.</text>
+  <!-- aortic arch (patient's left = viewer's right), lower & bigger -->
+  <path d="M250 400 q60 -8 78 -60 q6 -30 -18 -44" fill="none" stroke="#d1495b" stroke-width="14" stroke-linecap="round"/>
+  <text x="330" y="360" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#b0324a">Aortic arch</text>
+
+  <!-- ===== nerves (yellow) ===== -->
+  <!-- RIGHT vagus + SLN + RLN (viewer's left) -->
+  <path d="M120 60 C126 120 132 180 138 232" fill="none" stroke="#ca8a04" stroke-width="3.4"/>
+  <text x="96" y="60" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#8a6d00">Vagus (R)</text>
+  <!-- right RLN: loops UNDER the subclavian artery and ascends to larynx -->
+  <path d="M138 232 C140 260 150 272 165 270 C182 268 182 250 178 236 C172 210 176 170 205 150" fill="none" stroke="#ca8a04" stroke-width="3.4" marker-end="url(#nv)"/>
+  <text x="150" y="300" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#8a6d00">Right RLN</text>
+  <text x="150" y="312" font-family="Inter, sans-serif" font-size="9" fill="#8a6d00">(under subclavian)</text>
+
+  <!-- LEFT vagus + RLN (viewer's right) -->
+  <path d="M380 60 C372 160 366 280 300 350" fill="none" stroke="#ca8a04" stroke-width="3.4"/>
+  <text x="356" y="60" font-family="Inter, sans-serif" font-size="10.5" font-weight="600" fill="#8a6d00">Vagus (L)</text>
+  <!-- left RLN: loops UNDER the aortic arch and ascends the long way to larynx -->
+  <path d="M300 350 C280 372 262 372 258 352 C252 326 262 250 250 190 C246 172 240 158 295 150" fill="none" stroke="#ca8a04" stroke-width="3.4" marker-end="url(#nv)"/>
+  <text x="300" y="392" font-family="Inter, sans-serif" font-size="10" font-weight="600" fill="#8a6d00">Left RLN</text>
+  <text x="300" y="404" font-family="Inter, sans-serif" font-size="9" fill="#8a6d00">(under aortic arch — longer)</text>
+
+  <!-- SLN with internal + external branches (shown on the right vagus, high) -->
+  <path d="M124 96 C150 92 172 92 200 92" fill="none" stroke="#eab308" stroke-width="2.8" marker-end="url(#nv)"/>
+  <path d="M150 93 C168 104 184 116 205 128" fill="none" stroke="#eab308" stroke-width="2.4" marker-end="url(#nv)"/>
+  <text x="150" y="84" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#8a6d00">SLN → internal branch</text>
+  <text x="150" y="140" font-family="Inter, sans-serif" font-size="9.5" font-weight="600" fill="#8a6d00">external branch (cricothyroid)</text>
+
+  <!-- legend -->
+  <g font-family="Inter, sans-serif" font-size="11" fill="#334155">
+    <line x1="150" y1="436" x2="176" y2="436" stroke="#ca8a04" stroke-width="3.4"/><text x="182" y="440">Nerve</text>
+    <line x1="252" y1="436" x2="278" y2="436" stroke="#d1495b" stroke-width="8" stroke-linecap="round"/><text x="284" y="440">Artery</text>
+  </g>
+</svg>

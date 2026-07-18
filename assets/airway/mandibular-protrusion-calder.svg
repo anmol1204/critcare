@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 340" role="img" aria-label="Mandibular protrusion (Calder) test, classes A B and C shown as a side view of the incisor bite">
+  <!-- Original diagram for CritCare.in — own work, released CC0. -->
+  <title>Mandibular protrusion (Calder) test — Class A, B, C</title>
+  <text x="300" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#0f172a">Mandibular protrusion (Calder) test</text>
+  <text x="300" y="45" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#64748b">Side view of the bite — can the lower incisors be advanced past the upper?</text>
+
+  <!-- ===== PANEL TEMPLATE: three columns at cx = 100, 300, 500 ===== -->
+  <!-- CLASS A : lower tip anterior to upper  (good) -->
+  <g>
+    <rect x="24" y="62" width="152" height="210" rx="12" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+    <!-- anterior arrow -->
+    <text x="100" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="10.5" fill="#94a3b8">← anterior</text>
+    <!-- upper gum + incisor -->
+    <rect x="78" y="104" width="44" height="16" rx="5" fill="#f5c6c6"/>
+    <polygon points="92,120 108,120 105,164 95,164" fill="#fff" stroke="#94a3b8" stroke-width="1.4"/>
+    <!-- alignment reference at upper tip -->
+    <line x1="100" y1="120" x2="100" y2="210" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+    <!-- lower incisor (shifted anterior = left by 16) + jaw -->
+    <polygon points="79,210 95,210 92,164 82,164" fill="#fff" stroke="#16a34a" stroke-width="1.8"/>
+    <rect x="70" y="210" width="60" height="16" rx="5" fill="#f5c6c6"/>
+    <!-- status -->
+    <circle cx="100" cy="250" r="9" fill="#16a34a"/>
+    <text x="100" y="254" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="#fff">A</text>
+  </g>
+  <text x="100" y="292" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#166534">Class A</text>
+  <text x="100" y="309" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#475569">Lower incisors go</text>
+  <text x="100" y="323" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#475569">in front of upper</text>
+
+  <!-- CLASS B : edge to edge  (intermediate) -->
+  <g>
+    <rect x="224" y="62" width="152" height="210" rx="12" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+    <rect x="278" y="104" width="44" height="16" rx="5" fill="#f5c6c6"/>
+    <polygon points="292,120 308,120 305,164 295,164" fill="#fff" stroke="#94a3b8" stroke-width="1.4"/>
+    <line x1="300" y1="120" x2="300" y2="210" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+    <!-- lower incisor aligned (edge to edge) -->
+    <polygon points="292,210 308,210 305,164 295,164" fill="#fff" stroke="#d97706" stroke-width="1.8"/>
+    <rect x="270" y="210" width="60" height="16" rx="5" fill="#f5c6c6"/>
+    <circle cx="300" cy="250" r="9" fill="#d97706"/>
+    <text x="300" y="254" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="#fff">B</text>
+  </g>
+  <text x="300" y="292" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#92400e">Class B</text>
+  <text x="300" y="309" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#475569">Lower incisors reach</text>
+  <text x="300" y="323" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#475569">edge-to-edge only</text>
+
+  <!-- CLASS C : cannot reach  (poor) -->
+  <g>
+    <rect x="424" y="62" width="152" height="210" rx="12" fill="#fef2f2" stroke="#fecaca" stroke-width="1.5"/>
+    <rect x="478" y="104" width="44" height="16" rx="5" fill="#f5c6c6"/>
+    <polygon points="492,120 508,120 505,164 495,164" fill="#fff" stroke="#94a3b8" stroke-width="1.4"/>
+    <line x1="500" y1="120" x2="500" y2="210" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="3 3"/>
+    <!-- lower incisor retruded (behind = right by 16) -->
+    <polygon points="509,210 525,210 522,164 512,164" fill="#fff" stroke="#dc2626" stroke-width="1.8"/>
+    <rect x="490" y="210" width="60" height="16" rx="5" fill="#f5c6c6"/>
+    <circle cx="500" cy="250" r="9" fill="#dc2626"/>
+    <text x="500" y="254" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="800" fill="#fff">C</text>
+  </g>
+  <text x="500" y="292" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#991b1b">Class C</text>
+  <text x="500" y="309" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#475569">Lower incisors cannot</text>
+  <text x="500" y="323" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#475569">reach the upper lip</text>
+</svg>
