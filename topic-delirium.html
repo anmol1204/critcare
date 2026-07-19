@@ -46,6 +46,11 @@
     .diff-intro{background:linear-gradient(135deg,#ecfeff,#cffafe);border:1px solid #67e8f9;border-radius:12px;padding:1.1rem 1.3rem;margin:1rem 0 1.4rem;}
     .diff-intro p{font-size:.9rem;color:#155e75;line-height:1.7;margin:0;}
     .diff-intro strong{color:#0e7490;}
+    .tick-list,.cross-list{list-style:none;padding-left:0;margin:.4rem 0;}
+    .tick-list li,.cross-list li{position:relative;padding-left:1.6rem;margin-bottom:.5rem;font-size:.9rem;color:var(--slate);line-height:1.65;}
+    .tick-list li::before{content:"✓";position:absolute;left:0;color:#16a34a;font-weight:800;}
+    .cross-list li::before{content:"✕";position:absolute;left:0;color:#dc2626;font-weight:800;}
+    .tick-list strong,.cross-list strong{color:var(--ink);}
     h3.difftitle{margin-top:1.6rem;}
   </style>
   <script src="app-native.js" defer></script>
@@ -129,14 +134,14 @@
       <span class="sb sbm">🎭 2 · Subtypes</span>
       <h2>Hyperactive, hypoactive and mixed</h2>
       <p>Motor subtype is defined by the level of arousal and psychomotor activity. The commonest form is the one most often missed.</p>
-      <table class="cmp-table">
+      <div class="table-wrap"><table class="drug-table">
         <thead><tr><th>Subtype</th><th>Features</th><th>Frequency / prognosis</th></tr></thead>
         <tbody>
           <tr><td><strong>Hypoactive</strong></td><td>Withdrawn, flat, drowsy, slow — mistaken for depression or fatigue</td><td>Commonest in the ICU; frequently <strong>missed</strong>; worse prognosis</td></tr>
           <tr><td><strong>Hyperactive</strong></td><td>Agitated, restless, pulling at lines/tubes, hallucinating</td><td>Most easily recognised; least common alone</td></tr>
           <tr><td><strong>Mixed</strong></td><td>Fluctuates between the two, often over hours</td><td>Very common</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="ec"><p><strong>Clinical point:</strong> because hypoactive delirium looks "settled", it is under-diagnosed unless you <em>screen</em> — quiet is not the same as well.</p></div>
     </section>
 
@@ -155,7 +160,7 @@
       <span class="sb sbd">🧩 4 · Risk Factors</span>
       <h2>Predisposing vs precipitating</h2>
       <p>Delirium is almost always <strong>multifactorial</strong>: a vulnerable brain (predisposing) meets an acute insult (precipitating). The more vulnerable the patient, the smaller the insult needed.</p>
-      <table class="cmp-table">
+      <div class="table-wrap"><table class="drug-table">
         <thead><tr><th>Predisposing (baseline)</th><th>Precipitating (acute — often modifiable)</th></tr></thead>
         <tbody>
           <tr><td>Older age, pre-existing dementia/cognitive impairment</td><td><strong>Benzodiazepines</strong>, deep sedation, anticholinergics, opioids</td></tr>
@@ -164,7 +169,7 @@
           <tr><td>Alcohol/substance use, prior delirium</td><td>Sleep deprivation, immobility, restraints, pain</td></tr>
           <tr><td>Multiple comorbidities</td><td>Sedation-related, infection, drug withdrawal</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="mc"><div class="ml2">Highest-yield modifiable driver</div><p>Of all precipitants, <strong>benzodiazepine exposure and depth of sedation</strong> are the ones most under your direct control at the bedside.</p></div>
     </section>
 
@@ -174,7 +179,7 @@
       <p>Screening is a <strong>two-step</strong> process done at least once per shift. First quantify arousal with the <strong>RASS</strong>; only if the patient is rousable (RASS ≥ −3) do you apply the <strong>CAM-ICU</strong>.</p>
 
       <h3 class="difftitle">Step 1 — Richmond Agitation–Sedation Scale (RASS)</h3>
-      <table class="cmp-table">
+      <div class="table-wrap"><table class="drug-table">
         <thead><tr><th>Score</th><th>State</th></tr></thead>
         <tbody>
           <tr><td>+4 to +1</td><td>Combative → restless (agitation)</td></tr>
@@ -182,7 +187,7 @@
           <tr><td>−1 to −3</td><td>Drowsy → moderate sedation (responds to voice)</td></tr>
           <tr><td>−4 / −5</td><td>Responds to physical stimulus only / unrousable</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="ec"><p><strong>Target for most ventilated patients: RASS −2 to 0</strong> (light sedation). At RASS −4/−5 the patient is too deeply sedated to test — that is over-sedation, not calm.</p></div>
 
       <h3 class="difftitle">Step 2 — CAM-ICU algorithm (a flowchart)</h3>
@@ -200,7 +205,7 @@
       <span class="sb sbx">🩺 6 · Differential Diagnosis</span>
       <h2>Screen positive? Now hunt the cause</h2>
       <p>A positive screen is a prompt to find the <strong>reversible driver</strong>. A useful mnemonic is <strong>"DELIRIUM(S)"</strong> / "I WATCH DEATH" — work through them systematically.</p>
-      <table class="cmp-table">
+      <div class="table-wrap"><table class="drug-table">
         <thead><tr><th>Category</th><th>Examples to actively exclude</th></tr></thead>
         <tbody>
           <tr><td>Drugs / withdrawal</td><td>Benzodiazepines, opioids, anticholinergics, steroids; alcohol/benzo withdrawal</td></tr>
@@ -210,7 +215,7 @@
           <tr><td>Deficiency</td><td>Thiamine (Wernicke) — give before glucose in the at-risk</td></tr>
           <tr><td>Environment</td><td>Pain, urinary retention/constipation, sleep loss, immobility</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="mc"><div class="ml2">Don't miss</div><p>New agitation is <strong>hypoxia, hypoglycaemia, or urinary retention/pain</strong> until proven otherwise — check these before reaching for a sedative.</p></div>
     </section>
 
@@ -218,7 +223,7 @@
       <span class="sb sbf">🛡️ 7 · Prevention — the ABCDEF Bundle</span>
       <h2>Non-pharmacological prevention is the cornerstone</h2>
       <p>No drug reliably prevents delirium. The evidence base is the <strong>ABCDEF ("A2F") bundle</strong> — bundle adherence reduces delirium, ventilator days and mortality.</p>
-      <table class="cmp-table">
+      <div class="table-wrap"><table class="drug-table">
         <thead><tr><th>Letter</th><th>Element</th></tr></thead>
         <tbody>
           <tr><td><strong>A</strong></td><td><strong>A</strong>ssess, prevent and manage <strong>pain</strong></td></tr>
@@ -228,7 +233,7 @@
           <tr><td><strong>E</strong></td><td><strong>E</strong>arly mobility and exercise</td></tr>
           <tr><td><strong>F</strong></td><td><strong>F</strong>amily engagement and empowerment</td></tr>
         </tbody>
-      </table>
+      </table></div>
       <div class="ec"><p><strong>Plus the basics every night:</strong> restore the day–night cycle (light by day, dark/quiet at night, cluster care to protect sleep), give back glasses and hearing aids, reorient, and remove lines/catheters/restraints as soon as possible.</p></div>
     </section>
 
@@ -278,7 +283,7 @@
       <div class="diff-intro"><p>The classic exam traps: <strong>delirium vs dementia</strong>, and <strong>the two sedatives</strong> that pull in opposite directions on delirium risk.</p></div>
 
       <h3 class="difftitle">Delirium vs Dementia</h3>
-      <table class="cmp-table">
+      <div class="table-wrap"><table class="drug-table">
         <thead><tr><th>Feature</th><th>Delirium</th><th>Dementia</th></tr></thead>
         <tbody>
           <tr><td>Onset</td><td>Acute (hours–days)</td><td>Insidious (months–years)</td></tr>
@@ -287,10 +292,10 @@
           <tr><td>Consciousness</td><td>Altered/clouded</td><td>Clear until late</td></tr>
           <tr><td>Reversibility</td><td>Usually reversible (treat cause)</td><td>Generally irreversible</td></tr>
         </tbody>
-      </table>
+      </table></div>
 
       <h3 class="difftitle">Dexmedetomidine vs Benzodiazepines (for sedation)</h3>
-      <table class="cmp-table">
+      <div class="table-wrap"><table class="drug-table">
         <thead><tr><th>Feature</th><th>Dexmedetomidine</th><th>Benzodiazepine (e.g. midazolam)</th></tr></thead>
         <tbody>
           <tr><td>Mechanism</td><td>Central α₂-agonist</td><td>GABA-A potentiation</td></tr>
@@ -300,7 +305,7 @@
           <tr><td>Notable effects</td><td>Bradycardia, hypotension</td><td>Accumulation, tolerance, withdrawal</td></tr>
           <tr><td>PADIS stance</td><td>Preferred</td><td>Avoid where possible</td></tr>
         </tbody>
-      </table>
+      </table></div>
     </section>
 
     <section id="s12" class="references-section">

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Neuromuscular Blockers &amp; Reversal — Suxamethonium, NDMRs, TOF &amp; Sugammadex — CritCare.in</title>
+  <meta name="description" content="A structured anaesthesia guide to neuromuscular blocking drugs: neuromuscular junction physiology, depolarising vs non-depolarising agents, suxamethonium and its complications, the aminosteroids and benzylisoquinoliniums, train-of-four and depth-of-block monitoring, reversal with neostigmine and sugammadex, and the special situations (renal/hepatic failure, malignant hyperthermia, pseudocholinesterase deficiency, myasthenia). From Miller's, Morgan & Mikhail's and Stoelting's." />
+  <link rel="canonical" href="https://critcare.in/anaes-neuromuscular-blockers.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .flow-step{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.7rem;}
+    .flow-num{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:#fff;flex-shrink:0;margin-top:.15rem;}
+    .flow-body{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:.85rem 1.1rem;flex:1;}
+    .flow-body h4{font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:.3rem;}
+    .flow-body p{font-size:.84rem;color:var(--slate);line-height:1.65;margin:0;}
+    .flow-body strong{color:var(--ink);}
+    .flow-arrow{text-align:center;color:var(--blue);font-size:1.15rem;margin:0 0 .5rem;}
+    .tick-list,.cross-list{list-style:none;padding-left:0;margin:.4rem 0;}
+    .tick-list li,.cross-list li{position:relative;padding-left:1.6rem;margin-bottom:.5rem;font-size:.9rem;color:var(--slate);line-height:1.65;}
+    .tick-list li::before{content:"✓";position:absolute;left:0;color:#16a34a;font-weight:800;}
+    .cross-list li::before{content:"✕";position:absolute;left:0;color:#dc2626;font-weight:800;}
+    .tick-list strong,.cross-list strong{color:var(--ink);}
+    .difftitle{margin-top:1.6rem;}
+    .toc-inline{background:var(--bg-alt);border:1px solid var(--line);border-radius:12px;padding:1rem 1.3rem;margin:1.2rem 0 1.6rem;}
+    .toc-inline ol{margin:0;padding-left:1.2rem;columns:2;font-size:.86rem;line-height:1.9;}
+    @media(max-width:640px){.toc-inline ol{columns:1;}}
+    .toc-inline a{color:var(--blue);text-decoration:none;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › Neuromuscular Blockers</div>
+    <h1>🧬 Neuromuscular Blockers &amp; Reversal</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Depolarising vs non-depolarising</span>
+      <span class="topic-tag">TOF monitoring</span>
+      <span class="topic-tag">Sugammadex</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Sources: Miller's Anesthesia · Morgan &amp; Mikhail's Clinical Anesthesiology · Stoelting's Pharmacology</div>
+  </div>
+</header>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <div class="book-quote">
+    <p>"The neuromuscular blocking drugs paralyse but do not anaesthetise. The two commandments follow from that single fact: never paralyse a patient you cannot ventilate, and never let one wake before the block is fully reversed."</p>
+    <cite>Synthesised from Miller's Anesthesia; Morgan &amp; Mikhail's Clinical Anesthesiology; Stoelting's Pharmacology &amp; Physiology in Anesthetic Practice.</cite>
+  </div>
+
+  <div class="toc-inline">
+    <ol>
+      <li><a href="#s1">Neuromuscular junction physiology</a></li>
+      <li><a href="#s2">Classification</a></li>
+      <li><a href="#s3">Suxamethonium (depolarising)</a></li>
+      <li><a href="#s4">Non-depolarising agents</a></li>
+      <li><a href="#s5">Monitoring the block (TOF)</a></li>
+      <li><a href="#s6">Reversal</a></li>
+      <li><a href="#s7">Special situations</a></li>
+      <li><a href="#s8">Common mistakes</a></li>
+      <li><a href="#s9">Exam pearls</a></li>
+      <li><a href="#s10">Key differences</a></li>
+      <li><a href="#s11">References</a></li>
+    </ol>
+  </div>
+
+  <section id="s1">
+    <span class="sb sb-w">⚡ 1 · Neuromuscular Junction Physiology</span>
+    <h2>How a nerve impulse becomes a muscle twitch</h2>
+    <p>Every blocker acts on the nicotinic acetylcholine receptor at the motor end-plate. Understanding the normal cycle makes the pharmacology obvious.</p>
+    <div class="flow-step"><div class="flow-num" style="background:#1e6fd9;">1</div><div class="flow-body"><h4>Synthesis &amp; storage</h4><p>Acetylcholine (ACh) is made from acetyl-CoA + choline by choline acetyltransferase and stored in vesicles at the nerve terminal.</p></div></div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-step"><div class="flow-num" style="background:#5b21b6;">2</div><div class="flow-body"><h4>Release</h4><p>The action potential opens voltage-gated <strong>Ca²⁺</strong> channels; Ca²⁺ influx triggers vesicle fusion and ACh release into the cleft.</p></div></div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-step"><div class="flow-num" style="background:#9a3412;">3</div><div class="flow-body"><h4>Receptor activation</h4><p>ACh binds <strong>both α-subunits</strong> of the postjunctional nicotinic receptor → cation channel opens → end-plate depolarisation → muscle action potential → contraction.</p></div></div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-step"><div class="flow-num" style="background:#166534;">4</div><div class="flow-body"><h4>Termination</h4><p><strong>Acetylcholinesterase</strong> in the cleft hydrolyses ACh within milliseconds; choline is recycled. The end-plate repolarises, ready for the next impulse.</p></div></div>
+    <div class="ec"><p><strong>The pharmacological levers:</strong> non-depolarisers <em>compete</em> at the receptor (block step 3); suxamethonium <em>over-stimulates</em> it; anticholinesterases (neostigmine) raise ACh by blocking step 4; sugammadex removes the drug from the plasma entirely.</p></div>
+  </section>
+
+  <section id="s2">
+    <span class="sb sb-m">🧬 2 · Classification</span>
+    <h2>Two mechanisms, two chemical families</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Class</th><th>Mechanism</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Depolarising</strong></td><td>Receptor <em>agonist</em> — sustained depolarisation → fasciculation then flaccid paralysis</td><td>Suxamethonium (succinylcholine)</td></tr>
+          <tr><td><strong>Non-depolarising — aminosteroid</strong></td><td>Competitive <em>antagonist</em> at the receptor</td><td>Rocuronium, Vecuronium, Pancuronium</td></tr>
+          <tr><td><strong>Non-depolarising — benzylisoquinolinium</strong></td><td>Competitive antagonist; organ-independent breakdown</td><td>Atracurium, Cisatracurium, Mivacurium</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="marino-box"><div class="mb-label">Why the chemical family matters</div><p><strong>Aminosteroids</strong> ("-onium/-uronium") are reversed by <strong>sugammadex</strong> and depend on hepatic/renal clearance. <strong>Benzylisoquinoliniums</strong> are <strong>not</strong> reversed by sugammadex but atracurium/cisatracurium clear by organ-independent <strong>Hofmann elimination</strong> — the drugs of choice in renal and hepatic failure.</p></div>
+  </section>
+
+  <section id="s3">
+    <span class="sb sb-e">💥 3 · Suxamethonium — the Depolarising Agent</span>
+    <h2>Fast on, fast off — and a long list of hazards</h2>
+    <p>Dose <strong>1–1.5 mg/kg IV</strong>; onset <strong>~45–60 s</strong>, duration <strong>~5–10 min</strong>. Its speed makes it the classic <strong>rapid-sequence induction</strong> relaxant. It is hydrolysed by <strong>plasma (pseudo)cholinesterase</strong>.</p>
+    <div class="guideline-rec"><div class="gr-label">Phase I vs Phase II block</div><div class="gr-text"><strong>Phase I</strong> is the normal depolarising block (no fade on TOF, augmented by anticholinesterases). Repeated/large doses cause a <strong>Phase II</strong> block that behaves like a non-depolarising block (fade appears).</div></div>
+    <h3 class="difftitle">Complications to know cold</h3>
+    <div class="mc"><div class="ml">⚠ Hyperkalaemic cardiac arrest</div><p>Exaggerated K⁺ efflux via up-regulated extrajunctional receptors — <strong>avoid after ~24–72 h</strong> in burns, denervation/spinal cord injury, prolonged immobility and severe sepsis.</p></div>
+    <div class="mc"><div class="ml">⚠ Malignant hyperthermia</div><p>Suxamethonium is a <strong>trigger</strong> (with volatiles). Masseter spasm may be the first sign.</p></div>
+    <div class="mc"><div class="ml">⚠ Suxamethonium apnoea</div><p>Prolonged paralysis in <strong>pseudocholinesterase deficiency</strong> — quantified by the <strong>dibucaine number</strong> (normal ~80; homozygous atypical ~20). Management: ventilate &amp; sedate until spontaneous recovery.</p></div>
+    <div class="mc"><div class="ml">⚠ Others</div><p>Bradycardia (esp. second dose / children — pre-treat atropine), myalgia, raised <strong>intracranial, intraocular &amp; intragastric</strong> pressure, transient hyperkalaemia even in normals (~0.5 mmol/L).</p></div>
+  </section>
+
+  <section id="s4">
+    <span class="sb sb-g">🧪 4 · Non-depolarising Agents</span>
+    <h2>Choosing between the competitive blockers</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Agent</th><th>Intubating dose</th><th>Onset</th><th>Duration</th><th>Elimination / notes</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Rocuronium</strong></td><td>0.6 mg/kg (1.2 for RSI)</td><td>~60–90 s</td><td>~30–40 min</td><td>Hepatic; <strong>sugammadex-reversible</strong> — the non-depolarising RSI alternative to suxamethonium</td></tr>
+          <tr><td><strong>Vecuronium</strong></td><td>0.1 mg/kg</td><td>~2–3 min</td><td>~30–40 min</td><td>Hepatic/renal; sugammadex-reversible; cardiostable</td></tr>
+          <tr><td><strong>Atracurium</strong></td><td>0.5 mg/kg</td><td>~2–3 min</td><td>~30 min</td><td><strong>Hofmann elimination</strong> (organ-independent); histamine release; metabolite <strong>laudanosine</strong></td></tr>
+          <tr><td><strong>Cisatracurium</strong></td><td>0.15 mg/kg</td><td>~3–5 min</td><td>~35–45 min</td><td>Hofmann elimination; <strong>no histamine release</strong>; ideal in renal/hepatic failure &amp; ICU</td></tr>
+          <tr><td><strong>Pancuronium</strong></td><td>0.1 mg/kg</td><td>~3–5 min</td><td>~60–90 min (long)</td><td>Renal; <strong>vagolytic → tachycardia</strong>; largely historical</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="ec"><p><strong>Fast &amp; reversible:</strong> rocuronium + sugammadex now rivals suxamethonium for RSI where suxamethonium is contraindicated. <strong>Organ-independent:</strong> cisatracurium for the patient in renal/hepatic failure or long ICU infusions.</p></div>
+  </section>
+
+  <section id="s5">
+    <span class="sb sb-s">📊 5 · Monitoring the Block — Train-of-Four</span>
+    <h2>You cannot manage what you do not measure</h2>
+    <p>A peripheral nerve stimulator (e.g. ulnar nerve → adductor pollicis) delivers <strong>four supramaximal twitches (2 Hz)</strong>. Interpretation depends on the <strong>number of twitches</strong> and the presence of <strong>fade</strong>.</p>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Pattern</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><strong>TOF count 0</strong> (+ post-tetanic count)</td><td>Deep/profound block — use PTC to gauge depth</td></tr>
+          <tr><td><strong>1–3 twitches</strong></td><td>Moderate block — neostigmine reversal possible once ≥2 twitches</td></tr>
+          <tr><td><strong>Fade</strong> (T4 &lt; T1)</td><td>Non-depolarising (or Phase II) block — the hallmark</td></tr>
+          <tr><td><strong>No fade</strong></td><td>Normal, or a depolarising Phase I block</td></tr>
+          <tr><td><strong>TOF ratio ≥ 0.9</strong></td><td>Adequate recovery — the threshold for safe extubation</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mc"><div class="ml">Residual paralysis</div><p>A TOF ratio 0.7–0.9 still impairs pharyngeal function and the hypoxic ventilatory response — clinical tests (5-s head lift) miss it. Confirm <strong>≥0.9 with quantitative monitoring</strong> before extubation.</p></div>
+  </section>
+
+  <section id="s6">
+    <span class="sb sb-f">🔄 6 · Reversal</span>
+    <h2>Two very different tools</h2>
+    <div class="flow-step"><div class="flow-num" style="background:#166534;">A</div><div class="flow-body"><h4>Neostigmine (+ glycopyrrolate)</h4><p>Inhibits acetylcholinesterase → more ACh to out-compete the blocker. <strong>Only works once recovery has begun (≥2 twitches / TOF count ≥2)</strong> — it has a ceiling. Give an antimuscarinic (glycopyrrolate/atropine) to block bradycardia, salivation and bronchospasm.</p></div></div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-step"><div class="flow-num" style="background:#5b21b6;">B</div><div class="flow-body"><h4>Sugammadex</h4><p>A modified γ-cyclodextrin that <strong>encapsulates rocuronium/vecuronium</strong> in plasma — reverses even <strong>profound</strong> block. Dose <strong>2 mg/kg</strong> (moderate, ≥2 twitches), <strong>4 mg/kg</strong> (deep, PTC 1–2), <strong>16 mg/kg</strong> (immediate reversal after an intubating dose). Does <strong>not</strong> reverse benzylisoquinoliniums.</p></div></div>
+    <div class="ec"><p><strong>Caveats for sugammadex:</strong> binds hormonal contraceptives (advise extra contraception for 7 days), rare anaphylaxis, and needs a higher re-dose if rocuronium is given again soon.</p></div>
+  </section>
+
+  <section id="s7">
+    <span class="sb sb-x">🎯 7 · Special Situations</span>
+    <h2>When the choice of relaxant changes</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Situation</th><th>Approach</th></tr></thead>
+        <tbody>
+          <tr><td>Renal / hepatic failure</td><td><strong>Cisatracurium / atracurium</strong> (Hofmann elimination, organ-independent)</td></tr>
+          <tr><td>Rapid-sequence induction</td><td>Suxamethonium 1–1.5 mg/kg, <em>or</em> rocuronium 1.2 mg/kg (with sugammadex available)</td></tr>
+          <tr><td>Malignant hyperthermia risk</td><td>Avoid suxamethonium; all non-depolarisers are safe</td></tr>
+          <tr><td>Myasthenia gravis</td><td><strong>Resistant to suxamethonium</strong>, very <strong>sensitive to non-depolarisers</strong> — titrate tiny doses with monitoring</td></tr>
+          <tr><td>Pseudocholinesterase deficiency</td><td>Prolonged suxamethonium/mivacurium block — ventilate until recovery; dibucaine number confirms</td></tr>
+          <tr><td>Critical illness / prolonged immobility</td><td>Avoid suxamethonium (hyperkalaemia); watch for ICU-acquired weakness with prolonged NMB use</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s8">
+    <span class="sb sb-e">🚫 8 · Common Mistakes</span>
+    <h2>Where it goes wrong</h2>
+    <ul class="cross-list">
+      <li>Paralysing before confirming you can <strong>ventilate/oxygenate</strong>.</li>
+      <li>Giving <strong>suxamethonium</strong> to a burn/denervation/SCI patient beyond the safe window → hyperkalaemic arrest.</li>
+      <li>Reversing with <strong>neostigmine at TOF count 0</strong> — it cannot work with no twitches (use sugammadex or wait).</li>
+      <li>Extubating on clinical signs alone instead of a <strong>quantitative TOF ratio ≥0.9</strong>.</li>
+      <li>Forgetting the <strong>antimuscarinic</strong> with neostigmine → bradycardia/secretions.</li>
+      <li>Expecting <strong>sugammadex</strong> to reverse atracurium/cisatracurium (it won't).</li>
+    </ul>
+  </section>
+
+  <section id="s9">
+    <span class="sb sb-x">🎓 9 · Exam Pearls — DNB / NEET-SS</span>
+    <h2>High-yield one-liners</h2>
+    <div class="ec"><p><strong>Q: Dibucaine number in homozygous atypical pseudocholinesterase?</strong><br>~20 (normal ~80) — prolonged suxamethonium apnoea.</p></div>
+    <div class="ec"><p><strong>Q: Which relaxants are organ-independent?</strong><br>Atracurium &amp; cisatracurium — Hofmann elimination; drugs of choice in renal/hepatic failure.</p></div>
+    <div class="ec"><p><strong>Q: TOF ratio for safe extubation?</strong><br>≥0.9 (quantitative).</p></div>
+    <div class="ec"><p><strong>Q: Sugammadex doses?</strong><br>2 mg/kg (moderate), 4 mg/kg (deep), 16 mg/kg (immediate reversal).</p></div>
+    <div class="ec"><p><strong>Q: Muscle relaxants in myasthenia gravis?</strong><br>Resistant to suxamethonium; markedly sensitive to non-depolarisers.</p></div>
+    <div class="ec"><p><strong>Q: Metabolite of atracurium that can cause CNS excitation?</strong><br>Laudanosine.</p></div>
+  </section>
+
+  <section id="s10">
+    <span class="sb sb-r">⭐ 10 · Key Differences</span>
+    <h2>Side-by-side comparisons</h2>
+
+    <h3 class="difftitle">Depolarising (suxamethonium) vs Non-depolarising block</h3>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Feature</th><th>Depolarising</th><th>Non-depolarising</th></tr></thead>
+        <tbody>
+          <tr><td>Mechanism</td><td>Receptor agonist</td><td>Competitive antagonist</td></tr>
+          <tr><td>Fasciculations</td><td>Yes (before paralysis)</td><td>No</td></tr>
+          <tr><td>Fade on TOF / tetanus</td><td>Absent (Phase I)</td><td>Present</td></tr>
+          <tr><td>Post-tetanic potentiation</td><td>Absent</td><td>Present</td></tr>
+          <tr><td>Effect of neostigmine</td><td>Augments block</td><td>Reverses block</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="difftitle">Neostigmine vs Sugammadex</h3>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Feature</th><th>Neostigmine</th><th>Sugammadex</th></tr></thead>
+        <tbody>
+          <tr><td>Mechanism</td><td>Anticholinesterase (↑ ACh)</td><td>Encapsulates the drug</td></tr>
+          <tr><td>Works at deep block?</td><td>No — needs ≥2 twitches</td><td>Yes — even profound block</td></tr>
+          <tr><td>Reverses which agents?</td><td>All non-depolarisers (partially)</td><td>Only aminosteroids (roc/vec)</td></tr>
+          <tr><td>Co-drug</td><td>Antimuscarinic needed</td><td>None</td></tr>
+          <tr><td>Notable caveat</td><td>Bradycardia, ceiling effect</td><td>Binds contraceptives; costly</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="difftitle">Aminosteroid vs Benzylisoquinolinium</h3>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Feature</th><th>Aminosteroid</th><th>Benzylisoquinolinium</th></tr></thead>
+        <tbody>
+          <tr><td>Examples</td><td>Rocuronium, vecuronium, pancuronium</td><td>Atracurium, cisatracurium, mivacurium</td></tr>
+          <tr><td>Histamine release</td><td>No</td><td>Atracurium yes; cisatracurium no</td></tr>
+          <tr><td>Elimination</td><td>Hepatic/renal</td><td>Hofmann (organ-independent)</td></tr>
+          <tr><td>Sugammadex-reversible</td><td>Yes</td><td>No</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s11">
+    <span class="sb sb-r">📚 11 · References</span>
+    <h2>References</h2>
+    <ol class="ref-list">
+      <li><strong>Gropper MA, Cohen NH, Eriksson LI, et al. (eds).</strong> Miller's Anesthesia. 9th ed. Elsevier; 2020.</li>
+      <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology. 7th ed. McGraw-Hill; 2022.</li>
+      <li><strong>Flood P, Rathmell JP, Urman RD.</strong> Stoelting's Pharmacology &amp; Physiology in Anesthetic Practice. 6th ed. Wolters Kluwer; 2022.</li>
+      <li><strong>Naguib M, Brull SJ, Kopman AF, et al.</strong> Consensus Statement on Perioperative Use of Neuromuscular Monitoring. <em>Anesth Analg.</em> 2018;127(1):71–80.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li></ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+  <nav class="mobile-nav-bar">
+    <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+    <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+    <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+    <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+    <a href="drug-reference.html"><span class="mn-icon">💊</span>Drugs</a>
+  </nav>
+  <script src="/pwa.js"></script>
+</body>
+</html>
