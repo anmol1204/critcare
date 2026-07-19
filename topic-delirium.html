@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>ICU Delirium — CAM-ICU, PADIS &amp; the ABCDEF Bundle — Structured Guide — CritCare.in</title>
+  <meta name="description" content="A structured, tabular ICU guide to delirium: definition and subtypes, risk factors, CAM-ICU and ICDSC screening, the RASS, differential diagnosis, PADIS-based prevention (the ABCDEF bundle, light sedation, avoiding benzodiazepines), pharmacological and non-pharmacological management, and prognosis — with all comparisons at the end. Led by Marino with the Washington Manual and Irwin & Rippe." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .bq{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .bq p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .bq cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .mb{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .mb .ml{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .mb p,.mb ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .mb ul{padding-left:1.2rem;}
+    .mb strong{color:#4c1d95;}
+    .eq{background:var(--bg-alt);border:1px dashed var(--blue);border-radius:10px;padding:.9rem 1.1rem;margin:.8rem 0;font-size:.95rem;color:var(--ink);text-align:center;line-height:1.9;}
+    .eq strong{color:var(--blue);}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml2{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;}
+    .ec strong{color:#1e3a8a;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sbw{background:#dbeafe;color:#1e40af;}.sbm{background:#ede9fe;color:#5b21b6;}.sbg{background:#dcfce7;color:#166534;}.sbd{background:#ffedd5;color:#9a3412;}.sbf{background:#f0fdf4;color:#14532d;border:1px solid #86efac;}.sbe{background:#fee2e2;color:#991b1b;}.sbx{background:#fef9c3;color:#854d0e;}.sbc{background:#cffafe;color:#155e75;}.sbr{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .fs{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;}
+    .fn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;flex-shrink:0;margin-top:.2rem;}
+    .fb{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;}
+    .fb h4{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;}
+    .fb p,.fb ul{font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;}
+    .fb ul{padding-left:1.1rem;}
+    .fb strong{color:var(--ink);}
+    .flow-arrow{text-align:center;color:var(--blue);font-size:1.2rem;margin:.1rem 0;}
+    .diff-intro{background:linear-gradient(135deg,#ecfeff,#cffafe);border:1px solid #67e8f9;border-radius:12px;padding:1.1rem 1.3rem;margin:1rem 0 1.4rem;}
+    .diff-intro p{font-size:.9rem;color:#155e75;line-height:1.7;margin:0;}
+    .diff-intro strong{color:#0e7490;}
+    h3.difftitle{margin-top:1.6rem;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › ICU Delirium</div>
+    <h1>🧠 ICU Delirium</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">PADIS 2018</span>
+      <span class="gbadge esicm">CAM-ICU</span>
+      <span class="gbadge isccm">ABCDEF Bundle</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Acute brain dysfunction</span>
+      <span class="topic-tag">CAM-ICU / ICDSC</span>
+      <span class="topic-tag">Light sedation</span>
+      <span class="topic-updated">Led by Marino · with Washington Manual &amp; Irwin &amp; Rippe · PADIS-aligned</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. What delirium is</a></li>
+        <li><a href="#s2">2. Subtypes</a></li>
+        <li><a href="#s3">3. Why it matters</a></li>
+        <li><a href="#s4">4. Risk factors</a></li>
+        <li><a href="#s5">5. Screening: RASS → CAM-ICU</a></li>
+        <li><a href="#s6">6. Differential diagnosis</a></li>
+        <li><a href="#s7">7. Prevention: the ABCDEF bundle</a></li>
+        <li><a href="#s8">8. Management</a></li>
+        <li><a href="#s9">9. Common mistakes</a></li>
+        <li><a href="#s10">10. Exam pearls</a></li>
+        <li><a href="#s11">⭐ 11. Key differences</a></li>
+        <li><a href="#s12">12. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sbw">🧠 1 · What Delirium Is</span>
+      <h2>An acute, fluctuating disturbance of attention and awareness</h2>
+      <div class="bq">
+        <p>"Delirium is acute brain failure — as much an organ dysfunction as acute kidney injury or the acute respiratory distress syndrome, and just as deserving of monitoring, prevention and a search for a reversible cause."</p>
+        <cite>Summarised from Marino's The ICU Book; with the Washington Manual of Critical Care and Irwin &amp; Rippe's Intensive Care Medicine.</cite>
+      </div>
+      <p>Delirium (DSM-5) is an <strong>acute (hours–days), fluctuating</strong> disturbance of <strong>attention and awareness</strong>, with an additional change in cognition (memory, orientation, language, perception), that is a <strong>direct physiological consequence</strong> of a medical condition, intoxication or withdrawal — and <strong>not</strong> better explained by a pre-existing dementia or a severely reduced level of arousal such as coma.</p>
+      <div class="mb">
+        <div class="ml">The four DSM-5 pillars</div>
+        <ul>
+          <li><strong>Acute onset &amp; fluctuating</strong> course</li>
+          <li><strong>Inattention</strong> (the cardinal feature)</li>
+          <li><strong>Disorganised thinking</strong> or altered level of consciousness</li>
+          <li><strong>An identifiable organic cause</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="s2">
+      <span class="sb sbm">🎭 2 · Subtypes</span>
+      <h2>Hyperactive, hypoactive and mixed</h2>
+      <p>Motor subtype is defined by the level of arousal and psychomotor activity. The commonest form is the one most often missed.</p>
+      <table class="cmp-table">
+        <thead><tr><th>Subtype</th><th>Features</th><th>Frequency / prognosis</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Hypoactive</strong></td><td>Withdrawn, flat, drowsy, slow — mistaken for depression or fatigue</td><td>Commonest in the ICU; frequently <strong>missed</strong>; worse prognosis</td></tr>
+          <tr><td><strong>Hyperactive</strong></td><td>Agitated, restless, pulling at lines/tubes, hallucinating</td><td>Most easily recognised; least common alone</td></tr>
+          <tr><td><strong>Mixed</strong></td><td>Fluctuates between the two, often over hours</td><td>Very common</td></tr>
+        </tbody>
+      </table>
+      <div class="ec"><p><strong>Clinical point:</strong> because hypoactive delirium looks "settled", it is under-diagnosed unless you <em>screen</em> — quiet is not the same as well.</p></div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sbe">⚠️ 3 · Why It Matters</span>
+      <h2>Delirium is not benign</h2>
+      <ul class="tick-list">
+        <li>Independently associated with <strong>higher mortality</strong>, longer ventilation and longer ICU/hospital stay.</li>
+        <li>Predicts <strong>long-term cognitive impairment</strong> (a dementia-like decline) months after discharge.</li>
+        <li>Causes line/tube removal, falls, and the harms of the sedatives and restraints used to control it.</li>
+        <li>Every day of delirium raises the risk of a worse functional outcome.</li>
+      </ul>
+    </section>
+
+    <section id="s4">
+      <span class="sb sbd">🧩 4 · Risk Factors</span>
+      <h2>Predisposing vs precipitating</h2>
+      <p>Delirium is almost always <strong>multifactorial</strong>: a vulnerable brain (predisposing) meets an acute insult (precipitating). The more vulnerable the patient, the smaller the insult needed.</p>
+      <table class="cmp-table">
+        <thead><tr><th>Predisposing (baseline)</th><th>Precipitating (acute — often modifiable)</th></tr></thead>
+        <tbody>
+          <tr><td>Older age, pre-existing dementia/cognitive impairment</td><td><strong>Benzodiazepines</strong>, deep sedation, anticholinergics, opioids</td></tr>
+          <tr><td>Frailty, functional dependence</td><td>Sepsis/systemic inflammation, hypoxia, shock</td></tr>
+          <tr><td>Visual/hearing impairment</td><td>Metabolic derangement (Na, glucose, uraemia, ammonia)</td></tr>
+          <tr><td>Alcohol/substance use, prior delirium</td><td>Sleep deprivation, immobility, restraints, pain</td></tr>
+          <tr><td>Multiple comorbidities</td><td>Sedation-related, infection, drug withdrawal</td></tr>
+        </tbody>
+      </table>
+      <div class="mc"><div class="ml2">Highest-yield modifiable driver</div><p>Of all precipitants, <strong>benzodiazepine exposure and depth of sedation</strong> are the ones most under your direct control at the bedside.</p></div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sbc">🔍 5 · Screening — First RASS, then CAM-ICU</span>
+      <h2>You cannot assess thinking in a patient you cannot rouse</h2>
+      <p>Screening is a <strong>two-step</strong> process done at least once per shift. First quantify arousal with the <strong>RASS</strong>; only if the patient is rousable (RASS ≥ −3) do you apply the <strong>CAM-ICU</strong>.</p>
+
+      <h3 class="difftitle">Step 1 — Richmond Agitation–Sedation Scale (RASS)</h3>
+      <table class="cmp-table">
+        <thead><tr><th>Score</th><th>State</th></tr></thead>
+        <tbody>
+          <tr><td>+4 to +1</td><td>Combative → restless (agitation)</td></tr>
+          <tr><td><strong>0</strong></td><td>Alert and calm (target)</td></tr>
+          <tr><td>−1 to −3</td><td>Drowsy → moderate sedation (responds to voice)</td></tr>
+          <tr><td>−4 / −5</td><td>Responds to physical stimulus only / unrousable</td></tr>
+        </tbody>
+      </table>
+      <div class="ec"><p><strong>Target for most ventilated patients: RASS −2 to 0</strong> (light sedation). At RASS −4/−5 the patient is too deeply sedated to test — that is over-sedation, not calm.</p></div>
+
+      <h3 class="difftitle">Step 2 — CAM-ICU algorithm (a flowchart)</h3>
+      <div class="fs"><div class="fn" style="background:#1e6fd9;">1</div><div class="fb"><h4>Feature 1 — Acute change or fluctuating course of mental status</h4><p>Is there an acute change from baseline, OR has mental status fluctuated in the past 24 h? &nbsp;<strong>No → not delirious.</strong> Yes → go on.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#5b21b6;">2</div><div class="fb"><h4>Feature 2 — Inattention</h4><p>e.g. the "SAVEAHAART" letter test — squeeze on the letter A. &gt;2 errors = inattention present. &nbsp;<strong>No error → not delirious.</strong> Present → go on.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#9a3412;">3</div><div class="fb"><h4>Feature 3 — Altered level of consciousness</h4><p>Current RASS anything other than 0? If yes → <strong>CAM-ICU POSITIVE (delirium)</strong>. If RASS = 0, test Feature 4.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#991b1b;">4</div><div class="fb"><h4>Feature 4 — Disorganised thinking</h4><p>Simple yes/no questions + a command. &gt;1 error → <strong>CAM-ICU POSITIVE</strong>. Otherwise negative.</p></div></div>
+      <div class="mb"><div class="ml">The rule in one line</div><p>CAM-ICU is positive when <strong>Feature 1 AND Feature 2 AND (Feature 3 OR Feature 4)</strong> are present. The ICDSC (8-item checklist over a shift) is an equally valid alternative.</p></div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sbx">🩺 6 · Differential Diagnosis</span>
+      <h2>Screen positive? Now hunt the cause</h2>
+      <p>A positive screen is a prompt to find the <strong>reversible driver</strong>. A useful mnemonic is <strong>"DELIRIUM(S)"</strong> / "I WATCH DEATH" — work through them systematically.</p>
+      <table class="cmp-table">
+        <thead><tr><th>Category</th><th>Examples to actively exclude</th></tr></thead>
+        <tbody>
+          <tr><td>Drugs / withdrawal</td><td>Benzodiazepines, opioids, anticholinergics, steroids; alcohol/benzo withdrawal</td></tr>
+          <tr><td>Infection</td><td>Sepsis, pneumonia, UTI, CNS infection</td></tr>
+          <tr><td>Metabolic</td><td>Hypo/hyperglycaemia, Na/Ca disturbance, uraemia, hepatic encephalopathy, hypoxia, hypercapnia</td></tr>
+          <tr><td>Neurological</td><td>Stroke, seizure/non-convulsive status, raised ICP, PRES</td></tr>
+          <tr><td>Deficiency</td><td>Thiamine (Wernicke) — give before glucose in the at-risk</td></tr>
+          <tr><td>Environment</td><td>Pain, urinary retention/constipation, sleep loss, immobility</td></tr>
+        </tbody>
+      </table>
+      <div class="mc"><div class="ml2">Don't miss</div><p>New agitation is <strong>hypoxia, hypoglycaemia, or urinary retention/pain</strong> until proven otherwise — check these before reaching for a sedative.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sbf">🛡️ 7 · Prevention — the ABCDEF Bundle</span>
+      <h2>Non-pharmacological prevention is the cornerstone</h2>
+      <p>No drug reliably prevents delirium. The evidence base is the <strong>ABCDEF ("A2F") bundle</strong> — bundle adherence reduces delirium, ventilator days and mortality.</p>
+      <table class="cmp-table">
+        <thead><tr><th>Letter</th><th>Element</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A</strong></td><td><strong>A</strong>ssess, prevent and manage <strong>pain</strong></td></tr>
+          <tr><td><strong>B</strong></td><td><strong>B</strong>oth spontaneous awakening trials (SAT) and spontaneous breathing trials (SBT)</td></tr>
+          <tr><td><strong>C</strong></td><td><strong>C</strong>hoice of analgesia &amp; sedation (light sedation; avoid benzodiazepines)</td></tr>
+          <tr><td><strong>D</strong></td><td><strong>D</strong>elirium — assess, prevent and manage (screen every shift)</td></tr>
+          <tr><td><strong>E</strong></td><td><strong>E</strong>arly mobility and exercise</td></tr>
+          <tr><td><strong>F</strong></td><td><strong>F</strong>amily engagement and empowerment</td></tr>
+        </tbody>
+      </table>
+      <div class="ec"><p><strong>Plus the basics every night:</strong> restore the day–night cycle (light by day, dark/quiet at night, cluster care to protect sleep), give back glasses and hearing aids, reorient, and remove lines/catheters/restraints as soon as possible.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sbg">💊 8 · Management</span>
+      <h2>Treat the cause; drugs are for danger, not for a quiet ward</h2>
+      <div class="fs"><div class="fn" style="background:#166534;">1</div><div class="fb"><h4>Treat the precipitant</h4><p>Correct hypoxia, sepsis, metabolic derangement, pain, retention; stop/deprescribe deliriogenic drugs (especially benzodiazepines and anticholinergics).</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#5b21b6;">2</div><div class="fb"><h4>Optimise sedation</h4><p>Target light sedation (RASS −2 to 0). If a ventilated patient needs sedation and is agitated/delirious, <strong>dexmedetomidine</strong> is preferred over benzodiazepines (less delirium, shorter time to extubation).</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#9a3412;">3</div><div class="fb"><h4>Non-pharmacological first</h4><p>Reorientation, family presence, sleep hygiene, mobilisation, sensory aids — for every patient, every shift.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#991b1b;">4</div><div class="fb"><h4>Antipsychotics — only for distressing agitation</h4><p>Haloperidol or an atypical (e.g. quetiapine) may be used <strong>short-term</strong> to control agitation that threatens safety — they do <strong>not</strong> shorten delirium duration or improve survival, so they are not for prevention or routine treatment. Watch QTc and extrapyramidal effects.</p></div></div>
+      <div class="mc"><div class="ml2">Key negative-evidence point</div><p>Trials (e.g. MIND-USA) show antipsychotics do not reduce delirium duration or mortality. Reserve them for the agitated, endangering patient — and stop them at discharge.</p></div>
+    </section>
+
+    <section id="s9">
+      <span class="sb sbe">🚫 9 · Common Mistakes</span>
+      <h2>Where teams go wrong</h2>
+      <ul class="cross-list">
+        <li>Calling a withdrawn, quiet patient "comfortable" — <strong>missing hypoactive delirium</strong> by not screening.</li>
+        <li>Reaching for a <strong>benzodiazepine</strong> to settle agitation — the very drug that worsens delirium.</li>
+        <li>Treating the CAM-ICU result instead of <strong>hunting the cause</strong> (hypoxia, sepsis, retention, pain).</li>
+        <li>Using antipsychotics as <strong>prophylaxis</strong> or expecting them to shorten delirium.</li>
+        <li>Over-sedation (RASS −4/−5) mistaken for good control; deep sedation prolongs ventilation and delirium.</li>
+        <li>Continuing ICU antipsychotics at ward transfer/discharge — a common medication-safety error.</li>
+      </ul>
+    </section>
+
+    <section id="s10">
+      <span class="sb sbw">⭐ 10 · Exam Pearls</span>
+      <h2>High-yield for NEET-SS / DNB</h2>
+      <ul class="tick-list">
+        <li><strong>CAM-ICU</strong> = Feature 1 (acute/fluctuating) AND 2 (inattention) AND (3 altered LOC OR 4 disorganised thinking).</li>
+        <li><strong>Inattention</strong> is the cardinal feature; <strong>hypoactive</strong> is the commonest and most-missed subtype.</li>
+        <li>Assess <strong>RASS before CAM-ICU</strong>; target RASS −2 to 0.</li>
+        <li>PADIS: <strong>light sedation, avoid benzodiazepines</strong>, prefer propofol/<strong>dexmedetomidine</strong>.</li>
+        <li>Prevention = <strong>ABCDEF bundle</strong>; no drug prevents delirium.</li>
+        <li>Antipsychotics do <strong>not</strong> shorten delirium (MIND-USA) — for dangerous agitation only.</li>
+        <li>ICDSC is the valid checklist alternative to CAM-ICU.</li>
+      </ul>
+    </section>
+
+    <section id="s11">
+      <span class="sb sbc">⭐ 11 · Key Differences</span>
+      <h2>Side-by-side comparisons</h2>
+      <div class="diff-intro"><p>The classic exam traps: <strong>delirium vs dementia</strong>, and <strong>the two sedatives</strong> that pull in opposite directions on delirium risk.</p></div>
+
+      <h3 class="difftitle">Delirium vs Dementia</h3>
+      <table class="cmp-table">
+        <thead><tr><th>Feature</th><th>Delirium</th><th>Dementia</th></tr></thead>
+        <tbody>
+          <tr><td>Onset</td><td>Acute (hours–days)</td><td>Insidious (months–years)</td></tr>
+          <tr><td>Course</td><td>Fluctuating, worse at night</td><td>Slowly progressive, stable day-to-day</td></tr>
+          <tr><td>Attention</td><td><strong>Impaired</strong> (cardinal)</td><td>Usually preserved until late</td></tr>
+          <tr><td>Consciousness</td><td>Altered/clouded</td><td>Clear until late</td></tr>
+          <tr><td>Reversibility</td><td>Usually reversible (treat cause)</td><td>Generally irreversible</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="difftitle">Dexmedetomidine vs Benzodiazepines (for sedation)</h3>
+      <table class="cmp-table">
+        <thead><tr><th>Feature</th><th>Dexmedetomidine</th><th>Benzodiazepine (e.g. midazolam)</th></tr></thead>
+        <tbody>
+          <tr><td>Mechanism</td><td>Central α₂-agonist</td><td>GABA-A potentiation</td></tr>
+          <tr><td>Delirium risk</td><td><strong>Lower</strong></td><td><strong>Higher</strong> (independent risk factor)</td></tr>
+          <tr><td>Arousability</td><td>"Cooperative" sedation, easily roused</td><td>Deeper obtundation</td></tr>
+          <tr><td>Respiratory drive</td><td>Largely preserved</td><td>Depressed</td></tr>
+          <tr><td>Notable effects</td><td>Bradycardia, hypotension</td><td>Accumulation, tolerance, withdrawal</td></tr>
+          <tr><td>PADIS stance</td><td>Preferred</td><td>Avoid where possible</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="s12" class="references-section">
+      <span class="sb sbr">📚 12 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Marino PL.</strong> Marino's The ICU Book. 5th ed. Wolters Kluwer; 2025.</li>
+        <li><strong>Kollef MH, Isakow W, Burks AC, Despotovic VN (eds).</strong> The Washington Manual of Critical Care. 4th ed. Wolters Kluwer; 2024.</li>
+        <li><strong>Irwin RS, Lilly CM, Mayo PH, Rippe JM (eds).</strong> Irwin &amp; Rippe's Intensive Care Medicine. 9th ed. Wolters Kluwer; 2023.</li>
+        <li><strong>Devlin JW, Skrobik Y, Gélinas C, et al.</strong> Clinical Practice Guidelines for the Prevention and Management of Pain, Agitation/Sedation, Delirium, Immobility, and Sleep Disruption in Adult Patients in the ICU (PADIS). <em>Crit Care Med.</em> 2018;46(9):e825–e873.</li>
+        <li><strong>Girard TD, Exline MC, Carson SS, et al. (MIND-USA).</strong> Haloperidol and Ziprasidone for Treatment of Delirium in Critical Illness. <em>N Engl J Med.</em> 2018;379:2506–2516.</li>
+        <li><strong>Ely EW.</strong> The ABCDEF Bundle: Science and Philosophy of How ICU Liberation Serves Patients and Families. <em>Crit Care Med.</em> 2017;45(2):321–330.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+  <nav class="mobile-nav-bar">
+    <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+    <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+    <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+    <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+    <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI Tool</a>
+  </nav>
+  <script src="/pwa.js"></script>
+</body>
+</html>

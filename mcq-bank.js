@@ -1152,6 +1152,1242 @@ window.MCQ_BANK = [
   key: 'Never delay antibiotics for the scan or LP in suspected bacterial meningitis.',
   pearl: 'Empirical therapy: a third-generation cephalosporin (ceftriaxone) ± amoxicillin for Listeria cover in &gt;50 y/immunocompromised/pregnant; add vancomycin where resistant pneumococcus is a concern. Dexamethasone reduces neurological sequelae in pneumococcal meningitis.',
   src: 'IDSA / Washington Manual'
-}
+},
+
+/* ==========================================================
+   ANAESTHESIA — PHARMACOLOGY, AIRWAY, REGIONAL, EQUIPMENT
+   (Batch A1 — triangulated from Miller's, Morgan & Mikhail's
+   Clinical Anesthesiology, and Stoelting's Pharmacology)
+   ========================================================== */
+{
+  id: 'anaes-mac-001', spec: 'anaes', topic: 'Inhalational Agents', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'Minimum alveolar concentration (MAC) of a volatile agent is defined as the alveolar concentration at which:',
+  o: [
+    '50% of patients are rendered unconscious',
+    '50% of patients do not move in response to a standard surgical (skin) incision',
+    '95% of patients tolerate laryngoscopy without movement',
+    'The BIS falls below 40'
+  ],
+  a: 1,
+  e: 'MAC is the alveolar concentration preventing movement to a standardised surgical stimulus in <strong>50%</strong> of subjects — a measure of potency at the level of the spinal cord. MAC-awake (~0.3–0.4 MAC) relates to consciousness; MAC-BAR (~1.5 MAC) blocks the autonomic response.',
+  key: 'MAC = no movement to incision in 50% — a spinal-cord end-point, not a cortical (awareness) one.',
+  pearl: 'MAC is <strong>additive</strong> (0.5 MAC sevoflurane + 0.5 MAC N₂O ≈ 1 MAC). MAC is <em>decreased</em> by age, hypothermia, opioids, benzodiazepines, pregnancy, acute alcohol, hyponatraemia; <em>increased</em> by hyperthermia, chronic alcohol, and catecholamines/sympathomimetics.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-mac-002', spec: 'anaes', topic: 'Inhalational Agents', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'The "second gas effect" during inhalational induction is best explained by:',
+  o: [
+    'Rapid uptake of a high-volume first gas (N₂O) concentrating the remaining alveolar gases and augmenting inspired inflow',
+    'Direct chemical potentiation of the volatile agent by nitrous oxide',
+    'Increased cardiac output speeding agent delivery',
+    'A fall in functional residual capacity during induction'
+  ],
+  a: 0,
+  e: 'When a large volume of nitrous oxide is rapidly absorbed from the alveolus, the concentration of a concurrently administered "second gas" (e.g. sevoflurane) rises, and the volume void augments tracheal inflow of fresh gas — both accelerating the rise in second-gas alveolar concentration. It is a consequence of the <strong>concentration effect</strong> applied to a companion agent.',
+  pearl: 'The same rapid N₂O flux <em>out of</em> blood at the end of a case dilutes alveolar O₂ → <strong>diffusion hypoxia</strong>. Give 100% O₂ for a few minutes after discontinuing nitrous.',
+  src: "Morgan & Mikhail's Clinical Anesthesiology"
+},
+{
+  id: 'anaes-n2o-001', spec: 'anaes', topic: 'Inhalational Agents', difficulty: 'moderate', type: 'case',
+  stem: 'A patient with a pneumothorax (not yet drained) requires urgent anaesthesia.',
+  q: 'Which agent is specifically contraindicated, and why?',
+  o: [
+    'Sevoflurane — it is a bronchodilator',
+    'Nitrous oxide — it diffuses into and expands air-filled spaces',
+    'Propofol — it causes apnoea',
+    'Isoflurane — it is pungent'
+  ],
+  a: 1,
+  e: 'Nitrous oxide is ~34× more soluble than nitrogen, so it enters closed air-filled spaces faster than nitrogen leaves, <strong>expanding</strong> them. Avoid in pneumothorax, bowel obstruction, air embolism, pneumocephalus, middle-ear/vitreoretinal surgery, and with intraocular gas bubbles.',
+  key: 'N₂O expands any closed gas space — pneumothorax is an absolute contraindication.',
+  pearl: 'Chronic N₂O exposure inactivates vitamin B₁₂ (irreversibly oxidises cobalt), impairing methionine synthase → megaloblastic change and subacute combined degeneration.',
+  src: "Stoelting's Pharmacology & Physiology"
+},
+{
+  id: 'anaes-last-001', spec: 'anaes', topic: 'Local Anaesthetics', difficulty: 'severe', type: 'case',
+  stem: 'Two minutes after an axillary brachial plexus block with 30 mL 0.5% bupivacaine, a patient becomes agitated, then has a seizure followed by a broad-complex bradyarrhythmia and cardiac arrest.',
+  q: 'The single most important specific therapy is:',
+  o: [
+    'High-dose adrenaline boluses (1 mg) as per standard ACLS',
+    'Intravenous 20% lipid emulsion (Intralipid) 1.5 mL/kg bolus then infusion',
+    'Immediate synchronised cardioversion',
+    'Sodium bicarbonate 1 mmol/kg'
+  ],
+  a: 1,
+  e: 'This is <strong>local anaesthetic systemic toxicity (LAST)</strong>. Give <strong>20% lipid emulsion</strong> 1.5 mL/kg lean body weight over ~1 min, then 0.25 mL/kg/min, re-bolusing for persistent instability (the "lipid sink" plus metabolic effects). Manage the airway, stop injection, control seizures with a benzodiazepine, and use <strong>reduced</strong> adrenaline doses (≤1 µg/kg) — large boluses worsen outcome. Avoid vasopressin, calcium-channel/β-blockers, and lidocaine.',
+  key: 'LAST → lipid emulsion first-line; adrenaline in small doses only; prolonged resuscitation (consider ECMO).',
+  pearl: 'Bupivacaine is the most cardiotoxic LA (avid, slow-dissociating Na-channel block → refractory re-entrant arrhythmia). Levobupivacaine and ropivacaine are less cardiotoxic. Max bupivacaine ~2 mg/kg (2–3 with adrenaline).',
+  src: 'ASRA LAST Checklist 2020'
+},
+{
+  id: 'anaes-la-001', spec: 'anaes', topic: 'Local Anaesthetics', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'The maximum recommended dose of lidocaine (lignocaine) WITH adrenaline for infiltration is approximately:',
+  o: [
+    '3 mg/kg',
+    '4.5 mg/kg',
+    '7 mg/kg',
+    '10 mg/kg'
+  ],
+  a: 2,
+  e: 'Plain lidocaine ≈ <strong>3–4.5 mg/kg</strong>; <strong>with adrenaline ≈ 7 mg/kg</strong> because vasoconstriction slows systemic absorption and prolongs the block. Adrenaline (1:200,000 = 5 µg/mL) also serves as an intravascular marker.',
+  key: 'Lidocaine: 3–4.5 mg/kg plain, 7 mg/kg with adrenaline.',
+  pearl: 'Local anaesthetics block the voltage-gated <strong>Na⁺ channel</strong> from the intracellular side; the un-ionised base crosses the membrane, then the ionised cation binds. Inflamed/acidic tissue keeps more drug ionised → poorer block.',
+  src: "Morgan & Mikhail's"
+},
+{
+  id: 'anaes-la-002', spec: 'anaes', topic: 'Local Anaesthetics', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'Which statement about the metabolism of local anaesthetics is correct?',
+  o: [
+    'Esters (e.g. procaine, tetracaine) are metabolised by plasma cholinesterase; amides by hepatic microsomal enzymes',
+    'Amides are metabolised by plasma cholinesterase; esters by the liver',
+    'Both classes are cleared unchanged by the kidney',
+    'Esters are hepatically metabolised and rarely cause allergy'
+  ],
+  a: 0,
+  e: 'Ester LAs (one "i" in the name — procaine, chloroprocaine, tetracaine, cocaine, benzocaine) are hydrolysed by <strong>plasma cholinesterase</strong> to PABA, which underlies their higher allergy risk. Amides (two "i"s — lidocaine, bupivacaine, ropivacaine, prilocaine) undergo <strong>hepatic</strong> metabolism.',
+  pearl: 'Prilocaine and benzocaine can cause <strong>methaemoglobinaemia</strong> (metabolite o-toluidine) — treat with methylene blue.',
+  src: "Stoelting's Pharmacology"
+},
+{
+  id: 'anaes-sux-001', spec: 'anaes', topic: 'Neuromuscular Blockers', difficulty: 'moderate', type: 'case',
+  stem: 'A patient with a 3-week-old major burn and denervation injury is given suxamethonium for a rapid-sequence induction.',
+  q: 'The most feared immediate complication is:',
+  o: [
+    'Prolonged apnoea from pseudocholinesterase deficiency',
+    'Life-threatening hyperkalaemic cardiac arrest',
+    'Malignant hyperthermia',
+    'Anaphylaxis'
+  ],
+  a: 1,
+  e: 'Up-regulation of extrajunctional (immature/α7) acetylcholine receptors after burns, denervation, prolonged immobility, spinal cord injury or severe sepsis causes a massive <strong>K⁺ efflux</strong> with suxamethonium → hyperkalaemic arrest. Risk is significant from ~24–72 h after injury and persists for months.',
+  key: 'Avoid suxamethonium after ~24 h in burns, denervation, SCI, prolonged immobilisation — hyperkalaemic arrest.',
+  pearl: 'Other suxamethonium hazards: bradycardia (esp. repeat doses/children — pre-treat atropine), raised ICP/IOP/intragastric pressure, myalgia, MH trigger, and prolonged block in pseudocholinesterase deficiency.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-sux-002', spec: 'anaes', topic: 'Neuromuscular Blockers', difficulty: 'severe', type: 'direct',
+  stem: '',
+  q: 'A patient remains apnoeic and paralysed for 2 hours after a single dose of suxamethonium. A dibucaine number of 20 is reported. This indicates:',
+  o: [
+    'Normal pseudocholinesterase',
+    'Homozygous atypical pseudocholinesterase (markedly prolonged block)',
+    'Malignant hyperthermia susceptibility',
+    'Phase I block only'
+  ],
+  a: 1,
+  e: 'The <strong>dibucaine number</strong> is the % inhibition of pseudocholinesterase by dibucaine. Normal (homozygous typical) ≈ <strong>80</strong>; heterozygous ≈ 40–60 (mildly prolonged); <strong>homozygous atypical ≈ 20</strong> with block lasting hours. It reflects enzyme <em>quality</em>, not quantity. Management is continued ventilation and sedation until spontaneous recovery.',
+  key: 'Dibucaine number 80 = normal, ~20 = homozygous atypical → prolonged suxamethonium apnoea.',
+  pearl: 'Suxamethonium is also broken down by pseudocholinesterase, so deficiency (liver disease, pregnancy, atypical genes) prolongs it. Mivacurium (a non-depolariser) is likewise affected.',
+  src: "Stoelting's Pharmacology"
+},
+{
+  id: 'anaes-nmb-001', spec: 'anaes', topic: 'Neuromuscular Blockers', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Before tracheal extubation, adequate recovery from a non-depolarising block is best confirmed by a train-of-four (TOF) ratio of:',
+  o: [
+    '≥ 0.4',
+    '≥ 0.7',
+    '≥ 0.9',
+    'Any detectable fourth twitch'
+  ],
+  a: 2,
+  e: 'A TOF ratio (T4/T1) of <strong>≥0.9</strong> is required to exclude clinically important residual paralysis; below this, pharyngeal function and the hypoxic ventilatory response are impaired, raising aspiration/hypoxia risk. Clinical tests (5-s head lift) are insensitive.',
+  key: 'Safe extubation after NMB requires TOF ratio ≥0.9 (quantitative monitoring).',
+  pearl: 'Reversal: neostigmine (with glycopyrrolate to block muscarinic effects) works only once some recovery is present (≥2–4 twitches). <strong>Sugammadex</strong> encapsulates rocuronium/vecuronium and reverses even profound block rapidly.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-mh-001', spec: 'anaes', topic: 'Malignant Hyperthermia', difficulty: 'severe', type: 'case',
+  stem: 'During sevoflurane anaesthesia, a young patient develops a rising end-tidal CO₂ despite increased ventilation, masseter/generalised rigidity, tachycardia, and a rapidly rising temperature.',
+  q: 'The specific pharmacological treatment is:',
+  o: [
+    'Dantrolene 2.5 mg/kg IV, repeated to effect',
+    'Intravenous beta-blocker',
+    'Active cooling alone',
+    'Sodium bicarbonate'
+  ],
+  a: 0,
+  e: 'This is <strong>malignant hyperthermia</strong> — a ryanodine-receptor (RYR1) channelopathy causing uncontrolled sarcoplasmic Ca²⁺ release. Stop triggers (volatiles, suxamethonium), call for help, hyperventilate with 100% O₂, and give <strong>dantrolene 2.5 mg/kg</strong> IV repeated every ~5 min (to ~10 mg/kg) until controlled. Treat hyperkalaemia, acidosis, arrhythmias, and hyperthermia; watch for rhabdomyolysis.',
+  key: 'MH = ↑↑EtCO₂ + rigidity + hyperthermia → dantrolene + stop all triggers.',
+  pearl: 'Earliest and most sensitive sign is an <strong>unexplained rising EtCO₂</strong>. Safe agents: propofol, opioids, benzodiazepines, nitrous, and all non-depolarising relaxants. Confirmatory test: caffeine–halothane contracture test.',
+  src: 'MHAUS Guidelines'
+},
+{
+  id: 'anaes-prop-001', spec: 'anaes', topic: 'IV Induction Agents', difficulty: 'moderate', type: 'case',
+  stem: 'A child in PICU on a prolonged high-dose propofol infusion develops metabolic acidosis, hyperkalaemia, rhabdomyolysis, lipaemic serum and a Brugada-like ECG with cardiac failure.',
+  q: 'The most likely diagnosis is:',
+  o: [
+    'Propofol infusion syndrome (PRIS)',
+    'Malignant hyperthermia',
+    'Neuroleptic malignant syndrome',
+    'Local anaesthetic systemic toxicity'
+  ],
+  a: 0,
+  e: '<strong>Propofol infusion syndrome</strong> is associated with high-dose (>4 mg/kg/h) prolonged (>48 h) infusions, especially in children and the critically ill. Impaired mitochondrial fatty-acid oxidation → lactic acidosis, rhabdomyolysis, hyperkalaemia, lipaemia, arrhythmia and cardiac failure. Treatment: stop propofol, supportive care, haemodialysis/ECMO for refractory cases.',
+  key: 'PRIS: high-dose/prolonged propofol → lactic acidosis, rhabdo, hyperK, cardiac failure.',
+  pearl: 'Propofol also causes pain on injection, dose-dependent hypotension and apnoea, and lacks analgesic properties; its antiemetic effect is a clinical bonus.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-etom-001', spec: 'anaes', topic: 'IV Induction Agents', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Etomidate is often chosen for induction in the haemodynamically unstable patient, but its notable adverse effect is:',
+  o: [
+    'Profound histamine release',
+    'Adrenocortical suppression (11β-hydroxylase inhibition)',
+    'Malignant hyperthermia',
+    'Prolonged seizures'
+  ],
+  a: 1,
+  e: 'Etomidate provides <strong>cardiovascular stability</strong> (minimal effect on BP/contractility) but reversibly inhibits <strong>11β-hydroxylase</strong>, suppressing cortisol synthesis — a concern in sepsis, where even a single dose transiently lowers cortisol. It also causes myoclonus, pain on injection, and a high incidence of PONV.',
+  key: 'Etomidate = cardiostable induction but adrenal suppression (11β-hydroxylase).',
+  pearl: 'Ketamine is the alternative "haemodynamically friendly" induction agent — it maintains BP via sympathetic stimulation, provides analgesia and bronchodilation, but raises secretions and can cause emergence delirium.',
+  src: "Stoelting's Pharmacology"
+},
+{
+  id: 'anaes-ket-001', spec: 'anaes', topic: 'IV Induction Agents', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'Ketamine produces "dissociative anaesthesia" primarily by antagonism at which receptor?',
+  o: [
+    'GABA-A receptor',
+    'NMDA (glutamate) receptor',
+    'Mu-opioid receptor',
+    'Alpha-2 adrenoceptor'
+  ],
+  a: 1,
+  e: 'Ketamine is a non-competitive <strong>NMDA-receptor antagonist</strong>, producing a cataleptic, dissociated state with analgesia and amnesia while preserving airway reflexes and respiratory drive. It is a bronchodilator and sympathomimetic (useful in shock/asthma).',
+  key: 'Ketamine = NMDA antagonist; sympathomimetic, bronchodilator, preserves respiration.',
+  pearl: 'Because it raises sympathetic tone, ketamine increases HR/BP; historically avoided where a rise in ICP is undesirable, though modern data are reassuring when ventilation is controlled. Emergence phenomena are attenuated by benzodiazepines.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-cshl-001', spec: 'anaes', topic: 'IV Induction Agents', difficulty: 'severe', type: 'direct',
+  stem: '',
+  q: 'Which drug has an essentially constant, very short context-sensitive half-time regardless of infusion duration, making it ideal for prolonged TIVA?',
+  o: [
+    'Fentanyl',
+    'Thiopentone',
+    'Remifentanil',
+    'Morphine'
+  ],
+  a: 2,
+  e: '<strong>Remifentanil</strong> is cleared by non-specific plasma/tissue <strong>esterases</strong>, independent of hepatic/renal function, so its context-sensitive half-time stays ~3–4 min even after long infusions. Fentanyl, by contrast, accumulates and its context-sensitive half-time lengthens markedly with prolonged infusion.',
+  key: 'Remifentanil: organ-independent esterase clearance → flat, short context-sensitive half-time.',
+  pearl: 'Context-sensitive half-time = time for plasma concentration to fall 50% after stopping an infusion designed to hold a steady level; it depends on redistribution + clearance, not just elimination half-life.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-air-001', spec: 'anaes', topic: 'Airway Management', difficulty: 'moderate', type: 'case',
+  stem: 'Immediately after extubation, a patient develops complete airway obstruction with paradoxical chest/abdominal movement and no air entry; SpO₂ is falling.',
+  q: 'After 100% O₂ and jaw thrust/CPAP, the next drug step for persistent laryngospasm is:',
+  o: [
+    'Suxamethonium (with the ability to ventilate/intubate)',
+    'A large dose of a non-depolarising relaxant',
+    'Intravenous adrenaline',
+    'Nebulised salbutamol'
+  ],
+  a: 0,
+  e: 'Laryngospasm is treated stepwise: remove stimulus, 100% O₂, jaw thrust with firm CPAP and pressure at "Larson\'s point", deepen anaesthesia (propofol). If it persists with desaturation, give <strong>suxamethonium</strong> (0.5–1 mg/kg IV, or IM/IO if no IV) to break the spasm, then ventilate.',
+  key: 'Refractory laryngospasm with desaturation → suxamethonium.',
+  pearl: 'Negative-pressure pulmonary oedema can follow forceful inspiration against a closed glottis — watch for pink frothy sputum and desaturation after the spasm breaks.',
+  src: 'DAS Guidelines'
+},
+{
+  id: 'anaes-air-002', spec: 'anaes', topic: 'Airway Management', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'In the standard preoperative fasting guideline ("2-4-6-8"), the minimum fasting time for clear fluids and for a light meal, respectively, is:',
+  o: [
+    '2 h and 6 h',
+    '1 h and 4 h',
+    '4 h and 8 h',
+    '2 h and 8 h'
+  ],
+  a: 0,
+  e: 'Standard guidance: clear fluids <strong>2 h</strong>, breast milk 4 h, infant formula/light meal 6 h, and a fatty/fried or meat meal 8 h. Encouraging clear fluids up to 2 h improves comfort without raising aspiration risk.',
+  key: 'Fasting: clear fluids 2 h · breast milk 4 h · formula/light meal 6 h · heavy/fatty meal 8 h.',
+  pearl: 'Mendelson syndrome = chemical aspiration pneumonitis; classic risk if gastric volume >25 mL and pH <2.5. RSI with cricoid pressure is used when aspiration risk is high (e.g. full stomach, pregnancy, obstruction).',
+  src: 'ASA Fasting Guidelines'
+},
+{
+  id: 'anaes-air-003', spec: 'anaes', topic: 'Airway Management', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'The Mallampati classification assesses the airway by inspecting the:',
+  o: [
+    'Thyromental distance in finger-breadths',
+    'Visibility of oropharyngeal structures (faucial pillars, soft palate, uvula) with mouth maximally open',
+    'Range of atlanto-occipital extension',
+    'Inter-incisor gap'
+  ],
+  a: 1,
+  e: 'The modified Mallampati score grades the pharyngeal structures seen on maximal mouth opening (tongue protruded, no phonation): Class I (pillars, soft palate, uvula) → Class IV (hard palate only). Higher classes predict difficult laryngoscopy but it is only one component.',
+  key: 'Mallampati grades visible pharyngeal structures; higher class ⇒ potentially harder laryngoscopy.',
+  pearl: 'Combine predictors (LEMON / "3-3-2" rule, thyromental distance, mouth opening, neck mobility, prior difficult airway) — no single test is reliable. Cormack–Lehane grades the actual laryngoscopic view.',
+  src: "Morgan & Mikhail's"
+},
+{
+  id: 'anaes-spin-001', spec: 'anaes', topic: 'Regional Anaesthesia', difficulty: 'moderate', type: 'case',
+  stem: 'Five minutes after a subarachnoid (spinal) block for a caesarean, the patient develops hypotension and bradycardia.',
+  q: 'The mechanism of the bradycardia when the block reaches a high thoracic level is:',
+  o: [
+    'Blockade of the cardioaccelerator sympathetic fibres (T1–T4)',
+    'Direct vagal stimulation by the local anaesthetic',
+    'Beta-receptor down-regulation',
+    'Hypoglycaemia'
+  ],
+  a: 0,
+  e: 'High spinal blockade removes sympathetic outflow: vasodilation below the block causes hypotension, and involvement of the <strong>cardiac accelerator fibres (T1–T4)</strong> plus reduced venous return (Bezold–Jarisch reflex) causes bradycardia. Treat with fluids, vasopressors (phenylephrine/ephedrine), atropine for bradycardia, and left-uterine displacement in pregnancy.',
+  key: 'High spinal → sympathectomy: hypotension + bradycardia (T1–T4 cardioaccelerator block).',
+  pearl: 'A <strong>total spinal</strong> (block ascends to cervical levels) causes apnoea, profound hypotension and unconsciousness — support airway/ventilation and circulation until it recedes.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-pdph-001', spec: 'anaes', topic: 'Regional Anaesthesia', difficulty: 'moderate', type: 'case',
+  stem: 'Twenty-four hours after a spinal anaesthetic, a young woman has a severe fronto-occipital headache that worsens on sitting/standing and improves on lying flat, with neck stiffness and photophobia.',
+  q: 'The definitive treatment for a severe, persistent case is:',
+  o: [
+    'Epidural blood patch',
+    'Broad-spectrum antibiotics',
+    'Therapeutic lumbar puncture',
+    'High-dose steroids'
+  ],
+  a: 0,
+  e: 'This is a <strong>post-dural-puncture headache</strong> (CSF leak → traction on pain-sensitive structures), classically <strong>postural</strong>. Conservative care (analgesia, hydration, caffeine) may suffice, but a severe/persistent PDPH is treated with an <strong>epidural blood patch</strong> (~15–20 mL autologous blood), effective in the majority.',
+  key: 'Postural headache after dural puncture = PDPH → epidural blood patch if severe.',
+  pearl: 'Risk rises with larger/cutting (Quincke) needles and younger patients; pencil-point (Whitacre/Sprotte) needles reduce incidence. Always exclude sinister causes (meningitis, cortical vein thrombosis, subdural) if features are atypical.',
+  src: "Morgan & Mikhail's"
+},
+{
+  id: 'anaes-bier-001', spec: 'anaes', topic: 'Regional Anaesthesia', difficulty: 'severe', type: 'direct',
+  stem: '',
+  q: 'During intravenous regional anaesthesia (Bier block), the single most important safety rule is:',
+  o: [
+    'Use bupivacaine for a longer block',
+    'Never deflate the tourniquet within the first ~20–25 minutes',
+    'Inject the local anaesthetic proximal to the tourniquet',
+    'Keep the tourniquet pressure below systolic'
+  ],
+  a: 1,
+  e: 'Premature tourniquet release delivers a large bolus of local anaesthetic systemically → LAST. Maintain the cuff for at least <strong>~20–25 min</strong>, and deflate in cycles thereafter. Use <strong>prilocaine or lidocaine — never bupivacaine</strong> (cardiotoxic) for Bier blocks.',
+  key: 'Bier block: keep tourniquet up ≥20–25 min; never use bupivacaine.',
+  pearl: 'Prilocaine is favoured for its safety margin, but watch for methaemoglobinaemia at higher doses.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-mon-001', spec: 'anaes', topic: 'Monitoring & Equipment', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'The single most useful monitor for confirming correct tracheal tube placement is:',
+  o: [
+    'Chest auscultation',
+    'Continuous waveform capnography (sustained EtCO₂)',
+    'Pulse oximetry',
+    'Chest rise and misting of the tube'
+  ],
+  a: 1,
+  e: 'Sustained <strong>waveform capnography</strong> confirming exhaled CO₂ over several breaths is the gold standard for confirming tracheal (not oesophageal) placement and for ongoing monitoring — mandated by difficult-airway guidelines, including during CPR ("no trace, wrong place").',
+  key: 'Capnography (sustained EtCO₂ waveform) confirms and monitors tube placement.',
+  pearl: 'A sudden fall in EtCO₂ can mean oesophageal displacement, circuit disconnection, obstruction, or a fall in cardiac output/pulmonary embolism — interpret the waveform shape, not just the number.',
+  src: 'AAGBI Monitoring Standards'
+},
+{
+  id: 'anaes-mon-002', spec: 'anaes', topic: 'Monitoring & Equipment', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'The pulse oximeter measures oxygen saturation using the differential absorption of two wavelengths (660 nm red and 940 nm infrared). A key limitation is:',
+  o: [
+    'It reliably distinguishes carboxyhaemoglobin from oxyhaemoglobin',
+    'Carboxyhaemoglobin is read as oxyhaemoglobin, giving a falsely high SpO₂',
+    'It requires an arterial line to function',
+    'It measures PaO₂ directly'
+  ],
+  a: 1,
+  e: 'Standard 2-wavelength oximetry cannot distinguish <strong>carboxyhaemoglobin</strong> (absorbs like oxyHb at 660 nm) from oxyhaemoglobin → falsely reassuring SpO₂ in CO poisoning. Methaemoglobinaemia drives SpO₂ toward ~85%. Other error sources: poor perfusion, motion, nail polish, severe anaemia.',
+  key: 'Pulse oximetry overreads in CO poisoning; methaemoglobin pulls SpO₂ toward 85%.',
+  pearl: 'Use co-oximetry (multi-wavelength / blood gas) when dyshaemoglobinaemia is suspected.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-eq-001', spec: 'anaes', topic: 'Monitoring & Equipment', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'The oxygen failure warning (e.g. hypoxic guard / ratio system on the anaesthetic machine) primarily prevents delivery of:',
+  o: [
+    'An excessive volatile concentration',
+    'A hypoxic gas mixture (guaranteeing a minimum FiO₂, usually ≥25%)',
+    'Excessive fresh gas flow',
+    'Reverse gas flow'
+  ],
+  a: 1,
+  e: 'The hypoxic guard (e.g. mechanical/pneumatic link between N₂O and O₂ flows) and the oxygen-failure alarm ensure a <strong>minimum inspired O₂ fraction</strong> and warn of O₂ supply failure, cutting N₂O to prevent a hypoxic mixture.',
+  key: 'Hypoxic guard prevents a hypoxic mixture; guarantees a minimum FiO₂ (~25%).',
+  pearl: 'The anaesthetic machine has layered safety features: pin-index/colour coding, non-return valves, oxygen-failure whistle (Ritchie), pressure-relief valves, and the inspired-O₂ analyser as the final check.',
+  src: "Morgan & Mikhail's"
+},
+{
+  id: 'anaes-eq-002', spec: 'anaes', topic: 'Monitoring & Equipment', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'In a circle breathing system, the function of soda lime is to:',
+  o: [
+    'Humidify the inspired gas',
+    'Chemically absorb exhaled CO₂, allowing low fresh-gas flows',
+    'Vaporise the volatile agent',
+    'Scavenge waste anaesthetic gases'
+  ],
+  a: 1,
+  e: 'Soda lime (Ca(OH)₂ with NaOH/KOH and an indicator) absorbs CO₂ (CO₂ + Ca(OH)₂ → CaCO₃ + H₂O + heat), enabling rebreathing and low-flow anaesthesia. A colour change signals exhaustion.',
+  key: 'Soda lime absorbs CO₂ in the circle system, enabling low-flow rebreathing.',
+  pearl: 'Desiccated absorbent + sevoflurane can generate <strong>Compound A</strong>; older agents with desiccated baralyme risked CO and fires. Keep flows adequate and change exhausted absorbent.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-eq-003', spec: 'anaes', topic: 'Monitoring & Equipment', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'A modern plenum vaporiser (variable-bypass, temperature-compensated) delivers a set agent concentration by:',
+  o: [
+    'Splitting fresh gas into a bypass and a saturated vaporising chamber flow',
+    'Injecting a metered dose of liquid agent per breath',
+    'Heating the agent to a fixed vapour pressure',
+    'Using the patient\'s respiratory effort to draw agent (draw-over)'
+  ],
+  a: 0,
+  e: 'A variable-bypass vaporiser splits incoming gas: part passes through the vaporising chamber and becomes saturated with agent, then recombines with the bypass to give the dialled concentration. Temperature compensation keeps output stable as cooling reduces vapour pressure. Agent-specific because of differing saturated vapour pressures.',
+  key: 'Variable-bypass vaporiser: bypass + saturated chamber flow set the delivered %.',
+  pearl: 'Desflurane needs a heated, pressurised vaporiser because its boiling point (~23 °C) is near room temperature.',
+  src: "Morgan & Mikhail's"
+},
+{
+  id: 'anaes-eq-004', spec: 'anaes', topic: 'Monitoring & Equipment', difficulty: 'severe', type: 'direct',
+  stem: '',
+  q: 'The Bain circuit is a coaxial version of which Mapleson system, and is most efficient for which mode of ventilation?',
+  o: [
+    'Mapleson A — efficient for spontaneous ventilation',
+    'Mapleson D — efficient for controlled ventilation',
+    'Mapleson C — efficient for resuscitation',
+    'Mapleson E — for paediatric spontaneous breathing'
+  ],
+  a: 1,
+  e: 'The Bain is a coaxial <strong>Mapleson D</strong> (fresh gas runs through the inner tube to the patient end). It is efficient for <strong>controlled ventilation</strong> (fresh-gas flow ~70 mL/kg/min). The Mapleson A (Magill/Lack) is most efficient for spontaneous ventilation.',
+  key: 'Bain = coaxial Mapleson D → efficient for controlled ventilation. Mapleson A best for spontaneous.',
+  pearl: 'Always test the inner tube of a Bain (Pethick test) — a disconnected or kinked inner tube causes dangerous rebreathing.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-obs-001', spec: 'anaes', topic: 'Obstetric Anaesthesia', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Compared with the non-pregnant state, MAC and induction-drug requirements in the term parturient are:',
+  o: [
+    'Increased, because of higher cardiac output',
+    'Decreased (MAC falls ~30–40%), with faster inhalational induction',
+    'Unchanged',
+    'Only changed for regional techniques'
+  ],
+  a: 1,
+  e: 'Progesterone and endorphins lower <strong>MAC by ~30–40%</strong>. Increased minute ventilation with reduced FRC speeds inhalational induction (and desaturation). Aortocaval compression, a full stomach, and airway oedema make the obstetric airway higher-risk — hence a preference for neuraxial techniques.',
+  key: 'Pregnancy lowers MAC ~30–40%; faster inhalational induction and faster desaturation.',
+  pearl: 'Left-uterine displacement prevents aortocaval compression. Phenylephrine is preferred over ephedrine for spinal hypotension at caesarean (less fetal acidaemia).',
+  src: "Chestnut's Obstetric Anesthesia"
+},
+{
+  id: 'anaes-pons-001', spec: 'anaes', topic: 'Postoperative Care', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'Which set of factors in the Apfel score predicts postoperative nausea and vomiting (PONV)?',
+  o: [
+    'Age, ASA grade, smoking, surgery duration',
+    'Female sex, non-smoker, history of PONV/motion sickness, postoperative opioids',
+    'Obesity, diabetes, hypertension, reflux',
+    'Blood loss, fluid balance, temperature, surgery type'
+  ],
+  a: 1,
+  e: 'The simplified <strong>Apfel score</strong> has four risk factors: female sex, non-smoking status, history of PONV/motion sickness, and expected postoperative opioid use. Each adds ~20% to baseline risk. Multimodal prophylaxis (e.g. ondansetron + dexamethasone, TIVA with propofol, opioid-sparing analgesia) is used for higher scores.',
+  key: 'Apfel PONV: female, non-smoker, prior PONV/motion sickness, postop opioids.',
+  pearl: 'Propofol-based TIVA and avoiding nitrous/volatiles lower PONV; dexamethasone and 5-HT₃ antagonists act at different receptors, so combining classes is additive.',
+  src: 'Apfel 1999 / consensus PONV guidelines'
+},
+{
+  id: 'anaes-vaso-001', spec: 'anaes', topic: 'Intraoperative Physiology', difficulty: 'moderate', type: 'case',
+  stem: 'Under spinal anaesthesia a healthy patient becomes hypotensive with a heart rate of 52/min.',
+  q: 'The most appropriate first-line vasopressor is:',
+  o: [
+    'Phenylephrine, accepting it may slow the heart further',
+    'Ephedrine, which raises both blood pressure and heart rate',
+    'Adrenaline infusion',
+    'Noradrenaline bolus'
+  ],
+  a: 1,
+  e: 'With coexisting bradycardia, <strong>ephedrine</strong> (mixed direct/indirect α and β agonist) raises BP <em>and</em> heart rate, making it the sensible first choice. Pure α-agonist phenylephrine raises BP but causes reflex bradycardia — better when the heart rate is already fast. Add atropine/fluids as needed.',
+  key: 'Spinal hypotension + bradycardia → ephedrine; if tachycardic → phenylephrine.',
+  pearl: 'In obstetric spinal hypotension, phenylephrine is preferred overall (better fetal acid–base), with atropine on hand for bradycardia.',
+  src: "Morgan & Mikhail's"
+},
+
+/* ==========================================================
+   CRITICAL CARE — NEW-TOPIC BATCH (Delirium, TTM, Refeeding,
+   Ventilator weaning, Toxic alcohols) + high-yield extras
+   (Marino, Washington Manual, Irwin & Rippe + guidelines)
+   ========================================================== */
+{
+  id: 'ccm-delir-001', spec: 'ccm', topic: 'ICU Delirium', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'The validated bedside tool for diagnosing delirium in a mechanically ventilated ICU patient is:',
+  o: [
+    'The Glasgow Coma Scale',
+    'The CAM-ICU (Confusion Assessment Method for the ICU)',
+    'The Mini-Mental State Examination',
+    'The RASS alone'
+  ],
+  a: 1,
+  e: 'The <strong>CAM-ICU</strong> diagnoses delirium in non-verbal/ventilated patients using: (1) acute change/fluctuating mental status, (2) inattention, (3) altered level of consciousness (RASS), and (4) disorganised thinking — positive if 1 AND 2 AND (3 OR 4). RASS is first used to ensure the patient is arousable (≥ –3).',
+  key: 'CAM-ICU: acute/fluctuating course + inattention + (altered LOC OR disorganised thinking).',
+  pearl: 'Hypoactive delirium (quiet, withdrawn) is commoner and more often missed than hyperactive delirium, yet carries a worse prognosis — screen routinely.',
+  src: 'PADIS 2018 / Washington Manual'
+},
+{
+  id: 'ccm-delir-002', spec: 'ccm', topic: 'ICU Delirium', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'According to the PADIS guidelines, which sedative is associated with less delirium than benzodiazepines in mechanically ventilated patients?',
+  o: [
+    'Midazolam',
+    'Lorazepam',
+    'Dexmedetomidine',
+    'Diazepam'
+  ],
+  a: 2,
+  e: 'PADIS recommends targeting <strong>light sedation</strong>, avoiding benzodiazepines, and favouring propofol or <strong>dexmedetomidine</strong>, which is linked to less delirium and shorter time to extubation. Non-pharmacological prevention (the ABCDEF bundle, early mobility, sleep, reorientation) is the cornerstone.',
+  key: 'Avoid benzodiazepines; dexmedetomidine/propofol and the ABCDEF bundle reduce delirium.',
+  pearl: 'No drug reliably <em>prevents</em> delirium. Antipsychotics (haloperidol/quetiapine) do not shorten delirium duration and are reserved for distressing agitation — not routine prophylaxis.',
+  src: 'PADIS 2018'
+},
+{
+  id: 'ccm-ttm-001', spec: 'ccm', topic: 'Targeted Temperature Management', difficulty: 'moderate', type: 'case',
+  stem: 'A comatose adult remains unresponsive after ROSC from an out-of-hospital VF arrest.',
+  q: 'Based on TTM2 and current ILCOR guidance, temperature management should aim to:',
+  o: [
+    'Cool to 33 °C for 24 h in all patients',
+    'Target a constant temperature ≤37.5 °C and actively prevent fever, with cooling to 32–36 °C as an option',
+    'Allow permissive hyperthermia to preserve perfusion',
+    'Rewarm rapidly to 38 °C'
+  ],
+  a: 1,
+  e: 'The <strong>TTM2</strong> trial found hypothermia at 33 °C did not improve survival versus targeted normothermia. Current guidance is to <strong>actively prevent fever</strong> (keep ≤37.5 °C) for at least 72 h in comatose post-arrest patients; a target of 32–36 °C remains an acceptable option. Avoiding fever is the key intervention.',
+  key: 'Post-arrest: actively prevent fever (≤37.5 °C); routine deep hypothermia no longer mandated (TTM2).',
+  pearl: 'Delay neuroprognostication to ≥72 h off sedation, and use a multimodal approach (clinical exam, bilateral absent pupillary/corneal reflexes, absent N20 SSEP, EEG, NSE, imaging) — never a single test.',
+  src: 'TTM2 (NEJM 2021) / ERC-ESICM 2021'
+},
+{
+  id: 'ccm-ttm-002', spec: 'ccm', topic: 'Targeted Temperature Management', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'During active cooling for targeted temperature management, which electrolyte disturbance is characteristically seen and reverses on rewarming?',
+  o: [
+    'Hyperkalaemia during cooling, hypokalaemia on rewarming',
+    'Hypokalaemia (and hypomagnesaemia/hypophosphataemia) during cooling, with rebound hyperkalaemia on rewarming',
+    'Hypernatraemia',
+    'Hypercalcaemia'
+  ],
+  a: 1,
+  e: 'Cooling drives potassium <strong>intracellularly</strong> → hypokalaemia (plus hypomagnesaemia, hypophosphataemia); rewarming releases it, risking <strong>rebound hyperkalaemia</strong>. Replace cautiously during cooling and stop supplementation before rewarming.',
+  key: 'Cooling → hypokalaemia; rewarming → rebound hyperkalaemia (replete cautiously).',
+  pearl: 'Cooling also causes bradycardia, shivering (raises metabolic demand — treat), diuresis, insulin resistance/hyperglycaemia, and impaired coagulation.',
+  src: "Marino's The ICU Book"
+},
+{
+  id: 'ccm-refeed-001', spec: 'ccm', topic: 'Refeeding Syndrome', difficulty: 'moderate', type: 'case',
+  stem: 'A severely malnourished patient (BMI 14, minimal intake for 2 weeks) is started on full-rate enteral feeding. On day 2 they develop weakness, arrhythmia and respiratory failure.',
+  q: 'The biochemical hallmark of refeeding syndrome is:',
+  o: [
+    'Hyperkalaemia',
+    'Hypophosphataemia',
+    'Hypercalcaemia',
+    'Metabolic alkalosis'
+  ],
+  a: 1,
+  e: 'Reintroducing carbohydrate triggers insulin release → cellular uptake of <strong>phosphate</strong>, potassium and magnesium. <strong>Hypophosphataemia</strong> is the hallmark, depleting ATP and 2,3-DPG → cardiac, respiratory, neuromuscular and haematological dysfunction.',
+  key: 'Refeeding syndrome = insulin-driven hypophosphataemia (± hypoK, hypoMg) on reintroducing feeds.',
+  pearl: 'Prevent it: identify high-risk patients, give <strong>thiamine before feeding</strong>, start feeding low (~10 kcal/kg/day) and advance slowly, and correct electrolytes proactively — don\'t wait for symptoms.',
+  src: 'NICE Nutrition Support / Irwin & Rippe'
+},
+{
+  id: 'ccm-refeed-002', spec: 'ccm', topic: 'Refeeding Syndrome', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'Which vitamin must be replaced BEFORE initiating nutrition in a patient at risk of refeeding syndrome?',
+  o: [
+    'Vitamin C',
+    'Thiamine (B₁)',
+    'Vitamin K',
+    'Folate'
+  ],
+  a: 1,
+  e: 'Carbohydrate load increases <strong>thiamine</strong> demand (cofactor for pyruvate dehydrogenase). In a depleted patient this can precipitate Wernicke encephalopathy or lactic acidosis. Give thiamine before/with the first feed and continue for several days.',
+  key: 'Give thiamine before feeding the at-risk/malnourished patient.',
+  pearl: 'High-risk criteria (NICE): BMI <16, >15% weight loss, little/no intake >10 days, or low baseline K/PO₄/Mg — or two moderate-risk features.',
+  src: 'NICE Guidance'
+},
+{
+  id: 'ccm-wean-001', spec: 'ccm', topic: 'Ventilator Weaning', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'The rapid shallow breathing index (RSBI), a predictor of successful weaning, is calculated as and favourable when:',
+  o: [
+    'Tidal volume ÷ respiratory rate; favourable if >105',
+    'Respiratory rate ÷ tidal volume (in litres); favourable if <105',
+    'Minute ventilation ÷ PaCO₂; favourable if <10',
+    'PaO₂ ÷ FiO₂; favourable if >300'
+  ],
+  a: 1,
+  e: 'RSBI = <strong>respiratory rate (breaths/min) ÷ tidal volume (L)</strong>. A value <strong>&lt;105</strong> during a spontaneous breathing trial predicts successful extubation; higher values suggest rapid, shallow breathing and likely failure.',
+  key: 'RSBI = f/Vt; <105 predicts weaning success.',
+  pearl: 'Readiness screen precedes the SBT: improving/resolved cause, adequate oxygenation (PaO₂/FiO₂ >150–200, PEEP ≤5–8, FiO₂ ≤0.4–0.5), haemodynamic stability, and the ability to trigger breaths.',
+  src: 'Yang-Tobin / Marino'
+},
+{
+  id: 'ccm-wean-002', spec: 'ccm', topic: 'Ventilator Weaning', difficulty: 'moderate', type: 'case',
+  stem: 'A patient who was intubated for angioedema and prolonged ventilation is being assessed for extubation. There is concern about post-extubation stridor.',
+  q: 'The bedside test used to assess this risk is:',
+  o: [
+    'The cuff-leak test',
+    'The Allen test',
+    'A spontaneous awakening trial',
+    'The negative inspiratory force'
+  ],
+  a: 0,
+  e: 'The <strong>cuff-leak test</strong> assesses laryngeal/airway oedema: with the cuff deflated, a small (or absent) leak suggests narrowing and higher risk of post-extubation stridor. In high-risk patients a low leak warrants <strong>systemic corticosteroids ~4–12 h before</strong> extubation and readiness to re-intubate.',
+  key: 'Cuff-leak test screens for airway oedema/post-extubation stridor; steroids if leak is low in high-risk patients.',
+  pearl: 'The ABCDEF bundle pairs a daily <strong>spontaneous awakening trial (SAT)</strong> with a <strong>spontaneous breathing trial (SBT)</strong> — coordinating sedation interruption with weaning shortens ventilation and ICU stay.',
+  src: 'Washington Manual / ATS-CHEST'
+},
+{
+  id: 'ccm-tox-001', spec: 'ccm', topic: 'Toxic Alcohol Poisoning', difficulty: 'severe', type: 'case',
+  stem: 'A man presents with visual blurring ("snowfield"), tachypnoea and a severe high-anion-gap metabolic acidosis. Serum osmolar gap is elevated. He is suspected of drinking a windscreen-wash substitute.',
+  q: 'The toxic metabolite responsible for his symptoms (methanol poisoning) is:',
+  o: [
+    'Oxalic acid',
+    'Formic acid',
+    'Glycolic acid',
+    'Acetone'
+  ],
+  a: 1,
+  e: 'Methanol is metabolised by alcohol dehydrogenase to formaldehyde and then <strong>formic acid</strong>, which inhibits cytochrome oxidase and injures the <strong>optic nerve/retina</strong> (visual loss) and basal ganglia (putaminal necrosis), driving the anion-gap acidosis.',
+  key: 'Methanol → formic acid → visual loss + high-anion-gap acidosis.',
+  pearl: 'Early there is an <strong>osmolar gap</strong> (parent alcohol) which converts to an <strong>anion gap</strong> as it is metabolised — a normalising osmolar gap with a widening anion gap is ominous, not reassuring.',
+  src: 'Irwin & Rippe / Goldfrank'
+},
+{
+  id: 'ccm-tox-002', spec: 'ccm', topic: 'Toxic Alcohol Poisoning', difficulty: 'severe', type: 'direct',
+  stem: '',
+  q: 'The preferred antidote for methanol or ethylene glycol poisoning is:',
+  o: [
+    'N-acetylcysteine',
+    'Fomepizole (an alcohol dehydrogenase inhibitor)',
+    'Sodium nitrite',
+    'Flumazenil'
+  ],
+  a: 1,
+  e: '<strong>Fomepizole</strong> competitively inhibits alcohol dehydrogenase, halting formation of the toxic metabolites; ethanol is an alternative where fomepizole is unavailable. Add <strong>haemodialysis</strong> for severe acidosis, end-organ injury (visual/renal), or high levels. Cofactors help clear metabolites: <strong>folinic acid</strong> for methanol, <strong>thiamine and pyridoxine</strong> for ethylene glycol.',
+  key: 'Toxic alcohols: fomepizole (block ADH) + haemodialysis + specific cofactors.',
+  pearl: 'Ethylene glycol → glycolic acid (acidosis) and <strong>oxalic acid</strong>, which chelates calcium → hypocalcaemia and calcium-oxalate crystalluria with acute kidney injury.',
+  src: "Marino's / Goldfrank"
+},
+{
+  id: 'ccm-osm-001', spec: 'ccm', topic: 'Toxic Alcohol Poisoning', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'The calculated serum osmolality (for the osmolar gap) is best estimated by:',
+  o: [
+    '2×Na + glucose + urea (all in mmol/L)',
+    '2×Na + glucose/18 + BUN/2.8 (US units) or 2×Na + glucose + urea (SI)',
+    'Na + K + Cl + HCO₃',
+    'Anion gap + 12'
+  ],
+  a: 1,
+  e: 'Calculated osmolality ≈ <strong>2×Na⁺ + glucose + urea</strong> (SI, mmol/L). The <strong>osmolar gap</strong> = measured − calculated; a value >10 mOsm/kg suggests an unmeasured osmole such as methanol, ethylene glycol, or ethanol.',
+  key: 'Osmolar gap = measured − calculated (2Na + glucose + urea); >10 suggests a toxic alcohol/ethanol.',
+  pearl: 'A normal osmolar gap does not exclude toxic-alcohol poisoning late in the course (parent alcohol already metabolised); interpret alongside the anion gap and clinical picture.',
+  src: "Marino's The ICU Book"
+},
+{
+  id: 'ccm-hyperk-001', spec: 'ccm', topic: 'Electrolytes', difficulty: 'moderate', type: 'case',
+  stem: 'A dialysis patient has a potassium of 7.2 mmol/L with peaked T waves and a widening QRS.',
+  q: 'The first drug to give is:',
+  o: [
+    'Intravenous calcium gluconate/chloride',
+    'Insulin with dextrose',
+    'Nebulised salbutamol',
+    'Sodium bicarbonate'
+  ],
+  a: 0,
+  e: '<strong>Calcium</strong> is given first to <strong>stabilise the myocardium</strong> (it does not lower K⁺) when there are ECG changes. Then shift K⁺ intracellularly with insulin–dextrose (± salbutamol, ± bicarbonate if acidotic), and remove it with dialysis (definitive here) or potassium binders.',
+  key: 'Hyperkalaemia with ECG changes: calcium first (stabilise), then shift (insulin/dextrose ± salbutamol), then remove (dialysis).',
+  pearl: 'ECG evolution: peaked T waves → PR prolongation/flat P → wide QRS → sine wave → arrest. Calcium works within minutes but is short-lived — arrange definitive removal promptly.',
+  src: "Marino's / Washington Manual"
+},
+{
+  id: 'ccm-dka-003', spec: 'ccm', topic: 'Hyperglycaemic Emergencies', difficulty: 'moderate', type: 'case',
+  stem: 'A patient with diabetic ketoacidosis is resuscitated with fluids and an insulin infusion. Two hours in, the potassium is 3.2 mmol/L.',
+  q: 'The correct next step is:',
+  o: [
+    'Continue insulin at the same rate and ignore the potassium',
+    'Add potassium replacement and consider pausing/withholding insulin until K⁺ ≥3.3 mmol/L',
+    'Give a large insulin bolus to clear ketones faster',
+    'Give sodium bicarbonate'
+  ],
+  a: 1,
+  e: 'Insulin drives K⁺ into cells. If K⁺ is <strong>&lt;3.3 mmol/L, hold insulin and replace potassium first</strong> to avoid dangerous hypokalaemia/arrhythmia; give K⁺ in the fluids once 3.3–5.3. Total-body potassium is depleted in DKA even when the initial serum level looks normal or high.',
+  key: 'DKA: if K⁺ <3.3, replace potassium and hold insulin until corrected.',
+  pearl: 'Add dextrose to the fluids when glucose falls to ~14 mmol/L (250 mg/dL) so the insulin infusion can continue to clear ketones without hypoglycaemia. Resolution = anion gap closure/ketone clearance, not just normoglycaemia.',
+  src: 'ADA / Washington Manual'
+},
+{
+  id: 'ccm-vap-002', spec: 'ccm', topic: 'Pneumonia / VAP', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Ventilator-associated pneumonia is, by definition, pneumonia arising:',
+  o: [
+    'Within 24 h of any hospital admission',
+    'More than 48 h after tracheal intubation and mechanical ventilation',
+    'Only after extubation',
+    'In any patient receiving oxygen therapy'
+  ],
+  a: 1,
+  e: 'VAP is pneumonia developing <strong>&gt;48 h after intubation</strong>. Empirical therapy is guided by the risk of MDR organisms (prior antibiotics, ≥5 days\' hospitalisation, local resistance) and de-escalated on cultures; a ~7-day course suffices for most.',
+  key: 'VAP = pneumonia >48 h after intubation; empirical cover by MDR risk, then de-escalate.',
+  pearl: 'The VAP prevention bundle: head-up 30–45°, daily sedation interruption + readiness-to-extubate assessment, oral care (± chlorhexidine, locally variable), DVT and stress-ulcer prophylaxis, and subglottic secretion drainage.',
+  src: 'ATS/IDSA HAP-VAP Guideline'
+},
+{
+  id: 'ccm-sep-013', spec: 'ccm', topic: 'Sepsis', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Per the Surviving Sepsis Campaign, in septic shock the recommended initial crystalloid resuscitation and vasopressor targets are:',
+  o: [
+    '10 mL/kg crystalloid and MAP ≥55 mmHg',
+    'At least 30 mL/kg crystalloid within 3 h and MAP ≥65 mmHg with noradrenaline first-line',
+    '50 mL/kg colloid and MAP ≥75 mmHg',
+    'No fluids; start dopamine immediately'
+  ],
+  a: 1,
+  e: 'SSC recommends <strong>≥30 mL/kg</strong> balanced crystalloid within the first 3 h (then guided by dynamic assessment), a <strong>MAP target ≥65 mmHg</strong>, and <strong>noradrenaline as the first-line vasopressor</strong> (add vasopressin, then adrenaline). Give antibiotics and obtain cultures/lactate early.',
+  key: 'Septic shock: ≥30 mL/kg crystalloid, MAP ≥65, noradrenaline first-line.',
+  pearl: 'After the initial bolus, use dynamic measures (passive leg raise, stroke-volume/pulse-pressure variation, fluid-challenge response) rather than static CVP to decide on further fluid.',
+  src: 'Surviving Sepsis Campaign 2021'
+},
+{
+  id: 'ccm-ards-009', spec: 'ccm', topic: 'ARDS', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'For a patient with moderate–severe ARDS, the lung-protective ventilation strategy shown to reduce mortality includes:',
+  o: [
+    'Tidal volume 10–12 mL/kg actual body weight, plateau pressure <40 cmH₂O',
+    'Tidal volume ~6 mL/kg predicted body weight, plateau pressure ≤30 cmH₂O, and prone positioning if PaO₂/FiO₂ <150',
+    'High tidal volumes to prevent atelectasis',
+    'Zero PEEP to reduce barotrauma'
+  ],
+  a: 1,
+  e: 'ARDSNet lung-protective ventilation: <strong>~6 mL/kg predicted body weight</strong>, <strong>plateau pressure ≤30 cmH₂O</strong>, adequate PEEP, and permissive hypercapnia. <strong>Prone positioning</strong> (PROSEVA — ≥16 h/day) reduces mortality when PaO₂/FiO₂ <150. Neuromuscular blockade and ECMO are options in severe cases.',
+  key: 'ARDS: 6 mL/kg PBW, Pplat ≤30, PEEP, prone if P/F <150 (PROSEVA).',
+  pearl: 'Tidal volume is set by <strong>predicted</strong> (not actual) body weight — driven by height and sex — because lung size scales with height, not adiposity.',
+  src: 'ARDSNet / PROSEVA'
+},
+{
+  id: 'ccm-aki-004', spec: 'ccm', topic: 'Acute Kidney Injury', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Which is an accepted urgent (emergency) indication for renal replacement therapy in AKI?',
+  o: [
+    'A single creatinine of 200 µmol/L',
+    'Refractory hyperkalaemia, refractory acidosis, refractory fluid overload/pulmonary oedema, or uraemic complications (pericarditis/encephalopathy)',
+    'Oliguria for 6 hours',
+    'A rising urea alone'
+  ],
+  a: 1,
+  e: 'The classic emergency ("AEIOU") indications: severe <strong>A</strong>cidosis, <strong>E</strong>lectrolyte disturbance (refractory hyperkalaemia), <strong>I</strong>ntoxications (dialysable toxins), <strong>O</strong>verload (refractory pulmonary oedema), and <strong>U</strong>raemic complications (pericarditis, encephalopathy) — all when refractory to medical therapy.',
+  key: 'RRT emergencies (AEIOU): Acidosis, Electrolytes (K⁺), Intoxication, Overload, Uraemia.',
+  pearl: 'Trials (STARRT-AKI, AKIKI, IDEAL-ICU) show no benefit to routinely <em>early</em> RRT in the absence of these indications — watchful waiting is appropriate otherwise.',
+  src: 'KDIGO / STARRT-AKI'
+},
+{
+  id: 'ccm-pe-004', spec: 'ccm', topic: 'Pulmonary Embolism', difficulty: 'moderate', type: 'case',
+  stem: 'A patient with a confirmed pulmonary embolism is hypotensive (SBP 78 mmHg) with acute right-ventricular strain on echocardiography.',
+  q: 'This is high-risk (massive) PE. The indicated treatment, if no contraindication, is:',
+  o: [
+    'Systemic thrombolysis (e.g. alteplase)',
+    'A vitamin-K antagonist alone',
+    'Aspirin',
+    'Observation with oxygen'
+  ],
+  a: 0,
+  e: 'High-risk PE (sustained hypotension/shock) warrants <strong>systemic thrombolysis</strong> unless contraindicated; catheter-directed therapy or surgical embolectomy are alternatives if thrombolysis fails or is contraindicated. Anticoagulate (usually IV unfractionated heparin) alongside.',
+  key: 'High-risk (hypotensive) PE → thrombolysis (or embolectomy) + heparin.',
+  pearl: 'Intermediate-risk PE (RV strain/positive biomarkers but normotensive) is treated with anticoagulation and close monitoring — reserve thrombolysis for those who deteriorate.',
+  src: 'ESC PE Guideline / Washington Manual'
+},
+{
+  id: 'ccm-ich-001', spec: 'ccm', topic: 'Stroke', difficulty: 'moderate', type: 'case',
+  stem: 'A patient on warfarin (INR 3.5) presents with a large spontaneous intracerebral haemorrhage.',
+  q: 'The most appropriate reversal strategy is:',
+  o: [
+    'Vitamin K alone',
+    'Four-factor prothrombin complex concentrate plus intravenous vitamin K',
+    'Fresh frozen plasma alone, slowly',
+    'Platelet transfusion'
+  ],
+  a: 1,
+  e: 'Warfarin-associated intracranial haemorrhage requires <strong>rapid</strong> reversal: <strong>4-factor PCC</strong> (faster, smaller volume, more reliable than FFP) <strong>plus IV vitamin K</strong> (for sustained effect, as PCC is short-lived). Also manage blood pressure and neurosurgical referral.',
+  key: 'Warfarin-related ICH: 4-factor PCC + IV vitamin K (PCC alone wears off).',
+  pearl: 'For direct oral anticoagulants: idarucizumab reverses dabigatran; andexanet alfa (or PCC where unavailable) for factor-Xa inhibitors. In acute ICH, aim to lower systolic BP to ~140 mmHg.',
+  src: 'Neurocritical Care Society / AHA'
+},
+
+/* ==========================================================
+   ANAESTHESIA — BATCH A2 (Difficult airway, regional adjuncts,
+   physics, paediatric, monitoring, positioning)
+   ========================================================== */
+{
+  id: 'anaes-da-001', spec: 'anaes', topic: 'Airway Management', difficulty: 'severe', type: 'case',
+  stem: 'After induction, a patient cannot be intubated and cannot be mask-ventilated or oxygenated via a supraglottic device; SpO₂ is 70% and falling.',
+  q: 'Per the Difficult Airway Society guideline, the immediate next step is:',
+  o: [
+    'Repeated attempts at direct laryngoscopy',
+    'Declare "can\'t intubate, can\'t oxygenate" and perform emergency front-of-neck access (scalpel–bougie–tube cricothyroidotomy)',
+    'Wake the patient up',
+    'Give more neuromuscular blocker'
+  ],
+  a: 1,
+  e: 'A CICO situation mandates immediate <strong>emergency front-of-neck access</strong>. DAS recommends the <strong>scalpel–bougie–tube</strong> cricothyroidotomy: transverse stab through the cricothyroid membrane, rotate blade, rail a bougie, then a size-6 tube. Declaring CICO early and committing to FONA saves lives.',
+  key: 'CICO → scalpel–bougie–tube cricothyroidotomy without delay.',
+  pearl: 'DAS plans: A (facemask/tracheal intubation) → B (supraglottic airway rescue) → C (final attempt at facemask ventilation, wake if possible) → D (FONA). Give 100% O₂ and ensure full neuromuscular blockade before FONA.',
+  src: 'DAS 2015 Guidelines'
+},
+{
+  id: 'anaes-da-002', spec: 'anaes', topic: 'Airway Management', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'The strongest indication for planned awake fibreoptic intubation is:',
+  o: [
+    'A predicted easy airway needing rapid control',
+    'An anticipated difficult airway where loss of spontaneous ventilation would be dangerous (e.g. severe fixed-flexion neck, large airway tumour)',
+    'A full stomach with normal airway',
+    'Routine day-case surgery'
+  ],
+  a: 1,
+  e: 'Awake fibreoptic intubation preserves spontaneous ventilation and airway tone while the airway is secured under topical anaesthesia — ideal when both intubation and rescue oxygenation are predicted to be difficult (unstable cervical spine, airway tumours/masses, severe ankylosing spondylitis, previous difficult airway).',
+  key: 'Anticipated difficult airway where losing spontaneous ventilation is dangerous → awake fibreoptic intubation.',
+  pearl: 'Adequate topicalisation (lignocaine to nasopharynx, oropharynx, larynx) and judicious sedation (e.g. remifentanil or dexmedetomidine, keeping the patient rousable) are the keys to success.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-lma-001', spec: 'anaes', topic: 'Airway Management', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'A classic (first-generation) laryngeal mask airway is relatively contraindicated in which situation?',
+  o: [
+    'A short peripheral procedure in a fasted patient',
+    'A patient at high risk of aspiration (full stomach, significant reflux, or high intra-abdominal pressure)',
+    'A patient with a beard',
+    'Day-case knee arthroscopy'
+  ],
+  a: 1,
+  e: 'A supraglottic airway does not protect against aspiration; it is relatively contraindicated where aspiration risk is high (non-fasted, significant GORD, obstruction, high intra-abdominal pressure, prone/steep positions without protection). Second-generation SGAs (e.g. i-gel, ProSeal) have a gastric drain port and offer some protection.',
+  key: 'Classic LMA does not protect the airway — avoid when aspiration risk is high.',
+  pearl: 'Second-generation SGAs (i-gel, LMA ProSeal/Supreme) permit gastric decompression and higher seal pressures, widening their safe use — but a cuffed tracheal tube remains the standard where protection is essential.',
+  src: "Morgan & Mikhail's"
+},
+{
+  id: 'anaes-epi-001', spec: 'anaes', topic: 'Regional Anaesthesia', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'The epidural "test dose" (e.g. 3 mL of lidocaine 1.5% with adrenaline 1:200,000) is used to detect:',
+  o: [
+    'Only subarachnoid placement',
+    'Both subarachnoid (rapid dense block) and intravascular (tachycardia/rise in HR from adrenaline) placement',
+    'Infection of the catheter',
+    'The correct dermatome'
+  ],
+  a: 1,
+  e: 'The test dose screens for mis-placement: a subarachnoid catheter produces a rapid, dense motor/sensory block (the local anaesthetic component), while an intravascular catheter produces a transient <strong>tachycardia/BP rise</strong> from the adrenaline marker (≈20% HR rise). It reduces the risk of total spinal or systemic toxicity from the full dose.',
+  key: 'Epidural test dose: LA detects intrathecal placement; adrenaline detects intravascular placement.',
+  pearl: 'Always aspirate before dosing, dose incrementally, and stay alert to signs of LAST or a rising block — no single test is fully reliable, especially in labour where maternal HR fluctuates.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-cau-001', spec: 'anaes', topic: 'Regional Anaesthesia', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'A caudal epidural block in children is performed by injecting local anaesthetic through which structure?',
+  o: [
+    'The foramen magnum',
+    'The sacrococcygeal membrane (sacral hiatus)',
+    'The L3–L4 interspace',
+    'The intervertebral foramen'
+  ],
+  a: 1,
+  e: 'Caudal anaesthesia enters the epidural space through the <strong>sacral hiatus</strong> (sacrococcygeal membrane, bounded by the sacral cornua). It is popular for sub-umbilical paediatric surgery (circumcision, hernia, hypospadias) for intra- and post-operative analgesia.',
+  key: 'Caudal block = epidural space via the sacral hiatus; workhorse for paediatric sub-umbilical surgery.',
+  pearl: 'A common dosing guide is the Armitage regimen (~0.5–1 mL/kg of 0.25% bupivacaine depending on the desired level). Ultrasound improves accuracy in infants.',
+  src: "Morgan & Mikhail's"
+},
+{
+  id: 'anaes-phys-001', spec: 'anaes', topic: 'Physics & Physiology', difficulty: 'severe', type: 'direct',
+  stem: '',
+  q: 'According to the Hagen–Poiseuille equation, halving the radius of a cannula (with laminar flow, all else equal) changes the flow rate by a factor of:',
+  o: [
+    '1/2',
+    '1/4',
+    '1/8',
+    '1/16'
+  ],
+  a: 3,
+  e: 'Laminar flow is proportional to the <strong>fourth power of the radius</strong> (Q ∝ r⁴/L). Halving the radius reduces flow to (½)⁴ = <strong>1/16</strong>. This is why a short, wide-bore cannula delivers far more fluid than a long narrow one for rapid resuscitation.',
+  key: 'Laminar flow ∝ r⁴ — short, wide cannulas give the fastest flow.',
+  pearl: 'For rapid transfusion, choose a large-diameter, short catheter (e.g. a 14–16 G peripheral or a large-bore introducer) rather than a long triple-lumen central line, whose narrow lumens limit flow.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-paed-001', spec: 'anaes', topic: 'Paediatric Anaesthesia', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'A commonly used formula for the internal diameter of an uncuffed tracheal tube in a child over 1 year is:',
+  o: [
+    'Age/2 + 4 mm',
+    'Age/4 + 4 mm',
+    'Age + 4 mm',
+    'Weight/10 mm'
+  ],
+  a: 1,
+  e: 'Uncuffed tube internal diameter ≈ <strong>age/4 + 4 mm</strong> (use ~0.5 mm smaller for cuffed tubes). Length at lips ≈ age/2 + 12 cm (oral). Modern cuffed tubes with low-pressure cuffs are increasingly preferred, reducing air leak and re-intubation for size changes.',
+  key: 'Uncuffed ETT ID ≈ age/4 + 4 mm; cuffed ≈ 0.5 mm smaller.',
+  pearl: 'Paediatric airway differences: large head/occiput and tongue, high anterior larynx (C3–4), long floppy epiglottis, and the cricoid as the narrowest point in the young child — all favour a straight blade and careful sizing.',
+  src: "Morgan & Mikhail's"
+},
+{
+  id: 'anaes-bis-001', spec: 'anaes', topic: 'Monitoring & Equipment', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'When processed-EEG (BIS) monitoring is used to reduce accidental awareness, the general target range during general anaesthesia is:',
+  o: [
+    '0–20',
+    '40–60',
+    '60–80',
+    '80–100'
+  ],
+  a: 1,
+  e: 'A BIS of <strong>40–60</strong> indicates an appropriate depth of general anaesthesia; 100 is fully awake and 0 is isoelectric EEG. Depth monitoring is most useful during total intravenous anaesthesia and when neuromuscular blockade masks clinical signs of light anaesthesia.',
+  key: 'BIS target for general anaesthesia ≈ 40–60.',
+  pearl: 'NAP5 identified TIVA with neuromuscular blockade, and transfer/emergence periods, as high-risk for accidental awareness. End-tidal agent monitoring with an alarm is the volatile-anaesthesia equivalent safeguard.',
+  src: 'NAP5 / Miller'
+},
+{
+  id: 'anaes-olv-001', spec: 'anaes', topic: 'Intraoperative Physiology', difficulty: 'severe', type: 'case',
+  stem: 'During one-lung ventilation for a thoracotomy, the patient desaturates to 88%.',
+  q: 'After confirming tube position and FiO₂ 1.0, an effective early manoeuvre is:',
+  o: [
+    'Apply CPAP to the non-dependent (operative, non-ventilated) lung and/or PEEP to the dependent lung',
+    'Increase the tidal volume to 12 mL/kg',
+    'Immediately abandon one-lung ventilation',
+    'Give a fluid bolus'
+  ],
+  a: 0,
+  e: 'For hypoxaemia on one-lung ventilation: verify double-lumen/bronchial-blocker position (fibreoptically), FiO₂ 1.0, then apply <strong>CPAP to the non-dependent lung</strong> (oxygenates without much movement) and/or <strong>PEEP to the dependent lung</strong>; recruitment manoeuvres and intermittent two-lung ventilation help. Hypoxic pulmonary vasoconstriction diverts blood from the collapsed lung over time.',
+  key: 'OLV hypoxaemia: check tube position, FiO₂ 1.0, CPAP to non-dependent lung ± PEEP to dependent lung.',
+  pearl: 'Volatile agents (esp. >1 MAC) blunt hypoxic pulmonary vasoconstriction, potentially worsening shunt — another reason depth and agent choice matter in thoracic anaesthesia.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-pos-001', spec: 'anaes', topic: 'Intraoperative Physiology', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Prolonged, poorly padded positioning of the arm in supination and abduction most classically injures which nerve?',
+  o: [
+    'Common peroneal nerve',
+    'Ulnar nerve (at the elbow)',
+    'Brachial plexus / ulnar depending on position',
+    'Radial nerve at the wrist'
+  ],
+  a: 2,
+  e: 'Positioning injuries are a major medicolegal cause: the <strong>ulnar nerve</strong> at the elbow is the most commonly injured (pressure at the condylar groove — keep the forearm supinated/neutral and padded), while excessive arm <strong>abduction beyond 90°</strong> stretches the <strong>brachial plexus</strong>. The common peroneal nerve is at risk in lithotomy (pressure at the fibular head).',
+  key: 'Ulnar nerve at the elbow is the most commonly injured; abduction >90° risks the brachial plexus.',
+  pearl: 'Prevent nerve injury: neutral joint positions, generous padding, avoid overextension/abduction, and document a pressure-area check — position-related injury may not manifest until the postoperative period.',
+  src: "Morgan & Mikhail's"
+},
+{
+  id: 'anaes-diath-001', spec: 'anaes', topic: 'Monitoring & Equipment', difficulty: 'moderate', type: 'case',
+  stem: 'A patient with a permanent pacemaker is scheduled for surgery requiring monopolar diathermy.',
+  q: 'The main intraoperative concern and mitigation is:',
+  o: [
+    'Diathermy interference may inhibit the pacemaker or trigger inappropriate ICD shocks — use short bursts, position the return plate to keep current away from the device, and manage per a cardiology plan (magnet/reprogramming)',
+    'The pacemaker will overheat and must be removed',
+    'No precautions are needed with modern devices',
+    'Only spinal anaesthesia can be used'
+  ],
+  a: 0,
+  e: 'Monopolar diathermy can cause electromagnetic interference: <strong>oversensing</strong> may inhibit pacing (dangerous if pacemaker-dependent) or an ICD may deliver an inappropriate shock. Mitigate with <strong>bipolar diathermy</strong> where possible, short bursts, the return electrode sited so current does not cross the device, and a preoperative plan (a magnet to set asynchronous pacing / disable ICD tachytherapy, or reprogramming) with defibrillation available.',
+  key: 'CIED + monopolar diathermy → EMI: bipolar/short bursts, plate placement, magnet or reprogram per plan.',
+  pearl: 'A magnet over most pacemakers switches to asynchronous (fixed-rate) pacing; over most ICDs it suspends tachytherapy but does NOT change pacing — know the device before relying on a magnet.',
+  src: 'Miller / MHRA guidance'
+},
+{
+  id: 'anaes-sug-001', spec: 'anaes', topic: 'Neuromuscular Blockers', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Sugammadex reverses rocuronium/vecuronium blockade by:',
+  o: [
+    'Inhibiting acetylcholinesterase to raise synaptic acetylcholine',
+    'Encapsulating (chelating) the steroidal relaxant molecule, removing it from the neuromuscular junction',
+    'Stimulating nicotinic receptors directly',
+    'Blocking presynaptic calcium channels'
+  ],
+  a: 1,
+  e: 'Sugammadex is a modified γ-cyclodextrin that <strong>encapsulates</strong> aminosteroid relaxants (rocuronium > vecuronium) in plasma, creating a concentration gradient that pulls them off the junctional receptors — reversing even <strong>profound</strong> block rapidly (unlike neostigmine, which needs some spontaneous recovery). Typical doses: 2 mg/kg (moderate block, ≥2 twitches) or 16 mg/kg (immediate reversal after an intubating dose).',
+  key: 'Sugammadex chelates rocuronium/vecuronium; reverses even profound block (2 or 16 mg/kg).',
+  pearl: 'It does not reverse benzylisoquinoliniums (atracurium/cisatracurium). It binds hormonal contraceptives — advise additional contraception. Rare anaphylaxis is reported.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-op-001', spec: 'anaes', topic: 'Analgesia', difficulty: 'moderate', type: 'case',
+  stem: 'A patient with chronic kidney disease receives morphine for postoperative pain and becomes progressively more sedated with pinpoint pupils over hours.',
+  q: 'The most likely explanation is accumulation of:',
+  o: [
+    'Morphine-3-glucuronide, which is analgesic',
+    'Morphine-6-glucuronide, an active metabolite renally excreted',
+    'Normeperidine',
+    'Codeine'
+  ],
+  a: 1,
+  e: '<strong>Morphine-6-glucuronide</strong> is a potent active opioid metabolite cleared by the kidney; in renal impairment it accumulates → delayed, prolonged sedation and respiratory depression. Prefer opioids with inactive/less renally-dependent metabolites (e.g. fentanyl) in renal failure, and titrate carefully.',
+  key: 'Morphine-6-glucuronide accumulates in renal failure → prolonged sedation/respiratory depression.',
+  pearl: 'Pethidine\'s metabolite normeperidine accumulates in renal failure and causes seizures. Naloxone reverses opioid effect but is short-acting — repeat dosing/infusion may be needed for long-acting opioids.',
+  src: "Stoelting's Pharmacology"
+},
+{
+  id: 'anaes-tap-001', spec: 'anaes', topic: 'Regional Anaesthesia', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'The transversus abdominis plane (TAP) block deposits local anaesthetic to target which nerves?',
+  o: [
+    'The lumbar plexus roots',
+    'The thoracolumbar (T7–L1) anterior abdominal wall nerves in the plane between internal oblique and transversus abdominis',
+    'The pudendal nerve',
+    'The sciatic nerve'
+  ],
+  a: 1,
+  e: 'The TAP block spreads anaesthetic in the neurofascial plane between <strong>internal oblique and transversus abdominis</strong>, blocking the anterior rami (T7–L1) that supply the anterolateral abdominal wall — useful for somatic analgesia after abdominal surgery (caesarean, laparotomy, hernia).',
+  key: 'TAP block: internal oblique/transversus plane → T7–L1 abdominal wall analgesia (somatic only).',
+  pearl: 'TAP blocks cover the abdominal wall but not visceral pain — combine with multimodal analgesia. Watch total local-anaesthetic dose (often bilateral, large volumes) to avoid LAST.',
+  src: "Miller's Anesthesia"
+},
+{
+  id: 'anaes-hme-001', spec: 'anaes', topic: 'Monitoring & Equipment', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'A heat and moisture exchanger (HME) placed in the breathing circuit primarily serves to:',
+  o: [
+    'Absorb carbon dioxide',
+    'Conserve heat and humidity (and filter) the inspired gas, protecting the airway from drying',
+    'Deliver the volatile agent',
+    'Measure tidal volume'
+  ],
+  a: 1,
+  e: 'An HME ("artificial nose") captures exhaled heat and moisture and returns them on inspiration, preventing drying of secretions and mucosal damage during anaesthesia/ventilation; many incorporate a microbial filter. It is not a substitute for active humidification during very long cases.',
+  key: 'HME conserves airway heat/humidity (and filters); passive humidification.',
+  pearl: 'Dry gases impair ciliary function and thicken secretions; prolonged ventilation may need active heated humidification. An HME adds dead space and resistance — a consideration in small children.',
+  src: "Morgan & Mikhail's"
+},
+
+/* ==========================================================
+   CRITICAL CARE — BATCH C2 (Sepsis adjuncts, ARDS, transfusion,
+   prophylaxis, neuro-emergencies, tox)
+   ========================================================== */
+{
+  id: 'ccm-sep-014', spec: 'ccm', topic: 'Sepsis', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'In septic shock, low-dose corticosteroids (IV hydrocortisone) are recommended when:',
+  o: [
+    'In every septic patient regardless of haemodynamics',
+    'There is ongoing vasopressor requirement despite adequate fluids and noradrenaline (haemodynamic instability persists)',
+    'Only if random cortisol is low',
+    'Never — steroids are contraindicated in sepsis'
+  ],
+  a: 1,
+  e: 'The Surviving Sepsis Campaign suggests <strong>IV hydrocortisone</strong> (~200 mg/day) in adults with septic shock and an <strong>ongoing vasopressor need</strong> (e.g. noradrenaline ≥0.25 µg/kg/min for several hours). It hastens shock resolution; a random cortisol/ACTH stimulation test is not required to decide.',
+  key: 'Hydrocortisone for septic shock with persistent vasopressor requirement (no cortisol test needed).',
+  pearl: 'Adding fludrocortisone (as in APROCCHSS) is an option. Steroids shorten time to shock reversal but their mortality benefit is modest and trial-dependent (ADRENAL vs APROCCHSS).',
+  src: 'Surviving Sepsis Campaign 2021'
+},
+{
+  id: 'ccm-sep-015', spec: 'ccm', topic: 'Sepsis', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'After noradrenaline, the recommended second vasopressor to add in septic shock (to limit catecholamine dose) is:',
+  o: [
+    'Dopamine',
+    'Vasopressin',
+    'Phenylephrine',
+    'Isoprenaline'
+  ],
+  a: 1,
+  e: 'SSC recommends adding <strong>vasopressin</strong> (up to ~0.03 units/min) to noradrenaline rather than escalating catecholamines alone; adrenaline is the next addition. <strong>Dopamine is not recommended</strong> (more arrhythmia, no benefit) except in highly selected bradycardic patients.',
+  key: 'Septic shock vasopressor order: noradrenaline → add vasopressin → add adrenaline. Avoid dopamine.',
+  pearl: 'Angiotensin II is an option in refractory vasodilatory shock. Escalating catecholamine requirement should prompt a search for untreated source, adrenal insufficiency, or a mechanical/obstructive contributor.',
+  src: 'Surviving Sepsis Campaign 2021'
+},
+{
+  id: 'ccm-tx-003', spec: 'ccm', topic: 'Transfusion', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'For most haemodynamically stable, non-bleeding critically ill adults, the evidence supports a RED-CELL transfusion threshold of:',
+  o: [
+    'Haemoglobin < 10 g/dL (liberal)',
+    'Haemoglobin < 7 g/dL (restrictive)',
+    'Haemoglobin < 5 g/dL',
+    'Transfuse to keep Hb 12–14 g/dL'
+  ],
+  a: 1,
+  e: 'A <strong>restrictive</strong> threshold (~<strong>7 g/dL</strong>, target 7–9) is as safe as or safer than a liberal strategy (TRICC and successors) in most stable critically ill patients. A slightly higher trigger (~8 g/dL) is used in acute coronary syndrome/cardiac surgery contexts.',
+  key: 'Restrictive transfusion trigger ~7 g/dL for most ICU patients; ~8 in cardiac/ACS.',
+  pearl: 'In active major haemorrhage, transfuse by clinical picture and ratios (not a single Hb number). Each unit of red cells raises Hb by ~1 g/dL in an adult.',
+  src: 'TRICC / AABB'
+},
+{
+  id: 'ccm-vte-001', spec: 'ccm', topic: 'VTE Prophylaxis', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'For a critically ill medical patient at high VTE risk with no bleeding contraindication, the preferred pharmacological prophylaxis is:',
+  o: [
+    'Aspirin',
+    'Low-molecular-weight heparin (or low-dose unfractionated heparin)',
+    'Therapeutic-dose warfarin',
+    'Mechanical compression alone in all patients'
+  ],
+  a: 1,
+  e: 'Pharmacological prophylaxis with <strong>LMWH</strong> (or LDUH, e.g. in severe renal impairment) is preferred when bleeding risk is acceptable. <strong>Mechanical prophylaxis</strong> (intermittent pneumatic compression) is used when anticoagulation is contraindicated (active bleeding, severe thrombocytopenia).',
+  key: 'ICU VTE prophylaxis: LMWH (or LDUH); mechanical if anticoagulation contraindicated.',
+  pearl: 'Reassess daily — bleeding risk and platelet counts change. Combine mechanical + pharmacological in the highest-risk patients per local protocol.',
+  src: 'CHEST / Washington Manual'
+},
+{
+  id: 'ccm-sup-001', spec: 'ccm', topic: 'Supportive Care', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'Stress-ulcer prophylaxis in the ICU is most clearly indicated in patients with:',
+  o: [
+    'Any ICU admission regardless of risk',
+    'Major risk factors — mechanical ventilation >48 h or coagulopathy (and other high-risk states)',
+    'A history of mild dyspepsia',
+    'Enteral feeding, which increases bleeding risk'
+  ],
+  a: 1,
+  e: 'The strongest independent risk factors for clinically important GI bleeding are <strong>mechanical ventilation >48 h</strong> and <strong>coagulopathy</strong>; prophylaxis (PPI or H₂-blocker) is targeted to such high-risk patients rather than given to everyone. Established enteral nutrition itself may lower risk.',
+  key: 'Stress-ulcer prophylaxis for the high-risk (ventilated >48 h, coagulopathic); not routine for all.',
+  pearl: 'Balance against possible harms (C. difficile, pneumonia associations). De-escalate as risk factors resolve.',
+  src: 'Washington Manual / PEPTIC'
+},
+{
+  id: 'ccm-nut-002', spec: 'ccm', topic: 'Nutrition', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'For most critically ill patients with a functioning gut, nutrition guidelines recommend:',
+  o: [
+    'Early parenteral nutrition within 24 h for everyone',
+    'Early enteral nutrition (within 24–48 h), preferring the enteral over the parenteral route',
+    'Withholding all nutrition for the first week',
+    'Full-calorie feeding immediately in all patients'
+  ],
+  a: 1,
+  e: '<strong>Early enteral nutrition (within 24–48 h)</strong> is preferred — it maintains gut integrity and is associated with fewer infectious complications than parenteral nutrition. Parenteral nutrition is reserved for when enteral feeding is impossible or inadequate after several days.',
+  key: 'Prefer early (24–48 h) enteral nutrition; reserve parenteral for enteral failure.',
+  pearl: 'Avoid overfeeding early (permissive underfeeding/trophic feeds are acceptable initially in many); beware refeeding syndrome in the malnourished — advance calories gradually.',
+  src: 'ASPEN-SCCM / Irwin & Rippe'
+},
+{
+  id: 'ccm-gly-001', spec: 'ccm', topic: 'Endocrine Emergencies', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'The recommended blood-glucose target range for most critically ill patients on insulin is approximately:',
+  o: [
+    '80–110 mg/dL (4.4–6.1 mmol/L) tight control',
+    '140–180 mg/dL (7.8–10.0 mmol/L)',
+    '200–250 mg/dL',
+    'No target is needed'
+  ],
+  a: 1,
+  e: 'After NICE-SUGAR showed tight control (80–110) increased hypoglycaemia and mortality, guidelines recommend a target of <strong>140–180 mg/dL</strong> (7.8–10 mmol/L), starting insulin when glucose is persistently >180. Avoid hypoglycaemia and wide glycaemic variability.',
+  key: 'ICU glucose target 140–180 mg/dL (tight 80–110 control is harmful — NICE-SUGAR).',
+  pearl: 'Point-of-care glucose can be inaccurate in shock/anaemia/oedema — confirm abnormal values with a laboratory/blood-gas sample before major insulin changes.',
+  src: 'NICE-SUGAR / SCCM'
+},
+{
+  id: 'ccm-se-003', spec: 'ccm', topic: 'Status Epilepticus', difficulty: 'moderate', type: 'case',
+  stem: 'A patient in generalised convulsive status epilepticus has received adequate doses of IV lorazepam but continues to seize.',
+  q: 'The next (second-line) step is:',
+  o: [
+    'Repeat benzodiazepines indefinitely',
+    'A second-line IV antiseizure agent — levetiracetam, (fos)phenytoin, or valproate',
+    'Immediate thiopentone coma without other agents',
+    'Oral carbamazepine'
+  ],
+  a: 1,
+  e: 'After first-line benzodiazepines, give a <strong>second-line agent</strong>: IV <strong>levetiracetam, fosphenytoin/phenytoin, or valproate</strong> — the ESETT trial found them roughly equivalent. Refractory status (failure of first- and second-line) needs anaesthetic infusions (midazolam, propofol, or thiopentone) with continuous EEG.',
+  key: 'Status: benzodiazepine → 2nd-line (levetiracetam/fosphenytoin/valproate — equivalent, ESETT) → anaesthetic coma.',
+  pearl: 'Give adequate benzodiazepine doses early (under-dosing is a common error), secure the airway/glucose/thiamine, and pursue the cause (structural, metabolic, toxic, infective, non-adherence).',
+  src: 'ESETT / Neurocritical Care Society'
+},
+{
+  id: 'ccm-icp-001', spec: 'ccm', topic: 'Traumatic Brain Injury', difficulty: 'moderate', type: 'direct',
+  stem: '',
+  q: 'For acutely raised intracranial pressure, an appropriate initial (tier-1) set of measures includes:',
+  o: [
+    'Head-down positioning and hypoventilation',
+    'Head-up ~30°, ensure venous drainage (avoid tight ties), normocapnia, sedation/analgesia, and osmotherapy (hypertonic saline or mannitol) for surges',
+    'Routine prophylactic hyperventilation to PaCO₂ 25 mmHg',
+    'Immediate barbiturate coma in all patients'
+  ],
+  a: 1,
+  e: 'Initial ICP control: <strong>head-up 30°</strong> with unobstructed venous drainage, adequate sedation/analgesia, <strong>normocapnia</strong> (PaCO₂ ~35–40), normothermia, treat seizures, and <strong>osmotherapy</strong> (hypertonic saline or mannitol) for surges. Maintain CPP ~60–70 mmHg.',
+  key: 'Raised ICP tier-1: head-up 30°, venous drainage, normocapnia, sedation, osmotherapy; CPP 60–70.',
+  pearl: 'Aggressive prophylactic hyperventilation (PaCO₂ <30) causes ischaemia and is reserved as a brief bridge for herniation. Escalate to decompressive craniectomy/barbiturates for refractory intracranial hypertension.',
+  src: 'Brain Trauma Foundation'
+},
+{
+  id: 'ccm-htn-002', spec: 'ccm', topic: 'Hypertensive Emergency', difficulty: 'moderate', type: 'case',
+  stem: 'A patient presents with a hypertensive emergency (BP 230/130) and acute pulmonary oedema (but no aortic dissection or stroke).',
+  q: 'The general principle for lowering blood pressure is:',
+  o: [
+    'Normalise the BP to 120/80 within 30 minutes',
+    'Reduce MAP by ~10–20% in the first hour and ~25% within the first day, using titratable IV agents',
+    'Use sublingual nifedipine for a rapid drop',
+    'Avoid any BP reduction'
+  ],
+  a: 1,
+  e: 'In most hypertensive emergencies, lower the <strong>MAP by ~10–20% in the first hour</strong> and by ~25% over the first day with titratable IV agents (e.g. GTN/nitroprusside/labetalol) — abrupt normalisation risks organ hypoperfusion. Exceptions with specific targets: aortic dissection (rapid to SBP ~100–120, HR <60) and certain strokes.',
+  key: 'Hypertensive emergency: drop MAP ~10–20% in the 1st hour, ~25% over day 1 (except dissection/stroke).',
+  pearl: 'Avoid short-acting sublingual nifedipine — uncontrolled precipitous falls cause stroke/MI. Choose the agent by the target organ (e.g. GTN for pulmonary oedema/ACS, labetalol/esmolol + vasodilator for dissection).',
+  src: 'Washington Manual / ACC-AHA'
+},
+{
+  id: 'ccm-tox-003', spec: 'ccm', topic: 'Toxicology', difficulty: 'severe', type: 'case',
+  stem: 'A patient with a beta-blocker overdose is bradycardic and hypotensive, unresponsive to atropine and fluids.',
+  q: 'Beyond vasopressors, a specific therapy with strong support is:',
+  o: [
+    'High-dose insulin euglycaemia therapy (HIET), and glucagon',
+    'Flumazenil',
+    'N-acetylcysteine',
+    'Sodium thiosulfate'
+  ],
+  a: 0,
+  e: 'For beta-blocker (and calcium-channel-blocker) toxicity with shock: <strong>high-dose insulin euglycaemia therapy</strong> (improves myocardial glucose use and inotropy) is a key intervention, along with <strong>glucagon</strong> (bypasses the β-receptor to raise cAMP), calcium, vasopressors, and pacing; lipid emulsion and ECMO for refractory cases.',
+  key: 'Beta-blocker/CCB shock: high-dose insulin euglycaemia therapy + glucagon + calcium + vasopressors.',
+  pearl: 'HIET typically uses a large insulin bolus/infusion (e.g. ~1 unit/kg bolus then 0.5–1 unit/kg/h) with dextrose and close glucose/potassium monitoring.',
+  src: 'Goldfrank / Washington Manual'
+},
+{
+  id: 'ccm-tox-004', spec: 'ccm', topic: 'Toxicology', difficulty: 'moderate', type: 'case',
+  stem: 'A patient rescued from a house fire has headache, confusion and a normal SpO₂ on the pulse oximeter but a metabolic acidosis; carboxyhaemoglobin is 28%.',
+  q: 'Which statement is correct regarding carbon-monoxide poisoning?',
+  o: [
+    'The pulse oximeter accurately reflects the low true oxygen saturation',
+    'A normal SpO₂ is falsely reassuring; give 100% oxygen (consider hyperbaric O₂ for severe cases)',
+    'Carboxyhaemoglobin lowers SpO₂ proportionally',
+    'Oxygen therapy is unnecessary if SpO₂ is normal'
+  ],
+  a: 1,
+  e: 'Standard pulse oximetry reads carboxyhaemoglobin as oxyhaemoglobin, so <strong>SpO₂ is falsely normal</strong>. Treatment is <strong>high-flow 100% oxygen</strong> (shortens CO half-life from ~4–5 h to ~60–90 min); <strong>hyperbaric oxygen</strong> is considered for severe features (loss of consciousness, neurological signs, ischaemia, pregnancy, very high levels).',
+  key: 'CO poisoning: SpO₂ falsely normal → 100% O₂; hyperbaric O₂ for severe cases.',
+  pearl: 'Suspect concomitant <strong>cyanide</strong> toxicity in smoke inhalation with a high lactate and profound acidosis — treat empirically with hydroxocobalamin.',
+  src: 'Goldfrank / Irwin & Rippe'
+},
+{
+  id: 'ccm-ana-003', spec: 'ccm', topic: 'Anaphylaxis', difficulty: 'easy', type: 'direct',
+  stem: '',
+  q: 'The first-line drug and route in anaphylaxis with airway/breathing/circulation compromise is:',
+  o: [
+    'Intravenous hydrocortisone',
+    'Intramuscular adrenaline (0.5 mg of 1:1000 in an adult), repeated as needed',
+    'Oral antihistamine',
+    'Nebulised salbutamol alone'
+  ],
+  a: 1,
+  e: '<strong>Intramuscular adrenaline</strong> into the anterolateral thigh (0.5 mg = 0.5 mL of 1:1000 in adults) is first-line and life-saving, repeated every ~5 min as needed. Add oxygen, IV fluids for hypotension, and position supine (sitting up if breathing difficulty). Steroids and antihistamines are second-line and do not replace adrenaline.',
+  key: 'Anaphylaxis → IM adrenaline first (0.5 mg 1:1000 in adults), repeat q5min; fluids + O₂.',
+  pearl: 'Refractory anaphylaxis (esp. on beta-blockers) may need an adrenaline infusion and <strong>glucagon</strong>. Observe for a biphasic reaction and measure serum tryptase to confirm the diagnosis.',
+  src: 'Resuscitation Council / WAO'
+},
 
 ];
