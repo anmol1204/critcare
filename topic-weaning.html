@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Ventilator Weaning &amp; Extubation — SBT, RSBI &amp; Cuff Leak — CritCare.in</title>
+  <meta name="description" content="A structured ICU guide to liberating patients from mechanical ventilation: readiness criteria, the spontaneous breathing trial (SBT), the rapid shallow breathing index, coordinating spontaneous awakening and breathing trials, extubation assessment (cuff-leak test, secretions, cough, airway), post-extubation NIV/HFNC, and the causes of weaning failure. Led by Marino with the Washington Manual and Irwin & Rippe." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .bq{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .bq p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .bq cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .mb{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .mb .ml{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .mb p,.mb ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .mb ul{padding-left:1.2rem;}
+    .mb strong{color:#4c1d95;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml2{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;}
+    .ec strong{color:#1e3a8a;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sbw{background:#dbeafe;color:#1e40af;}.sbm{background:#ede9fe;color:#5b21b6;}.sbg{background:#dcfce7;color:#166534;}.sbd{background:#ffedd5;color:#9a3412;}.sbf{background:#f0fdf4;color:#14532d;border:1px solid #86efac;}.sbe{background:#fee2e2;color:#991b1b;}.sbx{background:#fef9c3;color:#854d0e;}.sbc{background:#cffafe;color:#155e75;}.sbr{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .fs{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;}
+    .fn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;flex-shrink:0;margin-top:.2rem;}
+    .fb{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;}
+    .fb h4{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;}
+    .fb p,.fb ul{font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;}
+    .fb ul{padding-left:1.1rem;}
+    .fb strong{color:var(--ink);}
+    .flow-arrow{text-align:center;color:var(--blue);font-size:1.2rem;margin:.1rem 0;}
+    .diff-intro{background:linear-gradient(135deg,#ecfeff,#cffafe);border:1px solid #67e8f9;border-radius:12px;padding:1.1rem 1.3rem;margin:1rem 0 1.4rem;}
+    .diff-intro p{font-size:.9rem;color:#155e75;line-height:1.7;margin:0;}
+    .diff-intro strong{color:#0e7490;}
+    .tick-list,.cross-list{list-style:none;padding-left:0;margin:.4rem 0;}
+    .tick-list li,.cross-list li{position:relative;padding-left:1.6rem;margin-bottom:.5rem;font-size:.9rem;color:var(--slate);line-height:1.65;}
+    .tick-list li::before{content:"✓";position:absolute;left:0;color:#16a34a;font-weight:800;}
+    .cross-list li::before{content:"✕";position:absolute;left:0;color:#dc2626;font-weight:800;}
+    .tick-list strong,.cross-list strong{color:var(--ink);}
+    h3.difftitle{margin-top:1.6rem;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Ventilator Weaning</div>
+    <h1>🫁 Ventilator Weaning &amp; Extubation</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">ATS/CHEST</span>
+      <span class="gbadge esicm">SBT</span>
+      <span class="gbadge isccm">ABCDEF</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Liberation</span>
+      <span class="topic-tag">RSBI / SBT</span>
+      <span class="topic-tag">Cuff-leak</span>
+      <span class="topic-updated">Led by Marino · with Washington Manual &amp; Irwin &amp; Rippe · ATS/CHEST-aligned</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Definitions</a></li>
+        <li><a href="#s2">2. Readiness to wean</a></li>
+        <li><a href="#s3">3. The SBT</a></li>
+        <li><a href="#s4">4. Weaning predictors (RSBI)</a></li>
+        <li><a href="#s5">5. Wake &amp; breathe (SAT+SBT)</a></li>
+        <li><a href="#s6">6. Extubation assessment</a></li>
+        <li><a href="#s7">7. Post-extubation support</a></li>
+        <li><a href="#s8">8. Weaning failure</a></li>
+        <li><a href="#s9">9. Common mistakes</a></li>
+        <li><a href="#s10">10. Exam pearls</a></li>
+        <li><a href="#s11">⭐ 11. Key differences</a></li>
+        <li><a href="#s12">12. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sbw">🫁 1 · Definitions</span>
+      <h2>Weaning, SBT and extubation are not the same thing</h2>
+      <div class="bq">
+        <p>"Weaning begins the moment ventilation begins. The commonest error in the ICU is not weaning too fast — it is leaving the tube in too long. Every day of unnecessary ventilation adds pneumonia, delirium and weakness."</p>
+        <cite>Summarised from Marino's The ICU Book; with the Washington Manual of Critical Care and Irwin &amp; Rippe's Intensive Care Medicine.</cite>
+      </div>
+      <ul class="tick-list">
+        <li><strong>Weaning</strong> — the process of reducing ventilator support as the patient resumes the work of breathing.</li>
+        <li><strong>Spontaneous breathing trial (SBT)</strong> — a test of the patient breathing with minimal/no support to see if they are ready.</li>
+        <li><strong>Extubation</strong> — removing the tube. A patient can pass an SBT (ready to breathe) yet fail extubation (airway problem).</li>
+      </ul>
+    </section>
+
+    <section id="s2">
+      <span class="sb sbm">✅ 2 · Readiness to Wean</span>
+      <h2>Screen daily before any trial</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Domain</th><th>Criterion</th></tr></thead>
+          <tbody>
+            <tr><td>Cause</td><td>The reason for intubation is improving or resolved</td></tr>
+            <tr><td>Oxygenation</td><td>PaO₂/FiO₂ &gt; 150–200; FiO₂ ≤ 0.4–0.5; PEEP ≤ 5–8 cmH₂O</td></tr>
+            <tr><td>Ventilation</td><td>pH acceptable; not severely hypercapnic; adequate cough</td></tr>
+            <tr><td>Haemodynamics</td><td>Stable; no/low vasopressors; no active ischaemia</td></tr>
+            <tr><td>Neurological</td><td>Arousable, able to protect airway (sedation minimised)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ec"><p>The daily readiness screen is deliberately generous — it identifies who deserves an SBT. The SBT itself is the real test.</p></div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sbg">⏱️ 3 · The Spontaneous Breathing Trial</span>
+      <h2>The decisive test of readiness</h2>
+      <div class="fs"><div class="fn" style="background:#1e6fd9;">1</div><div class="fb"><h4>Method</h4><p>Either a <strong>T-piece</strong> (no support) or <strong>low pressure-support</strong> (PSV ~5–8 cmH₂O ± low PEEP) for <strong>30 minutes to 2 hours</strong>.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#166534;">2</div><div class="fb"><h4>Pass</h4><p>Comfortable, stable gas exchange and haemodynamics, RR &lt; 35, SpO₂ ≥ 90%, no distress → proceed to extubation assessment.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#991b1b;">3</div><div class="fb"><h4>Fail</h4><p>Tachypnoea (RR &gt; 35), desaturation, tachycardia/hypertension, agitation, diaphoresis, accessory muscle use → return to full rest, find the cause, retry next day.</p></div></div>
+      <div class="mc"><div class="ml2">Rest after a failed SBT</div><p>Do not grind a failing patient — put them back on comfortable support for ≥24 h, correct the limiting factor, then re-trial. Repeated failed trials exhaust the patient.</p></div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sbd">📊 4 · Weaning Predictors</span>
+      <h2>The rapid shallow breathing index</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Predictor</th><th>Threshold favouring success</th></tr></thead>
+          <tbody>
+            <tr><td><strong>RSBI = RR ÷ Vₜ(L)</strong></td><td>&lt; 105 (rapid shallow breathing = likely failure)</td></tr>
+            <tr><td>Tidal volume</td><td>&gt; 5 mL/kg</td></tr>
+            <tr><td>Respiratory rate</td><td>&lt; 35/min</td></tr>
+            <tr><td>Negative inspiratory force</td><td>More negative than −20 to −30 cmH₂O</td></tr>
+            <tr><td>Minute ventilation</td><td>&lt; 10 L/min</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ec"><p><strong>No predictor replaces the SBT.</strong> RSBI is a useful adjunct, not a gate — a well-conducted spontaneous breathing trial is the best test of readiness.</p></div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sbf">🔗 5 · Wake &amp; Breathe — SAT + SBT</span>
+      <h2>Coordinate sedation interruption with the breathing trial</h2>
+      <div class="fs"><div class="fn" style="background:#5b21b6;">A</div><div class="fb"><h4>Spontaneous Awakening Trial (SAT)</h4><p>Daily interruption of sedation — if the patient tolerates it (calm, no distress), proceed to the SBT.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#1e6fd9;">B</div><div class="fb"><h4>Spontaneous Breathing Trial (SBT)</h4><p>Performed on the awakened patient. The paired "wake-and-breathe" strategy (ABC trial) shortens ventilation and ICU stay and improves survival.</p></div></div>
+      <div class="mb"><div class="ml">Part of the ABCDEF bundle</div><p>SAT + SBT are the "A/B" of ICU liberation, alongside choice of light sedation, delirium monitoring, early mobility and family engagement.</p></div>
+    </section>
+
+    <section id="s6">
+      <span class="sb sbc">🔎 6 · Extubation Assessment</span>
+      <h2>Passing the SBT is necessary but not sufficient</h2>
+      <p>Before pulling the tube, confirm the <strong>airway</strong> will be safe once the tube is gone:</p>
+      <ul class="tick-list">
+        <li><strong>Conscious level &amp; airway protection</strong> — follows commands, adequate gag/cough.</li>
+        <li><strong>Cough strength &amp; secretions</strong> — a weak cough or copious secretions predicts failure.</li>
+        <li><strong>Cuff-leak test</strong> — a small/absent leak with the cuff deflated suggests laryngeal oedema and risk of post-extubation stridor.</li>
+      </ul>
+      <div class="mc"><div class="ml2">High-risk airway</div><p>If the cuff-leak is low in a high-risk patient (traumatic/prolonged intubation, reintubation, airway oedema), give <strong>systemic corticosteroids ~4–12 h before</strong> extubation and have reintubation equipment ready.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sbx">🫁 7 · Post-Extubation Support</span>
+      <h2>Preventing reintubation in the high-risk patient</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Tool</th><th>Role</th></tr></thead>
+          <tbody>
+            <tr><td>High-flow nasal cannula</td><td>Comfort, mild support; reduces reintubation in some low/moderate-risk groups</td></tr>
+            <tr><td><strong>Prophylactic NIV</strong></td><td>In high-risk patients (hypercapnia, COPD, heart failure) immediately after extubation — reduces reintubation</td></tr>
+            <tr><td>Rescue NIV for established failure</td><td>Generally <strong>not</strong> advised — may delay necessary reintubation and worsen outcome</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ec"><p><strong>Timing matters:</strong> NIV works best used <em>prophylactically</em> in the right patient, not as a last-ditch rescue once respiratory failure is established.</p></div>
+    </section>
+
+    <section id="s8">
+      <span class="sb sbe">⚠️ 8 · Weaning Failure</span>
+      <h2>Why patients fail — think in systems</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Category</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td>Respiratory load</td><td>High resistance/secretions, dynamic hyperinflation, low compliance, residual lung disease</td></tr>
+            <tr><td><strong>Cardiac</strong></td><td>Weaning-induced pulmonary oedema — the negative intrathoracic pressure of spontaneous breathing raises LV afterload/preload → failure</td></tr>
+            <tr><td>Neuromuscular</td><td>ICU-acquired weakness, critical illness polyneuromyopathy, diaphragm dysfunction, over-sedation</td></tr>
+            <tr><td>Metabolic/other</td><td>Electrolytes (PO₄, K, Mg), anaemia, hypothyroidism, sepsis, overfeeding (↑ CO₂)</td></tr>
+            <tr><td>Psychological</td><td>Anxiety, delirium, sleep deprivation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ec"><p>The <strong>WIND</strong> classification groups patients by weaning difficulty: simple (first attempt), difficult (up to 3 SBTs / 7 days), and prolonged (&gt;3 SBTs or &gt;7 days) — prolonged weaning needs a systematic, tracheostomy-inclusive plan.</p></div>
+    </section>
+
+    <section id="s9">
+      <span class="sb sbe">🚫 9 · Common Mistakes</span>
+      <h2>Where it goes wrong</h2>
+      <ul class="cross-list">
+        <li>Leaving the tube in because "the numbers aren't perfect" — <strong>over-ventilation</strong> causes real harm.</li>
+        <li>Not pairing an <strong>SAT with the SBT</strong> (sedation masks readiness).</li>
+        <li>Confusing <strong>passing an SBT with being extubatable</strong> — the airway (cuff leak, cough, secretions) is separate.</li>
+        <li>Using NIV as a <strong>rescue</strong> after established post-extubation failure → delayed reintubation.</li>
+        <li>Missing <strong>weaning-induced cardiac pulmonary oedema</strong> as the reason for repeated SBT failure.</li>
+      </ul>
+    </section>
+
+    <section id="s10">
+      <span class="sb sbx">🎓 10 · Exam Pearls — DNB / NEET-SS</span>
+      <h2>High-yield one-liners</h2>
+      <div class="ec"><p><strong>Q: RSBI formula &amp; threshold?</strong><br>Respiratory rate ÷ tidal volume (L); &lt; 105 predicts weaning success.</p></div>
+      <div class="ec"><p><strong>Q: What is the SBT and its duration?</strong><br>T-piece or low PSV for 30 min–2 h to test readiness.</p></div>
+      <div class="ec"><p><strong>Q: Purpose of the cuff-leak test?</strong><br>Detect laryngeal oedema / risk of post-extubation stridor; steroids if low in high-risk patients.</p></div>
+      <div class="ec"><p><strong>Q: Best use of NIV around extubation?</strong><br>Prophylactic in high-risk patients — not as rescue for established failure.</p></div>
+      <div class="ec"><p><strong>Q: Cardiac cause of weaning failure?</strong><br>Weaning-induced pulmonary oedema (raised LV afterload from negative intrathoracic pressure).</p></div>
+    </section>
+
+    <section id="s11">
+      <span class="sb sbc">⭐ 11 · Key Differences</span>
+      <h2>Side-by-side comparisons</h2>
+      <div class="diff-intro"><p>The distinctions examiners probe: the two trials, and the two ways a liberation attempt can fail.</p></div>
+
+      <h3 class="difftitle">SAT vs SBT</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>SAT (awakening)</th><th>SBT (breathing)</th></tr></thead>
+          <tbody>
+            <tr><td>Tests</td><td>Readiness to be off sedation</td><td>Readiness to breathe unsupported</td></tr>
+            <tr><td>Intervention</td><td>Interrupt sedation</td><td>T-piece / low PSV</td></tr>
+            <tr><td>Sequence</td><td>First</td><td>After a passed SAT</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">Weaning failure vs Extubation failure</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>Weaning failure</th><th>Extubation failure</th></tr></thead>
+          <tbody>
+            <tr><td>Problem</td><td>Cannot sustain spontaneous breathing (SBT fails)</td><td>Passed SBT but fails after tube removed</td></tr>
+            <tr><td>Typical cause</td><td>Respiratory load, cardiac, neuromuscular</td><td>Airway (stridor, secretions, weak cough)</td></tr>
+            <tr><td>Timing</td><td>During the trial</td><td>Within 48–72 h of extubation → reintubation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s12" class="references-section">
+      <span class="sb sbr">📚 12 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Marino PL.</strong> Marino's The ICU Book. 5th ed. Wolters Kluwer; 2025.</li>
+        <li><strong>Kollef MH, Isakow W, Burks AC, Despotovic VN (eds).</strong> The Washington Manual of Critical Care. 4th ed. Wolters Kluwer; 2024.</li>
+        <li><strong>Irwin RS, Lilly CM, Mayo PH, Rippe JM (eds).</strong> Irwin &amp; Rippe's Intensive Care Medicine. 9th ed. Wolters Kluwer; 2023.</li>
+        <li><strong>Boles JM, Bion J, Connors A, et al.</strong> Weaning from mechanical ventilation (Task Force). <em>Eur Respir J.</em> 2007;29:1033–1056.</li>
+        <li><strong>Girard TD, Kress JP, Fuchs BD, et al. (ABC trial).</strong> Awakening and Breathing Controlled trial. <em>Lancet.</em> 2008;371:126–134.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+  <nav class="mobile-nav-bar">
+    <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+    <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+    <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+    <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+    <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI Tool</a>
+  </nav>
+  <script src="/pwa.js"></script>
+</body>
+</html>
