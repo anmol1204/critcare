@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Refeeding Syndrome — Hypophosphataemia, Thiamine &amp; Safe Refeeding — CritCare.in</title>
+  <meta name="description" content="A structured ICU guide to refeeding syndrome: pathophysiology of the insulin-driven electrolyte shift, who is at risk (NICE criteria), the hallmark hypophosphataemia plus hypokalaemia/hypomagnesaemia and thiamine depletion, clinical features, and the prevention protocol — identify, replace thiamine before feeding, start low and advance slowly with electrolyte monitoring. Led by Irwin & Rippe with Marino and the Washington Manual." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="shared.css"/>
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .bq{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .bq p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .bq cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .mb{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .mb .ml{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .mb p,.mb ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .mb ul{padding-left:1.2rem;}
+    .mb strong{color:#4c1d95;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml2{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    .ec{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#1e40af;line-height:1.7;margin:0;}
+    .ec strong{color:#1e3a8a;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sbw{background:#dbeafe;color:#1e40af;}.sbm{background:#ede9fe;color:#5b21b6;}.sbg{background:#dcfce7;color:#166534;}.sbd{background:#ffedd5;color:#9a3412;}.sbf{background:#f0fdf4;color:#14532d;border:1px solid #86efac;}.sbe{background:#fee2e2;color:#991b1b;}.sbx{background:#fef9c3;color:#854d0e;}.sbc{background:#cffafe;color:#155e75;}.sbr{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);}
+    .fs{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.8rem;}
+    .fn{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;flex-shrink:0;margin-top:.2rem;}
+    .fb{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;flex:1;}
+    .fb h4{font-size:.88rem;font-weight:700;color:var(--ink);margin-bottom:.4rem;}
+    .fb p,.fb ul{font-size:.85rem;color:var(--slate);line-height:1.7;margin:0;}
+    .fb ul{padding-left:1.1rem;}
+    .fb strong{color:var(--ink);}
+    .flow-arrow{text-align:center;color:var(--blue);font-size:1.2rem;margin:.1rem 0;}
+    .diff-intro{background:linear-gradient(135deg,#ecfeff,#cffafe);border:1px solid #67e8f9;border-radius:12px;padding:1.1rem 1.3rem;margin:1rem 0 1.4rem;}
+    .diff-intro p{font-size:.9rem;color:#155e75;line-height:1.7;margin:0;}
+    .diff-intro strong{color:#0e7490;}
+    .tick-list,.cross-list{list-style:none;padding-left:0;margin:.4rem 0;}
+    .tick-list li,.cross-list li{position:relative;padding-left:1.6rem;margin-bottom:.5rem;font-size:.9rem;color:var(--slate);line-height:1.65;}
+    .tick-list li::before{content:"✓";position:absolute;left:0;color:#16a34a;font-weight:800;}
+    .cross-list li::before{content:"✕";position:absolute;left:0;color:#dc2626;font-weight:800;}
+    .tick-list strong,.cross-list strong{color:var(--ink);}
+    h3.difftitle{margin-top:1.6rem;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html" class="active">Topics</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="ai-tool.html">AI Tool</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="topics.html">Topics</a> › Refeeding Syndrome</div>
+    <h1>🍽️ Refeeding Syndrome</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">NICE Nutrition</span>
+      <span class="gbadge esicm">ASPEN</span>
+      <span class="gbadge isccm">Hypophosphataemia</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Metabolic emergency</span>
+      <span class="topic-tag">Thiamine first</span>
+      <span class="topic-tag">Start low, go slow</span>
+      <span class="topic-updated">Led by Irwin &amp; Rippe · with Marino &amp; Washington Manual · NICE-aligned</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. What it is</a></li>
+        <li><a href="#s2">2. Pathophysiology</a></li>
+        <li><a href="#s3">3. Who is at risk</a></li>
+        <li><a href="#s4">4. The biochemical triad</a></li>
+        <li><a href="#s5">5. Clinical features</a></li>
+        <li><a href="#s6">6. Prevention protocol</a></li>
+        <li><a href="#s7">7. If it develops</a></li>
+        <li><a href="#s8">8. Common mistakes</a></li>
+        <li><a href="#s9">9. Exam pearls</a></li>
+        <li><a href="#s10">⭐ 10. Key differences</a></li>
+        <li><a href="#s11">11. References</a></li>
+      </ul>
+      <a href="topics.html" class="toc-back">← All topics</a>
+    </nav>
+  </aside>
+  <main class="topic-content">
+
+    <section id="s1">
+      <span class="sb sbw">🍽️ 1 · What It Is</span>
+      <h2>The metabolic price of feeding the starved too fast</h2>
+      <div class="bq">
+        <p>"Refeeding syndrome is an iatrogenic disease — it is caused by the treatment, not the disease. The starved body has adapted to famine; pour carbohydrate into it too quickly and you trigger a lethal shift of phosphate, potassium and magnesium into cells. The cure is caution: thiamine first, calories slow."</p>
+        <cite>Summarised from Irwin &amp; Rippe's Intensive Care Medicine; with Marino's The ICU Book and the Washington Manual of Critical Care.</cite>
+      </div>
+      <p>Refeeding syndrome is the potentially fatal shift in fluids and electrolytes — chiefly a fall in <strong>phosphate</strong> — that occurs when nutrition (enteral, parenteral or even oral/IV dextrose) is reintroduced to a significantly malnourished or starved patient. The hallmark is <strong>hypophosphataemia</strong> appearing within the first few days of feeding.</p>
+    </section>
+
+    <section id="s2">
+      <span class="sb sbm">🔬 2 · Pathophysiology</span>
+      <h2>Why carbohydrate is the trigger</h2>
+      <div class="fs"><div class="fn" style="background:#1e6fd9;">1</div><div class="fb"><h4>Starvation adaptation</h4><p>In prolonged fasting the body switches from carbohydrate to fat/protein as fuel; insulin falls and intracellular phosphate, potassium and magnesium stores become depleted (even if serum levels look normal). Thiamine stores run down.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#5b21b6;">2</div><div class="fb"><h4>Carbohydrate reintroduced</h4><p>Feeding → glucose → a surge of <strong>insulin</strong>. Insulin drives glucose — and with it <strong>phosphate, potassium and magnesium</strong> — into cells for glycolysis and ATP synthesis.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#9a3412;">3</div><div class="fb"><h4>The crash</h4><p>Serum <strong>phosphate</strong> plummets (needed for ATP and 2,3-DPG); potassium and magnesium fall; thiamine (cofactor for carbohydrate metabolism) is consumed. Fluid retention adds cardiac strain.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#991b1b;">4</div><div class="fb"><h4>Organ dysfunction</h4><p>ATP depletion → cardiac, respiratory, neuromuscular and haematological failure; thiamine deficiency → Wernicke encephalopathy and lactic acidosis.</p></div></div>
+    </section>
+
+    <section id="s3">
+      <span class="sb sbd">⚠️ 3 · Who Is at Risk (NICE Criteria)</span>
+      <h2>Identify before you feed</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>High risk — ONE or more</th><th>High risk — TWO or more</th></tr></thead>
+          <tbody>
+            <tr><td>BMI &lt; 16 kg/m²</td><td>BMI &lt; 18.5 kg/m²</td></tr>
+            <tr><td>Unintentional weight loss &gt; 15% in 3–6 months</td><td>Unintentional weight loss &gt; 10% in 3–6 months</td></tr>
+            <tr><td>Little/no nutritional intake for &gt; 10 days</td><td>Little/no intake for &gt; 5 days</td></tr>
+            <tr><td>Low baseline K⁺, PO₄³⁻ or Mg²⁺ before feeding</td><td>History of alcohol misuse or drugs (insulin, chemo, antacids, diuretics)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ec"><p><strong>Also think of it in:</strong> anorexia nervosa, chronic alcohol use, prolonged fasting/hunger strikes, post-bariatric surgery, malabsorption, and the elderly with poor intake.</p></div>
+    </section>
+
+    <section id="s4">
+      <span class="sb sbe">🧪 4 · The Biochemical Triad (+ Thiamine)</span>
+      <h2>What to watch and why it kills</h2>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Abnormality</th><th>Consequence</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Hypophosphataemia</strong> (the hallmark)</td><td>ATP &amp; 2,3-DPG depletion → cardiac failure, respiratory muscle weakness, rhabdomyolysis, haemolysis, confusion, seizures</td></tr>
+            <tr><td><strong>Hypokalaemia</strong></td><td>Arrhythmia, weakness, ileus</td></tr>
+            <tr><td><strong>Hypomagnesaemia</strong></td><td>Arrhythmia, tetany, seizures; makes hypokalaemia refractory</td></tr>
+            <tr><td><strong>Thiamine deficiency</strong></td><td>Wernicke encephalopathy, wet beriberi, lactic acidosis</td></tr>
+            <tr><td>Fluid/sodium retention</td><td>Oedema, pulmonary oedema, cardiac decompensation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mc"><div class="ml2">Correct magnesium too</div><p>You cannot fix the potassium until you fix the magnesium — hypomagnesaemia drives renal potassium wasting and refractory hypokalaemia.</p></div>
+    </section>
+
+    <section id="s5">
+      <span class="sb sbx">🩺 5 · Clinical Features</span>
+      <h2>Usually within 72 hours of starting feed</h2>
+      <ul class="tick-list">
+        <li><strong>Cardiac:</strong> arrhythmia, tachycardia, heart failure, sudden death.</li>
+        <li><strong>Respiratory:</strong> muscle weakness, ventilator dependence/failure to wean.</li>
+        <li><strong>Neurological:</strong> confusion, weakness, paraesthesiae, seizures; Wernicke's (confusion, ophthalmoplegia, ataxia).</li>
+        <li><strong>Haematological:</strong> haemolysis, impaired white-cell function.</li>
+        <li><strong>Metabolic:</strong> hyperglycaemia, fluid overload/oedema.</li>
+      </ul>
+    </section>
+
+    <section id="s6">
+      <span class="sb sbf">🛡️ 6 · Prevention Protocol</span>
+      <h2>"Thiamine first, calories slow, electrolytes watched"</h2>
+      <div class="fs"><div class="fn" style="background:#1e6fd9;">1</div><div class="fb"><h4>Identify &amp; check baseline</h4><p>Screen every malnourished patient (NICE criteria). Check and correct K⁺, PO₄³⁻, Mg²⁺ before or alongside starting feed.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#5b21b6;">2</div><div class="fb"><h4>Thiamine BEFORE feeding</h4><p>Give thiamine (and a vitamin B complex/multivitamin) <strong>before and during the first days</strong> of feeding — 30 min before feed in the highest risk.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#9a3412;">3</div><div class="fb"><h4>Start low</h4><p>Begin at <strong>~10 kcal/kg/day</strong> (as low as 5 kcal/kg/day in extreme cases, e.g. BMI &lt;14 or negligible intake &gt;15 days), not full feed.</p></div></div>
+      <div class="flow-arrow">▼</div>
+      <div class="fs"><div class="fn" style="background:#166534;">4</div><div class="fb"><h4>Go slow &amp; monitor</h4><p>Advance to target over <strong>4–7 days</strong>. Check electrolytes at least daily and <strong>replace proactively</strong> — do not stop feeding for a low phosphate, replace it and continue.</p></div></div>
+      <div class="mb"><div class="ml">The single most-tested fact</div><p><strong>Give thiamine before you give glucose</strong> in the at-risk or unknown patient — carbohydrate without thiamine can precipitate Wernicke encephalopathy.</p></div>
+    </section>
+
+    <section id="s7">
+      <span class="sb sbg">💊 7 · If It Develops</span>
+      <h2>Management once electrolytes fall</h2>
+      <ul class="tick-list">
+        <li><strong>Replace aggressively:</strong> IV phosphate, potassium and magnesium to correct deficits; continue high-dose thiamine.</li>
+        <li><strong>Reduce, don't stop, the feed:</strong> cut calories back (e.g. to ~50%) and re-advance slowly once corrected — abrupt cessation is rarely necessary.</li>
+        <li><strong>Support organs:</strong> cardiac monitoring for arrhythmia, respiratory support, fluid balance for overload.</li>
+        <li>Recheck electrolytes frequently (e.g. 4–6 hourly in severe cases) until stable.</li>
+      </ul>
+    </section>
+
+    <section id="s8">
+      <span class="sb sbe">🚫 8 · Common Mistakes</span>
+      <h2>Where it goes wrong</h2>
+      <ul class="cross-list">
+        <li>Starting a malnourished patient on <strong>full-rate feed</strong> ("they need the calories") — the classic trigger.</li>
+        <li>Giving <strong>IV dextrose without thiamine</strong> → Wernicke's.</li>
+        <li>Assuming a <strong>normal serum phosphate at baseline</strong> means safety — total-body stores are depleted; it falls after feeding starts.</li>
+        <li><strong>Stopping the feed entirely</strong> when phosphate drops, instead of replacing and continuing at a lower rate.</li>
+        <li>Chasing potassium while ignoring <strong>magnesium</strong> → refractory hypokalaemia.</li>
+      </ul>
+    </section>
+
+    <section id="s9">
+      <span class="sb sbx">🎓 9 · Exam Pearls — DNB / NEET-SS</span>
+      <h2>High-yield one-liners</h2>
+      <div class="ec"><p><strong>Q: The biochemical hallmark of refeeding syndrome?</strong><br>Hypophosphataemia (± hypokalaemia, hypomagnesaemia).</p></div>
+      <div class="ec"><p><strong>Q: What must be given before feeding?</strong><br>Thiamine (before/with the first carbohydrate).</p></div>
+      <div class="ec"><p><strong>Q: Starting calorie rate in high-risk patients?</strong><br>~10 kcal/kg/day (5 in the extreme), advancing over 4–7 days.</p></div>
+      <div class="ec"><p><strong>Q: Why does phosphate fall?</strong><br>Insulin (from carbohydrate) drives phosphate intracellularly for ATP/2,3-DPG synthesis.</p></div>
+      <div class="ec"><p><strong>Q: Why is refractory hypokalaemia seen?</strong><br>Uncorrected hypomagnesaemia causes renal potassium wasting.</p></div>
+    </section>
+
+    <section id="s10">
+      <span class="sb sbc">⭐ 10 · Key Differences</span>
+      <h2>Side-by-side comparisons</h2>
+      <div class="diff-intro"><p>Two distinctions worth nailing: the metabolic states, and the causes of a low phosphate.</p></div>
+
+      <h3 class="difftitle">Starvation state vs Refeeding state</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Feature</th><th>Starvation (fasted)</th><th>Refeeding (fed)</th></tr></thead>
+          <tbody>
+            <tr><td>Dominant fuel</td><td>Fat / ketones</td><td>Glucose</td></tr>
+            <tr><td>Insulin</td><td>Low</td><td>Surges</td></tr>
+            <tr><td>Electrolyte shift</td><td>Depleted stores, serum may look normal</td><td>Phosphate/K⁺/Mg²⁺ move into cells → serum falls</td></tr>
+            <tr><td>Main danger</td><td>Catabolism</td><td>Hypophosphataemia &amp; arrhythmia</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="difftitle">Causes of hypophosphataemia</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Mechanism</th><th>Examples</th></tr></thead>
+          <tbody>
+            <tr><td>Intracellular shift</td><td><strong>Refeeding</strong>, insulin/glucose, respiratory alkalosis, hungry-bone syndrome</td></tr>
+            <tr><td>Renal loss</td><td>Hyperparathyroidism, Fanconi, diuretics, post-obstructive diuresis</td></tr>
+            <tr><td>Reduced intake/absorption</td><td>Malnutrition, malabsorption, phosphate binders, vitamin D deficiency</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="s11" class="references-section">
+      <span class="sb sbr">📚 11 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Irwin RS, Lilly CM, Mayo PH, Rippe JM (eds).</strong> Irwin &amp; Rippe's Intensive Care Medicine. 9th ed. Wolters Kluwer; 2023.</li>
+        <li><strong>Marino PL.</strong> Marino's The ICU Book. 5th ed. Wolters Kluwer; 2025.</li>
+        <li><strong>Kollef MH, Isakow W, Burks AC, Despotovic VN (eds).</strong> The Washington Manual of Critical Care. 4th ed. Wolters Kluwer; 2024.</li>
+        <li><strong>National Institute for Health and Care Excellence.</strong> Nutrition support for adults (CG32). NICE; 2006 (updated 2017).</li>
+        <li><strong>da Silva JSV, Seres DS, Sabino K, et al. (ASPEN).</strong> Refeeding Syndrome: Consensus Recommendations. <em>Nutr Clin Pract.</em> 2020;35(2):178–195.</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="topics.html">Topics</a></li><li><a href="scores.html">Scores</a></li><li><a href="abg-calculator.html">ABG</a></li><li><a href="ai-tool.html">AI Tool</a></li></ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+  <nav class="mobile-nav-bar">
+    <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+    <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+    <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+    <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+    <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI Tool</a>
+  </nav>
+  <script src="/pwa.js"></script>
+</body>
+</html>
