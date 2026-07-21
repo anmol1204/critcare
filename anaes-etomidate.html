@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Etomidate — Cardiostable Induction &amp; Adrenal Suppression — CritCare.in</title>
+  <meta name="description" content="A detailed anaesthesia drug node on etomidate: the imidazole non-barbiturate induction agent, formulation and propylene glycol, pharmacokinetics with ester-hydrolysis metabolism, GABA-A mechanism, cerebral and cardiovascular stability, respiratory effects, the 11-beta-hydroxylase adrenal suppression, doses and uses in the haemodynamically fragile, myoclonus and side effects, and novel derivatives (MOC-etomidate, ABP-700) — from Danya's notes with Miller's, Morgan & Mikhail's and Stoelting's." />
+  <link rel="canonical" href="https://critcare.in/anaes-etomidate.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .flow-step{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.7rem;}
+    .flow-num{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:#fff;flex-shrink:0;margin-top:.15rem;}
+    .flow-body{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:.85rem 1.1rem;flex:1;}
+    .flow-body h4{font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:.3rem;}
+    .flow-body p{font-size:.84rem;color:var(--slate);line-height:1.65;margin:0;}
+    .flow-body strong{color:var(--ink);}
+    .flow-arrow{text-align:center;color:var(--blue);font-size:1.15rem;margin:0 0 .5rem;}
+    .tick-list,.cross-list{list-style:none;padding-left:0;margin:.4rem 0;}
+    .tick-list li,.cross-list li{position:relative;padding-left:1.6rem;margin-bottom:.5rem;font-size:.9rem;color:var(--slate);line-height:1.65;}
+    .tick-list li::before{content:"✓";position:absolute;left:0;color:#16a34a;font-weight:800;}
+    .cross-list li::before{content:"✕";position:absolute;left:0;color:#dc2626;font-weight:800;}
+    .tick-list strong,.cross-list strong{color:var(--ink);}
+    .difftitle{margin-top:1.6rem;}
+    .drug-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.4rem;}
+    .drug-tabs a{font-size:.8rem;font-weight:700;padding:.4rem .85rem;border-radius:20px;border:1px solid var(--line);color:var(--slate);text-decoration:none;background:var(--bg-alt);}
+    .drug-tabs a.active{background:#2563eb;color:#fff;border-color:#2563eb;}
+    .keybox{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:10px;padding:.7rem 1rem;margin:.6rem 0;font-size:.86rem;color:#1e3a8a;line-height:1.6;}
+    .keybox strong{color:#1e40af;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-iv-induction.html">IV Induction Agents</a> › Etomidate</div>
+    <h1>🔵 Etomidate</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Imidazole</span>
+      <span class="topic-tag">Cardiostable</span>
+      <span class="topic-tag">Adrenal suppression</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Compiled by <strong>Dr. Anmol Srivastava</strong> · Notes: Dr. Danya · Sources: Miller's Anesthesia · Morgan &amp; Mikhail's · Stoelting's Pharmacology</div>
+  </div>
+</header>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <nav class="drug-tabs" aria-label="Induction agents">
+    <a href="anaes-iv-induction.html">💉 Overview</a>
+    <a href="anaes-propofol.html">🥛 Propofol</a>
+    <a href="anaes-thiopentone.html">🟡 Thiopentone</a>
+    <a href="anaes-ketamine.html">🔴 Ketamine</a>
+    <a href="anaes-etomidate.html" class="active">🔵 Etomidate</a>
+  </nav>
+
+  <div class="book-quote">
+    <p>"Etomidate is the agent you choose when the heart cannot tolerate a fall in pressure — the most cardiostable induction there is. Its shadow is the adrenal gland: even one dose blunts cortisol synthesis, and in the septic patient that matters."</p>
+    <cite>Danya's notes, triangulated with Miller's Anesthesia; Morgan &amp; Mikhail's Clinical Anesthesiology; Stoelting's Pharmacology.</cite>
+  </div>
+
+  <section id="s1">
+    <span class="sb sb-w">🧪 1 · Identity &amp; Formulation</span>
+    <h2>An imidazole, non-barbiturate hypnotic</h2>
+    <p>Etomidate is an <strong>imidazole derivative</strong> and a non-barbiturate IV induction agent, <strong>hydrophobic at physiological pH</strong>. To improve solubility it is formulated in <strong>35% propylene glycol</strong> (a 0.2% solution) or, in newer preparations, a <strong>lipid emulsion</strong> (which reduces pain on injection and thrombophlebitis). It has hypnotic and sedative — but <strong>no analgesic</strong> — action.</p>
+  </section>
+
+  <section id="s2">
+    <span class="sb sb-m">🔬 2 · Pharmacokinetics</span>
+    <h2>Ester hydrolysis to an inactive metabolite</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Initial distribution t½</td><td>~2.7 min</td></tr>
+          <tr><td>Redistribution t½</td><td>~29 min</td></tr>
+          <tr><td>Elimination t½</td><td>2.9–5.3 h</td></tr>
+          <tr><td>Protein binding</td><td>~75%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Metabolised by <strong>hepatic ester hydrolysis</strong> → <strong>etomidate carboxylic acid</strong> (inactive); excreted in urine and bile.</p>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Group</th><th>Change</th><th>Dose</th></tr></thead>
+        <tbody>
+          <tr><td>Cirrhosis</td><td>Vd doubled, clearance ~normal, elimination t½ roughly twice</td><td>Titrate</td></tr>
+          <tr><td>Elderly</td><td>Smaller Vd, ↓ clearance</td><td><strong>Reduce</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s3">
+    <span class="sb sb-g">🧠 3 · CNS Effects</span>
+    <h2>GABA-A hypnosis with cerebral protection</h2>
+    <p>Acts on the <strong>GABA-A receptor</strong> to produce hypnosis: it enhances the receptor's response to GABA (so less GABA is needed) and, allosterically, can <strong>directly activate</strong> the channel. Hypnotic dose ≈ <strong>0.3 mg/kg</strong>.</p>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Cerebral parameter</th><th>Effect</th></tr></thead>
+        <tbody>
+          <tr><td>CBF</td><td>↓ ~34%</td></tr>
+          <tr><td>CMRO₂</td><td>↓ ~45%</td></tr>
+          <tr><td>ICP</td><td>↓ (temporary; a long-lasting fall needs a high infusion rate)</td></tr>
+          <tr><td>CPP</td><td>Maintained or increased (because MAP is unchanged)</td></tr>
+          <tr><td>MAP</td><td>No change</td></tr>
+          <tr><td>EEG</td><td>↓ BIS; ↑ activity in <strong>epileptogenic foci</strong> — may provoke grand-mal seizures (used for intra-operative seizure-focus mapping)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="keybox">The prized combination: it lowers ICP and CMRO₂ <strong>while keeping MAP constant</strong>, so <strong>CPP is preserved or improved</strong> — ideal for the fragile brain and the fragile circulation together.</div>
+  </section>
+
+  <section id="s4">
+    <span class="sb sb-s">🫁 4 · Respiratory Effects</span>
+    <h2>Brief stimulation, then apnoea</h2>
+    <ul class="tick-list">
+      <li>Induction dose → brief hyperventilation → <strong>apnoea</strong> → ↑ PaCO₂ and a fall in PaO₂.</li>
+      <li>The ventilatory response to a low PaO₂ is depressed.</li>
+      <li>Overall respiratory depression is <strong>less</strong> than with propofol or thiopentone.</li>
+    </ul>
+  </section>
+
+  <section id="s5">
+    <span class="sb sb-e">🫀 5 · Cardiovascular Effects</span>
+    <h2>The most stable induction</h2>
+    <ul class="tick-list">
+      <li><strong>No effect on the sympathetic nervous system</strong> and minimal effect on myocardial contractility.</li>
+      <li>Mild α₂/β effects with vasoconstriction → BP maintained (may slightly rise).</li>
+      <li><strong>Haemodynamically stable</strong>; myocardial O₂ supply–demand ratio preserved.</li>
+    </ul>
+    <div class="keybox">Because it does not drop the blood pressure, etomidate is favoured in <strong>valvular and ischaemic heart disease undergoing non-cardiac surgery, poor ventricular function, and haemodynamically unstable trauma</strong>.</div>
+  </section>
+
+  <section id="s6">
+    <span class="sb sb-tra">🧬 6 · Endocrine — Adrenal Suppression</span>
+    <h2>The defining drawback</h2>
+    <div class="flow-step"><div class="flow-num" style="background:#9f1239;">→</div><div class="flow-body"><h4>11β-hydroxylase inhibition</h4><p>Etomidate reversibly inhibits <strong>11β-hydroxylase</strong> → ↓ cortisol synthesis → <strong>adrenocortical suppression</strong>. The concentration needed to suppress the adrenal is <strong>far lower</strong> than that needed for hypnosis — so even a single induction dose suppresses cortisol.</p></div></div>
+    <div class="mc"><div class="ml">⚠ Clinical implication</div><p>Avoid <strong>infusions</strong>; consider <strong>glucocorticoid supplementation</strong> where the axis is stressed. It is a particular concern in <strong>sepsis</strong>, and is an independent risk factor for adverse outcome in the critically ill — weigh the cardiovascular benefit against transient adrenal suppression.</p></div>
+  </section>
+
+  <section id="s7">
+    <span class="sb sb-f">💉 7 · Doses &amp; Uses</span>
+    <h2>Induction for the fragile circulation</h2>
+    <div class="keybox">Induction dose: <strong>0.2–0.3 mg/kg IV</strong>.</div>
+    <ul class="tick-list">
+      <li>Induction where <strong>haemodynamic stability</strong> is paramount: CABG, valve surgery, PTCA, aortic-aneurysm and thoracic surgery, giant-aneurysm clipping.</li>
+      <li>↓ ICP while maintaining CPP / coronary perfusion pressure.</li>
+      <li>Haemodynamically unstable trauma; short-term sedation.</li>
+      <li>In ECT — can <strong>prolong</strong> seizures (useful when adequate seizure duration is hard to achieve).</li>
+    </ul>
+  </section>
+
+  <section id="s8">
+    <span class="sb sb-e">⚠️ 8 · Side Effects</span>
+    <h2>Myoclonus, PONV and the adrenal</h2>
+    <ul class="cross-list">
+      <li><strong>Myoclonus</strong> — from disinhibition of extrapyramidal motor activity; reduced by pre-treatment with a benzodiazepine (midazolam) or magnesium.</li>
+      <li>High incidence of <strong>PONV</strong>.</li>
+      <li><strong>Pain on injection</strong> (propylene glycol) and thrombophlebitis; histamine release.</li>
+      <li><strong>Adrenocortical suppression</strong> (see above); an independent risk factor for emergence delirium.</li>
+    </ul>
+    <h3 class="difftitle">Novel etomidate derivatives</h3>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Analogue</th><th>Feature</th></tr></thead>
+        <tbody>
+          <tr><td><strong>MOC-etomidate</strong> (methoxycarbonyl-)</td><td>Ultra-short (soft-drug, esterase-metabolised → MOC-ECA); does not inhibit adrenal steroidogenesis</td></tr>
+          <tr><td>Carboetomidate</td><td>No adrenal suppression; longer duration</td></tr>
+          <tr><td><strong>CPMM / ABP-700</strong> (cyclopropyl-MOC-metomidate)</td><td>No apnoea, no adrenocortical suppression; dose-dependent tachycardia/↑BP; myoclonus</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s9">
+    <span class="sb sb-x">🎓 9 · Exam Pearls</span>
+    <h2>High-yield one-liners</h2>
+    <div class="ec"><p><strong>Q: Why is etomidate cardiostable?</strong><br>No sympathetic effect and minimal myocardial depression → MAP unchanged.</p></div>
+    <div class="ec"><p><strong>Q: Enzyme it inhibits?</strong><br>11β-hydroxylase → ↓ cortisol → adrenal suppression (even one dose).</p></div>
+    <div class="ec"><p><strong>Q: How does it help the brain?</strong><br>↓ CBF (~34%) and ↓ CMRO₂ (~45%) with MAP unchanged → CPP preserved/increased.</p></div>
+    <div class="ec"><p><strong>Q: Commonest bothersome side effect on induction &amp; its remedy?</strong><br>Myoclonus — pre-treat with midazolam (or magnesium).</p></div>
+    <div class="ec"><p><strong>Q: Metabolism?</strong><br>Hepatic ester hydrolysis → etomidate carboxylic acid (inactive).</p></div>
+  </section>
+
+  <section id="s10">
+    <span class="sb sb-r">📚 10 · References</span>
+    <h2>References</h2>
+    <ol class="ref-list">
+      <li><strong>Dr. Danya.</strong> Induction Agents — handwritten viva notes (primary source for this node).</li>
+      <li><strong>Gropper MA, Cohen NH, Eriksson LI, et al. (eds).</strong> Miller's Anesthesia. 9th ed. Elsevier; 2020.</li>
+      <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology. 7th ed. McGraw-Hill; 2022.</li>
+      <li><strong>Flood P, Rathmell JP, Urman RD.</strong> Stoelting's Pharmacology &amp; Physiology in Anesthetic Practice. 6th ed. Wolters Kluwer; 2022.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li><li><a href="anaes-iv-induction.html">IV Induction Agents</a></li><li><a href="topics.html">Topics</a></li></ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+  <nav class="mobile-nav-bar">
+    <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+    <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+    <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+    <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+    <a href="drug-reference.html"><span class="mn-icon">💊</span>Drugs</a>
+  </nav>
+  <script src="/pwa.js"></script>
+</body>
+</html>

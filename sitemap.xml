@@ -259,6 +259,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://critcare.in/anaes-propofol.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://critcare.in/anaes-thiopentone.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://critcare.in/anaes-ketamine.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://critcare.in/anaes-etomidate.html</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://critcare.in/anaes-fluids-transfusion.html</loc>
     <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>

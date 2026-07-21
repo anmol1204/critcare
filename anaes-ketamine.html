@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Ketamine — Dissociative Anaesthesia, Doses &amp; Uses — CritCare.in</title>
+  <meta name="description" content="A detailed anaesthesia drug node on ketamine: NMDA antagonism and dissociative anaesthesia, S- vs racemic ketamine, pharmacokinetics and the active metabolite norketamine, CNS/respiratory/cardiovascular effects, the sympathomimetic profile, induction/analgesia/sedation doses and routes, emergence reactions, and side effects and contraindications — from Danya's notes triangulated with Miller's, Morgan & Mikhail's and Stoelting's." />
+  <link rel="canonical" href="https://critcare.in/anaes-ketamine.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .flow-step{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.7rem;}
+    .flow-num{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem;color:#fff;flex-shrink:0;margin-top:.15rem;text-align:center;line-height:1.1;}
+    .flow-body{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:.85rem 1.1rem;flex:1;}
+    .flow-body h4{font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:.3rem;}
+    .flow-body p{font-size:.84rem;color:var(--slate);line-height:1.65;margin:0;}
+    .flow-body strong{color:var(--ink);}
+    .flow-arrow{text-align:center;color:var(--blue);font-size:1.15rem;margin:0 0 .5rem;}
+    .tick-list,.cross-list{list-style:none;padding-left:0;margin:.4rem 0;}
+    .tick-list li,.cross-list li{position:relative;padding-left:1.6rem;margin-bottom:.5rem;font-size:.9rem;color:var(--slate);line-height:1.65;}
+    .tick-list li::before{content:"✓";position:absolute;left:0;color:#16a34a;font-weight:800;}
+    .cross-list li::before{content:"✕";position:absolute;left:0;color:#dc2626;font-weight:800;}
+    .tick-list strong,.cross-list strong{color:var(--ink);}
+    .difftitle{margin-top:1.6rem;}
+    .drug-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.4rem;}
+    .drug-tabs a{font-size:.8rem;font-weight:700;padding:.4rem .85rem;border-radius:20px;border:1px solid var(--line);color:var(--slate);text-decoration:none;background:var(--bg-alt);}
+    .drug-tabs a.active{background:#dc2626;color:#fff;border-color:#dc2626;}
+    .keybox{background:linear-gradient(135deg,#fef2f2,#fee2e2);border:1px solid #fca5a5;border-radius:10px;padding:.7rem 1rem;margin:.6rem 0;font-size:.86rem;color:#7f1d1d;line-height:1.6;}
+    .keybox strong{color:#991b1b;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-iv-induction.html">IV Induction Agents</a> › Ketamine</div>
+    <h1>🔴 Ketamine</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">NMDA antagonist</span>
+      <span class="topic-tag">Dissociative</span>
+      <span class="topic-tag">Sympathomimetic</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Compiled by <strong>Dr. Anmol Srivastava</strong> · Notes: Dr. Danya · Sources: Miller's Anesthesia · Morgan &amp; Mikhail's · Stoelting's Pharmacology</div>
+  </div>
+</header>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <nav class="drug-tabs" aria-label="Induction agents">
+    <a href="anaes-iv-induction.html">💉 Overview</a>
+    <a href="anaes-propofol.html">🥛 Propofol</a>
+    <a href="anaes-thiopentone.html">🟡 Thiopentone</a>
+    <a href="anaes-ketamine.html" class="active">🔴 Ketamine</a>
+    <a href="anaes-etomidate.html">🔵 Etomidate</a>
+  </nav>
+
+  <div class="book-quote">
+    <p>"Ketamine breaks every rule of the induction trolley: it raises the blood pressure, keeps the patient breathing, opens the bronchi and relieves pain. It is the drug for the crashing patient — bought at the price of a strange, dissociated awakening."</p>
+    <cite>Danya's notes, triangulated with Miller's Anesthesia; Morgan &amp; Mikhail's Clinical Anesthesiology; Stoelting's Pharmacology.</cite>
+  </div>
+
+  <section id="s1">
+    <span class="sb sb-w">🧬 1 · Identity</span>
+    <h2>An NMDA antagonist that dissociates the brain</h2>
+    <p>Ketamine is a non-competitive <strong>NMDA-receptor antagonist</strong> (binds the phencyclidine/PCP site). It is a <strong>partially water-soluble white crystalline salt</strong> with lipid solubility 5–10× that of thiopentone. Marketed as a racemate; the <strong>S(+) enantiomer</strong> is more potent as an analgesic, has faster clearance/recovery and fewer psychomimetic effects.</p>
+    <div class="keybox">Given alone it produces a <strong>cataleptic state = "dissociative anaesthesia"</strong> — the cortex and thalamus are functionally dissociated from the limbic system, giving analgesia and amnesia while airway reflexes and breathing are largely preserved.</div>
+  </section>
+
+  <section id="s2">
+    <span class="sb sb-m">🔬 2 · Pharmacokinetics</span>
+    <h2>Many routes, one active metabolite</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Routes</td><td>IV, IM, SC, oral, nasal, rectal, intrathecal/epidural (preservative-free)</td></tr>
+          <tr><td>Onset (IV)</td><td>30–60 s (IM ~2–4 min)</td></tr>
+          <tr><td>Distribution t½</td><td>11–16 min</td></tr>
+          <tr><td>Duration (single dose)</td><td>10–15 min</td></tr>
+          <tr><td>Elimination t½</td><td>2–3 h</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="flow-step"><div class="flow-num" style="background:#dc2626;">1</div><div class="flow-body"><h4>Hepatic N-demethylation</h4><p>Metabolised by hepatic microsomal enzymes → <strong>norketamine</strong> (an <strong>active</strong> metabolite, 20–30% of ketamine's activity) — <strong>prolongs the analgesia</strong>.</p></div></div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-step"><div class="flow-num" style="background:#9a3412;">2</div><div class="flow-body"><h4>Hydroxylation &amp; conjugation</h4><p>→ hydroxynorketamine → water-soluble glucuronides → renal excretion. <strong>Total body clearance ≈ hepatic blood flow</strong> (flow-limited).</p></div></div>
+  </section>
+
+  <section id="s3">
+    <span class="sb sb-g">🧠 3 · CNS Effects</span>
+    <h2>Receptors, dissociation, and a rise in ICP</h2>
+    <p>Beyond NMDA antagonism (cortex, hippocampus, basal ganglia, brainstem, spinal cord), ketamine engages several systems:</p>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Target</th><th>Effect</th></tr></thead>
+        <tbody>
+          <tr><td>NMDA receptor</td><td>Dissociation, analgesia, amnesia; inhibits central sensitisation (opioid-induced hyperalgesia)</td></tr>
+          <tr><td>Monoaminergic receptors</td><td>Antidepressant effect</td></tr>
+          <tr><td>Opioid receptors (brain &amp; cord)</td><td>Analgesia; at high concentration acts at the σ receptor (dysphoria)</td></tr>
+          <tr><td>Cholinergic receptors</td><td>Purposeless movements; ↑ secretions</td></tr>
+          <tr><td>Thalamo-cortical/limbic dissociation</td><td>Unconsciousness + spinal analgesia; preserved corneal, cough &amp; swallow reflexes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mc"><div class="ml">⚠ Cerebral haemodynamics</div><p>Ketamine <strong>↑ CMRO₂, ↑ CBF and ↑ ICP</strong> (antagonised by thiopentone/diazepam). Amnesia is weaker than a benzodiazepine. It also has an <strong>anti-apoptotic (neuroprotective)</strong> action and depresses auditory/visual relay nuclei.</p></div>
+    <div class="mc"><div class="ml">Emergence reactions</div><p>Vivid dreams, a sense of floating out of the body, and illusions — more with <strong>women &gt; men, large doses, and rapid administration</strong>. <strong>Treat/prevent with a benzodiazepine.</strong> A sub-anaesthetic dose (~0.5 mg/kg over 40 min) gives an antidepressant mood change lasting 3–12 days.</p></div>
+  </section>
+
+  <section id="s4">
+    <span class="sb sb-s">🫁 4 · Respiratory Effects</span>
+    <h2>The airway-sparing bronchodilator</h2>
+    <ul class="tick-list">
+      <li><strong>Minimal effect on respiratory drive</strong> at usual doses (unusually large or rapid doses → apnoea).</li>
+      <li><strong>Bronchial smooth-muscle relaxant</strong> — a role in status asthmaticus (antagonises the spasmogenic effects of carbachol and histamine).</li>
+      <li><strong>↑ Secretions &amp; salivation</strong> — pre-treat with an antisialagogue (e.g. glycopyrrolate).</li>
+    </ul>
+  </section>
+
+  <section id="s5">
+    <span class="sb sb-e">🫀 5 · Cardiovascular Effects</span>
+    <h2>The sympathomimetic induction agent</h2>
+    <div class="keybox">Ketamine <strong>↑ BP, ↑ HR, ↑ CO and ↑ myocardial O₂ consumption</strong> (a biphasic pattern) with a <strong>fall in coronary vascular resistance</strong> — via <strong>central sympathetic activation</strong>: ↑ catecholamine release, inhibition of the vagus, and inhibition of neuronal noradrenaline re-uptake.</div>
+    <ul class="tick-list">
+      <li>Blunt the sympathetic surge with a benzodiazepine, volatile agent or propofol if undesirable.</li>
+      <li>In the <strong>catecholamine-depleted</strong> patient (prolonged shock, critical illness) the direct <strong>myocardial depressant</strong> effect is unmasked → cardiodepression.</li>
+      <li>In congenital heart disease it does not change shunt fractions; PVR rises &gt; SVR.</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <span class="sb sb-f">💉 6 · Doses &amp; Uses</span>
+    <h2>From shock induction to chronic-pain infusions</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Indication</th><th>Dose</th></tr></thead>
+        <tbody>
+          <tr><td>Induction</td><td>0.5–2 mg/kg IV, or 4–10 mg/kg IM</td></tr>
+          <tr><td>Maintenance</td><td>15–45 µg/kg/min (up to 30–90 µg/kg/min with N₂O)</td></tr>
+          <tr><td>Sedation / premed (with an antisialagogue)</td><td>0.2–0.8 mg/kg IV or 2–4 mg/kg IM</td></tr>
+          <tr><td>Analgesia — epidural/caudal (preservative-free)</td><td>0.5–1 mg/kg</td></tr>
+          <tr><td>Pre-emptive analgesia</td><td>0.15–0.25 mg/kg IV</td></tr>
+          <tr><td>Antidepressant</td><td>~0.5 mg/kg IV over ~40 min</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="tick-list">
+      <li><strong>Induction of choice in shock:</strong> hypovolaemia, haemorrhagic and septic shock, cardiac tamponade — maintains BP.</li>
+      <li><strong>Reactive airway disease / status asthmaticus</strong> (bronchodilator).</li>
+      <li><strong>Multimodal analgesia</strong> — opioid-sparing (↓ PONV); chronic low-back, cancer, neuropathic/phantom/ischaemic-limb pain, fibromyalgia, CRPS, migraine, and opioid-induced hyperalgesia/tolerance.</li>
+      <li>Day-care/NORA procedures and paediatric sedation.</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <span class="sb sb-e">🚫 7 · Adverse Effects &amp; Contraindications</span>
+    <h2>Where ketamine is the wrong choice</h2>
+    <ul class="cross-list">
+      <li><strong>↑ ICP</strong> — caution where intracranial pressure is already a concern.</li>
+      <li><strong>↑ IOP</strong> — contraindicated in open-eye injury / ophthalmic disorders.</li>
+      <li><strong>↑ MVO₂</strong> — not used as a sole anaesthetic in ischaemic heart disease.</li>
+      <li>Apnoea with large/rapid doses; emergence reactions and post-operative delirium.</li>
+      <li>Psychiatric disease — caution in schizophrenia (may exacerbate).</li>
+      <li>Preservatives (chlorobutanol/benzethonium chloride) are <strong>neurotoxic</strong> → use <strong>preservative-free</strong> ketamine for epidural/intrathecal use.</li>
+      <li>Hepatic &amp; renal toxicity with chronic/repeated exposure (e.g. long-term pain or misuse).</li>
+    </ul>
+  </section>
+
+  <section id="s8">
+    <span class="sb sb-x">🎓 8 · Exam Pearls</span>
+    <h2>High-yield one-liners</h2>
+    <div class="ec"><p><strong>Q: Mechanism &amp; state produced?</strong><br>NMDA antagonist at the PCP site → dissociative anaesthesia.</p></div>
+    <div class="ec"><p><strong>Q: Active metabolite?</strong><br>Norketamine (20–30% activity) — prolongs analgesia.</p></div>
+    <div class="ec"><p><strong>Q: Why does BP rise?</strong><br>Central sympathetic activation: ↑ catecholamines, vagal inhibition, ↓ noradrenaline re-uptake.</p></div>
+    <div class="ec"><p><strong>Q: When does it depress the heart instead?</strong><br>When endogenous catecholamine stores are depleted (prolonged shock/critical illness).</p></div>
+    <div class="ec"><p><strong>Q: Classic contraindications?</strong><br>Open-globe eye injury (↑ IOP), raised ICP, and IHD as a sole agent (↑ MVO₂).</p></div>
+  </section>
+
+  <section id="s9">
+    <span class="sb sb-r">📚 9 · References</span>
+    <h2>References</h2>
+    <ol class="ref-list">
+      <li><strong>Dr. Danya.</strong> Induction Agents — handwritten viva notes (primary source for this node).</li>
+      <li><strong>Gropper MA, Cohen NH, Eriksson LI, et al. (eds).</strong> Miller's Anesthesia. 9th ed. Elsevier; 2020.</li>
+      <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology. 7th ed. McGraw-Hill; 2022.</li>
+      <li><strong>Flood P, Rathmell JP, Urman RD.</strong> Stoelting's Pharmacology &amp; Physiology in Anesthetic Practice. 6th ed. Wolters Kluwer; 2022.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li><li><a href="anaes-iv-induction.html">IV Induction Agents</a></li><li><a href="topics.html">Topics</a></li></ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+  <nav class="mobile-nav-bar">
+    <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+    <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+    <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+    <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+    <a href="drug-reference.html"><span class="mn-icon">💊</span>Drugs</a>
+  </nav>
+  <script src="/pwa.js"></script>
+</body>
+</html>

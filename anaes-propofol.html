@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Propofol — Pharmacology, Doses, PRIS &amp; Uses — CritCare.in</title>
+  <meta name="description" content="A detailed anaesthesia drug node on propofol (2,6-di-isopropylphenol): the lipid-emulsion formulation, fospropofol, pharmacokinetics and extrahepatic metabolism, GABA-A pharmacodynamics on the CNS, respiratory and cardiovascular systems, induction/sedation/antiemetic doses, adverse effects including propofol infusion syndrome, and drug interactions — from Danya's notes triangulated with Miller's, Morgan & Mikhail's and Stoelting's." />
+  <link rel="canonical" href="https://critcare.in/anaes-propofol.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .flow-step{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.7rem;}
+    .flow-num{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:#fff;flex-shrink:0;margin-top:.15rem;}
+    .flow-body{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:.85rem 1.1rem;flex:1;}
+    .flow-body h4{font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:.3rem;}
+    .flow-body p{font-size:.84rem;color:var(--slate);line-height:1.65;margin:0;}
+    .flow-body strong{color:var(--ink);}
+    .flow-arrow{text-align:center;color:var(--blue);font-size:1.15rem;margin:0 0 .5rem;}
+    .tick-list,.cross-list{list-style:none;padding-left:0;margin:.4rem 0;}
+    .tick-list li,.cross-list li{position:relative;padding-left:1.6rem;margin-bottom:.5rem;font-size:.9rem;color:var(--slate);line-height:1.65;}
+    .tick-list li::before{content:"✓";position:absolute;left:0;color:#16a34a;font-weight:800;}
+    .cross-list li::before{content:"✕";position:absolute;left:0;color:#dc2626;font-weight:800;}
+    .tick-list strong,.cross-list strong{color:var(--ink);}
+    .difftitle{margin-top:1.6rem;}
+    .drug-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.4rem;}
+    .drug-tabs a{font-size:.8rem;font-weight:700;padding:.4rem .85rem;border-radius:20px;border:1px solid var(--line);color:var(--slate);text-decoration:none;background:var(--bg-alt);}
+    .drug-tabs a.active{background:#1e6fd9;color:#fff;border-color:#1e6fd9;}
+    .keybox{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:10px;padding:.7rem 1rem;margin:.6rem 0;font-size:.86rem;color:#1e3a8a;line-height:1.6;}
+    .keybox strong{color:#1e40af;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-iv-induction.html">IV Induction Agents</a> › Propofol</div>
+    <h1>🥛 Propofol</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">2,6-di-isopropylphenol</span>
+      <span class="topic-tag">GABA-A</span>
+      <span class="topic-tag">PRIS</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Compiled by <strong>Dr. Anmol Srivastava</strong> · Notes: Dr. Danya · Sources: Miller's Anesthesia · Morgan &amp; Mikhail's · Stoelting's Pharmacology</div>
+  </div>
+</header>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <nav class="drug-tabs" aria-label="Induction agents">
+    <a href="anaes-iv-induction.html">💉 Overview</a>
+    <a href="anaes-propofol.html" class="active">🥛 Propofol</a>
+    <a href="anaes-thiopentone.html">🟡 Thiopentone</a>
+    <a href="anaes-ketamine.html">🔴 Ketamine</a>
+    <a href="anaes-etomidate.html">🔵 Etomidate</a>
+  </nav>
+
+  <div class="book-quote">
+    <p>"Propofol is the workhorse of modern induction: a rapid, clean hypnotic that wakes the patient clear-headed and free of nausea — but one that vasodilates, apnoeises and, in high-dose infusions, can turn lethal. Its virtues and its dangers both flow from the same lipophilic phenol."</p>
+    <cite>Danya's notes, triangulated with Miller's Anesthesia; Morgan &amp; Mikhail's Clinical Anesthesiology; Stoelting's Pharmacology &amp; Physiology in Anesthetic Practice.</cite>
+  </div>
+
+  <section id="s1">
+    <span class="sb sb-w">🧴 1 · Identity &amp; Formulation</span>
+    <h2>An IV sedative-hypnotic phenol in a lipid emulsion</h2>
+    <p>Propofol is <strong>2,6-di-isopropylphenol</strong> — a highly lipid-soluble IV sedative-hypnotic supplied as a slightly viscous, <strong>milky-white</strong> oil-in-water emulsion (1% and 2% preparations). Being insoluble in water, it is carried in a lipid vehicle:</p>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Component</th><th>Typical amount</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>Soybean oil</td><td>10%</td><td>Lipid vehicle — dissolves propofol</td></tr>
+          <tr><td>Egg lecithin (phosphatide)</td><td>1.2%</td><td>Emulsifier — stabilises the oil-in-water mixture</td></tr>
+          <tr><td>Glycerol</td><td>2.25%</td><td>Maintains tonicity (isotonic)</td></tr>
+          <tr><td>Preservative (e.g. EDTA)</td><td>—</td><td>Bacteriostatic — the emulsion supports microbial growth</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mc"><div class="ml">⚠ Sterility</div><p>The lipid emulsion is an excellent culture medium. Use strict asepsis, discard opened vials/syringes promptly (within hours). It is <strong>stable at room temperature and not light-sensitive</strong>.</p></div>
+    <h3 class="difftitle">Fospropofol</h3>
+    <p>A <strong>water-soluble prodrug</strong> cleaved by <strong>alkaline phosphatase</strong> → propofol + phosphate + formaldehyde. It has a slower onset/offset and characteristically causes <strong>perineal (peri-anal) paraesthesia/burning</strong> and <strong>pruritus</strong> (attributed to the phosphate metabolite).</p>
+  </section>
+
+  <section id="s2">
+    <span class="sb sb-m">🔬 2 · Pharmacokinetics</span>
+    <h2>Fast on, fast off — with important extrahepatic clearance</h2>
+    <div class="flow-step"><div class="flow-num" style="background:#1e6fd9;">1</div><div class="flow-body"><h4>Onset</h4><p>Time to peak effect <strong>~90–100 s</strong> — one arm–brain circulation. Onset is by rapid uptake into the vessel-rich brain.</p></div></div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-step"><div class="flow-num" style="background:#5b21b6;">2</div><div class="flow-body"><h4>Offset by redistribution</h4><p>Initial distribution half-life <strong>2–8 min</strong>; effect terminates by redistribution to muscle/fat. Elimination half-life 4–7 h; context-sensitive half-time stays short (~40 min even after 8 h infusion) — hence its suitability for <strong>TIVA</strong>.</p></div></div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-step"><div class="flow-num" style="background:#9a3412;">3</div><div class="flow-body"><h4>Metabolism</h4><p>Hepatic conjugation + <strong>oxidation → 1,4-di-isopropylquinol</strong>; glucuronidation gives <strong>propofol-1-glucuronide</strong> and <strong>quinol-4-glucuronide</strong> — all <strong>inactive</strong>. Excreted renally.</p></div></div>
+    <div class="keybox"><strong>Clearance &gt; hepatic blood flow</strong> → there must be <strong>extrahepatic metabolism</strong> (lungs, kidney). Practically: <strong>no significant dose adjustment in hepatic disease</strong> (extrahepatic clearance compensates). Propofol may even reduce its own clearance by lowering cardiac output and hepatic blood flow.</div>
+    <h3 class="difftitle">Special populations</h3>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Group</th><th>Change</th><th>Dose</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Elderly</strong></td><td>Smaller central compartment, ↓ cardiac output, ↓ clearance, ↑ sensitivity</td><td><strong>Reduce</strong></td></tr>
+          <tr><td><strong>Children</strong></td><td>Larger central compartment, ↑ clearance</td><td><strong>Increase</strong> (mg/kg)</td></tr>
+          <tr><td>Hepatic disease</td><td>Extrahepatic clearance compensates</td><td>No significant change</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s3">
+    <span class="sb sb-g">🧠 3 · Pharmacodynamics — CNS</span>
+    <h2>A GABA-A agonist, and much more</h2>
+    <p>Propofol potentiates the inhibitory <strong>GABA-A</strong> receptor (↑ chloride conductance) producing hypnosis and sedation. Additional CNS actions from the notes:</p>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Action</th><th>Consequence</th></tr></thead>
+        <tbody>
+          <tr><td>GABA-A agonism</td><td>Hypnosis &amp; sedation</td></tr>
+          <tr><td>NMDA inhibition</td><td>Contributes to anaesthesia</td></tr>
+          <tr><td>↑ Dopamine in nucleus accumbens</td><td>Reward/abuse potential</td></tr>
+          <tr><td>↓ Serotonin in area postrema</td><td><strong>Antiemetic</strong> effect</td></tr>
+          <tr><td>↓ CMRO₂, ↓ CBF, ↓ ICP &amp; ↓ CPP</td><td><strong>Neuroprotective</strong> (limits excitotoxic/ischaemic injury); concentration-dependent ↓ in BIS</td></tr>
+          <tr><td>↓ IOP</td><td>Useful for ophthalmic/airway instrumentation</td></tr>
+          <tr><td>Paradox at high concentration</td><td>Can provoke excitatory movements / grand-mal-type seizures</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="keybox"><strong>Dose–effect (CNS):</strong> loss of consciousness ≈ <strong>1–1.5 mg/kg</strong> · amnesia ≈ <strong>2 mg/kg</strong> · hypnosis &amp; sedation ≈ <strong>2.5 mg/kg</strong>. Propofol has <strong>no analgesic</strong> property.</div>
+  </section>
+
+  <section id="s4">
+    <span class="sb sb-s">🫁 4 · Pharmacodynamics — Respiratory</span>
+    <h2>A potent respiratory depressant</h2>
+    <ul class="tick-list">
+      <li><strong>Apnoea</strong> on induction — accentuated and prolonged when combined with opioids.</li>
+      <li>↓ Tidal volume, ↑ respiratory rate → an <strong>unpredictable change in minute ventilation</strong>.</li>
+      <li>Acts on <strong>carotid-body chemoreceptors</strong> and depresses the <strong>ventilatory response to hypoxia</strong> (and to hypercapnia).</li>
+      <li><strong>Bronchodilation</strong> in COPD; attenuates vagally/methacholine-induced bronchoconstriction.</li>
+      <li>Potentiates <strong>hypoxic pulmonary vasoconstriction</strong> (HPV).</li>
+    </ul>
+  </section>
+
+  <section id="s5">
+    <span class="sb sb-e">🫀 5 · Pharmacodynamics — Cardiovascular</span>
+    <h2>The vasodilator that drops the pressure</h2>
+    <div class="keybox">Propofol → <strong>↓ CO, ↓ SVR, ↓ BP</strong> (inhibits sympathetic drive; direct vasodilation and mild myocardial depression).</div>
+    <ul class="tick-list">
+      <li><strong>Heart rate is largely unchanged</strong> — it resets/inhibits the baroreflex, blunting the reflex tachycardia. The actual HR change depends on the degree of hypotension, the patient's ability to compensate and co-administered drugs.</li>
+      <li>Suppresses atrial tachycardias; <strong>no direct effect on SA/AV node</strong>.</li>
+      <li>Cardioprotection is dose-dependent (antioxidant effect); myocardial O₂ supply–demand generally preserved.</li>
+    </ul>
+    <div class="mc"><div class="ml">Clinical caution</div><p>Give <strong>slowly and reduce the dose</strong> in the elderly, hypovolaemic or cardiovascularly compromised — a standard bolus can cause marked hypotension and apnoea.</p></div>
+  </section>
+
+  <section id="s6">
+    <span class="sb sb-adv">🧩 6 · Other System Effects</span>
+    <h2>The distinguishing extras</h2>
+    <ul class="tick-list">
+      <li>Does <strong>not</strong> enhance neuromuscular-blocker action; does <strong>not</strong> trigger malignant hyperthermia.</li>
+      <li>No effect on ACTH stimulation, fibrinolytic, haematologic or hepatic function.</li>
+      <li>Enhances macrophage activity but is associated with a tendency to infection (largely a formulation/asepsis issue).</li>
+      <li><strong>Anti-tumorigenic</strong> signals: inhibits VEGF, ↑ NK-cell activity, ↑ cancer-cell apoptosis.</li>
+    </ul>
+  </section>
+
+  <section id="s7">
+    <span class="sb sb-f">💉 7 · Doses &amp; Uses</span>
+    <h2>From induction to the antiemetic mini-dose</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Indication</th><th>Dose</th></tr></thead>
+        <tbody>
+          <tr><td>Induction of anaesthesia</td><td>1–2.5 mg/kg IV</td></tr>
+          <tr><td>Maintenance (TIVA)</td><td>50–150 µg/kg/min</td></tr>
+          <tr><td>Sedation</td><td>25–75 µg/kg/min (<strong>not</strong> for long-term sedation in paediatric patients)</td></tr>
+          <tr><td>Antiemetic effect</td><td>~10 mg IV</td></tr>
+          <tr><td>Antipruritic effect</td><td>10–15 mg IV</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s8">
+    <span class="sb sb-e">⚠️ 8 · Adverse Effects</span>
+    <h2>From pain on injection to a lethal infusion syndrome</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Effect</th><th>Note / management</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Pain on injection</strong></td><td>Due to the irritant phenol — use a larger vein, avoid the dorsum of the hand, or add lidocaine to the propofol</td></tr>
+          <tr><td>Hypotension</td><td>Vasodilation ± myocardial depression</td></tr>
+          <tr><td>Apnoea</td><td>Especially with opioids</td></tr>
+          <tr><td>Myoclonus</td><td>Excitatory movement</td></tr>
+          <tr><td>Thrombophlebitis</td><td>Rare</td></tr>
+          <tr><td>Allergic reaction</td><td>Uncommon</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mc"><div class="ml">⚠ Propofol Infusion Syndrome (PRIS)</div><p>Associated with <strong>high-dose (&gt;4 mg/kg/h) prolonged (&gt;48 h)</strong> infusions — potentially <strong>fatal</strong>. Features: <strong>acute refractory bradycardia → asystole</strong>, plus <strong>metabolic acidosis</strong> (base deficit &gt;10 mmol/L), <strong>rhabdomyolysis</strong>, <strong>hyperlipidaemia</strong> and an enlarged/fatty liver. <br><strong>Risk factors:</strong> poor oxygen delivery, sepsis, brain injury, large dose, and inborn fatty-acid-oxidation disorders. Management: stop propofol, supportive care ± dialysis/ECMO.</p></div>
+  </section>
+
+  <section id="s9">
+    <span class="sb sb-x">🔗 9 · Drug Interactions</span>
+    <h2>Chiefly with midazolam, opioids and neuraxial block</h2>
+    <ul class="tick-list">
+      <li><strong>Midazolam</strong> ↓ propofol's metabolic clearance and alters haemodynamics; conversely propofol <strong>raises midazolam concentrations</strong> (mutual potentiation).</li>
+      <li><strong>Alfentanil</strong> raises propofol concentration (↓ its clearance).</li>
+      <li>An <strong>epidural blocking ~20 segments</strong> can reduce the propofol dose requirement by <strong>~30%</strong> (partly via ↓ hepatic/renal blood flow).</li>
+    </ul>
+  </section>
+
+  <section id="s10">
+    <span class="sb sb-x">🎓 10 · Exam Pearls</span>
+    <h2>High-yield one-liners</h2>
+    <div class="ec"><p><strong>Q: Emulsion constituents?</strong><br>10% soybean oil, 1.2% egg lecithin (emulsifier), 2.25% glycerol (tonicity) ± EDTA (bacteriostatic).</p></div>
+    <div class="ec"><p><strong>Q: Why no dose change in liver disease?</strong><br>Clearance exceeds hepatic blood flow → significant extrahepatic (lung/kidney) metabolism.</p></div>
+    <div class="ec"><p><strong>Q: PRIS threshold &amp; hallmark?</strong><br>&gt;4 mg/kg/h for &gt;48 h; refractory bradycardia + metabolic acidosis + rhabdomyolysis.</p></div>
+    <div class="ec"><p><strong>Q: Antiemetic dose?</strong><br>~10 mg IV (↓ serotonin in the area postrema).</p></div>
+    <div class="ec"><p><strong>Q: Fospropofol's signature side effect?</strong><br>Perineal paraesthesia and pruritus (phosphate metabolite).</p></div>
+  </section>
+
+  <section id="s11">
+    <span class="sb sb-r">📚 11 · References</span>
+    <h2>References</h2>
+    <ol class="ref-list">
+      <li><strong>Dr. Danya.</strong> Induction Agents — handwritten viva notes (primary source for this node).</li>
+      <li><strong>Gropper MA, Cohen NH, Eriksson LI, et al. (eds).</strong> Miller's Anesthesia. 9th ed. Elsevier; 2020.</li>
+      <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology. 7th ed. McGraw-Hill; 2022.</li>
+      <li><strong>Flood P, Rathmell JP, Urman RD.</strong> Stoelting's Pharmacology &amp; Physiology in Anesthetic Practice. 6th ed. Wolters Kluwer; 2022.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li><li><a href="anaes-iv-induction.html">IV Induction Agents</a></li><li><a href="topics.html">Topics</a></li></ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+  <nav class="mobile-nav-bar">
+    <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+    <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+    <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+    <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+    <a href="drug-reference.html"><span class="mn-icon">💊</span>Drugs</a>
+  </nav>
+  <script src="/pwa.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Thiopentone (Barbiturates) — Pharmacology, Doses &amp; Cautions — CritCare.in</title>
+  <meta name="description" content="A detailed anaesthesia drug node on thiopentone and the barbiturates: chemistry (thiobarbiturate), 2.5% alkaline preparation and incompatibilities, structure-activity relationships, hepatic pharmacokinetics and porphyria, GABA-A mechanism and cerebral protection, CNS/respiratory/cardiovascular effects, induction doses, adverse effects, intra-arterial injection and contraindications — from Danya's notes with Miller's, Morgan & Mikhail's and Stoelting's." />
+  <link rel="canonical" href="https://critcare.in/anaes-thiopentone.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .flow-step{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.7rem;}
+    .flow-num{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:#fff;flex-shrink:0;margin-top:.15rem;}
+    .flow-body{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:.85rem 1.1rem;flex:1;}
+    .flow-body h4{font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:.3rem;}
+    .flow-body p{font-size:.84rem;color:var(--slate);line-height:1.65;margin:0;}
+    .flow-body strong{color:var(--ink);}
+    .flow-arrow{text-align:center;color:var(--blue);font-size:1.15rem;margin:0 0 .5rem;}
+    .tick-list,.cross-list{list-style:none;padding-left:0;margin:.4rem 0;}
+    .tick-list li,.cross-list li{position:relative;padding-left:1.6rem;margin-bottom:.5rem;font-size:.9rem;color:var(--slate);line-height:1.65;}
+    .tick-list li::before{content:"✓";position:absolute;left:0;color:#16a34a;font-weight:800;}
+    .cross-list li::before{content:"✕";position:absolute;left:0;color:#dc2626;font-weight:800;}
+    .tick-list strong,.cross-list strong{color:var(--ink);}
+    .difftitle{margin-top:1.6rem;}
+    .drug-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1.4rem;}
+    .drug-tabs a{font-size:.8rem;font-weight:700;padding:.4rem .85rem;border-radius:20px;border:1px solid var(--line);color:var(--slate);text-decoration:none;background:var(--bg-alt);}
+    .drug-tabs a.active{background:#ca8a04;color:#fff;border-color:#ca8a04;}
+    .keybox{background:linear-gradient(135deg,#fefce8,#fef9c3);border:1px solid #fde047;border-radius:10px;padding:.7rem 1rem;margin:.6rem 0;font-size:.86rem;color:#713f12;line-height:1.6;}
+    .keybox strong{color:#854d0e;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-iv-induction.html">IV Induction Agents</a> › Thiopentone</div>
+    <h1>🟡 Thiopentone &amp; the Barbiturates</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Thiobarbiturate</span>
+      <span class="topic-tag">Cerebral protection</span>
+      <span class="topic-tag">Porphyria risk</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Compiled by <strong>Dr. Anmol Srivastava</strong> · Notes: Dr. Danya · Sources: Miller's Anesthesia · Morgan &amp; Mikhail's · Stoelting's Pharmacology</div>
+  </div>
+</header>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <nav class="drug-tabs" aria-label="Induction agents">
+    <a href="anaes-iv-induction.html">💉 Overview</a>
+    <a href="anaes-propofol.html">🥛 Propofol</a>
+    <a href="anaes-thiopentone.html" class="active">🟡 Thiopentone</a>
+    <a href="anaes-ketamine.html">🔴 Ketamine</a>
+    <a href="anaes-etomidate.html">🔵 Etomidate</a>
+  </nav>
+
+  <div class="book-quote">
+    <p>"The barbiturates are the old masters of induction — a single arm–brain circulation to sleep, terminated not by metabolism but by redistribution. Thiopentone still owns two niches: crash induction and the protected brain. But its alkaline solution is unforgiving, and in porphyria it is lethal."</p>
+    <cite>Danya's notes, triangulated with Miller's Anesthesia; Morgan &amp; Mikhail's Clinical Anesthesiology; Stoelting's Pharmacology.</cite>
+  </div>
+
+  <section id="s1">
+    <span class="sb sb-w">⚗️ 1 · Chemistry &amp; Preparation</span>
+    <h2>A sulphur-substituted barbituric-acid derivative</h2>
+    <p>Barbiturates are derivatives of <strong>barbituric acid</strong> (malonic acid + urea; 2,4,6-trioxohexahydropyrimidine). They divide into two classes by the substituent at <strong>position 2</strong>:</p>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Class</th><th>Position-2 group</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td>Oxybarbiturates</td><td>Oxygen</td><td>Methohexital, phenobarbital</td></tr>
+          <tr><td><strong>Thiobarbiturates</strong></td><td>Sulphur</td><td><strong>Thiopentone</strong> (thiopental)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="keybox">Supplied as <strong>2.5% sodium thiopental</strong>, reconstituted with a strongly alkaline vehicle (with Na₂CO₃; pH ≈ 10.5). <strong>Cannot be mixed with Ringer's lactate or acidic solutions</strong> → the barbiturate precipitates (loses solubility as alkalinity falls) and can <strong>occlude the IV line</strong>. Reconstituted thiopentone is stable ~1 week refrigerated (methohexital ~6 weeks).</div>
+    <h3 class="difftitle">Structure–activity relationships</h3>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Substitution</th><th>Effect on activity</th></tr></thead>
+        <tbody>
+          <tr><td>Position-5 aryl/alkyl group</td><td>Hypnotic / sedative potency</td></tr>
+          <tr><td>Phenyl group</td><td>Anticonvulsant activity</td></tr>
+          <tr><td>Sulphur / methyl group</td><td>Rapid onset of action (methyl &gt;&gt;&gt; sulphur)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s2">
+    <span class="sb sb-m">🔬 2 · Pharmacokinetics</span>
+    <h2>Redistribution ends the sleep; the liver ends the drug</h2>
+    <div class="flow-step"><div class="flow-num" style="background:#ca8a04;">1</div><div class="flow-body"><h4>Onset &amp; offset</h4><p>High lipid solubility → crosses the blood–brain barrier and accumulates rapidly in the CNS (onset 10–30 s). Consciousness returns by <strong>redistribution</strong> to muscle/fat within <strong>5–10 min</strong>, not by metabolism.</p></div></div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-step"><div class="flow-num" style="background:#9a3412;">2</div><div class="flow-body"><h4>Metabolism</h4><p>Hepatic — oxidation, desulphuration, ring cleavage and N-dealkylation → water-soluble metabolites (renal) or biliary conjugates. Enzyme inducers ↑ barbiturate metabolism.</p></div></div>
+    <div class="keybox"><strong>Porphyria alert:</strong> barbiturates <strong>stimulate ALA synthase (δ-aminolaevulinic acid synthase)</strong> and can <strong>precipitate an acute porphyric crisis</strong> — an absolute contraindication. <br>Kinetics: <strong>low doses follow first-order</strong> (constant fraction) kinetics; <strong>high doses shift to zero-order</strong> (constant amount). Half-lives: thiopentone ~12 h, methohexital ~4 h. Volume of distribution is increased in pregnancy. Alkalinising the urine increases barbiturate excretion.</div>
+  </section>
+
+  <section id="s3">
+    <span class="sb sb-g">🧠 3 · Mechanism &amp; CNS Effects</span>
+    <h2>GABA-A potentiation and the protected brain</h2>
+    <p>Barbiturates <strong>bind GABA-A</strong>, enhancing and mimicking GABA (↑ chloride conductance → hyperpolarisation) and raising the threshold of excitability of the post-synaptic neuron; at higher concentrations they <strong>directly open the chloride channel</strong> (GABA-mimetic → barbiturate anaesthesia). They also inhibit excitatory transmission (glutamate, acetylcholine).</p>
+    <div class="flow-step"><div class="flow-num" style="background:#166534;">→</div><div class="flow-body"><h4>Cerebral protection (dose-related)</h4><p>↓ CMRO₂ (↓ neuronal-signalling ATP consumption, not basal metabolism) → cerebral <strong>vasoconstriction</strong> → ↓ CBF and ↓ ICP, while MAP falls proportionally so <strong>CPP is preserved</strong>. Basis for burst-suppression neuroprotection.</p></div></div>
+    <div class="keybox">CPP = MAP − ICP. Barbiturates lower both MAP and ICP, keeping CPP roughly constant — useful when intracranial pressure is the problem.</div>
+  </section>
+
+  <section id="s4">
+    <span class="sb sb-s">🫁 4 · Respiratory Effects</span>
+    <h2>Central respiratory depression</h2>
+    <ul class="tick-list">
+      <li>Central respiratory depression — onset ~1–1.5 min after administration, lasting ~15 min.</li>
+      <li>↓ Ventilatory response to a rising CO₂.</li>
+      <li>Patients with <strong>chronic lung disease are more susceptible</strong> to respiratory depression.</li>
+      <li>Laryngospasm/bronchospasm can occur, especially at light planes — caution in reactive airways.</li>
+    </ul>
+  </section>
+
+  <section id="s5">
+    <span class="sb sb-e">🫀 5 · Cardiovascular Effects</span>
+    <h2>Falls in output, a reflex rise in rate</h2>
+    <div class="flow-step"><div class="flow-num" style="background:#991b1b;">↓CO</div><div class="flow-body"><h4>Cardiac output falls</h4><p>Via <strong>negative inotropy</strong> (↓ Ca²⁺ influx), <strong>↓ ventricular filling</strong> (venodilation) and <strong>↓ sympathetic outflow</strong>.</p></div></div>
+    <div class="flow-arrow">▼</div>
+    <div class="flow-step"><div class="flow-num" style="background:#9a3412;">↑HR</div><div class="flow-body"><h4>Heart rate rises</h4><p>Baroreceptor-reflex tachycardia in response to the fall in BP → <strong>↑ myocardial O₂ consumption</strong>.</p></div></div>
+    <div class="mc"><div class="ml">⚠ Rhythm</div><p>Prolongs the QT interval and flattens T waves; <strong>to be avoided in patients with ventricular arrhythmias</strong>. The reflex tachycardia and raised MVO₂ make it less ideal in coronary disease than a rate-neutral agent.</p></div>
+  </section>
+
+  <section id="s6">
+    <span class="sb sb-x">⚠️ 6 · Adverse Effects &amp; Intra-arterial Injection</span>
+    <h2>The barbiturate's hazards</h2>
+    <ul class="cross-list">
+      <li>At <strong>low doses, an anti-analgesic (hyperalgesic)</strong> effect.</li>
+      <li>Garlic/onion taste; allergic reactions; local tissue irritation; urticarial rash.</li>
+      <li>Excitatory phenomena (myoclonus, hiccups) — more with <strong>methohexital &gt; thiopentone</strong>.</li>
+    </ul>
+    <div class="mc"><div class="ml">⚠ Accidental intra-arterial injection</div><p>The alkaline solution causes intense vasospasm, crystallisation, thrombosis and distal ischaemia/gangrene. <strong>Do not remove the cannula</strong>; management: dilute (saline), <strong>brachial plexus / stellate block</strong> for vasodilation, and <strong>heparin ± papaverine</strong> to limit thrombosis.</p></div>
+  </section>
+
+  <section id="s7">
+    <span class="sb sb-f">💉 7 · Doses &amp; Uses</span>
+    <h2>Induction, ECT and cerebral protection</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Agent</th><th>Induction dose</th><th>Onset</th><th>Maintenance</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Thiopentone</strong></td><td>3–4 mg/kg IV</td><td>10–30 s</td><td>50–100 mg every 10–12 min</td></tr>
+          <tr><td>Methohexital</td><td>1–2 mg/kg IV</td><td>10–30 s</td><td>20–40 mg every 4–7 min</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="tick-list">
+      <li>Induction &amp; maintenance of anaesthesia.</li>
+      <li><strong>Methohexital for ECT</strong> (short seizures, rapid recovery); premedication methohexital ~25 mg/kg per rectum (paediatric).</li>
+      <li><strong>Cerebral protection</strong> (burst suppression).</li>
+      <li>Outpatient anaesthesia — rapid onset &amp; emergence. <strong>Not an analgesic.</strong></li>
+    </ul>
+  </section>
+
+  <section id="s8">
+    <span class="sb sb-e">🚫 8 · Contraindications</span>
+    <h2>When to reach for a different agent</h2>
+    <ul class="cross-list">
+      <li><strong>Porphyria</strong> — absolute (induces ALA synthase → acute crisis).</li>
+      <li>Reactive airways / status asthmaticus — relative (laryngospasm/bronchospasm risk).</li>
+      <li>Fixed-output cardiac lesions / severe hypovolaemia — myocardial depression and reflex tachycardia poorly tolerated.</li>
+      <li>Mixing with <strong>Ringer's lactate or acidic drugs</strong> in the same line (precipitation).</li>
+    </ul>
+  </section>
+
+  <section id="s9">
+    <span class="sb sb-x">🎓 9 · Exam Pearls</span>
+    <h2>High-yield one-liners</h2>
+    <div class="ec"><p><strong>Q: Why does the patient wake after one dose of thiopentone?</strong><br>Redistribution from brain to muscle/fat (5–10 min), not metabolism.</p></div>
+    <div class="ec"><p><strong>Q: Absolute contraindication?</strong><br>Porphyria (stimulates ALA synthase).</p></div>
+    <div class="ec"><p><strong>Q: How does it protect the brain and keep CPP?</strong><br>↓ CMRO₂ → cerebral vasoconstriction → ↓ CBF &amp; ↓ ICP; MAP falls too, so CPP is preserved.</p></div>
+    <div class="ec"><p><strong>Q: Management of intra-arterial injection?</strong><br>Leave cannula, dilute, regional block (brachial plexus/stellate), heparin ± papaverine.</p></div>
+    <div class="ec"><p><strong>Q: Which barbiturate is used for ECT and why?</strong><br>Methohexital — short-acting oxybarbiturate, lowers the seizure threshold least / gives good seizures with rapid recovery.</p></div>
+  </section>
+
+  <section id="s10">
+    <span class="sb sb-r">📚 10 · References</span>
+    <h2>References</h2>
+    <ol class="ref-list">
+      <li><strong>Dr. Danya.</strong> Induction Agents — handwritten viva notes (primary source for this node).</li>
+      <li><strong>Gropper MA, Cohen NH, Eriksson LI, et al. (eds).</strong> Miller's Anesthesia. 9th ed. Elsevier; 2020.</li>
+      <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology. 7th ed. McGraw-Hill; 2022.</li>
+      <li><strong>Flood P, Rathmell JP, Urman RD.</strong> Stoelting's Pharmacology &amp; Physiology in Anesthetic Practice. 6th ed. Wolters Kluwer; 2022.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li><li><a href="anaes-iv-induction.html">IV Induction Agents</a></li><li><a href="topics.html">Topics</a></li></ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+  <nav class="mobile-nav-bar">
+    <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+    <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+    <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+    <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+    <a href="drug-reference.html"><span class="mn-icon">💊</span>Drugs</a>
+  </nav>
+  <script src="/pwa.js"></script>
+</body>
+</html>
