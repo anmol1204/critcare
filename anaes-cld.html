@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Anaesthetic Considerations in Chronic Liver Disease (Cirrhosis) — CritCare.in</title>
+  <meta name="description" content="Comprehensive, high-yield anaesthesia for the patient with chronic liver disease / cirrhosis: liver anatomy &amp; physiology, portal hypertension, ascites, varices, hepatorenal &amp; hepatopulmonary syndromes, cirrhotic cardiomyopathy, coagulopathy, CTP/MELD scoring, altered drug handling, and pre-, intra- &amp; post-operative management. From Stoelting's Co-Existing Disease, Miller, Barash and Morgan &amp; Mikhail." />
+  <link rel="canonical" href="https://critcare.in/anaes-cld.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .book-quote{border-left:3px solid var(--blue);padding:.8rem 1.2rem;margin:1rem 0;background:var(--bg-alt);border-radius:0 8px 8px 0;}
+    .book-quote p{font-size:.9rem;color:var(--slate);line-height:1.7;margin:0;font-style:italic;}
+    .book-quote cite{font-size:.75rem;font-weight:700;color:var(--blue);font-style:normal;display:block;margin-top:.4rem;}
+    .marino-box{background:linear-gradient(135deg,#f5f3ff,#ede9fe);border:1px solid #c4b5fd;border-radius:10px;padding:1.2rem;margin:1.2rem 0;}
+    .marino-box .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#5b21b6;margin-bottom:.6rem;}
+    .marino-box p,.marino-box ul{font-size:.9rem;color:#3b0764;line-height:1.75;margin:0;}
+    .marino-box ul{padding-left:1.2rem;}
+    .marino-box li{margin-bottom:.35rem;}
+    .marino-box strong{color:#4c1d95;}
+    html.dark .marino-box{background:linear-gradient(135deg,#241b3a,#2a2140);border-color:#6d28d9;}
+    html.dark .marino-box p,html.dark .marino-box ul,html.dark .marino-box li{color:#ddd6fe;}
+    html.dark .marino-box strong{color:#c4b5fd;}
+    .guideline-rec{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;margin:.6rem 0;}
+    .gr-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:.4rem;}
+    .gr-text{font-size:.9rem;color:var(--ink);line-height:1.7;}
+    .gr-s{display:inline-block;font-size:.62rem;font-weight:800;padding:.15rem .45rem;border-radius:4px;margin-left:.4rem;background:#dcfce7;color:#166534;}
+    .mc{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:1rem 1.2rem;margin:.5rem 0;}
+    .mc .ml{font-size:.68rem;font-weight:700;color:#991b1b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem;}
+    .mc p{font-size:.88rem;color:#7f1d1d;line-height:1.7;margin:0;}
+    html.dark .mc{background:#2a1416;border-color:#7f1d1d;} html.dark .mc p{color:#fca5a5;}
+    .ec{background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:.9rem 1.1rem;margin:.4rem 0;}
+    .ec p{font-size:.88rem;color:#78350f;line-height:1.7;margin:0;}
+    .ec strong{color:#92400e;}
+    html.dark .ec{background:#2a1e0a;border-color:#b45309;} html.dark .ec p{color:#fcd34d;} html.dark .ec strong{color:#fde68a;}
+    .sb{display:inline-flex;align-items:center;gap:.5rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;padding:.3rem .8rem;border-radius:20px;margin-bottom:.8rem;}
+    .sb-w{background:#dbeafe;color:#1e40af;} .sb-m{background:#ede9fe;color:#5b21b6;} .sb-g{background:#dcfce7;color:#166534;} .sb-d{background:#ffedd5;color:#9a3412;} .sb-f{background:#f0fdf4;color:#14532d;border:1px solid #86efac;} .sb-e{background:#fee2e2;color:#991b1b;} .sb-x{background:#fef9c3;color:#854d0e;} .sb-r{background:var(--bg-alt);color:var(--slate);border:1px solid var(--line);} .sb-s{background:#e0f2fe;color:#075985;} .sb-c{background:#ccfbf1;color:#0f766e;} .sb-p{background:#fce7f3;color:#9d174d;}
+    .sys-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.8rem;margin:1rem 0;}
+    .sys-card{border-radius:10px;padding:1rem 1.1rem;border:1px solid var(--line);background:var(--bg-alt);}
+    .sys-card h4{font-size:.85rem;font-weight:800;margin-bottom:.4rem;color:var(--blue);}
+    .sys-card p{font-size:.82rem;color:var(--slate);line-height:1.6;margin:0;}
+    .sys-card ul{font-size:.82rem;color:var(--slate);line-height:1.6;margin:.3rem 0 0;padding-left:1.1rem;}
+    .sys-card li{margin-bottom:.2rem;}
+    @media(max-width:600px){.sys-grid{grid-template-columns:1fr;}}
+    .keydiff{background:linear-gradient(135deg,#eff6ff,#e0f2fe);border:1px solid #93c5fd;border-radius:10px;padding:1.1rem 1.2rem;margin:1rem 0;}
+    .keydiff .mb-label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#1e40af;margin-bottom:.5rem;}
+    .keydiff ul{font-size:.88rem;color:#0c4a6e;line-height:1.7;margin:0;padding-left:1.2rem;} .keydiff strong{color:#1e3a8a;}
+    html.dark .keydiff{background:linear-gradient(135deg,#0c2036,#0a2942);border-color:#1d4ed8;} html.dark .keydiff ul{color:#bae6fd;} html.dark .keydiff strong{color:#93c5fd;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › Chronic Liver Disease</div>
+    <h1>🤍 Anaesthetic Considerations in Chronic Liver Disease (Cirrhosis)</h1>
+    <div class="guideline-row">
+      <span class="gbadge sccm">Portal Hypertension</span>
+      <span class="gbadge kdigo">Child–Pugh / MELD</span>
+      <span class="gbadge isccm">Altered Pharmacology</span>
+      <span class="gbadge esicm">HRS · HPS · POPH</span>
+      <span class="gbadge apasl">Rebalanced Coagulation</span>
+    </div>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Cirrhosis · Portal Hypertension · Ascites</span>
+      <span class="topic-tag">Pre-op · Intra-op · Post-op</span>
+      <span class="topic-tag">Patient · Surgical · Anaesthesia factors</span>
+      <span class="topic-updated">Stoelting's Co-Existing Disease 8e / Miller 9e / Barash 9e / Morgan &amp; Mikhail 6e · from Dr. Tanya Chawla's notes</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Next review January 2027 · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, Emergency Medicine &amp; Critical Care Medicine</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+
+<div class="topic-layout">
+  <aside class="topic-sidebar">
+    <nav class="toc">
+      <div class="toc-title">On this page</div>
+      <ul class="toc-list">
+        <li><a href="#s1">1. Why CLD Matters to the Anaesthetist</a></li>
+        <li><a href="#s2">2. Liver Anatomy, Blood Supply &amp; Physiology</a></li>
+        <li><a href="#s3">3. Cirrhosis &amp; Portal Hypertension</a></li>
+        <li><a href="#s4">4. Systemic Effects — Organ by Organ</a></li>
+        <li><a href="#s5">5. Ascites, Varices &amp; SBP</a></li>
+        <li><a href="#s6">6. Severity Scoring — CTP, MELD, Frailty</a></li>
+        <li><a href="#s7">7. Altered Pharmacology</a></li>
+        <li><a href="#s8">8. Pre-operative Assessment &amp; Optimisation</a></li>
+        <li><a href="#s9">9. Intra-operative Management</a></li>
+        <li><a href="#s10">10. Post-operative Care &amp; Analgesia</a></li>
+        <li><a href="#s11">11. Common Mistakes</a></li>
+        <li><a href="#s12">12. Exam Pearls</a></li>
+        <li><a href="#s13">13. References</a></li>
+      </ul>
+      <a href="anaesthesia.html" class="toc-back">← All anaesthesia topics</a>
+    </nav>
+  </aside>
+
+  <main class="topic-content">
+
+    <!-- ============ 1 ============ -->
+    <section id="s1">
+      <span class="sb sb-w">📘 1 · Stoelting / Miller — The Problem in a Nutshell</span>
+      <h2>Why Chronic Liver Disease Matters to the Anaesthetist</h2>
+      <div class="book-quote">
+        <p>"Cirrhosis is a multisystem disease. The liver is central to drug metabolism, protein synthesis, coagulation and glucose homeostasis, so hepatic failure disturbs the pharmacology of almost every anaesthetic drug and the physiology of every organ system. Perioperative mortality tracks the severity of liver dysfunction (Child–Pugh, MELD) far more than the magnitude of surgery — and elective surgery in decompensated cirrhosis should be deferred until the patient is optimised or transplanted."</p>
+        <cite>Synthesised from Stoelting's Anesthesia and Co-Existing Disease, 8th Ed &amp; Miller's Anesthesia, 9th Ed.</cite>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">🎯 The five things that make these patients dangerous</div>
+        <ul>
+          <li><strong>Altered pharmacokinetics</strong> — large volume of distribution, low albumin (↑ free drug), and slow clearance → unpredictable, prolonged drug effect.</li>
+          <li><strong>Hyperdynamic circulation with a fixed, exhausted reserve</strong> — ↑CO, ↓SVR, blunted baroreflex and <strong>cirrhotic cardiomyopathy</strong> — they tolerate hypovolaemia and vasodilatation poorly.</li>
+          <li><strong>Rebalanced but fragile haemostasis</strong> — both pro- and anti-coagulant factors are low; a normal-looking INR is <em>not</em> reassuring and does not predict bleeding.</li>
+          <li><strong>Portal hypertension</strong> — varices (torrential bleeding), ascites (aspiration risk, restrictive respiration), and portosystemic shunting of ammonia and drugs.</li>
+          <li><strong>Vulnerable end organs</strong> — the kidney (<strong>hepatorenal syndrome</strong>), lungs (<strong>hepatopulmonary syndrome / portopulmonary hypertension</strong>), and brain (<strong>encephalopathy</strong>) decompensate with any perioperative insult.</li>
+        </ul>
+      </div>
+      <p>This page is built around Dr. Tanya Chawla's notes and triangulated with the standard anaesthesia texts. It works through the <strong>anatomy &amp; physiology</strong> first, then the <strong>pathophysiology by system</strong>, the <strong>scoring systems</strong>, the <strong>altered drug handling</strong>, and finally a practical <strong>pre-op → intra-op → post-op</strong> plan. Where useful, think of the assessment along three axes: <strong>patient factors</strong> (severity of liver disease and its multisystem effects), <strong>surgical factors</strong> (site, urgency, blood loss, open vs laparoscopic), and <strong>anaesthesia factors</strong> (drug choice, monitoring, regional vs general).</p>
+    </section>
+
+    <!-- ============ 2 ============ -->
+    <section id="s2">
+      <span class="sb sb-s">🫀 2 · Applied Anatomy &amp; Physiology</span>
+      <h2>The Liver — Structure, Dual Blood Supply &amp; Functions</h2>
+
+      <h3>Functions of the liver (why losing it hurts everywhere)</h3>
+      <div class="sys-grid">
+        <div class="sys-card"><h4>🍬 Carbohydrate metabolism</h4><p>Glycogenesis, glycogenolysis and gluconeogenesis — the liver buffers blood glucose. Loss → <strong>hypoglycaemia</strong> (also ↓ insulin degradation).</p></div>
+        <div class="sys-card"><h4>🧈 Fat metabolism</h4><p>Fatty-acid oxidation (→ acetoacetate), and synthesis of <strong>lipoproteins &amp; cholesterol</strong>.</p></div>
+        <div class="sys-card"><h4>🧬 Protein metabolism</h4><ul><li>Amino acids → glucose / lipids</li><li>Synthesis of <strong>urea</strong>, <strong>plasma proteins (albumin)</strong> and <strong>clotting factors</strong></li></ul></div>
+        <div class="sys-card"><h4>💛 Secretory / excretory</h4><p>Bile (≈ <strong>400–800 mL/day</strong>); excretion of bilirubin, drugs &amp; toxins.</p></div>
+        <div class="sys-card"><h4>🩸 Vascular &amp; reticulo-endothelial</h4><p>Sinusoids lined by endothelial + <strong>Kupffer cells</strong> (phagocytic); a major <strong>blood reservoir</strong>; forms hepatic <strong>lymph</strong> (portal HTN → ↑ sinusoidal pressure → ↑ lymph → ascites).</p></div>
+        <div class="sys-card"><h4>⚙️ Endocrine / metabolic</h4><ul><li>Metabolises IGF-1</li><li>Converts <strong>T4 → T3</strong></li><li><strong>Activates vitamin D</strong></li><li>Metabolises drugs &amp; hormones</li></ul></div>
+      </div>
+
+      <h3>Dual blood supply</h3>
+      <div class="patho-flow">
+        <div class="patho-flow-title">Hepatic blood flow ≈ 25% of cardiac output</div>
+        <div class="pf-node"><strong>Total Hepatic Blood Flow</strong><span class="pf-sub">~1500 mL/min · the liver is a major vascular reservoir</span></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><span class="pf-tag">Hepatic artery</span><strong>20–30% of flow</strong><span class="pf-sub">High O₂ content · supplies ~50% of O₂ · autoregulated</span></div>
+          <div class="pf-node"><span class="pf-tag">Portal vein</span><strong>70–80% of flow</strong><span class="pf-sub">Lower O₂ content but supplies ~50% of O₂ · NOT autoregulated · flow set by splanchnic bed</span></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Delivered together to the <strong>hepatic sinusoids</strong> (perfused at low pressure)</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">🔑 Hepatic Arterial Buffer Response (HABR) — the exam favourite</div>
+        <ul>
+          <li>The <strong>hepatic artery</strong> compensates for changes in <strong>portal</strong> flow to keep total hepatic flow (and O₂ delivery) constant. Mediated by <strong>adenosine washout</strong>:</li>
+          <li>↓ Portal flow → adenosine is <em>not</em> washed away → accumulates around the arterioles → <strong>hepatic artery dilates</strong> (buffers the fall).</li>
+          <li>↑ Portal flow → adenosine <em>washed out</em> → hepatic artery constricts.</li>
+          <li><strong>Anaesthetic relevance:</strong> the portal vein cannot autoregulate, so hepatic O₂ delivery depends heavily on the HABR — and the HABR is <strong>impaired by anaesthesia, hypotension, hypocapnia and surgical traction</strong>. Volatiles (esp. halothane) and low CO reduce hepatic flow → the diseased liver becomes ischaemic. <strong>Isoflurane best preserves hepatic flow</strong> among the older volatiles.</li>
+        </ul>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Regulation of hepatic blood flow (HBF)</div>
+        <div class="gr-text">
+          <strong>Intrinsic:</strong> HABR (adenosine) + pressure–flow autoregulation (hepatic artery only) + transmural pressure (↑ → vasoconstriction).<br>
+          <strong>Extrinsic:</strong> <em>Neural</em> — sympathetic stimulation → α-mediated portal venous &amp; arterial vasoconstriction; <em>Humoral</em> — glucagon, secretin (vasodilate), catecholamines, angiotensin, vasopressin (vasoconstrict).
+        </div>
+      </div>
+
+      <div class="keydiff">
+        <div class="mb-label">🧪 Liver function tests — read them like an anaesthetist</div>
+        <ul>
+          <li><strong>Hepatocellular injury:</strong> ALT, AST.</li>
+          <li><strong>Cholestasis:</strong> ALP, 5′-nucleotidase, GGT.</li>
+          <li><strong>Detoxification / excretory:</strong> total &amp; direct bilirubin, serum ammonia.</li>
+          <li><strong>Synthetic function:</strong> serum <strong>albumin</strong>, globulin, and the <strong>coagulation profile / PT</strong>.</li>
+          <li><strong>PT/INR is the single best <em>acute</em> marker of synthetic function</strong> — clotting-factor half-lives are short (~1–12 h) so PT rises quickly, whereas <strong>albumin</strong> (t½ 18–20 days) reflects <em>chronic</em> synthetic capacity.</li>
+          <li><strong>All coagulation factors are made in the liver except von Willebrand factor and factor VIII</strong> (endothelium / megakaryocytes) — hence factor VIII can be normal or high even in advanced disease. Vitamin-K-dependent factors = <strong>II, VII, IX, X</strong> and proteins C, S, Z.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 3 ============ -->
+    <section id="s3">
+      <span class="sb sb-m">🧩 3 · Pathophysiology</span>
+      <h2>Cirrhosis &amp; Portal Hypertension</h2>
+      <div class="book-quote">
+        <p>"Cirrhosis is the end-stage of chronic liver injury: the normal architecture is distorted by fibrosis and regenerative nodules, causing loss of hepatocellular function and a rise in intrahepatic vascular resistance. The resulting portal hypertension, together with splanchnic vasodilatation, drives the whole clinical syndrome — varices, ascites, encephalopathy and the hepatorenal, hepatopulmonary and portopulmonary complications."</p>
+        <cite>Synthesised from Stoelting's Co-Existing Disease &amp; Barash — Clinical Anesthesia.</cite>
+      </div>
+
+      <h3>Causes — where the block is</h3>
+      <div class="patho-flow">
+        <div class="patho-flow-title">Causes of cirrhosis / portal hypertension by site</div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><span class="pf-tag">Pre-hepatic</span><strong>Portal / splenic / SMV thrombosis</strong><span class="pf-sub">Haemoglobinopathies (thalassaemia, sickle cell)</span></div>
+          <div class="pf-node"><span class="pf-tag">Hepatic</span><strong>Cirrhosis (commonest)</strong><span class="pf-sub">Pre-sinusoidal: schistosomiasis, sarcoidosis, PBC · Sinusoidal: alcohol, viral, NASH · Post-sinusoidal: veno-occlusive disease</span></div>
+          <div class="pf-node"><span class="pf-tag">Post-hepatic</span><strong>Budd–Chiari, RHF</strong><span class="pf-sub">Constrictive pericarditis, TR</span></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><strong>Cirrhosis / Portal hypertension</strong></div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">📋 Common aetiologies (hepatic causes)</div>
+        <ul>
+          <li><strong>Infections:</strong> Hepatitis B &amp; C (± Hep D superinfection with B).</li>
+          <li><strong>Alcoholic liver disease.</strong></li>
+          <li><strong>NASH</strong> (non-alcoholic steatohepatitis — part of the metabolic syndrome).</li>
+          <li><strong>Autoimmune:</strong> autoimmune hepatitis, primary biliary cirrhosis, primary sclerosing cholangitis.</li>
+          <li><strong>Storage disorders:</strong> Wilson's disease, haemochromatosis, α1-antitrypsin deficiency.</li>
+          <li><strong>Drugs/toxins:</strong> paracetamol toxicity, <em>Amanita phalloides</em> (death-cap), herbal remedies, methotrexate.</li>
+        </ul>
+      </div>
+
+      <h3>Portal hypertension — the numbers (HVPG)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Hepatic venous pressure gradient (HVPG)</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1–5 mmHg</strong></td><td>Normal</td></tr>
+            <tr><td><strong>&gt;5 mmHg</strong></td><td>Portal hypertension</td></tr>
+            <tr><td><strong>≥10 mmHg</strong></td><td>Clinically significant portal hypertension — varices &amp; ascites can form</td></tr>
+            <tr><td><strong>≥12 mmHg</strong></td><td>Threshold for <strong>variceal bleeding</strong></td></tr>
+            <tr><td><strong>&gt;16–20 mmHg</strong></td><td>Associated with acute-on-chronic decompensation / high mortality</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>↑ Resistance to portal blood flow → ↓ portal flow → <strong>formation of porto-systemic collaterals</strong> (varices) to decompress the system.</p>
+
+      <h3>Compensated → decompensated</h3>
+      <div class="patho-flow">
+        <div class="patho-flow-title">Natural history</div>
+        <div class="pf-node"><strong>Chronic liver disease</strong><span class="pf-sub">↑ Liver fibrosis</span></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node"><strong>Compensated cirrhosis</strong><span class="pf-sub">HVPG 6–10 mmHg · often asymptomatic</span></div>
+        <div class="pf-arrow pf-lbl"><span>hyperdynamic circulation develops</span></div>
+        <div class="pf-node"><strong>Decompensated cirrhosis</strong><span class="pf-sub">HVPG &gt;10 mmHg → ascites · variceal bleeding · encephalopathy · jaundice</span></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><span class="pf-tag">End-stage</span><strong>Acute-on-chronic liver failure</strong><span class="pf-sub">HVPG &gt;16–20 mmHg · high perioperative mortality</span></div>
+      </div>
+      <div class="ec"><p><strong>Acute liver failure (contrast):</strong> hepatic dysfunction with coagulopathy (↑ PT/INR) and encephalopathy <strong>in the absence of pre-existing chronic liver disease</strong>, evolving in &lt;26 weeks — a different entity from decompensated cirrhosis.</p></div>
+    </section>
+
+    <!-- ============ 4 ============ -->
+    <section id="s4">
+      <span class="sb sb-e">🫁 4 · Multisystem Effects</span>
+      <h2>Systemic Effects of Cirrhosis — Organ by Organ</h2>
+      <p>The unifying mechanism is <strong>splanchnic &amp; peripheral vasodilatation</strong> (excess endogenous vasodilators — chiefly nitric oxide — plus reduced clearance) producing a <strong>hyperdynamic circulation</strong> and a fall in <strong>effective</strong> circulating volume (central hypovolaemia despite splanchnic hypervolaemia). Every downstream complication flows from this.</p>
+
+      <h3>① Cardiovascular — the hyperdynamic circulation &amp; cirrhotic cardiomyopathy</h3>
+      <div class="marino-box">
+        <div class="mb-label">❤️ CVS changes</div>
+        <ul>
+          <li><strong>↑ Cardiac output, ↑ stroke volume, ↓ SVR</strong> — a chronically vasodilated, hyperdynamic state. Effective blood volume is <em>reduced</em>, so these patients are <strong>preload-dependent</strong> and drop their pressure with induction, PEEP, haemorrhage or neuraxial block.</li>
+          <li><strong>Blunted baroreceptor reflexes &amp; chronotropic incompetence</strong> — down-regulation of β-adrenergic receptors → a poor heart-rate response to hypovolaemia and vasopressors.</li>
+          <li><strong>Bilirubin deposition in the SA &amp; AV nodes</strong> → prone to arrhythmias.</li>
+          <li><strong>Cirrhotic cardiomyopathy:</strong> impaired <strong>systolic &amp; diastolic function</strong> that is masked at rest by the low afterload, unmasked by stress (surgery, fluid, TIPS), plus <strong>QT prolongation</strong>. Manage with sodium restriction / diuretics and avoid QT-prolonging drugs.</li>
+        </ul>
+      </div>
+
+      <h3>② Respiratory — HPS vs POPH</h3>
+      <div class="sys-grid">
+        <div class="sys-card"><h4>🫁 Hepatopulmonary syndrome (HPS)</h4><p><strong>Triad:</strong> liver dysfunction + <strong>intrapulmonary vascular dilatation (IPVD)</strong> + arterial <strong>hypoxaemia</strong> (A–a gradient ≥15 mmHg; PaO₂ &lt;70). Dilated capillaries at the lung bases → shunt.</p><ul><li><strong>Orthodeoxia:</strong> SpO₂/PaO₂ falls on <em>standing</em> (>5% drop) — more blood diverts to the bases → worse V/Q mismatch &amp; shunt.</li><li><strong>Dx:</strong> contrast (bubble) echo or <strong>Tc-99m MAA</strong> perfusion lung scan.</li><li><strong>Rx:</strong> supplemental O₂; <strong>definitive = liver transplant.</strong></li></ul></div>
+        <div class="sys-card"><h4>🩺 Portopulmonary hypertension (POPH)</h4><p>Imbalance of vascular mediators → vasoconstriction + endothelial damage → <strong>pulmonary smooth-muscle proliferation</strong>.</p><ul><li><strong>Dx (RHC):</strong> mPAP &gt;25 mmHg at rest, PCWP &lt;15, PVR &gt;240 dyn·s·cm⁻⁵ (&gt;3 Wood units).</li><li><strong>Severity:</strong> mild 25–35 · moderate 35–50 · severe &gt;50.</li><li><strong>mPAP &gt;50 with PVR &gt;250 = contraindication to transplant.</strong></li><li><strong>Rx:</strong> inhaled NO, prostacyclin (epoprostenol), endothelin antagonist (bosentan), PDE-5 inhibitor (sildenafil).</li></ul></div>
+      </div>
+      <div class="ec"><p><strong>DDx of hypoxaemia in cirrhosis:</strong> ① <strong>ascites</strong> → basal compression atelectasis; ② <strong>hepatic hydrothorax</strong> (Rx: salt restriction + diuretics); ③ <strong>HPS</strong>; ④ POPH. Also ↓ diffusion capacity and ↑ extravascular lung water.</p></div>
+
+      <h3>③ Central nervous system — hepatic encephalopathy (HE)</h3>
+      <div class="patho-flow">
+        <div class="patho-flow-title">Pathogenesis of hepatic encephalopathy</div>
+        <div class="pf-node"><strong>↑ Ammonia produced in the gut</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Shunted into the systemic circulation (porto-systemic shunts + ↓ hepatic clearance)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Crosses the blood–brain barrier → taken up by <strong>astrocytes</strong></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">↑ Glutamine → astrocyte <strong>swelling</strong> &amp; dysfunction → altered neurotransmission</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node pf-end"><strong>Encephalopathy</strong><span class="pf-sub">Mild confusion → cerebral oedema &amp; raised ICP (net inhibitory / depressant effect)</span></div>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>West Haven grade</th><th>Clinical features</th></tr></thead>
+          <tbody>
+            <tr><td><strong>I</strong></td><td>Mild confusion, change in behaviour, <strong>day–night reversal</strong></td></tr>
+            <tr><td><strong>II</strong></td><td><strong>Asterixis (flapping tremor)</strong>, moderate confusion, lethargy</td></tr>
+            <tr><td><strong>III</strong></td><td>Marked confusion, arousable, incoherent speech, stupor</td></tr>
+            <tr><td><strong>IV</strong></td><td><strong>Coma</strong>, unresponsive to pain</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">⚡ Precipitants (memorise — you can cause these in theatre)</div>
+        <ul>
+          <li><strong>↑ Nitrogen load:</strong> GI bleed, constipation, excess dietary protein.</li>
+          <li><strong>Drugs:</strong> sedatives, opioids/narcotics (avoid or minimise!).</li>
+          <li><strong>Metabolic:</strong> hypoxia, hypotension/hypovolaemia, hyponatraemia, hypokalaemia, alkalosis.</li>
+          <li><strong>Miscellaneous:</strong> sepsis, surgery, TIPS.</li>
+        </ul>
+        <p style="margin-top:.6rem"><strong>Rx:</strong> identify &amp; correct the precipitant → protein restriction → <strong>lactulose 30–40 mL TID</strong> (gut bacteria → lactate/acetate → ↓ pH → traps ammonia as non-absorbable NH₄⁺) → non-absorbable oral antibiotics (<strong>rifaximin</strong>) → zinc supplementation.</p>
+      </div>
+
+      <h3>④ Renal — hepatorenal syndrome (HRS)</h3>
+      <div class="patho-flow">
+        <div class="patho-flow-title">From portal HTN to HRS</div>
+        <div class="pf-node">↓ Effective (central) blood volume</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Activation of vasoconstrictor &amp; antidiuretic systems (RAAS, SNS, ADH)</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><strong>Na⁺ retention</strong><span class="pf-sub">→ plasma volume expansion → ascites</span></div>
+          <div class="pf-node"><strong>Water retention</strong><span class="pf-sub">→ dilutional hyponatraemia</span></div>
+          <div class="pf-node"><strong>Renal vasoconstriction</strong><span class="pf-sub">→ hepatorenal syndrome (functional, pre-renal)</span></div>
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Diagnostic criteria for HRS (functional, diagnosis of exclusion)</div>
+        <div class="gr-text">Cirrhosis + ascites · rising serum creatinine · <strong>no improvement after 2 days of diuretic withdrawal + albumin volume expansion</strong> · absence of shock · no current/recent nephrotoxins · no structural kidney disease (bland urine, no proteinuria).</div>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th></th><th>Type 1 HRS (HRS-AKI)</th><th>Type 2 HRS (HRS-NAKI)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Course</strong></td><td>Rapidly progressive</td><td>Moderate, stable impairment</td></tr>
+            <tr><td><strong>Creatinine</strong></td><td>Rapid ↑ (≥0.3 mg/dL in 48 h or ≥50% from baseline)</td><td>Slower, stable rise</td></tr>
+            <tr><td><strong>Prognosis</strong></td><td>Poor — median ~2 weeks</td><td>~6 months</td></tr>
+            <tr><td><strong>Trigger</strong></td><td>Often a precipitant (SBP, GI bleed, over-diuresis, large-volume paracentesis)</td><td>Refractory ascites</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ec"><p><strong>Rx of HRS:</strong> stop nephrotoxins &amp; remove the trigger → <strong>albumin</strong> (volume expansion) → <strong>splanchnic vasoconstrictors</strong> to raise MAP &amp; renal perfusion: <strong>terlipressin</strong> (an ADH analogue → splanchnic vasoconstriction → ↑ MAP, ↑ GFR) or <strong>midodrine + octreotide ± noradrenaline</strong>. Definitive treatment is liver transplant.</p></div>
+
+      <h3>⑤ Haematological — the rebalanced coagulopathy</h3>
+      <div class="sys-grid">
+        <div class="sys-card"><h4>🩸 Coagulation</h4><ul><li>↓ Pro-coagulant factors (vitamin-K-dependent &amp; independent) <em>and</em> ↓ anticoagulants (protein C/S, antithrombin) — a <strong>rebalanced</strong> but fragile system.</li><li>Dysfunctional clotting factors; ↑ thrombin generation potential → cirrhosis can be <strong>pro-thrombotic</strong> (e.g. PVT, DVT) as easily as it bleeds.</li></ul></div>
+        <div class="sys-card"><h4>🔻 Anaemia &amp; thrombocytopenia</h4><ul><li><strong>Anaemia:</strong> nutritional deficiency, chronic GI blood loss, hypersplenism, marrow suppression by alcohol, Zieve's syndrome.</li><li><strong>Thrombocytopenia:</strong> hypersplenism (pooling), ↓ thrombopoietin synthesis, immune destruction, plus <strong>platelet dysfunction</strong>.</li></ul></div>
+      </div>
+      <div class="keydiff">
+        <div class="mb-label">⚠️ The single most important coagulation teaching point</div>
+        <ul><li>Because pro- and anti-coagulant deficits offset each other, the <strong>INR does NOT predict bleeding risk</strong> in cirrhosis and does <em>not</em> need "correcting" before every procedure. Assess whole-blood clotting with <strong>TEG/ROTEM</strong>, treat <strong>fibrinogen</strong> and <strong>platelets</strong>, and transfuse to the clinical picture — over-transfusing FFP raises portal pressure and worsens variceal bleeding.</li></ul>
+      </div>
+
+      <h3>⑥ Endocrine &amp; metabolic</h3>
+      <div class="ec"><p>Prone to <strong>hypoglycaemia</strong> (depleted glycogen stores + reduced insulin degradation) → check glucose intra-operatively. ↑ Plasma glucagon &amp; growth factor; abnormal sex-hormone metabolism (→ gynaecomastia, testicular atrophy, spider naevi, palmar erythema).</p></div>
+    </section>
+
+    <!-- ============ 5 ============ -->
+    <section id="s5">
+      <span class="sb sb-c">💧 5 · Portal-Hypertensive Complications</span>
+      <h2>Ascites, Varices &amp; Spontaneous Bacterial Peritonitis</h2>
+
+      <h3>Ascites — pathogenesis</h3>
+      <div class="patho-flow">
+        <div class="patho-flow-title">Why fluid accumulates</div>
+        <div class="pf-node">Sinusoidal portal hypertension</div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node">↑ Hydrostatic pressure in hepatic sinusoids</div>
+          <div class="pf-node">Hypoalbuminaemia → ↓ oncotic pressure</div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Leakage of fluid + hepatic lymph into the peritoneal cavity</div>
+        <div class="pf-arrow pf-lbl"><span>+ splanchnic hypervolaemia / central hypovolaemia → RAAS → Na⁺ &amp; H₂O retention</span></div>
+        <div class="pf-node pf-end"><strong>Ascites</strong></div>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">🧫 SAAG, grades &amp; treatment</div>
+        <ul>
+          <li><strong>SAAG</strong> (serum-ascites albumin gradient = serum − ascites albumin): <strong>≥1.1 g/dL → portal hypertension</strong> (cirrhosis, alcoholic hepatitis, cardiac); <strong>&lt;1.1 → non-portal</strong> causes (peritoneal TB/malignancy, nephrotic, pancreatic).</li>
+          <li><strong>Grades:</strong> I — detected only on USG (&lt;500 mL, puddle sign +); II — moderate (500 mL–2 L, shifting dullness +); III — tense (&gt;2 L, fluid thrill +).</li>
+          <li><strong>Rx:</strong> ① salt-restricted diet; ② diuretics — spironolactone : furosemide in a <strong>100 : 40 mg ratio</strong> (up to 400 : 160 mg/day); ③ therapeutic paracentesis.</li>
+          <li><strong>Refractory ascites</strong> = no response despite maximal diuretics. For <strong>large-volume paracentesis (&gt;5 L)</strong> give <strong>albumin ~8 g per litre removed</strong> to prevent post-paracentesis circulatory dysfunction.</li>
+        </ul>
+      </div>
+
+      <h3>Porto-systemic shunts &amp; varices</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Site of shunt</th><th>Portal ↔ systemic connection</th></tr></thead>
+          <tbody>
+            <tr><td>Lower oesophagus (<strong>oesophageal varices</strong>)</td><td>Left gastric vein ↔ azygos vein</td></tr>
+            <tr><td>Rectum (haemorrhoids)</td><td>Superior rectal ↔ inferior rectal veins</td></tr>
+            <tr><td>Umbilicus (<strong>caput medusae</strong>)</td><td>Para-umbilical (ligamentum teres) ↔ superficial epigastric veins</td></tr>
+            <tr><td>Bare area of liver</td><td>Hepatic ↔ inferior phrenic veins</td></tr>
+            <tr><td>Retroperitoneal</td><td>Colonic ↔ body-wall veins</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Management of acute variceal bleeding <span class="gr-s">Emergency</span></div>
+        <div class="gr-text">
+          <strong>① Resuscitate</strong> — restrictive transfusion (target Hb ~7–8 g/dL), protect the airway (high aspiration risk — <strong>RSI</strong>).<br>
+          <strong>② Control bleeding — pharmacological:</strong> <strong>terlipressin</strong> 2 mg IV 6-hourly → 1 mg 6-hourly until bleeding stops (or vasopressin 20 U in 100 mL D5 over 15 min then 0.1–0.4 U/min); or <strong>octreotide</strong> (somatostatin analogue → splanchnic vasoconstriction). Add antibiotic prophylaxis.<br>
+          <strong>③ Endoscopy (urgent):</strong> variceal band ligation or sclerotherapy (sodium tetradecyl sulphate).<br>
+          <strong>④ Balloon tamponade</strong> (rescue): Sengstaken–Blakemore (3-lumen) / Minnesota (4-lumen).<br>
+          <strong>⑤ Salvage:</strong> <strong>TIPS</strong> (transjugular intrahepatic porto-systemic shunt, portal → hepatic vein) — but precipitates encephalopathy.<br>
+          <strong>Prophylaxis:</strong> <strong>non-selective β-blockers</strong> (propranolol, nadolol) — block β in the gut → unopposed α → splanchnic vasoconstriction → ↓ portal pressure.
+        </div>
+      </div>
+
+      <h3>Spontaneous bacterial peritonitis (SBP)</h3>
+      <div class="ec"><p>Infection of ascitic fluid <strong>without an intra-abdominal source</strong>. Diagnose on ascitic <strong>PMN &gt;250 cells/mm³</strong> (typically a single organism; ascitic protein often low). <strong>Rx:</strong> 3rd-generation cephalosporin + IV albumin (reduces HRS); secondary prophylaxis with a <strong>quinolone</strong>. A perioperative decompensation trigger — always exclude it in the acutely unwell cirrhotic.</p></div>
+    </section>
+
+    <!-- ============ 6 ============ -->
+    <section id="s6">
+      <span class="sb sb-g">📊 6 · Risk Stratification</span>
+      <h2>Severity Scoring — Child–Pugh, MELD &amp; Frailty</h2>
+      <div class="book-quote">
+        <p>"Perioperative risk in cirrhosis correlates with the degree of hepatic dysfunction. Child–Pugh and MELD both predict mortality; elective surgery is generally acceptable in Child A, cautious in Child B, and contraindicated in Child C or a high MELD until the patient is optimised or transplanted."</p>
+        <cite>Synthesised from Miller's Anesthesia &amp; Stoelting's Co-Existing Disease.</cite>
+      </div>
+
+      <h3>Child–Turcotte–Pugh (CTP)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>1 point</th><th>2 points</th><th>3 points</th></tr></thead>
+          <tbody>
+            <tr><td>Albumin (g/dL)</td><td>&gt;3.5</td><td>2.8–3.5</td><td>&lt;2.8</td></tr>
+            <tr><td>Bilirubin (mg/dL)</td><td>&lt;2</td><td>2–3</td><td>&gt;3</td></tr>
+            <tr><td>INR</td><td>&lt;1.7</td><td>1.7–2.3</td><td>&gt;2.3</td></tr>
+            <tr><td>Ascites</td><td>None</td><td>Mild / controlled</td><td>Moderate–severe / refractory</td></tr>
+            <tr><td>Encephalopathy</td><td>None</td><td>Grade I–II</td><td>Grade III–IV</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Class</th><th>Score</th><th>Approx. peri-operative mortality (major/abdominal surgery)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>A</strong></td><td>5–6</td><td>~10%</td></tr>
+            <tr><td><strong>B</strong></td><td>7–9</td><td>~17–31%</td></tr>
+            <tr><td><strong>C</strong></td><td>10–15</td><td>~63–82%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ec"><p><strong>Advantage:</strong> easy, familiar. <strong>Disadvantage:</strong> ascites &amp; encephalopathy are <strong>subjective</strong>, and it does <strong>not include renal function</strong>. Mnemonic — "<strong>A BEAn</strong>": Albumin, Bilirubin, Encephalopathy, Ascites, INR.</p></div>
+
+      <h3>MELD &amp; MELD-Na</h3>
+      <div class="marino-box">
+        <div class="mb-label">🔢 Model for End-stage Liver Disease</div>
+        <ul>
+          <li>Uses <strong>creatinine, bilirubin, INR</strong> ("<strong>C-B-I</strong>") — objective, and importantly <strong>includes renal function</strong> (the main CTP weakness). Range 6–40.</li>
+          <li>Predicts <strong>3-month mortality</strong> and correlates with post-operative complications: <strong>&lt;10 low, 10–15 moderate, &gt;15 high; ≥26 very high risk.</strong></li>
+          <li><strong>90-day mortality by MELD:</strong> &lt;10 ≈ 2% · 10–19 ≈ 6% · 20–29 ≈ 20% · 30–39 ≈ 52% · &gt;40 ≈ 71%.</li>
+          <li><strong>MELD-Na</strong> adds serum sodium (hyponatraemia = worse prognosis) — used for transplant allocation.</li>
+        </ul>
+      </div>
+      <div class="keydiff">
+        <div class="mb-label">⏱ Which score predicts what</div>
+        <ul><li><strong>CTP</strong> → 1-month mortality · <strong>MELD</strong> → 3-month mortality · <strong>MELD-Na</strong> → 1-year mortality. High-risk scores → involve the patient in shared decision-making and consider deferring elective surgery.</li></ul>
+      </div>
+
+      <h3>Frailty &amp; sarcopenia</h3>
+      <div class="ec"><p>The <strong>Liver Frailty Index (LFI)</strong> — grip strength, timed chair-stands and balance — captures the sarcopenia that scores miss: <strong>&lt;3.2 robust, 3.2–4.4 pre-frail, ≥4.5 frail</strong>. Higher LFI predicts wait-list mortality, longer length of stay and worse functional recovery. Look for <strong>temporal wasting</strong> and muscle loss at the bedside.</p></div>
+    </section>
+
+    <!-- ============ 7 ============ -->
+    <section id="s7">
+      <span class="sb sb-d">💊 7 · Pharmacology</span>
+      <h2>Altered Drug Handling in Liver Disease</h2>
+      <div class="book-quote">
+        <p>"Hepatic dysfunction changes both what dose is needed and how long a drug lasts. A large volume of distribution and reduced protein binding may demand a <em>normal or larger initial dose</em>, while impaired metabolism and reduced hepatic blood flow <em>prolong</em> the effect. Titrate to effect, choose drugs with organ-independent clearance, and expect a slower recovery."</p>
+        <cite>Synthesised from Stoelting's Pharmacology &amp; Physiology in Anesthetic Practice &amp; Miller's Anesthesia.</cite>
+      </div>
+
+      <h3>Three pharmacokinetic changes</h3>
+      <div class="marino-box">
+        <div class="mb-label">📉 What changes and why</div>
+        <ul>
+          <li><strong>① Large volume of distribution</strong> (ascites, ↑ total body water) → the <strong>initial dose may need to be larger</strong> — but because of hepatocellular dysfunction &amp; reduced metabolism the <strong>effect is prolonged</strong>.</li>
+          <li><strong>② ↓ Albumin → ↑ free (unbound) drug fraction</strong> → a <strong>smaller dose</strong> gives the same clinical effect for highly protein-bound drugs (e.g. thiopentone) — reduce and titrate.</li>
+          <li><strong>③ ↓ Rate of metabolism &amp; ↓ hepatic blood flow</strong> → <strong>prolonged duration of action</strong>.</li>
+          <li><strong>Overarching goal in theatre:</strong> maintain <strong>hepatic blood flow &amp; oxygenation</strong> — maintain cardiac output (which maintains hepatic &amp; renal flow), avoid hypotension, hypocapnia and high airway pressures.</li>
+        </ul>
+      </div>
+
+      <h3>Hepatic metabolism &amp; the extraction ratio</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th></th><th>High extraction ratio (&gt;0.7)</th><th>Low extraction ratio (&lt;0.4)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Rate-limiting step</strong></td><td><strong>Flow-limited</strong> — clearance depends on hepatic blood flow</td><td><strong>Capacity-limited</strong> — clearance depends on enzyme capacity &amp; protein binding</td></tr>
+            <tr><td><strong>Vulnerable to</strong></td><td>↓ Hepatic blood flow (hypotension, low CO, volatiles)</td><td>Enzyme dysfunction / induction / hypoalbuminaemia</td></tr>
+            <tr><td><strong>Examples</strong></td><td>Propofol, lignocaine, morphine, pethidine, fentanyl</td><td>Thiopentone, diazepam, phenytoin, warfarin, rifampicin</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Phase I</strong> reactions (oxidation, reduction, hydrolysis — CYP450) are affected <em>earlier</em> than <strong>Phase II</strong> (conjugation, glucuronidation, sulfation, acetylation, methylation), which is relatively preserved — hence drugs cleared by conjugation (e.g. lorazepam, oxazepam) are "safer" than those needing oxidation.</p>
+
+      <h3>Agent-by-agent</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug class</th><th>Behaviour in liver disease</th><th>Preferred?</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Induction — thiopentone</strong></td><td>↓ Albumin → ↑ free drug → <strong>reduce the dose</strong>; effect prolonged</td><td>Use lower dose</td></tr>
+            <tr><td><strong>Induction — propofol</strong></td><td>Short-acting; both hepatic (~70%) &amp; <strong>extrahepatic (~30%)</strong> metabolism → recovery well preserved; watch hypotension</td><td>✅ Reasonable</td></tr>
+            <tr><td><strong>Induction — etomidate</strong></td><td>Cardiostable; can be used safely in <strong>moderate</strong> cirrhosis (single dose)</td><td>✅ Haemodynamically kind</td></tr>
+            <tr><td><strong>Opioid — morphine</strong></td><td>→ M-3-G + <strong>M-6-G (active)</strong> → prolonged action &amp; sedation; accumulates in renal impairment</td><td>⚠️ Caution / avoid</td></tr>
+            <tr><td><strong>Opioid — pethidine</strong></td><td>→ <strong>norpethidine (active, 8–12 h)</strong> → seizures; prolonged</td><td>❌ Avoid</td></tr>
+            <tr><td><strong>Opioid — fentanyl</strong></td><td>→ inactive norfentanyl; no active metabolite</td><td>✅ Opioid of choice (bolus)</td></tr>
+            <tr><td><strong>Opioid — remifentanil</strong></td><td><strong>Ester hydrolysis by plasma / tissue esterases — organ-independent</strong>; context-insensitive half-time unchanged</td><td>✅✅ Ideal if available (infusion)</td></tr>
+            <tr><td><strong>Relaxant — suxamethonium</strong></td><td>Plasma cholinesterase is made in the liver, but effect only prolonged if activity &lt;~50%</td><td>OK for RSI</td></tr>
+            <tr><td><strong>Relaxant — atracurium / cisatracurium</strong></td><td><strong>Hofmann elimination</strong> (spontaneous, pH/temp-dependent) — <strong>organ-independent</strong>; laudanosine metabolite (seizures at high dose)</td><td>✅✅ Relaxant of choice</td></tr>
+            <tr><td><strong>Relaxant — vecuronium / rocuronium / pancuronium</strong></td><td>Hepatic/biliary elimination → <strong>prolonged</strong> block (roc/vec 60–80% protein bound; roc partly renal)</td><td>⚠️ Prolonged — monitor TOF; sugammadex available for roc/vec</td></tr>
+            <tr><td><strong>Benzodiazepines</strong></td><td>Midazolam → active α-hydroxymidazolam; diazepam → nordiazepam (t½ ~60 h). <strong>Lorazepam/oxazepam/temazepam → no active metabolites</strong></td><td>Avoid in/near HE; small midazolam dose acceptable</td></tr>
+            <tr><td><strong>Volatiles</strong></td><td><strong>Isoflurane best preserves hepatic blood flow</strong> (TFA adducts ~0.2%). <strong>Sevoflurane preferred</strong> (minimal metabolism). <strong>Avoid halothane</strong> (20% metabolised → immune "halothane hepatitis")</td><td>✅ Sevoflurane / isoflurane</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="keydiff">
+        <div class="mb-label">⭐ The two drugs to remember for the "organ-independent" answer</div>
+        <ul>
+          <li><strong>Neuromuscular blocker of choice = atracurium / cisatracurium</strong> (Hofmann elimination — no reliance on liver or kidney).</li>
+          <li><strong>Opioid of choice = remifentanil</strong> (plasma esterase metabolism); <strong>fentanyl</strong> is the best bolus opioid. Premedication should be minimal — <strong>avoid sedatives in encephalopathy</strong> (a small dose of midazolam is acceptable in early/mild disease).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ 8 ============ -->
+    <section id="s8">
+      <span class="sb sb-f">📋 8 · Pre-operative</span>
+      <h2>Pre-operative Assessment &amp; Optimisation</h2>
+
+      <h3>History — the systems screen</h3>
+      <div class="guideline-rec">
+        <div class="gr-label">Ask specifically about</div>
+        <div class="gr-text">
+          <strong>Constitutional / GI:</strong> anorexia, nausea, vomiting; jaundice, fever, myalgia; upper-GI bleed (haematemesis/melaena); abdominal distension &amp; pain; altered bowel/bladder habit.<br>
+          <strong>Aetiology / exposure:</strong> alcohol intake, paracetamol/isoniazid/herbal medicine, tattoos, prior blood transfusions.<br>
+          <strong>Decompensation:</strong> ↓ urine output, leg swelling (→ ascites, HRS); <strong>day–night reversal, confusion, tremor, altered sensorium, family-reported behavioural change</strong> (HE).<br>
+          <strong>Cardiopulmonary reserve:</strong> chest pain, palpitations, syncope (cirrhotic cardiomyopathy); <strong>breathlessness lying down vs sitting up</strong> (orthodeoxia/HPS); exercise tolerance (METs &lt;4 = poor); bleeding tendency.
+        </div>
+      </div>
+
+      <h3>Examination — the stigmata of chronic liver disease</h3>
+      <div class="marino-box">
+        <div class="mb-label">🔍 Signs to elicit (and their anaesthetic meaning)</div>
+        <ul>
+          <li><strong>Pallor</strong> (anaemia) · <strong>icterus</strong> · <strong>fetor hepaticus</strong> · parotid enlargement · alopecia.</li>
+          <li><strong>Caput medusae / dilated abdominal veins</strong>, spider naevi (upper trunk), <strong>palmar erythema</strong>, Dupuytren's contracture.</li>
+          <li><strong>Gynaecomastia, testicular atrophy</strong> (sex-hormone metabolism).</li>
+          <li><strong>Ascites</strong> (aspiration &amp; respiratory risk), <strong>sarcopenia / temporal wasting</strong> (frailty).</li>
+          <li>Resting SpO₂ <strong>sitting vs lying</strong> (screen for orthodeoxia/HPS); asterixis (HE).</li>
+        </ul>
+      </div>
+
+      <h3>Investigations</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Test</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td><strong>FBC</strong></td><td>Anaemia (nutrition/GI loss), <strong>thrombocytopenia</strong> &amp; leucopenia (hypersplenism)</td></tr>
+            <tr><td><strong>Coagulation — PT/INR + fibrinogen + TEG/ROTEM</strong></td><td>Rebalanced haemostasis — assess whole-blood function, don't rely on INR alone</td></tr>
+            <tr><td><strong>LFTs + albumin</strong></td><td>Degree of hepatocellular vs cholestatic dysfunction; synthetic reserve</td></tr>
+            <tr><td><strong>U&amp;E / creatinine, electrolytes</strong></td><td>HRS, hyponatraemia, hypokalaemia; chronic diuretic effects</td></tr>
+            <tr><td><strong>Glucose</strong></td><td>Hypoglycaemia risk</td></tr>
+            <tr><td><strong>ABG / SpO₂ sit-stand</strong></td><td>HPS, hypoxaemia</td></tr>
+            <tr><td><strong>ECG</strong></td><td>QT prolongation, arrhythmia</td></tr>
+            <tr><td><strong>Echocardiography (± bubble study, RVSP)</strong></td><td>Cirrhotic cardiomyopathy, POPH screen, HPS shunt</td></tr>
+            <tr><td><strong>CXR</strong></td><td>Effusion/hydrothorax, cardiomegaly</td></tr>
+            <tr><td><strong>USG abdomen ± ascitic tap</strong></td><td>Quantify ascites; exclude SBP (PMN &gt;250)</td></tr>
+            <tr><td><strong>Right-heart catheterisation</strong></td><td>Confirm/quantify POPH before major surgery or transplant</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Optimisation &amp; risk decision</h3>
+      <div class="flowchart-step"><div class="fc-node fc-red">1</div><div class="fc-content"><h4>Stratify &amp; decide</h4><ul><li>Calculate <strong>Child–Pugh &amp; MELD</strong>; assess frailty. Defer <em>elective</em> surgery in <strong>Child C / high MELD / acute decompensation</strong> — optimise or refer for transplant.</li><li>Weigh <strong>patient × surgical × anaesthesia</strong> factors; involve hepatology &amp; discuss risk with the patient.</li></ul></div></div>
+      <div class="flowchart-step"><div class="fc-node fc-orange">2</div><div class="fc-content"><h4>Correct what you can</h4><ul><li><strong>Ascites:</strong> salt restriction, diuretics, drain a tense abdomen (albumin cover if &gt;5 L).</li><li><strong>Coagulopathy:</strong> vitamin K if cholestatic; correct fibrinogen/platelets <em>only</em> for active bleeding or high-risk procedures (TEG-guided) — don't chase the INR.</li><li><strong>Encephalopathy:</strong> treat precipitants, lactulose, rifaximin; correct electrolytes (Na⁺, K⁺).</li><li><strong>Varices:</strong> continue non-selective β-blockers; band high-risk varices before elective surgery.</li><li><strong>Renal/volume:</strong> avoid nephrotoxins &amp; NSAIDs; treat SBP/HRS; optimise volume status.</li></ul></div></div>
+      <div class="flowchart-step"><div class="fc-node fc-yellow">3</div><div class="fc-content"><h4>Fasting, premed &amp; consent</h4><ul><li>Treat as <strong>aspiration risk</strong> if ascites / GI bleed → plan RSI. <strong>Minimise sedative premed</strong> (avoid in HE). Consider stress-ulcer &amp; aspiration prophylaxis.</li></ul></div></div>
+    </section>
+
+    <!-- ============ 9 ============ -->
+    <section id="s9">
+      <span class="sb sb-w">🗺️ 9 · Intra-operative</span>
+      <h2>Intra-operative Management</h2>
+      <div class="marino-box">
+        <div class="mb-label">🎯 Overriding intra-operative goals</div>
+        <ul><li>Maintain <strong>hepatic blood flow &amp; oxygenation</strong> → keep <strong>cardiac output &amp; MAP</strong> up, avoid hypovolaemia, hypocapnia, high PEEP/airway pressure and surgical traction on the porta. Choose <strong>organ-independent drugs</strong>, monitor coagulation and glucose, and keep the patient warm.</li></ul>
+      </div>
+
+      <div class="flowchart-step"><div class="fc-node fc-red">1</div><div class="fc-content"><h4>Monitoring</h4><ul><li><strong>Standard:</strong> SpO₂, ECG, NIBP, EtCO₂, temperature, neuromuscular (TOF), urine output.</li><li><strong>Invasive (major surgery):</strong> arterial line (beat-to-beat BP + ABG/glucose/lactate), central venous access; <strong>TEG/ROTEM</strong> for coagulation; cardiac-output/fluid-responsiveness monitoring for goal-directed therapy.</li></ul></div></div>
+      <div class="flowchart-step"><div class="fc-node fc-orange">2</div><div class="fc-content"><h4>Induction &amp; airway</h4><ul><li><strong>RSI with cricoid pressure</strong> if ascites, GI bleed or delayed gastric emptying (aspiration risk). Pre-oxygenate well — reduced FRC &amp; shunt.</li><li>Cardiostable induction (etomidate, or reduced-dose propofol); obtund the pressor response with <strong>fentanyl</strong>. Suxamethonium is acceptable for RSI; otherwise intubate with <strong>rocuronium (sugammadex available)</strong> or maintain with <strong>atracurium/cisatracurium</strong>.</li></ul></div></div>
+      <div class="flowchart-step"><div class="fc-node fc-yellow">3</div><div class="fc-content"><h4>Maintenance</h4><ul><li><strong>Sevoflurane or isoflurane</strong> (avoid halothane); ± remifentanil infusion; <strong>atracurium/cisatracurium</strong> for relaxation.</li><li>Ventilate to <strong>normocapnia</strong> (hypocapnia ↓ hepatic flow); modest PEEP; lung-protective settings.</li><li>Maintain MAP with fluids first, then <strong>noradrenaline</strong> (or vasopressin/terlipressin for splanchnic tone) — the vasodilated circulation is often catecholamine-resistant.</li></ul></div></div>
+      <div class="flowchart-step"><div class="fc-node fc-green">4</div><div class="fc-content"><h4>Fluids, coagulation, glucose &amp; temperature</h4><ul><li><strong>Goal-directed fluid therapy</strong> — individualised, guided by fluid-responsiveness and urine output <em>throughout</em>; avoid both hypovolaemia and over-transfusion (raises portal pressure). Balanced crystalloid ± albumin.</li><li><strong>Coagulation:</strong> transfuse to the clinical picture &amp; TEG/ROTEM — fibrinogen (cryo/concentrate), platelets, targeted FFP; consider TXA for hyperfibrinolysis. Avoid prophylactic FFP.</li><li>Monitor and treat <strong>hypoglycaemia</strong>; correct Na⁺/K⁺; <strong>active warming</strong> (hypothermia worsens coagulopathy &amp; drug clearance).</li></ul></div></div>
+      <div class="flowchart-step"><div class="fc-node fc-blue">5</div><div class="fc-content"><h4>Regional anaesthesia</h4><ul><li>Peripheral &amp; truncal blocks reduce opioid load and are useful — but <strong>weigh neuraxial techniques against coagulopathy</strong> (epidural/spinal haematoma risk); assess platelets, fibrinogen &amp; TEG, not just INR, and follow local thresholds.</li></ul></div></div>
+
+      <div class="key-box">
+        <div class="kb-label">⚠️ Potential intra-operative problems to anticipate</div>
+        <p><strong>Coagulopathy &amp; bleeding</strong> · <strong>hypovolaemia &amp; hypotension</strong> (→ ↓ CO → hepatic &amp; renal ischaemia → hypoxaemia) · <strong>hypothermia</strong> · <strong>hypoglycaemia</strong> · citrate toxicity &amp; hypocalcaemia with massive transfusion · worsening encephalopathy · renal injury (HRS).</p>
+      </div>
+    </section>
+
+    <!-- ============ 10 ============ -->
+    <section id="s10">
+      <span class="sb sb-p">🛏️ 10 · Post-operative</span>
+      <h2>Post-operative Care &amp; Analgesia</h2>
+      <div class="marino-box">
+        <div class="mb-label">🔎 What to watch for</div>
+        <ul>
+          <li><strong>Hepatic decompensation &amp; encephalopathy</strong> — minimise sedatives/opioids, continue lactulose, correct electrolytes, avoid constipation, look for a GI bleed.</li>
+          <li><strong>Renal function (HRS)</strong> — hourly urine output, avoid nephrotoxins &amp; hypovolaemia, maintain MAP &amp; albumin.</li>
+          <li><strong>Bleeding &amp; delayed drug effects</strong> — residual neuromuscular block (confirm reversal), prolonged sedation.</li>
+          <li><strong>Sepsis / SBP</strong>, hypoglycaemia, hypothermia, respiratory failure.</li>
+          <li><strong>High-risk patients → HDU/ICU.</strong> The pre-operative <strong>MELD</strong> is a good guide to post-operative mortality risk.</li>
+        </ul>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Analgesia ladder in liver disease</div>
+        <div class="gr-text">
+          <strong>① Regional first:</strong> <strong>epidural infusion of dilute bupivacaine</strong> (opioid-sparing) or a <strong>peripheral / truncal nerve block</strong> — provided coagulation is acceptable.<br>
+          <strong>② Paracetamol</strong> — safe at a <strong>reduced dose</strong> (≤2–3 g/day) and short duration; still the multimodal backbone.<br>
+          <strong>③ Opioids</strong> — use sparingly and titrated; prefer <strong>fentanyl</strong>; expect prolonged effect; avoid morphine/pethidine accumulation.<br>
+          <strong>④ Avoid NSAIDs</strong> — GI-bleed &amp; renal (HRS) risk, and platelet effect.
+        </div>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>The dominant aetiologies are <strong>hepatitis B/C and alcohol-related liver disease</strong>, often presenting late and decompensated. Practical realities: <strong>terlipressin</strong> is widely available and first-line for variceal bleeding &amp; HRS; <strong>viscoelastic testing (TEG/ROTEM)</strong> and human <strong>albumin</strong> may be limited outside tertiary centres — so use component therapy judiciously, avoid over-transfusing FFP, and don't correct INR reflexively. Take strict <strong>universal blood/body-fluid precautions</strong> (high hepatitis B/C prevalence). Where a liver-transplant programme is not accessible, honest risk communication and deferral of non-essential elective surgery in Child C / high-MELD patients is essential.</p>
+      </div>
+    </section>
+
+    <!-- ============ 11 ============ -->
+    <section id="s11">
+      <span class="sb sb-e">⚠️ 11 · Common Mistakes</span>
+      <h2>Common Mistakes in Anaesthesia for CLD</h2>
+      <div class="mc"><div class="ml">❌ Mistake 1 — "Correcting" the INR before every procedure</div><p>Cirrhotic coagulopathy is <strong>rebalanced</strong>; INR does not predict bleeding. Prophylactic FFP raises portal pressure and can worsen variceal bleeding. Use TEG/ROTEM and treat fibrinogen/platelets for <em>actual</em> bleeding.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 2 — Standard opioid &amp; sedative doses</div><p>Morphine (M-6-G) and pethidine (norpethidine) accumulate; benzodiazepines precipitate encephalopathy. Titrate, prefer fentanyl/remifentanil, and minimise premed.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 3 — Long-acting/organ-dependent relaxants without monitoring</div><p>Vecuronium, rocuronium and pancuronium are prolonged. Use <strong>atracurium/cisatracurium</strong> (Hofmann) and monitor TOF; have sugammadex for roc/vec.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 4 — Ignoring aspiration risk</div><p>Ascites and GI bleeding raise intra-abdominal pressure and delay emptying. Plan an <strong>RSI</strong>; don't do a gentle gas induction on a tense, bleeding abdomen.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 5 — Letting the blood pressure and CO drift down</div><p>The portal vein can't autoregulate and the HABR is impaired under anaesthesia — hypotension, low CO and hypocapnia cause hepatic ischaemia. Maintain MAP, normocapnia and flow.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 6 — Using halothane / nephrotoxins / NSAIDs</div><p>Halothane risks immune hepatitis; NSAIDs and aminoglycosides precipitate HRS. Choose sevoflurane/isoflurane and protect the kidney.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 7 — Operating electively on decompensated (Child C / high-MELD) disease</div><p>Mortality is prohibitive. Optimise, involve hepatology, and defer or refer for transplant where possible.</p></div>
+      <div class="mc"><div class="ml">❌ Mistake 8 — Forgetting glucose &amp; temperature</div><p>Hypoglycaemia (depleted glycogen) and hypothermia (worsens coagulopathy &amp; drug clearance) are silent and preventable.</p></div>
+    </section>
+
+    <!-- ============ 12 ============ -->
+    <section id="s12">
+      <span class="sb sb-x">🎓 12 · Exam Pearls — DrNB / MD / EDAIC</span>
+      <h2>Exam Pearls</h2>
+      <div class="ec"><p><strong>Q: Describe the dual blood supply and the HABR.</strong><br>Hepatic artery 20–30% (high O₂), portal vein 70–80% (low O₂) — each supplies ~half the O₂. The <strong>hepatic arterial buffer response</strong> keeps total flow constant via adenosine washout: ↓ portal flow → adenosine accumulates → HA dilates. The portal vein cannot autoregulate, and the HABR is blunted by anaesthesia/hypotension.</p></div>
+      <div class="ec"><p><strong>Q: Why doesn't INR predict bleeding in cirrhosis?</strong><br>Both pro- and anti-coagulant factors fall together (rebalanced haemostasis); factor VIII &amp; vWF are made outside the liver and may be normal/high. Assess with TEG/ROTEM, fibrinogen and platelets, not INR alone.</p></div>
+      <div class="ec"><p><strong>Q: Muscle relaxant &amp; opioid of choice?</strong><br>Relaxant — <strong>atracurium/cisatracurium</strong> (Hofmann elimination, organ-independent). Opioid — <strong>remifentanil</strong> (plasma esterase) if infusing; <strong>fentanyl</strong> for boluses. Avoid morphine (M-6-G) and pethidine (norpethidine).</p></div>
+      <div class="ec"><p><strong>Q: Compare CTP and MELD.</strong><br>CTP = albumin, bilirubin, INR, ascites, encephalopathy (A-B-E-A-I) → 1-month mortality; subjective, excludes renal function. MELD = creatinine, bilirubin, INR (objective, includes kidney) → 3-month mortality; MELD-Na → 1-year. Child A operative mortality ~10%, B ~30%, C ~70%+.</p></div>
+      <div class="ec"><p><strong>Q: Define the hepatopulmonary syndrome.</strong><br>Triad: liver disease + intrapulmonary vascular dilatation + hypoxaemia (A–a gradient ≥15). Hallmark <strong>orthodeoxia</strong> (SpO₂ falls on standing). Dx: contrast echo / Tc-99m MAA scan. Rx: O₂; definitive = transplant.</p></div>
+      <div class="ec"><p><strong>Q: How does POPH differ, and when is transplant contraindicated?</strong><br>POPH = pulmonary arterial hypertension from portal HTN (mPAP &gt;25, PCWP &lt;15, PVR &gt;3 WU). <strong>mPAP &gt;50 with high PVR contraindicates transplant.</strong> Rx: prostacyclin, bosentan, sildenafil, inhaled NO.</p></div>
+      <div class="ec"><p><strong>Q: Pathogenesis &amp; treatment of hepatic encephalopathy?</strong><br>Gut-derived ammonia bypasses the liver → astrocyte glutamine ↑ → swelling → altered neurotransmission. West Haven I–IV. Treat precipitants (GI bleed, sepsis, electrolytes, sedatives), lactulose, rifaximin.</p></div>
+      <div class="ec"><p><strong>Q: What is hepatorenal syndrome and how is it treated?</strong><br>Functional, pre-renal renal failure from splanchnic vasodilatation → renal vasoconstriction; diagnosis of exclusion (no shock, nephrotoxins or structural disease; no response to albumin + diuretic withdrawal). Rx: albumin + <strong>terlipressin</strong> (or midodrine/octreotide/noradrenaline); definitive = transplant.</p></div>
+      <div class="ec"><p><strong>Q: SAAG interpretation?</strong><br>SAAG ≥1.1 g/dL = portal hypertension (cirrhosis, alcoholic hepatitis, cardiac); &lt;1.1 = non-portal (TB, malignancy, nephrotic, pancreatic).</p></div>
+      <div class="ec"><p><strong>Q: Which volatile agents, and why avoid halothane?</strong><br>Isoflurane best preserves hepatic blood flow; sevoflurane is minimally metabolised and preferred. Halothane (≈20% metabolised) → oxidative/reductive metabolites &amp; immune "halothane hepatitis" — avoid.</p></div>
+    </section>
+
+    <!-- ============ 13 ============ -->
+    <section id="s13" class="references-section">
+      <span class="sb sb-r">📚 13 · References</span>
+      <h2>References</h2>
+      <ol class="ref-list">
+        <li><strong>Hines RL, Marschall KE (eds).</strong> Stoelting's Anesthesia and Co-Existing Disease, 8th Edition. Liver Diseases. Elsevier; 2022.</li>
+        <li><strong>Gropper MA, et al. (eds).</strong> Miller's Anesthesia, 9th Edition. Anesthesia for Hepatic Surgery &amp; Patients with Liver Disease. Elsevier; 2020.</li>
+        <li><strong>Barash PG, et al. (eds).</strong> Clinical Anesthesia, 9th Edition. Anesthesia and the Hepatobiliary System. Wolters Kluwer; 2023.</li>
+        <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology, 6th Edition. Anesthesia for Patients with Liver Disease. McGraw-Hill; 2018.</li>
+        <li><strong>Stoelting RK, Hillier SC.</strong> Pharmacology &amp; Physiology in Anesthetic Practice, 6th Edition. Hepatic Drug Clearance &amp; the Extraction Ratio. Wolters Kluwer; 2021.</li>
+        <li><strong>European Association for the Study of the Liver (EASL).</strong> Clinical Practice Guidelines on the management of ascites, SBP, and hepatorenal syndrome; and on decompensated cirrhosis. <em>J Hepatol.</em></li>
+        <li><strong>Northup PG, et al.</strong> Coagulation in liver disease — rebalanced haemostasis. <em>Hepatology / J Hepatol.</em></li>
+        <li>Compiled from the teaching notes of <strong>Dr. Tanya Chawla</strong> (Anaesthesia &amp; Critical Care).</li>
+      </ol>
+    </section>
+
+  </main>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>
