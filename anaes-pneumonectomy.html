@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Anaesthesia for Pneumonectomy — Overview &amp; Contents — CritCare.in</title>
+  <meta name="description" content="Anaesthesia for pneumonectomy / lung resection — a tabbed thoracic topic: pre-thoracotomy assessment (three-legged stool, ppoFEV1), optimisation & plan, lung isolation (DLT), one-lung ventilation, analgesia/recovery and exam pearls. From Dr. Tanya Chawla's notes with Miller, Morgan & Mikhail and Stoelting." />
+  <link rel="canonical" href="https://critcare.in/anaes-pneumonectomy.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › Anaesthesia for Pneumonectomy</div>
+    <h1>🫁 Anaesthesia for Pneumonectomy</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Thoracic · OLV</span><span class="topic-tag">ppoFEV₁ / VO₂max</span><span class="topic-tag">DLT</span><span class="topic-tag">Thoracic epidural</span><span class="topic-updated">Miller (Slinger) / Morgan &amp; Mikhail / Stoelting · from Dr. Tanya Chawla's notes</span>
+    </div>
+    <div class="topic-reviewed" style="margin-top:.6rem"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, EM &amp; Critical Care</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Anaesthesia for Pneumonectomy sections">
+    <a href="anaes-pneumonectomy.html" class="active"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-pneumonectomy-preop.html"><span class="t-ic">🔬</span>Pre-op</a>
+    <a href="anaes-pneumonectomy-plan.html"><span class="t-ic">💪</span>Optimisation & Plan</a>
+    <a href="anaes-pneumonectomy-isolation.html"><span class="t-ic">🫁</span>Lung Isolation</a>
+    <a href="anaes-pneumonectomy-olv.html"><span class="t-ic">💨</span>One-Lung Ventilation</a>
+    <a href="anaes-pneumonectomy-recovery.html"><span class="t-ic">🛏️</span>Analgesia & Recovery</a>
+    <a href="anaes-pneumonectomy-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+  <div class="book-quote">
+    <p>"Lung resection asks two questions at once — can the patient survive the operation, and can they live with the lung that remains? This topic is split into short, focused tabs; read them in order or jump to what you need."</p>
+    <cite>How to use this topic — CritCare.in.</cite>
+  </div>
+
+<span class="sb sb-w">📘 1 · Miller / Slinger — The Problem</span>
+  <h2>Why Pneumonectomy Is High-Risk Thoracic Anaesthesia</h2>
+  <div class="book-quote">
+    <p>"Thoracic anaesthesia for lung resection asks two questions at once: can this patient <em>survive the operation</em>, and can they <em>live with the lung that remains</em>? Add one-lung ventilation, a lateral thoracotomy, large fluid shifts and a population of heavy smokers with limited reserve, and pneumonectomy becomes one of the highest-risk elective operations in general surgery."</p>
+    <cite>Synthesised from Miller's Anesthesia (Slinger) &amp; Morgan &amp; Mikhail's Clinical Anesthesiology.</cite>
+  </div>
+  <div class="marino-box">
+    <div class="mb-label">🎯 Illustrative case</div>
+    <p>A <strong>35-year-old man with carcinoma of the lung</strong>, PFTs showing <strong>FEV₁ 78%</strong> and <strong>FVC 65%</strong>, planned for <strong>VATS lobectomy / pneumonectomy</strong>. The task: <strong>assess &amp; optimise</strong>, and formulate an <strong>anaesthetic plan</strong>. The framework below applies to any major lung resection.</p>
+  </div>
+  <div class="keydiff">
+    <div class="mb-label">🧭 The three questions of pre-thoracotomy assessment</div>
+    <ul>
+      <li>Identify the patient's <strong>ability to tolerate the procedure</strong>.</li>
+      <li>Identify the <strong>high-risk patient</strong>.</li>
+      <li>Stratify peri-operative management and <strong>focus resources on high-risk patients</strong> to improve outcome.</li>
+    </ul>
+  </div>
+  <div class="hub-grid">
+    <a class="hub-card" href="anaes-pneumonectomy-preop.html">
+      <span class="hc-ic">🔬</span><span class="hc-n">01 · PRE-OP</span>
+      <h3>Pre-operative Assessment</h3>
+      <p>The 4 Ms, Hoover's sign, investigations, the <strong>three-legged stool</strong>, ppoFEV₁ and the exercise tests.</p>
+    </a>
+    <a class="hub-card" href="anaes-pneumonectomy-plan.html">
+      <span class="hc-ic">💪</span><span class="hc-n">02 · OPTIMISATION &amp; PLAN</span>
+      <h3>Optimisation, Plan &amp; Monitoring</h3>
+      <p>The <strong>5-pronged optimisation</strong>, GA + controlled ventilation + thoracic epidural, monitoring and induction.</p>
+    </a>
+    <a class="hub-card" href="anaes-pneumonectomy-isolation.html">
+      <span class="hc-ic">🫁</span><span class="hc-n">03 · LUNG ISOLATION</span>
+      <h3>Lung Isolation</h3>
+      <p>DLT / bronchial blocker / endobronchial tube, DLT <strong>sizing &amp; depth</strong>, FOB confirmation and positioning.</p>
+    </a>
+    <a class="hub-card" href="anaes-pneumonectomy-olv.html">
+      <span class="hc-ic">💨</span><span class="hc-n">04 · ONE-LUNG VENTILATION</span>
+      <h3>One-Lung Ventilation</h3>
+      <p>Maintenance, <strong>lung-protective OLV settings</strong>, the approach to hypoxaemia and judicious fluids.</p>
+    </a>
+    <a class="hub-card" href="anaes-pneumonectomy-recovery.html">
+      <span class="hc-ic">🛏️</span><span class="hc-n">05 · ANALGESIA &amp; RECOVERY</span>
+      <h3>Analgesia, Extubation &amp; Complications</h3>
+      <p>Thoracic epidural, intra-op complications, awake extubation and the post-operative complications.</p>
+    </a>
+    <a class="hub-card" href="anaes-pneumonectomy-pearls.html">
+      <span class="hc-ic">🎓</span><span class="hc-n">06 · PEARLS</span>
+      <h3>Mistakes, Pearls &amp; References</h3>
+      <p>Common mistakes, viva-ready exam pearls and references.</p>
+    </a>
+  </div>
+  <div class="tab-pager">
+    <span></span>
+    <a class="tp-next" href="anaes-pneumonectomy-preop.html"><span class="tp-dir">Next →</span><span class="tp-title">🔬 Pre-op</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>
