@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>CLD — Altered Drug Handling — CritCare.in</title>
+  <meta name="description" content="Altered pharmacology in liver disease: the three pharmacokinetic changes, the hepatic extraction ratio (flow- vs capacity-limited), phase I vs II metabolism, and an agent-by-agent guide — induction agents, opioids, muscle relaxants, benzodiazepines and volatiles." />
+  <link rel="canonical" href="https://critcare.in/anaes-cld-pharmacology.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-cld.html">Chronic Liver Disease (Cirrhosis)</a> › Pharmacology</div>
+    <h1>💊 Altered Drug Handling in Liver Disease</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Extraction ratio</span><span class="topic-tag">Atracurium</span><span class="topic-tag">Remifentanil</span><span class="topic-tag">Reduce & titrate</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Chronic Liver Disease (Cirrhosis) sections">
+    <a href="anaes-cld.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-cld-physiology.html"><span class="t-ic">🫀</span>Physiology</a>
+    <a href="anaes-cld-pathophysiology.html"><span class="t-ic">🧩</span>Pathophysiology</a>
+    <a href="anaes-cld-complications.html"><span class="t-ic">💧</span>Complications</a>
+    <a href="anaes-cld-scoring.html"><span class="t-ic">📊</span>Scoring</a>
+    <a href="anaes-cld-pharmacology.html" class="active"><span class="t-ic">💊</span>Pharmacology</a>
+    <a href="anaes-cld-preop.html"><span class="t-ic">📋</span>Pre-op</a>
+    <a href="anaes-cld-intraop.html"><span class="t-ic">🗺️</span>Intra-op</a>
+    <a href="anaes-cld-postop.html"><span class="t-ic">🛏️</span>Post-op</a>
+    <a href="anaes-cld-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s7">
+<span class="sb sb-d">💊 7 · Pharmacology</span>
+      <h2>Altered Drug Handling in Liver Disease</h2>
+      <div class="book-quote">
+        <p>"Hepatic dysfunction changes both what dose is needed and how long a drug lasts. A large volume of distribution and reduced protein binding may demand a <em>normal or larger initial dose</em>, while impaired metabolism and reduced hepatic blood flow <em>prolong</em> the effect. Titrate to effect, choose drugs with organ-independent clearance, and expect a slower recovery."</p>
+        <cite>Synthesised from Stoelting's Pharmacology &amp; Physiology in Anesthetic Practice &amp; Miller's Anesthesia.</cite>
+      </div>
+
+      <h3>Three pharmacokinetic changes</h3>
+      <div class="marino-box">
+        <div class="mb-label">📉 What changes and why</div>
+        <ul>
+          <li><strong>① Large volume of distribution</strong> (ascites, ↑ total body water) → the <strong>initial dose may need to be larger</strong> — but because of hepatocellular dysfunction &amp; reduced metabolism the <strong>effect is prolonged</strong>.</li>
+          <li><strong>② ↓ Albumin → ↑ free (unbound) drug fraction</strong> → a <strong>smaller dose</strong> gives the same clinical effect for highly protein-bound drugs (e.g. thiopentone) — reduce and titrate.</li>
+          <li><strong>③ ↓ Rate of metabolism &amp; ↓ hepatic blood flow</strong> → <strong>prolonged duration of action</strong>.</li>
+          <li><strong>Overarching goal in theatre:</strong> maintain <strong>hepatic blood flow &amp; oxygenation</strong> — maintain cardiac output (which maintains hepatic &amp; renal flow), avoid hypotension, hypocapnia and high airway pressures.</li>
+        </ul>
+      </div>
+
+      <h3>Hepatic metabolism &amp; the extraction ratio</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th></th><th>High extraction ratio (&gt;0.7)</th><th>Low extraction ratio (&lt;0.4)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Rate-limiting step</strong></td><td><strong>Flow-limited</strong> — clearance depends on hepatic blood flow</td><td><strong>Capacity-limited</strong> — clearance depends on enzyme capacity &amp; protein binding</td></tr>
+            <tr><td><strong>Vulnerable to</strong></td><td>↓ Hepatic blood flow (hypotension, low CO, volatiles)</td><td>Enzyme dysfunction / induction / hypoalbuminaemia</td></tr>
+            <tr><td><strong>Examples</strong></td><td>Propofol, lignocaine, morphine, pethidine, fentanyl</td><td>Thiopentone, diazepam, phenytoin, warfarin, rifampicin</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Phase I</strong> reactions (oxidation, reduction, hydrolysis — CYP450) are affected <em>earlier</em> than <strong>Phase II</strong> (conjugation, glucuronidation, sulfation, acetylation, methylation), which is relatively preserved — hence drugs cleared by conjugation (e.g. lorazepam, oxazepam) are "safer" than those needing oxidation.</p>
+
+      <h3>Agent-by-agent</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Drug class</th><th>Behaviour in liver disease</th><th>Preferred?</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Induction — thiopentone</strong></td><td>↓ Albumin → ↑ free drug → <strong>reduce the dose</strong>; effect prolonged</td><td>Use lower dose</td></tr>
+            <tr><td><strong>Induction — propofol</strong></td><td>Short-acting; both hepatic (~70%) &amp; <strong>extrahepatic (~30%)</strong> metabolism → recovery well preserved; watch hypotension</td><td>✅ Reasonable</td></tr>
+            <tr><td><strong>Induction — etomidate</strong></td><td>Cardiostable; can be used safely in <strong>moderate</strong> cirrhosis (single dose)</td><td>✅ Haemodynamically kind</td></tr>
+            <tr><td><strong>Opioid — morphine</strong></td><td>→ M-3-G + <strong>M-6-G (active)</strong> → prolonged action &amp; sedation; accumulates in renal impairment</td><td>⚠️ Caution / avoid</td></tr>
+            <tr><td><strong>Opioid — pethidine</strong></td><td>→ <strong>norpethidine (active, 8–12 h)</strong> → seizures; prolonged</td><td>❌ Avoid</td></tr>
+            <tr><td><strong>Opioid — fentanyl</strong></td><td>→ inactive norfentanyl; no active metabolite</td><td>✅ Opioid of choice (bolus)</td></tr>
+            <tr><td><strong>Opioid — remifentanil</strong></td><td><strong>Ester hydrolysis by plasma / tissue esterases — organ-independent</strong>; context-insensitive half-time unchanged</td><td>✅✅ Ideal if available (infusion)</td></tr>
+            <tr><td><strong>Relaxant — suxamethonium</strong></td><td>Plasma cholinesterase is made in the liver, but effect only prolonged if activity &lt;~50%</td><td>OK for RSI</td></tr>
+            <tr><td><strong>Relaxant — atracurium / cisatracurium</strong></td><td><strong>Hofmann elimination</strong> (spontaneous, pH/temp-dependent) — <strong>organ-independent</strong>; laudanosine metabolite (seizures at high dose)</td><td>✅✅ Relaxant of choice</td></tr>
+            <tr><td><strong>Relaxant — vecuronium / rocuronium / pancuronium</strong></td><td>Hepatic/biliary elimination → <strong>prolonged</strong> block (roc/vec 60–80% protein bound; roc partly renal)</td><td>⚠️ Prolonged — monitor TOF; sugammadex available for roc/vec</td></tr>
+            <tr><td><strong>Benzodiazepines</strong></td><td>Midazolam → active α-hydroxymidazolam; diazepam → nordiazepam (t½ ~60 h). <strong>Lorazepam/oxazepam/temazepam → no active metabolites</strong></td><td>Avoid in/near HE; small midazolam dose acceptable</td></tr>
+            <tr><td><strong>Volatiles</strong></td><td><strong>Isoflurane best preserves hepatic blood flow</strong> (TFA adducts ~0.2%). <strong>Sevoflurane preferred</strong> (minimal metabolism). <strong>Avoid halothane</strong> (20% metabolised → immune "halothane hepatitis")</td><td>✅ Sevoflurane / isoflurane</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="keydiff">
+        <div class="mb-label">⭐ The two drugs to remember for the "organ-independent" answer</div>
+        <ul>
+          <li><strong>Neuromuscular blocker of choice = atracurium / cisatracurium</strong> (Hofmann elimination — no reliance on liver or kidney).</li>
+          <li><strong>Opioid of choice = remifentanil</strong> (plasma esterase metabolism); <strong>fentanyl</strong> is the best bolus opioid. Premedication should be minimal — <strong>avoid sedatives in encephalopathy</strong> (a small dose of midazolam is acceptable in early/mild disease).</li>
+        </ul>
+      </div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-cld-scoring.html"><span class="tp-dir">← Previous</span><span class="tp-title">📊 Scoring</span></a>
+    <a class="tp-next" href="anaes-cld-preop.html"><span class="tp-dir">Next →</span><span class="tp-title">📋 Pre-op</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

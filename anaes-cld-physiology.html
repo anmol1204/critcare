@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>CLD — Liver Anatomy, Blood Supply &amp; Physiology — CritCare.in</title>
+  <meta name="description" content="Applied liver physiology for anaesthesia: functions of the liver, the dual blood supply, the hepatic arterial buffer response (HABR), regulation of hepatic blood flow, and how to read liver function tests." />
+  <link rel="canonical" href="https://critcare.in/anaes-cld-physiology.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-cld.html">Chronic Liver Disease (Cirrhosis)</a> › Physiology</div>
+    <h1>🫀 Liver Anatomy, Blood Supply &amp; Physiology</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Functions</span><span class="topic-tag">Dual blood supply</span><span class="topic-tag">HABR</span><span class="topic-tag">LFTs</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Chronic Liver Disease (Cirrhosis) sections">
+    <a href="anaes-cld.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-cld-physiology.html" class="active"><span class="t-ic">🫀</span>Physiology</a>
+    <a href="anaes-cld-pathophysiology.html"><span class="t-ic">🧩</span>Pathophysiology</a>
+    <a href="anaes-cld-complications.html"><span class="t-ic">💧</span>Complications</a>
+    <a href="anaes-cld-scoring.html"><span class="t-ic">📊</span>Scoring</a>
+    <a href="anaes-cld-pharmacology.html"><span class="t-ic">💊</span>Pharmacology</a>
+    <a href="anaes-cld-preop.html"><span class="t-ic">📋</span>Pre-op</a>
+    <a href="anaes-cld-intraop.html"><span class="t-ic">🗺️</span>Intra-op</a>
+    <a href="anaes-cld-postop.html"><span class="t-ic">🛏️</span>Post-op</a>
+    <a href="anaes-cld-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s2">
+<span class="sb sb-s">🫀 2 · Applied Anatomy &amp; Physiology</span>
+      <h2>The Liver — Structure, Dual Blood Supply &amp; Functions</h2>
+
+      <h3>Functions of the liver (why losing it hurts everywhere)</h3>
+      <div class="sys-grid">
+        <div class="sys-card"><h4>🍬 Carbohydrate metabolism</h4><p>Glycogenesis, glycogenolysis and gluconeogenesis — the liver buffers blood glucose. Loss → <strong>hypoglycaemia</strong> (also ↓ insulin degradation).</p></div>
+        <div class="sys-card"><h4>🧈 Fat metabolism</h4><p>Fatty-acid oxidation (→ acetoacetate), and synthesis of <strong>lipoproteins &amp; cholesterol</strong>.</p></div>
+        <div class="sys-card"><h4>🧬 Protein metabolism</h4><ul><li>Amino acids → glucose / lipids</li><li>Synthesis of <strong>urea</strong>, <strong>plasma proteins (albumin)</strong> and <strong>clotting factors</strong></li></ul></div>
+        <div class="sys-card"><h4>💛 Secretory / excretory</h4><p>Bile (≈ <strong>400–800 mL/day</strong>); excretion of bilirubin, drugs &amp; toxins.</p></div>
+        <div class="sys-card"><h4>🩸 Vascular &amp; reticulo-endothelial</h4><p>Sinusoids lined by endothelial + <strong>Kupffer cells</strong> (phagocytic); a major <strong>blood reservoir</strong>; forms hepatic <strong>lymph</strong> (portal HTN → ↑ sinusoidal pressure → ↑ lymph → ascites).</p></div>
+        <div class="sys-card"><h4>⚙️ Endocrine / metabolic</h4><ul><li>Metabolises IGF-1</li><li>Converts <strong>T4 → T3</strong></li><li><strong>Activates vitamin D</strong></li><li>Metabolises drugs &amp; hormones</li></ul></div>
+      </div>
+
+      <h3>Dual blood supply</h3>
+      <div class="patho-flow">
+        <div class="patho-flow-title">Hepatic blood flow ≈ 25% of cardiac output</div>
+        <div class="pf-node"><strong>Total Hepatic Blood Flow</strong><span class="pf-sub">~1500 mL/min · the liver is a major vascular reservoir</span></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><span class="pf-tag">Hepatic artery</span><strong>20–30% of flow</strong><span class="pf-sub">High O₂ content · supplies ~50% of O₂ · autoregulated</span></div>
+          <div class="pf-node"><span class="pf-tag">Portal vein</span><strong>70–80% of flow</strong><span class="pf-sub">Lower O₂ content but supplies ~50% of O₂ · NOT autoregulated · flow set by splanchnic bed</span></div>
+        </div>
+        <div class="pf-arrow"></div>
+        <div class="pf-node">Delivered together to the <strong>hepatic sinusoids</strong> (perfused at low pressure)</div>
+      </div>
+
+      <div class="marino-box">
+        <div class="mb-label">🔑 Hepatic Arterial Buffer Response (HABR) — the exam favourite</div>
+        <ul>
+          <li>The <strong>hepatic artery</strong> compensates for changes in <strong>portal</strong> flow to keep total hepatic flow (and O₂ delivery) constant. Mediated by <strong>adenosine washout</strong>:</li>
+          <li>↓ Portal flow → adenosine is <em>not</em> washed away → accumulates around the arterioles → <strong>hepatic artery dilates</strong> (buffers the fall).</li>
+          <li>↑ Portal flow → adenosine <em>washed out</em> → hepatic artery constricts.</li>
+          <li><strong>Anaesthetic relevance:</strong> the portal vein cannot autoregulate, so hepatic O₂ delivery depends heavily on the HABR — and the HABR is <strong>impaired by anaesthesia, hypotension, hypocapnia and surgical traction</strong>. Volatiles (esp. halothane) and low CO reduce hepatic flow → the diseased liver becomes ischaemic. <strong>Isoflurane best preserves hepatic flow</strong> among the older volatiles.</li>
+        </ul>
+      </div>
+
+      <div class="guideline-rec">
+        <div class="gr-label">Regulation of hepatic blood flow (HBF)</div>
+        <div class="gr-text">
+          <strong>Intrinsic:</strong> HABR (adenosine) + pressure–flow autoregulation (hepatic artery only) + transmural pressure (↑ → vasoconstriction).<br>
+          <strong>Extrinsic:</strong> <em>Neural</em> — sympathetic stimulation → α-mediated portal venous &amp; arterial vasoconstriction; <em>Humoral</em> — glucagon, secretin (vasodilate), catecholamines, angiotensin, vasopressin (vasoconstrict).
+        </div>
+      </div>
+
+      <div class="keydiff">
+        <div class="mb-label">🧪 Liver function tests — read them like an anaesthetist</div>
+        <ul>
+          <li><strong>Hepatocellular injury:</strong> ALT, AST.</li>
+          <li><strong>Cholestasis:</strong> ALP, 5′-nucleotidase, GGT.</li>
+          <li><strong>Detoxification / excretory:</strong> total &amp; direct bilirubin, serum ammonia.</li>
+          <li><strong>Synthetic function:</strong> serum <strong>albumin</strong>, globulin, and the <strong>coagulation profile / PT</strong>.</li>
+          <li><strong>PT/INR is the single best <em>acute</em> marker of synthetic function</strong> — clotting-factor half-lives are short (~1–12 h) so PT rises quickly, whereas <strong>albumin</strong> (t½ 18–20 days) reflects <em>chronic</em> synthetic capacity.</li>
+          <li><strong>All coagulation factors are made in the liver except von Willebrand factor and factor VIII</strong> (endothelium / megakaryocytes) — hence factor VIII can be normal or high even in advanced disease. Vitamin-K-dependent factors = <strong>II, VII, IX, X</strong> and proteins C, S, Z.</li>
+        </ul>
+      </div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-cld.html"><span class="tp-dir">← Previous</span><span class="tp-title">🏠 Overview</span></a>
+    <a class="tp-next" href="anaes-cld-pathophysiology.html"><span class="tp-dir">Next →</span><span class="tp-title">🧩 Pathophysiology</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

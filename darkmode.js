@@ -49,15 +49,67 @@
     return '<span class="sr-type sr-page">Page</span>';
   }
 
+  // Capped Levenshtein — bails out as soon as the distance clearly exceeds max.
+  function editDist(a, b, max) {
+    var m = a.length, n = b.length;
+    if (Math.abs(m - n) > max) return max + 1;
+    var prev = [], cur = [], i, j;
+    for (j = 0; j <= n; j++) prev[j] = j;
+    for (i = 1; i <= m; i++) {
+      cur[0] = i; var best = cur[0];
+      for (j = 1; j <= n; j++) {
+        var cost = a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1;
+        cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost);
+        if (cur[j] < best) best = cur[j];
+      }
+      if (best > max) return max + 1;
+      for (j = 0; j <= n; j++) prev[j] = cur[j];
+    }
+    return prev[n];
+  }
+  // A query token matches if it's a substring, or a near-miss of some word (typo tolerance).
+  function tokenMatch(tok, words, hay) {
+    if (hay.indexOf(tok) >= 0) return true;
+    if (tok.length < 4) return false;
+    var max = tok.length >= 7 ? 2 : 1;
+    for (var i = 0; i < words.length; i++) {
+      var w = words[i];
+      if (w.length < 3 || Math.abs(w.length - tok.length) > max) continue;
+      if (editDist(tok, w, max) <= max) return true;
+    }
+    return false;
+  }
+  // 120/100 = exact phrase (title / anywhere), 50+ = all tokens, else = #tokens; +title bonus.
+  function scoreItem(item, q, tokens) {
+    var title = item.title.toLowerCase();
+    var hay = (item.title + ' ' + item.tags + ' ' + item.desc).toLowerCase();
+    if (q && hay.indexOf(q) >= 0) return title.indexOf(q) >= 0 ? 120 : 100;
+    if (!tokens.length) return 0;
+    var words = hay.split(/[^a-z0-9]+/), matched = 0, titleHits = 0;
+    for (var i = 0; i < tokens.length; i++) {
+      if (tokenMatch(tokens[i], words, hay)) { matched++; if (title.indexOf(tokens[i]) >= 0) titleHits++; }
+    }
+    if (matched === 0) return 0;
+    return (matched === tokens.length ? 50 + matched : matched) + titleHits * 0.5;
+  }
+
   function doSearch(query) {
     const out = document.getElementById('cc-search-results');
     if (!out) return;
     query = query.trim();
     if (query.length < 2) { out.innerHTML = '<p class="sr-hint">Type at least 2 characters to search…</p>'; return; }
     const q = query.toLowerCase();
-    const matches = (window.CRITCARE_INDEX || []).filter(function (item) {
-      return (item.title + ' ' + item.tags + ' ' + item.desc).toLowerCase().includes(q);
+    const tokens = q.split(/\s+/).filter(function (t) { return t.length > 0; });
+    var scored = [];
+    (window.CRITCARE_INDEX || []).forEach(function (item, i) {
+      var s = scoreItem(item, q, tokens);
+      if (s > 0) scored.push({ item: item, s: s, i: i });
     });
+    var maxS = 0;
+    scored.forEach(function (x) { if (x.s > maxS) maxS = x.s; });
+    if (maxS >= 50) scored = scored.filter(function (x) { return x.s >= 50; });   // drop weak partials when strong hits exist
+    scored.sort(function (a, b) { return b.s - a.s || a.i - b.i; });
+    const matches = scored.slice(0, 25).map(function (x) { return x.item; });
     if (matches.length === 0) {
       out.innerHTML = '<p class="sr-hint">No results for <strong>' + query + '</strong></p>'; return;
     }

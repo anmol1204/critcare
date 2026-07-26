@@ -137,6 +137,60 @@ function setFilter(f, btn) {
   renderSearch(document.getElementById('sp-input').value);
 }
 
+// Capped Levenshtein distance (returns >max as soon as it's clearly exceeded).
+function editDist(a, b, max) {
+  var m = a.length, n = b.length;
+  if (Math.abs(m - n) > max) return max + 1;
+  var prev = [], cur = [], i, j;
+  for (j = 0; j <= n; j++) prev[j] = j;
+  for (i = 1; i <= m; i++) {
+    cur[0] = i;
+    var best = cur[0];
+    for (j = 1; j <= n; j++) {
+      var cost = a.charAt(i - 1) === b.charAt(j - 1) ? 0 : 1;
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + cost);
+      if (cur[j] < best) best = cur[j];
+    }
+    if (best > max) return max + 1;   // whole row already worse than tolerance
+    for (j = 0; j <= n; j++) prev[j] = cur[j];
+  }
+  return prev[n];
+}
+
+// Does a query token appear in the haystack — as a substring, or a near-miss of some word?
+function tokenMatch(tok, words, hay) {
+  if (hay.indexOf(tok) >= 0) return true;
+  if (tok.length < 4) return false;              // too short to fuzzy-match safely
+  var max = tok.length >= 7 ? 2 : 1;
+  for (var i = 0; i < words.length; i++) {
+    var w = words[i];
+    if (w.length < 3) continue;
+    if (Math.abs(w.length - tok.length) > max) continue;
+    if (editDist(tok, w, max) <= max) return true;
+  }
+  return false;
+}
+
+// Score an item against the query. 120/100 = exact phrase (in title / anywhere),
+// 50+ = all tokens match, else = #tokens matched. Title matches get a small bonus
+// so the most on-topic page floats up (e.g. the drug's own page over pages that just mention it).
+function scoreItem(item, q, tokens) {
+  var title = item.title.toLowerCase();
+  var hay = (item.title + ' ' + item.tags + ' ' + item.desc).toLowerCase();
+  if (q && hay.indexOf(q) >= 0) return title.indexOf(q) >= 0 ? 120 : 100;
+  if (!tokens.length) return 0;
+  var words = hay.split(/[^a-z0-9]+/), matched = 0, titleHits = 0;
+  for (var i = 0; i < tokens.length; i++) {
+    if (tokenMatch(tokens[i], words, hay)) {
+      matched++;
+      if (title.indexOf(tokens[i]) >= 0) titleHits++;
+    }
+  }
+  if (matched === 0) return 0;
+  var base = matched === tokens.length ? 50 + matched : matched;
+  return base + titleHits * 0.5;
+}
+
 function renderSearch(query) {
   var out = document.getElementById('sp-results');
   var cnt = document.getElementById('sp-count');
@@ -144,12 +198,28 @@ function renderSearch(query) {
   query = (query || '').trim();
   var q = query.toLowerCase();
 
-  var matches = idx.filter(function(item) {
-    var typeOk = activeFilter === 'all' || item.type === activeFilter;
-    if (!typeOk) return false;
-    if (!q || q.length < 2) return activeFilter !== 'all';
-    return (item.title + ' ' + item.tags + ' ' + item.desc).toLowerCase().includes(q);
+  var typeItems = idx.filter(function(item) {
+    return activeFilter === 'all' || item.type === activeFilter;
   });
+
+  var matches;
+  if (!q || q.length < 2) {
+    // No real query: show everything of the selected type (nothing when filter is 'all').
+    matches = activeFilter === 'all' ? [] : typeItems;
+  } else {
+    var tokens = q.split(/\s+/).filter(function(t) { return t.length > 0; });
+    var scored = [];
+    for (var i = 0; i < typeItems.length; i++) {
+      var s = scoreItem(typeItems[i], q, tokens);
+      if (s > 0) scored.push({ item: typeItems[i], s: s, i: i });
+    }
+    // If any strong (exact / all-token) matches exist, drop the weak partial-token ones.
+    var maxS = 0;
+    scored.forEach(function(x) { if (x.s > maxS) maxS = x.s; });
+    if (maxS >= 50) scored = scored.filter(function(x) { return x.s >= 50; });
+    scored.sort(function(a, b) { return b.s - a.s || a.i - b.i; });   // score desc, else index order
+    matches = scored.map(function(x) { return x.item; });
+  }
 
   if (!q && activeFilter === 'all') {
     cnt.textContent = '';

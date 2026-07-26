@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Cleft — Pre-operative Assessment &amp; Concerns — CritCare.in</title>
+  <meta name="description" content="Pre-operative assessment for cleft repair: the history, airway examination and the COPUR paediatric airway score, investigations, optimisation and premedication — and the five anaesthesia concerns (paediatric, difficult airway, shared airway, associated anomalies, bleeding)." />
+  <link rel="canonical" href="https://critcare.in/anaes-cleft-preop.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-cleft-lip-palate.html">Anaesthesia for Cleft Lip &amp; Palate</a> › Pre-op</div>
+    <h1>📋 Pre-operative Assessment &amp; Anaesthesia Concerns</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">COPUR score</span><span class="topic-tag">Defer for URTI</span><span class="topic-tag">Shared airway</span><span class="topic-tag">Avoid sedative premed</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Anaesthesia for Cleft Lip &amp; Palate sections">
+    <a href="anaes-cleft-lip-palate.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-cleft-classification.html"><span class="t-ic">🧬</span>Classification</a>
+    <a href="anaes-cleft-syndromes.html"><span class="t-ic">🧩</span>Syndromes &amp; CHD</a>
+    <a href="anaes-cleft-timing.html"><span class="t-ic">🗓️</span>Timing</a>
+    <a href="anaes-cleft-preop.html" class="active"><span class="t-ic">📋</span>Pre-op</a>
+    <a href="anaes-cleft-intraop.html"><span class="t-ic">🗺️</span>Intra-op</a>
+    <a href="anaes-cleft-recovery.html"><span class="t-ic">🛏️</span>Recovery</a>
+    <a href="anaes-cleft-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s6">
+<span class="sb sb-f">📋 6 · Pre-operative</span>
+      <h2>Pre-operative Assessment &amp; Optimisation</h2>
+      <div class="guideline-rec">
+        <div class="gr-label">History — screen for</div>
+        <div class="gr-text">
+          <strong>① Associated anomalies / syndromes</strong> (see §3) — and a perceived pause/obstruction during sleep (OSA).<br>
+          <strong>② Acute ENT problems</strong> — active URTI, running nose, ear infection, hearing loss.<br>
+          <strong>③ Cardiac symptoms</strong> — cyanosis on crying, failure to thrive, murmur → cardiology + echo.<br>
+          <strong>④ Feeding difficulty</strong> — nasal regurgitation, poor weight gain, nutritional deficiency.
+        </div>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Airway examination</div>
+        <div class="gr-text">Assess for <strong>retrognathia / micrognathia</strong>, mouth opening, the extent of the cleft (hard vs soft palate, uni/bilateral, protruding pre-maxilla), neck movement (associations), and any active nasal discharge. A normal-looking mouth opening &amp; neck (no retrognathia) predicts an easier airway.</div>
+      </div>
+      <div class="marino-box">
+        <div class="mb-label">📊 COPUR — Colorado Paediatric Airway Score</div>
+        <p>A paediatric difficult-airway score for cleft/craniofacial children — grade each 1 (easy) → 4 (difficult): <strong>C</strong>hin (mandibular hypoplasia), <strong>O</strong>pening (interdental space: &gt;40 / 20–40 / 10–20 / &lt;10 mm), <strong>P</strong>revious intubation or OSA, <strong>U</strong>vula/palate anatomy, <strong>R</strong>ange of neck movement. A high score flags an anticipated difficult airway → plan accordingly.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Investigation</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td><strong>CBC (Hb, TLC/DLC)</strong></td><td>Anaemia (malnutrition), active infection (URTI/LRTI)</td></tr>
+            <tr><td><strong>Blood group &amp; cross-match</strong></td><td>Small blood volume; vascular field</td></tr>
+            <tr><td><strong>Chest X-ray</strong></td><td>LRTI, cardiac size, spine anomalies</td></tr>
+            <tr><td><strong>ECG &amp; 2D echocardiography</strong></td><td>If a murmur is heard / CHD suspected; also screens for pulmonary hypertension (OSA)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Optimisation &amp; premedication <span class="gr-s">Key</span></div>
+        <div class="gr-text">
+          <strong>Defer for active URTI</strong> — postpone elective surgery for <strong>~2–4 weeks</strong> after a respiratory infection (airway hyper-reactivity → laryngospasm/desaturation).<br>
+          <strong>① Blood grouping &amp; cross-match. ② Antibiotic prophylaxis</strong> (coexisting congenital anomalies / IE risk). <strong>③ Avoid sedative premedication</strong> (airway obstruction risk). <strong>④ Antisialagogue</strong> — inj. <strong>glycopyrrolate</strong> or <strong>atropine 0.02 mg/kg</strong> to reduce secretions &amp; the chance of laryngospasm. Continue routine <strong>fasting</strong> guidelines.
+        </div>
+      </div>
+</section>
+
+<section id="s7">
+<span class="sb sb-e">⚠️ 7 · Concerns</span>
+      <h2>Anaesthesia-Related Concerns at a Glance</h2>
+      <div class="patho-flow">
+        <div class="patho-flow-title">Anaesthesia concerns → what they translate to</div>
+        <div class="pf-node"><strong>Shared airway</strong><span class="pf-sub">Tube kinking / obstruction / disconnection / accidental extubation · airway obstruction · laryngospasm · PONV</span></div>
+        <div class="pf-arrow"></div>
+        <div class="pf-split pf-converge">
+          <div class="pf-node"><span class="pf-tag">Airway</span><strong>DMV &amp; difficult intubation</strong><span class="pf-sub">Difficult mask ventilation, difficult DL, special (RAE) ETT</span></div>
+          <div class="pf-node"><span class="pf-tag">Physiology</span><strong>Paediatric</strong><span class="pf-sub">Analgesia, fluid management, avoid hypothermia</span></div>
+          <div class="pf-node"><span class="pf-tag">Surgical</span><strong>Bleeding</strong><span class="pf-sub">Retractor/gag → kinking, bleeding, extubation risk; adrenaline infiltration</span></div>
+        </div>
+      </div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-cleft-timing.html"><span class="tp-dir">← Previous</span><span class="tp-title">🗓️ Timing</span></a>
+    <a class="tp-next" href="anaes-cleft-intraop.html"><span class="tp-dir">Next →</span><span class="tp-title">🗺️ Intra-op</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

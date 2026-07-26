@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>CLD — Post-operative Care &amp; Analgesia — CritCare.in</title>
+  <meta name="description" content="Post-operative care in chronic liver disease: watching for decompensation, encephalopathy, renal injury, bleeding and sepsis; the analgesia ladder (regional first, reduced-dose paracetamol, cautious opioids, avoid NSAIDs); and the Indian context." />
+  <link rel="canonical" href="https://critcare.in/anaes-cld-postop.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-cld.html">Chronic Liver Disease (Cirrhosis)</a> › Post-op</div>
+    <h1>🛏️ Post-operative Care &amp; Analgesia</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Watch decompensation</span><span class="topic-tag">Analgesia ladder</span><span class="topic-tag">Avoid NSAIDs</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Chronic Liver Disease (Cirrhosis) sections">
+    <a href="anaes-cld.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-cld-physiology.html"><span class="t-ic">🫀</span>Physiology</a>
+    <a href="anaes-cld-pathophysiology.html"><span class="t-ic">🧩</span>Pathophysiology</a>
+    <a href="anaes-cld-complications.html"><span class="t-ic">💧</span>Complications</a>
+    <a href="anaes-cld-scoring.html"><span class="t-ic">📊</span>Scoring</a>
+    <a href="anaes-cld-pharmacology.html"><span class="t-ic">💊</span>Pharmacology</a>
+    <a href="anaes-cld-preop.html"><span class="t-ic">📋</span>Pre-op</a>
+    <a href="anaes-cld-intraop.html"><span class="t-ic">🗺️</span>Intra-op</a>
+    <a href="anaes-cld-postop.html" class="active"><span class="t-ic">🛏️</span>Post-op</a>
+    <a href="anaes-cld-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s10">
+<span class="sb sb-p">🛏️ 10 · Post-operative</span>
+      <h2>Post-operative Care &amp; Analgesia</h2>
+      <div class="marino-box">
+        <div class="mb-label">🔎 What to watch for</div>
+        <ul>
+          <li><strong>Hepatic decompensation &amp; encephalopathy</strong> — minimise sedatives/opioids, continue lactulose, correct electrolytes, avoid constipation, look for a GI bleed.</li>
+          <li><strong>Renal function (HRS)</strong> — hourly urine output, avoid nephrotoxins &amp; hypovolaemia, maintain MAP &amp; albumin.</li>
+          <li><strong>Bleeding &amp; delayed drug effects</strong> — residual neuromuscular block (confirm reversal), prolonged sedation.</li>
+          <li><strong>Sepsis / SBP</strong>, hypoglycaemia, hypothermia, respiratory failure.</li>
+          <li><strong>High-risk patients → HDU/ICU.</strong> The pre-operative <strong>MELD</strong> is a good guide to post-operative mortality risk.</li>
+        </ul>
+      </div>
+      <div class="guideline-rec">
+        <div class="gr-label">Analgesia ladder in liver disease</div>
+        <div class="gr-text">
+          <strong>① Regional first:</strong> <strong>epidural infusion of dilute bupivacaine</strong> (opioid-sparing) or a <strong>peripheral / truncal nerve block</strong> — provided coagulation is acceptable.<br>
+          <strong>② Paracetamol</strong> — safe at a <strong>reduced dose</strong> (≤2–3 g/day) and short duration; still the multimodal backbone.<br>
+          <strong>③ Opioids</strong> — use sparingly and titrated; prefer <strong>fentanyl</strong>; expect prolonged effect; avoid morphine/pethidine accumulation.<br>
+          <strong>④ Avoid NSAIDs</strong> — GI-bleed &amp; renal (HRS) risk, and platelet effect.
+        </div>
+      </div>
+      <div class="india-box">
+        <div class="kb-label">🇮🇳 Indian Context</div>
+        <p>The dominant aetiologies are <strong>hepatitis B/C and alcohol-related liver disease</strong>, often presenting late and decompensated. Practical realities: <strong>terlipressin</strong> is widely available and first-line for variceal bleeding &amp; HRS; <strong>viscoelastic testing (TEG/ROTEM)</strong> and human <strong>albumin</strong> may be limited outside tertiary centres — so use component therapy judiciously, avoid over-transfusing FFP, and don't correct INR reflexively. Take strict <strong>universal blood/body-fluid precautions</strong> (high hepatitis B/C prevalence). Where a liver-transplant programme is not accessible, honest risk communication and deferral of non-essential elective surgery in Child C / high-MELD patients is essential.</p>
+      </div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-cld-intraop.html"><span class="tp-dir">← Previous</span><span class="tp-title">🗺️ Intra-op</span></a>
+    <a class="tp-next" href="anaes-cld-pearls.html"><span class="tp-dir">Next →</span><span class="tp-title">🎓 Pearls</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

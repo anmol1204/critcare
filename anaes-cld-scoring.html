@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>CLD — Child–Pugh, MELD &amp; Frailty — CritCare.in</title>
+  <meta name="description" content="Risk stratification in cirrhosis: the Child–Turcotte–Pugh score and class-wise perioperative mortality, MELD and MELD-Na, which score predicts which mortality, and the Liver Frailty Index." />
+  <link rel="canonical" href="https://critcare.in/anaes-cld-scoring.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-cld.html">Chronic Liver Disease (Cirrhosis)</a> › Scoring</div>
+    <h1>📊 Severity Scoring — Child–Pugh, MELD &amp; Frailty</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Child–Pugh</span><span class="topic-tag">MELD / MELD-Na</span><span class="topic-tag">Frailty (LFI)</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Chronic Liver Disease (Cirrhosis) sections">
+    <a href="anaes-cld.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-cld-physiology.html"><span class="t-ic">🫀</span>Physiology</a>
+    <a href="anaes-cld-pathophysiology.html"><span class="t-ic">🧩</span>Pathophysiology</a>
+    <a href="anaes-cld-complications.html"><span class="t-ic">💧</span>Complications</a>
+    <a href="anaes-cld-scoring.html" class="active"><span class="t-ic">📊</span>Scoring</a>
+    <a href="anaes-cld-pharmacology.html"><span class="t-ic">💊</span>Pharmacology</a>
+    <a href="anaes-cld-preop.html"><span class="t-ic">📋</span>Pre-op</a>
+    <a href="anaes-cld-intraop.html"><span class="t-ic">🗺️</span>Intra-op</a>
+    <a href="anaes-cld-postop.html"><span class="t-ic">🛏️</span>Post-op</a>
+    <a href="anaes-cld-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s6">
+<span class="sb sb-g">📊 6 · Risk Stratification</span>
+      <h2>Severity Scoring — Child–Pugh, MELD &amp; Frailty</h2>
+      <div class="book-quote">
+        <p>"Perioperative risk in cirrhosis correlates with the degree of hepatic dysfunction. Child–Pugh and MELD both predict mortality; elective surgery is generally acceptable in Child A, cautious in Child B, and contraindicated in Child C or a high MELD until the patient is optimised or transplanted."</p>
+        <cite>Synthesised from Miller's Anesthesia &amp; Stoelting's Co-Existing Disease.</cite>
+      </div>
+
+      <h3>Child–Turcotte–Pugh (CTP)</h3>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Parameter</th><th>1 point</th><th>2 points</th><th>3 points</th></tr></thead>
+          <tbody>
+            <tr><td>Albumin (g/dL)</td><td>&gt;3.5</td><td>2.8–3.5</td><td>&lt;2.8</td></tr>
+            <tr><td>Bilirubin (mg/dL)</td><td>&lt;2</td><td>2–3</td><td>&gt;3</td></tr>
+            <tr><td>INR</td><td>&lt;1.7</td><td>1.7–2.3</td><td>&gt;2.3</td></tr>
+            <tr><td>Ascites</td><td>None</td><td>Mild / controlled</td><td>Moderate–severe / refractory</td></tr>
+            <tr><td>Encephalopathy</td><td>None</td><td>Grade I–II</td><td>Grade III–IV</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="table-wrap">
+        <table class="drug-table">
+          <thead><tr><th>Class</th><th>Score</th><th>Approx. peri-operative mortality (major/abdominal surgery)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>A</strong></td><td>5–6</td><td>~10%</td></tr>
+            <tr><td><strong>B</strong></td><td>7–9</td><td>~17–31%</td></tr>
+            <tr><td><strong>C</strong></td><td>10–15</td><td>~63–82%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="ec"><p><strong>Advantage:</strong> easy, familiar. <strong>Disadvantage:</strong> ascites &amp; encephalopathy are <strong>subjective</strong>, and it does <strong>not include renal function</strong>. Mnemonic — "<strong>A BEAn</strong>": Albumin, Bilirubin, Encephalopathy, Ascites, INR.</p></div>
+
+      <h3>MELD &amp; MELD-Na</h3>
+      <div class="marino-box">
+        <div class="mb-label">🔢 Model for End-stage Liver Disease</div>
+        <ul>
+          <li>Uses <strong>creatinine, bilirubin, INR</strong> ("<strong>C-B-I</strong>") — objective, and importantly <strong>includes renal function</strong> (the main CTP weakness). Range 6–40.</li>
+          <li>Predicts <strong>3-month mortality</strong> and correlates with post-operative complications: <strong>&lt;10 low, 10–15 moderate, &gt;15 high; ≥26 very high risk.</strong></li>
+          <li><strong>90-day mortality by MELD:</strong> &lt;10 ≈ 2% · 10–19 ≈ 6% · 20–29 ≈ 20% · 30–39 ≈ 52% · &gt;40 ≈ 71%.</li>
+          <li><strong>MELD-Na</strong> adds serum sodium (hyponatraemia = worse prognosis) — used for transplant allocation.</li>
+        </ul>
+      </div>
+      <div class="keydiff">
+        <div class="mb-label">⏱ Which score predicts what</div>
+        <ul><li><strong>CTP</strong> → 1-month mortality · <strong>MELD</strong> → 3-month mortality · <strong>MELD-Na</strong> → 1-year mortality. High-risk scores → involve the patient in shared decision-making and consider deferring elective surgery.</li></ul>
+      </div>
+
+      <h3>Frailty &amp; sarcopenia</h3>
+      <div class="ec"><p>The <strong>Liver Frailty Index (LFI)</strong> — grip strength, timed chair-stands and balance — captures the sarcopenia that scores miss: <strong>&lt;3.2 robust, 3.2–4.4 pre-frail, ≥4.5 frail</strong>. Higher LFI predicts wait-list mortality, longer length of stay and worse functional recovery. Look for <strong>temporal wasting</strong> and muscle loss at the bedside.</p></div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-cld-complications.html"><span class="tp-dir">← Previous</span><span class="tp-title">💧 Complications</span></a>
+    <a class="tp-next" href="anaes-cld-pharmacology.html"><span class="tp-dir">Next →</span><span class="tp-title">💊 Pharmacology</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>
