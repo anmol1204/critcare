@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Dexmedetomidine — Selective α2 Agonist — CritCare.in</title>
+  <meta name="description" content="A detailed anaesthesia drug node on dexmedetomidine: the highly selective α2-adrenergic agonist (α2:α1 1600:1), receptor subtypes (α2A/α2B/α2C) and mechanism, pharmacokinetics, cooperative sedation that mimics natural sleep with minimal respiratory depression, analgesia and opioid/MAC sparing, the biphasic cardiovascular response, doses, uses (ICU sedation, premedication, awake fibreoptic, MAC, regional adjuvant) and side effects — from Tanya's notes with Miller's, Morgan & Mikhail's and Stoelting's." />
+  <link rel="canonical" href="https://critcare.in/anaes-dexmedetomidine.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <style>
+    .flow-step{display:flex;gap:.8rem;align-items:flex-start;margin-bottom:.7rem;}
+    .flow-num{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:#fff;flex-shrink:0;margin-top:.15rem;}
+    .flow-body{background:var(--bg-alt);border:1px solid var(--line);border-radius:10px;padding:.85rem 1.1rem;flex:1;}
+    .flow-body h4{font-size:.86rem;font-weight:700;color:var(--ink);margin-bottom:.3rem;}
+    .flow-body p{font-size:.84rem;color:var(--slate);line-height:1.65;margin:0;}
+    .flow-body strong{color:var(--ink);}
+    .tick-list,.cross-list{list-style:none;padding-left:0;margin:.4rem 0;}
+    .tick-list li,.cross-list li{position:relative;padding-left:1.6rem;margin-bottom:.5rem;font-size:.9rem;color:var(--slate);line-height:1.65;}
+    .tick-list li::before{content:"✓";position:absolute;left:0;color:#16a34a;font-weight:800;}
+    .cross-list li::before{content:"✕";position:absolute;left:0;color:#dc2626;font-weight:800;}
+    .tick-list strong,.cross-list strong{color:var(--ink);}
+    .difftitle{margin-top:1.6rem;}
+    .keybox{background:linear-gradient(135deg,#eff6ff,#dbeafe);border:1px solid #93c5fd;border-radius:10px;padding:.7rem 1rem;margin:.6rem 0;font-size:.86rem;color:#1e3a8a;line-height:1.6;}
+    .keybox strong{color:#1e40af;}
+    html.dark .keybox{background:linear-gradient(135deg,#0c2036,#0a2942);border-color:#1d4ed8;color:#bae6fd;} html.dark .keybox strong{color:#93c5fd;}
+  </style>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › Pharmacology › Dexmedetomidine</div>
+    <h1>💤 Dexmedetomidine</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Selective α₂ agonist</span>
+      <span class="topic-tag">Sedation without respiratory depression</span>
+      <span class="topic-tag">Analgesic · Sympatholytic</span>
+    </div>
+    <div class="topic-reviewed"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Compiled by <strong>Dr. Anmol Srivastava</strong> · Notes: Dr. Tanya Chawla · Sources: Miller's Anesthesia · Morgan &amp; Mikhail's · Stoelting's Pharmacology</div>
+  </div>
+</header>
+
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+
+  <div class="book-quote">
+    <p>"Dexmedetomidine is the drug that sedates and provides analgesia while leaving breathing almost untouched — a 'cooperative' sedation that mimics natural sleep. Its two shadows are bradycardia and hypotension, and a transient hypertension if you push the loading dose too fast."</p>
+    <cite>Dr. Tanya Chawla's notes, triangulated with Miller's Anesthesia; Morgan &amp; Mikhail's Clinical Anesthesiology; Stoelting's Pharmacology.</cite>
+  </div>
+
+  <section id="s1">
+    <span class="sb sb-w">🧪 1 · Identity &amp; Chemistry</span>
+    <h2>A highly selective, complete α₂ agonist</h2>
+    <p>Dexmedetomidine is the pharmacologically active <strong>d-enantiomer of medetomidine</strong>, an <strong>imidazole</strong> derivative. It is a <strong>highly selective and complete (full) agonist</strong> at the α₂-adrenergic receptor (a G-protein-coupled receptor). Its defining feature is <strong>selectivity</strong>:</p>
+    <div class="keybox"><strong>α₂ : α₁ selectivity ≈ 1600 : 1</strong> for dexmedetomidine — roughly <strong>8× more selective than clonidine</strong> (~200 : 1). This is why it produces α₂ effects (sedation, analgesia, sympatholysis) with far fewer α₁ effects.</div>
+    <p>It has five clinically useful properties — it is a <strong>hypnotic, sedative, anxiolytic, analgesic and sympatholytic</strong> agent. At <strong>higher doses / rapid boluses</strong> it can also stimulate <strong>α₁ receptors</strong> (contributing to transient vasoconstriction).</p>
+  </section>
+
+  <section id="s2">
+    <span class="sb sb-m">🔬 2 · Receptor Subtypes &amp; Mechanism</span>
+    <h2>Where the α₂ receptors are — and what they do</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Subtype</th><th>Location</th><th>Effect</th></tr></thead>
+        <tbody>
+          <tr><td><strong>α₂A</strong></td><td>CNS — locus coeruleus (brainstem) &amp; presynaptic nerve terminals; dorsal horn</td><td><strong>Sedation, analgesia, sympatholysis</strong> (the main therapeutic effects)</td></tr>
+          <tr><td><strong>α₂B</strong></td><td>Peripheral vascular smooth muscle; thalamus</td><td><strong>Vasoconstriction</strong> → transient hypertension</td></tr>
+          <tr><td><strong>α₂C</strong></td><td>CNS — basal ganglia &amp; hippocampus</td><td>Modulates cognition/analgesia; startle response</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Dexmedetomidine acts predominantly at <strong>α₂A &gt; α₂B</strong>.</p>
+    <div class="patho-flow">
+      <div class="patho-flow-title">Mechanism of action</div>
+      <div class="pf-node"><strong>Agonist at pre-synaptic α₂ receptors</strong><span class="pf-sub">Gi-coupled → ↓ cAMP, ↑ K⁺ efflux, ↓ Ca²⁺ influx</span></div>
+      <div class="pf-arrow"></div>
+      <div class="pf-node">↓ Noradrenaline release → ↓ central sympathetic outflow</div>
+      <div class="pf-arrow"></div>
+      <div class="pf-split pf-converge">
+        <div class="pf-node"><span class="pf-tag">Locus coeruleus</span><strong>Sedation / hypnosis</strong><span class="pf-sub">Mimics natural (non-REM) sleep — arousable, cooperative</span></div>
+        <div class="pf-node"><span class="pf-tag">Dorsal horn (α₂A/α₂C)</span><strong>Analgesia</strong><span class="pf-sub">↓ Substance P &amp; glutamate; C-fibre hyperpolarisation</span></div>
+        <div class="pf-node"><span class="pf-tag">CNS + periphery</span><strong>Sympatholysis</strong><span class="pf-sub">↓ HR, ↓ BP; blunts stress response</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="s3">
+    <span class="sb sb-g">🔄 3 · Pharmacokinetics</span>
+    <h2>Highly protein-bound, hepatically cleared</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+        <tbody>
+          <tr><td>Routes</td><td>IV (usual), IM, oral, <strong>intranasal &amp; nebulised</strong> (highly lipophilic → good mucosal absorption)</td></tr>
+          <tr><td>Protein binding</td><td><strong>~94%</strong></td></tr>
+          <tr><td>Distribution t½</td><td>~6 min (rapid)</td></tr>
+          <tr><td>Elimination t½</td><td><strong>~2–3 h</strong></td></tr>
+          <tr><td>Metabolism</td><td><strong>Hepatic</strong> — glucuronidation, methylation &amp; hydroxylation (CYP2A6) → <strong>inactive metabolites</strong></td></tr>
+          <tr><td>Excretion</td><td>Renal (metabolites) &amp; biliary</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="keybox">Reduce the dose in <strong>hepatic impairment</strong> (clearance is flow- and liver-dependent → prolonged effect). A <strong>large / rapid loading dose</strong> produces <strong>transient hypertension</strong> (peripheral α₂B + α₁ vasoconstriction) — give the load slowly (over ≥10 min) or omit it.</div>
+  </section>
+
+  <section id="s4">
+    <span class="sb sb-s">🧠 4 · CNS Effects</span>
+    <h2>"Cooperative" sedation that mimics sleep</h2>
+    <ul class="tick-list">
+      <li>Acts on α₂ receptors in the <strong>locus coeruleus</strong> → sedation resembling <strong>natural non-REM sleep</strong>: the patient is <strong>arousable and able to follow commands</strong> — ideal for procedures needing cooperation.</li>
+      <li><strong>Analgesia</strong> (supraspinal + spinal, via α₂A/α₂C in the dorsal horn) → <strong>opioid-sparing</strong>, <strong>reduces MAC</strong> and post-operative analgesic requirement; a useful <strong>adjuvant in central/peripheral neuraxial blockade</strong>.</li>
+      <li><strong>Reduces the incidence of emergence agitation &amp; delirium</strong> — patients experience less delirium when sedated with dexmedetomidine.</li>
+      <li>Possible <strong>neuroprotective role</strong> (modulation of pro-/anti-apoptotic proteins; ↓ glutamate).</li>
+      <li>Does <strong>not</strong> significantly affect <strong>evoked potentials</strong> (amplitudes/latencies) → can be used during <strong>neurophysiological monitoring</strong> and <strong>wake-up tests</strong>.</li>
+    </ul>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th>Plasma concentration</th><th>State</th></tr></thead>
+        <tbody>
+          <tr><td>~0.2–0.3 ng/mL</td><td>Arousable to touch (light, cooperative sedation)</td></tr>
+          <tr><td>~1.9 ng/mL</td><td>Unarousable (deep sedation)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="s5">
+    <span class="sb sb-f">🫁 5 · Respiratory Effects</span>
+    <h2>The signature advantage — minimal respiratory depression</h2>
+    <ul class="tick-list">
+      <li>Reduces minute ventilation but with <strong>no significant change in arterial oxygenation</strong> and a <strong>preserved response to CO₂</strong>.</li>
+      <li>The <strong>hypercapnic arousal response is preserved</strong> — as in normal sleep — so apnoea is rare even at deep sedation levels.</li>
+      <li>This makes it uniquely suited to sedating patients with an <strong>unsecured airway</strong> (awake fibreoptic intubation, MRI/procedural sedation, obstructive sleep apnoea).</li>
+    </ul>
+  </section>
+
+  <section id="s6">
+    <span class="sb sb-e">🫀 6 · Cardiovascular Effects &amp; Side Effects</span>
+    <h2>A biphasic blood-pressure response</h2>
+    <div class="flow-step"><div class="flow-num" style="background:#b45309;">1</div><div class="flow-body"><h4>Early / bolus phase — transient hypertension + reflex bradycardia</h4><p>A rapid loading dose stimulates <strong>peripheral post-synaptic α₂B (and α₁) receptors</strong> on vascular smooth muscle → <strong>vasoconstriction → ↑ BP</strong>, with a <strong>reflex bradycardia</strong>. Minimise by giving the load slowly or omitting it.</p></div></div>
+    <div class="flow-arrow" style="text-align:center;color:var(--blue);">↓</div>
+    <div class="flow-step"><div class="flow-num" style="background:#1e40af;">2</div><div class="flow-body"><h4>Later / central phase — hypotension &amp; bradycardia</h4><p>Central sympatholysis dominates → <strong>↓ BP and ↓ HR</strong>. This is the sustained effect during infusion.</p></div></div>
+    <h3 class="difftitle">Side effects</h3>
+    <ul class="cross-list">
+      <li><strong>Hypotension</strong> (dose-dependent).</li>
+      <li><strong>Bradycardia</strong> — occasionally profound; caution with other negative chronotropes/heart block.</li>
+      <li><strong>AV block / AV dissociation.</strong></li>
+      <li><strong>Transient hypertension</strong> with rapid loading.</li>
+    </ul>
+    <div class="keybox">Antagonist / reversal agent: <strong>atipamezole</strong> (a selective α₂ antagonist).</div>
+  </section>
+
+  <section id="s7">
+    <span class="sb sb-x">💉 7 · Doses &amp; Uses</span>
+    <h2>Dose</h2>
+    <div class="keybox"><strong>ICU sedation:</strong> loading dose <strong>1 µg/kg IV over 10 min</strong>, then maintenance infusion <strong>0.2–0.7 µg/kg/h</strong>. (Intranasal premedication in children ~1–2 µg/kg.)</div>
+    <h3 class="difftitle">Uses</h3>
+    <ul class="tick-list">
+      <li><strong>ICU sedation</strong> — cooperative, extubation-friendly sedation with little respiratory depression.</li>
+      <li><strong>Wake-up tests</strong> &amp; neurophysiological monitoring (does not abolish evoked potentials).</li>
+      <li><strong>↓ Emergence agitation &amp; delirium.</strong></li>
+      <li><strong>Premedication</strong> (anxiolysis, antisialagogue-like drying, blunts intubation/extubation pressor response).</li>
+      <li><strong>Reduces intra-operative anaesthetic requirement</strong> (MAC- and opioid-sparing); adjunct to <strong>maintenance of anaesthesia / TIVA</strong>.</li>
+      <li><strong>Awake fibreoptic intubation</strong> and <strong>awake craniotomy</strong>.</li>
+      <li><strong>Monitored anaesthesia care (MAC)</strong> — sedation for procedures under local/regional anaesthesia or for <strong>MRI</strong>.</li>
+      <li><strong>Regional adjuvant</strong> — prolongs neuraxial &amp; peripheral nerve blocks; used in <strong>IVRA</strong>.</li>
+      <li><strong>Treatment of alcohol / drug withdrawal</strong> and post-operative shivering.</li>
+    </ul>
+  </section>
+
+  <section id="s8">
+    <span class="sb sb-d">⭐ 8 · Dexmedetomidine vs Clonidine</span>
+    <h2>Key differences</h2>
+    <div class="table-wrap">
+      <table class="drug-table">
+        <thead><tr><th></th><th>Dexmedetomidine</th><th>Clonidine</th></tr></thead>
+        <tbody>
+          <tr><td>α₂ : α₁ selectivity</td><td><strong>~1600 : 1</strong></td><td>~200 : 1</td></tr>
+          <tr><td>Agonist type</td><td>Full agonist</td><td>Partial agonist</td></tr>
+          <tr><td>Elimination t½</td><td>~2–3 h (titratable IV infusion)</td><td>~6–12 h (longer)</td></tr>
+          <tr><td>Typical use</td><td>IV sedation/infusion, procedural sedation, block adjuvant</td><td>Oral/neuraxial premed &amp; adjuvant, hypertension</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul class="tick-list">
+      <li>Both are advantages: <strong>excellent sedation, potentiates opioid analgesia &amp; benzodiazepine hypnosis, ↓ emergence delirium, mimics natural sleep with little respiratory depression, sympatholytic, and ↓ myocardial O₂ consumption</strong> (potentially protective).</li>
+    </ul>
+  </section>
+
+  <section id="s9">
+    <span class="sb sb-x">🎓 9 · Exam Pearls</span>
+    <h2>High-yield one-liners</h2>
+    <div class="ec"><p><strong>Q: α₂:α₁ selectivity of dexmedetomidine vs clonidine?</strong><br>~1600:1 vs ~200:1 — dexmedetomidine is far more selective.</p></div>
+    <div class="ec"><p><strong>Q: Why so little respiratory depression?</strong><br>It sedates via the locus coeruleus mimicking natural sleep; the hypercapnic arousal/CO₂ response is preserved.</p></div>
+    <div class="ec"><p><strong>Q: Explain the biphasic BP response.</strong><br>Rapid bolus → peripheral α₂B/α₁ vasoconstriction → transient hypertension + reflex bradycardia; then central sympatholysis → hypotension &amp; bradycardia.</p></div>
+    <div class="ec"><p><strong>Q: Which receptor subtype mediates sedation vs vasoconstriction?</strong><br>α₂A (locus coeruleus) → sedation/analgesia/sympatholysis; α₂B (vascular smooth muscle) → vasoconstriction.</p></div>
+    <div class="ec"><p><strong>Q: Loading and maintenance dose for ICU sedation?</strong><br>1 µg/kg over 10 min, then 0.2–0.7 µg/kg/h.</p></div>
+    <div class="ec"><p><strong>Q: Antagonist?</strong><br>Atipamezole.</p></div>
+    <div class="ec"><p><strong>Q: Why is it ideal for awake fibreoptic intubation and awake craniotomy?</strong><br>Cooperative, arousable sedation + analgesia + drying of secretions with minimal respiratory depression, and it does not abolish evoked potentials.</p></div>
+  </section>
+
+  <section id="s10">
+    <span class="sb sb-r">📚 10 · References</span>
+    <h2>References</h2>
+    <ol class="ref-list">
+      <li><strong>Dr. Tanya Chawla.</strong> Dexmedetomidine — handwritten viva notes (primary source for this node).</li>
+      <li><strong>Gropper MA, Cohen NH, Eriksson LI, et al. (eds).</strong> Miller's Anesthesia. 9th ed. Elsevier; 2020.</li>
+      <li><strong>Butterworth JF, Mackey DC, Wasnick JD.</strong> Morgan &amp; Mikhail's Clinical Anesthesiology. 7th ed. McGraw-Hill; 2022.</li>
+      <li><strong>Flood P, Rathmell JP, Urman RD.</strong> Stoelting's Pharmacology &amp; Physiology in Anesthetic Practice. 6th ed. Wolters Kluwer; 2022.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li><li><a href="drug-reference.html">Drugs</a></li><li><a href="topics.html">Topics</a></li></ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+  <nav class="mobile-nav-bar">
+    <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+    <a href="topics.html"><span class="mn-icon">📚</span>Topics</a>
+    <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+    <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+    <a href="drug-reference.html"><span class="mn-icon">💊</span>Drugs</a>
+  </nav>
+  <script src="/pwa.js"></script>
+</body>
+</html>
