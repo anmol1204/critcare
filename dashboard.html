@@ -89,6 +89,34 @@
     .saved-item button:hover { color:#b91c1c; }
     .saved-empty { font-size:.86rem; color:var(--slate); padding:1rem 0; }
 
+    /* Reading progress / analytics */
+    .rp-card { border:1px solid var(--line); border-radius:14px; padding:1.4rem; background:var(--bg); }
+    .rp-top { display:flex; align-items:center; gap:1.3rem; flex-wrap:wrap; }
+    .rp-ring { --p:0; position:relative; width:88px; height:88px; border-radius:50%; flex-shrink:0; display:grid; place-items:center;
+      background:conic-gradient(var(--accent) calc(var(--p)*1%), var(--line) 0); }
+    .rp-ring::before { content:""; position:absolute; width:66px; height:66px; border-radius:50%; background:var(--bg); }
+    .rp-ring span { position:relative; font-family:var(--font-disp); font-weight:700; font-size:1.15rem; color:var(--ink); }
+    .rp-stat { flex:1; min-width:200px; }
+    .rp-headline { font-size:1.05rem; color:var(--ink); } .rp-headline b { color:var(--blue-dark); font-weight:800; }
+    .rp-sub { font-size:.82rem; color:var(--slate); margin-top:.25rem; }
+    .rp-bar { height:8px; border-radius:20px; background:var(--bg-alt); border:1px solid var(--line); margin-top:.7rem; overflow:hidden; }
+    .rp-bar > span { display:block; height:100%; width:0; background:linear-gradient(90deg,var(--accent),#16a34a); transition:width .5s ease; }
+    .rp-chips { display:flex; gap:.6rem; flex-wrap:wrap; margin-top:1rem; }
+    .rp-chip { font-size:.74rem; font-weight:700; padding:.35rem .75rem; border-radius:20px; background:var(--bg-alt); border:1px solid var(--line); color:var(--ink); }
+    .rp-chip b { color:var(--blue-dark); }
+    .rp-lists { margin-top:1.1rem; display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+    @media(max-width:620px){ .rp-lists { grid-template-columns:1fr; } }
+    .rp-list h4 { font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; color:var(--slate); margin:0 0 .55rem; }
+    .rp-item { display:flex; align-items:center; gap:.6rem; padding:.5rem 0; border-bottom:1px solid var(--line); font-size:.85rem; }
+    .rp-item:last-child { border-bottom:none; }
+    .rp-item a { color:var(--ink); text-decoration:none; font-weight:600; flex:1; line-height:1.35; }
+    .rp-item a:hover { color:var(--blue); }
+    .rp-item .rp-pct { font-size:.72rem; font-weight:800; color:var(--accent); white-space:nowrap; }
+    .rp-item .rp-tick { color:#16a34a; font-weight:900; }
+    .rp-mini { height:4px; width:46px; border-radius:20px; background:var(--bg-alt); overflow:hidden; flex-shrink:0; }
+    .rp-mini > span { display:block; height:100%; background:var(--accent); }
+    .rp-empty { font-size:.82rem; color:var(--slate); padding:.4rem 0; }
+
     /* Continue-reading pop-up */
     .cc-modal-overlay { position:fixed; inset:0; background:rgba(8,16,32,.55); backdrop-filter:blur(3px); display:none; align-items:center; justify-content:center; z-index:9999; padding:1.2rem; }
     .cc-modal-overlay.show { display:flex; animation:ccFade .2s ease; }
@@ -194,6 +222,33 @@
     <div class="dash-section-label">📑 Read later <span id="laterCount" style="color:var(--slate);font-weight:600;"></span></div>
     <div id="laterList" class="saved-list"><p class="saved-empty">Your read-later queue is empty. On any article, tap <strong>📑 Read later</strong> (bottom-right) to line it up for your next break.</p></div>
 
+    <div class="dash-section-label">📖 Your reading progress</div>
+    <div class="rp-card">
+      <div class="rp-top">
+        <div class="rp-ring" id="rpRing"><span id="rpRingPct">0%</span></div>
+        <div class="rp-stat">
+          <div class="rp-headline"><b id="rpDone">0</b> of <b id="rpTotal">0</b> articles completed</div>
+          <div class="rp-sub" id="rpSub">Open any topic and read to the end — it ticks off automatically here.</div>
+          <div class="rp-bar"><span id="rpBar"></span></div>
+          <div class="rp-chips">
+            <span class="rp-chip">✓ Completed <b id="rpChipDone">0</b></span>
+            <span class="rp-chip">▶ In progress <b id="rpChipProg">0</b></span>
+            <span class="rp-chip">📚 Total <b id="rpChipTotal">0</b></span>
+          </div>
+        </div>
+      </div>
+      <div class="rp-lists">
+        <div class="rp-list">
+          <h4>▶ Continue / in progress</h4>
+          <div id="rpInProgress"><p class="rp-empty">Nothing in progress yet.</p></div>
+        </div>
+        <div class="rp-list">
+          <h4>✓ Recently completed</h4>
+          <div id="rpCompleted"><p class="rp-empty">No completed articles yet.</p></div>
+        </div>
+      </div>
+    </div>
+
     <div class="dash-section-label">Your account</div>
     <div class="dash-2col">
       <div class="acct-card">
@@ -252,6 +307,7 @@
   <a href="ai-tool.html"><span class="mn-icon">🤖</span>AI</a>
 </nav>
 
+<script src="search-index.js"></script>
 <script>
   function lsGet(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }
   function lsSet(k,v){ try { localStorage.setItem(k,v); } catch(e){} }
@@ -366,11 +422,59 @@
     }
   }
 
+  function renderReadingProgress() {
+    // Denominator: every readable article in the search index (topics + guidelines).
+    var idx = window.CRITCARE_INDEX || [];
+    var articles = idx.filter(function(x){ return x.type === 'topic' || x.type === 'guideline'; });
+    var titleOf = {}; articles.forEach(function(x){ titleOf[x.url] = x.title; });
+    var total = articles.length || 1;
+    var prog = jget('cc-progress', {});
+
+    var doneList = [], progList = [];
+    articles.forEach(function(x){
+      var p = prog[x.url]; if (!p) return;
+      if (p.done) doneList.push({ url:x.url, title:x.title, ts:p.ts||0 });
+      else if (p.pct > 0) progList.push({ url:x.url, title:x.title, pct:p.pct||0, ts:p.ts||0 });
+    });
+    doneList.sort(function(a,b){ return b.ts - a.ts; });
+    progList.sort(function(a,b){ return b.ts - a.ts; });
+
+    var doneN = doneList.length;
+    var pct = Math.round(doneN / total * 100);
+
+    document.getElementById('rpDone').textContent = doneN;
+    document.getElementById('rpTotal').textContent = total;
+    document.getElementById('rpChipDone').textContent = doneN;
+    document.getElementById('rpChipProg').textContent = progList.length;
+    document.getElementById('rpChipTotal').textContent = total;
+    document.getElementById('rpRingPct').textContent = pct + '%';
+    document.getElementById('rpRing').style.setProperty('--p', pct);
+    document.getElementById('rpBar').style.width = pct + '%';
+
+    var sub = document.getElementById('rpSub');
+    if (doneN === 0 && progList.length === 0) sub.textContent = 'Open any topic and read to the end — it ticks off automatically here.';
+    else if (pct >= 100) sub.textContent = '🎉 You have read the entire library. Outstanding.';
+    else sub.textContent = 'Keep going — ' + (total - doneN) + ' article' + (total - doneN === 1 ? '' : 's') + ' left to complete.';
+
+    var ip = document.getElementById('rpInProgress');
+    ip.innerHTML = progList.length ? progList.slice(0, 8).map(function(x){
+      return '<div class="rp-item"><a href="'+x.url+'">'+x.title+'</a>' +
+             '<span class="rp-mini"><span style="width:'+x.pct+'%"></span></span>' +
+             '<span class="rp-pct">'+x.pct+'%</span></div>';
+    }).join('') : '<p class="rp-empty">Nothing in progress yet.</p>';
+
+    var cp = document.getElementById('rpCompleted');
+    cp.innerHTML = doneList.length ? doneList.slice(0, 8).map(function(x){
+      return '<div class="rp-item"><span class="rp-tick">✓</span><a href="'+x.url+'">'+x.title+'</a></div>';
+    }).join('') : '<p class="rp-empty">No completed articles yet.</p>';
+  }
+
   function renderAll() {
     renderProfile();
     renderContinue();
     renderList('savedList', 'cc-saved', 'savedCount', SAVED_EMPTY);
     renderList('laterList', 'cc-readlater', 'laterCount', LATER_EMPTY);
+    renderReadingProgress();
   }
 
   (function initDash() {

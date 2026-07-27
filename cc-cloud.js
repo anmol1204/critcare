@@ -45,7 +45,8 @@ const db   = getFirestore(app);
 const LS = {
   name: 'critcare-name', email: 'critcare-email',
   spec: 'critcare-specialty', inst: 'critcare-institute',
-  saved: 'cc-saved', readlater: 'cc-readlater', last: 'cc-last', pro: 'critcare-pro'
+  saved: 'cc-saved', readlater: 'cc-readlater', last: 'cc-last', pro: 'critcare-pro',
+  progress: 'cc-progress'
 };
 
 function lget(k){ try { return localStorage.getItem(k); } catch (e) { return null; } }
@@ -61,6 +62,26 @@ function mergeList(a, b){
   });
   return Object.keys(map).map(function(k){ return map[k]; })
               .sort(function(p, q){ return (q.ts || 0) - (p.ts || 0); });
+}
+
+// Union two reading-progress maps, keeping the furthest progress per article.
+function mergeProgress(a, b){
+  a = a || {}; b = b || {};
+  var out = {}, k;
+  for (k in a) out[k] = a[k];
+  for (k in b){
+    if (!out[k]) { out[k] = b[k]; continue; }
+    var x = out[k], y = b[k];
+    out[k] = {
+      pct:      Math.max(x.pct || 0, y.pct || 0),
+      done:     !!(x.done || y.done),
+      sec:      Math.max(x.sec || 0, y.sec || 0),
+      secTotal: y.secTotal || x.secTotal || 0,
+      title:    x.title || y.title || '',
+      ts:       Math.max(x.ts || 0, y.ts || 0)
+    };
+  }
+  return out;
 }
 
 let currentUid = null;
@@ -80,6 +101,10 @@ async function pull(uid){
   var mLater = mergeList(jget(LS.readlater, []), cloud.readlater);
   jset(LS.saved,     mSaved);
   jset(LS.readlater, mLater);
+  // Reading progress — merge so completed articles + furthest scroll survive.
+  var lProg = jget(LS.progress, {});
+  var mProg = mergeProgress(lProg, cloud.progress);
+  jset(LS.progress, mProg);
   // Continue-reading — keep the most recent of the two.
   var ll = jget(LS.last, null), cl = cloud.last || null;
   var last = (!ll) ? cl : (!cl) ? ll : ((cl.ts || 0) > (ll.ts || 0) ? cl : ll);
@@ -88,6 +113,7 @@ async function pull(uid){
   var changed = !existed
     || mSaved.length !== (cloud.saved || []).length
     || mLater.length !== (cloud.readlater || []).length
+    || Object.keys(mProg).length !== Object.keys(cloud.progress || {}).length
     || (!!lget(LS.name) && !cloud.name)
     || (!!lget(LS.spec) && !cloud.specialty)
     || (!!lget(LS.inst) && !cloud.institute)
@@ -105,6 +131,7 @@ async function push(){
     saved:     jget(LS.saved, []),
     readlater: jget(LS.readlater, []),
     last:      jget(LS.last, null),
+    progress:  jget(LS.progress, {}),
     pro:       lget(LS.pro) === '1',
     updatedAt: serverTimestamp()
   };

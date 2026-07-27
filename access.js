@@ -170,9 +170,70 @@
     });
   }
 
+  // ── Mark topic/feature cards with a "read" / "% read" badge ──
+  function markProgressCards() {
+    var prog = engGet('cc-progress', {});
+    if (!prog || !Object.keys(prog).length) return;
+    injectProgressStyles();
+    var cards = document.querySelectorAll('a.card, a.feature-card, a.qa-card');
+    cards.forEach(function (a) {
+      if (a.querySelector('.cc-read-badge')) return;
+      var p = prog[fileOf(a.getAttribute('href') || '')];
+      if (!p || (!p.done && !(p.pct > 0))) return;
+      var b = document.createElement('span');
+      if (p.done) { b.className = 'cc-read-badge done'; b.textContent = '✓ Read'; }
+      else { b.className = 'cc-read-badge'; b.textContent = p.pct + '% read'; }
+      a.classList.add('cc-card-hasread');
+      a.appendChild(b);
+    });
+  }
+
   // ── Engagement: reading time, last-read, bookmarks (logged-in only) ──
   function engGet(k, def) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch (e) { return def; } }
   function engSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+  // ── Reading progress + completion (per-article) ──────────────────────
+  // cc-progress: { "<file>": { pct, done, sec, secTotal, title, ts } }
+  var PROG_KEY   = 'cc-progress';
+  var COMPLETE_AT = 90;           // max scroll-depth % that counts as "read"
+
+  function progAll() { return engGet(PROG_KEY, {}); }
+  function progGet(u) { var a = progAll(); return a[u] || null; }
+  function progSave(u, patch) {
+    var a = progAll(), cur = a[u] || {}, k;
+    for (k in patch) cur[k] = patch[k];
+    cur.ts = Date.now();
+    a[u] = cur;
+    engSet(PROG_KEY, a);
+    try { if (window.CCCloud && window.CCCloud.pushSoon) window.CCCloud.pushSoon(); } catch (e) {}
+  }
+
+  function injectProgressStyles() {
+    if (document.getElementById('cc-progress-css')) return;
+    var s = document.createElement('style');
+    s.id = 'cc-progress-css';
+    s.textContent =
+      // completion chip (article pages)
+      '.cc-prog-chip{position:fixed;left:1rem;bottom:5.2rem;z-index:120;background:var(--bg);border:1.5px solid var(--line);color:var(--slate);font-weight:700;font-size:.78rem;padding:.45rem .8rem;border-radius:30px;box-shadow:0 4px 16px rgba(0,0,0,.16);font-family:var(--font-body);display:flex;align-items:center;gap:.45rem;cursor:default;}' +
+      '.cc-prog-chip.done{border-color:#16a34a;color:#16a34a;}' +
+      'html.dark .cc-prog-chip.done{border-color:#22c55e;color:#4ade80;}' +
+      '.cc-prog-chip.flash{animation:ccProgPulse .55s ease 2;}' +
+      '@keyframes ccProgPulse{50%{transform:scale(1.09);box-shadow:0 6px 22px rgba(22,163,74,.45);}}' +
+      '@media(min-width:821px){.cc-prog-chip{bottom:1.5rem;}}' +
+      '.cc-prog-ring{width:14px;height:14px;border-radius:50%;flex-shrink:0;background:conic-gradient(var(--accent) calc(var(--p,0)*1%),var(--line) 0);}' +
+      // section ticks beside each h2 inside the article
+      '.topic-content h2.cc-sec-h{position:relative;}' +
+      '.cc-sec-tick{display:inline-flex;align-items:center;justify-content:center;width:1.05em;height:1.05em;margin-right:.45em;vertical-align:-0.1em;}' +
+      '.cc-sec-dot{width:.72em;height:.72em;border-radius:50%;border:2px solid var(--line);box-sizing:border-box;transition:background .25s,border-color .25s;position:relative;}' +
+      'h2.cc-sec-read .cc-sec-dot{background:#16a34a;border-color:#16a34a;}' +
+      'h2.cc-sec-read .cc-sec-dot::after{content:"\\2713";position:absolute;inset:0;color:#fff;font-size:.5em;line-height:1;display:flex;align-items:center;justify-content:center;font-weight:900;}' +
+      // "read" badge on topic/feature cards (listing pages)
+      'a.card.cc-card-hasread,a.feature-card.cc-card-hasread,a.qa-card.cc-card-hasread{position:relative;}' +
+      '.cc-read-badge{position:absolute;top:.6rem;right:.6rem;z-index:3;background:var(--bg-alt);border:1px solid var(--line);color:var(--slate);font-size:.62rem;font-weight:800;letter-spacing:.02em;padding:.16rem .5rem;border-radius:20px;}' +
+      '.cc-read-badge.done{background:#dcfce7;border-color:#86efac;color:#15803d;}' +
+      'html.dark .cc-read-badge.done{background:#0f2a1a;border-color:#16613a;color:#4ade80;}';
+    document.head.appendChild(s);
+  }
 
   function trackTime() {
     var t = parseInt(localStorage.getItem('cc-time') || '0', 10) || 0;
@@ -195,15 +256,95 @@
     var url = thisFile, title = articleTitle();
     engSet('cc-last', { url: url, title: title, ts: Date.now() });
 
-    // reading progress bar
+    // ── reading progress bar + completion tracking ──
+    injectProgressStyles();
     var bar = document.createElement('div');
     bar.className = 'cc-readbar';
     document.body.appendChild(bar);
+
+    var prev    = progGet(url) || {};
+    var maxPct  = prev.pct || 0;
+    var done    = !!prev.done;
+    var heads   = [].slice.call(content.querySelectorAll('h2'));
+    var secTotal = heads.length;
+    var readSet = {};
+
+    // completion chip (shows live % → turns into "✓ Read")
+    var chip = document.createElement('div');
+    chip.className = 'cc-prog-chip';
+    document.body.appendChild(chip);
+    function paintChip() {
+      if (done) { chip.className = 'cc-prog-chip done'; chip.innerHTML = '✓ Read'; }
+      else { chip.className = 'cc-prog-chip';
+        chip.innerHTML = '<span class="cc-prog-ring" style="--p:' + maxPct + '"></span>' + maxPct + '% read'; }
+    }
+    paintChip();
+
+    // tick markers beside each section heading
+    heads.forEach(function (h, i) {
+      h.classList.add('cc-sec-h');
+      h.setAttribute('data-cc-sec', i);
+      var t = document.createElement('span');
+      t.className = 'cc-sec-tick'; t.setAttribute('aria-hidden', 'true');
+      t.innerHTML = '<span class="cc-sec-dot"></span>';
+      h.insertBefore(t, h.firstChild);
+    });
+    // restore ticks already earned on a previous visit (best-effort: first N)
+    if (prev.sec) heads.slice(0, Math.min(prev.sec, secTotal)).forEach(function (h, i) {
+      readSet[i] = 1; h.classList.add('cc-sec-read');
+    });
+
+    var saveTimer = null;
+    function persist() {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(function () {
+        progSave(url, { pct: maxPct, done: done, sec: Object.keys(readSet).length,
+                        secTotal: secTotal, title: title });
+      }, 600);
+    }
+    function markComplete() {
+      if (done) return;
+      done = true; maxPct = Math.max(maxPct, 100);
+      // fill any remaining section ticks
+      heads.forEach(function (h, i) { readSet[i] = 1; h.classList.add('cc-sec-read'); });
+      paintChip();
+      chip.classList.add('flash');
+      setTimeout(function () { chip.classList.remove('flash'); }, 1300);
+      progSave(url, { pct: 100, done: true, sec: secTotal, secTotal: secTotal, title: title });
+    }
+
+    // tick a section once its heading scrolls up into the reading zone
+    if ('IntersectionObserver' in window && secTotal) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (!e.isIntersecting) return;
+          var idx = e.target.getAttribute('data-cc-sec');
+          if (readSet[idx]) return;
+          readSet[idx] = 1;
+          e.target.classList.add('cc-sec-read');
+          persist();
+          if (Object.keys(readSet).length >= secTotal) markComplete();
+        });
+      }, { rootMargin: '0px 0px -70% 0px', threshold: 0.01 });
+      heads.forEach(function (h) { io.observe(h); });
+    }
+
     window.addEventListener('scroll', function () {
       var h = document.documentElement;
       var max = h.scrollHeight - h.clientHeight;
-      bar.style.width = (max > 0 ? (h.scrollTop / max * 100) : 0) + '%';
+      var pct = max > 0 ? Math.round(h.scrollTop / max * 100) : 100;
+      bar.style.width = pct + '%';
+      if (pct > maxPct) { maxPct = pct; if (!done) paintChip(); persist(); }
+      if (!done && maxPct >= COMPLETE_AT) markComplete();
     }, { passive: true });
+
+    // short articles that don't scroll: count as read after a dwell
+    if (document.documentElement.scrollHeight - document.documentElement.clientHeight < 40) {
+      setTimeout(function () { if (!done) { maxPct = 100; markComplete(); } }, 8000);
+    }
+    // seed a record so "started" shows on the dashboard even before scrolling
+    if (!prev.ts) progSave(url, { pct: maxPct, done: done, sec: Object.keys(readSet).length,
+                                  secTotal: secTotal, title: title });
 
     function cloudPush() { try { if (window.CCCloud && window.CCCloud.pushSoon) window.CCCloud.pushSoon(); } catch (e) {} }
     function toggleIn(key, btn, onCls, onHtml, offCls, offHtml) {
@@ -441,6 +582,7 @@
     decorateNav();
     groupNav();
     markLockedCards();
+    markProgressCards();
     if (gateThisPage) buildGate();
     initEngagement();
     buildLibrary();
