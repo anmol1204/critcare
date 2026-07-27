@@ -188,6 +188,49 @@
     });
   }
 
+  // ── Multi-page (tabbed) topics: roll section progress up onto the tab strip ──
+  function renderTabProgress() {
+    if (!loggedIn()) return;
+    var nav = document.querySelector('.airway-tabs');
+    var wrap = document.querySelector('.airway-tabs-wrap');
+    if (!nav || !wrap) return;
+    var prog = engGet('cc-progress', {});
+    var seen = {}, pages = [];
+    [].slice.call(nav.querySelectorAll('a[href]')).forEach(function (a) {
+      var f = fileOf(a.getAttribute('href'));
+      if (f && !seen[f]) { seen[f] = 1; pages.push({ a: a, f: f }); }
+    });
+    if (pages.length < 2) return;               // not a real multi-page topic
+    injectProgressStyles();
+    var done = 0;
+    pages.forEach(function (p) {
+      var pr = prog[p.f];
+      if (pr && pr.done) {
+        done++;
+        p.a.classList.add('cc-tab-done');
+        if (!p.a.querySelector('.cc-tab-tick')) {
+          var t = document.createElement('span');
+          t.className = 'cc-tab-tick'; t.setAttribute('aria-hidden', 'true'); t.textContent = '✓';
+          p.a.appendChild(t);
+        }
+      }
+    });
+    var pct = Math.round(done / pages.length * 100);
+    var complete = done >= pages.length;
+    var roll = document.getElementById('cc-tabroll');
+    if (!roll) {
+      roll = document.createElement('div'); roll.id = 'cc-tabroll'; roll.className = 'cc-tabroll';
+      wrap.parentNode.insertBefore(roll, wrap.nextSibling);
+    }
+    roll.classList.toggle('complete', complete);
+    roll.innerHTML =
+      '<span class="cc-tr-ic">' + (complete ? '🎉' : '📖') + '</span>' +
+      '<span class="cc-tr-txt"><b>' + done + '</b> of <b>' + pages.length + '</b> sections read' +
+        (complete ? ' — topic complete' : '') + '</span>' +
+      '<span class="cc-tr-bar"><span style="width:' + pct + '%"></span></span>' +
+      '<span class="cc-tr-pct">' + pct + '%</span>';
+  }
+
   // ── Engagement: reading time, last-read, bookmarks (logged-in only) ──
   function engGet(k, def) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : def; } catch (e) { return def; } }
   function engSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
@@ -231,7 +274,19 @@
       'a.card.cc-card-hasread,a.feature-card.cc-card-hasread,a.qa-card.cc-card-hasread{position:relative;}' +
       '.cc-read-badge{position:absolute;top:.6rem;right:.6rem;z-index:3;background:var(--bg-alt);border:1px solid var(--line);color:var(--slate);font-size:.62rem;font-weight:800;letter-spacing:.02em;padding:.16rem .5rem;border-radius:20px;}' +
       '.cc-read-badge.done{background:#dcfce7;border-color:#86efac;color:#15803d;}' +
-      'html.dark .cc-read-badge.done{background:#0f2a1a;border-color:#16613a;color:#4ade80;}';
+      'html.dark .cc-read-badge.done{background:#0f2a1a;border-color:#16613a;color:#4ade80;}' +
+      // tabbed-topic rollup bar (below the tab strip) + per-tab ticks
+      '.cc-tabroll{max-width:1180px;margin:.55rem auto;padding:0 .9rem;display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--ink);font-family:var(--font-body);}' +
+      '.cc-tabroll .cc-tr-ic{font-size:1rem;flex-shrink:0;}' +
+      '.cc-tabroll .cc-tr-txt{white-space:nowrap;} .cc-tabroll .cc-tr-txt b{color:var(--blue-dark);}' +
+      '.cc-tabroll.complete .cc-tr-txt b{color:#15803d;}' +
+      '.cc-tr-bar{flex:1;height:7px;min-width:60px;border-radius:20px;background:var(--bg-alt);border:1px solid var(--line);overflow:hidden;}' +
+      '.cc-tr-bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#16a34a);transition:width .5s ease;}' +
+      '.cc-tr-pct{font-weight:800;font-size:.72rem;color:var(--accent);flex-shrink:0;}' +
+      '.airway-tabs a .cc-tab-tick{margin-left:.15em;color:#5ce08f;font-weight:900;font-size:.85em;}' +
+      '.airway-tabs a.active .cc-tab-tick{color:#dcfce7;}' +
+      '.airway-tabs a:not(.active).cc-tab-done{color:#15803d;}' +
+      'html.dark .airway-tabs a:not(.active).cc-tab-done{color:#4ade80;}';
     document.head.appendChild(s);
   }
 
@@ -311,6 +366,7 @@
       chip.classList.add('flash');
       setTimeout(function () { chip.classList.remove('flash'); }, 1300);
       progSave(url, { pct: 100, done: true, sec: secTotal, secTotal: secTotal, title: title });
+      renderTabProgress();   // refresh the tab-strip rollup live if this is a tabbed topic
     }
 
     // tick a section once its heading scrolls up into the reading zone
@@ -585,6 +641,7 @@
     markProgressCards();
     if (gateThisPage) buildGate();
     initEngagement();
+    renderTabProgress();
     buildLibrary();
     buildResumeBanner();
     buildWatermark();
