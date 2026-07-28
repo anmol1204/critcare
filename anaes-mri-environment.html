@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>MRI — Environment &amp; the Four Safety Zones — CritCare.in</title>
+  <meta name="description" content="The MRI environment for the anaesthetist: the static magnetic field (always on), gradient and radiofrequency fields, the isolated remote location, the four ACR safety zones, and ferromagnetic screening." />
+  <link rel="canonical" href="https://critcare.in/anaes-mri-environment.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-mri.html">Anaesthesia for MRI</a> › Environment &amp; Zones</div>
+    <h1>🧲 The Environment &amp; Safety Zones</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Field always on</span><span class="topic-tag">4 ACR zones</span><span class="topic-tag">Screening</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Anaesthesia for MRI sections">
+    <a href="anaes-mri.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-mri-environment.html" class="active"><span class="t-ic">🧲</span>Environment &amp; Zones</a>
+    <a href="anaes-mri-hazards.html"><span class="t-ic">⚠️</span>Hazards</a>
+    <a href="anaes-mri-technique.html"><span class="t-ic">💉</span>Selection &amp; Technique</a>
+    <a href="anaes-mri-monitoring.html"><span class="t-ic">📟</span>Monitoring &amp; Emergencies</a>
+    <a href="anaes-mri-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s2">
+<span class="sb sb-m">🧲 2 · The Physics You Must Know</span>
+  <h2>The Magnetic Environment</h2>
+  <div class="sys-grid">
+    <div class="sys-card">
+      <h4>Three fields</h4>
+      <ul>
+        <li><strong>Static magnetic field</strong> (typically 1.5–3 T) — <strong>always on</strong>, even when no scan is running; the source of the projectile hazard</li>
+        <li><strong>Gradient (switching) fields</strong> — the loud knocking noise; can induce currents</li>
+        <li><strong>Radiofrequency (RF) pulses</strong> — deposit energy → tissue/cable heating &amp; burns</li>
+      </ul>
+    </div>
+    <div class="sys-card">
+      <h4>A difficult place to work</h4>
+      <ul>
+        <li>Remote &amp; isolated — <strong>far from theatre help</strong></li>
+        <li><strong>Limited access to the patient</strong> inside a long, dim bore during scanning</li>
+        <li>Unfamiliar equipment, cold room, noise, and image-degradation constraints</li>
+      </ul>
+    </div>
+  </div>
+  <div class="mc"><div class="ml">Remember</div><p>The magnet <strong>cannot be "switched off"</strong> for an emergency — de-energising means a costly, hazardous <strong>quench</strong>. Treat the field as permanently live.</p></div>
+</section>
+
+<section id="s3">
+<span class="sb sb-e">🚧 3 · Safety Zones</span>
+  <h2>The Four ACR Safety Zones</h2>
+  <div class="patho-flow">
+    <div class="patho-flow-title">Increasing restriction from the public area to the magnet</div>
+    <div class="pf-node"><strong>Zone I</strong><span class="pf-sub">Freely accessible public area — outside the MR environment</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>Zone II</strong><span class="pf-sub">Reception / interview / screening — patients supervised but not yet in the controlled area</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>Zone III</strong><span class="pf-sub">Control room &amp; restricted access — MR-safety-screened personnel &amp; patients only; strictly controlled entry</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>Zone IV</strong><span class="pf-sub">The scanner (magnet) room itself — the strong field; the highest-hazard zone</span></div>
+  </div>
+  <div class="ec"><p><strong>Ferromagnetic screening</strong> of every person and every item is mandatory before entering Zone III/IV — patients, staff, the anaesthetist, and all equipment. Screen for implants (pacemakers, cochlear implants, aneurysm clips, metallic foreign bodies), and remove all loose metal.</p></div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-mri.html"><span class="tp-dir">← Previous</span><span class="tp-title">🏠 Overview</span></a>
+    <a class="tp-next" href="anaes-mri-hazards.html"><span class="tp-dir">Next →</span><span class="tp-title">⚠️ Hazards</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Burns — Acute Resuscitation, Parkland &amp; Inhalation Injury — CritCare.in</title>
+  <meta name="description" content="Acute burns resuscitation: the ABCDE primary survey, the Parkland fluid formula titrated to urine output, inhalation injury, carbon-monoxide &amp; cyanide toxicity, and circumferential burns needing escharotomy." />
+  <link rel="canonical" href="https://critcare.in/anaes-burns-resuscitation.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-burns.html">Anaesthesia for the Burns Patient</a> › Resuscitation</div>
+    <h1>🚑 Acute Resuscitation &amp; Fluids</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">ABCDE</span><span class="topic-tag">Parkland 4 mL/kg/%</span><span class="topic-tag">CO &amp; cyanide</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Anaesthesia for the Burns Patient sections">
+    <a href="anaes-burns.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-burns-pathophysiology.html"><span class="t-ic">🔬</span>Pathophysiology</a>
+    <a href="anaes-burns-resuscitation.html" class="active"><span class="t-ic">🚑</span>Resuscitation</a>
+    <a href="anaes-burns-airway.html"><span class="t-ic">🫁</span>Airway</a>
+    <a href="anaes-burns-pharmacology.html"><span class="t-ic">💊</span>Pharmacology</a>
+    <a href="anaes-burns-intraop.html"><span class="t-ic">🔪</span>Intra-op</a>
+    <a href="anaes-burns-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s2">
+<span class="sb sb-d">🚑 2 · Primary Survey</span>
+  <h2>The ABCDE Approach</h2>
+  <div class="patho-flow">
+    <div class="patho-flow-title">Acute burn — resuscitation priorities</div>
+    <div class="pf-node"><strong>A — Airway</strong><span class="pf-sub">Assess for inhalation injury; <strong>intubate early</strong> before oedema closes the airway (see Airway tab)</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>B — Breathing</strong><span class="pf-sub">100% O₂; look for chest-wall restriction from circumferential burns → <strong>escharotomy</strong>; treat hypoxaemia</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>C — Circulation</strong><span class="pf-sub">Large-bore IV (through unburnt skin if possible); warmed crystalloid; treat hypovolaemia</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>D — Disability</strong><span class="pf-sub">GCS; consider CO/cyanide &amp; associated trauma/head injury as causes of altered sensorium</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>E — Exposure &amp; Estimate</strong><span class="pf-sub">Remove clothing/jewellery, <strong>estimate %TBSA</strong>, keep warm (huge evaporative loss), look for other injuries</span></div>
+  </div>
+</section>
+
+<section id="s3">
+<span class="sb sb-w">💧 3 · Fluids</span>
+  <h2>Fluid Resuscitation — the Parkland Formula</h2>
+  <div class="guideline-rec">
+    <div class="gr-label">Parkland (Baxter) formula</div>
+    <div class="gr-text"><strong>4 mL × body weight (kg) × %TBSA</strong> of <strong>Ringer's lactate</strong> in the first 24 hours — <strong>half in the first 8 hours from the time of the burn</strong>, the remaining half over the next 16 hours. <span class="gr-s">Titrate, don't fix</span></div>
+  </div>
+  <div class="marino-box">
+    <div class="mb-label">🎯 The number that actually matters — urine output</div>
+    <ul>
+      <li>The formula is only an <strong>estimate of the starting rate</strong>. Titrate to a <strong>urine output of 0.5–1 mL/kg/h in adults</strong> and <strong>1–1.5 mL/kg/h in children</strong>.</li>
+      <li>Timing runs from the <strong>moment of injury</strong>, not from arrival — subtract fluid already given.</li>
+      <li><strong>Colloid</strong> is generally withheld for the first ~24 h (capillary leak); crystalloid is the mainstay early.</li>
+      <li>Beware <strong>"fluid creep" / over-resuscitation</strong> → worsening oedema, abdominal &amp; extremity compartment syndrome, pulmonary oedema.</li>
+      <li>Add <strong>maintenance dextrose-containing fluid in children</strong> (limited glycogen reserve → hypoglycaemia).</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s4">
+<span class="sb sb-e">💨 4 · Inhalation &amp; Toxic Gases</span>
+  <h2>Inhalation Injury, CO &amp; Cyanide</h2>
+  <div class="sys-grid">
+    <div class="sys-card">
+      <h4>Suspect inhalation injury if…</h4>
+      <ul>
+        <li>Fire in an <strong>enclosed space</strong>, ↓ consciousness at scene</li>
+        <li><strong>Facial/neck burns</strong>, singed nasal hair, soot around mouth/nose</li>
+        <li><strong>Carbonaceous sputum</strong>, hoarse voice, stridor, wheeze</li>
+        <li>Three components: <strong>upper-airway (thermal)</strong> oedema, <strong>lower-airway (chemical)</strong> injury, and <strong>systemic (CO/cyanide)</strong> toxicity</li>
+      </ul>
+    </div>
+    <div class="sys-card">
+      <h4>Carbon monoxide &amp; cyanide</h4>
+      <ul>
+        <li><strong>CO:</strong> binds Hb with ~<strong>250× the affinity</strong> of O₂ → left-shifts the ODC → tissue hypoxia. <strong>SpO₂ is falsely normal</strong> (pulse oximeter reads COHb as O₂Hb) — measure <strong>COHb by co-oximetry / ABG</strong>.</li>
+        <li><strong>Treat CO with 100% O₂</strong> — cuts the CO half-life from ~4–5 h (room air) to ~1 h; consider hyperbaric O₂ in severe cases.</li>
+        <li><strong>Cyanide</strong> (burning plastics) → histotoxic hypoxia, lactic acidosis, normal PaO₂ → antidote <strong>hydroxocobalamin</strong> (± sodium thiosulfate).</li>
+      </ul>
+    </div>
+  </div>
+  <div class="mc"><div class="ml">Common trap</div><p>A "normal SpO₂ of 99%" in a patient pulled from a house fire is <strong>reassuring but meaningless</strong> — the SpO₂ cannot see carboxyhaemoglobin. Trust the co-oximeter and the story, and give 100% O₂ regardless.</p></div>
+</section>
+
+<section id="s5">
+<span class="sb sb-x">🔪 5 · Escharotomy</span>
+  <h2>Circumferential Burns &amp; Escharotomy</h2>
+  <div class="ec"><p>Deep <strong>circumferential full-thickness burns</strong> form a rigid, non-compliant <strong>eschar</strong>. Around a <strong>limb</strong> this acts as a tourniquet → distal ischaemia (loss of pulses, pain, pallor). Around the <strong>chest/abdomen</strong> it restricts ventilation → rising airway pressures and hypoxia. The treatment is an <strong>escharotomy</strong> — an incision through the full thickness of the eschar to release the constriction. Escharotomies are usually painless (insensate full-thickness skin) but need anaesthetic vigilance for bleeding and analgesia at the incision margins.</p></div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-burns-pathophysiology.html"><span class="tp-dir">← Previous</span><span class="tp-title">🔬 Pathophysiology</span></a>
+    <a class="tp-next" href="anaes-burns-airway.html"><span class="tp-dir">Next →</span><span class="tp-title">🫁 Airway</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

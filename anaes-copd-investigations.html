@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>COPD — Investigations &amp; Pulmonary Function Tests — CritCare.in</title>
+  <meta name="description" content="Investigating the COPD patient before surgery: CBC/eosinophils, CXR &amp; ECG findings, ABG, spirometry (FEV₁, FEV₁/FVC, FEF25–75, DLCO) and bedside pulmonary function tests (Sabrasez breath-hold, single-breath count, match test), and predictors of post-op pulmonary complications." />
+  <link rel="canonical" href="https://critcare.in/anaes-copd-investigations.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-copd.html">Anaesthesia for COPD</a> › Investigations</div>
+    <h1>🔬 Investigations &amp; PFTs</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Spirometry</span><span class="topic-tag">ABG</span><span class="topic-tag">Bedside PFTs</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Anaesthesia for COPD sections">
+    <a href="anaes-copd.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-copd-pathophysiology.html"><span class="t-ic">🫁</span>Pathophysiology</a>
+    <a href="anaes-copd-investigations.html" class="active"><span class="t-ic">🔬</span>Investigations</a>
+    <a href="anaes-copd-optimisation.html"><span class="t-ic">🚭</span>Smoking &amp; Opt.</a>
+    <a href="anaes-copd-plan.html"><span class="t-ic">💉</span>Anaesthetic Plan</a>
+    <a href="anaes-copd-ventilation.html"><span class="t-ic">🌬️</span>Ventilation</a>
+    <a href="anaes-copd-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s2">
+<span class="sb sb-w">🧪 2 · Investigations</span>
+  <h2>Investigations &amp; What You Expect to Find</h2>
+  <div class="table-wrap">
+    <table class="drug-table">
+      <thead><tr><th>Test</th><th>Why / expected finding</th></tr></thead>
+      <tbody>
+        <tr><td><strong>CBC</strong></td><td>Secondary <strong>polycythaemia</strong> (chronic hypoxaemia); <strong>eosinophil count</strong> — absolute eosinophils &gt; 300–350/mm³ favours a response to inhaled corticosteroids</td></tr>
+        <tr><td><strong>CXR</strong></td><td><strong>Hyperinflation</strong> (low flat diaphragms, horizontal ribs, wide intercostal spaces, hyperlucent lungs), <strong>tubular heart</strong>, <strong>bullae</strong> (pneumothorax risk); rule out active infection</td></tr>
+        <tr><td><strong>ECG</strong></td><td>Signs of right-heart disease: <strong>P-pulmonale</strong> (RA enlargement), right-axis deviation, RVH (dominant R in V1–V3, RSR′); also to rule out IHD</td></tr>
+        <tr><td><strong>2-D Echo</strong></td><td>If cardiac symptoms, heart failure or advanced pulmonary disease — pulmonary hypertension, RV function</td></tr>
+        <tr><td><strong>ABG</strong></td><td>Hypoxaemia, CO₂ retention, prognosis — <strong>PaCO₂ &gt; 45 mmHg and PaO₂ &lt; 60 mmHg (room air)</strong> both signal a worse prognosis</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="s3">
+<span class="sb sb-m">📈 3 · Spirometry</span>
+  <h2>Pulmonary Function Tests &amp; Spirometry</h2>
+  <div class="marino-box">
+    <div class="mb-label">📉 What spirometry shows in COPD</div>
+    <ul>
+      <li><strong>↓ FEV₁</strong> and <strong>↓ FEV₁/FVC ratio &lt; 0.70</strong> (the defining obstruction)</li>
+      <li><strong>↑ FRC and RV</strong> (air trapping / hyperinflation)</li>
+      <li><strong>↓ DLCO</strong> (emphysematous loss of alveolar surface)</li>
+      <li><strong>↓ FEF25–75%</strong> (small-airway obstruction) &amp; <strong>↓ PEFR</strong> (early airway obstruction)</li>
+    </ul>
+  </div>
+  <div class="ec"><p><strong>Is routine PFT needed?</strong> Chiefly useful to <strong>predict post-resection pulmonary function</strong> and confirm/grade disease. For <em>non-thoracic</em> surgery, spirometry is a tool for pre-operative optimisation and severity assessment, not a mandatory routine — clinical assessment and functional capacity matter more.</p></div>
+</section>
+
+<section id="s4">
+<span class="sb sb-s">🩺 4 · Bedside PFTs</span>
+  <h2>Bedside Pulmonary Function Tests &amp; PPC Predictors</h2>
+  <div class="table-wrap">
+    <table class="drug-table">
+      <thead><tr><th>Bedside test</th><th>Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Sabrasez breath-holding</strong></td><td>&gt; 25 s normal reserve · 15–25 s limited · &lt; 15 s very poor cardiopulmonary reserve</td></tr>
+        <tr><td><strong>Single-breath count</strong></td><td>Normal 30–40 (reflects vital capacity); &lt; 15 = severe impairment</td></tr>
+        <tr><td><strong>Snider's match-blowing test</strong></td><td>Cannot blow out a match at 15 cm → MBC &lt; 60 L/min (significant obstruction)</td></tr>
+        <tr><td><strong>Forced expiratory time</strong></td><td>Normal 3–5 s; <strong>&gt; 6 s = obstructive</strong>; &lt; 3 s = restrictive</td></tr>
+        <tr><td><strong>Cough test / effective cough</strong></td><td>Inadequate if FVC &lt; 20 mL/kg, FEV₁ &lt; 15 mL/kg, PEFR &lt; 200 L/min (VC should be ≥ 3× tidal volume)</td></tr>
+        <tr><td><strong>6-minute walk test</strong></td><td>Normal 400–700 m; <strong>&lt; 350 m</strong> correlates with ↑ exacerbation, hospitalisation &amp; mortality risk</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-copd-pathophysiology.html"><span class="tp-dir">← Previous</span><span class="tp-title">🫁 Pathophysiology</span></a>
+    <a class="tp-next" href="anaes-copd-optimisation.html"><span class="tp-dir">Next →</span><span class="tp-title">🚭 Smoking &amp; Opt.</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

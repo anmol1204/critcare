@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>COPD — Smoking Effects &amp; Pre-op Optimisation — CritCare.in</title>
+  <meta name="description" content="Smoking and the COPD patient: effects on organ systems, the CYP450 drug interactions, the smoking-cessation timeline, vaping/ENDS and EVALI, and the pre-operative optimisation checklist including LABA/LAMA and steroid therapy." />
+  <link rel="canonical" href="https://critcare.in/anaes-copd-optimisation.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-copd.html">Anaesthesia for COPD</a> › Smoking &amp; Optimisation</div>
+    <h1>🚭 Smoking &amp; Pre-op Optimisation</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Cessation timeline</span><span class="topic-tag">CYP450</span><span class="topic-tag">LABA / LAMA</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Anaesthesia for COPD sections">
+    <a href="anaes-copd.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-copd-pathophysiology.html"><span class="t-ic">🫁</span>Pathophysiology</a>
+    <a href="anaes-copd-investigations.html"><span class="t-ic">🔬</span>Investigations</a>
+    <a href="anaes-copd-optimisation.html" class="active"><span class="t-ic">🚭</span>Smoking &amp; Opt.</a>
+    <a href="anaes-copd-plan.html"><span class="t-ic">💉</span>Anaesthetic Plan</a>
+    <a href="anaes-copd-ventilation.html"><span class="t-ic">🌬️</span>Ventilation</a>
+    <a href="anaes-copd-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s2">
+<span class="sb sb-e">🚬 2 · Effects of Smoking</span>
+  <h2>Effects of Smoking on Organ Systems</h2>
+  <div class="sys-grid">
+    <div class="sys-card">
+      <h4>Respiratory</h4>
+      <ul><li>↑ mucus, ↓ mucociliary clearance, hyper-reactive airways</li><li>↓ FRC, ↑ closing capacity → atelectasis; V/Q mismatch &amp; shunt; ↓ pulmonary immunity</li></ul>
+    </div>
+    <div class="sys-card">
+      <h4>Cardiovascular</h4>
+      <ul><li>Nicotine → ↑ sympathetic tone, HR, BP, contractility, myocardial work</li><li>CO → ↓ O₂ delivery; 3× cardiovascular death risk; impaired supply–demand</li></ul>
+    </div>
+    <div class="sys-card">
+      <h4>Haemostatic &amp; other</h4>
+      <ul><li>↑ Hct, thrombocytosis, ↑ platelet reactivity → thromboembolism, atherosclerosis</li><li>GORD; impaired wound healing; ↓ PONV but higher pain scores &amp; opioid need</li></ul>
+    </div>
+    <div class="sys-card">
+      <h4>The two phases of smoke</h4>
+      <ul><li><strong>Particulate:</strong> nicotine (nicotinic ACh agonist, sympathetic, <strong>CYP450 induction</strong>), 70 carcinogens</li><li><strong>Gaseous:</strong> <strong>carbon monoxide</strong> — 250× O₂ affinity, left-shifts ODC; COHb ~15% in smokers vs ~1% non-smokers</li></ul>
+    </div>
+  </div>
+  <div class="ec"><p><strong>CYP450 induction</strong> (maximal within ~24 h of smoking) increases dose requirements for CYP1A2/3A4 substrates — notably <strong>rocuronium/vecuronium (up to ~25% more)</strong>, fentanyl/sufentanil, theophylline and ropivacaine.</p></div>
+</section>
+
+<section id="s3">
+<span class="sb sb-g">⏳ 3 · Cessation</span>
+  <h2>Smoking Cessation — the Timeline</h2>
+  <div class="table-wrap">
+    <table class="drug-table">
+      <thead><tr><th>Time smoke-free</th><th>Benefit</th></tr></thead>
+      <tbody>
+        <tr><td>12–24 h</td><td>CO &amp; nicotine levels fall</td></tr>
+        <tr><td>48–72 h</td><td>COHb normalises, ciliary function improves</td></tr>
+        <tr><td>1–2 weeks</td><td>↓ sputum production</td></tr>
+        <tr><td>4–6 weeks</td><td>PFTs improve</td></tr>
+        <tr><td>6–8 weeks</td><td>Immune function &amp; metabolism normalise</td></tr>
+        <tr><td><strong>8–12 weeks</strong></td><td><strong>↓ overall post-op morbidity &amp; mortality</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ec"><p><strong>Vaping / ENDS:</strong> e-cigarettes deliver nicotine ± THC, carcinogens, endotoxins and flavourings (e.g. diacetyl → bronchiolitis-obliterans-like injury). Peri-operative evidence is limited; treat as an airway irritant with cardiovascular (nicotine) effects — and be aware of <strong>EVALI</strong> (e-cigarette/vaping-associated lung injury), a diagnosis of exclusion.</p></div>
+</section>
+
+<section id="s4">
+<span class="sb sb-w">✅ 4 · Optimisation</span>
+  <h2>Pre-operative Optimisation</h2>
+  <div class="marino-box">
+    <div class="mb-label">📋 Optimisation checklist</div>
+    <ul>
+      <li>Assess degree of impairment &amp; functional capacity; identify &amp; correct <strong>modifiable risk factors</strong></li>
+      <li>Treat any <strong>respiratory infection / worsening cough / dyspnoea</strong>; delay elective surgery through an exacerbation</li>
+      <li><strong>Smoking cessation</strong> (ideally ≥ 6–8 weeks); correct anaemia, nutrition &amp; hydration</li>
+      <li>Optimise <strong>bronchodilator therapy</strong>; pulmonary rehabilitation, chest physiotherapy, <strong>incentive spirometry</strong>, mucolytics &amp; systemic hydration</li>
+      <li><strong>Risk-stratify for post-op pulmonary complications (PPCs)</strong></li>
+    </ul>
+  </div>
+  <div class="sys-grid">
+    <div class="sys-card">
+      <h4>Drug therapy (maintenance)</h4>
+      <ul>
+        <li><strong>LAMA + LABA</strong> dual bronchodilators are the backbone</li>
+        <li><strong>Anticholinergics first-line</strong> (ipratropium, tiotropium) — block vagally-mediated bronchoconstriction, a key COPD component</li>
+        <li><strong>β₂-agonists</strong> — synergistic; <strong>inhaled corticosteroids</strong> (esp. if eosinophilic); oral steroids for exacerbations</li>
+      </ul>
+    </div>
+    <div class="sys-card">
+      <h4>Methylxanthines — caution</h4>
+      <ul>
+        <li>Theophylline enhances diaphragmatic contraction but has a <strong>narrow therapeutic index</strong></li>
+        <li>Risk of <strong>tachyarrhythmias, seizures, rhabdomyolysis</strong>; volatile agents <strong>sensitise the myocardium</strong> to its toxicity</li>
+      </ul>
+    </div>
+  </div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-copd-investigations.html"><span class="tp-dir">← Previous</span><span class="tp-title">🔬 Investigations</span></a>
+    <a class="tp-next" href="anaes-copd-plan.html"><span class="tp-dir">Next →</span><span class="tp-title">💉 Anaesthetic Plan</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

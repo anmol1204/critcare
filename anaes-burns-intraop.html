@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Burns — Intra-op: Excision, Grafting &amp; Contracture Release — CritCare.in</title>
+  <meta name="description" content="Intra-operative anaesthesia for burns surgery: preventing hypothermia, managing major blood loss and the maximum allowable blood loss, adrenaline-soaked swabs, monitoring the burnt patient, and positioning for donor sites." />
+  <link rel="canonical" href="https://critcare.in/anaes-burns-intraop.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-burns.html">Anaesthesia for the Burns Patient</a> › Intra-op</div>
+    <h1>🔪 Excision, Grafting &amp; Contracture Release</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Hypothermia</span><span class="topic-tag">Blood loss</span><span class="topic-tag">Monitoring the burnt patient</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Anaesthesia for the Burns Patient sections">
+    <a href="anaes-burns.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-burns-pathophysiology.html"><span class="t-ic">🔬</span>Pathophysiology</a>
+    <a href="anaes-burns-resuscitation.html"><span class="t-ic">🚑</span>Resuscitation</a>
+    <a href="anaes-burns-airway.html"><span class="t-ic">🫁</span>Airway</a>
+    <a href="anaes-burns-pharmacology.html"><span class="t-ic">💊</span>Pharmacology</a>
+    <a href="anaes-burns-intraop.html" class="active"><span class="t-ic">🔪</span>Intra-op</a>
+    <a href="anaes-burns-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s2">
+<span class="sb sb-d">🎯 2 · Intra-op Concerns</span>
+  <h2>The Intra-operative Checklist (from Dr. Tanya's notes)</h2>
+  <div class="marino-box">
+    <div class="mb-label">🔑 Eight recurring concerns for burns surgery</div>
+    <ul>
+      <li><strong>Difficult monitoring</strong> — attaching leads to burnt/grafted skin</li>
+      <li><strong>Difficult airway &amp; mask ventilation</strong> — cart ready, inhalational induction preferred</li>
+      <li><strong>Hypothermia</strong> — the dominant intra-op threat</li>
+      <li><strong>Prolonged procedure</strong> &amp; multiple surgeries → more anaesthetic agent/analgesia</li>
+      <li><strong>Special positioning</strong> for donor-skin harvest</li>
+      <li><strong>Muscle relaxant choice</strong> — avoid suxamethonium, NDMR resistance</li>
+      <li><strong>Adrenaline-soaked swabs</strong> → tachycardia/arrhythmia</li>
+      <li><strong>Haemodynamic support &amp; fluid/blood management</strong> — major blood loss</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s3">
+<span class="sb sb-s">🌡️ 3 · Hypothermia</span>
+  <h2>Preventing Hypothermia — the Priority</h2>
+  <div class="ec"><p>Burns patients lose heat faster than any other surgical patient: a <strong>large exposed raw surface</strong>, loss of the skin's insulating barrier, huge <strong>evaporative &amp; radiant losses</strong>, and impaired hypothalamic thermoregulation. Hypothermia worsens coagulopathy, slows drug metabolism and delays reversal.</p></div>
+  <div class="sys-grid">
+    <div class="sys-card">
+      <h4>Aim</h4>
+      <ul>
+        <li>Keep the patient warm — <strong>limit heat loss to ≤~1 °C from baseline</strong></li>
+        <li>Post as the <strong>first case</strong> of the day</li>
+      </ul>
+    </div>
+    <div class="sys-card">
+      <h4>How</h4>
+      <ul>
+        <li><strong>Warm the theatre to ~28–32 °C</strong></li>
+        <li>Forced-air warming &amp; warming mattress; cover unburnt areas</li>
+        <li><strong>Fluid &amp; blood warmers</strong>; humidified warm gases</li>
+        <li>Minimise exposure time; warm skin-prep solutions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="s4">
+<span class="sb sb-e">🩸 4 · Blood Loss</span>
+  <h2>Blood Loss &amp; Adrenaline</h2>
+  <div class="marino-box">
+    <div class="mb-label">💉 Major, rapid, hard to measure</div>
+    <ul>
+      <li><strong>Excision &amp; grafting bleeds briskly</strong> from the raw dermis — blood loss is easily <strong>underestimated</strong> (soaked into drapes/swabs) and can exceed <strong>30 mL/kg</strong>.</li>
+      <li><strong>Reserve &amp; cross-match blood products</strong> pre-operatively; calculate the <strong>maximum allowable blood loss (MABL)</strong> and transfusion trigger in advance.</li>
+      <li>Surgeons use <strong>adrenaline-soaked swabs / tumescent adrenaline</strong> to reduce bleeding — this can be systemically absorbed → <strong>tachycardia and arrhythmias</strong> (especially with volatile agents). Communicate and monitor.</li>
+      <li>Have <strong>vasopressors/inotropes</strong> ready — hypotension is common in the event of blood loss.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s5">
+<span class="sb sb-usg">📟 5 · Monitoring</span>
+  <h2>Monitoring the Burnt Patient</h2>
+  <div class="table-wrap">
+    <table class="drug-table">
+      <thead><tr><th>Monitor</th><th>The burns-specific problem</th></tr></thead>
+      <tbody>
+        <tr><td><strong>SpO₂</strong></td><td><strong>Unreliable in CO poisoning</strong> (reads COHb as O₂Hb); probe may not fit burnt digits — try ear/nose</td></tr>
+        <tr><td><strong>ECG</strong></td><td>Gel electrodes won't stick to burnt/grafted skin — use <strong>skin-staple / subcutaneous needle electrodes clipped with crocodile clips</strong></td></tr>
+        <tr><td><strong>NIBP / IBP</strong></td><td>NIBP cuff may not fit; for prolonged cases with large blood loss use <strong>invasive arterial (IBP) monitoring</strong></td></tr>
+        <tr><td><strong>Temperature</strong></td><td>Core temperature — essential given the hypothermia risk</td></tr>
+        <tr><td><strong>Urine output</strong></td><td>Resuscitation endpoint (0.5–1 mL/kg/h)</td></tr>
+        <tr><td><strong>EtCO₂ &amp; TOF</strong></td><td>Ventilation; neuromuscular monitoring (dose titration in NDMR resistance)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ec"><p><strong>Positioning:</strong> plan around the <strong>location of burns and the donor-skin sites</strong> (often thighs/back) — special positioning &amp; careful padding are frequently needed, and the "burnt" and "donor" areas are both surgical fields.</p></div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-burns-pharmacology.html"><span class="tp-dir">← Previous</span><span class="tp-title">💊 Pharmacology</span></a>
+    <a class="tp-next" href="anaes-burns-pearls.html"><span class="tp-dir">Next →</span><span class="tp-title">🎓 Pearls</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

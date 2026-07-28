@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Robotic Surgery — Intra-op: The Docked Robot — CritCare.in</title>
+  <meta name="description" content="Intra-operative anaesthesia for robotic surgery: total immobility and restricted access, long lines and circuits, induction and airway, positioning and padding, endobronchial migration, ventilation and restrictive fluid strategy." />
+  <link rel="canonical" href="https://critcare.in/anaes-robotic-intraop.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-robotic.html">Anaesthesia for Robotic Surgery</a> › Intra-op</div>
+    <h1>💉 The Docked Robot</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Total immobility</span><span class="topic-tag">Restricted access</span><span class="topic-tag">Restrictive fluids</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Anaesthesia for Robotic Surgery sections">
+    <a href="anaes-robotic.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-robotic-physiology.html"><span class="t-ic">🔄</span>Physiology</a>
+    <a href="anaes-robotic-preop.html"><span class="t-ic">📋</span>Pre-op</a>
+    <a href="anaes-robotic-intraop.html" class="active"><span class="t-ic">💉</span>Intra-op</a>
+    <a href="anaes-robotic-complications.html"><span class="t-ic">⚠️</span>Complications</a>
+    <a href="anaes-robotic-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s2">
+<span class="sb sb-d">🤖 2 · The Setup</span>
+  <h2>The Docked-Robot Environment</h2>
+  <div class="marino-box">
+    <div class="mb-label">🔒 Once the robot is docked, you cannot reach the patient</div>
+    <ul>
+      <li><strong>Total immobility is mandatory</strong> — if the patient moves while the arms are locked, the instruments can <strong>injure viscera</strong>. Ensure deep neuromuscular block &amp; adequate anaesthetic depth throughout.</li>
+      <li><strong>Restricted access to the patient and the airway</strong>; the bulky robot arms crowd the field.</li>
+      <li>Use <strong>long IV-line extensions and long breathing circuits</strong>, secured &amp; accessible before docking.</li>
+      <li><strong>Communication with the console surgeon is harder</strong> — agree signals for "stop / undock" emergencies.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s3">
+<span class="sb sb-m">💉 3 · Conduct</span>
+  <h2>Induction, Positioning &amp; Ventilation</h2>
+  <div class="patho-flow">
+    <div class="patho-flow-title">Intra-operative sequence</div>
+    <div class="pf-node"><strong>Access &amp; monitoring first</strong><span class="pf-sub">Secure IV lines with extensions; fluid warmer; ECG, NIBP, SpO₂, temperature, urine output, airway pressure, EtCO₂; add <strong>arterial line (IBP)</strong> if bleeding risk is high</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>Induction</strong><span class="pf-sub">Avoid long-acting sedatives; <strong>propofol 1–2 mg/kg + fentanyl 1–2 µg/kg + a non-depolariser (vecuronium/atracurium/rocuronium)</strong>; secure airway with an <strong>ETT</strong>; pass an orogastric/RT tube to reduce aspiration risk</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>Positioning &amp; padding</strong><span class="pf-sub"><strong>Pad all bony prominences, use non-sliding supports, and PAD/PROTECT THE EYES</strong>; secure the patient against the steep tilt without shoulder-brace nerve injury</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>Re-check the tube after positioning</strong><span class="pf-sub">Steep Trendelenburg + pneumoperitoneum shift the carina cephalad → <strong>endobronchial migration</strong>; auscultate again for bilateral air entry after position &amp; insufflation</span></div>
+  </div>
+  <div class="sys-grid">
+    <div class="sys-card">
+      <h4>Maintenance &amp; ventilation</h4>
+      <ul>
+        <li>Volatile (<strong>sevoflurane</strong>) in O₂/air</li>
+        <li>Lung-protective: <strong>TV 6–8 mL/kg + PEEP</strong> to prevent atelectasis; limit plateau pressure; increase minute ventilation to clear the CO₂ load; watch peak airway pressures</li>
+      </ul>
+    </div>
+    <div class="sys-card">
+      <h4>Blunting the sympathetic response</h4>
+      <ul>
+        <li><strong>Nitroglycerine 0.5–2 µg/kg/min</strong>, propofol, or <strong>dexmedetomidine</strong> to control the insufflation/positioning pressor response</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="s4">
+<span class="sb sb-w">💧 4 · Fluids &amp; Analgesia</span>
+  <h2>Restrictive Fluids &amp; Analgesia</h2>
+  <div class="keydiff">
+    <div class="mb-label">Why restrictive fluids until the anastomosis</div>
+    <ul><li>Keep intra-operative fluids <strong>restrictive</strong> — this <strong>reduces airway/facial oedema</strong> and <strong>reduces urine production</strong>, because a wet field obscures visibility <strong>before the urethral anastomosis</strong>. Once the anastomosis is complete, IV fluid can be given more liberally as required.</li></ul>
+  </div>
+  <div class="ec"><p><strong>Multimodal analgesia:</strong> NSAIDs, opioids, paracetamol, local-anaesthetic infiltration of port sites, ± a regional block (e.g. quadratus lumborum / TAP).</p></div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-robotic-preop.html"><span class="tp-dir">← Previous</span><span class="tp-title">📋 Pre-op</span></a>
+    <a class="tp-next" href="anaes-robotic-complications.html"><span class="tp-dir">Next →</span><span class="tp-title">⚠️ Complications</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

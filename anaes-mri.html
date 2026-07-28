@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Anaesthesia for MRI — Overview &amp; Contents — CritCare.in</title>
+  <meta name="description" content="Anaesthesia for MRI (a remote / non-operating-room location) — a tabbed topic: the MRI environment &amp; the four safety zones, the hazards (projectile effect, RF burns, quench, acoustic noise, gadolinium), patient selection &amp; technique, MR-conditional monitoring, and the golden rule of resuscitation (evacuate the patient from the magnet room). Based on AAGBI/ACR guidance, Miller and Morgan &amp; Mikhail." />
+  <link rel="canonical" href="https://critcare.in/anaes-mri.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › Anaesthesia for MRI</div>
+    <h1>🧲 Anaesthesia for MRI</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Remote location</span><span class="topic-tag">Projectile effect</span><span class="topic-tag">MR-conditional</span><span class="topic-tag">Field always on</span><span class="topic-updated">AAGBI / ACR · Miller / Morgan &amp; Mikhail</span>
+    </div>
+    <div class="topic-reviewed" style="margin-top:.6rem"><span class="tr-ic">📅</span> Last reviewed <strong>July 2026</strong> · Compiled by <strong>Dr. Anmol Srivastava</strong> <span class="tr-cred">Anaesthesia, EM &amp; Critical Care</span> · Reviewed by <strong>Dr. Tanya Chawla</strong> <span class="tr-cred">Anaesthesia &amp; Critical Care</span></div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Anaesthesia for MRI sections">
+    <a href="anaes-mri.html" class="active"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-mri-environment.html"><span class="t-ic">🧲</span>Environment &amp; Zones</a>
+    <a href="anaes-mri-hazards.html"><span class="t-ic">⚠️</span>Hazards</a>
+    <a href="anaes-mri-technique.html"><span class="t-ic">💉</span>Selection &amp; Technique</a>
+    <a href="anaes-mri-monitoring.html"><span class="t-ic">📟</span>Monitoring &amp; Emergencies</a>
+    <a href="anaes-mri-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+  <div class="book-quote">
+    <p>"MRI is the hardest 'easy' anaesthetic: a still, cooperative patient in a dim tunnel far from help, in a room where a steel laryngoscope becomes a bullet and the magnet never switches off. Safety here is about the environment as much as the patient — and the golden rule when things go wrong is to get the patient out of the magnet room."</p>
+    <cite>How to use this topic — CritCare.in.</cite>
+  </div>
+
+<span class="sb sb-w">📘 1 · The Problem</span>
+  <h2>Anaesthesia in the MRI Suite</h2>
+  <div class="marino-box">
+    <div class="mb-label">🎯 A remote (non-operating-room) location with unique physics</div>
+    <p>MRI is a form of <strong>remote-location / non-operating-room anaesthesia (NORA)</strong>: an unfamiliar, isolated environment with limited access to the patient during scanning — <em>plus</em> a powerful, <strong>always-on static magnetic field</strong>, switching gradient fields and radiofrequency pulses that create hazards found nowhere else in the hospital.</p>
+  </div>
+  <div class="keydiff">
+    <div class="mb-label">🧠 The one-line summary</div>
+    <ul><li>Respect the <strong>safety zones</strong> and the <strong>projectile hazard</strong>; use <strong>MR-conditional</strong> equipment &amp; monitoring; deliver a NORA anaesthetic to the <strong>full standard</strong> you would in theatre; and if the patient deteriorates, <strong>evacuate them out of the magnet room</strong> before resuscitating.</li></ul>
+  </div>
+  <div class="hub-grid">
+    <a class="hub-card" href="anaes-mri-environment.html">
+      <span class="hc-ic">🧲</span><span class="hc-n">01 · ENVIRONMENT</span>
+      <h3>The Environment &amp; Safety Zones</h3>
+      <p>The magnetic field, why it is always on, the <strong>four ACR safety zones</strong> and ferromagnetic screening.</p>
+    </a>
+    <a class="hub-card" href="anaes-mri-hazards.html">
+      <span class="hc-ic">⚠️</span><span class="hc-n">02 · HAZARDS</span>
+      <h3>The MRI Hazards</h3>
+      <p><strong>Projectile effect</strong>, RF heating &amp; burns, cryogen <strong>quench</strong>, acoustic noise, gadolinium &amp; monitoring interference.</p>
+    </a>
+    <a class="hub-card" href="anaes-mri-technique.html">
+      <span class="hc-ic">💉</span><span class="hc-n">03 · SELECTION &amp; TECHNIQUE</span>
+      <h3>Patient Selection &amp; Technique</h3>
+      <p>Who needs anaesthesia, implant screening, sedation vs GA, and induce-then-transfer vs MR-conditional in-room delivery.</p>
+    </a>
+    <a class="hub-card" href="anaes-mri-monitoring.html">
+      <span class="hc-ic">📟</span><span class="hc-n">04 · MONITORING &amp; EMERGENCIES</span>
+      <h3>Monitoring &amp; Emergencies</h3>
+      <p>MR-conditional monitoring, remote-location standards and the <strong>golden rule</strong> — evacuate the patient to resuscitate.</p>
+    </a>
+    <a class="hub-card" href="anaes-mri-pearls.html">
+      <span class="hc-ic">🎓</span><span class="hc-n">05 · PEARLS</span>
+      <h3>Mistakes, Pearls &amp; References</h3>
+      <p>Common mistakes, MR-safety terminology, exam pearls and references.</p>
+    </a>
+  </div>
+  <div class="tab-pager">
+    <span></span>
+    <a class="tp-next" href="anaes-mri-environment.html"><span class="tp-dir">Next →</span><span class="tp-title">🧲 Environment &amp; Zones</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>

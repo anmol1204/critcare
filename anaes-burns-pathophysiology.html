@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+  <link rel="manifest" href="/manifest.json"/>
+  <meta name="theme-color" content="#1e6fd9"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
+  <meta name="apple-mobile-web-app-title" content="CritCare"/>
+  <link rel="apple-touch-icon" href="/icon-apple.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+  <title>Burns — Depth, TBSA &amp; Pathophysiology — CritCare.in</title>
+  <meta name="description" content="Burn depth classification (superficial to full-thickness), estimating burn size (Wallace rule of 9s, Lund–Browder, palm rule), Jackson's three zones and the ebb-and-flow hypermetabolic response." />
+  <link rel="canonical" href="https://critcare.in/anaes-burns-pathophysiology.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+  <link rel="stylesheet" href="airway.css" />
+  <link rel="stylesheet" href="anaes-topic.css" />
+  <script src="darkmode.js"></script>
+  <script src="access.js"></script>
+  <script type="module" src="cc-cloud.js"></script>
+  <script src="app-native.js" defer></script>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand"><span class="nav-mark">🫀</span><span class="nav-name">Crit<span>Care</span>.in</span></a>
+  <ul class="nav-menu" id="menu">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+    <li><a href="topics.html">Topics</a></li>
+    <li><a href="anaesthesia.html" class="active">Anaesthesia</a></li>
+    <li><a href="scores.html">Scores</a></li><li><a href="drug-reference.html">Drugs</a></li>
+    <li><a href="dnb.html">DNB Papers</a></li><li><a href="login.html" class="nav-cta">Login</a></li>
+  </ul>
+  <button class="dm-toggle" id="dmToggle" onclick="toggleDarkMode()"><span class="dm-icon">🌙</span><span class="dm-label">Dark Mode</span></button>
+  <button class="nav-toggle" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+</nav>
+<header class="topic-hero">
+  <div class="wrap">
+    <div class="breadcrumb"><a href="index.html">Home</a> › <a href="anaesthesia.html">Anaesthesia</a> › <a href="anaes-burns.html">Anaesthesia for the Burns Patient</a> › Pathophysiology</div>
+    <h1>🔬 Depth, TBSA &amp; Pathophysiology</h1>
+    <div class="topic-hero-meta">
+      <span class="topic-tag red">Burn depth</span><span class="topic-tag">Rule of 9s</span><span class="topic-tag">Ebb &amp; flow</span>
+    </div>
+  </div>
+</header>
+<div class="airway-tabs-wrap">
+  <nav class="airway-tabs" aria-label="Anaesthesia for the Burns Patient sections">
+    <a href="anaes-burns.html"><span class="t-ic">🏠</span>Overview</a>
+    <a href="anaes-burns-pathophysiology.html" class="active"><span class="t-ic">🔬</span>Pathophysiology</a>
+    <a href="anaes-burns-resuscitation.html"><span class="t-ic">🚑</span>Resuscitation</a>
+    <a href="anaes-burns-airway.html"><span class="t-ic">🫁</span>Airway</a>
+    <a href="anaes-burns-pharmacology.html"><span class="t-ic">💊</span>Pharmacology</a>
+    <a href="anaes-burns-intraop.html"><span class="t-ic">🔪</span>Intra-op</a>
+    <a href="anaes-burns-pearls.html"><span class="t-ic">🎓</span>Pearls</a>
+  </nav>
+</div>
+<main class="topic-content" style="max-width:860px;margin:0 auto;padding:2rem 5% 3rem;">
+<section id="s2">
+<span class="sb sb-m">🔬 2 · Depth &amp; Size</span>
+  <h2>Classifying the Burn</h2>
+  <p>Two numbers drive every decision — <strong>depth</strong> (guides healing &amp; surgery) and <strong>size / % total body surface area (TBSA)</strong> (guides fluids, transfer &amp; prognosis). Only <strong>partial- and full-thickness</strong> burns are counted when calculating TBSA for fluids.</p>
+  <div class="table-wrap">
+    <table class="drug-table">
+      <thead><tr><th>Depth</th><th>Layers</th><th>Appearance / clinical</th><th>Healing</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Superficial (1°)</strong></td><td>Epidermis only</td><td>Red, dry, <strong>painful</strong>, blanches on pressure; <em>no blisters</em></td><td>~7 days, <strong>no scar</strong> (not counted in TBSA)</td></tr>
+        <tr><td><strong>Superficial partial (2°)</strong></td><td>Epidermis + superficial (papillary) dermis; adnexa preserved</td><td><strong>Blisters</strong>, moist, very <strong>painful</strong>, blanches</td><td>10–14 days, minimal/no scar</td></tr>
+        <tr><td><strong>Deep partial (2°)</strong></td><td>Epidermis + deep (reticular) dermis; few adnexa left</td><td>Mottled/<strong>marbled</strong>, drier, <strong>less painful</strong>, sluggish/absent blanching</td><td>2–3 weeks, <strong>scarring</strong> ± contracture</td></tr>
+        <tr><td><strong>Full thickness (3°)</strong></td><td>All layers (± fat/muscle in 4°)</td><td><strong>Charred / leathery / waxy white</strong>, dry, <strong>insensate</strong> (painless), does not blanch</td><td>Needs <strong>excision &amp; grafting</strong>; heals with contracture</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="marino-box">
+    <div class="mb-label">📐 Estimating burn size (TBSA)</div>
+    <ul>
+      <li><strong>Wallace "rule of 9s"</strong> (adults) — head 9%, each arm 9%, each leg 18%, anterior trunk 18%, posterior trunk 18%, perineum 1%.</li>
+      <li><strong>Lund–Browder chart</strong> — the <strong>most accurate, especially in children</strong>, because it corrects for age: an infant's head is relatively large (~18%) and the legs relatively small, changing with growth.</li>
+      <li><strong>Palm rule</strong> — the patient's <strong>palm + fingers ≈ 1% TBSA</strong> — quick for small or scattered burns.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="s3">
+<span class="sb sb-c">🩸 3 · Wound &amp; Systemic Response</span>
+  <h2>Pathophysiology</h2>
+  <div class="patho-flow">
+    <div class="patho-flow-title">Jackson's three concentric zones of a burn wound</div>
+    <div class="pf-node"><strong>Zone of coagulation</strong><span class="pf-sub">Central, irreversible necrosis — coagulated protein, no perfusion</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>Zone of stasis</strong><span class="pf-sub">Surrounding, at-risk but salvageable — good resuscitation, avoiding hypotension/hypoxia can save it; poor resuscitation converts it to necrosis (burn "deepens")</span></div>
+    <div class="pf-arrow"></div>
+    <div class="pf-node"><strong>Zone of hyperaemia</strong><span class="pf-sub">Outermost — vasodilated, viable, recovers</span></div>
+  </div>
+  <div class="patho-flow">
+    <div class="patho-flow-title">The systemic response — a biphasic time course</div>
+    <div class="pf-split">
+      <div class="pf-node"><strong>EBB phase (0–48 h) — hypovolaemic</strong><span class="pf-sub">Massive capillary leak &amp; oedema → ↓ intravascular volume, ↓ cardiac output, ↑ SVR. This is the resuscitation window — <em>but avoid over-resuscitation</em> ("fluid creep").</span></div>
+      <div class="pf-node"><strong>FLOW phase (&gt;48 h) — hypermetabolic</strong><span class="pf-sub">Hyperdynamic circulation (↑ CO), a <strong>doubling of metabolic rate</strong>, catabolism, protein loss, immunosuppression &amp; sepsis risk — persists until wounds are healed.</span></div>
+    </div>
+  </div>
+  <div class="ec"><p><strong>Why the "flow" phase matters to the anaesthetist:</strong> the hypercatabolic patient is <strong>tachycardic, warm and fluid-hungry at baseline</strong>, has ↑ drug clearance and altered protein binding, and is prone to <strong>hypothermia and infection</strong> — which is exactly why these patients are best <strong>posted first on the list</strong> and kept aggressively warm.</p></div>
+</section>
+  <div class="tab-pager">
+    <a class="tp-prev" href="anaes-burns.html"><span class="tp-dir">← Previous</span><span class="tp-title">🏠 Overview</span></a>
+    <a class="tp-next" href="anaes-burns-resuscitation.html"><span class="tp-dir">Next →</span><span class="tp-title">🚑 Resuscitation</span></a>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer-inner">
+    <span class="footer-brand">Crit<span>Care</span>.in</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li><li><a href="anaesthesia.html">Anaesthesia</a></li>
+      <li><a href="scores.html">Score Calculators</a></li><li><a href="login.html">Login</a></li>
+    </ul>
+    <p>© 2026 Dr. Anmol Srivastava · SGPGIMS Lucknow</p>
+  </div>
+</footer>
+<nav class="mobile-nav-bar">
+  <a href="index.html"><span class="mn-icon">🏠</span>Home</a>
+  <a href="anaesthesia.html"><span class="mn-icon">💉</span>Anaes</a>
+  <a href="abg-calculator.html"><span class="mn-icon">🩺</span>ABG</a>
+  <a href="scores.html"><span class="mn-icon">📊</span>Scores</a>
+  <a href="dnb.html"><span class="mn-icon">📝</span>DNB</a>
+</nav>
+</body>
+</html>
