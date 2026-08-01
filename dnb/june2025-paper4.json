@@ -1,0 +1,716 @@
+[
+  {
+    "qNo": 1,
+    "question": "a) What are the different methods to assess pain in a pediatric patient? [6]  b) Describe any one score for post operative pain assessment in the pediatric patient. [4]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Methods of paediatric pain assessment",
+        "definition": "Pain assessment in children must be age- and development-appropriate. The three broad approaches are self-report, behavioural (observational) and physiological — the 'gold standard' is self-report where the child is developmentally able.",
+        "methods": {
+          "title": "The three approaches",
+          "content": [
+            "1. SELF-REPORT (gold standard, for developmentally able children, usually ≥4–7 years): Faces Pain Scale–Revised / Wong-Baker FACES, visual analogue scale (VAS), numerical rating scale (NRS, older children), and the Poker Chip / 'pieces of hurt' tool.",
+            "2. BEHAVIOURAL / OBSERVATIONAL (for pre-verbal, non-verbal, cognitively impaired or unco-operative children): observe facial expression, cry, body movement, posture, consolability, leg tone — used in FLACC, CHEOPS, CRIES scales.",
+            "3. PHYSIOLOGICAL (adjunct, non-specific): heart rate, blood pressure, respiratory rate, sweating, pupil size and (neonates) vagal tone/oxygen saturation changes — non-specific, so used to support behavioural scores, not alone.",
+            "Composite scales (e.g. neonatal PIPP, CRIES) combine behavioural and physiological items — most useful in neonates.",
+            "Assessment must be repeated (before and after analgesia), and account for the child's developmental age, cultural context and the presence of parents."
+          ]
+        }
+      },
+      "partB": {
+        "title": "FLACC scale — a postoperative paediatric pain score",
+        "definition": "The FLACC scale is a validated behavioural (observational) pain-assessment tool for children ~2 months–7 years (and non-verbal/cognitively impaired children) — ideal for postoperative pain when self-report is not possible.",
+        "components": {
+          "title": "Five categories (each scored 0, 1 or 2 → total 0–10)",
+          "content": [
+            "F — Face: 0 = no expression/smile; 1 = occasional grimace/frown, withdrawn; 2 = frequent/constant frown, clenched jaw, quivering chin.",
+            "L — Legs: 0 = relaxed; 1 = uneasy/restless/tense; 2 = kicking or legs drawn up.",
+            "A — Activity: 0 = lying quietly, moves easily; 1 = squirming, tense, shifting; 2 = arched, rigid or jerking.",
+            "C — Cry: 0 = no cry; 1 = moans/whimpers, occasional complaint; 2 = crying steadily, screams/sobs, frequent complaints.",
+            "C — Consolability: 0 = content, relaxed; 1 = reassured by touching/talking, distractible; 2 = difficult to console or comfort.",
+            "Interpretation: 0 = relaxed/comfortable; 1–3 = mild discomfort; 4–6 = moderate pain; 7–10 = severe pain/discomfort → titrate analgesia and reassess."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Paediatric pain is assessed by self-report (gold standard where able), behavioural/observational scales (pre-verbal/non-verbal), and physiological indices (non-specific adjunct).",
+      "Match the tool to developmental age: FACES/VAS/NRS for older children; FLACC/CHEOPS/CRIES for infants and non-verbal children.",
+      "FLACC (Face, Legs, Activity, Cry, Consolability; each 0–2, total 0–10) is a validated postoperative behavioural score for young/non-verbal children."
+    ],
+    "clinicalPearls": [
+      "Self-report is the gold standard whenever the child can do it — but for the pre-verbal, sedated, ventilated or cognitively-impaired child you MUST switch to a behavioural scale like FLACC.",
+      "Physiological signs (tachycardia, hypertension) are non-specific — fever, hypovolaemia, hypoxia and anxiety all raise them — so never assess a child's pain on vital signs alone.",
+      "Always reassess AFTER an analgesic intervention: a pain score is only useful as a repeated measure guiding titration, not a one-off number.",
+      "Involve the parents — parental presence and their report of the child's behaviour hugely improve the accuracy of assessment in young children."
+    ],
+    "commonMistakes": [
+      "Using a self-report scale (VAS/NRS) in a child too young to understand it, instead of a behavioural scale.",
+      "Relying on heart rate/blood pressure alone to judge pain (non-specific).",
+      "Assessing pain only once rather than repeatedly before and after analgesia."
+    ],
+    "examTip": "For part (a), give the three-approach framework (self-report/behavioural/physiological) with named tools and the age-appropriateness principle. For part (b), take FLACC and lay out all five categories with the 0–10 interpretation.",
+    "sources": [
+      "Coté & Lerman — A Practice of Anesthesia for Infants and Children (pain assessment).",
+      "Merkel SI et al. The FLACC scale. Pediatr Nurs 1997.",
+      "APA (Association of Paediatric Anaesthetists) — Good Practice in Postoperative and Procedural Pain Management.",
+      "Gregory's Pediatric Anesthesia."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Neonatal-specific composite scales: PIPP (Premature Infant Pain Profile) and CRIES (Crying, Requires O₂, Increased vitals, Expression, Sleeplessness) combine behavioural + physiological items.",
+        "CHEOPS (Children's Hospital of Eastern Ontario Pain Scale) is another validated post-op behavioural tool (cry, facial, verbal, torso, touch, legs).",
+        "The r-FLACC (revised) is validated specifically for children with cognitive impairment, incorporating individualised behaviours described by carers."
+      ]
+    }
+  },
+  {
+    "qNo": 2,
+    "question": "a) Continuous renal replacement therapy. [5]  b) Use of magnesium in anaesthesia and ICU. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Continuous Renal Replacement Therapy (CRRT)",
+        "definition": "CRRT is a slow, continuous (24-h) form of renal replacement/blood purification used in critically-ill, haemodynamically-unstable patients with acute kidney injury — removing solute and fluid gradually, which is far better tolerated than intermittent haemodialysis.",
+        "principlesModes": {
+          "title": "Principles & modes",
+          "content": [
+            "Solute is removed by DIFFUSION (dialysis — down a concentration gradient across a membrane, countercurrent dialysate) and/or CONVECTION (haemofiltration — 'solvent drag' as fluid is ultrafiltered across the membrane and replaced), plus ULTRAFILTRATION for fluid removal.",
+            "Modes: SCUF (slow continuous ultrafiltration — fluid only), CVVH (continuous veno-venous haemoFILTRATION — convection), CVVHD (haemoDIALYSIS — diffusion), CVVHDF (haemoDIAFILTRATION — both). Access is via a double-lumen veno-venous catheter with a pump.",
+            "Anticoagulation of the circuit: regional CITRATE (preferred — anticoagulates only the circuit, not the patient) or systemic heparin."
+          ]
+        },
+        "indications": {
+          "title": "Indications & advantages",
+          "content": [
+            "Indications (AKI): refractory fluid overload/pulmonary oedema, severe hyperkalaemia, severe metabolic acidosis, uraemic complications (encephalopathy, pericarditis), and to make 'space' for nutrition/drugs; also some intoxications and (investigational) sepsis/cytokine removal.",
+            "Advantages over intermittent HD in the ICU: better haemodynamic stability (slow fluid shifts), gradual osmolar change (avoids dialysis dysequilibrium, good in raised ICP/brain injury), precise fluid balance, and continuous solute control."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Uses of magnesium in anaesthesia and the ICU",
+        "definition": "Magnesium is a physiological calcium antagonist and NMDA-receptor antagonist with membrane-stabilising, vasodilator, bronchodilator and anticonvulsant properties — giving it many peri-operative and critical-care uses.",
+        "uses": {
+          "title": "Clinical uses",
+          "content": [
+            "Obstetrics: seizure prophylaxis and treatment in severe pre-eclampsia/ECLAMPSIA (the drug of choice); also fetal neuroprotection and tocolysis.",
+            "Cardiac: treatment of Torsades de pointes (drug of choice) and other arrhythmias; part of arrhythmia prophylaxis in cardiac surgery.",
+            "Analgesia: NMDA antagonist — reduces postoperative pain and opioid requirement (adjunct in multimodal/opioid-free anaesthesia); attenuates opioid-induced hyperalgesia.",
+            "Attenuation of the pressor response to laryngoscopy and of the catecholamine response (e.g. phaeochromocytoma).",
+            "Respiratory: bronchodilator in severe/refractory acute asthma.",
+            "Correction of hypomagnesaemia (common in ICU — associated with arrhythmias, hypokalaemia, hypocalcaemia).",
+            "Others: adjunct to neuromuscular block (potentiates relaxants), tetanus, and controlled hypotension."
+          ]
+        },
+        "toxicity": {
+          "title": "Toxicity (monitor)",
+          "content": [
+            "Progressive toxicity: loss of deep tendon reflexes (~5 mmol/L), respiratory depression, then cardiac conduction block/arrest at high levels; potentiation of neuromuscular block. Antidote: IV calcium gluconate."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "CRRT is slow, continuous RRT for haemodynamically-unstable ICU patients with AKI; solute removal by diffusion (dialysis) and/or convection (filtration), with modes SCUF/CVVH/CVVHD/CVVHDF and citrate/heparin circuit anticoagulation.",
+      "CRRT's advantage over intermittent HD is haemodynamic stability and gradual osmolar change (important in brain injury/raised ICP) with precise fluid control.",
+      "Magnesium (Ca-antagonist + NMDA-antagonist): eclampsia seizure prophylaxis, Torsades, analgesic adjuvant, pressor-response attenuation, bronchodilation and correction of hypomagnesaemia — watch for toxicity (areflexia → respiratory/cardiac depression; antidote calcium)."
+    ],
+    "clinicalPearls": [
+      "Regional CITRATE anticoagulation is now preferred for CRRT circuits: it anticoagulates only the extracorporeal blood (reversed by the patient's own metabolism), avoiding systemic bleeding risk — but watch for citrate accumulation in liver failure (metabolic alkalosis, high total:ionised calcium ratio).",
+      "CRRT is specifically favoured in acute brain injury/raised ICP because the gradual solute shift avoids the cerebral oedema of rapid intermittent dialysis (dialysis dysequilibrium).",
+      "Magnesium is the FIRST-LINE drug for eclamptic seizures AND for Torsades de pointes — two classic 'drug of choice' answers examiners love.",
+      "CRRT and other renal replacement therapies REMOVE many drugs (including antibiotics) — dose adjustment and level monitoring are essential to avoid under-treating sepsis."
+    ],
+    "commonMistakes": [
+      "Confusing the mechanisms — diffusion (dialysis, concentration gradient) vs convection (filtration, solvent drag) — and the corresponding modes.",
+      "Forgetting citrate-accumulation risk in hepatic failure during citrate anticoagulation.",
+      "Overlooking magnesium toxicity monitoring (reflexes) or forgetting calcium as the antidote."
+    ],
+    "examTip": "For CRRT, define it, give the diffusion/convection principle, the modes, anticoagulation, indications and its haemodynamic advantage. For magnesium, list ≥5 distinct uses with the mechanism, and include toxicity + antidote.",
+    "sources": [
+      "Oh's Intensive Care Manual — Renal replacement therapy.",
+      "KDIGO Clinical Practice Guideline for Acute Kidney Injury.",
+      "Miller's Anesthesia, 9th Ed — Magnesium; renal failure & the ICU.",
+      "Herroeder S et al. Magnesium — essentials for anesthesiologists. Anesthesiology 2011."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "CRRT 'dose' is prescribed as effluent flow (~20–25 mL/kg/h per KDIGO); higher doses do not improve outcome (RENAL, ATN trials).",
+        "Timing of RRT in AKI (early vs delayed) is debated — recent trials (STARRT-AKI) support waiting for a clear indication rather than pre-emptive early start.",
+        "Magnesium therapeutic range in pre-eclampsia is 2–3.5 mmol/L (4–7 mEq/L); it also causes mild vasodilation/hypotension and potentiates non-depolarising neuromuscular block — reduce relaxant doses."
+      ]
+    }
+  },
+  {
+    "qNo": 3,
+    "question": "a) Describe acute kidney injury and its assessment in the critical care unit. [5]  b) Discuss the management of 50-year-old admitted in ICU with flail chest. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Acute Kidney Injury (AKI) — definition & assessment",
+        "definition": "AKI is an abrupt (hours–days) decline in renal function, defined and staged by the KDIGO criteria using serum creatinine and urine output.",
+        "kdigoCriteria": {
+          "title": "KDIGO definition & staging",
+          "content": [
+            "Definition: rise in serum creatinine ≥26.5 µmol/L (0.3 mg/dL) within 48 h, OR ≥1.5× baseline within 7 days, OR urine output <0.5 mL/kg/h for ≥6 h.",
+            "Stage 1: creatinine 1.5–1.9× baseline (or +26.5 µmol/L) / UO <0.5 mL/kg/h for 6–12 h.",
+            "Stage 2: creatinine 2.0–2.9× baseline / UO <0.5 mL/kg/h for ≥12 h.",
+            "Stage 3: creatinine ≥3× baseline (or ≥354 µmol/L) or on RRT / UO <0.3 mL/kg/h for ≥24 h or anuria ≥12 h.",
+            "(KDIGO unified the earlier RIFLE and AKIN criteria.)"
+          ]
+        },
+        "assessment": {
+          "title": "Assessment in the ICU (find the cause: pre-renal / renal / post-renal)",
+          "content": [
+            "History/examination and volume status; identify nephrotoxins (contrast, aminoglycosides, NSAIDs), sepsis and hypoperfusion.",
+            "Urine: output trend, urinalysis (casts, protein, blood), urine electrolytes/osmolality (fractional excretion of sodium — low in pre-renal, high in ATN).",
+            "Blood: urea, creatinine, electrolytes (especially K⁺), acid-base, and trend.",
+            "Imaging: renal ultrasound to exclude OBSTRUCTION (post-renal) and assess size.",
+            "Novel biomarkers: NGAL, cystatin C, KIM-1, TIMP-2·IGFBP7 (early tubular-stress markers)."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Management of flail chest in the ICU",
+        "definition": "Flail chest = ≥3 contiguous ribs each fractured in ≥2 places, producing a free 'flail' segment that moves PARADOXICALLY (in on inspiration, out on expiration). The major problem is not the paradox itself but the underlying PULMONARY CONTUSION and pain-related hypoventilation.",
+        "management": {
+          "title": "Management principles",
+          "content": [
+            "ANALGESIA is the cornerstone: excellent pain relief allows deep breathing, coughing and physiotherapy, preventing atelectasis and pneumonia. THORACIC EPIDURAL analgesia is the gold standard; alternatives: paravertebral/erector-spinae/intercostal blocks, and multimodal systemic analgesia (opioids + paracetamol ± ketamine).",
+            "Respiratory support: humidified oxygen, aggressive chest physiotherapy and secretion clearance; NON-INVASIVE ventilation (CPAP/BiPAP) if adequate analgesia and no contraindication; invasive ventilation ('internal pneumatic splinting') for respiratory failure, severe contusion or associated injuries.",
+            "Treat the underlying pulmonary contusion: judicious (not excessive) fluids to avoid worsening the contusion, lung-protective ventilation if ventilated.",
+            "Monitor for and manage associated injuries: pneumothorax/haemothorax (chest drain), and other trauma; serial ABGs and imaging.",
+            "SURGICAL RIB FIXATION (SSRF): increasingly indicated for severe flail chest / failure to wean / significantly displaced fractures — reduces ventilator days, ICU stay and pneumonia.",
+            "Supportive ICU care: nutrition, VTE prophylaxis, and early mobilisation."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "AKI is defined/staged by KDIGO using serum creatinine (≥26.5 µmol/L rise in 48 h or ≥1.5× baseline) and urine output (<0.5 mL/kg/h ≥6 h); assess by classifying pre-renal/renal/post-renal with urine indices, bloods and ultrasound.",
+      "Flail chest management centres on ANALGESIA (thoracic epidural is gold standard) to enable breathing/physiotherapy, plus respiratory support (O₂/NIV/invasive as needed) and treating the underlying pulmonary contusion.",
+      "Surgical rib fixation is increasingly used for severe flail chest and reduces ventilator days and pneumonia."
+    ],
+    "clinicalPearls": [
+      "In flail chest the real enemy is the underlying PULMONARY CONTUSION and pain-limited breathing, not the paradoxical segment itself — that's why good analgesia (thoracic epidural) matters more than 'stabilising' the chest wall.",
+      "Fluid management is a balancing act: under-resuscitation worsens shock/AKI, but over-resuscitation floods the contused lung — aim for judicious, targeted fluids.",
+      "Urine output is the earliest bedside marker of AKI — oliguria often precedes the creatinine rise by hours, so a falling urine output in the ICU is an early warning.",
+      "Fractional excretion of sodium (FENa <1% = pre-renal, >2% = ATN) helps distinguish reversible pre-renal AKI from established tubular injury — but is unreliable after diuretics."
+    ],
+    "commonMistakes": [
+      "Focusing on the paradoxical chest movement and neglecting the pulmonary contusion and analgesia that actually determine outcome.",
+      "Over-transfusing/over-filling the flail-chest patient and worsening the contusion.",
+      "Using only serum creatinine to diagnose AKI and ignoring urine output (the earlier, more sensitive marker)."
+    ],
+    "examTip": "For AKI, quote the KDIGO creatinine/urine-output criteria and staging and the pre-/renal/post-renal assessment. For flail chest, lead with analgesia (thoracic epidural), then respiratory support and treating the contusion, and mention surgical fixation.",
+    "sources": [
+      "KDIGO Clinical Practice Guideline for Acute Kidney Injury.",
+      "Oh's Intensive Care Manual — Acute kidney injury; chest trauma.",
+      "ATLS 10th Edition — Thoracic trauma.",
+      "Miller's Anesthesia, 9th Ed — Trauma; the critically ill patient."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "The evolution of AKI definitions: RIFLE (Risk/Injury/Failure/Loss/ESRD) → AKIN → the unified KDIGO staging used today.",
+        "Pulmonary contusion typically WORSENS over the first 24–48 h (radiographic and gas-exchange deterioration) — anticipate delayed respiratory failure in flail chest.",
+        "Indications for surgical rib fixation include flail chest with respiratory failure, failure to wean from ventilation, significantly displaced fractures and severe chest-wall deformity/pain."
+      ]
+    }
+  },
+  {
+    "qNo": 4,
+    "question": "a) Role of simulators in anesthesia training. [5]  b) Depth of analgesia monitoring. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Role of simulators in anaesthesia training",
+        "definition": "Simulation is an educational technique that recreates clinical situations in a safe, controlled environment for training, assessment and practice — increasingly central to anaesthesia education because anaesthesia is a high-stakes, procedure- and crisis-rich specialty.",
+        "rolesTypes": {
+          "title": "Roles, types & benefits",
+          "content": [
+            "Types: part-task trainers (airway/IV/central-line/regional manikins), full-body high-fidelity computerised patient simulators, screen-based/virtual-reality trainers, and standardised (simulated) patients for communication.",
+            "Skills taught: technical/procedural skills (intubation, fibreoptic, central lines, regional blocks), and crucially NON-TECHNICAL skills — the ANTS domains (situation awareness, decision-making, task management, teamwork/communication) via Crisis Resource Management (CRM) training.",
+            "Rare emergencies: safe, repeated rehearsal of critical incidents that are too rare/dangerous to learn on patients — malignant hyperthermia, anaphylaxis, 'can't intubate can't oxygenate', local-anaesthetic toxicity, cardiac arrest.",
+            "Benefits: no risk to real patients ('first, do no harm to the learner's patient'), deliberate practice to competence, immediate structured DEBRIEFING (where most learning occurs), objective assessment, and team/system testing (in-situ simulation reveals latent errors).",
+            "Also used for assessment (OSCEs), certification/revalidation and research; limitation — cost, fidelity gap and need for trained facilitators."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Depth of analgesia (nociception) monitoring",
+        "definition": "Depth-of-analgesia (antinociception) monitors aim to quantify the balance between the noxious surgical stimulus and the antinociceptive (analgesic) effect — helping to titrate intra-operative analgesia objectively, since analgesia (unlike hypnosis, monitored by BIS) has no long-established monitor.",
+        "monitors": {
+          "title": "Available monitors / methods",
+          "content": [
+            "Surgical Pleth Index (SPI / SSI): derived from photoplethysmographic pulse-wave amplitude and heart-rate interval — a low SPI suggests adequate analgesia.",
+            "Analgesia Nociception Index (ANI): based on heart-rate variability (high-frequency parasympathetic tone) — high ANI = good analgesia/parasympathetic dominance.",
+            "Nociception Level (NOL) index: a multi-parameter index (photoplethysmography, skin conductance, temperature, accelerometry) processed by an algorithm.",
+            "Pupillometry: pupillary dilatation reflex to a noxious stimulus reflects the analgesic state.",
+            "Skin conductance / sweating response and traditional clinical/autonomic surrogates (heart rate, blood pressure, lacrimation, sweating, movement) — non-specific.",
+            "Uses: guide opioid titration (avoid under- and over-dosing), part of opioid-free/opioid-sparing anaesthesia, and reduce postoperative pain/opioid consumption; still evolving evidence for hard outcomes."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Simulation trains technical skills AND non-technical skills (ANTS/CRM — situation awareness, decision-making, teamwork), and lets trainees rehearse rare crises (MH, anaphylaxis, CICO) safely; the DEBRIEF is where most learning happens.",
+      "Depth-of-analgesia (nociception) monitors quantify the nociception–antinociception balance to titrate analgesia objectively.",
+      "Examples: Surgical Pleth Index (SPI), Analgesia Nociception Index (ANI, heart-rate variability), NOL index, and pupillometry — versus non-specific autonomic signs (HR/BP)."
+    ],
+    "clinicalPearls": [
+      "In simulation, the DEBRIEF — not the scenario itself — is where the real learning occurs; a well-facilitated, non-judgemental debrief turns an experience into durable insight.",
+      "Simulation shines for the crises you can't safely practise on patients: 'can't intubate, can't oxygenate', malignant hyperthermia, LA toxicity and anaphylaxis — muscle-memory drills that save lives.",
+      "There is a monitor for hypnosis (BIS/entropy) but no gold-standard monitor for analgesia — nociception indices (SPI/ANI/NOL/pupillometry) are attempts to fill that gap, useful in opioid-free anaesthesia.",
+      "A rising heart rate/blood pressure under anaesthesia is a crude, non-specific analgesia signal — nociception monitors add value precisely because these autonomic surrogates are unreliable (blunted by beta-blockers, confounded by hypovolaemia)."
+    ],
+    "commonMistakes": [
+      "Describing simulation as only for technical/procedural skills and omitting non-technical skills (CRM/ANTS) and the central role of debriefing.",
+      "Confusing depth-of-ANALGESIA (nociception) monitors with depth-of-HYPNOSIS monitors (BIS/entropy) — they measure different components of the anaesthesia triad.",
+      "Overstating the evidence — nociception monitors help titration but robust outcome data are still limited."
+    ],
+    "examTip": "For simulation, cover types, technical + non-technical (CRM) skills, rare-crisis rehearsal, patient safety and debriefing. For analgesia monitoring, name the specific indices (SPI, ANI, NOL, pupillometry) and their basis, and note there is no gold standard.",
+    "sources": [
+      "Miller's Anesthesia, 9th Ed — Simulation in anesthesia; monitoring.",
+      "Gaba DM — The future vision of simulation in healthcare.",
+      "Flin R, Patey R — Anaesthetists' Non-Technical Skills (ANTS).",
+      "Gruenewald M, Ilies C — Monitoring the nociception–antinociception balance. Best Pract Res Clin Anaesthesiol 2013."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Fidelity: low/part-task (skills), medium, and high-fidelity (full-body computerised) simulators; 'in-situ' simulation in the real workplace uncovers latent system/latent-threat errors.",
+        "Kirkpatrick levels (reaction → learning → behaviour → results) frame how simulation training is evaluated.",
+        "Combining a hypnosis monitor (BIS) with a nociception monitor (SPI/ANI/NOL) allows separate titration of the two main anaesthetic components — the practical realisation of the anaesthesia triad."
+      ]
+    }
+  },
+  {
+    "qNo": 5,
+    "question": "a) Programmed intermittent epidural bolus technique. [5]  b) Remimazolam. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Programmed Intermittent Epidural Bolus (PIEB)",
+        "definition": "PIEB is a mode of maintaining epidural analgesia (chiefly for labour) in which the pump delivers fixed-volume boluses of dilute local-anaesthetic/opioid solution at set time intervals (e.g. 5–10 mL every 30–60 min), instead of (or in addition to) a continuous infusion — usually combined with patient-controlled epidural boluses (PCEA).",
+        "principleAdvantages": {
+          "title": "Principle & advantages",
+          "content": [
+            "Principle: delivering the same hourly volume as a bolus at higher pressure produces MORE EXTENSIVE and UNIFORM spread of solution in the epidural space than a slow continuous infusion (better distribution through the multi-orifice catoheter and along the space).",
+            "Advantages over continuous epidural infusion (CEI): better quality analgesia, more even/wider dermatomal spread, LESS local-anaesthetic consumption, LESS motor block (facilitates ambulation), fewer clinician top-ups/breakthrough pain, and higher maternal satisfaction.",
+            "Typically combined with PCEA for breakthrough pain; parameters (bolus volume, interval, PCEA dose, lockout) are individualised.",
+            "Considerations: the high-pressure bolus can rarely cause a higher block/hypotension — monitor; pump technology must support the mode."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Remimazolam",
+        "definition": "Remimazolam is a novel ULTRA-SHORT-ACTING benzodiazepine — a GABA-A receptor agonist — designed as a 'soft drug': it is rapidly metabolised by tissue (carboxyl)esterases to an inactive metabolite (CNS7054), giving a fast onset and, crucially, an ORGAN-INDEPENDENT, context-insensitive rapid offset.",
+        "propertiesUses": {
+          "title": "Properties, uses & reversal",
+          "content": [
+            "Pharmacology: rapid onset (1–3 min), short duration, and NO accumulation on infusion (organ-independent ester metabolism, like remifentanil) → predictable, quick recovery.",
+            "Haemodynamic stability: causes LESS hypotension and cardiorespiratory depression than propofol — attractive in the elderly and haemodynamically fragile.",
+            "REVERSIBLE by FLUMAZENIL (a benzodiazepine antagonist) — a unique safety advantage over propofol.",
+            "Uses: procedural SEDATION (endoscopy, bronchoscopy, cardiology), induction and maintenance of general ANAESTHESIA, and ICU sedation; useful where haemodynamic stability or reversibility is desirable.",
+            "Advantages: rapid recovery, cardiovascular stability, reversibility, no injection pain (unlike propofol) and low PONV.",
+            "Limitations: benzodiazepine class effects (limited analgesia — needs an opioid; theoretical delirium/tolerance concerns), cost, and less long-term outcome data."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "PIEB delivers timed fixed-volume epidural boluses (vs a continuous infusion), giving wider, more uniform spread, better analgesia, LESS local-anaesthetic use and LESS motor block — ideal for ambulatory labour analgesia, usually with PCEA.",
+      "Remimazolam is an ultra-short-acting benzodiazepine (GABA-A agonist) metabolised by tissue esterases → rapid, organ-independent, non-accumulating offset.",
+      "Remimazolam causes less haemodynamic depression than propofol and is REVERSIBLE with flumazenil — used for procedural sedation, GA and ICU sedation."
+    ],
+    "clinicalPearls": [
+      "The magic of PIEB is that the SAME hourly dose delivered as a high-pressure bolus spreads better than a trickle infusion — better analgesia with LESS drug and LESS motor block.",
+      "Remimazolam is the 'remifentanil of benzodiazepines' — ester-metabolised, non-accumulating, context-insensitive offset — so infusions wake up quickly regardless of duration.",
+      "Remimazolam's two standout safety features are cardiovascular stability (great for the frail/elderly and cardiac patients) and REVERSIBILITY with flumazenil — neither of which propofol offers.",
+      "Remimazolam provides sedation/hypnosis but NO analgesia (a benzodiazepine) — always pair it with an analgesic/opioid for painful procedures."
+    ],
+    "commonMistakes": [
+      "Describing PIEB as just a faster continuous infusion — the key is the intermittent high-pressure bolus giving superior spread and less motor block.",
+      "Forgetting that remimazolam is reversible with flumazenil and that it is metabolised by esterases (organ-independent), not the liver.",
+      "Expecting analgesia from remimazolam (it is a pure sedative-hypnotic)."
+    ],
+    "examTip": "For PIEB, contrast it with continuous infusion and list the advantages (spread, less LA, less motor block, satisfaction). For remimazolam, emphasise ester metabolism/organ-independent offset, haemodynamic stability and flumazenil reversibility.",
+    "sources": [
+      "Chestnut's Obstetric Anesthesia, 6th Ed — Maintenance of labour epidural analgesia (PIEB).",
+      "Miller's Anesthesia, 9th Ed — Intravenous anesthetics (novel agents).",
+      "Wiltshire HR et al. / Kilpatrick GJ — Remimazolam pharmacology.",
+      "Sng BL, Sia ATH — PIEB for labour analgesia (systematic reviews)."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "PIEB pump parameters interact: larger boluses at longer intervals generally give better spread than small frequent boluses; optimum is an area of active research.",
+        "Remimazolam besylate was approved (Japan/US/EU, ~2020) initially for procedural sedation and (Japan) general anaesthesia; it shows promise for ICU sedation with rapid neurological assessment.",
+        "Because remimazolam is ester-metabolised, it (like remifentanil and atracurium) is attractive in hepatic/renal impairment where organ-dependent drugs accumulate."
+      ]
+    }
+  },
+  {
+    "qNo": 6,
+    "question": "a) What is ventilator associated pneumonia (VAP)? [2]  b) How can it be prevented? [4]  c) Discuss the management of VAP. [4]",
+    "marks": 10,
+    "answer": {
+      "definition": {
+        "title": "Ventilator-Associated Pneumonia (VAP) — definition [2]",
+        "content": "VAP is a hospital-acquired pneumonia developing >48 hours after endotracheal intubation and mechanical ventilation, where the infection was neither present nor incubating at the time of intubation. Diagnosis is suggested by a new/progressive chest-X-ray infiltrate PLUS at least two of: fever/hypothermia, leucocytosis/leucopenia, purulent tracheal secretions, and worsening oxygenation — with microbiological confirmation from tracheal aspirate/BAL. Early-onset VAP (≤4 days) is usually due to more sensitive organisms; late-onset (≥5 days) to multidrug-resistant organisms (Pseudomonas, MRSA, Acinetobacter)."
+      },
+      "prevention": {
+        "title": "Prevention — the VAP care bundle [4]",
+        "content": [
+          "Head-of-bed ELEVATION to 30–45° (semi-recumbent) to reduce aspiration of gastric/oropharyngeal contents.",
+          "Daily SEDATION HOLDS ('sedation vacation') and assessment of readiness to WEAN/EXTUBATE — shorter ventilation = less VAP.",
+          "Oral care with chlorhexidine; subglottic secretion drainage (special ETTs) and maintaining ETT cuff pressure ~20–30 cmH₂O to limit micro-aspiration.",
+          "Prefer ORAL over nasal intubation (reduces sinusitis); avoid unnecessary re-intubation; use non-invasive ventilation where possible.",
+          "Peptic ulcer and DVT prophylaxis (bundle components), hand hygiene and infection-control measures, and avoiding unnecessary ventilator-circuit changes.",
+          "Minimise the duration of ventilation overall — the single most effective preventive strategy."
+        ]
+      },
+      "management": {
+        "title": "Management of VAP [4]",
+        "content": [
+          "Obtain cultures FIRST (tracheal aspirate/BAL, blood cultures) then start EMPIRICAL broad-spectrum antibiotics promptly — do not delay treatment for cultures.",
+          "Empirical choice guided by early vs late onset and local antibiogram/resistance patterns: cover Pseudomonas and, if MDR risk (late-onset, prior antibiotics, MRSA prevalence), add MRSA cover — e.g. an antipseudomonal β-lactam (piperacillin-tazobactam/meropenem/cefepime) ± an aminoglycoside/fluoroquinolone ± vancomycin/linezolid.",
+          "DE-ESCALATE antibiotics once culture and sensitivity return; treat for a SHORT course (~7 days) if responding (equal outcomes to longer courses, less resistance).",
+          "Supportive care: optimise oxygenation/lung-protective ventilation, physiotherapy and secretion clearance, source control, haemodynamic support and nutrition.",
+          "Monitor response (clinical, gas exchange, inflammatory markers/CPIS); re-evaluate and broaden/change if not improving; treat complications (empyema, ARDS)."
+        ]
+      }
+    },
+    "keyPoints": [
+      "VAP = pneumonia >48 h after intubation (new infiltrate + clinical/microbiological features); early-onset (≤4 days, sensitive organisms) vs late-onset (≥5 days, MDR organisms).",
+      "Prevention = the VAP bundle: 30–45° head-up, daily sedation holds and weaning assessment, oral chlorhexidine, subglottic suction/cuff-pressure control, oral intubation, and minimising ventilation duration.",
+      "Management: cultures then prompt empirical broad-spectrum antibiotics (cover Pseudomonas ± MRSA per onset/local resistance), DE-ESCALATE on sensitivities, treat ~7 days, plus supportive care."
+    ],
+    "clinicalPearls": [
+      "The most powerful VAP-prevention measure is simply getting the patient OFF the ventilator sooner — daily sedation holds + spontaneous-breathing trials reduce ventilator days and therefore VAP.",
+      "Take cultures but do NOT wait for them to start antibiotics — early appropriate empirical therapy improves survival; you refine/de-escalate later.",
+      "Short-course antibiotics (~7 days) are as effective as longer courses for most VAP and reduce resistance and C. difficile — 'shorter is better' when the patient is responding.",
+      "Late-onset VAP (≥5 days) and prior antibiotic exposure flag MDR organisms (Pseudomonas, MRSA, Acinetobacter) — broaden empirical cover accordingly, then de-escalate."
+    ],
+    "commonMistakes": [
+      "Delaying empirical antibiotics while waiting for culture results (worsens outcome).",
+      "Failing to de-escalate and treating for prolonged courses, driving resistance.",
+      "Ignoring the bundle (head-up position, sedation holds) which prevents VAP in the first place."
+    ],
+    "examTip": "Give the crisp 2-4-4 structure: a precise definition (>48 h, criteria, early vs late), the VAP bundle for prevention, and a management sequence (cultures → early empirical broad-spectrum → de-escalate → short course + supportive care).",
+    "sources": [
+      "IDSA/ATS Guidelines for Management of Hospital-Acquired and Ventilator-Associated Pneumonia (2016).",
+      "Oh's Intensive Care Manual — Nosocomial infection / VAP.",
+      "Surviving Sepsis & institutional VAP-prevention bundles.",
+      "Miller's Anesthesia, 9th Ed — Critical care & nosocomial infection."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "The Clinical Pulmonary Infection Score (CPIS, using temperature, WCC, secretions, oxygenation, CXR and culture) aids diagnosis and guides duration, though its accuracy is debated.",
+        "VAP is a subset of the newer surveillance concept 'ventilator-associated events (VAE)', which captures ventilator-associated conditions more objectively.",
+        "Selective oral/digestive decontamination (SOD/SDD) reduces VAP in some ICUs but is not universally adopted owing to antimicrobial-resistance concerns."
+      ]
+    }
+  },
+  {
+    "qNo": 7,
+    "question": "a) WHO ladder for cancer pain management. [5]  b) qSOFA score. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "WHO analgesic ladder for cancer pain",
+        "definition": "The WHO analgesic ladder (1986) is a stepwise framework for cancer-pain management, escalating analgesia according to pain severity, with the principle of giving analgesia 'by the mouth, by the clock, by the ladder, for the individual, with attention to detail'.",
+        "steps": {
+          "title": "The three steps (± a fourth)",
+          "content": [
+            "Step 1 — MILD pain: NON-OPIOID ± ADJUVANT. Paracetamol and/or an NSAID, plus adjuvants.",
+            "Step 2 — MILD-to-MODERATE pain: WEAK OPIOID (codeine, tramadol, low-dose oral morphine) + non-opioid ± adjuvant.",
+            "Step 3 — MODERATE-to-SEVERE pain: STRONG OPIOID (morphine, oxycodone, fentanyl, hydromorphone) + non-opioid ± adjuvant.",
+            "Step 4 (added in practice): INTERVENTIONAL / invasive techniques — nerve blocks, neuraxial (intrathecal/epidural) analgesia, neurolytic blocks (e.g. coeliac plexus), spinal-cord stimulation — for pain refractory to Step 3.",
+            "Adjuvants (at every step): antidepressants (amitriptyline, duloxetine) and anticonvulsants (gabapentin, pregabalin) for neuropathic pain, corticosteroids, bisphosphonates for bony pain, antispasmodics, and management of side-effects (laxatives, antiemetics)."
+          ]
+        },
+        "principles": {
+          "title": "Key principles",
+          "content": [
+            "By the CLOCK (regular dosing, not PRN) with breakthrough (rescue) doses available; by the MOUTH (oral where possible); individualised titration; and anticipation/treatment of side-effects (constipation, nausea)."
+          ]
+        }
+      },
+      "partB": {
+        "title": "qSOFA (quick Sequential Organ Failure Assessment) score",
+        "definition": "qSOFA is a rapid, bedside screening tool (introduced with the Sepsis-3 definitions, 2016) to identify patients with suspected infection who are at increased risk of poor outcome (death/prolonged ICU stay) — usable OUTSIDE the ICU without laboratory tests.",
+        "components": {
+          "title": "The three criteria (1 point each; score ≥2 = high risk)",
+          "content": [
+            "Respiratory rate ≥22 breaths/min.",
+            "Altered mentation (Glasgow Coma Scale <15).",
+            "Systolic blood pressure ≤100 mmHg.",
+            "Interpretation: a qSOFA ≥2 in a patient with suspected infection identifies those at greater risk of sepsis-related death and prompts escalation (closer monitoring, investigation for organ dysfunction, and full SOFA assessment)."
+          ]
+        },
+        "context": {
+          "title": "Context & limitations",
+          "content": [
+            "Sepsis-3: sepsis = life-threatening organ dysfunction (a rise in SOFA ≥2) due to a dysregulated host response to infection; septic shock = sepsis with vasopressor-requiring hypotension AND lactate >2 mmol/L despite fluids.",
+            "qSOFA is a prompt/screen, NOT a diagnosis of sepsis and not part of the definition; it has good specificity but limited sensitivity — a low qSOFA does not exclude sepsis.",
+            "Newer guidance (Surviving Sepsis 2021) does NOT recommend qSOFA as the sole screening tool — use alongside NEWS2/SIRS and clinical judgement."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "WHO ladder: Step 1 non-opioid ± adjuvant → Step 2 weak opioid → Step 3 strong opioid (each ± non-opioid ± adjuvant), with a Step 4 of interventional techniques; principles = by mouth, by the clock, by the ladder, individualised.",
+      "qSOFA (RR ≥22, altered mentation GCS <15, SBP ≤100) — a rapid non-laboratory bedside screen; ≥2 points flags high risk in suspected infection.",
+      "qSOFA is a prompt to escalate, not a diagnosis of sepsis; Sepsis-3 defines sepsis as organ dysfunction (SOFA rise ≥2) from a dysregulated host response to infection."
+    ],
+    "clinicalPearls": [
+      "Give cancer-pain analgesia 'by the clock' (regular), not just PRN, with breakthrough rescue doses — chasing established pain with PRN dosing gives poor control.",
+      "Always co-prescribe a LAXATIVE with strong opioids for cancer pain — opioid-induced constipation is universal and, unlike nausea, does NOT develop tolerance.",
+      "qSOFA needs NO blood tests — three bedside signs (fast breathing, confusion, low BP) — making it a rapid ward screen; but a normal qSOFA does NOT rule out sepsis (low sensitivity).",
+      "Neuropathic cancer pain responds poorly to opioids alone — reach early for adjuvants (amitriptyline, gabapentin/pregabalin, steroids) at any step of the ladder."
+    ],
+    "commonMistakes": [
+      "Prescribing opioids PRN instead of regularly (by the clock) and forgetting breakthrough doses and laxatives.",
+      "Treating qSOFA as a diagnostic definition of sepsis rather than a risk-stratification prompt, or relying on it alone (low sensitivity).",
+      "Omitting adjuvants for neuropathic/bony cancer pain and escalating opioids ineffectively."
+    ],
+    "examTip": "Draw the three-step ladder (add Step 4 interventional) with the 'by mouth/by the clock/by the ladder/for the individual' principles and adjuvants. For qSOFA, give the three criteria and the ≥2 cut-off, and place it correctly within Sepsis-3.",
+    "sources": [
+      "WHO — Cancer Pain Relief and the analgesic ladder.",
+      "Singer M et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA 2016.",
+      "Surviving Sepsis Campaign Guidelines 2021.",
+      "Miller's Anesthesia, 9th Ed — Cancer pain; sepsis."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "The WHO ladder is being modernised into a bidirectional/'lift' concept — for severe or acute-on-chronic cancer pain you can start high (strong opioid) and step down, and interventional techniques can be used earlier.",
+        "The full SOFA score grades dysfunction in six systems (respiration/PaO₂:FiO₂, coagulation/platelets, liver/bilirubin, cardiovascular/MAP-vasopressors, CNS/GCS, renal/creatinine-urine output).",
+        "Opioid conversion and equianalgesic dosing (e.g. oral:IV morphine 3:1; morphine to oxycodone ~1.5:1) are essential practical skills when climbing the ladder."
+      ]
+    }
+  },
+  {
+    "qNo": 8,
+    "question": "a) What is EXIT procedure? [3]  b) How would you manage anaesthesia for intrauterine fetal surgery? [7]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "EXIT procedure",
+        "definition": "EXIT = Ex-Utero Intrapartum Treatment. It is a specialised procedure performed at (or near) delivery in which the fetus is PARTIALLY delivered (usually head and shoulders) through a hysterotomy while UTEROPLACENTAL circulation and gas exchange are DELIBERATELY MAINTAINED — buying time to secure the fetal airway or perform a procedure BEFORE the cord is clamped.",
+        "indications": {
+          "title": "Indications",
+          "content": [
+            "Anticipated difficult/obstructed fetal airway: large neck masses (cervical teratoma, lymphangioma), congenital high airway obstruction syndrome (CHAOS), severe micrognathia.",
+            "To secure the airway (intubation/bronchoscopy/tracheostomy) or resect a mass, or place the neonate on ECMO (e.g. severe congenital diaphragmatic hernia) — all while placental support continues.",
+            "The key is maintaining UTERINE RELAXATION so placental gas exchange sustains the fetus during the intervention."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Anaesthesia for intrauterine (fetal) surgery",
+        "definition": "Fetal surgery (open, or EXIT, or fetoscopic) is unique: the anaesthetist cares for TWO patients simultaneously — the mother and the fetus — and the paramount requirement (for open/EXIT surgery) is profound UTERINE RELAXATION while preserving uteroplacental perfusion and providing fetal anaesthesia/analgesia and immobility.",
+        "maternal": {
+          "title": "Maternal management",
+          "content": [
+            "Full obstetric anaesthetic considerations: aspiration prophylaxis and RSI, LEFT uterine displacement, large-bore access, invasive monitoring for major open cases.",
+            "GENERAL ANAESTHESIA with a HIGH concentration of a VOLATILE agent (e.g. 2–3 MAC sevoflurane/desflurane) is the classic technique for open/EXIT surgery because volatiles provide profound UTERINE RELAXATION (tocolysis) and cross the placenta to anaesthetise the fetus.",
+            "Additional tocolysis if needed: magnesium, nitroglycerin, terbutaline; but deep volatile-induced hypotension must be treated to preserve placental perfusion (vasopressors, fluids).",
+            "Maintain maternal normoxia, normocapnia and normotension for fetal wellbeing."
+          ]
+        },
+        "fetal": {
+          "title": "Fetal management",
+          "content": [
+            "Fetal anaesthesia/analgesia and IMMOBILITY: partly from placental transfer of the volatile agent, PLUS direct intramuscular fetal injection of an OPIOID (fentanyl), a MUSCLE RELAXANT (vecuronium/rocuronium) and an anticholinergic (atropine) given by the surgeon.",
+            "Fetal monitoring: intra-operative fetal echocardiography (heart rate, contractility, filling), pulse oximetry; maintain fetal temperature and have resuscitation drugs/blood (warmed, irradiated, CMV-negative, cross-matched) ready.",
+            "Amnioinfusion with warm fluid to maintain uterine volume and cord/placental perfusion; avoid fetal hypothermia and hypovolaemia."
+          ]
+        },
+        "postprocedure": {
+          "title": "Post-procedure (for EXIT: the transition)",
+          "content": [
+            "For EXIT: only AFTER the airway/procedure is secured is the cord clamped and the neonate fully delivered and handed to the neonatal team; then uterine tone must be RESTORED rapidly (turn off/down volatile, give oxytocin/uterotonics) to prevent postpartum haemorrhage from the relaxed uterus.",
+            "Manage the risk of maternal haemorrhage (relaxed uterus) and preterm labour; postoperative tocolysis and analgesia."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "EXIT (Ex-Utero Intrapartum Treatment) maintains uteroplacental circulation while the partially-delivered fetus's airway/procedure is secured BEFORE cord clamping — for airway-obstructing neck masses, CHAOS, or to institute ECMO.",
+      "Fetal surgery = two patients; open/EXIT needs profound UTERINE RELAXATION (high-dose volatile ± magnesium/GTN/terbutaline) while maintaining uteroplacental perfusion.",
+      "Fetal anaesthesia/immobility comes from placental volatile transfer PLUS direct fetal IM opioid + relaxant + atropine; monitor with fetal echo; after EXIT, restore uterine tone (oxytocin) to prevent haemorrhage."
+    ],
+    "clinicalPearls": [
+      "The whole point of EXIT is that the placenta keeps oxygenating the baby — so the enemy is uterine CONTRACTION (which shears the placenta); you deliberately relax the uterus with high-dose volatile and only clamp the cord once the airway is secured.",
+      "High-dose volatile is a double-edged sword: it relaxes the uterus AND drops maternal blood pressure — treat maternal hypotension aggressively, because placental perfusion (and thus the fetus) depends on it.",
+      "The dangerous moment after EXIT/open fetal surgery is uterine ATONY from the deep volatile — have oxytocin/uterotonics ready and turn the volatile down promptly after cord clamping to prevent massive PPH.",
+      "The fetus is given its OWN anaesthetic (IM fentanyl + relaxant + atropine) directly — never assume placental transfer alone provides adequate fetal analgesia and immobility."
+    ],
+    "commonMistakes": [
+      "Forgetting that the aim is uterine RELAXATION (not the usual uterine tone) during the procedure, and then failing to restore tone afterwards (causing haemorrhage).",
+      "Neglecting maternal hypotension from deep volatile, compromising placental perfusion.",
+      "Assuming placental drug transfer alone anaesthetises the fetus and omitting direct fetal opioid/relaxant/atropine."
+    ],
+    "examTip": "Define EXIT crisply (placental support maintained until airway secured). For fetal surgery, structure around two patients: maternal (GA + high volatile for uterine relaxation + preserve perfusion) and fetal (direct IM anaesthesia + monitoring), then the uterine-tone/haemorrhage transition.",
+    "sources": [
+      "Chestnut's Obstetric Anesthesia, 6th Ed — Anesthesia for fetal surgery & EXIT.",
+      "Miller's Anesthesia, 9th Ed — Fetal surgery.",
+      "Coté & Lerman — Anesthesia for fetal and neonatal surgery.",
+      "Ferschl M et al. Anesthesia for in-utero and EXIT procedures (reviews)."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Three types of fetal intervention: minimally invasive/FETOSCOPIC (e.g. laser for twin-twin transfusion, needs less uterine relaxation, can be maternal neuraxial ± sedation), OPEN fetal surgery (e.g. myelomeningocele repair — MOMS trial), and EXIT.",
+        "The MOMS trial established open fetal repair of spina bifida (myelomeningocele) as beneficial, popularising open fetal surgery.",
+        "Fetoscopic procedures may be done under maternal regional/local ± sedation with lighter tocolysis, whereas open/EXIT surgery mandates general anaesthesia with deep volatile tocolysis."
+      ]
+    }
+  },
+  {
+    "qNo": 9,
+    "question": "a) Enumerate the causes of acute hepatic failure. [3]  b) What are the principles of management of acute hepatic failure in the ICU? [7]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Causes of acute (fulminant) hepatic failure [3]",
+        "definition": "Acute liver failure (ALF) = the rapid development of hepatocellular dysfunction with COAGULOPATHY (INR ≥1.5) and hepatic ENCEPHALOPATHY in a patient WITHOUT pre-existing liver disease, within ~26 weeks of the first symptom.",
+        "causes": {
+          "title": "Causes",
+          "content": [
+            "DRUGS/TOXINS: PARACETAMOL overdose (the commonest cause in the UK/US), idiosyncratic drug reactions (anti-TB drugs, antiepileptics, halothane, herbal remedies), and Amanita phalloides (mushroom) poisoning.",
+            "VIRAL hepatitis: hepatitis A, B, E (and E is important in pregnancy), rarely others (herpes, CMV).",
+            "VASCULAR/ischaemic: 'shock liver' (ischaemic hepatitis), Budd-Chiari syndrome, veno-occlusive disease.",
+            "PREGNANCY-related: acute fatty liver of pregnancy, HELLP syndrome.",
+            "METABOLIC/other: Wilson's disease, autoimmune hepatitis, malignant infiltration, sepsis, heat stroke."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Principles of ICU management of acute liver failure [7]",
+        "definition": "ALF is a multi-organ emergency; management is largely supportive in a specialist/transplant centre while treating the cause and watching for the two big killers — cerebral oedema/raised ICP and multi-organ failure — and assessing transplant candidacy.",
+        "principles": {
+          "title": "System-based principles",
+          "content": [
+            "Treat the CAUSE: N-ACETYLCYSTEINE for paracetamol toxicity (and it improves outcome even in non-paracetamol ALF); antivirals, penicillin/silibinin for Amanita, delivery for pregnancy-related ALF.",
+            "NEUROLOGICAL — cerebral oedema/raised ICP (the leading cause of death): nurse head-up 30°, avoid hypercapnia/hypoxia/hyponatraemia, treat raised ICP (hypertonic saline/mannitol), control seizures; lactulose/rifaximin for encephalopathy; consider ICP monitoring; hyperammonaemia management (± CRRT).",
+            "CARDIOVASCULAR: hyperdynamic, vasodilated circulation — fluids then vasopressors (noradrenaline) to maintain MAP/cerebral perfusion; consider hydrocortisone for refractory shock.",
+            "RESPIRATORY: protect the airway (intubate/ventilate if grade 3–4 encephalopathy), lung-protective ventilation, treat aspiration/ARDS.",
+            "COAGULATION/HAEMATOLOGY: correct clotting only for active bleeding or before procedures (INR is a prognostic marker — don't blindly normalise it); vitamin K, platelets/products/fibrinogen as needed; stress-ulcer prophylaxis.",
+            "RENAL/METABOLIC: monitor for AKI/hepatorenal syndrome; CRRT for AKI, fluid/acid-base/ammonia control; treat HYPOGLYCAEMIA (frequent glucose monitoring, dextrose infusion), and correct electrolytes (K⁺, PO₄, Mg²⁺) and lactic acidosis.",
+            "INFECTION: high risk of sepsis (immunoparesis) — low threshold for cultures and antibiotics/antifungals.",
+            "PROGNOSIS & TRANSPLANT: apply prognostic criteria (KING'S COLLEGE criteria) and refer EARLY to a liver-transplant centre — transplantation may be life-saving; nutritional support and multidisciplinary care throughout."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "ALF = coagulopathy (INR ≥1.5) + encephalopathy without pre-existing liver disease; commonest cause is PARACETAMOL, then viral, vascular (shock liver), pregnancy-related and metabolic.",
+      "ICU management is supportive & system-based: treat the cause (N-acetylcysteine), control cerebral oedema/raised ICP (the main killer), support cardiovascular/respiratory/renal systems, correct hypoglycaemia and coagulopathy (only if bleeding), treat sepsis.",
+      "Apply King's College criteria and refer EARLY to a transplant centre — transplantation can be life-saving."
+    ],
+    "clinicalPearls": [
+      "Give N-ACETYLCYSTEINE early — it is life-saving in paracetamol ALF and improves transplant-free survival even in NON-paracetamol acute liver failure.",
+      "CEREBRAL OEDEMA/raised ICP is the leading cause of death in ALF — avoid the aggravators (hyponatraemia, hypercapnia, hypoxia, fever, high ammonia) and treat ICP actively; this is why airway control and CRRT (ammonia clearance) matter.",
+      "Don't reflexively correct the INR with FFP — the INR is a key PROGNOSTIC marker guiding transplant listing (King's criteria), and correction is only indicated for active bleeding or before an invasive procedure.",
+      "HYPOGLYCAEMIA is common and easily missed in the sedated/encephalopathic ALF patient — check glucose frequently and run a dextrose infusion."
+    ],
+    "commonMistakes": [
+      "Correcting the INR routinely with FFP, masking a vital prognostic marker used for transplant listing.",
+      "Under-treating cerebral oedema/raised ICP (the main cause of death) and ignoring its aggravators.",
+      "Delaying referral to a transplant centre and delaying N-acetylcysteine."
+    ],
+    "examTip": "Enumerate causes by category (drugs/toxins, viral, vascular, pregnancy, metabolic) — paracetamol first. Then give a SYSTEM-BASED management (cause/NAC → neuro/ICP → CVS → resp → coag → renal/glucose → sepsis → transplant referral). Mention King's College criteria.",
+    "sources": [
+      "Oh's Intensive Care Manual — Acute liver failure.",
+      "EASL / AASLD Clinical Practice Guidelines on acute (fulminant) liver failure.",
+      "Miller's Anesthesia, 9th Ed — Hepatic failure & critical care.",
+      "O'Grady JG — King's College Hospital criteria for liver transplantation in ALF."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "King's College criteria (paracetamol): arterial pH <7.30, OR the triad of INR >6.5 (PT >100 s) + creatinine >300 µmol/L + grade 3–4 encephalopathy — predict poor outcome without transplant.",
+        "Encephalopathy grading (West Haven I–IV) tracks severity; grade 3–4 mandates airway protection and ICP vigilance.",
+        "Extracorporeal liver-support/albumin-dialysis systems (MARS) can bridge to transplant/recovery in selected patients, though outcome benefit is unproven."
+      ]
+    }
+  },
+  {
+    "qNo": 10,
+    "question": "a) What is complex regional pain syndrome? [5]  b) Discuss the treatment of complex regional pain syndrome. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Complex Regional Pain Syndrome (CRPS) — definition",
+        "definition": "CRPS is a chronic neuropathic pain condition, usually affecting a limb, in which the pain is DISPROPORTIONATE in magnitude and duration to the inciting event (often trauma/surgery/immobilisation), accompanied by sensory, autonomic (vasomotor/sudomotor), motor and trophic changes.",
+        "typesFeatures": {
+          "title": "Types & clinical features (Budapest criteria)",
+          "content": [
+            "TYPE I (formerly Reflex Sympathetic Dystrophy): NO definable nerve injury.",
+            "TYPE II (formerly Causalgia): associated with a defined PERIPHERAL NERVE injury.",
+            "Diagnosis is CLINICAL (Budapest criteria): continuing disproportionate pain PLUS signs/symptoms in ≥3 (symptoms) and ≥2 (signs) of four categories:",
+            "  • Sensory: hyperalgesia, allodynia.",
+            "  • Vasomotor: temperature asymmetry, skin-colour changes/asymmetry.",
+            "  • Sudomotor/oedema: sweating changes, oedema.",
+            "  • Motor/trophic: reduced range of motion, weakness/tremor/dystonia, and trophic changes to hair/nail/skin.",
+            "…with no other diagnosis better explaining the signs. There is no single confirmatory test (bone scan/thermography are supportive only)."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Treatment of CRPS",
+        "definition": "Management is MULTIDISCIPLINARY, aiming at functional restoration, with early diagnosis and treatment giving the best outcome. A stepwise, multimodal approach combines rehabilitation, pharmacology, psychology and interventional techniques.",
+        "approach": {
+          "title": "Multimodal, functionally-oriented treatment",
+          "content": [
+            "REHABILITATION (the cornerstone): physiotherapy and occupational therapy for graded mobilisation, desensitisation, and GRADED MOTOR IMAGERY / mirror therapy — restore function and prevent disuse contractures.",
+            "PHARMACOLOGICAL: neuropathic agents — gabapentinoids (gabapentin/pregabalin) and tricyclics (amitriptyline)/duloxetine; simple analgesics/NSAIDs; short courses of corticosteroids (especially early, inflammatory phase); bisphosphonates (evidence for pain/bony changes); topical agents (lidocaine, capsaicin); ketamine (NMDA antagonist) infusions in refractory cases.",
+            "PSYCHOLOGICAL: cognitive-behavioural therapy, addressing depression/anxiety/catastrophising and coping — essential in a chronic pain condition.",
+            "INTERPENTIONAL: SYMPATHETIC blocks (e.g. stellate ganglion for upper limb, lumbar sympathetic for lower limb) for sympathetically-maintained pain; regional/IV regional blocks; and for refractory cases SPINAL CORD STIMULATION (good evidence) or intrathecal drug delivery.",
+            "General: EARLY diagnosis and treatment, encourage limb USE, treat the whole patient; avoid unnecessary surgery/immobilisation which can worsen it."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "CRPS is disproportionate chronic neuropathic pain (usually a limb) with sensory, vasomotor, sudomotor/oedema and motor/trophic changes; Type I (no nerve injury) vs Type II (defined nerve injury); diagnosed clinically by the Budapest criteria.",
+      "Treatment is MULTIDISCIPLINARY and functionally-oriented: rehabilitation (graded mobilisation, mirror therapy) is the cornerstone, plus neuropathic pharmacology, psychology and interventional techniques.",
+      "Sympathetic blocks and spinal-cord stimulation are used for sympathetically-maintained/refractory pain; early diagnosis and limb use give the best outcomes."
+    ],
+    "clinicalPearls": [
+      "CRPS is a CLINICAL diagnosis (Budapest criteria) — there is no confirmatory test; bone scans and thermography are only supportive, so don't wait for a 'positive test' before treating.",
+      "The single most important treatment is RESTORING FUNCTION — graded physiotherapy, desensitisation and mirror/graded-motor-imagery therapy; encouraging use of the limb (not resting/immobilising it) is central.",
+      "EARLY diagnosis and treatment dramatically improve outcome — delay leads to fixed trophic/dystonic changes; think of CRPS in any post-injury pain that is out of proportion.",
+      "Sympathetic (stellate/lumbar) blocks are both diagnostic and therapeutic for the sympathetically-maintained subset, and spinal cord stimulation has the best evidence for refractory CRPS."
+    ],
+    "commonMistakes": [
+      "Waiting for an investigation to 'confirm' CRPS instead of making the clinical (Budapest) diagnosis and starting early treatment.",
+      "Immobilising/resting the limb (which worsens CRPS) rather than encouraging graded functional use.",
+      "Relying on drugs alone and neglecting the multidisciplinary rehabilitation and psychological components."
+    ],
+    "examTip": "Define CRPS with the Type I/II distinction and the Budapest-criteria categories (sensory/vasomotor/sudomotor/motor-trophic). For treatment, give the multidisciplinary framework — rehabilitation first, then pharmacology, psychology and interventional (sympathetic blocks, SCS).",
+    "sources": [
+      "Harden RN et al. Budapest diagnostic criteria for CRPS. Pain Med 2013.",
+      "Miller's Anesthesia, 9th Ed — Chronic pain / CRPS.",
+      "Royal College of Physicians — CRPS in adults: UK guidelines.",
+      "Cousins & Bridenbaugh — Neural Blockade in Clinical Anesthesia and Pain Medicine."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Proposed mechanisms: peripheral and central sensitisation, neurogenic inflammation, autonomic dysfunction, and cortical reorganisation (the basis for mirror/graded-motor-imagery therapy).",
+        "CRPS classically has 'warm' (acute, inflammatory, vasodilated) and 'cold' (chronic, dystrophic) phases — the phase influences whether sympathetic blocks and anti-inflammatory measures help.",
+        "Spinal cord stimulation has the strongest evidence among interventional options for refractory CRPS, improving pain and quality of life in selected patients."
+      ]
+    }
+  }
+]

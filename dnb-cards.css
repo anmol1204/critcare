@@ -106,6 +106,12 @@
     .dnb-sources ol { font-size:.82rem; color:#0c4a6e; line-height:1.7; padding-left:1.3rem; margin:0; }
     .dnb-sources li { margin-bottom:.15rem; }
 
+    .dnb-pearls { background:#f0fdfa; border:1px solid #5eead4; border-radius:10px; padding:1rem 1.2rem; margin:.8rem 0; }
+    .dnb-pearls .dnb-sec-title { font-size:.68rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; color:#0f766e; margin-bottom:.6rem; display:flex; align-items:center; gap:.4rem; }
+    .dnb-pearls ul { font-size:.88rem; color:#134e4a; line-height:1.7; padding-left:1.2rem; margin:0; list-style:none; }
+    .dnb-pearls li { margin-bottom:.35rem; position:relative; padding-left:1.1rem; }
+    .dnb-pearls li::before { content:"🔑"; position:absolute; left:-.1rem; font-size:.8rem; }
+
     /* ── COMING SOON ─────────────────────────────────────────────── */
     .dnb-coming-soon { text-align:center; padding:4rem 2rem; }
     .dnb-coming-soon .cs-icon { font-size:3rem; margin-bottom:1rem; }
@@ -137,6 +143,9 @@
     html.dark .dnb-extramarks ul, html.dark .dnb-extramarks p { color:#c4b5fd; }
     html.dark .dnb-extramarks .dnb-sec-title { color:#a78bfa; }
     html.dark .dnb-extramarks-head { color:#ddd6fe; }
+    html.dark .dnb-pearls { background:#042f2e; border-color:#0f766e; }
+    html.dark .dnb-pearls ul { color:#5eead4; }
+    html.dark .dnb-pearls .dnb-sec-title { color:#2dd4bf; }
     html.dark .dnb-selector-bar { background:var(--bg-alt); }
     html.dark .dnb-paper-btn.active { color:#a78bfa; border-bottom-color:#a78bfa; }
     html.dark .dnb-paper-badge { background:#2d1b69; color:#a78bfa; }

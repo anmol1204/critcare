@@ -1,0 +1,763 @@
+[
+  {
+    "qNo": 1,
+    "question": "A 54-year-old lady with a large thyroid swelling and retrosternal extension with hyperthyroidism is posted for total thyroidectomy. a) Discuss the pre-operative assessment and airway management in this patient. [5]  b) Describe the clinical presentation, diagnosis and management of post thyroidectomy tracheomalacia. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Pre-operative assessment & airway management",
+        "assessment": {
+          "title": "Pre-operative assessment",
+          "content": [
+            "Confirm EUTHYROID status before elective surgery (the key endocrine goal): assess for control of hyperthyroidism (antithyroid drugs/beta-blockers/iodine), resting heart rate, tremor, weight, and signs of thyrotoxicosis; check thyroid function tests.",
+            "Cardiovascular assessment: tachyarrhythmias (AF), thyrotoxic cardiomyopathy/heart failure — optimise with beta-blockade.",
+            "Assess the goitre & retrosternal extension: symptoms of compression (dyspnoea, positional dyspnoea/orthopnoea, stridor, dysphagia, hoarseness suggesting recurrent laryngeal nerve involvement), and superior vena cava obstruction signs (Pemberton's sign).",
+            "Investigations: CT neck/thorax (extent of retrosternal spread, tracheal deviation/compression and its narrowest diameter), flow-volume loops, indirect/nasendoscopic laryngoscopy to document pre-existing vocal-cord function, and a baseline calcium.",
+            "Airway assessment for difficulty: goitre size, tracheal deviation/compression, mouth opening, neck mobility."
+          ]
+        },
+        "airwayManagement": {
+          "title": "Airway management",
+          "content": [
+            "Anticipate a DIFFICULT airway (deviation, compression, retrosternal extension) — plan to MAINTAIN SPONTANEOUS VENTILATION until the airway is secured.",
+            "Preferred: AWAKE fibreoptic intubation, or inhalational/careful IV induction keeping the patient breathing, guided by the CT (know the level and degree of narrowing).",
+            "Use a reinforced (armoured) tube advanced beyond any tracheal narrowing; have a range of smaller tube sizes; video laryngoscope and difficult-airway trolley ready.",
+            "Rigid bronchoscope, ENT surgeon and the ability to do cardiopulmonary bypass/femoral access standby for severe retrosternal compression (a tube may not pass a compressed intrathoracic trachea).",
+            "Avoid muscle relaxants before confirming the airway can be secured; beware airway collapse on induction in a large intrathoracic goitre."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Post-thyroidectomy tracheomalacia",
+        "definition": "Tracheomalacia is weakening and loss of rigidity of the tracheal cartilage from long-standing compression by a large goitre; after the supporting goitre is removed, the softened trachea can collapse — usually on extubation.",
+        "presentation": {
+          "title": "Clinical presentation",
+          "content": [
+            "Airway obstruction on/after extubation: stridor, respiratory distress, paradoxical/see-saw breathing, and inability to ventilate.",
+            "Typically occurs immediately at extubation or in the early postoperative period.",
+            "Must be distinguished from other post-thyroidectomy airway emergencies: neck haematoma, bilateral recurrent laryngeal nerve palsy, laryngeal oedema, and hypocalcaemic laryngospasm."
+          ]
+        },
+        "diagnosis": {
+          "title": "Diagnosis",
+          "content": [
+            "Clinical suspicion in a long-standing large/retrosternal goitre.",
+            "'Leak test' before extubation (deflate cuff — absent leak suggests significant narrowing/collapse) and fibreoptic/bronchoscopic assessment of tracheal collapse during spontaneous breathing.",
+            "Direct visualisation of tracheal wall collapse at surgery/bronchoscopy is confirmatory."
+          ]
+        },
+        "management": {
+          "title": "Management",
+          "content": [
+            "Prevention/anticipation: extubate over an airway-exchange catheter/bougie or fibreoptically, with the patient fully awake and re-intubation equipment ready.",
+            "If collapse occurs: RE-INTUBATE immediately (the tube stents the trachea open); maintain oxygenation/ventilation.",
+            "Definitive options: prolonged intubation/ventilation to allow the trachea to regain tone, tracheostomy (bypasses/stents the malacic segment), or surgical tracheopexy/external stenting; endotracheal stenting in selected cases.",
+            "Manage in ICU; exclude and treat concurrent causes (haematoma evacuation, calcium correction)."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Render the patient EUTHYROID and beta-blocked before elective thyroidectomy; use CT to map retrosternal extension and tracheal narrowing.",
+      "Anticipate a difficult airway — maintain spontaneous ventilation, secure with a reinforced tube (awake FOI or careful inhalational induction), with rigid bronchoscopy/ENT and even CPB standby for severe intrathoracic compression.",
+      "Tracheomalacia presents as stridor/airway collapse at extubation; treat by immediate re-intubation to stent the trachea, then prolonged intubation, tracheostomy or surgical stabilisation — but always exclude haematoma, RLN palsy and hypocalcaemia."
+    ],
+    "clinicalPearls": [
+      "Extubate the big-goitre patient over an airway-exchange catheter (or fibreoptically) with the patient fully awake — if the trachea collapses you can rail-road the tube straight back in.",
+      "The four post-thyroidectomy airway emergencies are: neck HAEMATOMA (open the wound at the bedside), bilateral RECURRENT LARYNGEAL nerve palsy, tracheoMALACIA, and hypoCALCAEMIC laryngospasm — always run through all four.",
+      "A tension neck haematoma obstructs by venous/lymphatic congestion of the larynx, not just direct compression — so simply opening the skin sutures at the bedside can be life-saving before formal re-exploration.",
+      "In severe retrosternal goitre the trachea may be compressed BELOW the level a tube can reach — have rigid bronchoscopy and, rarely, femoro-femoral bypass planned before induction."
+    ],
+    "commonMistakes": [
+      "Anaesthetising a thyrotoxic patient electively (risk of thyroid storm) instead of postponing until euthyroid.",
+      "Giving a muscle relaxant/IV induction before confirming the airway in a large compressive goitre, precipitating a can't-ventilate situation.",
+      "Attributing all post-thyroidectomy stridor to tracheomalacia and missing an expanding neck haematoma or hypocalcaemia."
+    ],
+    "examTip": "Frame part (a) as endocrine optimisation (euthyroid) + difficult-airway plan guided by CT. In part (b), give a clear differential of post-thyroidectomy airway emergencies and stress immediate re-intubation as the first management step.",
+    "sources": [
+      "Stoelting's Anesthesia and Co-Existing Disease, 8th Ed — Thyroid disease.",
+      "Miller's Anesthesia, 9th Ed — Endocrine surgery & the difficult airway.",
+      "Farling PA. Thyroid disease (BJA Education/CEACCP review).",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Anesthesia for thyroid surgery."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Thyroid storm (peri-operative thyrotoxic crisis): hyperthermia, tachyarrhythmia, agitation, cardiovascular collapse — treat with beta-blocker (propranolol/esmolol), propylthiouracil/carbimazole, iodine (given AFTER antithyroid drug — Wolff-Chaikoff), hydrocortisone, cooling and supportive care.",
+            "Recurrent laryngeal nerve monitoring (nerve-integrity monitor tubes) is increasingly used intra-operatively to reduce cord-palsy injury.",
+            "Post-thyroidectomy hypocalcaemia (parathyroid injury) presents 24–72 h later with perioral tingling, Chvostek/Trousseau signs and laryngospasm — check calcium routinely."
+      ]
+    }
+  },
+  {
+    "qNo": 2,
+    "question": "A 26-year-old lady with 24 weeks pregnancy is posted for laparoscopic appendicectomy following acute appendicitis. a) Which trimester of pregnancy is considered to be the safest for a non obstetric surgery in a pregnant patient and why? [1+2]  b) Discuss the anesthetic management of this patient. [7]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Safest trimester for non-obstetric surgery",
+        "content": [
+          "The SECOND TRIMESTER is considered safest for non-obstetric surgery.",
+          "Why: organogenesis is complete (first trimester), so the teratogenic risk to the fetus is lowest.",
+          "The risk of miscarriage is lower than in the first trimester, and the risk of preterm labour is lower than in the third trimester.",
+          "The uterus is not yet large enough to seriously impair surgical access or cause major aortocaval compression (as in the third trimester)."
+        ]
+      },
+      "partB": {
+        "title": "Anaesthetic management (two-patient principle: mother and fetus)",
+        "generalPrinciples": {
+          "title": "Guiding principles",
+          "content": [
+            "Two patients: maternal safety is the priority, but maintain uteroplacental perfusion and avoid fetal hypoxia, acidosis, teratogens and preterm labour.",
+            "Only urgent/emergency surgery is done in pregnancy (this appendicitis is an emergency — delay increases perforation/peritonitis risk to mother and fetus).",
+            "Multidisciplinary care: obstetrician, surgeon, anaesthetist, neonatologist; document fetal heart before and after; consider tocolysis if preterm labour."
+          ]
+        },
+        "preoperative": {
+          "title": "Preoperative",
+          "content": [
+            "From ~18–20 weeks, treat as a FULL STOMACH (aspiration risk): antacid prophylaxis (sodium citrate, ranitidine/PPI, metoclopramide) and rapid-sequence induction with cricoid pressure.",
+            "Left uterine displacement (15° left tilt/wedge) to relieve aortocaval compression.",
+            "Fetal heart rate documentation and obstetric input on peri-operative fetal monitoring and steroids/tocolysis as indicated."
+          ]
+        },
+        "intraoperative": {
+          "title": "Intra-operative",
+          "content": [
+            "General anaesthesia with RSI is usual for laparoscopy; pre-oxygenate well (reduced FRC, rapid desaturation).",
+            "Maintain LEFT tilt, normotension (avoid hypotension → uteroplacental hypoperfusion; treat with phenylephrine/fluids), normoxia and NORMOCAPNIA (avoid hyperventilation which shifts the maternal O₂ curve and reduces placental O₂ delivery; monitor EtCO₂ ± arterial to keep maternal PaCO₂ near the pregnant baseline ~30 mmHg).",
+            "Use established, non-teratogenic agents (thiopentone/propofol, volatile agents, suxamethonium/non-depolarisers, opioids); avoid nitrous oxide in early pregnancy (theoretical, less relevant at 24 weeks) and prolonged high-dose exposure.",
+            "Laparoscopy-specific: low pneumoperitoneum pressure (≤12 mmHg), open/careful entry, gentle Trendelenburg, and monitor for reduced venous return and raised airway pressure.",
+            "DVT prophylaxis (pregnancy is prothrombotic), maintain normothermia, and glucose control."
+          ]
+        },
+        "postoperative": {
+          "title": "Postoperative",
+          "content": [
+            "Multimodal analgesia avoiding NSAIDs after ~28–30 weeks (ductus arteriosus closure, oligohydramnios); paracetamol and judicious opioids are safe.",
+            "Continue aspiration and DVT prophylaxis; monitor for preterm labour and fetal wellbeing; effective analgesia reduces the stress response and preterm-labour risk."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Second trimester is safest: organogenesis complete (least teratogenicity), lower miscarriage risk than first trimester, and lower preterm-labour/access problems than third.",
+      "Manage as two patients: maternal safety first, but preserve uteroplacental perfusion — left uterine displacement, normotension, normoxia and NORMOCAPNIA.",
+      "From ~18–20 weeks treat as a full stomach: antacid prophylaxis + RSI with cricoid; use established non-teratogenic drugs; low-pressure pneumoperitoneum for laparoscopy."
+    ],
+    "clinicalPearls": [
+      "Maternal HYPERventilation is harmful: a low maternal PaCO₂ left-shifts her oxyhaemoglobin curve and constricts uterine vessels, reducing oxygen delivery to the fetus — keep PaCO₂ at the pregnant baseline (~30 mmHg), not lower.",
+      "Left uterine displacement (15° tilt) is mandatory beyond ~20 weeks — supine aortocaval compression can halve cardiac output and cause profound, treatment-resistant hypotension.",
+      "No commonly used anaesthetic agent is proven teratogenic in humans at clinical doses — fetal wellbeing depends far more on avoiding maternal hypoxia, hypotension and acidosis than on the specific drug chosen.",
+      "Avoid NSAIDs in the third trimester (premature ductus arteriosus closure and oligohydramnios); they are the classic 'wrong' analgesic to prescribe late in pregnancy."
+    ],
+    "commonMistakes": [
+      "Hyperventilating the mother to a low PaCO₂, harming placental oxygen delivery.",
+      "Forgetting left uterine displacement and aspiration prophylaxis/RSI in the second-trimester patient.",
+      "Prescribing NSAIDs in later pregnancy, or unnecessarily withholding needed emergency surgery for fear of 'teratogens'."
+    ],
+    "examTip": "Answer part (a) crisply (second trimester + three reasons). Structure part (b) around the two-patient principle and the pre/intra/post framework, hammering left tilt, normocapnia, normotension, RSI and low-pressure laparoscopy.",
+    "sources": [
+      "Chestnut's Obstetric Anesthesia: Principles and Practice, 6th Ed — Nonobstetric surgery during pregnancy.",
+      "Miller's Anesthesia, 9th Ed — Anesthesia for the pregnant patient undergoing nonobstetric surgery.",
+      "ACOG / SAGES guidelines — surgery and laparoscopy during pregnancy.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Maternal & fetal physiology."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Physiological pregnancy changes relevant to anaesthesia: ↓FRC + ↑O₂ consumption (rapid desaturation), full stomach, dilutional anaemia, hyperdynamic circulation, aortocaval compression, and ↓MAC (~25–40%).",
+        "Fetal heart-rate monitoring intra-operatively (if ≥24 weeks and feasible) allows detection and correction of fetal compromise by optimising maternal physiology.",
+        "The FDA has retired the old A/B/C/D/X pregnancy letter categories in favour of narrative risk labelling — but the principle remains: use drugs with a long safety record."
+      ]
+    }
+  },
+  {
+    "qNo": 3,
+    "question": "A 2-year-old child posted for cleft palate repair surgery. Discuss: a) The pre-operative assessment. [3]  b) Anesthetic management [5]  c) Post operative analgesia [2]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Pre-operative assessment",
+        "content": [
+          "Rule of 10s readiness (traditional): weight >10 lb (~5 kg), age >10 weeks, Hb >10 g/dL (for cleft LIP; palate repair is usually ~9–18 months) — assess growth, nutrition and anaemia.",
+          "Associated syndromes/anomalies (~30%): Pierre Robin sequence (micrognathia, glossoptosis → difficult airway), Treacher Collins, Stickler, DiGeorge (cardiac, hypocalcaemia), Goldenhar — examine for congenital heart disease and other anomalies.",
+          "Airway assessment: micrognathia, the cleft itself (laryngoscope blade can lodge in the cleft), and history of feeding/airway difficulty; recent URTI (defer if active).",
+          "Investigations: Hb, and echocardiography if a murmur/syndrome; ensure fasting and consent."
+        ]
+      },
+      "partB": {
+        "title": "Anaesthetic management",
+        "airway": {
+          "title": "Airway — the central challenge",
+          "content": [
+            "Anticipate a potentially DIFFICULT airway (especially with micrognathia/Pierre Robin): plan to maintain spontaneous ventilation on induction; have difficult-airway equipment and an experienced paediatric anaesthetist.",
+            "Inhalational induction (sevoflurane) with the child breathing spontaneously; pack the cleft with gauze during laryngoscopy so the blade does not lodge in it.",
+            "Secure with a preformed SOUTH-FACING (oral RAE) tube, taped in the midline, so it sits in the Dingman/Boyle-Davis mouth gag without kinking and keeps the surgical field clear."
+          ]
+        },
+        "conduct": {
+          "title": "Conduct of anaesthesia",
+          "content": [
+            "Maintenance: volatile or TIVA with controlled ventilation; secure IV access; careful fluid management (weight-based, glucose-containing maintenance as appropriate).",
+            "Monitor for airway obstruction/kinking or accidental extubation when the surgeon inserts/opens the mouth gag (can compress or dislodge the tube) — check breath sounds and capnography after gag placement.",
+            "Temperature maintenance (small child, exposed), meticulous haemostasis (blood loss significant relative to blood volume), and antiemetic prophylaxis.",
+            "Extubate AWAKE, fully reversed, with the child in the lateral/tonsil position; a tongue stitch or nasopharyngeal airway may be left to maintain the airway; suction blood/clots gently."
+          ]
+        }
+      },
+      "partC": {
+        "title": "Postoperative analgesia",
+        "content": [
+          "Multimodal, opioid-SPARING (opioids risk respiratory depression/airway obstruction in a newly-repaired palate): regular paracetamol ± NSAID (as permitted).",
+          "Regional: bilateral maxillary/infraorbital nerve blocks provide excellent analgesia for the palate/lip and reduce opioid need.",
+          "Cautious, titrated small doses of opioid only if needed, with close monitoring for airway obstruction/apnoea; nurse in a high-dependency/close-observation area."
+        ]
+      }
+    },
+    "keyPoints": [
+      "Assess for associated syndromes (Pierre Robin → difficult airway; DiGeorge → cardiac/hypocalcaemia), anaemia, recent URTI, and airway difficulty; the 'rule of 10s' for readiness.",
+      "Inhalational induction maintaining spontaneous ventilation; secure with a south-facing (oral RAE) tube; vigilance for tube kinking/dislodgement when the mouth gag is placed.",
+      "Extubate awake in the lateral position; provide multimodal, opioid-sparing analgesia with bilateral infraorbital/maxillary nerve blocks."
+    ],
+    "clinicalPearls": [
+      "The moment of highest danger is when the surgeon opens the Dingman/Boyle-Davis gag — it can compress, kink or extubate the RAE tube; re-auscultate and check the capnograph immediately after the gag is set.",
+      "Pack the cleft before laryngoscopy: the blade (and the tube) can disappear into the palatal cleft, making an otherwise easy intubation surprisingly difficult.",
+      "Bilateral infraorbital/maxillary nerve blocks give superb cleft analgesia and let you all but avoid opioids — important because opioids plus a swollen, newly-repaired palate is a recipe for airway obstruction.",
+      "Leave a tongue suture/nasopharyngeal airway and nurse the child in the lateral 'tonsil' position after extubation — the freshly repaired palate and residual blood threaten the airway in recovery."
+    ],
+    "commonMistakes": [
+      "Missing an associated syndrome (Pierre Robin, DiGeorge) and the difficult airway or cardiac lesion that comes with it.",
+      "Relying on opioids for analgesia and causing postoperative airway obstruction/respiratory depression instead of using nerve blocks.",
+      "Extubating deep or in the supine position, risking obstruction and aspiration of blood."
+    ],
+    "examTip": "Keep the 3-5-2 mark split. Emphasise the difficult-airway plan, the south-facing RAE tube and the gag hazard, and finish with opioid-sparing analgesia (infraorbital blocks) — the pearls examiners look for.",
+    "sources": [
+      "Coté & Lerman — A Practice of Anesthesia for Infants and Children.",
+      "Gregory's Pediatric Anesthesia.",
+      "Miller's Anesthesia, 9th Ed — Pediatric anesthesia; cleft surgery.",
+      "APA/paediatric anaesthesia cleft-palate guidance."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Cleft lip is typically repaired ~3 months ('rule of 10s'), cleft palate ~9–18 months (to balance speech development against airway/feeding maturity).",
+        "After palate repair the airway is narrower and swollen — post-op obstruction, bleeding ('reactionary/secondary haemorrhage') and desaturation are the main early complications requiring HDU observation.",
+        "Pierre Robin sequence airway typically IMPROVES with age (mandibular growth), whereas syndromic micrognathia (Treacher Collins) does not — relevant to planning future anaesthetics."
+      ]
+    }
+  },
+  {
+    "qNo": 4,
+    "question": "Discuss the pre-operative optimization of a 70-year-old hypertensive patient posted for total hip replacement. Write briefly about the anticipated intraoperative complications and their management. [2+4+4]",
+    "marks": 10,
+    "answer": {
+      "preoperativeOptimisation": {
+        "title": "Pre-operative optimisation of the elderly hypertensive [2+4]",
+        "assessment": {
+          "title": "Assessment & optimisation",
+          "content": [
+            "Confirm blood-pressure control and assess for end-organ damage: LVH/heart failure, ischaemic heart disease, cerebrovascular and renal disease (ECG, echo if indicated, U&E, urinalysis).",
+            "Defer elective surgery if BP is severely uncontrolled (generally ≥180/110 mmHg) until better controlled; otherwise continue antihypertensives.",
+            "Medication plan: CONTINUE beta-blockers, calcium-channel blockers and statins; typically WITHHOLD ACE-inhibitors/ARBs on the morning of surgery (risk of refractory intra-operative hypotension); manage diuretics and check electrolytes.",
+            "Assess the geriatric patient broadly: functional capacity (METs), frailty, cognition (baseline for delirium), nutrition, anaemia (optimise before major arthroplasty), and polypharmacy.",
+            "Anticoagulant/antiplatelet plan for neuraxial anaesthesia and VTE risk; plan analgesia and thromboprophylaxis; group & save/cross-match."
+          ]
+        }
+      },
+      "intraoperativeComplications": {
+        "title": "Anticipated intra-operative complications & management [4]",
+        "haemodynamic": {
+          "title": "Haemodynamic instability",
+          "content": [
+            "Labile blood pressure: exaggerated hypertensive response to laryngoscopy and hypotension with induction/neuraxial block (stiff, non-compliant vasculature). Management: careful titration, obtund pressor responses, treat hypotension with fluids and vasopressors, invasive arterial monitoring for major cases.",
+            "Myocardial ischaemia/arrhythmia: maintain rate/BP control, adequate oxygenation and Hb; monitor ECG/ST segments."
+          ]
+        },
+        "boneCementImplantationSyndrome": {
+          "title": "Bone Cement Implantation Syndrome (BCIS) — the classic THR complication",
+          "content": [
+            "Presentation: hypotension, hypoxaemia, arrhythmias, raised pulmonary pressures and possibly cardiac arrest, occurring at cementation, prosthesis insertion or reduction — due to embolisation of fat/marrow/cement and the systemic effects of methylmethacrylate monomer.",
+            "Management: warn team before cementing; ensure the patient is euvolaemic and well-oxygenated (increase FiO₂ before cementing); treat hypotension aggressively with vasopressors/fluids; the surgeon can lavage and vent the femoral canal to reduce intramedullary pressure and embolic load."
+          ]
+        },
+        "otherComplications": {
+          "title": "Other intra-operative complications",
+          "content": [
+            "Blood loss/haemorrhage: monitor, transfuse, use tranexamic acid and blood conservation.",
+            "Venous thromboembolism/fat embolism: mechanical and pharmacological prophylaxis.",
+            "Hypothermia (elderly, exposure, cement): active warming and warmed fluids.",
+            "Positioning (lateral) injuries and nerve injury; pressure-area care.",
+            "Postoperative delirium risk — minimise long-acting sedatives, maintain oxygenation and analgesia."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Optimise BP control (defer if ≥180/110), continue most antihypertensives but withhold ACE-i/ARB on the morning of surgery; assess end-organ damage, frailty, cognition and anaemia.",
+      "Bone Cement Implantation Syndrome (hypotension, hypoxaemia, arrhythmia at cementing) is the signature THR complication — pre-oxygenate, ensure euvolaemia, warn before cementing, and treat with vasopressors while the surgeon vents/lavages the canal.",
+      "Also anticipate labile haemodynamics, blood loss, VTE/fat embolism, hypothermia, positioning injury and postoperative delirium."
+    ],
+    "clinicalPearls": [
+      "Withhold ACE-inhibitors/ARBs on the morning of surgery — continuing them is a common cause of refractory intra-operative hypotension that responds poorly to ephedrine/phenylephrine (may need vasopressin).",
+      "Increase FiO₂ and ensure the patient is well-filled BEFORE the surgeon cements — BCIS strikes suddenly at cementation, and a hypovolaemic, marginally-oxygenated elderly patient tolerates it badly.",
+      "Neuraxial (spinal) anaesthesia for hip arthroplasty reduces blood loss, VTE and possibly delirium versus GA, and provides an awake patient — but manage the sympathectomy-induced hypotension carefully in stiff elderly vessels.",
+      "Tranexamic acid substantially reduces transfusion in arthroplasty and is now routine unless contraindicated."
+    ],
+    "commonMistakes": [
+      "Continuing ACE-inhibitors/ARBs on the morning of surgery and then battling refractory hypotension.",
+      "Being caught unprepared by BCIS — not raising FiO₂/optimising volume before cementation and not warning the team.",
+      "Cancelling for mild-moderate hypertension unnecessarily, or ignoring geriatric issues (frailty, delirium risk, anaemia)."
+    ],
+    "examTip": "Match the 2+4+4 marks: brief statement of optimisation goals, then a fuller optimisation (medication and geriatric assessment), then intra-operative complications led by BCIS with its management. BCIS is the highest-yield THR-specific point.",
+    "sources": [
+      "Miller's Anesthesia, 9th Ed — Anesthesia for orthopedic surgery; geriatric anesthesia.",
+      "Association of Anaesthetists — Bone cement implantation syndrome guidance (Donaldson AJ, BJA 2009).",
+      "Stoelting's Anesthesia and Co-Existing Disease, 8th Ed — Systemic hypertension.",
+      "2024 ESC perioperative cardiovascular guidelines."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "BCIS is graded (Donaldson): Grade 1 = moderate hypoxia (SpO₂<94%)/hypotension (SBP fall >20%); Grade 2 = severe; Grade 3 = cardiovascular collapse/arrest. Risk factors: elderly, ASA III–IV, pre-existing pulmonary hypertension, long-stem/pathological-fracture cementing.",
+        "Anaesthetic-hypertension controversy: mild-to-moderate hypertension (<180/110) is not an independent predictor of major cardiac events, so routine cancellation is not justified — treat end-organ disease, not the number.",
+        "Fat embolism syndrome (petechiae, hypoxia, confusion 24–72 h post long-bone/pelvic surgery) is a related but distinct entity from acute intra-operative BCIS."
+      ]
+    }
+  },
+  {
+    "qNo": 5,
+    "question": "Briefly discuss management of: a) Diabetic ketoacidosis. [5]  b) Intra-operative bronchospasm. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Diabetic ketoacidosis (DKA) — management",
+        "definition": "DKA is an emergency of absolute/relative insulin deficiency causing hyperglycaemia, ketonaemia and metabolic (high anion-gap) acidosis. Diagnostic triad: glucose >11 mmol/L (or known DM), ketonaemia ≥3 mmol/L (or ketonuria ≥2+), and pH <7.3 / bicarbonate <15 mmol/L.",
+        "management": {
+          "title": "Management (fluids → insulin → potassium → precipitant, with monitoring)",
+          "content": [
+            "FLUID resuscitation FIRST: 0.9% saline — a bolus for shock, then a structured replacement (patients are typically 5–7 L deplete); this alone lowers glucose and improves acidosis.",
+            "INSULIN: fixed-rate intravenous insulin infusion (0.1 units/kg/h). Do NOT stop the insulin when glucose falls — instead add 10% dextrose once glucose <14 mmol/L to continue clearing ketones while avoiding hypoglycaemia.",
+            "POTASSIUM: total-body potassium is depleted though initial serum K⁺ may be high; replace K⁺ once it falls into the normal range and urine output is confirmed (insulin drives K⁺ intracellularly → risk of dangerous hypokalaemia).",
+            "Monitor: hourly glucose and ketones/bicarbonate/venous pH, K⁺ 2-hourly; aim to clear ketones (fall in blood ketones and rise in bicarbonate), not just normalise glucose.",
+            "Identify and treat the PRECIPITANT (infection, MI, missed insulin, surgery, new diagnosis); give VTE prophylaxis; consider NG tube if drowsy (gastroparesis/aspiration); catheterise to monitor output.",
+            "Bicarbonate is NOT routinely given (only considered in life-threatening acidaemia, pH <6.9); avoid over-rapid correction (cerebral oedema, especially children)."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Intra-operative bronchospasm — management",
+        "definition": "Bronchospasm intra-operatively presents as wheeze, rising airway pressures, a prolonged/sloping (up-sloping 'shark-fin') capnograph, reduced/absent breath sounds, difficulty ventilating, hypoxaemia and hypercarbia.",
+        "management": {
+          "title": "Management (immediate → pharmacological → confirm diagnosis)",
+          "content": [
+            "Immediate: give 100% oxygen, remove the trigger, and hand-ventilate to assess compliance; call for help.",
+            "DEEPEN anaesthesia — increase the volatile agent (sevoflurane; halothane historically) as volatiles are bronchodilators; a propofol bolus can also help (light anaesthesia is a common cause).",
+            "Exclude mechanical mimics FIRST: tube obstruction/kinking, endobronchial/oesophageal placement, secretions, breathing-circuit/valve problems, and pneumothorax — 'not all that wheezes is bronchospasm'.",
+            "Bronchodilators: inhaled/nebulised salbutamol (β2-agonist) via the circuit; ipratropium; IV salbutamol/aminophylline for refractory cases; magnesium sulphate IV.",
+            "If ANAPHYLAXIS is suspected (bronchospasm + hypotension + rash): ADRENALINE is the drug of choice (IM 0.5 mg or titrated IV), plus fluids, steroids and antihistamine.",
+            "Adjuncts: IV/inhaled adrenaline for severe bronchospasm, hydrocortisone (delayed benefit), ketamine (bronchodilator) for induction in asthmatics.",
+            "Adjust ventilation: allow a longer expiratory time and permissive hypercapnia to avoid gas-trapping/breath-stacking; treat the precipitant."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "DKA: fluids first (0.9% saline), fixed-rate insulin (0.1 U/kg/h, don't stop it — add dextrose when glucose <14), replace potassium as it falls, clear the ketones, treat the precipitant; bicarbonate almost never needed.",
+      "Intra-operative bronchospasm: 100% O₂, deepen anaesthesia (volatiles are bronchodilators), and EXCLUDE mechanical causes (tube/circuit/pneumothorax) before/while giving β2-agonists.",
+      "If bronchospasm is due to anaphylaxis, ADRENALINE is the first-line drug."
+    ],
+    "clinicalPearls": [
+      "In DKA the aim is to clear KETONES, not merely lower glucose — that's why you continue insulin and ADD dextrose once glucose <14 mmol/L, rather than stopping the insulin.",
+      "Potassium is the silent killer in DKA: insulin drives K⁺ into cells, so a 'normal' or high starting K⁺ can plummet — start replacement early once K⁺ is in/below the normal range and the patient is passing urine.",
+      "'Not everything that wheezes is bronchospasm' — always exclude a kinked/mainstem/obstructed tube, blocked filter, circuit fault and pneumothorax before escalating drugs.",
+      "Ketamine and volatile agents are the anaesthetist's bronchodilators — ketamine is the induction agent of choice in the actively wheezing asthmatic needing surgery."
+    ],
+    "commonMistakes": [
+      "Stopping insulin in DKA when glucose falls (ketosis continues) instead of adding dextrose; giving routine bicarbonate.",
+      "Neglecting/over-delaying potassium replacement, causing hypokalaemic arrhythmias.",
+      "Treating intra-operative wheeze as bronchospasm without excluding tube/circuit obstruction or pneumothorax; forgetting adrenaline when the cause is anaphylaxis."
+    ],
+    "examTip": "For DKA use the ordered list: Fluids → Insulin (don't stop, add dextrose) → Potassium → monitor ketones → treat precipitant. For bronchospasm: 100% O₂ + deepen + exclude mechanical causes + β2-agonists, with adrenaline for anaphylaxis.",
+    "sources": [
+      "JBDS (Joint British Diabetes Societies) guideline — Management of DKA in adults.",
+      "Miller's Anesthesia, 9th Ed — Endocrine emergencies; bronchospasm/anaphylaxis.",
+      "AAGBI — Management of severe perioperative anaphylaxis.",
+      "Stoelting's Anesthesia and Co-Existing Disease, 8th Ed — Diabetes; reactive airway disease."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Cerebral oedema is the feared complication of over-rapid fluid/osmolality correction in DKA, particularly in children — correct glucose and osmolality gradually.",
+        "The capnograph in bronchospasm shows a characteristic up-sloping ('shark-fin') expiratory limb from prolonged, uneven alveolar emptying — a quick bedside confirmation.",
+        "Euglycaemic DKA (near-normal glucose with acidosis and ketosis) occurs with SGLT2 inhibitors, pregnancy and starvation — a trap because the glucose looks reassuring."
+      ]
+    }
+  },
+  {
+    "qNo": 6,
+    "question": "a) Cardioplegia. [5]  b) Trans-esophageal echocardiography application in anesthesia. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Cardioplegia",
+        "definition": "Cardioplegia is the deliberate, temporary, reversible arrest of the heart (usually in diastole) to provide a still, bloodless field for cardiac surgery while PROTECTING the myocardium from ischaemia during aortic cross-clamping. It is achieved chiefly by high-potassium solutions that depolarise and arrest the myocyte.",
+        "principles": {
+          "title": "Principles & types",
+          "content": [
+            "Mechanism: a high potassium concentration (~15–30 mmol/L) depolarises the cell membrane and holds it depolarised, arresting the heart in diastole and abolishing electromechanical work — greatly reducing myocardial oxygen demand.",
+            "Composition/adjuncts: hyperkalaemia + hypothermia (topical/solution cooling to ~4–10 °C), buffering, membrane stabilisers, magnesium, and substrates.",
+            "Temperature: COLD cardioplegia (reduces metabolic rate) vs WARM (continuous, maintains aerobic metabolism).",
+            "Composition base: CRYSTALLOID vs BLOOD cardioplegia (blood provides oxygen and buffering — widely preferred).",
+            "Route: ANTEGRADE (into the aortic root/coronary ostia) and/or RETROGRADE (via the coronary sinus — useful with severe coronary disease or aortic regurgitation).",
+            "Delivery: an initial induction dose then intermittent 'top-ups' (every ~20–30 min) to maintain arrest and protection during the cross-clamp period."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Trans-oesophageal echocardiography (TOE/TEE) — applications in anaesthesia",
+        "definition": "TOE is a semi-invasive ultrasound probe placed in the oesophagus/stomach giving high-resolution real-time images of cardiac structure and function — a powerful intra-operative monitor and diagnostic tool.",
+        "applications": {
+          "title": "Applications",
+          "content": [
+            "Cardiac surgery: assessing ventricular function, valve pathology BEFORE and immediately AFTER repair/replacement (confirming success, detecting paravalvular leak), de-airing, and diagnosing the cause of failure to wean from CPB.",
+            "Haemodynamic instability: rapid diagnosis of the cause of hypotension/collapse — hypovolaemia, LV/RV failure, tamponade, dynamic LV outflow obstruction, pulmonary embolism.",
+            "Monitoring: real-time preload (LV end-diastolic area), contractility, regional wall-motion abnormalities (sensitive early sign of MYOCARDIAL ISCHAEMIA), and cardiac output.",
+            "Detecting complications: intracardiac air/thrombus, venous air EMBOLISM (very sensitive), aortic dissection/atheroma, and intracardiac shunts (PFO).",
+            "Guiding procedures: valve interventions (TAVI/MitraClip), septal defect closure, and placement of cannulae/devices.",
+            "Non-cardiac use: high-risk major/liver/trauma surgery haemodynamic assessment and rescue echocardiography."
+          ]
+        },
+        "contraindicationsRisks": {
+          "title": "Contraindications & risks",
+          "content": [
+            "Contraindications: oesophageal stricture/varices/tumour, recent upper-GI surgery, unstable cervical spine.",
+            "Risks: oesophageal/gastric injury, dysphagia, dental/airway trauma, and (rare) perforation."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Cardioplegia arrests the heart in diastole (high K⁺ depolarisation) plus hypothermia to minimise myocardial O₂ demand and protect against cross-clamp ischaemia; classified by temperature (cold/warm), base (crystalloid/blood) and route (antegrade/retrograde).",
+      "TOE is a semi-invasive real-time cardiac monitor for ventricular/valve function, cause of hypotension (hypovolaemia, tamponade, embolism, ischaemia), and immediate assessment of surgical repair.",
+      "Regional wall-motion abnormality on TOE is an early, sensitive sign of myocardial ischaemia; contraindications relate to oesophageal pathology."
+    ],
+    "clinicalPearls": [
+      "Blood cardioplegia is generally preferred over crystalloid because it delivers oxygen and buffering to the arrested myocardium, improving protection during long cross-clamp times.",
+      "Retrograde (coronary-sinus) cardioplegia reaches myocardium beyond tight coronary stenoses and is used when aortic regurgitation makes antegrade root delivery ineffective.",
+      "TOE detects regional wall-motion abnormalities BEFORE ECG ST changes — it is the earliest, most sensitive intra-operative monitor of myocardial ischaemia.",
+      "In sudden intra-operative collapse, 'rescue TOE' answers the key question fast: empty and hyperdynamic (hypovolaemia), a stiff pericardium (tamponade), a dilated hypokinetic ventricle (failure), or a dilated RV (pulmonary embolism)."
+    ],
+    "commonMistakes": [
+      "Forgetting that cardioplegia protection relies on BOTH hyperkalaemic arrest AND hypothermia (reducing metabolic demand), not potassium alone.",
+      "Overlooking retrograde delivery/route options and blood vs crystalloid distinctions.",
+      "Using TOE without checking for oesophageal contraindications (varices, stricture) — risk of perforation/bleeding."
+    ],
+    "examTip": "Classify cardioplegia three ways (temperature/base/route) with the mechanism up front. For TOE, group applications into cardiac-surgical, haemodynamic diagnosis, ischaemia/embolism detection and procedural guidance, and mention contraindications.",
+    "sources": [
+      "Kaplan's Cardiac Anesthesia, 7th Ed — Myocardial protection & intra-operative TEE.",
+      "Miller's Anesthesia, 9th Ed — Cardiopulmonary bypass; echocardiography.",
+      "ASE/SCA Guidelines for performing a comprehensive intraoperative TEE examination.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Cardiac anesthesia."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "del Nido cardioplegia (single-dose, long-acting, with lidocaine and magnesium) allows prolonged arrest with a single administration and is increasingly popular, especially in paediatric and minimally invasive surgery.",
+        "The standard comprehensive intra-operative TOE examination comprises 20 (now 28) standardised views (ASE/SCA) — worth citing.",
+        "TOE-derived indices: LV end-diastolic area for preload, fractional area change for systolic function, and Doppler for valve gradients and cardiac output."
+      ]
+    }
+  },
+  {
+    "qNo": 7,
+    "question": "a) Adductor canal block. [5]  b) Three legged stool test. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Adductor canal block (ACB)",
+        "definition": "The adductor canal (subsartorial/Hunter's canal) is an aponeurotic tunnel in the mid-medial thigh containing the femoral artery and vein, the SAPHENOUS nerve (a purely SENSORY terminal branch of the femoral nerve) and the nerve to vastus medialis. An ultrasound-guided ACB deposits local anaesthetic here to provide sensory analgesia to the medial leg and knee.",
+        "techniqueUses": {
+          "title": "Technique & uses",
+          "content": [
+            "Technique: supine, leg slightly externally rotated; high-frequency linear probe on the medial mid-thigh; identify the femoral artery deep to sartorius; needle in-plane, deposit ~10–15 mL LA around the artery within the canal (deep to sartorius).",
+            "Key advantage: it is a mainly SENSORY block that largely SPARES the quadriceps MOTOR power — preserving the ability to straight-leg-raise and mobilise/weight-bear, unlike a femoral nerve block.",
+            "Uses: post-operative analgesia for total knee arthroplasty (part of multimodal, motor-sparing analgesia), knee arthroscopy/ACL, and medial-leg/saphenous-territory surgery; enables early physiotherapy and reduces falls.",
+            "Often combined with an IPACK block (interspace between popliteal artery and posterior knee capsule) for posterior knee analgesia."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Three-legged stool of anaesthesia (the anaesthesia triad)",
+        "definition": "The 'three-legged stool' is the classic conceptual model of BALANCED (general) anaesthesia, described by Rees and Gray — the three components ('legs') that together constitute an adequate anaesthetic, each provided by specific agents so that no single drug is given in excessive dose.",
+        "components": {
+          "title": "The three legs (components) of the triad",
+          "content": [
+            "1. NARCOSIS / hypnosis (unconsciousness & amnesia): provided by induction/maintenance agents — volatile anaesthetics, propofol/IV agents.",
+            "2. ANALGESIA (suppression of the noxious/autonomic response to surgery): provided by opioids, regional/local anaesthesia, and other analgesics.",
+            "3. MUSCLE RELAXATION (areflexia / immobility to allow surgery & ventilation): provided by neuromuscular blocking agents (and deep volatile/regional block).",
+            "Principle: 'balanced anaesthesia' uses a combination of agents to achieve all three, minimising the dose (and side-effects) of any single drug — safer than relying on a single deep agent.",
+            "If a 'leg' is missing/inadequate the 'stool' is unstable: inadequate narcosis → AWARENESS; inadequate analgesia → autonomic response/hypertension/tachycardia; inadequate relaxation → movement/poor operating conditions."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "The adductor canal block anaesthetises the saphenous nerve (sensory) in Hunter's canal, giving medial-knee/leg analgesia while SPARING quadriceps motor power — ideal for total knee replacement and early mobilisation.",
+      "The 'three-legged stool' is the anaesthesia triad (Rees & Gray): narcosis/hypnosis + analgesia + muscle relaxation.",
+      "Balanced anaesthesia provides each component with a specific agent, minimising the dose and side-effects of any single drug; a missing 'leg' causes awareness, autonomic response, or movement."
+    ],
+    "clinicalPearls": [
+      "The adductor canal block's selling point is being 'motor-sparing': patients keep quadriceps strength and can straight-leg-raise and mobilise safely after knee surgery — reducing the fall risk seen with femoral nerve blocks.",
+      "Add an IPACK block to an ACB to cover the POSTERIOR knee capsule — together they give near-complete analgesia for total knee arthroplasty without motor weakness.",
+      "Think of the anaesthesia triad as a stool: remove any leg and it topples — no hypnosis = awareness, no analgesia = a hypertensive/tachycardic stress response, no relaxation = the patient moves.",
+      "The triad is why we monitor separately for depth (BIS), analgesia (haemodynamics/nociception index) and neuromuscular block (TOF) — each 'leg' has its own monitor."
+    ],
+    "commonMistakes": [
+      "Confusing the adductor canal block with a femoral nerve block — the ACB is chosen precisely because it preserves quadriceps power.",
+      "Depositing LA outside the canal (superficial to sartorius) so the saphenous nerve is missed.",
+      "Describing the anaesthesia triad but omitting the practical consequence of a missing component (awareness, autonomic response, movement)."
+    ],
+    "examTip": "For the ACB, stress the sonoanatomy (saphenous nerve, subsartorial) and the motor-sparing advantage over femoral block. For the three-legged stool, name the three components and link each deficiency to its clinical consequence.",
+    "sources": [
+      "Hadzic's Textbook of Regional Anesthesia and Acute Pain Management — Adductor canal block.",
+      "Miller's Anesthesia, 9th Ed — Peripheral nerve blocks; principles of balanced anesthesia.",
+      "Gray TC, Rees GJ. The concept of balanced anaesthesia (the anaesthesia triad).",
+      "Jaeger P et al. Adductor canal block versus femoral block for knee surgery."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Motor-sparing analgesia (ACB ± IPACK, local infiltration analgesia) is central to fast-track/ERAS knee arthroplasty — early mobilisation, fewer falls, shorter stay.",
+        "The anaesthesia triad concept evolved into the modern 'balanced anaesthesia' and underpins TIVA/TCI + regional + relaxant practice; some add a fourth component — suppression of the autonomic/stress response.",
+        "The saphenous nerve is the longest cutaneous branch of the femoral nerve, supplying the medial leg down to the medial malleolus — hence the ACB's utility for medial-leg surgery too."
+      ]
+    }
+  },
+  {
+    "qNo": 8,
+    "question": "Discuss the anesthetic concerns, preoperative preparation and anesthetic management in a 60-year-old male patient with a permanent pacemaker posted for laparoscopic cholecystectomy. [3+2+5]",
+    "marks": 10,
+    "answer": {
+      "concerns": {
+        "title": "Anaesthetic concerns [3]",
+        "content": [
+          "ELECTROMAGNETIC INTERFERENCE (EMI) from monopolar diathermy — can inhibit the pacemaker (oversensing → dangerous pauses in a pacemaker-dependent patient) or trigger inappropriate ICD shocks.",
+          "Underlying cardiac disease that necessitated the device (bradyarrhythmia, heart block, cardiomyopathy, heart failure) with limited reserve.",
+          "Device factors: unknown device type/indication/programming, pacemaker dependency, battery status, and whether it is a pacemaker or a pacemaker+ICD.",
+          "Laparoscopy-specific: pneumoperitoneum and Trendelenburg reduce venous return and alter haemodynamics; CO₂ absorption; positioning."
+        ]
+      },
+      "preoperativePreparation": {
+        "title": "Preoperative preparation [2]",
+        "content": [
+          "Identify the device: type (PPM vs ICD), manufacturer, indication, and the date/result of the last check; obtain a recent device interrogation (ideally within 3–12 months) and the pacing-dependency status.",
+          "Interrogation/reprogramming plan: for a pacemaker-dependent patient, reprogram to an ASYNCHRONOUS mode (e.g. VOO/DOO) or apply a magnet to prevent diathermy-induced inhibition; for an ICD, SUSPEND anti-tachycardia therapy (deactivate/magnet) to prevent inappropriate shocks — and have external defibrillation/pacing available while it is off.",
+          "Optimise the underlying cardiac condition; check electrolytes; involve cardiology/device technician; ensure resuscitation and external pacing/defibrillation immediately available."
+        ]
+      },
+      "anaestheticManagement": {
+        "title": "Anaesthetic management [5]",
+        "intraoperative": {
+          "title": "Intra-operative",
+          "content": [
+            "Minimise EMI: use BIPOLAR diathermy where possible; if monopolar is used, use short bursts, lowest effective power, and place the return (dispersion) electrode so the current path is AWAY from the device (e.g. return pad on the thigh, not across the chest).",
+            "Have a MAGNET immediately available to convert the pacemaker to asynchronous pacing if inhibition occurs (know the magnet response of the specific device).",
+            "Continuous monitoring: ECG (watch for pacing spikes/failure to capture), plethysmograph/arterial line and manual pulse (a plethysmograph or arterial trace confirms mechanical output even if ECG is obscured by diathermy).",
+            "Have external transcutaneous pacing pads applied and a defibrillator ready (especially if an ICD is deactivated).",
+            "Anaesthetic technique: standard GA is fine; avoid factors that change pacing thresholds (marked electrolyte shifts, acidosis, hypoxia, suxamethonium fasciculations may be misinterpreted as R waves).",
+            "Manage laparoscopy haemodynamics: careful pneumoperitoneum pressure and positioning; treat hypotension."
+          ]
+        },
+        "postoperative": {
+          "title": "Postoperative",
+          "content": [
+            "RE-INTERROGATE and reprogram the device back to its original settings / REACTIVATE the ICD before discharge from monitored care.",
+            "Monitor ECG until device function is confirmed; document."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "The chief concern is electromagnetic interference from monopolar diathermy causing pacing inhibition (pauses) or inappropriate ICD shocks, on a background of significant cardiac disease.",
+      "Preop: interrogate the device, determine pacing dependency, reprogram pacemaker to asynchronous (or use magnet) and DEACTIVATE ICD anti-tachy therapy — with external defibrillation/pacing ready.",
+      "Intra-op: prefer bipolar diathermy; if monopolar, short low-power bursts with the return pad routing current away from the device; monitor a mechanical pulse (pleth/arterial); reprogram/reactivate the device postoperatively."
+    ],
+    "clinicalPearls": [
+      "A magnet on a PACEMAKER usually switches it to asynchronous (fixed-rate) pacing (protects against diathermy inhibition); a magnet on an ICD usually only SUSPENDS shock therapy (it does NOT make the pacing asynchronous) — know the difference, it is a classic exam and clinical trap.",
+      "Always deactivate an ICD's anti-tachycardia therapy before surgery with diathermy AND have external defibrillation pads on the patient — an inappropriate shock or an undetected VF while it's off can be fatal.",
+      "During diathermy the ECG is often obscured — a plethysmograph or arterial line confirms the heart is still mechanically ejecting when the ECG is uninterpretable.",
+      "Keep the diathermy return electrode and the current path away from the pulse generator — placing the pad on the thigh for abdominal laparoscopy keeps the current well clear of the device."
+    ],
+    "commonMistakes": [
+      "Assuming a magnet makes an ICD pace asynchronously (it only suspends shocks) — pacemaker-dependent ICD patients can still be inhibited by diathermy.",
+      "Failing to have external pacing/defibrillation ready when the device is reprogrammed or the ICD deactivated.",
+      "Forgetting to reactivate/reprogram the device postoperatively before the patient leaves monitored care."
+    ],
+    "examTip": "Match the 3+2+5 split. Lead concerns with EMI, make preop = interrogation + reprogramming/deactivation, and management = bipolar diathermy, magnet ready, mechanical-pulse monitoring, external backup, and postoperative reactivation.",
+    "sources": [
+      "MHRA / AAGBI & Heart Rhythm Society guidance — Perioperative management of patients with cardiac implantable electronic devices.",
+      "Miller's Anesthesia, 9th Ed — Pacemakers and ICDs.",
+      "Stoelting's Anesthesia and Co-Existing Disease, 8th Ed — Cardiac conduction disturbances & pacemakers.",
+      "ASA Practice Advisory for the Perioperative Management of CIEDs."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "NBG pacemaker code (positions I–V): Chamber Paced / Chamber Sensed / Response to sensing (I=inhibited, T=triggered, D=dual) / Rate modulation / Multisite. E.g. DDD = dual-chamber sense & pace, dual response; VOO = asynchronous ventricular pacing.",
+        "Pacemaker-dependency means there is no adequate intrinsic escape rhythm — these are the patients in whom diathermy-induced inhibition is most dangerous, mandating asynchronous reprogramming.",
+        "Modern devices with 'noise reversion' modes may automatically pace asynchronously when they detect EMI, but relying on this is not recommended — plan reprogramming/magnet deliberately."
+      ]
+    }
+  },
+  {
+    "qNo": 9,
+    "question": "What are the indications, physiological effects and technique of insertion of intra-aortic balloon pump? [4+3+3]",
+    "marks": 10,
+    "answer": {
+      "definition": {
+        "title": "Intra-Aortic Balloon Pump (IABP) — definition",
+        "content": "The IABP is a mechanical circulatory-support device: a catheter-mounted balloon positioned in the descending thoracic aorta that inflates in diastole and deflates in systole (counterpulsation), synchronised to the ECG or arterial waveform, to improve myocardial oxygen supply and reduce demand."
+      },
+      "indications": {
+        "title": "Indications [4]",
+        "content": [
+          "Cardiogenic shock (e.g. post-MI) as a bridge to revascularisation/recovery.",
+          "Acute mechanical complications of MI: acute mitral regurgitation (papillary muscle rupture) and ventricular septal rupture.",
+          "Refractory unstable angina / ischaemia awaiting revascularisation.",
+          "Failure to wean from cardiopulmonary bypass / low cardiac output syndrome after cardiac surgery.",
+          "Bridge to a ventricular assist device, transplant or high-risk PCI/surgery.",
+          "Refractory ventricular arrhythmias due to ischaemia."
+        ]
+      },
+      "physiologicalEffects": {
+        "title": "Physiological effects [3]",
+        "content": [
+          "Diastolic INFLATION → diastolic augmentation: raises aortic diastolic pressure → INCREASES coronary perfusion (and cerebral/systemic perfusion) → improved myocardial oxygen SUPPLY.",
+          "Systolic DEFLATION (just before the aortic valve opens) → creates a vacuum/reduces aortic end-diastolic pressure → REDUCES afterload/LV impedance → decreased LV wall tension and myocardial oxygen DEMAND, and increased stroke volume/cardiac output (~0.5–1 L/min).",
+          "Net effect: improves the myocardial oxygen supply:demand ratio, increases cardiac output, and reduces LV workload — WITHOUT increasing myocardial oxygen consumption.",
+          "Modest reduction in heart rate/PCWP and improved forward flow."
+        ]
+      },
+      "technique": {
+        "title": "Technique of insertion [3]",
+        "content": [
+          "Access: percutaneously (Seldinger) via the common FEMORAL artery (most common); the sheathed balloon catheter is advanced over a guidewire.",
+          "Positioning: the balloon tip lies in the descending thoracic aorta, ~2 cm distal to the origin of the LEFT SUBCLAVIAN artery and ABOVE the renal arteries — confirm position by fluoroscopy/chest X-ray (tip at the carina level) or TOE.",
+          "Timing/triggering: inflation is timed to the DICROTIC NOTCH (aortic valve closure, onset of diastole) and deflation to just before the upstroke of systole; triggered from the ECG (R wave) or the arterial pressure waveform.",
+          "Balloon gas: HELIUM (low density → rapid inflation/deflation, and rapidly absorbed if the balloon ruptures).",
+          "Monitor: arterial waveform for correct augmentation, distal limb perfusion, and anticoagulate; ratio (1:1, 1:2) is set for weaning."
+        ]
+      }
+    },
+    "keyPoints": [
+      "IABP works by COUNTERPULSATION: inflates in diastole (augments coronary/systemic perfusion → ↑O₂ supply) and deflates in systole (reduces afterload → ↓O₂ demand, ↑cardiac output).",
+      "Indications: cardiogenic shock, mechanical complications of MI (acute MR, VSR), refractory ischaemia, failure to wean from CPB, and as a bridge to revascularisation/VAD/transplant.",
+      "Inserted via the femoral artery with the tip 2 cm distal to the left subclavian and above the renals; helium-filled; timed to the dicrotic notch, triggered by ECG/arterial waveform."
+    ],
+    "clinicalPearls": [
+      "Inflation on the DICROTIC NOTCH and deflation just before systole is everything — mistimed inflation (too early, before aortic valve closes) increases afterload and is dangerous; use the arterial waveform to fine-tune timing.",
+      "Helium is used because its low density lets the balloon inflate/deflate almost instantly and, if it ruptures, it is harmlessly and rapidly absorbed (unlike CO₂/air which risks a large gas embolus).",
+      "IABP is CONTRAINDICATED in significant AORTIC REGURGITATION (diastolic augmentation worsens the regurgitant volume) and in aortic dissection/aneurysm.",
+      "The IABP-SHOCK II trial questioned routine IABP in post-MI cardiogenic shock (no mortality benefit) — so its use is now more selective, mainly for mechanical complications and bridging."
+    ],
+    "commonMistakes": [
+      "Reversing the timing — the balloon INFLATES in diastole and DEFLATES in systole (not the other way round).",
+      "Forgetting the contraindications: aortic regurgitation, aortic dissection/aneurysm and severe peripheral vascular disease.",
+      "Mispositioning (too high → occludes the left subclavian/cerebral vessels; too low → occludes renal/mesenteric vessels)."
+    ],
+    "examTip": "Answer in the 4+3+3 structure. Make the physiology crystal clear (diastolic inflation → supply; systolic deflation → demand) and the technique specific (femoral access, position 2 cm below left subclavian, helium, dicrotic-notch timing).",
+    "sources": [
+      "Kaplan's Cardiac Anesthesia, 7th Ed — Mechanical circulatory support / IABP.",
+      "Miller's Anesthesia, 9th Ed — Circulatory assist devices.",
+      "Thiele H et al. IABP-SHOCK II Trial. N Engl J Med 2012.",
+      "Oh's Intensive Care Manual — Intra-aortic balloon counterpulsation."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Complications: limb ISCHAEMIA (commonest), aortic dissection/perforation, balloon rupture (helium embolus, seen as blood in the tubing), thrombocytopenia, haemolysis, infection, and cerebral/renal/mesenteric malposition.",
+        "Weaning is by reducing the augmentation ratio (1:1 → 1:2 → 1:3) or the balloon volume while monitoring haemodynamics.",
+        "Newer percutaneous devices (Impella — a micro-axial LV assist pump) are increasingly used instead of IABP for higher-grade support, as IABP only augments output modestly."
+      ]
+    }
+  },
+  {
+    "qNo": 10,
+    "question": "a) Ambulatory labor analgesia. [5]  b) Sensory evoked potential. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Ambulatory ('walking') labour analgesia",
+        "definition": "Ambulatory labour analgesia is a neuraxial technique providing effective pain relief while PRESERVING lower-limb MOTOR power and proprioception, so the parturient can safely stand, walk and adopt upright positions during the first stage of labour.",
+        "techniqueDrugs": {
+          "title": "Technique & drugs",
+          "content": [
+            "Achieved with LOW-DOSE, dilute local anaesthetic + OPIOID mixtures that block pain (sensory) while sparing motor fibres — e.g. bupivacaine/ropivacaine 0.0625–0.1% with fentanyl/sufentanil.",
+            "Delivered by combined spinal-epidural (CSE) — a small intrathecal opioid ± low-dose LA gives rapid analgesia with minimal motor block — or a low-dose epidural infusion / patient-controlled epidural analgesia (PCEA) ± programmed intermittent epidural boluses.",
+            "Safety checks BEFORE ambulation: confirm preserved motor power (straight-leg raise, partial knee bend), intact proprioception, normal blood pressure (no orthostatic hypotension), and always with an accompanying attendant; continuous fetal monitoring as per unit policy.",
+            "Contraindications to walking: any motor weakness, hypotension, abnormal fetal heart, sedation, or obstetric reasons to remain in bed."
+          ]
+        },
+        "benefits": {
+          "title": "Benefits & considerations",
+          "content": [
+            "Maternal satisfaction, comfort and a sense of control; upright posture may aid descent and progress and reduce instrumental delivery in some studies.",
+            "Low-dose technique reduces motor block, urinary retention and the need for instrumental delivery compared with older high-dose epidurals.",
+            "Must exclude hypotension and confirm motor/proprioceptive integrity every time before mobilising."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Sensory (somatosensory) evoked potentials (SSEP)",
+        "definition": "A somatosensory evoked potential is the electrical response recorded over the sensory cortex/spinal cord following repetitive stimulation of a peripheral (sensory/mixed) nerve — it monitors the integrity of the ascending SENSORY pathway (peripheral nerve → dorsal columns → medial lemniscus → thalamus → sensory cortex).",
+        "useAndEffects": {
+          "title": "Intra-operative use & anaesthetic effects",
+          "content": [
+            "Uses: intra-operative NEUROMONITORING during surgery that risks the spinal cord/sensory pathways — scoliosis/spine surgery, spinal-cord tumour, thoracic aortic (aneurysm) surgery (spinal-cord ischaemia), and some intracranial/carotid surgery.",
+            "Interpretation: a significant fall in AMPLITUDE (>50%) and/or increase in LATENCY (>10%) warns of impending neural injury or ischaemia → prompts corrective action (raise BP/perfusion, adjust retractors/hardware, reduce cord traction).",
+            "Anaesthetic effects (important): VOLATILE agents and nitrous oxide DEPRESS SSEPs (dose-dependent ↓amplitude, ↑latency); TIVA (propofol + opioid) preserves them best. Keep a stable, constant anaesthetic depth; muscle relaxants do NOT affect SSEPs (they can even improve the signal by removing EMG noise).",
+            "Physiological confounders: hypothermia, hypotension/ischaemia, hypoxia, hypocarbia and anaemia also alter the signal — maintain stable physiology."
+          ]
+        },
+        "limitation": {
+          "title": "Key limitation",
+          "content": [
+            "SSEPs monitor only the DORSAL (sensory) columns — they can MISS anterior-cord (MOTOR) injury; therefore MOTOR evoked potentials (MEPs) are used alongside SSEPs for complete cord monitoring (e.g. the anterior spinal artery territory)."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Ambulatory labour analgesia uses low-dose dilute LA + opioid (CSE or low-dose epidural/PCEA) to relieve pain while sparing motor power, allowing safe walking after confirming preserved motor/proprioception and normal BP with an attendant.",
+      "SSEPs monitor the ascending sensory (dorsal-column) pathway during spine/aortic/neurosurgery; a >50% amplitude fall or >10% latency increase signals impending injury.",
+      "Volatile agents and N₂O depress SSEPs — TIVA is preferred and anaesthetic depth kept constant; SSEPs can miss anterior-cord (motor) injury, so MEPs are added."
+    ],
+    "clinicalPearls": [
+      "Before letting a labouring woman walk, do the bedside triad every time: adequate motor power (straight-leg raise / partial squat), intact proprioception, and no postural drop in blood pressure — plus an escort.",
+      "For evoked-potential monitoring, keep the anaesthetic CONSTANT and prefer TIVA — a sudden change in signal is only meaningful if the anaesthetic depth (a powerful confounder) hasn't changed.",
+      "SSEPs watch the DORSAL columns and can miss ANTERIOR (motor) cord ischaemia — the classic pitfall in scoliosis/aortic surgery is a normal SSEP with a new motor deficit, which is why MEPs are run in parallel.",
+      "Muscle relaxants improve SSEP quality (less EMG artefact) but ABOLISH motor evoked potentials — so when MEPs are needed, relaxants must be avoided/limited."
+    ],
+    "commonMistakes": [
+      "Allowing a woman to ambulate without checking motor power, proprioception and blood pressure (fall risk).",
+      "Using volatile-based anaesthesia during SSEP/MEP monitoring and then being unable to interpret depressed signals.",
+      "Relying on SSEPs alone and missing anterior-cord motor injury; giving muscle relaxants when MEPs are being monitored."
+    ],
+    "examTip": "For ambulatory analgesia, emphasise the low-dose LA+opioid principle and the mandatory pre-ambulation safety checks. For SSEP, define the pathway, give the amplitude/latency alarm criteria, and stress the TIVA/volatile effect and the SSEP-vs-MEP (sensory vs motor) distinction.",
+    "sources": [
+      "Chestnut's Obstetric Anesthesia: Principles and Practice, 6th Ed — Neuraxial labour analgesia.",
+      "Miller's Anesthesia, 9th Ed — Intra-operative neurophysiologic monitoring; obstetric anesthesia.",
+      "Cottrell & Patel's Neuroanesthesia — Evoked potential monitoring.",
+      "Barash, Clinical Anesthesia, 8th Ed — Neuromonitoring."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "The 'mobile epidural' relies on selective sensory block: opioids act on spinal opioid receptors and the very dilute LA blocks small sensory fibres while sparing large motor fibres (differential block).",
+        "SSEP generators/waves are named by latency (e.g. N20 from the cortex after median-nerve stimulation); the cortical response is the one anaesthesia most affects.",
+        "During thoracic aortic surgery, SSEP/MEP changes guide interventions to protect the spinal cord (raising distal perfusion pressure, reimplanting intercostal arteries, CSF drainage) to prevent paraplegia."
+      ]
+    }
+  }
+]

@@ -1,0 +1,828 @@
+[
+  {
+    "qNo": 1,
+    "question": "A 6-year-old child is posted for release of contracture of front of neck following burns sustained three months back. On examination, the neck extension is limited and the mouth opening is two finger breadth. a) What are the anesthetic concerns in this child? [5]  b) Discuss the anesthesia technique with special reference to airway management. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Anaesthetic concerns in a child with post-burn neck contracture",
+        "airway": {
+          "title": "Airway (the dominant concern) — an ANTICIPATED difficult airway",
+          "content": [
+            "Restricted neck extension and reduced mouth opening (2 finger-breadths) → difficult mask ventilation, laryngoscopy and intubation.",
+            "Contracture may worsen after induction (loss of tone) and distort/fix the airway; risk of 'can't intubate, can't oxygenate'.",
+            "Possible associated facial/oral contractures, microstomia and limited access."
+          ]
+        },
+        "otherConcerns": {
+          "title": "Other concerns (mature scar at 3 months, but general paediatric-burn issues)",
+          "content": [
+            "Paediatric considerations: weight-based dosing, higher O₂ consumption, rapid desaturation, temperature regulation (small size, exposed neck), psychological preparation and separation anxiety.",
+            "Suxamethonium is CONTRAINDICATED in the burn-injured phase because of hyperkalaemia risk — although receptor up-regulation largely resolves by ~3 months, most avoid it to be safe.",
+            "Resistance to non-depolarising relaxants (up-regulated extrajunctional receptors) in the sub-acute burn.",
+            "Nutritional status/anaemia/hypoproteinaemia; venous access may be limited by scarring.",
+            "Positioning and pressure-area care over scarred skin; consent for tracheostomy as backup."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Anaesthetic technique with special reference to airway management",
+        "principles": {
+          "title": "Guiding principle — SECURE THE AIRWAY FIRST, maintain spontaneous ventilation",
+          "content": [
+            "This is an anticipated difficult airway: the cardinal rule is to MAINTAIN SPONTANEOUS VENTILATION and avoid muscle relaxants/apnoea until the airway is secured or shown to be manageable.",
+            "Full difficult-airway preparation: experienced anaesthetist and assistant, ENT surgeon and rigid bronchoscope/tracheostomy standby, age-appropriate difficult-airway trolley (video laryngoscope, LMA/supraglottic sizes, paediatric fibreoptic scope, bougies)."
+          ]
+        },
+        "technique": {
+          "title": "Preferred techniques",
+          "content": [
+            "Option 1 — Release of contracture under local/regional infiltration by the surgeon FIRST, which improves neck extension and mouth opening, then convert to a controlled airway once access improves (a common practical approach for neck-band contractures).",
+            "Option 2 — Inhalational induction with sevoflurane in oxygen, keeping the child breathing spontaneously ('deep' but breathing), then gentle laryngoscopy/video-laryngoscopy or LMA insertion; deepen and secure once ventilation is confirmed.",
+            "Option 3 — Awake/sedated fibreoptic intubation is ideal in adults but difficult in an uncooperative 6-year-old; a sedated fibreoptic technique (dexmedetomidine/ketamine, maintaining spontaneous breathing) via nose or through an LMA is an option in expert hands.",
+            "Avoid IV induction with paralysis before confirming the airway is manageable.",
+            "Antisialagogue (glycopyrrolate) to dry secretions; topical airway local anaesthetic; have plan A/B/C and a surgical airway plan ready.",
+            "Extubate awake, with airway adjuncts/re-intubation equipment ready, as post-release oedema and residual restriction persist."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "This is an ANTICIPATED difficult paediatric airway — plan for difficult mask ventilation, laryngoscopy and intubation with full difficult-airway and surgical-airway backup.",
+      "Maintain spontaneous ventilation (inhalational induction, no early paralysis); consider surgeon releasing the band under local first to improve access.",
+      "Avoid suxamethonium in burns (hyperkalaemia) and expect resistance to non-depolarisers; extubate awake with equipment ready."
+    ],
+    "clinicalPearls": [
+      "For an isolated neck-band contracture, letting the surgeon infiltrate and DIVIDE the band under local anaesthesia first can transform an impossible airway into an easy one — 'release then intubate'.",
+      "Inhalational induction keeping the child breathing spontaneously is the safest paediatric plan: if you can't intubate, the child keeps breathing and you can lighten and wake them.",
+      "Suxamethonium hyperkalaemia risk peaks ~5 days to ~3 months post-burn but can persist longer — when in doubt, avoid it entirely in any burn patient.",
+      "A well-seated LMA can be both a rescue ventilation device AND a conduit for fibreoptic intubation in the paediatric difficult airway."
+    ],
+    "commonMistakes": [
+      "Giving an IV induction with a muscle relaxant before confirming the airway is manageable — the classic route to a can't-intubate-can't-oxygenate disaster.",
+      "Using suxamethonium in a burn patient (hyperkalaemic cardiac arrest).",
+      "Failing to plan/consent for a surgical airway and to extubate awake with re-intubation readiness."
+    ],
+    "examTip": "Frame the whole answer around 'anticipated difficult airway'. Emphasise maintenance of spontaneous ventilation, the surgeon-releases-the-band-first strategy, avoidance of suxamethonium, and a structured plan A/B/C with surgical backup.",
+    "sources": [
+      "Miller's Anesthesia, 9th Ed — The difficult airway & anesthesia for burns.",
+      "Coté & Lerman — A Practice of Anesthesia for Infants and Children.",
+      "DAS/APA Paediatric Difficult Airway Guidelines.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Airway management."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Burn pathophysiology and suxamethonium: extrajunctional (fetal-type) nAChR up-regulation causes exaggerated K⁺ release with suxamethonium and resistance to non-depolarisers — a dual receptor effect.",
+        "Ketamine is valuable in burns/contracture surgery: preserves airway reflexes and respiration, provides analgesia and is useful for repeated dressing changes.",
+        "Post-release, a new split-skin graft over the neck may again limit extension — plan the NEXT anaesthetic assuming a difficult airway until proven otherwise."
+      ]
+    }
+  },
+  {
+    "qNo": 2,
+    "question": "a) Indications for stellate ganglion block. [3]  b) Describe the technique with help of a diagram. [3]  c) Discuss complications of stellate ganglion block. [4]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Indications for stellate ganglion block (SGB)",
+        "content": [
+          "Sympathetically-mediated pain: Complex Regional Pain Syndrome (CRPS I & II) of the head, neck and upper limb; refractory angina; phantom-limb pain.",
+          "Vascular insufficiency of the upper limb: Raynaud's, vasospasm, arterial embolism, frostbite, post-reimplantation.",
+          "Herpes zoster / post-herpetic neuralgia of the head, neck and upper limb.",
+          "Hyperhidrosis of the upper limb; refractory ventricular arrhythmias / electrical storm (cardiac sympathetic denervation).",
+          "Others: Ménière's disease, atypical facial pain, and (investigational) PTSD and hot flushes."
+        ]
+      },
+      "partB": {
+        "title": "Technique of stellate ganglion block",
+        "definition": "The stellate (cervicothoracic) ganglion is formed by fusion of the inferior cervical and first thoracic sympathetic ganglia, lying anterior to the neck of the first rib and the C7 transverse process. It is blocked at the C6 level (Chassaignac's tubercle) to avoid the pleura/vertebral artery.",
+        "steps": {
+          "title": "Technique (anterior paratracheal approach at C6)",
+          "content": [
+            "Position: supine, neck slightly extended, mouth slightly open (relaxes strap muscles).",
+            "Landmark: palpate Chassaignac's tubercle (anterior tubercle of the C6 transverse process) at the level of the cricoid cartilage.",
+            "Retract the carotid sheath (sternocleidomastoid + carotid) LATERALLY with two fingers; the needle is inserted between the trachea and the carotid onto the C6 tubercle.",
+            "Withdraw ~2 mm off the bone, aspirate (for blood/CSF), inject a test dose then 5–10 mL of local anaesthetic (e.g. 0.25% bupivacaine).",
+            "Ultrasound guidance is now preferred — deposit LA deep to the prevertebral fascia over longus colli, avoiding vessels (inferior thyroid/vertebral artery) and the oesophagus.",
+            "Diagram to label: trachea, cricoid (C6), carotid sheath retracted laterally, C6 anterior tubercle (Chassaignac's), longus colli muscle, needle onto the tubercle, vertebral artery and pleura (structures to avoid)."
+          ]
+        },
+        "successSigns": {
+          "title": "Signs of successful block",
+          "content": [
+            "Ipsilateral HORNER'S SYNDROME: ptosis, miosis, anhidrosis, enophthalmos.",
+            "Also nasal stuffiness (Guttmann's sign), conjunctival injection, and increased ipsilateral hand temperature (sympathetic block)."
+          ]
+        }
+      },
+      "partC": {
+        "title": "Complications of stellate ganglion block",
+        "content": [
+          "Vascular: inadvertent VERTEBRAL ARTERY injection → immediate seizures/LA systemic toxicity (even tiny volumes); haematoma; carotid puncture.",
+          "Neural spread: recurrent laryngeal nerve block → hoarseness; phrenic nerve block → diaphragmatic paralysis (avoid bilateral blocks); brachial plexus block.",
+          "Neuraxial: subarachnoid/epidural injection → high/total spinal.",
+          "Respiratory: pneumothorax (needle too low/too deep).",
+          "Local: oesophageal puncture, retropharyngeal haematoma (airway compromise), infection.",
+          "Expected (not a true complication): Horner's syndrome — confirms a successful block."
+        ]
+      }
+    },
+    "keyPoints": [
+      "SGB indications: sympathetically-maintained pain (CRPS, PHN, refractory angina/arrhythmia), upper-limb vascular insufficiency and hyperhidrosis.",
+      "Blocked at C6 (Chassaignac's tubercle) with the carotid retracted laterally; ultrasound guidance is now standard; success = ipsilateral Horner's syndrome.",
+      "Feared complications: vertebral-artery injection (seizures), recurrent laryngeal/phrenic block, pneumothorax and total spinal."
+    ],
+    "clinicalPearls": [
+      "A tiny (0.5 mL) inadvertent VERTEBRAL ARTERY injection can cause immediate seizures/loss of consciousness — always aspirate and give a small test dose first, and have resuscitation and lipid emulsion ready.",
+      "Never do BILATERAL stellate blocks at the same sitting — bilateral phrenic and recurrent laryngeal nerve block can obstruct the airway and stop the diaphragm.",
+      "Horner's syndrome is a sign of SUCCESS, not a complication — but it does NOT guarantee an adequate sympathetic block of the arm (the T1–T4 fibres may be spared).",
+      "Left stellate ganglion block is used therapeutically for refractory ventricular arrhythmias / electrical storm — cardiac sympathetic denervation."
+    ],
+    "commonMistakes": [
+      "Listing Horner's syndrome as a complication — it is the expected marker of a successful block.",
+      "Performing the block at C7 rather than C6 — increases the risk of vertebral-artery puncture and pneumothorax.",
+      "Doing bilateral blocks or ignoring the vertebral-artery/LAST risk (no aspiration/test dose)."
+    ],
+    "examTip": "Give a labelled diagram at C6 (Chassaignac's tubercle, carotid retracted laterally) — that secures the technique marks. List Horner's as a success sign, and separate it clearly from the true complications.",
+    "sources": [
+      "Cousins & Bridenbaugh — Neural Blockade in Clinical Anesthesia and Pain Medicine.",
+      "Miller's Anesthesia, 9th Ed — Chronic pain / sympathetic blocks.",
+      "Hadzic's Textbook of Regional Anesthesia and Acute Pain Management.",
+      "Waldman — Atlas of Interventional Pain Management."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "The stellate ganglion supplies sympathetic fibres to the head, neck and upper limb; the arm's sympathetic supply (T2–T8) may require a lower/higher spread, which is why a good Horner's does not always mean a good arm block.",
+        "Ultrasound-guided SGB (out-of-plane onto longus colli, deep to prevertebral fascia) reduces vascular and oesophageal injury versus the blind landmark technique and allows lower LA volumes.",
+        "Emerging evidence: SGB for post-traumatic stress disorder and for menopausal hot flushes — mechanism thought to be modulation of central sympathetic tone."
+      ]
+    }
+  },
+  {
+    "qNo": 3,
+    "question": "a) Anesthesia concerns in laser surgery. [5]  b) Six minute walk test. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Anaesthesia concerns in laser surgery",
+        "definition": "LASER (Light Amplification by Stimulated Emission of Radiation) surgery — especially airway/ENT laser work — poses hazards to the patient, the airway and theatre staff. Concerns group into fire risk, atmospheric/eye hazards, and shared-airway issues.",
+        "fireRisk": {
+          "title": "1. Airway fire (the principal hazard) — the 'fire triad'",
+          "content": [
+            "Oxidiser (high FiO₂/N₂O), ignition (laser beam) and fuel (tracheal tube, drapes) — all present in airway laser surgery.",
+            "Prevention: lowest safe FiO₂ (ideally ≤0.30), avoid nitrous oxide, laser-resistant (laser-safe) tracheal tube, saline-filled cuff (± methylene blue to detect rupture), wet swabs around the field, saline available."
+          ]
+        },
+        "otherHazards": {
+          "title": "2. Atmospheric, ocular and general hazards",
+          "content": [
+            "Laser plume: smoke contains toxic gases, viable virus (HPV) and carbon — needs smoke evacuation and appropriate masks.",
+            "Eye injury: retinal/corneal burns — wavelength-specific protective goggles for all staff; the patient's eyes taped and covered with wet gauze/eye shields.",
+            "Skin burns and reflection off shiny instruments (use matte/anodised instruments).",
+            "Warning signs on doors, windows covered, restricted access, trained laser-safety officer."
+          ]
+        },
+        "airwayManagement": {
+          "title": "3. Shared-airway / anaesthetic technique",
+          "content": [
+            "Shared airway with the surgeon; options: laser-safe cuffed tube, intermittent apnoea technique, jet ventilation (supraglottic/subglottic) or spontaneous ventilation with TIVA.",
+            "TIVA (propofol ± remifentanil) is favoured to keep FiO₂ low and avoid volatile agents in an open airway.",
+            "Immobility essential; protect against airway oedema; plan for the airway-fire drill."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Six-minute walk test (6MWT)",
+        "definition": "The 6MWT is a simple, inexpensive, submaximal exercise test that measures the distance a patient can walk on a flat, hard surface in 6 minutes (the 6-minute walk distance, 6MWD). It is a global measure of functional exercise capacity integrating cardiac, pulmonary, and musculoskeletal function.",
+        "conductAndUse": {
+          "title": "Conduct, interpretation & uses",
+          "content": [
+            "Standardised (ATS guidelines): a 30-m corridor, standardised encouragement, measure SpO₂, heart rate, Borg dyspnoea/fatigue score before and after; two tests (best recorded).",
+            "Normal 6MWD ≈ 400–700 m; <300–350 m indicates significant impairment and correlates with poor outcome.",
+            "Uses: pre-operative functional assessment (fitness for thoracic/major surgery), pulmonary hypertension and COPD/ILD severity and response to therapy, heart-failure and pulmonary-rehabilitation assessment, and lung-transplant/resection evaluation.",
+            "A fall in SpO₂ >4% (desaturation) during the test is an important adverse marker.",
+            "Absolute contraindications: unstable angina or MI in the previous month; relative: uncontrolled hypertension, resting tachycardia."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "The dominant laser hazard is airway fire (fire triad) — use lowest FiO₂ (≤0.30), no N₂O, a laser-safe saline-filled-cuff tube, and have the airway-fire drill ready.",
+      "Other laser hazards: toxic/viral plume (smoke evacuation), eye injury (wavelength-specific goggles, protect patient's eyes), and skin/reflection burns.",
+      "The 6MWT is a standardised submaximal test of functional capacity; 6MWD <300–350 m or desaturation >4% indicates significant impairment and predicts poor perioperative outcome."
+    ],
+    "clinicalPearls": [
+      "For airway laser work, keep FiO₂ ≤0.30 with air (no nitrous oxide) and use TIVA — this attacks the 'oxidiser' arm of the fire triad, the one the anaesthetist controls.",
+      "Fill the laser-tube cuff with saline tinted with methylene blue: it both quenches a spark and gives an instant visible warning if the cuff is perforated by the beam.",
+      "6MWD is a strong, cheap predictor of perioperative morbidity — a patient who cannot walk one flight of stairs / achieve ~4 METs is high-risk, mirroring a short 6MWD.",
+      "Laser plume can transmit viable HPV — surgeons have contracted laryngeal papillomatosis; smoke evacuation and high-filtration masks are a genuine occupational-safety issue."
+    ],
+    "commonMistakes": [
+      "Continuing a high FiO₂ or using nitrous oxide during airway laser surgery — directly fuels an airway fire.",
+      "Forgetting eye protection (staff goggles must match the laser wavelength; the patient's eyes must be covered).",
+      "Treating the 6MWT as a maximal test — it is submaximal, and results depend on standardisation, encouragement and patient motivation."
+    ],
+    "examTip": "Structure laser concerns as fire triad / plume-eye-skin hazards / shared-airway technique. For the 6MWT, give the definition, how it's standardised, normal values and its predictive/clinical uses.",
+    "sources": [
+      "Miller's Anesthesia, 9th Ed — Anesthesia for laser airway surgery & OR fires.",
+      "ASA Practice Advisory for the Prevention and Management of Operating Room Fires.",
+      "ATS Statement: Guidelines for the Six-Minute Walk Test. Am J Respir Crit Care Med 2002.",
+      "Barash, Clinical Anesthesia, 8th Ed — ENT anesthesia & preoperative assessment."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "CO₂ laser (10,600 nm) is absorbed by water/surface tissue (used in airway/ENT); Nd:YAG penetrates deeper. Protective eyewear must be wavelength-specific.",
+        "Alternatives to a tube during airway laser surgery: intermittent apnoea, supraglottic/subglottic jet ventilation, or 'tubeless' spontaneous-ventilation TIVA with high-flow nasal oxygen (THRIVE).",
+        "The 6MWT complements formal cardiopulmonary exercise testing (CPET, which gives anaerobic threshold and VO₂peak) — the 6MWT is simpler and cheaper but less precise."
+      ]
+    }
+  },
+  {
+    "qNo": 4,
+    "question": "a) Risk factors and management of post operative nausea and vomiting. [5]  b) Management of ventricular tachycardia. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Postoperative nausea and vomiting (PONV) — risk factors & management",
+        "riskFactors": {
+          "title": "Risk factors (Apfel simplified score: 4 factors)",
+          "content": [
+            "Patient factors (Apfel): female sex, non-smoker, history of PONV or motion sickness, younger age. Each factor scores 1; 0–4 factors predict ~10/20/40/60/80% risk.",
+            "Anaesthetic factors: volatile agents, nitrous oxide, opioids (intra- and postoperative), longer duration of anaesthesia.",
+            "Surgical factors: laparoscopy, gynaecological, ENT/middle-ear, squint, bariatric and GI surgery."
+          ]
+        },
+        "management": {
+          "title": "Management — risk-stratified prophylaxis & rescue",
+          "content": [
+            "Reduce baseline risk: prefer regional anaesthesia, use propofol TIVA, avoid/minimise nitrous oxide and volatile agents, minimise opioids (multimodal/opioid-sparing analgesia), ensure hydration.",
+            "Multimodal PROPHYLAXIS by risk (give 2–3 agents from different classes for moderate–high risk): dexamethasone 4–8 mg at induction; ondansetron 4 mg (5-HT3 antagonist) at end of surgery; droperidol/haloperidol; and consider a NK-1 antagonist (aprepitant), cyclizine/antihistamine, or a scopolamine patch.",
+            "RESCUE (if PONV occurs despite prophylaxis): use a drug from a DIFFERENT class to the one used for prophylaxis; do not simply repeat the same agent within 6 h.",
+            "Non-pharmacological: P6 (acupressure), adequate hydration, avoiding gastric insufflation."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Management of ventricular tachycardia (VT)",
+        "definition": "VT is a broad-complex tachycardia (≥3 consecutive ventricular beats >100/min). Management is dictated by whether the patient is PULSELESS, or has a pulse with/without adverse features.",
+        "pulseless": {
+          "title": "1. Pulseless VT (= cardiac arrest)",
+          "content": [
+            "Treat as a SHOCKABLE rhythm: immediate unsynchronised DEFIBRILLATION + high-quality CPR (ALS algorithm).",
+            "Adrenaline 1 mg after the 3rd shock (then every 3–5 min) and amiodarone 300 mg after the 3rd shock; correct reversible causes (4 Hs & 4 Ts)."
+          ]
+        },
+        "pulseUnstable": {
+          "title": "2. VT with a pulse + adverse features (shock, syncope, myocardial ischaemia, heart failure)",
+          "content": [
+            "Synchronised DC CARDIOVERSION (up to 3 attempts, sedation/anaesthesia if conscious).",
+            "If unsuccessful: amiodarone 300 mg IV over 10–20 min, then repeat synchronised cardioversion; amiodarone 900 mg/24 h infusion."
+          ]
+        },
+        "pulseStable": {
+          "title": "3. VT with a pulse + stable (no adverse features)",
+          "content": [
+            "Amiodarone 300 mg IV over 20–60 min then infusion is first-line; correct electrolytes (K⁺, Mg²⁺).",
+            "Seek expert help; identify and treat the cause; consider other agents/overdrive pacing.",
+            "Polymorphic VT / Torsades de pointes: IV magnesium sulphate 2 g, stop QT-prolonging drugs, correct electrolytes, overdrive pacing/isoprenaline if bradycardia-related."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Apfel score (female, non-smoker, PONV/motion-sickness history, postoperative opioids) risk-stratifies PONV; manage by lowering baseline risk plus multimodal prophylaxis (dexamethasone + ondansetron ± others).",
+      "For rescue, use a drug from a DIFFERENT class than the prophylactic agent.",
+      "VT management hinges on pulse and stability: pulseless → defibrillate (shockable arrest); unstable-with-pulse → synchronised cardioversion; stable → IV amiodarone; Torsades → magnesium."
+    ],
+    "clinicalPearls": [
+      "Match the number of PONV prophylactic drug CLASSES to the number of Apfel risk factors — and always pick DIFFERENT classes (a second 5-HT3 antagonist adds little).",
+      "Dexamethasone must be given at INDUCTION (slow onset), whereas ondansetron works best given at the END of surgery — timing matters.",
+      "The single biggest VT decision is 'pulse or no pulse': pulseless VT is a cardiac arrest needing an UNSYNCHRONISED shock; VT with a pulse needs a SYNCHRONISED shock to avoid inducing VF.",
+      "Always give magnesium and correct K⁺ in polymorphic VT/Torsades — and hunt for QT-prolonging drugs (including ondansetron, droperidol, many antiemetics!)."
+    ],
+    "commonMistakes": [
+      "Repeating the same antiemetic class for rescue within 6 hours (ineffective) instead of switching class.",
+      "Delivering an unsynchronised shock to VT WITH a pulse (can precipitate VF) — it must be synchronised.",
+      "Forgetting magnesium for Torsades and missing the QT-prolonging drug that caused it."
+    ],
+    "examTip": "Present the Apfel score explicitly and a tiered prophylaxis/rescue plan. For VT, use the three-branch algorithm (pulseless / unstable / stable) — that structure is exactly what the examiner wants.",
+    "sources": [
+      "Fourth Consensus Guidelines for the Management of PONV (Gan TJ et al. Anesth Analg 2020).",
+      "Resuscitation Council (UK) / ALS — Adult tachycardia & cardiac arrest algorithms.",
+      "Miller's Anesthesia, 9th Ed — PONV; perioperative arrhythmias.",
+      "Apfel CC et al. A simplified risk score for PONV. Anesthesiology 1999."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Brugada criteria help distinguish VT from SVT with aberrancy in a broad-complex tachycardia — but if in doubt, treat a broad-complex tachycardia as VT.",
+        "Amiodarone is preferred over lidocaine in most VT now; procainamide is an alternative for stable monomorphic VT in some guidelines.",
+        "Total antiemetic 'stacking' plus other QT-prolongers can itself precipitate Torsades — a nice link between the two halves of this question."
+      ]
+    }
+  },
+  {
+    "qNo": 5,
+    "question": "Describe the anesthetic concerns and management in a 50-year-old male with alcoholic cirrhosis and portal hypertension, who is posted for open reduction and internal fixation of fracture of both bone of forearm. [5+5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Anaesthetic concerns in alcoholic cirrhosis with portal hypertension",
+        "definition": "Cirrhosis is a multisystem disease; risk is stratified by Child-Pugh class and MELD score. Concerns arise from every affected organ system plus alcohol-specific issues.",
+        "systemicConcerns": {
+          "title": "System-wise concerns",
+          "content": [
+            "Hepatic/pharmacological: reduced drug metabolism and altered protein binding (low albumin) → prolonged/exaggerated drug effects; risk of hepatic encephalopathy and worsening liver function.",
+            "Coagulation: reduced clotting-factor synthesis (raised INR), thrombocytopenia (hypersplenism) → bleeding risk; may contraindicate regional block.",
+            "Cardiovascular: hyperdynamic circulation (high CO, low SVR), cirrhotic cardiomyopathy, and reduced response to catecholamines.",
+            "Respiratory: hepatopulmonary syndrome (hypoxaemia), pleural effusion, and raised diaphragm/ascites reducing FRC.",
+            "Renal: hepatorenal syndrome and sensitivity to nephrotoxins/hypovolaemia.",
+            "GI: oesophageal varices (aspiration & bleeding risk), ascites, delayed gastric emptying.",
+            "Metabolic: hypoglycaemia, hyponatraemia, hypokalaemia, metabolic alkalosis.",
+            "Alcohol-specific: acute intoxication or WITHDRAWAL (delirium tremens), Wernicke's (give thiamine), cross-tolerance to anaesthetics, cardiomyopathy, and associated malnutrition/anaemia."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Anaesthetic management",
+        "preoperative": {
+          "title": "Preoperative optimisation",
+          "content": [
+            "Assess severity: Child-Pugh/MELD, coagulation (INR, platelets, fibrinogen), LFTs, electrolytes, glucose, renal function; correct coagulopathy (vitamin K, FFP/platelets/cryoprecipitate as needed) and electrolytes.",
+            "Screen for and treat encephalopathy, ascites, varices; give thiamine (Wernicke prophylaxis) and a benzodiazepine-based alcohol-withdrawal regimen if at risk.",
+            "Assess volume status; avoid over-diuresis; ensure adequate but not excessive fluids."
+          ]
+        },
+        "regionalOption": {
+          "title": "Regional anaesthesia (the technique of choice HERE if coagulation permits)",
+          "content": [
+            "A forearm ORIF is ideally suited to a BRACHIAL PLEXUS BLOCK (supraclavicular/infraclavicular/axillary), which avoids hepatically-metabolised anaesthetic drugs, protects the airway from aspiration, and provides excellent analgesia.",
+            "PROVIDED coagulation is adequate (acceptable INR and platelets) and no infection — check platelets/INR first; ultrasound guidance reduces vascular injury.",
+            "Use a reduced dose of local anaesthetic (reduced protein binding and clearance increase LAST risk)."
+          ]
+        },
+        "generalOption": {
+          "title": "If general anaesthesia is needed",
+          "content": [
+            "RSI for aspiration risk (varices/ascites/delayed emptying); careful airway.",
+            "Choose drugs with hepatic-independent elimination: propofol (short procedures), atracurium/cisatracurium (Hofmann elimination, not liver-dependent), remifentanil (ester hydrolysis); use short-acting titrated agents.",
+            "Maintain hepatic perfusion: avoid hypotension, hypoxia, hypercarbia and high airway pressures; invasive monitoring and warming; monitor glucose and neuromuscular block.",
+            "Careful fluid/transfusion strategy; postoperative HDU monitoring for decompensation and withdrawal."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Cirrhosis is multisystem: coagulopathy/thrombocytopenia, hyperdynamic circulation, hepatopulmonary/hepatorenal syndromes, varices/ascites (aspiration), encephalopathy, and altered drug handling; stratify with Child-Pugh/MELD.",
+      "A forearm ORIF is ideal for a BRACHIAL PLEXUS BLOCK — provided coagulation permits — avoiding hepatically-metabolised drugs and airway instrumentation.",
+      "If GA is needed: RSI, use atracurium/cisatracurium and remifentanil (organ-independent elimination), and preserve hepatic perfusion."
+    ],
+    "clinicalPearls": [
+      "Cisatracurium/atracurium (Hofmann elimination) and remifentanil (plasma esterases) are the muscle relaxant and opioid of choice in liver failure because their clearance does not depend on the liver.",
+      "A 'normal' INR in cirrhosis does NOT mean normal haemostasis — there is a rebalanced coagulopathy (both pro- and anti-coagulant factors fall); viscoelastic testing (ROTEM/TEG) guides therapy better than INR alone.",
+      "Don't forget thiamine BEFORE glucose in the alcoholic — a glucose load without thiamine can precipitate Wernicke's encephalopathy.",
+      "Maintaining hepatic blood flow (avoid hypotension/hypoxia/high PEEP) protects the already-vulnerable liver — the hepatic arterial buffer response is impaired in cirrhosis."
+    ],
+    "commonMistakes": [
+      "Using drugs heavily dependent on hepatic metabolism (e.g. long-acting benzodiazepines, morphine, vecuronium/rocuronium) with prolonged, exaggerated effects.",
+      "Assuming a normal INR excludes bleeding risk, or conversely denying a block purely on a mildly raised INR without checking platelets/viscoelastic testing.",
+      "Giving glucose to a malnourished alcoholic without thiamine cover; ignoring aspiration risk from varices/ascites (skipping RSI)."
+    ],
+    "examTip": "Lead with 'regional (brachial plexus block) is ideal for this forearm surgery if coagulation permits'. Then give the system-wise concerns and, for GA, name the organ-independent drugs (atracurium, remifentanil) and hepatic-perfusion protection.",
+    "sources": [
+      "Stoelting's Anesthesia and Co-Existing Disease, 8th Ed — Liver disease.",
+      "Miller's Anesthesia, 9th Ed — Anesthesia and the hepatobiliary system.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Anesthesia for patients with liver disease.",
+      "AAGBI/Association of Anaesthetists — Regional anaesthesia and coagulation guidance."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Child-Pugh (A/B/C: bilirubin, albumin, INR, ascites, encephalopathy) and MELD (bilirubin, INR, creatinine ± Na) predict perioperative mortality; MELD >15 or Child-Pugh C carry markedly increased risk.",
+        "Hepatopulmonary syndrome triad: liver disease + hypoxaemia + intrapulmonary vascular dilatation (positive contrast echo); orthodeoxia (desaturation on standing) is characteristic.",
+        "Cirrhotic cardiomyopathy: blunted contractile response to stress, diastolic dysfunction and a prolonged QT — the hyperdynamic circulation can mask a poor cardiac reserve until stressed."
+      ]
+    }
+  },
+  {
+    "qNo": 6,
+    "question": "a) Erector spinae plane nerve block. [5]  b) Post operative jaundice. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Erector spinae plane (ESP) block",
+        "definition": "The ESP block is an ultrasound-guided fascial-plane block in which local anaesthetic is deposited in the plane DEEP to the erector spinae muscle and superficial to the tip of the transverse process. It was first described by Forero in 2016 for thoracic neuropathic pain.",
+        "mechanismTechnique": {
+          "title": "Mechanism & technique",
+          "content": [
+            "Mechanism: LA spreads cranio-caudally in the plane and diffuses anteriorly through the costotransverse foramina to reach the dorsal AND ventral rami of the spinal nerves (and the sympathetic chain), producing multi-dermatomal thoracic/abdominal analgesia.",
+            "Technique: patient sitting/lateral; high-frequency linear probe placed parasagittally ~2.5–3 cm lateral to the spinous process; identify trapezius, rhomboid and erector spinae muscles over the hyperechoic transverse process; needle in-plane to contact the transverse process tip; inject 20–30 mL LA that lifts erector spinae off the bone.",
+            "Level chosen by target: T5 for thoracic (breast, thoracotomy, rib fractures), T7–T9 for upper abdominal, higher/lower as needed; can be bilateral or catheter-based."
+          ]
+        },
+        "usesAdvantages": {
+          "title": "Indications & advantages",
+          "content": [
+            "Thoracic surgery/thoracotomy, breast surgery, rib fractures, abdominal surgery, spine surgery, chronic thoracic neuropathic pain.",
+            "Advantages: technically easy and relatively SAFE — the injection point is far from the pleura, major vessels and neuraxis; a good option when a paravertebral/epidural is contraindicated (e.g. mild coagulopathy)."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Postoperative jaundice — a surgical sieve",
+        "definition": "Postoperative jaundice (raised bilirubin, often peaking days 2–10) is classified by mechanism into prehepatic, intrahepatic (hepatocellular) and posthepatic (obstructive) causes.",
+        "prehepatic": {
+          "title": "Prehepatic (bilirubin overload / haemolysis — unconjugated)",
+          "content": [
+            "Resorption of a large haematoma/bruising; transfusion of stored blood.",
+            "Haemolysis: transfusion reaction, mechanical (prosthetic valve/CPB), G6PD deficiency, sickle cell; Gilbert's unmasked by fasting."
+          ]
+        },
+        "intrahepatic": {
+          "title": "Intrahepatic (hepatocellular dysfunction — mixed)",
+          "content": [
+            "Ischaemic/hypoxic hepatitis ('shock liver') from intra-operative hypotension, hypoxia, low output, sepsis.",
+            "Drug-induced (halothane historically, paracetamol, antibiotics), TPN-associated cholestasis, benign postoperative intrahepatic cholestasis, decompensation of pre-existing liver disease."
+          ]
+        },
+        "posthepatic": {
+          "title": "Posthepatic (obstructive — conjugated)",
+          "content": [
+            "Iatrogenic bile-duct injury/ligation, retained common-bile-duct stone, biliary stricture, ascending cholangitis, pancreatitis."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "ESP block: US-guided injection deep to erector spinae onto the transverse-process tip; LA spreads to dorsal and ventral rami for multi-dermatomal thoracic/abdominal analgesia.",
+      "It is popular because it is technically easy and relatively safe (away from pleura, vessels and neuraxis) — a useful alternative to paravertebral/epidural.",
+      "Classify postoperative jaundice as prehepatic (haemolysis/haematoma), intrahepatic (shock liver/drugs/benign cholestasis) or posthepatic (biliary obstruction/injury)."
+    ],
+    "clinicalPearls": [
+      "The ESP block's safety margin comes from its injection point being far from the pleura, great vessels and neuraxis — hence it is often chosen for rib fractures and when neuraxial/paravertebral techniques are risky (e.g. mild coagulopathy).",
+      "Volume matters more than concentration in fascial-plane blocks: 20–30 mL is needed to achieve adequate cranio-caudal spread across several dermatomes.",
+      "The commonest cause of significant postoperative jaundice is 'shock liver' from an intra-operative hypotensive/hypoxic insult — far more common than the historically-feared halothane hepatitis.",
+      "Always exclude a surgical/obstructive cause (retained CBD stone, bile-duct injury) after hepatobiliary surgery — it needs intervention, not observation."
+    ],
+    "commonMistakes": [
+      "Depositing LA in the wrong plane (too superficial) so it never reaches the transverse-process tip — the block then fails.",
+      "Attributing all postoperative jaundice to anaesthetic agents rather than the far commoner shock liver and transfusion/haematoma causes.",
+      "Missing an obstructive (surgical) cause that requires ERCP/re-operation."
+    ],
+    "examTip": "For the ESP block, give the exact sonoanatomy (trapezius/rhomboid/erector spinae over the transverse process) and the mechanism (dorsal + ventral rami). For jaundice, answer with the pre-/intra-/post-hepatic sieve and 2–3 examples of each.",
+    "sources": [
+      "Forero M et al. The erector spinae plane block. Reg Anesth Pain Med 2016;41:621–627.",
+      "Hadzic's Textbook of Regional Anesthesia and Acute Pain Management.",
+      "Stoelting's Anesthesia and Co-Existing Disease, 8th Ed — Liver disease.",
+      "Miller's Anesthesia, 9th Ed — Regional anesthesia; hepatobiliary."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "The ESP block is a 'compartment/fascial-plane' block — like TAP, PECS and quadratus lumborum blocks — relying on spread rather than a discrete nerve target, so its exact mechanism and reliability are still debated.",
+        "Benign postoperative intrahepatic cholestasis is a multifactorial diagnosis of exclusion (bilirubin load + reduced hepatic function + drugs) that resolves spontaneously.",
+        "Obstructive jaundice predisposes to postoperative AKI (endotoxin/hepatorenal) and coagulopathy (vitamin-K malabsorption) — perioperative hydration and vitamin K matter."
+      ]
+    }
+  },
+  {
+    "qNo": 7,
+    "question": "a) Enumerate the causes and management of inadequate reversal of anesthesia. [5]  b) Target controlled infusion. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Inadequate reversal / delayed recovery of neuromuscular block (residual paralysis)",
+        "definition": "Inadequate reversal = failure to regain adequate neuromuscular function (TOF ratio <0.9) after antagonism of neuromuscular block, presenting as weakness, inability to sustain head-lift, airway obstruction and respiratory insufficiency after surgery.",
+        "causes": {
+          "title": "Causes",
+          "content": [
+            "Inadequate reversal: too little neostigmine, or reversal attempted when block was too deep (neostigmine cannot reverse profound block).",
+            "Pharmacological potentiation: aminoglycoside/other antibiotics, magnesium, local anaesthetics, lithium, volatile agents, calcium channel blockers.",
+            "Physiological derangements: HYPOTHERMIA, respiratory acidosis (hypercarbia), metabolic alkalosis, hypokalaemia, hypocalcaemia, hypermagnesaemia.",
+            "Organ dysfunction: hepatic/renal impairment prolonging relaxant elimination.",
+            "Pseudocholinesterase deficiency (suxamethonium/mivacurium apnoea).",
+            "Overdose or relative overdose of relaxant; drug error."
+          ]
+        },
+        "management": {
+          "title": "Management",
+          "content": [
+            "Do NOT extubate; maintain ventilation, oxygenation and sedation; ensure adequate anaesthesia so the patient is not awake and paralysed.",
+            "Confirm with quantitative neuromuscular monitoring (TOF ratio) — objectively diagnose residual block.",
+            "Correct the reversible causes: rewarm, correct acid-base and electrolytes (K⁺, Ca²⁺, Mg²⁺).",
+            "Give further reversal: additional neostigmine (up to max), or sugammadex for rocuronium/vecuronium (encapsulates and reverses even deep block).",
+            "For suxamethonium apnoea (pseudocholinesterase deficiency): keep sedated and ventilated until block wears off; send for cholinesterase level/dibucaine number; counsel the patient/family.",
+            "Exclude and treat OTHER causes of delayed recovery (see pearl): opioids, hypoglycaemia, hypothermia, hypercarbia, residual anaesthetic, stroke."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Target-Controlled Infusion (TCI)",
+        "definition": "TCI is a computer-controlled infusion system that uses a pharmacokinetic model to automatically calculate and adjust the infusion rate to achieve and maintain a user-set TARGET drug concentration (in plasma or at the effect-site/brain), rather than a fixed rate.",
+        "principlesAndUse": {
+          "title": "Principles, models and clinical use",
+          "content": [
+            "The clinician sets a target concentration; the pump uses a three-compartment PK model to deliver a bolus + exponentially decreasing infusion (BET: Bolus-Elimination-Transfer) to reach and hold it.",
+            "Plasma-targeting vs effect-site targeting: effect-site TCI overshoots the plasma briefly to speed onset (accounts for the ke0, the plasma–effect-site equilibration).",
+            "Propofol models: Marsh (uses weight) and Schnider (uses age, height, lean body mass); remifentanil: Minto model.",
+            "Uses: TIVA for maintenance of anaesthesia and sedation, target-guided titration, and situations favouring TIVA (PONV-prone, malignant-hyperthermia risk, neuromonitoring, shared/laser airway, day-case).",
+            "Advantages: smoother control, easy titration, predictable offset/recovery. Limitations: no feedback of actual concentration (open-loop), model inaccuracy in obesity/elderly/shock, and no depth-of-anaesthesia guarantee — combine with processed-EEG (BIS/entropy) to reduce awareness risk."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Residual paralysis (TOF <0.9) is caused by inadequate/attempted-too-early reversal, drug potentiation (aminoglycosides, Mg), hypothermia, acid-base/electrolyte derangement, organ dysfunction and pseudocholinesterase deficiency.",
+      "Manage by NOT extubating, ventilating with sedation, quantitative TOF monitoring, correcting reversible causes, and giving further neostigmine or sugammadex.",
+      "TCI uses a PK model to deliver and maintain a set plasma or effect-site target concentration (BET scheme); propofol Marsh/Schnider, remifentanil Minto models."
+    ],
+    "clinicalPearls": [
+      "Neostigmine CANNOT reverse a deep block and has a 'ceiling' — giving more only adds muscarinic side-effects; if the block is deep and you need rapid reversal, sugammadex is the answer for rocuronium/vecuronium.",
+      "A patient who is weak but NOT paralysed may instead have another cause of delayed recovery — run through the differential: Opioids, Hypothermia, Hypercarbia/hypoxia, Hypoglycaemia, residual Anaesthetic, electrolyte/acid-base, and neurological event.",
+      "Effect-site (not plasma) targeting is preferred for induction with TCI because it accounts for the brain–blood lag (ke0) and titrates to clinical effect.",
+      "Always pair TIVA/TCI with depth-of-anaesthesia monitoring (BIS/entropy) — TCI is open-loop and does not measure the actual concentration or guarantee unconsciousness (awareness risk)."
+    ],
+    "commonMistakes": [
+      "Repeatedly giving more neostigmine to reverse a profound block (it has a ceiling) instead of using sugammadex.",
+      "Extubating on clinical signs alone without a quantitative TOF ratio ≥0.9.",
+      "Running TCI without processed-EEG monitoring, or using a model outside its validated population (e.g. Marsh in the very obese)."
+    ],
+    "examTip": "For part (a) enumerate causes in groups (pharmacological/physiological/organ/genetic) then a clear management sequence (don't extubate → monitor → correct causes → re-reverse). For TCI, define it, explain the BET/effect-site concept and name the models.",
+    "sources": [
+      "Miller's Anesthesia, 9th Ed — Neuromuscular blockade reversal; intravenous anesthetics & TCI.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Neuromuscular blocking agents; TIVA.",
+      "Absalom & Struys — Overview of Target Controlled Infusions and TIVA.",
+      "Naguib M, Brull SJ — Neuromuscular monitoring & residual block."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Dibucaine number quantifies pseudocholinesterase (butyrylcholinesterase) activity: normal ~80 (inhibits normal enzyme 80%), homozygous atypical ~20 → prolonged suxamethonium/mivacurium apnoea.",
+        "The BET scheme (Bolus, Elimination, Transfer) is the mathematical basis of TCI: a bolus fills the central compartment, then infusion replaces drug leaving by elimination and by transfer to peripheral compartments.",
+        "Closed-loop anaesthesia (BIS-guided automated TCI) is the emerging next step, using depth monitoring as feedback to adjust the target automatically."
+      ]
+    }
+  },
+  {
+    "qNo": 8,
+    "question": "A 65-year-old patient with diabetes mellitus, controlled on oral hypoglycemic drugs, is scheduled for open hernia repair as a day care patient. Discuss anesthetic management and criteria for discharge of this patient. [5+5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Anaesthetic management of a day-care diabetic for open hernia repair",
+        "patientSelection": {
+          "title": "Suitability & preoperative assessment",
+          "content": [
+            "Day-care suitability: well-controlled DM (target HbA1c generally <8–8.5%), good functional status, minor/intermediate surgery, ASA I–III stable, responsible escort and home support.",
+            "Assess for diabetic end-organ disease: cardiovascular (silent ischaemia, autonomic neuropathy), renal function, retinopathy, and airway (stiff-joint syndrome/limited neck extension).",
+            "Investigations: HbA1c, capillary glucose, U&E, ECG."
+          ]
+        },
+        "glycaemicManagement": {
+          "title": "Perioperative glycaemic management (oral hypoglycaemics)",
+          "content": [
+            "Schedule FIRST on the morning list to minimise fasting and disruption.",
+            "Omit the morning oral hypoglycaemic on the day of surgery (in particular OMIT metformin around contrast/major surgery per local policy; sulfonylureas omitted on the morning of surgery to avoid fasting hypoglycaemia; SGLT2 inhibitors held to avoid euglycaemic DKA).",
+            "Monitor capillary blood glucose (target ~6–10, acceptable 4–12 mmol/L); if a single short procedure and good control, a variable-rate insulin infusion is usually NOT needed — manage with monitoring ± correction.",
+            "Restart usual oral agents with the first normal meal postoperatively."
+          ]
+        },
+        "anaestheticTechnique": {
+          "title": "Anaesthetic technique",
+          "content": [
+            "REGIONAL/LOCAL techniques are ideal for day-care hernia repair — field block/TAP block or spinal — allowing early eating, minimal glucose disturbance, good analgesia and less PONV.",
+            "If GA: short-acting agents (propofol, sevoflurane/desflurane, LMA where appropriate), multimodal opioid-sparing analgesia, and antiemetic prophylaxis.",
+            "Maintain normothermia and hydration; avoid long-acting opioids/sedatives that delay discharge."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Criteria for discharge (day-care) — modified Post-Anaesthetic Discharge Scoring System (PADSS)",
+        "dischargeCriteria": {
+          "title": "PADSS domains (each scored; total ≥9/10 to discharge)",
+          "content": [
+            "Vital signs stable and within ~20% of baseline.",
+            "Ambulation — steady gait / at pre-op level, no dizziness.",
+            "Nausea/vomiting minimal and controlled.",
+            "Pain controlled by oral analgesia.",
+            "Surgical bleeding minimal.",
+            "Plus practical requirements: able to tolerate oral fluids and void (if applicable), stable BLOOD GLUCOSE, a responsible adult escort and transport home, written instructions and emergency contact, and no unexpected surgical/anaesthetic complications."
+          ]
+        },
+        "diabeticSpecific": {
+          "title": "Diabetes-specific discharge requirements",
+          "content": [
+            "Blood glucose stable and near baseline, tolerating oral intake, and the usual diabetic medication regimen restarted/clarified.",
+            "Clear advice on sick-day glucose monitoring and when to seek help."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Day-care diabetic: schedule first on the list, omit the morning oral hypoglycaemic (special care with metformin/SGLT2i), monitor capillary glucose (aim 6–10 mmol/L), and restart orals with the first meal.",
+      "Regional/local anaesthesia (spinal/TAP/field block) is ideal — early eating, minimal glucose disturbance, good analgesia, less PONV.",
+      "Discharge by PADSS ≥9/10 (stable vitals, ambulation, controlled pain/PONV/bleeding) PLUS stable glucose, oral intake, escort/transport and written instructions."
+    ],
+    "clinicalPearls": [
+      "Scheduling the diabetic FIRST on the morning list is the simplest, highest-yield measure — it minimises fasting time and glycaemic swings.",
+      "Hold SGLT2 inhibitors ('-gliflozins') for ~3 days perioperatively — they can cause euglycaemic diabetic ketoacidosis (normal or near-normal glucose with acidosis), which is easily missed.",
+      "For most short day-case procedures in a well-controlled patient, a variable-rate insulin infusion is unnecessary and actually delays discharge — simple monitoring and correction suffice.",
+      "Autonomic neuropathy in long-standing diabetics predisposes to intra-operative hypotension, silent ischaemia, gastroparesis (aspiration) and impaired counter-regulation of hypoglycaemia — a real day-care safety concern."
+    ],
+    "commonMistakes": [
+      "Starting a variable-rate insulin infusion unnecessarily in a well-controlled patient for a short procedure, which prolongs the stay.",
+      "Forgetting the specific hazards of metformin (lactic acidosis with renal impairment/contrast) and SGLT2 inhibitors (euglycaemic DKA).",
+      "Discharging without confirming stable glucose, tolerated oral intake, a responsible escort and written instructions."
+    ],
+    "examTip": "Split cleanly: management (selection → glycaemic plan → technique, favouring regional) and discharge (quote PADSS ≥9/10 plus the diabetes- and day-care-specific criteria). Naming a scoring system scores marks.",
+    "sources": [
+      "Association of Anaesthetists / CPOC — Peri-operative management of the surgical patient with diabetes.",
+      "Miller's Anesthesia, 9th Ed — Ambulatory (day-case) anesthesia; endocrine disease.",
+      "Chung F — Discharge criteria and PADSS. J Clin Anesth.",
+      "Stoelting's Anesthesia and Co-Existing Disease, 8th Ed — Diabetes mellitus."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "The modified PADSS (Chung) scores vital signs, ambulation, nausea/vomiting, pain and surgical bleeding, each 0–2; a total ≥9 permits discharge — 'street fitness'.",
+        "'Home readiness' vs 'street fitness': voiding and drinking are no longer mandatory for all patients but remain important for spinal anaesthesia and hernia (urinary retention) cases.",
+        "HbA1c reflects 8–12 weeks of control; a very high value (>8.5–9%) is a reason to optimise and consider deferring elective surgery, and predicts higher wound-infection risk."
+      ]
+    }
+  },
+  {
+    "qNo": 9,
+    "question": "a) What are the various methods of pre-operative cardiac risk stratification in a patient with cardiac disease posted for non cardiac surgery. [5]  b) Discuss any one scoring system for cardiac risk stratification. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Methods of preoperative cardiac risk stratification for non-cardiac surgery",
+        "definition": "Risk stratification integrates PATIENT (clinical) risk, FUNCTIONAL capacity and SURGERY-specific risk (ACC/AHA and ESC/ESA stepwise approach) to decide on further testing and optimisation.",
+        "methods": {
+          "title": "Methods",
+          "content": [
+            "Clinical risk indices/scores: Revised Cardiac Risk Index (RCRI/Lee), ACS-NSQIP MICA (Gupta) calculator, Goldman and Detsky indices.",
+            "Functional capacity assessment: metabolic equivalents (METs) by history — the ability to achieve ≥4 METs (climb two flights of stairs, brisk walking) suggests good reserve; the Duke Activity Status Index (DASI) questionnaire.",
+            "Surgery-specific risk: low (<1%), intermediate (1–5%), high (>5%) 30-day cardiac risk (e.g. major vascular = high).",
+            "Biomarkers: BNP/NT-proBNP and high-sensitivity troponin for risk refinement.",
+            "Non-invasive testing (only if it will change management): resting ECG, echocardiography (LV function/valves), and stress testing — exercise ECG, stress echo, or myocardial perfusion imaging.",
+            "Cardiopulmonary exercise testing (CPET): objective anaerobic threshold and VO₂peak for major surgery.",
+            "Coronary angiography in selected high-risk/unstable patients."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Revised Cardiac Risk Index (RCRI / Lee index) — one scoring system",
+        "definition": "The RCRI (Lee, 1999) is the most widely used, simple, validated index predicting major perioperative cardiac events (MI, pulmonary oedema, VF/cardiac arrest, complete heart block) in non-cardiac surgery.",
+        "components": {
+          "title": "Six independent risk factors (1 point each)",
+          "content": [
+            "High-risk surgery (intraperitoneal, intrathoracic or suprainguinal vascular).",
+            "Ischaemic heart disease (history of MI, angina, positive stress test, Q waves, nitrate use).",
+            "History of congestive heart failure.",
+            "History of cerebrovascular disease (stroke/TIA).",
+            "Insulin-treated diabetes mellitus.",
+            "Preoperative serum creatinine >177 µmol/L (>2.0 mg/dL)."
+          ]
+        },
+        "interpretation": {
+          "title": "Interpretation",
+          "content": [
+            "Risk of major cardiac event rises with score: 0 factors ≈ 0.4%, 1 ≈ 1%, 2 ≈ 2.4%, ≥3 factors ≈ 5.4% (higher in updated cohorts).",
+            "≥2 points defines elevated risk → consider functional-capacity assessment, biomarkers, and further testing/optimisation and perioperative medical management.",
+            "Simple, bedside, well-validated; limitations: derived in stable patients, does not include age or functional capacity, and under-predicts vascular-surgery risk."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Risk stratification combines clinical indices (RCRI), functional capacity (METs/DASI), surgery-specific risk, biomarkers (BNP, troponin) and selective non-invasive/invasive testing.",
+      "Testing should be done only if the result will change management (ACC/AHA and ESC stepwise algorithms).",
+      "The RCRI scores six factors (high-risk surgery, IHD, CHF, CVD, insulin-treated DM, creatinine >2 mg/dL); ≥2 points = elevated risk."
+    ],
+    "clinicalPearls": [
+      "A patient who can climb TWO flights of stairs (≥4 METs) without symptoms has good functional reserve and rarely needs further cardiac testing — functional capacity is one of the strongest, cheapest predictors.",
+      "Order a cardiac investigation only if the result will change management — a stress test that won't alter the plan just delays surgery and adds risk.",
+      "Never stop aspirin/beta-blockers or statins abruptly perioperatively in established users; DON'T start beta-blockers acutely on the day of surgery (POISE trial showed increased stroke/death).",
+      "BNP/NT-proBNP and high-sensitivity troponin add prognostic information beyond the RCRI, especially before major/vascular surgery."
+    ],
+    "commonMistakes": [
+      "Ordering routine stress tests/echoes that will not change management, delaying surgery unnecessarily.",
+      "Acutely starting high-dose beta-blockade on the day of surgery (POISE — increased stroke and mortality).",
+      "Ignoring functional capacity and relying on a score alone; forgetting that the RCRI under-predicts vascular-surgery risk."
+    ],
+    "examTip": "In part (a), organise around the three pillars — patient/clinical risk, functional capacity, surgical risk — plus biomarkers and testing. In part (b), list the six RCRI factors precisely with the risk bands; naming and quantifying the score earns full marks.",
+    "sources": [
+      "2024 ESC / 2014 ACC-AHA Guidelines on perioperative cardiovascular assessment for non-cardiac surgery.",
+      "Lee TH et al. Derivation and validation of the Revised Cardiac Risk Index. Circulation 1999.",
+      "Miller's Anesthesia, 9th Ed — Preoperative cardiac evaluation.",
+      "POISE Study Group. Perioperative metoprolol. Lancet 2008."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "The ACS-NSQIP surgical-risk (Gupta MICA) calculator uses functional status, ASA, creatinine, age and surgery type and often outperforms the RCRI, especially for vascular surgery.",
+        "MET thresholds: <4 METs = poor (light housework only), 4–10 = moderate, >10 = excellent. The DASI questionnaire estimates METs when history is unclear (MET-REPAIR/measurement debate).",
+        "Timing after coronary stents: delay elective non-cardiac surgery ideally 6 months after a drug-eluting stent (minimum 1–3 months on newer stents) to allow safe interruption of dual antiplatelet therapy."
+      ]
+    }
+  },
+  {
+    "qNo": 10,
+    "question": "A 75-year-old patient is posted for TURP surgery under spinal anesthesia. Enumerate complications that can occur intra-operatively. Discuss their clinical presentation and management. [2+4+4]",
+    "marks": 10,
+    "answer": {
+      "complications": {
+        "title": "Intra-operative complications of TURP (enumeration) [2]",
+        "content": [
+          "TURP syndrome (dilutional hyponatraemia/fluid absorption).",
+          "Haemorrhage and bladder/prostatic capsule perforation.",
+          "Hypothermia (cold irrigation fluid).",
+          "Bacteraemia/septicaemia.",
+          "Complications of spinal anaesthesia (hypotension, high block, bradycardia).",
+          "Others: obturator jerk (with monopolar cautery), disseminated intravascular coagulation, and positioning (lithotomy) injuries."
+        ]
+      },
+      "turpSyndrome": {
+        "title": "TURP syndrome — presentation & management [4]",
+        "definition": "TURP syndrome is caused by systemic absorption of large volumes of hypotonic, non-electrolyte irrigation fluid (e.g. glycine 1.5%) through open prostatic venous sinuses, causing dilutional HYPONATRAEMIA, fluid overload, and — with glycine — hyperammonaemia and visual disturbance.",
+        "presentation": {
+          "title": "Clinical presentation (why regional is preferred — the AWAKE patient warns you early)",
+          "content": [
+            "Early CNS (in the awake spinal patient): restlessness, confusion, headache, nausea, visual disturbance/transient blindness (glycine), then seizures and coma.",
+            "Cardiovascular: hypertension and bradycardia (fluid overload) progressing to hypotension, pulmonary oedema and cardiovascular collapse.",
+            "Biochemistry: acute hyponatraemia (<120 mmol/L → severe symptoms), low serum osmolality, and hyperammonaemia/hyperglycinaemia with glycine."
+          ]
+        },
+        "management": {
+          "title": "Management",
+          "content": [
+            "Recognise early, tell the surgeon to STOP/expedite and stop irrigation absorption; secure ABC, give oxygen.",
+            "Restrict fluids; give a loop diuretic (furosemide) for overload/pulmonary oedema.",
+            "Correct hyponatraemia: mild/asymptomatic — fluid restriction; severe/symptomatic (seizures, Na <120) — HYPERTONIC (3%) saline SLOWLY, correcting no faster than ~1–2 mmol/L/h and <8–10 mmol/L in 24 h (avoid osmotic demyelination).",
+            "Treat seizures (benzodiazepine), support circulation, monitor Na and neurology in HDU/ICU."
+          ]
+        }
+      },
+      "otherComplications": {
+        "title": "Other key complications — presentation & management [4]",
+        "haemorrhagePerforation": {
+          "title": "Haemorrhage & bladder perforation",
+          "content": [
+            "Bleeding: can be significant and hard to quantify (mixed with irrigation); manage with monitoring, transfusion as needed, and treating any dilutional coagulopathy/DIC.",
+            "Perforation: presents in the awake spinal patient as abdominal/shoulder-tip pain, distension, nausea and hypotension; inform surgeon, resuscitate, and arrange drainage/repair as required."
+          ]
+        },
+        "spinalAndOther": {
+          "title": "Spinal-related, hypothermia, sepsis & obturator jerk",
+          "content": [
+            "Spinal complications: hypotension/bradycardia (treat with fluids, vasopressors, atropine) and high/total spinal (support ABC, ventilate).",
+            "Hypothermia: warm irrigation and IV fluids, forced-air warming, monitor temperature.",
+            "Bacteraemia/septicaemia: prophylactic antibiotics, treat sepsis promptly.",
+            "Obturator jerk (adductor spasm from obturator-nerve stimulation with monopolar cautery risking perforation): prevent with an obturator nerve block or use bipolar/saline resection."
+          ]
+        }
+      },
+      "keyAdvantageRegional": {
+        "title": "Why spinal anaesthesia is preferred for TURP",
+        "content": [
+          "An awake patient allows EARLY detection of TURP syndrome (confusion, restlessness) and bladder perforation (pain) — the single biggest safety advantage over general anaesthesia. Block height to ~T10 is sufficient."
+        ]
+      }
+    },
+    "keyPoints": [
+      "TURP syndrome = absorption of hypotonic irrigation → dilutional hyponatraemia + fluid overload (± glycine effects: visual disturbance, hyperammonaemia); manage by stopping absorption, fluid restriction/diuretic and cautious hypertonic saline for severe symptomatic hyponatraemia.",
+      "Spinal anaesthesia (block to T10) is preferred because the AWAKE patient reveals early TURP syndrome and perforation.",
+      "Other intra-op complications: haemorrhage, capsular/bladder perforation, hypothermia, bacteraemia, spinal-related hypotension, and obturator jerk."
+    ],
+    "clinicalPearls": [
+      "Correct severe hyponatraemia SLOWLY (≤8–10 mmol/L/24 h) — over-rapid correction causes central pontine myelinolysis (osmotic demyelination), an irreversible catastrophe.",
+      "Glycine absorption causes transient blindness and hyperammonaemia — a confused TURP patient who says 'I can't see' has TURP syndrome until proven otherwise.",
+      "Risk of fluid absorption rises with resection time (>1 h), a large gland, low irrigation-bag height and open venous sinuses — many surgeons limit resection to ~60 minutes.",
+      "Bipolar (saline) TURP and laser prostatectomy have largely abolished classic TURP syndrome because they use isotonic saline irrigation instead of hypotonic glycine."
+    ],
+    "commonMistakes": [
+      "Correcting hyponatraemia too quickly with hypertonic saline (risk of osmotic demyelination).",
+      "Missing early TURP syndrome by choosing GA (which masks the warning CNS signs) or over-sedating a spinal patient.",
+      "Forgetting the obturator jerk and perforation risk with monopolar resection near the lateral bladder wall."
+    ],
+    "examTip": "Follow the 2+4+4 split: briefly enumerate the complications, then give TURP syndrome in depth (pathophysiology → presentation → careful Na correction), then the other complications. Emphasise why the AWAKE spinal patient is safer.",
+    "sources": [
+      "Miller's Anesthesia, 9th Ed — Anesthesia for urologic surgery; TURP syndrome.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Genitourinary surgery.",
+      "Gravenstein D. TURP syndrome. Anesth Analg 1997.",
+      "Stoelting's Anesthesia and Co-Existing Disease, 8th Ed — Fluid & electrolyte disorders."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Irrigation fluids: glycine 1.5% (hypotonic, non-conductive — for monopolar) causes the classic syndrome; sorbitol/mannitol are alternatives; NORMAL SALINE is used for bipolar/laser (conductive, isotonic — no syndrome).",
+        "Ethanol can be added to irrigation as a marker: exhaled/breath ethanol monitoring detects fluid absorption early.",
+        "Serum sodium falls ~1 mmol/L per ~100–150 mL of glycine absorbed; symptoms usually appear once Na <125 and become severe <120 mmol/L."
+      ]
+    }
+  }
+]

@@ -61,7 +61,10 @@
       <span class="sess-badge">📅 June 2026</span>
     </button>
     <button class="dnb-sess-btn" onclick="switchSession('dec2025', this)">
-      <span class="sess-badge">📅 December 2025 <span class="sess-new">New</span></span>
+      <span class="sess-badge">📅 December 2025</span>
+    </button>
+    <button class="dnb-sess-btn" onclick="switchSession('june2025', this)">
+      <span class="sess-badge">📅 June 2025 <span class="sess-new">New</span></span>
     </button>
   </div>
 </nav>
@@ -93,6 +96,10 @@
     <li><a href="dnb-dec2025-paper2.html">DNB Anaesthesiology December 2025 — Paper II (Solved)</a></li>
     <li><a href="dnb-dec2025-paper3.html">DNB Anaesthesiology December 2025 — Paper III (Solved)</a></li>
     <li><a href="dnb-dec2025-paper4.html">DNB Anaesthesiology December 2025 — Paper IV (Solved)</a></li>
+    <li><a href="dnb-june2025-paper1.html">DNB Anaesthesiology June 2025 — Paper I (Solved)</a></li>
+    <li><a href="dnb-june2025-paper2.html">DNB Anaesthesiology June 2025 — Paper II (Solved)</a></li>
+    <li><a href="dnb-june2025-paper3.html">DNB Anaesthesiology June 2025 — Paper III (Solved)</a></li>
+    <li><a href="dnb-june2025-paper4.html">DNB Anaesthesiology June 2025 — Paper IV (Solved)</a></li>
   </ul>
 </section>
 
@@ -124,7 +131,7 @@ var paperCache = {};
 var currentPaper = 0;
 var currentSession = 'june2026';
 var ROMAN = ['I','II','III','IV'];
-var SESSION_ORDER = ['june2026','dec2025'];
+var SESSION_ORDER = ['june2026','dec2025','june2025'];
 
 var sessionMeta = {
   june2026: {
@@ -137,6 +144,12 @@ var sessionMeta = {
     label: 'December 2025',
     badge: '📄 DNB Anaesthesiology · December 2025',
     path: function(num){ return 'dnb/dec2025-paper' + num + '.json'; },
+    availablePapers: [1,2,3,4]
+  },
+  june2025: {
+    label: 'June 2025',
+    badge: '📄 DNB Anaesthesiology · June 2025',
+    path: function(num){ return 'dnb/june2025-paper' + num + '.json'; },
     availablePapers: [1,2,3,4]
   }
 };
@@ -282,6 +295,13 @@ function renderQuestion(q) {
   if (q.keyPoints && q.keyPoints.length) {
     ansHtml += '<div class="dnb-keypoints"><div class="dnb-sec-title">✅ Key Points</div><ul>' +
       q.keyPoints.map(function(p){ return '<li>' + escHtml(p) + '</li>'; }).join('') +
+      '</ul></div>';
+  }
+
+  // Clinical pearls
+  if (q.clinicalPearls && q.clinicalPearls.length) {
+    ansHtml += '<div class="dnb-pearls"><div class="dnb-sec-title">🔑 Clinical Pearls</div><ul>' +
+      q.clinicalPearls.map(function(p){ return '<li>' + escHtml(p) + '</li>'; }).join('') +
       '</ul></div>';
   }
 
