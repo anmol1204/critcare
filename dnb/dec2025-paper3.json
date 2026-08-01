@@ -1,0 +1,833 @@
+[
+  {
+    "qNo": 1,
+    "question": "Discuss the advantages and disadvantages of opioid free anaesthesia and enumerate the various techniques used for it. [5+5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Opioid-Free Anaesthesia (OFA)",
+        "definition": {
+          "title": "Opioid-Free Anaesthesia (OFA) — Definition",
+          "content": "OFA is a multimodal anaesthetic technique in which NO intra-operative systemic opioid (IV, IM, neuraxial, intracavitary or intra-articular) is administered; analgesia and suppression of the sympathetic/nociceptive response are achieved instead by a combination of non-opioid analgesics, sympatholytics and regional/local anaesthesia. It is the logical extension of Opioid-Sparing Anaesthesia (where opioids are minimised but not eliminated), and is a core element of Enhanced Recovery After Surgery (ERAS)."
+        },
+        "rationale": {
+          "title": "Rationale",
+          "content": [
+            "Nociception (not \"pain\", which needs consciousness) can be blunted without μ-opioid agonism by targeting other pathways — α2, NMDA, sodium channel, cyclo-oxygenase, dexamethasone, magnesium.",
+            "Avoids the well-recognised opioid-related adverse events and the phenomenon of opioid-induced hyperalgesia (OIH) and acute tolerance."
+          ]
+        },
+        "advantages": {
+          "title": "Advantages",
+          "content": [
+            "Eliminates opioid-related adverse effects: postoperative nausea & vomiting (PONV), respiratory depression, sedation, ileus/constipation, urinary retention, pruritus.",
+            "Reduces opioid-induced hyperalgesia and acute tolerance, and lowers postoperative opioid requirement — relevant to the opioid epidemic and to chronic-pain/opioid-dependent patients.",
+            "Faster recovery of bowel function and earlier mobilisation → shorter length of stay (fits ERAS pathways).",
+            "Particularly valuable in the morbidly obese and OSA patient (avoids depression of respiratory drive), in day-case surgery, and in patients with a history of substance-use disorder.",
+            "Attenuation of the surgical stress response and possible (unproven) benefit on cancer-recurrence/immune function.",
+            "Better preservation of hypoxic and hypercapnic ventilatory drive."
+          ]
+        },
+        "disadvantages": {
+          "title": "Disadvantages / Limitations",
+          "content": [
+            "The individual agents carry their own adverse effects: dexmedetomidine/clonidine → bradycardia, hypotension, delayed sedation; ketamine → dysphoria, hallucinations, hypertension, salivation; lignocaine → LA systemic toxicity; magnesium → potentiation of neuromuscular block, hypotension; NSAIDs → renal, GI and platelet effects.",
+            "More complex to conduct — needs multiple infusions, precise titration and more vigilance; risk of drug errors.",
+            "Intra-operative haemodynamic control may be less predictable; awareness is a theoretical concern if depth is not adequately monitored.",
+            "Not suitable for all surgeries — poor evidence/insufficient for some major procedures; regional block may be contraindicated (coagulopathy, sepsis, refusal).",
+            "Residual effects of long-acting adjuvants (e.g. dexmedetomidine) may delay discharge.",
+            "Robust evidence of superiority over modern opioid-sparing techniques for hard outcomes is still limited (e.g. POFA trial showed more adverse events with a dexmedetomidine-based OFA protocol)."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Techniques / Components used for OFA",
+        "content": [
+          "α2-agonists (sympatholysis + analgesia): dexmedetomidine, clonidine — the backbone of most OFA protocols.",
+          "NMDA antagonists: ketamine (low-dose infusion), magnesium sulphate.",
+          "IV lignocaine infusion (systemic analgesia, anti-hyperalgesic, pro-kinetic).",
+          "Anti-inflammatory / non-opioid analgesics: paracetamol, NSAIDs / COX-2 inhibitors, dexamethasone.",
+          "β-blockers (e.g. esmolol) to blunt the sympathetic response to nociception.",
+          "Regional & neuraxial anaesthesia and peripheral nerve/fascial-plane blocks (e.g. TAP, ESP, PECS), wound infiltration and topical/local anaesthesia.",
+          "Gabapentinoids (gabapentin/pregabalin) as pre-emptive adjuncts (use now more selective owing to sedation).",
+          "Adequate hypnosis with volatile agent or propofol (± depth-of-anaesthesia monitoring) to ensure amnesia, since analgesic surrogates of depth are removed."
+        ]
+      }
+    },
+    "keyPoints": [
+      "OFA = zero systemic opioid; analgesia from multimodal non-opioid agents + regional anaesthesia; it is the extreme end of opioid-sparing/ERAS.",
+      "Backbone agents: α2-agonists (dexmedetomidine), ketamine, lignocaine, magnesium, dexamethasone, NSAIDs/paracetamol, regional blocks, ± esmolol.",
+      "Chief wins: less PONV, less respiratory depression, no OIH — ideal for obese/OSA and opioid-dependent patients."
+    ],
+    "commonMistakes": [
+      "Confusing opioid-free with opioid-sparing anaesthesia — OFA means NO opioid at all, intra-operatively.",
+      "Assuming OFA is automatically safer — the POFA trial found the dexmedetomidine-based protocol caused more severe bradycardia/hypoxaemia; individual adjuvants have real toxicities.",
+      "Forgetting to ensure adequate depth/amnesia when opioids (a component of balanced anaesthesia) are removed."
+    ],
+    "examTip": "Structure the answer as Definition → Advantages → Disadvantages → Techniques (a mnemonic for agents: 'A-KLM-DR' — Alpha-2, Ketamine, Lignocaine, Magnesium, Dexamethasone/Dexketoprofen, Regional). Mention ERAS and the POFA trial to show current awareness.",
+    "sources": [
+      "Miller's Anesthesia, 9th Ed — Acute Postoperative Pain & Opioid pharmacology.",
+      "Barash, Clinical Anesthesia, 8th Ed — Multimodal analgesia and ERAS.",
+      "Beloeil H et al. Balanced Opioid-Free Anaesthesia (POFA) trial. Anesthesiology 2021;134:541–551.",
+      "Mulier J. Opioid-free general anaesthesia — a paradigm shift. Best Pract Res Clin Anaesthesiol 2017."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Opioid-Induced Hyperalgesia (OIH): a paradoxical increased sensitivity to painful stimuli after opioid exposure (especially remifentanil), mediated by NMDA-receptor up-regulation — a key argument for OFA. Ketamine and magnesium (NMDA blockers) attenuate it.",
+        "'Nociception' monitors (e.g. ANI, NOL index, SPI/SSI) are used in some OFA protocols to titrate anti-nociceptive drugs objectively.",
+        "The POFA trial (2021) is a must-quote: OFA did not reduce opioid-related complications and increased serious adverse events (bradycardia/hypoxaemia) — so OFA should be selective, not universal."
+      ]
+    }
+  },
+  {
+    "qNo": 2,
+    "question": "a) What are the risk factors for postoperative hepatobiliary complications? [5]  b) Aetiology of post operative jaundice. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Risk factors for postoperative hepatobiliary complications",
+        "definition": "Postoperative hepatobiliary dysfunction ranges from asymptomatic transaminitis to overt hepatic failure. Risk is determined by pre-existing liver disease, the nature of the surgery, and perioperative insults to hepatic blood flow and oxygen delivery.",
+        "patientFactors": {
+          "title": "Patient (pre-operative) factors",
+          "content": [
+            "Pre-existing liver disease: cirrhosis, chronic hepatitis, NAFLD/NASH, alcoholic liver disease — high Child-Pugh class and high MELD score are the strongest predictors.",
+            "Acute hepatitis (viral, alcoholic, drug-induced) — elective surgery is contraindicated until resolved.",
+            "Obstructive jaundice / biliary obstruction (endotoxaemia, coagulopathy, hepatorenal risk).",
+            "Portal hypertension, hypoalbuminaemia, coagulopathy (raised INR), ascites, encephalopathy.",
+            "Age, malnutrition, sepsis, diabetes, obesity, right heart failure/congestive hepatopathy."
+          ]
+        },
+        "surgicalFactors": {
+          "title": "Surgical & anaesthetic factors",
+          "content": [
+            "Site & magnitude of surgery: hepatobiliary, cardiac (CPB) and upper-abdominal surgery carry the highest risk (proximity + reduced hepatic blood flow).",
+            "Emergency surgery, prolonged surgery, large blood loss and massive transfusion.",
+            "Intra-operative hypotension, hypoxaemia and low cardiac output → hepatic ischaemia (the liver's O₂ supply is uniquely dependent on hepatic-arterial buffer response).",
+            "Raised intra-abdominal pressure (laparoscopy/pneumoperitoneum) reducing portal flow.",
+            "Hepatotoxic/older volatile agents (historically halothane), and hypercarbia/PEEP reducing hepatic venous drainage.",
+            "Sepsis, drugs (antibiotics, paracetamol, TPN) and transfusion-related injury."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Aetiology of postoperative jaundice — a surgical sieve (pre-, intra-, post-hepatic)",
+        "definition": "Postoperative jaundice is common (bilirubin often peaks days 2–10). Classify by mechanism: increased bilirubin load (prehepatic), hepatocellular dysfunction (intrahepatic), or obstruction (posthepatic).",
+        "prehepatic": {
+          "title": "1. Prehepatic — bilirubin overload / haemolysis (unconjugated)",
+          "content": [
+            "Resorption of a large haematoma or bruising.",
+            "Haemolysis: transfusion of stored/old blood, transfusion reactions, mechanical (prosthetic valve, CPB), G6PD deficiency, sickle cell.",
+            "Gilbert's syndrome unmasked by fasting/stress."
+          ]
+        },
+        "intrahepatic": {
+          "title": "2. Intrahepatic — hepatocellular dysfunction (mixed)",
+          "content": [
+            "Ischaemic/hypoxic hepatitis ('shock liver') from intra-operative hypotension, hypoxia, low cardiac output, sepsis.",
+            "Drug-induced (halothane hepatitis, paracetamol, antibiotics, TPN-associated cholestasis).",
+            "Benign postoperative intrahepatic cholestasis (multifactorial — bilirubin load + reduced hepatic function).",
+            "Decompensation of pre-existing liver disease; sepsis-associated cholestasis."
+          ]
+        },
+        "posthepatic": {
+          "title": "3. Posthepatic — obstructive (conjugated)",
+          "content": [
+            "Iatrogenic bile-duct injury or ligation (cholecystectomy).",
+            "Retained common-bile-duct stone, biliary stricture.",
+            "Ascending cholangitis, pancreatitis, or external compression."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Child-Pugh class and MELD score are the best predictors of perioperative hepatic risk; acute hepatitis contraindicates elective surgery.",
+      "The liver is uniquely vulnerable to hypotension/hypoxia because volatile agents and surgery reduce hepatic blood flow and the hepatic-arterial buffer response.",
+      "Classify postoperative jaundice as prehepatic (haemolysis/haematoma), intrahepatic (ischaemic/drug/benign cholestasis) or posthepatic (biliary obstruction/injury)."
+    ],
+    "commonMistakes": [
+      "Attributing all postoperative jaundice to volatile agents — 'shock liver' and transfusion/haematoma-related haemolysis are far commoner.",
+      "Forgetting benign postoperative intrahepatic cholestasis as a multifactorial diagnosis of exclusion.",
+      "Missing a surgical (obstructive) cause such as a retained CBD stone or bile-duct injury, which needs intervention, not observation."
+    ],
+    "examTip": "Answer part (b) with a clear surgical sieve — prehepatic / intrahepatic / posthepatic — and give 2–3 examples of each; examiners reward the classification framework as much as the content.",
+    "sources": [
+      "Stoelting's Anesthesia and Co-Existing Disease, 8th Ed — Liver disease.",
+      "Miller's Anesthesia, 9th Ed — Hepatic physiology & Anesthesia for hepatic surgery.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Anesthesia for patients with liver disease.",
+      "Oxford Handbook of Anaesthesia — Postoperative jaundice."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Child-Pugh (A/B/C) uses bilirubin, albumin, INR, ascites and encephalopathy; MELD (bilirubin, INR, creatinine ± Na) predicts perioperative mortality — MELD >15 markedly increases risk.",
+        "Obstructive jaundice specifically predisposes to postoperative acute kidney injury (hepatorenal / endotoxin-mediated) — perioperative hydration ± consideration of preoperative biliary drainage matters.",
+        "Halothane hepatitis is an immune-mediated (trifluoroacetyl-hapten) reaction on repeat exposure — largely historical; modern volatiles (sevoflurane, desflurane) undergo minimal metabolism and are far safer."
+      ]
+    }
+  },
+  {
+    "qNo": 3,
+    "question": "a) Hypothyroidism and anaesthetic implications. [5]  b) Dexamethasone in anaesthesia practice. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Hypothyroidism & anaesthetic implications",
+        "definition": "Hypothyroidism is deficiency of thyroid hormone (↑TSH, ↓free T4). Anaesthetic concern is proportional to severity — from subclinical/mild (proceed) to myxoedema coma (a medical emergency). Elective surgery should ideally be deferred until euthyroid; only life-saving surgery proceeds in severe untreated disease with hormone replacement + steroid cover.",
+        "systemicEffects": {
+          "title": "Systemic effects relevant to anaesthesia",
+          "content": [
+            "CVS: bradycardia, ↓ contractility & cardiac output, pericardial effusion, ↑ diastolic BP, blunted baroreceptor reflex → prone to hypotension.",
+            "Respiratory: ↓ hypoxic & hypercapnic ventilatory drive, hypoventilation, risk of CO₂ narcosis and sensitivity to sedatives/opioids; possible pleural effusion, macroglossia/OSA.",
+            "CNS/metabolic: slow mentation, ↓ BMR, hypothermia, hypoglycaemia, hyponatraemia (impaired free-water clearance).",
+            "GI/other: delayed gastric emptying (aspiration risk), constipation/ileus, anaemia, coagulopathy (acquired vWF deficiency), adrenal insufficiency association.",
+            "Airway: goitre may cause airway compromise / difficult intubation; myxoedematous tissue infiltration."
+          ]
+        },
+        "anaestheticManagement": {
+          "title": "Anaesthetic management",
+          "content": [
+            "Preop: optimise to euthyroid; continue thyroxine on the day (long half-life ~7 days). Assess airway/goitre, cardiac status, electrolytes, glucose. Consider stress-dose steroid if adrenal insufficiency suspected.",
+            "Intra-op: cautious, reduced doses of induction agents, opioids and sedatives (exquisite sensitivity); anticipate hypotension (have vasopressors); use invasive monitoring in severe disease. Prevent hypothermia (warming, warm fluids); monitor glucose and Na.",
+            "Ventilation: titrate carefully — impaired CO₂ response; delayed awakening/extubation is common.",
+            "Regional anaesthesia is often preferable where feasible (avoids airway & respiratory-depressant issues).",
+            "Postop: risk of delayed recovery, hypoventilation, ileus and, in severe cases, myxoedema coma — monitor accordingly."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Dexamethasone in anaesthesia practice",
+        "definition": "Dexamethasone is a potent, long-acting synthetic glucocorticoid (biological half-life 36–72 h) with negligible mineralocorticoid activity and ~25–30× the potency of hydrocortisone. It has multiple established uses across the perioperative period.",
+        "uses": {
+          "title": "Uses in anaesthesia",
+          "content": [
+            "PONV prophylaxis: 4–8 mg IV at induction — a first-line antiemetic (works best given at induction, not emergence).",
+            "Analgesic adjunct: reduces postoperative pain and opioid requirement (part of multimodal/OFA analgesia); prolongs peripheral nerve-block duration (as IV or perineural adjuvant).",
+            "Airway oedema: reduces post-extubation stridor / airway swelling and in croup; used before extubation of the difficult/oedematous airway.",
+            "Reduction of raised ICP due to vasogenic oedema around tumours (peri-tumoural oedema) — NOT for traumatic/ischaemic oedema.",
+            "Adrenal replacement / stress cover and treatment of adrenal crisis; component of the WHO surgical/anaesthesia armamentarium.",
+            "Antiemetic & anti-inflammatory in chemotherapy, and dexamethasone-suppression testing; adjunct in bacterial meningitis and in COVID-19."
+          ]
+        },
+        "cautions": {
+          "title": "Cautions / adverse effects",
+          "content": [
+            "Transient hyperglycaemia — monitor in diabetics (does not contraindicate a single dose).",
+            "Perineal burning/itching on rapid IV bolus in the awake patient — give slowly/diluted.",
+            "Theoretical immunosuppression / impaired wound healing and infection risk with repeated dosing; caution in active systemic infection.",
+            "A single perioperative dose is generally safe; avoid unnecessary repeated dosing."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Defer elective surgery until euthyroid; continue thyroxine perioperatively (long half-life). Severe untreated hypothyroidism → sensitivity to anaesthetics, hypotension, hypothermia, hypoventilation, delayed recovery.",
+      "Myxoedema coma is the emergency end of the spectrum — treat with IV T3/T4, steroids, rewarming and supportive care.",
+      "Dexamethasone 4–8 mg at induction: first-line PONV prophylaxis + analgesic adjuvant + reduces airway oedema and peri-tumoural cerebral oedema; watch glucose."
+    ],
+    "commonMistakes": [
+      "Stopping thyroxine before surgery — it should be continued (very long half-life).",
+      "Giving normal induction/opioid doses to a hypothyroid patient — they are exquisitely sensitive.",
+      "Using dexamethasone for cytotoxic/traumatic cerebral oedema (it only helps vasogenic peri-tumoural oedema) or giving it at emergence for PONV rather than at induction."
+    ],
+    "examTip": "For hypothyroidism, organise the answer by system (CVS/RS/CNS/airway) then management (pre/intra/post) — a systems approach scores highly. For dexamethasone, list ≥5 distinct uses; breadth is rewarded.",
+    "sources": [
+      "Stoelting's Anesthesia and Co-Existing Disease, 8th Ed — Endocrine (thyroid) disease.",
+      "Miller's Anesthesia, 9th Ed — Endocrine physiology & Corticosteroids.",
+      "Stoelting's Pharmacology & Physiology in Anesthetic Practice — Corticosteroids.",
+      "De Oliveira GS et al. Perioperative single-dose dexamethasone. Anesthesiology 2011 (meta-analysis)."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Myxoedema coma: hypothermia + altered consciousness + hyponatraemia + hypoventilation; mortality is high. Treat with IV levothyroxine/liothyronine, hydrocortisone (cover coexisting adrenal insufficiency), rewarming, correct hyponatraemia and glucose, ventilatory support.",
+        "The single 4–8 mg dexamethasone dose does NOT meaningfully suppress the HPA axis or worsen surgical-site infection in modern RCT/meta-analysis (e.g. PADDI trial) — safe even in diabetics with glucose monitoring.",
+        "Sick euthyroid syndrome (low T3, normal TSH) in critically ill patients does not require thyroxine replacement — do not confuse with true hypothyroidism."
+      ]
+    }
+  },
+  {
+    "qNo": 4,
+    "question": "a) Problems encountered after cardiopulmonary bypass (CPB). [5]  b) Low cardiac output syndrome after CPB and its treatment. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Problems encountered after cardiopulmonary bypass (post-CPB / weaning period)",
+        "definition": "CPB triggers a systemic inflammatory response, contact activation, non-pulsatile flow, hypothermia and ischaemia-reperfusion — producing predictable multi-system problems during and after separation from bypass.",
+        "cardiovascular": {
+          "title": "Cardiovascular",
+          "content": [
+            "Low cardiac output syndrome (LCOS) — myocardial stunning, inadequate myocardial protection, incomplete revascularisation.",
+            "Arrhythmias (AF, heart block, VF), and vasoplegia (low SVR, distributive shock from SIRS).",
+            "Hypovolaemia/bleeding vs. fluid overload; tamponade; residual/new valvular or surgical lesion; myocardial ischaemia (graft problem, air/embolism to coronaries)."
+          ]
+        },
+        "haematologicalCoagulation": {
+          "title": "Haematological & coagulation",
+          "content": [
+            "Coagulopathy: heparin effect / heparin rebound, protamine reactions, platelet dysfunction & thrombocytopenia, fibrinolysis, dilution, hypothermia-induced coagulopathy → bleeding.",
+            "Haemolysis and transfusion requirements."
+          ]
+        },
+        "respiratory": {
+          "title": "Respiratory",
+          "content": [
+            "Atelectasis, pulmonary oedema, 'post-pump lung' (SIRS/ARDS), pleural effusion, phrenic nerve injury (cold cardioplegia)."
+          ]
+        },
+        "otherSystems": {
+          "title": "Metabolic, renal, neurological & thermal",
+          "content": [
+            "Electrolyte/acid-base derangement: hyperkalaemia (cardioplegia) or hypokalaemia, hypocalcaemia, hypomagnesaemia, metabolic acidosis, hyperglycaemia.",
+            "Acute kidney injury (hypoperfusion, haemolysis, non-pulsatile flow).",
+            "Neurological: stroke, delirium, cognitive dysfunction (micro-emboli, hypoperfusion).",
+            "Hypothermia and rewarming shivering (↑ O₂ demand); systemic inflammatory response / capillary leak."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Low Cardiac Output Syndrome (LCOS) after CPB & its treatment",
+        "definition": "LCOS is a post-CPB state of inadequate cardiac output/tissue perfusion — typically cardiac index <2.0–2.2 L/min/m² with signs of hypoperfusion (hypotension, oliguria <0.5 mL/kg/h, rising lactate, low SvO₂, cool peripheries, metabolic acidosis) despite adequate filling.",
+        "causes": {
+          "title": "Causes (a diagnostic framework of preload / contractility / afterload / rate-rhythm / mechanical)",
+          "content": [
+            "Preload: hypovolaemia, bleeding, vasodilation, tamponade, RV dysfunction.",
+            "Contractility: myocardial stunning, inadequate protection, ischaemia/infarction, pre-existing poor LV.",
+            "Afterload: high SVR (poor LV) or vasoplegia (low SVR).",
+            "Rate/rhythm: bradycardia, AF, heart block.",
+            "Mechanical/surgical: residual valve lesion, graft failure, coronary air embolism, tamponade."
+          ]
+        },
+        "treatment": {
+          "title": "Treatment (systematic, cause-directed)",
+          "content": [
+            "Confirm diagnosis: TOE, cardiac output monitoring (PAC/pulse-contour), SvO₂, lactate; exclude/treat tamponade & surgical bleeding.",
+            "Optimise preload: guided fluid boluses to an optimal filling pressure; correct bleeding/coagulopathy.",
+            "Optimise rate & rhythm: pace to ~80–90/min (AV sequential), cardiovert/treat arrhythmias, correct K⁺/Mg²⁺/Ca²⁺.",
+            "Optimise contractility (inotropes): adrenaline, dobutamine, milrinone (inodilator, also lowers PVR — good for RV failure), levosimendan; calcium for acute support.",
+            "Optimise afterload: vasodilators (GTN/nitroprusside/milrinone) if SVR high; vasopressors (noradrenaline, vasopressin) for vasoplegia.",
+            "Ensure adequate oxygenation, normocarbia, normothermia, and correct acidosis/electrolytes.",
+            "Mechanical support if refractory: Intra-Aortic Balloon Pump (IABP), then ECMO/VAD; consider return to CPB and surgical revision (graft/valve).",
+            "Treat RV failure specifically: reduce PVR (iNO, milrinone, avoid hypoxia/hypercarbia/acidosis), inotropic RV support, optimise preload without overload."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Post-CPB problems are multi-system: LCOS, vasoplegia, arrhythmias, bleeding/coagulopathy, AKI, neuro injury, electrolyte and thermal derangement — all driven by SIRS, ischaemia-reperfusion and non-pulsatile flow.",
+      "Define LCOS as CI <2.0–2.2 with hypoperfusion (oliguria, lactataemia, low SvO₂) despite adequate filling.",
+      "Treat LCOS by systematically optimising preload → rate/rhythm → contractility (inotropes) → afterload, and escalate to IABP/ECMO if refractory; always exclude tamponade and a surgical cause with TOE."
+    ],
+    "commonMistakes": [
+      "Reaching for inotropes before excluding tamponade, surgical bleeding, hypovolaemia and a correctable rhythm/electrolyte problem.",
+      "Ignoring the right ventricle — RV failure with high PVR needs a different strategy (milrinone/iNO), not just left-sided inotropes.",
+      "Confusing vasoplegia (low SVR, warm, high CO) with true pump failure — the treatment (vasopressor vs inotrope) is opposite."
+    ],
+    "examTip": "Use the preload–rate/rhythm–contractility–afterload–mechanical framework for both the causes and the treatment of LCOS; it demonstrates a structured, safe approach and covers the marks efficiently.",
+    "sources": [
+      "Kaplan's Cardiac Anesthesia, 7th Ed — Weaning from CPB & Low cardiac output.",
+      "Miller's Anesthesia, 9th Ed — Cardiopulmonary Bypass.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Anesthesia for cardiac surgery.",
+      "STS/SCA/AmSECT clinical practice guidelines on CPB management."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Vasoplegic syndrome after CPB (low SVR, high/normal CO, catecholamine-refractory hypotension) may respond to vasopressin, methylene blue (inhibits NO/guanylate cyclase) or hydroxocobalamin.",
+        "Criteria to attempt separation from CPB — the 'rule of 20s'/checklist: rewarmed (>36 °C), rhythm & rate optimised, ventilation restarted, Hb/electrolytes/acid-base corrected, monitoring & TOE ready, inotropes prepared.",
+        "IABP improves coronary perfusion (diastolic augmentation) and reduces afterload (systolic deflation) — contraindicated in significant aortic regurgitation and aortic dissection."
+      ]
+    }
+  },
+  {
+    "qNo": 5,
+    "question": "a) Indications for hyperbaric oxygen therapy. [5]  b) Side effects of hyperbaric therapy. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Hyperbaric Oxygen Therapy (HBOT) — Indications",
+        "definition": "HBOT is the therapeutic administration of 100% oxygen at a pressure greater than 1 atmosphere absolute (usually 2–3 ATA) in a pressurised chamber. It dramatically increases dissolved oxygen in plasma (Henry's law), raising arterial and tissue oxygen tension independent of haemoglobin.",
+        "mechanisms": {
+          "title": "Mechanisms of benefit",
+          "content": [
+            "Hyperoxygenation — greatly increased dissolved O₂ delivers oxygen even without functioning haemoglobin (e.g. CO poisoning, severe anaemia).",
+            "Reduction of bubble volume (Boyle's law) — treats gas emboli and decompression sickness.",
+            "Vasoconstriction (reduces oedema), enhanced leucocyte killing, angiogenesis/neovascularisation, fibroblast proliferation and antibacterial effects."
+          ]
+        },
+        "approvedIndications": {
+          "title": "Accepted indications (UHMS-approved)",
+          "content": [
+            "Carbon monoxide poisoning (especially with LOC, neurological signs, cardiac involvement, pregnancy).",
+            "Decompression sickness ('the bends') and air/gas embolism.",
+            "Gas gangrene (clostridial myonecrosis) and necrotising soft-tissue infections.",
+            "Crush injury, compartment syndrome and other acute traumatic ischaemias.",
+            "Enhancement of healing in selected problem wounds (e.g. diabetic foot ulcers, Wagner grade ≥3).",
+            "Compromised skin grafts and flaps.",
+            "Delayed radiation injury (osteoradionecrosis, soft-tissue radionecrosis, radiation cystitis/proctitis).",
+            "Refractory osteomyelitis; severe anaemia (when transfusion not possible); intracranial abscess; thermal burns; sudden sensorineural hearing loss / central retinal artery occlusion (selected)."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Side effects / complications of hyperbaric therapy",
+        "definition": "Adverse effects arise from pressure changes (barotrauma), oxygen toxicity, and the chamber environment. Most are mild and reversible, but some are serious.",
+        "barotrauma": {
+          "title": "1. Barotrauma (pressure-related)",
+          "content": [
+            "Middle-ear barotrauma — the commonest complication (ear pain, TM rupture).",
+            "Sinus and dental ('aerodontalgia') barotrauma.",
+            "Pulmonary barotrauma → pneumothorax (risk of tension pneumothorax on decompression), air embolism.",
+            "Inner-ear barotrauma (vertigo, hearing loss)."
+          ]
+        },
+        "oxygenToxicity": {
+          "title": "2. Oxygen toxicity",
+          "content": [
+            "CNS (Paul Bert effect): grand-mal seizures — the most feared acute toxicity (more likely >2.8–3 ATA); premonitory VSCELL features (visual, tinnitus, nausea, twitching, irritability).",
+            "Pulmonary (Lorrain Smith effect): tracheobronchitis, retrosternal pain, reduced vital capacity, pulmonary oedema with prolonged exposure.",
+            "Ocular: reversible myopia, and cataract acceleration / worsening with repeated long courses; retinopathy of prematurity risk in neonates."
+          ]
+        },
+        "otherEffects": {
+          "title": "3. Other effects",
+          "content": [
+            "Claustrophobia/anxiety in the chamber.",
+            "Fire hazard (100% O₂ environment).",
+            "Hypoglycaemia in diabetics; reversible worsening of congestive cardiac failure (afterload/oxidative effects).",
+            "Decompression sickness in attendants; difficulty accessing/monitoring a critically ill patient in the chamber."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "HBOT = 100% O₂ at 2–3 ATA; works by hyperoxygenation (Henry's law) and bubble-size reduction (Boyle's law).",
+      "Classic indications: CO poisoning, decompression sickness, air/gas embolism, gas gangrene/necrotising infection, crush injury, problem wounds, radiation necrosis, compromised grafts/flaps.",
+      "Key toxicities: middle-ear barotrauma (commonest), CNS oxygen-toxicity seizures (Paul Bert), pulmonary oxygen toxicity (Lorrain Smith), reversible myopia, and pneumothorax/fire risk."
+    ],
+    "commonMistakes": [
+      "Forgetting the two governing gas laws (Henry's and Boyle's) that explain the indications.",
+      "Omitting that an untreated pneumothorax is an (relative) contraindication and can tension on decompression.",
+      "Confusing CNS (Paul Bert, seizures) with pulmonary (Lorrain Smith) oxygen toxicity."
+    ],
+    "examTip": "Group indications by mechanism (hyperoxygenation vs bubble reduction vs wound healing/infection) and side-effects by cause (barotrauma vs oxygen toxicity vs environment) — the classification carries the marks.",
+    "sources": [
+      "Undersea & Hyperbaric Medical Society (UHMS) — Indications for HBOT.",
+      "Miller's Anesthesia, 9th Ed — Hyperbaric oxygen & oxygen toxicity.",
+      "Brunner & Suddarth / Oh's Intensive Care Manual — Hyperbaric oxygen therapy.",
+      "West's Respiratory Physiology — Oxygen toxicity."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "The ONLY absolute contraindication to HBOT is an untreated pneumothorax; relative contraindications include concurrent bleomycin/cisplatin/doxorubicin/disulfiram, COPD with CO₂ retention, uncontrolled seizures, claustrophobia and pregnancy (except CO poisoning).",
+        "In CO poisoning, HBOT accelerates dissociation of carboxyhaemoglobin (half-life falls from ~4–5 h on air, ~90 min on 100% O₂ at 1 ATA, to ~20–30 min at 3 ATA) and may reduce delayed neurological sequelae.",
+        "Oxygen-toxicity seizures are self-limiting and stop when FiO₂ is reduced — but the patient must not be decompressed during a seizure (breath-holding risk of pulmonary barotrauma)."
+      ]
+    }
+  },
+  {
+    "qNo": 6,
+    "question": "Define lethal triad for trauma patient. Write briefly about damage control resuscitation and damage control surgery. [2+(4+4)]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Lethal triad of trauma (2 marks)",
+        "content": "The 'lethal triad' (or 'triad of death') is the self-perpetuating vicious cycle of HYPOTHERMIA, ACIDOSIS and COAGULOPATHY in the severely injured, bleeding patient. Each component worsens the others: hypothermia and acidosis impair coagulation-factor and platelet function, ongoing bleeding worsens hypoperfusion (acidosis) and heat loss (hypothermia) — spiralling to uncontrolled haemorrhage and death. (Some now describe a 'lethal diamond' by adding hypocalcaemia.)"
+      },
+      "partB": {
+        "title": "Damage Control Resuscitation (DCR) (4 marks)",
+        "definition": "DCR is a systematic, haemostatic resuscitation strategy aimed at breaking the lethal triad by minimising blood loss, restoring perfusion and correcting coagulopathy while limiting the harms of over-resuscitation, until definitive haemorrhage control is achieved.",
+        "components": {
+          "title": "Key components",
+          "content": [
+            "Permissive (hypotensive) resuscitation — accept a lower target BP (e.g. SBP ~80–90 mmHg or a palpable radial pulse / mentation) until bleeding is controlled, to avoid 'popping the clot' and dilution — EXCEPT in traumatic brain injury, where normotension is maintained.",
+            "Haemostatic resuscitation — early, balanced transfusion of blood products in ~1:1:1 ratio of packed red cells : plasma (FFP) : platelets; minimise crystalloid.",
+            "Rapid haemorrhage control — direct pressure, tourniquets, pelvic binder, and early damage-control surgery / interventional radiology.",
+            "Tranexamic acid — give early (within 3 h; CRASH-2), 1 g over 10 min then 1 g over 8 h.",
+            "Correction and prevention of the lethal triad — aggressive rewarming, correct acidosis (perfusion, not just bicarbonate), replace calcium, and use point-of-care coagulation testing (ROTEM/TEG) to guide products.",
+            "Massive transfusion protocol activation and use of a validated trigger/score (e.g. ABC score)."
+          ]
+        }
+      },
+      "partC": {
+        "title": "Damage Control Surgery (DCS) (4 marks)",
+        "definition": "DCS is a staged surgical approach for the physiologically deranged trauma patient in whom a prolonged definitive operation would be lethal. The priority is to control haemorrhage and contamination quickly, restore physiology in ICU, and defer definitive repair.",
+        "stages": {
+          "title": "The three (four) stages",
+          "content": [
+            "Stage 0 — recognition & DCR: identify the patient who needs DCS (hypothermia <35 °C, acidosis pH <7.2/base deficit, coagulopathy, high transfusion requirement) and begin damage control resuscitation.",
+            "Stage 1 — abbreviated surgery: rapid control of bleeding (packing, ligation, temporary vascular shunts) and of contamination (staple/close bowel, no anastomosis); temporary abdominal closure ('open abdomen', e.g. Bogota bag / negative-pressure dressing).",
+            "Stage 2 — ICU physiological restoration: rewarming, correction of acidosis and coagulopathy, ongoing resuscitation and organ support over 24–48 h.",
+            "Stage 3 — definitive surgery: return to theatre once physiology is restored for definitive repair, anastomosis, reconstruction and abdominal closure (may need repeated 're-look' laparotomies)."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Lethal triad = hypothermia + acidosis + coagulopathy (add hypocalcaemia → 'lethal diamond'); the aim of all damage-control care is to break this cycle.",
+      "DCR = permissive hypotension (not in TBI) + haemostatic 1:1:1 transfusion + early TXA + minimal crystalloid + rewarming/calcium + haemorrhage control.",
+      "DCS = staged surgery: abbreviated damage-control operation → ICU physiological restoration → delayed definitive surgery, with temporary abdominal closure."
+    ],
+    "commonMistakes": [
+      "Applying permissive hypotension to patients with traumatic brain injury — they need normotension to preserve cerebral perfusion.",
+      "Over-resuscitation with crystalloid, which dilutes clotting factors, worsens hypothermia and acidosis, and disrupts clot.",
+      "Delaying tranexamic acid beyond 3 hours (CRASH-2 showed harm/no benefit if given late)."
+    ],
+    "examTip": "Respect the mark split: 2 marks — define the triad crisply; 4+4 — give DCR components and the staged DCS approach. Quote CRASH-2 and the 1:1:1 ratio for current, evidence-based marks.",
+    "sources": [
+      "ATLS 10th Edition — Shock & haemorrhage.",
+      "CRASH-2 Collaborators. Tranexamic acid in bleeding trauma. Lancet 2010;376:23–32.",
+      "Miller's Anesthesia, 9th Ed — Trauma and Massive transfusion.",
+      "Rotondo MF et al. 'Damage control' — original description. J Trauma 1993."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Acute Traumatic Coagulopathy (ATC) is present in ~25% of major-trauma patients on arrival, BEFORE dilution/hypothermia — driven by tissue hypoperfusion, activated protein C and endothelial glycocalyx shedding; this is why early haemostatic resuscitation (not delayed) matters.",
+        "Hypocalcaemia is increasingly emphasised (citrate in stored blood chelates calcium) — the 'lethal diamond'; keep ionised Ca²⁺ >1.0–1.1 mmol/L during massive transfusion.",
+        "Whole blood and pre-hospital blood-product resuscitation are re-emerging as the ideal 'balanced' resuscitation fluid in major haemorrhage."
+      ]
+    }
+  },
+  {
+    "qNo": 7,
+    "question": "Discuss the anaesthetic implications of a patient scheduled for posterior cranial fossa surgery. Describe various methods to detect and treat venous air embolism. [5+5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Anaesthetic implications of posterior cranial fossa (PCF) surgery",
+        "definition": "The posterior fossa is a small, rigid compartment containing the brainstem (cardiorespiratory centres), cranial nerves and cerebellum, with the great veins nearby. Surgery here — often in the sitting position — carries unique risks: venous air embolism (VAE), brainstem/cranial-nerve injury, haemodynamic instability and positioning hazards.",
+        "keyConcerns": {
+          "title": "Key anaesthetic concerns",
+          "content": [
+            "Positioning: often sitting/park-bench/prone — risk of VAE (surgical site above the heart), postural hypotension, pressure injuries, quadriplegia from neck flexion (allow ≥2 finger-breadths chin–chest), macroglossia, peripheral nerve injury, and pneumocephalus.",
+            "Venous air embolism & paradoxical air embolism (right-to-left shunt / PFO — screen with pre-op echo).",
+            "Brainstem manipulation → sudden bradycardia/asystole, hypertension, arrhythmias (surgeon must be warned to pause); cardiovascular instability.",
+            "Cranial-nerve involvement → loss of airway-protective reflexes and risk of postoperative bulbar dysfunction, apnoea and aspiration → delayed/cautious extubation.",
+            "Need for a smooth, immobile field and rapid emergence for neuro assessment; brain relaxation (avoid ↑ICP/coughing).",
+            "Haemodynamic monitoring: invasive arterial line (transducer at the level of the external auditory meatus/circle of Willis to reflect cerebral perfusion in the sitting position), central line (right atrial catheter for air aspiration), precordial Doppler/capnography."
+          ]
+        },
+        "management": {
+          "title": "Anaesthetic management points",
+          "content": [
+            "Preop: assess for PFO (contrast echo), cardiorespiratory reserve, and raised ICP; plan monitoring.",
+            "Induction/maintenance: smooth induction, secure reinforced (armoured) ETT well fixed, TIVA or balanced technique preserving CO₂ reactivity and cerebral autoregulation, avoid N₂O once VAE risk begins (it enlarges bubbles).",
+            "Careful positioning with graded head-up, MAP maintained for cerebral perfusion, and vigilance for VAE throughout.",
+            "Emergence: assess airway reflexes and consciousness; be prepared for delayed extubation and postoperative ventilation."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Venous Air Embolism (VAE) — detection & treatment",
+        "definition": "VAE occurs when the operative venous site is above the heart and open non-collapsing veins (dural sinuses, diploë) entrain air, which travels to the right heart/pulmonary circulation causing an 'air-lock', RV outflow obstruction, cardiovascular collapse and hypoxaemia; paradoxical embolism (to brain/coronaries) can occur with a right-to-left shunt.",
+        "detection": {
+          "title": "Methods of detection (most → least sensitive)",
+          "content": [
+            "Transoesophageal echocardiography (TOE) — most sensitive; detects tiny air and paradoxical embolism, but invasive/needs expertise.",
+            "Precordial Doppler ultrasound — very sensitive, non-invasive; classic 'mill-wheel'/roaring change in sound (placed over the right heart, 3rd–6th right parasternal space).",
+            "End-tidal CO₂ — a sudden fall in EtCO₂ (increased alveolar dead space) is the most practical, continuous monitor.",
+            "End-tidal nitrogen (EtN₂) — rises with air entrainment (early, but less available).",
+            "Pulmonary artery pressure — rises; and fall in SpO₂/PaO₂.",
+            "Clinical/haemodynamic: hypotension, arrhythmias, 'mill-wheel' murmur on auscultation (late), and cardiovascular collapse.",
+            "A right-atrial catheter also allows aspiration of entrained air (both a monitor and a treatment)."
+          ]
+        },
+        "treatment": {
+          "title": "Treatment of VAE",
+          "content": [
+            "Alert the surgeon — flood the field with saline and pack/wax bone edges to stop further air entry; lower the head (below heart level) if possible.",
+            "Stop N₂O immediately and give 100% oxygen.",
+            "Aspirate air from the right-atrial (central) catheter.",
+            "Apply jugular venous compression (raises venous pressure at the surgical site to identify and stop the entry point).",
+            "Position: left lateral decubitus (Durant's manoeuvre) ± head-down to trap air in the RV apex, away from the outflow tract.",
+            "Cardiovascular support: fluids, vasopressors/inotropes; CPR if arrest; treat arrhythmias.",
+            "Refractory/paradoxical cases: consider hyperbaric oxygen (for cerebral/coronary air embolism) and supportive intensive care."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "PCF surgery (often sitting position) risks VAE/paradoxical embolism, brainstem-mediated cardiovascular instability, cranial-nerve/bulbar dysfunction (delayed extubation) and positioning injuries (quadriplegia, pneumocephalus).",
+      "VAE detection sensitivity: TOE > precordial Doppler > sudden ↓EtCO₂ (most practical) > PA pressure/SpO₂ > clinical mill-wheel murmur (late).",
+      "VAE treatment: tell surgeon + flood field, stop N₂O/100% O₂, aspirate from RA catheter, jugular compression, left-lateral head-down (Durant), and cardiovascular support."
+    ],
+    "commonMistakes": [
+      "Continuing nitrous oxide when VAE is a risk — it diffuses into and enlarges the air embolus.",
+      "Forgetting to zero the arterial transducer at head level (external auditory meatus) in the sitting position — leads to unrecognised cerebral hypoperfusion.",
+      "Overlooking a PFO / paradoxical air embolism risk and neglecting preoperative screening."
+    ],
+    "examTip": "Split cleanly into (i) implications — position, VAE, brainstem, cranial nerves, monitoring; and (ii) VAE — detection ranked by sensitivity + a stepwise treatment list. Ranking the monitors by sensitivity impresses examiners.",
+    "sources": [
+      "Cottrell & Patel's Neuroanesthesia, 6th Ed — Posterior fossa surgery & VAE.",
+      "Miller's Anesthesia, 9th Ed — Anesthesia for neurosurgery; venous air embolism.",
+      "Barash, Clinical Anesthesia, 8th Ed — Neuroanesthesia & patient positioning.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Neurophysiology & anesthesia."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "The sitting position improves surgical access and venous/CSF drainage but maximises VAE risk; a documented right-to-left shunt (PFO) is a relative contraindication because of paradoxical embolism.",
+        "Detection thresholds: TOE/precordial Doppler detect ~0.02 mL/kg of air; EtCO₂ change needs a larger volume — but EtCO₂ is the continuous, universally available early warning.",
+        "'Tension pneumocephalus' can present as delayed emergence/neurological deterioration after sitting-position surgery — N₂O avoidance reduces this risk too."
+      ]
+    }
+  },
+  {
+    "qNo": 8,
+    "question": "A twenty-five-year-old primigravida with 34 weeks gestation with severe pre-eclampsia is scheduled for caesarian section. Discuss the anaesthetic implications and management. [5+5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Severe pre-eclampsia & anaesthetic implications",
+        "definition": {
+          "title": "Severe pre-eclampsia — definition & implications",
+          "content": "Pre-eclampsia is new-onset hypertension (≥140/90 mmHg) after 20 weeks with proteinuria and/or maternal organ dysfunction. It is 'severe' when BP ≥160/110 mmHg, or there is thrombocytopenia, renal/hepatic involvement, pulmonary oedema, or cerebral/visual symptoms. It is a multisystem endothelial disorder — the anaesthetic implications flow from every affected system."
+        },
+        "systemicImplications": {
+          "title": "Anaesthetic implications (multisystem)",
+          "content": [
+            "CVS: severe hypertension with exaggerated pressor response to laryngoscopy (risk of cerebral haemorrhage, LV failure); intravascular volume depletion despite oedema.",
+            "CNS: risk of eclamptic seizures, cerebral oedema/haemorrhage; headache, hyperreflexia, visual disturbance are warning signs.",
+            "Respiratory: laryngeal/airway oedema → difficult intubation and higher failed-intubation rate; pulmonary oedema.",
+            "Haematological: thrombocytopenia and coagulopathy (may contraindicate neuraxial block); HELLP syndrome.",
+            "Hepatic: HELLP (Haemolysis, Elevated Liver enzymes, Low Platelets), subcapsular haematoma / hepatic rupture, epigastric pain.",
+            "Renal: proteinuria, oliguria, AKI.",
+            "Uteroplacental: reduced placental perfusion, IUGR, fetal compromise; risk of abruption.",
+            "Drug interactions: magnesium potentiates neuromuscular block and causes hypotension."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Anaesthetic management",
+        "definition": "Multidisciplinary (obstetric, anaesthetic, neonatal) care; the priorities are BP control, seizure prophylaxis, careful fluid balance, and a safe anaesthetic — regional preferred unless contraindicated.",
+        "preoperative": {
+          "title": "Preoperative optimisation",
+          "content": [
+            "Control BP: keep <160/110 mmHg — labetalol, hydralazine or nifedipine (avoid precipitous falls that harm placental perfusion).",
+            "Seizure prophylaxis/treatment: magnesium sulphate (loading 4 g IV then infusion) — monitor for toxicity (loss of reflexes, respiratory depression); antidote is calcium gluconate.",
+            "Assess platelets/coagulation (usually need platelets >70–80 ×10⁹/L and normal coagulation for neuraxial block), airway, and fluid status; secure large-bore IV access, group & save.",
+            "Judicious fluids (risk of pulmonary oedema) — avoid aggressive preloading."
+          ]
+        },
+        "regionalAnaesthesia": {
+          "title": "Regional anaesthesia (preferred technique)",
+          "content": [
+            "Neuraxial (spinal, epidural, or combined spinal-epidural) is the technique of choice if platelets/coagulation are adequate and no other contraindication — it avoids airway instrumentation and the hypertensive response, and improves uteroplacental flow.",
+            "Modern evidence shows spinal is acceptable in severe pre-eclampsia — hypotension is often LESS severe than in healthy parturients; treat hypotension with phenylephrine and cautious fluids.",
+            "Epidural gives a slower, controllable block and good postoperative analgesia."
+          ]
+        },
+        "generalAnaesthesia": {
+          "title": "General anaesthesia (when regional contraindicated)",
+          "content": [
+            "Indications: thrombocytopenia/coagulopathy, maternal refusal, eclampsia with reduced consciousness, fetal distress needing immediate delivery, or pulmonary oedema.",
+            "Anticipate a DIFFICULT AIRWAY (oedema) — smaller ETT, difficult-airway equipment ready, experienced assistance.",
+            "Obtund the pressor response to laryngoscopy: e.g. IV labetalol, esmolol, fentanyl/alfentanil, magnesium, or lignocaine — a critical step to prevent cerebral haemorrhage.",
+            "Rapid-sequence induction with cricoid; remember magnesium prolongs neuromuscular blockade — titrate relaxants with a nerve stimulator.",
+            "Maintain BP control at extubation (another pressor surge) and continue magnesium and monitoring postoperatively."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Severe pre-eclampsia is a multisystem endothelial disease — plan around BP control, seizure prophylaxis (magnesium), coagulation status, difficult airway and fetal wellbeing.",
+      "Neuraxial anaesthesia is preferred if platelets/coagulation allow (usually platelets >70–80 ×10⁹/L); spinal hypotension is typically less severe than in healthy parturients.",
+      "For GA, the key steps are managing a potentially difficult (oedematous) airway and OBTUNDING the pressor response to laryngoscopy/extubation to prevent intracranial haemorrhage."
+    ],
+    "commonMistakes": [
+      "Aggressive fluid preloading — precipitates pulmonary oedema in these patients.",
+      "Failing to blunt the hypertensive response to laryngoscopy during GA (leading cause of maternal death — cerebral haemorrhage).",
+      "Forgetting that magnesium potentiates non-depolarising relaxants — always use neuromuscular monitoring and reduce doses."
+    ],
+    "examTip": "Structure as Implications (by system) → Management (preop optimisation → regional vs GA). Emphasise magnesium (dose, toxicity, calcium antidote) and the pressor-response obtundation — these are the high-yield, life-saving marks.",
+    "sources": [
+      "Chestnut's Obstetric Anesthesia: Principles and Practice, 6th Ed — Hypertensive disorders of pregnancy.",
+      "Miller's Anesthesia, 9th Ed — Obstetric anesthesia.",
+      "OAA/AAGBI & ACOG/NICE guidelines on management of severe pre-eclampsia.",
+      "Morgan & Mikhail's Clinical Anesthesiology, 6th Ed — Maternal & fetal physiology; obstetric complications."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Magnesium therapeutic level 4–7 mEq/L (2–3.5 mmol/L): loss of patellar reflex ~10 mEq/L, respiratory depression ~15, cardiac arrest >25 — antidote 10 mL 10% calcium gluconate IV.",
+        "Ephedrine vs phenylephrine: phenylephrine is now first-line for spinal hypotension; in the compromised fetus the older concern about phenylephrine reducing placental flow is outweighed by better maternal acid-base/fetal pH data.",
+        "HELLP and eclampsia can occur postpartum — vigilance and magnesium are continued for ≥24 h after delivery."
+      ]
+    }
+  },
+  {
+    "qNo": 9,
+    "question": "a) Hypoxemia during one lung ventilation. [5]  b) Blood conservation strategies during surgery. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Hypoxaemia during one-lung ventilation (OLV)",
+        "definition": "During OLV (for thoracic surgery), the non-dependent (operative) lung is collapsed while the dependent lung is ventilated. Blood flowing through the non-ventilated lung creates an obligatory transpulmonary shunt; hypoxaemia results when this shunt is not adequately offset by hypoxic pulmonary vasoconstriction (HPV) and redistribution of blood flow.",
+        "causes": {
+          "title": "Causes / contributing factors",
+          "content": [
+            "Shunt through the collapsed non-dependent lung (main cause).",
+            "Impaired hypoxic pulmonary vasoconstriction (HPV) — inhibited by volatile agents (dose-dependent), vasodilators (GTN, nitroprusside, dobutamine), hypocapnia, very high/low PA pressures.",
+            "Malposition of the double-lumen tube (DLT) or bronchial blocker — the commonest correctable cause; verify with fibreoptic bronchoscopy.",
+            "V/Q mismatch and reduced FRC/atelectasis in the dependent lung (lateral position, weight of mediastinum, absorption atelectasis with high FiO₂).",
+            "Pre-existing lung disease, low cardiac output (low mixed-venous O₂), and secretions/blood obstructing the airway."
+          ]
+        },
+        "management": {
+          "title": "Management of hypoxaemia during OLV (stepwise)",
+          "content": [
+            "Increase FiO₂ to 1.0.",
+            "Check DLT/blocker position with fibreoptic bronchoscopy and confirm both lungs; suction secretions/blood.",
+            "Ensure adequate cardiac output and Hb; confirm no equipment/circuit problem.",
+            "Apply CPAP (5–10 cmH₂O with O₂) to the non-dependent (operative) lung — after a recruitment breath (most effective specific measure).",
+            "Apply PEEP (5 cmH₂O) to the dependent, ventilated lung (helps if atelectatic; may worsen shunt if it over-distends and diverts flow).",
+            "Intermittent re-inflation / two-lung ventilation if severe or persistent.",
+            "Surgical clamping of the pulmonary artery to the operative lung (during pneumonectomy) abolishes the shunt.",
+            "Optimise ventilation: lung-protective settings, avoid factors inhibiting HPV."
+          ]
+        }
+      },
+      "partB": {
+        "title": "Blood conservation strategies during surgery",
+        "definition": "Blood conservation = the coordinated use of techniques to reduce allogeneic (donor) blood transfusion and its risks — best delivered within 'Patient Blood Management' (PBM), built on three pillars: optimise red-cell mass, minimise blood loss, and optimise/tolerate anaemia.",
+        "preoperative": {
+          "title": "1. Preoperative",
+          "content": [
+            "Detect and treat anaemia early — iron (oral/IV), B12/folate, and erythropoietin where indicated.",
+            "Stop/optimise antiplatelet and anticoagulant drugs where safe; treat coagulopathy.",
+            "Autologous predonation in selected elective cases; restrictive transfusion thresholds (Hb 7–8 g/dL).",
+            "Plan surgery/technique to minimise loss."
+          ]
+        },
+        "intraoperative": {
+          "title": "2. Intraoperative",
+          "content": [
+            "Meticulous surgical haemostasis; minimally invasive/laparoscopic approaches; tourniquets where appropriate.",
+            "Controlled (deliberate) hypotension where safe.",
+            "Acute Normovolaemic Haemodilution (ANH) — remove blood at induction, replace volume, re-infuse later.",
+            "Intraoperative Cell Salvage (autotransfusion) — collect, wash and re-infuse the patient's own shed blood (avoid in malignancy/infection unless leucodepletion filter used).",
+            "Antifibrinolytics — tranexamic acid (strong evidence), aminocaproic acid.",
+            "Positioning to reduce venous congestion; maintain normothermia, normal pH and calcium (all improve haemostasis); point-of-care ROTEM/TEG-guided, targeted product use.",
+            "Topical haemostatic agents (fibrin sealants, etc.)."
+          ]
+        },
+        "postoperative": {
+          "title": "3. Postoperative",
+          "content": [
+            "Postoperative cell salvage from drains; restrictive transfusion triggers.",
+            "Minimise iatrogenic (phlebotomy) blood loss; continue iron/erythropoietic support.",
+            "Prompt management of surgical bleeding and coagulopathy."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "Hypoxaemia during OLV is mainly shunt through the collapsed lung; the commonest correctable cause is tube malposition — always re-check with a fibreoptic scope.",
+      "Stepwise OLV rescue: FiO₂ 1.0 → check position/suction → CPAP to operative lung → PEEP to dependent lung → intermittent two-lung ventilation → PA clamp.",
+      "Blood conservation = Patient Blood Management's 3 pillars: optimise red-cell mass, minimise loss (haemostasis, cell salvage, ANH, tranexamic acid, normothermia), and tolerate anaemia (restrictive triggers)."
+    ],
+    "commonMistakes": [
+      "Reaching for CPAP/PEEP before excluding a malpositioned double-lumen tube (the commonest, most correctable cause).",
+      "Using high-dose volatile agents that inhibit HPV and worsen the shunt.",
+      "Forgetting that hypothermia, acidosis and hypocalcaemia all impair haemostasis — correcting them IS a blood-conservation measure."
+    ],
+    "examTip": "Give the OLV rescue as a numbered escalation (FiO₂ → position check → CPAP → PEEP → two-lung/PA clamp). For blood conservation, use the pre/intra/post or the PBM three-pillar framework — the structure earns marks.",
+    "sources": [
+      "Miller's Anesthesia, 9th Ed — Anesthesia for thoracic surgery; one-lung ventilation.",
+      "Slinger P. Principles and Practice of Anesthesia for Thoracic Surgery.",
+      "Barash, Clinical Anesthesia, 8th Ed — Blood therapy & Patient Blood Management.",
+      "NICE/AAGBI guidelines on blood transfusion & cell salvage; CRASH-2/tranexamic acid evidence."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Hypoxic pulmonary vasoconstriction (HPV) is a protective reflex diverting flow from hypoxic (collapsed) lung; modern volatile agents inhibit it far less than older ones, and propofol/TIVA preserves it — a reason some choose TIVA for difficult OLV oxygenation.",
+        "Protective OLV: tidal volume 4–6 mL/kg (ideal body weight), PEEP 5 cmH₂O, recruitment manoeuvres, permissive hypercapnia and FiO₂ titrated to lowest acceptable — reduces acute lung injury after thoracic surgery.",
+        "Cell salvage in obstetrics and (with leucocyte-depletion filters) in oncological surgery is now accepted, expanding blood-conservation options."
+      ]
+    }
+  },
+  {
+    "qNo": 10,
+    "question": "a) Risk factors for post operative cognitive dysfunction after non cardiac surgery. [5]  b) Management of airway fires. [5]",
+    "marks": 10,
+    "answer": {
+      "partA": {
+        "title": "Risk factors for Postoperative Cognitive Dysfunction (POCD) after non-cardiac surgery",
+        "definition": "POCD is a subtle, objectively measurable decline in cognitive domains (memory, attention, executive function, processing speed) that persists for weeks to months after surgery, diagnosed by neuropsychological testing. It is distinct from postoperative delirium (acute, fluctuating, days) and postoperative neurocognitive disorder in the newer DSM-5 nomenclature.",
+        "patientFactors": {
+          "title": "Patient (predisposing) factors",
+          "content": [
+            "Advanced age — the single strongest risk factor.",
+            "Pre-existing cognitive impairment / low cognitive reserve, low educational level.",
+            "Cerebrovascular disease, prior stroke/TIA, and vascular risk factors (hypertension, diabetes, atherosclerosis).",
+            "Depression, alcohol misuse, frailty and poor functional status; genetic factors (e.g. ApoE4 — evidence mixed).",
+            "History of previous POCD or postoperative delirium."
+          ]
+        },
+        "perioperativeFactors": {
+          "title": "Surgical & perioperative (precipitating) factors",
+          "content": [
+            "Major/prolonged and emergency surgery; the systemic inflammatory (neuro-inflammatory) response to surgery.",
+            "Intra-operative and postoperative complications: hypotension/hypoperfusion, hypoxaemia, hypo-/hyperglycaemia, embolic events.",
+            "Postoperative pain, sleep disturbance and postoperative delirium (a strong predictor of subsequent POCD).",
+            "Deep anaesthesia / possible burst suppression, and polypharmacy (long-acting sedatives, anticholinergics, benzodiazepines).",
+            "Postoperative infection/sepsis, second surgery, and prolonged ICU stay/hospitalisation.",
+            "(The independent role of anaesthetic type — general vs regional — remains unproven.)"
+          ]
+        }
+      },
+      "partB": {
+        "title": "Management of airway fires",
+        "definition": "An airway fire is an operating-room fire in or near the airway, needing the three components of the 'fire triad': an oxidiser (O₂/N₂O — enriched airway), an ignition source (laser, diathermy/cautery), and fuel (tracheal tube, drapes, sponges, alcohol prep). Airway/laser surgery is the classic high-risk setting. Management is a memorised emergency drill.",
+        "prevention": {
+          "title": "Prevention (reduce the triad)",
+          "content": [
+            "Minimise oxidiser: use the lowest FiO₂ that maintains safe SpO₂; avoid nitrous oxide; allow time for O₂ to dissipate before using cautery.",
+            "Use laser-resistant (laser-safe) tracheal tubes for laser airway surgery; fill the cuff with saline (± dye) to detect/quench rupture.",
+            "Control ignition: surgeon warns before activating laser/cautery; keep power low; allow prep solutions to dry fully.",
+            "Team briefing and a fire risk assessment before high-risk cases; wet swabs/gauze around the field; saline immediately available."
+          ]
+        },
+        "management": {
+          "title": "Immediate management of an airway fire (drill)",
+          "content": [
+            "STOP and simultaneously: STOP the flow of all airway gases (disconnect the circuit) and REMOVE the tracheal tube.",
+            "Pour saline/water into the airway to extinguish and cool.",
+            "Remove any other flammable/burning material from the airway and field.",
+            "Then: re-establish ventilation by mask (avoiding supplemental O₂/N₂O until sure the fire is out); re-intubate — ideally examine the airway with rigid/flexible bronchoscopy to assess thermal injury.",
+            "Assess airway damage (bronchoscopy), consider steroids/humidified oxygen, and plan ICU care; keep the patient intubated/ventilated if significant injury.",
+            "Save the involved materials and report the incident."
+          ]
+        }
+      }
+    },
+    "keyPoints": [
+      "The dominant POCD risk factor is advanced age plus low cognitive reserve/pre-existing impairment; major/prolonged surgery, perioperative hypotension/hypoxia, and postoperative delirium are key precipitants.",
+      "Anaesthetic technique (GA vs regional) has NOT been proven to independently change POCD risk.",
+      "Airway fire = fire triad (oxidiser + ignition + fuel). Emergency drill: STOP gases + REMOVE tube + saline into airway, THEN re-establish ventilation and bronchoscope the airway."
+    ],
+    "commonMistakes": [
+      "Equating POCD with postoperative delirium — they differ in time-course and diagnosis (delirium is acute/fluctuating; POCD is a persistent, test-defined decline).",
+      "In an airway fire, wasting time or, worse, continuing high-flow oxygen — the first actions are to stop the gases AND remove the burning tube together.",
+      "Re-establishing ventilation with 100% O₂/N₂O before confirming the fire is fully out — this can reignite it."
+    ],
+    "examTip": "Split POCD risk factors into patient (predisposing) vs perioperative (precipitating), and note the unproven role of anaesthetic type. For airway fire, lead with the fire triad and give the four immediate steps as a crisp drill — examiners want the sequence, not prose.",
+    "sources": [
+      "Miller's Anesthesia, 9th Ed — Postoperative cognitive dysfunction; Operating room fires.",
+      "Barash, Clinical Anesthesia, 8th Ed — Neurocognitive disorders & OR safety.",
+      "ASA Practice Advisory for the Prevention and Management of Operating Room Fires (2013).",
+      "Nomenclature Consensus Working Group (Anesthesiology 2018) — perioperative neurocognitive disorders."
+    ],
+    "extraMarks": {
+      "heading": "⭐ Extra Theory Edge",
+      "content": [
+        "Updated nomenclature (2018): 'perioperative neurocognitive disorders' is the umbrella term — postoperative delirium (up to 7 days), delayed neurocognitive recovery (up to 30 days) and postoperative NCD (up to 12 months) replace the older term 'POCD'.",
+        "Processed-EEG-guided (BIS/entropy) anaesthesia to avoid excessive depth/burst suppression MAY reduce delirium in older patients (ENGAGES trial gave mixed results) — evidence is not definitive.",
+        "For laser airway surgery, the classic quoted precaution is FiO₂ ≤0.30, no nitrous oxide, laser-resistant tube, saline-filled cuff and a bowl of saline on the field — a favourite viva checklist."
+      ]
+    }
+  }
+]
