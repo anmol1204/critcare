@@ -34,29 +34,36 @@
   }
 
   // ── Push Notifications (Firebase FCM) ────────────────────────────────────
-  if (PushNotifications) {
-    PushNotifications.requestPermissions().then(function (result) {
-      if (result.receive === 'granted') {
-        PushNotifications.register();
-      }
-    });
+  // DISABLED until Firebase is configured: registering for push requires a valid
+  // android/app/google-services.json. Without it, PushNotifications.register()
+  // hits an uninitialised FirebaseApp and CRASHES the app on launch.
+  // To re-enable later: add google-services.json, then set window.CC_PUSH_ENABLED = true.
+  if (PushNotifications && window.CC_PUSH_ENABLED === true) {
+    try {
+      PushNotifications.requestPermissions().then(function (result) {
+        if (result.receive === 'granted') {
+          PushNotifications.register();
+        }
+      }).catch(function (e) { console.warn('[FCM] permission error:', e); });
 
-    PushNotifications.addListener('registration', function (token) {
-      // Token available — in production, send to your server
-      console.log('[FCM] Token:', token.value);
-    });
+      PushNotifications.addListener('registration', function (token) {
+        console.log('[FCM] Token:', token.value);
+      });
 
-    PushNotifications.addListener('registrationError', function (err) {
-      console.error('[FCM] Registration error:', err.error);
-    });
+      PushNotifications.addListener('registrationError', function (err) {
+        console.error('[FCM] Registration error:', err.error);
+      });
 
-    PushNotifications.addListener('pushNotificationReceived', function (notification) {
-      console.log('[FCM] Notification received:', notification);
-    });
+      PushNotifications.addListener('pushNotificationReceived', function (notification) {
+        console.log('[FCM] Notification received:', notification);
+      });
 
-    PushNotifications.addListener('pushNotificationActionPerformed', function (action) {
-      var url = action.notification.data && action.notification.data.url;
-      if (url) window.location.href = url;
-    });
+      PushNotifications.addListener('pushNotificationActionPerformed', function (action) {
+        var url = action.notification.data && action.notification.data.url;
+        if (url) window.location.href = url;
+      });
+    } catch (e) {
+      console.warn('[FCM] push notifications unavailable:', e);
+    }
   }
 })();
