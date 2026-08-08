@@ -9,15 +9,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --blue:       #1e6fd9;
-  --blue-dark:  #1453a8;
-  --blue-soft:  #eaf2fd;
-  --ink:        #14233a;
-  --slate:      #5b6b80;
-  --line:       #e2e8f1;
+  --blue:       #1d5fc4;
+  --blue-dark:  #164a9e;
+  --blue-soft:  #eef4fd;
+  --ink:        #17212f;
+  --slate:      #586878;
+  --line:       #e5e9ef;
   --bg:         #ffffff;
-  --bg-alt:     #f7fafd;
-  --accent:     #00b3a4;
+  --bg-alt:     #f6f8fb;
+  --accent:     #0a9d90;
   --white:      #ffffff;
   --font-body: 'Inter', -apple-system, system-ui, sans-serif;
   --font-disp: 'Fraunces', Georgia, serif;
@@ -28,19 +28,19 @@
    DARK MODE
    ============================================================ */
 html.dark {
-  --blue:       #4d9ff5;
-  --blue-dark:  #7bb8f7;
-  --blue-soft:  #0d1b2e;
-  --ink:        #f2f2f3;
-  --slate:      #9a9a9e;
-  --line:       #242427;
-  --bg:         #000000;
-  --bg-alt:     #0d0d0f;
-  --accent:     #00c9b8;
-  --white:      #0d0d0f;
+  --blue:       #5aa2f5;
+  --blue-dark:  #86bcf8;
+  --blue-soft:  #0f1d30;
+  --ink:        #e9ebef;
+  --slate:      #9aa1ac;
+  --line:       #262a30;
+  --bg:         #0a0b0d;
+  --bg-alt:     #131519;
+  --accent:     #22c9b8;
+  --white:      #131519;
 }
 html.dark body { background: var(--bg); color: var(--ink); }
-html.dark .nav { background: rgba(0,0,0,0.96); border-color: var(--line); }
+html.dark .nav { background: rgba(10,11,13,0.9); border-color: var(--line); }
 html.dark .nav-menu { background: #0d0d0f; }
 html.dark .hero-photo-card,
 html.dark .about-photo-card,
@@ -54,7 +54,7 @@ html.dark .login-brand-panel { background: #0a0a0c; }
 html.dark .toc,
 html.dark .stats,
 html.dark .stat { background: var(--bg-alt); border-color: var(--line); }
-html.dark .hero, html.dark .topic-hero, html.dark .page-head { background: linear-gradient(180deg, #111114 0%, #000000 100%); }
+html.dark .hero, html.dark .topic-hero, html.dark .page-head { background: linear-gradient(180deg, #14161b 0%, #0a0b0d 100%); }
 html.dark .ai-banner { background: linear-gradient(120deg, #0a0a0c 0%, #101218 100%); }
 html.dark .drug-table th { background: #16171a; }
 html.dark .drug-table tr:hover td { background: #121214; }
@@ -280,7 +280,7 @@ html.dark .cc-gate { background: rgba(0,0,0,0.62); }
   font-family: var(--font-body); font-size: 0.92rem; font-weight: 700;
   text-decoration: none; margin-bottom: 0.6rem; transition: opacity 0.2s, background 0.2s;
 }
-.cc-btn-primary { background: linear-gradient(135deg, #1e6fd9, #1453a8); color: #fff; }
+.cc-btn-primary { background: linear-gradient(135deg, #1d5fc4, #164a9e); color: #fff; }
 .cc-btn-primary:hover { opacity: 0.92; }
 .cc-btn-ghost { background: var(--bg-alt); color: var(--ink); border: 1px solid var(--line); }
 .cc-btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
@@ -387,10 +387,10 @@ a { color: inherit; }
 .nav-mark {
   width: 36px; height: 36px;
   background: var(--blue);
-  border-radius: 9px;
+  border-radius: 10px;
   display: grid; place-items: center;
   color: #fff; font-size: 1.05rem;
-  box-shadow: 0 3px 10px rgba(30,111,217,0.3);
+  box-shadow: 0 2px 8px rgba(29,95,196,0.26);
 }
 .nav-name { font-weight: 800; font-size: 1.05rem; color: var(--ink); letter-spacing: -0.02em; }
 .nav-name span { color: var(--blue); }
@@ -441,9 +441,9 @@ html.dark .nav-more-menu { background: #0d0d0f; border-color: var(--line); }
   text-decoration: none; cursor: pointer; border: none;
   transition: transform 0.16s, box-shadow 0.16s, background 0.18s;
 }
-.btn:hover { transform: translateY(-2px); }
-.btn-blue { background: var(--blue); color: #fff; box-shadow: 0 4px 16px rgba(30,111,217,0.28); }
-.btn-blue:hover { background: var(--blue-dark); box-shadow: 0 6px 22px rgba(30,111,217,0.36); }
+.btn:hover { transform: translateY(-1px); }
+.btn-blue { background: var(--blue); color: #fff; box-shadow: 0 2px 10px rgba(23,60,120,0.18); }
+.btn-blue:hover { background: var(--blue-dark); box-shadow: 0 5px 18px rgba(23,60,120,0.24); }
 .btn-line { background: #fff; color: var(--ink); border: 1.5px solid var(--line); }
 .btn-line:hover { border-color: var(--blue); color: var(--blue); }
 .btn-wa { background: #25D366; color: #fff; box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
