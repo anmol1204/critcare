@@ -218,9 +218,13 @@
       handler: async function (response) {
         showProStatus('Verifying your payment…');
         try {
+          // Send the signed-in user's Firebase ID token so the SERVER can
+          // grant Pro to their account (client can't forge this).
+          var idToken = null;
+          try { if (window.CCCloud) idToken = await window.CCCloud.getIdToken(); } catch (e) {}
           var vr = await fetch('/api/razorpay-verify', {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(response)
+            body: JSON.stringify(Object.assign({}, response, { idToken: idToken }))
           });
           var v = await vr.json();
           if (v.verified) {
@@ -235,7 +239,7 @@
           showProStatus('⚠️ Payment verification couldn\'t reach the server. Please contact support with Payment ID ' + response.razorpay_payment_id + '.');
         }
       },
-      theme: { color: '#1e6fd9' }
+      theme: { color: '#1d5fc4' }
     };
 
     try {

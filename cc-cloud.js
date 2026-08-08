@@ -116,8 +116,7 @@ async function pull(uid){
     || Object.keys(mProg).length !== Object.keys(cloud.progress || {}).length
     || (!!lget(LS.name) && !cloud.name)
     || (!!lget(LS.spec) && !cloud.specialty)
-    || (!!lget(LS.inst) && !cloud.institute)
-    || (lget(LS.pro) === '1' && !cloud.pro);
+    || (!!lget(LS.inst) && !cloud.institute);
   return changed;
 }
 
@@ -132,7 +131,10 @@ async function push(){
     readlater: jget(LS.readlater, []),
     last:      jget(LS.last, null),
     progress:  jget(LS.progress, {}),
-    pro:       lget(LS.pro) === '1',
+    // NB: `pro` is intentionally NOT written here. Pro is a server-owned
+    // entitlement — only /api/razorpay-verify grants it (via Firebase Admin),
+    // and Firestore rules forbid the client from writing it. We still READ
+    // cloud.pro in pull() so a server grant reaches every device.
     updatedAt: serverTimestamp()
   };
   try { await setDoc(doc(db, 'users', currentUid), data, { merge: true }); }
@@ -145,6 +147,11 @@ function pushSoon(){ clearTimeout(pushTimer); pushTimer = setTimeout(push, 800);
 window.CCCloud = {
   ready: function(){ return isReady; },
   uid:   function(){ return currentUid; },
+  // Signed-in user's Firebase ID token, for the server to verify at payment
+  // time (so it can grant Pro to the right account). null when logged out.
+  getIdToken: function(){
+    return auth.currentUser ? auth.currentUser.getIdToken() : Promise.resolve(null);
+  },
   saveProfile: function(p){
     p = p || {};
     if (p.name)            lset(LS.name, p.name);

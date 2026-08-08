@@ -24,7 +24,7 @@ module.exports = async function handler(req, res) {
     return res.status(500).json({ verified: false, error: 'Razorpay secret is not set in Vercel environment variables.' });
   }
 
-  const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body || {};
+  const { razorpay_order_id, razorpay_payment_id, razorpay_signature, idToken } = req.body || {};
   if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
     return res.status(400).json({ verified: false, error: 'Missing payment fields' });
   }
@@ -44,5 +44,31 @@ module.exports = async function handler(req, res) {
     verified = false;
   }
 
-  return res.status(200).json({ verified: verified, paymentId: razorpay_payment_id });
+  // ── Server-side Pro grant ────────────────────────────────────────────────
+  // Once the signature is trusted, write the entitlement from the SERVER so
+  // the browser can never mint its own Pro. Requires the caller to send the
+  // signed-in user's Firebase ID token AND the Firebase Admin env vars to be
+  // set (see api/_firebase-admin.js). If either is absent we still report the
+  // payment as verified — the grant just isn't persisted server-side yet.
+  let proGranted = false;
+  if (verified && idToken) {
+    try {
+      const { getAdmin } = require('./_firebase-admin');
+      const admin = getAdmin();
+      if (admin) {
+        const decoded = await admin.auth().verifyIdToken(idToken);
+        await admin.firestore().collection('users').doc(decoded.uid).set({
+          pro:           true,
+          proSince:      admin.firestore.FieldValue.serverTimestamp(),
+          lastPaymentId: razorpay_payment_id,
+          lastOrderId:   razorpay_order_id
+        }, { merge: true });
+        proGranted = true;
+      }
+    } catch (e) {
+      console.error('[pro-grant] failed:', e && e.message);
+    }
+  }
+
+  return res.status(200).json({ verified: verified, proGranted: proGranted, paymentId: razorpay_payment_id });
 };

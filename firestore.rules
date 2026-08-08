@@ -2,10 +2,28 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Each authenticated user can read and write only their own profile
-    // document at users/{uid}. Nobody can read anyone else's data.
+    function protectedKeys() {
+      return ['pro', 'proSince', 'lastPaymentId', 'lastOrderId'];
+    }
+
+    // A user's profile document at users/{uid}. Readable/writable only by
+    // that same signed-in user — nobody can see anyone else's data.
+    //
+    // Server-owned entitlement fields (Pro membership + payment references)
+    // may ONLY be written by the Firebase Admin SDK, which bypasses these
+    // rules. The client is forbidden from creating or changing them, so a
+    // forged localStorage flag can never become a real cloud entitlement.
     match /users/{uid} {
-      allow read, write: if request.auth != null && request.auth.uid == uid;
+      allow read: if request.auth != null && request.auth.uid == uid;
+
+      // On create, the client must not set any protected field.
+      allow create: if request.auth != null && request.auth.uid == uid
+        && !request.resource.data.keys().hasAny(protectedKeys());
+
+      // On update, the client must not add/remove/change any protected field.
+      allow update: if request.auth != null && request.auth.uid == uid
+        && !request.resource.data.diff(resource.data).affectedKeys()
+              .hasAny(protectedKeys());
     }
 
     // Everything else is denied by default.
